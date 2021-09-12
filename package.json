@@ -8,6 +8,8 @@
     "gatsby"
   ],
   "scripts": {
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint:fix": "npm run lint -- --fix",
     "type-check": "tsc --noEmit",
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -43,7 +45,11 @@
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-config-preact": "^1.1.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "gatsby-plugin-emotion": "^6.13.0",
     "gatsby-plugin-prettier-eslint": "^1.0.6",
     "prettier": "^2.4.0",
