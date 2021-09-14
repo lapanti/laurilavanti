@@ -12,6 +12,18 @@ const Image = tw(GatsbyImage)`
     -mt-4.5 object-contain max-w-screen-fullhd w-full h-auto ml-auto mr-auto flex col-span-full
 `
 
+const H1 = tw.h1`
+    text-3xl text-accent font-bold col-start-3 col-end-auto
+`
+
+const List = tw.dl`
+    flex flex-col items-end
+`
+
+const Term = tw.dt`
+    self-start
+`
+
 interface Props extends PageProps {
     data: {
         heroImg: ImageDataLike
@@ -23,18 +35,16 @@ const Index = ({ data }: Props): JSX.Element => {
     const image = getImage(data.heroImg)
     return (
         <Page>
-            <article>
-                {image && <Image image={image} alt="Pyöräilyn harjoittelua tyttäreni kanssa" />}
-                <h1>
-                    <dl>
-                        <dt>Lauri Lavanti</dt>
-                        <dd>Isä</dd>
-                        <dd>Kirkkonummelainen</dd>
-                        <dd>Ohjelmistokehittäjä</dd>
-                        <dd>Diplomi-insinööri</dd>
-                    </dl>
-                </h1>
-            </article>
+            {image && <Image image={image} alt="Pyöräilyn harjoittelua tyttäreni kanssa" />}
+            <H1>
+                <List>
+                    <Term>Lauri Lavanti</Term>
+                    <dd>Isä</dd>
+                    <dd>Kirkkonummelainen</dd>
+                    <dd>Ohjelmistokehittäjä</dd>
+                    <dd>Diplomi-insinööri</dd>
+                </List>
+            </H1>
         </Page>
     )
 }

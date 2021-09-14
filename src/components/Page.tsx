@@ -10,6 +10,10 @@ const Main = tw.main`
     grid-in-main
 `
 
+const Article = tw.article`
+    grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
+`
+
 interface Props {
     className?: string
 }
@@ -24,7 +28,9 @@ const PageComponent = ({ className, children }: React.PropsWithChildren<Props>):
             </Helmet>
             <Header />
 
-            <Main>{children}</Main>
+            <Main>
+                <Article>{children}</Article>
+            </Main>
 
             <Footer />
 
