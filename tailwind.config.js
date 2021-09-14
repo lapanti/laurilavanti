@@ -2,6 +2,10 @@ module.exports = {
     purge: ['./src/**/*.{js,jsx,ts,tsx}'],
     darkMode: false, // or 'media' or 'class'
     theme: {
+        fontFamily: {
+            sans: '"Roboto"',
+            serif: '"Roboto"',
+        },
         screens: {
             700: '700px',
             750: '750px',

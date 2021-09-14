@@ -56,7 +56,7 @@ const config = {
     settings: {
         'import/resolver': {
             node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
             },
             typescript: {
                 alwaysTryTypes: true,

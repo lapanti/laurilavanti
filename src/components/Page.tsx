@@ -36,7 +36,7 @@ const PageComponent = ({ className, children }: React.PropsWithChildren<Props>):
 PageComponent.displayName = 'Page'
 
 const Page = tw(PageComponent)`
-    grid grid-areas-layout grid-rows-layout grid-cols-1 gap-4.5 min-h-screen relative
+    grid grid-areas-layout grid-rows-layout grid-cols-1 gap-4.5 min-h-screen relative font-sans
 `
 
 export default Page
