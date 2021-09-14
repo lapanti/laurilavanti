@@ -6,7 +6,7 @@ const Nav = tw.nav`
 `
 
 const Link = tw.a`
-    text-navLink hover:text-accent active:text-accent hover:underline active:underline
+    text-navLink hover:text-accent active:text-accent hover:underline active:underline transition
 `
 
 const LogoLink = tw(Link)`
