@@ -14,15 +14,15 @@ const Svg = tw.svg`
 `
 
 const Facebook = tw(Svg)`
-    hover:text-fb
+    hover:text-fb focus:text-fb
 `
 
 const Twitter = tw(Svg)`
-    hover:text-twitter
+    hover:text-twitter focus:text-twitter
 `
 
 const LinkedIn = tw(Svg)`
-    hover:text-linkedin
+    hover:text-linkedin focus:text-linkedin
 `
 
 interface Props {
