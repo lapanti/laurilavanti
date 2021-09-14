@@ -13,11 +13,11 @@ const Image = tw(GatsbyImage)`
 `
 
 const H1 = tw.h1`
-    text-3xl text-accent font-bold col-start-3 col-end-auto
+    text-3xl text-accent font-bold col-start-3
 `
 
 const List = tw.dl`
-    flex flex-col items-end
+    flex flex-col items-end my-6
 `
 
 const Term = tw.dt`
