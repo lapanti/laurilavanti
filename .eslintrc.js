@@ -64,6 +64,7 @@ const config = {
         },
     },
     rules: {
+        'no-duplicate-imports': ['off'],
         '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
         '@typescript-eslint/no-extra-semi': ['off'],
         '@typescript-eslint/no-unused-vars': [
