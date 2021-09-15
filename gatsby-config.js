@@ -43,6 +43,15 @@ module.exports = {
             __key: 'pages',
         },
         {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'blog',
+                path: './blog/',
+            },
+            __key: 'blog',
+        },
+        'gatsby-plugin-mdx',
+        {
             resolve: 'gatsby-plugin-prettier-eslint',
             options: {
                 prettier: {

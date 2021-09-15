@@ -14,11 +14,16 @@ const Article = tw.article`
     grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
 `
 
+const H1 = tw.h1`
+    col-start-3 text-3xl font-bold mb-1 mt-4.5
+`
+
 interface Props {
     className?: string
+    title?: string
 }
 
-const PageComponent = ({ className, children }: React.PropsWithChildren<Props>): JSX.Element => (
+const PageComponent = ({ className, title, children }: React.PropsWithChildren<Props>): JSX.Element => (
     <>
         <GlobalStyles />
         <div className={className}>
@@ -29,7 +34,10 @@ const PageComponent = ({ className, children }: React.PropsWithChildren<Props>):
             <Header />
 
             <Main>
-                <Article>{children}</Article>
+                <Article>
+                    {title && <H1 itemProp="headline">{title}</H1>}
+                    {children}
+                </Article>
             </Main>
 
             <Footer />

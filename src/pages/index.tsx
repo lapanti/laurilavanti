@@ -1,7 +1,6 @@
-import type { PageProps } from 'gatsby'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import tw from 'twin.macro'
@@ -24,14 +23,16 @@ const Term = tw.dt`
     self-start
 `
 
-interface Props extends PageProps {
-    data: {
-        heroImg: ImageDataLike
-    }
-}
-
-// markup
-const Index = ({ data }: Props): JSX.Element => {
+const Index = (): JSX.Element => {
+    const data = useStaticQuery<{ heroImg: ImageDataLike }>(graphql`
+        query {
+            heroImg: file(relativePath: { eq: "pyoraily-harjoituksia.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED)
+                }
+            }
+        }
+    `)
     const image = getImage(data.heroImg)
     return (
         <Page>
@@ -48,15 +49,5 @@ const Index = ({ data }: Props): JSX.Element => {
         </Page>
     )
 }
-
-export const pageQuery = graphql`
-    query {
-        heroImg: file(relativePath: { eq: "pyoraily-harjoituksia-xxxl.jpg" }) {
-            childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
-            }
-        }
-    }
-`
 
 export default Index
