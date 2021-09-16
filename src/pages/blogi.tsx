@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
 import React from 'react'
 
 import Page from '../components/Page'
@@ -9,7 +10,7 @@ const Blog = (): JSX.Element => {
     const data = useStaticQuery<{
         allMdx: {
             nodes: {
-                frontmatter: { title: string; date: string; excerpt: string; categories: string[] }
+                frontmatter: { title: string; date: string; excerpt: string; categories: string[]; image: ImageDataLike }
                 fields: { readingTime: { time: number } }
             }[]
         }
@@ -22,6 +23,11 @@ const Blog = (): JSX.Element => {
                         date(formatString: "L", locale: "fi")
                         excerpt
                         categories
+                        image {
+                            childImageSharp {
+                              gatsbyImageData(placeholder: BLURRED)
+                            }
+                          }
                     }
                     fields {
                         readingTime {
@@ -32,11 +38,15 @@ const Blog = (): JSX.Element => {
             }
         }
     `)
+
     return (
         <Page title="Blogi">
             <ul>
-                {data.allMdx.nodes.map((node) => (
+                {data.allMdx.nodes.map((node) => {
+                    const image = getImage(node.frontmatter.image)
+                    return (
                     <li key={node.frontmatter.date}>
+                        {image && <GatsbyImage image={image} alt={node.frontmatter.title} />}}
                         {node.frontmatter.title}
                         <br />
                         {node.frontmatter.date} {node.fields.readingTime.time % MINUTE_IN_MS === 0 ? '' : 'Noin '}{' '}
@@ -49,7 +59,7 @@ const Blog = (): JSX.Element => {
                         <br />
                         {node.frontmatter.excerpt}
                     </li>
-                ))}
+                )})}
             </ul>
         </Page>
     )
