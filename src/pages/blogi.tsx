@@ -1,5 +1,7 @@
+import type { ImageDataLike } from 'gatsby-plugin-image'
+
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, getImage, ImageDataLike } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 
 import Page from '../components/Page'
@@ -10,7 +12,13 @@ const Blog = (): JSX.Element => {
     const data = useStaticQuery<{
         allMdx: {
             nodes: {
-                frontmatter: { title: string; date: string; excerpt: string; categories: string[]; image: ImageDataLike }
+                frontmatter: {
+                    title: string
+                    date: string
+                    excerpt: string
+                    categories: string[]
+                    image: ImageDataLike
+                }
                 fields: { readingTime: { time: number } }
             }[]
         }
@@ -25,9 +33,9 @@ const Blog = (): JSX.Element => {
                         categories
                         image {
                             childImageSharp {
-                              gatsbyImageData(placeholder: BLURRED)
+                                gatsbyImageData(placeholder: BLURRED)
                             }
-                          }
+                        }
                     }
                     fields {
                         readingTime {
@@ -45,21 +53,22 @@ const Blog = (): JSX.Element => {
                 {data.allMdx.nodes.map((node) => {
                     const image = getImage(node.frontmatter.image)
                     return (
-                    <li key={node.frontmatter.date}>
-                        {image && <GatsbyImage image={image} alt={node.frontmatter.title} />}}
-                        {node.frontmatter.title}
-                        <br />
-                        {node.frontmatter.date} {node.fields.readingTime.time % MINUTE_IN_MS === 0 ? '' : 'Noin '}{' '}
-                        {Math.max(1, Math.floor(node.fields.readingTime.time / MINUTE_IN_MS))} minuutti
-                        {Math.floor(node.fields.readingTime.time / MINUTE_IN_MS) === 1 ? '' : 'a'}
-                        <br />
-                        {node.frontmatter.categories.map((category) => (
-                            <span key={category}>#{category}</span>
-                        ))}
-                        <br />
-                        {node.frontmatter.excerpt}
-                    </li>
-                )})}
+                        <li key={node.frontmatter.date}>
+                            {image && <GatsbyImage image={image} alt={node.frontmatter.title} />}
+                            {node.frontmatter.title}
+                            <br />
+                            {node.frontmatter.date} {node.fields.readingTime.time % MINUTE_IN_MS === 0 ? '' : 'Noin '}{' '}
+                            {Math.max(1, Math.floor(node.fields.readingTime.time / MINUTE_IN_MS))} minuutti
+                            {Math.floor(node.fields.readingTime.time / MINUTE_IN_MS) === 1 ? '' : 'a'}
+                            <br />
+                            {node.frontmatter.categories.map((category) => (
+                                <span key={category}>#{category}</span>
+                            ))}
+                            <br />
+                            {node.frontmatter.excerpt}
+                        </li>
+                    )
+                })}
             </ul>
         </Page>
     )
