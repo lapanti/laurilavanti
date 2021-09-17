@@ -2,12 +2,15 @@ import type { PageProps } from 'gatsby'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
+import tw from 'twin.macro'
 
+import Excerpt from '../components/Excerpt'
 import Page from '../components/Page'
 
-const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
+const ExcerptList = tw.ul`
+    col-start-3
+`
 
 const Blog = ({ location }: PageProps): JSX.Element => {
     const data = useStaticQuery<{
@@ -21,6 +24,7 @@ const Blog = ({ location }: PageProps): JSX.Element => {
                     image: ImageDataLike
                 }
                 fields: { readingTime: { time: number } }
+                slug: string
             }[]
         }
     }>(graphql`
@@ -43,6 +47,7 @@ const Blog = ({ location }: PageProps): JSX.Element => {
                             time
                         }
                     }
+                    slug
                 }
             }
         }
@@ -50,27 +55,13 @@ const Blog = ({ location }: PageProps): JSX.Element => {
 
     return (
         <Page title="Blogi" location={location}>
-            <ul>
-                {data.allMdx.nodes.map((node) => {
-                    const image = getImage(node.frontmatter.image)
-                    return (
-                        <li key={node.frontmatter.date}>
-                            {image && <GatsbyImage image={image} alt={node.frontmatter.title} />}
-                            {node.frontmatter.title}
-                            <br />
-                            {node.frontmatter.date} {node.fields.readingTime.time % MINUTE_IN_MS === 0 ? '' : 'Noin '}{' '}
-                            {Math.max(1, Math.floor(node.fields.readingTime.time / MINUTE_IN_MS))} minuutti
-                            {Math.floor(node.fields.readingTime.time / MINUTE_IN_MS) === 1 ? '' : 'a'}
-                            <br />
-                            {node.frontmatter.categories.map((category) => (
-                                <span key={category}>#{category}</span>
-                            ))}
-                            <br />
-                            {node.frontmatter.excerpt}
-                        </li>
-                    )
-                })}
-            </ul>
+            <ExcerptList>
+                {data.allMdx.nodes.map((node) => (
+                    <li key={node.frontmatter.date}>
+                        <Excerpt {...node.frontmatter} slug={node.slug} readingTime={node.fields.readingTime.time} />
+                    </li>
+                ))}
+            </ExcerptList>
         </Page>
     )
 }

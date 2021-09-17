@@ -1,17 +1,20 @@
 import type { PageProps } from 'gatsby'
 
 import React from 'react'
+// @ts-expect-error styled isn't included in types for some reason
 import tw, { styled } from 'twin.macro'
+
+import Link from '../Link'
 
 const Nav = tw.nav`
     flex flex-row items-center justify-between h-full my-0 mx-4.5
 `
 
-const Link = tw.a`
-    text-navLink hover:text-accent active:text-accent hover:underline active:underline transition
+const NavLink = tw(Link)`
+    text-navLink hover:text-accent active:text-accent
 `
 
-const LogoLink = tw(Link)`
+const LogoLink = tw(NavLink)`
     flex flex-row items-center text-2xl font-semibold
 `
 
@@ -31,7 +34,7 @@ const Item = tw.li`
     mr-2 h-full
 `
 
-const MainLink = styled(Link)(({ current }: { current: boolean }) => [
+const MainLink = styled(NavLink)(({ current }: { current: boolean }) => [
     tw`text-xl flex items-center h-full`,
     current && tw`underline`,
 ])
