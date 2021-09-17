@@ -70,7 +70,10 @@ const HeaderComponent = ({ className, location }: Props): JSX.Element => (
             <List>
                 {MAIN_NAV.map((nav) => (
                     <Item key={nav.url}>
-                        <MainLink current={location.pathname === nav.url} href={nav.url}>
+                        <MainLink
+                            current={location && location.pathname && location.pathname === nav.url}
+                            href={nav.url}
+                        >
                             {nav.title}
                         </MainLink>
                     </Item>
