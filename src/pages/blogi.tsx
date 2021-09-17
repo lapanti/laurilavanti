@@ -1,3 +1,4 @@
+import type { PageProps } from 'gatsby'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { graphql, useStaticQuery } from 'gatsby'
@@ -8,7 +9,7 @@ import Page from '../components/Page'
 
 const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
 
-const Blog = (): JSX.Element => {
+const Blog = ({ location }: PageProps): JSX.Element => {
     const data = useStaticQuery<{
         allMdx: {
             nodes: {
@@ -48,7 +49,7 @@ const Blog = (): JSX.Element => {
     `)
 
     return (
-        <Page title="Blogi">
+        <Page title="Blogi" location={location}>
             <ul>
                 {data.allMdx.nodes.map((node) => {
                     const image = getImage(node.frontmatter.image)

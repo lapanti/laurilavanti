@@ -1,5 +1,7 @@
+import type { PageProps } from 'gatsby'
+
 import React from 'react'
-import tw from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 const Nav = tw.nav`
     flex flex-row items-center justify-between h-full my-0 mx-4.5
@@ -29,9 +31,10 @@ const Item = tw.li`
     mr-2 h-full
 `
 
-const MainLink = tw(Link)`
-    text-xl flex items-center h-full
-`
+const MainLink = styled(Link)(({ current }: { current: boolean }) => [
+    tw`text-xl flex items-center h-full`,
+    current && tw`underline`,
+])
 
 const MAIN_NAV = [
     {
@@ -48,11 +51,11 @@ const MAIN_NAV = [
     },
 ]
 
-interface Props {
+interface Props extends Pick<PageProps, 'location'> {
     className?: string
 }
 
-const HeaderComponent = ({ className }: Props): JSX.Element => (
+const HeaderComponent = ({ className, location }: Props): JSX.Element => (
     <header className={className}>
         <Nav>
             <LogoLink href="/">
@@ -64,7 +67,9 @@ const HeaderComponent = ({ className }: Props): JSX.Element => (
             <List>
                 {MAIN_NAV.map((nav) => (
                     <Item key={nav.url}>
-                        <MainLink href={nav.url}>{nav.title}</MainLink>
+                        <MainLink current={location.pathname === nav.url} href={nav.url}>
+                            {nav.title}
+                        </MainLink>
                     </Item>
                 ))}
             </List>
