@@ -1,3 +1,4 @@
+import type { PageProps } from 'gatsby'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { graphql, useStaticQuery } from 'gatsby'
@@ -5,6 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import tw from 'twin.macro'
 
+import ExcerptList from '../components/ExcerptList'
 import Page from '../components/Page'
 
 const Image = tw(GatsbyImage)`
@@ -23,7 +25,15 @@ const Term = tw.dt`
     self-start
 `
 
-const Index = (): JSX.Element => {
+const H2 = tw.h2`
+    col-start-3 mt-8 font-bold text-xl text-accent
+`
+
+const HR = tw.hr`
+    col-start-3 mb-4
+`
+
+const Index = ({ location }: PageProps): JSX.Element => {
     const data = useStaticQuery<{ heroImg: ImageDataLike }>(graphql`
         query {
             heroImg: file(relativePath: { eq: "pyoraily-harjoituksia.jpg" }) {
@@ -35,7 +45,7 @@ const Index = (): JSX.Element => {
     `)
     const image = getImage(data.heroImg)
     return (
-        <Page>
+        <Page location={location}>
             {image && <Image image={image} alt="Pyöräilyn harjoittelua tyttäreni kanssa" />}
             <H1>
                 <List>
@@ -46,6 +56,9 @@ const Index = (): JSX.Element => {
                     <dd>Diplomi-insinööri</dd>
                 </List>
             </H1>
+            <H2>Uusimmat kirjoitukset</H2>
+            <HR />
+            <ExcerptList limit={3} />
         </Page>
     )
 }

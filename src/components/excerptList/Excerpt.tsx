@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { useMemo } from 'react'
 import tw from 'twin.macro'
 
-import Link from './Link'
+import Link from '../Link'
 
 const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
 
