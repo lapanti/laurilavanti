@@ -1,6 +1,6 @@
-import type { IGatsbyImageData } from 'gatsby-plugin-image'
+import type { ImageDataLike } from 'gatsby-plugin-image'
 
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import tw from 'twin.macro'
 
@@ -14,14 +14,15 @@ const Caption = tw.figcaption`
 
 interface Props {
     className?: string
-    image?: IGatsbyImageData
+    imageData: ImageDataLike
     alt: string
     caption?: string
     link?: string
 }
 
-const ImageComponent = ({ className, image, alt, caption, link }: Props): JSX.Element | null =>
-    !image ? null : (
+const ImageComponent = ({ className, imageData, alt, caption, link }: Props): JSX.Element | null => {
+    const image = getImage(imageData)
+    return !image ? null : (
         <figure className={className}>
             <Img image={image} alt={alt} />
             {caption && (
@@ -37,6 +38,7 @@ const ImageComponent = ({ className, image, alt, caption, link }: Props): JSX.El
             )}
         </figure>
     )
+}
 
 ImageComponent.displayName = 'Image'
 

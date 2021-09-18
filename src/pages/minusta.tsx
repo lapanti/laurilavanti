@@ -1,7 +1,6 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import { getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import tw from 'twin.macro'
 
@@ -29,8 +28,6 @@ const About = (): JSX.Element => {
             }
         }
     `)
-    const wallImage = getImage(data.wall)
-    const bikingImage = getImage(data.biking)
 
     return (
         <Page title="Minusta">
@@ -49,7 +46,7 @@ const About = (): JSX.Element => {
                 Areenan vierestä, joka kelpasi sekä kunnalle että asukkaille.
             </P>
             <Image
-                image={wallImage}
+                imageData={data.wall}
                 alt="Kirkkonummen graffitiseinä ja Varuboden Areena"
                 caption="Kirkkonummen graffitiseinä"
             />
@@ -90,7 +87,7 @@ const About = (): JSX.Element => {
                 muidenkin lapsilla on hyvä ja turvallista kasvaa.
             </P>
             <Image
-                image={bikingImage}
+                imageData={data.biking}
                 alt="Pyöräilyn harjoittelua tyttäreni kanssa"
                 caption="Pyöräilyn harjoittelua tyttäreni kanssa"
             />
