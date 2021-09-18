@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createRedirect } = actions
-    const result = await graphql(`
+    const redirectResults = await graphql(`
         {
             allMdx(filter: { frontmatter: { redirect_from: { ne: null } } }) {
                 nodes {
@@ -26,10 +26,10 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `)
-    if (result.errors) {
-        console.log(result.errors)
+    if (redirectResults.errors) {
+        console.log(redirectResults.errors)
     } else {
-        result.data.allMdx.nodes.forEach((post) =>
+        redirectResults.data.allMdx.nodes.forEach((post) =>
             post.frontmatter.redirect_from.forEach((from) =>
                 createRedirect({
                     fromPath: from,
@@ -42,4 +42,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
         console.log(`${chalk.green('success')} created redirects`)
     }
+
+    const { data } = await graphql(`
+        query {
+            allMdx {
+                nodes {
+                    slug
+                }
+            }
+        }
+    `)
+    data.allMdx.nodes.forEach(({ slug }) => {
+        actions.createPage({
+            path: slug,
+            component: require.resolve('./src/components/Post.tsx'),
+            context: { slug },
+        })
+    })
 }

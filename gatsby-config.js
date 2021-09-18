@@ -16,7 +16,6 @@ module.exports = {
                 icon: 'src/images/icon.png',
             },
         },
-        'gatsby-plugin-mdx',
         {
             resolve: 'gatsby-plugin-sharp',
             options: {
@@ -50,7 +49,23 @@ module.exports = {
             },
             __key: 'blog',
         },
-        'gatsby-plugin-mdx',
+        `gatsby-remark-images`,
+        {
+            resolve: 'gatsby-plugin-mdx',
+            options: {
+                gatsbyRemarkPlugins: [
+                    {
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 1920,
+                            showCaptions: true,
+                            withWebp: true,
+                            loading: 'eager',
+                        },
+                    },
+                ],
+            },
+        },
         `gatsby-plugin-remove-trailing-slashes`,
         {
             resolve: 'gatsby-plugin-prettier-eslint',

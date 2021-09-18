@@ -1,9 +1,12 @@
+import type { ImageDataLike } from 'gatsby-plugin-image'
+
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import tw, { GlobalStyles } from 'twin.macro'
 
 import Footer from './page/Footer'
 import Header from './page/Header'
+import HeroImage from './page/HeroImage'
 import Svgs from './page/Svgs'
 
 const Main = tw.main`
@@ -21,9 +24,17 @@ const H1 = tw.h1`
 interface Props {
     className?: string
     title?: string
+    heroImage?: ImageDataLike
+    imageAlt?: string
 }
 
-const PageComponent = ({ className, title, children }: React.PropsWithChildren<Props>): JSX.Element => (
+const PageComponent = ({
+    className,
+    title,
+    heroImage,
+    imageAlt,
+    children,
+}: React.PropsWithChildren<Props>): JSX.Element => (
     <>
         <GlobalStyles />
         <div className={className}>
@@ -35,6 +46,7 @@ const PageComponent = ({ className, title, children }: React.PropsWithChildren<P
 
             <Main>
                 <Article>
+                    {heroImage && <HeroImage imageData={heroImage} alt={title || imageAlt || ''} />}
                     {title && <H1 itemProp="headline">{title}</H1>}
                     {children}
                 </Article>

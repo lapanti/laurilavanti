@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { useMemo } from 'react'
 import tw from 'twin.macro'
 
-import Link from '../Link'
+import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 
 const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
@@ -103,7 +103,7 @@ const ExcerptComponent = ({
                 <CategoryList>
                     {categories.map((category) => (
                         <CategoryItem key={category}>
-                            <Link href={`/blogi/${category}`}>#{category}</Link>
+                            <InternalLink href={`/blogi/${category}`}>#{category}</InternalLink>
                         </CategoryItem>
                     ))}
                 </CategoryList>

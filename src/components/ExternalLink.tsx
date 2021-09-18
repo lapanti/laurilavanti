@@ -1,21 +1,21 @@
 import React from 'react'
 import tw from 'twin.macro'
 
+import Link from './Link'
+
 interface Props {
     className?: string
     href: string
 }
 
 const ExternalLinkComponent = ({ className, href, children }: React.PropsWithChildren<Props>): JSX.Element => (
-    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
+    <Link className={className} href={href} target="_blank" rel="noopener noreferrer">
         {children}
-    </a>
+    </Link>
 )
 
 ExternalLinkComponent.displayName = 'ExternalLink'
 
-const ExternalLink = tw(ExternalLinkComponent)`
-    text-link no-underline hover:underline active:underline text-base
-`
+const ExternalLink = tw(ExternalLinkComponent)``
 
 export default ExternalLink

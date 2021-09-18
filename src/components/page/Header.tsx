@@ -1,13 +1,13 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import Link from '../Link'
+import InternalLink from '../InternalLink'
 
 const Nav = tw.nav`
     flex flex-row items-center justify-between h-full my-0 mx-4.5
 `
 
-const NavLink = tw(Link)`
+const NavLink = tw(InternalLink)`
     text-navLink hover:text-accent active:text-accent
 `
 
