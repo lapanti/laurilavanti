@@ -1,5 +1,3 @@
-import type { PageProps } from 'gatsby'
-
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import tw, { GlobalStyles } from 'twin.macro'
@@ -20,12 +18,12 @@ const H1 = tw.h1`
     col-start-3 text-3xl font-bold mb-1 mt-4.5
 `
 
-interface Props extends Pick<PageProps, 'location'> {
+interface Props {
     className?: string
     title?: string
 }
 
-const PageComponent = ({ className, title, location, children }: React.PropsWithChildren<Props>): JSX.Element => (
+const PageComponent = ({ className, title, children }: React.PropsWithChildren<Props>): JSX.Element => (
     <>
         <GlobalStyles />
         <div className={className}>
@@ -33,7 +31,7 @@ const PageComponent = ({ className, title, location, children }: React.PropsWith
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
-            <Header location={location} />
+            <Header />
 
             <Main>
                 <Article>

@@ -51,6 +51,7 @@ module.exports = {
             __key: 'blog',
         },
         'gatsby-plugin-mdx',
+        `gatsby-plugin-remove-trailing-slashes`,
         {
             resolve: 'gatsby-plugin-prettier-eslint',
             options: {

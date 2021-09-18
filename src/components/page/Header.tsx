@@ -1,8 +1,5 @@
-import type { PageProps } from 'gatsby'
-
 import React from 'react'
-// @ts-expect-error styled isn't included in types for some reason
-import tw, { styled } from 'twin.macro'
+import tw from 'twin.macro'
 
 import Link from '../Link'
 
@@ -34,10 +31,9 @@ const Item = tw.li`
     mr-2 h-full
 `
 
-const MainLink = styled(NavLink)(({ current }: { current: boolean }) => [
-    tw`text-xl flex items-center h-full`,
-    current && tw`underline`,
-])
+const MainLink = tw(NavLink)`
+text-xl flex items-center h-full
+`
 
 const MAIN_NAV = [
     {
@@ -54,14 +50,14 @@ const MAIN_NAV = [
     },
 ]
 
-interface Props extends Pick<PageProps, 'location'> {
+interface Props {
     className?: string
 }
 
-const HeaderComponent = ({ className, location }: Props): JSX.Element => (
+const HeaderComponent = ({ className }: Props): JSX.Element => (
     <header className={className}>
         <Nav>
-            <LogoLink href="/">
+            <LogoLink to="/">
                 <Svg>
                     <use xlinkHref="#logo" />
                 </Svg>
@@ -70,7 +66,7 @@ const HeaderComponent = ({ className, location }: Props): JSX.Element => (
             <List>
                 {MAIN_NAV.map((nav) => (
                     <Item key={nav.url}>
-                        <MainLink current={location.pathname === nav.url} href={nav.url}>
+                        <MainLink partiallyActive activeStyle={{ textDecoration: 'underline' }} to={nav.url}>
                             {nav.title}
                         </MainLink>
                     </Item>

@@ -5,6 +5,7 @@ import React, { useMemo } from 'react'
 import tw from 'twin.macro'
 
 import Link from '../Link'
+import Paragraph from '../Paragraph'
 
 const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
 
@@ -42,10 +43,6 @@ const CategoryList = tw.ul`
 
 const CategoryItem = tw.li`
     mr-4 last:mr-0
-`
-
-const Paragraph = tw.p`
-    text-base my-4
 `
 
 interface Props {

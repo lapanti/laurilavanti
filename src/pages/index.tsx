@@ -1,4 +1,3 @@
-import type { PageProps } from 'gatsby'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { graphql, useStaticQuery } from 'gatsby'
@@ -33,7 +32,7 @@ const HR = tw.hr`
     col-start-3 mb-4
 `
 
-const Index = ({ location }: PageProps): JSX.Element => {
+const Index = (): JSX.Element => {
     const data = useStaticQuery<{ heroImg: ImageDataLike }>(graphql`
         query {
             heroImg: file(relativePath: { eq: "pyoraily-harjoituksia.jpg" }) {
@@ -45,7 +44,7 @@ const Index = ({ location }: PageProps): JSX.Element => {
     `)
     const image = getImage(data.heroImg)
     return (
-        <Page location={location}>
+        <Page>
             {image && <Image image={image} alt="Pyöräilyn harjoittelua tyttäreni kanssa" />}
             <H1>
                 <List>
