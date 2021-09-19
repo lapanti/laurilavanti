@@ -10,9 +10,10 @@ interface Props {
     className?: string
     limit?: number
     relatedTags?: string[]
+    tag?: string
 }
 
-const ExcerptListComponent = ({ className, limit, relatedTags }: Props): JSX.Element => {
+const ExcerptListComponent = ({ className, limit, relatedTags, tag }: Props): JSX.Element => {
     const data = useStaticQuery<{
         allMdx: {
             nodes: MdxPost[]
@@ -46,7 +47,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags }: Props): JSX.Ele
     const allNodes = useMemo(() => {
         const all = data.allMdx.nodes
         if (relatedTags?.length) {
-            const allSorted = all
+            return all
                 .reduce<[MdxPost, number][]>(
                     (acc, curr) => [
                         ...acc,
@@ -74,10 +75,12 @@ const ExcerptListComponent = ({ className, limit, relatedTags }: Props): JSX.Ele
                     return a[1] < b[1] ? 1 : -1
                 })
                 .map((postWithPoints) => postWithPoints[0])
-            return allSorted
+        }
+        if (tag) {
+            return all.filter((post) => post.frontmatter.tags.includes(tag))
         }
         return all
-    }, [data.allMdx.nodes, relatedTags])
+    }, [data.allMdx.nodes, relatedTags, tag])
 
     const nodes = useMemo(() => (limit ? allNodes.slice(0, limit) : allNodes), [allNodes, limit])
 

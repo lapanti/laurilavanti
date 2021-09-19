@@ -15,6 +15,7 @@ export interface MdxPostFrontmatter extends MdxFrontmatter {
     date: string
     image: ImageDataLike
     description: string
+    excerpt: string
 }
 
 export interface MdxPost extends Mdx {
@@ -25,4 +26,5 @@ export interface MdxPost extends Mdx {
         }
     }
     body: string
+    slug: string
 }
