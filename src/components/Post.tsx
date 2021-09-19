@@ -7,6 +7,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import tw from 'twin.macro'
 
+import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import Page from './Page'
 import Paragraph from './Paragraph'
@@ -18,6 +19,7 @@ const PositionedP = tw(Paragraph)`
 const components = {
     p: PositionedP,
     h2: H2,
+    a: ExternalLink,
 }
 
 interface Props {
