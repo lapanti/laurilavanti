@@ -49,22 +49,9 @@ module.exports = {
             },
             __key: 'blog',
         },
-        `gatsby-remark-images`,
         {
             resolve: 'gatsby-plugin-mdx',
-            options: {
-                gatsbyRemarkPlugins: [
-                    {
-                        resolve: 'gatsby-remark-images',
-                        options: {
-                            maxWidth: 1920,
-                            showCaptions: true,
-                            withWebp: true,
-                            loading: 'eager',
-                        },
-                    },
-                ],
-            },
+            options: {},
         },
         `gatsby-plugin-remove-trailing-slashes`,
         {

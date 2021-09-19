@@ -9,26 +9,14 @@ redirect_from:
     - /varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia
 ---
 
-import { graphql } from 'gatsby'
-
 import ExternalLink from '../../../../../components/ExternalLink'
-import Image from '../../../../../components/Image'
-
-export const query = graphql`
-    query {
-        daycares: file(relativePath: { eq: "keskustan-alueen-paivakodit.jpg" }) {
-            childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
-            }
-        }
-`
+import KeskustanAlueenPaivakodit from '../../../../../imageComponents/KeskustanAlueenPaivakodit'
 
 Nyt kun <ExternalLink href="https://www.kirkkonummi.fi/13800-juhlakallio">Juhlakallion asemakaava</ExternalLink> on hyväksytty, ja <ExternalLink href="https://www.kirkkonummi.fi/13900-tolsanmaki">Tolsanmäen</ExternalLink> sekä <ExternalLink href="https://www.kirkkonummi.fi/14100-tolsanjarvi">Tolsanjärven</ExternalLink> asemakaavat ovat tulossa, olisi erittäin tärkeää, että kunnassa kiinnitettäisiin huomiota myös alueen päivähoitopaikkoihin ja koulujen määrään. Kirkkonummen uusille asemakaava-alueille on perinteisesti muuttanut suuria määriä lapsiperheitä, esimerkiksi <ExternalLink href="https://www.stat.fi/tietotrendit/artikkelit/2017/paavo-nayttaa-missa-asuvat-lapsiperheet/">Sundsbergissä yli 50 prosenttia talouksista oli lapsiperheitä</ExternalLink> vuonna 2015. Jo nykyään asuu Heikkilän, Jolkbyn ja Laajakallion alueella <ExternalLink href="https://www.kirkkonummi.fi/vaesto-tilastoalueittain">noin 300 päiväkoti-ikäistä ja noin 500 koulu-ikäistä lasta</ExternalLink>. <ExternalLink href="https://www.kirkkonummi.fi/library/files/5c6a6b69c910588b1800042c/Selostus3346_Juhlakallio.pdf#page=8">Juhlakallioon</ExternalLink>, <ExternalLink href="https://www.kirkkonummi.fi/library/files/5ad9bd47c91058399c000fe1/3299_Tolsanm_ki_selostus_p_ivitetty_khn_k_sittelypvm.pdf#page=8">Tolsanmäkeen</ExternalLink> ja <ExternalLink href="https://www.kirkkonummi.fi/library/files/5e462fe9c91058943e000319/Selostus_3391Tolsanj_rvi.pdf#page=7">Tolsanjärveen</ExternalLink> on kaavailtu muuttavan yhteensä lähes 2 000 uutta asukasta. Kunnan päätöksenteon tueksi teetetyissä väestöennusteissa (tammikuu 2021) arvioidaan, että [vuonna 2030 näillä alueilla asuisi 10-30 % enemmän alle 7-vuotiasta](http://kirkkonummi.oncloudos.com/kokous/2021663-5-45961.PDF#page=25) kuin nykyään. Kuitenkin mikäli näiden alueiden <ExternalLink href="https://www.kirkkonummi.fi/vaesto-tilastoalueittain">väestörakenne olisi samanlainen kuin Sundsbergissa</ExternalLink>, tarkoittaisi tämä jopa noin 200 uutta päiväkoti-ikäistä ja noin 300 uutta kouluikäistä lasta.
 
 Tällä hetkellä suunniteltujen asemakaavojen alueella on päiväkoteja kolme kappaletta: <ExternalLink href="https://www.kirkkonummi.fi/laajakallion-paivakoti">Laajakallion kunnallinen päiväkoti</ExternalLink> ja yksityiset <ExternalLink href="https://touhula.fi/paivakoti/kirkkonummi-touhula-laajakallio/">Touhula Laajakallio</ExternalLink> sekä <ExternalLink href="https://www.paivakotimurut.fi/solstugan/">Murut Solstugan</ExternalLink>. Lisäksi alueelta löytyy <ExternalLink href="https://www.kirkkonummi.fi/heikkilan-koulu-1">Heikkilän koulu</ExternalLink> sekä <ExternalLink href="https://www.kirkkonummi.fi/laajakallion-koulu-1">Laajakallion koulu</ExternalLink>. Toki myös <ExternalLink href="https://www.kirkkonummi.fi/tulevat-jokirinteen-oppimiskeskus">Jokirinteen oppimiskeskus</ExternalLink> on alueen lähellä, mutta kun perinteisesti <ExternalLink href="https://www.hsy.fi/globalassets/ilmanlaatu-ja-ilmasto/tiedostot/sukkulointikatsaus_2016.pdf#page=2">yli puolet Kirkkonummelaisista käy töissä vastakkaisessa suunnassa</ExternalLink>, ei se ole järkevä vaihtoehto varsinkaan päiväkoti-ikäisille lapsille. Vaikka nykyiset päiväkodit ja koulut riittäisivätkin nykyisille asukkaille, mitä ne eivät tee, kasvaa sekä päiväkotipaikkojen että koulujen tarve merkittävästi lähivuosien aikana.
 
-<Image
-    imageData={props.data.daycares}
+<KeskustanAlueenPaivakodit
     alt="Keskustan alueen päiväkodit kartalla"
     caption="Keskustan alueen päiväkodit"
     link="https://www.google.com/maps/d/edit?mid=1SZ08xDzVf1yiLYInxPr0vPYrXR2gAAf5&usp=sharing"
