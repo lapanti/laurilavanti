@@ -5,6 +5,7 @@ import * as React from 'react'
 import tw from 'twin.macro'
 
 import ExcerptList from '../components/ExcerptList'
+import HR from '../components/HR'
 import Page from '../components/Page'
 
 const H1 = tw.h1`
@@ -21,10 +22,6 @@ const Term = tw.dt`
 
 const H2 = tw.h2`
     col-start-3 mt-8 font-bold text-xl text-accent
-`
-
-const HR = tw.hr`
-    col-start-3 mb-4
 `
 
 const Index = (): JSX.Element => {

@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { MdxPost } from '../types/mdx'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useMemo } from 'react'
@@ -9,22 +9,13 @@ import Excerpt from './excerptList/Excerpt'
 interface Props {
     className?: string
     limit?: number
+    relatedTags?: string[]
 }
 
-const ExcerptListComponent = ({ className, limit }: Props): JSX.Element => {
+const ExcerptListComponent = ({ className, limit, relatedTags }: Props): JSX.Element => {
     const data = useStaticQuery<{
         allMdx: {
-            nodes: {
-                frontmatter: {
-                    title: string
-                    date: string
-                    excerpt: string
-                    categories: string[]
-                    image: ImageDataLike
-                }
-                fields: { readingTime: { time: number } }
-                slug: string
-            }[]
+            nodes: MdxPost[]
         }
     }>(graphql`
         {
@@ -34,7 +25,7 @@ const ExcerptListComponent = ({ className, limit }: Props): JSX.Element => {
                         title
                         date(formatString: "L", locale: "fi")
                         excerpt
-                        categories
+                        tags
                         image {
                             childImageSharp {
                                 gatsbyImageData(placeholder: BLURRED)
@@ -52,10 +43,43 @@ const ExcerptListComponent = ({ className, limit }: Props): JSX.Element => {
         }
     `)
 
-    const nodes = useMemo(
-        () => (limit ? data.allMdx.nodes.slice(0, limit) : data.allMdx.nodes),
-        [data.allMdx.nodes, limit]
-    )
+    const allNodes = useMemo(() => {
+        const all = data.allMdx.nodes
+        if (relatedTags?.length) {
+            const allSorted = all
+                .reduce<[MdxPost, number][]>(
+                    (acc, curr) => [
+                        ...acc,
+                        [
+                            curr,
+                            // 1 point per matching tag
+                            relatedTags.reduce<number>(
+                                (pointsAcc, pointsCurr) =>
+                                    pointsAcc + (curr.frontmatter.tags.includes(pointsCurr) ? 1 : 0),
+                                0
+                            ),
+                        ],
+                    ],
+                    []
+                )
+                .slice()
+                .sort((a, b) => {
+                    // Same points, sort by date
+                    if (a[1] === b[1]) {
+                        const [aDay, aMonth, aYear] = a[0].frontmatter.date.split('.').map((s) => parseInt(s, 10))
+                        const [bDay, bMonth, bYear] = b[0].frontmatter.date.split('.').map((s) => parseInt(s, 10))
+                        return new Date(bYear, bMonth - 1, bDay).getTime() - new Date(aYear, aMonth - 1, aDay).getTime()
+                    }
+                    // Higher points first
+                    return a[1] < b[1] ? 1 : -1
+                })
+                .map((postWithPoints) => postWithPoints[0])
+            return allSorted
+        }
+        return all
+    }, [data.allMdx.nodes, relatedTags])
+
+    const nodes = useMemo(() => (limit ? allNodes.slice(0, limit) : allNodes), [allNodes, limit])
 
     return (
         <ul className={className}>

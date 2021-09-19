@@ -1,13 +1,12 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { PostMetaProps } from '../PostMeta'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import React, { useMemo } from 'react'
+import React from 'react'
 import tw from 'twin.macro'
 
-import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
-
-const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
+import PostMeta from '../PostMeta'
 
 const TitleLink = tw.a`
     hover:underline
@@ -21,38 +20,11 @@ const H2 = tw.h2`
     font-bold text-accent text-xl
 `
 
-const Aside = tw.aside`
-    flex flex-col
-`
-
-const MetaContainer = tw.div`
-    flex flex-row mb-2
-`
-
-const Meta = tw.span`
-    flex flex-row items-center mr-4 last:mr-0
-`
-
-const Svg = tw.svg`
-    h-4.5 w-4.5 inline-block fill-current mr-2 flex-shrink-0
-`
-
-const CategoryList = tw.ul`
-    flex flex-row
-`
-
-const CategoryItem = tw.li`
-    mr-4 last:mr-0
-`
-
-interface Props {
+interface Props extends PostMetaProps {
     className?: string
     title: string
-    date: string
     excerpt: string
-    categories: string[]
     image: ImageDataLike
-    readingTime: number
     slug: string
 }
 
@@ -61,23 +33,12 @@ const ExcerptComponent = ({
     title,
     date,
     excerpt,
-    categories,
+    tags,
     image: imageData,
     readingTime,
     slug,
 }: Props): JSX.Element => {
     const image = getImage(imageData)
-
-    const readTimeString = useMemo(() => {
-        const readTimeMinutes = Math.floor(readingTime / MINUTE_IN_MS)
-        return `${readingTime % MINUTE_IN_MS === 0 ? '' : readTimeMinutes < 1 ? 'alle' : 'noin '}${
-            readTimeMinutes < 1 ? '' : readTimeMinutes
-        } minuutti${readTimeMinutes <= 1 ? '' : 'a'}`
-    }, [readingTime])
-    const dateAsDateTime = useMemo(() => {
-        const [day, month, year] = date.split('.')
-        return `${year}-${month}-${day}`
-    }, [date])
 
     return (
         <article className={className} itemScope itemType="https://schema.org/CreativeWork">
@@ -85,29 +46,7 @@ const ExcerptComponent = ({
                 {image && <Image image={image} alt={title} />}
                 <H2 itemProp="headline">{title}</H2>
             </TitleLink>
-            <Aside>
-                <MetaContainer>
-                    <Meta>
-                        <Svg>
-                            <use xlinkHref="#icon-calendar-alt" />
-                        </Svg>
-                        <time dateTime={dateAsDateTime}>{date}</time>
-                    </Meta>
-                    <Meta>
-                        <Svg>
-                            <use xlinkHref="#icon-clock" />
-                        </Svg>
-                        <span>{readTimeString}</span>
-                    </Meta>
-                </MetaContainer>
-                <CategoryList>
-                    {categories.map((category) => (
-                        <CategoryItem key={category}>
-                            <InternalLink href={`/blogi/${category}`}>#{category}</InternalLink>
-                        </CategoryItem>
-                    ))}
-                </CategoryList>
-            </Aside>
+            <PostMeta date={date} readingTime={readingTime} tags={tags} />
             <Paragraph itemProp="description">{excerpt}</Paragraph>
         </article>
     )
