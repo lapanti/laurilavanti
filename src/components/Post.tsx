@@ -47,6 +47,9 @@ interface Props {
             body: string
         }
     }
+    pageContext: {
+        slug: string
+    }
 }
 
 const Post = ({
@@ -59,20 +62,18 @@ const Post = ({
             body,
         },
     },
-}: Props): JSX.Element => {
-    console.log('description', description)
-    return (
-        <MDXProvider components={components}>
-            <Page title={title} heroImage={imageData}>
-                <PositionedMeta readingTime={time} date={date} tags={tags} />
-                <MDXRenderer>{body}</MDXRenderer>
-                <H2>Muita kirjoituksia</H2>
-                <HR />
-                <ExcerptList limit={3} relatedTags={tags} />
-            </Page>
-        </MDXProvider>
-    )
-}
+    pageContext: { slug },
+}: Props): JSX.Element => (
+    <MDXProvider components={components}>
+        <Page title={title} pathname={`/${slug}`} heroImage={imageData} description={description}>
+            <PositionedMeta readingTime={time} date={date} tags={tags} />
+            <MDXRenderer>{body}</MDXRenderer>
+            <H2>Muita kirjoituksia</H2>
+            <HR />
+            <ExcerptList limit={3} relatedTags={tags} />
+        </Page>
+    </MDXProvider>
+)
 
 export const query = graphql`
     query ($slug: String!) {
