@@ -2,6 +2,13 @@ module.exports = {
     siteMetadata: {
         siteUrl: 'https://laurilavanti.fi',
         title: 'Lauri Lavanti',
+        description: 'Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
+        author: 'laurilavanti',
+        locale: 'fi_FI',
+        twSite: '@laurilavanti',
+        twCreator: '@laurilavanti',
+        publisher: 'https://www.facebook.com/laurilavanti',
+        keywords: ['kuntavaalit', 'aluevaalit', 'Vihreät', 'Lauri Lavanti', 'Lauri', 'Lavanti', 'poliitikko'],
     },
     plugins: [
         'gatsby-plugin-preact',

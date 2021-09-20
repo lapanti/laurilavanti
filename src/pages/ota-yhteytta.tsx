@@ -29,7 +29,7 @@ const Twitter = tw(Svg)`
 `
 
 const Contact = (): JSX.Element => (
-    <Page title="Ota yhteyttä">
+    <Page title="Ota yhteyttä" description="Yhteystiedot">
         <List>
             <Item>
                 <Svg>

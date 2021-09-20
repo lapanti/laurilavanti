@@ -1,12 +1,12 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import tw, { GlobalStyles } from 'twin.macro'
 
 import Footer from './page/Footer'
 import Header from './page/Header'
 import HeroImage from './page/HeroImage'
+import SEO from './page/SEO'
 import Svgs from './page/Svgs'
 
 const Main = tw.main`
@@ -24,41 +24,68 @@ const H1 = tw.h1`
 interface Props {
     className?: string
     title?: string
-    heroImage?: ImageDataLike
     hiddenTitle?: string
+    heroImage?: ImageDataLike
+    metaImage?: ImageDataLike
+    description?: string
+    meta?: JSX.IntrinsicElements['meta'][]
+    image?: { src: string; height: string; width: string }
+    pathname?: string
 }
 
 const PageComponent = ({
     className,
     title,
     heroImage,
+    metaImage,
     hiddenTitle,
+    description,
+    meta,
+    pathname,
     children,
-}: React.PropsWithChildren<Props>): JSX.Element => (
-    <>
-        <GlobalStyles />
-        <div className={className}>
-            <Helmet>
-                <title>{title || hiddenTitle}</title>
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            </Helmet>
-            <Header />
+}: React.PropsWithChildren<Props>): JSX.Element => {
+    const imageToUse = (heroImage || metaImage) as
+        | {
+              childImageSharp: {
+                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
+              }
+          }
+        | undefined
+    const image = imageToUse
+        ? {
+              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
+              height: `${imageToUse?.childImageSharp.gatsbyImageData.height}`,
+              width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
+          }
+        : undefined
+    return (
+        <>
+            <GlobalStyles />
+            <SEO
+                title={title || hiddenTitle || ''}
+                description={description}
+                meta={meta}
+                pathname={pathname}
+                image={image}
+            />
+            <div className={className}>
+                <Header />
 
-            <Main>
-                <Article>
-                    {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
-                    {title && <H1 itemProp="headline">{title}</H1>}
-                    {children}
-                </Article>
-            </Main>
+                <Main>
+                    <Article>
+                        {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
+                        {title && <H1 itemProp="headline">{title}</H1>}
+                        {children}
+                    </Article>
+                </Main>
 
-            <Footer />
+                <Footer />
 
-            <Svgs />
-        </div>
-    </>
-)
+                <Svgs />
+            </div>
+        </>
+    )
+}
 
 PageComponent.displayName = 'Page'
 

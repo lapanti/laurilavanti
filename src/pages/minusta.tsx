@@ -30,7 +30,11 @@ const About = (): JSX.Element => {
     `)
 
     return (
-        <Page title="Minusta">
+        <Page
+            title="Minusta"
+            description="Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus."
+            metaImage={data.biking}
+        >
             <P>
                 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri Kirkkonummelta. Tasa-arvoa tavoitteleva
                 liberaali, jonka mielestä ketään ei jätetä.
