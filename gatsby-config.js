@@ -13,7 +13,15 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
-                icon: 'src/images/icon.png',
+                name: 'Lauri Lavanti',
+                short_name: 'Lauri Lavanti',
+                description: 'Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
+                start_url: '/',
+                icon: 'logo.svg',
+                background_color: '#045a1c',
+                theme_color: '#045a1c',
+                display: 'standalone',
+                lang: 'fi',
             },
         },
         {
