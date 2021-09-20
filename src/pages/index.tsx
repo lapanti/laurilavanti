@@ -35,7 +35,7 @@ const Index = (): JSX.Element => {
         }
     `)
     return (
-        <Page heroImage={data.heroImg} imageAlt="Pyöräilyn harjoittelua tyttäreni kanssa">
+        <Page heroImage={data.heroImg} hiddenTitle="Lauri Lavanti">
             <H1>
                 <List>
                     <Term>Lauri Lavanti</Term>

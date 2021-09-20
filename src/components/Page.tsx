@@ -25,20 +25,21 @@ interface Props {
     className?: string
     title?: string
     heroImage?: ImageDataLike
-    imageAlt?: string
+    hiddenTitle?: string
 }
 
 const PageComponent = ({
     className,
     title,
     heroImage,
-    imageAlt,
+    hiddenTitle,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => (
     <>
         <GlobalStyles />
         <div className={className}>
             <Helmet>
+                <title>{title || hiddenTitle}</title>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
@@ -46,7 +47,7 @@ const PageComponent = ({
 
             <Main>
                 <Article>
-                    {heroImage && <HeroImage imageData={heroImage} alt={title || imageAlt || ''} />}
+                    {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
                     {title && <H1 itemProp="headline">{title}</H1>}
                     {children}
                 </Article>
