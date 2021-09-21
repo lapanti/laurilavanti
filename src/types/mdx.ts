@@ -13,6 +13,7 @@ export interface Mdx {
 export interface MdxPostFrontmatter extends MdxFrontmatter {
     tags: string[]
     date: string
+    modified: string | null
     image: ImageDataLike
     description: string
     excerpt: string

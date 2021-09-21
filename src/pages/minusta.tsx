@@ -8,6 +8,7 @@ import H2 from '../components/H2'
 import Image from '../components/Image'
 import Page from '../components/Page'
 import Paragraph from '../components/Paragraph'
+import { PERSON } from '../types/jsonld'
 
 const P = tw(Paragraph)`
     col-start-3
@@ -34,6 +35,8 @@ const About = (): JSX.Element => {
             title="Minusta"
             description="Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus."
             metaImage={data.biking}
+            pathname="/minusta"
+            type={PERSON}
         >
             <P>
                 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri Kirkkonummelta. Tasa-arvoa tavoitteleva

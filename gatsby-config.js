@@ -7,7 +7,8 @@ module.exports = {
         locale: 'fi_FI',
         twSite: '@laurilavanti',
         twCreator: '@laurilavanti',
-        publisher: 'https://www.facebook.com/laurilavanti',
+        facebook: 'https://www.facebook.com/laurilavanti',
+        twitter: 'https://twitter.com/laurilavanti',
         keywords: ['kuntavaalit', 'aluevaalit', 'Vihreät', 'Lauri Lavanti', 'Lauri', 'Lavanti', 'poliitikko'],
     },
     plugins: [

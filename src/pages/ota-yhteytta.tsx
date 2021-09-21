@@ -1,8 +1,12 @@
+import type { ImageDataLike } from 'gatsby-plugin-image'
+
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import tw from 'twin.macro'
 
 import ExternalLink from '../components/ExternalLink'
 import Page from '../components/Page'
+import { PERSON } from '../types/jsonld'
 
 const List = tw.ul`
     col-start-3 mt-4
@@ -28,33 +32,50 @@ const Twitter = tw(Svg)`
     text-twitter
 `
 
-const Contact = (): JSX.Element => (
-    <Page title="Ota yhteyttä" description="Yhteystiedot">
-        <List>
-            <Item>
-                <Svg>
-                    <use xlinkHref="#icon-envelope" />
-                </Svg>
-                <span>lauri.lavanti@kirkkonummi.fi</span>
-            </Item>
-            <li>
-                <RowExternalLink href="https://www.facebook.com/laurilavanti">
-                    <Facebook>
-                        <use xlinkHref="#icon-facebook" />
-                    </Facebook>
-                    <span>Facebook</span>
-                </RowExternalLink>
-            </li>
-            <li>
-                <RowExternalLink href="https://twitter.com/laurilavanti">
-                    <Twitter>
-                        <use xlinkHref="#icon-twitter" />
-                    </Twitter>
-                    Twitter
-                </RowExternalLink>
-            </li>
-        </List>
-    </Page>
-)
+const Contact = (): JSX.Element => {
+    const data = useStaticQuery<{ biking: ImageDataLike }>(graphql`
+        query {
+            biking: file(relativePath: { eq: "pyoraily-harjoituksia.jpg" }) {
+                childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED)
+                }
+            }
+        }
+    `)
+    return (
+        <Page
+            title="Ota yhteyttä"
+            description="Yhteystiedot"
+            pathname="/ota-yhteytta"
+            metaImage={data.biking}
+            type={PERSON}
+        >
+            <List>
+                <Item>
+                    <Svg>
+                        <use xlinkHref="#icon-envelope" />
+                    </Svg>
+                    <span>lauri.lavanti@kirkkonummi.fi</span>
+                </Item>
+                <li>
+                    <RowExternalLink href="https://www.facebook.com/laurilavanti">
+                        <Facebook>
+                            <use xlinkHref="#icon-facebook" />
+                        </Facebook>
+                        <span>Facebook</span>
+                    </RowExternalLink>
+                </li>
+                <li>
+                    <RowExternalLink href="https://twitter.com/laurilavanti">
+                        <Twitter>
+                            <use xlinkHref="#icon-twitter" />
+                        </Twitter>
+                        Twitter
+                    </RowExternalLink>
+                </li>
+            </List>
+        </Page>
+    )
+}
 
 export default Contact

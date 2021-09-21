@@ -1,16 +1,32 @@
+import type { JsonLdType } from '../../types/jsonld'
+
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-interface Props {
+import { BLOGPOSTING, JSON_LD_TYPES, WEBPAGE, WEBSITE } from '../../types/jsonld'
+
+export interface SEOProps {
     description?: string
     meta?: JSX.IntrinsicElements['meta'][]
     title: string
     image?: { src: string; height: string; width: string }
     pathname?: string
+    type?: JsonLdType
+    published?: string
+    modified?: string
 }
 
-const SEO = ({ description, meta, title, image: metaImage, pathname }: Props): JSX.Element => {
+const SEO = ({
+    description,
+    meta,
+    title,
+    image: metaImage,
+    pathname,
+    type = WEBSITE,
+    published,
+    modified,
+}: SEOProps): JSX.Element => {
     const { site } = useStaticQuery<{
         site: {
             siteMetadata: {
@@ -22,7 +38,8 @@ const SEO = ({ description, meta, title, image: metaImage, pathname }: Props): J
                 locale: string
                 twSite: string
                 twCreator: string
-                publisher: string
+                facebook: string
+                twitter: string
             }
         }
     }>(graphql`
@@ -37,7 +54,8 @@ const SEO = ({ description, meta, title, image: metaImage, pathname }: Props): J
                     locale
                     twSite
                     twCreator
-                    publisher
+                    facebook
+                    twitter
                 }
             }
         }
@@ -71,6 +89,39 @@ const SEO = ({ description, meta, title, image: metaImage, pathname }: Props): J
                   },
               ]
     const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+
+    const jsonLD = {
+        description: metaDescription,
+        url: canonical,
+        '@type': JSON_LD_TYPES.includes(type) ? type : WEBSITE,
+        headline: title,
+        author: {
+            '@type': 'Person',
+            name: site.siteMetadata.author,
+        },
+        '@context': 'https://schema.org',
+        ...(metaImage
+            ? {
+                  image: `${site.siteMetadata.siteUrl}${metaImage.src}`,
+              }
+            : {}),
+        ...(type === BLOGPOSTING
+            ? {
+                  datePublished: published,
+                  dateModified: modified || published,
+                  mainEntityOfPage: {
+                      '@type': WEBPAGE,
+                      '@id': canonical,
+                  },
+              }
+            : {}),
+        ...(type === WEBSITE
+            ? {
+                  sameAs: [site.siteMetadata.facebook, site.siteMetadata.twitter],
+                  name: site.siteMetadata.title,
+              }
+            : {}),
+    }
 
     return (
         <Helmet
@@ -125,7 +176,7 @@ const SEO = ({ description, meta, title, image: metaImage, pathname }: Props): J
                 },
                 {
                     name: 'article:publisher',
-                    content: site.siteMetadata.publisher,
+                    content: site.siteMetadata.facebook,
                 },
                 {
                     property: 'og:type',
@@ -138,7 +189,9 @@ const SEO = ({ description, meta, title, image: metaImage, pathname }: Props): J
                 ...cardMeta,
                 ...(meta ? meta : []),
             ]}
-        />
+        >
+            <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
+        </Helmet>
     )
 }
 

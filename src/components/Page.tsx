@@ -1,4 +1,5 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { SEOProps } from './page/SEO'
 
 import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
@@ -21,16 +22,13 @@ const H1 = tw.h1`
     col-start-3 text-3xl font-bold mb-1 mt-4.5
 `
 
-interface Props {
+interface Props extends Omit<SEOProps, 'title' | 'image'> {
     className?: string
     title?: string
     hiddenTitle?: string
     heroImage?: ImageDataLike
     metaImage?: ImageDataLike
-    description?: string
-    meta?: JSX.IntrinsicElements['meta'][]
     image?: { src: string; height: string; width: string }
-    pathname?: string
 }
 
 const PageComponent = ({
@@ -42,6 +40,9 @@ const PageComponent = ({
     description,
     meta,
     pathname,
+    type,
+    published,
+    modified,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const imageToUse = (heroImage || metaImage) as
@@ -67,6 +68,9 @@ const PageComponent = ({
                 meta={meta}
                 pathname={pathname}
                 image={image}
+                type={type}
+                published={published}
+                modified={modified}
             />
             <div className={className}>
                 <Header />

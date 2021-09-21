@@ -7,6 +7,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
 import tw from 'twin.macro'
 
+import { BLOGPOSTING } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
@@ -38,6 +39,8 @@ interface Props {
                 date: string
                 image: ImageDataLike
                 description: string
+                published: string
+                modified: string | null
             }
             fields: {
                 readingTime: {
@@ -55,7 +58,7 @@ interface Props {
 const Post = ({
     data: {
         mdx: {
-            frontmatter: { title, tags, date, image: imageData, description },
+            frontmatter: { title, tags, date, image: imageData, description, published, modified },
             fields: {
                 readingTime: { time },
             },
@@ -65,7 +68,15 @@ const Post = ({
     pageContext: { slug },
 }: Props): JSX.Element => (
     <MDXProvider components={components}>
-        <Page title={title} pathname={`/${slug}`} heroImage={imageData} description={description}>
+        <Page
+            title={title}
+            pathname={`/${slug}`}
+            heroImage={imageData}
+            description={description}
+            type={BLOGPOSTING}
+            published={published}
+            modified={modified || published}
+        >
             <PositionedMeta readingTime={time} date={date} tags={tags} />
             <MDXRenderer>{body}</MDXRenderer>
             <H2>Muita kirjoituksia</H2>
@@ -88,6 +99,8 @@ export const query = graphql`
                     }
                 }
                 description
+                published: date
+                modified
             }
             fields {
                 readingTime {
