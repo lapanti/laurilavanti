@@ -11,13 +11,11 @@ interface Props {
     }
 }
 
-const Tag = ({ pageContext: { tag } }: Props): JSX.Element => {
-    return (
-        <Page title={tag.replace(/^\w/, (c) => c.toUpperCase())} pathname={`/blogi/${tag}`} type={WEBPAGE}>
-            <HR />
-            <ExcerptList tag={tag} />
-        </Page>
-    )
-}
+const Tag = ({ pageContext: { tag } }: Props): JSX.Element => (
+    <Page title={tag.replace(/^\w/, (c) => c.toUpperCase())} pathname={`/blogi/${tag}`} type={WEBPAGE}>
+        <HR />
+        <ExcerptList tag={tag} />
+    </Page>
+)
 
 export default Tag
