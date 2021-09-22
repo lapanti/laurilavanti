@@ -17,7 +17,8 @@ module.exports = {
         'gatsby-plugin-gatsby-cloud',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
-        {
+        'gatsby-plugin-sitemap',
+        /*{
             resolve: 'gatsby-plugin-sitemap',
             options: {
                 query: `
@@ -53,7 +54,7 @@ module.exports = {
                 },
                 serialize: ({ url, lastmod }) => ({ url, lastmod }),
             },
-        },
+        },*/
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
