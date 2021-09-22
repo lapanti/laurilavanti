@@ -17,7 +17,43 @@ module.exports = {
         'gatsby-plugin-gatsby-cloud',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
-        'gatsby-plugin-sitemap',
+        {
+            resolve: 'gatsby-plugin-sitemap',
+            options: {
+                query: `
+                {
+                    allMdx {
+                      nodes {
+                        frontmatter {
+                          date
+                          modified
+                        }
+                        slug
+                      }
+                    }
+                    allSitePage {
+                      nodes {
+                        path
+                      }
+                    }
+                  }                  
+                `,
+                resolveSiteUrl: () => 'https://laurilavanti.fi',
+                resolvePages: ({
+                    allMdx: { nodes: allMdxNodes },
+                    allSitePage: {
+                        nodes: { allPageNodes },
+                    },
+                }) => {
+                    const mdxMap = allMdxNodes.reduce((acc, curr) => ({
+                        ...acc,
+                        [`/${curr.slug}`]: curr.frontmatter.modified || curr.frontmatter.date,
+                    }))
+                    return allPageNodes.map((page) => ({ url: page.path, lastmod: mdxMap[page.path] }))
+                },
+                serialize: ({ url, lastmod }) => ({ url, lastmod }),
+            },
+        },
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
