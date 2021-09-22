@@ -12,7 +12,7 @@ import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import HR from './HR'
-import Page from './Page'
+import Layout from './Layout'
 import Paragraph from './Paragraph'
 import PostMeta from './PostMeta'
 
@@ -68,7 +68,7 @@ const Post = ({
     pageContext: { slug },
 }: Props): JSX.Element => (
     <MDXProvider components={components}>
-        <Page
+        <Layout
             title={title}
             pathname={`/${slug}`}
             heroImage={imageData}
@@ -115,7 +115,7 @@ const Post = ({
             <H2>Muita kirjoituksia</H2>
             <HR />
             <ExcerptList limit={3} relatedTags={tags} />
-        </Page>
+        </Layout>
     </MDXProvider>
 )
 

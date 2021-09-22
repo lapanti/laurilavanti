@@ -24,7 +24,12 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
-            posts: allMdx {
+            pages: allMdx(filter: { frontmatter: { tags: { eq: null } } }) {
+                nodes {
+                    slug
+                }
+            }
+            posts: allMdx(filter: { frontmatter: { tags: { ne: null } } }) {
                 nodes {
                     slug
                 }
@@ -52,6 +57,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
         console.log(`${chalk.green('success')} created redirects`)
     }
+
+    data.pages.nodes.forEach(({ slug }) => {
+        actions.createPage({
+            path: slug === '' ? '/' : slug,
+            component: require.resolve('./src/components/Page.tsx'),
+            context: { slug },
+        })
+    })
 
     data.posts.nodes.forEach(({ slug }) => {
         actions.createPage({

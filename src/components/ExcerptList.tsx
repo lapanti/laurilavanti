@@ -20,7 +20,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag }: Props): JS
         }
     }>(graphql`
         {
-            allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+            allMdx(filter: { frontmatter: { tags: { ne: null } } }, sort: { fields: frontmatter___date, order: DESC }) {
                 nodes {
                     frontmatter {
                         title

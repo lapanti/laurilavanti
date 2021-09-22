@@ -1,100 +1,96 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
-import type { SEOProps } from './page/SEO'
+import type { JsonLdType } from '../types/jsonld'
 
+// @ts-expect-error untyped library
+import { MDXProvider } from '@mdx-js/react'
+import { graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 import React from 'react'
-import tw, { GlobalStyles } from 'twin.macro'
+import tw from 'twin.macro'
 
-import Footer from './page/Footer'
-import Header from './page/Header'
-import HeroImage from './page/HeroImage'
-import SEO from './page/SEO'
-import Svgs from './page/Svgs'
+import ExternalLink from './ExternalLink'
+import H2 from './H2'
+import Layout from './Layout'
+import Paragraph from './Paragraph'
 
-const Main = tw.main`
-    grid-in-main
+const PositionedP = tw(Paragraph)`
+    col-start-3
 `
 
-const Article = tw.article`
-    grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
-`
-
-const H1 = tw.h1`
-    col-start-3 text-3xl font-bold mb-1 mt-4.5
-`
-
-interface Props extends Omit<SEOProps, 'title' | 'image'> {
-    className?: string
-    title?: string
-    hiddenTitle?: string
-    heroImage?: ImageDataLike
-    metaImage?: ImageDataLike
-    image?: { src: string; height: string; width: string }
+const components = {
+    p: PositionedP,
+    h2: H2,
+    a: ExternalLink,
 }
 
-const PageComponent = ({
-    className,
-    title,
-    heroImage,
-    metaImage,
-    hiddenTitle,
-    description,
-    meta,
-    pathname,
-    type,
-    published,
-    modified,
-    children,
-}: React.PropsWithChildren<Props>): JSX.Element => {
-    const imageToUse = (heroImage || metaImage) as
-        | {
-              childImageSharp: {
-                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
-              }
-          }
-        | undefined
-    const image = imageToUse
-        ? {
-              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
-              height: `${imageToUse?.childImageSharp.gatsbyImageData.height}`,
-              width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
-          }
-        : undefined
-    return (
-        <>
-            <GlobalStyles />
-            <SEO
-                title={title || hiddenTitle || ''}
-                description={description}
-                meta={meta}
-                pathname={pathname}
-                image={image}
-                type={type}
-                published={published}
-                modified={modified}
-            />
-            <div className={className}>
-                <Header />
-
-                <Main>
-                    <Article>
-                        {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
-                        {title && <H1 itemProp="headline">{title}</H1>}
-                        {children}
-                    </Article>
-                </Main>
-
-                <Footer />
-
-                <Svgs />
-            </div>
-        </>
-    )
+interface Props {
+    data: {
+        mdx: {
+            frontmatter: {
+                title?: string
+                hiddenTitle?: string
+                image?: ImageDataLike
+                metaImage?: ImageDataLike
+                description: string
+                modified: string | null
+                jsonLdType: JsonLdType
+            }
+            body: string
+        }
+    }
+    pageContext: {
+        slug: string
+    }
 }
 
-PageComponent.displayName = 'Page'
+const Page = ({
+    data: {
+        mdx: {
+            frontmatter: { title, hiddenTitle, image, metaImage, description, modified, jsonLdType },
+            body,
+        },
+    },
+    pageContext: { slug },
+}: Props): JSX.Element => (
+    <MDXProvider components={components}>
+        <Layout
+            title={title}
+            hiddenTitle={hiddenTitle}
+            pathname={`/${slug}`}
+            heroImage={image}
+            metaImage={metaImage}
+            description={description}
+            type={jsonLdType}
+            modified={modified || undefined}
+        >
+            <MDXRenderer>{body}</MDXRenderer>
+        </Layout>
+    </MDXProvider>
+)
 
-const Page = tw(PageComponent)`
-    grid grid-areas-layout grid-rows-layout grid-cols-1 gap-4.5 min-h-screen relative font-sans
+export const query = graphql`
+    query ($slug: String!) {
+        mdx(slug: { eq: $slug }) {
+            frontmatter {
+                title
+                hiddenTitle
+                image {
+                    childImageSharp {
+                        gatsbyImageData(placeholder: BLURRED)
+                    }
+                }
+                metaImage {
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                }
+                description
+                modified
+                jsonLdType
+            }
+            body
+        }
+    }
 `
 
 export default Page

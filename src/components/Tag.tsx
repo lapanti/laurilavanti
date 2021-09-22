@@ -3,7 +3,7 @@ import React from 'react'
 import { WEBPAGE } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
 import HR from './HR'
-import Page from './Page'
+import Layout from './Layout'
 
 interface Props {
     pageContext: {
@@ -12,10 +12,10 @@ interface Props {
 }
 
 const Tag = ({ pageContext: { tag } }: Props): JSX.Element => (
-    <Page title={tag.replace(/^\w/, (c) => c.toUpperCase())} pathname={`/blogi/${tag}`} type={WEBPAGE}>
+    <Layout title={tag.replace(/^\w/, (c) => c.toUpperCase())} pathname={`/blogi/${tag}`} type={WEBPAGE}>
         <HR />
         <ExcerptList tag={tag} />
-    </Page>
+    </Layout>
 )
 
 export default Tag
