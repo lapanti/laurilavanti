@@ -48,6 +48,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag }: Props): JS
         const all = data.allMdx.nodes
         if (relatedTags?.length) {
             return all
+                .filter((curr) => `/${curr.slug}` !== location.pathname)
                 .reduce<[MdxPost, number][]>(
                     (acc, curr) => [
                         ...acc,
