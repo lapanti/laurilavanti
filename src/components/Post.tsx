@@ -30,6 +30,28 @@ const PositionedMeta = tw(PostMeta)`
     col-start-3
 `
 
+const ShareAside = tw.aside`
+    col-start-3 flex flex-row mt-4 mb-8
+`
+
+const Share = tw.span`
+    mr-2
+`
+
+const ExtLink = tw(ExternalLink)`
+    mr-2 flex flex-row items-center
+`
+
+const Svg = tw.svg`
+    inline-block h-4 w-4 fill-current
+`
+
+const Fb = tw(Svg)`text-fb`
+
+const Twitter = tw(Svg)`text-twitter`
+
+const LinkedIn = tw(Svg)`text-linkedin`
+
 interface Props {
     data: {
         mdx: {
@@ -49,6 +71,11 @@ interface Props {
             }
             body: string
         }
+        site: {
+            siteMetadata: {
+                siteUrl: string
+            }
+        }
     }
     pageContext: {
         slug: string
@@ -63,6 +90,9 @@ const Post = ({
                 readingTime: { time },
             },
             body,
+        },
+        site: {
+            siteMetadata: { siteUrl },
         },
     },
     pageContext: { slug },
@@ -79,39 +109,33 @@ const Post = ({
         >
             <PositionedMeta readingTime={time} date={date} tags={tags} />
             <MDXRenderer>{body}</MDXRenderer>
-            <aside>
-                <span>Jaa:</span>
-                <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}`}
-                    target="_blank"
+            <ShareAside>
+                <Share>Jaa:</Share>
+                <ExtLink
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`}
                     title="Jaa Facebookissa"
-                    rel="noreferrer"
                 >
-                    <svg>
+                    <Fb>
                         <use xlinkHref="#icon-facebook" />
-                    </svg>
-                </a>
-                <a
-                    href={`https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}`}
-                    target="_blank"
+                    </Fb>
+                </ExtLink>
+                <ExtLink
+                    href={`https://twitter.com/intent/tweet?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
                     title="Jaa Twitterissä"
-                    rel="noreferrer"
                 >
-                    <svg>
+                    <Twitter>
                         <use xlinkHref="#icon-twitter" />
-                    </svg>
-                </a>
-                <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}`}
-                    target="_blank"
+                    </Twitter>
+                </ExtLink>
+                <ExtLink
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(siteUrl)}`}
                     title="Jaa LinkedInissä"
-                    rel="noreferrer"
                 >
-                    <svg>
+                    <LinkedIn>
                         <use xlinkHref="#icon-linkedin" />
-                    </svg>
-                </a>
-            </aside>
+                    </LinkedIn>
+                </ExtLink>
+            </ShareAside>
             <H2>Muita kirjoituksia</H2>
             <HR />
             <ExcerptList limit={3} relatedTags={tags} />
@@ -141,6 +165,11 @@ export const query = graphql`
                 }
             }
             body
+        }
+        site {
+            siteMetadata {
+                siteUrl
+            }
         }
     }
 `

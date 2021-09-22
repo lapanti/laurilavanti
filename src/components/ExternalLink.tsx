@@ -6,10 +6,11 @@ import Link from './Link'
 interface Props {
     className?: string
     href: string
+    title?: string
 }
 
-const ExternalLinkComponent = ({ className, href, children }: React.PropsWithChildren<Props>): JSX.Element => (
-    <Link className={className} href={href} target="_blank" rel="noopener noreferrer">
+const ExternalLinkComponent = ({ className, href, title, children }: React.PropsWithChildren<Props>): JSX.Element => (
+    <Link className={className} href={href} target="_blank" title={title} rel="noopener noreferrer">
         {children}
     </Link>
 )
