@@ -96,6 +96,14 @@ module.exports = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
+                name: 'pages',
+                path: './src/mdxPages/',
+            },
+            __key: 'pages',
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
                 name: 'blog',
                 path: './src/posts/',
             },
