@@ -79,6 +79,39 @@ const Post = ({
         >
             <PositionedMeta readingTime={time} date={date} tags={tags} />
             <MDXRenderer>{body}</MDXRenderer>
+            <aside>
+                <span>Jaa:</span>
+                <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}`}
+                    target="_blank"
+                    title="Jaa Facebookissa"
+                    rel="noreferrer"
+                >
+                    <svg>
+                        <use xlinkHref="#icon-facebook" />
+                    </svg>
+                </a>
+                <a
+                    href={`https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}`}
+                    target="_blank"
+                    title="Jaa Twitterissä"
+                    rel="noreferrer"
+                >
+                    <svg>
+                        <use xlinkHref="#icon-twitter" />
+                    </svg>
+                </a>
+                <a
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}`}
+                    target="_blank"
+                    title="Jaa LinkedInissä"
+                    rel="noreferrer"
+                >
+                    <svg>
+                        <use xlinkHref="#icon-linkedin" />
+                    </svg>
+                </a>
+            </aside>
             <H2>Muita kirjoituksia</H2>
             <HR />
             <ExcerptList limit={3} relatedTags={tags} />

@@ -35,21 +35,11 @@ const Twitter = tw(Svg)`
 const Contact = (): JSX.Element => {
     const data = useStaticQuery<{
         biking: ImageDataLike
-        allJavascriptFrontMatter: { edges: { node: { frontmatter: { modified: string } } }[] }
     }>(graphql`
         query {
             biking: file(relativePath: { eq: "pyoraily-harjoituksia.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(placeholder: BLURRED)
-                }
-            }
-            allJavascriptFrontmatter {
-                edges {
-                    node {
-                        frontmatter {
-                            modified
-                        }
-                    }
                 }
             }
         }
@@ -62,15 +52,6 @@ const Contact = (): JSX.Element => {
             metaImage={data.biking}
             type={PERSON}
         >
-            {data.allJavascriptFrontMatter.edges
-                .map(
-                    ({
-                        node: {
-                            frontmatter: { modified },
-                        },
-                    }) => modified
-                )
-                .join(', ')}
             <List>
                 <Item>
                     <Svg>
@@ -97,11 +78,6 @@ const Contact = (): JSX.Element => {
             </List>
         </Page>
     )
-}
-
-export const frontmatter = {
-    modified: '2021-09-22',
-    path: '/ota-yhteytta',
 }
 
 export default Contact

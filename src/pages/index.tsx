@@ -52,9 +52,4 @@ const Index = (): JSX.Element => {
     )
 }
 
-export const frontmatter = {
-    modified: '2021-09-22',
-    path: '/',
-}
-
 export default Index

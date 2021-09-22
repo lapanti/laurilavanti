@@ -17,62 +17,7 @@ module.exports = {
         'gatsby-plugin-gatsby-cloud',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
-        {
-            resolve: 'gatsby-plugin-sitemap',
-            options: {
-                query: `
-                {
-                    allMdx {
-                      nodes {
-                        frontmatter {
-                          date
-                          modified
-                        }
-                        slug
-                      }
-                    }
-                    allSitePage {
-                      nodes {
-                        path
-                      }
-                    }
-                    allJavascriptFrontmatter {
-                      edges {
-                        node {
-                          frontmatter {
-                            modified
-                            path
-                          }
-                        }
-                      }
-                    }
-                  }
-                  `,
-                resolveSiteUrl: () => 'https://laurilavanti.fi',
-                resolvePages: ({
-                    allMdx: { nodes: allMdxNodes },
-                    allSitePage: { nodes: allPageNodes },
-                    allJavascriptFrontmatter: { edges: allPageEdges },
-                }) => {
-                    const mdxMap = allMdxNodes.reduce(
-                        (acc, node) => ({
-                            ...acc,
-                            [`/${node.slug}`]: node.frontmatter.modified || node.frontmatter.date,
-                        }),
-                        {}
-                    )
-                    const pageMap = allPageEdges.reduce(
-                        (acc, { node }) => ({ ...acc, [node.frontmatter.path]: node.frontmatter.modified }),
-                        {}
-                    )
-                    return allPageNodes.map((page) => ({
-                        url: page.path,
-                        lastmod: mdxMap[page.path] || pageMap[page.path],
-                    }))
-                },
-                serialize: ({ url, lastmod }) => ({ url, lastmod }),
-            },
-        },
+        'gatsby-plugin-sitemap',
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -112,7 +57,6 @@ module.exports = {
             },
             __key: 'pages',
         },
-        'gatsby-transformer-javascript-frontmatter',
         {
             resolve: 'gatsby-source-filesystem',
             options: {

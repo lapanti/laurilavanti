@@ -10,9 +10,4 @@ const Blog = (): JSX.Element => (
     </Page>
 )
 
-export const frontmatter = {
-    modified: '2021-09-22',
-    path: '/blogi',
-}
-
 export default Blog
