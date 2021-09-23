@@ -138,7 +138,7 @@ const Post = ({
             </ShareAside>
             <H2>Muita kirjoituksia</H2>
             <HR />
-            <ExcerptList limit={3} relatedTags={tags} />
+            <ExcerptList currentSlug={slug} limit={3} relatedTags={tags} />
         </Layout>
     </MDXProvider>
 )
