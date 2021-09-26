@@ -45,7 +45,7 @@ const Svgs = (): JSX.Element => (
                         transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
                         xmlSpace="preserve"
                         text-anchor="start"
-                        font-family="serif"
+                        font-family="Times New Roman"
                         font-size="24"
                         id="svg_1"
                         y="221.21152"
