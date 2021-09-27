@@ -10,7 +10,7 @@ import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
 const Image = tw(GatsbyImage)`
-    w-full flex h-24 object-cover
+    w-full flex h-32 object-cover
 `
 
 const H2 = tw.h2`

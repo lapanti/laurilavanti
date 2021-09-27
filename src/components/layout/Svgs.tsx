@@ -40,12 +40,12 @@ const Svgs = (): JSX.Element => (
                     <title>Lauri lavanti</title>
                     <rect rx="50" id="svg_2" height="600" width="600" y="0" x="0" fill="#045a1c" />
                     <text
-                        font-weight="normal"
+                        font-weight="400"
                         font-style="normal"
                         transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
                         xmlSpace="preserve"
                         text-anchor="start"
-                        font-family="serif"
+                        font-family="Times New Roman"
                         font-size="24"
                         id="svg_1"
                         y="221.21152"
