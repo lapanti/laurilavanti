@@ -30,7 +30,7 @@ module.exports = {
                 layout: ['header', ' main ', 'footer'],
             },
             gridTemplateRows: {
-                layout: '4.5rem 1fr 6.75rem',
+                layout: '4.5rem 1fr 8rem',
             },
             gridTemplateColumns: {
                 article: '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr',
