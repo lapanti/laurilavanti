@@ -13,7 +13,6 @@ const HomeTitleComponent = ({ className }: Props) => (
     <h1 className={className}>
         <List>
             <Term>Lauri Lavanti</Term>
-            <dd>Aluevaaliehdokas</dd>
             <dd>Isä</dd>
             <dd>Kirkkonummelainen</dd>
             <dd>Ohjelmistokehittäjä</dd>
