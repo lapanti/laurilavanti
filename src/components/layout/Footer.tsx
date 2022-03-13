@@ -37,30 +37,42 @@ interface Props {
 
 const FooterComponent = ({ className }: Props): JSX.Element => (
     <footer className={className}>
-        <a
-            href="https://vaalit.vihreat.fi/api/share/5209?redirect_to=https%3A%2F%2Fwww.vihreat.fi%2Fehdokkaat%2F%3Fkieli%3Dfi%26vaali%3Daluevaalit-2022%26alue%3Dlnsi-uusimaa%26ehdokas%3Dlavanti-lauri-5209"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <StyledH2>Lahjoita!</StyledH2>
-        </a>
+        {/*
+            <a
+                href="https://vaalit.vihreat.fi/api/share/5209?redirect_to=https%3A%2F%2Fwww.vihreat.fi%2Fehdokkaat%2F%3Fkieli%3Dfi%26vaali%3Daluevaalit-2022%26alue%3Dlnsi-uusimaa%26ehdokas%3Dlavanti-lauri-5209"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <StyledH2>Lahjoita!</StyledH2>
+            </a>
+            */}
         <List>
             <Item>
-                <a href="https://www.facebook.com/laurilavanti/" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.facebook.com/laurilavanti/"
+                    title="Facebook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Facebook>
                         <use xlinkHref="#icon-facebook" />
                     </Facebook>
                 </a>
             </Item>
             <Item>
-                <a href="https://twitter.com/laurilavanti" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/laurilavanti" target="_blank" title="Twitter" rel="noopener noreferrer">
                     <Twitter>
                         <use xlinkHref="#icon-twitter" />
                     </Twitter>
                 </a>
             </Item>
             <Item>
-                <a href="https://www.linkedin.com/in/lapanti/" target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.linkedin.com/in/lapanti/"
+                    target="_blank"
+                    title="LinkedIn"
+                    rel="noopener noreferrer"
+                >
                     <LinkedIn>
                         <use xlinkHref="#icon-linkedin" />
                     </LinkedIn>

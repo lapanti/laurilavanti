@@ -57,7 +57,7 @@ interface Props {
 const HeaderComponent = ({ className }: Props): JSX.Element => (
     <header className={className}>
         <Nav>
-            <LogoLink to="/">
+            <LogoLink to="/" aria-label="Lauri Lavanti">
                 <Svg>
                     <use xlinkHref="#logo" />
                 </Svg>
