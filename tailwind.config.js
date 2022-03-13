@@ -3,8 +3,8 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         fontFamily: {
-            sans: '"Roboto"',
-            serif: '"Roboto"',
+            sans: '"Ubuntu"',
+            serif: '"Ubuntu"',
         },
         screens: {
             700: '700px',
