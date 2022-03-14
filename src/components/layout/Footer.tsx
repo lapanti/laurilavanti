@@ -1,11 +1,11 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import H2 from '../H2'
+//import H2 from '../H2'
 
-const StyledH2 = tw(H2)`
+/*const StyledH2 = tw(H2)`
     mt-4
-`
+`*/
 
 const List = tw.ul`
     flex flex-row items-center justify-center
