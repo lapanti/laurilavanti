@@ -1,4 +1,5 @@
 const React = require('react')
+const gatsbyConfig = require('../../gatsby-config')
 
 const gatsby = jest.requireActual('gatsby')
 module.exports = {
@@ -14,6 +15,8 @@ module.exports = {
     ),
     StaticQuery: jest.fn(),
     useStaticQuery: jest.fn(() => ({
-        site: { siteMetadata: { description: '', keywords: [] } },
+        site: {
+            siteMetadata: gatsbyConfig.siteMetadata,
+        },
     })),
 }
