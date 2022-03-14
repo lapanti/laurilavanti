@@ -7,7 +7,7 @@ interface Props {
 }
 
 const H2Component = ({ className, children }: Props): JSX.Element => (
-    <h2 className={className} id={children.toLowerCase().replace(' ', '-').replace('ä', 'a').replace('ö', 'o')}>
+    <h2 className={className} id={children.toLowerCase().replace(/\s/gi, '-').replace(/ä/gi, 'a').replace(/ö/gi, 'o')}>
         {children}
     </h2>
 )
