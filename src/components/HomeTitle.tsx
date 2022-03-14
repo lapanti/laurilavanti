@@ -12,11 +12,11 @@ interface Props {
 const HomeTitleComponent = ({ className }: Props) => (
     <h1 className={className}>
         <List>
-            <Term>Lauri Lavanti</Term>
-            <dd>Isä</dd>
-            <dd>Kirkkonummelainen</dd>
-            <dd>Ohjelmistokehittäjä</dd>
-            <dd>Diplomi-insinööri</dd>
+            <Term aria-label="Lauri Lavanti">Lauri Lavanti</Term>
+            <dd aria-label="Isä">Isä</dd>
+            <dd aria-label="Kirkkonummelainen">Kirkkonummelainen</dd>
+            <dd aria-label="Ohjelmistokehittäjä">Ohjelmistokehittäjä</dd>
+            <dd aria-label="Diplomi-insinööri">Diplomi-insinööri</dd>
         </List>
     </h1>
 )
