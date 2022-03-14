@@ -9,7 +9,17 @@ module.exports = {
         twCreator: '@laurilavanti',
         facebook: 'https://www.facebook.com/laurilavanti',
         twitter: 'https://twitter.com/laurilavanti',
-        keywords: ['kuntavaalit', 'aluevaalit', 'Vihreät', 'Lauri Lavanti', 'Lauri', 'Lavanti', 'poliitikko'],
+        keywords: [
+            'Kirkkonummi',
+            'Länsi-Uusimaa',
+            'kuntavaalit',
+            'aluevaalit',
+            'Vihreät',
+            'Lauri Lavanti',
+            'Lauri',
+            'Lavanti',
+            'poliitikko',
+        ],
     },
     plugins: [
         'gatsby-plugin-preact',
