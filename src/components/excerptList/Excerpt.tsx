@@ -38,7 +38,7 @@ const ExcerptComponent = ({
     const image = getImage(imageData)
 
     return (
-        <article className={className} itemScope itemType="https://schema.org/CreativeWork">
+        <article className={className} aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
             <InternalLink to={`/${slug}`} rel="permalink">
                 {image && <Image image={image} alt={title} />}
                 <H2 itemProp="headline">{title}</H2>
