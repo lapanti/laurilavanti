@@ -1,4 +1,4 @@
-const excerpt1 = {
+export const healthBelongsToAll = {
     frontmatter: {
         title: 'Terveys kuuluu kaikille',
         date: '19.01.2022',
@@ -41,7 +41,7 @@ const excerpt1 = {
     slug: 'blogi/2022/01/19/terveys-kuuluu-kaikille',
 }
 
-const excerpt2 = {
+export const soteIsBedrock = {
     frontmatter: {
         title: 'Sote on hyvinvointiyhteiskunnan kulmakivi',
         date: '20.12.2021',
@@ -84,7 +84,7 @@ const excerpt2 = {
     slug: 'blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi',
 }
 
-const excerpt3 = {
+export const whatIfNoHealthCareCenter = {
     frontmatter: {
         title: 'Mitä jos terveyskeskusta ei olisikaan?',
         date: '15.11.2021',
@@ -127,7 +127,7 @@ const excerpt3 = {
     slug: 'blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan',
 }
 
-const excerpt4 = {
+export const perusturvajaostoWhatIs = {
     frontmatter: {
         title: 'Perusturvajaosto - mikä se on?',
         date: '30.10.2021',
@@ -170,7 +170,7 @@ const excerpt4 = {
     slug: 'blogi/2021/10/31/perusturvajaosto-mika-se-on',
 }
 
-const excerpt5 = {
+export const runningForAluevaalit = {
     frontmatter: {
         title: 'Ehdolle aluevaaleihin',
         date: '27.09.2021',
@@ -213,7 +213,7 @@ const excerpt5 = {
     slug: 'blogi/2021/09/27/ehdolle-aluevaaleihin',
 }
 
-const excerpt6 = {
+export const daycareNeedsTeachers = {
     frontmatter: {
         title: 'Päiväkodit kaipaavat opettajia',
         date: '07.06.2021',
@@ -256,7 +256,7 @@ const excerpt6 = {
     slug: 'blogi/2021/06/07/paivakodit-kaipaavat-opettajia',
 }
 
-const excerpt7 = {
+export const wellPlannedIsWellDoneBut = {
     frontmatter: {
         title: 'Hyvin suunniteltu on puoliksi tehty, mutta',
         date: '24.05.2021',
@@ -299,7 +299,7 @@ const excerpt7 = {
     slug: 'blogi/2021/05/24/hyvin-suunniteltu-on-puoliksi-tehty-mutta',
 }
 
-const excerpt8 = {
+export const daycareCannotBeCompromised = {
     frontmatter: {
         title: 'Varhaiskasvatuksen riittävyydestä ei saa tinkiä',
         date: '05.03.2021',
@@ -342,7 +342,7 @@ const excerpt8 = {
     slug: 'blogi/2021/03/05/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia',
 }
 
-const excerpt9 = {
+export const preschoolClubChildBenefit = {
     frontmatter: {
         title: 'Varhaiskasvatuksen kerhotoiminta - lapsen etu',
         date: '18.02.2021',
@@ -385,7 +385,7 @@ const excerpt9 = {
     slug: 'blogi/2021/02/18/varhaiskasvatuksen-kerhotoiminta',
 }
 
-const excerpt10 = {
+export const kirkkonummiAddIsYourBenefit = {
     frontmatter: {
         title: 'Kirkkonummi-lisä on sinunkin etusi',
         date: '15.02.2021',
@@ -428,7 +428,7 @@ const excerpt10 = {
     slug: 'blogi/2021/02/15/kirkkonummi-lisa-on-sinunkin-etusi',
 }
 
-const excerpt11 = {
+export const homecareMunicipalityExtra = {
     frontmatter: {
         title: 'Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys',
         date: '04.02.2021',
@@ -472,15 +472,15 @@ const excerpt11 = {
 }
 
 export const excerptList = [
-    excerpt1,
-    excerpt2,
-    excerpt3,
-    excerpt4,
-    excerpt5,
-    excerpt6,
-    excerpt7,
-    excerpt8,
-    excerpt9,
-    excerpt10,
-    excerpt11,
+    healthBelongsToAll,
+    soteIsBedrock,
+    whatIfNoHealthCareCenter,
+    perusturvajaostoWhatIs,
+    runningForAluevaalit,
+    daycareNeedsTeachers,
+    wellPlannedIsWellDoneBut,
+    daycareCannotBeCompromised,
+    preschoolClubChildBenefit,
+    kirkkonummiAddIsYourBenefit,
+    homecareMunicipalityExtra,
 ]

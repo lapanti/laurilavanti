@@ -1,6 +1,6 @@
 const React = require('react')
 const gatsbyConfig = require('../../gatsby-config')
-const { excerpList } = require('../posts.mock')
+const { excerptList } = require('../posts.mock')
 
 const gatsby = jest.requireActual('gatsby')
 module.exports = {
@@ -17,7 +17,7 @@ module.exports = {
     StaticQuery: jest.fn(),
     useStaticQuery: jest.fn(() => ({
         allMdx: {
-            nodes: excerpList,
+            nodes: excerptList,
         },
         site: {
             siteMetadata: gatsbyConfig.siteMetadata,
