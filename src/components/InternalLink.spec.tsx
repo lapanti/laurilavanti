@@ -12,13 +12,6 @@ describe('<InternalLink />', () => {
 
         expect(screen.getByRole('link', { name: children })).toHaveAttribute('href', href)
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
-            <a
-              class="css-1oxnj2p"
-              href="/blogi"
-            >
-              Linkki
-            </a>
-        `)
+        expect(container.firstChild).toMatchSnapshot()
     })
 })

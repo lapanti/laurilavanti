@@ -19,16 +19,6 @@ describe('<ExternalLink />', () => {
         expect(link).toHaveAttribute('rel', 'noopener noreferrer')
         expect(link).toHaveAttribute('target', '_blank')
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
-            <a
-              class="css-1b6i7hm"
-              href="https://github.com/lapanti"
-              rel="noopener noreferrer"
-              target="_blank"
-              title="title"
-            >
-              children
-            </a>
-        `)
+        expect(container.firstChild).toMatchSnapshot()
     })
 })

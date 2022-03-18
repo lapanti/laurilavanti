@@ -17,6 +17,7 @@ const config: Config.InitialOptions = {
     testEnvironment: `jsdom`,
     setupFilesAfterEnv: ['<rootDir>/tests/setup-test-env.js'],
     rootDir: '..',
+    snapshotResolver: '<rootDir>/tests/snapshotResolver.js',
 }
 
 export default config

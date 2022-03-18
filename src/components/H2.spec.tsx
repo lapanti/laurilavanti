@@ -10,13 +10,6 @@ describe('<H2 />', () => {
 
         expect(screen.getByRole('heading', { name: children })).toHaveAttribute('id', 'aakkoset-ja-lapset-leikkivat')
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
-            <h2
-              class="css-1akyri4"
-              id="aakkoset-ja-lapset-leikkivat"
-            >
-              Ääkköset ja Lapset Leikkivät
-            </h2>
-        `)
+        expect(container.firstChild).toMatchSnapshot()
     })
 })

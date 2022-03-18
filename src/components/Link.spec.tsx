@@ -12,13 +12,6 @@ describe('<Link />', () => {
 
         expect(screen.getByRole('link', { name: children })).toHaveAttribute('href', href)
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
-            <a
-              class="css-1hi3wl"
-              href="https://laurilavanti.fi"
-            >
-              Linkki
-            </a>
-        `)
+        expect(container.firstChild).toMatchSnapshot()
     })
 })

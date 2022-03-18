@@ -11,12 +11,6 @@ describe('<Paragraph />', () => {
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(container.firstChild).toMatchInlineSnapshot(`
-            <p
-              class="css-1mbj6hi"
-            >
-              Children
-            </p>
-        `)
+        expect(container.firstChild).toMatchSnapshot()
     })
 })

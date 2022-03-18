@@ -73,6 +73,8 @@ describe('<SEO />', () => {
             name: pageType === 'WebSite' ? title : undefined,
             ...(pageType === 'WebSite' ? { sameAs: [facebook, twitter] } : {}),
         })
+
+        expect(helmet).toMatchSnapshot()
     }
 
     it('should render minimal SEO', async () => {
