@@ -45,6 +45,27 @@ const config = {
                 ],
             },
         },
+        {
+            files: ['**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
+            env: {
+                jest: true,
+            },
+            plugins: ['jest'],
+            rules: {
+                '@typescript-eslint/no-empty-function': ['off'],
+                'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+                'react/display-name': ['off'],
+                'jest/expect-expect': ['warn', { assertFunctionNames: ['expect', 'expect[A-Z]\\w+'] }],
+                'jest/no-done-callback': ['error'],
+                'jest/no-standalone-expect': ['warn'],
+                'no-console': ['warn'],
+            },
+        },
+        {
+            files: ['tests/cypress/**/*.ts', 'tests/cypress/**/*.js'],
+            extends: ['plugin:cypress/recommended'],
+            plugins: ['cypress'],
+        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
