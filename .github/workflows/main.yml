@@ -7,27 +7,43 @@ on:
         branches: [main]
 
 jobs:
-    preflight:
+    build:
         runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node: [16]
-
+        name: Build
         steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: Install
-              run: npm ci
-            - name: Build
-              run: npm run build
-            - name: Lint
-              run: npm run lint
-            - name: Typecheck
-              run: npm run typecheck
-            - name: Test
-              run: npm test
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1.4.5
+            - run: npm run build
+
+    lint:
+        runs-on: ubuntu-latest
+        name: Lint
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1.4.5
+            - run: npm run lint
+
+    typecheck:
+        runs-on: ubuntu-latest
+        name: Typecheck
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1.4.5
+            - run: npm run typecheck
+
+    test-unit:
+        runs-on: ubuntu-latest
+        needs: [build, lint, typecheck]
+        name: Unit tests
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1.4.5
+
+    test-e2e:
+        runs-on: ubuntu-latest
+        needs: [build, lint, typecheck]
+        name: E2E tests
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1.4.5
+            - run: npm run test:e2e
