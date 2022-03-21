@@ -20,6 +20,12 @@ export const goToAboutPage = (cy: Cypress.cy & EventEmitter) => {
     cy.findByRole('link', { name: /Minusta/i }).click()
 }
 
+export const goToBlogPage = (cy: Cypress.cy & EventEmitter) => {
+    shouldHaveMainNavigation(cy)
+
+    cy.findByRole('link', { name: /Blogi/i }).click()
+}
+
 export const goToContactPage = (cy: Cypress.cy & EventEmitter) => {
     shouldHaveMainNavigation(cy)
 
