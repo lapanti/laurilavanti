@@ -35,12 +35,21 @@ jobs:
         runs-on: ubuntu-latest
         needs: [build, lint, typecheck]
         name: Unit tests
+        if: ${{ github.event_name == 'push' }}
         steps:
             - uses: actions/checkout@v3
             - uses: bahmutov/npm-install@v1.4.5
-            - uses: ArtiomTr/jest-coverage-report-action@v2
-              with:
-                test-script: npm test
+            - run: npm test
+
+    test-unit-report:
+        runs-on: ubuntu-latest
+        needs: [build, lint, typecheck]
+        name: Unit tests with coverage report
+        if: ${{ github.event_name == 'pull_request' }}
+        steps:
+            - uses: actions/checkout@v3
+            - uses: bahmutov/npm-install@v1.4.5
+            - uses: anuraag016/Jest-Coverage-Diff@master
 
     test-e2e:
         runs-on: ubuntu-latest
