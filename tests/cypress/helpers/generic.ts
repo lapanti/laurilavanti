@@ -14,6 +14,12 @@ export const shouldHaveMainNavigation = (cy: Cypress.cy & EventEmitter) => {
         .should('eq', '/ota-yhteytta')
 }
 
+export const goToAboutPage = (cy: Cypress.cy & EventEmitter) => {
+    shouldHaveMainNavigation(cy)
+
+    cy.findByRole('link', { name: /Minusta/i }).click()
+}
+
 export const shouldHaveFooter = (cy: Cypress.cy & EventEmitter) => {
     cy.findByRole('link', { name: /Facebook/i })
         .invoke('attr', 'href')
