@@ -20,16 +20,22 @@ export const goToAboutPage = (cy: Cypress.cy & EventEmitter) => {
     cy.findByRole('link', { name: /Minusta/i }).click()
 }
 
-export const shouldHaveFooter = (cy: Cypress.cy & EventEmitter) => {
-    cy.findByRole('link', { name: /Facebook/i })
-        .invoke('attr', 'href')
-        .should('eq', 'https://www.facebook.com/laurilavanti/')
+export const goToContactPage = (cy: Cypress.cy & EventEmitter) => {
+    shouldHaveMainNavigation(cy)
 
-    cy.findByRole('link', { name: /Twitter/i })
+    cy.findByRole('link', { name: /Ota yhteyttä/i }).click()
+}
+
+export const shouldHaveFooter = (cy: Cypress.cy & EventEmitter) => {
+    cy.findAllByRole('link', { name: /Facebook/i })
+        .invoke('attr', 'href')
+        .should('eq', 'https://www.facebook.com/laurilavanti')
+
+    cy.findAllByRole('link', { name: /Twitter/i })
         .invoke('attr', 'href')
         .should('eq', 'https://twitter.com/laurilavanti')
 
     cy.findByRole('link', { name: /LinkedIn/i })
         .invoke('attr', 'href')
-        .should('eq', 'https://www.linkedin.com/in/lapanti/')
+        .should('eq', 'https://www.linkedin.com/in/lapanti')
 }

@@ -9,7 +9,7 @@ describe('<Footer />', () => {
 
         expect(screen.getByRole('link', { name: /Facebook/i })).toHaveAttribute(
             'href',
-            'https://www.facebook.com/laurilavanti/'
+            'https://www.facebook.com/laurilavanti'
         )
 
         expect(screen.getByRole('link', { name: /Twitter/i })).toHaveAttribute(
@@ -19,7 +19,7 @@ describe('<Footer />', () => {
 
         expect(screen.getByRole('link', { name: /LinkedIn/i })).toHaveAttribute(
             'href',
-            'https://www.linkedin.com/in/lapanti/'
+            'https://www.linkedin.com/in/lapanti'
         )
 
         expect(container.firstChild).toMatchSnapshot()

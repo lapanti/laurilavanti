@@ -3,7 +3,7 @@
 import { shouldHaveFooter, shouldHaveMainNavigation } from '../helpers/generic'
 
 describe('Home Page', () => {
-    it('should have basic stuff', () => {
+    it('should render', () => {
         cy.visit('/')
         shouldHaveMainNavigation(cy)
 

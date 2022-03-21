@@ -3,7 +3,7 @@
 import { goToAboutPage, shouldHaveFooter } from '../helpers/generic'
 
 describe('About Page', () => {
-    it('should show', () => {
+    it('should render', () => {
         cy.visit('/')
         goToAboutPage(cy)
 

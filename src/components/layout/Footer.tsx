@@ -49,7 +49,7 @@ const FooterComponent = ({ className }: Props): JSX.Element => (
         <List>
             <Item>
                 <a
-                    href="https://www.facebook.com/laurilavanti/"
+                    href="https://www.facebook.com/laurilavanti"
                     title="Facebook"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -68,7 +68,7 @@ const FooterComponent = ({ className }: Props): JSX.Element => (
             </Item>
             <Item>
                 <a
-                    href="https://www.linkedin.com/in/lapanti/"
+                    href="https://www.linkedin.com/in/lapanti"
                     target="_blank"
                     title="LinkedIn"
                     rel="noopener noreferrer"
