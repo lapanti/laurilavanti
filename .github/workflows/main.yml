@@ -51,7 +51,7 @@ jobs:
             - uses: bahmutov/npm-install@v1.4.5
             - uses: anuraag016/Jest-Coverage-Diff@master
               with:
-                runCommand: "npm run test -- --coverage --collectCoverage=true --coverageDirectory='./' --coverageReporters='json-summary'"
+                  runCommand: "npm run test -- --coverage --collectCoverage=true --coverageDirectory='./' --coverageReporters='json-summary'"
 
     test-e2e:
         runs-on: ubuntu-latest

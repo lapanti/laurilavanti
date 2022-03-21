@@ -5,7 +5,6 @@ import { shouldHaveFooter, shouldHaveMainNavigation } from '../helpers/generic'
 describe('Home Page', () => {
     it('should have basic stuff', () => {
         cy.visit('/')
-
         shouldHaveMainNavigation(cy)
 
         cy.findByRole('term', { name: /Lauri Lavanti/i }).should('be.visible')
