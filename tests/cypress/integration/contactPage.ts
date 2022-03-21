@@ -9,13 +9,13 @@ describe('Contact Page', () => {
 
         cy.findByText('lauri.lavanti@kirkkonummi.fi').should('be.visible')
 
-        cy.findAllByRole('link', { name: /Facebook/i })
-            .invoke('attr', 'href')
-            .should('eq', 'https://www.facebook.com/laurilavanti')
+        cy.findAllByRole('link', { name: /Facebook/i }).should(
+            'have.attr',
+            'href',
+            'https://www.facebook.com/laurilavanti'
+        )
 
-        cy.findAllByRole('link', { name: /Twitter/i })
-            .invoke('attr', 'href')
-            .should('eq', 'https://twitter.com/laurilavanti')
+        cy.findAllByRole('link', { name: /Twitter/i }).should('have.attr', 'href', 'https://twitter.com/laurilavanti')
 
         shouldHaveFooter(cy)
     })
