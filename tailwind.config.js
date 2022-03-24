@@ -1,6 +1,5 @@
 module.exports = {
-    purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-    darkMode: false, // or 'media' or 'class'
+    content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         fontFamily: {
             sans: '"Ubuntu"',
@@ -40,9 +39,6 @@ module.exports = {
                 article750: '1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr',
             },
         },
-    },
-    variants: {
-        extend: {},
     },
     plugins: [require('@savvywombat/tailwindcss-grid-areas')],
 }
