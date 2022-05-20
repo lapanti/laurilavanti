@@ -1,4 +1,6 @@
-module.exports = {
+import type { GatsbyConfig } from 'gatsby'
+
+const config: GatsbyConfig = {
     siteMetadata: {
         siteUrl: 'https://laurilavanti.fi',
         title: 'Lauri Lavanti',
@@ -94,7 +96,6 @@ module.exports = {
                 name: 'images',
                 path: './src/images/',
             },
-            __key: 'images',
         },
         {
             resolve: 'gatsby-source-filesystem',
@@ -102,7 +103,6 @@ module.exports = {
                 name: 'pages',
                 path: './src/pages/',
             },
-            __key: 'pages',
         },
         {
             resolve: 'gatsby-source-filesystem',
@@ -110,7 +110,6 @@ module.exports = {
                 name: 'pages',
                 path: './src/mdxPages/',
             },
-            __key: 'pages',
         },
         {
             resolve: 'gatsby-source-filesystem',
@@ -118,7 +117,6 @@ module.exports = {
                 name: 'blog',
                 path: './src/posts/',
             },
-            __key: 'blog',
         },
         {
             resolve: 'gatsby-plugin-mdx',
@@ -126,3 +124,5 @@ module.exports = {
         },
     ],
 }
+
+export default config
