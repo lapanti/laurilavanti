@@ -2,10 +2,22 @@ import { render, waitFor } from '@testing-library/react'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-/** @ts-expect-error untyped code */
 import gatsbyConfig from '../../../gatsby-config'
 import { mainImage } from '../../../tests/images.mock'
 import SEO from './SEO'
+
+interface SiteMetadata {
+    title: string
+    keywords: string[]
+    author: string
+    locale: string
+    description: string
+    siteUrl: string
+    twSite: string
+    twCreator: string
+    facebook: string
+    twitter: string
+}
 
 interface ImageSeoData {
     childImageSharp: {
@@ -15,7 +27,7 @@ interface ImageSeoData {
 
 describe('<SEO />', () => {
     const { title, keywords, author, locale, description, siteUrl, twSite, twCreator, facebook, twitter } =
-        gatsbyConfig.siteMetadata
+        gatsbyConfig.siteMetadata as any as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = (
         pageTitle = title,
