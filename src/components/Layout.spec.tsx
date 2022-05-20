@@ -1,15 +1,27 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import React from 'react'
 
-/** @ts-expect-error untyped code */
 import gatsbyConfig from '../../gatsby-config'
 import { mainImage } from '../../tests/images.mock'
 import Layout from './Layout'
 
+interface SiteMetadata {
+    title: string
+    keywords: string[]
+    author: string
+    locale: string
+    description: string
+    siteUrl: string
+    twSite: string
+    twCreator: string
+    facebook: string
+    twitter: string
+}
+
 describe('<Layout />', () => {
     const title = 'Title'
     const children = 'Children'
-    const { title: siteTitle } = gatsbyConfig.siteMetadata
+    const { title: siteTitle } = gatsbyConfig.siteMetadata as any as SiteMetadata
 
     it('should render minimal', () => {
         const { container } = render(<Layout>{children}</Layout>)
