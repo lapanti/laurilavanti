@@ -4,7 +4,6 @@ const config = {
         node: true,
     },
     extends: [
-        'preact',
         'eslint:recommended',
         'plugin:import/recommended',
         'plugin:import/typescript',

@@ -23,7 +23,6 @@ module.exports = {
     },
     trailingSlash: 'never',
     plugins: [
-        'gatsby-plugin-preact',
         'gatsby-plugin-emotion',
         'gatsby-plugin-gatsby-cloud',
         'gatsby-plugin-image',
