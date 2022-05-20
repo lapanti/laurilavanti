@@ -3,6 +3,7 @@ const gatsbyConfig = require('../../gatsby-config')
 const { excerptList } = require('../posts.mock')
 
 const gatsby = jest.requireActual('gatsby')
+
 module.exports = {
     ...gatsby,
     graphql: jest.fn(),
@@ -20,7 +21,28 @@ module.exports = {
             nodes: excerptList,
         },
         site: {
-            siteMetadata: gatsbyConfig.siteMetadata,
+            siteMetadata: {
+                siteUrl: 'https://laurilavanti.fi',
+                title: 'Lauri Lavanti',
+                description: 'Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
+                author: 'laurilavanti',
+                locale: 'fi_FI',
+                twSite: '@laurilavanti',
+                twCreator: '@laurilavanti',
+                facebook: 'https://www.facebook.com/laurilavanti',
+                twitter: 'https://twitter.com/laurilavanti',
+                keywords: [
+                    'Kirkkonummi',
+                    'Länsi-Uusimaa',
+                    'kuntavaalit',
+                    'aluevaalit',
+                    'Vihreät',
+                    'Lauri Lavanti',
+                    'Lauri',
+                    'Lavanti',
+                    'poliitikko',
+                ],
+            },
         },
     })),
 }

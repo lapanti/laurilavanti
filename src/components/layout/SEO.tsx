@@ -61,13 +61,13 @@ const SEO = ({
         }
     `)
 
-    const metaDescription = description || site.siteMetadata.description
+    const metaDescription = description || site?.siteMetadata?.description
     const cardMeta =
         metaImage && metaImage.src
             ? [
                   {
                       property: 'og:image',
-                      content: `${site.siteMetadata.siteUrl}${metaImage.src}`,
+                      content: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
                   },
                   {
                       property: 'og:image:width',
@@ -88,7 +88,7 @@ const SEO = ({
                       content: 'summary',
                   },
               ]
-    const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+    const canonical = pathname ? `${site?.siteMetadata?.siteUrl}${pathname}` : null
 
     const jsonLD = {
         description: metaDescription,
@@ -97,12 +97,12 @@ const SEO = ({
         headline: title,
         author: {
             '@type': 'Person',
-            name: site.siteMetadata.author,
+            name: site?.siteMetadata?.author,
         },
         '@context': 'https://schema.org',
         ...(metaImage
             ? {
-                  image: `${site.siteMetadata.siteUrl}${metaImage.src}`,
+                  image: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
               }
             : {}),
         ...(type === BLOGPOSTING
@@ -117,8 +117,8 @@ const SEO = ({
             : {}),
         ...(type === WEBSITE
             ? {
-                  sameAs: [site.siteMetadata.facebook, site.siteMetadata.twitter],
-                  name: site.siteMetadata.title,
+                  sameAs: [site?.siteMetadata?.facebook, site?.siteMetadata?.twitter],
+                  name: site?.siteMetadata?.title,
               }
             : {}),
     }
@@ -127,12 +127,12 @@ const SEO = ({
         <Helmet
             htmlAttributes={{ lang: 'fi' }}
             title={title}
-            titleTemplate={title === site.siteMetadata.title ? '%s' : `%s | ${site.siteMetadata.title}`}
+            titleTemplate={title === site?.siteMetadata?.title ? '%s' : `%s | ${site?.siteMetadata?.title}`}
             link={canonical ? [{ rel: 'canonical', href: canonical }] : []}
             meta={[
                 {
                     name: 'keywords',
-                    content: site.siteMetadata.keywords.join(', '),
+                    content: site?.siteMetadata?.keywords.join(', '),
                 },
                 {
                     property: 'og:title',
@@ -140,11 +140,11 @@ const SEO = ({
                 },
                 {
                     name: 'author',
-                    content: site.siteMetadata.author,
+                    content: site?.siteMetadata?.author,
                 },
                 {
                     name: 'og:locale',
-                    content: site.siteMetadata.locale,
+                    content: site?.siteMetadata?.locale,
                 },
                 {
                     name: 'description',
@@ -156,11 +156,11 @@ const SEO = ({
                 },
                 {
                     name: 'og:url',
-                    content: canonical || site.siteMetadata.siteUrl,
+                    content: canonical || site?.siteMetadata?.siteUrl,
                 },
                 {
                     name: 'og:site_name',
-                    content: site.siteMetadata.title,
+                    content: site?.siteMetadata?.title,
                 },
                 {
                     name: 'twitter:title',
@@ -168,15 +168,15 @@ const SEO = ({
                 },
                 {
                     name: 'twitter:site',
-                    content: site.siteMetadata.twSite,
+                    content: site?.siteMetadata?.twSite,
                 },
                 {
                     name: 'twitter:creator',
-                    content: site.siteMetadata.twCreator,
+                    content: site?.siteMetadata?.twCreator,
                 },
                 {
                     name: 'article:publisher',
-                    content: site.siteMetadata.facebook,
+                    content: site?.siteMetadata?.facebook,
                 },
                 {
                     property: 'og:type',
