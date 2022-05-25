@@ -21,7 +21,7 @@ interface SiteMetadata {
 describe('<Layout />', () => {
     const title = 'Title'
     const children = 'Children'
-    const { title: siteTitle } = gatsbyConfig.siteMetadata as any as SiteMetadata
+    const { title: siteTitle } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     it('should render minimal', () => {
         const { container } = render(<Layout>{children}</Layout>)

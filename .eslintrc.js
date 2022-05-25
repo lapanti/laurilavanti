@@ -45,7 +45,7 @@ const config = {
             },
         },
         {
-            files: ['**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
+            files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
             env: {
                 jest: true,
             },

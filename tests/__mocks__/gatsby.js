@@ -1,5 +1,4 @@
 const React = require('react')
-const gatsbyConfig = require('../../gatsby-config')
 const { excerptList } = require('../posts.mock')
 
 const gatsby = jest.requireActual('gatsby')

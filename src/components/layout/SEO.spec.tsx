@@ -27,7 +27,7 @@ interface ImageSeoData {
 
 describe('<SEO />', () => {
     const { title, keywords, author, locale, description, siteUrl, twSite, twCreator, facebook, twitter } =
-        gatsbyConfig.siteMetadata as any as SiteMetadata
+        gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = (
         pageTitle = title,
