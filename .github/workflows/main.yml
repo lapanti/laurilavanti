@@ -49,9 +49,9 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - uses: bahmutov/npm-install@v1.8.13
-            - uses: anuraag016/Jest-Coverage-Diff@master
+            - uses: ArtiomTr/jest-coverage-report-action@v2
               with:
-                  runCommand: "npm run test -- --coverage --collectCoverage=true --coverageDirectory='./' --coverageReporters='json-summary'"
+                  test-script: "npm run test -- --ci --json --coverage --testLocationInResults --outputFile=report.json"
 
     test-e2e:
         runs-on: ubuntu-latest
