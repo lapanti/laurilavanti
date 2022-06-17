@@ -41,27 +41,12 @@ jobs:
         runs-on: ubuntu-latest
         needs: [build, lint, typecheck]
         name: Unit tests
-        if: ${{ github.event_name == 'push' }}
         steps:
             - uses: actions/checkout@v3
             - uses: bahmutov/npm-install@v1.8.13
               with:
                   install-command: npm ci --force
             - run: npm test
-
-    test-unit-report:
-        runs-on: ubuntu-latest
-        needs: [build, lint, typecheck]
-        name: Unit tests with coverage report
-        if: ${{ github.event_name == 'pull_request' }}
-        steps:
-            - uses: actions/checkout@v3
-            - uses: bahmutov/npm-install@v1.8.13
-              with:
-                  install-command: npm ci --force
-            - uses: ArtiomTr/jest-coverage-report-action@v2
-              with:
-                  test-script: "npm run test -- --ci --json --coverage --testLocationInResults --outputFile=report.json"
 
     test-e2e:
         runs-on: ubuntu-latest
