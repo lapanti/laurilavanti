@@ -1,10 +1,11 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
 import type { JsonLdType } from '../types/jsonld'
 
 // @ts-expect-error untyped library
 import { MDXProvider } from '@mdx-js/react'
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import tw from 'twin.macro'
 
@@ -25,17 +26,15 @@ const components = {
 
 interface Props {
     data: {
-        mdx: {
-            frontmatter: {
-                title?: string
-                hiddenTitle?: string
-                image?: ImageDataLike
-                metaImage?: ImageDataLike
-                description: string
-                modified: string | null
-                jsonLdType: JsonLdType
-            }
-            body: string
+        contentfulPage: {
+            description: string | null
+            hideTitle: boolean
+            jsonLdType: JsonLdType
+            title: string
+            body: RenderRichTextData<ContentfulRichTextGatsbyReference>
+            metaImage?: ImageDataLike
+            image?: ImageDataLike
+            updatedAt: string
         }
     }
     pageContext: {
@@ -45,50 +44,91 @@ interface Props {
 
 const Page = ({
     data: {
-        mdx: {
-            frontmatter: { title, hiddenTitle, image, metaImage, description, modified, jsonLdType },
-            body,
-        },
+        contentfulPage: { description, hideTitle, jsonLdType, title, body, metaImage, image, updatedAt },
     },
     pageContext: { slug },
 }: Props): JSX.Element => (
     <MDXProvider components={components}>
         <Layout
-            title={title}
-            hiddenTitle={hiddenTitle}
+            title={hideTitle ? undefined : title}
+            hiddenTitle={hideTitle ? title : undefined}
             pathname={`/${slug}`}
             heroImage={image}
             metaImage={metaImage}
-            description={description}
+            description={description || ''}
             type={jsonLdType}
-            modified={modified || undefined}
+            modified={updatedAt}
         >
-            <MDXRenderer>{body}</MDXRenderer>
+            {renderRichText(body)}
         </Layout>
     </MDXProvider>
 )
 
 export const query = graphql`
     query ($slug: String!) {
-        mdx(slug: { eq: $slug }) {
-            frontmatter {
-                title
-                hiddenTitle
-                image {
-                    childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED)
+        contentfulPage(slug: { eq: $slug }) {
+            description
+            hideTitle
+            jsonLdType
+            title
+            body {
+                raw
+                references {
+                    ... on ContentfulContactInfo {
+                        contentful_id
+                        sys {
+                            contentType {
+                                sys {
+                                    id
+                                }
+                            }
+                        }
+                    }
+                    ... on ContentfulHomeTitle {
+                        contentful_id
+                        sys {
+                            contentType {
+                                sys {
+                                    id
+                                }
+                            }
+                        }
+                    }
+                    ... on ContentfulImageWithCaption {
+                        contentful_id
+                        sys {
+                            contentType {
+                                sys {
+                                    id
+                                }
+                            }
+                        }
+                        altText
+                        image {
+                            gatsbyImageData
+                        }
+                        caption
+                    }
+                    ... on ContentfulExcerptList {
+                        contentful_id
+                        limit
+                        sys {
+                            contentType {
+                                sys {
+                                    id
+                                }
+                            }
+                        }
                     }
                 }
-                metaImage {
-                    childImageSharp {
-                        gatsbyImageData
-                    }
-                }
-                description
-                modified
-                jsonLdType
             }
-            body
+            metaImage {
+                gatsbyImageData
+            }
+            image {
+                gatsbyImageData(placeholder: BLURRED)
+            }
+            updatedAt
         }
     }
 `

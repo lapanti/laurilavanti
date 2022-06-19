@@ -47,16 +47,14 @@ const LayoutComponent = ({
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const imageToUse = (heroImage || metaImage) as
         | {
-              childImageSharp: {
-                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
-              }
+              gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
           }
         | undefined
     const image = imageToUse
         ? {
-              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
-              height: `${imageToUse?.childImageSharp.gatsbyImageData.height}`,
-              width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
+              src: imageToUse.gatsbyImageData.images.fallback.src,
+              height: `${imageToUse?.gatsbyImageData.height}`,
+              width: `${imageToUse?.gatsbyImageData.width}`,
           }
         : undefined
     return (
