@@ -1,16 +1,21 @@
+import type { Block, Inline } from '@contentful/rich-text-types'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
+import type { ReactNode } from 'react'
 import type { JsonLdType } from '../types/jsonld'
 
-// @ts-expect-error untyped library
-import { MDXProvider } from '@mdx-js/react'
+import { BLOCKS } from '@contentful/rich-text-types'
 import { graphql } from 'gatsby'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import tw from 'twin.macro'
 
-import ExternalLink from './ExternalLink'
+import ContactInfo from './ContactInfo'
+import ExcerptList from './ExcerptList'
 import H2 from './H2'
+import HomeTitle from './HomeTitle'
+import HR from './HR'
+import Image from './Image'
 import Layout from './Layout'
 import Paragraph from './Paragraph'
 
@@ -18,10 +23,31 @@ const PositionedP = tw(Paragraph)`
     col-start-3
 `
 
-const components = {
-    p: PositionedP,
-    h2: H2,
-    a: ExternalLink,
+const options = {
+    renderNode: {
+        [BLOCKS.PARAGRAPH]: (_, children: ReactNode) => <PositionedP>{children}</PositionedP>,
+        [BLOCKS.HEADING_2]: (_, children: ReactNode) => <H2>{children}</H2>,
+        [BLOCKS.HR]: () => <HR />,
+        [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
+            console.log('node', node)
+            switch (node.data.target.__typename) {
+                case 'ContentfulHomeTitle':
+                    return <HomeTitle />
+                case 'ContentfulExcerptList':
+                    return <ExcerptList limit={node.data.target.limit} />
+                case 'ContentfulImageWithCaption':
+                    return (
+                        <Image
+                            imageData={node.data.target.image}
+                            alt={node.data.target.altText}
+                            caption={node.data.target.caption}
+                        />
+                    )
+                case 'ContentfulContactInfo':
+                    return <ContactInfo />
+            }
+        },
+    },
 }
 
 interface Props {
@@ -48,20 +74,18 @@ const Page = ({
     },
     pageContext: { slug },
 }: Props): JSX.Element => (
-    <MDXProvider components={components}>
-        <Layout
-            title={hideTitle ? undefined : title}
-            hiddenTitle={hideTitle ? title : undefined}
-            pathname={`/${slug}`}
-            heroImage={image}
-            metaImage={metaImage}
-            description={description || ''}
-            type={jsonLdType}
-            modified={updatedAt}
-        >
-            {renderRichText(body)}
-        </Layout>
-    </MDXProvider>
+    <Layout
+        title={hideTitle ? undefined : title}
+        hiddenTitle={hideTitle ? title : undefined}
+        pathname={`/${slug}`}
+        heroImage={image}
+        metaImage={metaImage}
+        description={description || ''}
+        type={jsonLdType}
+        modified={updatedAt}
+    >
+        {renderRichText(body, options)}
+    </Layout>
 )
 
 export const query = graphql`
@@ -75,34 +99,16 @@ export const query = graphql`
                 raw
                 references {
                     ... on ContentfulContactInfo {
+                        __typename
                         contentful_id
-                        sys {
-                            contentType {
-                                sys {
-                                    id
-                                }
-                            }
-                        }
                     }
                     ... on ContentfulHomeTitle {
+                        __typename
                         contentful_id
-                        sys {
-                            contentType {
-                                sys {
-                                    id
-                                }
-                            }
-                        }
                     }
                     ... on ContentfulImageWithCaption {
+                        __typename
                         contentful_id
-                        sys {
-                            contentType {
-                                sys {
-                                    id
-                                }
-                            }
-                        }
                         altText
                         image {
                             gatsbyImageData
@@ -110,15 +116,9 @@ export const query = graphql`
                         caption
                     }
                     ... on ContentfulExcerptList {
+                        __typename
                         contentful_id
                         limit
-                        sys {
-                            contentType {
-                                sys {
-                                    id
-                                }
-                            }
-                        }
                     }
                 }
             }

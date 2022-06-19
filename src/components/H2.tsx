@@ -1,13 +1,18 @@
+import type { ReactNode } from 'react'
+
 import React from 'react'
 import tw from 'twin.macro'
 
 interface Props {
     className?: string
-    children: string
+    children: ReactNode
 }
 
 const H2Component = ({ className, children }: Props): JSX.Element => (
-    <h2 className={className} id={children.toLowerCase().replace(/\s/gi, '-').replace(/ä/gi, 'a').replace(/ö/gi, 'o')}>
+    <h2
+        className={className}
+        id={children?.toString().toLowerCase().replace(/\s/gi, '-').replace(/ä/gi, 'a').replace(/ö/gi, 'o')}
+    >
         {children}
     </h2>
 )
