@@ -1,5 +1,7 @@
 import type { GatsbyConfig } from 'gatsby'
 
+import './env'
+
 const config: GatsbyConfig = {
     siteMetadata: {
         siteUrl: 'https://laurilavanti.fi',
@@ -25,8 +27,18 @@ const config: GatsbyConfig = {
     },
     trailingSlash: 'never',
     plugins: [
+        {
+            resolve: `gatsby-source-contentful`,
+            options: {
+                spaceId: process.env.CONTENTFUL_SPACE_ID,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+                localeFilter: (locale: { code: string }) => locale.code === 'fi',
+                useNameForId: false,
+                enableTags: true,
+                downloadLocal: true,
+            },
+        },
         'gatsby-plugin-emotion',
-        'gatsby-plugin-gatsby-cloud',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
