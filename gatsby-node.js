@@ -16,27 +16,25 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createRedirect } = actions
     const { errors, data } = await graphql(`
         {
-            redirects: allMdx(filter: { frontmatter: { redirect_from: { ne: null } } }) {
+            redirects: allContentfulPost(filter: { oldSlugs: { ne: null } }) {
                 nodes {
                     slug
-                    frontmatter {
-                        redirect_from
-                    }
+                    oldSlugs
                 }
             }
-            pages: allMdx(filter: { frontmatter: { tags: { eq: null } } }) {
-                nodes {
-                    slug
-                }
-            }
-            posts: allMdx(filter: { frontmatter: { tags: { ne: null } } }) {
+            pages: allContentfulPage {
                 nodes {
                     slug
                 }
             }
-            tagsGroup: allMdx {
-                group(field: frontmatter___tags) {
-                    fieldValue
+            posts: allContentfulPost {
+                nodes {
+                    slug
+                }
+            }
+            tagsGroup: allContentfulTag {
+                nodes {
+                    contentful_id
                 }
             }
         }
@@ -45,10 +43,10 @@ exports.createPages = async ({ graphql, actions }) => {
         console.log(errors)
     } else {
         data.redirects.nodes.forEach((post) =>
-            post.frontmatter.redirect_from.forEach((from) =>
+            post.oldSlugs.forEach((from) =>
                 createRedirect({
-                    fromPath: from,
-                    toPath: post.slug,
+                    fromPath: `/${from}`,
+                    toPath: `blogi/${post.slug}`,
                     isPermanent: true,
                     redirectInBrowser: true,
                 })
@@ -60,7 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     data.pages.nodes.forEach(({ slug }) => {
         actions.createPage({
-            path: slug === '' ? '/' : slug,
+            path: slug === 'index' ? '/' : slug,
             component: require.resolve('./src/components/Page.tsx'),
             context: { slug },
         })
@@ -74,11 +72,11 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    data.tagsGroup.group.forEach(({ fieldValue }) => {
+    data.tagsGroup.nodes.forEach(({ contentful_id }) => {
         actions.createPage({
-            path: `/blogi/${fieldValue}`,
+            path: `/kategoria/${contentful_id}`,
             component: require.resolve('./src/components/Tag.tsx'),
-            context: { tag: fieldValue },
+            context: { tag: contentful_id },
         })
     })
 }
