@@ -42,7 +42,6 @@ const Post = ({
             updatedAt,
             publishedOld,
             published,
-
             excerpt,
         },
         site: {

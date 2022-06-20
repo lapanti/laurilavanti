@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import ExternalLink from './ExternalLink'
+import ExternalLink from '../ExternalLink'
 
 const Item = tw.li` flex flex-row items-center`
 

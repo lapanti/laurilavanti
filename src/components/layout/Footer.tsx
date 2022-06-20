@@ -1,12 +1,6 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-//import H2 from '../H2'
-
-/*const StyledH2 = tw(H2)`
-    mt-4
-`*/
-
 const List = tw.ul`
     flex flex-row items-center justify-center
 `
@@ -37,15 +31,6 @@ interface Props {
 
 const FooterComponent = ({ className }: Props): JSX.Element => (
     <footer className={className}>
-        {/*
-            <a
-                href="https://vaalit.vihreat.fi/api/share/5209?redirect_to=https%3A%2F%2Fwww.vihreat.fi%2Fehdokkaat%2F%3Fkieli%3Dfi%26vaali%3Daluevaalit-2022%26alue%3Dlnsi-uusimaa%26ehdokas%3Dlavanti-lauri-5209"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <StyledH2>Lahjoita!</StyledH2>
-            </a>
-            */}
         <List>
             <Item>
                 <a

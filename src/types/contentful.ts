@@ -2,7 +2,19 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
 import type { JsonLdType } from './jsonld'
 
-export type RichBody = RenderRichTextData<ContentfulRichTextGatsbyReference>
+interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
+    slug: string
+}
+
+interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
+    caption: string
+    altText: string
+    image: ImageDataLike
+}
+
+type RichReferences = RichTextPostReference | RichTextImageReference
+
+export type RichBody = RenderRichTextData<RichReferences>
 
 export interface ContentfulPage {
     description: string | null

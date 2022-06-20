@@ -20,9 +20,7 @@ interface SiteMetadata {
 }
 
 interface ImageSeoData {
-    childImageSharp: {
-        gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
-    }
+    gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
 }
 
 describe('<SEO />', () => {
@@ -104,7 +102,7 @@ describe('<SEO />', () => {
             },
             height,
             width,
-        } = (mainImage as ImageSeoData).childImageSharp.gatsbyImageData
+        } = (mainImage as unknown as ImageSeoData).gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
         render(<SEO description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
 
@@ -128,7 +126,7 @@ describe('<SEO />', () => {
             },
             height,
             width,
-        } = (mainImage as ImageSeoData).childImageSharp.gatsbyImageData
+        } = (mainImage as unknown as ImageSeoData).gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
 
         render(

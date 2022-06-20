@@ -11,7 +11,9 @@ describe('<Tag />', () => {
         const { container } = render(<Tag pageContext={{ tag }} />)
 
         expect(screen.getAllByRole('article')).toHaveLength(
-            excerptList.filter((excerpt) => excerpt.frontmatter.tags.includes(tag)).length + 1
+            excerptList.filter((excerpt) =>
+                excerpt.metadata.tags.map(({ contentful_id }) => contentful_id).includes(tag)
+            ).length + 1
         )
 
         expect(screen.getByRole('heading', { name: tag.replace(/^\w/, (c) => c.toUpperCase()) })).toBeInTheDocument()
