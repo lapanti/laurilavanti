@@ -11,10 +11,9 @@ describe('<PostMeta />', () => {
     it('should render', () => {
         const { container } = render(<PostMeta tags={tags} date={date} />)
 
-        expect(screen.getByText('alle minuutti')).toBeInTheDocument()
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/blogi/${tag}`)
+            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -25,7 +24,7 @@ describe('<PostMeta />', () => {
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/blogi/${tag}`)
+            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}`)
         )
 
         expect(container.firstChild).toMatchSnapshot()

@@ -16,7 +16,7 @@ module.exports = {
     ),
     StaticQuery: jest.fn(),
     useStaticQuery: jest.fn(() => ({
-        allMdx: {
+        allContentfulPost: {
             nodes: excerptList,
         },
         site: {

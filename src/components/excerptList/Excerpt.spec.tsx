@@ -11,7 +11,7 @@ describe('<Excerpt />', () => {
         const excerpt =
             'Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.'
         const tags = ['aluevaalit', 'soteuudistus', 'kirkkonummi']
-        const slug = 'blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi'
+        const slug = 'sote-on-hyvinvointiyhteiskunnan-kulmakivi'
 
         const { container } = render(
             <Excerpt title={title} date={date} excerpt={excerpt} tags={tags} slug={slug} image={mainImage} />
@@ -24,15 +24,14 @@ describe('<Excerpt />', () => {
         expect(screen.getByRole('heading', { name: title })).toHaveAttribute('itemProp', 'headline')
 
         const mainLink = screen.getByRole('link', { name: new RegExp(title, 'i') })
-        expect(mainLink).toHaveAttribute('href', `/${slug}`)
+        expect(mainLink).toHaveAttribute('href', `/blogi/${slug}`)
         expect(mainLink).toHaveAttribute('rel', 'permalink')
 
         tags.forEach((tag) => {
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/blogi/${tag}`)
+            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}`)
         })
 
         expect(screen.getByText(date)).toBeInTheDocument()
-        expect(screen.getByText('noin 1 minuutti')).toBeInTheDocument()
         expect(screen.getByText(excerpt)).toHaveAttribute('itemProp', 'description')
 
         expect(container.firstChild).toMatchSnapshot()

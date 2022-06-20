@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 
-import Link from './Link'
+import Link from './externalLink/Link'
 
 interface Props {
     className?: string

@@ -4,8 +4,6 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import tw from 'twin.macro'
 
-import ExternalLink from './ExternalLink'
-
 const Img = tw(GatsbyImage)`
      w-full h-auto flex
 `
@@ -16,8 +14,7 @@ const Caption = tw.figcaption`
 
 export interface ImageProps {
     alt: string
-    caption?: string
-    link?: string
+    caption: string
 }
 
 interface Props extends ImageProps {
@@ -25,12 +22,12 @@ interface Props extends ImageProps {
     imageData: ImageDataLike
 }
 
-const ImageComponent = ({ className, imageData, alt, caption, link }: Props): JSX.Element | null => {
+const ImageComponent = ({ className, imageData, alt, caption }: Props): JSX.Element | null => {
     const image = getImage(imageData)
     return !image ? null : (
         <figure className={className} aria-label={caption}>
             <Img image={image} alt={alt} />
-            {caption && <Caption>{link ? <ExternalLink href={link}>{caption}</ExternalLink> : caption}</Caption>}
+            <Caption>{caption}</Caption>
         </figure>
     )
 }

@@ -17,9 +17,7 @@ describe('<ExcerptList />', () => {
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(excerptList.length)
-        articles.forEach((article, i) =>
-            expect(article).toHaveAttribute('aria-label', excerptList[i].frontmatter.title)
-        )
+        articles.forEach((article, i) => expect(article).toHaveAttribute('aria-label', excerptList[i].title))
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -29,9 +27,7 @@ describe('<ExcerptList />', () => {
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(limit)
-        articles.forEach((article, i) =>
-            expect(article).toHaveAttribute('aria-label', excerptList[i].frontmatter.title)
-        )
+        articles.forEach((article, i) => expect(article).toHaveAttribute('aria-label', excerptList[i].title))
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -42,23 +38,21 @@ describe('<ExcerptList />', () => {
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(limit)
-        orderedExcerpts.forEach(({ frontmatter: { title } }, i) =>
-            expect(articles[i]).toHaveAttribute('aria-label', title)
-        )
+        orderedExcerpts.forEach(({ title }, i) => expect(articles[i]).toHaveAttribute('aria-label', title))
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should only render those with given tag', () => {
         const tag = 'varhaiskasvatus'
-        const filteredExcerpts = excerptList.filter(({ frontmatter: { tags } }) => tags.includes(tag))
+        const filteredExcerpts = excerptList.filter(({ metadata: { tags } }) =>
+            tags.map(({ contentful_id }) => contentful_id).includes(tag)
+        )
         const { container } = render(<ExcerptList tag={tag} />)
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(filteredExcerpts.length)
-        filteredExcerpts.forEach(({ frontmatter: { title } }, i) =>
-            expect(articles[i]).toHaveAttribute('aria-label', title)
-        )
+        filteredExcerpts.forEach(({ title }, i) => expect(articles[i]).toHaveAttribute('aria-label', title))
 
         expect(container.firstChild).toMatchSnapshot()
     })
