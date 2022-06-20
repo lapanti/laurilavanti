@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useMemo } from 'react'
@@ -13,24 +13,11 @@ interface Props {
     tag?: string
     currentSlug?: string
 }
-interface ContentfulPost {
-    title: string
-    createdAt: string
-    publishDate?: string | null
-    excerpt: string
-    metadata: {
-        tags: {
-            contentful_id: string
-        }[]
-    }
-    headerImage: ImageDataLike
-    slug: string
-}
 
 const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug }: Props): JSX.Element => {
     const data = useStaticQuery<{
         allContentfulPost: {
-            nodes: ContentfulPost[]
+            nodes: ContentfulPostExcerpt[]
         }
     }>(graphql`
         {
@@ -59,7 +46,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
         if (relatedTags?.length) {
             return all
                 .filter((curr) => !currentSlug || currentSlug !== curr.slug)
-                .reduce<[ContentfulPost, number][]>(
+                .reduce<[ContentfulPostExcerpt, number][]>(
                     (acc, curr) => [
                         ...acc,
                         [
@@ -67,7 +54,10 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                             // 1 point per matching tag
                             relatedTags.reduce<number>(
                                 (pointsAcc, pointsCurr) =>
-                                    pointsAcc + (curr.metadata.tags.includes({ contentful_id: pointsCurr }) ? 1 : 0),
+                                    pointsAcc +
+                                    (curr.metadata.tags.map(({ contentful_id }) => contentful_id).includes(pointsCurr)
+                                        ? 1
+                                        : 0),
                                 0
                             ),
                         ],
@@ -88,7 +78,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                 .map((postWithPoints) => postWithPoints[0])
         }
         if (tag) {
-            return all.filter((post) => post.metadata.tags.includes({ contentful_id: tag }))
+            return all.filter((post) => post.metadata.tags.map(({ contentful_id }) => contentful_id).includes(tag))
         }
         return all
     }, [data.allContentfulPost.nodes, relatedTags, currentSlug, tag])

@@ -1,20 +1,22 @@
 import type { Block, Inline } from '@contentful/rich-text-types'
 import type { ImageDataLike } from 'gatsby-plugin-image'
-import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
 import type { ReactNode } from 'react'
+import type { RichBody } from '../types/contentful'
 import type { SEOProps } from './layout/SEO'
 
-import { BLOCKS } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 
 import ContactInfo from './ContactInfo'
 import ExcerptList from './ExcerptList'
+import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import HomeTitle from './HomeTitle'
 import HR from './HR'
 import Image from './Image'
+import InternalLink from './InternalLink'
 import Footer from './layout/Footer'
 import Header from './layout/Header'
 import HeroImage from './layout/HeroImage'
@@ -62,6 +64,16 @@ const options = {
                     return <ContactInfo />
             }
         },
+        [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
+            <ExternalLink href={node.data.uri}>{children}</ExternalLink>
+        ),
+        [INLINES.ENTRY_HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
+            console.log('node', node)
+            switch (node.data.target.__typename) {
+                case 'ContentfulPost':
+                    return <InternalLink to={`/blogi/${node.data.target.slug}`}>{children}</InternalLink>
+            }
+        },
     },
 }
 
@@ -72,7 +84,8 @@ interface Props extends Omit<SEOProps, 'title' | 'image'> {
     heroImage?: ImageDataLike
     metaImage?: ImageDataLike
     image?: { src: string; height: string; width: string }
-    body?: RenderRichTextData<ContentfulRichTextGatsbyReference>
+    body?: RichBody
+    preBody?: ReactNode
 }
 
 const LayoutComponent = ({
@@ -87,6 +100,7 @@ const LayoutComponent = ({
     type,
     published,
     modified,
+    preBody,
     body,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
@@ -122,6 +136,7 @@ const LayoutComponent = ({
                     <Article>
                         {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
                         {title && <H1 itemProp="headline">{title}</H1>}
+                        {preBody}
                         {body && renderRichText(body, options)}
                         {children}
                     </Article>

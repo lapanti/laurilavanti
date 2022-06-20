@@ -1,6 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
-import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
-import type { JsonLdType } from '../types/jsonld'
+import type { ContentfulPage } from '../types/contentful'
 
 import { graphql } from 'gatsby'
 import React from 'react'
@@ -9,16 +7,7 @@ import Layout from './Layout'
 
 interface Props {
     data: {
-        contentfulPage: {
-            description: string | null
-            hideTitle: boolean
-            jsonLdType: JsonLdType
-            title: string
-            body: RenderRichTextData<ContentfulRichTextGatsbyReference>
-            metaImage?: ImageDataLike
-            image?: ImageDataLike
-            updatedAt: string
-        }
+        contentfulPage: ContentfulPage
     }
     pageContext: {
         slug: string

@@ -1,31 +1,16 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { ContentfulPost } from '../types/contentful'
 
-// @ts-expect-error untyped library
-import { MDXProvider } from '@mdx-js/react'
 import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import React from 'react'
+import React, { useMemo } from 'react'
 import tw from 'twin.macro'
 
 import { BLOGPOSTING } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
-import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import HR from './HR'
 import Layout from './Layout'
-import Paragraph from './Paragraph'
 import SocialShare from './post/SocialShare'
 import PostMeta from './PostMeta'
-
-const PositionedP = tw(Paragraph)`
-    col-start-3
-`
-
-const components = {
-    p: PositionedP,
-    h2: H2,
-    a: ExternalLink,
-}
 
 const PositionedMeta = tw(PostMeta)`
     col-start-3
@@ -33,23 +18,7 @@ const PositionedMeta = tw(PostMeta)`
 
 interface Props {
     data: {
-        mdx: {
-            frontmatter: {
-                title: string
-                tags: string[]
-                date: string
-                image: ImageDataLike
-                description: string
-                published: string
-                modified: string | null
-            }
-            fields: {
-                readingTime: {
-                    time: number
-                }
-            }
-            body: string
-        }
+        contentfulPost: ContentfulPost
         site: {
             siteMetadata: {
                 siteUrl: string
@@ -63,61 +32,84 @@ interface Props {
 
 const Post = ({
     data: {
-        mdx: {
-            frontmatter: { title, tags, date, image: imageData, description, published, modified },
-            fields: {
-                readingTime: { time },
-            },
+        contentfulPost: {
+            createdAt,
+            publishDate,
             body,
+            headerImage,
+            metadata,
+            title,
+            updatedAt,
+            publishedOld,
+            published,
+
+            excerpt,
         },
         site: {
             siteMetadata: { siteUrl },
         },
     },
     pageContext: { slug },
-}: Props): JSX.Element => (
-    <MDXProvider components={components}>
+}: Props): JSX.Element => {
+    const tags = useMemo(() => metadata.tags.map(({ contentful_id }) => contentful_id), [metadata.tags])
+
+    return (
         <Layout
             title={title}
-            pathname={`/${slug}`}
-            heroImage={imageData}
-            description={description}
+            pathname={`/blogi/${slug}`}
+            heroImage={headerImage}
+            description={excerpt}
             type={BLOGPOSTING}
-            published={published}
-            modified={modified || published}
+            published={publishedOld || published}
+            modified={updatedAt || publishedOld || published}
+            body={body}
+            preBody={<PositionedMeta date={publishDate || createdAt} tags={tags} />}
         >
-            <PositionedMeta readingTime={time} date={date} tags={tags} />
-            <MDXRenderer>{body}</MDXRenderer>
             <SocialShare title={title} siteUrl={siteUrl} />
             <H2>Muita kirjoituksia</H2>
             <HR />
             <ExcerptList currentSlug={slug} limit={3} relatedTags={tags} />
         </Layout>
-    </MDXProvider>
-)
+    )
+}
 
 export const query = graphql`
     query ($slug: String!) {
-        mdx(slug: { eq: $slug }) {
-            frontmatter {
-                title
-                tags
-                date(formatString: "L", locale: "fi")
-                image {
-                    childImageSharp {
-                        gatsbyImageData(placeholder: BLURRED)
+        contentfulPost(slug: { eq: $slug }) {
+            createdAt(formatString: "L", locale: "fi")
+            publishDate(formatString: "L", locale: "fi")
+            body {
+                raw
+                references {
+                    ... on ContentfulImageWithCaption {
+                        __typename
+                        contentful_id
+                        caption
+                        altText
+                        image {
+                            gatsbyImageData
+                        }
+                    }
+                    ... on ContentfulPost {
+                        __typename
+                        contentful_id
+                        slug
                     }
                 }
-                description
-                published: date
-                modified
             }
-            fields {
-                readingTime {
-                    time
+            headerImage {
+                gatsbyImageData
+            }
+            metadata {
+                tags {
+                    contentful_id
                 }
             }
-            body
+            title
+            updatedAt
+            publishedOld: publishDate
+            published: createdAt
+            excerpt
         }
         site {
             siteMetadata {
