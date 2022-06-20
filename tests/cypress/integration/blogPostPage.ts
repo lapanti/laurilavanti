@@ -11,17 +11,15 @@ describe('Blog Post Page', () => {
 
         cy.findByText(/20.12.2021/i).should('be.visible')
 
-        cy.findAllByText(/noin 1 minuutti/i).should('be.visible')
-
         cy.findAllByRole('link', { name: /#aluevaalit/i })
             .first()
-            .should('have.attr', 'href', '/blogi/aluevaalit')
+            .should('have.attr', 'href', '/kategoria/aluevaalit')
         cy.findAllByRole('link', { name: /#soteuudistus/i })
             .first()
-            .should('have.attr', 'href', '/blogi/soteuudistus')
+            .should('have.attr', 'href', '/kategoria/soteuudistus')
         cy.findAllByRole('link', { name: /#kirkkonummi/i })
             .first()
-            .should('have.attr', 'href', '/blogi/kirkkonummi')
+            .should('have.attr', 'href', '/kategoria/kirkkonummi')
 
         cy.findByRole('link', { name: /Jaa Facebookissa/i }).should(
             'have.attr',
