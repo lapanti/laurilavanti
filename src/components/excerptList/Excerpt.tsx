@@ -23,28 +23,18 @@ interface Props extends PostMetaProps {
     excerpt: string
     image: ImageDataLike
     slug: string
-    readingTime?: number
 }
 
-const ExcerptComponent = ({
-    className,
-    title,
-    date,
-    excerpt,
-    tags,
-    image: imageData,
-    readingTime,
-    slug,
-}: Props): JSX.Element => {
+const ExcerptComponent = ({ className, title, date, excerpt, tags, image: imageData, slug }: Props): JSX.Element => {
     const image = getImage(imageData)
 
     return (
         <article className={className} aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
-            <InternalLink to={`/${slug}`} rel="permalink">
+            <InternalLink to={`/blogi/${slug}`} rel="permalink">
                 {image && <Image image={image} alt={title} />}
                 <H2 itemProp="headline">{title}</H2>
             </InternalLink>
-            <PostMeta date={date} readingTime={readingTime} tags={tags} />
+            <PostMeta date={date} tags={tags} />
             <Paragraph itemProp="description">{excerpt}</Paragraph>
         </article>
     )

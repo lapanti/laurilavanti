@@ -3,8 +3,6 @@ import tw from 'twin.macro'
 
 import InternalLink from './InternalLink'
 
-const MINUTE_IN_MS = 60000 // 60 seconds * 1000 ms
-
 const MetaContainer = tw.div`
     flex flex-row mb-2
 `
@@ -27,7 +25,6 @@ const TagItem = tw.li`
 
 export interface PostMetaProps {
     date: string
-    readingTime?: number
     tags: string[]
 }
 
@@ -35,16 +32,7 @@ interface Props extends PostMetaProps {
     className?: string
 }
 
-const PostMetaComponent = ({ className, date, readingTime, tags }: Props): JSX.Element => {
-    const readTimeString = useMemo(() => {
-        if (!readingTime) return ''
-
-        const readTimeMinutes = Math.floor(readingTime / MINUTE_IN_MS)
-        return `${readingTime % MINUTE_IN_MS === 0 ? '' : readTimeMinutes < 1 ? 'alle' : 'noin '}${
-            readTimeMinutes < 1 ? '' : readTimeMinutes
-        } minuutti${readTimeMinutes <= 1 ? '' : 'a'}`
-    }, [readingTime])
-
+const PostMetaComponent = ({ className, date, tags }: Props): JSX.Element => {
     const dateAsDateTime = useMemo(() => {
         const [day, month, year] = date.split('.')
         return `${year}-${month}-${day}`
@@ -59,19 +47,11 @@ const PostMetaComponent = ({ className, date, readingTime, tags }: Props): JSX.E
                     </Svg>
                     <time dateTime={dateAsDateTime}>{date}</time>
                 </Meta>
-                {readTimeString && (
-                    <Meta>
-                        <Svg>
-                            <use xlinkHref="#icon-clock" />
-                        </Svg>
-                        <span>{readTimeString}</span>
-                    </Meta>
-                )}
             </MetaContainer>
             <TagList>
                 {tags.map((tag) => (
                     <TagItem key={tag}>
-                        <InternalLink to={`/blogi/${tag}`}>#{tag}</InternalLink>
+                        <InternalLink to={`/kategoria/${tag}`}>#{tag}</InternalLink>
                     </TagItem>
                 ))}
             </TagList>

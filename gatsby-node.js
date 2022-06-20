@@ -1,16 +1,4 @@
 const chalk = require('chalk')
-const readingTime = require('reading-time')
-
-exports.onCreateNode = ({ node, actions }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `Mdx`) {
-        createNodeField({
-            node,
-            name: `readingTime`,
-            value: readingTime(node.rawBody),
-        })
-    }
-}
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createRedirect } = actions
@@ -66,7 +54,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     data.posts.nodes.forEach(({ slug }) => {
         actions.createPage({
-            path: slug,
+            path: `/blogi/${slug}`,
             component: require.resolve('./src/components/Post.tsx'),
             context: { slug },
         })
