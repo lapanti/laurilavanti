@@ -4,7 +4,7 @@ import { shouldHaveFooter, shouldHaveMainNavigation } from '../helpers/generic'
 
 describe('Tag Page', () => {
     it('should render', () => {
-        cy.visit('/blogi/kirkkonummi')
+        cy.visit('/kategoria/kirkkonummi')
         shouldHaveMainNavigation(cy)
 
         cy.findByRole('heading', { name: 'Kirkkonummi' }).should('be.visible')
