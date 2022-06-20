@@ -27,7 +27,7 @@ const TagItem = tw.li`
 
 export interface PostMetaProps {
     date: string
-    readingTime: number
+    readingTime?: number
     tags: string[]
 }
 
@@ -37,11 +37,14 @@ interface Props extends PostMetaProps {
 
 const PostMetaComponent = ({ className, date, readingTime, tags }: Props): JSX.Element => {
     const readTimeString = useMemo(() => {
+        if (!readingTime) return ''
+
         const readTimeMinutes = Math.floor(readingTime / MINUTE_IN_MS)
         return `${readingTime % MINUTE_IN_MS === 0 ? '' : readTimeMinutes < 1 ? 'alle' : 'noin '}${
             readTimeMinutes < 1 ? '' : readTimeMinutes
         } minuutti${readTimeMinutes <= 1 ? '' : 'a'}`
     }, [readingTime])
+
     const dateAsDateTime = useMemo(() => {
         const [day, month, year] = date.split('.')
         return `${year}-${month}-${day}`
@@ -56,12 +59,14 @@ const PostMetaComponent = ({ className, date, readingTime, tags }: Props): JSX.E
                     </Svg>
                     <time dateTime={dateAsDateTime}>{date}</time>
                 </Meta>
-                <Meta>
-                    <Svg>
-                        <use xlinkHref="#icon-clock" />
-                    </Svg>
-                    <span>{readTimeString}</span>
-                </Meta>
+                {readTimeString && (
+                    <Meta>
+                        <Svg>
+                            <use xlinkHref="#icon-clock" />
+                        </Svg>
+                        <span>{readTimeString}</span>
+                    </Meta>
+                )}
             </MetaContainer>
             <TagList>
                 {tags.map((tag) => (

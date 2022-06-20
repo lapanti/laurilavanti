@@ -1,14 +1,26 @@
+import type { Block, Inline } from '@contentful/rich-text-types'
 import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
+import type { ReactNode } from 'react'
 import type { SEOProps } from './layout/SEO'
 
+import { BLOCKS } from '@contentful/rich-text-types'
+import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import tw, { GlobalStyles } from 'twin.macro'
 
+import ContactInfo from './ContactInfo'
+import ExcerptList from './ExcerptList'
+import H2 from './H2'
+import HomeTitle from './HomeTitle'
+import HR from './HR'
+import Image from './Image'
 import Footer from './layout/Footer'
 import Header from './layout/Header'
 import HeroImage from './layout/HeroImage'
 import SEO from './layout/SEO'
 import Svgs from './layout/Svgs'
+import Paragraph from './Paragraph'
 
 const Main = tw.main`
     grid-in-main
@@ -22,6 +34,37 @@ const H1 = tw.h1`
     col-start-3 text-3xl font-bold mb-1 mt-4.5
 `
 
+const PositionedP = tw(Paragraph)`
+    col-start-3
+`
+
+const options = {
+    renderNode: {
+        [BLOCKS.PARAGRAPH]: (_, children: ReactNode) => <PositionedP>{children}</PositionedP>,
+        [BLOCKS.HEADING_2]: (_, children: ReactNode) => <H2>{children}</H2>,
+        [BLOCKS.HR]: () => <HR />,
+        [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
+            console.log('node', node)
+            switch (node.data.target.__typename) {
+                case 'ContentfulHomeTitle':
+                    return <HomeTitle />
+                case 'ContentfulExcerptList':
+                    return <ExcerptList limit={node.data.target.limit} />
+                case 'ContentfulImageWithCaption':
+                    return (
+                        <Image
+                            imageData={node.data.target.image}
+                            alt={node.data.target.altText}
+                            caption={node.data.target.caption}
+                        />
+                    )
+                case 'ContentfulContactInfo':
+                    return <ContactInfo />
+            }
+        },
+    },
+}
+
 interface Props extends Omit<SEOProps, 'title' | 'image'> {
     className?: string
     title?: string
@@ -29,6 +72,7 @@ interface Props extends Omit<SEOProps, 'title' | 'image'> {
     heroImage?: ImageDataLike
     metaImage?: ImageDataLike
     image?: { src: string; height: string; width: string }
+    body?: RenderRichTextData<ContentfulRichTextGatsbyReference>
 }
 
 const LayoutComponent = ({
@@ -43,6 +87,7 @@ const LayoutComponent = ({
     type,
     published,
     modified,
+    body,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const imageToUse = (heroImage || metaImage) as
@@ -77,6 +122,7 @@ const LayoutComponent = ({
                     <Article>
                         {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
                         {title && <H1 itemProp="headline">{title}</H1>}
+                        {body && renderRichText(body, options)}
                         {children}
                     </Article>
                 </Main>

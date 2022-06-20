@@ -23,6 +23,7 @@ interface Props extends PostMetaProps {
     excerpt: string
     image: ImageDataLike
     slug: string
+    readingTime?: number
 }
 
 const ExcerptComponent = ({
