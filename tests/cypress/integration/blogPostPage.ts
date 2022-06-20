@@ -4,7 +4,7 @@ import { shouldHaveFooter, shouldHaveMainNavigation } from '../helpers/generic'
 
 describe('Blog Post Page', () => {
     it('should render', () => {
-        cy.visit('/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi')
+        cy.visit('/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi')
         shouldHaveMainNavigation(cy)
 
         cy.findByRole('heading', { name: /Sote on hyvinvointiyhteiskunnan kulmakivi/i }).should('be.visible')
