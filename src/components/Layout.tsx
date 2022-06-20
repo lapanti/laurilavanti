@@ -42,11 +42,10 @@ const PositionedP = tw(Paragraph)`
 
 const options = {
     renderNode: {
-        [BLOCKS.PARAGRAPH]: (_, children: ReactNode) => <PositionedP>{children}</PositionedP>,
-        [BLOCKS.HEADING_2]: (_, children: ReactNode) => <H2>{children}</H2>,
+        [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
+        [BLOCKS.HEADING_2]: (_: Block | Inline, children: ReactNode) => <H2>{children}</H2>,
         [BLOCKS.HR]: () => <HR />,
         [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
-            console.log('node', node)
             switch (node.data.target.__typename) {
                 case 'ContentfulHomeTitle':
                     return <HomeTitle />
@@ -68,7 +67,6 @@ const options = {
             <ExternalLink href={node.data.uri}>{children}</ExternalLink>
         ),
         [INLINES.ENTRY_HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
-            console.log('node', node)
             switch (node.data.target.__typename) {
                 case 'ContentfulPost':
                     return <InternalLink to={`/blogi/${node.data.target.slug}`}>{children}</InternalLink>

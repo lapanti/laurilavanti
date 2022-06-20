@@ -3,8 +3,6 @@ import React from 'react'
 
 import PostMeta from './PostMeta'
 
-const MINUTE_IN_MS = 1000 * 60
-
 describe('<PostMeta />', () => {
     const tags = ['kirkkonummi', 'aluevaalit', 'sote', 'kuntavaalit']
     const date = '16.3.2022'
