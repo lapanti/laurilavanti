@@ -42,43 +42,6 @@ const config: GatsbyConfig = {
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
-        /*{
-            resolve: 'gatsby-plugin-sitemap',
-            options: {
-                query: `
-                {
-                    allMdx {
-                      nodes {
-                        frontmatter {
-                          date
-                          modified
-                        }
-                        slug
-                      }
-                    }
-                    allSitePage {
-                      nodes {
-                        path
-                      }
-                    }
-                  }                  
-                `,
-                resolveSiteUrl: () => 'https://laurilavanti.fi',
-                resolvePages: ({
-                    allMdx: { nodes: allMdxNodes },
-                    allSitePage: {
-                        nodes: { allPageNodes },
-                    },
-                }) => {
-                    const mdxMap = allMdxNodes.reduce((acc, curr) => ({
-                        ...acc,
-                        [`/${curr.slug}`]: curr.frontmatter.modified || curr.frontmatter.date,
-                    }))
-                    return allPageNodes.map((page) => ({ url: page.path, lastmod: mdxMap[page.path] }))
-                },
-                serialize: ({ url, lastmod }) => ({ url, lastmod }),
-            },
-        },*/
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -102,38 +65,6 @@ const config: GatsbyConfig = {
             },
         },
         'gatsby-transformer-sharp',
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'images',
-                path: './src/images/',
-            },
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'pages',
-                path: './src/pages/',
-            },
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'pages',
-                path: './src/mdxPages/',
-            },
-        },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'blog',
-                path: './src/posts/',
-            },
-        },
-        {
-            resolve: 'gatsby-plugin-mdx',
-            options: {},
-        },
     ],
 }
 
