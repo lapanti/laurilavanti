@@ -54,7 +54,7 @@ const options = {
                 case 'ContentfulImageWithCaption':
                     return (
                         <Image
-                            imageData={node.data.target.image}
+                            imageData={node.data.target.image.localFile}
                             alt={node.data.target.altText}
                             caption={node.data.target.caption}
                         />
@@ -104,14 +104,16 @@ const LayoutComponent = ({
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const imageToUse = (heroImage || metaImage) as
         | {
-              gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
+              childImageSharp: {
+                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
+              }
           }
         | undefined
     const image = imageToUse
         ? {
-              src: imageToUse.gatsbyImageData.images.fallback.src,
-              height: `${imageToUse?.gatsbyImageData.height}`,
-              width: `${imageToUse?.gatsbyImageData.width}`,
+              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
+              height: `${imageToUse?.childImageSharp.gatsbyImageData.height}`,
+              width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
           }
         : undefined
     return (

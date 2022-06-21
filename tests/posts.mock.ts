@@ -9,30 +9,34 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
-                        sizes: '(min-width: 4032px) 4032px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
+                                sizes: '(min-width: 4032px) 4032px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
+                            sizes: '(min-width: 4032px) 4032px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
-                    sizes: '(min-width: 4032px) 4032px, 100vw',
+                    layout: 'constrained',
+                    width: 4032,
+                    height: 1728,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k=',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 4032,
-            height: 1728,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k=',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -63,30 +67,34 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
-                        sizes: '(min-width: 4032px) 4032px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
+                                sizes: '(min-width: 4032px) 4032px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
+                            sizes: '(min-width: 4032px) 4032px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
-                    sizes: '(min-width: 4032px) 4032px, 100vw',
+                    layout: 'constrained',
+                    width: 4032,
+                    height: 1728,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k=',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 4032,
-            height: 1728,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k=',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -117,30 +125,34 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
-                        sizes: '(min-width: 4032px) 4032px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
+                                sizes: '(min-width: 4032px) 4032px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
+                            sizes: '(min-width: 4032px) 4032px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/qrduG3vyJn1jzNdMISfJU/63cea405f75edca0c1890d65bc372cf5/sosiaali-ja-terveyskeskus.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
-                    sizes: '(min-width: 4032px) 4032px, 100vw',
+                    layout: 'constrained',
+                    width: 4032,
+                    height: 1728,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEE/8QAJBAAAgECBgEFAAAAAAAAAAAAAQIDABIEESExMjPBdIGhseH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQAAf/EAB4RAAICAgIDAAAAAAAAAAAAAAABAgMEMREyISJB/9oADAMBAAIRAxEAPwATJC1xRlaK3YqR806eU3piq8b415AWFI4zFBZGgkYW68tM/FSycXstgrEnwBGMUoYPNEDnsoP5XPQJq42tzFTy7iAH7JPUN9JT5bH19WTHd/t5NYFn/9k=',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 4032,
-            height: 1728,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAwEE/8QAJBAAAgECBgEFAAAAAAAAAAAAAQIDABIEESExMjPBdIGhseH/xAAYAQADAQEAAAAAAAAAAAAAAAACAwQAAf/EAB4RAAICAgIDAAAAAAAAAAAAAAABAgMEMREyISJB/9oADAMBAAIRAxEAPwATJC1xRlaK3YqR806eU3piq8b415AWFI4zFBZGgkYW68tM/FSycXstgrEnwBGMUoYPNEDnsoP5XPQJq42tzFTy7iAH7JPUN9JT5bH19WTHd/t5NYFn/9k=',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -171,30 +183,34 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=816&h=350&q=50&fm=webp 816w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=1632&h=700&q=50&fm=webp 1632w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=3264&h=1399&q=50&fm=webp 3264w',
-                        sizes: '(min-width: 3264px) 3264px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=816&h=350&q=50&fm=webp 816w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=1632&h=700&q=50&fm=webp 1632w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=3264&h=1399&q=50&fm=webp 3264w',
+                                sizes: '(min-width: 3264px) 3264px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=3264&h=1399&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=816&h=350&fl=progressive&q=50&fm=jpg 816w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=1632&h=700&fl=progressive&q=50&fm=jpg 1632w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=3264&h=1399&fl=progressive&q=50&fm=jpg 3264w',
+                            sizes: '(min-width: 3264px) 3264px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=3264&h=1399&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=816&h=350&fl=progressive&q=50&fm=jpg 816w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=1632&h=700&fl=progressive&q=50&fm=jpg 1632w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/16g8SHm3OAgir1bD93gsrt/7cc1ba58581d8399d0ba452d35e167f2/lauri-lavanti-perusturvajaosto.jpg?w=3264&h=1399&fl=progressive&q=50&fm=jpg 3264w',
-                    sizes: '(min-width: 3264px) 3264px, 100vw',
+                    layout: 'constrained',
+                    width: 3264,
+                    height: 1399,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAwECBP/EACMQAAEDAwIHAAAAAAAAAAAAAAIAAQMEERIiMSEzNHGCsbL/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAHREAAgICAwEAAAAAAAAAAAAAAAECEQMxEiEyM//aAAwDAQACEQMRAD8AOemoXac3PI3fUe+D27pJbKQkuNiyxjPHiTRmFuGlvdllYOmiAKSGMYgPEAawtZnsye2TaRkpuRU+fyhLYuL5sSl6YUWLi8l33WKH/9k=',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 3264,
-            height: 1399,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAwECBP/EACMQAAEDAwIHAAAAAAAAAAAAAAIAAQMEERIiMSEzNHGCsbL/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/8QAHREAAgICAwEAAAAAAAAAAAAAAAECEQMxEiEyM//aAAwDAQACEQMRAD8AOemoXac3PI3fUe+D27pJbKQkuNiyxjPHiTRmFuGlvdllYOmiAKSGMYgPEAawtZnsye2TaRkpuRU+fyhLYuL5sSl6YUWLi8l33WKH/9k=',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -222,30 +238,34 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=671&h=377&q=50&fm=webp 671w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=1342&h=755&q=50&fm=webp 1342w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=2683&h=1509&q=50&fm=webp 2683w',
-                        sizes: '(min-width: 2683px) 2683px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=671&h=377&q=50&fm=webp 671w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=1342&h=755&q=50&fm=webp 1342w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=2683&h=1509&q=50&fm=webp 2683w',
+                                sizes: '(min-width: 2683px) 2683px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=2683&h=1509&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=671&h=377&fl=progressive&q=50&fm=jpg 671w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=1342&h=755&fl=progressive&q=50&fm=jpg 1342w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=2683&h=1509&fl=progressive&q=50&fm=jpg 2683w',
+                            sizes: '(min-width: 2683px) 2683px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=2683&h=1509&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=671&h=377&fl=progressive&q=50&fm=jpg 671w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=1342&h=755&fl=progressive&q=50&fm=jpg 1342w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/7j3kCI9UbuoXfXKoGdhLnp/b8569a0f8335bdf5827b174db091569f/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg?w=2683&h=1509&fl=progressive&q=50&fm=jpg 2683w',
-                    sizes: '(min-width: 2683px) 2683px, 100vw',
+                    layout: 'constrained',
+                    width: 2683,
+                    height: 1509,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQQFA//EACMQAAEDBAIBBQAAAAAAAAAAAAECAxEABAUSITFRE0GRksH/xAAYAQEBAQEBAAAAAAAAAAAAAAABAwIEBf/EAB4RAAICAQUBAAAAAAAAAAAAAAABAhEDBBMUMUNR/9oADAMBAAIRAxEAPwCZhsjd2FsGH7JxxG07cykfFMM6iqRGeNSdjrueHqI0tyJkans+D1WnqJVaBYI0FvM3JTJxwJ8hyPyjlBsL6JoWsrSkqMGvOSLWYHnMtT7QB9VVfyNLoolRHANc4H//2Q==',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 2683,
-            height: 1509,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQQFA//EACMQAAEDBAIBBQAAAAAAAAAAAAECAxEABAUSITFRE0GRksH/xAAYAQEBAQEBAAAAAAAAAAAAAAABAwIEBf/EAB4RAAICAQUBAAAAAAAAAAAAAAABAhEDBBMUMUNR/9oADAMBAAIRAxEAPwCZhsjd2FsGH7JxxG07cykfFMM6iqRGeNSdjrueHqI0tyJkans+D1WnqJVaBYI0FvM3JTJxwJ8hyPyjlBsL6JoWsrSkqMGvOSLWYHnMtT7QB9VVfyNLoolRHANc4H//2Q==',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -282,30 +302,34 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
         ],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=756&h=358&q=50&fm=webp 756w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=1512&h=716&q=50&fm=webp 1512w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=3024&h=1432&q=50&fm=webp 3024w',
-                        sizes: '(min-width: 3024px) 3024px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=756&h=358&q=50&fm=webp 756w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=1512&h=716&q=50&fm=webp 1512w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=3024&h=1432&q=50&fm=webp 3024w',
+                                sizes: '(min-width: 3024px) 3024px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=3024&h=1432&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=756&h=358&fl=progressive&q=50&fm=jpg 756w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=1512&h=716&fl=progressive&q=50&fm=jpg 1512w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=3024&h=1432&fl=progressive&q=50&fm=jpg 3024w',
+                            sizes: '(min-width: 3024px) 3024px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=3024&h=1432&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=756&h=358&fl=progressive&q=50&fm=jpg 756w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=1512&h=716&fl=progressive&q=50&fm=jpg 1512w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/46akHTASPFPtMtfdXs8D6v/75f6ee1d7398da08e63785b534dcaed5/Muumimaailmassa.jpg?w=3024&h=1432&fl=progressive&q=50&fm=jpg 3024w',
-                    sizes: '(min-width: 3024px) 3024px, 100vw',
+                    layout: 'constrained',
+                    width: 3024,
+                    height: 1432,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAEAsMDgwKEA4NDhIREBMYKBoYFhYYMSMlHSg6Mz08OTM4N0BIXE5ARFdFNzhQbVFXX2JnaGc+TXF5cGR4XGVnY//bAEMBERISGBUYLxoaL2NCOEJjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY//AABEIAAkAFAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAEAAEG/8QAJxAAAQMCAgsBAAAAAAAAAAAAAQACAwQRBTESMjQ1QUJhcnOBscH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8AO+z26rCRlpcESldiT43RQOe5hFjGDldKGXsfVsu8ajyFFIRwrE+anN+ql1sGyw9v6VKTj//Z',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 3024,
-            height: 1432,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAIQAABtbnRyUkdCIFhZWiAAAAAAAAAAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAAHRyWFlaAAABZAAAABRnWFlaAAABeAAAABRiWFlaAAABjAAAABRyVFJDAAABoAAAAChnVFJDAAABoAAAAChiVFJDAAABoAAAACh3dHB0AAAByAAAABRjcHJ0AAAB3AAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAFgAAAAcAHMAUgBHAEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFhZWiAAAAAAAABvogAAOPUAAAOQWFlaIAAAAAAAAGKZAAC3hQAAGNpYWVogAAAAAAAAJKAAAA+EAAC2z3BhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABYWVogAAAAAAAA9tYAAQAAAADTLW1sdWMAAAAAAAAAAQAAAAxlblVTAAAAIAAAABwARwBvAG8AZwBsAGUAIABJAG4AYwAuACAAMgAwADEANv/bAEMAEAsMDgwKEA4NDhIREBMYKBoYFhYYMSMlHSg6Mz08OTM4N0BIXE5ARFdFNzhQbVFXX2JnaGc+TXF5cGR4XGVnY//bAEMBERISGBUYLxoaL2NCOEJjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY//AABEIAAkAFAMBIgACEQEDEQH/xAAXAAEBAQEAAAAAAAAAAAAAAAAEAAEG/8QAJxAAAQMCAgsBAAAAAAAAAAAAAQACAwQRBTESMjQ1QUJhcnOBscH/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8AO+z26rCRlpcESldiT43RQOe5hFjGDldKGXsfVsu8ajyFFIRwrE+anN+ql1sGyw9v6VKTj//Z',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -337,58 +361,66 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
                 caption: 'Gesterbyn koulukeskuksen parakkirakennuksia',
                 altText: 'Gesterbyn koulukeskuksen parakkirakennuksia',
                 image: {
-                    gatsbyImageData: {
-                        images: {
-                            sources: [
-                                {
-                                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=455&h=195&q=50&fm=webp 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=910&h=390&q=50&fm=webp 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=1820&h=780&q=50&fm=webp 1820w',
-                                    sizes: '(min-width: 1820px) 1820px, 100vw',
-                                    type: 'image/webp',
+                    localFile: {
+                        childImageSharp: {
+                            gatsbyImageData: {
+                                images: {
+                                    sources: [
+                                        {
+                                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=455&h=195&q=50&fm=webp 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=910&h=390&q=50&fm=webp 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=1820&h=780&q=50&fm=webp 1820w',
+                                            sizes: '(min-width: 1820px) 1820px, 100vw',
+                                            type: 'image/webp',
+                                        },
+                                    ],
+                                    fallback: {
+                                        src: 'https://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg',
+                                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=455&h=195&fl=progressive&q=50&fm=jpg 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=910&h=390&fl=progressive&q=50&fm=jpg 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg 1820w',
+                                        sizes: '(min-width: 1820px) 1820px, 100vw',
+                                    },
                                 },
-                            ],
-                            fallback: {
-                                src: 'https://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg',
-                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=455&h=195&fl=progressive&q=50&fm=jpg 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=910&h=390&fl=progressive&q=50&fm=jpg 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5twD2bw03nDep0j2qI4fJ4/846007152f2be0de8c5850ea7cd550c8/gesterbyn-parakit-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg 1820w',
-                                sizes: '(min-width: 1820px) 1820px, 100vw',
+                                layout: 'constrained',
+                                width: 1820,
+                                height: 780,
+                                placeholder: {
+                                    fallback:
+                                        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQMG/8QAIhAAAQMDAwUAAAAAAAAAAAAAAQIDEQAEBRIxkRQhQVGh/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABcRAQEBAQAAAAAAAAAAAAAAAAABERL/2gAMAwEAAhEDEQA/AE0ZtGknpbiRsCkd+DWu5WeaOvb+4v21Sl1CIMN6Snn3VpyhE47KPy42l3SSYh4J+UbDjSeK5uib21QSRtQn/9k=',
+                                },
                             },
                         },
-                        layout: 'constrained',
-                        width: 1820,
-                        height: 780,
-                        placeholder: {
-                            fallback:
-                                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQMG/8QAIhAAAQMDAwUAAAAAAAAAAAAAAQIDEQAEBRIxkRQhQVGh/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQACA//EABcRAQEBAQAAAAAAAAAAAAAAAAABERL/2gAMAwEAAhEDEQA/AE0ZtGknpbiRsCkd+DWu5WeaOvb+4v21Sl1CIMN6Snn3VpyhE47KPy42l3SSYh4J+UbDjSeK5uib21QSRtQn/9k=',
-                        },
-                    },
-                } as unknown as ImageDataLike,
+                    } as unknown as ImageDataLike,
+                },
             },
         ],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=455&h=195&q=50&fm=webp 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=910&h=390&q=50&fm=webp 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=1820&h=780&q=50&fm=webp 1820w',
-                        sizes: '(min-width: 1820px) 1820px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=455&h=195&q=50&fm=webp 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=910&h=390&q=50&fm=webp 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=1820&h=780&q=50&fm=webp 1820w',
+                                sizes: '(min-width: 1820px) 1820px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=455&h=195&fl=progressive&q=50&fm=jpg 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=910&h=390&fl=progressive&q=50&fm=jpg 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg 1820w',
+                            sizes: '(min-width: 1820px) 1820px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=455&h=195&fl=progressive&q=50&fm=jpg 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=910&h=390&fl=progressive&q=50&fm=jpg 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/114A93jFbHVwdAv2ohXDHm/df793360b7a914840593921606705640/winellska-skolan-w.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg 1820w',
-                    sizes: '(min-width: 1820px) 1820px, 100vw',
+                    layout: 'constrained',
+                    width: 1820,
+                    height: 780,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIFA//EACEQAAEDBAIDAQAAAAAAAAAAAAECAxEABAUxEkEyUYHB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQIA/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAESIQL/2gAMAwEAAhEDEQA/AJuKvLrHuTaOkpVtEKIMH1HcUdir1VVlMvccjzUyDoBo9/K2qMw6MpdNyHg8tRO0NmNAflVui+YLPgKhbYVmKaC//9k=',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 1820,
-            height: 780,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAQIFA//EACEQAAEDBAIDAQAAAAAAAAAAAAECAxEABAUxEkEyUYHB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQIA/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAESIQL/2gAMAwEAAhEDEQA/AJuKvLrHuTaOkpVtEKIMH1HcUdir1VVlMvccjzUyDoBo9/K2qMw6MpdNyHg8tRO0NmNAflVui+YLPgKhbYVmKaC//9k=',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -420,58 +452,66 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
                 caption: 'Keskustan alueen päiväkodit',
                 altText: 'Keskustan alueen päiväkodit kartalla',
                 image: {
-                    gatsbyImageData: {
-                        images: {
-                            sources: [
-                                {
-                                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=455&h=195&q=50&fm=webp 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=910&h=390&q=50&fm=webp 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=1820&h=780&q=50&fm=webp 1820w',
-                                    sizes: '(min-width: 1820px) 1820px, 100vw',
-                                    type: 'image/webp',
+                    localFile: {
+                        childImageSharp: {
+                            gatsbyImageData: {
+                                images: {
+                                    sources: [
+                                        {
+                                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=455&h=195&q=50&fm=webp 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=910&h=390&q=50&fm=webp 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=1820&h=780&q=50&fm=webp 1820w',
+                                            sizes: '(min-width: 1820px) 1820px, 100vw',
+                                            type: 'image/webp',
+                                        },
+                                    ],
+                                    fallback: {
+                                        src: 'https://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg',
+                                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=455&h=195&fl=progressive&q=50&fm=jpg 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=910&h=390&fl=progressive&q=50&fm=jpg 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg 1820w',
+                                        sizes: '(min-width: 1820px) 1820px, 100vw',
+                                    },
                                 },
-                            ],
-                            fallback: {
-                                src: 'https://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg',
-                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=455&h=195&fl=progressive&q=50&fm=jpg 455w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=910&h=390&fl=progressive&q=50&fm=jpg 910w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/1RnD7VAYU3KbSBpZ3WrqBu/21d375cb9ef9923d0186fdd1cc0b8ec0/keskustan-alueen-paivakodit.jpg?w=1820&h=780&fl=progressive&q=50&fm=jpg 1820w',
-                                sizes: '(min-width: 1820px) 1820px, 100vw',
+                                layout: 'constrained',
+                                width: 1820,
+                                height: 780,
+                                placeholder: {
+                                    fallback:
+                                        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEG/8QAFxABAQEBAAAAAAAAAAAAAAAAAAEhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3QCom9AqKQFB/9k=',
+                                },
                             },
                         },
-                        layout: 'constrained',
-                        width: 1820,
-                        height: 780,
-                        placeholder: {
-                            fallback:
-                                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAEG/8QAFxABAQEBAAAAAAAAAAAAAAAAAAEhQf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A3QCom9AqKQFB/9k=',
-                        },
-                    },
-                } as unknown as ImageDataLike,
+                    } as unknown as ImageDataLike,
+                },
             },
         ],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=1008&h=567&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=2015&h=1134&q=50&fm=webp 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=4000&h=2250&q=50&fm=webp 4000w',
-                        sizes: '(min-width: 4030px) 4030px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=1008&h=567&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=2015&h=1134&q=50&fm=webp 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=4000&h=2250&q=50&fm=webp 4000w',
+                                sizes: '(min-width: 4030px) 4030px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=2015&h=1134&fl=progressive&q=50&fm=jpg 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=4000&h=2250&fl=progressive&q=50&fm=jpg 4000w',
+                            sizes: '(min-width: 4030px) 4030px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=2015&h=1134&fl=progressive&q=50&fm=jpg 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6wf9X4U8dK18LBXVI0XDqr/25dd4230150855ee4555611533233524/laajakallion-paivakoti.jpg?w=4000&h=2250&fl=progressive&q=50&fm=jpg 4000w',
-                    sizes: '(min-width: 4030px) 4030px, 100vw',
+                    layout: 'constrained',
+                    width: 4030,
+                    height: 2267,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQGAgP/xAAhEAACAgICAQUAAAAAAAAAAAABAwIRAAQSIaEFMUFRsf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAbEQACAwADAAAAAAAAAAAAAAAAAwERUQISMf/aAAwDAQACEQMRAD8A07WaIEBLIy9+RVY8HF1rLZcQl0uwCQqq8nKZZuNnOe7Y1zIEiQ+Qax4ay/QpXwwmmIbCVDSfIffHDF9j1XeU+cIbEuIPVgH9wx7bofVeH//Z',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 4030,
-            height: 2267,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQGAgP/xAAhEAACAgICAQUAAAAAAAAAAAABAwIRAAQSIaEFMUFRsf/EABQBAQAAAAAAAAAAAAAAAAAAAAP/xAAbEQACAwADAAAAAAAAAAAAAAAAAwERUQISMf/aAAwDAQACEQMRAD8A07WaIEBLIy9+RVY8HF1rLZcQl0uwCQqq8nKZZuNnOe7Y1zIEiQ+Qax4ay/QpXwwmmIbCVDSfIffHDF9j1XeU+cIbEuIPVgH9wx7bofVeH//Z',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -502,30 +542,34 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=899&h=506&q=50&fm=webp 899w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=1798&h=1012&q=50&fm=webp 1798w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=3595&h=2023&q=50&fm=webp 3595w',
-                        sizes: '(min-width: 3595px) 3595px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=899&h=506&q=50&fm=webp 899w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=1798&h=1012&q=50&fm=webp 1798w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=3595&h=2023&q=50&fm=webp 3595w',
+                                sizes: '(min-width: 3595px) 3595px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=3595&h=2023&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=899&h=506&fl=progressive&q=50&fm=jpg 899w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=1798&h=1012&fl=progressive&q=50&fm=jpg 1798w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=3595&h=2023&fl=progressive&q=50&fm=jpg 3595w',
+                            sizes: '(min-width: 3595px) 3595px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=3595&h=2023&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=899&h=506&fl=progressive&q=50&fm=jpg 899w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=1798&h=1012&fl=progressive&q=50&fm=jpg 1798w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/76CiIeUoFE5oG5EPco6nKd/0a37619a5e821765878ccade68f93689/lastenkirjallisuutta.jpg?w=3595&h=2023&fl=progressive&q=50&fm=jpg 3595w',
-                    sizes: '(min-width: 3595px) 3595px, 100vw',
+                    layout: 'constrained',
+                    width: 3595,
+                    height: 2023,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGA//EACIQAAIBAwQCAwAAAAAAAAAAAAECAwAEEQUSITETQSIzkf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAGhEBAQACAwAAAAAAAAAAAAAAAQACEQMSE//aAAwDAQACEQMRAD8ATarGlxdy/EAsy5YDns+/yi60u3MOI8pL4VkBznIHBNM7e0glLPJHuYnOcn1W8saBkO0ZRCq8dA9ipnIAjVyw2GqL8Dg4J5oqke0g3fUtFD0l0v/Z',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 3595,
-            height: 2023,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAUGA//EACIQAAIBAwQCAwAAAAAAAAAAAAECAwAEEQUSITETQSIzkf/EABUBAQEAAAAAAAAAAAAAAAAAAAID/8QAGhEBAQACAwAAAAAAAAAAAAAAAQACEQMSE//aAAwDAQACEQMRAD8ATarGlxdy/EAsy5YDns+/yi60u3MOI8pL4VkBznIHBNM7e0glLPJHuYnOcn1W8saBkO0ZRCq8dA9ipnIAjVyw2GqL8Dg4J5oqke0g3fUtFD0l0v/Z',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -557,58 +601,66 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
                 caption: 'Kirkkonummen avoimet varhaiskasvatuksen työpaikat',
                 altText: 'Kirkkonummen avoimet varhaiskasvatuksen työpaikat',
                 image: {
-                    gatsbyImageData: {
-                        images: {
-                            sources: [
-                                {
-                                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=452&h=194&q=50&fm=webp 452w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=903&h=387&q=50&fm=webp 903w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=1806&h=774&q=50&fm=webp 1806w',
-                                    sizes: '(min-width: 1806px) 1806px, 100vw',
-                                    type: 'image/webp',
+                    localFile: {
+                        childImageSharp: {
+                            gatsbyImageData: {
+                                images: {
+                                    sources: [
+                                        {
+                                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=452&h=194&q=50&fm=webp 452w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=903&h=387&q=50&fm=webp 903w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=1806&h=774&q=50&fm=webp 1806w',
+                                            sizes: '(min-width: 1806px) 1806px, 100vw',
+                                            type: 'image/webp',
+                                        },
+                                    ],
+                                    fallback: {
+                                        src: 'https://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=1806&h=774&fl=progressive&q=50&fm=jpg',
+                                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=452&h=194&fl=progressive&q=50&fm=jpg 452w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=903&h=387&fl=progressive&q=50&fm=jpg 903w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=1806&h=774&fl=progressive&q=50&fm=jpg 1806w',
+                                        sizes: '(min-width: 1806px) 1806px, 100vw',
+                                    },
                                 },
-                            ],
-                            fallback: {
-                                src: 'https://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=1806&h=774&fl=progressive&q=50&fm=jpg',
-                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=452&h=194&fl=progressive&q=50&fm=jpg 452w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=903&h=387&fl=progressive&q=50&fm=jpg 903w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/33Ib85acEuJCUILLuT8HBy/f9eaa4b83244db3ece0949cd5f2725a8/kunnan-avoimet-paikat-xxxl.jpg?w=1806&h=774&fl=progressive&q=50&fm=jpg 1806w',
-                                sizes: '(min-width: 1806px) 1806px, 100vw',
+                                layout: 'constrained',
+                                width: 1806,
+                                height: 774,
+                                placeholder: {
+                                    fallback:
+                                        'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQCBv/EACAQAAIBBAEFAAAAAAAAAAAAAAABBAMREkEFFUSSk9H/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//EABkRAAIDAQAAAAAAAAAAAAAAAAABAxJRE//aAAwDAQACEQMRAD8A7VcfDXa0fWvhlQI+bvGj46tSVyAFaPSTmZf02FuJR8ECBAUejuz/2Q==',
+                                },
                             },
                         },
-                        layout: 'constrained',
-                        width: 1806,
-                        height: 774,
-                        placeholder: {
-                            fallback:
-                                'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQCBv/EACAQAAIBBAEFAAAAAAAAAAAAAAABBAMREkEFFUSSk9H/xAAVAQEBAAAAAAAAAAAAAAAAAAAAA//EABkRAAIDAQAAAAAAAAAAAAAAAAABAxJRE//aAAwDAQACEQMRAD8A7VcfDXa0fWvhlQI+bvGj46tSVyAFaPSTmZf02FuJR8ECBAUejuz/2Q==',
-                        },
-                    },
-                } as unknown as ImageDataLike,
+                    } as unknown as ImageDataLike,
+                },
             },
         ],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=1008&h=567&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=2015&h=1134&q=50&fm=webp 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=4000&h=2250&q=50&fm=webp 4000w',
-                        sizes: '(min-width: 4030px) 4030px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=1008&h=567&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=2015&h=1134&q=50&fm=webp 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=4000&h=2250&q=50&fm=webp 4000w',
+                                sizes: '(min-width: 4030px) 4030px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=2015&h=1134&fl=progressive&q=50&fm=jpg 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=4000&h=2250&fl=progressive&q=50&fm=jpg 4000w',
+                            sizes: '(min-width: 4030px) 4030px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=2015&h=1134&fl=progressive&q=50&fm=jpg 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/Ly9sVBSzeRbGLtU89KXVk/3947e0b3c3b9f8d7759a06144d3dce87/duploleikkeja.jpg?w=4000&h=2250&fl=progressive&q=50&fm=jpg 4000w',
-                    sizes: '(min-width: 4030px) 4030px, 100vw',
+                    layout: 'constrained',
+                    width: 4030,
+                    height: 2267,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EACEQAAIBBQABBQAAAAAAAAAAAAECAwAEERIhMRNRYXGh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/8QAGREBAQADAQAAAAAAAAAAAAAAAQACERIT/9oADAMBAAIRAxEAPwAhj9N95c5QZ77fGa1D3InR4ZFa0K42kYAE/Xn8pKMaSTRqWCJcOirscAYHKSldlKqGIXY8pDUua16W5tg5BLEjzqeUVEzRV+ljzf/Z',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 4030,
-            height: 2267,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAQFA//EACEQAAIBBQABBQAAAAAAAAAAAAECAwAEERIhMRNRYXGh/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/8QAGREBAQADAQAAAAAAAAAAAAAAAQACERIT/9oADAMBAAIRAxEAPwAhj9N95c5QZ77fGa1D3InR4ZFa0K42kYAE/Xn8pKMaSTRqWCJcOirscAYHKSldlKqGIXY8pDUua16W5tg5BLEjzqeUVEzRV+ljzf/Z',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {
@@ -636,30 +688,34 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
         references: [],
     },
     headerImage: {
-        gatsbyImageData: {
-            images: {
-                sources: [
-                    {
-                        srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=1008&h=567&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=2015&h=1134&q=50&fm=webp 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=4000&h=2250&q=50&fm=webp 4000w',
-                        sizes: '(min-width: 4030px) 4030px, 100vw',
-                        type: 'image/webp',
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    images: {
+                        sources: [
+                            {
+                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=1008&h=567&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=2015&h=1134&q=50&fm=webp 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=4000&h=2250&q=50&fm=webp 4000w',
+                                sizes: '(min-width: 4030px) 4030px, 100vw',
+                                type: 'image/webp',
+                            },
+                        ],
+                        fallback: {
+                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg',
+                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=2015&h=1134&fl=progressive&q=50&fm=jpg 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=4000&h=2250&fl=progressive&q=50&fm=jpg 4000w',
+                            sizes: '(min-width: 4030px) 4030px, 100vw',
+                        },
                     },
-                ],
-                fallback: {
-                    src: 'https://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg',
-                    srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=1008&h=567&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=2015&h=1134&fl=progressive&q=50&fm=jpg 2015w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/6Icujv1bhkF1X6Ngy6Ge1X/0d91fe8e1c8e0b3267454bbcf2516be0/kotihoidossa.jpg?w=4000&h=2250&fl=progressive&q=50&fm=jpg 4000w',
-                    sizes: '(min-width: 4030px) 4030px, 100vw',
+                    layout: 'constrained',
+                    width: 4030,
+                    height: 2267,
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAlEAACAQMDAwUBAAAAAAAAAAABAgMABBESISITMWEFMkFRkdH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAgT/xAAYEQADAQEAAAAAAAAAAAAAAAAAAQIRA//aAAwDAQACEQMRAD8AQ3paW1ujStHFEoDaw2dX9zWZ7bCLcLOWkO4Yp99uOx/aplRXtLgyDWY/Zr5ad8bZrnXUj9ReRGXA2Pmi605wuSkXco4nrgrscRd/NFIjlc6gTnSxAyPiitcpNaG2f//Z',
+                    },
                 },
             },
-            layout: 'constrained',
-            width: 4030,
-            height: 2267,
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAgX/xAAlEAACAQMDAwUBAAAAAAAAAAABAgMABBESISITMWEFMkFRkdH/xAAWAQEBAQAAAAAAAAAAAAAAAAADAgT/xAAYEQADAQEAAAAAAAAAAAAAAAAAAQIRA//aAAwDAQACEQMRAD8AQ3paW1ujStHFEoDaw2dX9zWZ7bCLcLOWkO4Yp99uOx/aplRXtLgyDWY/Zr5ad8bZrnXUj9ReRGXA2Pmi605wuSkXco4nrgrscRd/NFIjlc6gTnSxAyPiitcpNaG2f//Z',
-            },
-        },
-    } as unknown as ImageDataLike,
+        } as unknown as ImageDataLike,
+    },
     metadata: {
         tags: [
             {

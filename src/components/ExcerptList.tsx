@@ -33,7 +33,11 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                         }
                     }
                     headerImage {
-                        gatsbyImageData(placeholder: BLURRED)
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData(placeholder: BLURRED)
+                            }
+                        }
                     }
                     slug
                 }
@@ -93,7 +97,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                         date={node.publishDate || node.createdAt}
                         slug={node.slug}
                         excerpt={node.excerpt}
-                        image={node.headerImage}
+                        image={node.headerImage.localFile}
                         title={node.title}
                         tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
                     />

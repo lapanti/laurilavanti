@@ -9,7 +9,9 @@ interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
 interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
     caption: string
     altText: string
-    image: ImageDataLike
+    image: {
+        localFile: ImageDataLike
+    }
 }
 
 type RichReferences = RichTextPostReference | RichTextImageReference
@@ -36,7 +38,9 @@ interface ContentfulPostCommon {
             contentful_id: string
         }[]
     }
-    headerImage: ImageDataLike
+    headerImage: {
+        localFile: ImageDataLike
+    }
     excerpt: string
 }
 

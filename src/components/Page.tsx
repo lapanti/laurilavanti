@@ -19,8 +19,8 @@ const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         title={data?.contentfulPage?.hideTitle ? undefined : data?.contentfulPage?.title}
         hiddenTitle={data?.contentfulPage?.hideTitle ? data?.contentfulPage?.title : undefined}
         pathname={`/${slug}`}
-        heroImage={data?.contentfulPage?.image}
-        metaImage={data?.contentfulPage?.metaImage}
+        heroImage={data?.contentfulPage?.image?.localFile}
+        metaImage={data?.contentfulPage?.metaImage?.localFile}
         description={data?.contentfulPage?.description || ''}
         type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
@@ -51,7 +51,11 @@ export const query = graphql`
                         contentful_id
                         altText
                         image {
-                            gatsbyImageData
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData
+                                }
+                            }
                         }
                         caption
                     }
@@ -63,10 +67,18 @@ export const query = graphql`
                 }
             }
             metaImage {
-                gatsbyImageData
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                }
             }
             image {
-                gatsbyImageData(placeholder: BLURRED)
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(placeholder: BLURRED)
+                    }
+                }
             }
             updatedAt
         }

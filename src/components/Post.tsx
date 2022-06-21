@@ -56,7 +56,7 @@ const Post = ({
         <Layout
             title={title}
             pathname={`/blogi/${slug}`}
-            heroImage={headerImage}
+            heroImage={headerImage.localFile}
             description={excerpt}
             type={BLOGPOSTING}
             published={publishedOld || published}
@@ -86,7 +86,11 @@ export const query = graphql`
                         caption
                         altText
                         image {
-                            gatsbyImageData
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData
+                                }
+                            }
                         }
                     }
                     ... on ContentfulPost {
@@ -97,7 +101,11 @@ export const query = graphql`
                 }
             }
             headerImage {
-                gatsbyImageData
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData
+                    }
+                }
             }
             metadata {
                 tags {
