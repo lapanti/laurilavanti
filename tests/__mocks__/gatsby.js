@@ -1,5 +1,6 @@
 const React = require('react')
 const { excerptList } = require('../posts.mock')
+const { mainNav } = require('../mainNav.mock')
 
 const gatsby = jest.requireActual('gatsby')
 
@@ -19,6 +20,7 @@ module.exports = {
         allContentfulPost: {
             nodes: excerptList,
         },
+        contentfulMainNav: mainNav,
         site: {
             siteMetadata: {
                 siteUrl: 'https://laurilavanti.fi',

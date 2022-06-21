@@ -1,3 +1,6 @@
+import type { MainNav } from '../../types/contentful'
+
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import tw from 'twin.macro'
 
@@ -35,46 +38,45 @@ const MainLink = tw(NavLink)`
 text-xl flex items-center h-full
 `
 
-const MAIN_NAV = [
-    {
-        title: 'Minusta',
-        url: '/minusta',
-    },
-    {
-        title: 'Blogi',
-        url: '/blogi',
-    },
-    {
-        title: 'Ota yhteyttä',
-        url: '/ota-yhteytta',
-    },
-]
-
 interface Props {
     className?: string
 }
 
-const HeaderComponent = ({ className }: Props): JSX.Element => (
-    <header className={className}>
-        <Nav>
-            <LogoLink to="/" aria-label="Lauri Lavanti">
-                <Svg>
-                    <use xlinkHref="#logo" />
-                </Svg>
-                <Title>Lauri Lavanti</Title>
-            </LogoLink>
-            <List>
-                {MAIN_NAV.map((nav) => (
-                    <Item key={nav.url}>
-                        <MainLink partiallyActive activeStyle={{ textDecoration: 'underline' }} to={nav.url}>
-                            {nav.title}
-                        </MainLink>
-                    </Item>
-                ))}
-            </List>
-        </Nav>
-    </header>
-)
+const HeaderComponent = ({ className }: Props): JSX.Element => {
+    const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
+        {
+            contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
+                links {
+                    contentful_id
+                    title
+                    slug
+                }
+            }
+        }
+    `)
+
+    return (
+        <header className={className}>
+            <Nav>
+                <LogoLink to="/" aria-label="Lauri Lavanti">
+                    <Svg>
+                        <use xlinkHref="#logo" />
+                    </Svg>
+                    <Title>Lauri Lavanti</Title>
+                </LogoLink>
+                <List>
+                    {data.contentfulMainNav.links.map((nav) => (
+                        <Item key={nav.slug}>
+                            <MainLink partiallyActive activeStyle={{ textDecoration: 'underline' }} to={`/${nav.slug}`}>
+                                {nav.title}
+                            </MainLink>
+                        </Item>
+                    ))}
+                </List>
+            </Nav>
+        </header>
+    )
+}
 
 HeaderComponent.displayName = 'Header'
 
