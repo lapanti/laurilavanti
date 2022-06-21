@@ -1,3 +1,6 @@
+import type { FooterNav } from '../../types/contentful'
+
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import tw from 'twin.macro'
 
@@ -29,43 +32,48 @@ interface Props {
     className?: string
 }
 
-const FooterComponent = ({ className }: Props): JSX.Element => (
-    <footer className={className}>
-        <List>
-            <Item>
-                <a
-                    href="https://www.facebook.com/laurilavanti"
-                    title="Facebook"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Facebook>
-                        <use xlinkHref="#icon-facebook" />
-                    </Facebook>
-                </a>
-            </Item>
-            <Item>
-                <a href="https://twitter.com/laurilavanti" target="_blank" title="Twitter" rel="noopener noreferrer">
-                    <Twitter>
-                        <use xlinkHref="#icon-twitter" />
-                    </Twitter>
-                </a>
-            </Item>
-            <Item>
-                <a
-                    href="https://www.linkedin.com/in/lapanti"
-                    target="_blank"
-                    title="LinkedIn"
-                    rel="noopener noreferrer"
-                >
-                    <LinkedIn>
-                        <use xlinkHref="#icon-linkedin" />
-                    </LinkedIn>
-                </a>
-            </Item>
-        </List>
-    </footer>
-)
+const FooterComponent = ({ className }: Props): JSX.Element => {
+    const data = useStaticQuery<{ contentfulFooterNav: FooterNav }>(graphql`
+        {
+            contentfulFooterNav(titleToBeIgnored: { eq: "Footer nav" }) {
+                links {
+                    contentful_id
+                    title
+                    url
+                    icon
+                }
+            }
+        }
+    `)
+
+    return (
+        <footer className={className}>
+            <List>
+                {data.contentfulFooterNav.links.map((link) => (
+                    <Item key={link.title}>
+                        <a href={link.url} title={link.title} target="_blank" rel="noopener noreferrer">
+                            {link.icon === 'facebook' && (
+                                <Facebook>
+                                    <use xlinkHref="#icon-facebook" />
+                                </Facebook>
+                            )}
+                            {link.icon === 'twitter' && (
+                                <Twitter>
+                                    <use xlinkHref="#icon-twitter" />
+                                </Twitter>
+                            )}
+                            {link.icon === 'linkedin' && (
+                                <LinkedIn>
+                                    <use xlinkHref="#icon-linkedin" />
+                                </LinkedIn>
+                            )}
+                        </a>
+                    </Item>
+                ))}
+            </List>
+        </footer>
+    )
+}
 
 FooterComponent.displayName = 'Footer'
 

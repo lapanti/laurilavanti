@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
+import { mainNav } from '../../../tests/mainNav.mock'
 import Header from './Header'
 
 describe('<Header />', () => {
@@ -8,9 +9,10 @@ describe('<Header />', () => {
         const { container } = render(<Header />)
 
         expect(screen.getByRole('link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
-        expect(screen.getByRole('link', { name: /Minusta/i })).toHaveAttribute('href', '/minusta')
-        expect(screen.getByRole('link', { name: /Blogi/i })).toHaveAttribute('href', '/blogi')
-        expect(screen.getByRole('link', { name: /Ota yhteyttä/i })).toHaveAttribute('href', '/ota-yhteytta')
+
+        mainNav.links.forEach((link) =>
+            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}`)
+        )
 
         expect(container.firstChild).toMatchSnapshot()
     })

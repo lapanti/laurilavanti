@@ -66,3 +66,12 @@ export interface MainNav {
         slug: string
     }[]
 }
+
+export interface FooterNav {
+    links: {
+        contentful_id: string
+        title: string
+        url: string
+        icon: 'facebook' | 'twitter' | 'linkedin'
+    }[]
+}
