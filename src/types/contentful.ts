@@ -58,3 +58,11 @@ export interface ContentfulPost extends ContentfulPostCommon {
     publishedOld: string
     published: string
 }
+
+export interface MainNav {
+    links: {
+        contentful_id: string
+        title: string
+        slug: string
+    }[]
+}
