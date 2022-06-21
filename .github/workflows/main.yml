@@ -62,7 +62,6 @@ jobs:
         name: E2E tests
         if: ${{ github.event_name == 'pull_request' }}
         steps:
-            - run: sleep 30
             - uses: actions/checkout@v3
             - uses: bahmutov/npm-install@v1.8.15
             - uses: zentered/cloudflare-preview-url@v1.0.0
