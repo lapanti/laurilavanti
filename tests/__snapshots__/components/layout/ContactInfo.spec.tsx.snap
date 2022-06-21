@@ -18,7 +18,9 @@ exports[`<ContactInfo /> should render 1`] = `
       lauri.lavanti@kirkkonummi.fi
     </span>
   </li>
-  <li>
+  <li
+    class="css-u4p24i"
+  >
     <a
       class="css-mkqfkm"
       href="https://www.facebook.com/laurilavanti"
@@ -37,7 +39,9 @@ exports[`<ContactInfo /> should render 1`] = `
       </span>
     </a>
   </li>
-  <li>
+  <li
+    class="css-u4p24i"
+  >
     <a
       class="css-mkqfkm"
       href="https://twitter.com/laurilavanti"
@@ -51,7 +55,30 @@ exports[`<ContactInfo /> should render 1`] = `
           xlink:href="#icon-twitter"
         />
       </svg>
-      Twitter
+      <span>
+        Twitter
+      </span>
+    </a>
+  </li>
+  <li
+    class="css-u4p24i"
+  >
+    <a
+      class="css-mkqfkm"
+      href="https://www.linkedin.com/in/lapanti"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <svg
+        class="css-f326di"
+      >
+        <use
+          xlink:href="#icon-linkedin"
+        />
+      </svg>
+      <span>
+        LinkedIn
+      </span>
     </a>
   </li>
 </ul>

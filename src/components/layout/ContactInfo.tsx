@@ -1,46 +1,20 @@
+import type { ContactInfoLink as ContactInfoLinkType } from '../../types/contentful'
+
 import React from 'react'
 import tw from 'twin.macro'
 
-import ExternalLink from '../ExternalLink'
-
-const Item = tw.li` flex flex-row items-center`
-
-const Svg = tw.svg` w-4 h-4 mr-2 fill-current`
-
-const RowExternalLink = tw(ExternalLink)` flex flex-row items-center`
-
-const Facebook = tw(Svg)` text-fb`
-
-const Twitter = tw(Svg)` text-twitter`
+import ContactInfoLink from './contactInfo/ContactInfoLink'
 
 interface Props {
     className?: string
+    links: ContactInfoLinkType[]
 }
 
-const ContactInfoComponent = ({ className }: Props) => (
+const ContactInfoComponent = ({ className, links }: Props) => (
     <ul className={className}>
-        <Item>
-            <Svg>
-                <use xlinkHref="#icon-envelope" />
-            </Svg>
-            <span>lauri.lavanti@kirkkonummi.fi</span>
-        </Item>
-        <li>
-            <RowExternalLink href="https://www.facebook.com/laurilavanti">
-                <Facebook>
-                    <use xlinkHref="#icon-facebook" />
-                </Facebook>
-                <span>Facebook</span>
-            </RowExternalLink>
-        </li>
-        <li>
-            <RowExternalLink href="https://twitter.com/laurilavanti">
-                <Twitter>
-                    <use xlinkHref="#icon-twitter" />
-                </Twitter>
-                Twitter
-            </RowExternalLink>
-        </li>
+        {links.map((link) => (
+            <ContactInfoLink link={link} key={link.title} />
+        ))}
     </ul>
 )
 

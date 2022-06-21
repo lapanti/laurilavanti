@@ -14,7 +14,18 @@ interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
     }
 }
 
-type RichReferences = RichTextPostReference | RichTextImageReference
+export interface ContactInfoLink {
+    contentful_id: string
+    title: string
+    url?: string | null
+    icon: 'facebook' | 'twitter' | 'linkedin' | 'envelope'
+}
+
+interface ContactInfoReference extends ContentfulRichTextGatsbyReference {
+    links: ContactInfoLink[]
+}
+
+type RichReferences = RichTextPostReference | RichTextImageReference | ContactInfoReference
 
 export type RichBody = RenderRichTextData<RichReferences>
 
