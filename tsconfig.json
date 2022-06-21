@@ -90,6 +90,11 @@
         "skipLibCheck": true /* Skip type checking all .d.ts files. */
     },
     "exclude": [
-        "tests/cypress/**/*"
+        "cypress.config.ts",
+        "tests/cypress/**/*",
+        "src/**/*.spec.ts",
+        "src/**/*.spec.tsx",
+        "src/**/*.spec.js",
+        "src/**/*.spec.jsx"
     ]
 }
