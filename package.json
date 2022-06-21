@@ -23,7 +23,7 @@
         "test": "jest --config tests/jest.config.js",
         "cypress:open": "cypress open",
         "cy:open": "start-server-and-test develop http://localhost:8000 cypress:open",
-        "cy:run:mobile": "cypress run --config-file cypress-mobile.json",
+        "cy:run:mobile": "CY_MOBILE=true cypress run",
         "cy:run:desktop": "cypress run",
         "cy:run": "npm run cy:run:mobile && npm run cy:run:desktop",
         "test:e2e": "start-server-and-test develop http://localhost:8000 cy:run"
