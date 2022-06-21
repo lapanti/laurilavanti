@@ -12,7 +12,7 @@ const config = defineConfig({
         openMode: 0,
     },
     e2e: {
-        baseUrl: 'http://localhost:8000',
+        baseUrl: process.env.CY_URL || 'http://localhost:8000',
         specPattern: 'tests/cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
         supportFile: 'tests/cypress/support/index.js',
     },
