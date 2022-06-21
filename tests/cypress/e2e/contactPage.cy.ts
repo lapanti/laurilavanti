@@ -1,5 +1,3 @@
-/* eslint-disable jest/expect-expect */
-
 import { goToContactPage, shouldHaveFooter } from '../helpers/generic'
 
 describe('Contact Page', () => {

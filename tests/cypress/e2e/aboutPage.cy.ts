@@ -1,5 +1,3 @@
-/* eslint-disable jest/expect-expect */
-
 import { goToAboutPage, shouldHaveFooter } from '../helpers/generic'
 
 describe('About Page', () => {

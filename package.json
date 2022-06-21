@@ -14,7 +14,10 @@
     "scripts": {
         "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
         "lint:fix": "npm run lint -- --fix",
-        "typecheck": "tsc --noEmit",
+        "typecheck:src": "tsc --noEmit",
+        "typecheck:tests": "tsc --noEmit -p tests/tsconfig.json",
+        "typecheck:cy": "tsc --noEmit -p tests/cypress/tsconfig.json",
+        "typecheck": "npm run typecheck:src && npm run typecheck:tests && npm run typecheck:cy",
         "develop": "gatsby develop",
         "start": "gatsby develop",
         "build": "gatsby build",
