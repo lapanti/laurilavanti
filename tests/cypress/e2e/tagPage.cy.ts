@@ -1,5 +1,3 @@
-/* eslint-disable jest/expect-expect */
-
 import { shouldHaveFooter, shouldHaveMainNavigation } from '../helpers/generic'
 
 describe('Tag Page', () => {

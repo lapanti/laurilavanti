@@ -1,4 +1,4 @@
-export const shouldHaveMainNavigation = (cy: Cypress.cy & EventEmitter) => {
+export const shouldHaveMainNavigation = (cy: Cypress.cy & CyEventEmitter) => {
     cy.findByRole('link', { name: /Lauri Lavanti/i }).should('have.attr', 'href', '/')
 
     cy.findByRole('link', { name: /Minusta/i }).should('have.attr', 'href', '/minusta')
@@ -8,25 +8,25 @@ export const shouldHaveMainNavigation = (cy: Cypress.cy & EventEmitter) => {
     cy.findByRole('link', { name: /Ota yhteyttä/i }).should('have.attr', 'href', '/ota-yhteytta')
 }
 
-export const goToAboutPage = (cy: Cypress.cy & EventEmitter) => {
+export const goToAboutPage = (cy: Cypress.cy & CyEventEmitter) => {
     shouldHaveMainNavigation(cy)
 
     cy.findByRole('link', { name: /Minusta/i }).click()
 }
 
-export const goToBlogPage = (cy: Cypress.cy & EventEmitter) => {
+export const goToBlogPage = (cy: Cypress.cy & CyEventEmitter) => {
     shouldHaveMainNavigation(cy)
 
     cy.findByRole('link', { name: /Blogi/i }).click()
 }
 
-export const goToContactPage = (cy: Cypress.cy & EventEmitter) => {
+export const goToContactPage = (cy: Cypress.cy & CyEventEmitter) => {
     shouldHaveMainNavigation(cy)
 
     cy.findByRole('link', { name: /Ota yhteyttä/i }).click()
 }
 
-export const shouldHaveFooter = (cy: Cypress.cy & EventEmitter) => {
+export const shouldHaveFooter = (cy: Cypress.cy & CyEventEmitter) => {
     cy.get('footer').then(($footer) => {
         cy.wrap($footer.find('a[title="Facebook"]')).should(
             'have.attr',

@@ -2,7 +2,6 @@
     "extends": "../tsconfig.json",
     "compilerOptions": {
         "types": [
-            "jest-styled-components",
             "jest",
             "react-dom",
             "react",
@@ -14,5 +13,6 @@
         "../src/**/*.spec.tsx",
         "../src/**/*.spec.js",
         "../src/**/*.spec.jsx"
-    ]
+    ],
+    "exclude": []
 }
