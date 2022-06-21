@@ -22,11 +22,13 @@
         "clean": "gatsby clean",
         "test": "jest --config tests/jest.config.js",
         "cypress:open": "cypress open",
-        "cy:open": "start-server-and-test develop http://localhost:8000 cypress:open",
+        "cy:open-dev": "start-server-and-test develop http://localhost:8000 cypress:open",
+        "cy:open": "npm run cypress:open",
         "cy:run:mobile": "CY_MOBILE=true cypress run",
         "cy:run:desktop": "cypress run",
         "cy:run": "npm run cy:run:mobile && npm run cy:run:desktop",
-        "test:e2e": "start-server-and-test develop http://localhost:8000 cy:run"
+        "test:e2e-dev": "start-server-and-test develop http://localhost:8000 cy:run",
+        "test:e2e": "npm run cy:run"
     },
     "dependencies": {
         "@fontsource/ubuntu": "4.5.10",
