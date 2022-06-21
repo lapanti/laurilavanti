@@ -10,15 +10,17 @@ interface Props {
 }
 
 const HomeTitleComponent = ({ className }: Props) => (
-    <h1 className={className}>
+    <div className={className}>
         <List>
-            <Term aria-label="Lauri Lavanti">Lauri Lavanti</Term>
+            <Term aria-label="Lauri Lavanti">
+                <h1>Lauri Lavanti</h1>
+            </Term>
             <dd aria-label="Isä">Isä</dd>
             <dd aria-label="Kirkkonummelainen">Kirkkonummelainen</dd>
             <dd aria-label="Ohjelmistokehittäjä">Ohjelmistokehittäjä</dd>
             <dd aria-label="Diplomi-insinööri">Diplomi-insinööri</dd>
         </List>
-    </h1>
+    </div>
 )
 
 HomeTitleComponent.displayName = 'HomeTitle'
