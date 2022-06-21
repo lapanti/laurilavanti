@@ -35,6 +35,7 @@ const config: GatsbyConfig = {
                 localeFilter: (locale: { code: string }) => locale.code === 'fi',
                 useNameForId: false,
                 enableTags: true,
+                downloadLocal: true,
             },
         },
         'gatsby-plugin-emotion',

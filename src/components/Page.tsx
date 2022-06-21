@@ -14,22 +14,17 @@ interface Props {
     }
 }
 
-const Page = ({
-    data: {
-        contentfulPage: { description, hideTitle, jsonLdType, title, body, metaImage, image, updatedAt },
-    },
-    pageContext: { slug },
-}: Props): JSX.Element => (
+const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
-        title={hideTitle ? undefined : title}
-        hiddenTitle={hideTitle ? title : undefined}
+        title={data?.contentfulPage?.hideTitle ? undefined : data?.contentfulPage?.title}
+        hiddenTitle={data?.contentfulPage?.hideTitle ? data?.contentfulPage?.title : undefined}
         pathname={`/${slug}`}
-        heroImage={image}
-        metaImage={metaImage}
-        description={description || ''}
-        type={jsonLdType}
-        modified={updatedAt}
-        body={body}
+        heroImage={data?.contentfulPage?.image}
+        metaImage={data?.contentfulPage?.metaImage}
+        description={data?.contentfulPage?.description || ''}
+        type={data?.contentfulPage?.jsonLdType}
+        modified={data?.contentfulPage?.updatedAt}
+        body={data?.contentfulPage?.body}
     />
 )
 
