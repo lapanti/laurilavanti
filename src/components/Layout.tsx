@@ -60,7 +60,7 @@ const options = {
                         />
                     )
                 case 'ContentfulContactInfo':
-                    return <ContactInfo />
+                    return <ContactInfo links={node.data.target.links} />
             }
         },
         [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (

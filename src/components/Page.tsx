@@ -41,6 +41,12 @@ export const query = graphql`
                     ... on ContentfulContactInfo {
                         __typename
                         contentful_id
+                        links {
+                            contentful_id
+                            title
+                            url
+                            icon
+                        }
                     }
                     ... on ContentfulHomeTitle {
                         __typename
