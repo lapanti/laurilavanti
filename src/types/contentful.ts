@@ -24,8 +24,12 @@ export interface ContentfulPage {
     jsonLdType: JsonLdType
     title: string
     body: RichBody
-    metaImage?: ImageDataLike
-    image?: ImageDataLike
+    metaImage?: {
+        localFile: ImageDataLike
+    }
+    image?: {
+        localFile: ImageDataLike
+    }
     updatedAt: string
 }
 
