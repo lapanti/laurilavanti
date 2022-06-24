@@ -2,6 +2,10 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
 import type { JsonLdType } from './jsonld'
 
+interface ExcerptListReference extends ContentfulRichTextGatsbyReference {
+    limit: number
+}
+
 interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
     slug: string
 }
@@ -25,7 +29,12 @@ interface ContactInfoReference extends ContentfulRichTextGatsbyReference {
     links: ContactInfoLink[]
 }
 
-type RichReferences = RichTextPostReference | RichTextImageReference | ContactInfoReference
+type RichReferences =
+    | ExcerptListReference
+    | RichTextPostReference
+    | RichTextImageReference
+    | ContactInfoReference
+    | ContentfulRichTextGatsbyReference
 
 export type RichBody = RenderRichTextData<RichReferences>
 
