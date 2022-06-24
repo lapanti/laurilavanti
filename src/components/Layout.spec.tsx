@@ -1,6 +1,6 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
-import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { BLOCKS } from '@contentful/rich-text-types'
 import { render, screen, waitFor } from '@testing-library/react'
 import React from 'react'
 
