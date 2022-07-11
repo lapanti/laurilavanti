@@ -16,7 +16,7 @@ const Svg = tw.svg`
 `
 
 const TagList = tw.ul`
-    flex flex-row
+    flex flex-row flex-wrap
 `
 
 const TagItem = tw.li`
