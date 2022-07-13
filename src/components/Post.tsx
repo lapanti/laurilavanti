@@ -55,7 +55,7 @@ const Post = ({
     return (
         <Layout
             title={title}
-            pathname={`/blogi/${slug}`}
+            pathname={`/blogi/${slug}/`}
             heroImage={headerImage.localFile}
             description={excerpt}
             type={BLOGPOSTING}

@@ -30,7 +30,7 @@ const ExcerptComponent = ({ className, title, date, excerpt, tags, image: imageD
 
     return (
         <article className={className} aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
-            <InternalLink to={`/blogi/${slug}`} rel="permalink">
+            <InternalLink to={`/blogi/${slug}/`} rel="permalink">
                 {image && <Image image={image} alt={title} />}
                 <H2 itemProp="headline">{title}</H2>
             </InternalLink>

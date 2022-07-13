@@ -67,7 +67,11 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                 <List>
                     {data.contentfulMainNav.links.map((nav) => (
                         <Item key={nav.slug}>
-                            <MainLink partiallyActive activeStyle={{ textDecoration: 'underline' }} to={`/${nav.slug}`}>
+                            <MainLink
+                                partiallyActive
+                                activeStyle={{ textDecoration: 'underline' }}
+                                to={`/${nav.slug}/`}
+                            >
                                 {nav.title}
                             </MainLink>
                         </Item>

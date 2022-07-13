@@ -51,7 +51,7 @@ const PostMetaComponent = ({ className, date, tags }: Props): JSX.Element => {
             <TagList>
                 {tags.map((tag) => (
                     <TagItem key={tag}>
-                        <InternalLink to={`/kategoria/${tag}`}>#{tag}</InternalLink>
+                        <InternalLink to={`/kategoria/${tag}/`}>#{tag}</InternalLink>
                     </TagItem>
                 ))}
             </TagList>

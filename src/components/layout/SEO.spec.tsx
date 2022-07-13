@@ -117,7 +117,7 @@ describe('<SEO />', () => {
         const description =
             'Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?'
         const blogTitle = 'Mitä jos terveyskeskusta ei olisikaan?'
-        const pathname = '/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan'
+        const pathname = '/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/'
         const type = 'BlogPosting'
         const published = '2021-11-15'
         const modified = '2021-12-15'

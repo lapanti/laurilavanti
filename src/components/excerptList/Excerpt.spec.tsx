@@ -24,11 +24,11 @@ describe('<Excerpt />', () => {
         expect(screen.getByRole('heading', { name: title })).toHaveAttribute('itemProp', 'headline')
 
         const mainLink = screen.getByRole('link', { name: new RegExp(title, 'i') })
-        expect(mainLink).toHaveAttribute('href', `/blogi/${slug}`)
+        expect(mainLink).toHaveAttribute('href', `/blogi/${slug}/`)
         expect(mainLink).toHaveAttribute('rel', 'permalink')
 
         tags.forEach((tag) => {
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}`)
+            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
         })
 
         expect(screen.getByText(date)).toBeInTheDocument()

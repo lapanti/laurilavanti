@@ -18,7 +18,7 @@ const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
         title={data?.contentfulPage?.hideTitle ? undefined : data?.contentfulPage?.title}
         hiddenTitle={data?.contentfulPage?.hideTitle ? data?.contentfulPage?.title : undefined}
-        pathname={`/${slug}`}
+        pathname={`/${slug}/`}
         heroImage={data?.contentfulPage?.image?.localFile}
         metaImage={data?.contentfulPage?.metaImage?.localFile}
         description={data?.contentfulPage?.description || ''}

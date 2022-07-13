@@ -11,13 +11,13 @@ describe('Blog Post Page', () => {
 
         cy.findAllByRole('link', { name: /#aluevaalit/i })
             .first()
-            .should('have.attr', 'href', '/kategoria/aluevaalit')
+            .should('have.attr', 'href', '/kategoria/aluevaalit/')
         cy.findAllByRole('link', { name: /#soteuudistus/i })
             .first()
-            .should('have.attr', 'href', '/kategoria/soteuudistus')
+            .should('have.attr', 'href', '/kategoria/soteuudistus/')
         cy.findAllByRole('link', { name: /#kirkkonummi/i })
             .first()
-            .should('have.attr', 'href', '/kategoria/kirkkonummi')
+            .should('have.attr', 'href', '/kategoria/kirkkonummi/')
 
         cy.findByRole('link', { name: /Jaa Facebookissa/i }).should(
             'have.attr',
