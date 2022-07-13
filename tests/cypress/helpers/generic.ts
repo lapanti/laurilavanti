@@ -1,11 +1,11 @@
 export const shouldHaveMainNavigation = (cy: Cypress.cy & CyEventEmitter) => {
     cy.findByRole('link', { name: /Lauri Lavanti/i }).should('have.attr', 'href', '/')
 
-    cy.findByRole('link', { name: /Minusta/i }).should('have.attr', 'href', '/minusta')
+    cy.findByRole('link', { name: /Minusta/i }).should('have.attr', 'href', '/minusta/')
 
-    cy.findByRole('link', { name: /Blogi/i }).invoke('attr', 'href').should('eq', '/blogi')
+    cy.findByRole('link', { name: /Blogi/i }).invoke('attr', 'href').should('eq', '/blogi/')
 
-    cy.findByRole('link', { name: /Ota yhteyttä/i }).should('have.attr', 'href', '/ota-yhteytta')
+    cy.findByRole('link', { name: /Ota yhteyttä/i }).should('have.attr', 'href', '/ota-yhteytta/')
 }
 
 export const goToAboutPage = (cy: Cypress.cy & CyEventEmitter) => {

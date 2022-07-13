@@ -25,7 +25,7 @@ const config: GatsbyConfig = {
             'poliitikko',
         ],
     },
-    trailingSlash: 'never',
+    trailingSlash: 'always',
     plugins: [
         {
             resolve: `gatsby-source-contentful`,

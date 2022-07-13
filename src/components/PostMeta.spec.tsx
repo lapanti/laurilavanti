@@ -13,7 +13,7 @@ describe('<PostMeta />', () => {
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}`)
+            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -24,7 +24,7 @@ describe('<PostMeta />', () => {
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}`)
+            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()

@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Tag = ({ pageContext: { tag } }: Props): JSX.Element => (
-    <Layout title={tag.replace(/^\w/, (c) => c.toUpperCase())} pathname={`/blogi/${tag}`} type={WEBPAGE}>
+    <Layout title={tag.replace(/^\w/, (c) => c.toUpperCase())} pathname={`/blogi/${tag}/`} type={WEBPAGE}>
         <HR />
         <ExcerptList tag={tag} />
     </Layout>

@@ -497,7 +497,7 @@ describe('<Layout />', () => {
             )
 
             // Check internal link is present
-            expect(screen.getByRole('link', { name: value })).toHaveAttribute('href', `/blogi/${slug}`)
+            expect(screen.getByRole('link', { name: value })).toHaveAttribute('href', `/blogi/${slug}/`)
 
             expect(container.firstChild).toMatchSnapshot()
         })
