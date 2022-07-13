@@ -28,10 +28,10 @@ module.exports = {
                 18: '4.5rem',
             },
             gridTemplateAreas: {
-                layout: ['header', ' main ', 'footer'],
+                layout: [' main ', 'footer'],
             },
             gridTemplateRows: {
-                layout: '4.5rem 1fr 8rem',
+                layout: '1fr 8rem',
             },
             gridTemplateColumns: {
                 article: '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr',
