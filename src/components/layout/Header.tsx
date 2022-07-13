@@ -78,7 +78,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                         key={nav.slug}
                         partiallyActive
                         activeStyle={{ textDecoration: 'underline' }}
-                        to={`/${nav.slug}`}
+                        to={`/${nav.slug}/`}
                     >
                         {nav.title}
                     </NavLink>
