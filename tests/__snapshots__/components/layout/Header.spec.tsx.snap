@@ -1,64 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> should render 1`] = `
+exports[`<Header /> should open and close the menu 1`] = `
 <header
-  class="css-3knrel"
+  class="css-1dxui3r"
 >
-  <nav
-    class="css-1o2ndit"
+  <button
+    aria-label="Open navigation menu"
+    class="css-k73tyo"
   >
-    <a
-      aria-label="Lauri Lavanti"
-      class="css-pc3p7f"
-      href="/"
+    <svg
+      aria-hidden="true"
+      class="css-ylhc0e"
+    >
+      <use
+        xlink:href="#icon-bars"
+      />
+    </svg>
+  </button>
+  <button
+    aria-hidden="true"
+    class="css-7keydz"
+  />
+  <nav
+    aria-expanded="false"
+    class="css-1l9oqi7"
+  >
+    <button
+      aria-label="Close navigation menu"
+      class="css-98lnwj"
     >
       <svg
-        class="css-w0k9t"
+        aria-hidden="true"
+        class="css-ylhc0e"
       >
         <use
-          xlink:href="#logo"
+          xlink:href="#icon-close"
         />
       </svg>
-      <span
-        class="css-1sgvto8"
-      >
-        Lauri Lavanti
-      </span>
-    </a>
-    <ul
-      class="css-voneje"
+    </button>
+    <a
+      class="css-1r5t1rw"
+      href="/minusta/"
     >
-      <li
-        class="css-bn8vgc"
+      Minusta
+    </a>
+    <a
+      class="css-1r5t1rw"
+      href="/blogi/"
+    >
+      Blogi
+    </a>
+    <a
+      class="css-1r5t1rw"
+      href="/ota-yhteytta/"
+    >
+      Ota yhteyttä
+    </a>
+  </nav>
+</header>
+`;
+
+exports[`<Header /> should render 1`] = `
+<header
+  class="css-1dxui3r"
+>
+  <button
+    aria-label="Open navigation menu"
+    class="css-k73tyo"
+  >
+    <svg
+      aria-hidden="true"
+      class="css-ylhc0e"
+    >
+      <use
+        xlink:href="#icon-bars"
+      />
+    </svg>
+  </button>
+  <button
+    aria-hidden="true"
+    class="css-7keydz"
+  />
+  <nav
+    aria-expanded="false"
+    class="css-1l9oqi7"
+  >
+    <button
+      aria-label="Close navigation menu"
+      class="css-98lnwj"
+    >
+      <svg
+        aria-hidden="true"
+        class="css-ylhc0e"
       >
-        <a
-          class="css-hbc5qy"
-          href="/minusta/"
-        >
-          Minusta
-        </a>
-      </li>
-      <li
-        class="css-bn8vgc"
+        <use
+          xlink:href="#icon-close"
+        />
+      </svg>
+    </button>
+    <a
+      class="css-1r5t1rw"
+      href="/minusta/"
+    >
+      Minusta
+    </a>
+    <a
+      class="css-1r5t1rw"
+      href="/blogi/"
+    >
+      Blogi
+    </a>
+    <a
+      class="css-1r5t1rw"
+      href="/ota-yhteytta/"
+    >
+      Ota yhteyttä
+    </a>
+  </nav>
+</header>
+`;
+
+exports[`<Header /> should render opened menu 1`] = `
+<header
+  class="css-1dxui3r"
+>
+  <button
+    aria-label="Open navigation menu"
+    class="css-1vfy3tg"
+  >
+    <svg
+      aria-hidden="true"
+      class="css-ylhc0e"
+    >
+      <use
+        xlink:href="#icon-bars"
+      />
+    </svg>
+  </button>
+  <button
+    aria-hidden="true"
+    class="css-1erzxz4"
+  />
+  <nav
+    aria-expanded="true"
+    class="css-1mwtfyl"
+  >
+    <button
+      aria-label="Close navigation menu"
+      class="css-98lnwj"
+    >
+      <svg
+        aria-hidden="true"
+        class="css-ylhc0e"
       >
-        <a
-          class="css-hbc5qy"
-          href="/blogi/"
-        >
-          Blogi
-        </a>
-      </li>
-      <li
-        class="css-bn8vgc"
-      >
-        <a
-          class="css-hbc5qy"
-          href="/ota-yhteytta/"
-        >
-          Ota yhteyttä
-        </a>
-      </li>
-    </ul>
+        <use
+          xlink:href="#icon-close"
+        />
+      </svg>
+    </button>
+    <a
+      class="css-1r5t1rw"
+      href="/minusta/"
+    >
+      Minusta
+    </a>
+    <a
+      class="css-1r5t1rw"
+      href="/blogi/"
+    >
+      Blogi
+    </a>
+    <a
+      class="css-1r5t1rw"
+      href="/ota-yhteytta/"
+    >
+      Ota yhteyttä
+    </a>
   </nav>
 </header>
 `;

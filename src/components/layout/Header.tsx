@@ -1,51 +1,50 @@
 import type { MainNav } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
-import tw from 'twin.macro'
+import React, { useCallback, useState } from 'react'
+/** @ts-expect-error twin.macro typings are incomplete :/ */
+import tw, { styled } from 'twin.macro'
 
-import InternalLink from '../InternalLink'
+import NavLink from './header/NavLink'
 
-const Input = tw.input`
-    invisible fixed top-0 -right-96 w-px h-px border-none border-0 outline-none
-`
-
-const Label = tw.label`
+const CloseButton = tw.button`
     cursor-pointer
     h-12 w-12 mt-2 mr-2
     flex items-center justify-center
 `
 
-const OpenLabel = tw(Label)`
-    box-border bg-opacity-75 bg-white rounded-md rounded-tl-sm rounded-br-sm
-`
+const OpenButton = styled(CloseButton)(({ isOpen }: { isOpen: boolean }) => [
+    tw`
+        box-border bg-opacity-75 bg-white rounded-md rounded-tl-sm rounded-br-sm
+        transition-all duration-300 ease-out
+    `,
+    isOpen ? tw`invisible` : tw`visible`,
+])
 
 const Svg = tw.svg`
     h-8 w-8
 `
 
-const Nav = tw.nav`
-    fixed top-0
-    invisible -right-64
-    w-60 h-screen flex flex-col items-end
-    bg-lightGrey
-    peer-checked:visible peer-checked:right-0 transition-all duration-300 ease-in
-`
+const CloseBG = styled(CloseButton)(({ isOpen }: { isOpen: boolean }) => [
+    tw`
+        absolute top-0 w-screen h-screen bg-transparent
+    `,
+    isOpen ? tw`visible left-0` : tw`invisible left-full`,
+])
 
-const CloseLabel = tw(Label)`
-    
-`
-
-const NavLink = tw(InternalLink)`
-    w-full pl-4 mt-4 first-of-type:mt-0
-    text-xl text-navLink hover:text-accent active:text-accent
-`
+const Nav = styled.nav(({ isOpen }: { isOpen: boolean }) => [
+    tw`
+        fixed top-0
+        w-72 h-screen flex flex-col items-end
+        bg-opacity-90 bg-white
+        transition-all duration-300 ease-in
+    `,
+    isOpen ? tw`visible right-0` : tw`invisible -right-80`,
+])
 
 interface Props {
     className?: string
 }
-
-const INPUT_ID = 'toggle-main-navigation'
 
 const HeaderComponent = ({ className }: Props): JSX.Element => {
     const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
@@ -59,29 +58,27 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
             }
         }
     `)
+    const [isOpen, setIsOpen] = useState<boolean>(false)
+
+    const openMenu = useCallback(() => setIsOpen(true), [])
+    const closeMenu = useCallback(() => setIsOpen(false), [])
+
     return (
         <header className={className}>
-            <Input id={INPUT_ID} type="checkbox" className="peer" />
-            <OpenLabel htmlFor={INPUT_ID}>
-                <Svg>
+            <OpenButton aria-label="Open navigation menu" onClick={openMenu} isOpen={isOpen}>
+                <Svg aria-hidden="true">
                     <use xlinkHref="#icon-bars" />
                 </Svg>
-            </OpenLabel>
-            <Nav>
-                <CloseLabel htmlFor={INPUT_ID}>
-                    <Svg>
-                        <use xlinkHref="#icon-bars" />
+            </OpenButton>
+            <CloseBG onClick={closeMenu} aria-hidden="true" isOpen={isOpen} />
+            <Nav aria-expanded={isOpen} isOpen={isOpen}>
+                <CloseButton aria-label="Close navigation menu" onClick={closeMenu}>
+                    <Svg aria-hidden="true">
+                        <use xlinkHref="#icon-close" />
                     </Svg>
-                </CloseLabel>
+                </CloseButton>
                 {data.contentfulMainNav.links.map((nav) => (
-                    <NavLink
-                        key={nav.slug}
-                        partiallyActive
-                        activeStyle={{ textDecoration: 'underline' }}
-                        to={`/${nav.slug}/`}
-                    >
-                        {nav.title}
-                    </NavLink>
+                    <NavLink {...nav} key={nav.slug} />
                 ))}
             </Nav>
         </header>
