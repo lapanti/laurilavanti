@@ -1,11 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HeroImage /> should render actual image 1`] = `
+.emotion-0 {
+  grid-column: 1/-1;
+  margin-top: -1.125rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.emotion-1 {
+  object-fit: contain;
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 <div
-  class="css-bbmnyn"
+  class="emotion-0"
 >
   <div
-    class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-4gdwhm"
+    class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-1"
     data-gatsby-image-wrapper=""
     style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
   >

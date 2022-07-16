@@ -1,19 +1,361 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Layout /> rich body should render ContactInfo 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+  margin-top: 1rem;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-15 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+
+.emotion-16 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  padding: 1.125rem;
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-23 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-23:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -22,19 +364,19 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -42,19 +384,19 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -62,19 +404,19 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <ul
-        class="css-17j0lcr"
+        class="emotion-13"
       >
         <li
-          class="css-u4p24i"
+          class="emotion-14"
         >
           <svg
-            class="css-1rc7hph"
+            class="emotion-15"
           >
             <use
               xlink:href="#icon-envelope"
@@ -88,13 +430,13 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-16"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-17"
     >
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -103,7 +445,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-facebook"
@@ -112,7 +454,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -121,7 +463,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-twitter"
@@ -130,7 +472,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -139,7 +481,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-23"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -262,19 +604,464 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 `;
 
 exports[`<Layout /> rich body should render ExcerptList 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+}
+
+.emotion-15 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-15:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-15:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-15:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-16 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 8rem;
+  object-fit: cover;
+}
+
+.emotion-17 {
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.emotion-20:last-child {
+  margin-right: 0px;
+}
+
+.emotion-21 {
+  height: 1.125rem;
+  width: 1.125rem;
+  display: inline-block;
+  fill: currentColor;
+  margin-right: 0.5rem;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-23 {
+  margin-right: 1rem;
+}
+
+.emotion-23:last-child {
+  margin-right: 0px;
+}
+
+.emotion-29 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.emotion-30 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-31 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-32 {
+  padding: 1.125rem;
+}
+
+.emotion-33 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-33:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-33:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-35 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-35:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-35:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-37 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-37:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-37:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -283,19 +1070,19 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -303,19 +1090,19 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -323,28 +1110,28 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <ul
-        class="css-18f81vd"
+        class="emotion-13"
       >
         <li>
           <article
             aria-label="Terveys kuuluu kaikille"
-            class="css-0"
+            class="emotion-14"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="css-1oxnj2p"
+              class="emotion-15"
               href="/blogi/terveys-kuuluu-kaikille/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-1qwjt9"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-16"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -393,23 +1180,23 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <h2
-                class="css-178znh2"
+                class="emotion-17"
                 itemprop="headline"
               >
                 Terveys kuuluu kaikille
               </h2>
             </a>
             <aside
-              class="css-j7qwjs"
+              class="emotion-18"
             >
               <div
-                class="css-96di1v"
+                class="emotion-19"
               >
                 <span
-                  class="css-1fuc7m2"
+                  class="emotion-20"
                 >
                   <svg
-                    class="css-79tm4e"
+                    class="emotion-21"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -423,13 +1210,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </span>
               </div>
               <ul
-                class="css-p58oka"
+                class="emotion-22"
               >
                 <li
-                  class="css-1rw86pq"
+                  class="emotion-23"
                 >
                   <a
-                    class="css-1oxnj2p"
+                    class="emotion-15"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -437,10 +1224,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="css-1rw86pq"
+                  class="emotion-23"
                 >
                   <a
-                    class="css-1oxnj2p"
+                    class="emotion-15"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -448,10 +1235,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="css-1rw86pq"
+                  class="emotion-23"
                 >
                   <a
-                    class="css-1oxnj2p"
+                    class="emotion-15"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -461,7 +1248,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="css-1mbj6hi"
+              class="emotion-29"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -472,13 +1259,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-30"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-31"
     >
       <li
-        class="css-behyg3"
+        class="emotion-32"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -487,7 +1274,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-33"
           >
             <use
               xlink:href="#icon-facebook"
@@ -496,7 +1283,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-32"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -505,7 +1292,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-35"
           >
             <use
               xlink:href="#icon-twitter"
@@ -514,7 +1301,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-32"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -523,7 +1310,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-37"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -646,19 +1433,342 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 `;
 
 exports[`<Layout /> rich body should render H2 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.emotion-14 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-16 {
+  padding: 1.125rem;
+}
+
+.emotion-17 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-17:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-17:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -667,19 +1777,19 @@ exports[`<Layout /> rich body should render H2 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -687,19 +1797,19 @@ exports[`<Layout /> rich body should render H2 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -707,13 +1817,13 @@ exports[`<Layout /> rich body should render H2 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <h2
-        class="css-1akyri4"
+        class="emotion-13"
         id="heading-text"
       >
         Heading text
@@ -721,13 +1831,13 @@ exports[`<Layout /> rich body should render H2 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-14"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-15"
     >
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -736,7 +1846,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-17"
           >
             <use
               xlink:href="#icon-facebook"
@@ -745,7 +1855,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -754,7 +1864,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-twitter"
@@ -763,7 +1873,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -772,7 +1882,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -895,19 +2005,342 @@ exports[`<Layout /> rich body should render H2 1`] = `
 `;
 
 exports[`<Layout /> rich body should render H2 2`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.emotion-14 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-16 {
+  padding: 1.125rem;
+}
+
+.emotion-17 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-17:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-17:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -916,19 +2349,19 @@ exports[`<Layout /> rich body should render H2 2`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -936,19 +2369,19 @@ exports[`<Layout /> rich body should render H2 2`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -956,13 +2389,13 @@ exports[`<Layout /> rich body should render H2 2`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <h2
-        class="css-1akyri4"
+        class="emotion-13"
         id="heading-text"
       >
         Heading text
@@ -970,13 +2403,13 @@ exports[`<Layout /> rich body should render H2 2`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-14"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-15"
     >
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -985,7 +2418,7 @@ exports[`<Layout /> rich body should render H2 2`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-17"
           >
             <use
               xlink:href="#icon-facebook"
@@ -994,7 +2427,7 @@ exports[`<Layout /> rich body should render H2 2`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -1003,7 +2436,7 @@ exports[`<Layout /> rich body should render H2 2`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-twitter"
@@ -1012,7 +2445,7 @@ exports[`<Layout /> rich body should render H2 2`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -1021,7 +2454,7 @@ exports[`<Layout /> rich body should render H2 2`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -1144,19 +2577,340 @@ exports[`<Layout /> rich body should render H2 2`] = `
 `;
 
 exports[`<Layout /> rich body should render HR 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+  margin-bottom: 1rem;
+}
+
+.emotion-14 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-16 {
+  padding: 1.125rem;
+}
+
+.emotion-17 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-17:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-17:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -1165,19 +2919,19 @@ exports[`<Layout /> rich body should render HR 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -1185,19 +2939,19 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -1205,24 +2959,24 @@ exports[`<Layout /> rich body should render HR 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <hr
-        class="css-jhjc2s"
+        class="emotion-13"
       />
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-14"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-15"
     >
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -1231,7 +2985,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-17"
           >
             <use
               xlink:href="#icon-facebook"
@@ -1240,7 +2994,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -1249,7 +3003,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-twitter"
@@ -1258,7 +3012,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -1267,7 +3021,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -1390,19 +3144,366 @@ exports[`<Layout /> rich body should render HR 1`] = `
 `;
 
 exports[`<Layout /> rich body should render HomeTitle 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+  font-weight: 700;
+  grid-column-start: 3;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.emotion-15 {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+}
+
+.emotion-16 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  padding: 1.125rem;
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-23 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-23:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -1411,19 +3512,19 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -1431,19 +3532,19 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -1451,20 +3552,20 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <div
-        class="css-j0buno"
+        class="emotion-13"
       >
         <dl
-          class="css-nqsfib"
+          class="emotion-14"
         >
           <dt
             aria-label="Lauri Lavanti"
-            class="css-1bf7e4w"
+            class="emotion-15"
           >
             <h1>
               Lauri Lavanti
@@ -1495,13 +3596,13 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-16"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-17"
     >
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -1510,7 +3611,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-facebook"
@@ -1519,7 +3620,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -1528,7 +3629,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-twitter"
@@ -1537,7 +3638,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -1546,7 +3647,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-23"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -1669,19 +3770,369 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
 `;
 
 exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column: 1/-1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.emotion-14 {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-15 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-style: italic;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.emotion-16 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  padding: 1.125rem;
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-23 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-23:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -1690,19 +4141,19 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -1710,19 +4161,19 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -1730,17 +4181,17 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <figure
         aria-label="caption"
-        class="css-k5x8ge"
+        class="emotion-13"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-3agn7a"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1789,7 +4240,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
           </script>
         </div>
         <figcaption
-          class="css-1co30af"
+          class="emotion-15"
         >
           caption
         </figcaption>
@@ -1797,13 +4248,13 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-16"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-17"
     >
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -1812,7 +4263,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-facebook"
@@ -1821,7 +4272,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -1830,7 +4281,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-twitter"
@@ -1839,7 +4290,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -1848,7 +4299,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-23"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -1971,19 +4422,343 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 `;
 
 exports[`<Layout /> rich body should render Paragraph 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-column-start: 3;
+}
+
+.emotion-14 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-16 {
+  padding: 1.125rem;
+}
+
+.emotion-17 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-17:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-17:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -1992,19 +4767,19 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -2012,19 +4787,19 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -2032,26 +4807,26 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <p
-        class="css-c0krxd"
+        class="emotion-13"
       >
         Paragraph text
       </p>
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-14"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-15"
     >
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -2060,7 +4835,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-17"
           >
             <use
               xlink:href="#icon-facebook"
@@ -2069,7 +4844,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -2078,7 +4853,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-twitter"
@@ -2087,7 +4862,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -2096,7 +4871,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -2219,19 +4994,362 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 `;
 
 exports[`<Layout /> rich body should render external links 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-column-start: 3;
+}
+
+.emotion-14 {
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-14:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-14:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-15 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-17 {
+  padding: 1.125rem;
+}
+
+.emotion-18 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-18:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-18:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-20 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-20:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-20:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-22 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-22:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-22:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -2240,19 +5358,19 @@ exports[`<Layout /> rich body should render external links 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -2260,19 +5378,19 @@ exports[`<Layout /> rich body should render external links 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -2280,16 +5398,16 @@ exports[`<Layout /> rich body should render external links 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <p
-        class="css-c0krxd"
+        class="emotion-13"
       >
         <a
-          class="css-1b6i7hm"
+          class="emotion-14"
           href="https://test.com"
           rel="noopener noreferrer"
           target="_blank"
@@ -2300,13 +5418,13 @@ exports[`<Layout /> rich body should render external links 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-15"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-16"
     >
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -2315,7 +5433,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-18"
           >
             <use
               xlink:href="#icon-facebook"
@@ -2324,7 +5442,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -2333,7 +5451,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-20"
           >
             <use
               xlink:href="#icon-twitter"
@@ -2342,7 +5460,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -2351,7 +5469,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-22"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -2474,19 +5592,370 @@ exports[`<Layout /> rich body should render external links 1`] = `
 `;
 
 exports[`<Layout /> rich body should render internal links 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-column-start: 3;
+}
+
+.emotion-14 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-14:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-14:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-14:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-15 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-17 {
+  padding: 1.125rem;
+}
+
+.emotion-18 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-18:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-18:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-20 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-20:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-20:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-22 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-22:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-22:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -2495,19 +5964,19 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -2515,19 +5984,19 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -2535,16 +6004,16 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <p
-        class="css-c0krxd"
+        class="emotion-13"
       >
         <a
-          class="css-1oxnj2p"
+          class="emotion-14"
           href="/blogi/this-is-an-internal/link/"
         >
           external link
@@ -2553,13 +6022,13 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-15"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-16"
     >
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -2568,7 +6037,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-18"
           >
             <use
               xlink:href="#icon-facebook"
@@ -2577,7 +6046,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -2586,7 +6055,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-20"
           >
             <use
               xlink:href="#icon-twitter"
@@ -2595,7 +6064,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -2604,7 +6073,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-22"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -2727,19 +6196,363 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 `;
 
 exports[`<Layout /> should render hero image 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column: 1/-1;
+  margin-top: -1.125rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.emotion-14 {
+  object-fit: contain;
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emotion-15 {
+  grid-column-start: 3;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  margin-top: 1.125rem;
+}
+
+.emotion-16 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-17 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-18 {
+  padding: 1.125rem;
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-23 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-23:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -2748,19 +6561,19 @@ exports[`<Layout /> should render hero image 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -2768,19 +6581,19 @@ exports[`<Layout /> should render hero image 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -2788,16 +6601,16 @@ exports[`<Layout /> should render hero image 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <div
-        class="css-bbmnyn"
+        class="emotion-13"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-4gdwhm"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2847,7 +6660,7 @@ exports[`<Layout /> should render hero image 1`] = `
         </div>
       </div>
       <h1
-        class="css-1uf9nl6"
+        class="emotion-15"
         itemprop="headline"
       >
         Title
@@ -2856,13 +6669,13 @@ exports[`<Layout /> should render hero image 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-16"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-17"
     >
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -2871,7 +6684,7 @@ exports[`<Layout /> should render hero image 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-facebook"
@@ -2880,7 +6693,7 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -2889,7 +6702,7 @@ exports[`<Layout /> should render hero image 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-twitter"
@@ -2898,7 +6711,7 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-18"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -2907,7 +6720,7 @@ exports[`<Layout /> should render hero image 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-23"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -3030,19 +6843,354 @@ exports[`<Layout /> should render hero image 1`] = `
 `;
 
 exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column: 1/-1;
+  margin-top: -1.125rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.emotion-14 {
+  object-fit: contain;
+  max-width: 1920px;
+  width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.emotion-15 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-17 {
+  padding: 1.125rem;
+}
+
+.emotion-18 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-18:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-18:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-20 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-20:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-20:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-22 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-22:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-22:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -3051,19 +7199,19 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -3071,19 +7219,19 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -3091,16 +7239,16 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <div
-        class="css-bbmnyn"
+        class="emotion-13"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-4gdwhm"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3153,13 +7301,13 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-15"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-16"
     >
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -3168,7 +7316,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-18"
           >
             <use
               xlink:href="#icon-facebook"
@@ -3177,7 +7325,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -3186,7 +7334,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-20"
           >
             <use
               xlink:href="#icon-twitter"
@@ -3195,7 +7343,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-17"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -3204,7 +7352,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-22"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -3327,19 +7475,335 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
 `;
 
 exports[`<Layout /> should render hidden title 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-15 {
+  padding: 1.125rem;
+}
+
+.emotion-16 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-16:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-16:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-18 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-18:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-18:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-20 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-20:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-20:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -3348,19 +7812,19 @@ exports[`<Layout /> should render hidden title 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -3368,19 +7832,19 @@ exports[`<Layout /> should render hidden title 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -3388,22 +7852,22 @@ exports[`<Layout /> should render hidden title 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       Children
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-13"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-14"
     >
       <li
-        class="css-behyg3"
+        class="emotion-15"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -3412,7 +7876,7 @@ exports[`<Layout /> should render hidden title 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-16"
           >
             <use
               xlink:href="#icon-facebook"
@@ -3421,7 +7885,7 @@ exports[`<Layout /> should render hidden title 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-15"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -3430,7 +7894,7 @@ exports[`<Layout /> should render hidden title 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-18"
           >
             <use
               xlink:href="#icon-twitter"
@@ -3439,7 +7903,7 @@ exports[`<Layout /> should render hidden title 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-15"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -3448,7 +7912,7 @@ exports[`<Layout /> should render hidden title 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-20"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -3571,19 +8035,344 @@ exports[`<Layout /> should render hidden title 1`] = `
 `;
 
 exports[`<Layout /> should render meta image 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  margin-top: 1.125rem;
+}
+
+.emotion-14 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-16 {
+  padding: 1.125rem;
+}
+
+.emotion-17 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-17:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-17:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -3592,19 +8381,19 @@ exports[`<Layout /> should render meta image 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -3612,19 +8401,19 @@ exports[`<Layout /> should render meta image 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -3632,13 +8421,13 @@ exports[`<Layout /> should render meta image 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <h1
-        class="css-1uf9nl6"
+        class="emotion-13"
         itemprop="headline"
       >
         Title
@@ -3647,13 +8436,13 @@ exports[`<Layout /> should render meta image 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-14"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-15"
     >
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -3662,7 +8451,7 @@ exports[`<Layout /> should render meta image 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-17"
           >
             <use
               xlink:href="#icon-facebook"
@@ -3671,7 +8460,7 @@ exports[`<Layout /> should render meta image 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -3680,7 +8469,7 @@ exports[`<Layout /> should render meta image 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-twitter"
@@ -3689,7 +8478,7 @@ exports[`<Layout /> should render meta image 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -3698,7 +8487,7 @@ exports[`<Layout /> should render meta image 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -3821,19 +8610,335 @@ exports[`<Layout /> should render meta image 1`] = `
 `;
 
 exports[`<Layout /> should render minimal 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-15 {
+  padding: 1.125rem;
+}
+
+.emotion-16 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-16:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-16:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-18 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-18:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-18:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-20 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-20:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-20:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -3842,19 +8947,19 @@ exports[`<Layout /> should render minimal 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -3862,19 +8967,19 @@ exports[`<Layout /> should render minimal 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -3882,22 +8987,22 @@ exports[`<Layout /> should render minimal 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       Children
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-13"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-14"
     >
       <li
-        class="css-behyg3"
+        class="emotion-15"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -3906,7 +9011,7 @@ exports[`<Layout /> should render minimal 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-16"
           >
             <use
               xlink:href="#icon-facebook"
@@ -3915,7 +9020,7 @@ exports[`<Layout /> should render minimal 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-15"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -3924,7 +9029,7 @@ exports[`<Layout /> should render minimal 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-18"
           >
             <use
               xlink:href="#icon-twitter"
@@ -3933,7 +9038,7 @@ exports[`<Layout /> should render minimal 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-15"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -3942,7 +9047,7 @@ exports[`<Layout /> should render minimal 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-20"
           >
             <use
               xlink:href="#icon-linkedin"
@@ -4065,19 +9170,344 @@ exports[`<Layout /> should render minimal 1`] = `
 `;
 
 exports[`<Layout /> should render title 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 8rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column-start: 3;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  margin-top: 1.125rem;
+}
+
+.emotion-14 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-16 {
+  padding: 1.125rem;
+}
+
+.emotion-17 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-17:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-17:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-19:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-19:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
 <div
-  class="css-8zhhm8"
+  class="emotion-0"
 >
   <header
-    class="css-1dxui3r"
+    class="emotion-1"
   >
     <button
       aria-label="Open navigation menu"
-      class="css-k73tyo"
+      class="emotion-2"
     >
       <svg
         aria-hidden="true"
-        class="css-ylhc0e"
+        class="emotion-3"
       >
         <use
           xlink:href="#icon-bars"
@@ -4086,19 +9516,19 @@ exports[`<Layout /> should render title 1`] = `
     </button>
     <button
       aria-hidden="true"
-      class="css-7keydz"
+      class="emotion-4"
     />
     <nav
       aria-expanded="false"
-      class="css-1l9oqi7"
+      class="emotion-5"
     >
       <button
         aria-label="Close navigation menu"
-        class="css-98lnwj"
+        class="emotion-6"
       >
         <svg
           aria-hidden="true"
-          class="css-ylhc0e"
+          class="emotion-3"
         >
           <use
             xlink:href="#icon-close"
@@ -4106,19 +9536,19 @@ exports[`<Layout /> should render title 1`] = `
         </svg>
       </button>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="css-1r5t1rw"
+        class="emotion-8"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -4126,13 +9556,13 @@ exports[`<Layout /> should render title 1`] = `
     </nav>
   </header>
   <main
-    class="css-n7iznt"
+    class="emotion-11"
   >
     <article
-      class="css-1dnuctk"
+      class="emotion-12"
     >
       <h1
-        class="css-1uf9nl6"
+        class="emotion-13"
         itemprop="headline"
       >
         Title
@@ -4141,13 +9571,13 @@ exports[`<Layout /> should render title 1`] = `
     </article>
   </main>
   <footer
-    class="css-wyssy7"
+    class="emotion-14"
   >
     <ul
-      class="css-1hyoz7m"
+      class="emotion-15"
     >
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -4156,7 +9586,7 @@ exports[`<Layout /> should render title 1`] = `
           title="Facebook"
         >
           <svg
-            class="css-a62265"
+            class="emotion-17"
           >
             <use
               xlink:href="#icon-facebook"
@@ -4165,7 +9595,7 @@ exports[`<Layout /> should render title 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -4174,7 +9604,7 @@ exports[`<Layout /> should render title 1`] = `
           title="Twitter"
         >
           <svg
-            class="css-14al99q"
+            class="emotion-19"
           >
             <use
               xlink:href="#icon-twitter"
@@ -4183,7 +9613,7 @@ exports[`<Layout /> should render title 1`] = `
         </a>
       </li>
       <li
-        class="css-behyg3"
+        class="emotion-16"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -4192,7 +9622,7 @@ exports[`<Layout /> should render title 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="css-be1gqa"
+            class="emotion-21"
           >
             <use
               xlink:href="#icon-linkedin"
