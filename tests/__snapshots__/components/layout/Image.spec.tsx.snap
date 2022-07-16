@@ -1,12 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Image /> should render image with caption 1`] = `
+.emotion-0 {
+  grid-column: 1/-1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.emotion-1 {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-style: italic;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  width: 100%;
+}
+
 <figure
   aria-label="My caption"
-  class="css-k5x8ge"
+  class="emotion-0"
 >
   <div
-    class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-3agn7a"
+    class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-1"
     data-gatsby-image-wrapper=""
     style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
   >
@@ -55,7 +89,7 @@ exports[`<Image /> should render image with caption 1`] = `
     </script>
   </div>
   <figcaption
-    class="css-1co30af"
+    class="emotion-2"
   >
     My caption
   </figcaption>

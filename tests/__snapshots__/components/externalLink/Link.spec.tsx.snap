@@ -1,8 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Link /> should render 1`] = `
+.emotion-0 {
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
 <a
-  class="css-1hi3wl"
+  class="emotion-0"
   href="https://laurilavanti.fi"
 >
   Linkki
