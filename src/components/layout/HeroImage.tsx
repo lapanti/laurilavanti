@@ -26,7 +26,7 @@ const HeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element |
 HeroImageComponent.displayName = 'HeroImage'
 
 const HeroImage = tw(HeroImageComponent)`
-    -mt-4.5 flex col-span-full relative
+    flex col-span-full relative
 `
 
 export default HeroImage
