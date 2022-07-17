@@ -103,7 +103,14 @@ export const query = graphql`
             headerImage {
                 localFile {
                     childImageSharp {
-                        gatsbyImageData
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: FIXED
+                            height: 667
+                            width: 1920
+                            transformOptions: { fit: OUTSIDE }
+                            aspectRatio: 2.87
+                        )
                     }
                 }
             }
