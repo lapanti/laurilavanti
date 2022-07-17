@@ -11,12 +11,13 @@ exports[`<HeroImage /> should render actual image 1`] = `
 }
 
 .emotion-1 {
-  object-fit: contain;
-  max-width: 1920px;
-  width: 100%;
-  height: auto;
   margin-left: auto;
   margin-right: auto;
+  height: 41rem!important;
+  object-fit: cover;
+  width: 100%!important;
+  max-width: 1920px;
+  overflow: hidden;
 }
 
 <div
