@@ -22,6 +22,7 @@ import HomeTitle from './layout/HomeTitle'
 import Image from './layout/Image'
 import SEO from './layout/SEO'
 import Svgs from './layout/Svgs'
+import Title from './layout/Title'
 import Paragraph from './Paragraph'
 
 const Main = tw.main`
@@ -30,10 +31,6 @@ const Main = tw.main`
 
 const Article = tw.article`
     grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
-`
-
-const H1 = tw.h1`
-    col-start-3 text-3xl font-bold mb-1 mt-4.5
 `
 
 const PositionedP = tw(Paragraph)`
@@ -135,7 +132,7 @@ const LayoutComponent = ({
                 <Main>
                     <Article>
                         {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
-                        {title && <H1 itemProp="headline">{title}</H1>}
+                        {title && <Title title={title} />}
                         {preBody}
                         {body && renderRichText(body, options)}
                         {children}

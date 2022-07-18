@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Title /> should render 1`] = `
+.emotion-0 {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  margin-top: -14rem;
+  z-index: 40;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 700px) {
+  .emotion-0 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-0 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-1 {
+  grid-column-start: 3;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+}
+
+<section
+  class="emotion-0"
+>
+  <h1
+    class="emotion-1"
+    itemprop="headline"
+  >
+    My title
+  </h1>
+</section>
+`;
