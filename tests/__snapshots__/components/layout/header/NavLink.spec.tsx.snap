@@ -56,3 +56,60 @@ exports[`<NavLink /> should render 1`] = `
   This is my title
 </a>
 `;
+
+exports[`<NavLink /> should render link to index 1`] = `
+.emotion-0 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-0:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-0:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+<a
+  class="emotion-0"
+  href="/"
+>
+  This is my title
+</a>
+`;
