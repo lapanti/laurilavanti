@@ -815,7 +815,15 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   grid-column-start: 3;
 }
 
-.emotion-15 {
+.emotion-14 {
+  margin-top: 2rem;
+}
+
+.emotion-14:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-16 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -827,32 +835,32 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-15:hover {
+.emotion-16:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-15:active {
+.emotion-16:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-15:focus {
+.emotion-16:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-16 {
+.emotion-17 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 8rem;
+  height: 16rem;
   object-fit: cover;
 }
 
-.emotion-17 {
+.emotion-18 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(6, 45, 36, var(--tw-text-opacity));
@@ -860,7 +868,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   line-height: 1.75rem;
 }
 
-.emotion-18 {
+.emotion-19 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -870,7 +878,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   flex-direction: column;
 }
 
-.emotion-19 {
+.emotion-20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -881,7 +889,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-20 {
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -896,11 +904,11 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-20:last-child {
+.emotion-21:last-child {
   margin-right: 0px;
 }
 
-.emotion-21 {
+.emotion-22 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -911,7 +919,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-22 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -925,22 +933,23 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-23 {
+.emotion-24 {
   margin-right: 1rem;
 }
 
-.emotion-23:last-child {
+.emotion-24:last-child {
   margin-right: 0px;
 }
 
-.emotion-29 {
+.emotion-30 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
 
-.emotion-30 {
+.emotion-31 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -964,7 +973,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   height: 100%;
 }
 
-.emotion-31 {
+.emotion-32 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -982,11 +991,11 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   justify-content: center;
 }
 
-.emotion-32 {
+.emotion-33 {
   padding: 1.125rem;
 }
 
-.emotion-33 {
+.emotion-34 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -997,17 +1006,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   width: 2.25rem;
 }
 
-.emotion-33:hover {
+.emotion-34:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-33:focus {
+.emotion-34:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-35 {
+.emotion-36 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -1018,17 +1027,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   width: 2.25rem;
 }
 
-.emotion-35:hover {
+.emotion-36:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-35:focus {
+.emotion-36:focus {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-37 {
+.emotion-38 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -1039,12 +1048,12 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   width: 2.25rem;
 }
 
-.emotion-37:hover {
+.emotion-38:hover {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
 
-.emotion-37:focus {
+.emotion-38:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -1118,20 +1127,22 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
       <ul
         class="emotion-13"
       >
-        <li>
+        <li
+          class="emotion-14"
+        >
           <article
             aria-label="Terveys kuuluu kaikille"
-            class="emotion-14"
+            class="emotion-15"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="emotion-15"
+              class="emotion-16"
               href="/blogi/terveys-kuuluu-kaikille/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-16"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-17"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -1180,23 +1191,23 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <h2
-                class="emotion-17"
+                class="emotion-18"
                 itemprop="headline"
               >
                 Terveys kuuluu kaikille
               </h2>
             </a>
             <aside
-              class="emotion-18"
+              class="emotion-19"
             >
               <div
-                class="emotion-19"
+                class="emotion-20"
               >
                 <span
-                  class="emotion-20"
+                  class="emotion-21"
                 >
                   <svg
-                    class="emotion-21"
+                    class="emotion-22"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -1210,13 +1221,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </span>
               </div>
               <ul
-                class="emotion-22"
+                class="emotion-23"
               >
                 <li
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <a
-                    class="emotion-15"
+                    class="emotion-16"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -1224,10 +1235,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <a
-                    class="emotion-15"
+                    class="emotion-16"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1235,10 +1246,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <a
-                    class="emotion-15"
+                    class="emotion-16"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -1248,7 +1259,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="emotion-29"
+              class="emotion-30"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -1259,13 +1270,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-30"
+    class="emotion-31"
   >
     <ul
-      class="emotion-31"
+      class="emotion-32"
     >
       <li
-        class="emotion-32"
+        class="emotion-33"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -1274,7 +1285,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           title="Facebook"
         >
           <svg
-            class="emotion-33"
+            class="emotion-34"
           >
             <use
               xlink:href="#icon-facebook"
@@ -1283,7 +1294,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-32"
+        class="emotion-33"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -1292,7 +1303,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           title="Twitter"
         >
           <svg
-            class="emotion-35"
+            class="emotion-36"
           >
             <use
               xlink:href="#icon-twitter"
@@ -1301,7 +1312,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-32"
+        class="emotion-33"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -1310,7 +1321,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="emotion-37"
+            class="emotion-38"
           >
             <use
               xlink:href="#icon-linkedin"

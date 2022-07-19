@@ -6,6 +6,10 @@ import tw from 'twin.macro'
 
 import Excerpt from './excerptList/Excerpt'
 
+const Item = tw.li`
+    mt-8 first-of-type:mt-0
+`
+
 interface Props {
     className?: string
     limit?: number
@@ -92,7 +96,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
     return (
         <ul className={className}>
             {nodes.map((node) => (
-                <li key={node.publishDate || node.createdAt}>
+                <Item key={node.publishDate || node.createdAt}>
                     <Excerpt
                         date={node.publishDate || node.createdAt}
                         slug={node.slug}
@@ -101,7 +105,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                         title={node.title}
                         tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
                     />
-                </li>
+                </Item>
             ))}
         </ul>
     )

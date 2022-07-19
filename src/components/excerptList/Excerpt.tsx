@@ -10,11 +10,15 @@ import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
 const Image = tw(GatsbyImage)`
-    w-full flex h-32 object-cover
+    w-full flex h-64 object-cover
 `
 
 const H2 = tw.h2`
     font-bold text-accent text-xl
+`
+
+const RemarginP = tw(Paragraph)`
+    mt-1
 `
 
 interface Props extends PostMetaProps {
@@ -35,7 +39,7 @@ const ExcerptComponent = ({ className, title, date, excerpt, tags, image: imageD
                 <H2 itemProp="headline">{title}</H2>
             </InternalLink>
             <PostMeta date={date} tags={tags} />
-            <Paragraph itemProp="description">{excerpt}</Paragraph>
+            <RemarginP itemProp="description">{excerpt}</RemarginP>
         </article>
     )
 }
