@@ -5,7 +5,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 const Image = tw(GatsbyImage)`
-    ml-auto mr-auto !h-96 object-cover !w-full max-w-screen-fullhd overflow-hidden
+    ml-auto mr-auto !h-[41rem] object-cover !w-full max-w-screen-fullhd overflow-hidden
 `
 
 interface Props {
@@ -14,7 +14,7 @@ interface Props {
     alt: string
 }
 
-const HeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element | null => {
+const BigHeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element | null => {
     const image = getImage(imageData)
     return !image ? null : (
         <div className={className}>
@@ -23,10 +23,10 @@ const HeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element |
     )
 }
 
-HeroImageComponent.displayName = 'HeroImage'
+BigHeroImageComponent.displayName = 'BigHeroImage'
 
-const HeroImage = tw(HeroImageComponent)`
+const BigHeroImage = tw(BigHeroImageComponent)`
     flex col-span-full relative
 `
 
-export default HeroImage
+export default BigHeroImage
