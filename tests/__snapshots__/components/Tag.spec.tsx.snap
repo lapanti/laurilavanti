@@ -210,6 +210,25 @@ exports[`<Tag /> should render 1`] = `
 
 .emotion-13 {
   grid-column: 1/-1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.emotion-14 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 24rem!important;
+  object-fit: cover;
+  width: 100%!important;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.emotion-15 {
+  grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   margin-top: -14rem;
@@ -220,18 +239,18 @@ exports[`<Tag /> should render 1`] = `
 }
 
 @media (min-width: 700px) {
-  .emotion-13 {
+  .emotion-15 {
     grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
   }
 }
 
 @media (min-width: 750px) {
-  .emotion-13 {
+  .emotion-15 {
     grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
   }
 }
 
-.emotion-14 {
+.emotion-16 {
   grid-column-start: 3;
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -250,16 +269,16 @@ exports[`<Tag /> should render 1`] = `
   color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
-.emotion-15 {
+.emotion-17 {
   grid-column-start: 3;
   margin-bottom: 1rem;
 }
 
-.emotion-16 {
+.emotion-18 {
   grid-column-start: 3;
 }
 
-.emotion-18 {
+.emotion-20 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -271,22 +290,22 @@ exports[`<Tag /> should render 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-18:hover {
+.emotion-20:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-18:active {
+.emotion-20:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-18:focus {
+.emotion-20:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-19 {
+.emotion-21 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -296,7 +315,7 @@ exports[`<Tag /> should render 1`] = `
   object-fit: cover;
 }
 
-.emotion-20 {
+.emotion-22 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(6, 45, 36, var(--tw-text-opacity));
@@ -304,7 +323,7 @@ exports[`<Tag /> should render 1`] = `
   line-height: 1.75rem;
 }
 
-.emotion-21 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -314,7 +333,7 @@ exports[`<Tag /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-22 {
+.emotion-24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -325,7 +344,7 @@ exports[`<Tag /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-23 {
+.emotion-25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -340,11 +359,11 @@ exports[`<Tag /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-23:last-child {
+.emotion-25:last-child {
   margin-right: 0px;
 }
 
-.emotion-24 {
+.emotion-26 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -355,7 +374,7 @@ exports[`<Tag /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-25 {
+.emotion-27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -369,22 +388,22 @@ exports[`<Tag /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-26 {
+.emotion-28 {
   margin-right: 1rem;
 }
 
-.emotion-26:last-child {
+.emotion-28:last-child {
   margin-right: 0px;
 }
 
-.emotion-30 {
+.emotion-32 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-.emotion-89 {
+.emotion-91 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -408,7 +427,7 @@ exports[`<Tag /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-90 {
+.emotion-92 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -426,29 +445,8 @@ exports[`<Tag /> should render 1`] = `
   justify-content: center;
 }
 
-.emotion-91 {
+.emotion-93 {
   padding: 1.125rem;
-}
-
-.emotion-92 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  fill: currentColor;
-  --tw-text-opacity: 1;
-  color: rgba(227, 227, 227, var(--tw-text-opacity));
-  height: 2.25rem;
-  width: 2.25rem;
-}
-
-.emotion-92:hover {
-  --tw-text-opacity: 1;
-  color: rgba(66, 103, 178, var(--tw-text-opacity));
-}
-
-.emotion-92:focus {
-  --tw-text-opacity: 1;
-  color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
 .emotion-94 {
@@ -464,12 +462,12 @@ exports[`<Tag /> should render 1`] = `
 
 .emotion-94:hover {
   --tw-text-opacity: 1;
-  color: rgba(29, 161, 242, var(--tw-text-opacity));
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
 .emotion-94:focus {
   --tw-text-opacity: 1;
-  color: rgba(29, 161, 242, var(--tw-text-opacity));
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
 .emotion-96 {
@@ -485,10 +483,31 @@ exports[`<Tag /> should render 1`] = `
 
 .emotion-96:hover {
   --tw-text-opacity: 1;
-  color: rgba(14, 118, 168, var(--tw-text-opacity));
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
 .emotion-96:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-98 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-98:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-98:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -559,36 +578,89 @@ exports[`<Tag /> should render 1`] = `
     <article
       class="emotion-12"
     >
-      <section
+      <div
         class="emotion-13"
       >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 4032px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='4032' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatus"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+      </div>
+      <section
+        class="emotion-15"
+      >
         <h1
-          class="emotion-14"
+          class="emotion-16"
           itemprop="headline"
         >
           Varhaiskasvatus
         </h1>
       </section>
       <hr
-        class="emotion-15"
+        class="emotion-17"
       />
       <ul
-        class="emotion-16"
+        class="emotion-18"
       >
         <li>
           <article
             aria-label="Päiväkodit kaipaavat opettajia"
-            class="emotion-17"
+            class="emotion-19"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="emotion-18"
+              class="emotion-20"
               href="/blogi/paivakodit-kaipaavat-opettajia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -637,23 +709,23 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <h2
-                class="emotion-20"
+                class="emotion-22"
                 itemprop="headline"
               >
                 Päiväkodit kaipaavat opettajia
               </h2>
             </a>
             <aside
-              class="emotion-21"
+              class="emotion-23"
             >
               <div
-                class="emotion-22"
+                class="emotion-24"
               >
                 <span
-                  class="emotion-23"
+                  class="emotion-25"
                 >
                   <svg
-                    class="emotion-24"
+                    class="emotion-26"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -667,13 +739,13 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="emotion-25"
+                class="emotion-27"
               >
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -681,10 +753,10 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -694,7 +766,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="emotion-30"
+              class="emotion-32"
               itemprop="description"
             >
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -704,17 +776,17 @@ exports[`<Tag /> should render 1`] = `
         <li>
           <article
             aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-            class="emotion-17"
+            class="emotion-19"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="emotion-18"
+              class="emotion-20"
               href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -763,23 +835,23 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <h2
-                class="emotion-20"
+                class="emotion-22"
                 itemprop="headline"
               >
                 Varhaiskasvatuksen riittävyydestä ei saa tinkiä
               </h2>
             </a>
             <aside
-              class="emotion-21"
+              class="emotion-23"
             >
               <div
-                class="emotion-22"
+                class="emotion-24"
               >
                 <span
-                  class="emotion-23"
+                  class="emotion-25"
                 >
                   <svg
-                    class="emotion-24"
+                    class="emotion-26"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -793,13 +865,13 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="emotion-25"
+                class="emotion-27"
               >
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -807,10 +879,10 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -818,10 +890,10 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -831,7 +903,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="emotion-30"
+              class="emotion-32"
               itemprop="description"
             >
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -841,17 +913,17 @@ exports[`<Tag /> should render 1`] = `
         <li>
           <article
             aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-            class="emotion-17"
+            class="emotion-19"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="emotion-18"
+              class="emotion-20"
               href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -900,23 +972,23 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <h2
-                class="emotion-20"
+                class="emotion-22"
                 itemprop="headline"
               >
                 Varhaiskasvatuksen kerhotoiminta - lapsen etu
               </h2>
             </a>
             <aside
-              class="emotion-21"
+              class="emotion-23"
             >
               <div
-                class="emotion-22"
+                class="emotion-24"
               >
                 <span
-                  class="emotion-23"
+                  class="emotion-25"
                 >
                   <svg
-                    class="emotion-24"
+                    class="emotion-26"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -930,13 +1002,13 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="emotion-25"
+                class="emotion-27"
               >
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -944,10 +1016,10 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -957,7 +1029,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="emotion-30"
+              class="emotion-32"
               itemprop="description"
             >
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -967,17 +1039,17 @@ exports[`<Tag /> should render 1`] = `
         <li>
           <article
             aria-label="Kirkkonummi-lisä on sinunkin etusi"
-            class="emotion-17"
+            class="emotion-19"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="emotion-18"
+              class="emotion-20"
               href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -1026,23 +1098,23 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <h2
-                class="emotion-20"
+                class="emotion-22"
                 itemprop="headline"
               >
                 Kirkkonummi-lisä on sinunkin etusi
               </h2>
             </a>
             <aside
-              class="emotion-21"
+              class="emotion-23"
             >
               <div
-                class="emotion-22"
+                class="emotion-24"
               >
                 <span
-                  class="emotion-23"
+                  class="emotion-25"
                 >
                   <svg
-                    class="emotion-24"
+                    class="emotion-26"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -1056,13 +1128,13 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="emotion-25"
+                class="emotion-27"
               >
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1070,10 +1142,10 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -1083,7 +1155,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="emotion-30"
+              class="emotion-32"
               itemprop="description"
             >
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
@@ -1093,17 +1165,17 @@ exports[`<Tag /> should render 1`] = `
         <li>
           <article
             aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
-            class="emotion-17"
+            class="emotion-19"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="emotion-18"
+              class="emotion-20"
               href="/blogi/kotihoidon-tuen-kuntalisa/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -1152,23 +1224,23 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <h2
-                class="emotion-20"
+                class="emotion-22"
                 itemprop="headline"
               >
                 Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
               </h2>
             </a>
             <aside
-              class="emotion-21"
+              class="emotion-23"
             >
               <div
-                class="emotion-22"
+                class="emotion-24"
               >
                 <span
-                  class="emotion-23"
+                  class="emotion-25"
                 >
                   <svg
-                    class="emotion-24"
+                    class="emotion-26"
                   >
                     <use
                       xlink:href="#icon-calendar-alt"
@@ -1182,13 +1254,13 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="emotion-25"
+                class="emotion-27"
               >
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1196,10 +1268,10 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="emotion-26"
+                  class="emotion-28"
                 >
                   <a
-                    class="emotion-18"
+                    class="emotion-20"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -1209,7 +1281,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="emotion-30"
+              class="emotion-32"
               itemprop="description"
             >
               Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -1220,13 +1292,13 @@ exports[`<Tag /> should render 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-89"
+    class="emotion-91"
   >
     <ul
-      class="emotion-90"
+      class="emotion-92"
     >
       <li
-        class="emotion-91"
+        class="emotion-93"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -1235,7 +1307,7 @@ exports[`<Tag /> should render 1`] = `
           title="Facebook"
         >
           <svg
-            class="emotion-92"
+            class="emotion-94"
           >
             <use
               xlink:href="#icon-facebook"
@@ -1244,7 +1316,7 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="emotion-91"
+        class="emotion-93"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -1253,7 +1325,7 @@ exports[`<Tag /> should render 1`] = `
           title="Twitter"
         >
           <svg
-            class="emotion-94"
+            class="emotion-96"
           >
             <use
               xlink:href="#icon-twitter"
@@ -1262,7 +1334,7 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="emotion-91"
+        class="emotion-93"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -1271,7 +1343,7 @@ exports[`<Tag /> should render 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="emotion-96"
+            class="emotion-98"
           >
             <use
               xlink:href="#icon-linkedin"

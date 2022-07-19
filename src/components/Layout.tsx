@@ -14,6 +14,7 @@ import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import HR from './HR'
 import InternalLink from './InternalLink'
+import BigHeroImage from './layout/BigHeroImage'
 import ContactInfo from './layout/ContactInfo'
 import Footer from './layout/Footer'
 import Header from './layout/Header'
@@ -113,6 +114,9 @@ const LayoutComponent = ({
               width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
           }
         : undefined
+
+    const HeroComponent = pathname === '/index/' ? BigHeroImage : HeroImage
+
     return (
         <>
             <GlobalStyles />
@@ -131,7 +135,7 @@ const LayoutComponent = ({
 
                 <Main>
                     <Article>
-                        {heroImage && <HeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />}
+                        {heroImage && <HeroComponent imageData={heroImage} alt={title || hiddenTitle || ''} />}
                         {title && <Title title={title} />}
                         {preBody}
                         {body && renderRichText(body, options)}

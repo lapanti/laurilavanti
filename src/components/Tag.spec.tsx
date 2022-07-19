@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
+import { mainImage } from '../../tests/images.mock'
 import { excerptList } from '../../tests/posts.mock'
 import Tag from './Tag'
 
@@ -8,7 +9,12 @@ describe('<Tag />', () => {
     const tag = 'varhaiskasvatus'
 
     it('should render', () => {
-        const { container } = render(<Tag pageContext={{ tag }} />)
+        const { container } = render(
+            <Tag
+                data={{ contentfulPage: { metaImage: { localFile: mainImage }, image: { localFile: mainImage } } }}
+                pageContext={{ tag }}
+            />
+        )
 
         expect(screen.getAllByRole('article')).toHaveLength(
             excerptList.filter((excerpt) =>
