@@ -5,7 +5,15 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   grid-column-start: 3;
 }
 
-.emotion-2 {
+.emotion-1 {
+  margin-top: 2rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-3 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -17,32 +25,32 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-2:hover {
+.emotion-3:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:active {
+.emotion-3:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:focus {
+.emotion-3:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-3 {
+.emotion-4 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 8rem;
+  height: 16rem;
   object-fit: cover;
 }
 
-.emotion-4 {
+.emotion-5 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(6, 45, 36, var(--tw-text-opacity));
@@ -50,7 +58,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   line-height: 1.75rem;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -60,7 +68,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-direction: column;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -71,7 +79,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -86,11 +94,11 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-7:last-child {
+.emotion-8:last-child {
   margin-right: 0px;
 }
 
-.emotion-8 {
+.emotion-9 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -101,7 +109,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -115,38 +123,41 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-11 {
   margin-right: 1rem;
 }
 
-.emotion-10:last-child {
+.emotion-11:last-child {
   margin-right: 0px;
 }
 
-.emotion-14 {
+.emotion-15 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
 
 <ul
   class="emotion-0"
 >
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Päiväkodit kaipaavat opettajia"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -195,23 +206,23 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Päiväkodit kaipaavat opettajia
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -225,13 +236,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -239,10 +250,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -252,27 +263,29 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -321,23 +334,23 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Varhaiskasvatuksen riittävyydestä ei saa tinkiä
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -351,13 +364,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -365,10 +378,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -376,10 +389,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -389,27 +402,29 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -458,23 +473,23 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Varhaiskasvatuksen kerhotoiminta - lapsen etu
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -488,13 +503,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -502,10 +517,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -515,27 +530,29 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Kirkkonummi-lisä on sinunkin etusi"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -584,23 +601,23 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Kirkkonummi-lisä on sinunkin etusi
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -614,13 +631,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -628,10 +645,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -641,27 +658,29 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/kotihoidon-tuen-kuntalisa/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -710,23 +729,23 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -740,13 +759,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -754,10 +773,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -767,7 +786,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -782,7 +801,15 @@ exports[`<ExcerptList /> should render 1`] = `
   grid-column-start: 3;
 }
 
-.emotion-2 {
+.emotion-1 {
+  margin-top: 2rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-3 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -794,32 +821,32 @@ exports[`<ExcerptList /> should render 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-2:hover {
+.emotion-3:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:active {
+.emotion-3:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:focus {
+.emotion-3:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-3 {
+.emotion-4 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 8rem;
+  height: 16rem;
   object-fit: cover;
 }
 
-.emotion-4 {
+.emotion-5 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(6, 45, 36, var(--tw-text-opacity));
@@ -827,7 +854,7 @@ exports[`<ExcerptList /> should render 1`] = `
   line-height: 1.75rem;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -837,7 +864,7 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -848,7 +875,7 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -863,11 +890,11 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-7:last-child {
+.emotion-8:last-child {
   margin-right: 0px;
 }
 
-.emotion-8 {
+.emotion-9 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -878,7 +905,7 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -892,38 +919,41 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-11 {
   margin-right: 1rem;
 }
 
-.emotion-10:last-child {
+.emotion-11:last-child {
   margin-right: 0px;
 }
 
-.emotion-16 {
+.emotion-17 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
 
 <ul
   class="emotion-0"
 >
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Terveys kuuluu kaikille"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/terveys-kuuluu-kaikille/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -972,23 +1002,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Terveys kuuluu kaikille
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1002,13 +1032,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1016,10 +1046,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1027,10 +1057,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1040,27 +1070,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1109,23 +1141,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Sote on hyvinvointiyhteiskunnan kulmakivi
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1139,13 +1171,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1153,10 +1185,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1164,10 +1196,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1177,27 +1209,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Mitä jos terveyskeskusta ei olisikaan?"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1246,23 +1280,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Mitä jos terveyskeskusta ei olisikaan?
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1276,13 +1310,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1290,10 +1324,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1301,10 +1335,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1314,27 +1348,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Perusturvajaosto - mikä se on?"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1383,23 +1419,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Perusturvajaosto - mikä se on?
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1413,13 +1449,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1427,10 +1463,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/perustuva/"
             >
               #
@@ -1440,27 +1476,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Ehdolle aluevaaleihin"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/ehdolle-aluevaaleihin/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1509,23 +1547,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Ehdolle aluevaaleihin
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1539,13 +1577,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1553,10 +1591,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1564,10 +1602,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1577,27 +1615,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Päiväkodit kaipaavat opettajia"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1646,23 +1686,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Päiväkodit kaipaavat opettajia
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1676,13 +1716,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1690,10 +1730,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -1703,27 +1743,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Hyvin suunniteltu on puoliksi tehty, mutta"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1772,23 +1814,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Hyvin suunniteltu on puoliksi tehty, mutta
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1802,13 +1844,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1816,10 +1858,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/opetus/"
             >
               #
@@ -1829,27 +1871,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1898,23 +1942,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Varhaiskasvatuksen riittävyydestä ei saa tinkiä
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1928,13 +1972,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -1942,10 +1986,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1953,10 +1997,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -1966,27 +2010,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2035,23 +2081,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Varhaiskasvatuksen kerhotoiminta - lapsen etu
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2065,13 +2111,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2079,10 +2125,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2092,27 +2138,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Kirkkonummi-lisä on sinunkin etusi"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2161,23 +2209,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Kirkkonummi-lisä on sinunkin etusi
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2191,13 +2239,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2205,10 +2253,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2218,27 +2266,29 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/kotihoidon-tuen-kuntalisa/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2287,23 +2337,23 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2317,13 +2367,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2331,10 +2381,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2344,7 +2394,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -2359,7 +2409,15 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   grid-column-start: 3;
 }
 
-.emotion-2 {
+.emotion-1 {
+  margin-top: 2rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-3 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2371,32 +2429,32 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-2:hover {
+.emotion-3:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:active {
+.emotion-3:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:focus {
+.emotion-3:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-3 {
+.emotion-4 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 8rem;
+  height: 16rem;
   object-fit: cover;
 }
 
-.emotion-4 {
+.emotion-5 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(6, 45, 36, var(--tw-text-opacity));
@@ -2404,7 +2462,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   line-height: 1.75rem;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2414,7 +2472,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-direction: column;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2425,7 +2483,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2440,11 +2498,11 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-7:last-child {
+.emotion-8:last-child {
   margin-right: 0px;
 }
 
-.emotion-8 {
+.emotion-9 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -2455,7 +2513,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2469,38 +2527,41 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-11 {
   margin-right: 1rem;
 }
 
-.emotion-10:last-child {
+.emotion-11:last-child {
   margin-right: 0px;
 }
 
-.emotion-14 {
+.emotion-15 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
 
 <ul
   class="emotion-0"
 >
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Päiväkodit kaipaavat opettajia"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2549,23 +2610,23 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Päiväkodit kaipaavat opettajia
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2579,13 +2640,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2593,10 +2654,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2606,27 +2667,29 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2675,23 +2738,23 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Varhaiskasvatuksen riittävyydestä ei saa tinkiä
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2705,13 +2768,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -2719,10 +2782,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2730,10 +2793,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2743,27 +2806,29 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2812,23 +2877,23 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Varhaiskasvatuksen kerhotoiminta - lapsen etu
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2842,13 +2907,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2856,10 +2921,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2869,7 +2934,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-14"
+        class="emotion-15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -2884,7 +2949,15 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   grid-column-start: 3;
 }
 
-.emotion-2 {
+.emotion-1 {
+  margin-top: 2rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-3 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2896,32 +2969,32 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-2:hover {
+.emotion-3:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:active {
+.emotion-3:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-2:focus {
+.emotion-3:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-3 {
+.emotion-4 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 8rem;
+  height: 16rem;
   object-fit: cover;
 }
 
-.emotion-4 {
+.emotion-5 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(6, 45, 36, var(--tw-text-opacity));
@@ -2929,7 +3002,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   line-height: 1.75rem;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2939,7 +3012,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-direction: column;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2950,7 +3023,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2965,11 +3038,11 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-7:last-child {
+.emotion-8:last-child {
   margin-right: 0px;
 }
 
-.emotion-8 {
+.emotion-9 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -2980,7 +3053,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2994,38 +3067,41 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-10 {
+.emotion-11 {
   margin-right: 1rem;
 }
 
-.emotion-10:last-child {
+.emotion-11:last-child {
   margin-right: 0px;
 }
 
-.emotion-16 {
+.emotion-17 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  margin-top: 0.25rem;
 }
 
 <ul
   class="emotion-0"
 >
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Terveys kuuluu kaikille"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/terveys-kuuluu-kaikille/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3074,23 +3150,23 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Terveys kuuluu kaikille
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3104,13 +3180,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3118,10 +3194,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3129,10 +3205,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3142,27 +3218,29 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3211,23 +3289,23 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Sote on hyvinvointiyhteiskunnan kulmakivi
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3241,13 +3319,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3255,10 +3333,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3266,10 +3344,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3279,27 +3357,29 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
       </p>
     </article>
   </li>
-  <li>
+  <li
+    class="emotion-1"
+  >
     <article
       aria-label="Mitä jos terveyskeskusta ei olisikaan?"
-      class="emotion-1"
+      class="emotion-2"
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-2"
+        class="emotion-3"
         href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-3"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3348,23 +3428,23 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <h2
-          class="emotion-4"
+          class="emotion-5"
           itemprop="headline"
         >
           Mitä jos terveyskeskusta ei olisikaan?
         </h2>
       </a>
       <aside
-        class="emotion-5"
+        class="emotion-6"
       >
         <div
-          class="emotion-6"
+          class="emotion-7"
         >
           <span
-            class="emotion-7"
+            class="emotion-8"
           >
             <svg
-              class="emotion-8"
+              class="emotion-9"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3378,13 +3458,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-9"
+          class="emotion-10"
         >
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3392,10 +3472,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3403,10 +3483,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-10"
+            class="emotion-11"
           >
             <a
-              class="emotion-2"
+              class="emotion-3"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3416,7 +3496,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
