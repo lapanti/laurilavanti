@@ -5,7 +5,6 @@ import React from 'react'
 
 import { WEBPAGE } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
-import HR from './HR'
 import Layout from './Layout'
 
 interface Props {
@@ -25,8 +24,7 @@ const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
         pathname={`/blogi/${tag}/`}
         type={WEBPAGE}
     >
-        <HR />
-        <ExcerptList tag={tag} />
+        <ExcerptList isFirstElement tag={tag} />
     </Layout>
 )
 

@@ -13,7 +13,7 @@ import SocialShare from './post/SocialShare'
 import PostMeta from './PostMeta'
 
 const PositionedMeta = tw(PostMeta)`
-    col-start-3
+    col-start-3 mt-4
 `
 
 interface Props {
