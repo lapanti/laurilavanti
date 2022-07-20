@@ -165,39 +165,6 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render H2', () => {
-            const headingText = 'Heading text'
-            const { container } = render(
-                <Layout
-                    body={{
-                        raw: JSON.stringify({
-                            data: {},
-                            content: [
-                                {
-                                    data: {},
-                                    content: [
-                                        {
-                                            data: {},
-                                            marks: [],
-                                            value: headingText,
-                                            nodeType: 'text',
-                                        },
-                                    ],
-                                    nodeType: BLOCKS.HEADING_2,
-                                },
-                            ],
-                            nodeType: 'document',
-                        }),
-                        references: [],
-                    }}
-                />
-            )
-
-            expect(screen.getByRole('heading', { name: headingText })).toBeInTheDocument()
-
-            expect(container.firstChild).toMatchSnapshot()
-        })
-
         it('should render HR', () => {
             const { container } = render(
                 <Layout
@@ -280,6 +247,7 @@ describe('<Layout />', () => {
                                 __typename: 'ContentfulExcerptList',
                                 contentful_id: '6kFlEZ2Nv6UXotMJJNIFGm',
                                 limit: 1,
+                                isFirstElement: true,
                             },
                         ],
                     }}

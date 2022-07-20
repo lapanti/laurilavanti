@@ -69,6 +69,7 @@ export const query = graphql`
                         __typename
                         contentful_id
                         limit
+                        isFirstElement
                     }
                 }
             }

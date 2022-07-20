@@ -48,7 +48,9 @@ const options = {
                 case 'ContentfulHomeTitle':
                     return <HomeTitle />
                 case 'ContentfulExcerptList':
-                    return <ExcerptList limit={node.data.target.limit} />
+                    return (
+                        <ExcerptList limit={node.data.target.limit} isFirstElement={node.data.target.isFirstElement} />
+                    )
                 case 'ContentfulImageWithCaption':
                     return (
                         <Image

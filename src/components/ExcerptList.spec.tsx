@@ -32,6 +32,16 @@ describe('<ExcerptList />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render as first element', () => {
+        const { container } = render(<ExcerptList isFirstElement />)
+
+        const articles = screen.getAllByRole('article')
+        expect(articles).toHaveLength(excerptList.length)
+        articles.forEach((article, i) => expect(article).toHaveAttribute('aria-label', excerptList[i].title))
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should render in related order', () => {
         const orderedExcerpts = [daycareNeedsTeachers, daycareCannotBeCompromised, preschoolClubChildBenefit]
         const { container } = render(<ExcerptList relatedTags={['kirkkonummi', 'varhaiskasvatus']} limit={limit} />)
