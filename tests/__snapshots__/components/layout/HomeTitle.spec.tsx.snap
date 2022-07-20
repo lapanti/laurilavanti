@@ -2,15 +2,36 @@
 
 exports[`<HomeTitle /> should render 1`] = `
 .emotion-0 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  margin-top: -41rem;
+  height: 41rem;
+  z-index: 40;
+  font-size: 3.75rem;
+  line-height: 1;
   font-weight: 700;
-  grid-column-start: 3;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: rgba(0,0,0,.85);
+  --tw-gradient-stops: var(--tw-gradient-from),rgba(0,0,0,.05),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 700px) {
+  .emotion-0 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-0 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
 }
 
 .emotion-1 {
+  grid-column-start: 3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,54 +39,86 @@ exports[`<HomeTitle /> should render 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .emotion-2 {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-3 {
+  text-shadow: black 1px 1px 1px;
+  width: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 <div
   class="emotion-0"
 >
-  <dl
+  <h1
+    aria-label="Lauri Lavanti"
     class="emotion-1"
   >
-    <dt
-      aria-label="Lauri Lavanti"
+    <span
       class="emotion-2"
     >
-      <h1>
-        Lauri Lavanti
-      </h1>
-    </dt>
-    <dd
-      aria-label="Isä"
+      <span
+        class="emotion-3"
+      >
+        L
+      </span>
+    </span>
+    <span
+      class="emotion-2"
     >
-      Isä
-    </dd>
-    <dd
-      aria-label="Kirkkonummelainen"
+      <span
+        class="emotion-3"
+      >
+        A
+      </span>
+    </span>
+    <span
+      class="emotion-2"
     >
-      Kirkkonummelainen
-    </dd>
-    <dd
-      aria-label="Ohjelmistokehittäjä"
+      <span
+        class="emotion-3"
+      >
+        U
+      </span>
+    </span>
+    <span
+      class="emotion-2"
     >
-      Ohjelmistokehittäjä
-    </dd>
-    <dd
-      aria-label="Diplomi-insinööri"
+      <span
+        class="emotion-3"
+      >
+        R
+      </span>
+    </span>
+    <span
+      class="emotion-2"
     >
-      Diplomi-insinööri
-    </dd>
-  </dl>
+      <span
+        class="emotion-3"
+      >
+        I
+      </span>
+    </span>
+  </h1>
 </div>
 `;

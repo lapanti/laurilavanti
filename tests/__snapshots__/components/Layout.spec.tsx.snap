@@ -2792,15 +2792,36 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
 }
 
 .emotion-13 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  margin-top: -41rem;
+  height: 41rem;
+  z-index: 40;
+  font-size: 3.75rem;
+  line-height: 1;
   font-weight: 700;
-  grid-column-start: 3;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+  --tw-gradient-from: rgba(0,0,0,.85);
+  --tw-gradient-stops: var(--tw-gradient-from),rgba(0,0,0,.05),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 700px) {
+  .emotion-13 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-13 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
 }
 
 .emotion-14 {
+  grid-column-start: 3;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2808,21 +2829,44 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  overflow: hidden;
 }
 
 .emotion-15 {
-  -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
-  align-self: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .emotion-16 {
+  text-shadow: black 1px 1px 1px;
+  width: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-25 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  grid-column-start: 3;
+  margin-top: 1rem;
+}
+
+.emotion-26 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -2846,7 +2890,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   height: 100%;
 }
 
-.emotion-17 {
+.emotion-27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2864,11 +2908,11 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   justify-content: center;
 }
 
-.emotion-18 {
+.emotion-28 {
   padding: 1.125rem;
 }
 
-.emotion-19 {
+.emotion-29 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2879,17 +2923,17 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   width: 2.25rem;
 }
 
-.emotion-19:hover {
+.emotion-29:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-19:focus {
+.emotion-29:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-21 {
+.emotion-31 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2900,17 +2944,17 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   width: 2.25rem;
 }
 
-.emotion-21:hover {
+.emotion-31:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-21:focus {
+.emotion-31:focus {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-23 {
+.emotion-33 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2921,12 +2965,12 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   width: 2.25rem;
 }
 
-.emotion-23:hover {
+.emotion-33:hover {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
 
-.emotion-23:focus {
+.emotion-33:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -3000,49 +3044,72 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
       <div
         class="emotion-13"
       >
-        <dl
+        <h1
+          aria-label="Lauri Lavanti"
           class="emotion-14"
         >
-          <dt
-            aria-label="Lauri Lavanti"
+          <span
             class="emotion-15"
           >
-            <h1>
-              Lauri Lavanti
-            </h1>
-          </dt>
-          <dd
-            aria-label="Isä"
+            <span
+              class="emotion-16"
+            >
+              L
+            </span>
+          </span>
+          <span
+            class="emotion-15"
           >
-            Isä
-          </dd>
-          <dd
-            aria-label="Kirkkonummelainen"
+            <span
+              class="emotion-16"
+            >
+              A
+            </span>
+          </span>
+          <span
+            class="emotion-15"
           >
-            Kirkkonummelainen
-          </dd>
-          <dd
-            aria-label="Ohjelmistokehittäjä"
+            <span
+              class="emotion-16"
+            >
+              U
+            </span>
+          </span>
+          <span
+            class="emotion-15"
           >
-            Ohjelmistokehittäjä
-          </dd>
-          <dd
-            aria-label="Diplomi-insinööri"
+            <span
+              class="emotion-16"
+            >
+              R
+            </span>
+          </span>
+          <span
+            class="emotion-15"
           >
-            Diplomi-insinööri
-          </dd>
-        </dl>
+            <span
+              class="emotion-16"
+            >
+              I
+            </span>
+          </span>
+        </h1>
       </div>
+      <p
+        class="emotion-25"
+      >
+        Kirkkonummelainen paikallispolitiikkaa harrastava diplomi-insinööri. Kahden lapsen isä ja ohjelmistokehittäjä.
+      </p>
     </article>
   </main>
   <footer
-    class="emotion-16"
+    class="emotion-26"
   >
     <ul
-      class="emotion-17"
+      class="emotion-27"
     >
       <li
-        class="emotion-18"
+        class="emotion-28"
       >
         <a
           href="https://www.facebook.com/laurilavanti"
@@ -3051,7 +3118,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           title="Facebook"
         >
           <svg
-            class="emotion-19"
+            class="emotion-29"
           >
             <use
               xlink:href="#icon-facebook"
@@ -3060,7 +3127,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="emotion-18"
+        class="emotion-28"
       >
         <a
           href="https://twitter.com/laurilavanti"
@@ -3069,7 +3136,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           title="Twitter"
         >
           <svg
-            class="emotion-21"
+            class="emotion-31"
           >
             <use
               xlink:href="#icon-twitter"
@@ -3078,7 +3145,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="emotion-18"
+        class="emotion-28"
       >
         <a
           href="https://www.linkedin.com/in/lapanti"
@@ -3087,7 +3154,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           title="LinkedIn"
         >
           <svg
-            class="emotion-23"
+            class="emotion-33"
           >
             <use
               xlink:href="#icon-linkedin"

@@ -5,7 +5,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 const Image = tw(GatsbyImage)`
-    ml-auto mr-auto !h-[41rem] object-cover !w-full max-w-screen-fullhd overflow-hidden
+    ml-auto mr-auto !h-164 object-cover !w-full max-w-screen-fullhd overflow-hidden
 `
 
 interface Props {
