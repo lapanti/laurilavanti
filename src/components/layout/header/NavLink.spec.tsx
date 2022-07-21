@@ -19,11 +19,11 @@ describe('<NavLink />', () => {
     })
 
     it('should render link to index', () => {
-        const indexNav = { ...nav, slug: 'index' }
+        const indexNav = { ...nav, title: 'Lauri Lavanti', slug: 'index' }
 
         const { container } = render(<NavLink {...indexNav} />)
 
-        expect(screen.getByRole('link', { name: title })).toHaveAttribute('href', `/`)
+        expect(screen.getByRole('link', { name: /Etusivu/i })).toHaveAttribute('href', `/`)
 
         expect(container.firstChild).toMatchSnapshot()
     })
