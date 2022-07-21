@@ -5,7 +5,7 @@ describe('Home Page', () => {
         cy.visit('/')
         shouldHaveMainNavigation(cy)
 
-        cy.findByRole('term', { name: /Lauri Lavanti/i }).should('be.visible')
+        cy.findByRole('heading', { name: /Lauri Lavanti/i }).should('be.visible')
 
         cy.findByRole('heading', { name: /Uusimmat kirjoitukset/i }).should('be.visible')
 
