@@ -4,7 +4,7 @@ exports[`<404 /> should render 1`] = `
 .emotion-0 {
   display: grid;
   grid-template-areas: " main " "footer";
-  grid-template-rows: 1fr 8rem;
+  grid-template-rows: 1fr 6rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
   min-height: 100vh;
@@ -393,13 +393,30 @@ exports[`<404 /> should render 1`] = `
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .emotion-100 {
-  padding: 1.125rem;
+  padding: 0px;
 }
 
 .emotion-101 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-102 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -410,35 +427,14 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-101:hover {
+.emotion-102:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-101:focus {
+.emotion-102:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
-}
-
-.emotion-103 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  fill: currentColor;
-  --tw-text-opacity: 1;
-  color: rgba(227, 227, 227, var(--tw-text-opacity));
-  height: 2.25rem;
-  width: 2.25rem;
-}
-
-.emotion-103:hover {
-  --tw-text-opacity: 1;
-  color: rgba(29, 161, 242, var(--tw-text-opacity));
-}
-
-.emotion-103:focus {
-  --tw-text-opacity: 1;
-  color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
 .emotion-105 {
@@ -454,10 +450,31 @@ exports[`<404 /> should render 1`] = `
 
 .emotion-105:hover {
   --tw-text-opacity: 1;
-  color: rgba(14, 118, 168, var(--tw-text-opacity));
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
 .emotion-105:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-108 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-108:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-108:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -1234,13 +1251,14 @@ exports[`<404 /> should render 1`] = `
           class="emotion-100"
         >
           <a
+            class="emotion-101"
             href="https://www.facebook.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Facebook"
           >
             <svg
-              class="emotion-101"
+              class="emotion-102"
             >
               <use
                 xlink:href="#icon-facebook"
@@ -1252,13 +1270,14 @@ exports[`<404 /> should render 1`] = `
           class="emotion-100"
         >
           <a
+            class="emotion-101"
             href="https://twitter.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Twitter"
           >
             <svg
-              class="emotion-103"
+              class="emotion-105"
             >
               <use
                 xlink:href="#icon-twitter"
@@ -1270,13 +1289,14 @@ exports[`<404 /> should render 1`] = `
           class="emotion-100"
         >
           <a
+            class="emotion-101"
             href="https://www.linkedin.com/in/lapanti"
             rel="noopener noreferrer"
             target="_blank"
             title="LinkedIn"
           >
             <svg
-              class="emotion-105"
+              class="emotion-108"
             >
               <use
                 xlink:href="#icon-linkedin"

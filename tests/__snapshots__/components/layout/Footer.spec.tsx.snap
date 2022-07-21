@@ -41,13 +41,30 @@ exports[`<Footer /> should render 1`] = `
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+  gap: 1.5rem;
 }
 
 .emotion-2 {
-  padding: 1.125rem;
+  padding: 0px;
 }
 
 .emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-4 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -58,35 +75,14 @@ exports[`<Footer /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-3:hover {
+.emotion-4:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-3:focus {
+.emotion-4:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
-}
-
-.emotion-5 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  fill: currentColor;
-  --tw-text-opacity: 1;
-  color: rgba(227, 227, 227, var(--tw-text-opacity));
-  height: 2.25rem;
-  width: 2.25rem;
-}
-
-.emotion-5:hover {
-  --tw-text-opacity: 1;
-  color: rgba(29, 161, 242, var(--tw-text-opacity));
-}
-
-.emotion-5:focus {
-  --tw-text-opacity: 1;
-  color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
 .emotion-7 {
@@ -102,10 +98,31 @@ exports[`<Footer /> should render 1`] = `
 
 .emotion-7:hover {
   --tw-text-opacity: 1;
-  color: rgba(14, 118, 168, var(--tw-text-opacity));
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
 .emotion-7:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-10 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-10:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-10:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -120,13 +137,14 @@ exports[`<Footer /> should render 1`] = `
       class="emotion-2"
     >
       <a
+        class="emotion-3"
         href="https://www.facebook.com/laurilavanti"
         rel="noopener noreferrer"
         target="_blank"
         title="Facebook"
       >
         <svg
-          class="emotion-3"
+          class="emotion-4"
         >
           <use
             xlink:href="#icon-facebook"
@@ -138,13 +156,14 @@ exports[`<Footer /> should render 1`] = `
       class="emotion-2"
     >
       <a
+        class="emotion-3"
         href="https://twitter.com/laurilavanti"
         rel="noopener noreferrer"
         target="_blank"
         title="Twitter"
       >
         <svg
-          class="emotion-5"
+          class="emotion-7"
         >
           <use
             xlink:href="#icon-twitter"
@@ -156,13 +175,14 @@ exports[`<Footer /> should render 1`] = `
       class="emotion-2"
     >
       <a
+        class="emotion-3"
         href="https://www.linkedin.com/in/lapanti"
         rel="noopener noreferrer"
         target="_blank"
         title="LinkedIn"
       >
         <svg
-          class="emotion-7"
+          class="emotion-10"
         >
           <use
             xlink:href="#icon-linkedin"

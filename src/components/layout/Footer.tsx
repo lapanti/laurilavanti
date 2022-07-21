@@ -5,11 +5,15 @@ import React from 'react'
 import tw from 'twin.macro'
 
 const List = tw.ul`
-    flex flex-row items-center justify-center
+    flex flex-row items-center justify-center gap-6
 `
 
 const Item = tw.li`
-    p-4.5
+    p-0
+`
+
+const Link = tw.a`
+    flex items-center justify-center h-full
 `
 
 const Svg = tw.svg`
@@ -51,7 +55,7 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
             <List>
                 {data.contentfulFooterNav.links.map((link) => (
                     <Item key={link.title}>
-                        <a href={link.url} title={link.title} target="_blank" rel="noopener noreferrer">
+                        <Link href={link.url} title={link.title} target="_blank" rel="noopener noreferrer">
                             {link.icon === 'facebook' && (
                                 <Facebook>
                                     <use xlinkHref="#icon-facebook" />
@@ -67,7 +71,7 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
                                     <use xlinkHref="#icon-linkedin" />
                                 </LinkedIn>
                             )}
-                        </a>
+                        </Link>
                     </Item>
                 ))}
             </List>

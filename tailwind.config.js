@@ -32,7 +32,7 @@ module.exports = {
                 layout: [' main ', 'footer'],
             },
             gridTemplateRows: {
-                layout: '1fr 8rem',
+                layout: '1fr 6rem',
             },
             gridTemplateColumns: {
                 article: '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr',
