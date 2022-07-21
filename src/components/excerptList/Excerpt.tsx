@@ -9,12 +9,20 @@ import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
+const Link = tw(InternalLink)`
+    text-lightGrey
+`
+
 const Image = tw(GatsbyImage)`
     w-full flex h-64 object-cover
 `
 
+const H2Container = tw.div`
+    flex items-end mb-4 pb-2 pl-2 -mt-32 h-32 w-full bg-gradient-to-t from-black z-40 relative
+`
+
 const H2 = tw.h2`
-    font-bold text-accent text-xl
+    font-bold text-xl
 `
 
 const RemarginP = tw(Paragraph)`
@@ -34,12 +42,19 @@ const ExcerptComponent = ({ className, title, date, excerpt, tags, image: imageD
 
     return (
         <article className={className} aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
-            <InternalLink to={`/blogi/${slug}/`} rel="permalink">
+            <Link to={`/blogi/${slug}/`} rel="permalink">
                 {image && <Image image={image} alt={title} />}
-                <H2 itemProp="headline">{title}</H2>
-            </InternalLink>
+                <H2Container>
+                    <H2 itemProp="headline">{title}</H2>
+                </H2Container>
+            </Link>
             <PostMeta date={date} tags={tags} />
-            <RemarginP itemProp="description">{excerpt}</RemarginP>
+            <RemarginP itemProp="description">
+                {excerpt}{' '}
+                <InternalLink to={`/blogi/${slug}/`} rel="permalink">
+                    Lue lisää »
+                </InternalLink>
+            </RemarginP>
         </article>
     )
 }
