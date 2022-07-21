@@ -14,11 +14,11 @@ interface Props extends Link {
 const NavLinkComponent = ({ className, title, slug }: Props): JSX.Element => (
     <InternalLink
         className={className}
-        partiallyActive
+        partiallyActive={slug !== 'index'}
         activeStyle={{ textDecoration: 'underline' }}
         to={slug === 'index' ? '/' : `/${slug}/`}
     >
-        {title}
+        {title === 'Lauri Lavanti' ? 'Etusivu' : title}
     </InternalLink>
 )
 
