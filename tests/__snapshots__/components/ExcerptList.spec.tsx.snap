@@ -23,6 +23,8 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
@@ -51,14 +53,34 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.emotion-6 {
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,7 +90,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-direction: column;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -79,7 +101,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -94,11 +116,11 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-8:last-child {
+.emotion-9:last-child {
   margin-right: 0px;
 }
 
-.emotion-9 {
+.emotion-10 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -109,7 +131,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,15 +145,42 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-11 {
+.emotion-12 {
   margin-right: 1rem;
 }
 
-.emotion-11:last-child {
+.emotion-12:last-child {
   margin-right: 0px;
 }
 
-.emotion-15 {
+.emotion-13 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-13:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-16 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -205,24 +254,28 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Päiväkodit kaipaavat opettajia
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Päiväkodit kaipaavat opettajia
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -236,13 +289,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -250,10 +303,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -263,10 +316,18 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/paivakodit-kaipaavat-opettajia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -333,24 +394,28 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen riittävyydestä ei saa tinkiä
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen riittävyydestä ei saa tinkiä
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -364,13 +429,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -378,10 +443,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -389,10 +454,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -402,10 +467,18 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -472,24 +545,28 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen kerhotoiminta - lapsen etu
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen kerhotoiminta - lapsen etu
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -503,13 +580,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -517,10 +594,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -530,10 +607,18 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -600,24 +685,28 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Kirkkonummi-lisä on sinunkin etusi
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Kirkkonummi-lisä on sinunkin etusi
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -631,13 +720,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -645,10 +734,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -658,10 +747,18 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -728,24 +825,28 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -759,13 +860,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -773,10 +874,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -786,10 +887,18 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
+         
+        <a
+          class="emotion-13"
+          href="/blogi/kotihoidon-tuen-kuntalisa/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -819,6 +928,8 @@ exports[`<ExcerptList /> should render 1`] = `
   text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
@@ -847,14 +958,34 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.emotion-6 {
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -864,7 +995,7 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -875,7 +1006,7 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -890,11 +1021,11 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-8:last-child {
+.emotion-9:last-child {
   margin-right: 0px;
 }
 
-.emotion-9 {
+.emotion-10 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -905,7 +1036,7 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -919,15 +1050,42 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-11 {
+.emotion-12 {
   margin-right: 1rem;
 }
 
-.emotion-11:last-child {
+.emotion-12:last-child {
   margin-right: 0px;
 }
 
-.emotion-17 {
+.emotion-13 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-13:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-18 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -1001,24 +1159,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Terveys kuuluu kaikille
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Terveys kuuluu kaikille
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1032,13 +1194,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1046,10 +1208,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1057,10 +1219,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1070,10 +1232,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/terveys-kuuluu-kaikille/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1140,24 +1310,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Sote on hyvinvointiyhteiskunnan kulmakivi
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Sote on hyvinvointiyhteiskunnan kulmakivi
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1171,13 +1345,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1185,10 +1359,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1196,10 +1370,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1209,10 +1383,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1279,24 +1461,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Mitä jos terveyskeskusta ei olisikaan?
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Mitä jos terveyskeskusta ei olisikaan?
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1310,13 +1496,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1324,10 +1510,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1335,10 +1521,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1348,10 +1534,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1418,24 +1612,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Perusturvajaosto - mikä se on?
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Perusturvajaosto - mikä se on?
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1449,13 +1647,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1463,10 +1661,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/perustuva/"
             >
               #
@@ -1476,10 +1674,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1546,24 +1752,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Ehdolle aluevaaleihin
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Ehdolle aluevaaleihin
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1577,13 +1787,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1591,10 +1801,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1602,10 +1812,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1615,10 +1825,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/ehdolle-aluevaaleihin/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1685,24 +1903,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Päiväkodit kaipaavat opettajia
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Päiväkodit kaipaavat opettajia
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1716,13 +1938,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1730,10 +1952,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -1743,10 +1965,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/paivakodit-kaipaavat-opettajia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1813,24 +2043,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Hyvin suunniteltu on puoliksi tehty, mutta
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Hyvin suunniteltu on puoliksi tehty, mutta
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1844,13 +2078,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1858,10 +2092,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/opetus/"
             >
               #
@@ -1871,10 +2105,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -1941,24 +2183,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen riittävyydestä ei saa tinkiä
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen riittävyydestä ei saa tinkiä
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1972,13 +2218,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -1986,10 +2232,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1997,10 +2243,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2010,10 +2256,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -2080,24 +2334,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen kerhotoiminta - lapsen etu
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen kerhotoiminta - lapsen etu
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2111,13 +2369,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2125,10 +2383,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2138,10 +2396,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -2208,24 +2474,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Kirkkonummi-lisä on sinunkin etusi
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Kirkkonummi-lisä on sinunkin etusi
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2239,13 +2509,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2253,10 +2523,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2266,10 +2536,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -2336,24 +2614,28 @@ exports[`<ExcerptList /> should render 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2367,13 +2649,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2381,10 +2663,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2394,10 +2676,18 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
+         
+        <a
+          class="emotion-13"
+          href="/blogi/kotihoidon-tuen-kuntalisa/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -2428,6 +2718,8 @@ exports[`<ExcerptList /> should render as first element 1`] = `
   text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
@@ -2456,14 +2748,34 @@ exports[`<ExcerptList /> should render as first element 1`] = `
 }
 
 .emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.emotion-6 {
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2473,7 +2785,7 @@ exports[`<ExcerptList /> should render as first element 1`] = `
   flex-direction: column;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2484,7 +2796,7 @@ exports[`<ExcerptList /> should render as first element 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2499,11 +2811,11 @@ exports[`<ExcerptList /> should render as first element 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-8:last-child {
+.emotion-9:last-child {
   margin-right: 0px;
 }
 
-.emotion-9 {
+.emotion-10 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -2514,7 +2826,7 @@ exports[`<ExcerptList /> should render as first element 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2528,15 +2840,42 @@ exports[`<ExcerptList /> should render as first element 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-11 {
+.emotion-12 {
   margin-right: 1rem;
 }
 
-.emotion-11:last-child {
+.emotion-12:last-child {
   margin-right: 0px;
 }
 
-.emotion-17 {
+.emotion-13 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-13:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-18 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -2610,24 +2949,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Terveys kuuluu kaikille
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Terveys kuuluu kaikille
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2641,13 +2984,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -2655,10 +2998,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2666,10 +3009,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -2679,10 +3022,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/terveys-kuuluu-kaikille/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -2749,24 +3100,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Sote on hyvinvointiyhteiskunnan kulmakivi
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Sote on hyvinvointiyhteiskunnan kulmakivi
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2780,13 +3135,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -2794,10 +3149,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2805,10 +3160,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -2818,10 +3173,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -2888,24 +3251,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Mitä jos terveyskeskusta ei olisikaan?
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Mitä jos terveyskeskusta ei olisikaan?
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2919,13 +3286,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -2933,10 +3300,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2944,10 +3311,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -2957,10 +3324,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3027,24 +3402,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Perusturvajaosto - mikä se on?
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Perusturvajaosto - mikä se on?
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3058,13 +3437,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3072,10 +3451,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/perustuva/"
             >
               #
@@ -3085,10 +3464,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3155,24 +3542,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Ehdolle aluevaaleihin
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Ehdolle aluevaaleihin
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3186,13 +3577,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3200,10 +3591,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3211,10 +3602,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3224,10 +3615,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/ehdolle-aluevaaleihin/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3294,24 +3693,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Päiväkodit kaipaavat opettajia
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Päiväkodit kaipaavat opettajia
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3325,13 +3728,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3339,10 +3742,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3352,10 +3755,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/paivakodit-kaipaavat-opettajia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3422,24 +3833,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Hyvin suunniteltu on puoliksi tehty, mutta
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Hyvin suunniteltu on puoliksi tehty, mutta
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3453,13 +3868,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3467,10 +3882,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/opetus/"
             >
               #
@@ -3480,10 +3895,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3550,24 +3973,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen riittävyydestä ei saa tinkiä
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen riittävyydestä ei saa tinkiä
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3581,13 +4008,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -3595,10 +4022,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3606,10 +4033,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3619,10 +4046,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3689,24 +4124,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen kerhotoiminta - lapsen etu
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen kerhotoiminta - lapsen etu
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3720,13 +4159,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3734,10 +4173,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3747,10 +4186,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3817,24 +4264,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Kirkkonummi-lisä on sinunkin etusi
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Kirkkonummi-lisä on sinunkin etusi
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3848,13 +4299,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3862,10 +4313,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3875,10 +4326,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -3945,24 +4404,28 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3976,13 +4439,13 @@ exports[`<ExcerptList /> should render as first element 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3990,10 +4453,10 @@ exports[`<ExcerptList /> should render as first element 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4003,10 +4466,18 @@ exports[`<ExcerptList /> should render as first element 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
+         
+        <a
+          class="emotion-13"
+          href="/blogi/kotihoidon-tuen-kuntalisa/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -4036,6 +4507,8 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
@@ -4064,14 +4537,34 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.emotion-6 {
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4081,7 +4574,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-direction: column;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4092,7 +4585,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4107,11 +4600,11 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-8:last-child {
+.emotion-9:last-child {
   margin-right: 0px;
 }
 
-.emotion-9 {
+.emotion-10 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -4122,7 +4615,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4136,15 +4629,42 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-11 {
+.emotion-12 {
   margin-right: 1rem;
 }
 
-.emotion-11:last-child {
+.emotion-12:last-child {
   margin-right: 0px;
 }
 
-.emotion-15 {
+.emotion-13 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-13:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-16 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -4218,24 +4738,28 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Päiväkodit kaipaavat opettajia
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Päiväkodit kaipaavat opettajia
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -4249,13 +4773,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4263,10 +4787,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4276,10 +4800,18 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/paivakodit-kaipaavat-opettajia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -4346,24 +4878,28 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen riittävyydestä ei saa tinkiä
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen riittävyydestä ei saa tinkiä
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -4377,13 +4913,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -4391,10 +4927,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4402,10 +4938,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4415,10 +4951,18 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -4485,24 +5029,28 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Varhaiskasvatuksen kerhotoiminta - lapsen etu
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Varhaiskasvatuksen kerhotoiminta - lapsen etu
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -4516,13 +5064,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4530,10 +5078,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4543,10 +5091,18 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-15"
+        class="emotion-16"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -4576,6 +5132,8 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
@@ -4604,14 +5162,34 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.emotion-6 {
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4621,7 +5199,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-direction: column;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4632,7 +5210,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4647,11 +5225,11 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-8:last-child {
+.emotion-9:last-child {
   margin-right: 0px;
 }
 
-.emotion-9 {
+.emotion-10 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -4662,7 +5240,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-10 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4676,15 +5254,42 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-11 {
+.emotion-12 {
   margin-right: 1rem;
 }
 
-.emotion-11:last-child {
+.emotion-12:last-child {
   margin-right: 0px;
 }
 
-.emotion-17 {
+.emotion-13 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-13:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-13:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-18 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -4758,24 +5363,28 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Terveys kuuluu kaikille
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Terveys kuuluu kaikille
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -4789,13 +5398,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -4803,10 +5412,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4814,10 +5423,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -4827,10 +5436,18 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
+         
+        <a
+          class="emotion-13"
+          href="/blogi/terveys-kuuluu-kaikille/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -4897,24 +5514,28 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Sote on hyvinvointiyhteiskunnan kulmakivi
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Sote on hyvinvointiyhteiskunnan kulmakivi
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -4928,13 +5549,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -4942,10 +5563,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4953,10 +5574,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -4966,10 +5587,18 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>
@@ -5036,24 +5665,28 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
           </script>
         </div>
-        <h2
+        <div
           class="emotion-5"
-          itemprop="headline"
         >
-          Mitä jos terveyskeskusta ei olisikaan?
-        </h2>
+          <h2
+            class="emotion-6"
+            itemprop="headline"
+          >
+            Mitä jos terveyskeskusta ei olisikaan?
+          </h2>
+        </div>
       </a>
       <aside
-        class="emotion-6"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-8"
         >
           <span
-            class="emotion-8"
+            class="emotion-9"
           >
             <svg
-              class="emotion-9"
+              class="emotion-10"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -5067,13 +5700,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-10"
+          class="emotion-11"
         >
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -5081,10 +5714,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -5092,10 +5725,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-11"
+            class="emotion-12"
           >
             <a
-              class="emotion-3"
+              class="emotion-13"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -5105,10 +5738,18 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-18"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
+         
+        <a
+          class="emotion-13"
+          href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
+          rel="permalink"
+        >
+          Lue lisää »
+        </a>
       </p>
     </article>
   </li>

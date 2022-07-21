@@ -237,6 +237,8 @@ exports[`<404 /> should render 1`] = `
   text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
 .emotion-17:hover {
@@ -265,14 +267,34 @@ exports[`<404 /> should render 1`] = `
 }
 
 .emotion-19 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.emotion-20 {
   font-weight: 700;
-  --tw-text-opacity: 1;
-  color: rgba(6, 45, 36, var(--tw-text-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-20 {
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -282,7 +304,7 @@ exports[`<404 /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-21 {
+.emotion-22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -293,7 +315,7 @@ exports[`<404 /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-22 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -308,11 +330,11 @@ exports[`<404 /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-22:last-child {
+.emotion-23:last-child {
   margin-right: 0px;
 }
 
-.emotion-23 {
+.emotion-24 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -323,7 +345,7 @@ exports[`<404 /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-24 {
+.emotion-25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -337,15 +359,42 @@ exports[`<404 /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-25 {
+.emotion-26 {
   margin-right: 1rem;
 }
 
-.emotion-25:last-child {
+.emotion-26:last-child {
   margin-right: 0px;
 }
 
-.emotion-31 {
+.emotion-27 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.emotion-27:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-27:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-27:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-32 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -353,7 +402,7 @@ exports[`<404 /> should render 1`] = `
   margin-top: 0.25rem;
 }
 
-.emotion-98 {
+.emotion-108 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -377,7 +426,7 @@ exports[`<404 /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-99 {
+.emotion-109 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -396,11 +445,11 @@ exports[`<404 /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-100 {
+.emotion-110 {
   padding: 0px;
 }
 
-.emotion-101 {
+.emotion-111 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -416,7 +465,7 @@ exports[`<404 /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-102 {
+.emotion-112 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -427,17 +476,17 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-102:hover {
+.emotion-112:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-102:focus {
+.emotion-112:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-105 {
+.emotion-115 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -448,17 +497,17 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-105:hover {
+.emotion-115:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-105:focus {
+.emotion-115:focus {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-108 {
+.emotion-118 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -469,12 +518,12 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-108:hover {
+.emotion-118:hover {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
 
-.emotion-108:focus {
+.emotion-118:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -617,24 +666,28 @@ exports[`<404 /> should render 1`] = `
                     const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
                   </script>
                 </div>
-                <h2
+                <div
                   class="emotion-19"
-                  itemprop="headline"
                 >
-                  Terveys kuuluu kaikille
-                </h2>
+                  <h2
+                    class="emotion-20"
+                    itemprop="headline"
+                  >
+                    Terveys kuuluu kaikille
+                  </h2>
+                </div>
               </a>
               <aside
-                class="emotion-20"
+                class="emotion-21"
               >
                 <div
-                  class="emotion-21"
+                  class="emotion-22"
                 >
                   <span
-                    class="emotion-22"
+                    class="emotion-23"
                   >
                     <svg
-                      class="emotion-23"
+                      class="emotion-24"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -648,13 +701,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-24"
+                  class="emotion-25"
                 >
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -662,10 +715,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -673,10 +726,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -686,10 +739,18 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-31"
+                class="emotion-32"
                 itemprop="description"
               >
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
+                 
+                <a
+                  class="emotion-27"
+                  href="/blogi/terveys-kuuluu-kaikille/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
               </p>
             </article>
           </li>
@@ -756,24 +817,28 @@ exports[`<404 /> should render 1`] = `
                     const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
                   </script>
                 </div>
-                <h2
+                <div
                   class="emotion-19"
-                  itemprop="headline"
                 >
-                  Sote on hyvinvointiyhteiskunnan kulmakivi
-                </h2>
+                  <h2
+                    class="emotion-20"
+                    itemprop="headline"
+                  >
+                    Sote on hyvinvointiyhteiskunnan kulmakivi
+                  </h2>
+                </div>
               </a>
               <aside
-                class="emotion-20"
+                class="emotion-21"
               >
                 <div
-                  class="emotion-21"
+                  class="emotion-22"
                 >
                   <span
-                    class="emotion-22"
+                    class="emotion-23"
                   >
                     <svg
-                      class="emotion-23"
+                      class="emotion-24"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -787,13 +852,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-24"
+                  class="emotion-25"
                 >
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -801,10 +866,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -812,10 +877,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -825,10 +890,18 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-31"
+                class="emotion-32"
                 itemprop="description"
               >
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
+                 
+                <a
+                  class="emotion-27"
+                  href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
               </p>
             </article>
           </li>
@@ -895,24 +968,28 @@ exports[`<404 /> should render 1`] = `
                     const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
                   </script>
                 </div>
-                <h2
+                <div
                   class="emotion-19"
-                  itemprop="headline"
                 >
-                  Mitä jos terveyskeskusta ei olisikaan?
-                </h2>
+                  <h2
+                    class="emotion-20"
+                    itemprop="headline"
+                  >
+                    Mitä jos terveyskeskusta ei olisikaan?
+                  </h2>
+                </div>
               </a>
               <aside
-                class="emotion-20"
+                class="emotion-21"
               >
                 <div
-                  class="emotion-21"
+                  class="emotion-22"
                 >
                   <span
-                    class="emotion-22"
+                    class="emotion-23"
                   >
                     <svg
-                      class="emotion-23"
+                      class="emotion-24"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -926,13 +1003,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-24"
+                  class="emotion-25"
                 >
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -940,10 +1017,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -951,10 +1028,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -964,10 +1041,18 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-31"
+                class="emotion-32"
                 itemprop="description"
               >
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
+                 
+                <a
+                  class="emotion-27"
+                  href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
               </p>
             </article>
           </li>
@@ -1034,24 +1119,28 @@ exports[`<404 /> should render 1`] = `
                     const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
                   </script>
                 </div>
-                <h2
+                <div
                   class="emotion-19"
-                  itemprop="headline"
                 >
-                  Perusturvajaosto - mikä se on?
-                </h2>
+                  <h2
+                    class="emotion-20"
+                    itemprop="headline"
+                  >
+                    Perusturvajaosto - mikä se on?
+                  </h2>
+                </div>
               </a>
               <aside
-                class="emotion-20"
+                class="emotion-21"
               >
                 <div
-                  class="emotion-21"
+                  class="emotion-22"
                 >
                   <span
-                    class="emotion-22"
+                    class="emotion-23"
                   >
                     <svg
-                      class="emotion-23"
+                      class="emotion-24"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1065,13 +1154,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-24"
+                  class="emotion-25"
                 >
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1079,10 +1168,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/perustuva/"
                     >
                       #
@@ -1092,10 +1181,18 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-31"
+                class="emotion-32"
                 itemprop="description"
               >
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
+                 
+                <a
+                  class="emotion-27"
+                  href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
               </p>
             </article>
           </li>
@@ -1162,24 +1259,28 @@ exports[`<404 /> should render 1`] = `
                     const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
                   </script>
                 </div>
-                <h2
+                <div
                   class="emotion-19"
-                  itemprop="headline"
                 >
-                  Ehdolle aluevaaleihin
-                </h2>
+                  <h2
+                    class="emotion-20"
+                    itemprop="headline"
+                  >
+                    Ehdolle aluevaaleihin
+                  </h2>
+                </div>
               </a>
               <aside
-                class="emotion-20"
+                class="emotion-21"
               >
                 <div
-                  class="emotion-21"
+                  class="emotion-22"
                 >
                   <span
-                    class="emotion-22"
+                    class="emotion-23"
                   >
                     <svg
-                      class="emotion-23"
+                      class="emotion-24"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1193,13 +1294,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-24"
+                  class="emotion-25"
                 >
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1207,10 +1308,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1218,10 +1319,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-25"
+                    class="emotion-26"
                   >
                     <a
-                      class="emotion-17"
+                      class="emotion-27"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1231,10 +1332,18 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-31"
+                class="emotion-32"
                 itemprop="description"
               >
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
+                 
+                <a
+                  class="emotion-27"
+                  href="/blogi/ehdolle-aluevaaleihin/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
               </p>
             </article>
           </li>
@@ -1242,23 +1351,23 @@ exports[`<404 /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="emotion-98"
+      class="emotion-108"
     >
       <ul
-        class="emotion-99"
+        class="emotion-109"
       >
         <li
-          class="emotion-100"
+          class="emotion-110"
         >
           <a
-            class="emotion-101"
+            class="emotion-111"
             href="https://www.facebook.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Facebook"
           >
             <svg
-              class="emotion-102"
+              class="emotion-112"
             >
               <use
                 xlink:href="#icon-facebook"
@@ -1267,17 +1376,17 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="emotion-100"
+          class="emotion-110"
         >
           <a
-            class="emotion-101"
+            class="emotion-111"
             href="https://twitter.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Twitter"
           >
             <svg
-              class="emotion-105"
+              class="emotion-115"
             >
               <use
                 xlink:href="#icon-twitter"
@@ -1286,17 +1395,17 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="emotion-100"
+          class="emotion-110"
         >
           <a
-            class="emotion-101"
+            class="emotion-111"
             href="https://www.linkedin.com/in/lapanti"
             rel="noopener noreferrer"
             target="_blank"
             title="LinkedIn"
           >
             <svg
-              class="emotion-108"
+              class="emotion-118"
             >
               <use
                 xlink:href="#icon-linkedin"
