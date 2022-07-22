@@ -2,12 +2,9 @@ import type { ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useMemo } from 'react'
-/** @ts-expect-error twin.macro typings are incomplete :/ */
-import tw, { styled } from 'twin.macro'
+import tw from 'twin.macro'
 
 import Excerpt from './excerptList/Excerpt'
-
-const List = styled.ul(({ isFirstElement }: { isFirstElement?: boolean }) => [isFirstElement ? tw`mt-4` : tw``])
 
 const Item = tw.li`
     mt-8 first-of-type:mt-0
@@ -19,17 +16,9 @@ interface Props {
     relatedTags?: string[]
     tag?: string
     currentSlug?: string
-    isFirstElement?: boolean
 }
 
-const ExcerptListComponent = ({
-    className,
-    limit,
-    relatedTags,
-    tag,
-    currentSlug,
-    isFirstElement,
-}: Props): JSX.Element => {
+const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug }: Props): JSX.Element => {
     const data = useStaticQuery<{
         allContentfulPost: {
             nodes: ContentfulPostExcerpt[]
@@ -105,7 +94,7 @@ const ExcerptListComponent = ({
     const nodes = useMemo(() => (limit ? allNodes.slice(0, limit) : allNodes), [allNodes, limit])
 
     return (
-        <List isFirstElement={isFirstElement} className={className}>
+        <ul className={className}>
             {nodes.map((node) => (
                 <Item key={node.publishDate || node.createdAt}>
                     <Excerpt
@@ -118,7 +107,7 @@ const ExcerptListComponent = ({
                     />
                 </Item>
             ))}
-        </List>
+        </ul>
     )
 }
 

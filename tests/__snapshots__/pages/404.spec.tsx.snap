@@ -196,6 +196,11 @@ exports[`<404 /> should render 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
+.emotion-12 NO_COMPONENT_SELECTOR+*,
+.emotion-12 NO_COMPONENT_SELECTOR+* {
+  margin-top: 1rem;
+}
+
 @media (min-width: 700px) {
   .emotion-12 {
     grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;

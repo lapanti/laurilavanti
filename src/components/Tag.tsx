@@ -24,7 +24,7 @@ const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
         pathname={`/blogi/${tag}/`}
         type={WEBPAGE}
     >
-        <ExcerptList isFirstElement tag={tag} />
+        <ExcerptList tag={tag} />
     </Layout>
 )
 

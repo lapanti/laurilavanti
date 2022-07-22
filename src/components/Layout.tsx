@@ -7,7 +7,8 @@ import type { SEOProps } from './layout/SEO'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
-import tw, { GlobalStyles } from 'twin.macro'
+/* @ts-expect-error twin.macro typings are incomplete :/ */
+import tw, { GlobalStyles, styled } from 'twin.macro'
 
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
@@ -30,9 +31,16 @@ const Main = tw.main`
     grid-in-main
 `
 
-const Article = tw.article`
-    grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
-`
+const Article = styled.article(() => [
+    {
+        [`${HomeTitle} + *, ${Title} + *`]: {
+            marginTop: '1rem',
+        },
+    },
+    tw`
+        grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
+    `,
+])
 
 const PositionedP = tw(Paragraph)`
     col-start-3
@@ -48,9 +56,7 @@ const options = {
                 case 'ContentfulHomeTitle':
                     return <HomeTitle />
                 case 'ContentfulExcerptList':
-                    return (
-                        <ExcerptList limit={node.data.target.limit} isFirstElement={node.data.target.isFirstElement} />
-                    )
+                    return <ExcerptList limit={node.data.target.limit} />
                 case 'ContentfulImageWithCaption':
                     return (
                         <Image
