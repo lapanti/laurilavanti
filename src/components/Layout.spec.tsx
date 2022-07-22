@@ -247,7 +247,6 @@ describe('<Layout />', () => {
                                 __typename: 'ContentfulExcerptList',
                                 contentful_id: '6kFlEZ2Nv6UXotMJJNIFGm',
                                 limit: 1,
-                                isFirstElement: true,
                             },
                         ],
                     }}
