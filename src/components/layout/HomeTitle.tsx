@@ -3,15 +3,18 @@ import React from 'react'
 import tw, { styled } from 'twin.macro'
 
 const H1 = tw.h1`
-    col-start-3 flex flex-col justify-end mb-4 overflow-hidden
+    col-start-3 flex flex-col justify-end mb-4 overflow-visible
 `
 
 const Word = tw.span`
     flex
 `
 
-const Letter = styled.span([
-    `text-shadow: black 1px 1px 1px`,
+const Letter = styled.span(({ index }: { index: number }) => [
+    {
+        textShadow: 'black 1px 1px 1px',
+        animation: `slidein 1.${1 - index / 10}s ease-in-out`,
+    },
     tw`
         w-10 flex justify-center
     `,
@@ -35,9 +38,9 @@ const HomeTitleComponent = ({ className }: Props) => (
                 ['U', 'teliaisuus'],
                 ['R', 'ehellisyys'],
                 ['I', 'nhimillisyys'],
-            ].map(([firstLetter /*, rest*/]) => (
+            ].map(([firstLetter /*, rest*/], i) => (
                 <Word key={firstLetter}>
-                    <Letter>{firstLetter}</Letter>
+                    <Letter index={i}>{firstLetter}</Letter>
                     {/*<Rest>{rest}</Rest>*/}
                 </Word>
             ))}
