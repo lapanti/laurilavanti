@@ -115,6 +115,8 @@ exports[`<404 /> should render 1`] = `
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-duration: 300ms;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
   visibility: hidden;
   right: -20rem;
 }
