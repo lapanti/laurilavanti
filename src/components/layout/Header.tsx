@@ -38,6 +38,7 @@ const Nav = styled.nav(({ isOpen }: { isOpen: boolean }) => [
         w-72 h-screen flex flex-col items-end
         bg-opacity-90 bg-white
         transition-all duration-300 ease-in
+        shadow
     `,
     isOpen ? tw`visible right-0` : tw`invisible -right-80`,
 ])
