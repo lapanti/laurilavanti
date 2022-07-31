@@ -17,6 +17,14 @@ const Image = tw(GatsbyImage)`
     w-full flex h-64 object-cover
 `
 
+const MobileImage = tw(Image)`
+    flex biggerthenphone:hidden
+`
+
+const DesktopImage = tw(Image)`
+    hidden biggerthenphone:flex
+`
+
 const H2Container = tw.div`
     flex items-end mb-4 pb-2 pl-2 -mt-32 h-32 w-full bg-gradient-to-t from-black z-40 relative
 `
@@ -34,16 +42,28 @@ interface Props extends PostMetaProps {
     title: string
     excerpt: string
     image: ImageDataLike
+    mobileImage: ImageDataLike
     slug: string
 }
 
-const ExcerptComponent = ({ className, title, date, excerpt, tags, image: imageData, slug }: Props): JSX.Element => {
+const ExcerptComponent = ({
+    className,
+    title,
+    date,
+    excerpt,
+    tags,
+    image: imageData,
+    mobileImage: mobileImageData,
+    slug,
+}: Props): JSX.Element => {
     const image = getImage(imageData)
+    const mobileImage = getImage(mobileImageData)
 
     return (
         <article className={className} aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
             <Link to={`/blogi/${slug}/`} rel="permalink">
-                {image && <Image image={image} alt={title} />}
+                {image && <DesktopImage image={image} alt={title} />}
+                {mobileImage && <MobileImage image={mobileImage} alt={title} />}
                 <H2Container>
                     <H2 itemProp="headline">{title}</H2>
                 </H2Container>
