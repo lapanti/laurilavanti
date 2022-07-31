@@ -222,6 +222,16 @@ exports[`<Tag /> should render 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-14 {
