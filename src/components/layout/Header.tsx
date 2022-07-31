@@ -89,7 +89,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
 HeaderComponent.displayName = 'Header'
 
 const Header = tw(HeaderComponent)`
-  flex justify-end box-border w-full max-w-screen-fullhd fixed z-50 select-none 
+  flex justify-end box-border w-full fixed z-50 select-none 
 `
 
 export default Header

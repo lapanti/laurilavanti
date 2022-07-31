@@ -8,6 +8,10 @@ exports[`<HomeTitle /> should render 1`] = `
   margin-top: -41rem;
   height: 41rem;
   z-index: 40;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;
@@ -16,6 +20,7 @@ exports[`<HomeTitle /> should render 1`] = `
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: rgba(0,0,0,.85);
   --tw-gradient-stops: var(--tw-gradient-from),rgba(0,0,0,.05),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  overflow: hidden;
 }
 
 @media (min-width: 700px) {

@@ -52,9 +52,10 @@ HomeTitleComponent.displayName = 'HomeTitle'
 
 const HomeTitle = tw(HomeTitleComponent)`
     grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
-    col-span-full -mt-164 h-164 z-40
+    col-span-full -mt-164 h-164 z-40 max-w-screen-fullhd mx-auto w-full
     text-6xl font-bold text-lightGrey
     bg-gradient-to-r from-[rgba(0,0,0,.85)] via-[rgba(0,0,0,.05)]
+    overflow-hidden
 `
 
 export default HomeTitle
