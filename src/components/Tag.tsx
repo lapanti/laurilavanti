@@ -9,7 +9,7 @@ import Layout from './Layout'
 
 interface Props {
     data: {
-        contentfulPage: Pick<ContentfulPage, 'metaImage' | 'image'>
+        contentfulPage: Pick<ContentfulPage, 'mobileImage' | 'image'>
     }
     pageContext: {
         tag: string
@@ -19,7 +19,7 @@ interface Props {
 const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
     <Layout
         heroImage={data?.contentfulPage?.image?.localFile}
-        metaImage={data?.contentfulPage?.metaImage?.localFile}
+        mobileHeroImage={data?.contentfulPage?.mobileImage?.localFile}
         title={tag.replace(/^\w/, (c) => c.toUpperCase())}
         pathname={`/blogi/${tag}/`}
         type={WEBPAGE}
@@ -39,6 +39,20 @@ export const query = graphql`
                 }
             }
             image {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: FIXED
+                            height: 667
+                            width: 1920
+                            transformOptions: { fit: OUTSIDE }
+                            aspectRatio: 2.87
+                        )
+                    }
+                }
+            }
+            mobileImage {
                 localFile {
                     childImageSharp {
                         gatsbyImageData(
