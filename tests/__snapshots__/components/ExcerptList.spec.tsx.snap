@@ -50,9 +50,39 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   display: flex;
   height: 16rem;
   object-fit: cover;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-5 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-5 {
+    display: none;
+  }
+}
+
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -74,13 +104,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-7 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -90,7 +120,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -101,7 +131,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -116,11 +146,11 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-9:last-child {
+.emotion-10:last-child {
   margin-right: 0px;
 }
 
-.emotion-10 {
+.emotion-11 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -131,7 +161,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -145,15 +175,15 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-12 {
+.emotion-13 {
   margin-right: 1rem;
 }
 
-.emotion-12:last-child {
+.emotion-13:last-child {
   margin-right: 0px;
 }
 
-.emotion-13 {
+.emotion-14 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -165,22 +195,22 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-13:hover {
+.emotion-14:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:active {
+.emotion-14:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-16 {
+.emotion-17 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -255,10 +285,59 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1432px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1432' width='1432' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABprszR0GMaYihZ//EABwQAAICAgMAAAAAAAAAAAAAAAECAAMREgQTIf/aAAgBAQABBQLUCLa1ZTkeFYFnU0Ay1i4s2M//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BI//EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwEr/8QAGRABAQADAQAAAAAAAAAAAAAAAAERITFh/9oACAEBAAY/Amq2teuIuHX/xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMUFRgf/aAAgBAQABPyFEpj7DGrzkr7twk61LitrEOahWNQ3YZ0QHqf/aAAwDAQACAAMAAAAQjAA9/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARQf/aAAgBAwEBPxCUJi//xAAZEQACAwEAAAAAAAAAAAAAAAAAEQEQMUH/2gAIAQIBAT8QnWMdr//EAB8QAQADAAIBBQAAAAAAAAAAAAEAESExUWFBgZGh0f/aAAgBAQABPxDfuC1CqnJvuirqWu7Tdc/cfTjJ6ZBFZemPiBOF7QT2kE70/YkjXFAfBBKCPDP/2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/dba123474668752335b4536b7dd70bd9/3acea/Muumimaailmassa.webp 358w,/static/dba123474668752335b4536b7dd70bd9/e5338/Muumimaailmassa.webp 716w,/static/dba123474668752335b4536b7dd70bd9/cb8fb/Muumimaailmassa.webp 1432w"
+              sizes="(min-width: 1432px) 1432px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Päiväkodit kaipaavat opettajia"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/dba123474668752335b4536b7dd70bd9/23613/Muumimaailmassa.jpg"
+              data-srcset="/static/dba123474668752335b4536b7dd70bd9/85264/Muumimaailmassa.jpg 358w,/static/dba123474668752335b4536b7dd70bd9/66af3/Muumimaailmassa.jpg 716w,/static/dba123474668752335b4536b7dd70bd9/23613/Muumimaailmassa.jpg 1432w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1432px) 1432px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Päiväkodit kaipaavat opettajia
@@ -266,16 +345,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -289,13 +368,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -303,10 +382,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -316,13 +395,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/paivakodit-kaipaavat-opettajia/"
           rel="permalink"
         >
@@ -395,10 +474,59 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQDAf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAABx7Xkp5KVlgJJRqf/xAAaEAACAwEBAAAAAAAAAAAAAAABAgADEiER/9oACAEBAAEFAmZQeGZhS3zFpK1uohjcP//EABcRAAMBAAAAAAAAAAAAAAAAAAABExD/2gAIAQMBAT8Bmie//8QAFxEAAwEAAAAAAAAAAAAAAAAAAAETEP/aAAgBAgEBPwGrK7//xAAcEAAABgMAAAAAAAAAAAAAAAAAAQIQESESMZH/2gAIAQEABj8Ch6WLUYjJPH2Y/8QAGxAAAgIDAQAAAAAAAAAAAAAAAREAIRBBYXH/2gAIAQEAAT8hajJ4IGIHuFAA24CCnolwV7fAOAUCH//aAAwDAQACAAMAAAAQxOD+/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETFx/9oACAEDAQE/EJks0/8A/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETFx/9oACAECAQE/EIVow/8A/8QAHBABAAICAwEAAAAAAAAAAAAAAQARIWExQXGB/9oACAEBAAE/EG9E5yBAQFphqOsL570+XAKoMtg+JEXIEpR9SDhggHvuK6LbP//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/f3e1996f960b9094d00f01bcbfcdc88a/b709e/laajakallion-paivakoti.webp 567w,/static/f3e1996f960b9094d00f01bcbfcdc88a/df689/laajakallion-paivakoti.webp 1134w,/static/f3e1996f960b9094d00f01bcbfcdc88a/20300/laajakallion-paivakoti.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/f3e1996f960b9094d00f01bcbfcdc88a/0c6e4/laajakallion-paivakoti.jpg"
+              data-srcset="/static/f3e1996f960b9094d00f01bcbfcdc88a/d558d/laajakallion-paivakoti.jpg 567w,/static/f3e1996f960b9094d00f01bcbfcdc88a/52bbf/laajakallion-paivakoti.jpg 1134w,/static/f3e1996f960b9094d00f01bcbfcdc88a/0c6e4/laajakallion-paivakoti.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Varhaiskasvatuksen riittävyydestä ei saa tinkiä
@@ -406,16 +534,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -429,13 +557,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -443,10 +571,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -454,10 +582,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -467,13 +595,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
           rel="permalink"
         >
@@ -546,10 +674,59 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2023px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2023' width='2023' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAEFAgME/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQMC/9oADAMBAAIQAxAAAAGr3Oh1WLRmeck7gn//xAAdEAACAgEFAAAAAAAAAAAAAAABAgARMgMSEyEi/9oACAEBAAEFAmX1wxlKkZP1oMtzYohxD0P/xAAaEQAABwAAAAAAAAAAAAAAAAAAAQIQERIh/9oACAEDAQE/AVFsC7//xAAXEQEBAQEAAAAAAAAAAAAAAAARAAIQ/9oACAECAQE/Achxm//EAB0QAAICAgMBAAAAAAAAAAAAAAABAhExURIhQXH/2gAIAQEABj8CSjoj3koXwUtMtemDjSopJH//xAAaEAADAQEBAQAAAAAAAAAAAAAAAREhMUFh/9oACAEBAAE/IfMbTrN5aJpSiCs1fQpXNKKDODp0+QYpAkf/2gAMAwEAAgADAAAAEETfAP/EABkRAQADAQEAAAAAAAAAAAAAAAEAESFRwf/aAAgBAwEBPxBirnkoYx1tlE//xAAYEQEBAQEBAAAAAAAAAAAAAAABABFRIf/aAAgBAgEBPxALbI8hHmwu3//EAB4QAQACAgMAAwAAAAAAAAAAAAEAESExQYHRcaHB/9oACAEBAAE/EDTcDIdxFqMOOkOO46O05DDAlo0/IiuxXwvktljGr5iSETQq+y0he7X7NSIgHH3P/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/f4ac7/lastenkirjallisuutta.webp 506w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/0487e/lastenkirjallisuutta.webp 1012w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/ab278/lastenkirjallisuutta.webp 2023w"
+              sizes="(min-width: 2023px) 2023px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/cb561/lastenkirjallisuutta.jpg"
+              data-srcset="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/aac61/lastenkirjallisuutta.jpg 506w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/4285d/lastenkirjallisuutta.jpg 1012w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/cb561/lastenkirjallisuutta.jpg 2023w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2023px) 2023px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Varhaiskasvatuksen kerhotoiminta - lapsen etu
@@ -557,16 +734,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -580,13 +757,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -594,10 +771,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -607,13 +784,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
           rel="permalink"
         >
@@ -686,10 +863,59 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAMBAgT/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAHbAOqas484qBH/xAAaEAADAAMBAAAAAAAAAAAAAAAAAQIDEjEi/9oACAEBAAEFAkvNZHFbwVWo5izbGcT4f//EABgRAAIDAAAAAAAAAAAAAAAAAAABEBFR/9oACAEDAQE/Ab0an//EABcRAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8BRt//xAAcEAACAgIDAAAAAAAAAAAAAAAAARARAjISIVH/2gAIAQEABj8C1VoUdHN5M1K8n//EAB0QAQACAgIDAAAAAAAAAAAAAAEAETFBIVFxgdH/2gAIAQEAAT8hc4pkg4nmbFzOGhnvkDECPm4lmlguJBXczuf/2gAMAwEAAgADAAAAEJznQ//EABgRAAMBAQAAAAAAAAAAAAAAAAABESEx/9oACAEDAQE/EJYZcHwh/8QAGBEAAgMAAAAAAAAAAAAAAAAAESEAARD/2gAIAQIBAT8QIKUj3//EABwQAQEAAgMBAQAAAAAAAAAAAAERACExUWFBcf/aAAgBAQABPxBkfQBVObhzgSiTV6xTRu2nTnEwSSce4AgilRT5eMmAzpsfrckqqULocRknjCiqXP/Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/22100376be4814e6916d2a04bced6268/b709e/duploleikkeja.webp 567w,/static/22100376be4814e6916d2a04bced6268/df689/duploleikkeja.webp 1134w,/static/22100376be4814e6916d2a04bced6268/20300/duploleikkeja.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Kirkkonummi-lisä on sinunkin etusi"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/22100376be4814e6916d2a04bced6268/0c6e4/duploleikkeja.jpg"
+              data-srcset="/static/22100376be4814e6916d2a04bced6268/d558d/duploleikkeja.jpg 567w,/static/22100376be4814e6916d2a04bced6268/52bbf/duploleikkeja.jpg 1134w,/static/22100376be4814e6916d2a04bced6268/0c6e4/duploleikkeja.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Kirkkonummi-lisä on sinunkin etusi
@@ -697,16 +923,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -720,13 +946,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -734,10 +960,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -747,13 +973,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
           rel="permalink"
         >
@@ -826,10 +1052,59 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMEAQL/xAAXAQEBAQEAAAAAAAAAAAAAAAABAwIE/9oADAMBAAIQAxAAAAGHN+UZtKb5mUJjn1//xAAbEAADAAIDAAAAAAAAAAAAAAAAAQIDExESIv/aAAgBAQABBQLWkT2mdVsqMck5ebbkhDfo/8QAFREBAQAAAAAAAAAAAAAAAAAAEAH/2gAIAQMBAT8BIf/EABoRAAEFAQAAAAAAAAAAAAAAAAABAhASITH/2gAIAQIBAT8Bwug/kf/EAB4QAAICAQUBAAAAAAAAAAAAAAABESEQAhIiUWFx/9oACAEBAAY/AoUv0dWydpJwSS7xd/TVj//EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWGR/9oACAEBAAE/ITSpX1NNZKqcSl+4BbK7bEqI9UscgKA0X5TLAAQyXP/aAAwDAQACAAMAAAAQOD8B/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQMSH/2gAIAQMBAT8QFxnZor//xAAYEQACAwAAAAAAAAAAAAAAAAABEBEhMf/aAAgBAgEBPxA0lOq//8QAHhABAAIBBQEBAAAAAAAAAAAAAQARITFBUWFxobH/2gAIAQEAAT8QCcSm9ng4ierWjc5icojYJK+ylicrAfsd6XxanRLfT5iV3vWM7RQstBWIq5//2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/e66d66a99b231f600c7dcae882e0520c/b709e/kotihoidossa.webp 567w,/static/e66d66a99b231f600c7dcae882e0520c/df689/kotihoidossa.webp 1134w,/static/e66d66a99b231f600c7dcae882e0520c/20300/kotihoidossa.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/e66d66a99b231f600c7dcae882e0520c/0c6e4/kotihoidossa.jpg"
+              data-srcset="/static/e66d66a99b231f600c7dcae882e0520c/d558d/kotihoidossa.jpg 567w,/static/e66d66a99b231f600c7dcae882e0520c/52bbf/kotihoidossa.jpg 1134w,/static/e66d66a99b231f600c7dcae882e0520c/0c6e4/kotihoidossa.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
@@ -837,16 +1112,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -860,13 +1135,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -874,10 +1149,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -887,13 +1162,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/kotihoidon-tuen-kuntalisa/"
           rel="permalink"
         >
@@ -955,9 +1230,39 @@ exports[`<ExcerptList /> should render 1`] = `
   display: flex;
   height: 16rem;
   object-fit: cover;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-5 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-5 {
+    display: none;
+  }
+}
+
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -979,13 +1284,13 @@ exports[`<ExcerptList /> should render 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-7 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -995,7 +1300,7 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1006,7 +1311,7 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1021,11 +1326,11 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-9:last-child {
+.emotion-10:last-child {
   margin-right: 0px;
 }
 
-.emotion-10 {
+.emotion-11 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -1036,7 +1341,7 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1050,15 +1355,15 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-12 {
+.emotion-13 {
   margin-right: 1rem;
 }
 
-.emotion-12:last-child {
+.emotion-13:last-child {
   margin-right: 0px;
 }
 
-.emotion-13 {
+.emotion-14 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -1070,22 +1375,22 @@ exports[`<ExcerptList /> should render 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-13:hover {
+.emotion-14:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:active {
+.emotion-14:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-18 {
+.emotion-19 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -1160,10 +1465,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1728px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Terveys kuuluu kaikille"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg"
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Terveys kuuluu kaikille
@@ -1171,16 +1525,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1194,13 +1548,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1208,10 +1562,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1219,10 +1573,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1232,13 +1586,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/terveys-kuuluu-kaikille/"
           rel="permalink"
         >
@@ -1311,10 +1665,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1728px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Sote on hyvinvointiyhteiskunnan kulmakivi"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg"
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Sote on hyvinvointiyhteiskunnan kulmakivi
@@ -1322,16 +1725,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1345,13 +1748,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1359,10 +1762,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1370,10 +1773,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1383,13 +1786,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
           rel="permalink"
         >
@@ -1462,10 +1865,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1728px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMC/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/aAAwDAQACEAMQAAABnOucTBKVmBJgX//EAB0QAAEEAgMAAAAAAAAAAAAAAAIAAQMREhMhMjT/2gAIAQEAAQUCOPJow1OuMmojoU3YPTa//8QAGBEAAwEBAAAAAAAAAAAAAAAAAAECECL/2gAIAQMBAT8BUuTsWf/EABoRAAICAwAAAAAAAAAAAAAAAAACARARIjH/2gAIAQIBAT8BlsmovK//xAAbEAADAAMBAQAAAAAAAAAAAAAAARECEDEhgf/aAAgBAQAGPwLsMvbVNRDxhwQ/uv/EACAQAAICAQMFAAAAAAAAAAAAAAABEUEhMWHRcZGhseH/2gAIAQEAAT8hu69PpnTSKcmN/HI8MDrTBMFG9FRNXshU5lZo9vUTQf/aAAwDAQACAAMAAAAQwNh9/8QAGREAAwADAAAAAAAAAAAAAAAAAAERITHw/9oACAEDAQE/EFmEd0M6U//EABYRAQEBAAAAAAAAAAAAAAAAAAERIP/aAAgBAgEBPxAnVwP/xAAdEAEAAwEAAgMAAAAAAAAAAAABABExIUFRcbHw/9oACAEBAAE/EBEAXtlX1kB2CNApaR7AK+H5h322jQEvnICtd9UxmeagK9f1krYsCJx2JNofenrPM//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/aaf0eb28b01d8691152f60fa8fa38218/18bed/sosiaali-ja-terveyskeskus.webp 432w,/static/aaf0eb28b01d8691152f60fa8fa38218/d0f84/sosiaali-ja-terveyskeskus.webp 864w,/static/aaf0eb28b01d8691152f60fa8fa38218/ca0c6/sosiaali-ja-terveyskeskus.webp 1728w"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Mitä jos terveyskeskusta ei olisikaan?"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/aaf0eb28b01d8691152f60fa8fa38218/4227f/sosiaali-ja-terveyskeskus.jpg"
+              data-srcset="/static/aaf0eb28b01d8691152f60fa8fa38218/9e7cd/sosiaali-ja-terveyskeskus.jpg 432w,/static/aaf0eb28b01d8691152f60fa8fa38218/ead50/sosiaali-ja-terveyskeskus.jpg 864w,/static/aaf0eb28b01d8691152f60fa8fa38218/4227f/sosiaali-ja-terveyskeskus.jpg 1728w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Mitä jos terveyskeskusta ei olisikaan?
@@ -1473,16 +1925,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1496,13 +1948,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1510,10 +1962,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1521,10 +1973,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1534,13 +1986,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
           rel="permalink"
         >
@@ -1613,10 +2065,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1399px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1399' width='1399' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAQAD/9oADAMBAAIQAxAAAAHN3bWXMY5ZlNQvD//EABoQAQADAQEBAAAAAAAAAAAAAAEAAgMSESL/2gAIAQEAAQUCrlLZ8vpOxG55MT61qciz/8QAGBEAAgMAAAAAAAAAAAAAAAAAABARQUL/2gAIAQMBAT8BpZJP/8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQIBAT8BKf/EABwQAAICAgMAAAAAAAAAAAAAAAARASECECIyof/aAAgBAQAGPwLlKKlnT0qGXWsh6//EABwQAQACAwADAAAAAAAAAAAAAAEAESExQVFhcf/aAAgBAQABPyFlcG6PcqO6vkKclfMhFVF3NREsxLOPcQRyW9sEUM//2gAMAwEAAgADAAAAEBA/Qv/EABkRAAMAAwAAAAAAAAAAAAAAAAABETFRsf/aAAgBAwEBPxBPIiFyVs//xAAYEQACAwAAAAAAAAAAAAAAAAAAARAhMf/aAAgBAgEBPxB6WOH/xAAdEAEAAwABBQAAAAAAAAAAAAABABEhYTFBcaHB/9oACAEBAAE/EMDXprV8jMzFdlLAgIFKW+4LIMRBVQDDtTd2XAWg08wdigArZqwlUtePEBpA5n//2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/9191e5858402a1213443faa945425bd8/6cac9/lauri-lavanti-perusturvajaosto.webp 350w,/static/9191e5858402a1213443faa945425bd8/ec00d/lauri-lavanti-perusturvajaosto.webp 700w,/static/9191e5858402a1213443faa945425bd8/c688d/lauri-lavanti-perusturvajaosto.webp 1399w"
+              sizes="(min-width: 1399px) 1399px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Perusturvajaosto - mikä se on?"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/9191e5858402a1213443faa945425bd8/c1041/lauri-lavanti-perusturvajaosto.jpg"
+              data-srcset="/static/9191e5858402a1213443faa945425bd8/7ba70/lauri-lavanti-perusturvajaosto.jpg 350w,/static/9191e5858402a1213443faa945425bd8/9366f/lauri-lavanti-perusturvajaosto.jpg 700w,/static/9191e5858402a1213443faa945425bd8/c1041/lauri-lavanti-perusturvajaosto.jpg 1399w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1399px) 1399px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Perusturvajaosto - mikä se on?
@@ -1624,16 +2125,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1647,13 +2148,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1661,10 +2162,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/perustuva/"
             >
               #
@@ -1674,13 +2175,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
           rel="permalink"
         >
@@ -1753,10 +2254,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1509px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1509' width='1509' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMEBQH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/9oADAMBAAIQAxAAAAG1Hl8M9VmF01Ym9sIf/8QAGhABAQEBAAMAAAAAAAAAAAAAAQIAAxExMv/aAAgBAQABBQIZddEjcGObOfMzBTJunuPj/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAECEBL/2gAIAQMBAT8BUEYV/wD/xAAZEQACAwEAAAAAAAAAAAAAAAAAAhAREzH/2gAIAQIBAT8B0s1YXsf/xAAbEAACAgMBAAAAAAAAAAAAAAAAAREhIDFhcf/aAAgBAQAGPwKmiaZsqMJ4Lw//xAAdEAADAAICAwAAAAAAAAAAAAAAAREhMUGBUXGR/9oACAEBAAE/IUNa7G9HDijCNTau1GmcrnwTXicVmapu8MRZ6x//2gAMAwEAAgADAAAAEH/3Qv/EABYRAQEBAAAAAAAAAAAAAAAAABABEf/aAAgBAwEBPxDQEP/EABkRAQACAwAAAAAAAAAAAAAAAAEAECExQf/aAAgBAgEBPxAeBEHlTuf/xAAeEAEBAQEAAgIDAAAAAAAAAAABESEAMUFRYXGRwf/aAAgBAQABPxCEBZ+XxzGSVBss7XFLhebVdNrjDUgDTwzftP1wrWrpsueu3LzZ2rWtHofngCWfw7//2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/21b2876e43d499dadd58d90d69279f91/e6df8/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 377w,/static/21b2876e43d499dadd58d90d69279f91/9a8b1/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 755w,/static/21b2876e43d499dadd58d90d69279f91/d1461/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 1509w"
+              sizes="(min-width: 1509px) 1509px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Ehdolle aluevaaleihin"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/21b2876e43d499dadd58d90d69279f91/5e0f8/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg"
+              data-srcset="/static/21b2876e43d499dadd58d90d69279f91/3c15e/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 377w,/static/21b2876e43d499dadd58d90d69279f91/3fcac/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 755w,/static/21b2876e43d499dadd58d90d69279f91/5e0f8/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 1509w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1509px) 1509px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Ehdolle aluevaaleihin
@@ -1764,16 +2314,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1787,13 +2337,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1801,10 +2351,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1812,10 +2362,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1825,13 +2375,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/ehdolle-aluevaaleihin/"
           rel="permalink"
         >
@@ -1904,10 +2454,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1432px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1432' width='1432' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABprszR0GMaYihZ//EABwQAAICAgMAAAAAAAAAAAAAAAECAAMREgQTIf/aAAgBAQABBQLUCLa1ZTkeFYFnU0Ay1i4s2M//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BI//EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwEr/8QAGRABAQADAQAAAAAAAAAAAAAAAAERITFh/9oACAEBAAY/Amq2teuIuHX/xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMUFRgf/aAAgBAQABPyFEpj7DGrzkr7twk61LitrEOahWNQ3YZ0QHqf/aAAwDAQACAAMAAAAQjAA9/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARQf/aAAgBAwEBPxCUJi//xAAZEQACAwEAAAAAAAAAAAAAAAAAEQEQMUH/2gAIAQIBAT8QnWMdr//EAB8QAQADAAIBBQAAAAAAAAAAAAEAESExUWFBgZGh0f/aAAgBAQABPxDfuC1CqnJvuirqWu7Tdc/cfTjJ6ZBFZemPiBOF7QT2kE70/YkjXFAfBBKCPDP/2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/dba123474668752335b4536b7dd70bd9/3acea/Muumimaailmassa.webp 358w,/static/dba123474668752335b4536b7dd70bd9/e5338/Muumimaailmassa.webp 716w,/static/dba123474668752335b4536b7dd70bd9/cb8fb/Muumimaailmassa.webp 1432w"
+              sizes="(min-width: 1432px) 1432px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Päiväkodit kaipaavat opettajia"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/dba123474668752335b4536b7dd70bd9/23613/Muumimaailmassa.jpg"
+              data-srcset="/static/dba123474668752335b4536b7dd70bd9/85264/Muumimaailmassa.jpg 358w,/static/dba123474668752335b4536b7dd70bd9/66af3/Muumimaailmassa.jpg 716w,/static/dba123474668752335b4536b7dd70bd9/23613/Muumimaailmassa.jpg 1432w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1432px) 1432px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Päiväkodit kaipaavat opettajia
@@ -1915,16 +2514,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -1938,13 +2537,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1952,10 +2551,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -1965,13 +2564,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/paivakodit-kaipaavat-opettajia/"
           rel="permalink"
         >
@@ -2044,10 +2643,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 780px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='780' width='780' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAEEBQID/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAAbHnT7jQZqrsksA//8QAHRAAAQMFAQAAAAAAAAAAAAAAAQIRIQAEEhMUIP/aAAgBAQABBQLrRRu43oYPk0keP//EABYRAQEBAAAAAAAAAAAAAAAAABEAEP/aAAgBAwEBPwEjf//EABYRAQEBAAAAAAAAAAAAAAAAABEAEP/aAAgBAgEBPwFnf//EABsQAAICAwEAAAAAAAAAAAAAAAACATEgIZEy/9oACAEBAAY/Aqk0pB5cp+FNzD//xAAdEAEBAAICAwEAAAAAAAAAAAABEQAhMUEQUWGB/9oACAEBAAE/IWDKda5ylvfuFBdpZh9A9hoxG7SThh3T/gyvn//aAAwDAQACAAMAAAAQnPhB/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAQ/9oACAEDAQE/EDHf/8QAFhEBAQEAAAAAAAAAAAAAAAAAEQAQ/9oACAECAQE/EFPf/8QAGxABAQEBAQADAAAAAAAAAAAAAREhAEExYcH/2gAIAQEAAT8Q3DCnhwg1Olw3lNyoCz65zcIx0mweXQDRalunJy4Sn5ut8vedXv/Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/89330cf9554dd6ac44855a98153a4daf/fd1d9/winellska-skolan-w.webp 195w,/static/89330cf9554dd6ac44855a98153a4daf/e5835/winellska-skolan-w.webp 390w,/static/89330cf9554dd6ac44855a98153a4daf/2bb5f/winellska-skolan-w.webp 780w"
+              sizes="(min-width: 780px) 780px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Hyvin suunniteltu on puoliksi tehty, mutta"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/89330cf9554dd6ac44855a98153a4daf/73156/winellska-skolan-w.jpg"
+              data-srcset="/static/89330cf9554dd6ac44855a98153a4daf/77423/winellska-skolan-w.jpg 195w,/static/89330cf9554dd6ac44855a98153a4daf/bb640/winellska-skolan-w.jpg 390w,/static/89330cf9554dd6ac44855a98153a4daf/73156/winellska-skolan-w.jpg 780w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 780px) 780px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Hyvin suunniteltu on puoliksi tehty, mutta
@@ -2055,16 +2703,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2078,13 +2726,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2092,10 +2740,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/opetus/"
             >
               #
@@ -2105,13 +2753,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
           rel="permalink"
         >
@@ -2184,10 +2832,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQDAf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAABx7Xkp5KVlgJJRqf/xAAaEAACAwEBAAAAAAAAAAAAAAABAgADEiER/9oACAEBAAEFAmZQeGZhS3zFpK1uohjcP//EABcRAAMBAAAAAAAAAAAAAAAAAAABExD/2gAIAQMBAT8Bmie//8QAFxEAAwEAAAAAAAAAAAAAAAAAAAETEP/aAAgBAgEBPwGrK7//xAAcEAAABgMAAAAAAAAAAAAAAAAAAQIQESESMZH/2gAIAQEABj8Ch6WLUYjJPH2Y/8QAGxAAAgIDAQAAAAAAAAAAAAAAAREAIRBBYXH/2gAIAQEAAT8hajJ4IGIHuFAA24CCnolwV7fAOAUCH//aAAwDAQACAAMAAAAQxOD+/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETFx/9oACAEDAQE/EJks0/8A/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETFx/9oACAECAQE/EIVow/8A/8QAHBABAAICAwEAAAAAAAAAAAAAAQARIWExQXGB/9oACAEBAAE/EG9E5yBAQFphqOsL570+XAKoMtg+JEXIEpR9SDhggHvuK6LbP//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/f3e1996f960b9094d00f01bcbfcdc88a/b709e/laajakallion-paivakoti.webp 567w,/static/f3e1996f960b9094d00f01bcbfcdc88a/df689/laajakallion-paivakoti.webp 1134w,/static/f3e1996f960b9094d00f01bcbfcdc88a/20300/laajakallion-paivakoti.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/f3e1996f960b9094d00f01bcbfcdc88a/0c6e4/laajakallion-paivakoti.jpg"
+              data-srcset="/static/f3e1996f960b9094d00f01bcbfcdc88a/d558d/laajakallion-paivakoti.jpg 567w,/static/f3e1996f960b9094d00f01bcbfcdc88a/52bbf/laajakallion-paivakoti.jpg 1134w,/static/f3e1996f960b9094d00f01bcbfcdc88a/0c6e4/laajakallion-paivakoti.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Varhaiskasvatuksen riittävyydestä ei saa tinkiä
@@ -2195,16 +2892,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2218,13 +2915,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -2232,10 +2929,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2243,10 +2940,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2256,13 +2953,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
           rel="permalink"
         >
@@ -2335,10 +3032,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2023px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2023' width='2023' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAEFAgME/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQMC/9oADAMBAAIQAxAAAAGr3Oh1WLRmeck7gn//xAAdEAACAgEFAAAAAAAAAAAAAAABAgARMgMSEyEi/9oACAEBAAEFAmX1wxlKkZP1oMtzYohxD0P/xAAaEQAABwAAAAAAAAAAAAAAAAAAAQIQERIh/9oACAEDAQE/AVFsC7//xAAXEQEBAQEAAAAAAAAAAAAAAAARAAIQ/9oACAECAQE/Achxm//EAB0QAAICAgMBAAAAAAAAAAAAAAABAhExURIhQXH/2gAIAQEABj8CSjoj3koXwUtMtemDjSopJH//xAAaEAADAQEBAQAAAAAAAAAAAAAAAREhMUFh/9oACAEBAAE/IfMbTrN5aJpSiCs1fQpXNKKDODp0+QYpAkf/2gAMAwEAAgADAAAAEETfAP/EABkRAQADAQEAAAAAAAAAAAAAAAEAESFRwf/aAAgBAwEBPxBirnkoYx1tlE//xAAYEQEBAQEBAAAAAAAAAAAAAAABABFRIf/aAAgBAgEBPxALbI8hHmwu3//EAB4QAQACAgMAAwAAAAAAAAAAAAEAESExQYHRcaHB/9oACAEBAAE/EDTcDIdxFqMOOkOO46O05DDAlo0/IiuxXwvktljGr5iSETQq+y0he7X7NSIgHH3P/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/f4ac7/lastenkirjallisuutta.webp 506w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/0487e/lastenkirjallisuutta.webp 1012w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/ab278/lastenkirjallisuutta.webp 2023w"
+              sizes="(min-width: 2023px) 2023px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/cb561/lastenkirjallisuutta.jpg"
+              data-srcset="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/aac61/lastenkirjallisuutta.jpg 506w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/4285d/lastenkirjallisuutta.jpg 1012w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/cb561/lastenkirjallisuutta.jpg 2023w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2023px) 2023px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Varhaiskasvatuksen kerhotoiminta - lapsen etu
@@ -2346,16 +3092,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2369,13 +3115,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2383,10 +3129,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2396,13 +3142,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
           rel="permalink"
         >
@@ -2475,10 +3221,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQADAAAAAAAAAAAAAAAAAAMBAgT/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAHbAOqas484qBH/xAAaEAADAAMBAAAAAAAAAAAAAAAAAQIDEjEi/9oACAEBAAEFAkvNZHFbwVWo5izbGcT4f//EABgRAAIDAAAAAAAAAAAAAAAAAAABEBFR/9oACAEDAQE/Ab0an//EABcRAAMBAAAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8BRt//xAAcEAACAgIDAAAAAAAAAAAAAAAAARARAjISIVH/2gAIAQEABj8C1VoUdHN5M1K8n//EAB0QAQACAgIDAAAAAAAAAAAAAAEAETFBIVFxgdH/2gAIAQEAAT8hc4pkg4nmbFzOGhnvkDECPm4lmlguJBXczuf/2gAMAwEAAgADAAAAEJznQ//EABgRAAMBAQAAAAAAAAAAAAAAAAABESEx/9oACAEDAQE/EJYZcHwh/8QAGBEAAgMAAAAAAAAAAAAAAAAAESEAARD/2gAIAQIBAT8QIKUj3//EABwQAQEAAgMBAQAAAAAAAAAAAAERACExUWFBcf/aAAgBAQABPxBkfQBVObhzgSiTV6xTRu2nTnEwSSce4AgilRT5eMmAzpsfrckqqULocRknjCiqXP/Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/22100376be4814e6916d2a04bced6268/b709e/duploleikkeja.webp 567w,/static/22100376be4814e6916d2a04bced6268/df689/duploleikkeja.webp 1134w,/static/22100376be4814e6916d2a04bced6268/20300/duploleikkeja.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Kirkkonummi-lisä on sinunkin etusi"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/22100376be4814e6916d2a04bced6268/0c6e4/duploleikkeja.jpg"
+              data-srcset="/static/22100376be4814e6916d2a04bced6268/d558d/duploleikkeja.jpg 567w,/static/22100376be4814e6916d2a04bced6268/52bbf/duploleikkeja.jpg 1134w,/static/22100376be4814e6916d2a04bced6268/0c6e4/duploleikkeja.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Kirkkonummi-lisä on sinunkin etusi
@@ -2486,16 +3281,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2509,13 +3304,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2523,10 +3318,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2536,13 +3331,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
           rel="permalink"
         >
@@ -2615,10 +3410,59 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMEAQL/xAAXAQEBAQEAAAAAAAAAAAAAAAABAwIE/9oADAMBAAIQAxAAAAGHN+UZtKb5mUJjn1//xAAbEAADAAIDAAAAAAAAAAAAAAAAAQIDExESIv/aAAgBAQABBQLWkT2mdVsqMck5ebbkhDfo/8QAFREBAQAAAAAAAAAAAAAAAAAAEAH/2gAIAQMBAT8BIf/EABoRAAEFAQAAAAAAAAAAAAAAAAABAhASITH/2gAIAQIBAT8Bwug/kf/EAB4QAAICAQUBAAAAAAAAAAAAAAABESEQAhIiUWFx/9oACAEBAAY/AoUv0dWydpJwSS7xd/TVj//EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWGR/9oACAEBAAE/ITSpX1NNZKqcSl+4BbK7bEqI9UscgKA0X5TLAAQyXP/aAAwDAQACAAMAAAAQOD8B/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQMSH/2gAIAQMBAT8QFxnZor//xAAYEQACAwAAAAAAAAAAAAAAAAABEBEhMf/aAAgBAgEBPxA0lOq//8QAHhABAAIBBQEBAAAAAAAAAAAAAQARITFBUWFxobH/2gAIAQEAAT8QCcSm9ng4ierWjc5icojYJK+ylicrAfsd6XxanRLfT5iV3vWM7RQstBWIq5//2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/e66d66a99b231f600c7dcae882e0520c/b709e/kotihoidossa.webp 567w,/static/e66d66a99b231f600c7dcae882e0520c/df689/kotihoidossa.webp 1134w,/static/e66d66a99b231f600c7dcae882e0520c/20300/kotihoidossa.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/e66d66a99b231f600c7dcae882e0520c/0c6e4/kotihoidossa.jpg"
+              data-srcset="/static/e66d66a99b231f600c7dcae882e0520c/d558d/kotihoidossa.jpg 567w,/static/e66d66a99b231f600c7dcae882e0520c/52bbf/kotihoidossa.jpg 1134w,/static/e66d66a99b231f600c7dcae882e0520c/0c6e4/kotihoidossa.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
@@ -2626,16 +3470,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2649,13 +3493,13 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2663,10 +3507,10 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2676,13 +3520,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/kotihoidon-tuen-kuntalisa/"
           rel="permalink"
         >
@@ -2744,9 +3588,39 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   display: flex;
   height: 16rem;
   object-fit: cover;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-5 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-5 {
+    display: none;
+  }
+}
+
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2768,13 +3642,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-7 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2784,7 +3658,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2795,7 +3669,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2810,11 +3684,11 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-9:last-child {
+.emotion-10:last-child {
   margin-right: 0px;
 }
 
-.emotion-10 {
+.emotion-11 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -2825,7 +3699,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2839,15 +3713,15 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-12 {
+.emotion-13 {
   margin-right: 1rem;
 }
 
-.emotion-12:last-child {
+.emotion-13:last-child {
   margin-right: 0px;
 }
 
-.emotion-13 {
+.emotion-14 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2859,22 +3733,22 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-13:hover {
+.emotion-14:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:active {
+.emotion-14:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-16 {
+.emotion-17 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -2949,10 +3823,59 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1432px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1432' width='1432' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABprszR0GMaYihZ//EABwQAAICAgMAAAAAAAAAAAAAAAECAAMREgQTIf/aAAgBAQABBQLUCLa1ZTkeFYFnU0Ay1i4s2M//xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8BI//EABYRAAMAAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPwEr/8QAGRABAQADAQAAAAAAAAAAAAAAAAERITFh/9oACAEBAAY/Amq2teuIuHX/xAAbEAEAAgMBAQAAAAAAAAAAAAABABEhMUFRgf/aAAgBAQABPyFEpj7DGrzkr7twk61LitrEOahWNQ3YZ0QHqf/aAAwDAQACAAMAAAAQjAA9/8QAFxEAAwEAAAAAAAAAAAAAAAAAARARQf/aAAgBAwEBPxCUJi//xAAZEQACAwEAAAAAAAAAAAAAAAAAEQEQMUH/2gAIAQIBAT8QnWMdr//EAB8QAQADAAIBBQAAAAAAAAAAAAEAESExUWFBgZGh0f/aAAgBAQABPxDfuC1CqnJvuirqWu7Tdc/cfTjJ6ZBFZemPiBOF7QT2kE70/YkjXFAfBBKCPDP/2Q=="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/dba123474668752335b4536b7dd70bd9/3acea/Muumimaailmassa.webp 358w,/static/dba123474668752335b4536b7dd70bd9/e5338/Muumimaailmassa.webp 716w,/static/dba123474668752335b4536b7dd70bd9/cb8fb/Muumimaailmassa.webp 1432w"
+              sizes="(min-width: 1432px) 1432px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Päiväkodit kaipaavat opettajia"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/dba123474668752335b4536b7dd70bd9/23613/Muumimaailmassa.jpg"
+              data-srcset="/static/dba123474668752335b4536b7dd70bd9/85264/Muumimaailmassa.jpg 358w,/static/dba123474668752335b4536b7dd70bd9/66af3/Muumimaailmassa.jpg 716w,/static/dba123474668752335b4536b7dd70bd9/23613/Muumimaailmassa.jpg 1432w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1432px) 1432px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Päiväkodit kaipaavat opettajia
@@ -2960,16 +3883,16 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -2983,13 +3906,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2997,10 +3920,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3010,13 +3933,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/paivakodit-kaipaavat-opettajia/"
           rel="permalink"
         >
@@ -3089,10 +4012,59 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2267px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2267' width='2267' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQDAf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAABx7Xkp5KVlgJJRqf/xAAaEAACAwEBAAAAAAAAAAAAAAABAgADEiER/9oACAEBAAEFAmZQeGZhS3zFpK1uohjcP//EABcRAAMBAAAAAAAAAAAAAAAAAAABExD/2gAIAQMBAT8Bmie//8QAFxEAAwEAAAAAAAAAAAAAAAAAAAETEP/aAAgBAgEBPwGrK7//xAAcEAAABgMAAAAAAAAAAAAAAAAAAQIQESESMZH/2gAIAQEABj8Ch6WLUYjJPH2Y/8QAGxAAAgIDAQAAAAAAAAAAAAAAAREAIRBBYXH/2gAIAQEAAT8hajJ4IGIHuFAA24CCnolwV7fAOAUCH//aAAwDAQACAAMAAAAQxOD+/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETFx/9oACAEDAQE/EJks0/8A/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETFx/9oACAECAQE/EIVow/8A/8QAHBABAAICAwEAAAAAAAAAAAAAAQARIWExQXGB/9oACAEBAAE/EG9E5yBAQFphqOsL570+XAKoMtg+JEXIEpR9SDhggHvuK6LbP//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/f3e1996f960b9094d00f01bcbfcdc88a/b709e/laajakallion-paivakoti.webp 567w,/static/f3e1996f960b9094d00f01bcbfcdc88a/df689/laajakallion-paivakoti.webp 1134w,/static/f3e1996f960b9094d00f01bcbfcdc88a/20300/laajakallion-paivakoti.webp 2267w"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/f3e1996f960b9094d00f01bcbfcdc88a/0c6e4/laajakallion-paivakoti.jpg"
+              data-srcset="/static/f3e1996f960b9094d00f01bcbfcdc88a/d558d/laajakallion-paivakoti.jpg 567w,/static/f3e1996f960b9094d00f01bcbfcdc88a/52bbf/laajakallion-paivakoti.jpg 1134w,/static/f3e1996f960b9094d00f01bcbfcdc88a/0c6e4/laajakallion-paivakoti.jpg 2267w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2267px) 2267px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Varhaiskasvatuksen riittävyydestä ei saa tinkiä
@@ -3100,16 +4072,16 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3123,13 +4095,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -3137,10 +4109,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3148,10 +4120,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3161,13 +4133,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
           rel="permalink"
         >
@@ -3240,10 +4212,59 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 2023px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='2023' width='2023' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAEFAgME/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQMC/9oADAMBAAIQAxAAAAGr3Oh1WLRmeck7gn//xAAdEAACAgEFAAAAAAAAAAAAAAABAgARMgMSEyEi/9oACAEBAAEFAmX1wxlKkZP1oMtzYohxD0P/xAAaEQAABwAAAAAAAAAAAAAAAAAAAQIQERIh/9oACAEDAQE/AVFsC7//xAAXEQEBAQEAAAAAAAAAAAAAAAARAAIQ/9oACAECAQE/Achxm//EAB0QAAICAgMBAAAAAAAAAAAAAAABAhExURIhQXH/2gAIAQEABj8CSjoj3koXwUtMtemDjSopJH//xAAaEAADAQEBAQAAAAAAAAAAAAAAAREhMUFh/9oACAEBAAE/IfMbTrN5aJpSiCs1fQpXNKKDODp0+QYpAkf/2gAMAwEAAgADAAAAEETfAP/EABkRAQADAQEAAAAAAAAAAAAAAAEAESFRwf/aAAgBAwEBPxBirnkoYx1tlE//xAAYEQEBAQEBAAAAAAAAAAAAAAABABFRIf/aAAgBAgEBPxALbI8hHmwu3//EAB4QAQACAgMAAwAAAAAAAAAAAAEAESExQYHRcaHB/9oACAEBAAE/EDTcDIdxFqMOOkOO46O05DDAlo0/IiuxXwvktljGr5iSETQq+y0he7X7NSIgHH3P/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/f4ac7/lastenkirjallisuutta.webp 506w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/0487e/lastenkirjallisuutta.webp 1012w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/ab278/lastenkirjallisuutta.webp 2023w"
+              sizes="(min-width: 2023px) 2023px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/cb561/lastenkirjallisuutta.jpg"
+              data-srcset="/static/9d968fa26ea2cd55cad7f9ab8709c9a2/aac61/lastenkirjallisuutta.jpg 506w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/4285d/lastenkirjallisuutta.jpg 1012w,/static/9d968fa26ea2cd55cad7f9ab8709c9a2/cb561/lastenkirjallisuutta.jpg 2023w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 2023px) 2023px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Varhaiskasvatuksen kerhotoiminta - lapsen etu
@@ -3251,16 +4272,16 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3274,13 +4295,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3288,10 +4309,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3301,13 +4322,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-16"
+        class="emotion-17"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
           rel="permalink"
         >
@@ -3369,9 +4390,39 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   display: flex;
   height: 16rem;
   object-fit: cover;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-4 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-5 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-5 {
+    display: none;
+  }
+}
+
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3393,13 +4444,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-7 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3409,7 +4460,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3420,7 +4471,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-9 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3435,11 +4486,11 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-9:last-child {
+.emotion-10:last-child {
   margin-right: 0px;
 }
 
-.emotion-10 {
+.emotion-11 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -3450,7 +4501,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3464,15 +4515,15 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-12 {
+.emotion-13 {
   margin-right: 1rem;
 }
 
-.emotion-12:last-child {
+.emotion-13:last-child {
   margin-right: 0px;
 }
 
-.emotion-13 {
+.emotion-14 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -3484,22 +4535,22 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-13:hover {
+.emotion-14:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:active {
+.emotion-14:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-18 {
+.emotion-19 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -3574,10 +4625,59 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1728px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Terveys kuuluu kaikille"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg"
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Terveys kuuluu kaikille
@@ -3585,16 +4685,16 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3608,13 +4708,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3622,10 +4722,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3633,10 +4733,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3646,13 +4746,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/terveys-kuuluu-kaikille/"
           rel="permalink"
         >
@@ -3725,10 +4825,59 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1728px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Sote on hyvinvointiyhteiskunnan kulmakivi"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg"
+              data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Sote on hyvinvointiyhteiskunnan kulmakivi
@@ -3736,16 +4885,16 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3759,13 +4908,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3773,10 +4922,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3784,10 +4933,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3797,13 +4946,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
           rel="permalink"
         >
@@ -3876,10 +5025,59 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 1728px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMC/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/aAAwDAQACEAMQAAABnOucTBKVmBJgX//EAB0QAAEEAgMAAAAAAAAAAAAAAAIAAQMREhMhMjT/2gAIAQEAAQUCOPJow1OuMmojoU3YPTa//8QAGBEAAwEBAAAAAAAAAAAAAAAAAAECECL/2gAIAQMBAT8BUuTsWf/EABoRAAICAwAAAAAAAAAAAAAAAAACARARIjH/2gAIAQIBAT8BlsmovK//xAAbEAADAAMBAQAAAAAAAAAAAAAAARECEDEhgf/aAAgBAQAGPwLsMvbVNRDxhwQ/uv/EACAQAAICAQMFAAAAAAAAAAAAAAABEUEhMWHRcZGhseH/2gAIAQEAAT8hu69PpnTSKcmN/HI8MDrTBMFG9FRNXshU5lZo9vUTQf/aAAwDAQACAAMAAAAQwNh9/8QAGREAAwADAAAAAAAAAAAAAAAAAAERITHw/9oACAEDAQE/EFmEd0M6U//EABYRAQEBAAAAAAAAAAAAAAAAAAERIP/aAAgBAgEBPxAnVwP/xAAdEAEAAwEAAgMAAAAAAAAAAAABABExIUFRcbHw/9oACAEBAAE/EBEAXtlX1kB2CNApaR7AK+H5h322jQEvnICtd9UxmeagK9f1krYsCJx2JNofenrPM//Z"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="/static/aaf0eb28b01d8691152f60fa8fa38218/18bed/sosiaali-ja-terveyskeskus.webp 432w,/static/aaf0eb28b01d8691152f60fa8fa38218/d0f84/sosiaali-ja-terveyskeskus.webp 864w,/static/aaf0eb28b01d8691152f60fa8fa38218/ca0c6/sosiaali-ja-terveyskeskus.webp 1728w"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Mitä jos terveyskeskusta ei olisikaan?"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="/static/aaf0eb28b01d8691152f60fa8fa38218/4227f/sosiaali-ja-terveyskeskus.jpg"
+              data-srcset="/static/aaf0eb28b01d8691152f60fa8fa38218/9e7cd/sosiaali-ja-terveyskeskus.jpg 432w,/static/aaf0eb28b01d8691152f60fa8fa38218/ead50/sosiaali-ja-terveyskeskus.jpg 864w,/static/aaf0eb28b01d8691152f60fa8fa38218/4227f/sosiaali-ja-terveyskeskus.jpg 1728w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 1728px) 1728px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+        <div
+          class="emotion-6"
         >
           <h2
-            class="emotion-6"
+            class="emotion-7"
             itemprop="headline"
           >
             Mitä jos terveyskeskusta ei olisikaan?
@@ -3887,16 +5085,16 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </div>
       </a>
       <aside
-        class="emotion-7"
+        class="emotion-8"
       >
         <div
-          class="emotion-8"
+          class="emotion-9"
         >
           <span
-            class="emotion-9"
+            class="emotion-10"
           >
             <svg
-              class="emotion-10"
+              class="emotion-11"
             >
               <use
                 xlink:href="#icon-calendar-alt"
@@ -3910,13 +5108,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="emotion-11"
+          class="emotion-12"
         >
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3924,10 +5122,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3935,10 +5133,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="emotion-12"
+            class="emotion-13"
           >
             <a
-              class="emotion-13"
+              class="emotion-14"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3948,13 +5146,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-18"
+        class="emotion-19"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
          
         <a
-          class="emotion-13"
+          class="emotion-14"
           href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
           rel="permalink"
         >

@@ -47,7 +47,10 @@ export interface ContentfulPage {
     metaImage?: {
         localFile: ImageDataLike
     }
-    image?: {
+    image: {
+        localFile: ImageDataLike
+    }
+    mobileImage: {
         localFile: ImageDataLike
     }
     updatedAt: string
@@ -63,6 +66,9 @@ interface ContentfulPostCommon {
         }[]
     }
     headerImage: {
+        localFile: ImageDataLike
+    }
+    mobileHeaderImage: {
         localFile: ImageDataLike
     }
     excerpt: string

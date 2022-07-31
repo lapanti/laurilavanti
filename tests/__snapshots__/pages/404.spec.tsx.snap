@@ -271,9 +271,39 @@ exports[`<404 /> should render 1`] = `
   display: flex;
   height: 16rem;
   object-fit: cover;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-18 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-19 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-19 {
+    display: none;
+  }
+}
+
+.emotion-20 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -295,13 +325,13 @@ exports[`<404 /> should render 1`] = `
   position: relative;
 }
 
-.emotion-20 {
+.emotion-21 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-21 {
+.emotion-22 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -311,7 +341,7 @@ exports[`<404 /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-22 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -322,7 +352,7 @@ exports[`<404 /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-23 {
+.emotion-24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -337,11 +367,11 @@ exports[`<404 /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-23:last-child {
+.emotion-24:last-child {
   margin-right: 0px;
 }
 
-.emotion-24 {
+.emotion-25 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -352,7 +382,7 @@ exports[`<404 /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-25 {
+.emotion-26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -366,15 +396,15 @@ exports[`<404 /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-26 {
+.emotion-27 {
   margin-right: 1rem;
 }
 
-.emotion-26:last-child {
+.emotion-27:last-child {
   margin-right: 0px;
 }
 
-.emotion-27 {
+.emotion-28 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -386,22 +416,22 @@ exports[`<404 /> should render 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-27:hover {
+.emotion-28:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-27:active {
+.emotion-28:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-27:focus {
+.emotion-28:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-32 {
+.emotion-33 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -409,7 +439,7 @@ exports[`<404 /> should render 1`] = `
   margin-top: 0.25rem;
 }
 
-.emotion-108 {
+.emotion-113 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -433,7 +463,7 @@ exports[`<404 /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-109 {
+.emotion-114 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -452,11 +482,11 @@ exports[`<404 /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-110 {
+.emotion-115 {
   padding: 0px;
 }
 
-.emotion-111 {
+.emotion-116 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -472,7 +502,7 @@ exports[`<404 /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-112 {
+.emotion-117 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -483,17 +513,17 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-112:hover {
+.emotion-117:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-112:focus {
+.emotion-117:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-115 {
+.emotion-120 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -504,17 +534,17 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-115:hover {
+.emotion-120:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-115:focus {
+.emotion-120:focus {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-118 {
+.emotion-123 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -525,12 +555,12 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-118:hover {
+.emotion-123:hover {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
 
-.emotion-118:focus {
+.emotion-123:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -674,10 +704,59 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+                >
+                  <div
+                    style="max-width: 1728px; display: block;"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      role="presentation"
+                      src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+                      style="max-width: 100%; display: block; position: static;"
+                    />
+                  </div>
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w"
+                      sizes="(min-width: 1728px) 1728px, 100vw"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Terveys kuuluu kaikille"
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg"
+                      data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="(min-width: 1728px) 1728px, 100vw"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="emotion-20"
                 >
                   <h2
-                    class="emotion-20"
+                    class="emotion-21"
                     itemprop="headline"
                   >
                     Terveys kuuluu kaikille
@@ -685,16 +764,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-21"
+                class="emotion-22"
               >
                 <div
-                  class="emotion-22"
+                  class="emotion-23"
                 >
                   <span
-                    class="emotion-23"
+                    class="emotion-24"
                   >
                     <svg
-                      class="emotion-24"
+                      class="emotion-25"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -708,13 +787,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-25"
+                  class="emotion-26"
                 >
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -722,10 +801,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -733,10 +812,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -746,13 +825,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-32"
+                class="emotion-33"
                 itemprop="description"
               >
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                  
                 <a
-                  class="emotion-27"
+                  class="emotion-28"
                   href="/blogi/terveys-kuuluu-kaikille/"
                   rel="permalink"
                 >
@@ -825,10 +904,59 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+                >
+                  <div
+                    style="max-width: 1728px; display: block;"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      role="presentation"
+                      src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+                      style="max-width: 100%; display: block; position: static;"
+                    />
+                  </div>
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w"
+                      sizes="(min-width: 1728px) 1728px, 100vw"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Sote on hyvinvointiyhteiskunnan kulmakivi"
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg"
+                      data-srcset="/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="(min-width: 1728px) 1728px, 100vw"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="emotion-20"
                 >
                   <h2
-                    class="emotion-20"
+                    class="emotion-21"
                     itemprop="headline"
                   >
                     Sote on hyvinvointiyhteiskunnan kulmakivi
@@ -836,16 +964,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-21"
+                class="emotion-22"
               >
                 <div
-                  class="emotion-22"
+                  class="emotion-23"
                 >
                   <span
-                    class="emotion-23"
+                    class="emotion-24"
                   >
                     <svg
-                      class="emotion-24"
+                      class="emotion-25"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -859,13 +987,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-25"
+                  class="emotion-26"
                 >
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -873,10 +1001,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -884,10 +1012,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -897,13 +1025,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-32"
+                class="emotion-33"
                 itemprop="description"
               >
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                  
                 <a
-                  class="emotion-27"
+                  class="emotion-28"
                   href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                   rel="permalink"
                 >
@@ -976,10 +1104,59 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+                >
+                  <div
+                    style="max-width: 1728px; display: block;"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      role="presentation"
+                      src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='1728' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+                      style="max-width: 100%; display: block; position: static;"
+                    />
+                  </div>
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMC/8QAFwEAAwEAAAAAAAAAAAAAAAAAAQIDAP/aAAwDAQACEAMQAAABnOucTBKVmBJgX//EAB0QAAEEAgMAAAAAAAAAAAAAAAIAAQMREhMhMjT/2gAIAQEAAQUCOPJow1OuMmojoU3YPTa//8QAGBEAAwEBAAAAAAAAAAAAAAAAAAECECL/2gAIAQMBAT8BUuTsWf/EABoRAAICAwAAAAAAAAAAAAAAAAACARARIjH/2gAIAQIBAT8BlsmovK//xAAbEAADAAMBAQAAAAAAAAAAAAAAARECEDEhgf/aAAgBAQAGPwLsMvbVNRDxhwQ/uv/EACAQAAICAQMFAAAAAAAAAAAAAAABEUEhMWHRcZGhseH/2gAIAQEAAT8hu69PpnTSKcmN/HI8MDrTBMFG9FRNXshU5lZo9vUTQf/aAAwDAQACAAMAAAAQwNh9/8QAGREAAwADAAAAAAAAAAAAAAAAAAERITHw/9oACAEDAQE/EFmEd0M6U//EABYRAQEBAAAAAAAAAAAAAAAAAAERIP/aAAgBAgEBPxAnVwP/xAAdEAEAAwEAAgMAAAAAAAAAAAABABExIUFRcbHw/9oACAEBAAE/EBEAXtlX1kB2CNApaR7AK+H5h322jQEvnICtd9UxmeagK9f1krYsCJx2JNofenrPM//Z"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/aaf0eb28b01d8691152f60fa8fa38218/18bed/sosiaali-ja-terveyskeskus.webp 432w,/static/aaf0eb28b01d8691152f60fa8fa38218/d0f84/sosiaali-ja-terveyskeskus.webp 864w,/static/aaf0eb28b01d8691152f60fa8fa38218/ca0c6/sosiaali-ja-terveyskeskus.webp 1728w"
+                      sizes="(min-width: 1728px) 1728px, 100vw"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Mitä jos terveyskeskusta ei olisikaan?"
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/aaf0eb28b01d8691152f60fa8fa38218/4227f/sosiaali-ja-terveyskeskus.jpg"
+                      data-srcset="/static/aaf0eb28b01d8691152f60fa8fa38218/9e7cd/sosiaali-ja-terveyskeskus.jpg 432w,/static/aaf0eb28b01d8691152f60fa8fa38218/ead50/sosiaali-ja-terveyskeskus.jpg 864w,/static/aaf0eb28b01d8691152f60fa8fa38218/4227f/sosiaali-ja-terveyskeskus.jpg 1728w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="(min-width: 1728px) 1728px, 100vw"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="emotion-20"
                 >
                   <h2
-                    class="emotion-20"
+                    class="emotion-21"
                     itemprop="headline"
                   >
                     Mitä jos terveyskeskusta ei olisikaan?
@@ -987,16 +1164,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-21"
+                class="emotion-22"
               >
                 <div
-                  class="emotion-22"
+                  class="emotion-23"
                 >
                   <span
-                    class="emotion-23"
+                    class="emotion-24"
                   >
                     <svg
-                      class="emotion-24"
+                      class="emotion-25"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1010,13 +1187,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-25"
+                  class="emotion-26"
                 >
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1024,10 +1201,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1035,10 +1212,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1048,13 +1225,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-32"
+                class="emotion-33"
                 itemprop="description"
               >
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
                  
                 <a
-                  class="emotion-27"
+                  class="emotion-28"
                   href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
                   rel="permalink"
                 >
@@ -1127,10 +1304,59 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+                >
+                  <div
+                    style="max-width: 1399px; display: block;"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      role="presentation"
+                      src="data:image/svg+xml;charset=utf-8,%3Csvg height='1399' width='1399' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+                      style="max-width: 100%; display: block; position: static;"
+                    />
+                  </div>
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAIDBAH/xAAXAQEBAQEAAAAAAAAAAAAAAAACAQAD/9oADAMBAAIQAxAAAAHN3bWXMY5ZlNQvD//EABoQAQADAQEBAAAAAAAAAAAAAAEAAgMSESL/2gAIAQEAAQUCrlLZ8vpOxG55MT61qciz/8QAGBEAAgMAAAAAAAAAAAAAAAAAABARQUL/2gAIAQMBAT8BpZJP/8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQIBAT8BKf/EABwQAAICAgMAAAAAAAAAAAAAAAARASECECIyof/aAAgBAQAGPwLlKKlnT0qGXWsh6//EABwQAQACAwADAAAAAAAAAAAAAAEAESExQVFhcf/aAAgBAQABPyFlcG6PcqO6vkKclfMhFVF3NREsxLOPcQRyW9sEUM//2gAMAwEAAgADAAAAEBA/Qv/EABkRAAMAAwAAAAAAAAAAAAAAAAABETFRsf/aAAgBAwEBPxBPIiFyVs//xAAYEQACAwAAAAAAAAAAAAAAAAAAARAhMf/aAAgBAgEBPxB6WOH/xAAdEAEAAwABBQAAAAAAAAAAAAABABEhYTFBcaHB/9oACAEBAAE/EMDXprV8jMzFdlLAgIFKW+4LIMRBVQDDtTd2XAWg08wdigArZqwlUtePEBpA5n//2Q=="
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/9191e5858402a1213443faa945425bd8/6cac9/lauri-lavanti-perusturvajaosto.webp 350w,/static/9191e5858402a1213443faa945425bd8/ec00d/lauri-lavanti-perusturvajaosto.webp 700w,/static/9191e5858402a1213443faa945425bd8/c688d/lauri-lavanti-perusturvajaosto.webp 1399w"
+                      sizes="(min-width: 1399px) 1399px, 100vw"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Perusturvajaosto - mikä se on?"
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/9191e5858402a1213443faa945425bd8/c1041/lauri-lavanti-perusturvajaosto.jpg"
+                      data-srcset="/static/9191e5858402a1213443faa945425bd8/7ba70/lauri-lavanti-perusturvajaosto.jpg 350w,/static/9191e5858402a1213443faa945425bd8/9366f/lauri-lavanti-perusturvajaosto.jpg 700w,/static/9191e5858402a1213443faa945425bd8/c1041/lauri-lavanti-perusturvajaosto.jpg 1399w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="(min-width: 1399px) 1399px, 100vw"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="emotion-20"
                 >
                   <h2
-                    class="emotion-20"
+                    class="emotion-21"
                     itemprop="headline"
                   >
                     Perusturvajaosto - mikä se on?
@@ -1138,16 +1364,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-21"
+                class="emotion-22"
               >
                 <div
-                  class="emotion-22"
+                  class="emotion-23"
                 >
                   <span
-                    class="emotion-23"
+                    class="emotion-24"
                   >
                     <svg
-                      class="emotion-24"
+                      class="emotion-25"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1161,13 +1387,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-25"
+                  class="emotion-26"
                 >
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1175,10 +1401,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/perustuva/"
                     >
                       #
@@ -1188,13 +1414,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-32"
+                class="emotion-33"
                 itemprop="description"
               >
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
                  
                 <a
-                  class="emotion-27"
+                  class="emotion-28"
                   href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
                   rel="permalink"
                 >
@@ -1267,10 +1493,59 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+                >
+                  <div
+                    style="max-width: 1509px; display: block;"
+                  >
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      role="presentation"
+                      src="data:image/svg+xml;charset=utf-8,%3Csvg height='1509' width='1509' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+                      style="max-width: 100%; display: block; position: static;"
+                    />
+                  </div>
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMEBQH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/9oADAMBAAIQAxAAAAG1Hl8M9VmF01Ym9sIf/8QAGhABAQEBAAMAAAAAAAAAAAAAAQIAAxExMv/aAAgBAQABBQIZddEjcGObOfMzBTJunuPj/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAECEBL/2gAIAQMBAT8BUEYV/wD/xAAZEQACAwEAAAAAAAAAAAAAAAAAAhAREzH/2gAIAQIBAT8B0s1YXsf/xAAbEAACAgMBAAAAAAAAAAAAAAAAAREhIDFhcf/aAAgBAQAGPwKmiaZsqMJ4Lw//xAAdEAADAAICAwAAAAAAAAAAAAAAAREhMUGBUXGR/9oACAEBAAE/IUNa7G9HDijCNTau1GmcrnwTXicVmapu8MRZ6x//2gAMAwEAAgADAAAAEH/3Qv/EABYRAQEBAAAAAAAAAAAAAAAAABABEf/aAAgBAwEBPxDQEP/EABkRAQACAwAAAAAAAAAAAAAAAAEAECExQf/aAAgBAgEBPxAeBEHlTuf/xAAeEAEBAQEAAgIDAAAAAAAAAAABESEAMUFRYXGRwf/aAAgBAQABPxCEBZ+XxzGSVBss7XFLhebVdNrjDUgDTwzftP1wrWrpsueu3LzZ2rWtHofngCWfw7//2Q=="
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/21b2876e43d499dadd58d90d69279f91/e6df8/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 377w,/static/21b2876e43d499dadd58d90d69279f91/9a8b1/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 755w,/static/21b2876e43d499dadd58d90d69279f91/d1461/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 1509w"
+                      sizes="(min-width: 1509px) 1509px, 100vw"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Ehdolle aluevaaleihin"
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/21b2876e43d499dadd58d90d69279f91/5e0f8/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg"
+                      data-srcset="/static/21b2876e43d499dadd58d90d69279f91/3c15e/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 377w,/static/21b2876e43d499dadd58d90d69279f91/3fcac/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 755w,/static/21b2876e43d499dadd58d90d69279f91/5e0f8/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 1509w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="(min-width: 1509px) 1509px, 100vw"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="emotion-20"
                 >
                   <h2
-                    class="emotion-20"
+                    class="emotion-21"
                     itemprop="headline"
                   >
                     Ehdolle aluevaaleihin
@@ -1278,16 +1553,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-21"
+                class="emotion-22"
               >
                 <div
-                  class="emotion-22"
+                  class="emotion-23"
                 >
                   <span
-                    class="emotion-23"
+                    class="emotion-24"
                   >
                     <svg
-                      class="emotion-24"
+                      class="emotion-25"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1301,13 +1576,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-25"
+                  class="emotion-26"
                 >
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1315,10 +1590,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1326,10 +1601,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-26"
+                    class="emotion-27"
                   >
                     <a
-                      class="emotion-27"
+                      class="emotion-28"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1339,13 +1614,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-32"
+                class="emotion-33"
                 itemprop="description"
               >
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                  
                 <a
-                  class="emotion-27"
+                  class="emotion-28"
                   href="/blogi/ehdolle-aluevaaleihin/"
                   rel="permalink"
                 >
@@ -1358,23 +1633,23 @@ exports[`<404 /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="emotion-108"
+      class="emotion-113"
     >
       <ul
-        class="emotion-109"
+        class="emotion-114"
       >
         <li
-          class="emotion-110"
+          class="emotion-115"
         >
           <a
-            class="emotion-111"
+            class="emotion-116"
             href="https://www.facebook.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Facebook"
           >
             <svg
-              class="emotion-112"
+              class="emotion-117"
             >
               <use
                 xlink:href="#icon-facebook"
@@ -1383,17 +1658,17 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="emotion-110"
+          class="emotion-115"
         >
           <a
-            class="emotion-111"
+            class="emotion-116"
             href="https://twitter.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Twitter"
           >
             <svg
-              class="emotion-115"
+              class="emotion-120"
             >
               <use
                 xlink:href="#icon-twitter"
@@ -1402,17 +1677,17 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="emotion-110"
+          class="emotion-115"
         >
           <a
-            class="emotion-111"
+            class="emotion-116"
             href="https://www.linkedin.com/in/lapanti"
             rel="noopener noreferrer"
             target="_blank"
             title="LinkedIn"
           >
             <svg
-              class="emotion-118"
+              class="emotion-123"
             >
               <use
                 xlink:href="#icon-linkedin"

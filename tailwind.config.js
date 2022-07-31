@@ -6,6 +6,7 @@ module.exports = {
             serif: '"Ubuntu"',
         },
         screens: {
+            biggerthenphone: '479px',
             700: '700px',
             750: '750px',
             1200: '1200px',
