@@ -42,6 +42,22 @@ const Article = styled.article(() => [
     `,
 ])
 
+const MobileBigHeroImage = tw(BigHeroImage)`
+    flex biggerthenphone:hidden
+`
+
+const DesktopBigHeroImage = tw(BigHeroImage)`
+    hidden biggerthenphone:flex
+`
+
+const MobileHeroImage = tw(HeroImage)`
+    flex biggerthenphone:hidden
+`
+
+const DesktopHeroImage = tw(HeroImage)`
+    hidden biggerthenphone:flex
+`
+
 const PositionedP = tw(Paragraph)`
     col-start-3
 `
@@ -86,7 +102,7 @@ interface Props extends Omit<SEOProps, 'title' | 'image'> {
     title?: string
     hiddenTitle?: string
     heroImage?: ImageDataLike
-    metaImage?: ImageDataLike
+    mobileHeroImage?: ImageDataLike
     image?: { src: string; height: string; width: string }
     body?: RichBody
     preBody?: ReactNode
@@ -96,7 +112,7 @@ const LayoutComponent = ({
     className,
     title,
     heroImage,
-    metaImage,
+    mobileHeroImage,
     hiddenTitle,
     description,
     meta,
@@ -108,7 +124,7 @@ const LayoutComponent = ({
     body,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
-    const imageToUse = (heroImage || metaImage) as
+    const imageToUse = heroImage as
         | {
               childImageSharp: {
                   gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
@@ -122,8 +138,6 @@ const LayoutComponent = ({
               width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
           }
         : undefined
-
-    const HeroComponent = pathname === '/index/' ? BigHeroImage : HeroImage
 
     return (
         <>
@@ -143,7 +157,19 @@ const LayoutComponent = ({
 
                 <Main>
                     <Article>
-                        {heroImage && <HeroComponent imageData={heroImage} alt={title || hiddenTitle || ''} />}
+                        {pathname === '/index/' && heroImage && (
+                            <DesktopBigHeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />
+                        )}
+                        {pathname === '/index/' && mobileHeroImage && (
+                            <MobileBigHeroImage imageData={mobileHeroImage} alt={title || hiddenTitle || ''} />
+                        )}
+
+                        {pathname !== '/index/' && heroImage && (
+                            <DesktopHeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />
+                        )}
+                        {pathname !== '/index/' && mobileHeroImage && (
+                            <MobileHeroImage imageData={mobileHeroImage} alt={title || hiddenTitle || ''} />
+                        )}
                         {title && <Title title={title} />}
                         {preBody}
                         {body && renderRichText(body, options)}

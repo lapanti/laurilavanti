@@ -44,9 +44,6 @@ export interface ContentfulPage {
     jsonLdType: JsonLdType
     title: string
     body: RichBody
-    metaImage?: {
-        localFile: ImageDataLike
-    }
     image: {
         localFile: ImageDataLike
     }

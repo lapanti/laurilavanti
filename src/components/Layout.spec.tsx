@@ -58,7 +58,7 @@ describe('<Layout />', () => {
 
     it('should render hero image', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} title={title}>
+            <Layout heroImage={mainImage} mobileHeroImage={mainImage} title={title}>
                 {children}
             </Layout>
         )
@@ -72,7 +72,7 @@ describe('<Layout />', () => {
 
     it('should render hero image with hidden title as alt', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} hiddenTitle={title}>
+            <Layout heroImage={mainImage} mobileHeroImage={mainImage} hiddenTitle={title}>
                 {children}
             </Layout>
         )
@@ -80,20 +80,6 @@ describe('<Layout />', () => {
         expect(screen.getByText(children)).toBeInTheDocument()
 
         expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render meta image', () => {
-        const { container } = render(
-            <Layout metaImage={mainImage} title={title}>
-                {children}
-            </Layout>
-        )
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.queryByRole('img', { name: title })).toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })

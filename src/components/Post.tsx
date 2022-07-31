@@ -37,6 +37,7 @@ const Post = ({
             publishDate,
             body,
             headerImage,
+            mobileHeaderImage,
             metadata,
             title,
             updatedAt,
@@ -57,6 +58,7 @@ const Post = ({
             title={title}
             pathname={`/blogi/${slug}/`}
             heroImage={headerImage.localFile}
+            mobileHeroImage={mobileHeaderImage.localFile}
             description={excerpt}
             type={BLOGPOSTING}
             published={publishedOld || published}
@@ -101,6 +103,20 @@ export const query = graphql`
                 }
             }
             headerImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: FIXED
+                            height: 667
+                            width: 1920
+                            transformOptions: { fit: OUTSIDE }
+                            aspectRatio: 2.87
+                        )
+                    }
+                }
+            }
+            mobileHeaderImage {
                 localFile {
                     childImageSharp {
                         gatsbyImageData(
