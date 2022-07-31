@@ -23,7 +23,6 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -653,7 +652,6 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -1660,7 +1658,6 @@ exports[`<Layout /> rich body should render H2 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -2259,7 +2256,6 @@ exports[`<Layout /> rich body should render HR 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -2853,7 +2849,6 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -3052,6 +3047,10 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   margin-top: -41rem;
   height: 41rem;
   z-index: 40;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;
@@ -3060,6 +3059,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
   --tw-gradient-from: rgba(0,0,0,.85);
   --tw-gradient-stops: var(--tw-gradient-from),rgba(0,0,0,.05),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+  overflow: hidden;
 }
 
 @media (min-width: 700px) {
@@ -3621,7 +3621,6 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -4300,7 +4299,6 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -4899,7 +4897,6 @@ exports[`<Layout /> rich body should render external links 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -5524,7 +5521,6 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -6155,7 +6151,6 @@ exports[`<Layout /> should render hero image 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -6401,6 +6396,10 @@ exports[`<Layout /> should render hero image 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   margin-top: -14rem;
   z-index: 40;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: #000;
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -6948,7 +6947,6 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -7689,7 +7687,6 @@ exports[`<Layout /> should render hidden title 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -8276,7 +8273,6 @@ exports[`<Layout /> should render minimal 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -8863,7 +8859,6 @@ exports[`<Layout /> should render title 1`] = `
   justify-content: flex-end;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1920px;
   position: fixed;
   z-index: 50;
   -webkit-user-select: none;
@@ -9061,6 +9056,10 @@ exports[`<Layout /> should render title 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   margin-top: -14rem;
   z-index: 40;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: #000;
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));

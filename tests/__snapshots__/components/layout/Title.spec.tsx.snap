@@ -7,6 +7,10 @@ exports[`<Title /> should render 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   margin-top: -14rem;
   z-index: 40;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: #000;
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
