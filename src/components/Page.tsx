@@ -81,7 +81,6 @@ export const query = graphql`
                             height: 667
                             width: 1920
                             transformOptions: { fit: OUTSIDE }
-                            aspectRatio: 2.87
                         )
                     }
                 }
@@ -93,9 +92,8 @@ export const query = graphql`
                             placeholder: BLURRED
                             layout: FIXED
                             height: 667
-                            width: 1920
+                            width: 478
                             transformOptions: { fit: OUTSIDE }
-                            aspectRatio: 2.87
                         )
                     }
                 }

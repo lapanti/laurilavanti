@@ -58,7 +58,7 @@ export const query = graphql`
                             placeholder: BLURRED
                             layout: FIXED
                             height: 384
-                            width: 1920
+                            width: 478
                             transformOptions: { fit: OUTSIDE }
                         )
                     }
