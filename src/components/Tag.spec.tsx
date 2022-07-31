@@ -11,7 +11,7 @@ describe('<Tag />', () => {
     it('should render', () => {
         const { container } = render(
             <Tag
-                data={{ contentfulPage: { metaImage: { localFile: mainImage }, image: { localFile: mainImage } } }}
+                data={{ contentfulPage: { mobileImage: { localFile: mainImage }, image: { localFile: mainImage } } }}
                 pageContext={{ tag }}
             />
         )

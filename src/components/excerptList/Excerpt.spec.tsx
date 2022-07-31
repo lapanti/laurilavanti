@@ -14,7 +14,15 @@ describe('<Excerpt />', () => {
         const slug = 'sote-on-hyvinvointiyhteiskunnan-kulmakivi'
 
         const { container } = render(
-            <Excerpt title={title} date={date} excerpt={excerpt} tags={tags} slug={slug} image={mainImage} />
+            <Excerpt
+                title={title}
+                date={date}
+                excerpt={excerpt}
+                tags={tags}
+                slug={slug}
+                mobileImage={mainImage}
+                image={mainImage}
+            />
         )
 
         const article = screen.getByRole('article', { name: title })
