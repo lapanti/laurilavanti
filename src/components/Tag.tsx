@@ -44,10 +44,9 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: BLURRED
                             layout: FIXED
-                            height: 667
+                            height: 384
                             width: 1920
                             transformOptions: { fit: OUTSIDE }
-                            aspectRatio: 2.87
                         )
                     }
                 }
@@ -58,10 +57,9 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: BLURRED
                             layout: FIXED
-                            height: 667
+                            height: 384
                             width: 1920
                             transformOptions: { fit: OUTSIDE }
-                            aspectRatio: 2.87
                         )
                     }
                 }
