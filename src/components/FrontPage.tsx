@@ -25,6 +25,7 @@ const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
         body={data?.contentfulPage?.body}
+        isFrontPage
     />
 )
 
@@ -78,7 +79,7 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: BLURRED
                             layout: FIXED
-                            height: 384
+                            height: 667
                             width: 1920
                             transformOptions: { fit: OUTSIDE }
                         )
@@ -91,7 +92,7 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: BLURRED
                             layout: FIXED
-                            height: 384
+                            height: 667
                             width: 478
                             transformOptions: { fit: OUTSIDE }
                         )

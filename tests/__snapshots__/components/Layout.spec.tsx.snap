@@ -6924,6 +6924,802 @@ exports[`<Layout /> should render hero image 1`] = `
 </div>
 `;
 
+exports[`<Layout /> should render hero image for front page 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 6rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+.emotion-12 NO_COMPONENT_SELECTOR+*,
+.emotion-12 NO_COMPONENT_SELECTOR+* {
+  margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-14 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 41rem!important;
+  object-fit: cover;
+  width: 100%!important;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.emotion-15 {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-15 {
+    display: none;
+  }
+}
+
+.emotion-17 {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  margin-top: -14rem;
+  z-index: 40;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  --tw-gradient-from: #000;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
+}
+
+@media (min-width: 700px) {
+  .emotion-17 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-17 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-18 {
+  grid-column-start: 3;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  margin: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+}
+
+.emotion-19 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.emotion-21 {
+  padding: 0px;
+}
+
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-23 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-23:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-23:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-26 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-26:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-26:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-29 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-29:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-29:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+<div
+  class="emotion-0"
+>
+  <header
+    class="emotion-1"
+  >
+    <button
+      aria-label="Open navigation menu"
+      class="emotion-2"
+    >
+      <svg
+        aria-hidden="true"
+        class="emotion-3"
+      >
+        <use
+          xlink:href="#icon-bars"
+        />
+      </svg>
+    </button>
+    <button
+      aria-hidden="true"
+      class="emotion-4"
+    />
+    <nav
+      aria-expanded="false"
+      class="emotion-5"
+    >
+      <button
+        aria-label="Close navigation menu"
+        class="emotion-6"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-3"
+        >
+          <use
+            xlink:href="#icon-close"
+          />
+        </svg>
+      </button>
+      <a
+        class="emotion-8"
+        href="/minusta/"
+      >
+        Minusta
+      </a>
+      <a
+        class="emotion-8"
+        href="/blogi/"
+      >
+        Blogi
+      </a>
+      <a
+        class="emotion-8"
+        href="/ota-yhteytta/"
+      >
+        Ota yhteyttä
+      </a>
+    </nav>
+  </header>
+  <main
+    class="emotion-11"
+  >
+    <article
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 4032px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='4032' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Title"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+      </div>
+      <div
+        class="emotion-15"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 4032px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='4032' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Title"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+      </div>
+      <section
+        class="emotion-17"
+      >
+        <h1
+          class="emotion-18"
+          itemprop="headline"
+        >
+          Title
+        </h1>
+      </section>
+      Children
+    </article>
+  </main>
+  <footer
+    class="emotion-19"
+  >
+    <ul
+      class="emotion-20"
+    >
+      <li
+        class="emotion-21"
+      >
+        <a
+          class="emotion-22"
+          href="https://www.facebook.com/laurilavanti"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Facebook"
+        >
+          <svg
+            class="emotion-23"
+          >
+            <use
+              xlink:href="#icon-facebook"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="emotion-21"
+      >
+        <a
+          class="emotion-22"
+          href="https://twitter.com/laurilavanti"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            class="emotion-26"
+          >
+            <use
+              xlink:href="#icon-twitter"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="emotion-21"
+      >
+        <a
+          class="emotion-22"
+          href="https://www.linkedin.com/in/lapanti"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="LinkedIn"
+        >
+          <svg
+            class="emotion-29"
+          >
+            <use
+              xlink:href="#icon-linkedin"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <svg
+    aria-hidden="true"
+    style="position: absolute; width: 0px; height: 0px; overflow: hidden;"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <symbol
+        id="icon-envelope"
+        viewBox="0 0 28 28"
+      >
+        <path
+          d="M26 23.5v-12c-0.328 0.375-0.688 0.719-1.078 1.031-2.234 1.719-4.484 3.469-6.656 5.281-1.172 0.984-2.625 2.188-4.25 2.188h-0.031c-1.625 0-3.078-1.203-4.25-2.188-2.172-1.813-4.422-3.563-6.656-5.281-0.391-0.313-0.75-0.656-1.078-1.031v12c0 0.266 0.234 0.5 0.5 0.5h23c0.266 0 0.5-0.234 0.5-0.5zM26 7.078c0-0.391 0.094-1.078-0.5-1.078h-23c-0.266 0-0.5 0.234-0.5 0.5 0 1.781 0.891 3.328 2.297 4.438 2.094 1.641 4.188 3.297 6.266 4.953 0.828 0.672 2.328 2.109 3.422 2.109h0.031c1.094 0 2.594-1.437 3.422-2.109 2.078-1.656 4.172-3.313 6.266-4.953 1.016-0.797 2.297-2.531 2.297-3.859zM28 6.5v17c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-17c0-1.375 1.125-2.5 2.5-2.5h23c1.375 0 2.5 1.125 2.5 2.5z"
+        />
+      </symbol>
+      <symbol
+        id="icon-rss"
+        viewBox="0 0 28 32"
+      >
+        <path
+          d="M8.005 25.997c0 2.211-1.792 4.003-4.003 4.003s-4.003-1.792-4.003-4.003 1.792-4.003 4.003-4.003 4.003 1.792 4.003 4.003zM18.984 28.951c-0.522-9.662-8.262-17.412-17.934-17.934-0.571-0.031-1.049 0.428-1.049 1v3.004c0 0.526 0.406 0.967 0.93 1.001 6.989 0.455 12.592 6.044 13.048 13.048 0.034 0.525 0.475 0.93 1.001 0.93h3.004c0.572 0 1.031-0.478 1-1.049zM27.999 28.969c-0.525-14.614-12.283-26.441-26.968-26.968-0.564-0.020-1.031 0.436-1.031 1v3.004c0 0.539 0.427 0.978 0.966 1 11.949 0.49 21.539 10.082 22.029 22.029 0.022 0.539 0.461 0.966 1 0.966h3.004c0.565-0 1.021-0.467 1-1.032z"
+        />
+      </symbol>
+      <symbol
+        id="icon-calendar-alt"
+        viewBox="0 0 28 32"
+      >
+        <path
+          d="M9.25 18h-2.5c-0.412 0-0.75-0.337-0.75-0.75v-2.5c0-0.412 0.338-0.75 0.75-0.75h2.5c0.412 0 0.75 0.338 0.75 0.75v2.5c0 0.413-0.338 0.75-0.75 0.75zM16 17.25v-2.5c0-0.412-0.338-0.75-0.75-0.75h-2.5c-0.412 0-0.75 0.338-0.75 0.75v2.5c0 0.413 0.338 0.75 0.75 0.75h2.5c0.412 0 0.75-0.337 0.75-0.75zM22 17.25v-2.5c0-0.412-0.337-0.75-0.75-0.75h-2.5c-0.413 0-0.75 0.338-0.75 0.75v2.5c0 0.413 0.337 0.75 0.75 0.75h2.5c0.413 0 0.75-0.337 0.75-0.75zM16 23.25v-2.5c0-0.413-0.338-0.75-0.75-0.75h-2.5c-0.412 0-0.75 0.337-0.75 0.75v2.5c0 0.413 0.338 0.75 0.75 0.75h2.5c0.412 0 0.75-0.337 0.75-0.75zM10 23.25v-2.5c0-0.413-0.338-0.75-0.75-0.75h-2.5c-0.412 0-0.75 0.337-0.75 0.75v2.5c0 0.413 0.338 0.75 0.75 0.75h2.5c0.412 0 0.75-0.337 0.75-0.75zM22 23.25v-2.5c0-0.413-0.337-0.75-0.75-0.75h-2.5c-0.413 0-0.75 0.337-0.75 0.75v2.5c0 0.413 0.337 0.75 0.75 0.75h2.5c0.413 0 0.75-0.337 0.75-0.75zM28 7v22c0 1.656-1.344 3-3 3h-22c-1.656 0-3-1.344-3-3v-22c0-1.656 1.344-3 3-3h3v-3.25c0-0.412 0.338-0.75 0.75-0.75h2.5c0.412 0 0.75 0.338 0.75 0.75v3.25h8v-3.25c0-0.412 0.337-0.75 0.75-0.75h2.5c0.413 0 0.75 0.338 0.75 0.75v3.25h3c1.656 0 3 1.344 3 3zM25 28.625v-18.625h-22v18.625c0 0.206 0.169 0.375 0.375 0.375h21.25c0.206 0 0.375-0.169 0.375-0.375z"
+        />
+      </symbol>
+      <symbol
+        id="icon-facebook"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M31.5 16c0-8.563-6.938-15.5-15.5-15.5s-15.5 6.938-15.5 15.5c0 7.736 5.668 14.149 13.078 15.313v-10.832h-3.938v-4.481h3.938v-3.415c0-3.884 2.313-6.030 5.854-6.030 1.696 0 3.47 0.303 3.47 0.303v3.813h-1.955c-1.925 0-2.526 1.195-2.526 2.421v2.909h4.299l-0.688 4.481h-3.611v10.832c7.41-1.164 13.078-7.576 13.078-15.313z"
+        />
+      </symbol>
+      <symbol
+        id="icon-linkedin"
+        viewBox="0 0 28 32"
+      >
+        <path
+          d="M26 2h-24.006c-1.1 0-1.994 0.906-1.994 2.019v23.962c0 1.113 0.894 2.019 1.994 2.019h24.006c1.1 0 2-0.906 2-2.019v-23.962c0-1.112-0.9-2.019-2-2.019zM8.463 26h-4.15v-13.363h4.156v13.363zM6.388 10.813c-1.331 0-2.406-1.081-2.406-2.406s1.075-2.406 2.406-2.406c1.325 0 2.406 1.081 2.406 2.406 0 1.331-1.075 2.406-2.406 2.406zM24.019 26h-4.15v-6.5c0-1.55-0.031-3.544-2.156-3.544-2.162 0-2.494 1.688-2.494 3.431v6.613h-4.15v-13.363h3.981v1.825h0.056c0.556-1.050 1.912-2.156 3.931-2.156 4.2 0 4.981 2.769 4.981 6.369v7.325z"
+        />
+      </symbol>
+      <symbol
+        id="icon-twitter"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M28.711 9.482c0.020 0.284 0.020 0.569 0.020 0.853 0 8.67-6.599 18.66-18.66 18.66-3.716 0-7.168-1.076-10.071-2.944 0.528 0.061 1.036 0.081 1.584 0.081 3.066 0 5.888-1.035 8.142-2.802-2.883-0.061-5.3-1.949-6.132-4.548 0.406 0.061 0.812 0.102 1.239 0.102 0.589 0 1.178-0.081 1.726-0.223-3.005-0.609-5.259-3.249-5.259-6.437v-0.081c0.873 0.487 1.888 0.792 2.964 0.832-1.766-1.178-2.924-3.188-2.924-5.462 0-1.218 0.325-2.335 0.893-3.31 3.228 3.98 8.081 6.579 13.523 6.863-0.101-0.487-0.162-0.995-0.162-1.502 0-3.614 2.924-6.558 6.558-6.558 1.888 0 3.594 0.792 4.792 2.071 1.482-0.284 2.904-0.832 4.162-1.584-0.487 1.523-1.523 2.802-2.883 3.614 1.32-0.142 2.599-0.508 3.777-1.015-0.893 1.299-2.010 2.457-3.289 3.391z"
+        />
+      </symbol>
+      <symbol
+        id="icon-bars"
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        />
+      </symbol>
+      <symbol
+        id="icon-close"
+        viewBox="0 0 320 512"
+      >
+        <path
+          d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+        />
+      </symbol>
+      <symbol
+        id="logo"
+        viewBox="0 0 600 600"
+      >
+        <g>
+          <title>
+            Lauri lavanti
+          </title>
+          <rect
+            fill="#045a1c"
+            height="600"
+            id="svg_2"
+            rx="50"
+            width="600"
+            x="0"
+            y="0"
+          />
+          <text
+            fill="#ffffff"
+            font-family="Times New Roman"
+            font-size="24"
+            font-style="normal"
+            font-weight="400"
+            id="svg_1"
+            stroke="#ffffff"
+            text-anchor="start"
+            transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
+            x="217.25434"
+            xml:space="preserve"
+            y="221.21152"
+          >
+            L²
+          </text>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+</div>
+`;
+
 exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
 .emotion-0 {
   display: grid;
@@ -7161,6 +7957,746 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   margin-left: auto;
   margin-right: auto;
   height: 24rem!important;
+  object-fit: cover;
+  width: 100%!important;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.emotion-15 {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 479px) {
+  .emotion-15 {
+    display: none;
+  }
+}
+
+.emotion-17 {
+  grid-area: footer;
+  --tw-bg-opacity: 1;
+  background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.emotion-19 {
+  padding: 0px;
+}
+
+.emotion-20 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.emotion-21 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-21:hover {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-21:focus {
+  --tw-text-opacity: 1;
+  color: rgba(66, 103, 178, var(--tw-text-opacity));
+}
+
+.emotion-24 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-24:hover {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-24:focus {
+  --tw-text-opacity: 1;
+  color: rgba(29, 161, 242, var(--tw-text-opacity));
+}
+
+.emotion-27 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  fill: currentColor;
+  --tw-text-opacity: 1;
+  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  height: 2.25rem;
+  width: 2.25rem;
+}
+
+.emotion-27:hover {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+.emotion-27:focus {
+  --tw-text-opacity: 1;
+  color: rgba(14, 118, 168, var(--tw-text-opacity));
+}
+
+<div
+  class="emotion-0"
+>
+  <header
+    class="emotion-1"
+  >
+    <button
+      aria-label="Open navigation menu"
+      class="emotion-2"
+    >
+      <svg
+        aria-hidden="true"
+        class="emotion-3"
+      >
+        <use
+          xlink:href="#icon-bars"
+        />
+      </svg>
+    </button>
+    <button
+      aria-hidden="true"
+      class="emotion-4"
+    />
+    <nav
+      aria-expanded="false"
+      class="emotion-5"
+    >
+      <button
+        aria-label="Close navigation menu"
+        class="emotion-6"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-3"
+        >
+          <use
+            xlink:href="#icon-close"
+          />
+        </svg>
+      </button>
+      <a
+        class="emotion-8"
+        href="/minusta/"
+      >
+        Minusta
+      </a>
+      <a
+        class="emotion-8"
+        href="/blogi/"
+      >
+        Blogi
+      </a>
+      <a
+        class="emotion-8"
+        href="/ota-yhteytta/"
+      >
+        Ota yhteyttä
+      </a>
+    </nav>
+  </header>
+  <main
+    class="emotion-11"
+  >
+    <article
+      class="emotion-12"
+    >
+      <div
+        class="emotion-13"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 4032px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='4032' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Title"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+      </div>
+      <div
+        class="emotion-15"
+      >
+        <div
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-14"
+          data-gatsby-image-wrapper=""
+          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+        >
+          <div
+            style="max-width: 4032px; display: block;"
+          >
+            <img
+              alt=""
+              aria-hidden="true"
+              role="presentation"
+              src="data:image/svg+xml;charset=utf-8,%3Csvg height='1728' width='4032' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E"
+              style="max-width: 100%; display: block; position: static;"
+            />
+          </div>
+          <img
+            alt=""
+            aria-hidden="true"
+            data-placeholder-image=""
+            decoding="async"
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+          />
+          <picture>
+            <source
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              type="image/webp"
+            />
+            <img
+              alt="Title"
+              data-gatsby-image-ssr=""
+              data-main-image=""
+              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+              decoding="async"
+              loading="lazy"
+              sizes="(min-width: 4032px) 4032px, 100vw"
+              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+            />
+          </picture>
+          <noscript />
+          <script
+            type="module"
+          >
+            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+          </script>
+        </div>
+      </div>
+      Children
+    </article>
+  </main>
+  <footer
+    class="emotion-17"
+  >
+    <ul
+      class="emotion-18"
+    >
+      <li
+        class="emotion-19"
+      >
+        <a
+          class="emotion-20"
+          href="https://www.facebook.com/laurilavanti"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Facebook"
+        >
+          <svg
+            class="emotion-21"
+          >
+            <use
+              xlink:href="#icon-facebook"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="emotion-19"
+      >
+        <a
+          class="emotion-20"
+          href="https://twitter.com/laurilavanti"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            class="emotion-24"
+          >
+            <use
+              xlink:href="#icon-twitter"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="emotion-19"
+      >
+        <a
+          class="emotion-20"
+          href="https://www.linkedin.com/in/lapanti"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="LinkedIn"
+        >
+          <svg
+            class="emotion-27"
+          >
+            <use
+              xlink:href="#icon-linkedin"
+            />
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <svg
+    aria-hidden="true"
+    style="position: absolute; width: 0px; height: 0px; overflow: hidden;"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  >
+    <defs>
+      <symbol
+        id="icon-envelope"
+        viewBox="0 0 28 28"
+      >
+        <path
+          d="M26 23.5v-12c-0.328 0.375-0.688 0.719-1.078 1.031-2.234 1.719-4.484 3.469-6.656 5.281-1.172 0.984-2.625 2.188-4.25 2.188h-0.031c-1.625 0-3.078-1.203-4.25-2.188-2.172-1.813-4.422-3.563-6.656-5.281-0.391-0.313-0.75-0.656-1.078-1.031v12c0 0.266 0.234 0.5 0.5 0.5h23c0.266 0 0.5-0.234 0.5-0.5zM26 7.078c0-0.391 0.094-1.078-0.5-1.078h-23c-0.266 0-0.5 0.234-0.5 0.5 0 1.781 0.891 3.328 2.297 4.438 2.094 1.641 4.188 3.297 6.266 4.953 0.828 0.672 2.328 2.109 3.422 2.109h0.031c1.094 0 2.594-1.437 3.422-2.109 2.078-1.656 4.172-3.313 6.266-4.953 1.016-0.797 2.297-2.531 2.297-3.859zM28 6.5v17c0 1.375-1.125 2.5-2.5 2.5h-23c-1.375 0-2.5-1.125-2.5-2.5v-17c0-1.375 1.125-2.5 2.5-2.5h23c1.375 0 2.5 1.125 2.5 2.5z"
+        />
+      </symbol>
+      <symbol
+        id="icon-rss"
+        viewBox="0 0 28 32"
+      >
+        <path
+          d="M8.005 25.997c0 2.211-1.792 4.003-4.003 4.003s-4.003-1.792-4.003-4.003 1.792-4.003 4.003-4.003 4.003 1.792 4.003 4.003zM18.984 28.951c-0.522-9.662-8.262-17.412-17.934-17.934-0.571-0.031-1.049 0.428-1.049 1v3.004c0 0.526 0.406 0.967 0.93 1.001 6.989 0.455 12.592 6.044 13.048 13.048 0.034 0.525 0.475 0.93 1.001 0.93h3.004c0.572 0 1.031-0.478 1-1.049zM27.999 28.969c-0.525-14.614-12.283-26.441-26.968-26.968-0.564-0.020-1.031 0.436-1.031 1v3.004c0 0.539 0.427 0.978 0.966 1 11.949 0.49 21.539 10.082 22.029 22.029 0.022 0.539 0.461 0.966 1 0.966h3.004c0.565-0 1.021-0.467 1-1.032z"
+        />
+      </symbol>
+      <symbol
+        id="icon-calendar-alt"
+        viewBox="0 0 28 32"
+      >
+        <path
+          d="M9.25 18h-2.5c-0.412 0-0.75-0.337-0.75-0.75v-2.5c0-0.412 0.338-0.75 0.75-0.75h2.5c0.412 0 0.75 0.338 0.75 0.75v2.5c0 0.413-0.338 0.75-0.75 0.75zM16 17.25v-2.5c0-0.412-0.338-0.75-0.75-0.75h-2.5c-0.412 0-0.75 0.338-0.75 0.75v2.5c0 0.413 0.338 0.75 0.75 0.75h2.5c0.412 0 0.75-0.337 0.75-0.75zM22 17.25v-2.5c0-0.412-0.337-0.75-0.75-0.75h-2.5c-0.413 0-0.75 0.338-0.75 0.75v2.5c0 0.413 0.337 0.75 0.75 0.75h2.5c0.413 0 0.75-0.337 0.75-0.75zM16 23.25v-2.5c0-0.413-0.338-0.75-0.75-0.75h-2.5c-0.412 0-0.75 0.337-0.75 0.75v2.5c0 0.413 0.338 0.75 0.75 0.75h2.5c0.412 0 0.75-0.337 0.75-0.75zM10 23.25v-2.5c0-0.413-0.338-0.75-0.75-0.75h-2.5c-0.412 0-0.75 0.337-0.75 0.75v2.5c0 0.413 0.338 0.75 0.75 0.75h2.5c0.412 0 0.75-0.337 0.75-0.75zM22 23.25v-2.5c0-0.413-0.337-0.75-0.75-0.75h-2.5c-0.413 0-0.75 0.337-0.75 0.75v2.5c0 0.413 0.337 0.75 0.75 0.75h2.5c0.413 0 0.75-0.337 0.75-0.75zM28 7v22c0 1.656-1.344 3-3 3h-22c-1.656 0-3-1.344-3-3v-22c0-1.656 1.344-3 3-3h3v-3.25c0-0.412 0.338-0.75 0.75-0.75h2.5c0.412 0 0.75 0.338 0.75 0.75v3.25h8v-3.25c0-0.412 0.337-0.75 0.75-0.75h2.5c0.413 0 0.75 0.338 0.75 0.75v3.25h3c1.656 0 3 1.344 3 3zM25 28.625v-18.625h-22v18.625c0 0.206 0.169 0.375 0.375 0.375h21.25c0.206 0 0.375-0.169 0.375-0.375z"
+        />
+      </symbol>
+      <symbol
+        id="icon-facebook"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M31.5 16c0-8.563-6.938-15.5-15.5-15.5s-15.5 6.938-15.5 15.5c0 7.736 5.668 14.149 13.078 15.313v-10.832h-3.938v-4.481h3.938v-3.415c0-3.884 2.313-6.030 5.854-6.030 1.696 0 3.47 0.303 3.47 0.303v3.813h-1.955c-1.925 0-2.526 1.195-2.526 2.421v2.909h4.299l-0.688 4.481h-3.611v10.832c7.41-1.164 13.078-7.576 13.078-15.313z"
+        />
+      </symbol>
+      <symbol
+        id="icon-linkedin"
+        viewBox="0 0 28 32"
+      >
+        <path
+          d="M26 2h-24.006c-1.1 0-1.994 0.906-1.994 2.019v23.962c0 1.113 0.894 2.019 1.994 2.019h24.006c1.1 0 2-0.906 2-2.019v-23.962c0-1.112-0.9-2.019-2-2.019zM8.463 26h-4.15v-13.363h4.156v13.363zM6.388 10.813c-1.331 0-2.406-1.081-2.406-2.406s1.075-2.406 2.406-2.406c1.325 0 2.406 1.081 2.406 2.406 0 1.331-1.075 2.406-2.406 2.406zM24.019 26h-4.15v-6.5c0-1.55-0.031-3.544-2.156-3.544-2.162 0-2.494 1.688-2.494 3.431v6.613h-4.15v-13.363h3.981v1.825h0.056c0.556-1.050 1.912-2.156 3.931-2.156 4.2 0 4.981 2.769 4.981 6.369v7.325z"
+        />
+      </symbol>
+      <symbol
+        id="icon-twitter"
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="M28.711 9.482c0.020 0.284 0.020 0.569 0.020 0.853 0 8.67-6.599 18.66-18.66 18.66-3.716 0-7.168-1.076-10.071-2.944 0.528 0.061 1.036 0.081 1.584 0.081 3.066 0 5.888-1.035 8.142-2.802-2.883-0.061-5.3-1.949-6.132-4.548 0.406 0.061 0.812 0.102 1.239 0.102 0.589 0 1.178-0.081 1.726-0.223-3.005-0.609-5.259-3.249-5.259-6.437v-0.081c0.873 0.487 1.888 0.792 2.964 0.832-1.766-1.178-2.924-3.188-2.924-5.462 0-1.218 0.325-2.335 0.893-3.31 3.228 3.98 8.081 6.579 13.523 6.863-0.101-0.487-0.162-0.995-0.162-1.502 0-3.614 2.924-6.558 6.558-6.558 1.888 0 3.594 0.792 4.792 2.071 1.482-0.284 2.904-0.832 4.162-1.584-0.487 1.523-1.523 2.802-2.883 3.614 1.32-0.142 2.599-0.508 3.777-1.015-0.893 1.299-2.010 2.457-3.289 3.391z"
+        />
+      </symbol>
+      <symbol
+        id="icon-bars"
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        />
+      </symbol>
+      <symbol
+        id="icon-close"
+        viewBox="0 0 320 512"
+      >
+        <path
+          d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"
+        />
+      </symbol>
+      <symbol
+        id="logo"
+        viewBox="0 0 600 600"
+      >
+        <g>
+          <title>
+            Lauri lavanti
+          </title>
+          <rect
+            fill="#045a1c"
+            height="600"
+            id="svg_2"
+            rx="50"
+            width="600"
+            x="0"
+            y="0"
+          />
+          <text
+            fill="#ffffff"
+            font-family="Times New Roman"
+            font-size="24"
+            font-style="normal"
+            font-weight="400"
+            id="svg_1"
+            stroke="#ffffff"
+            text-anchor="start"
+            transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
+            x="217.25434"
+            xml:space="preserve"
+            y="221.21152"
+          >
+            L²
+          </text>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+</div>
+`;
+
+exports[`<Layout /> should render hero image with hidden title as alt for front page 1`] = `
+.emotion-0 {
+  display: grid;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 6rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.125rem;
+  min-height: 100vh;
+  position: relative;
+  font-family: "Ubuntu";
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-2 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 300ms;
+  visibility: visible;
+}
+
+.emotion-3 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+  left: 100%;
+}
+
+.emotion-5 {
+  position: fixed;
+  top: 0px;
+  width: 18rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  --tw-bg-opacity: 0.9;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-duration: 300ms;
+  --tw-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+  visibility: hidden;
+  right: -20rem;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgba(72, 127, 109, var(--tw-text-opacity));
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(12, 90, 72, var(--tw-text-opacity));
+}
+
+.emotion-8:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:active {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:focus {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0px;
+}
+
+.emotion-8:hover {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-8:active {
+  --tw-text-opacity: 1;
+  color: rgba(6, 45, 36, var(--tw-text-opacity));
+}
+
+.emotion-11 {
+  grid-area: main;
+}
+
+.emotion-12 {
+  display: grid;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+.emotion-12 NO_COMPONENT_SELECTOR+*,
+.emotion-12 NO_COMPONENT_SELECTOR+* {
+  margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
+  }
+}
+
+@media (min-width: 750px) {
+  .emotion-12 {
+    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
+  }
+}
+
+.emotion-13 {
+  grid-column: 1/-1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .emotion-13 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.emotion-14 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 41rem!important;
   object-fit: cover;
   width: 100%!important;
   max-width: 1920px;
