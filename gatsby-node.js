@@ -47,7 +47,10 @@ exports.createPages = async ({ graphql, actions }) => {
     data.pages.nodes.forEach(({ slug }) => {
         actions.createPage({
             path: slug === 'index' ? '/' : slug,
-            component: require.resolve('./src/components/Page.tsx'),
+            component:
+                slug === 'index'
+                    ? require.resolve('./src/components/FrontPage.tsx')
+                    : require.resolve('./src/components/Page.tsx'),
             context: { slug },
         })
     })

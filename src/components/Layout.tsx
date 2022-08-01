@@ -106,6 +106,7 @@ interface Props extends Omit<SEOProps, 'title' | 'image'> {
     image?: { src: string; height: string; width: string }
     body?: RichBody
     preBody?: ReactNode
+    isFrontPage?: boolean
 }
 
 const LayoutComponent = ({
@@ -122,6 +123,7 @@ const LayoutComponent = ({
     modified,
     preBody,
     body,
+    isFrontPage,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const imageToUse = heroImage as
@@ -157,17 +159,17 @@ const LayoutComponent = ({
 
                 <Main>
                     <Article>
-                        {pathname === '/index/' && heroImage && (
+                        {isFrontPage && heroImage && (
                             <DesktopBigHeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />
                         )}
-                        {pathname === '/index/' && mobileHeroImage && (
+                        {isFrontPage && mobileHeroImage && (
                             <MobileBigHeroImage imageData={mobileHeroImage} alt={title || hiddenTitle || ''} />
                         )}
 
-                        {pathname !== '/index/' && heroImage && (
+                        {!isFrontPage && heroImage && (
                             <DesktopHeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />
                         )}
-                        {pathname !== '/index/' && mobileHeroImage && (
+                        {!isFrontPage && mobileHeroImage && (
                             <MobileHeroImage imageData={mobileHeroImage} alt={title || hiddenTitle || ''} />
                         )}
                         {title && <Title title={title} />}

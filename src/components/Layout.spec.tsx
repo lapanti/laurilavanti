@@ -84,6 +84,34 @@ describe('<Layout />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render hero image for front page', () => {
+        const { container } = render(
+            <Layout heroImage={mainImage} isFrontPage mobileHeroImage={mainImage} title={title}>
+                {children}
+            </Layout>
+        )
+
+        expect(screen.getByText(children)).toBeInTheDocument()
+
+        expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render hero image with hidden title as alt for front page', () => {
+        const { container } = render(
+            <Layout heroImage={mainImage} mobileHeroImage={mainImage} isFrontPage hiddenTitle={title}>
+                {children}
+            </Layout>
+        )
+
+        expect(screen.getByText(children)).toBeInTheDocument()
+
+        expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     describe('rich body', () => {
         it('should render Paragraph', () => {
             const paragraphText = 'Paragraph text'
