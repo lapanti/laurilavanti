@@ -17,10 +17,17 @@ exports[`<404 /> should render 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  padding: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
   position: fixed;
@@ -35,8 +42,6 @@ exports[`<404 /> should render 1`] = `
   cursor: pointer;
   height: 3rem;
   width: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,8 +75,6 @@ exports[`<404 /> should render 1`] = `
   cursor: pointer;
   height: 3rem;
   width: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -124,8 +127,6 @@ exports[`<404 /> should render 1`] = `
   cursor: pointer;
   height: 3rem;
   width: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -189,51 +190,65 @@ exports[`<404 /> should render 1`] = `
 }
 
 .emotion-11 {
-  grid-area: main;
+  grid-column-start: 3;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
 }
 
 .emotion-12 {
+  grid-area: main;
+}
+
+.emotion-13 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.emotion-12 NO_COMPONENT_SELECTOR+*,
-.emotion-12 NO_COMPONENT_SELECTOR+* {
+.emotion-13 NO_COMPONENT_SELECTOR+*,
+.emotion-13 NO_COMPONENT_SELECTOR+* {
   margin-top: 1rem;
 }
 
 @media (min-width: 700px) {
-  .emotion-12 {
+  .emotion-13 {
     grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
   }
 }
 
 @media (min-width: 750px) {
-  .emotion-12 {
+  .emotion-13 {
     grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
   }
 }
 
-.emotion-13 {
+.emotion-14 {
   grid-column-start: 3;
   font-size: 1.5rem;
   line-height: 2rem;
   margin-bottom: 1rem;
 }
 
-.emotion-14 {
+.emotion-15 {
   grid-column-start: 3;
 }
 
-.emotion-15 {
+.emotion-16 {
   margin-top: 2rem;
 }
 
-.emotion-15:first-of-type {
+.emotion-16:first-of-type {
   margin-top: 0px;
 }
 
-.emotion-17 {
+.emotion-18 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -247,22 +262,22 @@ exports[`<404 /> should render 1`] = `
   color: rgba(227, 227, 227, var(--tw-text-opacity));
 }
 
-.emotion-17:hover {
+.emotion-18:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-17:active {
+.emotion-18:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-17:focus {
+.emotion-18:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-18 {
+.emotion-19 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -274,7 +289,7 @@ exports[`<404 /> should render 1`] = `
 }
 
 @media (min-width: 479px) {
-  .emotion-18 {
+  .emotion-19 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -282,7 +297,7 @@ exports[`<404 /> should render 1`] = `
   }
 }
 
-.emotion-19 {
+.emotion-20 {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -297,12 +312,12 @@ exports[`<404 /> should render 1`] = `
 }
 
 @media (min-width: 479px) {
-  .emotion-19 {
+  .emotion-20 {
     display: none;
   }
 }
 
-.emotion-20 {
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -324,13 +339,13 @@ exports[`<404 /> should render 1`] = `
   position: relative;
 }
 
-.emotion-21 {
+.emotion-22 {
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.emotion-22 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -340,7 +355,7 @@ exports[`<404 /> should render 1`] = `
   flex-direction: column;
 }
 
-.emotion-23 {
+.emotion-24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -351,7 +366,7 @@ exports[`<404 /> should render 1`] = `
   margin-bottom: 0.5rem;
 }
 
-.emotion-24 {
+.emotion-25 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -366,11 +381,11 @@ exports[`<404 /> should render 1`] = `
   margin-right: 1rem;
 }
 
-.emotion-24:last-child {
+.emotion-25:last-child {
   margin-right: 0px;
 }
 
-.emotion-25 {
+.emotion-26 {
   height: 1.125rem;
   width: 1.125rem;
   display: inline-block;
@@ -381,7 +396,7 @@ exports[`<404 /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.emotion-26 {
+.emotion-27 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -395,15 +410,15 @@ exports[`<404 /> should render 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-27 {
+.emotion-28 {
   margin-right: 1rem;
 }
 
-.emotion-27:last-child {
+.emotion-28:last-child {
   margin-right: 0px;
 }
 
-.emotion-28 {
+.emotion-29 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -415,22 +430,22 @@ exports[`<404 /> should render 1`] = `
   line-height: 1.5rem;
 }
 
-.emotion-28:hover {
+.emotion-29:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-28:active {
+.emotion-29:active {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-28:focus {
+.emotion-29:focus {
   -webkit-text-decoration: underline;
   text-decoration: underline;
 }
 
-.emotion-33 {
+.emotion-34 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -438,7 +453,7 @@ exports[`<404 /> should render 1`] = `
   margin-top: 0.25rem;
 }
 
-.emotion-113 {
+.emotion-114 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -462,7 +477,7 @@ exports[`<404 /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-114 {
+.emotion-115 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -481,11 +496,11 @@ exports[`<404 /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-115 {
+.emotion-116 {
   padding: 0px;
 }
 
-.emotion-116 {
+.emotion-117 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -501,7 +516,7 @@ exports[`<404 /> should render 1`] = `
   height: 100%;
 }
 
-.emotion-117 {
+.emotion-118 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -512,17 +527,17 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-117:hover {
+.emotion-118:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-117:focus {
+.emotion-118:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-120 {
+.emotion-121 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -533,17 +548,17 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-120:hover {
+.emotion-121:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-120:focus {
+.emotion-121:focus {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-123 {
+.emotion-124 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -554,12 +569,12 @@ exports[`<404 /> should render 1`] = `
   width: 2.25rem;
 }
 
-.emotion-123:hover {
+.emotion-124:hover {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
 
-.emotion-123:focus {
+.emotion-124:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -624,37 +639,43 @@ exports[`<404 /> should render 1`] = `
           Ota yhteyttä
         </a>
       </nav>
+      <h2
+        class="emotion-11"
+        id="lauri-lavanti"
+      >
+        Lauri Lavanti
+      </h2>
     </header>
     <main
-      class="emotion-11"
+      class="emotion-12"
     >
       <article
-        class="emotion-12"
+        class="emotion-13"
       >
         <h1
-          class="emotion-13"
+          class="emotion-14"
         >
           Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?
         </h1>
         <ul
-          class="emotion-14"
+          class="emotion-15"
         >
           <li
-            class="emotion-15"
+            class="emotion-16"
           >
             <article
               aria-label="Terveys kuuluu kaikille"
-              class="emotion-16"
+              class="emotion-17"
               itemscope=""
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="emotion-17"
+                class="emotion-18"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-18"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -703,7 +724,7 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -752,10 +773,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-20"
+                  class="emotion-21"
                 >
                   <h2
-                    class="emotion-21"
+                    class="emotion-22"
                     itemprop="headline"
                   >
                     Terveys kuuluu kaikille
@@ -763,16 +784,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-22"
+                class="emotion-23"
               >
                 <div
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <span
-                    class="emotion-24"
+                    class="emotion-25"
                   >
                     <svg
-                      class="emotion-25"
+                      class="emotion-26"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -786,13 +807,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-26"
+                  class="emotion-27"
                 >
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -800,10 +821,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -811,10 +832,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -824,13 +845,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-33"
+                class="emotion-34"
                 itemprop="description"
               >
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                  
                 <a
-                  class="emotion-28"
+                  class="emotion-29"
                   href="/blogi/terveys-kuuluu-kaikille/"
                   rel="permalink"
                 >
@@ -840,21 +861,21 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="emotion-15"
+            class="emotion-16"
           >
             <article
               aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
-              class="emotion-16"
+              class="emotion-17"
               itemscope=""
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="emotion-17"
+                class="emotion-18"
                 href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-18"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -903,7 +924,7 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -952,10 +973,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-20"
+                  class="emotion-21"
                 >
                   <h2
-                    class="emotion-21"
+                    class="emotion-22"
                     itemprop="headline"
                   >
                     Sote on hyvinvointiyhteiskunnan kulmakivi
@@ -963,16 +984,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-22"
+                class="emotion-23"
               >
                 <div
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <span
-                    class="emotion-24"
+                    class="emotion-25"
                   >
                     <svg
-                      class="emotion-25"
+                      class="emotion-26"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -986,13 +1007,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-26"
+                  class="emotion-27"
                 >
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1000,10 +1021,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1011,10 +1032,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1024,13 +1045,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-33"
+                class="emotion-34"
                 itemprop="description"
               >
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                  
                 <a
-                  class="emotion-28"
+                  class="emotion-29"
                   href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                   rel="permalink"
                 >
@@ -1040,21 +1061,21 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="emotion-15"
+            class="emotion-16"
           >
             <article
               aria-label="Mitä jos terveyskeskusta ei olisikaan?"
-              class="emotion-16"
+              class="emotion-17"
               itemscope=""
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="emotion-17"
+                class="emotion-18"
                 href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-18"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -1103,7 +1124,7 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -1152,10 +1173,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-20"
+                  class="emotion-21"
                 >
                   <h2
-                    class="emotion-21"
+                    class="emotion-22"
                     itemprop="headline"
                   >
                     Mitä jos terveyskeskusta ei olisikaan?
@@ -1163,16 +1184,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-22"
+                class="emotion-23"
               >
                 <div
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <span
-                    class="emotion-24"
+                    class="emotion-25"
                   >
                     <svg
-                      class="emotion-25"
+                      class="emotion-26"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1186,13 +1207,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-26"
+                  class="emotion-27"
                 >
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1200,10 +1221,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1211,10 +1232,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1224,13 +1245,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-33"
+                class="emotion-34"
                 itemprop="description"
               >
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
                  
                 <a
-                  class="emotion-28"
+                  class="emotion-29"
                   href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
                   rel="permalink"
                 >
@@ -1240,21 +1261,21 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="emotion-15"
+            class="emotion-16"
           >
             <article
               aria-label="Perusturvajaosto - mikä se on?"
-              class="emotion-16"
+              class="emotion-17"
               itemscope=""
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="emotion-17"
+                class="emotion-18"
                 href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-18"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -1303,7 +1324,7 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -1352,10 +1373,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-20"
+                  class="emotion-21"
                 >
                   <h2
-                    class="emotion-21"
+                    class="emotion-22"
                     itemprop="headline"
                   >
                     Perusturvajaosto - mikä se on?
@@ -1363,16 +1384,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-22"
+                class="emotion-23"
               >
                 <div
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <span
-                    class="emotion-24"
+                    class="emotion-25"
                   >
                     <svg
-                      class="emotion-25"
+                      class="emotion-26"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1386,13 +1407,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-26"
+                  class="emotion-27"
                 >
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1400,10 +1421,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/perustuva/"
                     >
                       #
@@ -1413,13 +1434,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-33"
+                class="emotion-34"
                 itemprop="description"
               >
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
                  
                 <a
-                  class="emotion-28"
+                  class="emotion-29"
                   href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
                   rel="permalink"
                 >
@@ -1429,21 +1450,21 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="emotion-15"
+            class="emotion-16"
           >
             <article
               aria-label="Ehdolle aluevaaleihin"
-              class="emotion-16"
+              class="emotion-17"
               itemscope=""
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="emotion-17"
+                class="emotion-18"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-18"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -1492,7 +1513,7 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-19"
+                  class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
                 >
@@ -1541,10 +1562,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="emotion-20"
+                  class="emotion-21"
                 >
                   <h2
-                    class="emotion-21"
+                    class="emotion-22"
                     itemprop="headline"
                   >
                     Ehdolle aluevaaleihin
@@ -1552,16 +1573,16 @@ exports[`<404 /> should render 1`] = `
                 </div>
               </a>
               <aside
-                class="emotion-22"
+                class="emotion-23"
               >
                 <div
-                  class="emotion-23"
+                  class="emotion-24"
                 >
                   <span
-                    class="emotion-24"
+                    class="emotion-25"
                   >
                     <svg
-                      class="emotion-25"
+                      class="emotion-26"
                     >
                       <use
                         xlink:href="#icon-calendar-alt"
@@ -1575,13 +1596,13 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="emotion-26"
+                  class="emotion-27"
                 >
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1589,10 +1610,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1600,10 +1621,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="emotion-27"
+                    class="emotion-28"
                   >
                     <a
-                      class="emotion-28"
+                      class="emotion-29"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1613,13 +1634,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="emotion-33"
+                class="emotion-34"
                 itemprop="description"
               >
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                  
                 <a
-                  class="emotion-28"
+                  class="emotion-29"
                   href="/blogi/ehdolle-aluevaaleihin/"
                   rel="permalink"
                 >
@@ -1632,23 +1653,23 @@ exports[`<404 /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="emotion-113"
+      class="emotion-114"
     >
       <ul
-        class="emotion-114"
+        class="emotion-115"
       >
         <li
-          class="emotion-115"
+          class="emotion-116"
         >
           <a
-            class="emotion-116"
+            class="emotion-117"
             href="https://www.facebook.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Facebook"
           >
             <svg
-              class="emotion-117"
+              class="emotion-118"
             >
               <use
                 xlink:href="#icon-facebook"
@@ -1657,17 +1678,17 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="emotion-115"
+          class="emotion-116"
         >
           <a
-            class="emotion-116"
+            class="emotion-117"
             href="https://twitter.com/laurilavanti"
             rel="noopener noreferrer"
             target="_blank"
             title="Twitter"
           >
             <svg
-              class="emotion-120"
+              class="emotion-121"
             >
               <use
                 xlink:href="#icon-twitter"
@@ -1676,17 +1697,17 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="emotion-115"
+          class="emotion-116"
         >
           <a
-            class="emotion-116"
+            class="emotion-117"
             href="https://www.linkedin.com/in/lapanti"
             rel="noopener noreferrer"
             target="_blank"
             title="LinkedIn"
           >
             <svg
-              class="emotion-123"
+              class="emotion-124"
             >
               <use
                 xlink:href="#icon-linkedin"

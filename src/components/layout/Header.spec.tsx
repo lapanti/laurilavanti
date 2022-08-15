@@ -7,7 +7,19 @@ import Header from './Header'
 
 describe('<Header />', () => {
     it('should render', () => {
-        const { container } = render(<Header />)
+        const { container } = render(<Header isFrontPage={false} />)
+
+        expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
+
+        expect(screen.getByRole('button', { name: /Open navigation menu/i })).toBeEnabled()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render front page', () => {
+        const { container } = render(<Header isFrontPage />)
+
+        expect(screen.queryByRole('heading', { name: /Lauri Lavanti/i })).not.toBeInTheDocument()
 
         expect(screen.getByRole('button', { name: /Open navigation menu/i })).toBeEnabled()
 
@@ -17,7 +29,9 @@ describe('<Header />', () => {
     it('should render opened menu', async () => {
         const user = userEvent.setup()
 
-        const { container } = render(<Header />)
+        const { container } = render(<Header isFrontPage={false} />)
+
+        expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
 
         await user.click(screen.getByRole('button', { name: /Open navigation menu/i }))
 
@@ -33,7 +47,7 @@ describe('<Header />', () => {
     it('should open and close the menu', async () => {
         const user = userEvent.setup()
 
-        const { container } = render(<Header />)
+        const { container } = render(<Header isFrontPage={false} />)
 
         await user.click(screen.getByRole('button', { name: /Open navigation menu/i }))
 

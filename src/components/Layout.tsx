@@ -182,7 +182,7 @@ const LayoutComponent = ({
                 modified={modified}
             />
             <div className={className}>
-                <Header />
+                <Header isFrontPage={isFrontPage} />
 
                 <Main>
                     <Article>
