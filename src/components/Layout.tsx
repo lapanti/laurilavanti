@@ -62,6 +62,22 @@ const PositionedP = tw(Paragraph)`
     col-start-3
 `
 
+const TableContainer = tw.div`
+    col-span-full overflow-x-auto max-w-[100vw]
+`
+
+const Table = tw.table`
+    my-4 mx-auto table-auto border-separate
+`
+
+const TableHeaderCell = tw.th`
+    bg-lightGrey px-4 border border-black border-solid whitespace-nowrap
+`
+
+const TableCell = tw.td`
+    px-4 border border-black border-solid whitespace-nowrap
+`
+
 const options = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
@@ -85,6 +101,17 @@ const options = {
                     return <ContactInfo links={node.data.target.links} />
             }
         },
+        [BLOCKS.TABLE]: (_: Block | Inline, children: ReactNode) => (
+            <TableContainer>
+                <Table>
+                    <tbody>{children}</tbody>
+                </Table>
+            </TableContainer>
+        ),
+        [BLOCKS.TABLE_HEADER_CELL]: (_: Block | Inline, children: ReactNode) => (
+            <TableHeaderCell>{children}</TableHeaderCell>
+        ),
+        [BLOCKS.TABLE_CELL]: (_: Block | Inline, children: ReactNode) => <TableCell>{children}</TableCell>,
         [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
             <ExternalLink href={node.data.uri}>{children}</ExternalLink>
         ),
