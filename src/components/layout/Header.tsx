@@ -5,11 +5,19 @@ import React, { useCallback, useState } from 'react'
 /** @ts-expect-error twin.macro typings are incomplete :/ */
 import tw, { styled } from 'twin.macro'
 
+import H2 from '../H2'
 import NavLink from './header/NavLink'
+
+const Heading = styled(H2)(({ isVisible }: { isVisible: boolean }) => [
+    tw`
+    bg-opacity-75 bg-white p-2 rounded-md rounded-tr-sm rounded-bl-sm
+`,
+    isVisible ? tw`visible` : tw`invisible`,
+])
 
 const CloseButton = tw.button`
     cursor-pointer
-    h-12 w-12 mt-2 mr-2
+    h-12 w-12
     flex items-center justify-center
 `
 
@@ -45,9 +53,10 @@ const Nav = styled.nav(({ isOpen }: { isOpen: boolean }) => [
 
 interface Props {
     className?: string
+    isFrontPage: boolean
 }
 
-const HeaderComponent = ({ className }: Props): JSX.Element => {
+const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
     const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
         {
             contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
@@ -82,6 +91,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                     <NavLink {...nav} key={nav.slug} />
                 ))}
             </Nav>
+            <Heading isVisible={!isFrontPage}>Lauri Lavanti</Heading>
         </header>
     )
 }
@@ -89,7 +99,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
 HeaderComponent.displayName = 'Header'
 
 const Header = tw(HeaderComponent)`
-  flex justify-end box-border w-full fixed z-50 select-none 
+  flex flex-row-reverse p-2 items-center justify-between box-border w-full fixed z-50 select-none 
 `
 
 export default Header

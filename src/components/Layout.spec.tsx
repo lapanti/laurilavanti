@@ -205,6 +205,7 @@ describe('<Layout />', () => {
         it('should render HomeTitle', () => {
             const { container } = render(
                 <Layout
+                    isFrontPage
                     body={{
                         raw: JSON.stringify({
                             nodeType: 'document',
