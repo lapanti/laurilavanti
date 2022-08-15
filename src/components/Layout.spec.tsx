@@ -482,5 +482,83 @@ describe('<Layout />', () => {
 
             expect(container.firstChild).toMatchSnapshot()
         })
+
+        it('should render table', () => {
+            const header = 'my table header'
+            const cell = 'my table cell'
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            data: {},
+                            content: [
+                                {
+                                    nodeType: 'table',
+                                    data: {},
+                                    content: [
+                                        {
+                                            nodeType: 'table-row',
+                                            data: {},
+                                            content: [
+                                                {
+                                                    nodeType: 'table-header-cell',
+                                                    data: {},
+                                                    content: [
+                                                        {
+                                                            nodeType: 'paragraph',
+                                                            data: {},
+                                                            content: [
+                                                                {
+                                                                    nodeType: 'text',
+                                                                    value: header,
+                                                                    marks: [],
+                                                                    data: {},
+                                                                },
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            nodeType: 'table-row',
+                                            data: {},
+                                            content: [
+                                                {
+                                                    nodeType: 'table-cell',
+                                                    data: {},
+                                                    content: [
+                                                        {
+                                                            nodeType: 'paragraph',
+                                                            data: {},
+                                                            content: [
+                                                                {
+                                                                    nodeType: 'text',
+                                                                    value: cell,
+                                                                    marks: [],
+                                                                    data: {},
+                                                                },
+                                                            ],
+                                                        },
+                                                    ],
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                            nodeType: 'document',
+                        }),
+                        references: [],
+                    }}
+                />
+            )
+
+            // Check table parts are present
+            expect(screen.getByRole('columnheader', { name: header })).toHaveTextContent(header)
+            expect(screen.getByRole('cell', { name: cell })).toHaveTextContent(cell)
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
     })
 })
