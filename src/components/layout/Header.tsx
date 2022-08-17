@@ -53,7 +53,7 @@ const Nav = styled.nav(({ isOpen }: { isOpen: boolean }) => [
 
 interface Props {
     className?: string
-    isFrontPage: boolean
+    isFrontPage?: boolean
 }
 
 const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
