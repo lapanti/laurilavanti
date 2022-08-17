@@ -7,7 +7,7 @@ import Header from './Header'
 
 describe('<Header />', () => {
     it('should render', () => {
-        const { container } = render(<Header isFrontPage={false} />)
+        const { container } = render(<Header />)
 
         expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
 

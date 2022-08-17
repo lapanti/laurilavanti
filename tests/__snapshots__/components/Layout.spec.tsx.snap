@@ -6334,10 +6334,17 @@ exports[`<Layout /> rich body should render table 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  padding: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
   position: fixed;
@@ -6352,8 +6359,6 @@ exports[`<Layout /> rich body should render table 1`] = `
   cursor: pointer;
   height: 3rem;
   width: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6387,8 +6392,6 @@ exports[`<Layout /> rich body should render table 1`] = `
   cursor: pointer;
   height: 3rem;
   width: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6441,8 +6444,6 @@ exports[`<Layout /> rich body should render table 1`] = `
   cursor: pointer;
   height: 3rem;
   width: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6506,38 +6507,52 @@ exports[`<Layout /> rich body should render table 1`] = `
 }
 
 .emotion-11 {
-  grid-area: main;
+  grid-column-start: 3;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-bg-opacity: 0.75;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
 }
 
 .emotion-12 {
+  grid-area: main;
+}
+
+.emotion-13 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.emotion-12 NO_COMPONENT_SELECTOR+*,
-.emotion-12 NO_COMPONENT_SELECTOR+* {
+.emotion-13 NO_COMPONENT_SELECTOR+*,
+.emotion-13 NO_COMPONENT_SELECTOR+* {
   margin-top: 1rem;
 }
 
 @media (min-width: 700px) {
-  .emotion-12 {
+  .emotion-13 {
     grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
   }
 }
 
 @media (min-width: 750px) {
-  .emotion-12 {
+  .emotion-13 {
     grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
   }
 }
 
-.emotion-13 {
+.emotion-14 {
   grid-column: 1/-1;
   overflow-x: auto;
   max-width: 100vw;
 }
 
-.emotion-14 {
+.emotion-15 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: auto;
@@ -6546,7 +6561,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   border-collapse: separate;
 }
 
-.emotion-15 {
+.emotion-16 {
   --tw-bg-opacity: 1;
   background-color: rgba(227, 227, 227, var(--tw-bg-opacity));
   padding-left: 1rem;
@@ -6558,7 +6573,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   white-space: nowrap;
 }
 
-.emotion-16 {
+.emotion-17 {
   font-size: 1rem;
   line-height: 1.5rem;
   margin-top: 1rem;
@@ -6566,7 +6581,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   grid-column-start: 3;
 }
 
-.emotion-17 {
+.emotion-18 {
   padding-left: 1rem;
   padding-right: 1rem;
   border-width: 1px;
@@ -6576,7 +6591,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   white-space: nowrap;
 }
 
-.emotion-19 {
+.emotion-20 {
   grid-area: footer;
   --tw-bg-opacity: 1;
   background-color: rgba(4, 90, 28, var(--tw-bg-opacity));
@@ -6600,7 +6615,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   height: 100%;
 }
 
-.emotion-20 {
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6619,11 +6634,11 @@ exports[`<Layout /> rich body should render table 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-21 {
+.emotion-22 {
   padding: 0px;
 }
 
-.emotion-22 {
+.emotion-23 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6639,7 +6654,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   height: 100%;
 }
 
-.emotion-23 {
+.emotion-24 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -6650,17 +6665,17 @@ exports[`<Layout /> rich body should render table 1`] = `
   width: 2.25rem;
 }
 
-.emotion-23:hover {
+.emotion-24:hover {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-23:focus {
+.emotion-24:focus {
   --tw-text-opacity: 1;
   color: rgba(66, 103, 178, var(--tw-text-opacity));
 }
 
-.emotion-26 {
+.emotion-27 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -6671,17 +6686,17 @@ exports[`<Layout /> rich body should render table 1`] = `
   width: 2.25rem;
 }
 
-.emotion-26:hover {
+.emotion-27:hover {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-26:focus {
+.emotion-27:focus {
   --tw-text-opacity: 1;
   color: rgba(29, 161, 242, var(--tw-text-opacity));
 }
 
-.emotion-29 {
+.emotion-30 {
   transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -6692,12 +6707,12 @@ exports[`<Layout /> rich body should render table 1`] = `
   width: 2.25rem;
 }
 
-.emotion-29:hover {
+.emotion-30:hover {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
 
-.emotion-29:focus {
+.emotion-30:focus {
   --tw-text-opacity: 1;
   color: rgba(14, 118, 168, var(--tw-text-opacity));
 }
@@ -6761,26 +6776,32 @@ exports[`<Layout /> rich body should render table 1`] = `
         Ota yhteyttä
       </a>
     </nav>
+    <h2
+      class="emotion-11"
+      id="lauri-lavanti"
+    >
+      Lauri Lavanti
+    </h2>
   </header>
   <main
-    class="emotion-11"
+    class="emotion-12"
   >
     <article
-      class="emotion-12"
+      class="emotion-13"
     >
       <div
-        class="emotion-13"
+        class="emotion-14"
       >
         <table
-          class="emotion-14"
+          class="emotion-15"
         >
           <tbody>
             <tr>
               <th
-                class="emotion-15"
+                class="emotion-16"
               >
                 <p
-                  class="emotion-16"
+                  class="emotion-17"
                 >
                   my table header
                 </p>
@@ -6788,10 +6809,10 @@ exports[`<Layout /> rich body should render table 1`] = `
             </tr>
             <tr>
               <td
-                class="emotion-17"
+                class="emotion-18"
               >
                 <p
-                  class="emotion-16"
+                  class="emotion-17"
                 >
                   my table cell
                 </p>
@@ -6803,23 +6824,23 @@ exports[`<Layout /> rich body should render table 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-19"
+    class="emotion-20"
   >
     <ul
-      class="emotion-20"
+      class="emotion-21"
     >
       <li
-        class="emotion-21"
+        class="emotion-22"
       >
         <a
-          class="emotion-22"
+          class="emotion-23"
           href="https://www.facebook.com/laurilavanti"
           rel="noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-23"
+            class="emotion-24"
           >
             <use
               xlink:href="#icon-facebook"
@@ -6828,17 +6849,17 @@ exports[`<Layout /> rich body should render table 1`] = `
         </a>
       </li>
       <li
-        class="emotion-21"
+        class="emotion-22"
       >
         <a
-          class="emotion-22"
+          class="emotion-23"
           href="https://twitter.com/laurilavanti"
           rel="noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-26"
+            class="emotion-27"
           >
             <use
               xlink:href="#icon-twitter"
@@ -6847,17 +6868,17 @@ exports[`<Layout /> rich body should render table 1`] = `
         </a>
       </li>
       <li
-        class="emotion-21"
+        class="emotion-22"
       >
         <a
-          class="emotion-22"
+          class="emotion-23"
           href="https://www.linkedin.com/in/lapanti"
           rel="noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-29"
+            class="emotion-30"
           >
             <use
               xlink:href="#icon-linkedin"
