@@ -561,5 +561,44 @@ describe('<Layout />', () => {
 
             expect(container.firstChild).toMatchSnapshot()
         })
+
+        it('should render BlockQuote', () => {
+            const quoteText = 'Quote text'
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            data: {},
+                            content: [
+                                {
+                                    nodeType: BLOCKS.QUOTE,
+                                    data: {},
+                                    content: [
+                                        {
+                                            nodeType: BLOCKS.PARAGRAPH,
+                                            data: {},
+                                            content: [
+                                                {
+                                                    nodeType: 'text',
+                                                    value: quoteText,
+                                                    marks: [],
+                                                    data: {},
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                            nodeType: 'document',
+                        }),
+                        references: [],
+                    }}
+                />
+            )
+
+            expect(screen.getByText(quoteText)).toBeInTheDocument()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
     })
 })
