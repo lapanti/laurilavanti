@@ -1,4 +1,4 @@
-import type { Block, Inline } from '@contentful/rich-text-types'
+import type { Block, Inline, Text } from '@contentful/rich-text-types'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ReactNode } from 'react'
 import type { RichBody } from '../types/contentful'
@@ -78,6 +78,10 @@ const TableCell = tw.td`
     px-4 border border-black border-solid whitespace-nowrap
 `
 
+const BlockQuote = tw.div`
+    border-l-4 pl-2 py-2 border-l-lightGrey col-start-3 text-lg
+`
+
 const options = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
@@ -112,6 +116,9 @@ const options = {
             <TableHeaderCell>{children}</TableHeaderCell>
         ),
         [BLOCKS.TABLE_CELL]: (_: Block | Inline, children: ReactNode) => <TableCell>{children}</TableCell>,
+        [BLOCKS.QUOTE]: (block: Block | Inline) => (
+            <BlockQuote>{((block.content[0] as Block | Inline).content[0] as Text).value}</BlockQuote>
+        ),
         [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
             <ExternalLink href={node.data.uri}>{children}</ExternalLink>
         ),
