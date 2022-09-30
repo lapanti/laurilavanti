@@ -15,7 +15,7 @@ jobs:
             CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
         steps:
             - uses: actions/checkout@v3
-            - uses: bahmutov/npm-install@v1.8.22
+            - uses: bahmutov/npm-install@v1.8.23
             - run: npm run build
 
     lint:
@@ -23,7 +23,7 @@ jobs:
         name: Lint
         steps:
             - uses: actions/checkout@v3
-            - uses: bahmutov/npm-install@v1.8.22
+            - uses: bahmutov/npm-install@v1.8.23
             - run: npm run lint
 
     typecheck:
@@ -31,7 +31,7 @@ jobs:
         name: Typecheck
         steps:
             - uses: actions/checkout@v3
-            - uses: bahmutov/npm-install@v1.8.22
+            - uses: bahmutov/npm-install@v1.8.23
             - run: npm run typecheck
 
     test-unit:
@@ -40,7 +40,7 @@ jobs:
         name: Unit tests
         steps:
             - uses: actions/checkout@v3
-            - uses: bahmutov/npm-install@v1.8.22
+            - uses: bahmutov/npm-install@v1.8.23
             - run: npm test
 
     test-e2e:
@@ -52,5 +52,5 @@ jobs:
             CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
         steps:
             - uses: actions/checkout@v3
-            - uses: bahmutov/npm-install@v1.8.22
+            - uses: bahmutov/npm-install@v1.8.23
             - run: npm run test:e2e-dev
