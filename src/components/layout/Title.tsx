@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 const H1 = tw.h1`
-    col-start-3 text-3xl font-bold m-0 flex items-end mb-4 text-lightGrey
+    col-start-3 text-6xl font-heading font-black m-0 flex items-end mb-4 text-lightGrey
 `
 
 interface Props {

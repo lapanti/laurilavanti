@@ -9,7 +9,6 @@ exports[`<Tag /> should render 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
-  font-family: "Ubuntu";
 }
 
 .emotion-1 {
@@ -191,9 +190,10 @@ exports[`<Tag /> should render 1`] = `
 
 .emotion-11 {
   grid-column-start: 3;
+  font-family: "Signika Negative";
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
   --tw-bg-opacity: 0.75;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   padding: 0.5rem;
@@ -306,9 +306,10 @@ exports[`<Tag /> should render 1`] = `
 
 .emotion-19 {
   grid-column-start: 3;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-family: "Signika Negative";
+  font-weight: 900;
   margin: 0px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -427,9 +428,12 @@ exports[`<Tag /> should render 1`] = `
 }
 
 .emotion-27 {
+  grid-column-start: 3;
+  font-family: "Signika Negative";
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  grid-column-start: auto;
 }
 
 .emotion-28 {
@@ -533,8 +537,10 @@ exports[`<Tag /> should render 1`] = `
 }
 
 .emotion-37 {
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-top: 0.25rem;
@@ -974,6 +980,7 @@ exports[`<Tag /> should render 1`] = `
               >
                 <h2
                   class="emotion-27"
+                  id="paivakodit-kaipaavat-opettajia"
                   itemprop="headline"
                 >
                   Päiväkodit kaipaavat opettajia
@@ -1163,6 +1170,7 @@ exports[`<Tag /> should render 1`] = `
               >
                 <h2
                   class="emotion-27"
+                  id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                   itemprop="headline"
                 >
                   Varhaiskasvatuksen riittävyydestä ei saa tinkiä
@@ -1363,6 +1371,7 @@ exports[`<Tag /> should render 1`] = `
               >
                 <h2
                   class="emotion-27"
+                  id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                   itemprop="headline"
                 >
                   Varhaiskasvatuksen kerhotoiminta - lapsen etu
@@ -1552,6 +1561,7 @@ exports[`<Tag /> should render 1`] = `
               >
                 <h2
                   class="emotion-27"
+                  id="kirkkonummi-lisa-on-sinunkin-etusi"
                   itemprop="headline"
                 >
                   Kirkkonummi-lisä on sinunkin etusi
@@ -1741,6 +1751,7 @@ exports[`<Tag /> should render 1`] = `
               >
                 <h2
                   class="emotion-27"
+                  id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
                   itemprop="headline"
                 >
                   Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
