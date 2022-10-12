@@ -17,7 +17,7 @@ const Link = tw.a`
 `
 
 const Svg = tw.svg`
-    fill-current text-lightGrey h-9 w-9 transition
+    fill-current text-gray h-9 w-9 transition
 `
 
 const Facebook = tw(Svg)`
@@ -82,7 +82,7 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
 FooterComponent.displayName = 'Footer'
 
 const Footer = tw(FooterComponent)`
-    grid-in-footer bg-forestGreen text-white flex flex-col items-center justify-center h-full
+    grid-in-footer bg-greenDarkBackground text-white flex flex-col items-center justify-center h-full
 `
 
 export default Footer
