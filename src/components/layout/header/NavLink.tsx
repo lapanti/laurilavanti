@@ -15,7 +15,7 @@ const NavLinkComponent = ({ className, title, slug }: Props): JSX.Element => (
     <InternalLink
         className={className}
         partiallyActive={slug !== 'index'}
-        activeStyle={{ textDecoration: 'underline' }}
+        activeStyle={{ textDecoration: 'underline', color: 'rgb(0, 104, 69)' }}
         to={slug === 'index' ? '/' : `/${slug}/`}
     >
         {title === 'Lauri Lavanti' ? 'Etusivu' : title}
@@ -26,7 +26,7 @@ NavLinkComponent.displayName = 'NavLink'
 
 const NavLink = tw(NavLinkComponent)`
     w-full pl-8 mt-6 first-of-type:mt-0
-    text-xl text-navLink hover:text-accent active:text-accent
+    text-3xl text-black hover:text-greenDarkText active:text-greenDarkText
 `
 
 export default NavLink

@@ -11,7 +11,7 @@ import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
 const Link = tw(InternalLink)`
-    text-lightGrey
+    text-gray
 `
 
 const Image = tw(GatsbyImage)`

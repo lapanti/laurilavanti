@@ -12,7 +12,7 @@ exports[`<Title /> should render 1`] = `
   margin-right: auto;
   width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: #000;
+  --tw-gradient-from: rgb(0, 0, 0);
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
 }
 
@@ -45,7 +45,7 @@ exports[`<Title /> should render 1`] = `
   align-items: flex-end;
   margin-bottom: 1rem;
   --tw-text-opacity: 1;
-  color: rgba(227, 227, 227, var(--tw-text-opacity));
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 <section
