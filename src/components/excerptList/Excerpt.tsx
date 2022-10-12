@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import tw from 'twin.macro'
 
+import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
@@ -29,8 +30,8 @@ const H2Container = tw.div`
     flex items-end mb-4 pb-2 pl-2 -mt-32 h-32 w-full bg-gradient-to-t from-black z-40 relative
 `
 
-const H2 = tw.h2`
-    font-bold text-xl
+const StyledH2 = tw(H2)`
+    col-start-auto
 `
 
 const RemarginP = tw(Paragraph)`
@@ -65,7 +66,7 @@ const ExcerptComponent = ({
                 {image && <DesktopImage image={image} alt={title} />}
                 {mobileImage && <MobileImage image={mobileImage} alt={title} />}
                 <H2Container>
-                    <H2 itemProp="headline">{title}</H2>
+                    <StyledH2 itemProp="headline">{title}</StyledH2>
                 </H2Container>
             </Link>
             <PostMeta date={date} tags={tags} />

@@ -79,7 +79,7 @@ const TableCell = tw.td`
 `
 
 const BlockQuote = tw.div`
-    border-l-4 pl-2 py-2 border-l-lightGrey col-start-3 text-lg
+    border-l-4 pl-2 py-2 border-l-lightGrey col-start-3 font-mono font-normal italic text-2xl
 `
 
 const options = {
@@ -224,7 +224,7 @@ const LayoutComponent = ({
 LayoutComponent.displayName = 'Layout'
 
 const Layout = tw(LayoutComponent)`
-    grid grid-areas-layout grid-rows-layout grid-cols-1 gap-4.5 min-h-screen relative font-sans
+    grid grid-areas-layout grid-rows-layout grid-cols-1 gap-4.5 min-h-screen relative
 `
 
 export default Layout

@@ -1,9 +1,11 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         fontFamily: {
-            sans: '"Ubuntu"',
-            serif: '"Ubuntu"',
+            sans: `"IBM Plex Sans"`,
+            mono: `"IBM Plex Mono"`,
+            heading: `"Signika Negative"`,
         },
         screens: {
             biggerthenphone: '479px',
