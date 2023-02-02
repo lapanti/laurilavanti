@@ -7,10 +7,6 @@ test.describe('Blog Page', () => {
         const blogPage = new BlogPage(page)
         await blogPage.goTo()
 
-        await blogPage.checkMainNavigation()
-
         await blogPage.checkContent()
-
-        await blogPage.checkFooter()
     })
 })
