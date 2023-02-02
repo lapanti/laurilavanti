@@ -59,4 +59,8 @@ export class AnyPage {
         await this.checkMainNavigation()
         await this.checkFooter()
     }
+
+    async testScreenshot() {
+        await expect(this.page).toHaveScreenshot()
+    }
 }

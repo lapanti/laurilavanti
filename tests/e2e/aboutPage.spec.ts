@@ -7,6 +7,8 @@ test.describe('About Page', () => {
         const aboutPage = new AboutPage(page)
         await aboutPage.goTo()
 
-        await aboutPage.checkTitles()
+        await aboutPage.checkContent()
+
+        await aboutPage.testScreenshot()
     })
 })

@@ -8,5 +8,7 @@ test.describe('Contact Page', () => {
         await contactPage.goTo()
 
         await contactPage.checkContent()
+
+        await contactPage.testScreenshot()
     })
 })
