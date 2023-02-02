@@ -15,13 +15,7 @@ export class AboutPage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/')
-
-        await expect(this.navOpenButton).toBeVisible()
-        await this.navOpenButton.click()
-
-        await expect(this.navLinkAboutMe).toBeVisible()
-        await this.navLinkAboutMe.click()
+        await this.goToNavLink(this.navLinkAboutMe)
     }
 
     async checkTitles() {
