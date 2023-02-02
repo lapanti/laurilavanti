@@ -9,6 +9,9 @@ export class AnyPage {
     readonly navLinkAboutMe: Locator
     readonly navLinkBlog: Locator
     readonly navLinkContactInfo: Locator
+    readonly footerFacebookLink: Locator
+    readonly footerTwitterLink: Locator
+    readonly footerLinkedInLink: Locator
 
     constructor(page: Page) {
         this.page = page
@@ -17,6 +20,9 @@ export class AnyPage {
         this.navLinkAboutMe = page.getByRole('link', { name: /Minusta/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
+        this.footerFacebookLink = page.locator('footer').locator('a[title="Facebook"]')
+        this.footerTwitterLink = page.locator('footer').locator('a[title="Twitter"]')
+        this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
     }
 
     async checkMainNavigation() {
@@ -31,5 +37,11 @@ export class AnyPage {
         await expect(this.navCloseButton).toBeVisible()
         await this.navCloseButton.click()
         await expect(this.navCloseButton).not.toBeVisible()
+    }
+
+    async checkFooter() {
+        await expect(this.footerFacebookLink).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
+        await expect(this.footerTwitterLink).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
+        await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
     }
 }

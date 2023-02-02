@@ -10,5 +10,7 @@ test.describe('Home Page', () => {
         await homePage.checkMainNavigation()
 
         await homePage.checkTitles()
+
+        await homePage.checkFooter()
     })
 })
