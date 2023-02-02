@@ -60,11 +60,6 @@ const config = {
                 'no-console': ['warn'],
             },
         },
-        {
-            files: ['tests/cypress/**/*.ts', 'tests/cypress/**/*.js'],
-            extends: ['plugin:cypress/recommended'],
-            plugins: ['cypress'],
-        },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
