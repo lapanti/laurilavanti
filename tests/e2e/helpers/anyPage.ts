@@ -54,4 +54,9 @@ export class AnyPage {
         await expect(this.footerTwitterLink).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
     }
+
+    async checkFundamentals() {
+        await this.checkMainNavigation()
+        await this.checkFooter()
+    }
 }

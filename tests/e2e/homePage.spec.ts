@@ -7,10 +7,6 @@ test.describe('Home Page', () => {
         const homePage = new HomePage(page)
         await homePage.goHome()
 
-        await homePage.checkMainNavigation()
-
         await homePage.checkTitles()
-
-        await homePage.checkFooter()
     })
 })

@@ -7,10 +7,6 @@ test.describe('About Page', () => {
         const aboutPage = new AboutPage(page)
         await aboutPage.goTo()
 
-        await aboutPage.checkMainNavigation()
-
         await aboutPage.checkTitles()
-
-        await aboutPage.checkFooter()
     })
 })

@@ -20,6 +20,9 @@ export class AboutPage extends AnyPage {
 
     async checkTitles() {
         await expect(this.aboutMeTitle).toBeVisible()
+
+        await this.checkFundamentals()
+
         await expect(this.positionsTitle).toBeVisible()
     }
 }
