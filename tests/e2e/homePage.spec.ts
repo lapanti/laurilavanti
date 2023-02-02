@@ -8,5 +8,7 @@ test.describe('Home Page', () => {
         await homePage.goHome()
 
         await homePage.checkTitles()
+
+        await homePage.testScreenshot()
     })
 })

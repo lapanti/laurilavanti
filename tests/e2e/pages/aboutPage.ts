@@ -18,7 +18,7 @@ export class AboutPage extends AnyPage {
         await this.goToNavLink(this.navLinkAboutMe)
     }
 
-    async checkTitles() {
+    async checkContent() {
         await expect(this.aboutMeTitle).toBeVisible()
 
         await this.checkFundamentals()

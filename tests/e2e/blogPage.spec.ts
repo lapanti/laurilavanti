@@ -8,5 +8,7 @@ test.describe('Blog Page', () => {
         await blogPage.goTo()
 
         await blogPage.checkContent()
+
+        await blogPage.testScreenshot()
     })
 })
