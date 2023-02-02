@@ -25,6 +25,16 @@ export class AnyPage {
         this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
     }
 
+    async goToNavLink(navLink: Locator) {
+        await this.page.goto('/')
+
+        await expect(this.navOpenButton).toBeVisible()
+        await this.navOpenButton.click()
+
+        await expect(navLink).toBeVisible()
+        await navLink.click()
+    }
+
     async checkMainNavigation() {
         await expect(this.navOpenButton).toBeVisible()
         await this.navOpenButton.click()
