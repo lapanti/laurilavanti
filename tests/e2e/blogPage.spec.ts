@@ -1,6 +1,6 @@
 import test from '@playwright/test'
 
-import { BlogPage } from './helpers/blogPage'
+import { BlogPage } from './pages/blogPage'
 
 test.describe('Blog Page', () => {
     test('should render', async ({ page }) => {
