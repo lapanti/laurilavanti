@@ -75,14 +75,14 @@ const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
 
     return (
         <header className={className}>
-            <OpenButton aria-label="Open navigation menu" onClick={openMenu} isOpen={isOpen}>
+            <OpenButton aria-label="Avaa valikko" onClick={openMenu} isOpen={isOpen}>
                 <Svg aria-hidden="true">
                     <use xlinkHref="#icon-bars" />
                 </Svg>
             </OpenButton>
             <CloseBG onClick={closeMenu} aria-hidden="true" isOpen={isOpen} />
             <Nav aria-expanded={isOpen} isOpen={isOpen}>
-                <CloseButton aria-label="Close navigation menu" onClick={closeMenu}>
+                <CloseButton aria-label="Sulje valikko" onClick={closeMenu}>
                     <Svg aria-hidden="true">
                         <use xlinkHref="#icon-close" />
                     </Svg>
