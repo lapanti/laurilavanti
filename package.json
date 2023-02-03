@@ -16,7 +16,7 @@
     "lint:fix": "npm run lint -- --fix",
     "typecheck:src": "tsc --noEmit",
     "typecheck:tests": "tsc --noEmit -p tests/tsconfig.json",
-    "typecheck": "npm run typecheck:src && npm run typecheck:tests && npm run typecheck:cy",
+    "typecheck": "npm run typecheck:src && npm run typecheck:tests",
     "predevelop": "npm run clean",
     "develop": "gatsby develop",
     "start": "gatsby develop",
