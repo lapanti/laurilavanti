@@ -23,9 +23,9 @@ export class ContactPage extends AnyPage {
     async checkContent() {
         await expect(this.email).toBeVisible()
 
-        await this.checkFundamentals()
-
         await expect(this.facebook).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
         await expect(this.twitter).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
+
+        await this.checkFooter()
     }
 }

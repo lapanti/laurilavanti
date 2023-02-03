@@ -25,28 +25,41 @@ export class AnyPage {
         this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
     }
 
+    async openMainNavigation() {
+        await expect(this.navOpenButton).toBeVisible()
+        await this.navOpenButton.click()
+        await expect(this.navOpenButton).not.toBeVisible()
+    }
+
+    async checkMainNavigationLinks() {
+        await expect(this.navLinkAboutMe).toHaveAttribute('href', '/minusta/')
+        await expect(this.navLinkBlog).toHaveAttribute('href', '/blogi/')
+        await expect(this.navLinkContactInfo).toHaveAttribute('href', '/ota-yhteytta/')
+    }
+
     async goToNavLink(navLink: Locator) {
         await this.page.goto('/')
 
-        await expect(this.navOpenButton).toBeVisible()
-        await this.navOpenButton.click()
+        await this.openMainNavigation()
+
+        await this.checkMainNavigationLinks()
 
         await expect(navLink).toBeVisible()
         await navLink.click()
     }
 
-    async checkMainNavigation() {
-        await expect(this.navOpenButton).toBeVisible()
-        await this.navOpenButton.click()
-        await expect(this.navOpenButton).not.toBeVisible()
-
-        await expect(this.navLinkAboutMe).toHaveAttribute('href', '/minusta/')
-        await expect(this.navLinkBlog).toHaveAttribute('href', '/blogi/')
-        await expect(this.navLinkContactInfo).toHaveAttribute('href', '/ota-yhteytta/')
-
+    async closeMainNavigation() {
         await expect(this.navCloseButton).toBeVisible()
         await this.navCloseButton.click()
         await expect(this.navCloseButton).not.toBeVisible()
+    }
+
+    async checkMainNavigation() {
+        await this.openMainNavigation()
+
+        await this.checkMainNavigationLinks()
+
+        await this.closeMainNavigation()
     }
 
     async checkFooter() {

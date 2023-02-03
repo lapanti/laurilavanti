@@ -25,8 +25,8 @@ export class TagPage extends AnyPage {
     async checkContent() {
         await expect(this.title).toBeVisible()
 
-        await this.checkFundamentals()
-
         await expect(await this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArtices)
+
+        await this.checkFundamentals()
     }
 }

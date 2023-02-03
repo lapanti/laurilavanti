@@ -46,8 +46,6 @@ export class BlogPostPage extends AnyPage {
     async checkContent() {
         await expect(this.titleLocator).toBeVisible()
 
-        await this.checkFundamentals()
-
         await Promise.all(this.tagsAndUrls.map(([tag, url]) => expect(tag).toHaveAttribute('href', url)))
 
         await expect(this.shareFacebook).toHaveAttribute(
@@ -64,5 +62,7 @@ export class BlogPostPage extends AnyPage {
         )
 
         await expect(this.otherPostsTitle).toBeVisible()
+
+        await this.checkFundamentals()
     }
 }

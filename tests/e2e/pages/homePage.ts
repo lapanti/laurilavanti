@@ -21,8 +21,8 @@ export class HomePage extends AnyPage {
     async checkTitles() {
         await expect(this.mainTitle).toBeVisible()
 
-        await this.checkFundamentals()
-
         await expect(this.latestTitle).toBeVisible()
+
+        await this.checkFundamentals()
     }
 }
