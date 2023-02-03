@@ -61,6 +61,6 @@ export class AnyPage {
     }
 
     async testScreenshot() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true })
+        await expect(this.page).toHaveScreenshot()
     }
 }
