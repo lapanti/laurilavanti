@@ -62,7 +62,5 @@ export class BlogPostPage extends AnyPage {
         )
 
         await expect(this.otherPostsTitle).toBeVisible()
-
-        await this.checkFundamentals()
     }
 }

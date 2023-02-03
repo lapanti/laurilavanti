@@ -23,6 +23,7 @@ export class HomePage extends AnyPage {
 
         await expect(this.latestTitle).toBeVisible()
 
-        await this.checkFundamentals()
+        await this.checkMainNavigation()
+        await this.checkFooter()
     }
 }

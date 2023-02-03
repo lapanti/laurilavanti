@@ -11,7 +11,7 @@ describe('<Header />', () => {
 
         expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
 
-        expect(screen.getByRole('button', { name: /Open navigation menu/i })).toBeEnabled()
+        expect(screen.getByRole('button', { name: /Avaa valikko/i })).toBeEnabled()
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -21,7 +21,7 @@ describe('<Header />', () => {
 
         expect(screen.queryByRole('heading', { name: /Lauri Lavanti/i })).not.toBeInTheDocument()
 
-        expect(screen.getByRole('button', { name: /Open navigation menu/i })).toBeEnabled()
+        expect(screen.getByRole('button', { name: /Avaa valikko/i })).toBeEnabled()
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -33,9 +33,9 @@ describe('<Header />', () => {
 
         expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
 
-        await user.click(screen.getByRole('button', { name: /Open navigation menu/i }))
+        await user.click(screen.getByRole('button', { name: /Avaa valikko/i }))
 
-        expect(screen.getByRole('button', { name: /Close navigation menu/i })).toBeEnabled()
+        expect(screen.getByRole('button', { name: /Sulje valikko/i })).toBeEnabled()
 
         mainNav.links.forEach((link) =>
             expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
@@ -49,9 +49,9 @@ describe('<Header />', () => {
 
         const { container } = render(<Header isFrontPage={false} />)
 
-        await user.click(screen.getByRole('button', { name: /Open navigation menu/i }))
+        await user.click(screen.getByRole('button', { name: /Avaa valikko/i }))
 
-        const closeButton = screen.getByRole('button', { name: /Close navigation menu/i })
+        const closeButton = screen.getByRole('button', { name: /Sulje valikko/i })
 
         expect(closeButton).toBeEnabled()
 

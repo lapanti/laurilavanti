@@ -15,8 +15,8 @@ export class AnyPage {
 
     constructor(page: Page) {
         this.page = page
-        this.navOpenButton = page.getByRole('button', { name: /Open navigation menu/i })
-        this.navCloseButton = page.getByRole('button', { name: /Close navigation menu/i })
+        this.navOpenButton = page.getByRole('button', { name: /Avaa valikko/i })
+        this.navCloseButton = page.getByRole('button', { name: /Sulje valikko/i })
         this.navLinkAboutMe = page.getByRole('link', { name: /Minusta/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
@@ -66,11 +66,6 @@ export class AnyPage {
         await expect(this.footerFacebookLink).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
         await expect(this.footerTwitterLink).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
-    }
-
-    async checkFundamentals() {
-        await this.checkMainNavigation()
-        await this.checkFooter()
     }
 
     async testScreenshot() {
