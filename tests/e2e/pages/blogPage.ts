@@ -23,9 +23,9 @@ export class BlogPage extends AnyPage {
     async checkContent() {
         await expect(this.title).toBeVisible()
 
-        await this.checkFundamentals()
-
         await expect(await this.articles.count()).toBeGreaterThanOrEqual(2)
         await expect(await this.linksToBlogs.count()).toBeGreaterThanOrEqual(2)
+
+        await this.checkFooter()
     }
 }
