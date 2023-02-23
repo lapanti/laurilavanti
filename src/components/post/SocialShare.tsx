@@ -12,7 +12,7 @@ const ExtLink = tw(ExternalLink)`
 `
 
 const Svg = tw.svg`
-    inline-block h-4 w-4 fill-current
+    inline-block h-4 w-4
 `
 
 const Fb = tw(Svg)`text-fb`

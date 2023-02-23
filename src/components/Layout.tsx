@@ -38,7 +38,7 @@ const Article = styled.article(() => [
         },
     },
     tw`
-        grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
+        grid grid-cols-article
     `,
 ])
 

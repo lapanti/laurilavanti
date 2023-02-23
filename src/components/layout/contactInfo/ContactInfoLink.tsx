@@ -7,7 +7,7 @@ import ExternalLink from '../../ExternalLink'
 
 const RowExternalLink = tw(ExternalLink)` flex flex-row items-center`
 
-const Svg = tw.svg` w-4 h-4 mr-2 fill-current`
+const Svg = tw.svg` w-4 h-4 mr-2`
 
 const Facebook = tw(Svg)` text-fb`
 

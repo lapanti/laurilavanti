@@ -19,7 +19,7 @@ const TitleComponent = ({ className, title }: Props): JSX.Element => (
 TitleComponent.displayName = 'Title'
 
 const Title = tw(TitleComponent)`
-    grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
+    grid grid-cols-article
     col-span-full -mt-56 z-40 max-w-screen-fullhd mx-auto w-full
     bg-gradient-to-t from-black
 `

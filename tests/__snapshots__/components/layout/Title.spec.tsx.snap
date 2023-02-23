@@ -2,39 +2,25 @@
 
 exports[`<Title /> should render 1`] = `
 .emotion-0 {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
-  margin-top: -14rem;
   z-index: 40;
-  max-width: 1920px;
+  grid-column: 1/-1;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -14rem;
+  display: grid;
   width: 100%;
+  max-width: 1920px;
+  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
-}
-
-@media (min-width: 700px) {
-  .emotion-0 {
-    grid-template-columns: 1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr;
-  }
-}
-
-@media (min-width: 750px) {
-  .emotion-0 {
-    grid-template-columns: 1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr;
-  }
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
 }
 
 .emotion-1 {
   grid-column-start: 3;
-  font-size: 3.75rem;
-  line-height: 1;
-  font-family: "Signika Negative";
-  font-weight: 900;
   margin: 0px;
+  margin-bottom: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -43,9 +29,12 @@ exports[`<Title /> should render 1`] = `
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  margin-bottom: 1rem;
+  font-family: "Signika Negative";
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 900;
   --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 <section

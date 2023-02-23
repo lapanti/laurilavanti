@@ -14,41 +14,37 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-3 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
-  color: rgba(235, 235, 236, var(--tw-text-opacity));
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgb(235 235 236 / var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-3:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-3:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-3:active {
+  text-decoration-line: underline;
 }
 
 .emotion-4 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: none;
 }
@@ -63,12 +59,12 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-5 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: -webkit-box;
   display: -webkit-flex;
@@ -83,33 +79,34 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-6 {
+  position: relative;
+  z-index: 40;
+  margin-bottom: 1rem;
+  margin-top: -8rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 8rem;
+  width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  margin-top: -8rem;
-  height: 8rem;
-  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
-  z-index: 40;
-  position: relative;
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .emotion-7 {
   grid-column-start: 3;
   font-family: "Signika Negative";
-  font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  font-weight: 700;
   grid-column-start: auto;
 }
 
@@ -124,6 +121,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-9 {
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -131,10 +129,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-bottom: 0.5rem;
 }
 
 .emotion-10 {
+  margin-right: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -146,7 +144,6 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 1rem;
 }
 
 .emotion-10:last-child {
@@ -154,11 +151,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-11 {
+  margin-right: 0.5rem;
+  display: inline-block;
   height: 1.125rem;
   width: 1.125rem;
-  display: inline-block;
-  fill: currentColor;
-  margin-right: 0.5rem;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -187,39 +183,35 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-14 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .emotion-14:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-14:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-14:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-14:active {
+  text-decoration-line: underline;
 }
 
 .emotion-17 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-family: "IBM Plex Sans";
-  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: "IBM Plex Sans";
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
   margin-top: 0.25rem;
 }
 
@@ -1204,41 +1196,37 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-3 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
-  color: rgba(235, 235, 236, var(--tw-text-opacity));
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgb(235 235 236 / var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-3:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-3:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-3:active {
+  text-decoration-line: underline;
 }
 
 .emotion-4 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: none;
 }
@@ -1253,12 +1241,12 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-5 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1273,33 +1261,34 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-6 {
+  position: relative;
+  z-index: 40;
+  margin-bottom: 1rem;
+  margin-top: -8rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 8rem;
+  width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  margin-top: -8rem;
-  height: 8rem;
-  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
-  z-index: 40;
-  position: relative;
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .emotion-7 {
   grid-column-start: 3;
   font-family: "Signika Negative";
-  font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  font-weight: 700;
   grid-column-start: auto;
 }
 
@@ -1314,6 +1303,7 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-9 {
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1321,10 +1311,10 @@ exports[`<ExcerptList /> should render 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-bottom: 0.5rem;
 }
 
 .emotion-10 {
+  margin-right: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1336,7 +1326,6 @@ exports[`<ExcerptList /> should render 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 1rem;
 }
 
 .emotion-10:last-child {
@@ -1344,11 +1333,10 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-11 {
+  margin-right: 0.5rem;
+  display: inline-block;
   height: 1.125rem;
   width: 1.125rem;
-  display: inline-block;
-  fill: currentColor;
-  margin-right: 0.5rem;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -1377,39 +1365,35 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-14 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .emotion-14:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-14:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-14:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-14:active {
+  text-decoration-line: underline;
 }
 
 .emotion-19 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-family: "IBM Plex Sans";
-  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: "IBM Plex Sans";
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
   margin-top: 0.25rem;
 }
 
@@ -3578,41 +3562,37 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-3 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
-  color: rgba(235, 235, 236, var(--tw-text-opacity));
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgb(235 235 236 / var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-3:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-3:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-3:active {
+  text-decoration-line: underline;
 }
 
 .emotion-4 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: none;
 }
@@ -3627,12 +3607,12 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-5 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: -webkit-box;
   display: -webkit-flex;
@@ -3647,33 +3627,34 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-6 {
+  position: relative;
+  z-index: 40;
+  margin-bottom: 1rem;
+  margin-top: -8rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 8rem;
+  width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  margin-top: -8rem;
-  height: 8rem;
-  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
-  z-index: 40;
-  position: relative;
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .emotion-7 {
   grid-column-start: 3;
   font-family: "Signika Negative";
-  font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  font-weight: 700;
   grid-column-start: auto;
 }
 
@@ -3688,6 +3669,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-9 {
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3695,10 +3677,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-bottom: 0.5rem;
 }
 
 .emotion-10 {
+  margin-right: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3710,7 +3692,6 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 1rem;
 }
 
 .emotion-10:last-child {
@@ -3718,11 +3699,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-11 {
+  margin-right: 0.5rem;
+  display: inline-block;
   height: 1.125rem;
   width: 1.125rem;
-  display: inline-block;
-  fill: currentColor;
-  margin-right: 0.5rem;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -3751,39 +3731,35 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-14 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .emotion-14:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-14:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-14:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-14:active {
+  text-decoration-line: underline;
 }
 
 .emotion-17 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-family: "IBM Plex Sans";
-  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: "IBM Plex Sans";
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
   margin-top: 0.25rem;
 }
 
@@ -4388,41 +4364,37 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-3 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
   --tw-text-opacity: 1;
-  color: rgba(235, 235, 236, var(--tw-text-opacity));
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  --tw-text-opacity: 1;
+  color: rgb(235 235 236 / var(--tw-text-opacity));
 }
 
 .emotion-3:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-3:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-3:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-3:active {
+  text-decoration-line: underline;
 }
 
 .emotion-4 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: none;
 }
@@ -4437,12 +4409,12 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-5 {
-  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   height: 16rem;
+  width: 100%;
   object-fit: cover;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4457,33 +4429,34 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-6 {
+  position: relative;
+  z-index: 40;
+  margin-bottom: 1rem;
+  margin-top: -8rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 8rem;
+  width: 100%;
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
   -ms-flex-align: flex-end;
   align-items: flex-end;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  margin-top: -8rem;
-  height: 8rem;
-  width: 100%;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
   --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(0, 0, 0, 0));
-  z-index: 40;
-  position: relative;
+  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
 }
 
 .emotion-7 {
   grid-column-start: 3;
   font-family: "Signika Negative";
-  font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  font-weight: 700;
   grid-column-start: auto;
 }
 
@@ -4498,6 +4471,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-9 {
+  margin-bottom: 0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4505,10 +4479,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  margin-bottom: 0.5rem;
 }
 
 .emotion-10 {
+  margin-right: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4520,7 +4494,6 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-right: 1rem;
 }
 
 .emotion-10:last-child {
@@ -4528,11 +4501,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-11 {
+  margin-right: 0.5rem;
+  display: inline-block;
   height: 1.125rem;
   width: 1.125rem;
-  display: inline-block;
-  fill: currentColor;
-  margin-right: 0.5rem;
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -4561,39 +4533,35 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-14 {
-  transition-property: background-color,border-color,color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  transition-property: color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .emotion-14:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-14:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-14:focus {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
+}
+
+.emotion-14:active {
+  text-decoration-line: underline;
 }
 
 .emotion-19 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-family: "IBM Plex Sans";
-  font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  font-family: "IBM Plex Sans";
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
   margin-top: 0.25rem;
 }
 

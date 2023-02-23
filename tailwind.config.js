@@ -51,8 +51,6 @@ module.exports = {
             },
             gridTemplateColumns: {
                 article: '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr',
-                article700: '1fr 1.125rem min(80ch, calc(100% - 2.25rem)) 1.125rem 1fr',
-                article750: '1fr 2.25rem min(80ch, calc(100% - 4.5rem)) 2.25rem 1fr',
             },
         },
     },
