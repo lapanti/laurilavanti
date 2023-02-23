@@ -12,7 +12,7 @@ const Meta = tw.span`
 `
 
 const Svg = tw.svg`
-    h-4.5 w-4.5 inline-block fill-current mr-2 flex-shrink-0
+    h-4.5 w-4.5 inline-block mr-2 flex-shrink-0
 `
 
 const TagList = tw.ul`

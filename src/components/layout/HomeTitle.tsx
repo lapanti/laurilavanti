@@ -51,7 +51,7 @@ const HomeTitleComponent = ({ className }: Props) => (
 HomeTitleComponent.displayName = 'HomeTitle'
 
 const HomeTitle = tw(HomeTitleComponent)`
-    grid grid-cols-article 700:grid-cols-article700 750:grid-cols-article750
+    grid grid-cols-article
     col-span-full -mt-164 h-164 z-40 max-w-screen-fullhd mx-auto w-full
     text-6xl font-heading font-black text-white
     bg-gradient-to-r from-[rgba(0,0,0,.85)] via-[rgba(0,0,0,.05)]

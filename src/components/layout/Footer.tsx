@@ -17,19 +17,19 @@ const Link = tw.a`
 `
 
 const Svg = tw.svg`
-    fill-current text-gray h-9 w-9 transition
+    text-gray h-9 w-9 transition
 `
 
 const Facebook = tw(Svg)`
-    hover:text-fb focus:text-fb
+   hover:fill-fb focus:fill-fb
 `
 
 const Twitter = tw(Svg)`
-    hover:text-twitter focus:text-twitter
+    hover:fill-twitter focus:fill-twitter
 `
 
 const LinkedIn = tw(Svg)`
-    hover:text-linkedin focus:text-linkedin
+    hover:fill-linkedin focus:fill-linkedin
 `
 
 interface Props {
