@@ -2,22 +2,19 @@
 
 exports[`<ExternalLink /> should render 1`] = `
 .emotion-0 {
-  --tw-text-opacity: 1;
-  color: rgba(90, 94, 0, var(--tw-text-opacity));
-  -webkit-text-decoration: none;
-  text-decoration: none;
   font-size: 1rem;
   line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
 }
 
 .emotion-0:hover {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 .emotion-0:active {
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 
 <a
