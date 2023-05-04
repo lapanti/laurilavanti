@@ -12,8 +12,8 @@ exports[`<Title /> should render 1`] = `
   max-width: 1920px;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
 }
 

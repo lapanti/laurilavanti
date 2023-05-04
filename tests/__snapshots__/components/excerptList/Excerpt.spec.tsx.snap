@@ -69,8 +69,8 @@ exports[`<Excerpt /> should render 1`] = `
 .emotion-4 {
   position: relative;
   z-index: 40;
-  margin-bottom: 1rem;
   margin-top: -8rem;
+  margin-bottom: 1rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,8 +82,8 @@ exports[`<Excerpt /> should render 1`] = `
   -ms-flex-align: flex-end;
   align-items: flex-end;
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0);
-  --tw-gradient-to: rgb(0 0 0 / 0);
+  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
