@@ -14,9 +14,9 @@ exports[`<HomeTitle /> should render 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   overflow: hidden;
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
-  --tw-gradient-from: rgba(0,0,0,.85);
-  --tw-gradient-to: rgba(0, 0, 0, 0);
-  --tw-gradient-stops: var(--tw-gradient-from),rgba(0,0,0,.05),var(--tw-gradient-to);
+  --tw-gradient-from: rgba(0,0,0,.85) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(0, 0, 0, 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from),rgba(0,0,0,.05) var(--tw-gradient-via-position),var(--tw-gradient-to);
   font-family: "Signika Negative";
   font-size: 3.75rem;
   line-height: 1;
