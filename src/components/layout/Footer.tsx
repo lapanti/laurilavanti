@@ -63,7 +63,7 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
             <List>
                 {data.contentfulFooterNav.links.map((link) => (
                     <Item key={link.title}>
-                        <Link href={link.url} title={link.title} target="_blank" rel="noopener noreferrer">
+                        <Link href={link.url} title={link.title} target="_blank" rel="me noopener noreferrer">
                             {link.icon === 'facebook' && (
                                 <Facebook>
                                     <use xlinkHref="#icon-facebook" />

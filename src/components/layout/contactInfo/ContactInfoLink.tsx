@@ -30,7 +30,7 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
     return (
         <li className={className}>
             {/* @ts-expect-error typescript doesn't like this */}
-            <Wrapper {...(link.url ? { href: link.url } : {})}>
+            <Wrapper {...(link.url ? { href: link.url, rel: 'me' } : {})}>
                 {link.icon === 'envelope' && (
                     <Svg>
                         <use xlinkHref="#icon-envelope" />

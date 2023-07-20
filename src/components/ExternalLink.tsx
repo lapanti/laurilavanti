@@ -7,10 +7,17 @@ interface Props {
     className?: string
     href: string
     title?: string
+    rel?: string
 }
 
-const ExternalLinkComponent = ({ className, href, title, children }: React.PropsWithChildren<Props>): JSX.Element => (
-    <Link className={className} href={href} target="_blank" title={title} rel="noopener noreferrer">
+const ExternalLinkComponent = ({
+    className,
+    href,
+    title,
+    rel,
+    children,
+}: React.PropsWithChildren<Props>): JSX.Element => (
+    <Link className={className} href={href} target="_blank" title={title} rel={`${rel ?? ''} noopener noreferrer`}>
         {children}
     </Link>
 )
