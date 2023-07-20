@@ -9,15 +9,15 @@ const RowExternalLink = tw(ExternalLink)` flex flex-row items-center`
 
 const Svg = tw.svg` w-4 h-4 mr-2`
 
-const Facebook = tw(Svg)` text-fb`
+const Facebook = tw(Svg)` fill-fb`
 
-const Twitter = tw(Svg)` text-twitter`
+const Twitter = tw(Svg)` fill-twitter`
 
-const LinkedIn = tw(Svg)` text-linkedin`
+const LinkedIn = tw(Svg)` fill-linkedin`
 
 const Instagram = tw(Svg)` fill-[url(#instagram-gradient)]`
 
-const Mastodon = tw(Svg)` text-mastodon`
+const Mastodon = tw(Svg)` fill-mastodon`
 
 interface Props {
     className?: string
