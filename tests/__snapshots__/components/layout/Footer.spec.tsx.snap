@@ -111,11 +111,47 @@ exports[`<Footer /> should render 1`] = `
 }
 
 .emotion-10:hover {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .emotion-10:focus {
+  fill: url(#instagram-gradient);
+}
+
+.emotion-13 {
+  height: 2.25rem;
+  width: 2.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(235 235 236 / var(--tw-text-opacity));
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.emotion-13:hover {
   fill: #0E76A8;
+}
+
+.emotion-13:focus {
+  fill: #0E76A8;
+}
+
+.emotion-16 {
+  height: 2.25rem;
+  width: 2.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(235 235 236 / var(--tw-text-opacity));
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.emotion-16:hover {
+  fill: #6363ff;
+}
+
+.emotion-16:focus {
+  fill: #6363ff;
 }
 
 <footer
@@ -167,16 +203,54 @@ exports[`<Footer /> should render 1`] = `
     >
       <a
         class="emotion-3"
+        href="https://www.instagram.com/laurilavanti/"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Instagram"
+      >
+        <svg
+          class="emotion-10"
+        >
+          <use
+            xlink:href="#icon-instagram"
+          />
+        </svg>
+      </a>
+    </li>
+    <li
+      class="emotion-2"
+    >
+      <a
+        class="emotion-3"
         href="https://www.linkedin.com/in/lapanti"
         rel="noopener noreferrer"
         target="_blank"
         title="LinkedIn"
       >
         <svg
-          class="emotion-10"
+          class="emotion-13"
         >
           <use
             xlink:href="#icon-linkedin"
+          />
+        </svg>
+      </a>
+    </li>
+    <li
+      class="emotion-2"
+    >
+      <a
+        class="emotion-3"
+        href="https://mastodontti.fi/@laurilavanti"
+        rel="noopener noreferrer"
+        target="_blank"
+        title="Mastodon"
+      >
+        <svg
+          class="emotion-16"
+        >
+          <use
+            xlink:href="#icon-mastodon"
           />
         </svg>
       </a>

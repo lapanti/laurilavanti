@@ -73,6 +73,78 @@ exports[`<ContactInfoLink /> should render Facebook 1`] = `
 </li>
 `;
 
+exports[`<ContactInfoLink /> should render Instagram 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1:hover {
+  text-decoration-line: underline;
+}
+
+.emotion-1:active {
+  text-decoration-line: underline;
+}
+
+.emotion-2 {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  fill: url(#instagram-gradient);
+}
+
+<li
+  class="emotion-0"
+>
+  <a
+    class="emotion-1"
+    href="https://www.instagram.com/laurilavanti/"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <svg
+      class="emotion-2"
+    >
+      <use
+        xlink:href="#icon-instagram"
+      />
+    </svg>
+    <span>
+      Instagram
+    </span>
+  </a>
+</li>
+`;
+
 exports[`<ContactInfoLink /> should render LinkedIn 1`] = `
 .emotion-0 {
   display: -webkit-box;
@@ -141,6 +213,79 @@ exports[`<ContactInfoLink /> should render LinkedIn 1`] = `
     </svg>
     <span>
       LinkedIn
+    </span>
+  </a>
+</li>
+`;
+
+exports[`<ContactInfoLink /> should render Mastodon 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(90 94 0 / var(--tw-text-opacity));
+  text-decoration-line: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1:hover {
+  text-decoration-line: underline;
+}
+
+.emotion-1:active {
+  text-decoration-line: underline;
+}
+
+.emotion-2 {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(99 99 255 / var(--tw-text-opacity));
+}
+
+<li
+  class="emotion-0"
+>
+  <a
+    class="emotion-1"
+    href="https://mastodontti.fi/@laurilavanti"
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <svg
+      class="emotion-2"
+    >
+      <use
+        xlink:href="#icon-mastodon"
+      />
+    </svg>
+    <span>
+      Mastodon
     </span>
   </a>
 </li>

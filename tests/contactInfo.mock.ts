@@ -21,6 +21,13 @@ export const twitterLink: ContactInfoLink = {
     icon: 'twitter',
 }
 
+export const instagramLink: ContactInfoLink = {
+    contentful_id: 'o7sDXDUNJVK7NUQSQarQQ',
+    title: 'Instagram',
+    url: 'https://www.instagram.com/laurilavanti/',
+    icon: 'instagram',
+}
+
 export const linkedInLink: ContactInfoLink = {
     contentful_id: 'vl12ZwQDYvDaOBWKlWU09',
     title: 'LinkedIn',
@@ -28,4 +35,11 @@ export const linkedInLink: ContactInfoLink = {
     icon: 'linkedin',
 }
 
-export const contactInfoLinks = [mailLink, facebookLink, twitterLink, linkedInLink]
+export const mastodonLink: ContactInfoLink = {
+    contentful_id: '2uZGyVH5uV3hzs4fjd685d',
+    title: 'Mastodon',
+    url: 'https://mastodontti.fi/@laurilavanti',
+    icon: 'mastodon',
+}
+
+export const contactInfoLinks = [mailLink, facebookLink, twitterLink, instagramLink, linkedInLink, mastodonLink]
