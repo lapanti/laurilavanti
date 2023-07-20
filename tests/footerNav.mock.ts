@@ -15,10 +15,22 @@ export const footerNav: FooterNav = {
             icon: 'twitter',
         },
         {
+            contentful_id: '30Ax2dp5Vio9Z8wPfAH6VJ',
+            title: 'Instagram',
+            url: 'https://www.instagram.com/laurilavanti/',
+            icon: 'instagram',
+        },
+        {
             contentful_id: '74NYC6zhDMIatoVImQBXj0',
             title: 'LinkedIn',
             url: 'https://www.linkedin.com/in/lapanti',
             icon: 'linkedin',
+        },
+        {
+            contentful_id: '3DER2zvkJ1BDyeBCU8aBb3',
+            title: 'Mastodon',
+            url: 'https://mastodontti.fi/@laurilavanti',
+            icon: 'mastodon',
         },
     ],
 }

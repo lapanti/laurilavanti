@@ -32,6 +32,14 @@ const LinkedIn = tw(Svg)`
     hover:fill-linkedin focus:fill-linkedin
 `
 
+const Instagram = tw(Svg)`
+  hover:fill-[url(#instagram-gradient)] focus:fill-[url(#instagram-gradient)]
+`
+
+const Mastodon = tw(Svg)`
+    hover:fill-mastodon focus:fill-mastodon
+`
+
 interface Props {
     className?: string
 }
@@ -70,6 +78,16 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
                                 <LinkedIn>
                                     <use xlinkHref="#icon-linkedin" />
                                 </LinkedIn>
+                            )}
+                            {link.icon === 'instagram' && (
+                                <Instagram>
+                                    <use xlinkHref="#icon-instagram" />
+                                </Instagram>
+                            )}
+                            {link.icon === 'mastodon' && (
+                                <Mastodon>
+                                    <use xlinkHref="#icon-mastodon" />
+                                </Mastodon>
                             )}
                         </Link>
                     </Item>

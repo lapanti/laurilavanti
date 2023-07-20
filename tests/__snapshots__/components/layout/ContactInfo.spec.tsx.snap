@@ -73,8 +73,23 @@ exports[`<ContactInfo /> should render 1`] = `
   margin-right: 0.5rem;
   height: 1rem;
   width: 1rem;
+  fill: url(#instagram-gradient);
+}
+
+.emotion-14 {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
   --tw-text-opacity: 1;
   color: rgb(14 118 168 / var(--tw-text-opacity));
+}
+
+.emotion-17 {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  --tw-text-opacity: 1;
+  color: rgb(99 99 255 / var(--tw-text-opacity));
 }
 
 <ul
@@ -141,7 +156,7 @@ exports[`<ContactInfo /> should render 1`] = `
   >
     <a
       class="emotion-4"
-      href="https://www.linkedin.com/in/lapanti"
+      href="https://www.instagram.com/laurilavanti/"
       rel="noopener noreferrer"
       target="_blank"
     >
@@ -149,11 +164,53 @@ exports[`<ContactInfo /> should render 1`] = `
         class="emotion-11"
       >
         <use
+          xlink:href="#icon-instagram"
+        />
+      </svg>
+      <span>
+        Instagram
+      </span>
+    </a>
+  </li>
+  <li
+    class="emotion-1"
+  >
+    <a
+      class="emotion-4"
+      href="https://www.linkedin.com/in/lapanti"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <svg
+        class="emotion-14"
+      >
+        <use
           xlink:href="#icon-linkedin"
         />
       </svg>
       <span>
         LinkedIn
+      </span>
+    </a>
+  </li>
+  <li
+    class="emotion-1"
+  >
+    <a
+      class="emotion-4"
+      href="https://mastodontti.fi/@laurilavanti"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <svg
+        class="emotion-17"
+      >
+        <use
+          xlink:href="#icon-mastodon"
+        />
+      </svg>
+      <span>
+        Mastodon
       </span>
     </a>
   </li>

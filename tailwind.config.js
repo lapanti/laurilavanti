@@ -34,6 +34,8 @@ module.exports = {
             fb: '#4267B2',
             twitter: '#1DA1F2',
             linkedin: '#0E76A8',
+            instagram: '#E4405F',
+            mastodon: '#6363ff',
             rss: '#EE802F',
             transparent: 'transparent',
         },
