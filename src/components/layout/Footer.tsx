@@ -28,12 +28,12 @@ const Twitter = tw(Svg)`
     hover:fill-twitter focus:fill-twitter
 `
 
-const LinkedIn = tw(Svg)`
-    hover:fill-linkedin focus:fill-linkedin
-`
-
 const Instagram = tw(Svg)`
   hover:fill-[url(#instagram-gradient)] focus:fill-[url(#instagram-gradient)]
+`
+
+const LinkedIn = tw(Svg)`
+    hover:fill-linkedin focus:fill-linkedin
 `
 
 const Mastodon = tw(Svg)`
@@ -74,15 +74,15 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
                                     <use xlinkHref="#icon-twitter" />
                                 </Twitter>
                             )}
-                            {link.icon === 'linkedin' && (
-                                <LinkedIn>
-                                    <use xlinkHref="#icon-linkedin" />
-                                </LinkedIn>
-                            )}
                             {link.icon === 'instagram' && (
                                 <Instagram>
                                     <use xlinkHref="#icon-instagram" />
                                 </Instagram>
+                            )}
+                            {link.icon === 'linkedin' && (
+                                <LinkedIn>
+                                    <use xlinkHref="#icon-linkedin" />
+                                </LinkedIn>
                             )}
                             {link.icon === 'mastodon' && (
                                 <Mastodon>

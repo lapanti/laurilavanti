@@ -19,6 +19,9 @@ interface SiteMetadata {
     twCreator: string
     facebook: string
     twitter: string
+    instagram: string
+    linkedIn: string
+    mastodon: string
 }
 
 describe('<Layout />', () => {
