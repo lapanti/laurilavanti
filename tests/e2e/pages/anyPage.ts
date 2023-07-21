@@ -11,7 +11,9 @@ export class AnyPage {
     readonly navLinkContactInfo: Locator
     readonly footerFacebookLink: Locator
     readonly footerTwitterLink: Locator
+    readonly footerInstagramLink: Locator
     readonly footerLinkedInLink: Locator
+    readonly footerMastodonLink: Locator
 
     constructor(page: Page) {
         this.page = page
@@ -22,7 +24,9 @@ export class AnyPage {
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
         this.footerFacebookLink = page.locator('footer').locator('a[title="Facebook"]')
         this.footerTwitterLink = page.locator('footer').locator('a[title="Twitter"]')
+        this.footerInstagramLink = page.locator('footer').locator('a[title="Instagram"]')
         this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
+        this.footerMastodonLink = page.locator('footer').locator('a[title="Mastodon"]')
     }
 
     async openMainNavigation() {
@@ -65,7 +69,9 @@ export class AnyPage {
     async checkFooter() {
         await expect(this.footerFacebookLink).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
         await expect(this.footerTwitterLink).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
+        await expect(this.footerInstagramLink).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
+        await expect(this.footerMastodonLink).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
     }
 
     async testScreenshot() {

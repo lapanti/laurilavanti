@@ -13,9 +13,9 @@ const Facebook = tw(Svg)` fill-fb`
 
 const Twitter = tw(Svg)` fill-twitter`
 
-const LinkedIn = tw(Svg)` fill-linkedin`
-
 const Instagram = tw(Svg)` fill-[url(#instagram-gradient)]`
+
+const LinkedIn = tw(Svg)` fill-linkedin`
 
 const Mastodon = tw(Svg)` fill-mastodon`
 
@@ -46,15 +46,15 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
                         <use xlinkHref="#icon-twitter" />
                     </Twitter>
                 )}
-                {link.icon === 'linkedin' && (
-                    <LinkedIn>
-                        <use xlinkHref="#icon-linkedin" />
-                    </LinkedIn>
-                )}
                 {link.icon === 'instagram' && (
                     <Instagram>
                         <use xlinkHref="#icon-instagram" />
                     </Instagram>
+                )}
+                {link.icon === 'linkedin' && (
+                    <LinkedIn>
+                        <use xlinkHref="#icon-linkedin" />
+                    </LinkedIn>
                 )}
                 {link.icon === 'mastodon' && (
                     <Mastodon>

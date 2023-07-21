@@ -40,6 +40,9 @@ const SEO = ({
                 twCreator: string
                 facebook: string
                 twitter: string
+                instagram: string
+                linkedIn: string
+                mastodon: string
             }
         }
     }>(graphql`
@@ -56,6 +59,9 @@ const SEO = ({
                     twCreator
                     facebook
                     twitter
+                    instagram
+                    linkedIn
+                    mastodon
                 }
             }
         }
@@ -117,7 +123,13 @@ const SEO = ({
             : {}),
         ...(type === WEBSITE
             ? {
-                  sameAs: [site?.siteMetadata?.facebook, site?.siteMetadata?.twitter],
+                  sameAs: [
+                      site?.siteMetadata?.facebook,
+                      site?.siteMetadata?.twitter,
+                      site?.siteMetadata?.instagram,
+                      site?.siteMetadata?.linkedIn,
+                      site?.siteMetadata?.mastodon,
+                  ],
                   name: site?.siteMetadata?.title,
               }
             : {}),

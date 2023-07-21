@@ -17,6 +17,9 @@ interface SiteMetadata {
     twCreator: string
     facebook: string
     twitter: string
+    instagram: string
+    linkedIn: string
+    mastodon: string
 }
 
 interface ImageSeoData {
@@ -26,8 +29,21 @@ interface ImageSeoData {
 }
 
 describe('<SEO />', () => {
-    const { title, keywords, author, locale, description, siteUrl, twSite, twCreator, facebook, twitter } =
-        gatsbyConfig.siteMetadata as unknown as SiteMetadata
+    const {
+        title,
+        keywords,
+        author,
+        locale,
+        description,
+        siteUrl,
+        twSite,
+        twCreator,
+        facebook,
+        twitter,
+        instagram,
+        linkedIn,
+        mastodon,
+    } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = (
         pageTitle = title,
@@ -83,7 +99,7 @@ describe('<SEO />', () => {
             '@context': 'https://schema.org',
             mainEntityOfPage: pageType === 'WebSite' ? undefined : { '@id': canonical, '@type': 'WebPage' },
             name: pageType === 'WebSite' ? title : undefined,
-            ...(pageType === 'WebSite' ? { sameAs: [facebook, twitter] } : {}),
+            ...(pageType === 'WebSite' ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon] } : {}),
         })
 
         expect(helmet).toMatchSnapshot()

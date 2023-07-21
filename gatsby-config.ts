@@ -13,6 +13,9 @@ const config: GatsbyConfig = {
         twCreator: '@laurilavanti',
         facebook: 'https://www.facebook.com/laurilavanti',
         twitter: 'https://twitter.com/laurilavanti',
+        instagram: 'https://www.instagram.com/laurilavanti/',
+        linkedIn: 'https://www.linkedin.com/in/lapanti',
+        mastodon: 'https://mastodontti.fi/@laurilavanti',
         keywords: [
             'Kirkkonummi',
             'Länsi-Uusimaa',

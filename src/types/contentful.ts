@@ -22,7 +22,7 @@ export interface ContactInfoLink {
     contentful_id: string
     title: string
     url?: string | null
-    icon: 'facebook' | 'twitter' | 'linkedin' | 'instagram' | 'mastodon' | 'envelope'
+    icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope'
 }
 
 interface ContactInfoReference extends ContentfulRichTextGatsbyReference {
@@ -95,6 +95,6 @@ export interface FooterNav {
         contentful_id: string
         title: string
         url: string
-        icon: 'facebook' | 'twitter' | 'linkedin' | 'instagram' | 'mastodon'
+        icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon'
     }[]
 }
