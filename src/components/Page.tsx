@@ -70,6 +70,33 @@ export const query = graphql`
                         contentful_id
                         limit
                     }
+                    ... on ContentfulCurriculumVitae {
+                        __typename
+                        contentful_id
+                        fiduciariesTitle
+                        fiduciaries {
+                            duty
+                            organization
+                            startYear
+                            endYear
+                        }
+                        degreesTitle
+                        degrees {
+                            degree
+                            school
+                            location
+                            startYear
+                            endYear
+                        }
+                        jobExperiencesTitle
+                        jobExperiences {
+                            title
+                            company
+                            location
+                            startYear
+                            endYear
+                        }
+                    }
                 }
             }
             image {

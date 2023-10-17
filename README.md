@@ -1,1 +1,1 @@
-To develop, you need a `.env.development`-file with the keys `CONTENTFUL_SPACE_ID` and `CONTENTFUL_ACCESS_TOKEN`
+To develop, you need a `.env.development`-file with the keys `CONTENTFUL_SPACE_ID` and `CONTENTFUL_ACCESS_TOKEN`. If you want to use preview (draft content), you also need to set `CONTENTFUL_HOST` to `preview.contentful.com`.

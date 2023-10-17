@@ -25,6 +25,38 @@ export interface ContactInfoLink {
     icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope'
 }
 
+export interface Fiduciary {
+    duty: string
+    organization: string
+    startYear: number
+    endYear?: number
+}
+
+export interface JobExperience {
+    title: string
+    company: string
+    location: string
+    startYear: number
+    endYear?: number
+}
+
+export interface Degree {
+    degree: string
+    school: string
+    location: string
+    startYear: number
+    endYear?: number
+}
+
+interface CurriculumVitae extends ContentfulRichTextGatsbyReference {
+    fiduciariesTitle: string
+    fiduciaries: Fiduciary[]
+    degreesTitle: string
+    degrees: Degree[]
+    jobExperiencesTitle: string
+    jobExperiences: JobExperience[]
+}
+
 interface ContactInfoReference extends ContentfulRichTextGatsbyReference {
     links: ContactInfoLink[]
 }
@@ -35,6 +67,7 @@ type RichReferences =
     | RichTextImageReference
     | ContactInfoReference
     | ContentfulRichTextGatsbyReference
+    | CurriculumVitae
 
 export type RichBody = RenderRichTextData<RichReferences>
 

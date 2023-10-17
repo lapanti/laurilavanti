@@ -17,6 +17,7 @@ import HR from './HR'
 import InternalLink from './InternalLink'
 import BigHeroImage from './layout/BigHeroImage'
 import ContactInfo from './layout/ContactInfo'
+import CurriculumVitae from './layout/CurriculumVitae'
 import Footer from './layout/Footer'
 import Header from './layout/Header'
 import HeroImage from './layout/HeroImage'
@@ -88,7 +89,7 @@ const options = {
         [BLOCKS.HEADING_2]: (_: Block | Inline, children: ReactNode) => <H2>{children}</H2>,
         [BLOCKS.HR]: () => <HR />,
         [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
-            switch (node.data.target.__typename) {
+            switch (node?.data?.target?.__typename) {
                 case 'ContentfulHomeTitle':
                     return <HomeTitle />
                 case 'ContentfulExcerptList':
@@ -103,6 +104,17 @@ const options = {
                     )
                 case 'ContentfulContactInfo':
                     return <ContactInfo links={node.data.target.links} />
+                case 'ContentfulCurriculumVitae':
+                    return (
+                        <CurriculumVitae
+                            degreesTitle={node.data.target.degreesTitle}
+                            degrees={node.data.target.degrees}
+                            fiduciariesTitle={node.data.target.fiduciariesTitle}
+                            fiduciaries={node.data.target.fiduciaries}
+                            jobExperiencesTitle={node.data.target.jobExperiencesTitle}
+                            jobExperiences={node.data.target.jobExperiences}
+                        />
+                    )
             }
         },
         [BLOCKS.TABLE]: (_: Block | Inline, children: ReactNode) => (
