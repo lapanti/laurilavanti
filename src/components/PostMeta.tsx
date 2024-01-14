@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { FaRegCalendarDays } from 'react-icons/fa6'
 import tw from 'twin.macro'
 
 import InternalLink from './InternalLink'
@@ -11,7 +12,7 @@ const Meta = tw.span`
     flex flex-row items-center mr-4 last:mr-0
 `
 
-const Svg = tw.svg`
+const CalendarIcon = tw(FaRegCalendarDays)`
     h-4.5 w-4.5 inline-block mr-2 flex-shrink-0
 `
 
@@ -42,9 +43,7 @@ const PostMetaComponent = ({ className, date, tags }: Props): JSX.Element => {
         <aside className={className}>
             <MetaContainer>
                 <Meta>
-                    <Svg>
-                        <use xlinkHref="#icon-calendar-alt" />
-                    </Svg>
+                    <CalendarIcon />
                     <time dateTime={dateAsDateTime}>{date}</time>
                 </Meta>
             </MetaContainer>

@@ -14,7 +14,7 @@ describe('<SocialShare />', () => {
             'href',
             `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`
         )
-        expect(screen.getByRole('link', { name: /Jaa Twitterissä/i })).toHaveAttribute(
+        expect(screen.getByRole('link', { name: /Jaa Xssä \(ent. Twitterissä\)/i })).toHaveAttribute(
             'href',
             `https://twitter.com/intent/tweet?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`
         )

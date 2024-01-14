@@ -1,23 +1,24 @@
 import type { ContactInfoLink as ContactInfoLinkType } from '../../../types/contentful'
 
 import React from 'react'
+import { FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaXTwitter } from 'react-icons/fa6'
 import tw from 'twin.macro'
 
 import ExternalLink from '../../ExternalLink'
 
 const RowExternalLink = tw(ExternalLink)` flex flex-row items-center`
 
-const Svg = tw.svg` w-4 h-4 mr-2`
+const Envelope = tw(FaEnvelope)` w-4 h-4 mr-2`
 
-const Facebook = tw(Svg)` fill-fb`
+const Facebook = tw(FaFacebook)` w-4 h-4 mr-2 fill-fb`
 
-const Twitter = tw(Svg)` fill-twitter`
+const XTwitter = tw(FaXTwitter)` w-4 h-4 mr-2 fill-black`
 
-const Instagram = tw(Svg)` fill-[url(#instagram-gradient)]`
+const Instagram = tw(FaInstagram)` w-4 h-4 mr-2 fill-[url(#instagram-gradient)]`
 
-const LinkedIn = tw(Svg)` fill-linkedin`
+const LinkedIn = tw(FaLinkedin)` w-4 h-4 mr-2 fill-linkedin`
 
-const Mastodon = tw(Svg)` fill-mastodon`
+const Mastodon = tw(FaMastodon)` w-4 h-4 mr-2 fill-mastodon`
 
 interface Props {
     className?: string
@@ -31,36 +32,12 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
         <li className={className}>
             {/* @ts-expect-error typescript doesn't like this */}
             <Wrapper {...(link.url ? { href: link.url, rel: 'me' } : {})}>
-                {link.icon === 'envelope' && (
-                    <Svg>
-                        <use xlinkHref="#icon-envelope" />
-                    </Svg>
-                )}
-                {link.icon === 'facebook' && (
-                    <Facebook>
-                        <use xlinkHref="#icon-facebook" />
-                    </Facebook>
-                )}
-                {link.icon === 'twitter' && (
-                    <Twitter>
-                        <use xlinkHref="#icon-twitter" />
-                    </Twitter>
-                )}
-                {link.icon === 'instagram' && (
-                    <Instagram>
-                        <use xlinkHref="#icon-instagram" />
-                    </Instagram>
-                )}
-                {link.icon === 'linkedin' && (
-                    <LinkedIn>
-                        <use xlinkHref="#icon-linkedin" />
-                    </LinkedIn>
-                )}
-                {link.icon === 'mastodon' && (
-                    <Mastodon>
-                        <use xlinkHref="#icon-mastodon" />
-                    </Mastodon>
-                )}
+                {link.icon === 'envelope' && <Envelope />}
+                {link.icon === 'facebook' && <Facebook />}
+                {link.icon === 'twitter' && <XTwitter />}
+                {link.icon === 'instagram' && <Instagram />}
+                {link.icon === 'linkedin' && <LinkedIn />}
+                {link.icon === 'mastodon' && <Mastodon />}
                 <span>{link.title}</span>
             </Wrapper>
         </li>

@@ -2,6 +2,7 @@ import type { MainNav } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useCallback, useState } from 'react'
+import { FaBars, FaXmark } from 'react-icons/fa6'
 /** @ts-expect-error twin.macro typings are incomplete :/ */
 import tw, { styled } from 'twin.macro'
 
@@ -29,7 +30,11 @@ const OpenButton = styled(CloseButton)(({ isOpen }: { isOpen: boolean }) => [
     isOpen ? tw`invisible` : tw`visible`,
 ])
 
-const Svg = tw.svg`
+const Bars = tw(FaBars)`
+    h-8 w-8
+`
+
+const Close = tw(FaXmark)`
     h-8 w-8
 `
 
@@ -76,16 +81,12 @@ const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
     return (
         <header className={className}>
             <OpenButton aria-label="Avaa valikko" onClick={openMenu} isOpen={isOpen}>
-                <Svg aria-hidden="true">
-                    <use xlinkHref="#icon-bars" />
-                </Svg>
+                <Bars aria-hidden="true" />
             </OpenButton>
             <CloseBG onClick={closeMenu} aria-hidden="true" isOpen={isOpen} />
             <Nav aria-expanded={isOpen} isOpen={isOpen}>
                 <CloseButton aria-label="Sulje valikko" onClick={closeMenu}>
-                    <Svg aria-hidden="true">
-                        <use xlinkHref="#icon-close" />
-                    </Svg>
+                    <Close aria-hidden="true" />
                 </CloseButton>
                 {data.contentfulMainNav.links.map((nav) => (
                     <NavLink {...nav} key={nav.slug} />

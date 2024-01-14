@@ -22,7 +22,7 @@ const Facebook = tw(FaFacebook)`
 `
 
 const XTwitter = tw(FaXTwitter)`
-    h-9 w-9 transition hover:fill-twitter focus:fill-twitter
+    h-9 w-9 transition hover:fill-black focus:fill-black
 `
 
 const Instagram = tw(FaInstagram)`
