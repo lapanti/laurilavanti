@@ -4,12 +4,16 @@ import React from 'react'
 import tw from 'twin.macro'
 
 import H2 from '../H2'
-import Paragraph from '../Paragraph'
 
-const yearsToString = (startYear: number, endYear?: number): string => {
+/** Only exported for testing purposes */
+export const yearsToString = (startYear: number, endYear?: number): string => {
     if (startYear === endYear) return `${startYear}`
     return `${startYear}-${endYear ? endYear : ''}`
 }
+
+const DivContainer = tw.div`
+    text-lg font-sans font-normal my-4
+`
 
 interface Props {
     className?: string
@@ -29,50 +33,46 @@ const CurriculumVitaeComponent = ({
     fiduciaries,
     jobExperiencesTitle,
     jobExperiences,
-}: Props): JSX.Element => {
-    console.log(fiduciaries)
-
-    return (
-        <div className={className}>
-            <Paragraph>
-                <H2>{fiduciariesTitle}</H2>
-            </Paragraph>
-            <Paragraph>
-                <ul>
-                    {fiduciaries.map(({ duty, organization, startYear, endYear }) => (
-                        <li key={`${duty}-${organization}-${startYear}`}>
-                            {duty}, {organization} - {yearsToString(startYear, endYear)}
-                        </li>
-                    ))}
-                </ul>
-            </Paragraph>
-            <Paragraph>
-                <H2>{jobExperiencesTitle}</H2>
-            </Paragraph>
-            <Paragraph>
-                <ul>
-                    {jobExperiences.map(({ title, company, location, startYear, endYear }) => (
-                        <li key={`${title}-${company}`}>
-                            {title}, {company} ({location}) - {yearsToString(startYear, endYear)}
-                        </li>
-                    ))}
-                </ul>
-            </Paragraph>
-            <Paragraph>
-                <H2>{degreesTitle}</H2>
-            </Paragraph>
-            <Paragraph>
-                <ul>
-                    {degrees.map(({ degree, school, location, startYear, endYear }) => (
-                        <li key={`${degree}-${school}`}>
-                            {degree}, {school} ({location}) - {yearsToString(startYear, endYear)}
-                        </li>
-                    ))}
-                </ul>
-            </Paragraph>
-        </div>
-    )
-}
+}: Props): JSX.Element => (
+    <div className={className}>
+        <DivContainer>
+            <H2>{fiduciariesTitle}</H2>
+        </DivContainer>
+        <DivContainer>
+            <ul>
+                {fiduciaries.map(({ duty, organization, startYear, endYear }) => (
+                    <li key={`${duty}-${organization}-${startYear}`}>
+                        {duty}, {organization} - {yearsToString(startYear, endYear)}
+                    </li>
+                ))}
+            </ul>
+        </DivContainer>
+        <DivContainer>
+            <H2>{jobExperiencesTitle}</H2>
+        </DivContainer>
+        <DivContainer>
+            <ul>
+                {jobExperiences.map(({ title, company, location, startYear, endYear }) => (
+                    <li key={`${title}-${company}`}>
+                        {title}, {company} ({location}) - {yearsToString(startYear, endYear)}
+                    </li>
+                ))}
+            </ul>
+        </DivContainer>
+        <DivContainer>
+            <H2>{degreesTitle}</H2>
+        </DivContainer>
+        <DivContainer>
+            <ul>
+                {degrees.map(({ degree, school, location, startYear, endYear }) => (
+                    <li key={`${degree}-${school}`}>
+                        {degree}, {school} ({location}) - {yearsToString(startYear, endYear)}
+                    </li>
+                ))}
+            </ul>
+        </DivContainer>
+    </div>
+)
 
 CurriculumVitaeComponent.displayName = 'CurriculumVitae'
 
