@@ -2,6 +2,7 @@ import type { FooterNav } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+import { FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaXTwitter } from 'react-icons/fa6'
 import tw from 'twin.macro'
 
 const List = tw.ul`
@@ -16,28 +17,24 @@ const Link = tw.a`
     flex items-center justify-center h-full
 `
 
-const Svg = tw.svg`
-    text-gray h-9 w-9 transition
+const Facebook = tw(FaFacebook)`
+    fill-gray h-9 w-9 transition hover:fill-fb focus:fill-fb
 `
 
-const Facebook = tw(Svg)`
-   hover:fill-fb focus:fill-fb
+const XTwitter = tw(FaXTwitter)`
+    h-9 w-9 transition hover:fill-twitter focus:fill-twitter
 `
 
-const Twitter = tw(Svg)`
-    hover:fill-twitter focus:fill-twitter
+const Instagram = tw(FaInstagram)`
+    h-9 w-9 transition hover:fill-[url(#instagram-gradient)] focus:fill-[url(#instagram-gradient)]
 `
 
-const Instagram = tw(Svg)`
-  hover:fill-[url(#instagram-gradient)] focus:fill-[url(#instagram-gradient)]
+const LinkedIn = tw(FaLinkedin)`
+    h-9 w-9 transition hover:fill-linkedin focus:fill-linkedin
 `
 
-const LinkedIn = tw(Svg)`
-    hover:fill-linkedin focus:fill-linkedin
-`
-
-const Mastodon = tw(Svg)`
-    hover:fill-mastodon focus:fill-mastodon
+const Mastodon = tw(FaMastodon)`
+    h-9 w-9 transition hover:fill-mastodon focus:fill-mastodon
 `
 
 interface Props {
@@ -64,31 +61,11 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
                 {data.contentfulFooterNav.links.map((link) => (
                     <Item key={link.title}>
                         <Link href={link.url} title={link.title} target="_blank" rel="me noopener noreferrer">
-                            {link.icon === 'facebook' && (
-                                <Facebook>
-                                    <use xlinkHref="#icon-facebook" />
-                                </Facebook>
-                            )}
-                            {link.icon === 'twitter' && (
-                                <Twitter>
-                                    <use xlinkHref="#icon-twitter" />
-                                </Twitter>
-                            )}
-                            {link.icon === 'instagram' && (
-                                <Instagram>
-                                    <use xlinkHref="#icon-instagram" />
-                                </Instagram>
-                            )}
-                            {link.icon === 'linkedin' && (
-                                <LinkedIn>
-                                    <use xlinkHref="#icon-linkedin" />
-                                </LinkedIn>
-                            )}
-                            {link.icon === 'mastodon' && (
-                                <Mastodon>
-                                    <use xlinkHref="#icon-mastodon" />
-                                </Mastodon>
-                            )}
+                            {link.icon === 'facebook' && <Facebook />}
+                            {link.icon === 'twitter' && <XTwitter />}
+                            {link.icon === 'instagram' && <Instagram />}
+                            {link.icon === 'linkedin' && <LinkedIn />}
+                            {link.icon === 'mastodon' && <Mastodon />}
                         </Link>
                     </Item>
                 ))}
