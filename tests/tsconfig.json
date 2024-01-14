@@ -4,15 +4,15 @@
         "types": [
             "jest",
             "react-dom",
-            "react",
-            "testing-library__jest-dom"
+            "react"
         ]
     },
     "include": [
         "../src/**/*.spec.ts",
         "../src/**/*.spec.tsx",
         "../src/**/*.spec.js",
-        "../src/**/*.spec.jsx"
+        "../src/**/*.spec.jsx",
+        "./setup-test-env.ts"
     ],
     "exclude": []
 }
