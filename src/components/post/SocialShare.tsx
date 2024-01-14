@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import tw from 'twin.macro'
 
 import ExternalLink from '../ExternalLink'
@@ -15,11 +16,11 @@ const Svg = tw.svg`
     inline-block h-4 w-4
 `
 
-const Fb = tw(Svg)`text-fb`
+const Facebook = tw(FaFacebook)` inline-block h-4 w-4 text-fb`
 
-const Twitter = tw(Svg)`text-twitter`
+const XTwitter = tw(FaXTwitter)` inline-block h-4 w-4 text-black`
 
-const LinkedIn = tw(Svg)`text-linkedin`
+const LinkedIn = tw(FaLinkedin)`inline-block h-4 w-4 text-linkedin`
 
 interface Props {
     className?: string
@@ -31,25 +32,19 @@ const SocialShareComponent = ({ className, siteUrl, title }: Props): JSX.Element
     <aside className={className}>
         <Share>Jaa:</Share>
         <ExtLink href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`} title="Jaa Facebookissa">
-            <Fb>
-                <use xlinkHref="#icon-facebook" />
-            </Fb>
+            <Facebook />
         </ExtLink>
         <ExtLink
             href={`https://twitter.com/intent/tweet?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
-            title="Jaa Twitterissä"
+            title="Jaa Xssä (ent. Twitterissä)"
         >
-            <Twitter>
-                <use xlinkHref="#icon-twitter" />
-            </Twitter>
+            <XTwitter />
         </ExtLink>
         <ExtLink
             href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(siteUrl)}`}
             title="Jaa LinkedInissä"
         >
-            <LinkedIn>
-                <use xlinkHref="#icon-linkedin" />
-            </LinkedIn>
+            <LinkedIn />
         </ExtLink>
     </aside>
 )
