@@ -13,7 +13,7 @@ const config = {
     },
     setupFiles: [`<rootDir>/tests/loadershim.js`],
     testEnvironment: `jsdom`,
-    setupFilesAfterEnv: ['<rootDir>/tests/setup-test-env.js'],
+    setupFilesAfterEnv: ['<rootDir>/tests/setup-test-env.ts'],
     rootDir: '..',
     snapshotResolver: '<rootDir>/tests/snapshotResolver.js',
     snapshotSerializers: ['@emotion/jest/serializer'],
