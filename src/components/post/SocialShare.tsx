@@ -12,15 +12,11 @@ const ExtLink = tw(ExternalLink)`
     mr-2 flex flex-row items-center
 `
 
-const Svg = tw.svg`
-    inline-block h-4 w-4
-`
-
 const Facebook = tw(FaFacebook)` inline-block h-4 w-4 text-fb`
 
 const XTwitter = tw(FaXTwitter)` inline-block h-4 w-4 text-black`
 
-const LinkedIn = tw(FaLinkedin)`inline-block h-4 w-4 text-linkedin`
+const LinkedIn = tw(FaLinkedin)` inline-block h-4 w-4 text-linkedin`
 
 interface Props {
     className?: string
