@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Link from './externalLink/Link'
+import { colors } from '../lib/styles'
 
 interface Props {
     className?: string
@@ -17,13 +17,16 @@ const ExternalLinkComponent = ({
     rel,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => (
-    <Link className={className} href={href} target="_blank" title={title} rel={`${rel ?? ''} noopener noreferrer`}>
+    <a className={className} href={href} target="_blank" title={title} rel={`${rel ?? ''} noopener noreferrer`}>
         {children}
-    </Link>
+    </a>
 )
 
 ExternalLinkComponent.displayName = 'ExternalLink'
 
-const ExternalLink = styled(ExternalLinkComponent)({})
+const ExternalLink = styled(ExternalLinkComponent)({
+    color: colors.moss,
+    textDecoration: 'underline',
+})
 
 export default ExternalLink
