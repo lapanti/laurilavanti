@@ -23,6 +23,86 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   text-decoration: underline;
 }
 
+.c10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c10 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c9 {
+  padding: 0px;
+}
+
+.c9 :hover,
+.c9 :focus {
+  fill: #4267B2;
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #0E76A8;
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: #6363ff;
+}
+
+.c8 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c7 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -214,150 +294,6 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -452,23 +388,22 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c7"
   >
     <ul
-      class="emotion-9"
+      class="c8"
     >
       <li
-        class="emotion-10"
+        class="c9"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -484,43 +419,41 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c10"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -536,17 +469,16 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -562,17 +494,16 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -583,6 +514,31 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c11"
+      >
+        <a
+          class="c10"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -707,6 +663,86 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 .c6 {
   grid-column-start: 3;
   margin-top: 1rem;
+}
+
+.c12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c12 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: #4267B2;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #0E76A8;
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
+  fill: #6363ff;
+}
+
+.c10 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c9 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -886,150 +922,6 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -1144,23 +1036,22 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c9"
   >
     <ul
-      class="emotion-9"
+      class="c10"
     >
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1176,43 +1067,41 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c12"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1228,17 +1117,16 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1254,17 +1142,16 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c16"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1275,6 +1162,31 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c13"
+      >
+        <a
+          class="c12"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -1490,6 +1402,86 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   grid-column-start: 3;
 }
 
+.c25 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c25 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c24 {
+  padding: 0px;
+}
+
+.c24 :hover,
+.c24 :focus {
+  fill: #4267B2;
+}
+
+.c26 {
+  padding: 0px;
+}
+
+.c26 :hover,
+.c26 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c27 {
+  padding: 0px;
+}
+
+.c27 :hover,
+.c27 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c28 {
+  padding: 0px;
+}
+
+.c28 :hover,
+.c28 :focus {
+  fill: #0E76A8;
+}
+
+.c29 {
+  padding: 0px;
+}
+
+.c29 :hover,
+.c29 :focus {
+  fill: #6363ff;
+}
+
+.c23 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c22 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -1677,150 +1669,6 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding: 0.5rem;
   visibility: visible;
-}
-
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
 }
 
 <div
@@ -2124,23 +1972,22 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c22"
   >
     <ul
-      class="emotion-9"
+      class="c23"
     >
       <li
-        class="emotion-10"
+        class="c24"
       >
         <a
-          class="emotion-11"
+          class="c25"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2156,43 +2003,41 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c26"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c25"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c27"
       >
         <a
-          class="emotion-11"
+          class="c25"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2208,17 +2053,16 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c28"
       >
         <a
-          class="emotion-11"
+          class="c25"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2234,17 +2078,16 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c29"
       >
         <a
-          class="emotion-11"
+          class="c25"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2255,6 +2098,31 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c26"
+      >
+        <a
+          class="c25"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -2362,6 +2230,86 @@ exports[`<Layout /> rich body should render H2 1`] = `
 .c1 :active,
 .c1 :focus {
   text-decoration: underline;
+}
+
+.c9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c9 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c8 {
+  padding: 0px;
+}
+
+.c8 :hover,
+.c8 :focus {
+  fill: #4267B2;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #0E76A8;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #6363ff;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c6 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -2541,150 +2489,6 @@ exports[`<Layout /> rich body should render H2 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -2780,23 +2584,22 @@ exports[`<Layout /> rich body should render H2 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c6"
   >
     <ul
-      class="emotion-9"
+      class="c7"
     >
       <li
-        class="emotion-10"
+        class="c8"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2812,43 +2615,41 @@ exports[`<Layout /> rich body should render H2 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c10"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c9"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2864,17 +2665,16 @@ exports[`<Layout /> rich body should render H2 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2890,17 +2690,16 @@ exports[`<Layout /> rich body should render H2 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2911,6 +2710,31 @@ exports[`<Layout /> rich body should render H2 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c10"
+      >
+        <a
+          class="c9"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -3025,6 +2849,86 @@ exports[`<Layout /> rich body should render HR 1`] = `
   margin-bottom: 1rem;
 }
 
+.c10 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c10 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c9 {
+  padding: 0px;
+}
+
+.c9 :hover,
+.c9 :focus {
+  fill: #4267B2;
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #0E76A8;
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: #6363ff;
+}
+
+.c8 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c7 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -3202,150 +3106,6 @@ exports[`<Layout /> rich body should render HR 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -3438,23 +3198,22 @@ exports[`<Layout /> rich body should render HR 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c7"
   >
     <ul
-      class="emotion-9"
+      class="c8"
     >
       <li
-        class="emotion-10"
+        class="c9"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3470,43 +3229,41 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c10"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3522,17 +3279,16 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3548,17 +3304,16 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c10"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3569,6 +3324,31 @@ exports[`<Layout /> rich body should render HR 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c11"
+      >
+        <a
+          class="c10"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -3676,6 +3456,86 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
 .c1 :active,
 .c1 :focus {
   text-decoration: underline;
+}
+
+.c9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c9 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c8 {
+  padding: 0px;
+}
+
+.c8 :hover,
+.c8 :focus {
+  fill: #4267B2;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #0E76A8;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #6363ff;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c6 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -3978,150 +3838,6 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   justify-content: center;
 }
 
-.emotion-20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-22 {
-  padding: 0px;
-}
-
-.emotion-23 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #4267B2;
-}
-
-.emotion-24:focus {
-  fill: #4267B2;
-}
-
-.emotion-27 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-27:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-27:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-30 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-30:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-30:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-33 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-33:hover {
-  fill: #0E76A8;
-}
-
-.emotion-33:focus {
-  fill: #0E76A8;
-}
-
-.emotion-36 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-36:hover {
-  fill: #6363ff;
-}
-
-.emotion-36:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -4265,23 +3981,22 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-20"
+    class="c6"
   >
     <ul
-      class="emotion-21"
+      class="c7"
     >
       <li
-        class="emotion-22"
+        class="c8"
       >
         <a
-          class="emotion-23"
+          class="c9"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4297,43 +4012,41 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="emotion-22"
+        class="c10"
       >
         <a
-          class="emotion-23"
-          href="https://twitter.com/laurilavanti"
+          class="c9"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-27"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-22"
+        class="c11"
       >
         <a
-          class="emotion-23"
+          class="c9"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-30"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4349,17 +4062,16 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="emotion-22"
+        class="c12"
       >
         <a
-          class="emotion-23"
+          class="c9"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-33"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4375,17 +4087,16 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
         </a>
       </li>
       <li
-        class="emotion-22"
+        class="c13"
       >
         <a
-          class="emotion-23"
+          class="c9"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-36"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4396,6 +4107,31 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c10"
+      >
+        <a
+          class="c9"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -4503,6 +4239,86 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 .c1 :active,
 .c1 :focus {
   text-decoration: underline;
+}
+
+.c9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c9 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c8 {
+  padding: 0px;
+}
+
+.c8 :hover,
+.c8 :focus {
+  fill: #4267B2;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #0E76A8;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #6363ff;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c6 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -4716,150 +4532,6 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   font-style: italic;
 }
 
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-13 {
-  padding: 0px;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: #4267B2;
-}
-
-.emotion-15:focus {
-  fill: #4267B2;
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #0E76A8;
-}
-
-.emotion-24:focus {
-  fill: #0E76A8;
-}
-
-.emotion-27 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-27:hover {
-  fill: #6363ff;
-}
-
-.emotion-27:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -5008,23 +4680,22 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-11"
+    class="c6"
   >
     <ul
-      class="emotion-12"
+      class="c7"
     >
       <li
-        class="emotion-13"
+        class="c8"
       >
         <a
-          class="emotion-14"
+          class="c9"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5040,43 +4711,41 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="emotion-13"
+        class="c10"
       >
         <a
-          class="emotion-14"
-          href="https://twitter.com/laurilavanti"
+          class="c9"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-13"
+        class="c11"
       >
         <a
-          class="emotion-14"
+          class="c9"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5092,17 +4761,16 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="emotion-13"
+        class="c12"
       >
         <a
-          class="emotion-14"
+          class="c9"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5118,17 +4786,16 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="emotion-13"
+        class="c13"
       >
         <a
-          class="emotion-14"
+          class="c9"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-27"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5139,6 +4806,31 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c10"
+      >
+        <a
+          class="c9"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -5255,6 +4947,86 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.c11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c11 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: #4267B2;
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: #0E76A8;
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #6363ff;
+}
+
+.c9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c8 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -5438,150 +5210,6 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -5676,23 +5304,22 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c8"
   >
     <ul
-      class="emotion-9"
+      class="c9"
     >
       <li
-        class="emotion-10"
+        class="c10"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5708,43 +5335,41 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c11"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5760,17 +5385,16 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5786,17 +5410,16 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -5807,6 +5430,31 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c12"
+      >
+        <a
+          class="c11"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -5930,6 +5578,86 @@ exports[`<Layout /> rich body should render external links 1`] = `
   text-decoration: underline;
 }
 
+.c12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c12 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: #4267B2;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #0E76A8;
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
+  fill: #6363ff;
+}
+
+.c10 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c9 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -6111,150 +5839,6 @@ exports[`<Layout /> rich body should render external links 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -6356,23 +5940,22 @@ exports[`<Layout /> rich body should render external links 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c9"
   >
     <ul
-      class="emotion-9"
+      class="c10"
     >
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -6388,43 +5971,41 @@ exports[`<Layout /> rich body should render external links 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c12"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -6440,17 +6021,16 @@ exports[`<Layout /> rich body should render external links 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -6466,17 +6046,16 @@ exports[`<Layout /> rich body should render external links 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c16"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -6487,6 +6066,31 @@ exports[`<Layout /> rich body should render external links 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c13"
+      >
+        <a
+          class="c12"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -6605,6 +6209,86 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   margin-bottom: 1rem;
 }
 
+.c11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c11 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: #4267B2;
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: #0E76A8;
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #6363ff;
+}
+
+.c9 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c8 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -6786,150 +6470,6 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -7029,23 +6569,22 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c8"
   >
     <ul
-      class="emotion-9"
+      class="c9"
     >
       <li
-        class="emotion-10"
+        class="c10"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7061,43 +6600,41 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c11"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7113,17 +6650,16 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7139,17 +6675,16 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c11"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7160,6 +6695,31 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c12"
+      >
+        <a
+          class="c11"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -7276,6 +6836,86 @@ exports[`<Layout /> rich body should render table 1`] = `
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.c15 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c15 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: #4267B2;
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c17 {
+  padding: 0px;
+}
+
+.c17 :hover,
+.c17 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c18 {
+  padding: 0px;
+}
+
+.c18 :hover,
+.c18 :focus {
+  fill: #0E76A8;
+}
+
+.c19 {
+  padding: 0px;
+}
+
+.c19 :hover,
+.c19 :focus {
+  fill: #6363ff;
+}
+
+.c13 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c12 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -7493,150 +7133,6 @@ exports[`<Layout /> rich body should render table 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -7758,23 +7254,22 @@ exports[`<Layout /> rich body should render table 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c12"
   >
     <ul
-      class="emotion-9"
+      class="c13"
     >
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c15"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7790,43 +7285,41 @@ exports[`<Layout /> rich body should render table 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c16"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c15"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c17"
       >
         <a
-          class="emotion-11"
+          class="c15"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7842,17 +7335,16 @@ exports[`<Layout /> rich body should render table 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c18"
       >
         <a
-          class="emotion-11"
+          class="c15"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7868,17 +7360,16 @@ exports[`<Layout /> rich body should render table 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c19"
       >
         <a
-          class="emotion-11"
+          class="c15"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -7889,6 +7380,31 @@ exports[`<Layout /> rich body should render table 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c16"
+      >
+        <a
+          class="c15"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -7996,6 +7512,86 @@ exports[`<Layout /> should render hero image 1`] = `
 .c1 :active,
 .c1 :focus {
   text-decoration: underline;
+}
+
+.c16 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c16 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #4267B2;
+}
+
+.c17 {
+  padding: 0px;
+}
+
+.c17 :hover,
+.c17 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c18 {
+  padding: 0px;
+}
+
+.c18 :hover,
+.c18 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c19 {
+  padding: 0px;
+}
+
+.c19 :hover,
+.c19 :focus {
+  fill: #0E76A8;
+}
+
+.c20 {
+  padding: 0px;
+}
+
+.c20 :hover,
+.c20 :focus {
+  fill: #6363ff;
+}
+
+.c14 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c13 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -8241,150 +7837,6 @@ exports[`<Layout /> should render hero image 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -8591,23 +8043,22 @@ exports[`<Layout /> should render hero image 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c13"
   >
     <ul
-      class="emotion-9"
+      class="c14"
     >
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8623,43 +8074,41 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c17"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c16"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c18"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8675,17 +8124,16 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c19"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8701,17 +8149,16 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c20"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8722,6 +8169,31 @@ exports[`<Layout /> should render hero image 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c17"
+      >
+        <a
+          class="c16"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -8847,6 +8319,86 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   grid-column: 1/-1;
 }
 
+.c16 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c16 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #4267B2;
+}
+
+.c17 {
+  padding: 0px;
+}
+
+.c17 :hover,
+.c17 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c18 {
+  padding: 0px;
+}
+
+.c18 :hover,
+.c18 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c19 {
+  padding: 0px;
+}
+
+.c19 :hover,
+.c19 :focus {
+  fill: #0E76A8;
+}
+
+.c20 {
+  padding: 0px;
+}
+
+.c20 :hover,
+.c20 :focus {
+  fill: #6363ff;
+}
+
+.c14 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c13 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -9074,150 +8626,6 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   visibility: hidden;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -9424,23 +8832,22 @@ exports[`<Layout /> should render hero image for front page 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c13"
   >
     <ul
-      class="emotion-9"
+      class="c14"
     >
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9456,43 +8863,41 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c17"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c16"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c18"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9508,17 +8913,16 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c19"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9534,17 +8938,16 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c20"
       >
         <a
-          class="emotion-11"
+          class="c16"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9555,6 +8958,31 @@ exports[`<Layout /> should render hero image for front page 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c17"
+      >
+        <a
+          class="c16"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -9662,6 +9090,86 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
 .c1 :active,
 .c1 :focus {
   text-decoration: underline;
+}
+
+.c13 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c13 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #4267B2;
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
+  fill: #0E76A8;
+}
+
+.c17 {
+  padding: 0px;
+}
+
+.c17 :hover,
+.c17 :focus {
+  fill: #6363ff;
+}
+
+.c11 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c10 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -9877,150 +9385,6 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -10217,23 +9581,22 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c10"
   >
     <ul
-      class="emotion-9"
+      class="c11"
     >
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10249,43 +9612,41 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c13"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10301,17 +9662,16 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c16"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10327,17 +9687,16 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c17"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10348,6 +9707,31 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c14"
+      >
+        <a
+          class="c13"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -10471,6 +9855,86 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   display: flex;
   position: relative;
   grid-column: 1/-1;
+}
+
+.c13 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c13 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #4267B2;
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
+  fill: #0E76A8;
+}
+
+.c17 {
+  padding: 0px;
+}
+
+.c17 :hover,
+.c17 :focus {
+  fill: #6363ff;
+}
+
+.c11 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c10 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -10670,150 +10134,6 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   visibility: hidden;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -11010,23 +10330,22 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c10"
   >
     <ul
-      class="emotion-9"
+      class="c11"
     >
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11042,43 +10361,41 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c13"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11094,17 +10411,16 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c16"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11120,17 +10436,16 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c17"
       >
         <a
-          class="emotion-11"
+          class="c13"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11141,6 +10456,31 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c14"
+      >
+        <a
+          class="c13"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -11250,6 +10590,86 @@ exports[`<Layout /> should render hidden title 1`] = `
   text-decoration: underline;
 }
 
+.c9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c9 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c8 {
+  padding: 0px;
+}
+
+.c8 :hover,
+.c8 :focus {
+  fill: #4267B2;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #0E76A8;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #6363ff;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c6 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -11427,150 +10847,6 @@ exports[`<Layout /> should render hidden title 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -11661,23 +10937,22 @@ exports[`<Layout /> should render hidden title 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c6"
   >
     <ul
-      class="emotion-9"
+      class="c7"
     >
       <li
-        class="emotion-10"
+        class="c8"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11693,43 +10968,41 @@ exports[`<Layout /> should render hidden title 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c10"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c9"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11745,17 +11018,16 @@ exports[`<Layout /> should render hidden title 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11771,17 +11043,16 @@ exports[`<Layout /> should render hidden title 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11792,6 +11063,31 @@ exports[`<Layout /> should render hidden title 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c10"
+      >
+        <a
+          class="c9"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -11901,6 +11197,86 @@ exports[`<Layout /> should render minimal 1`] = `
   text-decoration: underline;
 }
 
+.c9 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c9 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c8 {
+  padding: 0px;
+}
+
+.c8 :hover,
+.c8 :focus {
+  fill: #4267B2;
+}
+
+.c10 {
+  padding: 0px;
+}
+
+.c10 :hover,
+.c10 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c12 {
+  padding: 0px;
+}
+
+.c12 :hover,
+.c12 :focus {
+  fill: #0E76A8;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: #6363ff;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c6 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .c2 {
   width: 100%;
   padding-left: 2rem;
@@ -12078,150 +11454,6 @@ exports[`<Layout /> should render minimal 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -12312,23 +11544,22 @@ exports[`<Layout /> should render minimal 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c6"
   >
     <ul
-      class="emotion-9"
+      class="c7"
     >
       <li
-        class="emotion-10"
+        class="c8"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -12344,43 +11575,41 @@ exports[`<Layout /> should render minimal 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c10"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c9"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -12396,17 +11625,16 @@ exports[`<Layout /> should render minimal 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c12"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -12422,17 +11650,16 @@ exports[`<Layout /> should render minimal 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
+          class="c9"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -12443,6 +11670,31 @@ exports[`<Layout /> should render minimal 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c10"
+      >
+        <a
+          class="c9"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>
@@ -12550,6 +11802,86 @@ exports[`<Layout /> should render title 1`] = `
 .c1 :active,
 .c1 :focus {
   text-decoration: underline;
+}
+
+.c12 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.c12 >* {
+  fill: rgb(0, 0, 0);
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c11 {
+  padding: 0px;
+}
+
+.c11 :hover,
+.c11 :focus {
+  fill: #4267B2;
+}
+
+.c13 {
+  padding: 0px;
+}
+
+.c13 :hover,
+.c13 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #0E76A8;
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
+  fill: #6363ff;
+}
+
+.c10 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.c9 {
+  grid-area: footer;
+  background-color: rgb(40, 71, 52);
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .c2 {
@@ -12759,150 +12091,6 @@ exports[`<Layout /> should render title 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 71 52 / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  grid-area: footer;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.emotion-10 {
-  padding: 0px;
-}
-
-.emotion-11 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.emotion-12 {
-  height: 2.25rem;
-  width: 2.25rem;
-  fill: rgb(235, 235, 236);
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-12:hover {
-  fill: #4267B2;
-}
-
-.emotion-12:focus {
-  fill: #4267B2;
-}
-
-.emotion-15 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-15:hover {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-15:focus {
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-18 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-18:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-18:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-21 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-21:hover {
-  fill: #0E76A8;
-}
-
-.emotion-21:focus {
-  fill: #0E76A8;
-}
-
-.emotion-24 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-24:hover {
-  fill: #6363ff;
-}
-
-.emotion-24:focus {
-  fill: #6363ff;
-}
-
 <div
   class="c0"
 >
@@ -13003,23 +12191,22 @@ exports[`<Layout /> should render title 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-8"
+    class="c9"
   >
     <ul
-      class="emotion-9"
+      class="c10"
     >
       <li
-        class="emotion-10"
+        class="c11"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-12"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -13035,43 +12222,41 @@ exports[`<Layout /> should render title 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c13"
       >
         <a
-          class="emotion-11"
-          href="https://twitter.com/laurilavanti"
+          class="c12"
+          href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
-          title="Twitter"
+          title="Threads"
         >
           <svg
-            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
             stroke-width="0"
-            viewBox="0 0 512 512"
+            viewBox="0 0 448 512"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+              d="M331.5 235.7c2.2 .9 4.2 1.9 6.3 2.8c29.2 14.1 50.6 35.2 61.8 61.4c15.7 36.5 17.2 95.8-30.3 143.2c-36.2 36.2-80.3 52.5-142.6 53h-.3c-70.2-.5-124.1-24.1-160.4-70.2c-32.3-41-48.9-98.1-49.5-169.6V256v-.2C17 184.3 33.6 127.2 65.9 86.2C102.2 40.1 156.2 16.5 226.4 16h.3c70.3 .5 124.9 24 162.3 69.9c18.4 22.7 32 50 40.6 81.7l-40.4 10.8c-7.1-25.8-17.8-47.8-32.2-65.4c-29.2-35.8-73-54.2-130.5-54.6c-57 .5-100.1 18.8-128.2 54.4C72.1 146.1 58.5 194.3 58 256c.5 61.7 14.1 109.9 40.3 143.3c28 35.6 71.2 53.9 128.2 54.4c51.4-.4 85.4-12.6 113.7-40.9c32.3-32.2 31.7-71.8 21.4-95.9c-6.1-14.2-17.1-26-31.9-34.9c-3.7 26.9-11.8 48.3-24.7 64.8c-17.1 21.8-41.4 33.6-72.7 35.3c-23.6 1.3-46.3-4.4-63.9-16c-20.8-13.8-33-34.8-34.3-59.3c-2.5-48.3 35.7-83 95.2-86.4c21.1-1.2 40.9-.3 59.2 2.8c-2.4-14.8-7.3-26.6-14.6-35.2c-10-11.7-25.6-17.7-46.2-17.8H227c-16.6 0-39 4.6-53.3 26.3l-34.4-23.6c19.2-29.1 50.3-45.1 87.8-45.1h.8c62.6 .4 99.9 39.5 103.7 107.7l-.2 .2zm-156 68.8c1.3 25.1 28.4 36.8 54.6 35.3c25.6-1.4 54.6-11.4 59.5-73.2c-13.2-2.9-27.8-4.4-43.4-4.4c-4.8 0-9.6 .1-14.4 .4c-42.9 2.4-57.2 23.2-56.2 41.8l-.1 .1z"
             />
           </svg>
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c14"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -13087,17 +12272,16 @@ exports[`<Layout /> should render title 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c15"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -13113,17 +12297,16 @@ exports[`<Layout /> should render title 1`] = `
         </a>
       </li>
       <li
-        class="emotion-10"
+        class="c16"
       >
         <a
-          class="emotion-11"
+          class="c12"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -13134,6 +12317,31 @@ exports[`<Layout /> should render title 1`] = `
           >
             <path
               d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li
+        class="c13"
+      >
+        <a
+          class="c12"
+          href="https://twitter.com/laurilavanti"
+          rel="me noopener noreferrer"
+          target="_blank"
+          title="Twitter"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
             />
           </svg>
         </a>

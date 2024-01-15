@@ -10,9 +10,9 @@ export const footerNav: FooterNav = {
         },
         {
             contentful_id: 'KQpgl5vI3xI6uN6dZd9Gy',
-            title: 'Twitter',
-            url: 'https://twitter.com/laurilavanti',
-            icon: 'twitter',
+            title: 'Threads',
+            url: 'https://www.threads.net/@laurilavanti',
+            icon: 'threads',
         },
         {
             contentful_id: '30Ax2dp5Vio9Z8wPfAH6VJ',
@@ -31,6 +31,12 @@ export const footerNav: FooterNav = {
             title: 'Mastodon',
             url: 'https://mastodontti.fi/@laurilavanti',
             icon: 'mastodon',
+        },
+        {
+            contentful_id: 'KQpgl5vI3xI6uN6dZd9Gy',
+            title: 'Twitter',
+            url: 'https://twitter.com/laurilavanti',
+            icon: 'twitter',
         },
     ],
 }

@@ -123,11 +123,13 @@ export interface MainNav {
     }[]
 }
 
+export interface FooterNavLink {
+    contentful_id: string
+    title: string
+    url: string
+    icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon' | 'threads'
+}
+
 export interface FooterNav {
-    links: {
-        contentful_id: string
-        title: string
-        url: string
-        icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon'
-    }[]
+    links: FooterNavLink[]
 }
