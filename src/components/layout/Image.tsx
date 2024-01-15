@@ -2,15 +2,25 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
-const Img = tw(GatsbyImage)`
-     w-full h-auto flex
-`
+import { fontSizes, sizes } from '../../lib/styles'
 
-const Caption = tw.figcaption`
-    mt-2 text-base italic flex flex-row justify-center w-full
-`
+const Img = styled(GatsbyImage)({
+    width: '100%',
+    height: 'auto',
+    display: 'flex',
+})
+
+const Caption = styled.figcaption({
+    marginTop: sizes[2],
+    fontStyle: 'italic',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
+    ...fontSizes.m,
+})
 
 export interface ImageProps {
     alt: string
@@ -34,8 +44,10 @@ const ImageComponent = ({ className, imageData, alt, caption }: Props): JSX.Elem
 
 ImageComponent.displayName = 'Image'
 
-const Image = tw(ImageComponent)`
-    col-span-full my-4
-`
+const Image = styled(ImageComponent)({
+    gridColumn: '1 / -1',
+    marginTop: sizes[4],
+    marginBottom: sizes[4],
+})
 
 export default Image
