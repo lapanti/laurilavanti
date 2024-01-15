@@ -55,13 +55,19 @@ const DesktopBigHeroImage = styled(BigHeroImage)({
     },
 })
 
-const MobileHeroImage = tw(HeroImage)`
-    flex biggerthenphone:hidden
-`
+const MobileHeroImage = styled(HeroImage)({
+    display: 'flex',
+    [breakpoints.biggerThanPhone.min]: {
+        display: 'none',
+    },
+})
 
-const DesktopHeroImage = tw(HeroImage)`
-    hidden biggerthenphone:flex
-`
+const DesktopHeroImage = styled(HeroImage)({
+    display: 'none',
+    [breakpoints.biggerThanPhone.min]: {
+        display: 'flex',
+    },
+})
 
 const PositionedP = styled(Paragraph)({
     gridColumnStart: 3,

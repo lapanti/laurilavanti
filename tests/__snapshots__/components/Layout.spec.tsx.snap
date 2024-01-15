@@ -8049,6 +8049,22 @@ exports[`<Layout /> should render hero image 1`] = `
 }
 
 .c7 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 24rem!important;
+  width: 100%!important;
+  object-fit: cover;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.c5 {
+  display: flex;
+  grid-column: 1/-1;
+  position: relative;
+}
+
+.c11 {
   grid-column-start: 3;
   font-family: "Signika Negative";
   font-weight: 900;
@@ -8060,7 +8076,7 @@ exports[`<Layout /> should render hero image 1`] = `
   line-height: 1;
 }
 
-.c6 {
+.c10 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -8083,8 +8099,28 @@ exports[`<Layout /> should render hero image 1`] = `
 }
 
 .c4 NO_COMPONENT_SELECTOR+*,
-.c4 .c5+* {
+.c4 .c9+* {
   margin-top: 1rem;
+}
+
+.c8 {
+  display: flex;
+}
+
+.c6 {
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .c8 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c6 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -8238,54 +8274,6 @@ exports[`<Layout /> should render hero image 1`] = `
 }
 
 .emotion-9 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-9 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-10 {
-  margin-left: auto;
-  margin-right: auto;
-  height: 24rem!important;
-  width: 100%!important;
-  max-width: 1920px;
-  overflow: hidden;
-  object-fit: cover;
-}
-
-.emotion-11 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-11 {
-    display: none;
-  }
-}
-
-.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8309,7 +8297,7 @@ exports[`<Layout /> should render hero image 1`] = `
   grid-area: footer;
 }
 
-.emotion-14 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8328,11 +8316,11 @@ exports[`<Layout /> should render hero image 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-15 {
+.emotion-11 {
   padding: 0px;
 }
 
-.emotion-16 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -8348,7 +8336,7 @@ exports[`<Layout /> should render hero image 1`] = `
   justify-content: center;
 }
 
-.emotion-17 {
+.emotion-13 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -8357,15 +8345,15 @@ exports[`<Layout /> should render hero image 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-17:hover {
+.emotion-13:hover {
   fill: #4267B2;
 }
 
-.emotion-17:focus {
+.emotion-13:focus {
   fill: #4267B2;
 }
 
-.emotion-20 {
+.emotion-16 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -8373,15 +8361,15 @@ exports[`<Layout /> should render hero image 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-20:hover {
+.emotion-16:hover {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-20:focus {
+.emotion-16:focus {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-23 {
+.emotion-19 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -8389,15 +8377,15 @@ exports[`<Layout /> should render hero image 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-23:hover {
+.emotion-19:hover {
   fill: url(#instagram-gradient);
 }
 
-.emotion-23:focus {
+.emotion-19:focus {
   fill: url(#instagram-gradient);
 }
 
-.emotion-26 {
+.emotion-22 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -8405,15 +8393,15 @@ exports[`<Layout /> should render hero image 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-26:hover {
+.emotion-22:hover {
   fill: #0E76A8;
 }
 
-.emotion-26:focus {
+.emotion-22:focus {
   fill: #0E76A8;
 }
 
-.emotion-29 {
+.emotion-25 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -8421,11 +8409,11 @@ exports[`<Layout /> should render hero image 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-29:hover {
+.emotion-25:hover {
   fill: #6363ff;
 }
 
-.emotion-29:focus {
+.emotion-25:focus {
   fill: #6363ff;
 }
 
@@ -8516,10 +8504,10 @@ exports[`<Layout /> should render hero image 1`] = `
       class="c4"
     >
       <div
-        class="emotion-9"
+        class="c5 c6"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-10"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -8569,10 +8557,10 @@ exports[`<Layout /> should render hero image 1`] = `
         </div>
       </div>
       <div
-        class="emotion-11"
+        class="c5 c8"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-10"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -8622,10 +8610,10 @@ exports[`<Layout /> should render hero image 1`] = `
         </div>
       </div>
       <section
-        class="c5 c6"
+        class="c9 c10"
       >
         <h1
-          class="c7"
+          class="c11"
           itemprop="headline"
         >
           Title
@@ -8635,23 +8623,23 @@ exports[`<Layout /> should render hero image 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-13"
+    class="emotion-9"
   >
     <ul
-      class="emotion-14"
+      class="emotion-10"
     >
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-17"
+            class="emotion-13"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8667,17 +8655,17 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-20"
+            class="emotion-16"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8693,17 +8681,17 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-23"
+            class="emotion-19"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8719,17 +8707,17 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-26"
+            class="emotion-22"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -8745,17 +8733,17 @@ exports[`<Layout /> should render hero image 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-29"
+            class="emotion-25"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9726,6 +9714,22 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   color: rgb(0, 104, 69);
 }
 
+.c7 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 24rem!important;
+  width: 100%!important;
+  object-fit: cover;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.c5 {
+  display: flex;
+  grid-column: 1/-1;
+  position: relative;
+}
+
 .c3 {
   grid-area: main;
 }
@@ -9733,6 +9737,26 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
 .c4 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+}
+
+.c8 {
+  display: flex;
+}
+
+.c6 {
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .c8 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c6 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -9886,54 +9910,6 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
 }
 
 .emotion-9 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-9 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-10 {
-  margin-left: auto;
-  margin-right: auto;
-  height: 24rem!important;
-  width: 100%!important;
-  max-width: 1920px;
-  overflow: hidden;
-  object-fit: cover;
-}
-
-.emotion-11 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-11 {
-    display: none;
-  }
-}
-
-.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9957,7 +9933,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   grid-area: footer;
 }
 
-.emotion-14 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9976,11 +9952,11 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-15 {
+.emotion-11 {
   padding: 0px;
 }
 
-.emotion-16 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9996,7 +9972,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   justify-content: center;
 }
 
-.emotion-17 {
+.emotion-13 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -10005,15 +9981,15 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-17:hover {
+.emotion-13:hover {
   fill: #4267B2;
 }
 
-.emotion-17:focus {
+.emotion-13:focus {
   fill: #4267B2;
 }
 
-.emotion-20 {
+.emotion-16 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10021,15 +9997,15 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-20:hover {
+.emotion-16:hover {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-20:focus {
+.emotion-16:focus {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-23 {
+.emotion-19 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10037,15 +10013,15 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-23:hover {
+.emotion-19:hover {
   fill: url(#instagram-gradient);
 }
 
-.emotion-23:focus {
+.emotion-19:focus {
   fill: url(#instagram-gradient);
 }
 
-.emotion-26 {
+.emotion-22 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10053,15 +10029,15 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-26:hover {
+.emotion-22:hover {
   fill: #0E76A8;
 }
 
-.emotion-26:focus {
+.emotion-22:focus {
   fill: #0E76A8;
 }
 
-.emotion-29 {
+.emotion-25 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10069,11 +10045,11 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-29:hover {
+.emotion-25:hover {
   fill: #6363ff;
 }
 
-.emotion-29:focus {
+.emotion-25:focus {
   fill: #6363ff;
 }
 
@@ -10164,10 +10140,10 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
       class="c4"
     >
       <div
-        class="emotion-9"
+        class="c5 c6"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-10"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -10217,10 +10193,10 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </div>
       </div>
       <div
-        class="emotion-11"
+        class="c5 c8"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-10"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -10273,23 +10249,23 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-13"
+    class="emotion-9"
   >
     <ul
-      class="emotion-14"
+      class="emotion-10"
     >
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-17"
+            class="emotion-13"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10305,17 +10281,17 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-20"
+            class="emotion-16"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10331,17 +10307,17 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-23"
+            class="emotion-19"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10357,17 +10333,17 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-26"
+            class="emotion-22"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10383,17 +10359,17 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
         </a>
       </li>
       <li
-        class="emotion-15"
+        class="emotion-11"
       >
         <a
-          class="emotion-16"
+          class="emotion-12"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-29"
+            class="emotion-25"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
