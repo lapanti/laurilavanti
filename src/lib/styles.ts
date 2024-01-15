@@ -67,9 +67,23 @@ export const sizes = {
     fullHd: '1920px' as const,
 } as const
 
+export const zIndices = {
+    [0]: 0 as const,
+    [10]: 10 as const,
+    [20]: 20 as const,
+    [30]: 30 as const,
+    [40]: 40 as const,
+    [50]: 50 as const,
+    auto: 'auto' as const,
+} as const
+
 /** Spacing variables end */
 /** Grid variables start */
 
+export const gridAreas = {
+    main: 'main' as const,
+    footer: 'footer' as const,
+} as const
 export const gridTemplateAreasLayout = [' main ', 'footer'] as const
 export const gridTemplateRowsLayout = '1fr 6rem' as const
 export const gridTemplateColumnsArticle = '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr' as const
@@ -106,6 +120,10 @@ export const colors = {
     transparent: 'transparent' as const,
 } as const
 
+export const gradients = {
+    fromBlackToTop: 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0))' as const
+} as const
+
 /** Colors end */
 /** Fonts begin */
 
@@ -134,6 +152,7 @@ export const fontFamily = {
 export const fontWeights = {
     normal: 400,
     bold: 700,
+    black: 900,
 } as const
 
 /** Fonts end */

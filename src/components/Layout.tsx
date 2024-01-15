@@ -11,7 +11,7 @@ import styled from 'styled-components'
 /* @ts-expect-error twin.macro typings are incomplete :/ */
 import tw, { GlobalStyles, styled as twStyled } from 'twin.macro'
 
-import { breakpoints } from '../lib/styles'
+import { breakpoints, gridAreas } from '../lib/styles'
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
@@ -30,9 +30,9 @@ import Svgs from './layout/Svgs'
 import Title from './layout/Title'
 import Paragraph from './Paragraph'
 
-const Main = tw.main`
-    grid-in-main
-`
+const Main = styled.main({
+    gridArea: gridAreas.main,
+})
 
 const Article = twStyled.article(() => [
     {
