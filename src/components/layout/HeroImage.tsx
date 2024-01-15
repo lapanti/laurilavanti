@@ -2,11 +2,19 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
-const Image = tw(GatsbyImage)`
-    ml-auto mr-auto !h-96 object-cover !w-full max-w-screen-fullhd overflow-hidden
-`
+import { sizes } from '../../lib/styles'
+
+const Image = styled(GatsbyImage)({
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    height: `${sizes[96]} !important`,
+    width: '100% !important',
+    objectFit: 'cover',
+    maxWidth: sizes.fullHd,
+    overflow: 'hidden',
+})
 
 interface Props {
     className?: string
@@ -25,8 +33,10 @@ const HeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element |
 
 HeroImageComponent.displayName = 'HeroImage'
 
-const HeroImage = tw(HeroImageComponent)`
-    flex col-span-full relative
-`
+const HeroImage = styled(HeroImageComponent)({
+    display: 'flex',
+    gridColumn: '1 / -1',
+    position: 'relative',
+})
 
 export default HeroImage
