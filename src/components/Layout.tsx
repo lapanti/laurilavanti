@@ -7,9 +7,11 @@ import type { SEOProps } from './layout/SEO'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
+import styled from 'styled-components'
 /* @ts-expect-error twin.macro typings are incomplete :/ */
-import tw, { GlobalStyles, styled } from 'twin.macro'
+import tw, { GlobalStyles, styled as twStyled } from 'twin.macro'
 
+import { breakpoints } from '../lib/styles'
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
@@ -32,7 +34,7 @@ const Main = tw.main`
     grid-in-main
 `
 
-const Article = styled.article(() => [
+const Article = twStyled.article(() => [
     {
         [`${HomeTitle} + *, ${Title} + *`]: {
             marginTop: '1rem',
@@ -43,13 +45,19 @@ const Article = styled.article(() => [
     `,
 ])
 
-const MobileBigHeroImage = tw(BigHeroImage)`
-    flex biggerthenphone:hidden
-`
+const MobileBigHeroImage = styled(BigHeroImage)({
+    display: 'flex',
+    [breakpoints.biggerThanPhone.min]: {
+        display: 'none',
+    },
+})
 
-const DesktopBigHeroImage = tw(BigHeroImage)`
-    hidden biggerthenphone:flex
-`
+const DesktopBigHeroImage = styled(BigHeroImage)({
+    display: 'none',
+    [breakpoints.biggerThanPhone.min]: {
+        display: 'flex',
+    },
+})
 
 const MobileHeroImage = tw(HeroImage)`
     flex biggerthenphone:hidden

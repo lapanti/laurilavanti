@@ -8923,6 +8923,22 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   text-decoration: underline;
 }
 
+.c4 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 41rem!important;
+  object-fit: cover;
+  width: 100%!important;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.c2 {
+  display: flex;
+  position: relative;
+  grid-column: 1/-1;
+}
+
 .c1 {
   width: 100%;
   padding-left: 2rem;
@@ -8939,6 +8955,26 @@ exports[`<Layout /> should render hero image for front page 1`] = `
 .c1 :hover,
 .c1 :active {
   color: rgb(0, 104, 69);
+}
+
+.c5 {
+  display: flex;
+}
+
+.c3 {
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .c5 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c3 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -9111,54 +9147,6 @@ exports[`<Layout /> should render hero image for front page 1`] = `
 }
 
 .emotion-11 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-11 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-12 {
-  margin-left: auto;
-  margin-right: auto;
-  height: 41rem!important;
-  width: 100%!important;
-  max-width: 1920px;
-  overflow: hidden;
-  object-fit: cover;
-}
-
-.emotion-13 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-13 {
-    display: none;
-  }
-}
-
-.emotion-15 {
   z-index: 40;
   grid-column: 1/-1;
   margin-left: auto;
@@ -9174,7 +9162,7 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
 }
 
-.emotion-16 {
+.emotion-12 {
   grid-column-start: 3;
   margin: 0px;
   margin-bottom: 1rem;
@@ -9194,7 +9182,7 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.emotion-17 {
+.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9218,7 +9206,7 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   grid-area: footer;
 }
 
-.emotion-18 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9237,11 +9225,11 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-19 {
+.emotion-15 {
   padding: 0px;
 }
 
-.emotion-20 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -9257,7 +9245,7 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   justify-content: center;
 }
 
-.emotion-21 {
+.emotion-17 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -9266,15 +9254,15 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-21:hover {
+.emotion-17:hover {
   fill: #4267B2;
 }
 
-.emotion-21:focus {
+.emotion-17:focus {
   fill: #4267B2;
 }
 
-.emotion-24 {
+.emotion-20 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -9282,15 +9270,15 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-24:hover {
+.emotion-20:hover {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-24:focus {
+.emotion-20:focus {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-27 {
+.emotion-23 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -9298,15 +9286,15 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-27:hover {
+.emotion-23:hover {
   fill: url(#instagram-gradient);
 }
 
-.emotion-27:focus {
+.emotion-23:focus {
   fill: url(#instagram-gradient);
 }
 
-.emotion-30 {
+.emotion-26 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -9314,15 +9302,15 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-30:hover {
+.emotion-26:hover {
   fill: #0E76A8;
 }
 
-.emotion-30:focus {
+.emotion-26:focus {
   fill: #0E76A8;
 }
 
-.emotion-33 {
+.emotion-29 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -9330,11 +9318,11 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-33:hover {
+.emotion-29:hover {
   fill: #6363ff;
 }
 
-.emotion-33:focus {
+.emotion-29:focus {
   fill: #6363ff;
 }
 
@@ -9425,10 +9413,10 @@ exports[`<Layout /> should render hero image for front page 1`] = `
       class="emotion-10"
     >
       <div
-        class="emotion-11"
+        class="c2 c3"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-12"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -9478,10 +9466,10 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </div>
       </div>
       <div
-        class="emotion-13"
+        class="c2 c5"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-12"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -9531,10 +9519,10 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </div>
       </div>
       <section
-        class="emotion-15"
+        class="emotion-11"
       >
         <h1
-          class="emotion-16"
+          class="emotion-12"
           itemprop="headline"
         >
           Title
@@ -9544,23 +9532,23 @@ exports[`<Layout /> should render hero image for front page 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-17"
+    class="emotion-13"
   >
     <ul
-      class="emotion-18"
+      class="emotion-14"
     >
       <li
-        class="emotion-19"
+        class="emotion-15"
       >
         <a
-          class="emotion-20"
+          class="emotion-16"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-21"
+            class="emotion-17"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9576,17 +9564,17 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-15"
       >
         <a
-          class="emotion-20"
+          class="emotion-16"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-24"
+            class="emotion-20"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9602,17 +9590,17 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-15"
       >
         <a
-          class="emotion-20"
+          class="emotion-16"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-27"
+            class="emotion-23"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9628,17 +9616,17 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-15"
       >
         <a
-          class="emotion-20"
+          class="emotion-16"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-30"
+            class="emotion-26"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -9654,17 +9642,17 @@ exports[`<Layout /> should render hero image for front page 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-15"
       >
         <a
-          class="emotion-20"
+          class="emotion-16"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-33"
+            class="emotion-29"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -10583,6 +10571,22 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   text-decoration: underline;
 }
 
+.c4 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 41rem!important;
+  object-fit: cover;
+  width: 100%!important;
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.c2 {
+  display: flex;
+  position: relative;
+  grid-column: 1/-1;
+}
+
 .c1 {
   width: 100%;
   padding-left: 2rem;
@@ -10599,6 +10603,26 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
 .c1 :hover,
 .c1 :active {
   color: rgb(0, 104, 69);
+}
+
+.c5 {
+  display: flex;
+}
+
+.c3 {
+  display: none;
+}
+
+@media (min-width: 479px) {
+  .c5 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c3 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -10771,54 +10795,6 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
 }
 
 .emotion-11 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-11 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-12 {
-  margin-left: auto;
-  margin-right: auto;
-  height: 41rem!important;
-  width: 100%!important;
-  max-width: 1920px;
-  overflow: hidden;
-  object-fit: cover;
-}
-
-.emotion-13 {
-  position: relative;
-  grid-column: 1/-1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-13 {
-    display: none;
-  }
-}
-
-.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10842,7 +10818,7 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   grid-area: footer;
 }
 
-.emotion-16 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10861,11 +10837,11 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   gap: 1.5rem;
 }
 
-.emotion-17 {
+.emotion-13 {
   padding: 0px;
 }
 
-.emotion-18 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -10881,7 +10857,7 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   justify-content: center;
 }
 
-.emotion-19 {
+.emotion-15 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -10890,15 +10866,15 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   transition-duration: 150ms;
 }
 
-.emotion-19:hover {
+.emotion-15:hover {
   fill: #4267B2;
 }
 
-.emotion-19:focus {
+.emotion-15:focus {
   fill: #4267B2;
 }
 
-.emotion-22 {
+.emotion-18 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10906,15 +10882,15 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   transition-duration: 150ms;
 }
 
-.emotion-22:hover {
+.emotion-18:hover {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-22:focus {
+.emotion-18:focus {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-25 {
+.emotion-21 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10922,15 +10898,15 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   transition-duration: 150ms;
 }
 
-.emotion-25:hover {
+.emotion-21:hover {
   fill: url(#instagram-gradient);
 }
 
-.emotion-25:focus {
+.emotion-21:focus {
   fill: url(#instagram-gradient);
 }
 
-.emotion-28 {
+.emotion-24 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10938,15 +10914,15 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   transition-duration: 150ms;
 }
 
-.emotion-28:hover {
+.emotion-24:hover {
   fill: #0E76A8;
 }
 
-.emotion-28:focus {
+.emotion-24:focus {
   fill: #0E76A8;
 }
 
-.emotion-31 {
+.emotion-27 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -10954,11 +10930,11 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   transition-duration: 150ms;
 }
 
-.emotion-31:hover {
+.emotion-27:hover {
   fill: #6363ff;
 }
 
-.emotion-31:focus {
+.emotion-27:focus {
   fill: #6363ff;
 }
 
@@ -11049,10 +11025,10 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
       class="emotion-10"
     >
       <div
-        class="emotion-11"
+        class="c2 c3"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-12"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -11102,10 +11078,10 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </div>
       </div>
       <div
-        class="emotion-13"
+        class="c2 c5"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-12"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -11158,23 +11134,23 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
     </article>
   </main>
   <footer
-    class="emotion-15"
+    class="emotion-11"
   >
     <ul
-      class="emotion-16"
+      class="emotion-12"
     >
       <li
-        class="emotion-17"
+        class="emotion-13"
       >
         <a
-          class="emotion-18"
+          class="emotion-14"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-19"
+            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11190,17 +11166,17 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-17"
+        class="emotion-13"
       >
         <a
-          class="emotion-18"
+          class="emotion-14"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-22"
+            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11216,17 +11192,17 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-17"
+        class="emotion-13"
       >
         <a
-          class="emotion-18"
+          class="emotion-14"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-25"
+            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11242,17 +11218,17 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-17"
+        class="emotion-13"
       >
         <a
-          class="emotion-18"
+          class="emotion-14"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-28"
+            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -11268,17 +11244,17 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
         </a>
       </li>
       <li
-        class="emotion-17"
+        class="emotion-13"
       >
         <a
-          class="emotion-18"
+          class="emotion-14"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-31"
+            class="emotion-27"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
