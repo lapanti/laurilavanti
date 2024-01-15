@@ -2,8 +2,9 @@ import type { ContentfulPost } from '../types/contentful'
 
 import { graphql } from 'gatsby'
 import React, { useMemo } from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { sizes } from '../lib/styles'
 import { BLOGPOSTING } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
 import H2 from './H2'
@@ -12,9 +13,10 @@ import Layout from './Layout'
 import SocialShare from './post/SocialShare'
 import PostMeta from './PostMeta'
 
-const PositionedMeta = tw(PostMeta)`
-    col-start-3 mt-4
-`
+const PositionedMeta = styled(PostMeta)({
+    gridColumnStart: 3,
+    marginTop: sizes[4],
+})
 
 interface Props {
     data: {
