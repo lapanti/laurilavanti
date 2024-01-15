@@ -1,8 +1,16 @@
 import { Link as GatsbyLink } from 'gatsby'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
-const InternalLink = tw(GatsbyLink)`
-    text-moss no-underline text-base hover:underline active:underline focus:underline transition
-`
+import { colors, transitions } from '../lib/styles'
+
+const InternalLink = styled(GatsbyLink)({
+    color: colors.moss,
+    textDecoration: 'none',
+    ...transitions.base,
+
+    ':hover, :active, :focus': {
+        textDecoration: 'underline',
+    },
+})
 
 export default InternalLink
