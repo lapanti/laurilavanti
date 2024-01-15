@@ -5,9 +5,10 @@ import ExcerptList from '../components/ExcerptList'
 import Layout from '../components/Layout'
 import { fontSizes, sizes } from '../lib/styles'
 
-const H1 = styled.h1({
+export const H1 = styled.h1({
     gridColumnStart: 3,
     marginBottom: sizes[4],
+    marginTop: sizes[8],
     ...fontSizes['2xl'],
 })
 
