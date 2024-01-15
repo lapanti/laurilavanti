@@ -1,22 +1,38 @@
 import React from 'react'
 import { FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { colors, sizes } from '../../lib/styles'
 import ExternalLink from '../ExternalLink'
 
-const Share = tw.span`
-    mr-2
-`
+const Share = styled.span({
+    marginRight: sizes[2],
+})
 
-const ExtLink = tw(ExternalLink)`
-    mr-2 flex flex-row items-center
-`
+const ExtLink = styled(ExternalLink)({
+    marginRight: sizes[2],
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+})
 
-const Facebook = tw(FaFacebook)` inline-block h-4 w-4 text-fb`
+const logoStyles = {
+    display: 'inline-block',
+    height: sizes[4],
+    width: sizes[4],
+}
 
-const XTwitter = tw(FaXTwitter)` inline-block h-4 w-4 text-black`
+const Facebook = styled(FaFacebook)(logoStyles, {
+    color: colors.facebook,
+})
 
-const LinkedIn = tw(FaLinkedin)` inline-block h-4 w-4 text-linkedin`
+const XTwitter = styled(FaXTwitter)(logoStyles, {
+    color: colors.xtwitter,
+})
+
+const LinkedIn = styled(FaLinkedin)(logoStyles, {
+    color: colors.linkedin,
+})
 
 interface Props {
     className?: string
@@ -47,8 +63,12 @@ const SocialShareComponent = ({ className, siteUrl, title }: Props): JSX.Element
 
 SocialShareComponent.displayName = 'SocialShare'
 
-const SocialShare = tw(SocialShareComponent)`
-    col-start-3 flex flex-row mt-4 mb-8
-`
+const SocialShare = styled(SocialShareComponent)({
+    gridColumnStart: 3,
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: sizes[4],
+    marginBottom: sizes[8],
+})
 
 export default SocialShare
