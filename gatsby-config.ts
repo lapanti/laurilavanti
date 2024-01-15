@@ -48,6 +48,7 @@ const config: GatsbyConfig = {
                 fonts: [`IBM Plex Sans: 300,400,400i,500`, `IBM Plex Mono: 400,400i`, `Signika Negative`],
             },
         },
+        'gatsby-plugin-styled-components',
         'gatsby-plugin-emotion',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
