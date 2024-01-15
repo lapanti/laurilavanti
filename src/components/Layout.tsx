@@ -67,9 +67,9 @@ const DesktopHeroImage = tw(HeroImage)`
     hidden biggerthenphone:flex
 `
 
-const PositionedP = tw(Paragraph)`
-    col-start-3
-`
+const PositionedP = styled(Paragraph)({
+    gridColumnStart: 3,
+})
 
 const TableContainer = tw.div`
     col-span-full overflow-x-auto max-w-[100vw]

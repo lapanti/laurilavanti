@@ -3,8 +3,10 @@ import type { PostMetaProps } from '../PostMeta'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
+import styled from 'styled-components'
 import tw from 'twin.macro'
 
+import { sizes } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
@@ -34,9 +36,9 @@ const StyledH2 = tw(H2)`
     col-start-auto
 `
 
-const RemarginP = tw(Paragraph)`
-    mt-1
-`
+const RemarginP = styled(Paragraph)({
+    marginTop: sizes[1],
+})
 
 interface Props extends PostMetaProps {
     className?: string
