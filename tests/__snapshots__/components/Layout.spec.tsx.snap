@@ -4241,14 +4241,14 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   text-decoration: underline;
 }
 
-.c9 {
+.c12 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c9 >* {
+.c12 >* {
   fill: rgb(0, 0, 0);
   height: 2.25rem;
   width: 2.25rem;
@@ -4257,40 +4257,13 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   transition-duration: 150ms;
 }
 
-.c8 {
-  padding: 0px;
-}
-
-.c8 :hover,
-.c8 :focus {
-  fill: #4267B2;
-}
-
-.c10 {
-  padding: 0px;
-}
-
-.c10 :hover,
-.c10 :focus {
-  fill: rgb(255, 255, 255);
-}
-
 .c11 {
   padding: 0px;
 }
 
 .c11 :hover,
 .c11 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c12 {
-  padding: 0px;
-}
-
-.c12 :hover,
-.c12 :focus {
-  fill: #0E76A8;
+  fill: #4267B2;
 }
 
 .c13 {
@@ -4299,10 +4272,37 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 
 .c13 :hover,
 .c13 :focus {
+  fill: rgb(255, 255, 255);
+}
+
+.c14 {
+  padding: 0px;
+}
+
+.c14 :hover,
+.c14 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c15 {
+  padding: 0px;
+}
+
+.c15 :hover,
+.c15 :focus {
+  fill: #0E76A8;
+}
+
+.c16 {
+  padding: 0px;
+}
+
+.c16 :hover,
+.c16 :focus {
   fill: #6363ff;
 }
 
-.c7 {
+.c10 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4310,7 +4310,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   gap: 1.5rem;
 }
 
-.c6 {
+.c9 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -4337,6 +4337,29 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 .c2 :hover,
 .c2 :active {
   color: rgb(0, 104, 69);
+}
+
+.c7 {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.c8 {
+  margin-top: 0.5rem;
+  font-style: italic;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.c6 {
+  grid-column: 1/-1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .c4 {
@@ -4498,40 +4521,6 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   visibility: visible;
 }
 
-.emotion-8 {
-  grid-column: 1/-1;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.emotion-9 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  width: 100%;
-}
-
-.emotion-10 {
-  margin-top: 0.5rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  font-style: italic;
-}
-
 <div
   class="c0"
 >
@@ -4620,10 +4609,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     >
       <figure
         aria-label="caption"
-        class="emotion-8"
+        class="c6"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-9"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4672,7 +4661,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
           </script>
         </div>
         <figcaption
-          class="emotion-10"
+          class="c8"
         >
           caption
         </figcaption>
@@ -4680,16 +4669,16 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     </article>
   </main>
   <footer
-    class="c6"
+    class="c9"
   >
     <ul
-      class="c7"
+      class="c10"
     >
       <li
-        class="c8"
+        class="c11"
       >
         <a
-          class="c9"
+          class="c12"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4711,10 +4700,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="c10"
+        class="c13"
       >
         <a
-          class="c9"
+          class="c12"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4736,10 +4725,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="c11"
+        class="c14"
       >
         <a
-          class="c9"
+          class="c12"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4761,10 +4750,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="c12"
+        class="c15"
       >
         <a
-          class="c9"
+          class="c12"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4786,10 +4775,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="c13"
+        class="c16"
       >
         <a
-          class="c9"
+          class="c12"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4811,10 +4800,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         </a>
       </li>
       <li
-        class="c10"
+        class="c13"
       >
         <a
-          class="c9"
+          class="c12"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
