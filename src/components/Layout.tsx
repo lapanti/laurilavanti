@@ -8,10 +8,9 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components'
-/* @ts-expect-error twin.macro typings are incomplete :/ */
-import tw, { GlobalStyles, styled as twStyled } from 'twin.macro'
+import tw, { GlobalStyles } from 'twin.macro'
 
-import { breakpoints, gridAreas } from '../lib/styles'
+import { breakpoints, gridAreas, gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
@@ -34,16 +33,13 @@ const Main = styled.main({
     gridArea: gridAreas.main,
 })
 
-const Article = twStyled.article(() => [
-    {
-        [`${HomeTitle} + *, ${Title} + *`]: {
-            marginTop: '1rem',
-        },
+const Article = styled.article({
+    display: 'grid',
+    gridTemplateColumns: gridTemplateColumnsArticle,
+    [`${HomeTitle} + *, ${Title} + *`]: {
+        marginTop: sizes[4],
     },
-    tw`
-        grid grid-cols-article
-    `,
-])
+})
 
 const MobileBigHeroImage = styled(BigHeroImage)({
     display: 'flex',
