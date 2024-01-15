@@ -1,9 +1,27 @@
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
-const H1 = tw.h1`
-    col-start-3 text-6xl font-heading font-black m-0 flex items-end mb-4 text-white
-`
+import {
+    colors,
+    fontFamily,
+    fontSizes,
+    fontWeights,
+    gradients,
+    gridTemplateColumnsArticle,
+    sizes,
+    zIndices,
+} from '../../lib/styles'
+
+const H1 = styled.h1({
+    gridColumnStart: 3,
+    fontFamily: fontFamily.heading,
+    fontWeight: fontWeights.black,
+    color: colors.white,
+    display: 'flex',
+    alignItems: 'flex-end',
+    marginBottom: sizes[4],
+    ...fontSizes['6xl'],
+})
 
 interface Props {
     className?: string
@@ -18,10 +36,17 @@ const TitleComponent = ({ className, title }: Props): JSX.Element => (
 
 TitleComponent.displayName = 'Title'
 
-const Title = tw(TitleComponent)`
-    grid grid-cols-article
-    col-span-full -mt-56 z-40 max-w-screen-fullhd mx-auto w-full
-    bg-gradient-to-t from-black
-`
+const Title = styled(TitleComponent)({
+    display: 'grid',
+    gridTemplateColumns: gridTemplateColumnsArticle,
+    gridColumn: '1 / -1',
+    marginTop: `-${sizes[56]}`,
+    zIndex: zIndices[40],
+    maxWidth: sizes.fullHd,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    width: '100%',
+    backgroundImage: gradients.fromBlackToTop,
+})
 
 export default Title
