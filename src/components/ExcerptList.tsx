@@ -2,13 +2,17 @@ import type { ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useMemo } from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt'
 
-const Item = tw.li`
-    mt-8 first-of-type:mt-0
-`
+const Item = styled.li({
+    marginTop: sizes[8],
+    [':first-of-type']: {
+        marginTop: sizes[0],
+    },
+})
 
 interface Props {
     className?: string
@@ -121,7 +125,8 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
 
 ExcerptListComponent.displayName = 'ExcerptList'
 
-const ExcerptList = tw(ExcerptListComponent)`
-    col-start-3
-`
+const ExcerptList = styled(ExcerptListComponent)({
+    gridColumnStart: 3,
+})
+
 export default ExcerptList
