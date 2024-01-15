@@ -23,6 +23,19 @@ exports[`<Excerpt /> should render 1`] = `
   text-decoration: underline;
 }
 
+.c2 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.c3 {
+  margin-top: 0.25rem;
+}
+
 .emotion-1 {
   --tw-text-opacity: 1;
   color: rgb(235 235 236 / var(--tw-text-opacity));
@@ -165,16 +178,6 @@ exports[`<Excerpt /> should render 1`] = `
 
 .emotion-11:last-child {
   margin-right: 0px;
-}
-
-.emotion-14 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-family: "IBM Plex Sans";
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 400;
-  margin-top: 0.25rem;
 }
 
 <article
@@ -367,7 +370,7 @@ exports[`<Excerpt /> should render 1`] = `
     </ul>
   </aside>
   <p
-    class="emotion-14"
+    class="c2 c3"
     itemprop="description"
   >
     Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
