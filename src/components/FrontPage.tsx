@@ -14,7 +14,7 @@ interface Props {
     }
 }
 
-const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
+const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
         title={data?.contentfulPage?.hideTitle ? undefined : data?.contentfulPage?.title}
         hiddenTitle={data?.contentfulPage?.hideTitle ? data?.contentfulPage?.title : undefined}
@@ -130,4 +130,4 @@ export const query = graphql`
     }
 `
 
-export default Page
+export default FrontPage

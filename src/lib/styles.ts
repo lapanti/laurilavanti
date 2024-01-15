@@ -81,13 +81,29 @@ export const colors = {
 /** Fonts begin */
 
 export const fontSizes = {
+    xs: { fontSize: '0.75rem', lineHeight: '1rem' } as const,
+    s: { fontSize: '0.875rem', lineHeight: '1.25rem' } as const,
+    m: { fontSize: '1rem', lineHeight: '1.5rem' } as const,
+    l: { fontSize: '1.125rem', lineHeight: '1.75rem' } as const,
+    xl: { fontSize: '1.25rem', lineHeight: '1.75rem' } as const,
+    ['2xl']: { fontSize: '1.5rem', lineHeight: '2rem' } as const,
     ['3xl']: { fontSize: '1.875rem', lineHeight: '2.25rem' } as const,
+    ['4xl']: { fontSize: '2.25rem', lineHeihgt: '2.5rem' } as const,
+    ['5xl']: { fontSize: '3rem', lineHeight: '1' } as const,
+    ['6xl']: { fontSize: '3.75rem', lineHeight: '1' } as const,
+    ['7xl']: { fontSize: '4.5rem', lineHeight: '1' } as const,
+    ['8xl']: { fontSize: '6rem', lineHeight: '1' } as const,
+    ['9xl']: { fontSize: '8rem', lineHeight: '1' } as const,
 } as const
 
 export const fontFamily = {
     sans: `"IBM Plex Sans"` as const,
     mono: `"IBM Plex Mono"` as const,
     heading: `"Signika Negative"` as const,
+} as const
+
+export const fontWeights = {
+    bold: 700,
 } as const
 
 /** Fonts end */
