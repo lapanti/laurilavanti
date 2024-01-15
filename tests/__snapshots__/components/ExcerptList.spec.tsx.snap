@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ExcerptList /> should only render those with given tag 1`] = `
-.c1 {
+.c6 {
   grid-column-start: 3;
   font-family: "Signika Negative";
   font-weight: 700;
@@ -23,7 +23,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   text-decoration: underline;
 }
 
-.c8 {
+.c14 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -32,24 +32,24 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-bottom: 1rem;
 }
 
-.c3 {
+.c9 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c4 {
+.c10 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c4 :last-child {
+.c10 :last-child {
   margin-right: 0px;
 }
 
-.c5 {
+.c11 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -57,27 +57,76 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   flex-shrink: 0;
 }
 
-.c6 {
+.c12 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c7 {
+.c13 {
   margin-right: 1rem;
 }
 
-.c7 :last-child {
+.c13 :last-child {
   margin-right: 0px;
 }
 
-.c2 {
+.c8 {
   display: flex;
   flex-direction: column;
 }
 
-.c9 {
+.c1 {
+  color: rgb(235, 235, 236);
+}
+
+.c2 {
+  width: 100%;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.c4 {
+  display: flex;
+}
+
+.c3 {
+  display: none;
+}
+
+.c5 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.c7 {
+  grid-column-start: auto;
+}
+
+.c15 {
   margin-top: 0.25rem;
+}
+
+@media (min-width: 479px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c3 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -92,78 +141,6 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-top: 0px;
 }
 
-.emotion-3 {
-  --tw-text-opacity: 1;
-  color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-5 {
-    display: none;
-  }
-}
-
-.emotion-6 {
-  position: relative;
-  z-index: 40;
-  margin-top: -8rem;
-  margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 8rem;
-  width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.emotion-7 {
-  grid-column-start: auto;
-}
-
 <ul
   class="emotion-0"
 >
@@ -172,17 +149,17 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   >
     <article
       aria-label="Päiväkodit kaipaavat opettajia"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -231,7 +208,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -280,10 +257,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="paivakodit-kaipaavat-opettajia"
             itemprop="headline"
           >
@@ -292,16 +269,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -322,10 +299,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -336,7 +313,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -349,7 +326,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -369,17 +346,17 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   >
     <article
       aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -428,7 +405,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -477,10 +454,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
             itemprop="headline"
           >
@@ -489,16 +466,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -519,10 +496,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -533,7 +510,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -544,7 +521,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -557,7 +534,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -577,17 +554,17 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   >
     <article
       aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -636,7 +613,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -685,10 +662,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
             itemprop="headline"
           >
@@ -697,16 +674,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -727,10 +704,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -741,7 +718,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -754,7 +731,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -774,17 +751,17 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   >
     <article
       aria-label="Kirkkonummi-lisä on sinunkin etusi"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -833,7 +810,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -882,10 +859,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="kirkkonummi-lisa-on-sinunkin-etusi"
             itemprop="headline"
           >
@@ -894,16 +871,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -924,10 +901,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -938,7 +915,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -951,7 +928,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
@@ -971,17 +948,17 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   >
     <article
       aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/kotihoidon-tuen-kuntalisa/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1030,7 +1007,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1079,10 +1056,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
             itemprop="headline"
           >
@@ -1091,16 +1068,16 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -1121,10 +1098,10 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1135,7 +1112,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1148,7 +1125,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -1167,7 +1144,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 `;
 
 exports[`<ExcerptList /> should render 1`] = `
-.c1 {
+.c6 {
   grid-column-start: 3;
   font-family: "Signika Negative";
   font-weight: 700;
@@ -1189,7 +1166,7 @@ exports[`<ExcerptList /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c8 {
+.c14 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -1198,24 +1175,24 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c3 {
+.c9 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c4 {
+.c10 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c4 :last-child {
+.c10 :last-child {
   margin-right: 0px;
 }
 
-.c5 {
+.c11 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -1223,27 +1200,76 @@ exports[`<ExcerptList /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.c6 {
+.c12 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c7 {
+.c13 {
   margin-right: 1rem;
 }
 
-.c7 :last-child {
+.c13 :last-child {
   margin-right: 0px;
 }
 
-.c2 {
+.c8 {
   display: flex;
   flex-direction: column;
 }
 
-.c9 {
+.c1 {
+  color: rgb(235, 235, 236);
+}
+
+.c2 {
+  width: 100%;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.c4 {
+  display: flex;
+}
+
+.c3 {
+  display: none;
+}
+
+.c5 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.c7 {
+  grid-column-start: auto;
+}
+
+.c15 {
   margin-top: 0.25rem;
+}
+
+@media (min-width: 479px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c3 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -1258,78 +1284,6 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-top: 0px;
 }
 
-.emotion-3 {
-  --tw-text-opacity: 1;
-  color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-5 {
-    display: none;
-  }
-}
-
-.emotion-6 {
-  position: relative;
-  z-index: 40;
-  margin-top: -8rem;
-  margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 8rem;
-  width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.emotion-7 {
-  grid-column-start: auto;
-}
-
 <ul
   class="emotion-0"
 >
@@ -1338,17 +1292,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Terveys kuuluu kaikille"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/terveys-kuuluu-kaikille/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1397,7 +1351,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1446,10 +1400,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="terveys-kuuluu-kaikille"
             itemprop="headline"
           >
@@ -1458,16 +1412,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -1488,10 +1442,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1502,7 +1456,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1513,7 +1467,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1526,7 +1480,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -1546,17 +1500,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1605,7 +1559,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1654,10 +1608,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="sote-on-hyvinvointiyhteiskunnan-kulmakivi"
             itemprop="headline"
           >
@@ -1666,16 +1620,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -1696,10 +1650,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1710,7 +1664,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1721,7 +1675,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1734,7 +1688,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
@@ -1754,17 +1708,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Mitä jos terveyskeskusta ei olisikaan?"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1813,7 +1767,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -1862,10 +1816,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="mita-jos-terveyskeskusta-ei-olisikaan?"
             itemprop="headline"
           >
@@ -1874,16 +1828,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -1904,10 +1858,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1918,7 +1872,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1929,7 +1883,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -1942,7 +1896,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
@@ -1962,17 +1916,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Perusturvajaosto - mikä se on?"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2021,7 +1975,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2070,10 +2024,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="perusturvajaosto---mika-se-on?"
             itemprop="headline"
           >
@@ -2082,16 +2036,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -2112,10 +2066,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2126,7 +2080,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2139,7 +2093,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
@@ -2159,17 +2113,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Ehdolle aluevaaleihin"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/ehdolle-aluevaaleihin/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2218,7 +2172,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2267,10 +2221,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="ehdolle-aluevaaleihin"
             itemprop="headline"
           >
@@ -2279,16 +2233,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -2309,10 +2263,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2323,7 +2277,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2334,7 +2288,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2347,7 +2301,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
@@ -2367,17 +2321,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Päiväkodit kaipaavat opettajia"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2426,7 +2380,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2475,10 +2429,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="paivakodit-kaipaavat-opettajia"
             itemprop="headline"
           >
@@ -2487,16 +2441,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -2517,10 +2471,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2531,7 +2485,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2544,7 +2498,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -2564,17 +2518,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Hyvin suunniteltu on puoliksi tehty, mutta"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2623,7 +2577,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2672,10 +2626,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="hyvin-suunniteltu-on-puoliksi-tehty,-mutta"
             itemprop="headline"
           >
@@ -2684,16 +2638,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -2714,10 +2668,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2728,7 +2682,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2741,7 +2695,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
@@ -2761,17 +2715,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2820,7 +2774,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -2869,10 +2823,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
             itemprop="headline"
           >
@@ -2881,16 +2835,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -2911,10 +2865,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2925,7 +2879,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2936,7 +2890,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -2949,7 +2903,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -2969,17 +2923,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3028,7 +2982,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3077,10 +3031,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
             itemprop="headline"
           >
@@ -3089,16 +3043,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -3119,10 +3073,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3133,7 +3087,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3146,7 +3100,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -3166,17 +3120,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Kirkkonummi-lisä on sinunkin etusi"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3225,7 +3179,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3274,10 +3228,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="kirkkonummi-lisa-on-sinunkin-etusi"
             itemprop="headline"
           >
@@ -3286,16 +3240,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -3316,10 +3270,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3330,7 +3284,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3343,7 +3297,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
@@ -3363,17 +3317,17 @@ exports[`<ExcerptList /> should render 1`] = `
   >
     <article
       aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/kotihoidon-tuen-kuntalisa/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3422,7 +3376,7 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3471,10 +3425,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
             itemprop="headline"
           >
@@ -3483,16 +3437,16 @@ exports[`<ExcerptList /> should render 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -3513,10 +3467,10 @@ exports[`<ExcerptList /> should render 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3527,7 +3481,7 @@ exports[`<ExcerptList /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3540,7 +3494,7 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -3559,7 +3513,7 @@ exports[`<ExcerptList /> should render 1`] = `
 `;
 
 exports[`<ExcerptList /> should render in related order 1`] = `
-.c1 {
+.c6 {
   grid-column-start: 3;
   font-family: "Signika Negative";
   font-weight: 700;
@@ -3581,7 +3535,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   text-decoration: underline;
 }
 
-.c8 {
+.c14 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -3590,24 +3544,24 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-bottom: 1rem;
 }
 
-.c3 {
+.c9 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c4 {
+.c10 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c4 :last-child {
+.c10 :last-child {
   margin-right: 0px;
 }
 
-.c5 {
+.c11 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -3615,27 +3569,76 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   flex-shrink: 0;
 }
 
-.c6 {
+.c12 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c7 {
+.c13 {
   margin-right: 1rem;
 }
 
-.c7 :last-child {
+.c13 :last-child {
   margin-right: 0px;
 }
 
-.c2 {
+.c8 {
   display: flex;
   flex-direction: column;
 }
 
-.c9 {
+.c1 {
+  color: rgb(235, 235, 236);
+}
+
+.c2 {
+  width: 100%;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.c4 {
+  display: flex;
+}
+
+.c3 {
+  display: none;
+}
+
+.c5 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.c7 {
+  grid-column-start: auto;
+}
+
+.c15 {
   margin-top: 0.25rem;
+}
+
+@media (min-width: 479px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c3 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -3650,78 +3653,6 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-top: 0px;
 }
 
-.emotion-3 {
-  --tw-text-opacity: 1;
-  color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-5 {
-    display: none;
-  }
-}
-
-.emotion-6 {
-  position: relative;
-  z-index: 40;
-  margin-top: -8rem;
-  margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 8rem;
-  width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.emotion-7 {
-  grid-column-start: auto;
-}
-
 <ul
   class="emotion-0"
 >
@@ -3730,17 +3661,17 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   >
     <article
       aria-label="Päiväkodit kaipaavat opettajia"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3789,7 +3720,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3838,10 +3769,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="paivakodit-kaipaavat-opettajia"
             itemprop="headline"
           >
@@ -3850,16 +3781,16 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -3880,10 +3811,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3894,7 +3825,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -3907,7 +3838,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -3927,17 +3858,17 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   >
     <article
       aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -3986,7 +3917,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4035,10 +3966,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
             itemprop="headline"
           >
@@ -4047,16 +3978,16 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -4077,10 +4008,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4091,7 +4022,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4102,7 +4033,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4115,7 +4046,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -4135,17 +4066,17 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   >
     <article
       aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4194,7 +4125,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4243,10 +4174,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
             itemprop="headline"
           >
@@ -4255,16 +4186,16 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -4285,10 +4216,10 @@ exports[`<ExcerptList /> should render in related order 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4299,7 +4230,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4312,7 +4243,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -4331,7 +4262,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 `;
 
 exports[`<ExcerptList /> should render with limit 1`] = `
-.c1 {
+.c6 {
   grid-column-start: 3;
   font-family: "Signika Negative";
   font-weight: 700;
@@ -4353,7 +4284,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   text-decoration: underline;
 }
 
-.c8 {
+.c14 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -4362,24 +4293,24 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-bottom: 1rem;
 }
 
-.c3 {
+.c9 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c4 {
+.c10 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c4 :last-child {
+.c10 :last-child {
   margin-right: 0px;
 }
 
-.c5 {
+.c11 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -4387,27 +4318,76 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   flex-shrink: 0;
 }
 
-.c6 {
+.c12 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c7 {
+.c13 {
   margin-right: 1rem;
 }
 
-.c7 :last-child {
+.c13 :last-child {
   margin-right: 0px;
 }
 
-.c2 {
+.c8 {
   display: flex;
   flex-direction: column;
 }
 
-.c9 {
+.c1 {
+  color: rgb(235, 235, 236);
+}
+
+.c2 {
+  width: 100%;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.c4 {
+  display: flex;
+}
+
+.c3 {
+  display: none;
+}
+
+.c5 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.c7 {
+  grid-column-start: auto;
+}
+
+.c15 {
   margin-top: 0.25rem;
+}
+
+@media (min-width: 479px) {
+  .c4 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c3 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -4422,78 +4402,6 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-top: 0px;
 }
 
-.emotion-3 {
-  --tw-text-opacity: 1;
-  color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-4 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-5 {
-    display: none;
-  }
-}
-
-.emotion-6 {
-  position: relative;
-  z-index: 40;
-  margin-top: -8rem;
-  margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 8rem;
-  width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.emotion-7 {
-  grid-column-start: auto;
-}
-
 <ul
   class="emotion-0"
 >
@@ -4502,17 +4410,17 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   >
     <article
       aria-label="Terveys kuuluu kaikille"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/terveys-kuuluu-kaikille/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4561,7 +4469,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4610,10 +4518,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="terveys-kuuluu-kaikille"
             itemprop="headline"
           >
@@ -4622,16 +4530,16 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -4652,10 +4560,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4666,7 +4574,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4677,7 +4585,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4690,7 +4598,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -4710,17 +4618,17 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   >
     <article
       aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4769,7 +4677,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4818,10 +4726,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="sote-on-hyvinvointiyhteiskunnan-kulmakivi"
             itemprop="headline"
           >
@@ -4830,16 +4738,16 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -4860,10 +4768,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4874,7 +4782,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4885,7 +4793,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -4898,7 +4806,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
@@ -4918,17 +4826,17 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   >
     <article
       aria-label="Mitä jos terveyskeskusta ei olisikaan?"
-      class="emotion-2"
+      class=""
       itemscope=""
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="c0 emotion-3"
+        class="c0 c1"
         href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
         rel="permalink"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-4"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -4977,7 +4885,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-5"
+          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c4"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
         >
@@ -5026,10 +4934,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </script>
         </div>
         <div
-          class="emotion-6"
+          class="c5"
         >
           <h2
-            class="c1 emotion-7"
+            class="c6 c7"
             id="mita-jos-terveyskeskusta-ei-olisikaan?"
             itemprop="headline"
           >
@@ -5038,16 +4946,16 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </div>
       </a>
       <aside
-        class="c2"
+        class="c8"
       >
         <div
-          class="c3"
+          class="c9"
         >
           <span
-            class="c4"
+            class="c10"
           >
             <svg
-              class="c5"
+              class="c11"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -5068,10 +4976,10 @@ exports[`<ExcerptList /> should render with limit 1`] = `
           </span>
         </div>
         <ul
-          class="c6"
+          class="c12"
         >
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -5082,7 +4990,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -5093,7 +5001,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             </a>
           </li>
           <li
-            class="c7"
+            class="c13"
           >
             <a
               class="c0"
@@ -5106,7 +5014,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="c8 c9"
+        class="c14 c15"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?

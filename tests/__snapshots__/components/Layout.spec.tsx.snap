@@ -1384,7 +1384,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   text-decoration: underline;
 }
 
-.c12 {
+.c18 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -1393,24 +1393,24 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-bottom: 1rem;
 }
 
-.c7 {
+.c13 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c8 {
+.c14 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c8 :last-child {
+.c14 :last-child {
   margin-right: 0px;
 }
 
-.c9 {
+.c15 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -1418,26 +1418,63 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   flex-shrink: 0;
 }
 
-.c10 {
+.c16 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c11 {
+.c17 {
   margin-right: 1rem;
 }
 
-.c11 :last-child {
+.c17 :last-child {
   margin-right: 0px;
 }
 
-.c6 {
+.c12 {
   display: flex;
   flex-direction: column;
 }
 
-.c13 {
+.c6 {
+  color: rgb(235, 235, 236);
+}
+
+.c7 {
+  width: 100%;
+  display: flex;
+  height: 16rem;
+  object-fit: cover;
+}
+
+.c9 {
+  display: flex;
+}
+
+.c8 {
+  display: none;
+}
+
+.c10 {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: -8rem;
+  height: 8rem;
+  width: 100%;
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  z-index: 40;
+  position: relative;
+}
+
+.c11 {
+  grid-column-start: auto;
+}
+
+.c19 {
   margin-top: 0.25rem;
 }
 
@@ -1476,6 +1513,18 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 479px) {
+  .c9 {
+    display: none;
+  }
+}
+
+@media (min-width: 479px) {
+  .c8 {
+    display: flex;
+  }
 }
 
 .emotion-0 {
@@ -1630,79 +1679,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-top: 0px;
 }
 
-.emotion-11 {
-  --tw-text-opacity: 1;
-  color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-12 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: none;
-}
-
-@media (min-width: 479px) {
-  .emotion-12 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.emotion-13 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 16rem;
-  width: 100%;
-  object-fit: cover;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-@media (min-width: 479px) {
-  .emotion-13 {
-    display: none;
-  }
-}
-
-.emotion-14 {
-  position: relative;
-  z-index: 40;
-  margin-top: -8rem;
-  margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  height: 8rem;
-  width: 100%;
-  -webkit-align-items: flex-end;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  --tw-gradient-from: rgb(0, 0, 0) var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-}
-
-.emotion-15 {
-  grid-column-start: auto;
-}
-
-.emotion-16 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1726,7 +1703,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   grid-area: footer;
 }
 
-.emotion-17 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1745,11 +1722,11 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-18 {
+.emotion-12 {
   padding: 0px;
 }
 
-.emotion-19 {
+.emotion-13 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1765,7 +1742,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   justify-content: center;
 }
 
-.emotion-20 {
+.emotion-14 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -1774,12 +1751,44 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-20:hover {
+.emotion-14:hover {
   fill: #4267B2;
 }
 
-.emotion-20:focus {
+.emotion-14:focus {
   fill: #4267B2;
+}
+
+.emotion-17 {
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.emotion-17:hover {
+  fill: rgb(0, 0, 0);
+}
+
+.emotion-17:focus {
+  fill: rgb(0, 0, 0);
+}
+
+.emotion-20 {
+  height: 2.25rem;
+  width: 2.25rem;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.emotion-20:hover {
+  fill: url(#instagram-gradient);
+}
+
+.emotion-20:focus {
+  fill: url(#instagram-gradient);
 }
 
 .emotion-23 {
@@ -1791,11 +1800,11 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .emotion-23:hover {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .emotion-23:focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .emotion-26 {
@@ -1807,42 +1816,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .emotion-26:hover {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-26:focus {
-  fill: url(#instagram-gradient);
-}
-
-.emotion-29 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-29:hover {
-  fill: #0E76A8;
-}
-
-.emotion-29:focus {
-  fill: #0E76A8;
-}
-
-.emotion-32 {
-  height: 2.25rem;
-  width: 2.25rem;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-32:hover {
   fill: #6363ff;
 }
 
-.emotion-32:focus {
+.emotion-26:focus {
   fill: #6363ff;
 }
 
@@ -1940,17 +1917,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         >
           <article
             aria-label="Terveys kuuluu kaikille"
-            class="emotion-10"
+            class=""
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c1 emotion-11"
+              class="c1 c6"
               href="/blogi/terveys-kuuluu-kaikille/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-12"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7 c8"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -1999,7 +1976,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained emotion-13"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7 c9"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -2048,10 +2025,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <div
-                class="emotion-14"
+                class="c10"
               >
                 <h2
-                  class="c3 emotion-15"
+                  class="c3 c11"
                   id="terveys-kuuluu-kaikille"
                   itemprop="headline"
                 >
@@ -2060,16 +2037,16 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </div>
             </a>
             <aside
-              class="c6"
+              class="c12"
             >
               <div
-                class="c7"
+                class="c13"
               >
                 <span
-                  class="c8"
+                  class="c14"
                 >
                   <svg
-                    class="c9"
+                    class="c15"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -2090,10 +2067,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </span>
               </div>
               <ul
-                class="c10"
+                class="c16"
               >
                 <li
-                  class="c11"
+                  class="c17"
                 >
                   <a
                     class="c1"
@@ -2104,7 +2081,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c11"
+                  class="c17"
                 >
                   <a
                     class="c1"
@@ -2115,7 +2092,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c11"
+                  class="c17"
                 >
                   <a
                     class="c1"
@@ -2128,7 +2105,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="c12 c13"
+              class="c18 c19"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -2147,23 +2124,23 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-16"
+    class="emotion-10"
   >
     <ul
-      class="emotion-17"
+      class="emotion-11"
     >
       <li
-        class="emotion-18"
+        class="emotion-12"
       >
         <a
-          class="emotion-19"
+          class="emotion-13"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-20"
+            class="emotion-14"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2179,17 +2156,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-18"
+        class="emotion-12"
       >
         <a
-          class="emotion-19"
+          class="emotion-13"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-23"
+            class="emotion-17"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2205,17 +2182,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-18"
+        class="emotion-12"
       >
         <a
-          class="emotion-19"
+          class="emotion-13"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-26"
+            class="emotion-20"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2231,17 +2208,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-18"
+        class="emotion-12"
       >
         <a
-          class="emotion-19"
+          class="emotion-13"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-29"
+            class="emotion-23"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2257,17 +2234,17 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="emotion-18"
+        class="emotion-12"
       >
         <a
-          class="emotion-19"
+          class="emotion-13"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-32"
+            class="emotion-26"
             fill="currentColor"
             height="1em"
             stroke="currentColor"

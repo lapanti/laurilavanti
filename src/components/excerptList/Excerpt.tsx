@@ -4,37 +4,55 @@ import type { PostMetaProps } from '../PostMeta'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
-import tw from 'twin.macro'
 
-import { sizes } from '../../lib/styles'
+import { breakpoints, colors, gradients, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
-const Link = tw(InternalLink)`
-    text-gray
-`
+const Link = styled(InternalLink)({
+    color: colors.gray,
+})
 
-const Image = tw(GatsbyImage)`
-    w-full flex h-64 object-cover
-`
+const Image = styled(GatsbyImage)({
+    width: '100%',
+    display: 'flex',
+    height: sizes[64],
+    objectFit: 'cover',
+})
 
-const MobileImage = tw(Image)`
-    flex biggerthenphone:hidden
-`
+const MobileImage = styled(Image)({
+    display: 'flex',
+    [breakpoints.biggerThanPhone.min]: {
+        display: 'none',
+    },
+})
 
-const DesktopImage = tw(Image)`
-    hidden biggerthenphone:flex
-`
+const DesktopImage = styled(Image)({
+    display: 'none',
+    [breakpoints.biggerThanPhone.min]: {
+        display: 'flex',
+    },
+})
 
-const H2Container = tw.div`
-    flex items-end mb-4 pb-2 pl-2 -mt-32 h-32 w-full bg-gradient-to-t from-black z-40 relative
-`
+const H2Container = styled.div({
+    display: 'flex',
+    alignItems: 'flex-end',
+    marginBottom: sizes[4],
+    paddingBottom: sizes[2],
+    paddingLeft: sizes[2],
+    marginTop: `-${sizes[32]}`,
+    height: sizes[32],
+    width: '100%',
+    backgroundImage: gradients.fromBlackToTop,
+    zIndex: zIndices[40],
+    position: 'relative',
+})
 
-const StyledH2 = tw(H2)`
-    col-start-auto
-`
+const StyledH2 = styled(H2)({
+    gridColumnStart: 'auto',
+})
 
 const RemarginP = styled(Paragraph)({
     marginTop: sizes[1],
@@ -84,6 +102,6 @@ const ExcerptComponent = ({
 
 ExcerptComponent.displayName = 'Excerpt'
 
-const Excerpt = tw(ExcerptComponent)``
+const Excerpt = styled(ExcerptComponent)({})
 
 export default Excerpt
