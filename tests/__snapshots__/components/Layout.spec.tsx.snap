@@ -685,6 +685,18 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 `;
 
 exports[`<Layout /> rich body should render ContactInfo 1`] = `
+.c1 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .emotion-0 {
   position: relative;
   display: grid;
@@ -908,26 +920,6 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-16 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-}
-
-.emotion-17 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   height: 100%;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
@@ -947,7 +939,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   grid-area: footer;
 }
 
-.emotion-18 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -966,11 +958,11 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-19 {
+.emotion-17 {
   padding: 0px;
 }
 
-.emotion-20 {
+.emotion-18 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -986,7 +978,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   justify-content: center;
 }
 
-.emotion-21 {
+.emotion-19 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -995,15 +987,15 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-21:hover {
+.emotion-19:hover {
   fill: #4267B2;
 }
 
-.emotion-21:focus {
+.emotion-19:focus {
   fill: #4267B2;
 }
 
-.emotion-24 {
+.emotion-22 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1011,15 +1003,15 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-24:hover {
+.emotion-22:hover {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-24:focus {
+.emotion-22:focus {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-27 {
+.emotion-25 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1027,15 +1019,15 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-27:hover {
+.emotion-25:hover {
   fill: url(#instagram-gradient);
 }
 
-.emotion-27:focus {
+.emotion-25:focus {
   fill: url(#instagram-gradient);
 }
 
-.emotion-30 {
+.emotion-28 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1043,15 +1035,15 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-30:hover {
+.emotion-28:hover {
   fill: #0E76A8;
 }
 
-.emotion-30:focus {
+.emotion-28:focus {
   fill: #0E76A8;
 }
 
-.emotion-33 {
+.emotion-31 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1059,11 +1051,11 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-33:hover {
+.emotion-31:hover {
   fill: #6363ff;
 }
 
-.emotion-33:focus {
+.emotion-31:focus {
   fill: #6363ff;
 }
 
@@ -1157,10 +1149,10 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         class="emotion-14"
       >
         <li
-          class="emotion-15"
+          class="c0"
         >
           <svg
-            class="emotion-16"
+            class="c1"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1181,23 +1173,23 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
     </article>
   </main>
   <footer
-    class="emotion-17"
+    class="emotion-15"
   >
     <ul
-      class="emotion-18"
+      class="emotion-16"
     >
       <li
-        class="emotion-19"
+        class="emotion-17"
       >
         <a
-          class="emotion-20"
+          class="emotion-18"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-21"
+            class="emotion-19"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1213,17 +1205,17 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-17"
       >
         <a
-          class="emotion-20"
+          class="emotion-18"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-24"
+            class="emotion-22"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1239,17 +1231,17 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-17"
       >
         <a
-          class="emotion-20"
+          class="emotion-18"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-27"
+            class="emotion-25"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1265,17 +1257,17 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-17"
       >
         <a
-          class="emotion-20"
+          class="emotion-18"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-30"
+            class="emotion-28"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1291,17 +1283,17 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         </a>
       </li>
       <li
-        class="emotion-19"
+        class="emotion-17"
       >
         <a
-          class="emotion-20"
+          class="emotion-18"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-33"
+            class="emotion-31"
             fill="currentColor"
             height="1em"
             stroke="currentColor"

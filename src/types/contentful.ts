@@ -22,7 +22,7 @@ export interface ContactInfoLink {
     contentful_id: string
     title: string
     url?: string | null
-    icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope'
+    icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope' | 'threads'
 }
 
 export interface Fiduciary {
