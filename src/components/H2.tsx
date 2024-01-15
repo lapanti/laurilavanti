@@ -1,7 +1,9 @@
 import type { ReactNode } from 'react'
 
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
+
+import { fontFamily, fontSizes, fontWeights } from '../lib/styles'
 
 interface Props {
     className?: string
@@ -21,8 +23,11 @@ const H2Component = ({ className, children, itemProp }: Props): JSX.Element => (
 
 H2Component.displayName = 'H2'
 
-const H2 = tw(H2Component)`
-    col-start-3 font-heading font-bold text-4xl
-`
+const H2 = styled(H2Component)({
+    gridColumnStart: 3,
+    fontFamily: fontFamily.heading,
+    fontWeight: fontWeights.bold,
+    ...fontSizes['4xl'],
+})
 
 export default H2
