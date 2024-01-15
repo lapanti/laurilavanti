@@ -84,8 +84,12 @@ export const gridAreas = {
     main: 'main' as const,
     footer: 'footer' as const,
 } as const
-export const gridTemplateAreasLayout = [' main ', 'footer'] as const
+export const gridTemplateAreasLayout = `
+    " main "
+    "footer"
+` as const
 export const gridTemplateRowsLayout = '1fr 6rem' as const
+export const gridTemplateColumns1 = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle = '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr' as const
 
 /** Grid variables end */
@@ -121,7 +125,7 @@ export const colors = {
 } as const
 
 export const gradients = {
-    fromBlackToTop: 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0))' as const
+    fromBlackToTop: 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0))' as const,
 } as const
 
 /** Colors end */

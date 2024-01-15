@@ -8,9 +8,21 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components'
-import tw, { GlobalStyles } from 'twin.macro'
+import { GlobalStyles } from 'twin.macro'
 
-import { breakpoints, gridAreas, gridTemplateColumnsArticle, sizes } from '../lib/styles'
+import {
+    breakpoints,
+    colors,
+    fontFamily,
+    fontSizes,
+    fontWeights,
+    gridAreas,
+    gridTemplateAreasLayout,
+    gridTemplateColumns1,
+    gridTemplateColumnsArticle,
+    gridTemplateRowsLayout,
+    sizes,
+} from '../lib/styles'
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
@@ -73,25 +85,52 @@ const PositionedP = styled(Paragraph)({
     gridColumnStart: 3,
 })
 
-const TableContainer = tw.div`
-    col-span-full overflow-x-auto max-w-[100vw]
-`
+const TableContainer = styled.div({
+    gridColumn: '1 / -1',
+    overflowX: 'auto',
+    maxWidth: '100vw',
+})
 
-const Table = tw.table`
-    my-4 mx-auto table-auto border-separate
-`
+const Table = styled.table({
+    marginTop: sizes[4],
+    marginBottom: sizes[4],
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    tableLayout: 'auto',
+    borderCollapse: 'separate',
+})
 
-const TableHeaderCell = tw.th`
-    bg-gray px-4 border border-black border-solid whitespace-nowrap
-`
+const TableHeaderCell = styled.th({
+    backgroundColor: colors.gray,
+    paddingLeft: sizes[4],
+    paddingRight: sizes[4],
+    borderWidth: '1px',
+    borderColor: colors.black,
+    borderStyle: 'solid',
+    whiteSpace: 'nowrap',
+})
 
-const TableCell = tw.td`
-    px-4 border border-black border-solid whitespace-nowrap
-`
+const TableCell = styled.td({
+    paddingLeft: sizes[4],
+    paddingRight: sizes[4],
+    borderWidth: '1px',
+    borderColor: colors.black,
+    borderStyle: 'solid',
+    whiteSpace: 'nowrap',
+})
 
-const BlockQuote = tw.div`
-    border-l-4 pl-2 py-2 border-l-sand col-start-3 font-mono font-normal italic text-2xl
-`
+const BlockQuote = styled.div({
+    borderLeftWidth: '4px',
+    paddingLeft: sizes[2],
+    paddingTop: sizes[2],
+    paddingBottom: sizes[2],
+    borderLeftColor: colors.sand,
+    gridColumnStart: 3,
+    fontFamily: fontFamily.mono,
+    fontWeight: fontWeights.normal,
+    fontStyle: 'italic',
+    ...fontSizes['2xl'],
+})
 
 const options = {
     renderNode: {
@@ -245,8 +284,14 @@ const LayoutComponent = ({
 
 LayoutComponent.displayName = 'Layout'
 
-const Layout = tw(LayoutComponent)`
-    grid grid-areas-layout grid-rows-layout grid-cols-1 gap-4.5 min-h-screen relative
-`
+const Layout = styled(LayoutComponent)({
+    display: 'grid',
+    gridTemplateAreas: gridTemplateAreasLayout,
+    gridTemplateRows: gridTemplateRowsLayout,
+    gridTemplateColumns: gridTemplateColumns1,
+    gap: sizes[4.5],
+    minHeight: '100vh',
+    position: 'relative',
+})
 
 export default Layout
