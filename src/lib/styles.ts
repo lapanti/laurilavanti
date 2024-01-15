@@ -1,11 +1,26 @@
 /** Screen sizes start */
 
-export const screen = {
-    biggerThanPhone: '479px' as const,
-    [700]: '700px' as const,
-    [750]: '750px' as const,
-    [1200]: '1200px' as const,
-    fullhd: '1920px' as const,
+export const breakpoints = {
+    biggerThanPhone: {
+        min: '@media (min-width: 479px)',
+        max: '@media not all and (min-width: 479px)',
+    } as const,
+    [700]: {
+        min: '@media (min-width: 700px)',
+        max: '@media not all and (min-width: 700px)',
+    } as const,
+    [750]: {
+        min: '@media (min-width: 750px)',
+        max: '@media not all and (min-width: 750px)',
+    } as const,
+    [1200]: {
+        min: '@media (min-width: 1200px)',
+        max: '@media not all and (min-width: 1200px)',
+    } as const,
+    fullhd: {
+        min: '@media (min-width: 1920px)',
+        max: '@media not all and (min-width: 1920px)',
+    } as const,
 } as const
 
 /** Screen sizes end */
@@ -20,6 +35,7 @@ export const sizes = {
     [8]: '2rem' as const,
     [18]: '4.5rem' as const,
     [164]: '41rem' as const,
+    fullHd: '1920px' as const,
 } as const
 
 /** Spacing variables end */
@@ -79,10 +95,11 @@ export const fontFamily = {
 
 export const transitions = {
     base: {
-        transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+        transitionProperty:
+            'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
         transitionDuration: '150ms',
-    } as const
+    } as const,
 } as const
 
 /** Transitions end */
