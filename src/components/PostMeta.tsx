@@ -1,28 +1,46 @@
 import React, { useMemo } from 'react'
 import { FaRegCalendarDays } from 'react-icons/fa6'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { sizes } from '../lib/styles'
 import InternalLink from './InternalLink'
 
-const MetaContainer = tw.div`
-    flex flex-row mb-2
-`
+const MetaContainer = styled.div({
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: sizes[2],
+})
 
-const Meta = tw.span`
-    flex flex-row items-center mr-4 last:mr-0
-`
+const Meta = styled.span({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: sizes[4],
+    ':last-child': {
+        marginRight: sizes[0],
+    },
+})
 
-const CalendarIcon = tw(FaRegCalendarDays)`
-    h-4.5 w-4.5 inline-block mr-2 flex-shrink-0
-`
+const CalendarIcon = styled(FaRegCalendarDays)({
+    height: sizes[4.5],
+    widht: sizes[4.5],
+    display: 'inline-block',
+    marginRight: sizes[2],
+    flexShrink: 0,
+})
 
-const TagList = tw.ul`
-    flex flex-row flex-wrap
-`
+const TagList = styled.ul({
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+})
 
-const TagItem = tw.li`
-    mr-4 last:mr-0
-`
+const TagItem = styled.li({
+    marginRight: sizes[4],
+    ':last-child': {
+        marginRight: sizes[0],
+    },
+})
 
 export interface PostMetaProps {
     date: string
@@ -60,8 +78,9 @@ const PostMetaComponent = ({ className, date, tags }: Props): JSX.Element => {
 
 PostMetaComponent.displayName = 'PostMeta'
 
-const PostMeta = tw(PostMetaComponent)`
-    flex flex-col
-`
+const PostMeta = styled(PostMetaComponent)({
+    display: 'flex',
+    flexDirection: 'column',
+})
 
 export default PostMeta
