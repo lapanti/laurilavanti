@@ -1,8 +1,9 @@
 import type { Degree, Fiduciary, JobExperience } from '../../types/contentful'
 
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { fontFamily, fontSizes, fontWeights, sizes } from '../../lib/styles'
 import H2 from '../H2'
 
 /** Only exported for testing purposes */
@@ -11,9 +12,13 @@ export const yearsToString = (startYear: number, endYear?: number): string => {
     return `${startYear}-${endYear ? endYear : ''}`
 }
 
-const DivContainer = tw.div`
-    text-lg font-sans font-normal my-4
-`
+const DivContainer = styled.div({
+    ...fontSizes.l,
+    fontFamily: fontFamily.sans,
+    fontWeight: fontWeights.normal,
+    marginTop: sizes[4],
+    marginBottom: sizes[4],
+})
 
 interface Props {
     className?: string
@@ -76,8 +81,9 @@ const CurriculumVitaeComponent = ({
 
 CurriculumVitaeComponent.displayName = 'CurriculumVitae'
 
-const CurriculumVitae = tw(CurriculumVitaeComponent)`
-    col-start-3 mt-4
-`
+const CurriculumVitae = styled(CurriculumVitaeComponent)({
+    gridColumnStart: 3,
+    marginTop: sizes[4],
+})
 
 export default CurriculumVitae
