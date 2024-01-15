@@ -1,5 +1,5 @@
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
 import Link from './externalLink/Link'
 
@@ -24,6 +24,6 @@ const ExternalLinkComponent = ({
 
 ExternalLinkComponent.displayName = 'ExternalLink'
 
-const ExternalLink = tw(ExternalLinkComponent)``
+const ExternalLink = styled(ExternalLinkComponent)({})
 
 export default ExternalLink
