@@ -1,14 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ContactInfo /> should render 1`] = `
-.c0 {
+.c2 {
   color: rgb(90, 94, 0);
   text-decoration: none;
 }
 
-.c0 :hover,
-.c0 :active {
+.c2 :hover,
+.c2 :active {
   text-decoration: underline;
+}
+
+.c3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.c1 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+.c4 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: #4267B2;
+}
+
+.c5 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: rgb(0, 0, 0);
+}
+
+.c6 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: url(#instagram-gradient);
+}
+
+.c7 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: #0E76A8;
+}
+
+.c8 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: #6363ff;
+}
+
+.c0 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .emotion-0 {
@@ -16,69 +69,14 @@ exports[`<ContactInfo /> should render 1`] = `
   margin-top: 1rem;
 }
 
-.emotion-1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-2 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-}
-
-.emotion-5 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  fill: #4267B2;
-}
-
-.emotion-8 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  fill: rgb(0, 0, 0);
-}
-
-.emotion-11 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  fill: url(#instagram-gradient);
-}
-
-.emotion-14 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  fill: #0E76A8;
-}
-
-.emotion-17 {
-  margin-right: 0.5rem;
-  height: 1rem;
-  width: 1rem;
-  fill: #6363ff;
-}
-
 <ul
   class="emotion-0"
 >
   <li
-    class="emotion-1"
+    class="c0"
   >
     <svg
-      class="emotion-2"
+      class="c1"
       fill="currentColor"
       height="1em"
       stroke="currentColor"
@@ -96,16 +94,16 @@ exports[`<ContactInfo /> should render 1`] = `
     </span>
   </li>
   <li
-    class="emotion-1"
+    class="c0"
   >
     <a
-      class="c0 emotion-1"
+      class="c2 c3 emotion-1"
       href="https://www.facebook.com/laurilavanti"
       rel="me noopener noreferrer"
       target="_blank"
     >
       <svg
-        class="emotion-5"
+        class="c4"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -124,16 +122,16 @@ exports[`<ContactInfo /> should render 1`] = `
     </a>
   </li>
   <li
-    class="emotion-1"
+    class="c0"
   >
     <a
-      class="c0 emotion-1"
+      class="c2 c3 emotion-1"
       href="https://twitter.com/laurilavanti"
       rel="me noopener noreferrer"
       target="_blank"
     >
       <svg
-        class="emotion-8"
+        class="c5"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -152,16 +150,16 @@ exports[`<ContactInfo /> should render 1`] = `
     </a>
   </li>
   <li
-    class="emotion-1"
+    class="c0"
   >
     <a
-      class="c0 emotion-1"
+      class="c2 c3 emotion-1"
       href="https://www.instagram.com/laurilavanti/"
       rel="me noopener noreferrer"
       target="_blank"
     >
       <svg
-        class="emotion-11"
+        class="c6"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -180,16 +178,16 @@ exports[`<ContactInfo /> should render 1`] = `
     </a>
   </li>
   <li
-    class="emotion-1"
+    class="c0"
   >
     <a
-      class="c0 emotion-1"
+      class="c2 c3 emotion-1"
       href="https://www.linkedin.com/in/lapanti"
       rel="me noopener noreferrer"
       target="_blank"
     >
       <svg
-        class="emotion-14"
+        class="c7"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -208,16 +206,16 @@ exports[`<ContactInfo /> should render 1`] = `
     </a>
   </li>
   <li
-    class="emotion-1"
+    class="c0"
   >
     <a
-      class="c0 emotion-1"
+      class="c2 c3 emotion-1"
       href="https://mastodontti.fi/@laurilavanti"
       rel="me noopener noreferrer"
       target="_blank"
     >
       <svg
-        class="emotion-17"
+        class="c8"
         fill="currentColor"
         height="1em"
         stroke="currentColor"

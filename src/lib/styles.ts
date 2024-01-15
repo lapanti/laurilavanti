@@ -12,6 +12,8 @@ export const screen = {
 /** Spacing variables start */
 
 export const spacing = {
+    [2]: '0.5rem' as const,
+    [4]: '1rem' as const,
     [4.5]: '1.125rem' as const,
     [18]: '4.5rem' as const,
     [164]: '41rem' as const,
@@ -47,7 +49,9 @@ export const colors = {
     sand: 'rgb(214, 210, 196)' as const,
     facebook: '#4267B2' as const,
     xtwitter: 'rgb(0, 0, 0)' as const,
+    threads: 'rgb(0, 0, 0)' as const,
     instagram: '#E4405F' as const,
+    instagramGradient: 'url(#instagram-gradient)' as const,
     linkedin: '#0E76A8' as const,
     mastodon: '#6363ff' as const,
     rss: '#EE802F' as const,
