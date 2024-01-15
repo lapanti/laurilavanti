@@ -1,12 +1,15 @@
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
 import ExcerptList from '../components/ExcerptList'
 import Layout from '../components/Layout'
+import { fontSizes, sizes } from '../lib/styles'
 
-const H1 = tw.h1`
-    col-start-3 text-2xl mb-4
-`
+const H1 = styled.h1({
+    gridColumnStart: 3,
+    marginBottom: sizes[4],
+    ...fontSizes['2xl'],
+})
 
 const FourZeroFour = (): JSX.Element => (
     <Layout>
