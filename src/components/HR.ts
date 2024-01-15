@@ -1,7 +1,10 @@
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
-const HR = tw.hr`
-    col-start-3 mb-4
-`
+import { sizes } from '../lib/styles'
+
+const HR = styled.hr({
+    gridColumnStart: 3,
+    marginBottom: sizes[4],
+})
 
 export default HR
