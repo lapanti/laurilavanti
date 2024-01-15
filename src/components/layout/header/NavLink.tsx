@@ -1,8 +1,9 @@
 import type { MainNav } from '../../../types/contentful'
 
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { colors, fontSizes, sizes } from '../../../lib/styles'
 import InternalLink from '../../InternalLink'
 
 type Link = MainNav['links'][number]
@@ -24,9 +25,20 @@ const NavLinkComponent = ({ className, title, slug }: Props): JSX.Element => (
 
 NavLinkComponent.displayName = 'NavLink'
 
-const NavLink = tw(NavLinkComponent)`
-    w-full pl-8 mt-6 first-of-type:mt-0
-    text-3xl text-black hover:text-greenDarkText active:text-greenDarkText
-`
+const NavLink = styled(NavLinkComponent)({
+    width: '100%',
+    paddingLeft: sizes[8],
+    marginTop: sizes[6],
+    color: colors.black,
+    ...fontSizes['3xl'],
+
+    ':first-of-type': {
+        marginTop: sizes[0],
+    },
+
+    ':hover, :active': {
+        color: colors.greenDarkText,
+    },
+})
 
 export default NavLink

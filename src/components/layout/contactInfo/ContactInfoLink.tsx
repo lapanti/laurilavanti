@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fa6'
 import styled from 'styled-components'
 
-import { colors, spacing } from '../../../lib/styles'
+import { colors, sizes } from '../../../lib/styles'
 import ExternalLink from '../../ExternalLink'
 
 const RowExternalLink = styled(ExternalLink)({
@@ -21,7 +21,7 @@ const RowExternalLink = styled(ExternalLink)({
     alignItems: 'center',
 })
 
-const logoStyles = { width: spacing[4], height: spacing[4], marginRight: spacing[2] }
+const logoStyles = { width: sizes[4], height: sizes[4], marginRight: sizes[2] }
 
 const Envelope = styled(FaEnvelope)(logoStyles)
 

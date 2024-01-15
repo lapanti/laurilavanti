@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ExcerptList /> should only render those with given tag 1`] = `
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c0 :hover,
+.c0 :active,
+.c0 :focus {
+  text-decoration: underline;
+}
+
 .emotion-0 {
   grid-column-start: 3;
 }
@@ -14,28 +28,8 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .emotion-3 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
   --tw-text-opacity: 1;
   color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-3:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-3:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-3:active {
-  text-decoration-line: underline;
 }
 
 .emotion-4 {
@@ -182,30 +176,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
   margin-right: 0px;
 }
 
-.emotion-14 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-14:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-14:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-14:active {
-  text-decoration-line: underline;
-}
-
-.emotion-17 {
+.emotion-15 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: "IBM Plex Sans";
@@ -228,7 +199,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
@@ -379,7 +350,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -390,7 +361,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -400,13 +371,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/paivakodit-kaipaavat-opettajia/"
           rel="permalink"
         >
@@ -425,7 +396,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
@@ -576,7 +547,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -587,7 +558,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -598,7 +569,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -608,13 +579,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
           rel="permalink"
         >
@@ -633,7 +604,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
@@ -784,7 +755,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -795,7 +766,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -805,13 +776,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
           rel="permalink"
         >
@@ -830,7 +801,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
         rel="permalink"
       >
@@ -981,7 +952,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -992,7 +963,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -1002,13 +973,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
           rel="permalink"
         >
@@ -1027,7 +998,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/kotihoidon-tuen-kuntalisa/"
         rel="permalink"
       >
@@ -1178,7 +1149,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1189,7 +1160,7 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -1199,13 +1170,13 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/kotihoidon-tuen-kuntalisa/"
           rel="permalink"
         >
@@ -1218,6 +1189,20 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 `;
 
 exports[`<ExcerptList /> should render 1`] = `
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c0 :hover,
+.c0 :active,
+.c0 :focus {
+  text-decoration: underline;
+}
+
 .emotion-0 {
   grid-column-start: 3;
 }
@@ -1231,28 +1216,8 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .emotion-3 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
   --tw-text-opacity: 1;
   color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-3:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-3:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-3:active {
-  text-decoration-line: underline;
 }
 
 .emotion-4 {
@@ -1399,30 +1364,7 @@ exports[`<ExcerptList /> should render 1`] = `
   margin-right: 0px;
 }
 
-.emotion-14 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-14:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-14:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-14:active {
-  text-decoration-line: underline;
-}
-
-.emotion-19 {
+.emotion-16 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: "IBM Plex Sans";
@@ -1445,7 +1387,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/terveys-kuuluu-kaikille/"
         rel="permalink"
       >
@@ -1596,7 +1538,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1607,7 +1549,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1618,7 +1560,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1628,13 +1570,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/terveys-kuuluu-kaikille/"
           rel="permalink"
         >
@@ -1653,7 +1595,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >
@@ -1804,7 +1746,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -1815,7 +1757,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -1826,7 +1768,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -1836,13 +1778,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
           rel="permalink"
         >
@@ -1861,7 +1803,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
         rel="permalink"
       >
@@ -2012,7 +1954,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -2023,7 +1965,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2034,7 +1976,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -2044,13 +1986,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
           rel="permalink"
         >
@@ -2069,7 +2011,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
         rel="permalink"
       >
@@ -2220,7 +2162,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2231,7 +2173,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/perustuva/"
             >
               #
@@ -2241,13 +2183,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/blogi/2021/10/31/perusturvajaosto-mika-se-on/"
           rel="permalink"
         >
@@ -2266,7 +2208,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/ehdolle-aluevaaleihin/"
         rel="permalink"
       >
@@ -2417,7 +2359,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -2428,7 +2370,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2439,7 +2381,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -2449,13 +2391,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/ehdolle-aluevaaleihin/"
           rel="permalink"
         >
@@ -2474,7 +2416,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
@@ -2625,7 +2567,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2636,7 +2578,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2646,13 +2588,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/paivakodit-kaipaavat-opettajia/"
           rel="permalink"
         >
@@ -2671,7 +2613,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
         rel="permalink"
       >
@@ -2822,7 +2764,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2833,7 +2775,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/opetus/"
             >
               #
@@ -2843,13 +2785,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
           rel="permalink"
         >
@@ -2868,7 +2810,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
@@ -3019,7 +2961,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -3030,7 +2972,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3041,7 +2983,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3051,13 +2993,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
           rel="permalink"
         >
@@ -3076,7 +3018,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
@@ -3227,7 +3169,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3238,7 +3180,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3248,13 +3190,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
           rel="permalink"
         >
@@ -3273,7 +3215,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
         rel="permalink"
       >
@@ -3424,7 +3366,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3435,7 +3377,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3445,13 +3387,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
           rel="permalink"
         >
@@ -3470,7 +3412,7 @@ exports[`<ExcerptList /> should render 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/kotihoidon-tuen-kuntalisa/"
         rel="permalink"
       >
@@ -3621,7 +3563,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3632,7 +3574,7 @@ exports[`<ExcerptList /> should render 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -3642,13 +3584,13 @@ exports[`<ExcerptList /> should render 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/kotihoidon-tuen-kuntalisa/"
           rel="permalink"
         >
@@ -3661,6 +3603,20 @@ exports[`<ExcerptList /> should render 1`] = `
 `;
 
 exports[`<ExcerptList /> should render in related order 1`] = `
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c0 :hover,
+.c0 :active,
+.c0 :focus {
+  text-decoration: underline;
+}
+
 .emotion-0 {
   grid-column-start: 3;
 }
@@ -3674,28 +3630,8 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .emotion-3 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
   --tw-text-opacity: 1;
   color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-3:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-3:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-3:active {
-  text-decoration-line: underline;
 }
 
 .emotion-4 {
@@ -3842,30 +3778,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
   margin-right: 0px;
 }
 
-.emotion-14 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-14:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-14:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-14:active {
-  text-decoration-line: underline;
-}
-
-.emotion-17 {
+.emotion-15 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: "IBM Plex Sans";
@@ -3888,7 +3801,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/paivakodit-kaipaavat-opettajia/"
         rel="permalink"
       >
@@ -4039,7 +3952,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4050,7 +3963,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4060,13 +3973,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/paivakodit-kaipaavat-opettajia/"
           rel="permalink"
         >
@@ -4085,7 +3998,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
         rel="permalink"
       >
@@ -4236,7 +4149,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kaavoitus/"
             >
               #
@@ -4247,7 +4160,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4258,7 +4171,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4268,13 +4181,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
           rel="permalink"
         >
@@ -4293,7 +4206,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
         rel="permalink"
       >
@@ -4444,7 +4357,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4455,7 +4368,7 @@ exports[`<ExcerptList /> should render in related order 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -4465,13 +4378,13 @@ exports[`<ExcerptList /> should render in related order 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-17"
+        class="emotion-15"
         itemprop="description"
       >
         Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
           rel="permalink"
         >
@@ -4484,6 +4397,20 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 `;
 
 exports[`<ExcerptList /> should render with limit 1`] = `
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.c0 :hover,
+.c0 :active,
+.c0 :focus {
+  text-decoration: underline;
+}
+
 .emotion-0 {
   grid-column-start: 3;
 }
@@ -4497,28 +4424,8 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .emotion-3 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
   --tw-text-opacity: 1;
   color: rgb(235 235 236 / var(--tw-text-opacity));
-}
-
-.emotion-3:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-3:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-3:active {
-  text-decoration-line: underline;
 }
 
 .emotion-4 {
@@ -4665,30 +4572,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
   margin-right: 0px;
 }
 
-.emotion-14 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.emotion-14:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-14:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-14:active {
-  text-decoration-line: underline;
-}
-
-.emotion-19 {
+.emotion-16 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: "IBM Plex Sans";
@@ -4711,7 +4595,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/terveys-kuuluu-kaikille/"
         rel="permalink"
       >
@@ -4862,7 +4746,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -4873,7 +4757,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -4884,7 +4768,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -4894,13 +4778,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/terveys-kuuluu-kaikille/"
           rel="permalink"
         >
@@ -4919,7 +4803,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >
@@ -5070,7 +4954,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -5081,7 +4965,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -5092,7 +4976,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -5102,13 +4986,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/blogi/2021/12/20/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
           rel="permalink"
         >
@@ -5127,7 +5011,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
       itemtype="https://schema.org/CreativeWork"
     >
       <a
-        class="emotion-3"
+        class="c0 emotion-3"
         href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
         rel="permalink"
       >
@@ -5278,7 +5162,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -5289,7 +5173,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -5300,7 +5184,7 @@ exports[`<ExcerptList /> should render with limit 1`] = `
             class="emotion-13"
           >
             <a
-              class="emotion-14"
+              class="c0"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -5310,13 +5194,13 @@ exports[`<ExcerptList /> should render with limit 1`] = `
         </ul>
       </aside>
       <p
-        class="emotion-19"
+        class="emotion-16"
         itemprop="description"
       >
         Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia? Entä jos siitä tulisi jälkikäteen lasku, jossa olisi pari nollaa enemmän kuin nykyään?
          
         <a
-          class="emotion-14"
+          class="c0"
           href="/blogi/blogi/2021/11/15/mita-jos-terveyskeskusta-ei-olisikaan/"
           rel="permalink"
         >

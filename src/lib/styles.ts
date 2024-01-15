@@ -11,10 +11,13 @@ export const screen = {
 /** Screen sizes end */
 /** Spacing variables start */
 
-export const spacing = {
+export const sizes = {
+    [0]: '0px' as const,
     [2]: '0.5rem' as const,
     [4]: '1rem' as const,
     [4.5]: '1.125rem' as const,
+    [6]: '1.5rem' as const,
+    [8]: '2rem' as const,
     [18]: '4.5rem' as const,
     [164]: '41rem' as const,
 } as const
@@ -61,6 +64,10 @@ export const colors = {
 /** Colors end */
 /** Fonts begin */
 
+export const fontSizes = {
+    ['3xl']: { fontSize: '1.875rem', lineHeight: '2.25rem' } as const,
+} as const
+
 export const fontFamily = {
     sans: `"IBM Plex Sans"` as const,
     mono: `"IBM Plex Mono"` as const,
@@ -68,3 +75,14 @@ export const fontFamily = {
 } as const
 
 /** Fonts end */
+/** Transitions begin */
+
+export const transitions = {
+    base: {
+        transitionProperty: 'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        transitionDuration: '150ms',
+    } as const
+} as const
+
+/** Transitions end */

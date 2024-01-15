@@ -1,31 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<InternalLink /> should render 1`] = `
-.emotion-0 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.emotion-0:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-0:focus {
-  text-decoration-line: underline;
-}
-
-.emotion-0:active {
-  text-decoration-line: underline;
+.c0 :hover,
+.c0 :active,
+.c0 :focus {
+  text-decoration: underline;
 }
 
 <a
-  class="emotion-0"
+  class="c0"
   href="/blogi"
 >
   Linkki
