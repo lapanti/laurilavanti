@@ -6116,6 +6116,16 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 `;
 
 exports[`<Layout /> rich body should render external links 1`] = `
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
+}
+
+.c0 :hover,
+.c0 :active {
+  text-decoration: underline;
+}
+
 .emotion-0 {
   position: relative;
   display: grid;
@@ -6337,22 +6347,6 @@ exports[`<Layout /> rich body should render external links 1`] = `
   line-height: 1.75rem;
   font-weight: 400;
   grid-column-start: 3;
-}
-
-.emotion-15 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-}
-
-.emotion-15:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-15:active {
-  text-decoration-line: underline;
 }
 
 .emotion-16 {
@@ -6589,7 +6583,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
         class="emotion-14"
       >
         <a
-          class="emotion-15"
+          class="c0 emotion-15"
           href="https://test.com"
           rel=" noopener noreferrer"
           target="_blank"

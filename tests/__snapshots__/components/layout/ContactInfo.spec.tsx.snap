@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ContactInfo /> should render 1`] = `
+.c0 {
+  color: rgb(90, 94, 0);
+  text-decoration: none;
+}
+
+.c0 :hover,
+.c0 :active {
+  text-decoration: underline;
+}
+
 .emotion-0 {
   grid-column-start: 3;
   margin-top: 1rem;
@@ -24,33 +34,6 @@ exports[`<ContactInfo /> should render 1`] = `
   margin-right: 0.5rem;
   height: 1rem;
   width: 1rem;
-}
-
-.emotion-4 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(90 94 0 / var(--tw-text-opacity));
-  text-decoration-line: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-4:hover {
-  text-decoration-line: underline;
-}
-
-.emotion-4:active {
-  text-decoration-line: underline;
 }
 
 .emotion-5 {
@@ -116,7 +99,7 @@ exports[`<ContactInfo /> should render 1`] = `
     class="emotion-1"
   >
     <a
-      class="emotion-4"
+      class="c0 emotion-1"
       href="https://www.facebook.com/laurilavanti"
       rel="me noopener noreferrer"
       target="_blank"
@@ -144,7 +127,7 @@ exports[`<ContactInfo /> should render 1`] = `
     class="emotion-1"
   >
     <a
-      class="emotion-4"
+      class="c0 emotion-1"
       href="https://twitter.com/laurilavanti"
       rel="me noopener noreferrer"
       target="_blank"
@@ -172,7 +155,7 @@ exports[`<ContactInfo /> should render 1`] = `
     class="emotion-1"
   >
     <a
-      class="emotion-4"
+      class="c0 emotion-1"
       href="https://www.instagram.com/laurilavanti/"
       rel="me noopener noreferrer"
       target="_blank"
@@ -200,7 +183,7 @@ exports[`<ContactInfo /> should render 1`] = `
     class="emotion-1"
   >
     <a
-      class="emotion-4"
+      class="c0 emotion-1"
       href="https://www.linkedin.com/in/lapanti"
       rel="me noopener noreferrer"
       target="_blank"
@@ -228,7 +211,7 @@ exports[`<ContactInfo /> should render 1`] = `
     class="emotion-1"
   >
     <a
-      class="emotion-4"
+      class="c0 emotion-1"
       href="https://mastodontti.fi/@laurilavanti"
       rel="me noopener noreferrer"
       target="_blank"
