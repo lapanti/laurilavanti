@@ -1,8 +1,9 @@
 import type { ContactInfoLink as ContactInfoLinkType } from '../../types/contentful'
 
 import React from 'react'
-import tw from 'twin.macro'
+import styled from 'styled-components'
 
+import { sizes } from '../../lib/styles'
 import ContactInfoLink from './contactInfo/ContactInfoLink'
 
 interface Props {
@@ -20,8 +21,9 @@ const ContactInfoComponent = ({ className, links }: Props) => (
 
 ContactInfoComponent.displayName = 'ContactInfo'
 
-const ContactInfo = tw(ContactInfoComponent)`
-    col-start-3 mt-4
-`
+const ContactInfo = styled(ContactInfoComponent)({
+    gridColumnStart: 3,
+    marginTop: sizes[4],
+})
 
 export default ContactInfo
