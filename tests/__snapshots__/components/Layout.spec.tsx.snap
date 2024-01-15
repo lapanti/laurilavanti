@@ -3089,6 +3089,11 @@ exports[`<Layout /> rich body should render HR 1`] = `
   text-decoration: underline;
 }
 
+.c3 {
+  grid-column-start: 3;
+  margin-bottom: 1rem;
+}
+
 .c1 {
   width: 100%;
   padding-left: 2rem;
@@ -3272,11 +3277,6 @@ exports[`<Layout /> rich body should render HR 1`] = `
 }
 
 .emotion-11 {
-  grid-column-start: 3;
-  margin-bottom: 1rem;
-}
-
-.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3300,7 +3300,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
   grid-area: footer;
 }
 
-.emotion-13 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3319,11 +3319,11 @@ exports[`<Layout /> rich body should render HR 1`] = `
   gap: 1.5rem;
 }
 
-.emotion-14 {
+.emotion-13 {
   padding: 0px;
 }
 
-.emotion-15 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3339,7 +3339,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
   justify-content: center;
 }
 
-.emotion-16 {
+.emotion-15 {
   height: 2.25rem;
   width: 2.25rem;
   fill: rgb(235, 235, 236);
@@ -3348,15 +3348,15 @@ exports[`<Layout /> rich body should render HR 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-16:hover {
+.emotion-15:hover {
   fill: #4267B2;
 }
 
-.emotion-16:focus {
+.emotion-15:focus {
   fill: #4267B2;
 }
 
-.emotion-19 {
+.emotion-18 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -3364,15 +3364,15 @@ exports[`<Layout /> rich body should render HR 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-19:hover {
+.emotion-18:hover {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-19:focus {
+.emotion-18:focus {
   fill: rgb(0, 0, 0);
 }
 
-.emotion-22 {
+.emotion-21 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -3380,15 +3380,15 @@ exports[`<Layout /> rich body should render HR 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-22:hover {
+.emotion-21:hover {
   fill: url(#instagram-gradient);
 }
 
-.emotion-22:focus {
+.emotion-21:focus {
   fill: url(#instagram-gradient);
 }
 
-.emotion-25 {
+.emotion-24 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -3396,15 +3396,15 @@ exports[`<Layout /> rich body should render HR 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-25:hover {
+.emotion-24:hover {
   fill: #0E76A8;
 }
 
-.emotion-25:focus {
+.emotion-24:focus {
   fill: #0E76A8;
 }
 
-.emotion-28 {
+.emotion-27 {
   height: 2.25rem;
   width: 2.25rem;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -3412,11 +3412,11 @@ exports[`<Layout /> rich body should render HR 1`] = `
   transition-duration: 150ms;
 }
 
-.emotion-28:hover {
+.emotion-27:hover {
   fill: #6363ff;
 }
 
-.emotion-28:focus {
+.emotion-27:focus {
   fill: #6363ff;
 }
 
@@ -3507,28 +3507,28 @@ exports[`<Layout /> rich body should render HR 1`] = `
       class="emotion-10"
     >
       <hr
-        class="emotion-11"
+        class="c3"
       />
     </article>
   </main>
   <footer
-    class="emotion-12"
+    class="emotion-11"
   >
     <ul
-      class="emotion-13"
+      class="emotion-12"
     >
       <li
-        class="emotion-14"
+        class="emotion-13"
       >
         <a
-          class="emotion-15"
+          class="emotion-14"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Facebook"
         >
           <svg
-            class="emotion-16"
+            class="emotion-15"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3544,17 +3544,17 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-14"
+        class="emotion-13"
       >
         <a
-          class="emotion-15"
+          class="emotion-14"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Twitter"
         >
           <svg
-            class="emotion-19"
+            class="emotion-18"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3570,17 +3570,17 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-14"
+        class="emotion-13"
       >
         <a
-          class="emotion-15"
+          class="emotion-14"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
           title="Instagram"
         >
           <svg
-            class="emotion-22"
+            class="emotion-21"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3596,17 +3596,17 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-14"
+        class="emotion-13"
       >
         <a
-          class="emotion-15"
+          class="emotion-14"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
           <svg
-            class="emotion-25"
+            class="emotion-24"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -3622,17 +3622,17 @@ exports[`<Layout /> rich body should render HR 1`] = `
         </a>
       </li>
       <li
-        class="emotion-14"
+        class="emotion-13"
       >
         <a
-          class="emotion-15"
+          class="emotion-14"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
           title="Mastodon"
         >
           <svg
-            class="emotion-28"
+            class="emotion-27"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
