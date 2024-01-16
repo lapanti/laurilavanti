@@ -6,7 +6,7 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -571,7 +571,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -1159,7 +1159,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -1176,7 +1176,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   text-decoration: underline;
 }
 
-.c28 {
+.c27 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -1185,24 +1185,24 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-bottom: 1rem;
 }
 
-.c23 {
+.c22 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c24 {
+.c23 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c24 :last-child {
+.c23 :last-child {
   margin-right: 0px;
 }
 
-.c25 {
+.c24 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -1210,45 +1210,45 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   flex-shrink: 0;
 }
 
-.c26 {
+.c25 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c27 {
+.c26 {
   margin-right: 1rem;
 }
 
-.c27 :last-child {
+.c26 :last-child {
   margin-right: 0px;
 }
 
-.c22 {
+.c21 {
   display: flex;
   flex-direction: column;
 }
 
-.c16 {
+.c15 {
   color: rgb(235, 235, 236);
 }
 
-.c17 {
+.c16 {
   width: 100%;
   display: flex;
   height: 16rem;
   object-fit: cover;
 }
 
-.c19 {
+.c18 {
   display: flex;
 }
 
-.c18 {
+.c17 {
   display: none;
 }
 
-.c20 {
+.c19 {
   display: flex;
   align-items: flex-end;
   margin-bottom: 1rem;
@@ -1262,34 +1262,29 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   position: relative;
 }
 
-.c21 {
+.c20 {
   grid-column-start: auto;
 }
 
-.c29 {
+.c28 {
   margin-top: 0.25rem;
-}
-
-.c15 {
-  margin-top: 2rem;
-}
-
-.c15 :first-of-type {
-  margin-top: 0px;
 }
 
 .c14 {
   grid-column-start: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.c33 {
+.c32 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c33 >* {
+.c32 >* {
   fill: rgb(0, 0, 0);
   height: 2.25rem;
   width: 2.25rem;
@@ -1298,13 +1293,22 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   transition-duration: 150ms;
 }
 
-.c32 {
+.c31 {
   padding: 0px;
 }
 
-.c32 :hover,
-.c32 :focus {
+.c31 :hover,
+.c31 :focus {
   fill: #4267B2;
+}
+
+.c33 {
+  padding: 0px;
+}
+
+.c33 :hover,
+.c33 :focus {
+  fill: rgb(255, 255, 255);
 }
 
 .c34 {
@@ -1313,7 +1317,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c34 :hover,
 .c34 :focus {
-  fill: rgb(255, 255, 255);
+  fill: url(#instagram-gradient);
 }
 
 .c35 {
@@ -1322,7 +1326,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c35 :hover,
 .c35 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c36 {
@@ -1331,19 +1335,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c36 :hover,
 .c36 :focus {
-  fill: #0E76A8;
-}
-
-.c37 {
-  padding: 0px;
-}
-
-.c37 :hover,
-.c37 :focus {
   fill: #6363ff;
 }
 
-.c31 {
+.c30 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1351,7 +1346,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   gap: 1.5rem;
 }
 
-.c30 {
+.c29 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -1480,13 +1475,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 @media (min-width: 479px) {
-  .c19 {
+  .c18 {
     display: none;
   }
 }
 
 @media (min-width: 479px) {
-  .c18 {
+  .c17 {
     display: flex;
   }
 }
@@ -1581,21 +1576,20 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         class="c14"
       >
         <li
-          class="c15"
+          class=""
         >
           <article
             aria-label="Terveys kuuluu kaikille"
-            class=""
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c8 c16"
+              class="c8 c15"
               href="/blogi/terveys-kuuluu-kaikille/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c17 c18"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c16 c17"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -1644,7 +1638,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c17 c19"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c16 c18"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -1693,10 +1687,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <div
-                class="c20"
+                class="c19"
               >
                 <h2
-                  class="c10 c21"
+                  class="c10 c20"
                   id="terveys-kuuluu-kaikille"
                   itemprop="headline"
                 >
@@ -1705,16 +1699,16 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </div>
             </a>
             <aside
-              class="c22"
+              class="c21"
             >
               <div
-                class="c23"
+                class="c22"
               >
                 <span
-                  class="c24"
+                  class="c23"
                 >
                   <svg
-                    class="c25"
+                    class="c24"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1735,10 +1729,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </span>
               </div>
               <ul
-                class="c26"
+                class="c25"
               >
                 <li
-                  class="c27"
+                  class="c26"
                 >
                   <a
                     class="c8"
@@ -1749,7 +1743,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c27"
+                  class="c26"
                 >
                   <a
                     class="c8"
@@ -1760,7 +1754,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c27"
+                  class="c26"
                 >
                   <a
                     class="c8"
@@ -1773,7 +1767,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="c28 c29"
+              class="c27 c28"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -1792,16 +1786,16 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="c30"
+    class="c29"
   >
     <ul
-      class="c31"
+      class="c30"
     >
       <li
-        class="c32"
+        class="c31"
       >
         <a
-          class="c33"
+          class="c32"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1823,10 +1817,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c34"
+        class="c33"
       >
         <a
-          class="c33"
+          class="c32"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1848,10 +1842,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c35"
+        class="c34"
       >
         <a
-          class="c33"
+          class="c32"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1873,10 +1867,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c36"
+        class="c35"
       >
         <a
-          class="c33"
+          class="c32"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1898,10 +1892,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c37"
+        class="c36"
       >
         <a
-          class="c33"
+          class="c32"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1923,10 +1917,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c34"
+        class="c33"
       >
         <a
-          class="c33"
+          class="c32"
           href="https://twitter.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -2035,7 +2029,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -2587,7 +2581,7 @@ exports[`<Layout /> rich body should render HR 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -3141,7 +3135,7 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -3819,7 +3813,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -4447,7 +4441,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -5011,7 +5005,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -5587,7 +5581,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -6156,7 +6150,7 @@ exports[`<Layout /> rich body should render table 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -6781,7 +6775,7 @@ exports[`<Layout /> should render hero image 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -7505,7 +7499,7 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -8229,7 +8223,7 @@ exports[`<Layout /> should render hero image with hidden title as alt 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -8918,7 +8912,7 @@ exports[`<Layout /> should render hero image with hidden title as alt for front 
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -9607,7 +9601,7 @@ exports[`<Layout /> should render hidden title 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -10154,7 +10148,7 @@ exports[`<Layout /> should render minimal 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
@@ -10701,7 +10695,7 @@ exports[`<Layout /> should render title 1`] = `
   font-family: "Signika Negative";
   font-weight: 700;
   font-size: 2.25rem;
-  line-heihgt: 2.5rem;
+  line-height: 2.5rem;
 }
 
 .c8 {
