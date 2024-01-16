@@ -3,58 +3,93 @@ import type { MainNav } from '../../types/contentful'
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useCallback, useState } from 'react'
 import { FaBars, FaXmark } from 'react-icons/fa6'
-/** @ts-expect-error twin.macro typings are incomplete :/ */
-import tw, { styled } from 'twin.macro'
+import styled from 'styled-components'
 
+import { colors, shadows, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'
 import NavLink from './header/NavLink'
 
-const Heading = styled(H2)(({ isVisible }: { isVisible: boolean }) => [
-    tw`
-    bg-opacity-75 bg-white p-2 rounded-md rounded-tr-sm rounded-bl-sm
-`,
-    isVisible ? tw`visible` : tw`invisible`,
-])
+const Heading = styled(H2)<{ isVisible?: boolean }>(
+    {
+        padding: sizes[2],
+        backgroundColor: colors.white75,
+        borderRadius: sizes[1.5],
+        borderTopRightRadius: sizes[0.5],
+        borderBottomLeftRadius: sizes[0.5],
+    },
+    ({ isVisible }) => ({
+        visibility: isVisible ? 'visible' : 'hidden',
+    })
+)
 
-const CloseButton = tw.button`
-    cursor-pointer
-    h-12 w-12
-    flex items-center justify-center
-`
+const CloseButton = styled.button({
+    cursor: 'pointer',
+    height: sizes[12],
+    width: sizes[12],
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+})
 
-const OpenButton = styled(CloseButton)(({ isOpen }: { isOpen: boolean }) => [
-    tw`
-        box-border bg-opacity-75 bg-white rounded-md rounded-tl-sm rounded-br-sm
-        transition-all duration-300 ease-out
-    `,
-    isOpen ? tw`invisible` : tw`visible`,
-])
+const OpenButton = styled(CloseButton)<{ $isOpen: boolean }>(
+    {
+        boxSizing: 'border-box',
+        background: colors.white75,
+        borderRadius: sizes[1.5],
+        borderTopLeftRadius: sizes[0.5],
+        borderBottomRightRadius: sizes[0.5],
+        transition: 'all',
+        transitionDuration: '300ms',
+        transitionTimingFunction: 'ease-out',
+    },
+    ({ $isOpen }) => ({
+        visibility: $isOpen ? 'hidden' : 'visible',
+    })
+)
 
-const Bars = tw(FaBars)`
-    h-8 w-8
-`
+const logoStyles = {
+    height: sizes[8],
+    width: sizes[8],
+}
 
-const Close = tw(FaXmark)`
-    h-8 w-8
-`
+const Bars = styled(FaBars)(logoStyles)
 
-const CloseBG = styled(CloseButton)(({ isOpen }: { isOpen: boolean }) => [
-    tw`
-        absolute top-0 w-screen h-screen bg-transparent
-    `,
-    isOpen ? tw`visible left-0` : tw`invisible left-full`,
-])
+const Close = styled(FaXmark)(logoStyles)
 
-const Nav = styled.nav(({ isOpen }: { isOpen: boolean }) => [
-    tw`
-        fixed top-0
-        w-72 h-screen flex flex-col items-end
-        bg-opacity-90 bg-white
-        transition-all duration-300 ease-in
-        shadow
-    `,
-    isOpen ? tw`visible right-0` : tw`invisible -right-80`,
-])
+const CloseBG = styled(CloseButton)<{ $isOpen: boolean }>(
+    {
+        position: 'absolute',
+        top: sizes[0],
+        width: '100vw',
+        height: '100vh',
+        background: colors.transparent,
+    },
+    ({ $isOpen }) => ({
+        visibility: $isOpen ? 'visible' : 'hidden',
+        left: $isOpen ? sizes[0] : '100%',
+    })
+)
+
+const Nav = styled.nav<{ $isOpen: boolean }>(
+    {
+        position: 'fixed',
+        top: sizes[0],
+        width: sizes[72],
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-end',
+        background: colors.white90,
+        transition: 'all',
+        transitionDuration: '300ms',
+        transitionTimingFunction: 'ease-in',
+        boxShadow: shadows.base,
+    },
+    ({ $isOpen }) => ({
+        visibility: $isOpen ? 'visible' : 'hidden',
+        right: $isOpen ? sizes[0] : `-${sizes[80]}`,
+    })
+)
 
 interface Props {
     className?: string
@@ -80,11 +115,11 @@ const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
 
     return (
         <header className={className}>
-            <OpenButton aria-label="Avaa valikko" onClick={openMenu} isOpen={isOpen}>
+            <OpenButton aria-label="Avaa valikko" onClick={openMenu} $isOpen={isOpen}>
                 <Bars aria-hidden="true" />
             </OpenButton>
-            <CloseBG onClick={closeMenu} aria-hidden="true" isOpen={isOpen} />
-            <Nav aria-expanded={isOpen} isOpen={isOpen}>
+            <CloseBG onClick={closeMenu} aria-hidden="true" $isOpen={isOpen} />
+            <Nav aria-expanded={isOpen} $isOpen={isOpen}>
                 <CloseButton aria-label="Sulje valikko" onClick={closeMenu}>
                     <Close aria-hidden="true" />
                 </CloseButton>
@@ -99,8 +134,17 @@ const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
 
 HeaderComponent.displayName = 'Header'
 
-const Header = tw(HeaderComponent)`
-  flex flex-row-reverse p-2 items-center justify-between box-border w-full fixed z-50 select-none 
-`
+const Header = styled(HeaderComponent)({
+    display: 'flex',
+    flexDirection: 'row-reverse',
+    padding: sizes[2],
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    boxSizing: 'border-box',
+    width: '100%',
+    position: 'fixed',
+    zIndex: zIndices[50],
+    userSelect: 'none',
+})
 
 export default Header
