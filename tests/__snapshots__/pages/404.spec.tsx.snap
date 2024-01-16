@@ -88,11 +88,11 @@ exports[`<404 /> should render 1`] = `
 }
 
 .c19 {
-  display: flex;
+  display: flex!important;
 }
 
 .c18 {
-  display: none;
+  display: none!important;
 }
 
 .c20 {
@@ -331,13 +331,13 @@ exports[`<404 /> should render 1`] = `
 
 @media (min-width: 479px) {
   .c19 {
-    display: none;
+    display: none!important;
   }
 }
 
 @media (min-width: 479px) {
   .c18 {
-    display: flex;
+    display: flex!important;
   }
 }
 
