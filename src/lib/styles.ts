@@ -146,7 +146,7 @@ export const fontSizes = {
     xl: { fontSize: '1.25rem', lineHeight: '1.75rem' } as const,
     ['2xl']: { fontSize: '1.5rem', lineHeight: '2rem' } as const,
     ['3xl']: { fontSize: '1.875rem', lineHeight: '2.25rem' } as const,
-    ['4xl']: { fontSize: '2.25rem', lineHeihgt: '2.5rem' } as const,
+    ['4xl']: { fontSize: '2.25rem', lineHeight: '2.5rem' } as const,
     ['5xl']: { fontSize: '3rem', lineHeight: '1' } as const,
     ['6xl']: { fontSize: '3.75rem', lineHeight: '1' } as const,
     ['7xl']: { fontSize: '4.5rem', lineHeight: '1' } as const,

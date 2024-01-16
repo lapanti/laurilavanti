@@ -8,7 +8,6 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components'
-import { GlobalStyles } from 'twin.macro'
 
 import {
     breakpoints,
@@ -32,6 +31,7 @@ import BigHeroImage from './layout/BigHeroImage'
 import ContactInfo from './layout/ContactInfo'
 import CurriculumVitae from './layout/CurriculumVitae'
 import Footer from './layout/Footer'
+import GlobalStyle from './layout/GlobalStyle'
 import Header from './layout/Header'
 import HeroImage from './layout/HeroImage'
 import HomeTitle from './layout/HomeTitle'
@@ -238,7 +238,7 @@ const LayoutComponent = ({
 
     return (
         <>
-            <GlobalStyles />
+            <GlobalStyle />
             <SEO
                 title={title || hiddenTitle || ''}
                 description={description}

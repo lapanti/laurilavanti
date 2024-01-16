@@ -81,22 +81,24 @@ const ExcerptComponent = ({
     const mobileImage = getImage(mobileImageData)
 
     return (
-        <article className={className} aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
-            <Link to={`/blogi/${slug}/`} rel="permalink">
-                {image && <DesktopImage image={image} alt={title} />}
-                {mobileImage && <MobileImage image={mobileImage} alt={title} />}
-                <H2Container>
-                    <StyledH2 itemProp="headline">{title}</StyledH2>
-                </H2Container>
-            </Link>
-            <PostMeta date={date} tags={tags} />
-            <RemarginP itemProp="description">
-                {excerpt}{' '}
-                <InternalLink to={`/blogi/${slug}/`} rel="permalink">
-                    Lue lisää »
-                </InternalLink>
-            </RemarginP>
-        </article>
+        <li className={className}>
+            <article aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
+                <Link to={`/blogi/${slug}/`} rel="permalink">
+                    {image && <DesktopImage image={image} alt={title} />}
+                    {mobileImage && <MobileImage image={mobileImage} alt={title} />}
+                    <H2Container>
+                        <StyledH2 itemProp="headline">{title}</StyledH2>
+                    </H2Container>
+                </Link>
+                <PostMeta date={date} tags={tags} />
+                <RemarginP itemProp="description">
+                    {excerpt}{' '}
+                    <InternalLink to={`/blogi/${slug}/`} rel="permalink">
+                        Lue lisää »
+                    </InternalLink>
+                </RemarginP>
+            </article>
+        </li>
     )
 }
 

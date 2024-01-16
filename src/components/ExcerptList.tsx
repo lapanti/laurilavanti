@@ -7,13 +7,6 @@ import styled from 'styled-components'
 import { sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt'
 
-const Item = styled.li({
-    marginTop: sizes[8],
-    [':first-of-type']: {
-        marginTop: sizes[0],
-    },
-})
-
 interface Props {
     className?: string
     limit?: number
@@ -107,17 +100,16 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
     return (
         <ul className={className}>
             {nodes.map((node) => (
-                <Item key={node.publishDate || node.createdAt}>
-                    <Excerpt
-                        date={node.publishDate || node.createdAt}
-                        slug={node.slug}
-                        excerpt={node.excerpt}
-                        image={node.headerImage.localFile}
-                        mobileImage={node.mobileHeaderImage.localFile}
-                        title={node.title}
-                        tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
-                    />
-                </Item>
+                <Excerpt
+                    key={node.publishDate || node.createdAt}
+                    date={node.publishDate || node.createdAt}
+                    slug={node.slug}
+                    excerpt={node.excerpt}
+                    image={node.headerImage.localFile}
+                    mobileImage={node.mobileHeaderImage.localFile}
+                    title={node.title}
+                    tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
+                />
             ))}
         </ul>
     )
@@ -127,6 +119,9 @@ ExcerptListComponent.displayName = 'ExcerptList'
 
 const ExcerptList = styled(ExcerptListComponent)({
     gridColumnStart: 3,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: sizes[8],
 })
 
 export default ExcerptList
