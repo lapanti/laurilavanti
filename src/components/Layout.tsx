@@ -54,30 +54,30 @@ const Article = styled.article({
 })
 
 const MobileBigHeroImage = styled(BigHeroImage)({
-    display: 'flex',
+    display: 'flex !important',
     [breakpoints.biggerThanPhone.min]: {
-        display: 'none',
+        display: 'none !important',
     },
 })
 
 const DesktopBigHeroImage = styled(BigHeroImage)({
-    display: 'none',
+    display: 'none !important',
     [breakpoints.biggerThanPhone.min]: {
-        display: 'flex',
+        display: 'flex !important',
     },
 })
 
 const MobileHeroImage = styled(HeroImage)({
-    display: 'flex',
+    display: 'flex !important',
     [breakpoints.biggerThanPhone.min]: {
-        display: 'none',
+        display: 'none !important',
     },
 })
 
 const DesktopHeroImage = styled(HeroImage)({
-    display: 'none',
+    display: 'none !important',
     [breakpoints.biggerThanPhone.min]: {
-        display: 'flex',
+        display: 'flex !important',
     },
 })
 

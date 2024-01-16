@@ -23,16 +23,16 @@ const Image = styled(GatsbyImage)({
 })
 
 const MobileImage = styled(Image)({
-    display: 'flex',
+    display: 'flex !important',
     [breakpoints.biggerThanPhone.min]: {
-        display: 'none',
+        display: 'none !important',
     },
 })
 
 const DesktopImage = styled(Image)({
-    display: 'none',
+    display: 'none !important',
     [breakpoints.biggerThanPhone.min]: {
-        display: 'flex',
+        display: 'flex !important',
     },
 })
 
