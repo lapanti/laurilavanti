@@ -104,6 +104,8 @@ export const colors = {
     black: 'rgb(0, 0, 0)' as const,
     gray: 'rgb(235, 235, 236)' as const,
     white: 'rgb(255, 255, 255)' as const,
+    white75: 'rgba(255, 255, 255, .75)' as const,
+    white90: 'rgba(255, 255, 255, .9)' as const,
     fire: 'rgb(240, 100, 0)' as const,
     evening: 'rgb(0, 98, 114)' as const,
     moss: 'rgb(90, 94, 0)' as const,
@@ -126,7 +128,12 @@ export const colors = {
 
 export const gradients = {
     fromBlackToTop: 'linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0))' as const,
+    fromLeftToRight: 'linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.05), rgba(0, 0, 0, 0))' as const,
 } as const
+
+export const shadows = {
+    base: '0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+}
 
 /** Colors end */
 /** Fonts begin */

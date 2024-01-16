@@ -1,29 +1,41 @@
 import React from 'react'
-/** @ts-expect-error twin.macro typings are incomplete :/ */
-import tw, { styled } from 'twin.macro'
+import styled from 'styled-components'
 
-const H1 = tw.h1`
-    col-start-3 flex flex-col justify-end mb-4 overflow-visible
-`
+import {
+    colors,
+    fontFamily,
+    fontSizes,
+    fontWeights,
+    gradients,
+    gridTemplateColumnsArticle,
+    sizes,
+    zIndices,
+} from '../../lib/styles'
 
-const Word = tw.span`
-    flex
-`
+const H1 = styled.h1({
+    gridColumnStart: 3,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    marginBottom: sizes[4],
+    overflow: 'visible',
+})
 
-const Letter = styled.span(({ index }: { index: number }) => [
+const Word = styled.span({
+    display: 'flex',
+})
+
+const Letter = styled.span<{ index: number }>(
     {
         textShadow: 'black 1px 1px 1px',
-        animation: `slidein 1.${1 - index / 10}s ease-in-out`,
+        width: sizes[10],
+        display: 'flex',
+        justifyContent: 'center',
     },
-    tw`
-        w-10 flex justify-center
-    `,
-])
-
-/*
-const Rest = tw.span`
-    text-3xl flex items-end
-`*/
+    ({ index }) => ({
+        animation: `slidein 1.${1 - index / 10}s ease-in-out`,
+    })
+)
 
 interface Props {
     className?: string
@@ -32,16 +44,9 @@ interface Props {
 const HomeTitleComponent = ({ className }: Props) => (
     <div className={className}>
         <H1 aria-label="Lauri Lavanti">
-            {[
-                ['L', 'aatu'],
-                ['A', 'voimuus'],
-                ['U', 'teliaisuus'],
-                ['R', 'ehellisyys'],
-                ['I', 'nhimillisyys'],
-            ].map(([firstLetter /*, rest*/], i) => (
+            {['L', 'A', 'U', 'R', 'I'].map((firstLetter, i) => (
                 <Word key={firstLetter}>
                     <Letter index={i}>{firstLetter}</Letter>
-                    {/*<Rest>{rest}</Rest>*/}
                 </Word>
             ))}
         </H1>
@@ -50,12 +55,23 @@ const HomeTitleComponent = ({ className }: Props) => (
 
 HomeTitleComponent.displayName = 'HomeTitle'
 
-const HomeTitle = tw(HomeTitleComponent)`
-    grid grid-cols-article
-    col-span-full -mt-164 h-164 z-40 max-w-screen-fullhd mx-auto w-full
-    text-6xl font-heading font-black text-white
-    bg-gradient-to-r from-[rgba(0,0,0,.85)] via-[rgba(0,0,0,.05)]
-    overflow-hidden
-`
+const HomeTitle = styled(HomeTitleComponent)({
+    zIndex: zIndices[40],
+    gridColumn: '1 / -1',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: `-${sizes[164]}`,
+    display: 'grid',
+    height: sizes[164],
+    width: '100%',
+    maxWidth: sizes.fullHd,
+    gridTemplateColumns: gridTemplateColumnsArticle,
+    overflow: 'hidden',
+    backgroundImage: gradients.fromLeftToRight,
+    fontFamily: fontFamily.heading,
+    fontWeight: fontWeights.black,
+    color: colors.white,
+    ...fontSizes['6xl'],
+})
 
 export default HomeTitle
