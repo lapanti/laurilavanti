@@ -16,7 +16,6 @@ const config = {
     setupFilesAfterEnv: ['<rootDir>/tests/setup-test-env.ts'],
     rootDir: '..',
     snapshotResolver: '<rootDir>/tests/snapshotResolver.js',
-    snapshotSerializers: ['@emotion/jest/serializer'],
 }
 
 module.exports = config

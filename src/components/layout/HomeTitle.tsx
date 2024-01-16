@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 import {
     colors,
@@ -25,6 +25,16 @@ const Word = styled.span({
     display: 'flex',
 })
 
+const slideIn = keyframes`
+    from {
+        transform: translateX(-20rem);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+`
+
 const Letter = styled.span<{ index: number }>(
     {
         textShadow: 'black 1px 1px 1px',
@@ -32,9 +42,9 @@ const Letter = styled.span<{ index: number }>(
         display: 'flex',
         justifyContent: 'center',
     },
-    ({ index }) => ({
-        animation: `slidein 1.${1 - index / 10}s ease-in-out`,
-    })
+    ({ index }) => css`
+        animation: ${slideIn} 1 ${1 - index / 10}s ease-in-out;
+    `
 )
 
 interface Props {
