@@ -13,7 +13,7 @@ const Link = styled.a({
     height: '100%',
 
     '> *': {
-        fill: colors.black,
+        fill: colors.gray,
         height: sizes[9],
         width: sizes[9],
         ...transitions.base,
@@ -31,8 +31,9 @@ const iconToHoverColor = (icon: FooterNavLink['icon']): string => {
         case 'mastodon':
             return colors.mastodon
         case 'threads':
+            return colors.threads
         case 'twitter':
-            return colors.white
+            return colors.xtwitter
     }
 }
 
