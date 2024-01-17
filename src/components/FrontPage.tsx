@@ -16,8 +16,8 @@ interface Props {
 
 const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
-        title={data?.contentfulPage?.hideTitle ? undefined : data?.contentfulPage?.title}
-        hiddenTitle={data?.contentfulPage?.hideTitle ? data?.contentfulPage?.title : undefined}
+        title={undefined}
+        hiddenTitle={data?.contentfulPage?.title}
         pathname={`/${slug}/`}
         heroImage={data?.contentfulPage?.image?.localFile}
         mobileHeroImage={data?.contentfulPage?.mobileImage?.localFile}
