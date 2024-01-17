@@ -111,7 +111,7 @@ export interface ContentfulPostExcerpt extends ContentfulPostCommon {
 export interface ContentfulPost extends ContentfulPostCommon {
     body: RichBody
     updatedAt: string
-    publishedOld: string
+    publishedOld: string | null
     published: string
 }
 
