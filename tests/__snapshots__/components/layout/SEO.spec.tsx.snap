@@ -103,6 +103,109 @@ exports[`<SEO /> should render blog post SEO 1`] = `
 }
 `;
 
+exports[`<SEO /> should render borken home page SEO 1`] = `
+{
+  "baseTag": [],
+  "bodyAttributes": {},
+  "defer": true,
+  "encode": true,
+  "htmlAttributes": {
+    "lang": "fi",
+  },
+  "linkTags": [
+    {
+      "href": "https://laurilavanti.fi/",
+      "rel": "canonical",
+    },
+  ],
+  "metaTags": [
+    {
+      "content": "Kirkkonummi, Länsi-Uusimaa, kuntavaalit, aluevaalit, Vihreät, Lauri Lavanti, Lauri, Lavanti, poliitikko",
+      "name": "keywords",
+    },
+    {
+      "content": "Lauri Lavanti",
+      "property": "og:title",
+    },
+    {
+      "content": "laurilavanti",
+      "name": "author",
+    },
+    {
+      "content": "fi_FI",
+      "name": "og:locale",
+    },
+    {
+      "content": "Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.",
+      "name": "description",
+    },
+    {
+      "content": "Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.",
+      "property": "og:description",
+    },
+    {
+      "content": "https://laurilavanti.fi/",
+      "name": "og:url",
+    },
+    {
+      "content": "Lauri Lavanti",
+      "name": "og:site_name",
+    },
+    {
+      "content": "Lauri Lavanti",
+      "name": "twitter:title",
+    },
+    {
+      "content": "@laurilavanti",
+      "name": "twitter:site",
+    },
+    {
+      "content": "@laurilavanti",
+      "name": "twitter:creator",
+    },
+    {
+      "content": "https://www.facebook.com/laurilavanti",
+      "name": "article:publisher",
+    },
+    {
+      "content": "website",
+      "property": "og:type",
+    },
+    {
+      "content": "Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.",
+      "name": "twitter:description",
+    },
+    {
+      "content": "https://laurilavanti.fihttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg",
+      "property": "og:image",
+    },
+    {
+      "content": "4032",
+      "property": "og:image:width",
+    },
+    {
+      "content": "1728",
+      "property": "og:image:height",
+    },
+    {
+      "content": "summary_large_image",
+      "name": "twitter:card",
+    },
+  ],
+  "noscriptTags": [],
+  "onChangeClientState": [Function],
+  "scriptTags": [
+    {
+      "innerHTML": "{"description":"Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.","url":"https://laurilavanti.fi/","@type":"WebSite","headline":"Lauri Lavanti","author":{"@type":"Person","name":"laurilavanti"},"@context":"https://schema.org","image":"https://laurilavanti.fihttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"}",
+      "type": "application/ld+json",
+    },
+  ],
+  "styleTags": [],
+  "title": "Lauri Lavanti",
+  "titleAttributes": {},
+}
+`;
+
 exports[`<SEO /> should render edited blog post SEO 1`] = `
 {
   "baseTag": [],

@@ -73,6 +73,20 @@ describe('<Layout />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render hero image with no alt', () => {
+        const { container } = render(
+            <Layout heroImage={mainImage} mobileHeroImage={mainImage}>
+                {children}
+            </Layout>
+        )
+
+        expect(screen.getByText(children)).toBeInTheDocument()
+
+        expect(screen.getByRole('img', { name: '' })).toBeInTheDocument()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should render hero image with hidden title as alt', () => {
         const { container } = render(
             <Layout heroImage={mainImage} mobileHeroImage={mainImage} hiddenTitle={title}>
@@ -97,6 +111,20 @@ describe('<Layout />', () => {
         expect(screen.getByText(children)).toBeInTheDocument()
 
         expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render hero image for front page with no alt', () => {
+        const { container } = render(
+            <Layout heroImage={mainImage} isFrontPage mobileHeroImage={mainImage}>
+                {children}
+            </Layout>
+        )
+
+        expect(screen.getByText(children)).toBeInTheDocument()
+
+        expect(screen.getByRole('img', { name: '' })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })

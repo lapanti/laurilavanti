@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import gatsbyConfig from '../../../gatsby-config'
 import { mainImage } from '../../../tests/images.mock'
+import { BLOGPOSTING, JSON_LD_TYPES, WEBSITE } from '../../types/jsonld'
 import SEO from './SEO'
 
 interface SiteMetadata {
@@ -46,11 +47,11 @@ describe('<SEO />', () => {
     } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = (
+        pageType: (typeof JSON_LD_TYPES)[number],
         pageTitle = title,
         canonical = '',
         imgData?: { src: string; width: string; height: string },
         pageDescription = description,
-        pageType = 'WebSite',
         modified?: string,
         published?: string,
         meta: { name: string; content: string }[] = []
@@ -93,16 +94,16 @@ describe('<SEO />', () => {
         expect(JSON.parse(helmet.scriptTags[0].innerHTML)).toEqual({
             description: pageDescription,
             url: canonical || null,
-            '@type': pageType,
+            '@type': JSON_LD_TYPES.includes(pageType) ? pageType : WEBSITE,
             headline: pageTitle,
             image: imgData ? `${siteUrl}${imgData.src}` : undefined,
             author: { '@type': 'Person', name: author },
-            dateModified: pageType === 'WebSite' ? undefined : modified,
-            datePublished: pageType === 'WebSite' ? undefined : published,
+            dateModified: pageType === BLOGPOSTING ? modified : undefined,
+            datePublished: pageType === BLOGPOSTING ? published : undefined,
             '@context': 'https://schema.org',
-            mainEntityOfPage: pageType === 'WebSite' ? undefined : { '@id': canonical, '@type': 'WebPage' },
-            name: pageType === 'WebSite' ? title : undefined,
-            ...(pageType === 'WebSite' ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon] } : {}),
+            mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
+            name: pageType === WEBSITE ? title : undefined,
+            ...(pageType === WEBSITE ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon] } : {}),
         })
 
         expect(helmet).toMatchSnapshot()
@@ -111,7 +112,7 @@ describe('<SEO />', () => {
     it('should render minimal SEO', async () => {
         render(<SEO title={title} />)
 
-        expectHelmetToHaveCorrectValues()
+        expectHelmetToHaveCorrectValues(WEBSITE)
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -127,7 +128,24 @@ describe('<SEO />', () => {
         const imgData = { src, height: `${height}`, width: `${width}` }
         render(<SEO description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
 
-        expectHelmetToHaveCorrectValues(title, `${siteUrl}/`, imgData)
+        expectHelmetToHaveCorrectValues(WEBSITE, title, `${siteUrl}/`, imgData)
+
+        await waitFor(() => expect(document.title).toEqual(title))
+    })
+
+    it('should render borken home page SEO', async () => {
+        const {
+            images: {
+                fallback: { src },
+            },
+            height,
+            width,
+        } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
+        const imgData = { src, height: `${height}`, width: `${width}` }
+        const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
+        render(<SEO description="" type={type} title={title} image={imgData} pathname="/" />)
+
+        expectHelmetToHaveCorrectValues(type, title, `${siteUrl}/`, imgData)
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -161,11 +179,11 @@ describe('<SEO />', () => {
         )
 
         expectHelmetToHaveCorrectValues(
+            type,
             blogTitle,
             `${siteUrl}${pathname}`,
             imgData,
             description,
-            type,
             published,
             published
         )
@@ -206,11 +224,11 @@ describe('<SEO />', () => {
         )
 
         expectHelmetToHaveCorrectValues(
+            type,
             blogTitle,
             `${siteUrl}${pathname}`,
             imgData,
             description,
-            type,
             modified,
             published,
             meta
