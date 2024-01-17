@@ -64,7 +64,7 @@ const Post = ({
             description={excerpt}
             type={BLOGPOSTING}
             published={publishedOld || published}
-            modified={updatedAt || publishedOld || published}
+            modified={updatedAt}
             body={body}
             preBody={<PositionedMeta date={publishDate || createdAt} tags={tags} />}
         >

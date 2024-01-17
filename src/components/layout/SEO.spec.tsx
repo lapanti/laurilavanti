@@ -53,7 +53,7 @@ describe('<SEO />', () => {
         pageType = 'WebSite',
         modified?: string,
         published?: string,
-        meta?: { name: string; content: string }[] = []
+        meta: { name: string; content: string }[] = []
     ) => {
         const helmet = Helmet.peek()
 
