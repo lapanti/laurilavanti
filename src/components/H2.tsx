@@ -3,7 +3,7 @@ import type { ReactNode } from 'react'
 import React from 'react'
 import styled from 'styled-components'
 
-import { fontFamily, fontSizes, fontWeights } from '../lib/styles'
+import { fontFamilies, fontSizes, fontWeights } from '../lib/styles'
 
 interface Props {
     className?: string
@@ -25,7 +25,7 @@ H2Component.displayName = 'H2'
 
 const H2 = styled(H2Component)({
     gridColumnStart: 3,
-    fontFamily: fontFamily.heading,
+    fontFamily: fontFamilies.heading,
     fontWeight: fontWeights.bold,
     ...fontSizes['4xl'],
 })

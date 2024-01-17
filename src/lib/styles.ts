@@ -89,7 +89,7 @@ export const gridTemplateAreasLayout = `
     "footer"
 ` as const
 export const gridTemplateRowsLayout = '1fr 6rem' as const
-export const gridTemplateColumns1 = 'repeat(1, minmax(0, 1fr))' as const
+export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle = '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr' as const
 
 /** Grid variables end */
@@ -154,7 +154,7 @@ export const fontSizes = {
     ['9xl']: { fontSize: '8rem', lineHeight: '1' } as const,
 } as const
 
-export const fontFamily = {
+export const fontFamilies = {
     sans: `"IBM Plex Sans"` as const,
     mono: `"IBM Plex Mono"` as const,
     heading: `"Signika Negative"` as const,

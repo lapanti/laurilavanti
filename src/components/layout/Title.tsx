@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import {
     colors,
-    fontFamily,
+    fontFamilies,
     fontSizes,
     fontWeights,
     gradients,
@@ -14,7 +14,7 @@ import {
 
 const H1 = styled.h1({
     gridColumnStart: 3,
-    fontFamily: fontFamily.heading,
+    fontFamily: fontFamilies.heading,
     fontWeight: fontWeights.black,
     color: colors.white,
     display: 'flex',

@@ -3,7 +3,7 @@ import type { Degree, Fiduciary, JobExperience } from '../../types/contentful'
 import React from 'react'
 import styled from 'styled-components'
 
-import { fontFamily, fontSizes, fontWeights, sizes } from '../../lib/styles'
+import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 import H2 from '../H2'
 
 /** Only exported for testing purposes */
@@ -14,7 +14,7 @@ export const yearsToString = (startYear: number, endYear?: number): string => {
 
 const DivContainer = styled.div({
     ...fontSizes.l,
-    fontFamily: fontFamily.sans,
+    fontFamily: fontFamilies.sans,
     fontWeight: fontWeights.normal,
     marginTop: sizes[4],
     marginBottom: sizes[4],
