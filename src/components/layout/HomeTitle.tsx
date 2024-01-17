@@ -3,7 +3,7 @@ import styled, { css, keyframes } from 'styled-components'
 
 import {
     colors,
-    fontFamily,
+    fontFamilies,
     fontSizes,
     fontWeights,
     gradients,
@@ -78,7 +78,7 @@ const HomeTitle = styled(HomeTitleComponent)({
     gridTemplateColumns: gridTemplateColumnsArticle,
     overflow: 'hidden',
     backgroundImage: gradients.fromLeftToRight,
-    fontFamily: fontFamily.heading,
+    fontFamily: fontFamilies.heading,
     fontWeight: fontWeights.black,
     color: colors.white,
     ...fontSizes['6xl'],

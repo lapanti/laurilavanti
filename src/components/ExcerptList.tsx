@@ -54,10 +54,9 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
     `)
 
     const allNodes = useMemo(() => {
-        const all = data.allContentfulPost.nodes
+        const all = data.allContentfulPost.nodes.filter((curr) => !currentSlug || currentSlug !== curr.slug)
         if (relatedTags?.length) {
             return all
-                .filter((curr) => !currentSlug || currentSlug !== curr.slug)
                 .reduce<[ContentfulPostExcerpt, number][]>(
                     (acc, curr) => [
                         ...acc,

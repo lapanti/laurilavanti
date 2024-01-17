@@ -21,6 +21,13 @@ export const twitterLink: ContactInfoLink = {
     icon: 'twitter',
 }
 
+export const threadsLink: ContactInfoLink = {
+    contentful_id: 'KQpgl5vI3xI6uN6dZd9Gy',
+    title: 'Threads',
+    url: 'https://www.threads.net/@laurilavanti',
+    icon: 'threads',
+}
+
 export const instagramLink: ContactInfoLink = {
     contentful_id: 'o7sDXDUNJVK7NUQSQarQQ',
     title: 'Instagram',
@@ -42,4 +49,12 @@ export const mastodonLink: ContactInfoLink = {
     icon: 'mastodon',
 }
 
-export const contactInfoLinks = [mailLink, facebookLink, twitterLink, instagramLink, linkedInLink, mastodonLink]
+export const contactInfoLinks = [
+    mailLink,
+    facebookLink,
+    threadsLink,
+    instagramLink,
+    linkedInLink,
+    mastodonLink,
+    twitterLink,
+]

@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`styles lib breakpoints should match snapshot 1`] = `
+{
+  "1200": {
+    "max": "@media not all and (min-width: 1200px)",
+    "min": "@media (min-width: 1200px)",
+  },
+  "700": {
+    "max": "@media not all and (min-width: 700px)",
+    "min": "@media (min-width: 700px)",
+  },
+  "750": {
+    "max": "@media not all and (min-width: 750px)",
+    "min": "@media (min-width: 750px)",
+  },
+  "biggerThanPhone": {
+    "max": "@media not all and (min-width: 479px)",
+    "min": "@media (min-width: 479px)",
+  },
+  "fullhd": {
+    "max": "@media not all and (min-width: 1920px)",
+    "min": "@media (min-width: 1920px)",
+  },
+}
+`;
+
+exports[`styles lib colors colors should match snapshot 1`] = `
+{
+  "black": "rgb(0, 0, 0)",
+  "evening": "rgb(0, 98, 114)",
+  "facebook": "#4267B2",
+  "fire": "rgb(240, 100, 0)",
+  "gray": "rgb(235, 235, 236)",
+  "greenBright": "rgb(0, 150, 57)",
+  "greenDarkBackground": "rgb(40, 71, 52)",
+  "greenDarkText": "rgb(0, 104, 69)",
+  "greenLight": "rgb(217, 234, 154)",
+  "instagram": "#E4405F",
+  "instagramGradient": "url(#instagram-gradient)",
+  "linkedin": "#0E76A8",
+  "mastodon": "#6363ff",
+  "moss": "rgb(90, 94, 0)",
+  "oats": "rgb(228, 215, 126)",
+  "ocher": "rgb(218, 170, 0)",
+  "peach": "rgb(248, 207, 169)",
+  "plum": "rgb(112, 39, 61)",
+  "rss": "#EE802F",
+  "sand": "rgb(214, 210, 196)",
+  "sky": "rgb(187, 221, 230)",
+  "threads": "rgb(0, 0, 0)",
+  "transparent": "transparent",
+  "white": "rgb(255, 255, 255)",
+  "white75": "rgba(255, 255, 255, .75)",
+  "white90": "rgba(255, 255, 255, .9)",
+  "xtwitter": "rgb(0, 0, 0)",
+}
+`;
+
+exports[`styles lib colors gradients should match snapshot 1`] = `
+{
+  "fromBlackToTop": "linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+  "fromLeftToRight": "linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.05), rgba(0, 0, 0, 0))",
+}
+`;
+
+exports[`styles lib colors shadows should match snapshot 1`] = `
+{
+  "base": "0 0 #0000, 0 0 #0000, 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+}
+`;
+
+exports[`styles lib fonts fontFamilies should match snapshot 1`] = `
+{
+  "heading": ""Signika Negative"",
+  "mono": ""IBM Plex Mono"",
+  "sans": ""IBM Plex Sans"",
+}
+`;
+
+exports[`styles lib fonts fontSizes should match snapshot 1`] = `
+{
+  "2xl": {
+    "fontSize": "1.5rem",
+    "lineHeight": "2rem",
+  },
+  "3xl": {
+    "fontSize": "1.875rem",
+    "lineHeight": "2.25rem",
+  },
+  "4xl": {
+    "fontSize": "2.25rem",
+    "lineHeight": "2.5rem",
+  },
+  "5xl": {
+    "fontSize": "3rem",
+    "lineHeight": "1",
+  },
+  "6xl": {
+    "fontSize": "3.75rem",
+    "lineHeight": "1",
+  },
+  "7xl": {
+    "fontSize": "4.5rem",
+    "lineHeight": "1",
+  },
+  "8xl": {
+    "fontSize": "6rem",
+    "lineHeight": "1",
+  },
+  "9xl": {
+    "fontSize": "8rem",
+    "lineHeight": "1",
+  },
+  "l": {
+    "fontSize": "1.125rem",
+    "lineHeight": "1.75rem",
+  },
+  "m": {
+    "fontSize": "1rem",
+    "lineHeight": "1.5rem",
+  },
+  "s": {
+    "fontSize": "0.875rem",
+    "lineHeight": "1.25rem",
+  },
+  "xl": {
+    "fontSize": "1.25rem",
+    "lineHeight": "1.75rem",
+  },
+  "xs": {
+    "fontSize": "0.75rem",
+    "lineHeight": "1rem",
+  },
+}
+`;
+
+exports[`styles lib fonts fontWeights should match snapshot 1`] = `
+{
+  "black": 900,
+  "bold": 700,
+  "normal": 400,
+}
+`;
+
+exports[`styles lib grid variables gridAreas should match snapshot 1`] = `
+{
+  "footer": "footer",
+  "main": "main",
+}
+`;
+
+exports[`styles lib grid variables gridTemplateAreasLayout should match snapshot 1`] = `
+"
+    " main "
+    "footer"
+"
+`;
+
+exports[`styles lib grid variables gridTemplateColumns should match snapshot 1`] = `"repeat(1, minmax(0, 1fr))"`;
+
+exports[`styles lib grid variables gridTemplateColumnsArticle should match snapshot 1`] = `"1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr"`;
+
+exports[`styles lib grid variables gridTemplateRowsLayout should match snapshot 1`] = `"1fr 6rem"`;
+
+exports[`styles lib spacing sizes should match snapshot 1`] = `
+{
+  "0": "0px",
+  "0.5": "0.125rem",
+  "1": "0.25rem",
+  "1.5": "0.375rem",
+  "10": "2.5rem",
+  "11": "2.75rem",
+  "12": "3rem",
+  "14": "3.5rem",
+  "16": "4rem",
+  "164": "41rem",
+  "18": "4.5rem",
+  "2": "0.5rem",
+  "2.5": "0.625rem",
+  "20": "5rem",
+  "24": "6rem",
+  "28": "7rem",
+  "3": "0.75rem",
+  "3.5": "0.875rem",
+  "32": "8rem",
+  "36": "9rem",
+  "4": "1rem",
+  "4.5": "1.125rem",
+  "40": "10rem",
+  "44": "11rem",
+  "48": "12rem",
+  "5": "1.25rem",
+  "52": "13rem",
+  "56": "14rem",
+  "6": "1.5rem",
+  "60": "15rem",
+  "64": "16rem",
+  "7": "1.75rem",
+  "72": "18rem",
+  "8": "2rem",
+  "80": "20rem",
+  "9": "2.25rem",
+  "96": "24rem",
+  "fullHd": "1920px",
+}
+`;
+
+exports[`styles lib spacing zIndices should match snapshot 1`] = `
+{
+  "0": 0,
+  "10": 10,
+  "20": 20,
+  "30": 30,
+  "40": 40,
+  "50": 50,
+  "auto": "auto",
+}
+`;
+
+exports[`styles lib transitions should match snapshot 1`] = `
+{
+  "base": {
+    "transitionDuration": "150ms",
+    "transitionProperty": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+  },
+}
+`;

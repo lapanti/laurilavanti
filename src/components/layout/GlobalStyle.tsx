@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { colors, fontFamily, sizes } from '../../lib/styles'
+import { colors, fontFamilies, sizes } from '../../lib/styles'
 
 const GlobalStyle = createGlobalStyle({
     '*, ::before, ::after': {
@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle({
     html: {
         lineHeight: 1.5,
         tabSize: 4,
-        fontFamily: fontFamily.sans,
+        fontFamily: fontFamilies.sans,
         fontFeatureSettings: 'normal',
         fontVariationSettings: 'normal',
     },

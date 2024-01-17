@@ -24,6 +24,27 @@ const config = {
             statements: -5,
         },
     },
+    collectCoverageFrom: [
+        '**/*.{js,jsx,ts,tsx}',
+        '!**/*.spec.{js,jsx,ts,tsx}',
+        '!**/*.mock.{js,jsx,ts,tsx}',
+        '!**/node_modules/**',
+        '!.cache/**',
+        '!coverage/**',
+        '!public/**',
+        '!tests/e2e/**',
+        '!src/types/**',
+        '!.eslintrc.js',
+        '!.prettierrc.js',
+        '!env.ts',
+        '!gatsby-browser.tsx',
+        '!gatsby-config.ts',
+        '!gatsby-node.js',
+        '!playwright.config.ts',
+        '!tests/jest-preprocess.js',
+        '!tests/jest.config.js',
+        '!tests/snapshotResolver.js',
+    ],
 }
 
 module.exports = config
