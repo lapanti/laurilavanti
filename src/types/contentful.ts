@@ -15,6 +15,7 @@ interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
     altText: string
     image: {
         localFile: ImageDataLike
+        description: string
     }
 }
 
@@ -79,9 +80,11 @@ export interface ContentfulPage {
     body: RichBody
     image: {
         localFile: ImageDataLike
+        description: string
     }
     mobileImage: {
         localFile: ImageDataLike
+        description: string
     }
     updatedAt: string
 }
@@ -97,9 +100,11 @@ interface ContentfulPostCommon {
     }
     headerImage: {
         localFile: ImageDataLike
+        description: string
     }
     mobileHeaderImage: {
         localFile: ImageDataLike
+        description: string
     }
     excerpt: string
 }

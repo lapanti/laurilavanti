@@ -47,6 +47,7 @@ export const frontPage: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     mobileImage: {
         localFile: {
@@ -76,6 +77,7 @@ export const frontPage: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     updatedAt: '2023-05-24T14:51:46.661Z',
 }
@@ -121,6 +123,7 @@ export const aboutMe: ContentfulPage = {
                             },
                         },
                     },
+                    description: 'Kuva Kirkkonummen graffitiseinästä.',
                 },
                 caption: 'Kirkkonummen graffitiseinä',
             },
@@ -286,6 +289,7 @@ export const aboutMe: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     mobileImage: {
         localFile: {
@@ -315,6 +319,7 @@ export const aboutMe: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     updatedAt: '2023-10-17T03:58:48.870Z',
 }
@@ -361,6 +366,7 @@ export const blog: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     mobileImage: {
         localFile: {
@@ -390,6 +396,7 @@ export const blog: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     updatedAt: '2022-07-31T20:26:27.574Z',
 }
@@ -480,6 +487,7 @@ export const contactMe: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     mobileImage: {
         localFile: {
@@ -509,6 +517,7 @@ export const contactMe: ContentfulPage = {
                 },
             },
         },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     updatedAt: '2022-07-31T20:25:55.535Z',
 }

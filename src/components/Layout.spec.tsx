@@ -5,7 +5,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
-import { mainImage } from '../../tests/images.mock'
+import { mainImage, mainImageDescription } from '../../tests/images.mock'
 import Layout from './Layout'
 
 interface SiteMetadata {
@@ -61,14 +61,20 @@ describe('<Layout />', () => {
 
     it('should render hero image', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} mobileHeroImage={mainImage} title={title}>
+            <Layout
+                heroImage={mainImage}
+                heroImageAlt={mainImageDescription}
+                mobileHeroImageAlt={mainImageDescription}
+                mobileHeroImage={mainImage}
+                title={title}
+            >
                 {children}
             </Layout>
         )
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
+        expect(screen.getAllByRole('img', { name: mainImageDescription })).not.toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -87,30 +93,23 @@ describe('<Layout />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render hero image with hidden title as alt', () => {
-        const { container } = render(
-            <Layout heroImage={mainImage} mobileHeroImage={mainImage} hiddenTitle={title}>
-                {children}
-            </Layout>
-        )
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
     it('should render hero image for front page', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} isFrontPage mobileHeroImage={mainImage} title={title}>
+            <Layout
+                heroImage={mainImage}
+                heroImageAlt={mainImageDescription}
+                isFrontPage
+                mobileHeroImage={mainImage}
+                mobileHeroImageAlt={mainImageDescription}
+                title={title}
+            >
                 {children}
             </Layout>
         )
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
+        expect(screen.getAllByRole('img', { name: mainImageDescription })).not.toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -125,20 +124,6 @@ describe('<Layout />', () => {
         expect(screen.getByText(children)).toBeInTheDocument()
 
         expect(screen.getByRole('img', { name: '' })).toBeInTheDocument()
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render hero image with hidden title as alt for front page', () => {
-        const { container } = render(
-            <Layout heroImage={mainImage} mobileHeroImage={mainImage} isFrontPage hiddenTitle={title}>
-                {children}
-            </Layout>
-        )
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.getByRole('img', { name: title })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -306,7 +291,7 @@ describe('<Layout />', () => {
         })
 
         it('should render ImageWithCaption', () => {
-            const altText = 'alt'
+            const altText = 'alt text'
             const caption = 'caption'
 
             const { container } = render(
@@ -332,7 +317,7 @@ describe('<Layout />', () => {
                                 __typename: 'ContentfulImageWithCaption',
                                 contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
                                 caption,
-                                altText,
+                                altText: 'alt',
                                 image: {
                                     localFile: {
                                         childImageSharp: {
@@ -361,6 +346,7 @@ describe('<Layout />', () => {
                                             },
                                         },
                                     } as unknown as ImageDataLike,
+                                    description: altText,
                                 },
                             },
                         ],

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage } from '../../tests/images.mock'
+import { mainImage, mainImageDescription } from '../../tests/images.mock'
 import { excerptList } from '../../tests/posts.mock'
 import Tag from './Tag'
 
@@ -11,7 +11,12 @@ describe('<Tag />', () => {
     it('should render', () => {
         const { container } = render(
             <Tag
-                data={{ contentfulPage: { mobileImage: { localFile: mainImage }, image: { localFile: mainImage } } }}
+                data={{
+                    contentfulPage: {
+                        mobileImage: { localFile: mainImage, description: mainImageDescription },
+                        image: { localFile: mainImage, description: mainImageDescription },
+                    },
+                }}
                 pageContext={{ tag }}
             />
         )

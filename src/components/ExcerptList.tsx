@@ -39,6 +39,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                                 gatsbyImageData(placeholder: BLURRED)
                             }
                         }
+                        description
                     }
                     mobileHeaderImage {
                         localFile {
@@ -46,6 +47,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                                 gatsbyImageData(placeholder: BLURRED)
                             }
                         }
+                        description
                     }
                     slug
                 }
@@ -105,7 +107,9 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                     slug={node.slug}
                     excerpt={node.excerpt}
                     image={node.headerImage.localFile}
+                    imageAlt={node.headerImage.description}
                     mobileImage={node.mobileHeaderImage.localFile}
+                    mobileImageAlt={node.mobileHeaderImage.description}
                     title={node.title}
                     tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
                 />

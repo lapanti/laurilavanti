@@ -60,7 +60,9 @@ const Post = ({
             title={title}
             pathname={`/blogi/${slug}/`}
             heroImage={headerImage.localFile}
+            heroImageAlt={headerImage.description}
             mobileHeroImage={mobileHeaderImage.localFile}
+            mobileHeroImageAlt={mobileHeaderImage.description}
             description={excerpt}
             type={BLOGPOSTING}
             published={publishedOld || published}
@@ -95,6 +97,7 @@ export const query = graphql`
                                     gatsbyImageData
                                 }
                             }
+                            description
                         }
                     }
                     ... on ContentfulPost {
@@ -116,6 +119,7 @@ export const query = graphql`
                         )
                     }
                 }
+                description
             }
             mobileHeaderImage {
                 localFile {
@@ -129,6 +133,7 @@ export const query = graphql`
                         )
                     }
                 }
+                description
             }
             metadata {
                 tags {

@@ -147,7 +147,7 @@ const options = {
                     return (
                         <Image
                             imageData={node.data.target.image.localFile}
-                            alt={node.data.target.altText}
+                            alt={node.data.target.image.description}
                             caption={node.data.target.caption}
                         />
                     )
@@ -197,7 +197,9 @@ interface Props extends Omit<SEOProps, 'title' | 'image'> {
     title?: string
     hiddenTitle?: string
     heroImage?: ImageDataLike
+    heroImageAlt?: string
     mobileHeroImage?: ImageDataLike
+    mobileHeroImageAlt?: string
     image?: { src: string; height: string; width: string }
     body?: RichBody
     preBody?: ReactNode
@@ -208,7 +210,9 @@ const LayoutComponent = ({
     className,
     title,
     heroImage,
+    heroImageAlt,
     mobileHeroImage,
+    mobileHeroImageAlt,
     hiddenTitle,
     description,
     meta,
@@ -255,17 +259,17 @@ const LayoutComponent = ({
                 <Main>
                     <Article>
                         {isFrontPage && heroImage && (
-                            <DesktopBigHeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />
+                            <DesktopBigHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
                         )}
                         {isFrontPage && mobileHeroImage && (
-                            <MobileBigHeroImage imageData={mobileHeroImage} alt={title || hiddenTitle || ''} />
+                            <MobileBigHeroImage imageData={mobileHeroImage} alt={mobileHeroImageAlt || ''} />
                         )}
 
                         {!isFrontPage && heroImage && (
-                            <DesktopHeroImage imageData={heroImage} alt={title || hiddenTitle || ''} />
+                            <DesktopHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
                         )}
                         {!isFrontPage && mobileHeroImage && (
-                            <MobileHeroImage imageData={mobileHeroImage} alt={title || hiddenTitle || ''} />
+                            <MobileHeroImage imageData={mobileHeroImage} alt={mobileHeroImageAlt || ''} />
                         )}
                         {title && <Title title={title} />}
                         {preBody}
