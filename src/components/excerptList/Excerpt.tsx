@@ -58,7 +58,7 @@ const RemarginP = styled(Paragraph)({
     marginTop: sizes[1],
 })
 
-interface Props extends PostMetaProps {
+interface Props extends Omit<PostMetaProps, 'ariaLabel'> {
     className?: string
     title: string
     excerpt: string
