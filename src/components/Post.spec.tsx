@@ -20,6 +20,15 @@ describe('<Post />', () => {
         expect(screen.getByRole('heading', { name: healthBelongsToAll.title })).toBeInTheDocument()
         expect(screen.getAllByRole('img', { name: healthBelongsToAll.headerImage.description })).not.toBeNull()
 
+        expect(
+            screen.getByRole('complementary', { name: `Kirjoituksen ${healthBelongsToAll.title} meta-tiedot` })
+        ).toBeInTheDocument()
+        expect(
+            screen.getByRole('complementary', {
+                name: `Kirjoituksen ${healthBelongsToAll.title} sosiaalisen median jakolinkit`,
+            })
+        ).toBeInTheDocument()
+
         expect(screen.getByRole('heading', { name: /Muita kirjoituksia/i })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
@@ -39,6 +48,15 @@ describe('<Post />', () => {
         expect(screen.getByRole('heading', { name: homecareMunicipalityExtra.title })).toBeInTheDocument()
         expect(screen.getAllByRole('img', { name: homecareMunicipalityExtra.headerImage.description })).not.toBeNull()
 
+        expect(
+            screen.getByRole('complementary', { name: `Kirjoituksen ${homecareMunicipalityExtra.title} meta-tiedot` })
+        ).toBeInTheDocument()
+        expect(
+            screen.getByRole('complementary', {
+                name: `Kirjoituksen ${homecareMunicipalityExtra.title} sosiaalisen median jakolinkit`,
+            })
+        ).toBeInTheDocument()
+
         expect(screen.getByRole('heading', { name: /Muita kirjoituksia/i })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
@@ -57,6 +75,15 @@ describe('<Post />', () => {
 
         expect(screen.getByRole('heading', { name: soteIsBedrock.title })).toBeInTheDocument()
         expect(screen.getAllByRole('img', { name: soteIsBedrock.headerImage.description })).not.toBeNull()
+
+        expect(
+            screen.getByRole('complementary', { name: `Kirjoituksen ${soteIsBedrock.title} meta-tiedot` })
+        ).toBeInTheDocument()
+        expect(
+            screen.getByRole('complementary', {
+                name: `Kirjoituksen ${soteIsBedrock.title} sosiaalisen median jakolinkit`,
+            })
+        ).toBeInTheDocument()
 
         expect(screen.getByRole('heading', { name: /Muita kirjoituksia/i })).toBeInTheDocument()
 
