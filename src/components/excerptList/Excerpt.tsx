@@ -63,7 +63,9 @@ interface Props extends PostMetaProps {
     title: string
     excerpt: string
     image: ImageDataLike
+    imageAlt: string
     mobileImage: ImageDataLike
+    mobileImageAlt: string
     slug: string
 }
 
@@ -74,7 +76,9 @@ const ExcerptComponent = ({
     excerpt,
     tags,
     image: imageData,
+    imageAlt,
     mobileImage: mobileImageData,
+    mobileImageAlt,
     slug,
 }: Props): JSX.Element => {
     const image = getImage(imageData)
@@ -84,8 +88,8 @@ const ExcerptComponent = ({
         <li className={className}>
             <article aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
                 <Link to={`/blogi/${slug}/`} rel="permalink">
-                    {image && <DesktopImage image={image} alt={title} />}
-                    {mobileImage && <MobileImage image={mobileImage} alt={title} />}
+                    {image && <DesktopImage image={image} alt={imageAlt} />}
+                    {mobileImage && <MobileImage image={mobileImage} alt={mobileImageAlt} />}
                     <H2Container>
                         <StyledH2 itemProp="headline">{title}</StyledH2>
                     </H2Container>

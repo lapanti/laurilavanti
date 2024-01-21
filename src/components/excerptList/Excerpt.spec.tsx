@@ -12,6 +12,8 @@ describe('<Excerpt />', () => {
             'Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.'
         const tags = ['aluevaalit', 'soteuudistus', 'kirkkonummi']
         const slug = 'sote-on-hyvinvointiyhteiskunnan-kulmakivi'
+        const mobileImageAlt = 'mobileImageAlt'
+        const imageAlt = 'imageAlt'
 
         const { container } = render(
             <Excerpt
@@ -21,13 +23,17 @@ describe('<Excerpt />', () => {
                 tags={tags}
                 slug={slug}
                 mobileImage={mainImage}
+                mobileImageAlt={mobileImageAlt}
                 image={mainImage}
+                imageAlt={imageAlt}
             />
         )
 
         const article = screen.getByRole('article', { name: title })
         expect(article).toHaveAttribute('itemScope', '')
         expect(article).toHaveAttribute('itemType', 'https://schema.org/CreativeWork')
+
+        expect(screen.getByRole('img', { name: mobileImageAlt })).toBeInTheDocument()
 
         expect(screen.getByRole('heading', { name: title })).toHaveAttribute('itemProp', 'headline')
 

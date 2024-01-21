@@ -27,3 +27,5 @@ export const mainImage: ImageDataLike = {
         },
     },
 } as unknown as ImageDataLike
+
+export const mainImageDescription: string = 'Kuva Lauri Lavannista, taustalla näkyy metsää'

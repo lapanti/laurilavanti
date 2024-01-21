@@ -36,6 +36,7 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     mobileHeaderImage: {
         localFile: {
@@ -65,6 +66,7 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     metadata: {
         tags: [
@@ -123,6 +125,7 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     mobileHeaderImage: {
         localFile: {
@@ -152,6 +155,7 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     metadata: {
         tags: [
@@ -210,6 +214,7 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -239,6 +244,7 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella.',
     },
     metadata: {
         tags: [
@@ -297,6 +303,7 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -326,6 +333,7 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä.',
     },
     metadata: {
         tags: [
@@ -381,6 +389,7 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -410,6 +419,7 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää.',
     },
     metadata: {
         tags: [
@@ -474,6 +484,7 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -503,6 +514,7 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa.',
     },
     metadata: {
         tags: [
@@ -562,6 +574,7 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
                             },
                         },
                     } as unknown as ImageDataLike,
+                    description: 'Kuva Gesterbyn koulun parakeista.',
                 },
             },
         ],
@@ -594,6 +607,7 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Winellska skolanista.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -623,6 +637,7 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Winellska skolanista.',
     },
     metadata: {
         tags: [
@@ -682,6 +697,8 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
                             },
                         },
                     } as unknown as ImageDataLike,
+                    description:
+                        'Kuvakaappaus Google Mapsistä, jossa on merkittynä Kirkkonummen keskustan alueen päiväkodit.',
                 },
             },
         ],
@@ -714,6 +731,7 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Laajakallion päiväkodista talvella.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -743,6 +761,7 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva Laajakallion päiväkodista talvella.',
     },
     metadata: {
         tags: [
@@ -801,6 +820,7 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva useammasta lasten kirjasta kirjahyllyssä.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -830,6 +850,7 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva useammasta lasten kirjasta kirjahyllyssä.',
     },
     metadata: {
         tags: [
@@ -889,6 +910,7 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
                             },
                         },
                     } as unknown as ImageDataLike,
+                    description: 'Kuvakaappaus kunnan avoimista työpaikoista internetissä.',
                 },
             },
         ],
@@ -921,6 +943,7 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva duploista laatikossa automaton päällä.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -950,6 +973,7 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva duploista laatikossa automaton päällä.',
     },
     metadata: {
         tags: [
@@ -1005,6 +1029,7 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva neulotusta pehmolelusta, taustalla erinäisiä lasten leluja.',
     },
     mobileHeaderImage: {
         localFile: {
@@ -1034,6 +1059,7 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
                 },
             },
         } as unknown as ImageDataLike,
+        description: 'Kuva neulotusta pehmolelusta, taustalla erinäisiä lasten leluja.',
     },
     metadata: {
         tags: [
