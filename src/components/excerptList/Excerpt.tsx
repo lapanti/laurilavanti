@@ -94,7 +94,7 @@ const ExcerptComponent = ({
                         <StyledH2 itemProp="headline">{title}</StyledH2>
                     </H2Container>
                 </Link>
-                <PostMeta date={date} tags={tags} />
+                <PostMeta date={date} tags={tags} ariaLabel={`Kirjoituksen ${title} meta-tiedot`} />
                 <RemarginP itemProp="description">
                     {excerpt}{' '}
                     <InternalLink to={`/blogi/${slug}/`} rel="permalink">
