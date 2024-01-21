@@ -7,9 +7,12 @@ describe('<PostMeta />', () => {
     const tags = ['kirkkonummi', 'aluevaalit', 'sote', 'kuntavaalit']
     const date = '16.3.2022'
     const dateAsDateTime = '2022-3-16'
+    const ariaLabel = 'ariaLabel'
 
     it('should render', () => {
-        const { container } = render(<PostMeta tags={tags} date={date} />)
+        const { container } = render(<PostMeta tags={tags} date={date} ariaLabel={ariaLabel} />)
+
+        expect(screen.getByRole('complementary', { name: ariaLabel })).toBeInTheDocument()
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
@@ -20,7 +23,9 @@ describe('<PostMeta />', () => {
     })
 
     it('should render multiple minutes', () => {
-        const { container } = render(<PostMeta tags={tags} date={date} />)
+        const { container } = render(<PostMeta tags={tags} date={date} ariaLabel={ariaLabel} />)
+
+        expect(screen.getByRole('complementary', { name: ariaLabel })).toBeInTheDocument()
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>

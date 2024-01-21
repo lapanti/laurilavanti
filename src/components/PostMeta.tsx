@@ -45,20 +45,21 @@ const TagItem = styled.li({
 export interface PostMetaProps {
     date: string
     tags: string[]
+    ariaLabel: string
 }
 
 interface Props extends PostMetaProps {
     className?: string
 }
 
-const PostMetaComponent = ({ className, date, tags }: Props): JSX.Element => {
+const PostMetaComponent = ({ className, date, tags, ariaLabel }: Props): JSX.Element => {
     const dateAsDateTime = useMemo(() => {
         const [day, month, year] = date.split('.')
         return `${year}-${month}-${day}`
     }, [date])
 
     return (
-        <aside className={className}>
+        <aside className={className} aria-label={ariaLabel}>
             <MetaContainer>
                 <Meta>
                     <CalendarIcon />
