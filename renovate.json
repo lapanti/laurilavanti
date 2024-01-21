@@ -1,9 +1,19 @@
 {
-    "extends": ["config:base"],
+    "extends": [
+        "config:base"
+    ],
     "packageRules": [
         {
-            "updateTypes": ["minor", "patch"],
-            "automerge": true
-        }
+            "groupName": "all non-major dependencies",
+            "groupSlug": "all-minor-patch",
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ]
+        },
+        "automerge": true
     ]
 }
