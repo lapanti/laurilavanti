@@ -1,3 +1,4 @@
+import AxeBuilder from '@axe-core/playwright'
 import test from '@playwright/test'
 
 import { BlogPage } from './pages/blogPage'
@@ -8,6 +9,9 @@ test.describe('Blog Page', () => {
         await blogPage.goTo()
 
         await blogPage.checkContent()
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        test.expect(accessibilityScanResults.violations).toEqual([])
 
         await blogPage.testScreenshot()
     })

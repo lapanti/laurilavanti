@@ -38,10 +38,11 @@ interface Props {
     className?: string
     siteUrl: string
     title: string
+    ariaLabel: string
 }
 
-const SocialShareComponent = ({ className, siteUrl, title }: Props): JSX.Element => (
-    <aside className={className}>
+const SocialShareComponent = ({ className, siteUrl, title, ariaLabel }: Props): JSX.Element => (
+    <aside className={className} aria-label={ariaLabel}>
         <Share>Jaa:</Share>
         <ExtLink href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`} title="Jaa Facebookissa">
             <Facebook />

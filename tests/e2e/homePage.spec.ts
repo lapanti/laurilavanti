@@ -1,3 +1,4 @@
+import AxeBuilder from '@axe-core/playwright'
 import { test } from '@playwright/test'
 
 import { HomePage } from './pages/homePage'
@@ -8,6 +9,9 @@ test.describe('Home Page', () => {
         await homePage.goHome()
 
         await homePage.checkTitles()
+
+        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        test.expect(accessibilityScanResults.violations).toEqual([])
 
         await homePage.testScreenshot()
     })

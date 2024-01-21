@@ -68,9 +68,19 @@ const Post = ({
             published={publishedOld || published}
             modified={updatedAt}
             body={body}
-            preBody={<PositionedMeta date={publishDate || createdAt} tags={tags} />}
+            preBody={
+                <PositionedMeta
+                    date={publishDate || createdAt}
+                    tags={tags}
+                    ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
+                />
+            }
         >
-            <SocialShare title={title} siteUrl={siteUrl} />
+            <SocialShare
+                ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`}
+                title={title}
+                siteUrl={siteUrl}
+            />
             <H2>Muita kirjoituksia</H2>
             <HR />
             <ExcerptList currentSlug={slug} limit={3} relatedTags={tags} />

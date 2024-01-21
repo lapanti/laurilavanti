@@ -6,10 +6,12 @@ import SocialShare from './SocialShare'
 describe('<SocialShare />', () => {
     const title = 'Title'
     const siteUrl = 'SiteUrl'
+    const ariaLabel = 'AriaLabel'
 
     it('should render', () => {
-        const { container } = render(<SocialShare title={title} siteUrl={siteUrl} />)
+        const { container } = render(<SocialShare title={title} siteUrl={siteUrl} ariaLabel={ariaLabel} />)
 
+        expect(screen.getByRole('complementary', { name: ariaLabel })).toBeInTheDocument()
         expect(screen.getByRole('link', { name: /Jaa Facebookissa/i })).toHaveAttribute(
             'href',
             `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`
