@@ -24,11 +24,12 @@ export class ContactPage extends AnyPage {
 
     async goTo() {
         await this.goToNavLink(this.navLinkContactInfo)
+
+        // Wait to ensure we are at the correct page
+        await expect(this.email).toBeVisible()
     }
 
     async checkContent() {
-        await expect(this.email).toBeVisible()
-
         await expect(this.facebook).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
         await expect(this.twitter).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
         await expect(this.instagram).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')

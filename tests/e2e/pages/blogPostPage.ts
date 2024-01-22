@@ -41,11 +41,12 @@ export class BlogPostPage extends AnyPage {
 
     async goTo() {
         await this.page.goto(this.url)
+
+        // Wait to ensure we are at the correct page
+        await expect(this.titleLocator).toBeVisible()
     }
 
     async checkContent() {
-        await expect(this.titleLocator).toBeVisible()
-
         await Promise.all(this.tagsAndUrls.map(([tag, url]) => expect(tag).toHaveAttribute('href', url)))
 
         await expect(this.shareFacebook).toHaveAttribute(
