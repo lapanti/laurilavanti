@@ -20,11 +20,12 @@ export class TagPage extends AnyPage {
 
     async goTo() {
         await this.page.goto(this.url)
+
+        // Wait to ensure we are at the correct page
+        await expect(this.title).toBeVisible()
     }
 
     async checkContent() {
-        await expect(this.title).toBeVisible()
-
         await expect(await this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArtices)
     }
 }

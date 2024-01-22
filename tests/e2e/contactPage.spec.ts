@@ -10,9 +10,14 @@ test.describe('Contact Page', () => {
 
         await contactPage.checkContent()
 
+        await contactPage.testScreenshot()
+    })
+
+    test('should pass accessibility test', async ({ page }) => {
+        const contactPage = new ContactPage(page)
+        await contactPage.goTo()
+
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
-
-        await contactPage.testScreenshot()
     })
 })

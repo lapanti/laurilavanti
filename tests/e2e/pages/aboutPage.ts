@@ -16,11 +16,12 @@ export class AboutPage extends AnyPage {
 
     async goTo() {
         await this.goToNavLink(this.navLinkAboutMe)
+
+        // Wait to ensure we are at the correct page
+        await expect(this.aboutMeTitle).toBeVisible()
     }
 
     async checkContent() {
-        await expect(this.aboutMeTitle).toBeVisible()
-
         await expect(this.positionsTitle).toBeVisible()
 
         await this.checkFooter()

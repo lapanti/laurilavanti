@@ -16,11 +16,12 @@ export class HomePage extends AnyPage {
 
     async goHome() {
         await this.page.goto('/')
+
+        // Wait to ensure we are at the correct page
+        await expect(this.mainTitle).toBeVisible()
     }
 
     async checkTitles() {
-        await expect(this.mainTitle).toBeVisible()
-
         await expect(this.latestTitle).toBeVisible()
 
         await this.checkMainNavigation()

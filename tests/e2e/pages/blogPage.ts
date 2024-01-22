@@ -18,11 +18,12 @@ export class BlogPage extends AnyPage {
 
     async goTo() {
         await this.goToNavLink(this.navLinkBlog)
+
+        // Wait to ensure we are at the correct page
+        await expect(this.title).toBeVisible()
     }
 
     async checkContent() {
-        await expect(this.title).toBeVisible()
-
         await expect(await this.articles.count()).toBeGreaterThanOrEqual(2)
         await expect(await this.linksToBlogs.count()).toBeGreaterThanOrEqual(2)
 
