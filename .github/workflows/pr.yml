@@ -22,6 +22,8 @@ jobs:
         with:
           cloudflare_project_id: 'laurilavanti'
           wait_until_ready: true
+      - name: Print url
+        run: echo ${{ steps.cloudflare_preview_url.outputs.preview_url }}
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -30,9 +32,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npm run test:e2e:setup
       - name: Run Playwright tests
-        run: E2E_URL=${{ steps.cloudflare_preview_url.outputs.preview_url }} npx playwright test
+        run: E2E_URL=https://laurilavanti.fi npm run test:e2e #E2E_URL=${{ steps.cloudflare_preview_url.outputs.preview_url }} npx playwright test
         timeout-minutes: 30
       - uses: actions/upload-artifact@v4
         if: always()
