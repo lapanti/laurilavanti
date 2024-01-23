@@ -2,9 +2,12 @@ name: pipeline
 
 on:
   push:
-    branches: [main]
+    branches:
+      - 'main'
   pull_request:
-    branches: [main]
+    branches:
+      - '**'
+      - '!main'
 
 jobs:
   build:
@@ -22,6 +25,25 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - run: npm run build
+
+  get-preview-url:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    name: Get preview URL
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_EMAIL: ${{ secrets.CLOUDFLARE_ACCOUNT_EMAIL }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - run: sleep 330s
+      - name: Get preview URL
+        uses: zentered/cloudflare-preview-url@v1.4.0
+        id: cloudflare_preview_url
+        with:
+          cloudflare_project_id: 'laurilavanti'
+          wait_until_ready: true
+      - name: Print URL
+        run: echo "https://${{ steps.cloudflare_preview_url.outputs.preview_url }}"
 
   lint:
     runs-on: ubuntu-latest
