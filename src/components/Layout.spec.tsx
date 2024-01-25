@@ -195,7 +195,7 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render HR', () => {
+        it('should render Hr', () => {
             const { container } = render(
                 <Layout
                     body={{
