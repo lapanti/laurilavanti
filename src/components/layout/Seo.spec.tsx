@@ -46,16 +46,25 @@ describe('<Seo />', () => {
         mastodon,
     } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
-    const expectHelmetToHaveCorrectValues = (
-        pageType: (typeof JSON_LD_TYPES)[number],
+    const expectHelmetToHaveCorrectValues = ({
+        pageType,
         pageTitle = title,
         canonical = '',
-        imgData?: { src: string; width: string; height: string },
+        imgData,
         pageDescription = description,
-        modified?: string,
-        published?: string,
-        meta: { name: string; content: string }[] = []
-    ) => {
+        modified,
+        published,
+        meta = [],
+    }: {
+        pageType: (typeof JSON_LD_TYPES)[number]
+        pageTitle: string
+        canonical?: string
+        imgData?: { src: string; width: string; height: string }
+        pageDescription: string
+        modified?: string
+        published?: string
+        meta: { name: string; content: string }[]
+    }) => {
         const helmet = Helmet.peek()
 
         expect(helmet.htmlAttributes).toEqual({ lang: 'fi' })
@@ -72,7 +81,7 @@ describe('<Seo />', () => {
                 { content: locale, name: 'og:locale' },
                 { content: pageDescription, name: 'description' },
                 { content: pageDescription, property: 'og:description' },
-                { content: canonical ? canonical : siteUrl, name: 'og:url' },
+                { content: canonical || siteUrl, name: 'og:url' },
                 { content: title, name: 'og:site_name' },
                 { content: pageTitle, name: 'twitter:title' },
                 { content: twSite, name: 'twitter:site' },

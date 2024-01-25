@@ -68,32 +68,31 @@ const Seo = ({
     `)
 
     const metaDescription = description || site?.siteMetadata?.description
-    const cardMeta =
-        metaImage && metaImage.src
-            ? [
-                  {
-                      property: 'og:image',
-                      content: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
-                  },
-                  {
-                      property: 'og:image:width',
-                      content: metaImage.width,
-                  },
-                  {
-                      property: 'og:image:height',
-                      content: metaImage.height,
-                  },
-                  {
-                      name: 'twitter:card',
-                      content: 'summary_large_image',
-                  },
-              ]
-            : [
-                  {
-                      name: 'twitter:card',
-                      content: 'summary',
-                  },
-              ]
+    const cardMeta = metaImage?.src
+        ? [
+              {
+                  property: 'og:image',
+                  content: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
+              },
+              {
+                  property: 'og:image:width',
+                  content: metaImage.width,
+              },
+              {
+                  property: 'og:image:height',
+                  content: metaImage.height,
+              },
+              {
+                  name: 'twitter:card',
+                  content: 'summary_large_image',
+              },
+          ]
+        : [
+              {
+                  name: 'twitter:card',
+                  content: 'summary',
+              },
+          ]
     const canonical = pathname ? `${site?.siteMetadata?.siteUrl}${pathname}` : null
 
     const jsonLD = {
@@ -114,7 +113,7 @@ const Seo = ({
         ...(type === BLOGPOSTING
             ? {
                   datePublished: published,
-                  dateModified: modified || published,
+                  dateModified: modified ?? published,
                   mainEntityOfPage: {
                       '@type': WEBPAGE,
                       '@id': canonical,
@@ -168,7 +167,7 @@ const Seo = ({
                 },
                 {
                     name: 'og:url',
-                    content: canonical || site?.siteMetadata?.siteUrl,
+                    content: canonical ?? site?.siteMetadata?.siteUrl,
                 },
                 {
                     name: 'og:site_name',
@@ -199,7 +198,7 @@ const Seo = ({
                     content: metaDescription,
                 },
                 ...cardMeta,
-                ...(meta ? meta : []),
+                ...(meta || []),
             ]}
         >
             <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
