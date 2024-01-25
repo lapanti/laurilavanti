@@ -501,6 +501,61 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
+        it('should render borken internal links', () => {
+            const slug = 'this-is-an-internal/link'
+            const value = 'external link'
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            data: {},
+                            content: [
+                                {
+                                    data: {},
+                                    content: [
+                                        {
+                                            data: {
+                                                target: {
+                                                    sys: {
+                                                        id: '55DEJPnoQSfP3jJzD7jDSJ',
+                                                        type: 'Link',
+                                                        linkType: 'Entry',
+                                                    },
+                                                },
+                                            },
+                                            content: [
+                                                {
+                                                    data: {},
+                                                    marks: [],
+                                                    value,
+                                                    nodeType: 'text',
+                                                },
+                                            ],
+                                            nodeType: 'entry-hyperlink',
+                                        },
+                                    ],
+                                    nodeType: 'paragraph',
+                                },
+                            ],
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename: 'something that will never match anything',
+                                contentful_id: '55DEJPnoQSfP3jJzD7jDSJ',
+                                slug,
+                            },
+                        ],
+                    }}
+                />
+            )
+
+            // Check internal link is not present
+            expect(screen.queryByRole('link', { name: value })).toBeNull()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
         it('should render table', () => {
             const header = 'my table header'
             const cell = 'my table cell'
