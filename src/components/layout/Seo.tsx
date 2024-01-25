@@ -198,7 +198,7 @@ const Seo = ({
                     content: metaDescription,
                 },
                 ...cardMeta,
-                ...(meta || []),
+                ...(meta ?? []),
             ]}
         >
             <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
