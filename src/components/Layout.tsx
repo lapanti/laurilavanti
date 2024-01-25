@@ -184,9 +184,8 @@ const options = {
             <ExternalLink href={node.data.uri}>{children}</ExternalLink>
         ),
         [INLINES.ENTRY_HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
-            switch (node.data.target.__typename) {
-                case 'ContentfulPost':
-                    return <InternalLink to={`/blogi/${node.data.target.slug}/`}>{children}</InternalLink>
+            if (node.data.target.__typename === 'ContentfulPost') {
+                return <InternalLink to={`/blogi/${node.data.target.slug}/`}>{children}</InternalLink>
             }
         },
     },
