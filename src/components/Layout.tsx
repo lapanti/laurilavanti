@@ -25,7 +25,7 @@ import {
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
-import HR from './HR'
+import Hr from './Hr'
 import InternalLink from './InternalLink'
 import BigHeroImage from './layout/BigHeroImage'
 import ContactInfo from './layout/ContactInfo'
@@ -136,7 +136,7 @@ const options = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
         [BLOCKS.HEADING_2]: (_: Block | Inline, children: ReactNode) => <H2>{children}</H2>,
-        [BLOCKS.HR]: () => <HR />,
+        [BLOCKS.HR]: () => <Hr />,
         [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
             switch (node?.data?.target?.__typename) {
                 case 'ContentfulHomeTitle':

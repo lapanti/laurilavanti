@@ -8,7 +8,7 @@ import { sizes } from '../lib/styles'
 import { BLOGPOSTING } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
 import H2 from './H2'
-import HR from './HR'
+import Hr from './Hr'
 import Layout from './Layout'
 import SocialShare from './post/SocialShare'
 import PostMeta from './PostMeta'
@@ -82,7 +82,7 @@ const Post = ({
                 siteUrl={siteUrl}
             />
             <H2>Muita kirjoituksia</H2>
-            <HR />
+            <Hr />
             <ExcerptList currentSlug={slug} limit={3} relatedTags={tags} />
         </Layout>
     )
