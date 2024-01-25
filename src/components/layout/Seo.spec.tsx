@@ -57,13 +57,13 @@ describe('<Seo />', () => {
         meta = [],
     }: {
         pageType: (typeof JSON_LD_TYPES)[number]
-        pageTitle: string
+        pageTitle?: string
         canonical?: string
         imgData?: { src: string; width: string; height: string }
-        pageDescription: string
+        pageDescription?: string
         modified?: string
         published?: string
-        meta: { name: string; content: string }[]
+        meta?: { name: string; content: string }[]
     }) => {
         const helmet = Helmet.peek()
 
@@ -121,7 +121,7 @@ describe('<Seo />', () => {
     it('should render minimal SEO', async () => {
         render(<Seo title={title} />)
 
-        expectHelmetToHaveCorrectValues(WEBSITE)
+        expectHelmetToHaveCorrectValues({ pageType: WEBSITE })
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -137,7 +137,7 @@ describe('<Seo />', () => {
         const imgData = { src, height: `${height}`, width: `${width}` }
         render(<Seo description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
 
-        expectHelmetToHaveCorrectValues(WEBSITE, title, `${siteUrl}/`, imgData)
+        expectHelmetToHaveCorrectValues({ pageType: WEBSITE, pageTitle: title, canonical: `${siteUrl}/`, imgData })
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -154,7 +154,7 @@ describe('<Seo />', () => {
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
         render(<Seo description="" type={type} title={title} image={imgData} pathname="/" />)
 
-        expectHelmetToHaveCorrectValues(type, title, `${siteUrl}/`, imgData)
+        expectHelmetToHaveCorrectValues({ pageType: type, pageTitle: title, canonical: `${siteUrl}/`, imgData })
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -187,15 +187,15 @@ describe('<Seo />', () => {
             />
         )
 
-        expectHelmetToHaveCorrectValues(
-            type,
-            blogTitle,
-            `${siteUrl}${pathname}`,
+        expectHelmetToHaveCorrectValues({
+            pageType: type,
+            pageTitle: blogTitle,
+            canonical: `${siteUrl}${pathname}`,
             imgData,
-            description,
+            pageDescription: description,
+            modified: published,
             published,
-            published
-        )
+        })
 
         await waitFor(() => expect(document.title).toEqual(`${blogTitle} | ${title}`))
     })
@@ -232,16 +232,16 @@ describe('<Seo />', () => {
             />
         )
 
-        expectHelmetToHaveCorrectValues(
-            type,
-            blogTitle,
-            `${siteUrl}${pathname}`,
+        expectHelmetToHaveCorrectValues({
+            pageType: type,
+            pageTitle: blogTitle,
+            canonical: `${siteUrl}${pathname}`,
             imgData,
-            description,
+            pageDescription: description,
             modified,
             published,
-            meta
-        )
+            meta,
+        })
 
         await waitFor(() => expect(document.title).toEqual(`${blogTitle} | ${title}`))
     })
