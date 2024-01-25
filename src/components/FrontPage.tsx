@@ -23,7 +23,7 @@ const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         heroImageAlt={data?.contentfulPage?.image?.description}
         mobileHeroImage={data?.contentfulPage?.mobileImage?.localFile}
         mobileHeroImageAlt={data?.contentfulPage?.mobileImage?.description}
-        description={data?.contentfulPage?.description || ''}
+        description={data?.contentfulPage?.description ?? ''}
         type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
         body={data?.contentfulPage?.body}
