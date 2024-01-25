@@ -4,7 +4,8 @@ module.exports = {
     /** Resolve path from test to snapshot path. The inverse of @see resolveTestPath */
     resolveSnapshotPath: (testPath, snapshotExtension) => {
         if (testPath.includes('src')) {
-            return `${testPath.replace('src', `tests${path.sep}__snapshots__`)}${snapshotExtension}`
+            const finalTestPath = testPath.replace('src', `tests${path.sep}__snapshots__`)
+            return `${finalTestPath}${snapshotExtension}`
         }
         // Remove this block of code after all tests live under `src/`
         return `${path.dirname(testPath)}${path.sep}__snapshots__${path.sep}${path.basename(
