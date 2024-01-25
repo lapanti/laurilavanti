@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
+import { getValueOrDefault } from '../../lib/string'
 import { BLOGPOSTING, JSON_LD_TYPES, WEBPAGE, WEBSITE } from '../../types/jsonld'
 
 export interface SeoProps {
@@ -67,7 +68,7 @@ const Seo = ({
         }
     `)
 
-    const metaDescription = description ?? site?.siteMetadata?.description
+    const metaDescription = getValueOrDefault(description, site?.siteMetadata?.description)
     const cardMeta = metaImage?.src
         ? [
               {
