@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 
 import { BLOGPOSTING, JSON_LD_TYPES, WEBPAGE, WEBSITE } from '../../types/jsonld'
 
-export interface SEOProps {
+export interface SeoProps {
     description?: string
     meta?: JSX.IntrinsicElements['meta'][]
     title: string
@@ -17,7 +17,7 @@ export interface SEOProps {
     modified?: string
 }
 
-const SEO = ({
+const Seo = ({
     description,
     meta,
     title,
@@ -26,7 +26,7 @@ const SEO = ({
     type = WEBSITE,
     published,
     modified,
-}: SEOProps): JSX.Element => {
+}: SeoProps): JSX.Element => {
     const { site } = useStaticQuery<{
         site: {
             siteMetadata: {
@@ -207,4 +207,4 @@ const SEO = ({
     )
 }
 
-export default SEO
+export default Seo

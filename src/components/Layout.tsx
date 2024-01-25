@@ -2,7 +2,7 @@ import type { Block, Inline, Text } from '@contentful/rich-text-types'
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ReactNode } from 'react'
 import type { RichBody } from '../types/contentful'
-import type { SEOProps } from './layout/SEO'
+import type { SeoProps } from './layout/Seo'
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
@@ -36,7 +36,7 @@ import Header from './layout/Header'
 import HeroImage from './layout/HeroImage'
 import HomeTitle from './layout/HomeTitle'
 import Image from './layout/Image'
-import SEO from './layout/SEO'
+import Seo from './layout/Seo'
 import Svgs from './layout/Svgs'
 import Title from './layout/Title'
 import Paragraph from './Paragraph'
@@ -191,7 +191,7 @@ const options = {
     },
 }
 
-interface Props extends Omit<SEOProps, 'title' | 'image'> {
+interface Props extends Omit<SeoProps, 'title' | 'image'> {
     className?: string
     title?: string
     hiddenTitle?: string
@@ -241,7 +241,7 @@ const LayoutComponent = ({
     return (
         <>
             <GlobalStyle />
-            <SEO
+            <Seo
                 title={title || hiddenTitle || ''}
                 description={description}
                 meta={meta}
