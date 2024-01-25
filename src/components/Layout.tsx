@@ -199,7 +199,6 @@ interface Props extends Omit<SEOProps, 'title' | 'image'> {
     heroImageAlt?: string
     mobileHeroImage?: ImageDataLike
     mobileHeroImageAlt?: string
-    image?: { src: string; height: string; width: string }
     body?: RichBody
     preBody?: ReactNode
     isFrontPage?: boolean
