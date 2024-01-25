@@ -67,7 +67,7 @@ const Seo = ({
         }
     `)
 
-    const metaDescription = description || site?.siteMetadata?.description
+    const metaDescription = description ?? site?.siteMetadata?.description
     const cardMeta = metaImage?.src
         ? [
               {
