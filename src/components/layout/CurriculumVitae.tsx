@@ -9,7 +9,7 @@ import H2 from '../H2'
 /** Only exported for testing purposes */
 export const yearsToString = (startYear: number, endYear?: number): string => {
     if (startYear === endYear) return `${startYear}`
-    return `${startYear}-${endYear || ''}`
+    return `${startYear}-${endYear ?? ''}`
 }
 
 const DivContainer = styled.div({
