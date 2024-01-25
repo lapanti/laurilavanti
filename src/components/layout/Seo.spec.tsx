@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 import gatsbyConfig from '../../../gatsby-config'
 import { mainImage } from '../../../tests/images.mock'
 import { BLOGPOSTING, JSON_LD_TYPES, WEBSITE } from '../../types/jsonld'
-import SEO from './SEO'
+import Seo from './Seo'
 
 interface SiteMetadata {
     title: string
@@ -29,7 +29,7 @@ interface ImageSeoData {
     }
 }
 
-describe('<SEO />', () => {
+describe('<Seo />', () => {
     const {
         title,
         keywords,
@@ -110,7 +110,7 @@ describe('<SEO />', () => {
     }
 
     it('should render minimal SEO', async () => {
-        render(<SEO title={title} />)
+        render(<Seo title={title} />)
 
         expectHelmetToHaveCorrectValues(WEBSITE)
 
@@ -126,7 +126,7 @@ describe('<SEO />', () => {
             width,
         } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
-        render(<SEO description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
+        render(<Seo description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
 
         expectHelmetToHaveCorrectValues(WEBSITE, title, `${siteUrl}/`, imgData)
 
@@ -143,7 +143,7 @@ describe('<SEO />', () => {
         } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
-        render(<SEO description="" type={type} title={title} image={imgData} pathname="/" />)
+        render(<Seo description="" type={type} title={title} image={imgData} pathname="/" />)
 
         expectHelmetToHaveCorrectValues(type, title, `${siteUrl}/`, imgData)
 
@@ -168,7 +168,7 @@ describe('<SEO />', () => {
         const imgData = { src, height: `${height}`, width: `${width}` }
 
         render(
-            <SEO
+            <Seo
                 description={description}
                 title={blogTitle}
                 image={imgData}
@@ -211,7 +211,7 @@ describe('<SEO />', () => {
         const imgData = { src, height: `${height}`, width: `${width}` }
 
         render(
-            <SEO
+            <Seo
                 description={description}
                 title={blogTitle}
                 image={imgData}
