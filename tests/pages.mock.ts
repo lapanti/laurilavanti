@@ -8,9 +8,13 @@ const image = {
     description: mainImageDescription,
 }
 
-const mobileImage = image
+const images = {
+    image,
+    mobileImage: image,
+}
 
 export const frontPage: ContentfulPage = {
+    ...images,
     description: null,
     hideTitle: true,
     jsonLdType: 'WebSite',
@@ -29,12 +33,11 @@ export const frontPage: ContentfulPage = {
             },
         ],
     },
-    image,
-    mobileImage,
     updatedAt: '2023-05-24T14:51:46.661Z',
 }
 
 export const aboutMe: ContentfulPage = {
+    ...images,
     description:
         'Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.',
     hideTitle: false,
@@ -213,12 +216,11 @@ export const aboutMe: ContentfulPage = {
             },
         ],
     },
-    image,
-    mobileImage,
     updatedAt: '2023-10-17T03:58:48.870Z',
 }
 
 export const blog: ContentfulPage = {
+    ...images,
     description: null,
     hideTitle: false,
     jsonLdType: 'WebPage',
@@ -232,12 +234,11 @@ export const blog: ContentfulPage = {
             },
         ],
     },
-    image,
-    mobileImage,
     updatedAt: '2022-07-31T20:26:27.574Z',
 }
 
 export const contactMe: ContentfulPage = {
+    ...images,
     description: 'Yhteystiedot',
     hideTitle: false,
     jsonLdType: 'Person',
@@ -252,7 +253,5 @@ export const contactMe: ContentfulPage = {
             },
         ],
     },
-    image,
-    mobileImage,
     updatedAt: '2022-07-31T20:25:55.535Z',
 }
