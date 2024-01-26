@@ -136,5 +136,5 @@ export interface FooterNavLink {
 }
 
 export interface FooterNav {
-    links: FooterNavLink[]
+    links: (FooterNavLink | ContactInfoLink)[]
 }
