@@ -1,6 +1,14 @@
 import type { ContentfulPage } from '../src/types/contentful'
 
+import { contactInfoLinks } from './contactInfo.mock'
 import { mainImage, mainImageDescription } from './images.mock'
+
+const image = {
+    localFile: mainImage,
+    description: mainImageDescription,
+}
+
+const mobileImage = image
 
 export const frontPage: ContentfulPage = {
     description: null,
@@ -21,14 +29,8 @@ export const frontPage: ContentfulPage = {
             },
         ],
     },
-    image: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
-    mobileImage: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
+    image,
+    mobileImage,
     updatedAt: '2023-05-24T14:51:46.661Z',
 }
 
@@ -211,14 +213,8 @@ export const aboutMe: ContentfulPage = {
             },
         ],
     },
-    image: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
-    mobileImage: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
+    image,
+    mobileImage,
     updatedAt: '2023-10-17T03:58:48.870Z',
 }
 
@@ -236,14 +232,8 @@ export const blog: ContentfulPage = {
             },
         ],
     },
-    image: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
-    mobileImage: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
+    image,
+    mobileImage,
     updatedAt: '2022-07-31T20:26:27.574Z',
 }
 
@@ -258,60 +248,11 @@ export const contactMe: ContentfulPage = {
             {
                 __typename: 'ContentfulContactInfo',
                 contentful_id: '5p1Xu3HEt01ELvRawwh6HF',
-                links: [
-                    {
-                        contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',
-                        title: 'lauri.lavanti@kirkkonummi.fi',
-                        url: null,
-                        icon: 'envelope',
-                    },
-                    {
-                        contentful_id: '6ylApa8B8wgGibypB2UIB9',
-                        title: 'Facebook',
-                        url: 'https://www.facebook.com/laurilavanti',
-                        icon: 'facebook',
-                    },
-                    {
-                        contentful_id: '25USXEVEz9KLBF6JMtgVsx',
-                        title: 'Threads',
-                        url: 'https://www.threads.net/@laurilavanti',
-                        icon: 'threads',
-                    },
-                    {
-                        contentful_id: 'o7sDXDUNJVK7NUQSQarQQ',
-                        title: 'Instagram',
-                        url: 'https://www.instagram.com/laurilavanti/',
-                        icon: 'instagram',
-                    },
-                    {
-                        contentful_id: 'vl12ZwQDYvDaOBWKlWU09',
-                        title: 'LinkedIn',
-                        url: 'https://www.linkedin.com/in/lapanti',
-                        icon: 'linkedin',
-                    },
-                    {
-                        contentful_id: '2uZGyVH5uV3hzs4fjd685d',
-                        title: 'Mastodon',
-                        url: 'https://mastodontti.fi/@laurilavanti',
-                        icon: 'mastodon',
-                    },
-                    {
-                        contentful_id: 'izqXNmDJzl4RfQit84tZs',
-                        title: 'Twitter',
-                        url: 'https://twitter.com/laurilavanti',
-                        icon: 'twitter',
-                    },
-                ],
+                links: contactInfoLinks,
             },
         ],
     },
-    image: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
-    mobileImage: {
-        localFile: mainImage,
-        description: mainImageDescription,
-    },
+    image,
+    mobileImage,
     updatedAt: '2022-07-31T20:25:55.535Z',
 }
