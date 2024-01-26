@@ -1,6 +1,36 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ContentfulPost, ContentfulPostExcerpt } from '../src/types/contentful'
 
+import { mainImage, mainImageDescription } from './images.mock'
+
+const aluevaalitTag = {
+    contentful_id: 'aluevaalit',
+}
+
+const kirkkonummiTag = {
+    contentful_id: 'kirkkonummi',
+}
+
+const soteuudistusTag = {
+    contentful_id: 'soteuudistus',
+}
+
+const perusturvaTag = {
+    contentful_id: 'perusturva',
+}
+
+const varhaiskasvatusTag = {
+    contentful_id: 'varhaiskasvatus',
+}
+
+const opetusTag = {
+    contentful_id: 'opetus',
+}
+
+const kaavoitusTag = {
+    contentful_id: 'kaavoitus',
+}
+
 export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
     createdAt: '18.06.2022',
     publishDate: null,
@@ -9,77 +39,15 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
         references: [],
     },
     headerImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    images: {
-                        sources: [
-                            {
-                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
-                                sizes: '(min-width: 4032px) 4032px, 100vw',
-                                type: 'image/webp',
-                            },
-                        ],
-                        fallback: {
-                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
-                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
-                            sizes: '(min-width: 4032px) 4032px, 100vw',
-                        },
-                    },
-                    layout: 'constrained',
-                    width: 4032,
-                    height: 1728,
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k=',
-                    },
-                },
-            },
-        } as unknown as ImageDataLike,
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'constrained',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,\n/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,\n/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w',
-                            sizes: '(min-width: 1728px) 1728px, 100vw',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,\n/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,\n/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w',
-                                type: 'image/webp',
-                                sizes: '(min-width: 1728px) 1728px, 100vw',
-                            },
-                        ],
-                    },
-                    width: 1728,
-                    height: 1728,
-                },
-            },
-        } as unknown as ImageDataLike,
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'aluevaalit',
-            },
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'soteuudistus',
-            },
-        ],
+        tags: [aluevaalitTag, kirkkonummiTag, soteuudistusTag],
     },
     title: 'Terveys kuuluu kaikille',
     updatedAt: '2022-06-19T17:43:34.855Z',
@@ -98,77 +66,15 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
         references: [],
     },
     headerImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    images: {
-                        sources: [
-                            {
-                                srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w',
-                                sizes: '(min-width: 4032px) 4032px, 100vw',
-                                type: 'image/webp',
-                            },
-                        ],
-                        fallback: {
-                            src: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg',
-                            srcSet: 'https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,\nhttps://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w',
-                            sizes: '(min-width: 4032px) 4032px, 100vw',
-                        },
-                    },
-                    layout: 'constrained',
-                    width: 4032,
-                    height: 1728,
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k=',
-                    },
-                },
-            },
-        } as unknown as ImageDataLike,
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'constrained',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTusKnGBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMjH/2gAIAQEAAQUCp9brMpRDHQGGUk7WsVjdf//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABsQAQADAQADAAAAAAAAAAAAAAEAESExQWFx/9oACAEBAAE/IbPI9yhsERelwxQeINQHwxF6N/IbfkE4jVNz/9oADAMBAAIAAwAAABAD8D7/xAAYEQEAAwEAAAAAAAAAAAAAAAABABARMf/aAAgBAwEBPxBHCY3/AP/EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBEx/9oACAECAQE/EFOxghy//8QAHBABAAMBAAMBAAAAAAAAAAAAAQARIVExQXFh/9oACAEBAAE/EMl2XyrIABFKVGAWjqkAK+ao7XYdXBRK3j9hmHGJ6QyKFKPrUxUVviIpWtv7P//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/9e7cd/Lauri-Lavanti-21-9.jpg 432w,\n/static/417ee201d5e9b3646c7f94feac814c4a/ead50/Lauri-Lavanti-21-9.jpg 864w,\n/static/417ee201d5e9b3646c7f94feac814c4a/4227f/Lauri-Lavanti-21-9.jpg 1728w',
-                            sizes: '(min-width: 1728px) 1728px, 100vw',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/18bed/Lauri-Lavanti-21-9.webp 432w,\n/static/417ee201d5e9b3646c7f94feac814c4a/d0f84/Lauri-Lavanti-21-9.webp 864w,\n/static/417ee201d5e9b3646c7f94feac814c4a/ca0c6/Lauri-Lavanti-21-9.webp 1728w',
-                                type: 'image/webp',
-                                sizes: '(min-width: 1728px) 1728px, 100vw',
-                            },
-                        ],
-                    },
-                    width: 1728,
-                    height: 1728,
-                },
-            },
-        } as unknown as ImageDataLike,
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'aluevaalit',
-            },
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'soteuudistus',
-            },
-        ],
+        tags: [aluevaalitTag, kirkkonummiTag, soteuudistusTag],
     },
     title: 'Sote on hyvinvointiyhteiskunnan kulmakivi',
     updatedAt: '2022-06-19T17:43:24.741Z',
@@ -247,17 +153,7 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
         description: 'Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'aluevaalit',
-            },
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'soteuudistus',
-            },
-        ],
+        tags: [aluevaalitTag, kirkkonummiTag, soteuudistusTag],
     },
     title: 'Mitä jos terveyskeskusta ei olisikaan?',
     updatedAt: '2022-06-19T17:43:13.288Z',
@@ -336,14 +232,7 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'perusturva',
-            },
-        ],
+        tags: [kirkkonummiTag, perusturvaTag],
     },
     title: 'Perusturvajaosto - mikä se on?',
     updatedAt: '2022-06-19T17:43:02.368Z',
@@ -422,17 +311,7 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'aluevaalit',
-            },
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'soteuudistus',
-            },
-        ],
+        tags: [aluevaalitTag, kirkkonummiTag, soteuudistusTag],
     },
     title: 'Ehdolle aluevaaleihin',
     updatedAt: '2022-06-19T17:42:50.201Z',
@@ -517,14 +396,7 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'varhaiskasvatus',
-            },
-        ],
+        tags: [kirkkonummiTag, varhaiskasvatusTag],
     },
     title: 'Päiväkodit kaipaavat opettajia',
     updatedAt: '2022-06-19T17:42:36.295Z',
@@ -640,14 +512,7 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
         description: 'Kuva Winellska skolanista.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'opetus',
-            },
-        ],
+        tags: [kirkkonummiTag, opetusTag],
     },
     title: 'Hyvin suunniteltu on puoliksi tehty, mutta',
     updatedAt: '2022-06-19T17:42:19.529Z',
@@ -764,17 +629,7 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
         description: 'Kuva Laajakallion päiväkodista talvella.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kaavoitus',
-            },
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'varhaiskasvatus',
-            },
-        ],
+        tags: [kaavoitusTag, kirkkonummiTag, varhaiskasvatusTag],
     },
     title: 'Varhaiskasvatuksen riittävyydestä ei saa tinkiä',
     updatedAt: '2022-06-19T17:42:01.314Z',
@@ -853,14 +708,7 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
         description: 'Kuva useammasta lasten kirjasta kirjahyllyssä.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'varhaiskasvatus',
-            },
-        ],
+        tags: [kirkkonummiTag, varhaiskasvatusTag],
     },
     title: 'Varhaiskasvatuksen kerhotoiminta - lapsen etu',
     updatedAt: '2022-06-19T17:41:43.069Z',
@@ -976,14 +824,7 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
         description: 'Kuva duploista laatikossa automaton päällä.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'varhaiskasvatus',
-            },
-        ],
+        tags: [kirkkonummiTag, varhaiskasvatusTag],
     },
     title: 'Kirkkonummi-lisä on sinunkin etusi',
     updatedAt: '2022-06-19T17:41:02.681Z',
@@ -1062,14 +903,7 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
         description: 'Kuva neulotusta pehmolelusta, taustalla erinäisiä lasten leluja.',
     },
     metadata: {
-        tags: [
-            {
-                contentful_id: 'kirkkonummi',
-            },
-            {
-                contentful_id: 'varhaiskasvatus',
-            },
-        ],
+        tags: [kirkkonummiTag, varhaiskasvatusTag],
     },
     title: 'Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys',
     updatedAt: '2022-06-19T17:40:37.691Z',
