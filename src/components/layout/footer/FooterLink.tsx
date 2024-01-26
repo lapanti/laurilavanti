@@ -1,4 +1,4 @@
-import type { FooterNavLink } from '../../../types/contentful'
+import type { FooterNav } from '../../../types/contentful'
 
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads, FaXTwitter } from 'react-icons/fa6'
@@ -20,7 +20,7 @@ const Link = styled.a({
     },
 })
 
-const iconToHoverColor = (icon: FooterNavLink['icon']): string => {
+const iconToHoverColor = (icon: FooterNav['links'][number]['icon']): string | undefined => {
     switch (icon) {
         case 'facebook':
             return colors.facebook
@@ -37,7 +37,7 @@ const iconToHoverColor = (icon: FooterNavLink['icon']): string => {
     }
 }
 
-const iconToIconComponent = (icon: FooterNavLink['icon']) => {
+const iconToIconComponent = (icon: FooterNav['links'][number]['icon']) => {
     switch (icon) {
         case 'facebook':
             return FaFacebook
@@ -56,18 +56,18 @@ const iconToIconComponent = (icon: FooterNavLink['icon']) => {
 
 interface Props {
     className?: string
-    link: FooterNavLink
+    link: FooterNav['links'][number]
 }
 
-const FooterLinkComponent = ({ className, link }: Props): JSX.Element => {
+const FooterLinkComponent = ({ className, link }: Props): JSX.Element | null => {
     const Icon = iconToIconComponent(link.icon)
-    return (
+    return link.url ? (
         <li className={className}>
             <Link href={link.url} title={link.title} target="_blank" rel="me noopener noreferrer">
-                <Icon />
+                {Icon && <Icon />}
             </Link>
         </li>
-    )
+    ) : null
 }
 
 FooterLinkComponent.displayName = 'FooterLink'
