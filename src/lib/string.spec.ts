@@ -16,5 +16,9 @@ describe('string lib', () => {
         it('should return default value when value is undefined', () => {
             expect(getValueOrDefault(undefined, defaultValue)).toEqual(defaultValue)
         })
+
+        it('should return default value when value is null', () => {
+            expect(getValueOrDefault(null, defaultValue)).toEqual(defaultValue)
+        })
     })
 })

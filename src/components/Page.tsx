@@ -3,6 +3,7 @@ import type { ContentfulPage } from '../types/contentful'
 import { graphql } from 'gatsby'
 import React from 'react'
 
+import { getValueOrDefault } from '../lib/string'
 import Layout from './Layout'
 
 interface Props {
@@ -23,7 +24,7 @@ const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         heroImageAlt={data?.contentfulPage?.image?.description}
         mobileHeroImage={data?.contentfulPage?.mobileImage?.localFile}
         mobileHeroImageAlt={data?.contentfulPage?.mobileImage?.description}
-        description={data?.contentfulPage?.description || ''}
+        description={getValueOrDefault(data?.contentfulPage?.description, '')}
         type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
         body={data?.contentfulPage?.body}
