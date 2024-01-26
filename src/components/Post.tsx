@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
+import { getValueOrDefault } from '../lib/string'
 import { sizes } from '../lib/styles'
 import { BLOGPOSTING } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
@@ -65,12 +66,12 @@ const Post = ({
             mobileHeroImageAlt={mobileHeaderImage.description}
             description={excerpt}
             type={BLOGPOSTING}
-            published={publishedOld || published}
+            published={getValueOrDefault(publishedOld, published)}
             modified={updatedAt}
             body={body}
             preBody={
                 <PositionedMeta
-                    date={publishDate || createdAt}
+                    date={getValueOrDefault(publishDate, createdAt)}
                     tags={tags}
                     ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
                 />
