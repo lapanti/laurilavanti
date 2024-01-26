@@ -1,4 +1,4 @@
-import type { FooterNav } from '../../../types/contentful'
+import type { ContactInfoLink } from '../../../types/contentful'
 
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads, FaXTwitter } from 'react-icons/fa6'
@@ -20,7 +20,7 @@ const Link = styled.a({
     },
 })
 
-const iconToHoverColor = (icon: FooterNav['links'][number]['icon']): string | undefined => {
+const iconToHoverColor = (icon: ContactInfoLink['icon']): string | undefined => {
     switch (icon) {
         case 'facebook':
             return colors.facebook
@@ -37,7 +37,7 @@ const iconToHoverColor = (icon: FooterNav['links'][number]['icon']): string | un
     }
 }
 
-const iconToIconComponent = (icon: FooterNav['links'][number]['icon']) => {
+const iconToIconComponent = (icon: ContactInfoLink['icon']) => {
     switch (icon) {
         case 'facebook':
             return FaFacebook
@@ -56,7 +56,7 @@ const iconToIconComponent = (icon: FooterNav['links'][number]['icon']) => {
 
 interface Props {
     className?: string
-    link: FooterNav['links'][number]
+    link: ContactInfoLink
 }
 
 const FooterLinkComponent = ({ className, link }: Props): JSX.Element | null => {
