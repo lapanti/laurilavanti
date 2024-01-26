@@ -586,8 +586,36 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render BlockQuote', () => {
-            const quoteText = 'Quote text'
+        const quoteText = 'Quote text'
+
+        it.each([
+            [
+                'render BlockQuote',
+                {
+                    nodeType: BLOCKS.PARAGRAPH,
+                    data: {},
+                    content: [
+                        {
+                            nodeType: 'text',
+                            value: quoteText,
+                            marks: [],
+                            data: {},
+                        },
+                    ],
+                },
+                true,
+            ],
+            [
+                'not render a BlockQuote if it has wrong children',
+                {
+                    nodeType: 'text',
+                    value: quoteText,
+                    marks: [],
+                    data: {},
+                },
+                false,
+            ],
+        ])('should %s', (_, firstContent, isVisible) => {
             const { container } = render(
                 <Layout
                     body={{
@@ -597,20 +625,7 @@ describe('<Layout />', () => {
                                 {
                                     nodeType: BLOCKS.QUOTE,
                                     data: {},
-                                    content: [
-                                        {
-                                            nodeType: BLOCKS.PARAGRAPH,
-                                            data: {},
-                                            content: [
-                                                {
-                                                    nodeType: 'text',
-                                                    value: quoteText,
-                                                    marks: [],
-                                                    data: {},
-                                                },
-                                            ],
-                                        },
-                                    ],
+                                    content: [firstContent],
                                 },
                             ],
                             nodeType: 'document',
@@ -620,7 +635,11 @@ describe('<Layout />', () => {
                 />
             )
 
-            expect(screen.getByText(quoteText)).toBeInTheDocument()
+            if (isVisible) {
+                expect(screen.getByText(quoteText)).toBeInTheDocument()
+            } else {
+                expect(screen.queryByText(quoteText)).toBeNull()
+            }
 
             expect(container.firstChild).toMatchSnapshot()
         })
