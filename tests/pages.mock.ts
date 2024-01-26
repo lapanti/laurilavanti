@@ -1,5 +1,7 @@
 import type { ContentfulPage } from '../src/types/contentful'
 
+import { mainImage, mainImageDescription } from './images.mock'
+
 export const frontPage: ContentfulPage = {
     description: null,
     hideTitle: true,
@@ -20,64 +22,12 @@ export const frontPage: ContentfulPage = {
         ],
     },
     image: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAHABUDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgED/9oADAMBAAIQAxAAAAGe4FzhmP/EABgQAAIDAAAAAAAAAAAAAAAAAAADAQIS/9oACAEBAAEFAoWXXlZ//8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAYEAACAwAAAAAAAAAAAAAAAAARMQABEP/aAAgBAQAGPwJwlVn/xAAaEAADAAMBAAAAAAAAAAAAAAAAAREhQWFx/9oACAEBAAE/IUuuvCcl8B1PGz//2gAMAwEAAgADAAAAEIgv/8QAFREBAQAAAAAAAAAAAAAAAAAAAAH/2gAIAQMBAT8QhX//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oACAECAQE/EFrUp//EABoQAQACAwEAAAAAAAAAAAAAAAEAESExUaH/2gAIAQEAAT8QKTFukBeYXpZ32OwC8mf/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/def1f6087f87810dc50189a1b172ee7e/921a3/lauri-lavanti.jpg',
-                            srcSet: '/static/def1f6087f87810dc50189a1b172ee7e/921a3/lauri-lavanti.jpg 1953w,\n/static/def1f6087f87810dc50189a1b172ee7e/2a1d8/lauri-lavanti.jpg 3906w',
-                            sizes: '1953px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/def1f6087f87810dc50189a1b172ee7e/cbe52/lauri-lavanti.webp 1953w,\n/static/def1f6087f87810dc50189a1b172ee7e/10d46/lauri-lavanti.webp 3906w',
-                                type: 'image/webp',
-                                sizes: '1953px',
-                            },
-                        ],
-                    },
-                    width: 1953,
-                    height: 667,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     mobileImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAbABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAMCBAUB/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgMA/9oADAMBAAIQAxAAAAFc7kzs44SOgym26pCiA//EABsQAAIDAAMAAAAAAAAAAAAAAAIDAAEhEjEy/9oACAEBAAEFAk6R4cUkYShl5aDwiqo0uRo6PxP/xAAWEQEBAQAAAAAAAAAAAAAAAAAQARH/2gAIAQMBAT8Bpp//xAAYEQACAwAAAAAAAAAAAAAAAAABEBESMv/aAAgBAgEBPwGsoZX/xAAeEAABBAEFAAAAAAAAAAAAAAAAARARIUECEjFRcf/aAAgBAQAGPwJCm3dnFrkgjBZKGr0Vv//EABwQAAMBAQADAQAAAAAAAAAAAAABESExEEFxof/aAAgBAQABPyHIc57IYkz7R0TV6+N4SxQBkxsaKu3DFGrPwrKifjMgz//aAAwDAQACAAMAAAAQd+eB/8QAGBEBAQEBAQAAAAAAAAAAAAAAAQARITH/2gAIAQMBAT8QRmXZA+S7f//EABkRAAMBAQEAAAAAAAAAAAAAAAABIRExUf/aAAgBAgEBPxBskNfgjrTtP//EAB4QAQEAAgIDAQEAAAAAAAAAAAERACExUUFhccHR/9oACAEBAAE/EKoxS1OOZdXKkM0cDZtNd41FFBsH+5BsWg+feT5ZEe8AQkQ9XOfpWhw7wlIBz594IXh2vzCRk1+5unzP/9k=',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/17e4ec3d9fac9cc09354828602f3a080/68b03/lauri-lavanti.jpg',
-                            srcSet: '/static/17e4ec3d9fac9cc09354828602f3a080/68b03/lauri-lavanti.jpg 486w,\n/static/17e4ec3d9fac9cc09354828602f3a080/e8784/lauri-lavanti.jpg 972w',
-                            sizes: '486px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/17e4ec3d9fac9cc09354828602f3a080/4820e/lauri-lavanti.webp 486w,\n/static/17e4ec3d9fac9cc09354828602f3a080/34f42/lauri-lavanti.webp 972w',
-                                type: 'image/webp',
-                                sizes: '486px',
-                            },
-                        ],
-                    },
-                    width: 486,
-                    height: 667,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     updatedAt: '2023-05-24T14:51:46.661Z',
 }
@@ -262,64 +212,12 @@ export const aboutMe: ContentfulPage = {
         ],
     },
     image: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     mobileImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     updatedAt: '2023-10-17T03:58:48.870Z',
 }
@@ -339,64 +237,12 @@ export const blog: ContentfulPage = {
         ],
     },
     image: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     mobileImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     updatedAt: '2022-07-31T20:26:27.574Z',
 }
@@ -460,64 +306,12 @@ export const contactMe: ContentfulPage = {
         ],
     },
     image: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     mobileImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+        localFile: mainImage,
+        description: mainImageDescription,
     },
     updatedAt: '2022-07-31T20:25:55.535Z',
 }
