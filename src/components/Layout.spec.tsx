@@ -285,7 +285,7 @@ describe('<Layout />', () => {
             )
 
             // Check ExcerptList is present
-            expect(screen.getByRole('article', { name: /Terveys kuuluu kaikille/i })).toBeInTheDocument()
+            expect(screen.getByRole('article', { name: /Uusi vuosi, tuttu talvikunnossapito/i })).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()
         })
