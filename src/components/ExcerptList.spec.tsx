@@ -5,7 +5,7 @@ import {
     daycareCannotBeCompromised,
     excerptList,
     healthBelongsToAll,
-    soteIsBedrock,
+    newYearSameUpkeep,
     wellPlannedIsWellDoneBut,
 } from '../../tests/posts.mock'
 import ExcerptList from './ExcerptList'
@@ -34,7 +34,7 @@ describe('<ExcerptList />', () => {
     })
 
     it('should render in related order', () => {
-        const orderedExcerpts = [wellPlannedIsWellDoneBut, daycareCannotBeCompromised, healthBelongsToAll]
+        const orderedExcerpts = [wellPlannedIsWellDoneBut, daycareCannotBeCompromised, newYearSameUpkeep]
         const { container } = render(<ExcerptList relatedTags={['kaavoitus', 'opetus']} limit={limit} />)
 
         const articles = screen.getAllByRole('article')
@@ -45,7 +45,7 @@ describe('<ExcerptList />', () => {
     })
 
     it('should render in related order the otherway around', () => {
-        const orderedExcerpts = [wellPlannedIsWellDoneBut, healthBelongsToAll, soteIsBedrock]
+        const orderedExcerpts = [wellPlannedIsWellDoneBut, newYearSameUpkeep, healthBelongsToAll]
         const { container } = render(<ExcerptList relatedTags={['opetus']} limit={limit} />)
 
         const articles = screen.getAllByRole('article')
