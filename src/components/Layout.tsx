@@ -177,9 +177,12 @@ const options = {
             <TableHeaderCell>{children}</TableHeaderCell>
         ),
         [BLOCKS.TABLE_CELL]: (_: Block | Inline, children: ReactNode) => <TableCell>{children}</TableCell>,
-        [BLOCKS.QUOTE]: (block: Block | Inline) => (
-            <BlockQuote>{((block.content[0] as Block | Inline).content[0] as Text).value}</BlockQuote>
-        ),
+        [BLOCKS.QUOTE]: (block: Block | Inline) => {
+            const firstContent = block.content[0]
+            if ('content' in firstContent) {
+                return <BlockQuote>{(firstContent.content[0] as Text).value}</BlockQuote>
+            }
+        },
         [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => (
             <ExternalLink href={node.data.uri}>{children}</ExternalLink>
         ),

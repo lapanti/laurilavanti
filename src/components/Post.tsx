@@ -71,7 +71,7 @@ const Post = ({
             body={body}
             preBody={
                 <PositionedMeta
-                    date={getValueOrDefault(publishDate, createdAt)}
+                    date={getValueOrDefault(publishDate, createdAt) as string}
                     tags={tags}
                     ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
                 />
