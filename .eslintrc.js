@@ -24,11 +24,12 @@ const config = {
             },
         },
         {
+            files: ['*.ts', '*.tsx'],
+            processor: '@graphql-eslint/graphql',
             /**
              * This magic grouping moves `import type` statements as their own group.
              * @see https://github.com/lydell/eslint-plugin-simple-import-sort#custom-grouping
              */
-            files: ['*.ts', '*.tsx'],
             rules: {
                 'simple-import-sort/imports': [
                     'error',
@@ -40,6 +41,24 @@ const config = {
                             ['^'],
                             ['^\\.'],
                         ],
+                    },
+                ],
+            },
+        },
+        {
+            files: ['*.graphql'],
+            parser: '@graphql-eslint/eslint-plugin',
+            plugins: ['@graphql-eslint'],
+            rules: {
+                '@graphql-eslint/no-anonymous-operations': 'error',
+                '@graphql-eslint/naming-convention': [
+                    'error',
+                    {
+                        OperationDefinition: {
+                            style: 'PascalCase',
+                            forbiddenPrefixes: ['Query', 'Mutation', 'Subscription', 'Get'],
+                            forbiddenSuffixes: ['Query', 'Mutation', 'Subscription'],
+                        },
                     },
                 ],
             },

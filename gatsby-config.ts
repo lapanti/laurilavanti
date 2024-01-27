@@ -76,6 +76,7 @@ const config: GatsbyConfig = {
         },
         'gatsby-transformer-sharp',
     ],
+    graphqlTypegen: true,
 }
 
 export default config
