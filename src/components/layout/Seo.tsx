@@ -47,7 +47,7 @@ const Seo = ({
             }
         }
     }>(graphql`
-        query {
+        query Seo {
             site {
                 siteMetadata {
                     title

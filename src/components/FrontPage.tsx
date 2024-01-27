@@ -32,7 +32,7 @@ const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
 )
 
 export const query = graphql`
-    query ($slug: String!) {
+    query FrontPage($slug: String!) {
         contentfulPage(slug: { eq: $slug }) {
             description
             hideTitle

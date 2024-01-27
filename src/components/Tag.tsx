@@ -31,7 +31,7 @@ const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
 )
 
 export const query = graphql`
-    {
+    query Tag {
         contentfulPage(slug: { eq: "blogi" }) {
             image {
                 localFile {

@@ -98,7 +98,7 @@ interface Props {
 
 const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
     const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
-        {
+        query Header {
             contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
                 links {
                     contentful_id

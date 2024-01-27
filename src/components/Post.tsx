@@ -90,7 +90,7 @@ const Post = ({
 }
 
 export const query = graphql`
-    query ($slug: String!) {
+    query Post($slug: String!) {
         contentfulPost(slug: { eq: $slug }) {
             createdAt(formatString: "L", locale: "fi")
             publishDate(formatString: "L", locale: "fi")

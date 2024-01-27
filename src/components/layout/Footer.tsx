@@ -21,7 +21,7 @@ interface Props {
 
 const FooterComponent = ({ className }: Props): JSX.Element => {
     const data = useStaticQuery<{ contentfulFooterNav: FooterNav }>(graphql`
-        {
+        query Footer {
             contentfulFooterNav(titleToBeIgnored: { eq: "Footer nav" }) {
                 links {
                     contentful_id

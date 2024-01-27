@@ -21,7 +21,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
             nodes: ContentfulPostExcerpt[]
         }
     }>(graphql`
-        {
+        query ExcerptList {
             allContentfulPost(sort: { publishDate: DESC }) {
                 nodes {
                     title
