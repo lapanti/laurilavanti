@@ -79,8 +79,8 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                 )
                 .slice()
                 .sort((a, b) => {
-                    // Same points, sort by date
-                    if (a[1] === b[1]) {
+                    // Same points, sort by date, also ensure dates exist (should always exist)
+                    if (a[1] === b[1] && a[0].createdAt && b[0].createdAt) {
                         const [aDay, aMonth, aYear] = a[0].createdAt.split('.').map((s) => parseInt(s, 10))
                         const [bDay, bMonth, bYear] = b[0].createdAt.split('.').map((s) => parseInt(s, 10))
                         return new Date(bYear, bMonth - 1, bDay).getTime() - new Date(aYear, aMonth - 1, aDay).getTime()
@@ -100,20 +100,23 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
 
     return (
         <ul className={className}>
-            {nodes.map((node) => (
-                <Excerpt
-                    key={node.publishDate || node.createdAt}
-                    date={node.publishDate || node.createdAt}
-                    slug={node.slug}
-                    excerpt={node.excerpt}
-                    image={node.headerImage.localFile}
-                    imageAlt={node.headerImage.description}
-                    mobileImage={node.mobileHeaderImage.localFile}
-                    mobileImageAlt={node.mobileHeaderImage.description}
-                    title={node.title}
-                    tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
-                />
-            ))}
+            {nodes.map((node) =>
+                // Node should always have createdAt, slug, excerpt and title, otherwise it's invalid
+                node.createdAt && node.slug && node.excerpt && node.title ? (
+                    <Excerpt
+                        key={node.publishDate || node.createdAt}
+                        date={node.publishDate || node.createdAt}
+                        slug={node.slug}
+                        excerpt={node.excerpt}
+                        image={node.headerImage.localFile}
+                        imageAlt={node.headerImage.description}
+                        mobileImage={node.mobileHeaderImage.localFile}
+                        mobileImageAlt={node.mobileHeaderImage.description}
+                        title={node.title}
+                        tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
+                    />
+                ) : null
+            )}
         </ul>
     )
 }

@@ -90,9 +90,21 @@ interface ContentfulPostCommon {
     excerpt: string
 }
 
-export interface ContentfulPostExcerpt extends ContentfulPostCommon {
-    slug: string
+interface Image {
+    localFile: ImageDataLike
+    description: string
 }
+
+type Tag = Pick<Queries.ContentfulTag, 'contentful_id'>
+
+interface Metadata {
+    tags: Tag[]
+}
+
+export type ContentfulPostExcerpt = Pick<
+    Queries.ContentfulPost,
+    'title' | 'createdAt' | 'publishDate' | 'excerpt' | 'slug'
+> & { headerImage: Image; mobileHeaderImage: Image; metadata: Metadata }
 
 export interface ContentfulPost extends ContentfulPostCommon {
     body: RichBody

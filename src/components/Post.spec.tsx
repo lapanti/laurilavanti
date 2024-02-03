@@ -13,7 +13,7 @@ describe('<Post />', () => {
                     contentfulPost: healthBelongsToAll,
                     site: { siteMetadata: { siteUrl: config?.siteMetadata?.siteUrl as string } },
                 }}
-                pageContext={{ slug: healthBelongsToAll.slug }}
+                pageContext={{ slug: healthBelongsToAll.slug! }}
             />
         )
 
@@ -41,7 +41,7 @@ describe('<Post />', () => {
                     contentfulPost: homecareMunicipalityExtra,
                     site: { siteMetadata: { siteUrl: config?.siteMetadata?.siteUrl as string } },
                 }}
-                pageContext={{ slug: homecareMunicipalityExtra.slug }}
+                pageContext={{ slug: homecareMunicipalityExtra.slug! }}
             />
         )
 
@@ -69,7 +69,7 @@ describe('<Post />', () => {
                     contentfulPost: soteIsBedrock,
                     site: { siteMetadata: { siteUrl: config?.siteMetadata?.siteUrl as string } },
                 }}
-                pageContext={{ slug: soteIsBedrock.slug }}
+                pageContext={{ slug: soteIsBedrock.slug! }}
             />
         )
 

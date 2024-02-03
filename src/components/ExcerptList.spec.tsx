@@ -72,7 +72,7 @@ describe('<ExcerptList />', () => {
     it('should not render those with same slug', () => {
         const currentSlug = healthBelongsToAll.slug
         const filteredExcerpts = excerptList.filter(({ slug }) => slug !== currentSlug)
-        const { container } = render(<ExcerptList currentSlug={currentSlug} />)
+        const { container } = render(<ExcerptList currentSlug={currentSlug!} />)
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(filteredExcerpts.length)
