@@ -19,12 +19,7 @@ interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
     }
 }
 
-export interface ContactInfoLink {
-    contentful_id: string
-    title: string
-    url?: string | null
-    icon: 'facebook' | 'twitter' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope' | 'threads'
-}
+export type ContactInfoLink = Pick<Queries.ContentfulContactInfoLink, 'contentful_id' | 'title' | 'url' | 'icon'>
 
 export interface Fiduciary {
     duty: string

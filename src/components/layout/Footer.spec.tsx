@@ -9,7 +9,7 @@ describe('<Footer />', () => {
         const { container } = render(<Footer />)
 
         footerNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', link.url)
+            expect(screen.getByRole('link', { name: link.title! })).toHaveAttribute('href', link.url)
         )
 
         expect(container.firstChild).toMatchSnapshot()

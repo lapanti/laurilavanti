@@ -9,9 +9,9 @@ describe('<ContactInfoLink />', () => {
         const { container } = render(<ContactInfoLink link={link} />)
 
         if (link.url) {
-            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', link.url)
+            expect(screen.getByRole('link', { name: link.title! })).toHaveAttribute('href', link.url)
         } else {
-            expect(screen.getByText(link.title)).toBeInTheDocument()
+            expect(screen.getByText(link.title!)).toBeInTheDocument()
         }
 
         expect(container.firstChild).toMatchSnapshot()
