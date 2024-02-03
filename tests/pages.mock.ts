@@ -91,21 +91,25 @@ export const aboutMe: ContentfulPage = {
                         duty: 'Toimitilapalvelujen lautakunnan varajäsen',
                         organization: 'Kirkkonummen kunta',
                         startYear: 2023,
+                        endYear: null,
                     },
                     {
                         duty: 'Hallituksen varajäsen',
                         organization: 'Kirkkonummen Vihreät',
                         startYear: 2023,
+                        endYear: null,
                     },
                     {
                         duty: 'Länsi-Uudenmaan pelastuslaitos -liikelaitoksen johtokunnan varajäsen',
                         organization: 'Länsi-Uudenmaan hyvinvointialue',
                         startYear: 2022,
+                        endYear: null,
                     },
                     {
                         duty: 'Suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen',
                         organization: 'Kirkkonummen kunta',
                         startYear: 2021,
+                        endYear: null,
                     },
                     {
                         duty: 'Perusturvajaoston jäsen',

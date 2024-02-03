@@ -21,12 +21,7 @@ interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
 
 export type ContactInfoLink = Pick<Queries.ContentfulContactInfoLink, 'contentful_id' | 'title' | 'url' | 'icon'>
 
-export interface Fiduciary {
-    duty: string
-    organization: string
-    startYear: number
-    endYear?: number
-}
+export type Fiduciary = Pick<Queries.ContentfulFiduciaries, 'duty' | 'organization' | 'startYear' | 'endYear'>
 
 export interface JobExperience {
     title: string

@@ -7,7 +7,7 @@ import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 import H2 from '../H2'
 
 /** Only exported for testing purposes */
-export const yearsToString = (startYear: number, endYear?: number): string => {
+export const yearsToString = (startYear: number, endYear?: number | null): string => {
     if (startYear === endYear) return `${startYear}`
     return `${startYear}-${endYear ?? ''}`
 }
@@ -45,11 +45,13 @@ const CurriculumVitaeComponent = ({
         </DivContainer>
         <DivContainer>
             <ul>
-                {fiduciaries.map(({ duty, organization, startYear, endYear }) => (
-                    <li key={`${duty}-${organization}-${startYear}`}>
-                        {duty}, {organization} - {yearsToString(startYear, endYear)}
-                    </li>
-                ))}
+                {fiduciaries.map(({ duty, organization, startYear, endYear }) =>
+                    startYear ? (
+                        <li key={`${duty}-${organization}-${startYear}`}>
+                            {duty}, {organization} - {yearsToString(startYear, endYear)}
+                        </li>
+                    ) : null
+                )}
             </ul>
         </DivContainer>
         <DivContainer>

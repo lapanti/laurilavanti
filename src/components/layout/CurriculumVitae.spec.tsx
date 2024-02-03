@@ -49,7 +49,7 @@ describe('<CurriculumVitae />', () => {
 
         fiduciaries.forEach(({ duty, organization, startYear, endYear }) =>
             expect(
-                screen.getByText(`${duty}, ${organization} - ${yearsToString(startYear, endYear)}`)
+                screen.getByText(`${duty}, ${organization} - ${yearsToString(startYear!, endYear)}`)
             ).toBeInTheDocument()
         )
 
