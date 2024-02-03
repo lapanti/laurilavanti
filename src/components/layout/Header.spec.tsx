@@ -38,8 +38,8 @@ describe('<Header />', () => {
 
         expect(screen.getByRole('button', { name: /Sulje valikko/i })).toBeEnabled()
 
-        mainNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
+        mainNav.contentfulMainNav.links.forEach((link) =>
+            expect(screen.getByRole('link', { name: link.title! })).toHaveAttribute('href', `/${link.slug}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -56,13 +56,13 @@ describe('<Header />', () => {
 
         expect(closeButton).toBeEnabled()
 
-        mainNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
+        mainNav.contentfulMainNav.links.forEach((link) =>
+            expect(screen.getByRole('link', { name: link.title! })).toHaveAttribute('href', `/${link.slug}/`)
         )
 
         await user.click(closeButton)
 
-        expect(screen.queryByRole('link', { name: mainNav.links[0].title })).toBeNull()
+        expect(screen.queryByRole('link', { name: mainNav.contentfulMainNav.links[0].title! })).toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })

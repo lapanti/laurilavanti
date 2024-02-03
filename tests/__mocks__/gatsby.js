@@ -18,10 +18,10 @@ module.exports = {
     ),
     StaticQuery: jest.fn(),
     useStaticQuery: jest.fn(() => ({
+        ...mainNav,
         allContentfulPost: {
             nodes: excerptList,
         },
-        contentfulMainNav: mainNav,
         contentfulFooterNav: footerNav,
         site: {
             siteMetadata: {

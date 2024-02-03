@@ -101,12 +101,14 @@ export interface ContentfulPost extends ContentfulPostCommon {
     published: string
 }
 
-export interface MainNav {
-    links: {
-        contentful_id: string
-        title: string
-        slug: string
-    }[]
+export type MainNavLink = NonNullable<
+    NonNullable<NonNullable<Queries.HeaderQuery['contentfulMainNav']>['links']>[number]
+>
+
+export interface MainNavQuery {
+    contentfulMainNav: {
+        links: MainNavLink[]
+    }
 }
 
 export interface FooterNav {

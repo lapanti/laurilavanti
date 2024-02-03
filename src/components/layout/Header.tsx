@@ -1,4 +1,4 @@
-import type { MainNav } from '../../types/contentful'
+import type { MainNavQuery } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useCallback, useState } from 'react'
@@ -97,7 +97,7 @@ interface Props {
 }
 
 const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
-    const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
+    const data = useStaticQuery<MainNavQuery>(graphql`
         query Header {
             contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
                 links {
