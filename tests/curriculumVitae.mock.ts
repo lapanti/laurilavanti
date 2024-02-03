@@ -1,8 +1,8 @@
-import type { Degree, Fiduciary, JobExperience } from '../src/types/contentful'
+import type { Education, Fiduciary, JobExperience } from '../src/types/contentful'
 
 export const degreesTitle: string = 'Koulutus'
 
-export const degrees: Degree[] = [
+export const degrees: Education[] = [
     {
         degree: 'Diplomi-insinööri (informaatioverkostot)',
         endYear: 2018,

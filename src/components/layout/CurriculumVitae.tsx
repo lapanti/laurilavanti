@@ -1,4 +1,4 @@
-import type { Degree, Fiduciary, JobExperience } from '../../types/contentful'
+import type { Education, Fiduciary, JobExperience } from '../../types/contentful'
 
 import React from 'react'
 import styled from 'styled-components'
@@ -23,7 +23,7 @@ const DivContainer = styled.div({
 interface Props {
     className?: string
     degreesTitle: string
-    degrees: Degree[]
+    degrees: Education[]
     fiduciariesTitle: string
     fiduciaries: Fiduciary[]
     jobExperiencesTitle: string
@@ -75,11 +75,14 @@ const CurriculumVitaeComponent = ({
         </DivContainer>
         <DivContainer>
             <ul>
-                {degrees.map(({ degree, school, location, startYear, endYear }) => (
-                    <li key={`${degree}-${school}`}>
-                        {degree}, {school} ({location}) - {yearsToString(startYear, endYear)}
-                    </li>
-                ))}
+                {degrees.map(({ degree, school, location, startYear, endYear }) =>
+                    // If there is no startYear, it should be invalid
+                    startYear ? (
+                        <li key={`${degree}-${school}`}>
+                            {degree}, {school} ({location}) - {yearsToString(startYear, endYear)}
+                        </li>
+                    ) : null
+                )}
             </ul>
         </DivContainer>
     </div>

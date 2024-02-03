@@ -28,19 +28,13 @@ export type JobExperience = Pick<
     'title' | 'company' | 'location' | 'startYear' | 'endYear'
 >
 
-export interface Degree {
-    degree: string
-    school: string
-    location: string
-    startYear: number
-    endYear?: number
-}
+export type Education = Pick<Queries.ContentfulEducation, 'degree' | 'school' | 'location' | 'startYear' | 'endYear'>
 
 interface CurriculumVitae extends ContentfulRichTextGatsbyReference {
     fiduciariesTitle: string
     fiduciaries: Fiduciary[]
     degreesTitle: string
-    degrees: Degree[]
+    degrees: Education[]
     jobExperiencesTitle: string
     jobExperiences: JobExperience[]
 }

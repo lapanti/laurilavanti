@@ -61,7 +61,7 @@ describe('<CurriculumVitae />', () => {
 
         degrees.forEach(({ degree, school, location, startYear, endYear }) =>
             expect(
-                screen.getByText(`${degree}, ${school} (${location}) - ${yearsToString(startYear, endYear)}`)
+                screen.getByText(`${degree}, ${school} (${location}) - ${yearsToString(startYear!, endYear)}`)
             ).toBeInTheDocument()
         )
 
