@@ -93,6 +93,7 @@ export const jobExperiences: JobExperience[] = [
         title: 'Team Lead',
         company: 'Verkkokauppa.com',
         location: 'Helsinki',
+        endYear: null,
     },
     {
         endYear: 2022,

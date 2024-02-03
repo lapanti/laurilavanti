@@ -23,13 +23,10 @@ export type ContactInfoLink = Pick<Queries.ContentfulContactInfoLink, 'contentfu
 
 export type Fiduciary = Pick<Queries.ContentfulFiduciaries, 'duty' | 'organization' | 'startYear' | 'endYear'>
 
-export interface JobExperience {
-    title: string
-    company: string
-    location: string
-    startYear: number
-    endYear?: number
-}
+export type JobExperience = Pick<
+    Queries.ContentfulJobExperience,
+    'title' | 'company' | 'location' | 'startYear' | 'endYear'
+>
 
 export interface Degree {
     degree: string

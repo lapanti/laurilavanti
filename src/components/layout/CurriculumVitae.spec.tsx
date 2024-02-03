@@ -55,7 +55,7 @@ describe('<CurriculumVitae />', () => {
 
         jobExperiences.forEach(({ title, company, location, startYear, endYear }) =>
             expect(
-                screen.getByText(`${title}, ${company} (${location}) - ${yearsToString(startYear, endYear)}`)
+                screen.getByText(`${title}, ${company} (${location}) - ${yearsToString(startYear!, endYear)}`)
             ).toBeInTheDocument()
         )
 

@@ -173,6 +173,7 @@ export const aboutMe: ContentfulPage = {
                         company: 'Verkkokauppa.com',
                         location: 'Helsinki',
                         startYear: 2022,
+                        endYear: null,
                     },
                     {
                         title: 'Software developer',

@@ -46,6 +46,7 @@ const CurriculumVitaeComponent = ({
         <DivContainer>
             <ul>
                 {fiduciaries.map(({ duty, organization, startYear, endYear }) =>
+                    // If there is no startYear, it should be invalid
                     startYear ? (
                         <li key={`${duty}-${organization}-${startYear}`}>
                             {duty}, {organization} - {yearsToString(startYear, endYear)}
@@ -59,11 +60,14 @@ const CurriculumVitaeComponent = ({
         </DivContainer>
         <DivContainer>
             <ul>
-                {jobExperiences.map(({ title, company, location, startYear, endYear }) => (
-                    <li key={`${title}-${company}`}>
-                        {title}, {company} ({location}) - {yearsToString(startYear, endYear)}
-                    </li>
-                ))}
+                {jobExperiences.map(({ title, company, location, startYear, endYear }) =>
+                    // If there is no startYear, it should be invalid
+                    startYear ? (
+                        <li key={`${title}-${company}`}>
+                            {title}, {company} ({location}) - {yearsToString(startYear, endYear)}
+                        </li>
+                    ) : null
+                )}
             </ul>
         </DivContainer>
         <DivContainer>
