@@ -15,7 +15,7 @@ export interface SeoProps {
     pathname?: string
     type?: JsonLdType
     published?: string
-    modified?: string
+    modified?: string | null
 }
 
 const Seo = ({

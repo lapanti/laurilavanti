@@ -53,10 +53,11 @@ const Post = ({
         },
     },
     pageContext: { slug },
-}: Props): JSX.Element => {
+}: Props): JSX.Element | null => {
     const tags = useMemo(() => metadata.tags.map(({ contentful_id }) => contentful_id), [metadata.tags])
 
-    return (
+    // Both title and excerpt should be required in post, so don't render invalid
+    return title && excerpt ? (
         <Layout
             title={title}
             pathname={`/blogi/${slug}/`}
@@ -86,7 +87,7 @@ const Post = ({
             <Hr />
             <ExcerptList currentSlug={slug} limit={3} relatedTags={tags} />
         </Layout>
-    )
+    ) : null
 }
 
 export const query = graphql`

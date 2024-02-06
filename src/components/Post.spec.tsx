@@ -17,7 +17,7 @@ describe('<Post />', () => {
             />
         )
 
-        expect(screen.getByRole('heading', { name: healthBelongsToAll.title })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: healthBelongsToAll.title! })).toBeInTheDocument()
         expect(screen.getAllByRole('img', { name: healthBelongsToAll.headerImage.description })).not.toBeNull()
 
         expect(
@@ -45,7 +45,7 @@ describe('<Post />', () => {
             />
         )
 
-        expect(screen.getByRole('heading', { name: homecareMunicipalityExtra.title })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: homecareMunicipalityExtra.title! })).toBeInTheDocument()
         expect(screen.getAllByRole('img', { name: homecareMunicipalityExtra.headerImage.description })).not.toBeNull()
 
         expect(
@@ -73,7 +73,7 @@ describe('<Post />', () => {
             />
         )
 
-        expect(screen.getByRole('heading', { name: soteIsBedrock.title })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: soteIsBedrock.title! })).toBeInTheDocument()
         expect(screen.getAllByRole('img', { name: soteIsBedrock.headerImage.description })).not.toBeNull()
 
         expect(

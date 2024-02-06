@@ -70,26 +70,6 @@ export interface ContentfulPage {
     updatedAt: string
 }
 
-interface ContentfulPostCommon {
-    title: string
-    createdAt: string
-    publishDate?: string | null
-    metadata: {
-        tags: {
-            contentful_id: string
-        }[]
-    }
-    headerImage: {
-        localFile: ImageDataLike
-        description: string
-    }
-    mobileHeaderImage: {
-        localFile: ImageDataLike
-        description: string
-    }
-    excerpt: string
-}
-
 interface Image {
     localFile: ImageDataLike
     description: string
@@ -101,17 +81,16 @@ interface Metadata {
     tags: Tag[]
 }
 
-export type ContentfulPostExcerpt = Pick<
-    Queries.ContentfulPost,
-    'title' | 'createdAt' | 'publishDate' | 'excerpt' | 'slug'
-> & { headerImage: Image; mobileHeaderImage: Image; metadata: Metadata }
-
-export interface ContentfulPost extends ContentfulPostCommon {
-    body: RichBody
-    updatedAt: string
-    publishedOld: string | null
-    published: string
+type ContentfulPostCommon = Pick<Queries.ContentfulPost, 'title' | 'createdAt' | 'publishDate' | 'excerpt'> & {
+    metadata: Metadata
+    headerImage: Image
+    mobileHeaderImage: Image
 }
+
+export type ContentfulPostExcerpt = ContentfulPostCommon & Pick<Queries.ContentfulPost, 'slug'>
+
+export type ContentfulPost = ContentfulPostCommon &
+    Pick<Queries.ContentfulPost, 'updatedAt'> & { body: RichBody; publishedOld?: string | null; published: string }
 
 export type MainNavLink = NonNullable<
     NonNullable<NonNullable<Queries.HeaderQuery['contentfulMainNav']>['links']>[number]
