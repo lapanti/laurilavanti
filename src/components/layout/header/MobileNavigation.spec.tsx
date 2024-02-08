@@ -3,12 +3,12 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from 'react'
 
-import { mainNav } from '../../../tests/mainNav.mock'
-import Header from './Header'
+import { mainNav } from '../../../../tests/mainNav.mock'
+import MobileNavigation from './MobileNavigation'
 
-describe('<Header />', () => {
+describe('<MobileNavigation />', () => {
     it('should render', () => {
-        const { container } = render(<Header />)
+        const { container } = render(<MobileNavigation links={mainNav.links} />)
 
         expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
 
@@ -18,7 +18,7 @@ describe('<Header />', () => {
     })
 
     it('should render front page', () => {
-        const { container } = render(<Header isFrontPage />)
+        const { container } = render(<MobileNavigation isFrontPage links={mainNav.links} />)
 
         expect(screen.queryByRole('heading', { name: /Lauri Lavanti/i })).not.toBeInTheDocument()
 
@@ -30,7 +30,7 @@ describe('<Header />', () => {
     it('should render opened menu', async () => {
         const user = userEvent.setup()
 
-        const { container } = render(<Header isFrontPage={false} />)
+        const { container } = render(<MobileNavigation links={mainNav.links} isFrontPage={false} />)
 
         expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
 
@@ -45,10 +45,26 @@ describe('<Header />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render empty menu', async () => {
+        const user = userEvent.setup()
+
+        const { container } = render(<MobileNavigation links={[]} isFrontPage={false} />)
+
+        expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
+
+        await user.click(screen.getByRole('button', { name: /Avaa valikko/i }))
+
+        expect(screen.getByRole('button', { name: /Sulje valikko/i })).toBeEnabled()
+
+        expect(screen.queryAllByRole('link')).toHaveLength(0)
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should open and close the menu', async () => {
         const user = userEvent.setup()
 
-        const { container } = render(<Header isFrontPage={false} />)
+        const { container } = render(<MobileNavigation isFrontPage={false} links={mainNav.links} />)
 
         await user.click(screen.getByRole('button', { name: /Avaa valikko/i }))
 

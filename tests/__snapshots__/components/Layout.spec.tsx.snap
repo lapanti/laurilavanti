@@ -121,15 +121,6 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -188,6 +179,15 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -218,6 +218,12 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -666,15 +672,6 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -733,6 +730,15 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -777,6 +783,12 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -1248,15 +1260,6 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -1315,6 +1318,15 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -1345,6 +1357,12 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -1920,15 +1938,6 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -1987,6 +1996,15 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -2028,6 +2046,12 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 @media (min-width: 479px) {
   .c17 {
     display: flex!important;
+  }
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
   }
 }
 
@@ -2668,15 +2692,6 @@ exports[`<Layout /> rich body should render H2 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -2735,6 +2750,15 @@ exports[`<Layout /> rich body should render H2 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -2765,6 +2789,12 @@ exports[`<Layout /> rich body should render H2 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -3220,15 +3250,6 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: hidden;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -3285,6 +3306,15 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   box-shadow: 0 0 #0000,0 0 #0000,0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
   visibility: hidden;
   right: -20rem;
+}
+
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: hidden;
 }
 
 .c1 {
@@ -3390,6 +3420,12 @@ exports[`<Layout /> rich body should render HomeTitle 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -3903,15 +3939,6 @@ exports[`<Layout /> rich body should render Hr 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -3970,6 +3997,15 @@ exports[`<Layout /> rich body should render Hr 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -4000,6 +4036,12 @@ exports[`<Layout /> rich body should render Hr 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -4452,15 +4494,6 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -4519,6 +4552,15 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -4572,6 +4614,12 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -5089,15 +5137,6 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -5156,6 +5195,15 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -5190,6 +5238,12 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -5653,15 +5707,6 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -5720,6 +5765,15 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -5754,6 +5808,12 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -6220,15 +6280,6 @@ exports[`<Layout /> rich body should render external links 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -6287,6 +6338,15 @@ exports[`<Layout /> rich body should render external links 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -6321,6 +6381,12 @@ exports[`<Layout /> rich body should render external links 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -6791,15 +6857,6 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -6858,6 +6915,15 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -6892,6 +6958,12 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -7360,15 +7432,6 @@ exports[`<Layout /> rich body should render table 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -7425,6 +7488,15 @@ exports[`<Layout /> rich body should render table 1`] = `
   box-shadow: 0 0 #0000,0 0 #0000,0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
   visibility: hidden;
   right: -20rem;
+}
+
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
 }
 
 .c1 {
@@ -7495,6 +7567,12 @@ exports[`<Layout /> rich body should render table 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -7976,15 +8054,6 @@ exports[`<Layout /> should render hero image 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -8041,6 +8110,15 @@ exports[`<Layout /> should render hero image 1`] = `
   box-shadow: 0 0 #0000,0 0 #0000,0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
   visibility: hidden;
   right: -20rem;
+}
+
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
 }
 
 .c1 {
@@ -8122,6 +8200,12 @@ exports[`<Layout /> should render hero image 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 @media (min-width: 479px) {
@@ -8716,15 +8800,6 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: hidden;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -8781,6 +8856,15 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   box-shadow: 0 0 #0000,0 0 #0000,0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
   visibility: hidden;
   right: -20rem;
+}
+
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: hidden;
 }
 
 .c1 {
@@ -8846,6 +8930,12 @@ exports[`<Layout /> should render hero image for front page 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 @media (min-width: 479px) {
@@ -9440,15 +9530,6 @@ exports[`<Layout /> should render hero image for front page with no alt 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: hidden;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -9507,6 +9588,15 @@ exports[`<Layout /> should render hero image for front page with no alt 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: hidden;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -9545,6 +9635,12 @@ exports[`<Layout /> should render hero image for front page with no alt 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 @media (min-width: 479px) {
@@ -10113,15 +10209,6 @@ exports[`<Layout /> should render hero image with no alt 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -10180,6 +10267,15 @@ exports[`<Layout /> should render hero image with no alt 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -10234,6 +10330,12 @@ exports[`<Layout /> should render hero image with no alt 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 @media (min-width: 479px) {
@@ -10802,15 +10904,6 @@ exports[`<Layout /> should render hidden title 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -10869,6 +10962,15 @@ exports[`<Layout /> should render hidden title 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -10899,6 +11001,12 @@ exports[`<Layout /> should render hidden title 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -11349,15 +11457,6 @@ exports[`<Layout /> should render minimal 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -11416,6 +11515,15 @@ exports[`<Layout /> should render minimal 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -11446,6 +11554,12 @@ exports[`<Layout /> should render minimal 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div
@@ -11896,15 +12010,6 @@ exports[`<Layout /> should render title 1`] = `
   color: rgb(0, 104, 69);
 }
 
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
-}
-
 .c2 {
   cursor: pointer;
   height: 3rem;
@@ -11963,6 +12068,15 @@ exports[`<Layout /> should render title 1`] = `
   right: -20rem;
 }
 
+.c11 {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, .75);
+  border-radius: 0.375rem;
+  border-top-right-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+  visibility: visible;
+}
+
 .c1 {
   display: flex;
   flex-direction: row-reverse;
@@ -12018,6 +12132,12 @@ exports[`<Layout /> should render title 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 750px) {
+  .c1 {
+    display: none;
+  }
 }
 
 <div

@@ -120,12 +120,14 @@ export interface ContentfulPost extends ContentfulPostCommon {
     published: string
 }
 
+export interface MainNavLink {
+    contentful_id: string
+    title: string
+    slug: string
+}
+
 export interface MainNav {
-    links: {
-        contentful_id: string
-        title: string
-        slug: string
-    }[]
+    links: MainNavLink[]
 }
 
 export interface FooterNav {

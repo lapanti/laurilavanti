@@ -1,4 +1,4 @@
-import type { MainNav } from '../../../types/contentful'
+import type { MainNavLink } from '../../../types/contentful'
 
 import React from 'react'
 import styled from 'styled-components'
@@ -6,9 +6,7 @@ import styled from 'styled-components'
 import { colors, fontSizes, sizes } from '../../../lib/styles'
 import InternalLink from '../../InternalLink'
 
-type Link = MainNav['links'][number]
-
-interface Props extends Link {
+interface Props extends MainNavLink {
     className?: string
 }
 
