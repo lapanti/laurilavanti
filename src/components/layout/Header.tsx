@@ -3,6 +3,7 @@ import type { MainNav } from '../../types/contentful'
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
+import DesktopNavigation from './header/DesktopNavigation'
 import MobileNavigation from './header/MobileNavigation'
 
 interface Props {
@@ -22,7 +23,12 @@ const Header = ({ isFrontPage }: Props): JSX.Element => {
         }
     `)
 
-    return <MobileNavigation links={data.contentfulMainNav.links} isFrontPage={isFrontPage} />
+    return (
+        <>
+            <MobileNavigation links={data.contentfulMainNav.links} isFrontPage={isFrontPage} />
+            <DesktopNavigation links={data.contentfulMainNav.links} />
+        </>
+    )
 }
 
 export default Header

@@ -3,7 +3,7 @@ import type { MainNavLink } from '../../../types/contentful'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, fontSizes, sizes } from '../../../lib/styles'
+import { colors, fontSizes } from '../../../lib/styles'
 import InternalLink from '../../InternalLink'
 
 interface Props extends MainNavLink {
@@ -24,15 +24,8 @@ const NavLinkComponent = ({ className, title, slug }: Props): JSX.Element => (
 NavLinkComponent.displayName = 'NavLink'
 
 const NavLink = styled(NavLinkComponent)({
-    width: '100%',
-    paddingLeft: sizes[8],
-    marginTop: sizes[6],
     color: colors.black,
     ...fontSizes['3xl'],
-
-    ':first-of-type': {
-        marginTop: sizes[0],
-    },
 
     ':hover, :active': {
         color: colors.greenDarkText,

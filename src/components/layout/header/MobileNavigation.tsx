@@ -77,6 +77,16 @@ const Nav = styled.nav<{ $isOpen: boolean }>(
     })
 )
 
+const NavLinkWithMargin = styled(NavLink)({
+    width: '100%',
+    marginTop: sizes[6],
+    paddingLeft: sizes[8],
+
+    ':first-of-type': {
+        marginTop: sizes[0],
+    },
+})
+
 const Heading = styled(H2)<{ isVisible?: boolean }>(
     {
         padding: sizes[2],
@@ -113,7 +123,7 @@ const MobileNavigationComponent = ({ className, links, isFrontPage }: Props): JS
                     <Close aria-hidden="true" />
                 </CloseButton>
                 {links.map((nav) => (
-                    <NavLink {...nav} key={nav.slug} />
+                    <NavLinkWithMargin {...nav} key={nav.slug} />
                 ))}
             </Nav>
 
