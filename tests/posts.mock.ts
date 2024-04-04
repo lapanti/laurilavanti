@@ -1,5 +1,94 @@
 import type { ContentfulPost, ContentfulPostExcerpt } from '../src/types/contentful'
 
+export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt = {
+    createdAt: '03.04.2024',
+    publishDate: '31.01.2024',
+    body: {
+        raw: '{"data":{},"content":[{"data":{},"content":[{"data":{},"marks":[],"value":"Nyt huhtikuussa käydään Varuboden-Oslan ","nodeType":"text"},{"data":{"uri":"https://vbo.fi/vaalit/"},"content":[{"data":{},"marks":[],"value":"osuuskauppavaalit","nodeType":"text"}],"nodeType":"hyperlink"},{"data":{},"marks":[],"value":", joissa valitaan VBO:n edustajisto seuraavaksi neljäksi vuodeksi. Edustajisto pääsee vaikuttamaan sekä VBO:n että laajemmin SOK:n toimintaan ja edustaa kaikkia asiakasomistajia osuuskaupan suuntaan. ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Osuuskaupat ovat siitä erilaisia kauppoja, että osuuskuntina niiden tehtävä ei ole tuottaa osakkeenomistajille voittoa, kuten yritysten, vaan hankkia osuuskunnan jäsenille palveluita ja/tai tuotteita edullisesti. Varuboden-Oslan ja muiden SOK:n osuuskauppojen osalta se tarkoittaa ensisijaisesti elintarvikkeita. Varuboden-Osla voisi siis hyvin helpottaa asiakasomistajiensa tilannetta näinä tiukkoina aikoina, alentamalla entisestään elintarvikkeiden hintoja. ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Osuuskaupat vaikuttavat muillakin tavoilla paikallisesti. Ne ovat merkittäviä työnantajia, esimerkiksi VBO työllistää melkein 1000 henkilöä. VBO myös tukee paikallisia yrittäjiä, suosiessaan lähiruokaa. Osuuskauppa voi edistää terveellisiä ja kestäviä valintoja esimerkiksi hinnoittelulla. Lähikauppa voi tukea kylien elinvoimaisuutta kokoamalla useampia palveluita saman katon alle. Osuuskaupan edustajistossa on mahdollista vaikuttaa näihin ja moniin muihin asioihin! ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Vaikka osuuskaupan edustajisto käyttää merkittävää valtaa, oli edellisissä vaaleissa äänestysprosentti alle 20. Näissä vaaleissa jokaisella äänellä on siis merkitystä, muistathan käyttää sen!","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[{"type":"italic"}],"value":"Julkaistu Kirkkonummen Sanomissa 3.4.2024","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
+        references: [],
+    },
+    headerImage: {
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    layout: 'fixed',
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
+                    },
+                    images: {
+                        fallback: {
+                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
+                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
+                            sizes: '1921px',
+                        },
+                        sources: [
+                            {
+                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
+                                type: 'image/webp',
+                                sizes: '1921px',
+                            },
+                        ],
+                    },
+                    width: 1921,
+                    height: 384,
+                },
+            },
+        },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+    },
+    mobileHeaderImage: {
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    layout: 'fixed',
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
+                    },
+                    images: {
+                        fallback: {
+                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
+                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
+                            sizes: '478px',
+                        },
+                        sources: [
+                            {
+                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
+                                type: 'image/webp',
+                                sizes: '478px',
+                            },
+                        ],
+                    },
+                    width: 478,
+                    height: 478,
+                },
+            },
+        },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+    },
+    metadata: {
+        tags: [
+            {
+                contentful_id: 'kaavoitus',
+            },
+            {
+                contentful_id: 'kirkkonummi',
+            },
+            {
+                contentful_id: 'osuuskauppavaalit',
+            },
+        ],
+    },
+    title: 'Osuuskauppavaalit koskettavat meitä kaikkia',
+    updatedAt: '2024-04-04T09:09:18.502Z',
+    publishedOld: '2024-01-31',
+    published: '2024-04-03T18:55:49.146Z',
+    slug: 'osuuskauppavaalit-koskettavat-meita-kaikkia',
+    excerpt:
+        'Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.',
+}
+
 export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
     createdAt: '12.01.2024',
     publishDate: null,
@@ -1169,6 +1258,7 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
 }
 
 export const excerptList = [
+    coopElectionsConcernUsAll,
     newYearSameUpkeep,
     healthBelongsToAll,
     soteIsBedrock,
