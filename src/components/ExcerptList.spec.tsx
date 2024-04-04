@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import React from 'react'
 
 import {
+    coopElectionsConcernUsAll,
     daycareCannotBeCompromised,
     excerptList,
     healthBelongsToAll,
@@ -34,7 +35,7 @@ describe('<ExcerptList />', () => {
     })
 
     it('should render in related order', () => {
-        const orderedExcerpts = [wellPlannedIsWellDoneBut, daycareCannotBeCompromised, newYearSameUpkeep]
+        const orderedExcerpts = [coopElectionsConcernUsAll, wellPlannedIsWellDoneBut, daycareCannotBeCompromised]
         const { container } = render(<ExcerptList relatedTags={['kaavoitus', 'opetus']} limit={limit} />)
 
         const articles = screen.getAllByRole('article')
@@ -45,7 +46,7 @@ describe('<ExcerptList />', () => {
     })
 
     it('should render in related order the otherway around', () => {
-        const orderedExcerpts = [wellPlannedIsWellDoneBut, newYearSameUpkeep, healthBelongsToAll]
+        const orderedExcerpts = [wellPlannedIsWellDoneBut, coopElectionsConcernUsAll, newYearSameUpkeep]
         const { container } = render(<ExcerptList relatedTags={['opetus']} limit={limit} />)
 
         const articles = screen.getAllByRole('article')
