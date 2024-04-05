@@ -6,6 +6,7 @@ import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
 import { mainImage, mainImageDescription } from '../../tests/images.mock'
+import { coopElectionsConcernUsAll } from '../../tests/posts.mock'
 import Layout from './Layout'
 
 interface SiteMetadata {
@@ -285,9 +286,7 @@ describe('<Layout />', () => {
             )
 
             // Check ExcerptList is present
-            expect(
-                screen.getByRole('article', { name: /Osuuskauppavaalit koskettavat meitä kaikkia/i })
-            ).toBeInTheDocument()
+            expect(screen.getByRole('article', { name: coopElectionsConcernUsAll.title })).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()
         })

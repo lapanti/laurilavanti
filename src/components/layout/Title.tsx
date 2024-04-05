@@ -42,7 +42,7 @@ const Title = styled(TitleComponent)({
     gridColumn: '1 / -1',
     marginTop: `-${sizes[56]}`,
     zIndex: zIndices[40],
-    maxWidth: sizes.fullHd,
+    maxWidth: `min(100%, ${sizes.fullHd})`,
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '100%',
