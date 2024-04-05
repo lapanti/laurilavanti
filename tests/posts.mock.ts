@@ -80,7 +80,7 @@ export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt =
             },
         ],
     },
-    title: 'Osuuskauppavaalit koskettavat meitä kaikkia',
+    title: 'VBO:n vaalit koskettavat meitä kaikkia',
     updatedAt: '2024-04-04T09:09:18.502Z',
     publishedOld: '2024-01-31',
     published: '2024-04-03T18:55:49.146Z',
