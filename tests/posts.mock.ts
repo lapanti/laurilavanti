@@ -2,7 +2,7 @@ import type { ContentfulPost, ContentfulPostExcerpt } from '../src/types/content
 
 export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt = {
     createdAt: '03.04.2024',
-    publishDate: '31.01.2024',
+    publishDate: '03.04.2024',
     body: {
         raw: '{"data":{},"content":[{"data":{},"content":[{"data":{},"marks":[],"value":"Nyt huhtikuussa käydään Varuboden-Oslan ","nodeType":"text"},{"data":{"uri":"https://vbo.fi/vaalit/"},"content":[{"data":{},"marks":[],"value":"osuuskauppavaalit","nodeType":"text"}],"nodeType":"hyperlink"},{"data":{},"marks":[],"value":", joissa valitaan VBO:n edustajisto seuraavaksi neljäksi vuodeksi. Edustajisto pääsee vaikuttamaan sekä VBO:n että laajemmin SOK:n toimintaan ja edustaa kaikkia asiakasomistajia osuuskaupan suuntaan. ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Osuuskaupat ovat siitä erilaisia kauppoja, että osuuskuntina niiden tehtävä ei ole tuottaa osakkeenomistajille voittoa, kuten yritysten, vaan hankkia osuuskunnan jäsenille palveluita ja/tai tuotteita edullisesti. Varuboden-Oslan ja muiden SOK:n osuuskauppojen osalta se tarkoittaa ensisijaisesti elintarvikkeita. Varuboden-Osla voisi siis hyvin helpottaa asiakasomistajiensa tilannetta näinä tiukkoina aikoina, alentamalla entisestään elintarvikkeiden hintoja. ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Osuuskaupat vaikuttavat muillakin tavoilla paikallisesti. Ne ovat merkittäviä työnantajia, esimerkiksi VBO työllistää melkein 1000 henkilöä. VBO myös tukee paikallisia yrittäjiä, suosiessaan lähiruokaa. Osuuskauppa voi edistää terveellisiä ja kestäviä valintoja esimerkiksi hinnoittelulla. Lähikauppa voi tukea kylien elinvoimaisuutta kokoamalla useampia palveluita saman katon alle. Osuuskaupan edustajistossa on mahdollista vaikuttaa näihin ja moniin muihin asioihin! ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Vaikka osuuskaupan edustajisto käyttää merkittävää valtaa, oli edellisissä vaaleissa äänestysprosentti alle 20. Näissä vaaleissa jokaisella äänellä on siis merkitystä, muistathan käyttää sen!","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[{"type":"italic"}],"value":"Julkaistu Kirkkonummen Sanomissa 3.4.2024","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
         references: [],
@@ -82,11 +82,100 @@ export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt =
     },
     title: 'VBO:n vaalit koskettavat meitä kaikkia',
     updatedAt: '2024-04-04T09:09:18.502Z',
-    publishedOld: '2024-01-31',
+    publishedOld: null,
     published: '2024-04-03T18:55:49.146Z',
     slug: 'osuuskauppavaalit-koskettavat-meita-kaikkia',
     excerpt:
         'Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.',
+}
+
+export const ourNatureIsOurAceInTheHole: ContentfulPost & ContentfulPostExcerpt = {
+    createdAt: '03.04.2024',
+    publishDate: '31.01.2024',
+    body: {
+        raw: '{"data":{},"content":[{"data":{},"content":[{"data":{},"marks":[],"value":"Kirkkonummella on alkanut osallistavan budjetoinnin äänestys ja siinä näkyy jälleen kerran se, että lähiluonto on yksi tärkeimmistä asioista kuntalaisille. Käytännön esimerkki tästä on Kirkkolaaksonpuisto ja keskusurheilupuisto, joita on viime vuosina laitettu kattavasti uuteen kuntoon, avoimiksi nurmialueiksi muovitetuilla leikkipaikoilla. Osallistuvan budjetoinnin ideoista 15 oli erilaisia keinoja lisätä alueelle puustoa, pensaita, kukkia tai muuta luontoa. ","nodeType":"text"},{"data":{"uri":"https://kirkkonummi.fi/wp-content/uploads/2024/01/OSBU-ideataulukko-1.pdf"},"content":[{"data":{},"marks":[{"type":"underline"}],"value":"Kaiken kaikkiaan lähes puolet ehdotuksista","nodeType":"text"}],"nodeType":"hyperlink"},{"data":{},"marks":[],"value":" liittyy lähiluonnon parantamiseen tai luonnossa liikkumiseen. ","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Sama oli nähtävissä kun kunta teetti kyselyn uudesta metsästrategiasta ja vastaajista 90% oli sitä mieltä, että luonnon virkistysarvot ovat tärkeämpiä kuin siitä mahdollisesti saatavat tulos. Sama toistui myös avoimissa kommenteissa. Metsien osalta toivotaan ensisijaisesti suojelua ja virkistyskäyttöä. Yksi hieno esimerkki oli ajatus siitä, että Kirkkonummella voisi olla joku päivä ikimetsää. Kuvitelkaa, jos sellaista nähdäkseen ei tarvitsisi mennä Itä-Suomeen, vaan riittäisi puolen tunnin junamatka Suomen pääkaupungista.","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Sama on usein havaittavissa kun keskustelee kuntaan muuttaneiden kanssa; tänne muutetaan, koska halutaan asua lähellä luontoa, mutta silti lähellä töitä ja palveluita. Sama todetaan hyvin myös ","nodeType":"text"},{"data":{"uri":"https://kirkkonummi.fi/wp-content/uploads/files/62022efec91058c3460002d2/Kuntastrategia_2022-2023.pdf#page=10"},"content":[{"data":{},"marks":[{"type":"underline"}],"value":"Kirkkonummen kuntastrategiassa","nodeType":"text"}],"nodeType":"hyperlink"},{"data":{},"marks":[],"value":", jossa ensimmäinen tekijä strategian onnistumiselle on “Luonnonläheisyys on lumovoimatekijämme”. Ja kuten sekä metsästrategian kyselystä että osallistavan budjetoinnin ideoista taas nähdään, se on yhä tärkeimpiä asioita kunnassamme.","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Tässä on nyt kunnalle kaksi selkeää kehityskohdetta, metsämme ja Kirkkolaaksonpuisto, sekä selvä viesti siitä, että kuntastrategiassa on ykköstekijämme tunnistettu oikein. Nyt lähiluonnosta pitääkin muistaa pitää huolta kaikessa kunnan päätöksenteossa.","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[{"type":"italic"}],"value":"Julkaistu Kirkkonummen Sanomissa 31.1.2024","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
+        references: [],
+    },
+    headerImage: {
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    layout: 'fixed',
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
+                    },
+                    images: {
+                        fallback: {
+                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
+                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
+                            sizes: '1921px',
+                        },
+                        sources: [
+                            {
+                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
+                                type: 'image/webp',
+                                sizes: '1921px',
+                            },
+                        ],
+                    },
+                    width: 1921,
+                    height: 384,
+                },
+            },
+        },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+    },
+    mobileHeaderImage: {
+        localFile: {
+            childImageSharp: {
+                gatsbyImageData: {
+                    layout: 'fixed',
+                    placeholder: {
+                        fallback:
+                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
+                    },
+                    images: {
+                        fallback: {
+                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
+                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
+                            sizes: '478px',
+                        },
+                        sources: [
+                            {
+                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
+                                type: 'image/webp',
+                                sizes: '478px',
+                            },
+                        ],
+                    },
+                    width: 478,
+                    height: 478,
+                },
+            },
+        },
+        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
+    },
+    metadata: {
+        tags: [
+            {
+                contentful_id: 'infra',
+            },
+            {
+                contentful_id: 'kaavoitus',
+            },
+            {
+                contentful_id: 'kirkkonummi',
+            },
+        ],
+    },
+    title: 'Luontomme on valttimme - vuodesta toiseen',
+    updatedAt: '2024-04-05T08:34:40.266Z',
+    publishedOld: '2024-01-31',
+    published: '2024-04-03T18:52:25.548Z',
+    slug: 'luontomme-on-valttimme-vuodesta-toiseen',
+    excerpt:
+        'Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.',
 }
 
 export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
@@ -1259,6 +1348,7 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
 
 export const excerptList = [
     coopElectionsConcernUsAll,
+    ourNatureIsOurAceInTheHole,
     newYearSameUpkeep,
     healthBelongsToAll,
     soteIsBedrock,
