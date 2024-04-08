@@ -5,7 +5,6 @@ import {
     coopElectionsConcernUsAll,
     excerptList,
     healthBelongsToAll,
-    newYearSameUpkeep,
     ourNatureIsOurAceInTheHole,
     wellPlannedIsWellDoneBut,
 } from '../../tests/posts.mock'
