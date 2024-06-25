@@ -49,6 +49,13 @@ export const mastodonLink: ContactInfoLink = {
     icon: 'mastodon',
 }
 
+export const blueskyLink: ContactInfoLink = {
+    contentful_id: 'izqXNmDJzl4RfQit84tZs',
+    title: 'Bluesky',
+    url: 'https://bsky.app/profile/laurilavanti.fi',
+    icon: 'bluesky',
+}
+
 export const contactInfoLinks = [
     mailLink,
     facebookLink,
@@ -56,5 +63,5 @@ export const contactInfoLinks = [
     instagramLink,
     linkedInLink,
     mastodonLink,
-    twitterLink,
+    blueskyLink,
 ]
