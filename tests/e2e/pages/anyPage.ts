@@ -68,7 +68,7 @@ export class AnyPage {
 
     async checkFooter() {
         await expect(this.footerFacebookLink).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
-        await expect(this.footerTwitterLink).toHaveAttribute('href', 'https://twitter.com/laurilavanti')
+        await expect(this.footerTwitterLink).toHaveAttribute('href', 'https://bsky.app/profile/laurilavanti.fi')
         await expect(this.footerInstagramLink).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
         await expect(this.footerMastodonLink).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
