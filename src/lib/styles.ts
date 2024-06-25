@@ -122,6 +122,7 @@ export const colors = {
     instagramGradient: 'url(#instagram-gradient)' as const,
     linkedin: '#0E76A8' as const,
     mastodon: '#6363ff' as const,
+    bluesky: '#0060df' as const,
     rss: '#EE802F' as const,
     transparent: 'transparent' as const,
 } as const
