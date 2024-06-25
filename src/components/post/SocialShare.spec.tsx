@@ -16,9 +16,13 @@ describe('<SocialShare />', () => {
             'href',
             `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`
         )
-        expect(screen.getByRole('link', { name: /Jaa Xssä \(ent. Twitterissä\)/i })).toHaveAttribute(
+        expect(screen.getByRole('link', { name: /Jaa Threadsissä/i })).toHaveAttribute(
             'href',
-            `https://twitter.com/intent/tweet?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`
+            `https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`
+        )
+        expect(screen.getByRole('link', { name: /Jaa Blueskyssa/i })).toHaveAttribute(
+            'href',
+            `https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`
         )
         expect(screen.getByRole('link', { name: /Jaa LinkedInissä/i })).toHaveAttribute(
             'href',
