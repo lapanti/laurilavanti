@@ -107,6 +107,15 @@ exports[`<Page /> should render about me page 1`] = `
   fill: #6363ff;
 }
 
+.c35 {
+  padding: 0px;
+}
+
+.c35 :hover,
+.c35 :focus {
+  fill: #0060df;
+}
+
 .c28 {
   display: flex;
   flex-direction: row;
@@ -955,26 +964,26 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c31"
+          class="c35"
         >
           <a
             class="c30"
-            href="https://twitter.com/laurilavanti"
+            href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
-            title="Twitter"
+            title="Bluesky"
           >
             <svg
               fill="currentColor"
               height="1em"
               stroke="currentColor"
               stroke-width="0"
-              viewBox="0 0 512 512"
+              viewBox="0 0 576 512"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"
               />
             </svg>
           </a>
@@ -1245,6 +1254,15 @@ exports[`<Page /> should render blog page 1`] = `
 .c43 :hover,
 .c43 :focus {
   fill: #6363ff;
+}
+
+.c44 {
+  padding: 0px;
+}
+
+.c44 :hover,
+.c44 :focus {
+  fill: #0060df;
 }
 
 .c37 {
@@ -4342,26 +4360,26 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c40"
+          class="c44"
         >
           <a
             class="c39"
-            href="https://twitter.com/laurilavanti"
+            href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
-            title="Twitter"
+            title="Bluesky"
           >
             <svg
               fill="currentColor"
               height="1em"
               stroke="currentColor"
               stroke-width="0"
-              viewBox="0 0 512 512"
+              viewBox="0 0 576 512"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"
               />
             </svg>
           </a>
@@ -4472,7 +4490,7 @@ exports[`<Page /> should render contact me page 1`] = `
   text-decoration: underline;
 }
 
-.c31 {
+.c30 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -4503,13 +4521,6 @@ exports[`<Page /> should render contact me page 1`] = `
   height: 1rem;
   margin-right: 0.5rem;
   fill: #4267B2;
-}
-
-.c30 {
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  fill: rgb(0, 0, 0);
 }
 
 .c26 {
@@ -4551,14 +4562,14 @@ exports[`<Page /> should render contact me page 1`] = `
   margin-top: 1rem;
 }
 
-.c36 {
+.c35 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c36 >* {
+.c35 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -4567,13 +4578,22 @@ exports[`<Page /> should render contact me page 1`] = `
   transition-duration: 150ms;
 }
 
-.c35 {
+.c34 {
   padding: 0px;
 }
 
-.c35 :hover,
-.c35 :focus {
+.c34 :hover,
+.c34 :focus {
   fill: #4267B2;
+}
+
+.c36 {
+  padding: 0px;
+}
+
+.c36 :hover,
+.c36 :focus {
+  fill: rgb(0, 0, 0);
 }
 
 .c37 {
@@ -4582,7 +4602,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c37 :hover,
 .c37 :focus {
-  fill: rgb(0, 0, 0);
+  fill: url(#instagram-gradient);
 }
 
 .c38 {
@@ -4591,7 +4611,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c39 {
@@ -4600,7 +4620,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: #0E76A8;
+  fill: #6363ff;
 }
 
 .c40 {
@@ -4609,10 +4629,10 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: #6363ff;
+  fill: #0060df;
 }
 
-.c34 {
+.c33 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4620,7 +4640,7 @@ exports[`<Page /> should render contact me page 1`] = `
   gap: 1.5rem;
 }
 
-.c33 {
+.c32 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -4787,7 +4807,7 @@ exports[`<Page /> should render contact me page 1`] = `
   display: none!important;
 }
 
-.c32 {
+.c31 {
   grid-column-start: 3;
 }
 
@@ -5185,46 +5205,32 @@ exports[`<Page /> should render contact me page 1`] = `
           >
             <a
               class="c23 c24"
-              href="https://twitter.com/laurilavanti"
+              href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"
             >
-              <svg
-                class="c30"
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 512 512"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-                />
-              </svg>
               <span>
-                Twitter
+                Bluesky
               </span>
             </a>
           </li>
         </ul>
         <p
-          class="c31 c32"
+          class="c30 c31"
         />
       </article>
     </main>
     <footer
-      class="c33"
+      class="c32"
     >
       <ul
-        class="c34"
+        class="c33"
       >
         <li
-          class="c35"
+          class="c34"
         >
           <a
-            class="c36"
+            class="c35"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5246,10 +5252,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c37"
+          class="c36"
         >
           <a
-            class="c36"
+            class="c35"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5271,10 +5277,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c37"
         >
           <a
-            class="c36"
+            class="c35"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5296,10 +5302,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c38"
         >
           <a
-            class="c36"
+            class="c35"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5321,10 +5327,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c40"
+          class="c39"
         >
           <a
-            class="c36"
+            class="c35"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5346,26 +5352,26 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c37"
+          class="c40"
         >
           <a
-            class="c36"
-            href="https://twitter.com/laurilavanti"
+            class="c35"
+            href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
-            title="Twitter"
+            title="Bluesky"
           >
             <svg
               fill="currentColor"
               height="1em"
               stroke="currentColor"
               stroke-width="0"
-              viewBox="0 0 512 512"
+              viewBox="0 0 576 512"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"
               />
             </svg>
           </a>

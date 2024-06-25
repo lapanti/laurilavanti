@@ -1,7 +1,7 @@
 import type { ContactInfoLink } from '../../../types/contentful'
 
 import React from 'react'
-import { FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads, FaXTwitter } from 'react-icons/fa6'
+import { FaBluesky, FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads } from 'react-icons/fa6'
 import styled from 'styled-components'
 
 import { colors, sizes, transitions } from '../../../lib/styles'
@@ -32,8 +32,8 @@ const iconToHoverColor = (icon: ContactInfoLink['icon']): string | undefined => 
             return colors.mastodon
         case 'threads':
             return colors.threads
-        case 'twitter':
-            return colors.xtwitter
+        case 'bluesky':
+            return colors.bluesky
     }
 }
 
@@ -49,8 +49,8 @@ const iconToIconComponent = (icon: ContactInfoLink['icon']) => {
             return FaLinkedin
         case 'mastodon':
             return FaMastodon
-        case 'twitter':
-            return FaXTwitter
+        case 'bluesky':
+            return FaBluesky
     }
 }
 
