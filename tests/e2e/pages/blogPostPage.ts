@@ -11,7 +11,8 @@ export class BlogPostPage extends AnyPage {
     readonly date: Locator
     readonly tagsAndUrls: [Locator, string][]
     readonly shareFacebook: Locator
-    readonly shareXTwitter: Locator
+    readonly shareBluesky: Locator
+    readonly shareThreads: Locator
     readonly shareLinkedIn: Locator
     readonly otherPostsTitle: Locator
 
@@ -34,7 +35,8 @@ export class BlogPostPage extends AnyPage {
         this.tagsAndUrls = tags.map(([tag, url]) => [page.getByRole('link', { name: tag }).first(), url])
 
         this.shareFacebook = page.getByRole('link', { name: /Jaa Facebookissa/i })
-        this.shareXTwitter = page.getByRole('link', { name: /Jaa Xssä \(ent. Twitterissä\)/i })
+        this.shareBluesky = page.getByRole('link', { name: /Jaa Blueskyssa/i })
+        this.shareThreads = page.getByRole('link', { name: /Jaa Threadsissä/i })
         this.shareLinkedIn = page.getByRole('link', { name: /Jaa LinkedInissä/i })
         this.otherPostsTitle = page.getByRole('heading', { name: /Muita kirjoituksia/i })
     }
@@ -53,9 +55,13 @@ export class BlogPostPage extends AnyPage {
             'href',
             'https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi'
         )
-        await expect(this.shareXTwitter).toHaveAttribute(
+        await expect(this.shareThreads).toHaveAttribute(
             'href',
-            `https://twitter.com/intent/tweet?text=${encodeURI(this.title)}%20https://laurilavanti.fi`
+            `https://threads.net/intent/post?text=${encodeURI(this.title)}%20https://laurilavanti.fi`
+        )
+        await expect(this.shareBluesky).toHaveAttribute(
+            'href',
+            `https://bsky.app/intent/compose?text=${encodeURI(this.title)}%20https://laurilavanti.fi`
         )
         await expect(this.shareLinkedIn).toHaveAttribute(
             'href',
