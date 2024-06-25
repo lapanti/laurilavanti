@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebook, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { FaBluesky, FaFacebook, FaLinkedin, FaThreads } from 'react-icons/fa6'
 import styled from 'styled-components'
 
 import { colors, sizes } from '../../lib/styles'
@@ -26,8 +26,12 @@ const Facebook = styled(FaFacebook)(logoStyles, {
     color: colors.facebook,
 })
 
-const XTwitter = styled(FaXTwitter)(logoStyles, {
-    color: colors.xtwitter,
+const Threads = styled(FaThreads)(logoStyles, {
+    color: colors.threads,
+})
+
+const Bluesky = styled(FaBluesky)(logoStyles, {
+    color: colors.bluesky,
 })
 
 const LinkedIn = styled(FaLinkedin)(logoStyles, {
@@ -48,10 +52,16 @@ const SocialShareComponent = ({ className, siteUrl, title, ariaLabel }: Props): 
             <Facebook />
         </ExtLink>
         <ExtLink
-            href={`https://twitter.com/intent/tweet?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
-            title="Jaa Xssä (ent. Twitterissä)"
+            href={`https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
+            title="Jaa Threadsissä"
         >
-            <XTwitter />
+            <Threads />
+        </ExtLink>
+        <ExtLink
+            href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
+            title="Jaa Blueskyssa"
+        >
+            <Bluesky />
         </ExtLink>
         <ExtLink
             href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(siteUrl)}`}
