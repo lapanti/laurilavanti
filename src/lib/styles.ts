@@ -116,7 +116,6 @@ export const colors = {
     oats: 'rgb(228, 215, 126)' as const,
     sand: 'rgb(214, 210, 196)' as const,
     facebook: '#4267B2' as const,
-    xtwitter: 'rgb(0, 0, 0)' as const,
     threads: 'rgb(0, 0, 0)' as const,
     instagram: '#E4405F' as const,
     instagramGradient: 'url(#instagram-gradient)' as const,
