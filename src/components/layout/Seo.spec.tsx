@@ -21,6 +21,7 @@ interface SiteMetadata {
     instagram: string
     linkedIn: string
     mastodon: string
+    bluesky: string
 }
 
 interface ImageSeoData {
@@ -44,6 +45,7 @@ describe('<Seo />', () => {
         instagram,
         linkedIn,
         mastodon,
+        bluesky,
     } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = ({
@@ -112,7 +114,7 @@ describe('<Seo />', () => {
             '@context': 'https://schema.org',
             mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
             name: pageType === WEBSITE ? title : undefined,
-            ...(pageType === WEBSITE ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon] } : {}),
+            ...(pageType === WEBSITE ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon, bluesky] } : {}),
         })
 
         expect(helmet).toMatchSnapshot()

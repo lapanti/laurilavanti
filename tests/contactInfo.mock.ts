@@ -14,13 +14,6 @@ export const facebookLink: ContactInfoLink = {
     icon: 'facebook',
 }
 
-export const twitterLink: ContactInfoLink = {
-    contentful_id: 'izqXNmDJzl4RfQit84tZs',
-    title: 'Twitter',
-    url: 'https://twitter.com/laurilavanti',
-    icon: 'twitter',
-}
-
 export const threadsLink: ContactInfoLink = {
     contentful_id: 'KQpgl5vI3xI6uN6dZd9Gy',
     title: 'Threads',

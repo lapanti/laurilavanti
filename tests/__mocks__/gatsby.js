@@ -37,6 +37,7 @@ module.exports = {
                 instagram: 'https://www.instagram.com/laurilavanti/',
                 linkedIn: 'https://www.linkedin.com/in/lapanti',
                 mastodon: 'https://mastodontti.fi/@laurilavanti',
+                bluesky: 'https://bsky.app/profile/laurilavanti.fi',
                 keywords: [
                     'Kirkkonummi',
                     'Länsi-Uusimaa',

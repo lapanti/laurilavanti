@@ -4490,7 +4490,7 @@ exports[`<Page /> should render contact me page 1`] = `
   text-decoration: underline;
 }
 
-.c30 {
+.c31 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -4551,6 +4551,13 @@ exports[`<Page /> should render contact me page 1`] = `
   fill: #6363ff;
 }
 
+.c30 {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  fill: #0060df;
+}
+
 .c21 {
   display: flex;
   flex-direction: row;
@@ -4562,14 +4569,14 @@ exports[`<Page /> should render contact me page 1`] = `
   margin-top: 1rem;
 }
 
-.c35 {
+.c36 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c35 >* {
+.c36 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -4578,22 +4585,13 @@ exports[`<Page /> should render contact me page 1`] = `
   transition-duration: 150ms;
 }
 
-.c34 {
+.c35 {
   padding: 0px;
 }
 
-.c34 :hover,
-.c34 :focus {
+.c35 :hover,
+.c35 :focus {
   fill: #4267B2;
-}
-
-.c36 {
-  padding: 0px;
-}
-
-.c36 :hover,
-.c36 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c37 {
@@ -4602,7 +4600,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c37 :hover,
 .c37 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c38 {
@@ -4611,7 +4609,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c39 {
@@ -4620,7 +4618,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c40 {
@@ -4629,10 +4627,19 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c40 :hover,
 .c40 :focus {
+  fill: #6363ff;
+}
+
+.c41 {
+  padding: 0px;
+}
+
+.c41 :hover,
+.c41 :focus {
   fill: #0060df;
 }
 
-.c33 {
+.c34 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4640,7 +4647,7 @@ exports[`<Page /> should render contact me page 1`] = `
   gap: 1.5rem;
 }
 
-.c32 {
+.c33 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -4807,7 +4814,7 @@ exports[`<Page /> should render contact me page 1`] = `
   display: none!important;
 }
 
-.c31 {
+.c32 {
   grid-column-start: 3;
 }
 
@@ -5209,6 +5216,20 @@ exports[`<Page /> should render contact me page 1`] = `
               rel="me noopener noreferrer"
               target="_blank"
             >
+              <svg
+                class="c30"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 576 512"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"
+                />
+              </svg>
               <span>
                 Bluesky
               </span>
@@ -5216,21 +5237,21 @@ exports[`<Page /> should render contact me page 1`] = `
           </li>
         </ul>
         <p
-          class="c30 c31"
+          class="c31 c32"
         />
       </article>
     </main>
     <footer
-      class="c32"
+      class="c33"
     >
       <ul
-        class="c33"
+        class="c34"
       >
         <li
-          class="c34"
+          class="c35"
         >
           <a
-            class="c35"
+            class="c36"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5252,10 +5273,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c36"
+          class="c37"
         >
           <a
-            class="c35"
+            class="c36"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5277,10 +5298,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c37"
+          class="c38"
         >
           <a
-            class="c35"
+            class="c36"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5302,10 +5323,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c39"
         >
           <a
-            class="c35"
+            class="c36"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5327,10 +5348,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c40"
         >
           <a
-            class="c35"
+            class="c36"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -5352,10 +5373,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c40"
+          class="c41"
         >
           <a
-            class="c35"
+            class="c36"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
