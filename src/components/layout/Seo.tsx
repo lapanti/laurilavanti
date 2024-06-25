@@ -44,6 +44,7 @@ const Seo = ({
                 instagram: string
                 linkedIn: string
                 mastodon: string
+                bluesky: string
             }
         }
     }>(graphql`
@@ -63,6 +64,7 @@ const Seo = ({
                     instagram
                     linkedIn
                     mastodon
+                    bluesky
                 }
             }
         }
@@ -129,6 +131,7 @@ const Seo = ({
                       site?.siteMetadata?.instagram,
                       site?.siteMetadata?.linkedIn,
                       site?.siteMetadata?.mastodon,
+                      site?.siteMetadata?.bluesky,
                   ],
                   name: site?.siteMetadata?.title,
               }

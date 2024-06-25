@@ -2,13 +2,13 @@ import type { ContactInfoLink as ContactInfoLinkType } from '../../../types/cont
 
 import React from 'react'
 import {
+    FaBluesky,
     FaEnvelope,
     FaFacebook,
     FaInstagram,
     FaLinkedin,
     FaMastodon,
     FaSquareThreads,
-    FaXTwitter,
 } from 'react-icons/fa6'
 import styled from 'styled-components'
 
@@ -27,8 +27,6 @@ const Envelope = styled(FaEnvelope)(logoStyles)
 
 const Facebook = styled(FaFacebook)(logoStyles, { fill: colors.facebook })
 
-const XTwitter = styled(FaXTwitter)(logoStyles, { fill: colors.xtwitter })
-
 const Threads = styled(FaSquareThreads)(logoStyles, { fill: colors.threads })
 
 const Instagram = styled(FaInstagram)(logoStyles, { fill: colors.instagramGradient })
@@ -36,6 +34,8 @@ const Instagram = styled(FaInstagram)(logoStyles, { fill: colors.instagramGradie
 const LinkedIn = styled(FaLinkedin)(logoStyles, { fill: colors.linkedin })
 
 const Mastodon = styled(FaMastodon)(logoStyles, { fill: colors.mastodon })
+
+const Bluesky = styled(FaBluesky)(logoStyles, { fill: colors.bluesky })
 
 interface Props {
     className?: string
@@ -51,7 +51,7 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
             <Wrapper {...(link.url ? { href: link.url, rel: 'me' } : {})}>
                 {link.icon === 'envelope' && <Envelope />}
                 {link.icon === 'facebook' && <Facebook />}
-                {link.icon === 'twitter' && <XTwitter />}
+                {link.icon === 'bluesky' && <Bluesky />}
                 {link.icon === 'threads' && <Threads />}
                 {link.icon === 'instagram' && <Instagram />}
                 {link.icon === 'linkedin' && <LinkedIn />}
