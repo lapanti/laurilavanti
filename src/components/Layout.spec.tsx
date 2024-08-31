@@ -2,6 +2,7 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 
 import { BLOCKS } from '@contentful/rich-text-types'
 import { render, screen, waitFor } from '@testing-library/react'
+import { parse } from 'date-fns'
 import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
@@ -26,6 +27,15 @@ interface SiteMetadata {
 }
 
 describe('<Layout />', () => {
+    beforeAll(() => {
+        jest.useFakeTimers()
+        jest.setSystemTime(parse('2020-01-01', 'yyyy-MM-dd', new Date()))
+    })
+
+    afterAll(() => {
+        jest.useRealTimers()
+    })
+
     const title = 'Title'
     const children = 'Children'
     const { title: siteTitle } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
@@ -641,6 +651,52 @@ describe('<Layout />', () => {
             } else {
                 expect(screen.queryByText(quoteText)).toBeNull()
             }
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
+        it('should render inline YearsFrom', () => {
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            data: {},
+                            content: [
+                                {
+                                    data: {},
+                                    content: [
+                                        {
+                                            data: {
+                                                target: {
+                                                    sys: {
+                                                        id: 'fvxZI2eLzqnwfebd6CPUO',
+                                                        type: 'Link',
+                                                        linkType: 'Entry',
+                                                    },
+                                                },
+                                            },
+                                            content: [],
+                                            nodeType: 'embedded-entry-inline',
+                                        },
+                                    ],
+                                    nodeType: 'paragraph',
+                                },
+                            ],
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename: 'ContentfulYearsFrom',
+                                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
+                                dateToCountFrom: '2000-01-01',
+                            },
+                        ],
+                    }}
+                />
+            )
+
+            // Check YearsFrom is present
+            expect(screen.getByText('20')).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()
         })
