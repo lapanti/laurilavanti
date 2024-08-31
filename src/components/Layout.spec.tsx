@@ -655,7 +655,10 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render inline YearsFrom', () => {
+        it.each([
+            ['YearsFrom', 'ContentfulYearsFrom', '20'],
+            ['borken stuff', 'Never Going to Match Anything', null],
+        ])('should render inline %s', (_, __typename, expected) => {
             const { container } = render(
                 <Layout
                     body={{
@@ -686,7 +689,7 @@ describe('<Layout />', () => {
                         }),
                         references: [
                             {
-                                __typename: 'ContentfulYearsFrom',
+                                __typename,
                                 contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
                                 dateToCountFrom: '2000-01-01',
                             },
@@ -695,54 +698,10 @@ describe('<Layout />', () => {
                 />
             )
 
-            // Check YearsFrom is present
-            expect(screen.getByText('20')).toBeInTheDocument()
-
-            expect(container.firstChild).toMatchSnapshot()
-        })
-
-        it('should render nothing when unused inline', () => {
-            const { container } = render(
-                <Layout
-                    body={{
-                        raw: JSON.stringify({
-                            data: {},
-                            content: [
-                                {
-                                    data: {},
-                                    content: [
-                                        {
-                                            data: {
-                                                target: {
-                                                    sys: {
-                                                        id: 'fvxZI2eLzqnwfebd6CPUO',
-                                                        type: 'Link',
-                                                        linkType: 'Entry',
-                                                    },
-                                                },
-                                            },
-                                            content: [],
-                                            nodeType: 'embedded-entry-inline',
-                                        },
-                                    ],
-                                    nodeType: 'paragraph',
-                                },
-                            ],
-                            nodeType: 'document',
-                        }),
-                        references: [
-                            {
-                                __typename: 'Never Gonna Match Anything',
-                                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
-                                dateToCountFrom: '2000-01-01',
-                            },
-                        ],
-                    }}
-                />
-            )
-
-            // Check nothing is present
-            expect(screen.queryByText('20')).toBeNull()
+            if (expected) {
+                // Check YearsFrom is present
+                expect(screen.getByText(expected)).toBeInTheDocument()
+            }
 
             expect(container.firstChild).toMatchSnapshot()
         })
