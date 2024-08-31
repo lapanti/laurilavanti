@@ -700,5 +700,51 @@ describe('<Layout />', () => {
 
             expect(container.firstChild).toMatchSnapshot()
         })
+
+        it('should render nothing when unused inline', () => {
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            data: {},
+                            content: [
+                                {
+                                    data: {},
+                                    content: [
+                                        {
+                                            data: {
+                                                target: {
+                                                    sys: {
+                                                        id: 'fvxZI2eLzqnwfebd6CPUO',
+                                                        type: 'Link',
+                                                        linkType: 'Entry',
+                                                    },
+                                                },
+                                            },
+                                            content: [],
+                                            nodeType: 'embedded-entry-inline',
+                                        },
+                                    ],
+                                    nodeType: 'paragraph',
+                                },
+                            ],
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename: 'Never Gonna Match Anything',
+                                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
+                                dateToCountFrom: '2000-01-01',
+                            },
+                        ],
+                    }}
+                />
+            )
+
+            // Check nothing is present
+            expect(screen.queryByText('20')).toBeNull()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
     })
 })
