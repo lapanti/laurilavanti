@@ -55,20 +55,6 @@ export const query = graphql`
                         __typename
                         contentful_id
                     }
-                    ... on ContentfulImageWithCaption {
-                        __typename
-                        contentful_id
-                        altText
-                        image {
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData
-                                }
-                            }
-                            description
-                        }
-                        caption
-                    }
                     ... on ContentfulExcerptList {
                         __typename
                         contentful_id
