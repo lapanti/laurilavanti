@@ -32,7 +32,12 @@ exports[`<Page /> should render about me page 1`] = `
   margin-bottom: 1rem;
 }
 
-.c26 {
+.c22 {
+  color: rgb(90, 94, 0);
+  text-decoration: underline;
+}
+
+.c24 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -41,19 +46,19 @@ exports[`<Page /> should render about me page 1`] = `
   margin-bottom: 1rem;
 }
 
-.c25 {
+.c23 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
-.c30 {
+.c28 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c30 >* {
+.c28 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -62,13 +67,31 @@ exports[`<Page /> should render about me page 1`] = `
   transition-duration: 150ms;
 }
 
+.c27 {
+  padding: 0px;
+}
+
+.c27 :hover,
+.c27 :focus {
+  fill: #4267B2;
+}
+
 .c29 {
   padding: 0px;
 }
 
 .c29 :hover,
 .c29 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c30 {
+  padding: 0px;
+}
+
+.c30 :hover,
+.c30 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c31 {
@@ -77,7 +100,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c31 :hover,
 .c31 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c32 {
@@ -86,7 +109,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c32 :hover,
 .c32 :focus {
-  fill: url(#instagram-gradient);
+  fill: #6363ff;
 }
 
 .c33 {
@@ -95,28 +118,10 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c33 :hover,
 .c33 :focus {
-  fill: #0E76A8;
-}
-
-.c34 {
-  padding: 0px;
-}
-
-.c34 :hover,
-.c34 :focus {
-  fill: #6363ff;
-}
-
-.c35 {
-  padding: 0px;
-}
-
-.c35 :hover,
-.c35 :focus {
   fill: #0060df;
 }
 
-.c28 {
+.c26 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -124,7 +129,7 @@ exports[`<Page /> should render about me page 1`] = `
   gap: 1.5rem;
 }
 
-.c27 {
+.c25 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -247,29 +252,6 @@ exports[`<Page /> should render about me page 1`] = `
   display: flex;
   grid-column: 1/-1;
   position: relative;
-}
-
-.c23 {
-  width: 100%;
-  height: auto;
-  display: flex;
-}
-
-.c24 {
-  margin-top: 0.5rem;
-  font-style: italic;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.c22 {
-  grid-column: 1/-1;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .c19 {
@@ -546,87 +528,44 @@ exports[`<Page /> should render about me page 1`] = `
         <p
           class="c20 c21"
         >
-          Olen 32-vuotias isä, esihenkilö, ohjelmistokehittäjä ja diplomi-insinööri Kirkkonummelta.
-        </p>
-        <p
-          class="c20 c21"
-        >
-          Ensimmäinen luottamustoimeni oli, kun minut valittiin edustamaan Masalan lukiota Kirkkonummen kunnan nuorisovaltuustoon vuonna 2010. Nuorisovaltuustossa toimin sen hallituksen puheenjohtajana. Kunnan antaman budjetin päätimme valtuustossa käyttää Kirkkonummella yhä käytössä olevaan graffitiseinään. Byrokratiaan ja paikan valintaan meni lähes koko vuosi, vaikka pohjatöitä oli jo edellisten nuorisovaltuustojen toimesta tehty. Lopulta kuitenkin löydettiin graffitiseinälle paikka Varuboden Areenan vierestä, joka kelpasi sekä kunnalle että asukkaille.
-        </p>
-        <figure
-          aria-label="Kirkkonummen graffitiseinä"
-          class="c22"
-        >
-          <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c23"
-            data-gatsby-image-wrapper=""
-            style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+          Olen 
+          <span
+            class=""
           >
-            <div
-              style="max-width: 1820px; display: block;"
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                role="presentation"
-                src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='780'%20width='1820'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-                style="max-width: 100%; display: block; position: static;"
-              />
-            </div>
-            <img
-              alt=""
-              aria-hidden="true"
-              data-placeholder-image=""
-              decoding="async"
-              src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABqZ3pOPE//8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIAEhMgI//aAAgBAQABBQLI5NnnbT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAABBQAAAAAAAAAAAAAAAAAAASAyM0L/2gAIAQEABj8CrUgZZ//EABkQAAIDAQAAAAAAAAAAAAAAAAERACBRcf/aAAgBAQABPyEh0BR+OqE4Cn//2gAMAwEAAgADAAAAELP/AP/EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPxCI/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITEQQVGRof/aAAgBAQABPxCkJa2pT7gfRX2w+xCoDxjEN8O5/9k="
-              style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-            />
-            <picture>
-              <source
-                data-srcset="/static/fd6136fc5d20d3649c71061c51f24dfe/7bfa3/kirkkonummen-graffitiseina.webp 455w,/static/fd6136fc5d20d3649c71061c51f24dfe/d32f3/kirkkonummen-graffitiseina.webp 910w,/static/fd6136fc5d20d3649c71061c51f24dfe/9e6d8/kirkkonummen-graffitiseina.webp 1820w"
-                sizes="(min-width: 1820px) 1820px, 100vw"
-                type="image/webp"
-              />
-              <img
-                alt="Kuva Kirkkonummen graffitiseinästä."
-                data-gatsby-image-ssr=""
-                data-main-image=""
-                data-src="/static/fd6136fc5d20d3649c71061c51f24dfe/f7471/kirkkonummen-graffitiseina.jpg"
-                data-srcset="/static/fd6136fc5d20d3649c71061c51f24dfe/95548/kirkkonummen-graffitiseina.jpg 455w,/static/fd6136fc5d20d3649c71061c51f24dfe/e6bdc/kirkkonummen-graffitiseina.jpg 910w,/static/fd6136fc5d20d3649c71061c51f24dfe/f7471/kirkkonummen-graffitiseina.jpg 1820w"
-                decoding="async"
-                loading="lazy"
-                sizes="(min-width: 1820px) 1820px, 100vw"
-                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-              />
-            </picture>
-            <noscript />
-            <script
-              type="module"
-            >
-              const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-            </script>
-          </div>
-          <figcaption
-            class="c24"
-          >
-            Kirkkonummen graffitiseinä
-          </figcaption>
-        </figure>
-        <p
-          class="c20 c21"
-        >
-          Yliopistossa toimin kolme vuotta vasta perustetun amerikkalaisen jalkapallojoukkueen Aalto Predatorsin hallituksessa, joista kaksi jälkimmäistä joukkueen puheenjohtajana. Näiden ensimmäisten vuosien toimme urheiluun sopivan verran urheilujuhlan tuntua, järjestämällä ottelumme Otaniemen perinteikkäässä Otahallissa, live-striimauksineen ja selostuksineen. Viimeisenä aktiivi-vuotenani toimin myös kiltani (Otaniemen teekkarien vastine ainejärjestölle) hallituksessa vastaten ulkomaalaisista opiskelijoistamme.
+            32
+          </span>
+          -vuotias diplomi-insinööri, Vihreiden luottamushenkilö ja kolmen pienen lapsen isä Kirkkonummelta. Politiikassa minulle tärkeimpiä asioita ovat lasten ja nuorten hyvinvointi, oikeudenmukaisuus, tasa-arvo, demokratia ja kestävä toiminta niin luonnon kuin taloudenkin kannalta. Päivätyöni on toimia ohjelmistokehitystiimin esihenkilönä ja ohjelmiston arkkitehtuurin suunnittelijana, huolehtien osaltani yrityksen kehityksen kestävästä suunnasta. 
+          Alapuolelta voit lukea tarkemman listauksen erinäisistä luottamustoimistani ja työhistoriastani
+          .
         </p>
         <p
           class="c20 c21"
         >
-          Sen jälkeen työelämä veikin minut mukanaan, kunnes 2021 päätin asettua kuntavaaleissa Vihreiden ehdokkaaksi. Kirkkonummella tärkeimpänä näin lapsiperheistä ja nuorista huolehtimisen. Vaikka en kunnanvaltuustoon päässytkään, sain varajäsenyyden Suomenkieliseen varhaiskasvatus- ja koulutuslautakuntaan sekä varsinaisen jäsenyyden Perusturvajaokseen.
+          Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös 
+          <a
+            class="c22"
+            href="https://bsky.app/profile/laurilavanti.fi"
+            rel=" noopener noreferrer"
+            target="_blank"
+          >
+            Blueskyssa
+          </a>
+           ja 
+          <a
+            class="c22"
+            href="https://www.threads.net/@laurilavanti"
+            rel=" noopener noreferrer"
+            target="_blank"
+          >
+            Threadsissä
+          </a>
+          .
         </p>
         <div
-          class="c25"
+          class="c23"
         >
           <div
-            class="c26"
+            class="c24"
           >
             <h2
               class="c10"
@@ -636,7 +575,7 @@ exports[`<Page /> should render about me page 1`] = `
             </h2>
           </div>
           <div
-            class="c26"
+            class="c24"
           >
             <ul>
               <li>
@@ -705,7 +644,7 @@ exports[`<Page /> should render about me page 1`] = `
             </ul>
           </div>
           <div
-            class="c26"
+            class="c24"
           >
             <h2
               class="c10"
@@ -715,7 +654,7 @@ exports[`<Page /> should render about me page 1`] = `
             </h2>
           </div>
           <div
-            class="c26"
+            class="c24"
           >
             <ul>
               <li>
@@ -784,7 +723,7 @@ exports[`<Page /> should render about me page 1`] = `
             </ul>
           </div>
           <div
-            class="c26"
+            class="c24"
           >
             <h2
               class="c10"
@@ -794,7 +733,7 @@ exports[`<Page /> should render about me page 1`] = `
             </h2>
           </div>
           <div
-            class="c26"
+            class="c24"
           >
             <ul>
               <li>
@@ -833,16 +772,16 @@ exports[`<Page /> should render about me page 1`] = `
       </article>
     </main>
     <footer
-      class="c27"
+      class="c25"
     >
       <ul
-        class="c28"
+        class="c26"
       >
         <li
-          class="c29"
+          class="c27"
         >
           <a
-            class="c30"
+            class="c28"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -864,10 +803,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c31"
+          class="c29"
         >
           <a
-            class="c30"
+            class="c28"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -889,10 +828,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c32"
+          class="c30"
         >
           <a
-            class="c30"
+            class="c28"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -914,10 +853,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c33"
+          class="c31"
         >
           <a
-            class="c30"
+            class="c28"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -939,10 +878,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c34"
+          class="c32"
         >
           <a
-            class="c30"
+            class="c28"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -964,10 +903,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c35"
+          class="c33"
         >
           <a
-            class="c30"
+            class="c28"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"

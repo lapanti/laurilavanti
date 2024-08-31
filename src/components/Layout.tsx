@@ -39,6 +39,7 @@ import Image from './layout/Image'
 import Seo from './layout/Seo'
 import Svgs from './layout/Svgs'
 import Title from './layout/Title'
+import YearsFrom from './layout/YearsFrom'
 import Paragraph from './Paragraph'
 
 const Main = styled.main({
@@ -189,6 +190,11 @@ const options = {
         [INLINES.ENTRY_HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
             if (node.data.target.__typename === 'ContentfulPost') {
                 return <InternalLink to={`/blogi/${node.data.target.slug}/`}>{children}</InternalLink>
+            }
+        },
+        [INLINES.EMBEDDED_ENTRY]: (node: Block | Inline) => {
+            if (node?.data?.target?.__typename === 'ContentfulYearsFrom') {
+                return <YearsFrom dateToCountFrom={node.data.target.dateToCountFrom} />
             }
         },
     },
