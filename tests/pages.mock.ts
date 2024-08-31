@@ -44,44 +44,8 @@ export const aboutMe: ContentfulPage = {
     jsonLdType: 'Person',
     title: 'Minusta',
     body: {
-        raw: '{"nodeType":"document","data":{},"content":[{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Olen 32-vuotias isä, esihenkilö, ohjelmistokehittäjä ja diplomi-insinööri Kirkkonummelta.","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Ensimmäinen luottamustoimeni oli, kun minut valittiin edustamaan Masalan lukiota Kirkkonummen kunnan nuorisovaltuustoon vuonna 2010. Nuorisovaltuustossa toimin sen hallituksen puheenjohtajana. Kunnan antaman budjetin päätimme valtuustossa käyttää Kirkkonummella yhä käytössä olevaan graffitiseinään. Byrokratiaan ja paikan valintaan meni lähes koko vuosi, vaikka pohjatöitä oli jo edellisten nuorisovaltuustojen toimesta tehty. Lopulta kuitenkin löydettiin graffitiseinälle paikka Varuboden Areenan vierestä, joka kelpasi sekä kunnalle että asukkaille.","marks":[],"data":{}}]},{"nodeType":"embedded-entry-block","data":{"target":{"sys":{"id":"6cya8rbqyJVA8DQlwSIWm8","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Yliopistossa toimin kolme vuotta vasta perustetun amerikkalaisen jalkapallojoukkueen Aalto Predatorsin hallituksessa, joista kaksi jälkimmäistä joukkueen puheenjohtajana. Näiden ensimmäisten vuosien toimme urheiluun sopivan verran urheilujuhlan tuntua, järjestämällä ottelumme Otaniemen perinteikkäässä Otahallissa, live-striimauksineen ja selostuksineen. Viimeisenä aktiivi-vuotenani toimin myös kiltani (Otaniemen teekkarien vastine ainejärjestölle) hallituksessa vastaten ulkomaalaisista opiskelijoistamme.","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Sen jälkeen työelämä veikin minut mukanaan, kunnes 2021 päätin asettua kuntavaaleissa Vihreiden ehdokkaaksi. Kirkkonummella tärkeimpänä näin lapsiperheistä ja nuorista huolehtimisen. Vaikka en kunnanvaltuustoon päässytkään, sain varajäsenyyden Suomenkieliseen varhaiskasvatus- ja koulutuslautakuntaan sekä varsinaisen jäsenyyden Perusturvajaokseen.","marks":[],"data":{}}]},{"nodeType":"embedded-entry-block","data":{"target":{"sys":{"id":"69ER5TaS3Gi3EG0xwHPOLv","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]}]}',
+        raw: '{"nodeType":"document","data":{},"content":[{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Olen ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"fvxZI2eLzqnwfebd6CPUO","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"-vuotias diplomi-insinööri, Vihreiden luottamushenkilö ja kolmen pienen lapsen isä Kirkkonummelta. Politiikassa minulle tärkeimpiä asioita ovat lasten ja nuorten hyvinvointi, oikeudenmukaisuus, tasa-arvo, demokratia ja kestävä toiminta niin luonnon kuin taloudenkin kannalta. Päivätyöni on toimia ohjelmistokehitystiimin esihenkilönä ja ohjelmiston arkkitehtuurin suunnittelijana, huolehtien osaltani yrityksen kehityksen kestävästä suunnasta. ","marks":[],"data":{}},{"nodeType":"text","value":"Alapuolelta voit lukea tarkemman listauksen erinäisistä luottamustoimistani ja työhistoriastani","marks":[],"data":{}},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://bsky.app/profile/laurilavanti.fi"},"content":[{"nodeType":"text","value":"Blueskyssa","marks":[],"data":{}}]},{"nodeType":"text","value":" ja ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://www.threads.net/@laurilavanti"},"content":[{"nodeType":"text","value":"Threadsissä","marks":[],"data":{}}]},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"embedded-entry-block","data":{"target":{"sys":{"id":"69ER5TaS3Gi3EG0xwHPOLv","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]}]}',
         references: [
-            {
-                __typename: 'ContentfulImageWithCaption',
-                contentful_id: '6cya8rbqyJVA8DQlwSIWm8',
-                altText: 'Kirkkonummen graffitiseinä ja Varuboden Areena',
-                image: {
-                    localFile: {
-                        childImageSharp: {
-                            gatsbyImageData: {
-                                layout: 'constrained',
-                                placeholder: {
-                                    fallback:
-                                        'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAMEAQL/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABqZ3pOPE//8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIAEhMgI//aAAgBAQABBQLI5NnnbT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAABBQAAAAAAAAAAAAAAAAAAASAyM0L/2gAIAQEABj8CrUgZZ//EABkQAAIDAQAAAAAAAAAAAAAAAAERACBRcf/aAAgBAQABPyEh0BR+OqE4Cn//2gAMAwEAAgADAAAAELP/AP/EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPxCI/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITEQQVGRof/aAAgBAQABPxCkJa2pT7gfRX2w+xCoDxjEN8O5/9k=',
-                                },
-                                images: {
-                                    fallback: {
-                                        src: '/static/fd6136fc5d20d3649c71061c51f24dfe/f7471/kirkkonummen-graffitiseina.jpg',
-                                        srcSet: '/static/fd6136fc5d20d3649c71061c51f24dfe/95548/kirkkonummen-graffitiseina.jpg 455w,\n/static/fd6136fc5d20d3649c71061c51f24dfe/e6bdc/kirkkonummen-graffitiseina.jpg 910w,\n/static/fd6136fc5d20d3649c71061c51f24dfe/f7471/kirkkonummen-graffitiseina.jpg 1820w',
-                                        sizes: '(min-width: 1820px) 1820px, 100vw',
-                                    },
-                                    sources: [
-                                        {
-                                            srcSet: '/static/fd6136fc5d20d3649c71061c51f24dfe/7bfa3/kirkkonummen-graffitiseina.webp 455w,\n/static/fd6136fc5d20d3649c71061c51f24dfe/d32f3/kirkkonummen-graffitiseina.webp 910w,\n/static/fd6136fc5d20d3649c71061c51f24dfe/9e6d8/kirkkonummen-graffitiseina.webp 1820w',
-                                            type: 'image/webp',
-                                            sizes: '(min-width: 1820px) 1820px, 100vw',
-                                        },
-                                    ],
-                                },
-                                width: 1820,
-                                height: 780,
-                            },
-                        },
-                    },
-                    description: 'Kuva Kirkkonummen graffitiseinästä.',
-                },
-                caption: 'Kirkkonummen graffitiseinä',
-            },
             {
                 __typename: 'ContentfulCurriculumVitae',
                 contentful_id: '69ER5TaS3Gi3EG0xwHPOLv',
@@ -213,6 +177,11 @@ export const aboutMe: ContentfulPage = {
                         endYear: 2013,
                     },
                 ],
+            },
+            {
+                __typename: 'ContentfulYearsFrom',
+                dateToCountFrom: '1991-10-01',
+                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
             },
         ],
     },

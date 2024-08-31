@@ -62,6 +62,10 @@ interface ContactInfoReference extends ContentfulRichTextGatsbyReference {
     links: ContactInfoLink[]
 }
 
+interface YearsFromReference extends ContentfulRichTextGatsbyReference {
+    dateToCountFrom?: string // In the format 'yyyy-MM-dd'
+}
+
 type RichReferences =
     | ExcerptListReference
     | RichTextPostReference
@@ -69,6 +73,7 @@ type RichReferences =
     | ContactInfoReference
     | ContentfulRichTextGatsbyReference
     | CurriculumVitae
+    | YearsFromReference
 
 export type RichBody = RenderRichTextData<RichReferences>
 

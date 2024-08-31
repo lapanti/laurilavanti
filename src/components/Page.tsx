@@ -87,6 +87,11 @@ export const query = graphql`
                             endYear
                         }
                     }
+                    ... on ContentfulYearsFrom {
+                        __typename
+                        contentful_id
+                        dateToCountFrom
+                    }
                 }
             }
             image {
