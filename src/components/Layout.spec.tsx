@@ -99,7 +99,7 @@ describe('<Layout />', () => {
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(screen.getByRole('img', { name: '' })).toBeInTheDocument()
+        expect(screen.getByRole('presentation', { name: '' })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -134,7 +134,7 @@ describe('<Layout />', () => {
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(screen.getByRole('img', { name: '' })).toBeInTheDocument()
+        expect(screen.getByRole('presentation', { name: '' })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })
