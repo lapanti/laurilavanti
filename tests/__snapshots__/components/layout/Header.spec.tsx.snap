@@ -30,11 +30,7 @@ exports[`<Header /> should render 1`] = `
 }
 
 .c1 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
+  display: none;
 }
 
 .c0 {
@@ -48,6 +44,16 @@ exports[`<Header /> should render 1`] = `
   position: fixed;
   z-index: 50;
   user-select: none;
+}
+
+@media (min-width: 1200px) {
+  .c1 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
 }
 
 <header

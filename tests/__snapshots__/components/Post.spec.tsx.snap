@@ -238,11 +238,7 @@ exports[`<Post /> should render basic post 1`] = `
 }
 
 .c2 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
+  display: none;
 }
 
 .c1 {
@@ -391,6 +387,16 @@ exports[`<Post /> should render basic post 1`] = `
 @media (min-width: 479px) {
   .c36 {
     display: flex!important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
   }
 }
 
@@ -1851,11 +1857,7 @@ exports[`<Post /> should render oldest post 1`] = `
 }
 
 .c2 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
+  display: none;
 }
 
 .c1 {
@@ -2004,6 +2006,16 @@ exports[`<Post /> should render oldest post 1`] = `
 @media (min-width: 479px) {
   .c36 {
     display: flex!important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
   }
 }
 
@@ -3462,11 +3474,7 @@ exports[`<Post /> should render updated post 1`] = `
 }
 
 .c2 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
+  display: none;
 }
 
 .c1 {
@@ -3615,6 +3623,16 @@ exports[`<Post /> should render updated post 1`] = `
 @media (min-width: 479px) {
   .c36 {
     display: flex!important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
   }
 }
 

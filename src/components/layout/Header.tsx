@@ -4,15 +4,19 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, sizes, zIndices } from '../../lib/styles'
+import { breakpoints, colors, sizes, zIndices } from '../../lib/styles'
 import NavLink from './header/NavLink'
 
+/** Half of header, only visible in desktop */
 const Half = styled.div({
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: sizes[10],
+    display: 'none',
+    [breakpoints[1200].min]: {
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: sizes[10],
+    },
 })
 
 interface Props {
