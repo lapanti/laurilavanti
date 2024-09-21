@@ -3,42 +3,37 @@ import type { MainNav } from '../../../types/contentful'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, fontSizes, sizes } from '../../../lib/styles'
+import { colors, fontFamilies, fontSizes } from '../../../lib/styles'
 import InternalLink from '../../InternalLink'
 
-type Link = MainNav['links'][number]
+type Link = Omit<MainNav['links'][number], 'contentful_id'>
 
 interface Props extends Link {
     className?: string
+    isFrontPage?: boolean
 }
 
-const NavLinkComponent = ({ className, title, slug }: Props): JSX.Element => (
+const NavLinkComponent = ({ className, title, slug, isFrontPage }: Props): JSX.Element => (
     <InternalLink
         className={className}
         partiallyActive={slug !== 'index'}
-        activeStyle={{ textDecoration: 'underline', color: 'rgb(0, 104, 69)' }}
+        activeStyle={isFrontPage ? undefined : { textDecoration: 'underline' }}
         to={slug === 'index' ? '/' : `/${slug}/`}
     >
-        {title === 'Lauri Lavanti' ? 'Etusivu' : title}
+        {title}
     </InternalLink>
 )
 
 NavLinkComponent.displayName = 'NavLink'
 
-const NavLink = styled(NavLinkComponent)({
-    width: '100%',
-    paddingLeft: sizes[8],
-    marginTop: sizes[6],
-    color: colors.black,
-    ...fontSizes['3xl'],
-
-    ':first-of-type': {
-        marginTop: sizes[0],
+const NavLink = styled(NavLinkComponent)(
+    {
+        color: colors.peach,
     },
-
-    ':hover, :active': {
-        color: colors.greenDarkText,
-    },
-})
+    ({ isFrontPage }) => ({
+        ...(isFrontPage ? fontSizes['3xl'] : fontSizes['2xl']),
+        fontFamily: isFrontPage ? fontFamilies.heading : fontFamilies.sans,
+    })
+)
 
 export default NavLink

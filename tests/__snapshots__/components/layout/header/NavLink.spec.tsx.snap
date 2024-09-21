@@ -16,21 +16,10 @@ exports[`<NavLink /> should render 1`] = `
 }
 
 .c1 {
-  width: 100%;
-  padding-left: 2rem;
-  margin-top: 1.5rem;
-  color: rgb(0, 0, 0);
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.c1 :first-of-type {
-  margin-top: 0px;
-}
-
-.c1 :hover,
-.c1 :active {
-  color: rgb(0, 104, 69);
+  color: rgb(248, 207, 169);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans";
 }
 
 <a
@@ -41,7 +30,7 @@ exports[`<NavLink /> should render 1`] = `
 </a>
 `;
 
-exports[`<NavLink /> should render link to index 1`] = `
+exports[`<NavLink /> should render link to front page 1`] = `
 .c0 {
   color: rgb(90, 94, 0);
   text-decoration: none;
@@ -57,27 +46,16 @@ exports[`<NavLink /> should render link to index 1`] = `
 }
 
 .c1 {
-  width: 100%;
-  padding-left: 2rem;
-  margin-top: 1.5rem;
-  color: rgb(0, 0, 0);
-  font-size: 1.875rem;
+  color: rgb(248, 207, 169);
+  font-size: 1.75rem;
   line-height: 2.25rem;
-}
-
-.c1 :first-of-type {
-  margin-top: 0px;
-}
-
-.c1 :hover,
-.c1 :active {
-  color: rgb(0, 104, 69);
+  font-family: "Krana Fat";
 }
 
 <a
   class="c0 c1"
   href="/"
 >
-  Etusivu
+  Lauri Lavanti
 </a>
 `;

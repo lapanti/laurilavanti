@@ -18,12 +18,12 @@ describe('<NavLink />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render link to index', () => {
-        const indexNav = { ...nav, title: 'Lauri Lavanti', slug: 'index' }
+    it('should render link to front page', () => {
+        const frontPageNav = { ...nav, title: 'Lauri Lavanti', slug: 'index' }
 
-        const { container } = render(<NavLink {...indexNav} />)
+        const { container } = render(<NavLink {...frontPageNav} isFrontPage />)
 
-        expect(screen.getByRole('link', { name: /Etusivu/i })).toHaveAttribute('href', `/`)
+        expect(screen.getByRole('link', { name: frontPageNav.title })).toHaveAttribute('href', `/`)
 
         expect(container.firstChild).toMatchSnapshot()
     })
