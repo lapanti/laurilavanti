@@ -140,94 +140,32 @@ exports[`<Page /> should render about me page 1`] = `
   height: 100%;
 }
 
-.c9 {
-  width: 100%;
-  padding-left: 2rem;
-  margin-top: 1.5rem;
-  color: rgb(0, 0, 0);
-  font-size: 1.875rem;
+.c4 {
+  color: rgb(248, 207, 169);
+  font-size: 1.75rem;
   line-height: 2.25rem;
+  font-family: "Krana Fat";
 }
 
-.c9 :first-of-type {
-  margin-top: 0px;
-}
-
-.c9 :hover,
-.c9 :active {
-  color: rgb(0, 104, 69);
-}
-
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
+.c5 {
+  color: rgb(248, 207, 169);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans";
 }
 
 .c2 {
-  cursor: pointer;
-  height: 3rem;
-  width: 3rem;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.c3 {
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-left-radius: 0.125rem;
-  border-bottom-right-radius: 0.125rem;
-  transition: all;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
-  visibility: visible;
-}
-
-.c4 {
-  height: 2rem;
-  width: 2rem;
-}
-
-.c7 {
-  height: 2rem;
-  width: 2rem;
-}
-
-.c5 {
-  position: absolute;
-  top: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  visibility: hidden;
-  left: 100%;
-}
-
-.c6 {
-  position: fixed;
-  top: 0px;
-  width: 18rem;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background: rgba(255, 255, 255, .9);
-  transition: all;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in;
-  box-shadow: 0 0 #0000,0 0 #0000,0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
-  visibility: hidden;
-  right: -20rem;
-}
-
 .c1 {
+  background-color: rgb(0, 98, 114);
+  color: rgb(248, 207, 169);
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   padding: 0.5rem;
   align-items: center;
   justify-content: space-between;
@@ -329,91 +267,50 @@ exports[`<Page /> should render about me page 1`] = `
     <header
       class="c1"
     >
-      <button
-        aria-label="Avaa valikko"
-        class="c2 c3"
+      <div
+        class="c2"
       >
-        <svg
-          aria-hidden="true"
-          class="c4"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 448 512"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-          />
-        </svg>
-      </button>
-      <button
-        aria-hidden="true"
-        class="c2 c5"
-      />
-      <nav
-        aria-expanded="false"
-        class="c6"
-      >
-        <button
-          aria-label="Sulje valikko"
-          class="c2"
-        >
-          <svg
-            aria-hidden="true"
-            class="c7"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 384 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-            />
-          </svg>
-        </button>
         <a
-          class="c8 c9"
+          class="c3 c4"
+          href="/"
+        >
+          Lauri Lavanti
+        </a>
+      </div>
+      <div
+        class="c2"
+      >
+        <a
+          class="c3 c5"
           href="/minusta/"
         >
           Minusta
         </a>
         <a
-          class="c8 c9"
+          class="c3 c5"
           href="/blogi/"
         >
           Blogi
         </a>
         <a
-          class="c8 c9"
+          class="c3 c5"
           href="/ota-yhteytta/"
         >
           Ota yhteyttä
         </a>
-      </nav>
-      <h2
-        class="c10 c11"
-        id="lauri-lavanti"
-      >
-        Lauri Lavanti
-      </h2>
+      </div>
     </header>
     <main
-      class="c12"
+      class="c6"
     >
       <article
-        class="c13"
+        class="c7"
       >
         <div
-          class="c14 c15"
+          class="c8 c9"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c16"
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c10"
             data-gatsby-image-wrapper=""
             style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >
@@ -463,10 +360,10 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
         </div>
         <div
-          class="c14 c17"
+          class="c8 c11"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c16"
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c10"
             data-gatsby-image-wrapper=""
             style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >
@@ -516,17 +413,17 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
         </div>
         <section
-          class="c18"
+          class="c12"
         >
           <h1
-            class="c19"
+            class="c13"
             itemprop="headline"
           >
             Minusta
           </h1>
         </section>
         <p
-          class="c20 c21"
+          class="c14 c15"
         >
           Olen 
           <span
@@ -1223,94 +1120,32 @@ exports[`<Page /> should render blog page 1`] = `
   height: 100%;
 }
 
-.c9 {
-  width: 100%;
-  padding-left: 2rem;
-  margin-top: 1.5rem;
-  color: rgb(0, 0, 0);
-  font-size: 1.875rem;
+.c4 {
+  color: rgb(248, 207, 169);
+  font-size: 1.75rem;
   line-height: 2.25rem;
+  font-family: "Krana Fat";
 }
 
-.c9 :first-of-type {
-  margin-top: 0px;
-}
-
-.c9 :hover,
-.c9 :active {
-  color: rgb(0, 104, 69);
-}
-
-.c11 {
-  padding: 0.5rem;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-right-radius: 0.125rem;
-  border-bottom-left-radius: 0.125rem;
-  visibility: visible;
+.c5 {
+  color: rgb(248, 207, 169);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans";
 }
 
 .c2 {
-  cursor: pointer;
-  height: 3rem;
-  width: 3rem;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.c3 {
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, .75);
-  border-radius: 0.375rem;
-  border-top-left-radius: 0.125rem;
-  border-bottom-right-radius: 0.125rem;
-  transition: all;
-  transition-duration: 300ms;
-  transition-timing-function: ease-out;
-  visibility: visible;
-}
-
-.c4 {
-  height: 2rem;
-  width: 2rem;
-}
-
-.c7 {
-  height: 2rem;
-  width: 2rem;
-}
-
-.c5 {
-  position: absolute;
-  top: 0px;
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  visibility: hidden;
-  left: 100%;
-}
-
-.c6 {
-  position: fixed;
-  top: 0px;
-  width: 18rem;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background: rgba(255, 255, 255, .9);
-  transition: all;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in;
-  box-shadow: 0 0 #0000,0 0 #0000,0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
-  visibility: hidden;
-  right: -20rem;
-}
-
 .c1 {
+  background-color: rgb(0, 98, 114);
+  color: rgb(248, 207, 169);
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   padding: 0.5rem;
   align-items: center;
   justify-content: space-between;
@@ -1424,91 +1259,50 @@ exports[`<Page /> should render blog page 1`] = `
     <header
       class="c1"
     >
-      <button
-        aria-label="Avaa valikko"
-        class="c2 c3"
+      <div
+        class="c2"
       >
-        <svg
-          aria-hidden="true"
-          class="c4"
-          fill="currentColor"
-          height="1em"
-          stroke="currentColor"
-          stroke-width="0"
-          viewBox="0 0 448 512"
-          width="1em"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-          />
-        </svg>
-      </button>
-      <button
-        aria-hidden="true"
-        class="c2 c5"
-      />
-      <nav
-        aria-expanded="false"
-        class="c6"
-      >
-        <button
-          aria-label="Sulje valikko"
-          class="c2"
-        >
-          <svg
-            aria-hidden="true"
-            class="c7"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 384 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-            />
-          </svg>
-        </button>
         <a
-          class="c8 c9"
+          class="c3 c4"
+          href="/"
+        >
+          Lauri Lavanti
+        </a>
+      </div>
+      <div
+        class="c2"
+      >
+        <a
+          class="c3 c5"
           href="/minusta/"
         >
           Minusta
         </a>
         <a
-          class="c8 c9"
+          class="c3 c5"
           href="/blogi/"
         >
           Blogi
         </a>
         <a
-          class="c8 c9"
+          class="c3 c5"
           href="/ota-yhteytta/"
         >
           Ota yhteyttä
         </a>
-      </nav>
-      <h2
-        class="c10 c11"
-        id="lauri-lavanti"
-      >
-        Lauri Lavanti
-      </h2>
+      </div>
     </header>
     <main
-      class="c12"
+      class="c6"
     >
       <article
-        class="c13"
+        class="c7"
       >
         <div
-          class="c14 c15"
+          class="c8 c9"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c16"
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c10"
             data-gatsby-image-wrapper=""
             style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >

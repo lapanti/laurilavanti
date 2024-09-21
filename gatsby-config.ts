@@ -46,7 +46,7 @@ const config: GatsbyConfig = {
         {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
-                fonts: [`IBM Plex Sans: 300,400,400i,500`, `IBM Plex Mono: 400,400i`, `Signika Negative`],
+                fonts: [`IBM Plex Sans: 300,400,400i,500`, `IBM Plex Mono: 400,400i`],
             },
         },
         'gatsby-plugin-styled-components',
