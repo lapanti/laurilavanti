@@ -159,6 +159,7 @@ exports[`<Page /> should render about me page 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2.5rem;
 }
 
 .c1 {
@@ -166,10 +167,8 @@ exports[`<Page /> should render about me page 1`] = `
   color: rgb(248, 207, 169);
   display: flex;
   flex-direction: row;
-  padding: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
+  height: 3.75rem;
   width: 100%;
   position: fixed;
   z-index: 50;
@@ -240,8 +239,8 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: " main " "footer";
-  grid-template-rows: 1fr 6rem;
+  grid-template-areas: "header" " main " "footer";
+  grid-template-rows: 42px 1fr 6rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
   min-height: 100vh;
@@ -1139,6 +1138,7 @@ exports[`<Page /> should render blog page 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2.5rem;
 }
 
 .c1 {
@@ -1146,10 +1146,8 @@ exports[`<Page /> should render blog page 1`] = `
   color: rgb(248, 207, 169);
   display: flex;
   flex-direction: row;
-  padding: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
+  height: 3.75rem;
   width: 100%;
   position: fixed;
   z-index: 50;
@@ -1220,8 +1218,8 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: " main " "footer";
-  grid-template-rows: 1fr 6rem;
+  grid-template-areas: "header" " main " "footer";
+  grid-template-rows: 42px 1fr 6rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
   min-height: 100vh;
@@ -4402,6 +4400,7 @@ exports[`<Page /> should render contact me page 1`] = `
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2.5rem;
 }
 
 .c1 {
@@ -4409,10 +4408,8 @@ exports[`<Page /> should render contact me page 1`] = `
   color: rgb(248, 207, 169);
   display: flex;
   flex-direction: row;
-  padding: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
+  height: 3.75rem;
   width: 100%;
   position: fixed;
   z-index: 50;
@@ -4483,8 +4480,8 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: " main " "footer";
-  grid-template-rows: 1fr 6rem;
+  grid-template-areas: "header" " main " "footer";
+  grid-template-rows: 42px 1fr 6rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
   min-height: 100vh;
