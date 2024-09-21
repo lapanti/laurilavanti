@@ -3,6 +3,13 @@ import { createGlobalStyle } from 'styled-components'
 import { colors, fontFamilies, sizes } from '../../lib/styles'
 
 const GlobalStyle = createGlobalStyle({
+    '@font-face': {
+        fontFamily: 'Krana Fat',
+        fontWeight: 1000,
+        fontDisplay: 'swap',
+        fontStyle: 'normal',
+        src: 'url(/fonts/Krana_Fat_B.otf) format("opentype")',
+    },
     '*, ::before, ::after': {
         boxSizing: 'border-box',
         borderWidth: sizes[0],
