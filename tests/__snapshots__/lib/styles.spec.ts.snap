@@ -152,6 +152,7 @@ exports[`styles lib grid variables gridAreas should match snapshot 1`] = `
 
 exports[`styles lib grid variables gridTemplateAreasLayout should match snapshot 1`] = `
 "
+    "header"
     " main "
     "footer"
 "
@@ -161,7 +162,7 @@ exports[`styles lib grid variables gridTemplateColumns should match snapshot 1`]
 
 exports[`styles lib grid variables gridTemplateColumnsArticle should match snapshot 1`] = `"1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr"`;
 
-exports[`styles lib grid variables gridTemplateRowsLayout should match snapshot 1`] = `"1fr 6rem"`;
+exports[`styles lib grid variables gridTemplateRowsLayout should match snapshot 1`] = `"42px 1fr 6rem"`;
 
 exports[`styles lib spacing sizes should match snapshot 1`] = `
 {
@@ -173,6 +174,7 @@ exports[`styles lib spacing sizes should match snapshot 1`] = `
   "11": "2.75rem",
   "12": "3rem",
   "14": "3.5rem",
+  "15": "3.75rem",
   "16": "4rem",
   "164": "41rem",
   "18": "4.5rem",
