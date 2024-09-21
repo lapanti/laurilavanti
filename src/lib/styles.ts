@@ -87,7 +87,7 @@ export const gridAreas = {
 export const gridTemplateAreasLayout = `
     " main "
     "footer"
-` as const
+`
 export const gridTemplateRowsLayout = '1fr 6rem' as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle = '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr' as const
@@ -145,7 +145,7 @@ export const fontSizes = {
     l: { fontSize: '1.125rem', lineHeight: '1.75rem' } as const,
     xl: { fontSize: '1.25rem', lineHeight: '1.75rem' } as const,
     ['2xl']: { fontSize: '1.5rem', lineHeight: '2rem' } as const,
-    ['3xl']: { fontSize: '1.875rem', lineHeight: '2.25rem' } as const,
+    ['3xl']: { fontSize: '1.75rem', lineHeight: '2.25rem' } as const,
     ['4xl']: { fontSize: '2.25rem', lineHeight: '2.5rem' } as const,
     ['5xl']: { fontSize: '3rem', lineHeight: '1' } as const,
     ['6xl']: { fontSize: '3.75rem', lineHeight: '1' } as const,
@@ -157,7 +157,7 @@ export const fontSizes = {
 export const fontFamilies = {
     sans: `"IBM Plex Sans"` as const,
     mono: `"IBM Plex Mono"` as const,
-    heading: `"Signika Negative"` as const,
+    heading: `"Krana Fat"` as const,
 } as const
 
 export const fontWeights = {
