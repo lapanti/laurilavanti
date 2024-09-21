@@ -1,13 +1,67 @@
 import type { MainNav } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import { Squash as Hamburger } from 'hamburger-react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { breakpoints, colors, sizes, zIndices } from '../../lib/styles'
 import NavLink from './header/NavLink'
 
-/** Half of header, only visible in desktop */
+const HEADER_SIZE = sizes[15]
+const ANIMATION_DURATION = 0.3
+const ANIMATION_EASING = 'ease-in-out'
+
+const HamburgerContainer = styled.div({
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    marginRight: sizes[7],
+    [breakpoints[1200].min]: {
+        display: 'none',
+    },
+})
+
+const MobileMenu = styled.div<{ $isOpen: boolean }>(
+    {
+        background: colors.evening,
+        position: 'absolute',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: sizes[10],
+        top: HEADER_SIZE,
+        width: '100vw',
+        overflow: 'hidden',
+
+        transition: `height ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
+        '@media (prefers-reduced-motion)': {
+            transition: undefined,
+        },
+
+        /** Hide the whole thing on desktop */
+        [breakpoints[1200].min]: {
+            display: 'none',
+        },
+
+        [NavLink]: {
+            transition: `opacity ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
+            '@media (prefers-reduced-motion)': {
+                transition: undefined,
+            },
+        },
+    },
+    ({ $isOpen }) => ({
+        height: $isOpen ? `calc(100vh - ${HEADER_SIZE})` : '0',
+        [NavLink]: {
+            opacity: $isOpen ? 100 : 0,
+        },
+    })
+)
+
+/** Half of desktop header */
 const Half = styled.div({
     display: 'none',
     [breakpoints[1200].min]: {
@@ -36,8 +90,28 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
         }
     `)
 
+    const [isMobileOpen, setIsMobileOpen] = useState(false)
+
     return (
         <header className={className}>
+            <HamburgerContainer>
+                <Hamburger
+                    toggled={isMobileOpen}
+                    easing={ANIMATION_EASING}
+                    duration={ANIMATION_DURATION}
+                    size={40}
+                    distance="sm"
+                    color={colors.peach}
+                    label={isMobileOpen ? 'Sulje valikko' : 'Avaa valikko'}
+                    toggle={setIsMobileOpen}
+                />
+            </HamburgerContainer>
+            <MobileMenu $isOpen={isMobileOpen}>
+                <NavLink title="Lauri Lavanti" slug="index" isFrontPage />
+                {data.contentfulMainNav.links.map((nav) => (
+                    <NavLink {...nav} key={nav.slug} />
+                ))}
+            </MobileMenu>
             <Half>
                 <NavLink title="Lauri Lavanti" slug="index" isFrontPage />
             </Half>
@@ -54,11 +128,10 @@ HeaderComponent.displayName = 'Header'
 
 const Header = styled(HeaderComponent)({
     backgroundColor: colors.evening,
-    color: colors.peach,
     display: 'flex',
     flexDirection: 'row',
     boxSizing: 'border-box',
-    height: sizes[15],
+    height: HEADER_SIZE,
     width: '100%',
     position: 'fixed',
     zIndex: zIndices[50],

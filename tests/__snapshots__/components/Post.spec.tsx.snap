@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Post /> should render basic post 1`] = `
-.c31 {
+.c34 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 700;
@@ -9,7 +9,7 @@ exports[`<Post /> should render basic post 1`] = `
   line-height: 2.5rem;
 }
 
-.c3 {
+.c4 {
   color: rgb(90, 94, 0);
   text-decoration: none;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -17,13 +17,13 @@ exports[`<Post /> should render basic post 1`] = `
   transition-duration: 150ms;
 }
 
-.c3 :hover,
-.c3 :active,
-.c3 :focus {
+.c4 :hover,
+.c4 :active,
+.c4 :focus {
   text-decoration: underline;
 }
 
-.c21 {
+.c24 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -32,38 +32,16 @@ exports[`<Post /> should render basic post 1`] = `
   margin-bottom: 1rem;
 }
 
-.c16 {
+.c19 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c17 {
+.c20 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 1rem;
-}
-
-.c17 :last-child {
-  margin-right: 0px;
-}
-
-.c18 {
-  height: 1.125rem;
-  widht: 1.125rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
-
-.c19 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.c20 {
   margin-right: 1rem;
 }
 
@@ -71,31 +49,53 @@ exports[`<Post /> should render basic post 1`] = `
   margin-right: 0px;
 }
 
-.c14 {
+.c21 {
+  height: 1.125rem;
+  widht: 1.125rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.c22 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.c23 {
+  margin-right: 1rem;
+}
+
+.c23 :last-child {
+  margin-right: 0px;
+}
+
+.c17 {
   display: flex;
   flex-direction: column;
 }
 
-.c34 {
+.c37 {
   color: rgb(235, 235, 236);
 }
 
-.c35 {
+.c38 {
   width: 100%;
   display: flex;
   height: 16rem;
   object-fit: cover;
 }
 
-.c37 {
+.c40 {
   display: flex!important;
 }
 
-.c36 {
+.c39 {
   display: none!important;
 }
 
-.c38 {
+.c41 {
   display: flex;
   align-items: flex-end;
   margin-bottom: 1rem;
@@ -109,39 +109,39 @@ exports[`<Post /> should render basic post 1`] = `
   position: relative;
 }
 
-.c39 {
+.c42 {
   grid-column-start: auto;
 }
 
-.c40 {
+.c43 {
   margin-top: 0.25rem;
 }
 
-.c33 {
+.c36 {
   grid-column-start: 3;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.c32 {
+.c35 {
   grid-column-start: 3;
   margin-bottom: 1rem;
 }
 
-.c23 {
+.c26 {
   color: rgb(90, 94, 0);
   text-decoration: underline;
 }
 
-.c44 {
+.c47 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c44 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -150,40 +150,13 @@ exports[`<Post /> should render basic post 1`] = `
   transition-duration: 150ms;
 }
 
-.c43 {
-  padding: 0px;
-}
-
-.c43 :hover,
-.c43 :focus {
-  fill: #4267B2;
-}
-
-.c45 {
-  padding: 0px;
-}
-
-.c45 :hover,
-.c45 :focus {
-  fill: rgb(0, 0, 0);
-}
-
 .c46 {
   padding: 0px;
 }
 
 .c46 :hover,
 .c46 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: #0E76A8;
+  fill: #4267B2;
 }
 
 .c48 {
@@ -192,7 +165,7 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c48 :hover,
 .c48 :focus {
-  fill: #6363ff;
+  fill: rgb(0, 0, 0);
 }
 
 .c49 {
@@ -201,10 +174,37 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c50 {
+  padding: 0px;
+}
+
+.c50 :hover,
+.c50 :focus {
+  fill: #0E76A8;
+}
+
+.c51 {
+  padding: 0px;
+}
+
+.c51 :hover,
+.c51 :focus {
+  fill: #6363ff;
+}
+
+.c52 {
+  padding: 0px;
+}
+
+.c52 :hover,
+.c52 :focus {
   fill: #0060df;
 }
 
-.c42 {
+.c45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -212,7 +212,7 @@ exports[`<Post /> should render basic post 1`] = `
   gap: 1.5rem;
 }
 
-.c41 {
+.c44 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -223,14 +223,14 @@ exports[`<Post /> should render basic post 1`] = `
   height: 100%;
 }
 
-.c4 {
+.c6 {
   color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
-.c5 {
+.c7 {
   color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
@@ -238,12 +238,42 @@ exports[`<Post /> should render basic post 1`] = `
 }
 
 .c2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1.75rem;
+}
+
+.c3 {
+  background: rgb(0, 98, 114);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  top: 3.75rem;
+  width: 100vw;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  height: 0;
+}
+
+.c3 .c5 {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.c3 .c5 {
+  opacity: 0;
+}
+
+.c8 {
   display: none;
 }
 
 .c1 {
   background-color: rgb(0, 98, 114);
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -254,7 +284,7 @@ exports[`<Post /> should render basic post 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c13 {
   margin-left: auto;
   margin-right: auto;
   height: 24rem!important;
@@ -264,13 +294,13 @@ exports[`<Post /> should render basic post 1`] = `
   overflow: hidden;
 }
 
-.c8 {
+.c11 {
   display: flex;
   grid-column: 1/-1;
   position: relative;
 }
 
-.c13 {
+.c16 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 900;
@@ -282,7 +312,7 @@ exports[`<Post /> should render basic post 1`] = `
   line-height: 1;
 }
 
-.c12 {
+.c15 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -295,24 +325,24 @@ exports[`<Post /> should render basic post 1`] = `
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-.c6 {
+.c9 {
   grid-area: main;
 }
 
-.c7 {
+.c10 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c11 {
+.c14 {
   display: flex!important;
 }
 
-.c9 {
+.c12 {
   display: none!important;
 }
 
-.c22 {
+.c25 {
   grid-column-start: 3;
 }
 
@@ -326,46 +356,46 @@ exports[`<Post /> should render basic post 1`] = `
   position: relative;
 }
 
-.c25 {
+.c28 {
   margin-right: 0.5rem;
 }
 
-.c26 {
+.c29 {
   margin-right: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.c27 {
+.c30 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #4267B2;
 }
 
-.c28 {
+.c31 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: rgb(0, 0, 0);
 }
 
-.c29 {
+.c32 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #0060df;
 }
 
-.c30 {
+.c33 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #0E76A8;
 }
 
-.c24 {
+.c27 {
   grid-column-start: 3;
   display: flex;
   flex-direction: row;
@@ -373,25 +403,37 @@ exports[`<Post /> should render basic post 1`] = `
   margin-bottom: 2rem;
 }
 
-.c15 {
+.c18 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
 @media (min-width: 479px) {
-  .c37 {
+  .c40 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c36 {
+  .c39 {
     display: flex!important;
   }
 }
 
 @media (min-width: 1200px) {
   .c2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c3 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c8 {
     flex: 1;
     display: flex;
     align-items: center;
@@ -401,13 +443,13 @@ exports[`<Post /> should render basic post 1`] = `
 }
 
 @media (min-width: 479px) {
-  .c11 {
+  .c14 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c9 {
+  .c12 {
     display: flex!important;
   }
 }
@@ -421,30 +463,92 @@ exports[`<Post /> should render basic post 1`] = `
     <div
       class="c2"
     >
+      <div
+        aria-expanded="false"
+        aria-label="Avaa valikko"
+        class="hamburger-react"
+        role="button"
+        style="cursor: pointer; height: 48px; position: relative; transition: 0.3s ease-in-out; user-select: none; width: 48px; outline: none;"
+        tabindex="0"
+      >
+        <div
+          style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 12px; transition: 0.15s ease-in-out 0s; transform: none;"
+          />
+        </div>
+        <div
+          style="transition: 0.15s ease-in-out; opacity: 1;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 23px; transition: 0.15s ease-in-out;"
+          />
+        </div>
+        <div
+          style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 34px; transition: 0.15s ease-in-out 0s; transform: none;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c3"
+    >
       <a
-        class="c3 c4"
+        class="c4 c5 c6"
+        href="/"
+      >
+        Lauri Lavanti
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/minusta/"
+      >
+        Minusta
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/blogi/"
+      >
+        Blogi
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/ota-yhteytta/"
+      >
+        Ota yhteyttä
+      </a>
+    </div>
+    <div
+      class="c8"
+    >
+      <a
+        class="c4 c5 c6"
         href="/"
       >
         Lauri Lavanti
       </a>
     </div>
     <div
-      class="c2"
+      class="c8"
     >
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -452,16 +556,16 @@ exports[`<Post /> should render basic post 1`] = `
     </div>
   </header>
   <main
-    class="c6"
+    class="c9"
   >
     <article
-      class="c7"
+      class="c10"
     >
       <div
-        class="c8 c9"
+        class="c11 c12"
       >
         <div
-          class="gatsby-image-wrapper c10"
+          class="gatsby-image-wrapper c13"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
         >
@@ -500,10 +604,10 @@ exports[`<Post /> should render basic post 1`] = `
         </div>
       </div>
       <div
-        class="c8 c11"
+        class="c11 c14"
       >
         <div
-          class="gatsby-image-wrapper c10"
+          class="gatsby-image-wrapper c13"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; width: 478px; height: 478px;"
         >
@@ -542,10 +646,10 @@ exports[`<Post /> should render basic post 1`] = `
         </div>
       </div>
       <section
-        class="c12"
+        class="c15"
       >
         <h1
-          class="c13"
+          class="c16"
           itemprop="headline"
         >
           Terveys kuuluu kaikille
@@ -553,16 +657,16 @@ exports[`<Post /> should render basic post 1`] = `
       </section>
       <aside
         aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-        class="c14 c15"
+        class="c17 c18"
       >
         <div
-          class="c16"
+          class="c19"
         >
           <span
-            class="c17"
+            class="c20"
           >
             <svg
-              class="c18"
+              class="c21"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -583,13 +687,13 @@ exports[`<Post /> should render basic post 1`] = `
           </span>
         </div>
         <ul
-          class="c19"
+          class="c22"
         >
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -597,10 +701,10 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
           </li>
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -608,10 +712,10 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
           </li>
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -621,11 +725,11 @@ exports[`<Post /> should render basic post 1`] = `
         </ul>
       </aside>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Yksi käytännön asia mistä tulevat aluevaltuustot päättävät, on 
         <a
-          class="c23"
+          class="c26"
           href="https://stm.fi/asiakasmaksulain-uudistus"
           rel=" noopener noreferrer"
           target="_blank"
@@ -635,11 +739,11 @@ exports[`<Post /> should render basic post 1`] = `
         . Yleensä asiakasmaksuja käytetäänkin talouden sopeuttamiseen, sillä sitä kautta saadaan helposti lisää tuloja palvelun järjestäjälle. Ne ovat kuitenkin myös eriarvoistavia ja nostavat pitkässä juoksussa menoja.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Maksut eivät yleensä julkisella puolella ole kovin suuria, jos niitä vertaa yksityiseen terveydenhuoltoon. Esimerkiksi 
         <a
-          class="c23"
+          class="c26"
           href="https://stm.fi/terveydenhuollon-maksut"
           rel=" noopener noreferrer"
           target="_blank"
@@ -648,7 +752,7 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
         , kun taas yksityisellä lääkärikäynnin hinta 
         <a
-          class="c23"
+          class="c26"
           href="https://www.pihlajalinna.fi/yleista/hinnastot/laakareiden-vastaanottojen-hinnasto"
           rel=" noopener noreferrer"
           target="_blank"
@@ -657,7 +761,7 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
          helposti 
         <a
-          class="c23"
+          class="c26"
           href="https://www.mehilainen.fi/tietoa-asiakkaalle/hinnastot"
           rel=" noopener noreferrer"
           target="_blank"
@@ -666,7 +770,7 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
         -[
         <a
-          class="c23"
+          class="c26"
           href="https://www.terveystalo.com/fi/Palvelut/Hinnasto/"
           rel=" noopener noreferrer"
           target="_blank"
@@ -675,7 +779,7 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
          eurosta. Palvelumaksuissa pitää kuitenkin ottaa huomioon se, että erityisen paljon 
         <a
-          class="c23"
+          class="c26"
           href="https://www.hs.fi/politiikka/art-2000008493046.html"
           rel=" noopener noreferrer"
           target="_blank"
@@ -684,7 +788,7 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
         . Esimerkiksi 
         <a
-          class="c23"
+          class="c26"
           href="https://www.is.fi/taloussanomat/art-2000008520346.html"
           rel=" noopener noreferrer"
           target="_blank"
@@ -694,17 +798,17 @@ exports[`<Post /> should render basic post 1`] = `
         . Jokainen käynti, joka jää väliin taloudellisista syistä, johtaa pahimmillaan huomattavasti kalliimpaan erikoissairaanhoidon tarpeeseen. Lisäksi jokaiseen maksuun sisältyy oikeus oikaisuvaatimukseen, joita sitten Perusturvajaostossa käsittelemme usean hengen voimin.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Pidetään huolta meistä kaikista!
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         <i>
           Julkaistu Kirkkonummen Sanomissa 20.1.2022.
@@ -712,22 +816,22 @@ exports[`<Post /> should render basic post 1`] = `
       </p>
       <aside
         aria-label="Kirjoituksen Terveys kuuluu kaikille sosiaalisen median jakolinkit"
-        class="c24"
+        class="c27"
       >
         <span
-          class="c25"
+          class="c28"
         >
           Jaa:
         </span>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Facebookissa"
         >
           <svg
-            class="c27"
+            class="c30"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -742,14 +846,14 @@ exports[`<Post /> should render basic post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://threads.net/intent/post?text=Terveys%20kuuluu%20kaikille%20https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Threadsissä"
         >
           <svg
-            class="c28"
+            class="c31"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -764,14 +868,14 @@ exports[`<Post /> should render basic post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://bsky.app/intent/compose?text=Terveys%20kuuluu%20kaikille%20https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Blueskyssa"
         >
           <svg
-            class="c29"
+            class="c32"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -786,14 +890,14 @@ exports[`<Post /> should render basic post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://www.linkedin.com/sharing/share-offsite/?url=https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa LinkedInissä"
         >
           <svg
-            class="c30"
+            class="c33"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -809,16 +913,16 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </aside>
       <h2
-        class="c31"
+        class="c34"
         id="muita-kirjoituksia"
       >
         Muita kirjoituksia
       </h2>
       <hr
-        class="c32"
+        class="c35"
       />
       <ul
-        class="c33"
+        class="c36"
       >
         <li
           class=""
@@ -829,12 +933,12 @@ exports[`<Post /> should render basic post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -872,7 +976,7 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -910,10 +1014,10 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="sote-on-hyvinvointiyhteiskunnan-kulmakivi"
                   itemprop="headline"
                 >
@@ -923,16 +1027,16 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Sote on hyvinvointiyhteiskunnan kulmakivi meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -953,13 +1057,13 @@ exports[`<Post /> should render basic post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -967,10 +1071,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -978,10 +1082,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -991,13 +1095,13 @@ exports[`<Post /> should render basic post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
@@ -1015,12 +1119,12 @@ exports[`<Post /> should render basic post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1058,7 +1162,7 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -1096,10 +1200,10 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="mita-jos-terveyskeskusta-ei-olisikaan?"
                   itemprop="headline"
                 >
@@ -1109,16 +1213,16 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1139,13 +1243,13 @@ exports[`<Post /> should render basic post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -1153,10 +1257,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1164,10 +1268,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -1177,13 +1281,13 @@ exports[`<Post /> should render basic post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
@@ -1201,12 +1305,12 @@ exports[`<Post /> should render basic post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/ehdolle-aluevaaleihin/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -1244,7 +1348,7 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -1282,10 +1386,10 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="ehdolle-aluevaaleihin"
                   itemprop="headline"
                 >
@@ -1295,16 +1399,16 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1325,13 +1429,13 @@ exports[`<Post /> should render basic post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -1339,10 +1443,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1350,10 +1454,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -1363,13 +1467,13 @@ exports[`<Post /> should render basic post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
@@ -1382,16 +1486,16 @@ exports[`<Post /> should render basic post 1`] = `
     </article>
   </main>
   <footer
-    class="c41"
+    class="c44"
   >
     <ul
-      class="c42"
+      class="c45"
     >
       <li
-        class="c43"
+        class="c46"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1413,10 +1517,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c45"
+        class="c48"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1438,10 +1542,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c46"
+        class="c49"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1463,10 +1567,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c47"
+        class="c50"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1488,10 +1592,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c48"
+        class="c51"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1513,10 +1617,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c52"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1620,7 +1724,7 @@ exports[`<Post /> should render basic post 1`] = `
 `;
 
 exports[`<Post /> should render oldest post 1`] = `
-.c31 {
+.c34 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 700;
@@ -1628,7 +1732,7 @@ exports[`<Post /> should render oldest post 1`] = `
   line-height: 2.5rem;
 }
 
-.c3 {
+.c4 {
   color: rgb(90, 94, 0);
   text-decoration: none;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1636,13 +1740,13 @@ exports[`<Post /> should render oldest post 1`] = `
   transition-duration: 150ms;
 }
 
-.c3 :hover,
-.c3 :active,
-.c3 :focus {
+.c4 :hover,
+.c4 :active,
+.c4 :focus {
   text-decoration: underline;
 }
 
-.c21 {
+.c24 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -1651,38 +1755,16 @@ exports[`<Post /> should render oldest post 1`] = `
   margin-bottom: 1rem;
 }
 
-.c16 {
+.c19 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c17 {
+.c20 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 1rem;
-}
-
-.c17 :last-child {
-  margin-right: 0px;
-}
-
-.c18 {
-  height: 1.125rem;
-  widht: 1.125rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
-
-.c19 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.c20 {
   margin-right: 1rem;
 }
 
@@ -1690,31 +1772,53 @@ exports[`<Post /> should render oldest post 1`] = `
   margin-right: 0px;
 }
 
-.c14 {
+.c21 {
+  height: 1.125rem;
+  widht: 1.125rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.c22 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.c23 {
+  margin-right: 1rem;
+}
+
+.c23 :last-child {
+  margin-right: 0px;
+}
+
+.c17 {
   display: flex;
   flex-direction: column;
 }
 
-.c34 {
+.c37 {
   color: rgb(235, 235, 236);
 }
 
-.c35 {
+.c38 {
   width: 100%;
   display: flex;
   height: 16rem;
   object-fit: cover;
 }
 
-.c37 {
+.c40 {
   display: flex!important;
 }
 
-.c36 {
+.c39 {
   display: none!important;
 }
 
-.c38 {
+.c41 {
   display: flex;
   align-items: flex-end;
   margin-bottom: 1rem;
@@ -1728,39 +1832,39 @@ exports[`<Post /> should render oldest post 1`] = `
   position: relative;
 }
 
-.c39 {
+.c42 {
   grid-column-start: auto;
 }
 
-.c40 {
+.c43 {
   margin-top: 0.25rem;
 }
 
-.c33 {
+.c36 {
   grid-column-start: 3;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.c32 {
+.c35 {
   grid-column-start: 3;
   margin-bottom: 1rem;
 }
 
-.c23 {
+.c26 {
   color: rgb(90, 94, 0);
   text-decoration: underline;
 }
 
-.c44 {
+.c47 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c44 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1769,40 +1873,13 @@ exports[`<Post /> should render oldest post 1`] = `
   transition-duration: 150ms;
 }
 
-.c43 {
-  padding: 0px;
-}
-
-.c43 :hover,
-.c43 :focus {
-  fill: #4267B2;
-}
-
-.c45 {
-  padding: 0px;
-}
-
-.c45 :hover,
-.c45 :focus {
-  fill: rgb(0, 0, 0);
-}
-
 .c46 {
   padding: 0px;
 }
 
 .c46 :hover,
 .c46 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: #0E76A8;
+  fill: #4267B2;
 }
 
 .c48 {
@@ -1811,7 +1888,7 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c48 :hover,
 .c48 :focus {
-  fill: #6363ff;
+  fill: rgb(0, 0, 0);
 }
 
 .c49 {
@@ -1820,10 +1897,37 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c50 {
+  padding: 0px;
+}
+
+.c50 :hover,
+.c50 :focus {
+  fill: #0E76A8;
+}
+
+.c51 {
+  padding: 0px;
+}
+
+.c51 :hover,
+.c51 :focus {
+  fill: #6363ff;
+}
+
+.c52 {
+  padding: 0px;
+}
+
+.c52 :hover,
+.c52 :focus {
   fill: #0060df;
 }
 
-.c42 {
+.c45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1831,7 +1935,7 @@ exports[`<Post /> should render oldest post 1`] = `
   gap: 1.5rem;
 }
 
-.c41 {
+.c44 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -1842,14 +1946,14 @@ exports[`<Post /> should render oldest post 1`] = `
   height: 100%;
 }
 
-.c4 {
+.c6 {
   color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
-.c5 {
+.c7 {
   color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1857,12 +1961,42 @@ exports[`<Post /> should render oldest post 1`] = `
 }
 
 .c2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1.75rem;
+}
+
+.c3 {
+  background: rgb(0, 98, 114);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  top: 3.75rem;
+  width: 100vw;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  height: 0;
+}
+
+.c3 .c5 {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.c3 .c5 {
+  opacity: 0;
+}
+
+.c8 {
   display: none;
 }
 
 .c1 {
   background-color: rgb(0, 98, 114);
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -1873,7 +2007,7 @@ exports[`<Post /> should render oldest post 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c13 {
   margin-left: auto;
   margin-right: auto;
   height: 24rem!important;
@@ -1883,13 +2017,13 @@ exports[`<Post /> should render oldest post 1`] = `
   overflow: hidden;
 }
 
-.c8 {
+.c11 {
   display: flex;
   grid-column: 1/-1;
   position: relative;
 }
 
-.c13 {
+.c16 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 900;
@@ -1901,7 +2035,7 @@ exports[`<Post /> should render oldest post 1`] = `
   line-height: 1;
 }
 
-.c12 {
+.c15 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -1914,24 +2048,24 @@ exports[`<Post /> should render oldest post 1`] = `
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-.c6 {
+.c9 {
   grid-area: main;
 }
 
-.c7 {
+.c10 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c11 {
+.c14 {
   display: flex!important;
 }
 
-.c9 {
+.c12 {
   display: none!important;
 }
 
-.c22 {
+.c25 {
   grid-column-start: 3;
 }
 
@@ -1945,46 +2079,46 @@ exports[`<Post /> should render oldest post 1`] = `
   position: relative;
 }
 
-.c25 {
+.c28 {
   margin-right: 0.5rem;
 }
 
-.c26 {
+.c29 {
   margin-right: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.c27 {
+.c30 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #4267B2;
 }
 
-.c28 {
+.c31 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: rgb(0, 0, 0);
 }
 
-.c29 {
+.c32 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #0060df;
 }
 
-.c30 {
+.c33 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #0E76A8;
 }
 
-.c24 {
+.c27 {
   grid-column-start: 3;
   display: flex;
   flex-direction: row;
@@ -1992,25 +2126,37 @@ exports[`<Post /> should render oldest post 1`] = `
   margin-bottom: 2rem;
 }
 
-.c15 {
+.c18 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
 @media (min-width: 479px) {
-  .c37 {
+  .c40 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c36 {
+  .c39 {
     display: flex!important;
   }
 }
 
 @media (min-width: 1200px) {
   .c2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c3 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c8 {
     flex: 1;
     display: flex;
     align-items: center;
@@ -2020,13 +2166,13 @@ exports[`<Post /> should render oldest post 1`] = `
 }
 
 @media (min-width: 479px) {
-  .c11 {
+  .c14 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c9 {
+  .c12 {
     display: flex!important;
   }
 }
@@ -2040,30 +2186,92 @@ exports[`<Post /> should render oldest post 1`] = `
     <div
       class="c2"
     >
+      <div
+        aria-expanded="false"
+        aria-label="Avaa valikko"
+        class="hamburger-react"
+        role="button"
+        style="cursor: pointer; height: 48px; position: relative; transition: 0.3s ease-in-out; user-select: none; width: 48px; outline: none;"
+        tabindex="0"
+      >
+        <div
+          style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 12px; transition: 0.15s ease-in-out 0s; transform: none;"
+          />
+        </div>
+        <div
+          style="transition: 0.15s ease-in-out; opacity: 1;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 23px; transition: 0.15s ease-in-out;"
+          />
+        </div>
+        <div
+          style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 34px; transition: 0.15s ease-in-out 0s; transform: none;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c3"
+    >
       <a
-        class="c3 c4"
+        class="c4 c5 c6"
+        href="/"
+      >
+        Lauri Lavanti
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/minusta/"
+      >
+        Minusta
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/blogi/"
+      >
+        Blogi
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/ota-yhteytta/"
+      >
+        Ota yhteyttä
+      </a>
+    </div>
+    <div
+      class="c8"
+    >
+      <a
+        class="c4 c5 c6"
         href="/"
       >
         Lauri Lavanti
       </a>
     </div>
     <div
-      class="c2"
+      class="c8"
     >
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -2071,16 +2279,16 @@ exports[`<Post /> should render oldest post 1`] = `
     </div>
   </header>
   <main
-    class="c6"
+    class="c9"
   >
     <article
-      class="c7"
+      class="c10"
     >
       <div
-        class="c8 c9"
+        class="c11 c12"
       >
         <div
-          class="gatsby-image-wrapper c10"
+          class="gatsby-image-wrapper c13"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
         >
@@ -2119,10 +2327,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </div>
       </div>
       <div
-        class="c8 c11"
+        class="c11 c14"
       >
         <div
-          class="gatsby-image-wrapper c10"
+          class="gatsby-image-wrapper c13"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; width: 478px; height: 478px;"
         >
@@ -2161,10 +2369,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </div>
       </div>
       <section
-        class="c12"
+        class="c15"
       >
         <h1
-          class="c13"
+          class="c16"
           itemprop="headline"
         >
           Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
@@ -2172,16 +2380,16 @@ exports[`<Post /> should render oldest post 1`] = `
       </section>
       <aside
         aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
-        class="c14 c15"
+        class="c17 c18"
       >
         <div
-          class="c16"
+          class="c19"
         >
           <span
-            class="c17"
+            class="c20"
           >
             <svg
-              class="c18"
+              class="c21"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -2202,13 +2410,13 @@ exports[`<Post /> should render oldest post 1`] = `
           </span>
         </div>
         <ul
-          class="c19"
+          class="c22"
         >
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -2216,10 +2424,10 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
           </li>
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/varhaiskasvatus/"
             >
               #
@@ -2229,11 +2437,11 @@ exports[`<Post /> should render oldest post 1`] = `
         </ul>
       </aside>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Joulun alla Kirkkonummen kunnanvaltuusto päätti 
         <a
-          class="c23"
+          class="c26"
           href="https://www.kirkkonummi.fi/kotihoidon-tuen-kuntalisa-182019-alkaen"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2242,7 +2450,7 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
          kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa. Vertailuna esimerkiksi naapurikaupungissa Espoossa maksetaan 
         <a
-          class="c23"
+          class="c26"
           href="https://www.espoo.fi/fi-FI/Kasvatus_ja_opetus/Varhaiskasvatus/Kotona_hoitaminen/Kotihoidon_tuki"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2252,11 +2460,11 @@ exports[`<Post /> should render oldest post 1`] = `
         .
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Kunnan budjetissa tällainen kustannus on erittäin pieni osa, mutta lapsiperheille kyseessä voi olla ero sen välillä, voidaanko lasta pitää kotona, vai pitääkö lapsi viedä päivähoitoon. Mikäli lapsi joudutaan kuntalisän poiston jälkeen laittamaan täysipäiväisesti päiväkotiin, maksaa se kunnalle 
         <a
-          class="c23"
+          class="c26"
           href="https://www.kirkkonummi.fi/library/files/5c923621c91058d1e40005b4/Kn_s__nt_kirja_svl__1.8.2019.pdf#page=9"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2266,11 +2474,11 @@ exports[`<Post /> should render oldest post 1`] = `
          (palvelusetelin maksimihinta vuonna 2019, mitä maksetaan yksityisessä päivähoidossa olevasta lapsesta), vanhemmat joutuvat maksamaan lisäksi 288 euroa kuukaudessa päivähoidosta.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Kyllähän kunta saa tietenkin enemmän verotuloja, kun molemmat vanhemmat menevät takaisin työelämään. Nimittäin noin 620,15 euroa, kun suomalaisen mediaanipalkka vuonna 2019 oli 
         <a
-          class="c23"
+          class="c26"
           href="https://www.tilastokeskus.fi/tup/suoluk/suoluk_palkat.html"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2279,7 +2487,7 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
          tilastokeskuksen mukaan ja Kirkkonummen kunnallisvero on 
         <a
-          class="c23"
+          class="c26"
           href="https://www.kirkkonummi.fi/tietoa-taloudesta"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2289,11 +2497,11 @@ exports[`<Post /> should render oldest post 1`] = `
         . Taloudellisesti tästä siis ei hyödy kunta, eikä välttämättä perheen vanhemmatkaan.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Entäs sitten lapsi ja perhe? Vanhempainvapaa loppuu kun lapsi on 
         <a
-          class="c23"
+          class="c26"
           href="https://www.kela.fi/vanhempainraha"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2302,7 +2510,7 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
         , jolloin suurin osa vauvoista 
         <a
-          class="c23"
+          class="c26"
           href="https://www.mll.fi/vanhemmille/lapsen-kasvu-ja-kehitys/0-1-v/vauvan-liikunnallinen-kehitys/"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2311,7 +2519,7 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
         , eikä 
         <a
-          class="c23"
+          class="c26"
           href="https://www.mll.fi/vanhemmille/lapsen-kasvu-ja-kehitys/0-1-v/vauvan-sosiaalinen-kehitys/"
           rel=" noopener noreferrer"
           target="_blank"
@@ -2321,26 +2529,26 @@ exports[`<Post /> should render oldest post 1`] = `
         . Päiväkodissa joudutaan siis antamaan erityistä huomiota pienokaiselle, vanhemmat eivät pääse seuraamaan ja nauttimaan lapsen kehityksestä. Lapsellakaan ei todennäköisesti ole kovin kivaa, sillä tuossa iässä he myös vierastavat kovasti eivätkä kaipaa ikäistään leikkiseuraa.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Pidetään Kirkkonummi lapsille ja lapsiperheille ystävällisenä kuntana ja palautetaan kotihoidon tuen kuntalisä!
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         <i>
           Julkaistu Kirkkonummen Sanomissa 20.1.2021.
         </i>
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         <i>
           Korjattu 4.2.2021 palvelusetelin maksimihinta kuukaudessa 862 eurosta 1 293 euroon.
         </i>
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         <i>
           Korjattu 14.2.2021 vanhempainvapaan kesto.
@@ -2351,22 +2559,22 @@ exports[`<Post /> should render oldest post 1`] = `
       </p>
       <aside
         aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys sosiaalisen median jakolinkit"
-        class="c24"
+        class="c27"
       >
         <span
-          class="c25"
+          class="c28"
         >
           Jaa:
         </span>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Facebookissa"
         >
           <svg
-            class="c27"
+            class="c30"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2381,14 +2589,14 @@ exports[`<Post /> should render oldest post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://threads.net/intent/post?text=Kotihoidon%20tuen%20kuntalis%C3%A4%20-%20pieni%20kustannus,%20suuri%20merkitys%20https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Threadsissä"
         >
           <svg
-            class="c28"
+            class="c31"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2403,14 +2611,14 @@ exports[`<Post /> should render oldest post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://bsky.app/intent/compose?text=Kotihoidon%20tuen%20kuntalis%C3%A4%20-%20pieni%20kustannus,%20suuri%20merkitys%20https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Blueskyssa"
         >
           <svg
-            class="c29"
+            class="c32"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2425,14 +2633,14 @@ exports[`<Post /> should render oldest post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://www.linkedin.com/sharing/share-offsite/?url=https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa LinkedInissä"
         >
           <svg
-            class="c30"
+            class="c33"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -2448,16 +2656,16 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </aside>
       <h2
-        class="c31"
+        class="c34"
         id="muita-kirjoituksia"
       >
         Muita kirjoituksia
       </h2>
       <hr
-        class="c32"
+        class="c35"
       />
       <ul
-        class="c33"
+        class="c36"
       >
         <li
           class=""
@@ -2468,12 +2676,12 @@ exports[`<Post /> should render oldest post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/paivakodit-kaipaavat-opettajia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
               >
@@ -2511,7 +2719,7 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -2549,10 +2757,10 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="paivakodit-kaipaavat-opettajia"
                   itemprop="headline"
                 >
@@ -2562,16 +2770,16 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Päiväkodit kaipaavat opettajia meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -2592,13 +2800,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2606,10 +2814,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -2619,13 +2827,13 @@ exports[`<Post /> should render oldest post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/paivakodit-kaipaavat-opettajia/"
                 rel="permalink"
               >
@@ -2643,12 +2851,12 @@ exports[`<Post /> should render oldest post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -2686,7 +2894,7 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -2724,10 +2932,10 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                   itemprop="headline"
                 >
@@ -2737,16 +2945,16 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen riittävyydestä ei saa tinkiä meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -2767,13 +2975,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -2781,10 +2989,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2792,10 +3000,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -2805,13 +3013,13 @@ exports[`<Post /> should render oldest post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                 rel="permalink"
               >
@@ -2829,12 +3037,12 @@ exports[`<Post /> should render oldest post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -2872,7 +3080,7 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -2910,10 +3118,10 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                   itemprop="headline"
                 >
@@ -2923,16 +3131,16 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen kerhotoiminta - lapsen etu meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -2953,13 +3161,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2967,10 +3175,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -2980,13 +3188,13 @@ exports[`<Post /> should render oldest post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                 rel="permalink"
               >
@@ -2999,16 +3207,16 @@ exports[`<Post /> should render oldest post 1`] = `
     </article>
   </main>
   <footer
-    class="c41"
+    class="c44"
   >
     <ul
-      class="c42"
+      class="c45"
     >
       <li
-        class="c43"
+        class="c46"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3030,10 +3238,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c45"
+        class="c48"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3055,10 +3263,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c46"
+        class="c49"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3080,10 +3288,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c47"
+        class="c50"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3105,10 +3313,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c48"
+        class="c51"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3130,10 +3338,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c52"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3237,7 +3445,7 @@ exports[`<Post /> should render oldest post 1`] = `
 `;
 
 exports[`<Post /> should render updated post 1`] = `
-.c31 {
+.c34 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 700;
@@ -3245,7 +3453,7 @@ exports[`<Post /> should render updated post 1`] = `
   line-height: 2.5rem;
 }
 
-.c3 {
+.c4 {
   color: rgb(90, 94, 0);
   text-decoration: none;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -3253,13 +3461,13 @@ exports[`<Post /> should render updated post 1`] = `
   transition-duration: 150ms;
 }
 
-.c3 :hover,
-.c3 :active,
-.c3 :focus {
+.c4 :hover,
+.c4 :active,
+.c4 :focus {
   text-decoration: underline;
 }
 
-.c21 {
+.c24 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -3268,38 +3476,16 @@ exports[`<Post /> should render updated post 1`] = `
   margin-bottom: 1rem;
 }
 
-.c16 {
+.c19 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c17 {
+.c20 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 1rem;
-}
-
-.c17 :last-child {
-  margin-right: 0px;
-}
-
-.c18 {
-  height: 1.125rem;
-  widht: 1.125rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
-
-.c19 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.c20 {
   margin-right: 1rem;
 }
 
@@ -3307,31 +3493,53 @@ exports[`<Post /> should render updated post 1`] = `
   margin-right: 0px;
 }
 
-.c14 {
+.c21 {
+  height: 1.125rem;
+  widht: 1.125rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.c22 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.c23 {
+  margin-right: 1rem;
+}
+
+.c23 :last-child {
+  margin-right: 0px;
+}
+
+.c17 {
   display: flex;
   flex-direction: column;
 }
 
-.c34 {
+.c37 {
   color: rgb(235, 235, 236);
 }
 
-.c35 {
+.c38 {
   width: 100%;
   display: flex;
   height: 16rem;
   object-fit: cover;
 }
 
-.c37 {
+.c40 {
   display: flex!important;
 }
 
-.c36 {
+.c39 {
   display: none!important;
 }
 
-.c38 {
+.c41 {
   display: flex;
   align-items: flex-end;
   margin-bottom: 1rem;
@@ -3345,39 +3553,39 @@ exports[`<Post /> should render updated post 1`] = `
   position: relative;
 }
 
-.c39 {
+.c42 {
   grid-column-start: auto;
 }
 
-.c40 {
+.c43 {
   margin-top: 0.25rem;
 }
 
-.c33 {
+.c36 {
   grid-column-start: 3;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.c32 {
+.c35 {
   grid-column-start: 3;
   margin-bottom: 1rem;
 }
 
-.c23 {
+.c26 {
   color: rgb(90, 94, 0);
   text-decoration: underline;
 }
 
-.c44 {
+.c47 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c44 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -3386,40 +3594,13 @@ exports[`<Post /> should render updated post 1`] = `
   transition-duration: 150ms;
 }
 
-.c43 {
-  padding: 0px;
-}
-
-.c43 :hover,
-.c43 :focus {
-  fill: #4267B2;
-}
-
-.c45 {
-  padding: 0px;
-}
-
-.c45 :hover,
-.c45 :focus {
-  fill: rgb(0, 0, 0);
-}
-
 .c46 {
   padding: 0px;
 }
 
 .c46 :hover,
 .c46 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: #0E76A8;
+  fill: #4267B2;
 }
 
 .c48 {
@@ -3428,7 +3609,7 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c48 :hover,
 .c48 :focus {
-  fill: #6363ff;
+  fill: rgb(0, 0, 0);
 }
 
 .c49 {
@@ -3437,10 +3618,37 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c50 {
+  padding: 0px;
+}
+
+.c50 :hover,
+.c50 :focus {
+  fill: #0E76A8;
+}
+
+.c51 {
+  padding: 0px;
+}
+
+.c51 :hover,
+.c51 :focus {
+  fill: #6363ff;
+}
+
+.c52 {
+  padding: 0px;
+}
+
+.c52 :hover,
+.c52 :focus {
   fill: #0060df;
 }
 
-.c42 {
+.c45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -3448,7 +3656,7 @@ exports[`<Post /> should render updated post 1`] = `
   gap: 1.5rem;
 }
 
-.c41 {
+.c44 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -3459,14 +3667,14 @@ exports[`<Post /> should render updated post 1`] = `
   height: 100%;
 }
 
-.c4 {
+.c6 {
   color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
-.c5 {
+.c7 {
   color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
@@ -3474,12 +3682,42 @@ exports[`<Post /> should render updated post 1`] = `
 }
 
 .c2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1.75rem;
+}
+
+.c3 {
+  background: rgb(0, 98, 114);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  top: 3.75rem;
+  width: 100vw;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  height: 0;
+}
+
+.c3 .c5 {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.c3 .c5 {
+  opacity: 0;
+}
+
+.c8 {
   display: none;
 }
 
 .c1 {
   background-color: rgb(0, 98, 114);
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -3490,7 +3728,7 @@ exports[`<Post /> should render updated post 1`] = `
   user-select: none;
 }
 
-.c10 {
+.c13 {
   margin-left: auto;
   margin-right: auto;
   height: 24rem!important;
@@ -3500,13 +3738,13 @@ exports[`<Post /> should render updated post 1`] = `
   overflow: hidden;
 }
 
-.c8 {
+.c11 {
   display: flex;
   grid-column: 1/-1;
   position: relative;
 }
 
-.c13 {
+.c16 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 900;
@@ -3518,7 +3756,7 @@ exports[`<Post /> should render updated post 1`] = `
   line-height: 1;
 }
 
-.c12 {
+.c15 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -3531,24 +3769,24 @@ exports[`<Post /> should render updated post 1`] = `
   background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
 
-.c6 {
+.c9 {
   grid-area: main;
 }
 
-.c7 {
+.c10 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c11 {
+.c14 {
   display: flex!important;
 }
 
-.c9 {
+.c12 {
   display: none!important;
 }
 
-.c22 {
+.c25 {
   grid-column-start: 3;
 }
 
@@ -3562,46 +3800,46 @@ exports[`<Post /> should render updated post 1`] = `
   position: relative;
 }
 
-.c25 {
+.c28 {
   margin-right: 0.5rem;
 }
 
-.c26 {
+.c29 {
   margin-right: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.c27 {
+.c30 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #4267B2;
 }
 
-.c28 {
+.c31 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: rgb(0, 0, 0);
 }
 
-.c29 {
+.c32 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #0060df;
 }
 
-.c30 {
+.c33 {
   display: inline-block;
   height: 1rem;
   width: 1rem;
   color: #0E76A8;
 }
 
-.c24 {
+.c27 {
   grid-column-start: 3;
   display: flex;
   flex-direction: row;
@@ -3609,25 +3847,37 @@ exports[`<Post /> should render updated post 1`] = `
   margin-bottom: 2rem;
 }
 
-.c15 {
+.c18 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
 @media (min-width: 479px) {
-  .c37 {
+  .c40 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c36 {
+  .c39 {
     display: flex!important;
   }
 }
 
 @media (min-width: 1200px) {
   .c2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c3 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c8 {
     flex: 1;
     display: flex;
     align-items: center;
@@ -3637,13 +3887,13 @@ exports[`<Post /> should render updated post 1`] = `
 }
 
 @media (min-width: 479px) {
-  .c11 {
+  .c14 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c9 {
+  .c12 {
     display: flex!important;
   }
 }
@@ -3657,30 +3907,92 @@ exports[`<Post /> should render updated post 1`] = `
     <div
       class="c2"
     >
+      <div
+        aria-expanded="false"
+        aria-label="Avaa valikko"
+        class="hamburger-react"
+        role="button"
+        style="cursor: pointer; height: 48px; position: relative; transition: 0.3s ease-in-out; user-select: none; width: 48px; outline: none;"
+        tabindex="0"
+      >
+        <div
+          style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 12px; transition: 0.15s ease-in-out 0s; transform: none;"
+          />
+        </div>
+        <div
+          style="transition: 0.15s ease-in-out; opacity: 1;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 23px; transition: 0.15s ease-in-out;"
+          />
+        </div>
+        <div
+          style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+        >
+          <div
+            style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 34px; transition: 0.15s ease-in-out 0s; transform: none;"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c3"
+    >
       <a
-        class="c3 c4"
+        class="c4 c5 c6"
+        href="/"
+      >
+        Lauri Lavanti
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/minusta/"
+      >
+        Minusta
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/blogi/"
+      >
+        Blogi
+      </a>
+      <a
+        class="c4 c5 c7"
+        href="/ota-yhteytta/"
+      >
+        Ota yhteyttä
+      </a>
+    </div>
+    <div
+      class="c8"
+    >
+      <a
+        class="c4 c5 c6"
         href="/"
       >
         Lauri Lavanti
       </a>
     </div>
     <div
-      class="c2"
+      class="c8"
     >
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/minusta/"
       >
         Minusta
       </a>
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/blogi/"
       >
         Blogi
       </a>
       <a
-        class="c3 c5"
+        class="c4 c5 c7"
         href="/ota-yhteytta/"
       >
         Ota yhteyttä
@@ -3688,16 +4000,16 @@ exports[`<Post /> should render updated post 1`] = `
     </div>
   </header>
   <main
-    class="c6"
+    class="c9"
   >
     <article
-      class="c7"
+      class="c10"
     >
       <div
-        class="c8 c9"
+        class="c11 c12"
       >
         <div
-          class="gatsby-image-wrapper c10"
+          class="gatsby-image-wrapper c13"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
         >
@@ -3736,10 +4048,10 @@ exports[`<Post /> should render updated post 1`] = `
         </div>
       </div>
       <div
-        class="c8 c11"
+        class="c11 c14"
       >
         <div
-          class="gatsby-image-wrapper c10"
+          class="gatsby-image-wrapper c13"
           data-gatsby-image-wrapper=""
           style="position: relative; overflow: hidden; width: 478px; height: 478px;"
         >
@@ -3778,10 +4090,10 @@ exports[`<Post /> should render updated post 1`] = `
         </div>
       </div>
       <section
-        class="c12"
+        class="c15"
       >
         <h1
-          class="c13"
+          class="c16"
           itemprop="headline"
         >
           Sote on hyvinvointiyhteiskunnan kulmakivi
@@ -3789,16 +4101,16 @@ exports[`<Post /> should render updated post 1`] = `
       </section>
       <aside
         aria-label="Kirjoituksen Sote on hyvinvointiyhteiskunnan kulmakivi meta-tiedot"
-        class="c14 c15"
+        class="c17 c18"
       >
         <div
-          class="c16"
+          class="c19"
         >
           <span
-            class="c17"
+            class="c20"
           >
             <svg
-              class="c18"
+              class="c21"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -3819,13 +4131,13 @@ exports[`<Post /> should render updated post 1`] = `
           </span>
         </div>
         <ul
-          class="c19"
+          class="c22"
         >
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/aluevaalit/"
             >
               #
@@ -3833,10 +4145,10 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
           </li>
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -3844,10 +4156,10 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
           </li>
           <li
-            class="c20"
+            class="c23"
           >
             <a
-              class="c3"
+              class="c4"
               href="/kategoria/soteuudistus/"
             >
               #
@@ -3857,16 +4169,16 @@ exports[`<Post /> should render updated post 1`] = `
         </ul>
       </aside>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Usein julkisuudessa puhutaan talouden sopeuttamisesta, korkeasta velkaantumisasteesta ja julkisten instituutioiden menoista. Mutta entä kolikon kääntöpuoli? Jo ennen koronaa meillä oli 
         <a
-          class="c23"
+          class="c26"
           href="https://yle.fi/aihe/t/18-328952"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3875,7 +4187,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          ja 
         <a
-          class="c23"
+          class="c26"
           href="https://www.is.fi/kotimaa/art-2000006278379.html"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3884,7 +4196,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
         , ja tilanne on siitä vain pahentunut. Tukitoimintoja on karsittu ja 
         <a
-          class="c23"
+          class="c26"
           href="https://www.hs.fi/paakirjoitukset/art-2000008439006.html"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3893,7 +4205,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
         . Sairaanhoitajille maksetaan liian 
         <a
-          class="c23"
+          class="c26"
           href="https://www.iltalehti.fi/tyoelama/a/7c881fab-b5d2-4bc6-b7e8-3b446f74116b"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3902,7 +4214,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          työn vaativuuteen ja koulutustasoon nähden. 
         <a
-          class="c23"
+          class="c26"
           href="https://yle.fi/uutiset/3-11605429"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3911,7 +4223,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          päivä päivältä, kun 
         <a
-          class="c23"
+          class="c26"
           href="https://yle.fi/uutiset/3-12205139"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3920,7 +4232,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          ja hoitajia joudutaan siirtämään akuutissa tarpeessa pois omilta osastoiltaan. 
         <a
-          class="c23"
+          class="c26"
           href="https://yle.fi/uutiset/3-11286438"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3929,7 +4241,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          ja ovat 
         <a
-          class="c23"
+          class="c26"
           href="https://www.etk.fi/ajankohtaista/mielenterveyden-sairaudet-yleisin-tyokyvyttomyyselakkeelle-siirtymisen-syy/"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3938,7 +4250,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
         . 
         <a
-          class="c23"
+          class="c26"
           href="https://yle.fi/uutiset/3-10823854"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3948,16 +4260,16 @@ exports[`<Post /> should render updated post 1`] = `
         . Nuoret syrjäytyvät ja voivat pahoin. Onko meillä varaa olla korjaamatta näitä ongelmia?
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Panostamalla hoitohenkilökuntaan ja lääkäreihin varmistamme sen, että apua saa jatkossakin. Tarjoamalla mielenterveyspalveluita saamme kiinni ongelmista kun niistä voi vielä selviytyä. Huolehtimalla sosiaalityöntekijöiden riittävyydestä, varmistamme, että lasten oikeus turvalliseen kasvuympäristöön toteutuu mahdollisimman hyvin. Ennaltaehkäisemällä vakavampia ongelmia, säästämme pitkällä aikavälillä rahaa, aikaa ja vaivaa kaikilta. Poistamalla asiakasmaksut, pidämme huolta myös heikoimmassa asemassa olevista ennen kuin heille tulee vakavampia ongelmia. Tarjoamalla kattavia sosiaalipalveluita pidämme myös huolen erityisryhmistä ja heidän läheisistään. Kaikella tällä estämme syrjäytymistä ja pysymme pidempään työkykyisinä.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Tietenkin sosiaali- ja terveydenhuollossa pitää myös saada rahalle mahdollisimman paljon vastinetta. Halvinta ja tehokkainta olisikin ennaltaehkäisevät toimet. Mittasuhteita antaa se, että 
         <a
-          class="c23"
+          class="c26"
           href="https://www.kuntaliitto.fi/sosiaali-ja-terveysasiat/tilastot-ja-erillisselvitykset/kuntien-sosiaali-ja-terveydenhuollon-nettokustannukset-euroaasukas"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3966,7 +4278,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
         . Malliesimerkki tehokkaasta ennaltaehkäisystä on maksuton ehkäisy nuorille. Esimerkiksi Vantaalla se on tutkitusti 
         <a
-          class="c23"
+          class="c26"
           href="https://bmjopen.bmj.com/content/11/2/e043092"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3975,7 +4287,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          
         <a
-          class="c23"
+          class="c26"
           href="https://terveysportti.mobi/xmedia/duo/duo15044.pdf#2"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3984,7 +4296,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
         . Toinen hyvä ja ajankohtainen esimerkki on rokotukset. Esimerikiksi 
         <a
-          class="c23"
+          class="c26"
           href="https://www.iltalehti.fi/koronavirus/a/24f02847-25ad-466e-a160-709e51be80e7"
           rel=" noopener noreferrer"
           target="_blank"
@@ -3993,7 +4305,7 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
          ja 
         <a
-          class="c23"
+          class="c26"
           href="https://www.iltalehti.fi/kotimaa/a/a5ac42f4-d753-4d24-abaf-a14967e3422b"
           rel=" noopener noreferrer"
           target="_blank"
@@ -4003,17 +4315,17 @@ exports[`<Post /> should render updated post 1`] = `
         .
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Sosiaali- ja terveydenhuolto ei ole pelkkä menoerä, vaan sijoitus tulevaisuuteemme. Jokainen järkevästi käytetty euro soteen on askel kohti hyvinvoivaa väestöä. Soten kustannusten kasvua ei hillitä palveluita leikkaamalla, vaan oikeiden palveluiden tarjoamisella oikeaan aikaan.
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         Tasapainotetaanko taloutta vai korjataanko hyvinvointiyhteiskunta?
       </p>
       <p
-        class="c21 c22"
+        class="c24 c25"
       >
         <i>
           Julkaistu Kirkkonummen Sanomissa 16.12.2021 ja Länsiväylässä 5.1.2022.
@@ -4021,22 +4333,22 @@ exports[`<Post /> should render updated post 1`] = `
       </p>
       <aside
         aria-label="Kirjoituksen Sote on hyvinvointiyhteiskunnan kulmakivi sosiaalisen median jakolinkit"
-        class="c24"
+        class="c27"
       >
         <span
-          class="c25"
+          class="c28"
         >
           Jaa:
         </span>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Facebookissa"
         >
           <svg
-            class="c27"
+            class="c30"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4051,14 +4363,14 @@ exports[`<Post /> should render updated post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://threads.net/intent/post?text=Sote%20on%20hyvinvointiyhteiskunnan%20kulmakivi%20https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Threadsissä"
         >
           <svg
-            class="c28"
+            class="c31"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4073,14 +4385,14 @@ exports[`<Post /> should render updated post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://bsky.app/intent/compose?text=Sote%20on%20hyvinvointiyhteiskunnan%20kulmakivi%20https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa Blueskyssa"
         >
           <svg
-            class="c29"
+            class="c32"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4095,14 +4407,14 @@ exports[`<Post /> should render updated post 1`] = `
           </svg>
         </a>
         <a
-          class="c23 c26"
+          class="c26 c29"
           href="https://www.linkedin.com/sharing/share-offsite/?url=https://laurilavanti.fi"
           rel=" noopener noreferrer"
           target="_blank"
           title="Jaa LinkedInissä"
         >
           <svg
-            class="c30"
+            class="c33"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -4118,16 +4430,16 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </aside>
       <h2
-        class="c31"
+        class="c34"
         id="muita-kirjoituksia"
       >
         Muita kirjoituksia
       </h2>
       <hr
-        class="c32"
+        class="c35"
       />
       <ul
-        class="c33"
+        class="c36"
       >
         <li
           class=""
@@ -4138,12 +4450,12 @@ exports[`<Post /> should render updated post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/terveys-kuuluu-kaikille/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -4181,7 +4493,7 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -4219,10 +4531,10 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="terveys-kuuluu-kaikille"
                   itemprop="headline"
                 >
@@ -4232,16 +4544,16 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -4262,13 +4574,13 @@ exports[`<Post /> should render updated post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -4276,10 +4588,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4287,10 +4599,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -4300,13 +4612,13 @@ exports[`<Post /> should render updated post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
@@ -4324,12 +4636,12 @@ exports[`<Post /> should render updated post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -4367,7 +4679,7 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -4405,10 +4717,10 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="mita-jos-terveyskeskusta-ei-olisikaan?"
                   itemprop="headline"
                 >
@@ -4418,16 +4730,16 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -4448,13 +4760,13 @@ exports[`<Post /> should render updated post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -4462,10 +4774,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4473,10 +4785,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -4486,13 +4798,13 @@ exports[`<Post /> should render updated post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
@@ -4510,12 +4822,12 @@ exports[`<Post /> should render updated post 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c3 c34"
+              class="c4 c37"
               href="/blogi/ehdolle-aluevaaleihin/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c35 c36"
+                class="gatsby-image-wrapper c38 c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -4553,7 +4865,7 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c35 c37"
+                class="gatsby-image-wrapper c38 c40"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 478px; height: 478px;"
               >
@@ -4591,10 +4903,10 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="c38"
+                class="c41"
               >
                 <h2
-                  class="c31 c39"
+                  class="c34 c42"
                   id="ehdolle-aluevaaleihin"
                   itemprop="headline"
                 >
@@ -4604,16 +4916,16 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
-              class="c14"
+              class="c17"
             >
               <div
-                class="c16"
+                class="c19"
               >
                 <span
-                  class="c17"
+                  class="c20"
                 >
                   <svg
-                    class="c18"
+                    class="c21"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -4634,13 +4946,13 @@ exports[`<Post /> should render updated post 1`] = `
                 </span>
               </div>
               <ul
-                class="c19"
+                class="c22"
               >
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -4648,10 +4960,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4659,10 +4971,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c20"
+                  class="c23"
                 >
                   <a
-                    class="c3"
+                    class="c4"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -4672,13 +4984,13 @@ exports[`<Post /> should render updated post 1`] = `
               </ul>
             </aside>
             <p
-              class="c21 c40"
+              class="c24 c43"
               itemprop="description"
             >
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                
               <a
-                class="c3"
+                class="c4"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
@@ -4691,16 +5003,16 @@ exports[`<Post /> should render updated post 1`] = `
     </article>
   </main>
   <footer
-    class="c41"
+    class="c44"
   >
     <ul
-      class="c42"
+      class="c45"
     >
       <li
-        class="c43"
+        class="c46"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4722,10 +5034,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c45"
+        class="c48"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4747,10 +5059,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c46"
+        class="c49"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4772,10 +5084,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c47"
+        class="c50"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4797,10 +5109,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c48"
+        class="c51"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -4822,10 +5134,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c52"
       >
         <a
-          class="c44"
+          class="c47"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
