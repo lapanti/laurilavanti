@@ -4,7 +4,7 @@ import { colors, fontFamilies, sizes } from '../../lib/styles'
 
 const GlobalStyle = createGlobalStyle({
     '@font-face': {
-        fontFamily: 'Krana Fat',
+        fontFamily: fontFamilies.heading,
         fontWeight: 1000,
         fontDisplay: 'swap',
         fontStyle: 'normal',
