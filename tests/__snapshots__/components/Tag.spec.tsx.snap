@@ -228,11 +228,7 @@ exports[`<Tag /> should render 1`] = `
 }
 
 .c2 {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2.5rem;
+  display: none;
 }
 
 .c1 {
@@ -325,6 +321,16 @@ exports[`<Tag /> should render 1`] = `
 @media (min-width: 479px) {
   .c17 {
     display: flex!important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
   }
 }
 
