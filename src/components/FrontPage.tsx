@@ -36,6 +36,8 @@ export const query = graphql`
             description
             jsonLdType
             title
+            subtitle
+            secondaryTitle
             body {
                 raw
                 references {

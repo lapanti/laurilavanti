@@ -81,6 +81,8 @@ export interface ContentfulPage {
     description: string | null
     jsonLdType: JsonLdType
     title: string
+    subtitle: string | null
+    secondaryTitle: string | null
     body: RichBody
     image: {
         localFile: ImageDataLike

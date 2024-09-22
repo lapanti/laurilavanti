@@ -18,6 +18,8 @@ export const frontPage: ContentfulPage = {
     description: null,
     jsonLdType: 'WebSite',
     title: 'Lauri Lavanti',
+    subtitle: 'Ehdolla kunta- ja aluevaaleissa 2025',
+    secondaryTitle: 'Kasvava ja kestävä Kirkkonummi',
     body: {
         raw: '{"data":{},"content":[{"data":{"target":{"sys":{"id":"3uieCAj8exvxEHG0mxndMV","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"Lyhyesti","nodeType":"text"}],"nodeType":"heading-2"},{"data":{},"content":[{"data":{},"marks":[],"value":"Kirkkonummelainen politiikasta kiinnostunut diplomi-insinööri. Vihreiden luottamushenkilö (entisen perusturvajaoston jäsen, suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen), ohjelmistokehittäjä ja kolmen lapsen isä.","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Uusimmat kirjoitukset","nodeType":"text"}],"nodeType":"heading-2"},{"data":{},"content":[],"nodeType":"hr"},{"data":{"target":{"sys":{"id":"6kFlEZ2Nv6UXotMJJNIFGm","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
         references: [
@@ -41,6 +43,8 @@ export const aboutMe: ContentfulPage = {
         'Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.',
     jsonLdType: 'Person',
     title: 'Minusta',
+    subtitle: null,
+    secondaryTitle: null,
     body: {
         raw: '{"nodeType":"document","data":{},"content":[{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Olen ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"fvxZI2eLzqnwfebd6CPUO","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"-vuotias diplomi-insinööri, Vihreiden luottamushenkilö ja kolmen pienen lapsen isä Kirkkonummelta. Politiikassa minulle tärkeimpiä asioita ovat lasten ja nuorten hyvinvointi, oikeudenmukaisuus, tasa-arvo, demokratia ja kestävä toiminta niin luonnon kuin taloudenkin kannalta. Päivätyöni on toimia ohjelmistokehitystiimin esihenkilönä ja ohjelmiston arkkitehtuurin suunnittelijana, huolehtien osaltani yrityksen kehityksen kestävästä suunnasta. ","marks":[],"data":{}},{"nodeType":"text","value":"Alapuolelta voit lukea tarkemman listauksen erinäisistä luottamustoimistani ja työhistoriastani","marks":[],"data":{}},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://bsky.app/profile/laurilavanti.fi"},"content":[{"nodeType":"text","value":"Blueskyssa","marks":[],"data":{}}]},{"nodeType":"text","value":" ja ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://www.threads.net/@laurilavanti"},"content":[{"nodeType":"text","value":"Threadsissä","marks":[],"data":{}}]},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"embedded-entry-block","data":{"target":{"sys":{"id":"69ER5TaS3Gi3EG0xwHPOLv","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]}]}',
         references: [
@@ -191,6 +195,8 @@ export const blog: ContentfulPage = {
     description: null,
     jsonLdType: 'WebPage',
     title: 'Blogi',
+    subtitle: null,
+    secondaryTitle: null,
     body: {
         raw: '{"data":{},"content":[{"data":{"target":{"sys":{"id":"2xbkM6orHOjGAeP19QeSoW","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
         references: [
@@ -208,6 +214,8 @@ export const contactMe: ContentfulPage = {
     description: 'Yhteystiedot',
     jsonLdType: 'Person',
     title: 'Ota yhteyttä',
+    subtitle: null,
+    secondaryTitle: null,
     body: {
         raw: '{"data":{},"content":[{"data":{"target":{"sys":{"id":"5p1Xu3HEt01ELvRawwh6HF","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
         references: [
