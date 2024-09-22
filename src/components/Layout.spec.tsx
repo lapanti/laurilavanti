@@ -93,7 +93,8 @@ describe('<Layout />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render hero image for front page', () => {
+    it('should render hero banner for front page', () => {
+        const subtitle = 'Subtesxttitle'
         const { container } = render(
             <Layout
                 heroImage={mainImage}
@@ -102,6 +103,7 @@ describe('<Layout />', () => {
                 mobileHeroImage={mainImage}
                 mobileHeroImageAlt={mainImageDescription}
                 title={title}
+                subtitle={subtitle}
             >
                 {children}
             </Layout>
@@ -109,21 +111,8 @@ describe('<Layout />', () => {
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(screen.getAllByRole('img', { name: mainImageDescription })).not.toBeNull()
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render hero image for front page with no alt', () => {
-        const { container } = render(
-            <Layout heroImage={mainImage} isFrontPage mobileHeroImage={mainImage}>
-                {children}
-            </Layout>
-        )
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.getByRole('presentation', { name: '' })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: subtitle })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })
