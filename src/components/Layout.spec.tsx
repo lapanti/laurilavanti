@@ -218,42 +218,6 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render HomeTitle', () => {
-            const { container } = render(
-                <Layout
-                    isFrontPage
-                    body={{
-                        raw: JSON.stringify({
-                            nodeType: 'document',
-                            data: {},
-                            content: [
-                                {
-                                    nodeType: 'embedded-entry-block',
-                                    data: {
-                                        target: {
-                                            sys: { id: '3uieCAj8exvxEHG0mxndMV', type: 'Link', linkType: 'Entry' },
-                                        },
-                                    },
-                                    content: [],
-                                },
-                            ],
-                        }),
-                        references: [
-                            {
-                                __typename: 'ContentfulHomeTitle',
-                                contentful_id: '3uieCAj8exvxEHG0mxndMV',
-                            },
-                        ],
-                    }}
-                />
-            )
-
-            // Check HomeTitle is present
-            expect(screen.getByRole('heading', { name: /Lauri Lavanti/i })).toBeInTheDocument()
-
-            expect(container.firstChild).toMatchSnapshot()
-        })
-
         it('should render ExcerptList', () => {
             const { container } = render(
                 <Layout

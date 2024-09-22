@@ -49,10 +49,6 @@ export const query = graphql`
                             icon
                         }
                     }
-                    ... on ContentfulHomeTitle {
-                        __typename
-                        contentful_id
-                    }
                     ... on ContentfulExcerptList {
                         __typename
                         contentful_id
