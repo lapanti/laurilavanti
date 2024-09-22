@@ -67,6 +67,7 @@ interface Props {
 
 const HeroBannerComponent = ({ className, title, subtitle, secondaryTitle, backgroundImage }: Props): JSX.Element => {
     const backgroundSrc = backgroundImage ? getSrc(backgroundImage) : undefined
+
     return (
         <div className={className}>
             <Titles>
