@@ -4,6 +4,7 @@ import { expect } from '@playwright/test'
 
 export class AnyPage {
     readonly page: Page
+    readonly isMobile: boolean
     readonly navOpenButton: Locator
     readonly navCloseButton: Locator
     readonly navLinkAboutMe: Locator
@@ -17,9 +18,10 @@ export class AnyPage {
 
     constructor(page: Page) {
         this.page = page
+        this.isMobile = (page.viewportSize()?.width ?? 0) < 1200
         this.navOpenButton = page.getByRole('button', { name: /Avaa valikko/i })
         this.navCloseButton = page.getByRole('button', { name: /Sulje valikko/i })
-        this.navLinkAboutMe = page.getByRole('link', { name: /Minusta/i })
+        this.navLinkAboutMe = page.getByRole('link', { name: /Kuka Lauri?/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
         this.footerFacebookLink = page.locator('footer').locator('a[title="Facebook"]')
@@ -44,7 +46,9 @@ export class AnyPage {
     async goToNavLink(navLink: Locator) {
         await this.page.goto('/')
 
-        await this.openMainNavigation()
+        if (this.isMobile) {
+            await this.openMainNavigation()
+        }
 
         await this.checkMainNavigationLinks()
 
@@ -59,11 +63,15 @@ export class AnyPage {
     }
 
     async checkMainNavigation() {
-        await this.openMainNavigation()
+        if (this.isMobile) {
+            await this.openMainNavigation()
+        }
 
         await this.checkMainNavigationLinks()
 
-        await this.closeMainNavigation()
+        if (this.isMobile) {
+            await this.closeMainNavigation()
+        }
     }
 
     async checkFooter() {
