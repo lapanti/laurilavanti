@@ -64,7 +64,7 @@ const MobileMenu = styled.div<{ $isOpen: boolean }>(
 const Half = styled.div({
     display: 'none',
     [breakpoints[1200].min]: {
-        flex: 1,
+        width: '50%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
