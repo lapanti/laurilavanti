@@ -107,17 +107,21 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
             </HamburgerContainer>
             <MobileMenu $isOpen={isMobileOpen}>
                 <NavLink title="Lauri Lavanti" slug="index" isFrontPage />
-                {data.contentfulMainNav.links.map((nav) => (
-                    <NavLink {...nav} key={nav.slug} />
-                ))}
+                {data.contentfulMainNav.links
+                    .filter(({ slug }) => slug !== 'index')
+                    .map((nav) => (
+                        <NavLink {...nav} key={nav.slug} />
+                    ))}
             </MobileMenu>
             <Half>
                 <NavLink title="Lauri Lavanti" slug="index" isFrontPage />
             </Half>
             <Half>
-                {data.contentfulMainNav.links.map((nav) => (
-                    <NavLink {...nav} key={nav.slug} />
-                ))}
+                {data.contentfulMainNav.links
+                    .filter(({ slug }) => slug !== 'index')
+                    .map((nav) => (
+                        <NavLink {...nav} key={nav.slug} />
+                    ))}
             </Half>
         </header>
     )

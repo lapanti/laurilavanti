@@ -6,29 +6,6 @@ import styled from 'styled-components'
 
 import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE, sizes } from '../../lib/styles'
 
-const SecondaryTitle = styled.h2({
-    ...fontSizes['4xl'],
-    fontWeight: fontWeights.bold,
-})
-
-const Titles = styled.div({
-    color: colors.peach,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: sizes[3],
-    margin: sizes[1.75],
-
-    [breakpoints[1200].min]: {
-        flex: 1,
-        margin: sizes[3.75],
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-        [SecondaryTitle]: {
-            marginTop: sizes[3],
-        },
-    },
-})
-
 const Title = styled.h1({
     fontFamily: fontFamilies.heading,
     ...fontSizes['6xl'],
@@ -42,15 +19,41 @@ const Subtitle = styled.h3({
     fontWeight: fontWeights.bold,
 })
 
+const SecondaryTitle = styled.h2({
+    ...fontSizes['4xl'],
+    fontWeight: fontWeights.bold,
+})
+
+const Titles = styled.div({
+    color: colors.peach,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: sizes[3],
+    padding: sizes[1.75],
+
+    [breakpoints[1200].min]: {
+        width: '50%',
+        padding: sizes[3.75],
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        [SecondaryTitle]: {
+            marginTop: sizes[3],
+        },
+    },
+})
+
 const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
     {
         [breakpoints[1200].min]: {
-            flex: 1,
+            width: '50%',
         },
     },
     ({ $backgroundSrc }) =>
         $backgroundSrc && {
-            backgroundImage: `url(${$backgroundSrc})`,
+            [breakpoints[1200].min]: {
+                backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70}), url(${$backgroundSrc})`,
+                backgroundSize: 'cover',
+            },
         }
 )
 
@@ -64,7 +67,6 @@ interface Props {
 
 const HeroBannerComponent = ({ className, title, subtitle, secondaryTitle, backgroundImage }: Props): JSX.Element => {
     const backgroundSrc = backgroundImage ? getSrc(backgroundImage) : undefined
-    console.log('backgroundSrc', backgroundSrc)
     return (
         <div className={className}>
             <Titles>

@@ -113,6 +113,7 @@ export const colors = {
     white90: 'rgba(255, 255, 255, .9)' as const,
     fire: 'rgb(240, 100, 0)' as const,
     evening: 'rgb(0, 98, 114)' as const,
+    evening70: 'rgba(0, 98, 114, 0.7)' as const,
     moss: 'rgb(90, 94, 0)' as const,
     ocher: 'rgb(218, 170, 0)' as const,
     plum: 'rgb(112, 39, 61)' as const,
