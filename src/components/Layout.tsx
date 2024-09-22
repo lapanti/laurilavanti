@@ -50,7 +50,7 @@ const Article = styled.article({
     display: 'grid',
     gridTemplateColumns: gridTemplateColumnsArticle,
     [`${HomeTitle} + *, ${Title} + *`]: {
-        marginTop: sizes[4],
+        marginTop: sizes[1],
     },
 })
 
@@ -93,8 +93,8 @@ const TableContainer = styled.div({
 })
 
 const Table = styled.table({
-    marginTop: sizes[4],
-    marginBottom: sizes[4],
+    marginTop: sizes[1],
+    marginBottom: sizes[1],
     marginLeft: 'auto',
     marginRight: 'auto',
     tableLayout: 'auto',
@@ -103,8 +103,8 @@ const Table = styled.table({
 
 const TableHeaderCell = styled.th({
     backgroundColor: colors.gray,
-    paddingLeft: sizes[4],
-    paddingRight: sizes[4],
+    paddingLeft: sizes[1],
+    paddingRight: sizes[1],
     borderWidth: '1px',
     borderColor: colors.black,
     borderStyle: 'solid',
@@ -112,8 +112,8 @@ const TableHeaderCell = styled.th({
 })
 
 const TableCell = styled.td({
-    paddingLeft: sizes[4],
-    paddingRight: sizes[4],
+    paddingLeft: sizes[1],
+    paddingRight: sizes[1],
     borderWidth: '1px',
     borderColor: colors.black,
     borderStyle: 'solid',
@@ -122,9 +122,9 @@ const TableCell = styled.td({
 
 const BlockQuote = styled.div({
     borderLeftWidth: '4px',
-    paddingLeft: sizes[2],
-    paddingTop: sizes[2],
-    paddingBottom: sizes[2],
+    paddingLeft: sizes[0.5],
+    paddingTop: sizes[0.5],
+    paddingBottom: sizes[0.5],
     borderLeftColor: colors.sand,
     gridColumnStart: 3,
     fontFamily: fontFamilies.mono,
@@ -298,7 +298,7 @@ const Layout = styled(LayoutComponent)({
     gridTemplateAreas: gridTemplateAreasLayout,
     gridTemplateRows: gridTemplateRowsLayout,
     gridTemplateColumns: gridTemplateColumns,
-    gap: sizes[4.5],
+    gap: sizes[1.125],
     minHeight: '100vh',
     position: 'relative',
 })

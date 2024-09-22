@@ -16,8 +16,8 @@ const DivContainer = styled.div({
     ...fontSizes.l,
     fontFamily: fontFamilies.sans,
     fontWeight: fontWeights.normal,
-    marginTop: sizes[4],
-    marginBottom: sizes[4],
+    marginTop: sizes[1],
+    marginBottom: sizes[1],
 })
 
 interface Props {
@@ -83,7 +83,7 @@ CurriculumVitaeComponent.displayName = 'CurriculumVitae'
 
 const CurriculumVitae = styled(CurriculumVitaeComponent)({
     gridColumnStart: 3,
-    marginTop: sizes[4],
+    marginTop: sizes[1],
 })
 
 export default CurriculumVitae

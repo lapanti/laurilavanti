@@ -23,7 +23,7 @@ ContactInfoComponent.displayName = 'ContactInfo'
 
 const ContactInfo = styled(ContactInfoComponent)({
     gridColumnStart: 3,
-    marginTop: sizes[4],
+    marginTop: sizes[1],
 })
 
 export default ContactInfo

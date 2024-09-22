@@ -6,8 +6,8 @@ const Paragraph = styled.p({
     ...fontSizes.l,
     fontFamily: fontFamilies.sans,
     fontWeight: fontWeights.normal,
-    marginTop: sizes[4],
-    marginBottom: sizes[4],
+    marginTop: sizes[1],
+    marginBottom: sizes[1],
 })
 
 export default Paragraph

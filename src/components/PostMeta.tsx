@@ -8,24 +8,24 @@ import InternalLink from './InternalLink'
 const MetaContainer = styled.div({
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: sizes[2],
+    marginBottom: sizes[0.5],
 })
 
 const Meta = styled.span({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: sizes[4],
+    marginRight: sizes[1],
     ':last-child': {
         marginRight: sizes[0],
     },
 })
 
 const CalendarIcon = styled(FaRegCalendarDays)({
-    height: sizes[4.5],
-    widht: sizes[4.5],
+    height: sizes[1.125],
+    widht: sizes[1.125],
     display: 'inline-block',
-    marginRight: sizes[2],
+    marginRight: sizes[0.5],
     flexShrink: 0,
 })
 
@@ -36,7 +36,7 @@ const TagList = styled.ul({
 })
 
 const TagItem = styled.li({
-    marginRight: sizes[4],
+    marginRight: sizes[1],
     ':last-child': {
         marginRight: sizes[0],
     },

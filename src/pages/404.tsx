@@ -5,15 +5,15 @@ import ExcerptList from '../components/ExcerptList'
 import Layout from '../components/Layout'
 import { fontSizes, sizes } from '../lib/styles'
 
-export const H1 = styled.h1({
+const H1 = styled.h1({
     gridColumnStart: 3,
-    marginBottom: sizes[4],
-    marginTop: sizes[8],
+    marginBottom: sizes[1],
+    marginTop: sizes[2],
     ...fontSizes['2xl'],
 })
 
 const FourZeroFour = (): JSX.Element => (
-    <Layout>
+    <Layout title="">
         <H1>Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?</H1>
         <ExcerptList limit={5} />
     </Layout>

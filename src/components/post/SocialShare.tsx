@@ -6,11 +6,11 @@ import { colors, sizes } from '../../lib/styles'
 import ExternalLink from '../ExternalLink'
 
 const Share = styled.span({
-    marginRight: sizes[2],
+    marginRight: sizes[0.5],
 })
 
 const ExtLink = styled(ExternalLink)({
-    marginRight: sizes[2],
+    marginRight: sizes[0.5],
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -18,8 +18,8 @@ const ExtLink = styled(ExternalLink)({
 
 const logoStyles = {
     display: 'inline-block',
-    height: sizes[4],
-    width: sizes[4],
+    height: sizes[1],
+    width: sizes[1],
 }
 
 const Facebook = styled(FaFacebook)(logoStyles, {
@@ -78,8 +78,8 @@ const SocialShare = styled(SocialShareComponent)({
     gridColumnStart: 3,
     display: 'flex',
     flexDirection: 'row',
-    marginTop: sizes[4],
-    marginBottom: sizes[8],
+    marginTop: sizes[1],
+    marginBottom: sizes[2],
 })
 
 export default SocialShare

@@ -19,7 +19,7 @@ const H1 = styled.h1({
     color: colors.white,
     display: 'flex',
     alignItems: 'flex-end',
-    marginBottom: sizes[4],
+    marginBottom: sizes[1],
     ...fontSizes['6xl'],
 })
 
@@ -40,7 +40,7 @@ const Title = styled(TitleComponent)({
     display: 'grid',
     gridTemplateColumns: gridTemplateColumnsArticle,
     gridColumn: '1 / -1',
-    marginTop: `-${sizes[56]}`,
+    marginTop: `-${sizes[14]}`,
     zIndex: zIndices[40],
     maxWidth: `min(100%, ${sizes.fullHd})`,
     marginLeft: 'auto',

@@ -18,7 +18,7 @@ const Link = styled(InternalLink)({
 const Image = styled(GatsbyImage)({
     width: '100%',
     display: 'flex',
-    height: sizes[64],
+    height: sizes[16],
     objectFit: 'cover',
 })
 
@@ -39,11 +39,11 @@ const DesktopImage = styled(Image)({
 const H2Container = styled.div({
     display: 'flex',
     alignItems: 'flex-end',
-    marginBottom: sizes[4],
-    paddingBottom: sizes[2],
-    paddingLeft: sizes[2],
-    marginTop: `-${sizes[32]}`,
-    height: sizes[32],
+    marginBottom: sizes[1],
+    paddingBottom: sizes[0.5],
+    paddingLeft: sizes[0.5],
+    marginTop: `-${sizes[8]}`,
+    height: sizes[8],
     width: '100%',
     backgroundImage: gradients.fromBlackToTop,
     zIndex: zIndices[40],
@@ -55,7 +55,7 @@ const StyledH2 = styled(H2)({
 })
 
 const RemarginP = styled(Paragraph)({
-    marginTop: sizes[1],
+    marginTop: sizes[0.25],
 })
 
 interface Props extends Omit<PostMetaProps, 'ariaLabel'> {

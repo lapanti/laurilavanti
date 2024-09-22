@@ -12,7 +12,7 @@ const List = styled.ul({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: sizes[6],
+    gap: sizes[1.5],
 })
 
 interface Props {

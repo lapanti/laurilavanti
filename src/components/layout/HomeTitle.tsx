@@ -17,7 +17,7 @@ const H1 = styled.h1({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',
-    marginBottom: sizes[4],
+    marginBottom: sizes[1],
     overflow: 'visible',
 })
 
@@ -38,7 +38,7 @@ const slideIn = keyframes`
 const Letter = styled.span<{ index: number }>(
     {
         textShadow: 'black 1px 1px 1px',
-        width: sizes[10],
+        width: sizes[2.5],
         display: 'flex',
         justifyContent: 'center',
     },
@@ -70,9 +70,9 @@ const HomeTitle = styled(HomeTitleComponent)({
     gridColumn: '1 / -1',
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: `-${sizes[164]}`,
+    marginTop: `-${sizes[41]}`,
     display: 'grid',
-    height: sizes[164],
+    height: sizes[41],
     width: '100%',
     maxWidth: sizes.fullHd,
     gridTemplateColumns: gridTemplateColumnsArticle,

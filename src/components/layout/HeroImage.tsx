@@ -9,7 +9,7 @@ import { HEADER_SIZE, sizes } from '../../lib/styles'
 const Image = styled(GatsbyImage)({
     marginLeft: 'auto',
     marginRight: 'auto',
-    height: `${sizes[96]} !important`,
+    height: `${sizes[24]} !important`,
     width: '100% !important',
     objectFit: 'cover',
     maxWidth: sizes.fullHd,
