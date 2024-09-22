@@ -202,8 +202,7 @@ const options = {
 
 interface Props extends Omit<SeoProps, 'title' | 'image'> {
     className?: string
-    title?: string
-    hiddenTitle?: string
+    title: string
     heroImage?: ImageDataLike
     heroImageAlt?: string
     mobileHeroImage?: ImageDataLike
@@ -278,7 +277,7 @@ const LayoutComponent = ({
                         {!isFrontPage && mobileHeroImage && (
                             <MobileHeroImage imageData={mobileHeroImage} alt={mobileHeroImageAlt || ''} />
                         )}
-                        {title && <Title title={title} />}
+                        {!isFrontPage && <Title title={title} />}
                         {preBody}
                         {body && renderRichText(body, options)}
                         {children}

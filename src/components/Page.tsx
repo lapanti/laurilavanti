@@ -18,7 +18,6 @@ interface Props {
 const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
         title={data?.contentfulPage?.title}
-        hiddenTitle={undefined}
         pathname={`/${slug}/`}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
@@ -35,7 +34,6 @@ export const query = graphql`
     query ($slug: String!) {
         contentfulPage(slug: { eq: $slug }) {
             description
-            hideTitle
             jsonLdType
             title
             body {
