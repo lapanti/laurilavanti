@@ -92,6 +92,9 @@ export interface ContentfulPage {
         localFile: ImageDataLike
         description: string
     }
+    backgroundImage: {
+        localFile: ImageDataLike
+    } | null
     updatedAt: string
 }
 

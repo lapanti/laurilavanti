@@ -17,11 +17,14 @@ interface Props {
 const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
         title={data?.contentfulPage?.title}
+        subtitle={data?.contentfulPage?.subtitle ?? undefined}
+        secondaryTitle={data?.contentfulPage?.secondaryTitle ?? undefined}
         pathname={`/${slug}/`}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
         mobileHeroImage={data?.contentfulPage?.mobileImage?.localFile}
         mobileHeroImageAlt={data?.contentfulPage?.mobileImage?.description}
+        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
         description={data?.contentfulPage?.description ?? ''}
         type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
@@ -115,6 +118,19 @@ export const query = graphql`
                     }
                 }
                 description
+            }
+            backgroundImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: FIXED
+                            height: 667
+                            width: 1920
+                            transformOptions: { fit: OUTSIDE }
+                        )
+                    }
+                }
             }
             updatedAt
         }

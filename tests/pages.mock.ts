@@ -11,10 +11,12 @@ const image = {
 const images = {
     image,
     mobileImage: image,
+    backgroundImage: null,
 }
 
 export const frontPage: ContentfulPage = {
     ...images,
+    backgroundImage: image,
     description: null,
     jsonLdType: 'WebSite',
     title: 'Lauri Lavanti',

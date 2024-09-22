@@ -33,6 +33,7 @@ import CurriculumVitae from './layout/CurriculumVitae'
 import Footer from './layout/Footer'
 import GlobalStyle from './layout/GlobalStyle'
 import Header from './layout/Header'
+import HeroBanner from './layout/HeroBanner'
 import HeroImage from './layout/HeroImage'
 import HomeTitle from './layout/HomeTitle'
 import Image from './layout/Image'
@@ -203,10 +204,13 @@ const options = {
 interface Props extends Omit<SeoProps, 'title' | 'image'> {
     className?: string
     title: string
+    subtitle?: string
+    secondaryTitle?: string
     heroImage?: ImageDataLike
     heroImageAlt?: string
     mobileHeroImage?: ImageDataLike
     mobileHeroImageAlt?: string
+    backgroundImage?: ImageDataLike
     body?: RichBody
     preBody?: ReactNode
     isFrontPage?: boolean
@@ -215,10 +219,13 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
 const LayoutComponent = ({
     className,
     title,
+    subtitle,
+    secondaryTitle,
     heroImage,
     heroImageAlt,
     mobileHeroImage,
     mobileHeroImageAlt,
+    backgroundImage,
     description,
     meta,
     pathname,
@@ -263,6 +270,14 @@ const LayoutComponent = ({
 
                 <Main>
                     <Article>
+                        {isFrontPage && (
+                            <HeroBanner
+                                title={title}
+                                backgroundImage={backgroundImage}
+                                subtitle={subtitle}
+                                secondaryTitle={secondaryTitle}
+                            />
+                        )}
                         {isFrontPage && heroImage && (
                             <DesktopBigHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
                         )}
