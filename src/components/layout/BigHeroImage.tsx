@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { sizes } from '../../lib/styles'
+import { HEADER_SIZE, sizes } from '../../lib/styles'
 
 const Image = styled(GatsbyImage)({
     marginLeft: 'auto',
@@ -34,6 +34,7 @@ const BigHeroImageComponent = ({ className, imageData, alt }: Props): JSX.Elemen
 BigHeroImageComponent.displayName = 'BigHeroImage'
 
 const BigHeroImage = styled(BigHeroImageComponent)({
+    paddingTop: HEADER_SIZE,
     display: 'flex',
     position: 'relative',
     gridColumn: '1 / -1',

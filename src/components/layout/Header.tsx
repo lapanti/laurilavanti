@@ -5,10 +5,9 @@ import { Squash as Hamburger } from 'hamburger-react'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { breakpoints, colors, sizes, zIndices } from '../../lib/styles'
+import { breakpoints, colors, HEADER_SIZE, sizes, zIndices } from '../../lib/styles'
 import NavLink from './header/NavLink'
 
-const HEADER_SIZE = sizes[15]
 const ANIMATION_DURATION = 0.3
 const ANIMATION_EASING = 'ease-in-out'
 
