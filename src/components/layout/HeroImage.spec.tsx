@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { mainImage } from '../../../tests/images.mock'
-import BigHeroImage from './BigHeroImage'
+import HeroImage from './HeroImage'
 
 describe('<HeroImage />', () => {
     const alt = 'alt'
@@ -16,13 +16,13 @@ describe('<HeroImage />', () => {
             children: [],
             internal: { type: '', contentDigest: '', owner: '' },
         }
-        const { container } = render(<BigHeroImage alt={alt} imageData={imageData} />)
+        const { container } = render(<HeroImage alt={alt} imageData={imageData} />)
 
         expect(container.firstChild).toBeNull()
     })
 
     it('should render actual image', () => {
-        const { container } = render(<BigHeroImage alt={alt} imageData={mainImage} />)
+        const { container } = render(<HeroImage alt={alt} imageData={mainImage} />)
 
         expect(screen.getByRole('img', { name: alt })).toBeInTheDocument()
 
