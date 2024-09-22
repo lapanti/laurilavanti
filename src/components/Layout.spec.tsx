@@ -41,7 +41,7 @@ describe('<Layout />', () => {
     const { title: siteTitle } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     it('should render minimal', () => {
-        const { container } = render(<Layout>{children}</Layout>)
+        const { container } = render(<Layout title="">{children}</Layout>)
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
@@ -54,17 +54,6 @@ describe('<Layout />', () => {
         expect(screen.getByText(children)).toBeInTheDocument()
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        await waitFor(() => expect(document.title).toEqual(`${title} | ${siteTitle}`))
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render hidden title', async () => {
-        const { container } = render(<Layout hiddenTitle={title}>{children}</Layout>)
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.queryByRole('heading', { name: title })).toBeNull()
         await waitFor(() => expect(document.title).toEqual(`${title} | ${siteTitle}`))
 
         expect(container.firstChild).toMatchSnapshot()

@@ -219,7 +219,6 @@ const LayoutComponent = ({
     heroImageAlt,
     mobileHeroImage,
     mobileHeroImageAlt,
-    hiddenTitle,
     description,
     meta,
     pathname,
@@ -250,7 +249,7 @@ const LayoutComponent = ({
         <>
             <GlobalStyle />
             <Seo
-                title={title || hiddenTitle || ''}
+                title={title || ''}
                 description={description}
                 meta={meta}
                 pathname={pathname}
