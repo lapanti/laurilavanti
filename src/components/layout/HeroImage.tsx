@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { sizes } from '../../lib/styles'
+import { HEADER_SIZE, sizes } from '../../lib/styles'
 
 const Image = styled(GatsbyImage)({
     marginLeft: 'auto',
@@ -34,6 +34,7 @@ const HeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element |
 HeroImageComponent.displayName = 'HeroImage'
 
 const HeroImage = styled(HeroImageComponent)({
+    paddingTop: HEADER_SIZE,
     display: 'flex',
     gridColumn: '1 / -1',
     position: 'relative',

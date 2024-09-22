@@ -78,6 +78,8 @@ export const zIndices = {
     auto: 'auto' as const,
 } as const
 
+export const HEADER_SIZE = sizes[15]
+
 /** Spacing variables end */
 /** Grid variables start */
 
@@ -86,13 +88,11 @@ export const gridAreas = {
     footer: 'footer' as const,
 } as const
 export const gridTemplateAreasLayout = `
-    "header"
     " main "
     "footer"
 `
 
-/** Header is 60px tall, minus gap of 18px and footer is 96px */
-export const gridTemplateRowsLayout = `42px 1fr ${sizes[24]}` as const
+export const gridTemplateRowsLayout = `1fr ${sizes[24]}` as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle = '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr' as const
 

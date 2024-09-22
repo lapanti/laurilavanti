@@ -140,6 +140,7 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c11 {
+  padding-top: 3.75rem;
   display: flex;
   position: relative;
   grid-column: 1/-1;
@@ -391,8 +392,8 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: "header" " main " "footer";
-  grid-template-rows: 42px 1fr 6rem;
+  grid-template-areas: " main " "footer";
+  grid-template-rows: 1fr 6rem;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
   min-height: 100vh;
