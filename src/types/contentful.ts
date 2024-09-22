@@ -79,7 +79,6 @@ export type RichBody = RenderRichTextData<RichReferences>
 
 export interface ContentfulPage {
     description: string | null
-    hideTitle: boolean
     jsonLdType: JsonLdType
     title: string
     body: RichBody

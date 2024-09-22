@@ -16,7 +16,6 @@ const images = {
 export const frontPage: ContentfulPage = {
     ...images,
     description: null,
-    hideTitle: true,
     jsonLdType: 'WebSite',
     title: 'Lauri Lavanti',
     body: {
@@ -40,7 +39,6 @@ export const aboutMe: ContentfulPage = {
     ...images,
     description:
         'Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.',
-    hideTitle: false,
     jsonLdType: 'Person',
     title: 'Minusta',
     body: {
@@ -191,7 +189,6 @@ export const aboutMe: ContentfulPage = {
 export const blog: ContentfulPage = {
     ...images,
     description: null,
-    hideTitle: false,
     jsonLdType: 'WebPage',
     title: 'Blogi',
     body: {
@@ -209,7 +206,6 @@ export const blog: ContentfulPage = {
 export const contactMe: ContentfulPage = {
     ...images,
     description: 'Yhteystiedot',
-    hideTitle: false,
     jsonLdType: 'Person',
     title: 'Ota yhteyttä',
     body: {
