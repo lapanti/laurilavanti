@@ -27,7 +27,6 @@ import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import Hr from './Hr'
 import InternalLink from './InternalLink'
-import BigHeroImage from './layout/BigHeroImage'
 import ContactInfo from './layout/ContactInfo'
 import CurriculumVitae from './layout/CurriculumVitae'
 import Footer from './layout/Footer'
@@ -51,20 +50,6 @@ const Article = styled.article({
     gridTemplateColumns: gridTemplateColumnsArticle,
     [`${Title} + *`]: {
         marginTop: sizes[1],
-    },
-})
-
-const MobileBigHeroImage = styled(BigHeroImage)({
-    display: 'flex !important',
-    [breakpoints.biggerThanPhone.min]: {
-        display: 'none !important',
-    },
-})
-
-const DesktopBigHeroImage = styled(BigHeroImage)({
-    display: 'none !important',
-    [breakpoints.biggerThanPhone.min]: {
-        display: 'flex !important',
     },
 })
 
@@ -275,13 +260,6 @@ const LayoutComponent = ({
                                 secondaryTitle={secondaryTitle}
                             />
                         )}
-                        {isFrontPage && heroImage && (
-                            <DesktopBigHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
-                        )}
-                        {isFrontPage && mobileHeroImage && (
-                            <MobileBigHeroImage imageData={mobileHeroImage} alt={mobileHeroImageAlt || ''} />
-                        )}
-
                         {!isFrontPage && heroImage && (
                             <DesktopHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
                         )}
