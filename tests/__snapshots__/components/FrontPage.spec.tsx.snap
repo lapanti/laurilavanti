@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FrontPage /> should render 1`] = `
-.c24 {
+.c18 {
   grid-column-start: 3;
   font-family: "Krana Fat";
   font-weight: 700;
@@ -23,7 +23,7 @@ exports[`<FrontPage /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c25 {
+.c19 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -32,24 +32,24 @@ exports[`<FrontPage /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c36 {
+.c30 {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5rem;
 }
 
-.c37 {
+.c31 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c37 :last-child {
+.c31 :last-child {
   margin-right: 0px;
 }
 
-.c38 {
+.c32 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -57,45 +57,45 @@ exports[`<FrontPage /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.c39 {
+.c33 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.c40 {
+.c34 {
   margin-right: 1rem;
 }
 
-.c40 :last-child {
+.c34 :last-child {
   margin-right: 0px;
 }
 
-.c35 {
+.c29 {
   display: flex;
   flex-direction: column;
 }
 
-.c29 {
+.c23 {
   color: rgb(235, 235, 236);
 }
 
-.c30 {
+.c24 {
   width: 100%;
   display: flex;
   height: 16rem;
   object-fit: cover;
 }
 
-.c32 {
+.c26 {
   display: flex!important;
 }
 
-.c31 {
+.c25 {
   display: none!important;
 }
 
-.c33 {
+.c27 {
   display: flex;
   align-items: flex-end;
   margin-bottom: 1rem;
@@ -109,51 +109,34 @@ exports[`<FrontPage /> should render 1`] = `
   position: relative;
 }
 
-.c34 {
+.c28 {
   grid-column-start: auto;
 }
 
-.c41 {
+.c35 {
   margin-top: 0.25rem;
 }
 
-.c28 {
+.c22 {
   grid-column-start: 3;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.c27 {
+.c21 {
   grid-column-start: 3;
   margin-bottom: 1rem;
 }
 
-.c14 {
-  margin-left: auto;
-  margin-right: auto;
-  height: 41rem!important;
-  object-fit: cover;
-  width: 100%!important;
-  max-width: 1920px;
-  overflow: hidden;
-}
-
-.c12 {
-  padding-top: 3.75rem;
-  display: flex;
-  position: relative;
-  grid-column: 1/-1;
-}
-
-.c45 {
+.c39 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c45 >* {
+.c39 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -162,61 +145,61 @@ exports[`<FrontPage /> should render 1`] = `
   transition-duration: 150ms;
 }
 
+.c38 {
+  padding: 0px;
+}
+
+.c38 :hover,
+.c38 :focus {
+  fill: #4267B2;
+}
+
+.c40 {
+  padding: 0px;
+}
+
+.c40 :hover,
+.c40 :focus {
+  fill: rgb(0, 0, 0);
+}
+
+.c41 {
+  padding: 0px;
+}
+
+.c41 :hover,
+.c41 :focus {
+  fill: url(#instagram-gradient);
+}
+
+.c42 {
+  padding: 0px;
+}
+
+.c42 :hover,
+.c42 :focus {
+  fill: #0E76A8;
+}
+
+.c43 {
+  padding: 0px;
+}
+
+.c43 :hover,
+.c43 :focus {
+  fill: #6363ff;
+}
+
 .c44 {
   padding: 0px;
 }
 
 .c44 :hover,
 .c44 :focus {
-  fill: #4267B2;
-}
-
-.c46 {
-  padding: 0px;
-}
-
-.c46 :hover,
-.c46 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c48 {
-  padding: 0px;
-}
-
-.c48 :hover,
-.c48 :focus {
-  fill: #0E76A8;
-}
-
-.c49 {
-  padding: 0px;
-}
-
-.c49 :hover,
-.c49 :focus {
-  fill: #6363ff;
-}
-
-.c50 {
-  padding: 0px;
-}
-
-.c50 :hover,
-.c50 :focus {
   fill: #0060df;
 }
 
-.c43 {
+.c37 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -224,7 +207,7 @@ exports[`<FrontPage /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c42 {
+.c36 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -296,84 +279,39 @@ exports[`<FrontPage /> should render 1`] = `
   user-select: none;
 }
 
+.c13 {
+  font-family: "Krana Fat";
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.c14 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.c16 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.c12 {
+  color: rgb(248, 207, 169);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1.75rem;
+}
+
 .c11 {
   background: rgb(0, 98, 114);
   height: 100vh;
   grid-column: 1/-1;
   padding-top: 3.75rem;
-}
-
-.c17 {
-  grid-column-start: 3;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-  overflow: visible;
-}
-
-.c18 {
-  display: flex;
-}
-
-.c19 {
-  text-shadow: black 1px 1px 1px;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  animation: kTcigv 1 1s ease-in-out;
-}
-
-.c20 {
-  text-shadow: black 1px 1px 1px;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  animation: kTcigv 1 0.9s ease-in-out;
-}
-
-.c21 {
-  text-shadow: black 1px 1px 1px;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  animation: kTcigv 1 0.8s ease-in-out;
-}
-
-.c22 {
-  text-shadow: black 1px 1px 1px;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  animation: kTcigv 1 0.7s ease-in-out;
-}
-
-.c23 {
-  text-shadow: black 1px 1px 1px;
-  width: 2.5rem;
-  display: flex;
-  justify-content: center;
-  animation: kTcigv 1 0.6s ease-in-out;
-}
-
-.c16 {
-  z-index: 40;
-  grid-column: 1/-1;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -41rem;
-  display: grid;
-  height: 41rem;
-  width: 100%;
-  max-width: 1920px;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
-  overflow: hidden;
-  background-image: linear-gradient(to right, rgba(0,0,0,.85), rgba(0,0,0,.05), rgba(0, 0, 0, 0));
-  font-family: "Krana Fat";
-  font-weight: 900;
-  color: rgb(255, 255, 255);
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .c9 {
@@ -385,15 +323,7 @@ exports[`<FrontPage /> should render 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c15 {
-  display: flex!important;
-}
-
-.c13 {
-  display: none!important;
-}
-
-.c26 {
+.c20 {
   grid-column-start: 3;
 }
 
@@ -408,13 +338,13 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 @media (min-width: 479px) {
-  .c32 {
+  .c26 {
     display: none!important;
   }
 }
 
 @media (min-width: 479px) {
-  .c31 {
+  .c25 {
     display: flex!important;
   }
 }
@@ -433,7 +363,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 @media (min-width: 1200px) {
   .c8 {
-    flex: 1;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -442,20 +372,42 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
+  .c13 {
+    font-size: 6rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c12 {
+    width: 50%;
+    padding: 3.75rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .c12 .c15 {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c17 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c17 {
+    background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7)),url(https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg);
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1200px) {
   .c11 {
     height: 45rem;
-  }
-}
-
-@media (min-width: 479px) {
-  .c15 {
-    display: none!important;
-  }
-}
-
-@media (min-width: 479px) {
-  .c13 {
-    display: flex!important;
+    flex-direction: row-reverse;
   }
 }
 
@@ -569,194 +521,52 @@ exports[`<FrontPage /> should render 1`] = `
       >
         <div
           class="c11"
-        />
-        <div
-          class="c12 c13"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c14"
-            data-gatsby-image-wrapper=""
-            style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+            class="c12"
           >
-            <div
-              style="max-width: 4032px; display: block;"
+            <h1
+              class="c13"
             >
-              <img
-                alt=""
-                aria-hidden="true"
-                role="presentation"
-                src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-                style="max-width: 100%; display: block; position: static;"
-              />
-            </div>
-            <img
-              alt=""
-              aria-hidden="true"
-              data-placeholder-image=""
-              decoding="async"
-              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-              style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-            />
-            <picture>
-              <source
-                data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-                sizes="(min-width: 4032px) 4032px, 100vw"
-                type="image/webp"
-              />
-              <img
-                alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-                data-gatsby-image-ssr=""
-                data-main-image=""
-                data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-                data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-                decoding="async"
-                loading="lazy"
-                sizes="(min-width: 4032px) 4032px, 100vw"
-                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-              />
-            </picture>
-            <noscript />
-            <script
-              type="module"
+              Lauri Lavanti
+            </h1>
+            <h3
+              class="c14"
             >
-              const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-            </script>
+              Ehdolla kunta- ja aluevaaleissa 2025
+            </h3>
+            <h2
+              class="c15 c16"
+            >
+              Kasvava ja kestävä Kirkkonummi
+            </h2>
           </div>
-        </div>
-        <div
-          class="c12 c15"
-        >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c14"
-            data-gatsby-image-wrapper=""
-            style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
-          >
-            <div
-              style="max-width: 4032px; display: block;"
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                role="presentation"
-                src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-                style="max-width: 100%; display: block; position: static;"
-              />
-            </div>
-            <img
-              alt=""
-              aria-hidden="true"
-              data-placeholder-image=""
-              decoding="async"
-              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-              style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-            />
-            <picture>
-              <source
-                data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-                sizes="(min-width: 4032px) 4032px, 100vw"
-                type="image/webp"
-              />
-              <img
-                alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-                data-gatsby-image-ssr=""
-                data-main-image=""
-                data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-                data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-                decoding="async"
-                loading="lazy"
-                sizes="(min-width: 4032px) 4032px, 100vw"
-                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-              />
-            </picture>
-            <noscript />
-            <script
-              type="module"
-            >
-              const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-            </script>
-          </div>
-        </div>
-        <div
-          class="c16"
-        >
-          <h1
-            aria-label="Lauri Lavanti"
             class="c17"
-          >
-            <span
-              class="c18"
-            >
-              <span
-                class="c19"
-                index="0"
-              >
-                L
-              </span>
-            </span>
-            <span
-              class="c18"
-            >
-              <span
-                class="c20"
-                index="1"
-              >
-                A
-              </span>
-            </span>
-            <span
-              class="c18"
-            >
-              <span
-                class="c21"
-                index="2"
-              >
-                U
-              </span>
-            </span>
-            <span
-              class="c18"
-            >
-              <span
-                class="c22"
-                index="3"
-              >
-                R
-              </span>
-            </span>
-            <span
-              class="c18"
-            >
-              <span
-                class="c23"
-                index="4"
-              >
-                I
-              </span>
-            </span>
-          </h1>
+          />
         </div>
         <h2
-          class="c24"
+          class="c18"
           id="lyhyesti"
         >
           Lyhyesti
         </h2>
         <p
-          class="c25 c26"
+          class="c19 c20"
         >
           Kirkkonummelainen politiikasta kiinnostunut diplomi-insinööri. Vihreiden luottamushenkilö (entisen perusturvajaoston jäsen, suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen), ohjelmistokehittäjä ja kolmen lapsen isä.
         </p>
         <h2
-          class="c24"
+          class="c18"
           id="uusimmat-kirjoitukset"
         >
           Uusimmat kirjoitukset
         </h2>
         <hr
-          class="c27"
+          class="c21"
         />
         <ul
-          class="c28"
+          class="c22"
         >
           <li
             class=""
@@ -767,12 +577,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c29"
+                class="c4 c23"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c30 c31"
+                  class="gatsby-image-wrapper c24 c25"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -810,7 +620,7 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper c30 c32"
+                  class="gatsby-image-wrapper c24 c26"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 478px; height: 478px;"
                 >
@@ -848,10 +658,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c33"
+                  class="c27"
                 >
                   <h2
-                    class="c24 c34"
+                    class="c18 c28"
                     id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                     itemprop="headline"
                   >
@@ -861,16 +671,16 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-                class="c35"
+                class="c29"
               >
                 <div
-                  class="c36"
+                  class="c30"
                 >
                   <span
-                    class="c37"
+                    class="c31"
                   >
                     <svg
-                      class="c38"
+                      class="c32"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -891,10 +701,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c39"
+                  class="c33"
                 >
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -905,7 +715,7 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -916,7 +726,7 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -929,7 +739,7 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c25 c41"
+                class="c19 c35"
                 itemprop="description"
               >
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
@@ -953,12 +763,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c29"
+                class="c4 c23"
                 href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c30 c31"
+                  class="gatsby-image-wrapper c24 c25"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -996,7 +806,7 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper c30 c32"
+                  class="gatsby-image-wrapper c24 c26"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 478px; height: 478px;"
                 >
@@ -1034,10 +844,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c33"
+                  class="c27"
                 >
                   <h2
-                    class="c24 c34"
+                    class="c18 c28"
                     id="luontomme-on-valttimme---vuodesta-toiseen"
                     itemprop="headline"
                   >
@@ -1047,16 +857,16 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Luontomme on valttimme - vuodesta toiseen meta-tiedot"
-                class="c35"
+                class="c29"
               >
                 <div
-                  class="c36"
+                  class="c30"
                 >
                   <span
-                    class="c37"
+                    class="c31"
                   >
                     <svg
-                      class="c38"
+                      class="c32"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1077,10 +887,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c39"
+                  class="c33"
                 >
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -1091,7 +901,7 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -1102,7 +912,7 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -1115,7 +925,7 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c25 c41"
+                class="c19 c35"
                 itemprop="description"
               >
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
@@ -1139,12 +949,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c29"
+                class="c4 c23"
                 href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c30 c31"
+                  class="gatsby-image-wrapper c24 c25"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1182,7 +992,7 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="gatsby-image-wrapper c30 c32"
+                  class="gatsby-image-wrapper c24 c26"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 478px; height: 478px;"
                 >
@@ -1220,10 +1030,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c33"
+                  class="c27"
                 >
                   <h2
-                    class="c24 c34"
+                    class="c18 c28"
                     id="uusi-vuosi,-tuttu-talvikunnossapito"
                     itemprop="headline"
                   >
@@ -1233,16 +1043,16 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Uusi vuosi, tuttu talvikunnossapito meta-tiedot"
-                class="c35"
+                class="c29"
               >
                 <div
-                  class="c36"
+                  class="c30"
                 >
                   <span
-                    class="c37"
+                    class="c31"
                   >
                     <svg
-                      class="c38"
+                      class="c32"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1263,10 +1073,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c39"
+                  class="c33"
                 >
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -1277,7 +1087,7 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -1288,7 +1098,7 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c34"
                   >
                     <a
                       class="c4"
@@ -1301,7 +1111,7 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c25 c41"
+                class="c19 c35"
                 itemprop="description"
               >
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
@@ -1318,21 +1128,21 @@ exports[`<FrontPage /> should render 1`] = `
           </li>
         </ul>
         <p
-          class="c25 c26"
+          class="c19 c20"
         />
       </article>
     </main>
     <footer
-      class="c42"
+      class="c36"
     >
       <ul
-        class="c43"
+        class="c37"
       >
         <li
-          class="c44"
+          class="c38"
         >
           <a
-            class="c45"
+            class="c39"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1354,10 +1164,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c46"
+          class="c40"
         >
           <a
-            class="c45"
+            class="c39"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1379,10 +1189,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c47"
+          class="c41"
         >
           <a
-            class="c45"
+            class="c39"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1404,10 +1214,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c48"
+          class="c42"
         >
           <a
-            class="c45"
+            class="c39"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1429,10 +1239,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c49"
+          class="c43"
         >
           <a
-            class="c45"
+            class="c39"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1454,10 +1264,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c50"
+          class="c44"
         >
           <a
-            class="c45"
+            class="c39"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
