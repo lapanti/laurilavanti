@@ -16,7 +16,7 @@ const HamburgerContainer = styled.div({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    marginRight: sizes[7],
+    marginRight: sizes[1.75],
     [breakpoints[1200].min]: {
         display: 'none',
     },
@@ -30,7 +30,7 @@ const MobileMenu = styled.div<{ $isOpen: boolean }>(
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: sizes[10],
+        gap: sizes[2.5],
         top: HEADER_SIZE,
         width: '100vw',
         overflow: 'hidden',
@@ -68,7 +68,7 @@ const Half = styled.div({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: sizes[10],
+        gap: sizes[2.5],
     },
 })
 

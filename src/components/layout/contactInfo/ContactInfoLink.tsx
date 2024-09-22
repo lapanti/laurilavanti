@@ -21,7 +21,7 @@ const RowExternalLink = styled(ExternalLink)({
     alignItems: 'center',
 })
 
-const logoStyles = { width: sizes[4], height: sizes[4], marginRight: sizes[2] }
+const logoStyles = { width: sizes[1], height: sizes[1], marginRight: sizes[0.5] }
 
 const Envelope = styled(FaEnvelope)(logoStyles)
 

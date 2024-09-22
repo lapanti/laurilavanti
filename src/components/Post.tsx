@@ -16,7 +16,7 @@ import PostMeta from './PostMeta'
 
 const PositionedMeta = styled(PostMeta)({
     gridColumnStart: 3,
-    marginTop: sizes[4],
+    marginTop: sizes[1],
 })
 
 interface Props {

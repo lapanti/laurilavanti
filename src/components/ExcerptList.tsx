@@ -124,7 +124,7 @@ const ExcerptList = styled(ExcerptListComponent)({
     gridColumnStart: 3,
     display: 'flex',
     flexDirection: 'column',
-    gap: sizes[8],
+    gap: sizes[2],
 })
 
 export default ExcerptList

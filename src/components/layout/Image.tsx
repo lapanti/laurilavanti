@@ -13,7 +13,7 @@ const Img = styled(GatsbyImage)({
 })
 
 const Caption = styled.figcaption({
-    marginTop: sizes[2],
+    marginTop: sizes[0.5],
     fontStyle: 'italic',
     display: 'flex',
     flexDirection: 'row',
@@ -46,8 +46,8 @@ ImageComponent.displayName = 'Image'
 
 const Image = styled(ImageComponent)({
     gridColumn: '1 / -1',
-    marginTop: sizes[4],
-    marginBottom: sizes[4],
+    marginTop: sizes[1],
+    marginBottom: sizes[1],
 })
 
 export default Image

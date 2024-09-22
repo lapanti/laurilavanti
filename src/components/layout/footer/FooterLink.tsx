@@ -14,8 +14,8 @@ const Link = styled.a({
 
     '> *': {
         fill: colors.gray,
-        height: sizes[9],
-        width: sizes[9],
+        height: sizes[2.25],
+        width: sizes[2.25],
         ...transitions.base,
     },
 })

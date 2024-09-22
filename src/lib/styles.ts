@@ -28,43 +28,44 @@ export const breakpoints = {
 
 export const sizes = {
     [0]: '0px' as const,
-    [0.5]: '0.125rem' as const, // 2px
-    [1]: '0.25rem' as const, // 4px
-    [1.5]: '0.375rem' as const, // 6px
-    [2]: '0.5rem' as const, // 8px
-    [2.5]: '0.625rem' as const, // 10px
-    [3]: '0.75rem' as const, // 12px
-    [3.5]: '0.875rem' as const, // 14px
-    [4]: '1rem' as const, // 16px
-    [4.5]: '1.125rem' as const, // 18px
-    [5]: '1.25rem' as const, // 20px
-    [6]: '1.5rem' as const, // 24px
-    [7]: '1.75rem' as const, // 28px
-    [8]: '2rem' as const, // 32px
-    [9]: '2.25rem' as const, // 36px
-    [10]: '2.5rem' as const, // 40px
-    [11]: '2.75rem' as const, // 44px
-    [12]: '3rem' as const, // 48px
-    [14]: '3.5rem' as const, // 56px
-    [15]: '3.75rem' as const, // 60px
-    [16]: '4rem' as const, // 64px
-    [18]: '4.5rem' as const, // 72px
-    [20]: '5rem' as const, // 80px
-    [24]: '6rem' as const, // 96px
-    [28]: '7rem' as const, // 112px
-    [32]: '8rem' as const, // 128px
-    [36]: '9rem' as const, // 144px
-    [40]: '10rem' as const, // 160px
-    [44]: '11rem' as const, // 176px
-    [48]: '12rem' as const, // 192px
-    [52]: '13rem' as const, // 208px
-    [56]: '14rem' as const, // 224px
-    [60]: '15rem' as const, // 240px
-    [64]: '16rem' as const, // 256px
-    [72]: '18rem' as const, // 288px
-    [80]: '20rem' as const, // 320px
-    [96]: '24rem' as const, // 384px
-    [164]: '41rem' as const, // 656px
+    [0.125]: '0.125rem' as const, // 2px
+    [0.25]: '0.25rem' as const, // 4px
+    [0.375]: '0.375rem' as const, // 6px
+    [0.5]: '0.5rem' as const, // 8px
+    [0.625]: '0.625rem' as const, // 10px
+    [0.75]: '0.75rem' as const, // 12px
+    [0.875]: '0.875rem' as const, // 14px
+    [1]: '1rem' as const, // 16px
+    [1.125]: '1.125rem' as const, // 18px
+    [1.25]: '1.25rem' as const, // 20px
+    [1.5]: '1.5rem' as const, // 24px
+    [1.75]: '1.75rem' as const, // 28px
+    [2]: '2rem' as const, // 32px
+    [2.25]: '2.25rem' as const, // 36px
+    [2.5]: '2.5rem' as const, // 40px
+    [2.75]: '2.75rem' as const, // 44px
+    [3]: '3rem' as const, // 48px
+    [3.5]: '3.5rem' as const, // 56px
+    [3.75]: '3.75rem' as const, // 60px
+    [4]: '4rem' as const, // 64px
+    [4.5]: '4.5rem' as const, // 72px
+    [5]: '5rem' as const, // 80px
+    [6]: '6rem' as const, // 96px
+    [7]: '7rem' as const, // 112px
+    [8]: '8rem' as const, // 128px
+    [9]: '9rem' as const, // 144px
+    [10]: '10rem' as const, // 160px
+    [11]: '11rem' as const, // 176px
+    [12]: '12rem' as const, // 192px
+    [13]: '13rem' as const, // 208px
+    [14]: '14rem' as const, // 224px
+    [15]: '15rem' as const, // 240px
+    [16]: '16rem' as const, // 256px
+    [18]: '18rem' as const, // 288px
+    [20]: '20rem' as const, // 320px
+    [24]: '24rem' as const, // 384px
+    [41]: '41rem' as const, // 656px
+    [45]: '45rem' as const, // 720px
     fullHd: '1920px' as const,
 } as const
 
@@ -78,7 +79,7 @@ export const zIndices = {
     auto: 'auto' as const,
 } as const
 
-export const HEADER_SIZE = sizes[15]
+export const HEADER_SIZE = sizes[3.75]
 
 /** Spacing variables end */
 /** Grid variables start */
@@ -92,7 +93,7 @@ export const gridTemplateAreasLayout = `
     "footer"
 `
 
-export const gridTemplateRowsLayout = `1fr ${sizes[24]}` as const
+export const gridTemplateRowsLayout = `1fr ${sizes[6]}` as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle = '1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr' as const
 
