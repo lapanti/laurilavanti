@@ -14,7 +14,7 @@ const Title = styled.h1({
     },
 })
 
-const Subtitle = styled.h3({
+const Subtitle = styled.p({
     ...fontSizes['2xl'],
     fontWeight: fontWeights.bold,
 })
