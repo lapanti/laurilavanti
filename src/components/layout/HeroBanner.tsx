@@ -72,8 +72,8 @@ const HeroBannerComponent = ({ className, title, subtitle, secondaryTitle, backg
         <div className={className}>
             <Titles>
                 <Title>{title}</Title>
-                <Subtitle>{subtitle}</Subtitle>
-                <SecondaryTitle>{secondaryTitle}</SecondaryTitle>
+                {subtitle && <Subtitle>{subtitle}</Subtitle>}
+                {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
             <ImageContainer $backgroundSrc={backgroundSrc}></ImageContainer>
         </div>
