@@ -111,18 +111,6 @@ exports[`<HeroBanner /> should render minimal 1`] = `
   line-height: 1;
 }
 
-.c3 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.c5 {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  font-weight: 700;
-}
-
 .c1 {
   color: rgb(248, 207, 169);
   display: flex;
@@ -154,14 +142,10 @@ exports[`<HeroBanner /> should render minimal 1`] = `
     align-items: flex-start;
     justify-content: center;
   }
-
-  .c1 .c4 {
-    margin-top: 3rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c3 {
     width: 50%;
   }
 }
@@ -184,15 +168,9 @@ exports[`<HeroBanner /> should render minimal 1`] = `
     >
       Test Title
     </h1>
-    <h3
-      class="c3"
-    />
-    <h2
-      class="c4 c5"
-    />
   </div>
   <div
-    class="c6"
+    class="c3"
   />
 </div>
 `;

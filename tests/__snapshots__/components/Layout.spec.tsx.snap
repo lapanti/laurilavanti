@@ -8955,14 +8955,14 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   text-decoration: underline;
 }
 
-.c21 {
+.c19 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c21 >* {
+.c19 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -8971,13 +8971,31 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   transition-duration: 150ms;
 }
 
+.c18 {
+  padding: 0px;
+}
+
+.c18 :hover,
+.c18 :focus {
+  fill: #4267B2;
+}
+
 .c20 {
   padding: 0px;
 }
 
 .c20 :hover,
 .c20 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c21 {
+  padding: 0px;
+}
+
+.c21 :hover,
+.c21 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c22 {
@@ -8986,7 +9004,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c22 :hover,
 .c22 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c23 {
@@ -8995,7 +9013,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c23 :hover,
 .c23 :focus {
-  fill: url(#instagram-gradient);
+  fill: #6363ff;
 }
 
 .c24 {
@@ -9004,28 +9022,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c24 :hover,
 .c24 :focus {
-  fill: #0E76A8;
-}
-
-.c25 {
-  padding: 0px;
-}
-
-.c25 :hover,
-.c25 :focus {
-  fill: #6363ff;
-}
-
-.c26 {
-  padding: 0px;
-}
-
-.c26 :hover,
-.c26 :focus {
   fill: #0060df;
 }
 
-.c19 {
+.c17 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9033,7 +9033,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   gap: 1.5rem;
 }
 
-.c18 {
+.c16 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -9117,12 +9117,6 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   font-weight: 700;
 }
 
-.c16 {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  font-weight: 700;
-}
-
 .c12 {
   color: rgb(248, 207, 169);
   display: flex;
@@ -9195,14 +9189,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
     align-items: flex-start;
     justify-content: center;
   }
-
-  .c12 .c15 {
-    margin-top: 3rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .c17 {
+  .c15 {
     width: 50%;
   }
 }
@@ -9337,28 +9327,25 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           >
             Subtesxttitle
           </h3>
-          <h2
-            class="c15 c16"
-          />
         </div>
         <div
-          class="c17"
+          class="c15"
         />
       </div>
       Children
     </article>
   </main>
   <footer
-    class="c18"
+    class="c16"
   >
     <ul
-      class="c19"
+      class="c17"
     >
       <li
-        class="c20"
+        class="c18"
       >
         <a
-          class="c21"
+          class="c19"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -9380,10 +9367,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         </a>
       </li>
       <li
-        class="c22"
+        class="c20"
       >
         <a
-          class="c21"
+          class="c19"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -9405,10 +9392,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         </a>
       </li>
       <li
-        class="c23"
+        class="c21"
       >
         <a
-          class="c21"
+          class="c19"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -9430,10 +9417,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         </a>
       </li>
       <li
-        class="c24"
+        class="c22"
       >
         <a
-          class="c21"
+          class="c19"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -9455,10 +9442,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         </a>
       </li>
       <li
-        class="c25"
+        class="c23"
       >
         <a
-          class="c21"
+          class="c19"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -9480,10 +9467,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         </a>
       </li>
       <li
-        class="c26"
+        class="c24"
       >
         <a
-          class="c21"
+          class="c19"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
