@@ -27,7 +27,8 @@
     "test:ci": "jest --config tests/jest.config.js --coverage",
     "test:e2e-dev": "start-server-and-test develop http://localhost:8000 test:e2e",
     "test:e2e": "playwright test",
-    "test:e2e:setup": "playwright install --with-deps"
+    "test:e2e:setup": "playwright install --with-deps",
+    "test:e2e:update": "npm run test:e2e --  --update-snapshots"
   },
   "dependencies": {
     "@fontsource/ubuntu": "5.1.0",
