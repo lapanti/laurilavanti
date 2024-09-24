@@ -112,7 +112,7 @@ describe('<Layout />', () => {
         expect(screen.getByText(children)).toBeInTheDocument()
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByRole('heading', { name: subtitle })).toBeInTheDocument()
+        expect(screen.getByText(subtitle)).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })

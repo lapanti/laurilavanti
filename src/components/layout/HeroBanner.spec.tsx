@@ -23,7 +23,7 @@ describe('<HeroBanner />', () => {
         )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByRole('heading', { name: subtitle })).toBeInTheDocument()
+        expect(screen.getByText(subtitle)).toBeInTheDocument()
         expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
