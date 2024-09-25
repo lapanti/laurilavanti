@@ -9133,7 +9133,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 .c16 {
-  position: absolute;
+  margin-top: auto;
   right: -5rem;
   bottom: 0;
 }
@@ -9146,6 +9146,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 .c9 {
@@ -9213,10 +9214,9 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   }
 }
 
-@media not all and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .c16 {
-    height: 100%!important;
-    width: 100%!important;
+    position: absolute;
   }
 }
 
@@ -9393,7 +9393,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
                 decoding="async"
                 loading="lazy"
                 sizes="(min-width: 4032px) 4032px, 100vw"
-                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
               />
             </picture>
             <noscript />

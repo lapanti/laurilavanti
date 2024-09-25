@@ -313,7 +313,7 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c18 {
-  position: absolute;
+  margin-top: auto;
   right: -5rem;
   bottom: 0;
 }
@@ -326,6 +326,7 @@ exports[`<FrontPage /> should render 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 .c9 {
@@ -420,10 +421,9 @@ exports[`<FrontPage /> should render 1`] = `
   }
 }
 
-@media not all and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .c18 {
-    height: 100%!important;
-    width: 100%!important;
+    position: absolute;
   }
 }
 
@@ -606,7 +606,7 @@ exports[`<FrontPage /> should render 1`] = `
                   decoding="async"
                   loading="lazy"
                   sizes="(min-width: 4032px) 4032px, 100vw"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
                 />
               </picture>
               <noscript />
@@ -1631,7 +1631,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 }
 
 .c15 {
-  position: absolute;
+  margin-top: auto;
   right: -5rem;
   bottom: 0;
 }
@@ -1644,6 +1644,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 .c9 {
@@ -1711,10 +1712,9 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   }
 }
 
-@media not all and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .c15 {
-    height: 100%!important;
-    width: 100%!important;
+    position: absolute;
   }
 }
 
@@ -1885,7 +1885,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
                   decoding="async"
                   loading="lazy"
                   sizes="(min-width: 4032px) 4032px, 100vw"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
                 />
               </picture>
               <noscript />
