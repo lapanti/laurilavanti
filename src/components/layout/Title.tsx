@@ -14,7 +14,7 @@ import {
 
 const H1 = styled.h1({
     gridColumnStart: 3,
-    fontFamily: fontFamilies.heading,
+    fontFamily: fontFamilies.sans,
     fontWeight: fontWeights.black,
     color: colors.white,
     display: 'flex',
