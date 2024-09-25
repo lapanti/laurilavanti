@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage } from '../../../tests/images.mock'
+import { mainImage, mainImageDescription } from '../../../tests/images.mock'
 import HeroBanner from './HeroBanner'
 
 describe('<HeroBanner />', () => {
@@ -13,18 +13,27 @@ describe('<HeroBanner />', () => {
         const { container } = render(<HeroBanner title={title} />)
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+        expect(screen.queryByRole('img')).toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render maximal', () => {
         const { container } = render(
-            <HeroBanner title={title} subtitle={subtitle} secondaryTitle={secondaryTitle} backgroundImage={mainImage} />
+            <HeroBanner
+                title={title}
+                subtitle={subtitle}
+                secondaryTitle={secondaryTitle}
+                imageAlt={mainImageDescription}
+                imageData={mainImage}
+                backgroundImage={mainImage}
+            />
         )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         expect(screen.getByText(subtitle)).toBeInTheDocument()
         expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
+        expect(screen.getByRole('img', { name: mainImageDescription })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })
