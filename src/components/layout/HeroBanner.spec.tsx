@@ -18,6 +18,15 @@ describe('<HeroBanner />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render minimal with borken image data', () => {
+        const { container } = render(<HeroBanner title={title} imageData={{ key: undefined }} />)
+
+        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+        expect(screen.queryByRole('img')).toBeNull()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should render maximal', () => {
         const { container } = render(
             <HeroBanner
