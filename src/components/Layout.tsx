@@ -258,6 +258,8 @@ const LayoutComponent = ({
                                 backgroundImage={backgroundImage}
                                 subtitle={subtitle}
                                 secondaryTitle={secondaryTitle}
+                                imageData={heroImage}
+                                imageAlt={heroImageAlt}
                             />
                         )}
                         {!isFrontPage && heroImage && (
