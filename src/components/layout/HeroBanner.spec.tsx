@@ -27,6 +27,16 @@ describe('<HeroBanner />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render minimal with image with no image alt', () => {
+        const { container } = render(<HeroBanner title={title} imageData={mainImage} />)
+
+        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+        // When gatsby image has no alt, it has aria-role presentation
+        expect(screen.getByRole('presentation', { name: '' })).toBeInTheDocument()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should render maximal', () => {
         const { container } = render(
             <HeroBanner
