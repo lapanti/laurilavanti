@@ -64,13 +64,11 @@ const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
 )
 
 const Image = styled(GatsbyImage)({
-    position: 'absolute',
+    marginTop: 'auto',
     right: `-${sizes[5]}`,
     bottom: 0,
-    [breakpoints[1200].max]: {
-        // We absolutely do not want these unless on mobile
-        height: '100% !important',
-        width: '100% !important',
+    [breakpoints[1200].min]: {
+        position: 'absolute',
     },
 })
 
@@ -104,7 +102,7 @@ const HeroBannerComponent = ({
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
             <ImageContainer $backgroundSrc={backgroundSrc}>
-                {image && <Image image={image} alt={imageAlt ?? ''} />}
+                {image && <Image objectFit="contain" image={image} alt={imageAlt ?? ''} />}
             </ImageContainer>
         </div>
     )
@@ -120,6 +118,7 @@ const HeroBanner = styled(HeroBannerComponent)({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'stretch',
+    marginBottom: sizes[4],
 
     [breakpoints[1200].min]: {
         height: sizes[45],

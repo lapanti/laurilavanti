@@ -35,7 +35,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 }
 
 .c7 {
-  position: absolute;
+  margin-top: auto;
   right: -5rem;
   bottom: 0;
 }
@@ -48,6 +48,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 1200px) {
@@ -85,10 +86,9 @@ exports[`<HeroBanner /> should render maximal 1`] = `
   }
 }
 
-@media not all and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .c7 {
-    height: 100%!important;
-    width: 100%!important;
+    position: absolute;
   }
 }
 
@@ -163,7 +163,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
           decoding="async"
           loading="lazy"
           sizes="(min-width: 4032px) 4032px, 100vw"
-          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
         />
       </picture>
       <noscript />
@@ -207,6 +207,7 @@ exports[`<HeroBanner /> should render minimal 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 1200px) {
@@ -288,6 +289,7 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 1200px) {
@@ -362,7 +364,7 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
 }
 
 .c4 {
-  position: absolute;
+  margin-top: auto;
   right: -5rem;
   bottom: 0;
 }
@@ -375,6 +377,7 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  margin-bottom: 4rem;
 }
 
 @media (min-width: 1200px) {
@@ -401,10 +404,9 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
   }
 }
 
-@media not all and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .c4 {
-    height: 100%!important;
-    width: 100%!important;
+    position: absolute;
   }
 }
 
@@ -469,7 +471,7 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
           decoding="async"
           loading="lazy"
           sizes="(min-width: 4032px) 4032px, 100vw"
-          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
         />
       </picture>
       <noscript />
