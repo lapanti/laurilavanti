@@ -15,7 +15,8 @@ const images = {
 }
 
 export const frontPage: ContentfulPage = {
-    ...images,
+    image,
+    mobileImage: image,
     backgroundImage: image,
     description: null,
     jsonLdType: 'WebSite',
