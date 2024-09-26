@@ -5,14 +5,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { breakpoints, colors, gradients, sizes, zIndices } from '../../lib/styles'
+import { breakpoints, colors, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
 const Link = styled(InternalLink)({
-    color: colors.gray,
+    color: colors.black,
 })
 
 const Image = styled(GatsbyImage)({
@@ -39,13 +39,8 @@ const DesktopImage = styled(Image)({
 const H2Container = styled.div({
     display: 'flex',
     alignItems: 'flex-end',
-    marginBottom: sizes[1],
-    paddingBottom: sizes[0.5],
-    paddingLeft: sizes[0.5],
-    marginTop: `-${sizes[8]}`,
-    height: sizes[8],
+    marginTop: sizes[0.25],
     width: '100%',
-    backgroundImage: gradients.fromBlackToTop,
     zIndex: zIndices[40],
     position: 'relative',
 })
