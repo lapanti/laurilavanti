@@ -14,13 +14,13 @@ import {
 
 const H1 = styled.h1({
     gridColumnStart: 3,
-    fontFamily: fontFamilies.sans,
+    fontFamily: fontFamilies.mono,
     fontWeight: fontWeights.black,
     color: colors.white,
     display: 'flex',
     alignItems: 'flex-end',
     marginBottom: sizes[1],
-    ...fontSizes['6xl'],
+    ...fontSizes['4xl'],
 })
 
 interface Props {
