@@ -63,12 +63,13 @@ const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
         }
 )
 
+// @ts-expect-error for some reason the typing does not include 'absolute !important', although it's valid CSS
 const Image = styled(GatsbyImage)({
     marginTop: 'auto',
     right: `-${sizes[5]}`,
     bottom: 0,
     [breakpoints[1200].min]: {
-        position: 'absolute',
+        position: 'absolute !important', // Otherwise gatsby image wrapper overrides it in production
     },
 })
 
