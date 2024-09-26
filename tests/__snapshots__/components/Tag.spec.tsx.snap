@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tag /> should render 1`] = `
-.c24 {
+.c22 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 700;
@@ -23,7 +23,7 @@ exports[`<Tag /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c32 {
+.c30 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -32,23 +32,23 @@ exports[`<Tag /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c27 {
+.c25 {
   display: flex;
   flex-direction: row;
 }
 
-.c28 {
+.c26 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c26 :last-child {
   margin-right: 0px;
 }
 
-.c29 {
+.c27 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -56,22 +56,22 @@ exports[`<Tag /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.c30 {
+.c28 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c31 {
+.c29 {
   margin-right: 1rem;
 }
 
-.c31 :last-child {
+.c29 :last-child {
   margin-right: 0px;
 }
 
-.c26 {
+.c24 {
   display: flex;
   flex-direction: column;
 }
@@ -87,15 +87,7 @@ exports[`<Tag /> should render 1`] = `
   object-fit: cover;
 }
 
-.c22 {
-  display: flex!important;
-}
-
 .c21 {
-  display: none!important;
-}
-
-.c23 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -104,11 +96,11 @@ exports[`<Tag /> should render 1`] = `
   position: relative;
 }
 
-.c25 {
+.c23 {
   grid-column-start: auto;
 }
 
-.c33 {
+.c31 {
   margin-top: 0.25rem;
 }
 
@@ -119,14 +111,14 @@ exports[`<Tag /> should render 1`] = `
   gap: 2rem;
 }
 
-.c37 {
+.c35 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c37 >* {
+.c35 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -135,13 +127,31 @@ exports[`<Tag /> should render 1`] = `
   transition-duration: 150ms;
 }
 
+.c34 {
+  padding: 0px;
+}
+
+.c34 :hover,
+.c34 :focus {
+  fill: #4267B2;
+}
+
 .c36 {
   padding: 0px;
 }
 
 .c36 :hover,
 .c36 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c37 {
+  padding: 0px;
+}
+
+.c37 :hover,
+.c37 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c38 {
@@ -150,7 +160,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c39 {
@@ -159,7 +169,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: url(#instagram-gradient);
+  fill: #6363ff;
 }
 
 .c40 {
@@ -168,28 +178,10 @@ exports[`<Tag /> should render 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: #0E76A8;
-}
-
-.c41 {
-  padding: 0px;
-}
-
-.c41 :hover,
-.c41 :focus {
-  fill: #6363ff;
-}
-
-.c42 {
-  padding: 0px;
-}
-
-.c42 :hover,
-.c42 :focus {
   fill: #0060df;
 }
 
-.c35 {
+.c33 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -197,7 +189,7 @@ exports[`<Tag /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c34 {
+.c32 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -338,18 +330,6 @@ exports[`<Tag /> should render 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
-}
-
-@media (min-width: 479px) {
-  .c22 {
-    display: none!important;
-  }
-}
-
-@media (min-width: 479px) {
-  .c21 {
-    display: flex!important;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -626,7 +606,7 @@ exports[`<Tag /> should render 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20 c21"
+                class="gatsby-image-wrapper c20"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
               >
@@ -664,48 +644,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c20 c22"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAEDBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGvERAj/8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGBABAAMBAAAAAAAAAAAAAAAAAQAhMRH/2gAIAQEAAT8hc3kwHrZAotn/2gAMAwEAAgADAAAAEH//AP/EABYRAAMAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAwEBPxARf//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EGf/xAAaEAEAAwADAAAAAAAAAAAAAAABACExEUFR/9oACAEBAAE/EG5VtJYvJZcRbq9n/9k="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/1154c65a6416b6a2623bd49bbcd7b417/ea55b/Muumimaailmassa.webp 1923w"
-                    sizes="1923px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/1154c65a6416b6a2623bd49bbcd7b417/d154e/Muumimaailmassa.jpg"
-                    data-srcset="/static/1154c65a6416b6a2623bd49bbcd7b417/d154e/Muumimaailmassa.jpg 1923w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1923px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c23"
+                class="c21"
               >
                 <h2
-                  class="c24 c25"
+                  class="c22 c23"
                   id="paivakodit-kaipaavat-opettajia"
                   itemprop="headline"
                 >
@@ -715,16 +657,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Päiväkodit kaipaavat opettajia meta-tiedot"
-              class="c26"
+              class="c24"
             >
               <div
-                class="c27"
+                class="c25"
               >
                 <span
-                  class="c28"
+                  class="c26"
                 >
                   <svg
-                    class="c29"
+                    class="c27"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -745,10 +687,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c30"
+                class="c28"
               >
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -759,7 +701,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -772,7 +714,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c32 c33"
+              class="c30 c31"
               itemprop="description"
             >
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -801,7 +743,7 @@ exports[`<Tag /> should render 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20 c21"
+                class="gatsby-image-wrapper c20"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -839,48 +781,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c20 c22"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAP/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABrAiBH//EABgQAAMBAQAAAAAAAAAAAAAAAAECEQAh/9oACAEBAAEFAmWBBcV7/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BR//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/AVf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAMQH/2gAIAQEABj8CVdf/xAAaEAEAAgMBAAAAAAAAAAAAAAABACExQYHh/9oACAEBAAE/ITS3oRLqzoJ7uf/aAAwDAQACAAMAAAAQc8//xAAXEQEBAQEAAAAAAAAAAAAAAAABABFR/9oACAEDAQE/EENbHL//xAAYEQACAwAAAAAAAAAAAAAAAAAAEQEhUf/aAAgBAgEBPxBzQ2n/xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMWFxsf/aAAgBAQABPxBQGo4QOdkAqkGAPkO2XlJ//9k="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/5264e4f52e103a3645c44cc6d5e7852e/0f5f5/laajakallion-paivakoti.webp 1920w,/static/5264e4f52e103a3645c44cc6d5e7852e/fe0d2/laajakallion-paivakoti.webp 3840w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Laajakallion päiväkodista talvella."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/5264e4f52e103a3645c44cc6d5e7852e/baa03/laajakallion-paivakoti.jpg"
-                    data-srcset="/static/5264e4f52e103a3645c44cc6d5e7852e/baa03/laajakallion-paivakoti.jpg 1920w,/static/5264e4f52e103a3645c44cc6d5e7852e/63cd6/laajakallion-paivakoti.jpg 3840w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c23"
+                class="c21"
               >
                 <h2
-                  class="c24 c25"
+                  class="c22 c23"
                   id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                   itemprop="headline"
                 >
@@ -890,16 +794,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen riittävyydestä ei saa tinkiä meta-tiedot"
-              class="c26"
+              class="c24"
             >
               <div
-                class="c27"
+                class="c25"
               >
                 <span
-                  class="c28"
+                  class="c26"
                 >
                   <svg
-                    class="c29"
+                    class="c27"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -920,10 +824,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c30"
+                class="c28"
               >
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -934,7 +838,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -945,7 +849,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -958,7 +862,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c32 c33"
+              class="c30 c31"
               itemprop="description"
             >
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -987,7 +891,7 @@ exports[`<Tag /> should render 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20 c21"
+                class="gatsby-image-wrapper c20"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1025,48 +929,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c20 c22"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAYKxWaIf/8QAFxABAAMAAAAAAAAAAAAAAAAAAQAhQf/aAAgBAQABBQImpf8A/8QAFREBAQAAAAAAAAAAAAAAAAAAAhD/2gAIAQMBAT8BU//EABYRAAMAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPwERf//EABgQAAIDAAAAAAAAAAAAAAAAAAACARBh/9oACAEBAAY/AoF1a//EABoQAAICAwAAAAAAAAAAAAAAAAABEUEhcbH/2gAIAQEAAT8hyey4U0yRVD//2gAMAwEAAgADAAAAEAv/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABMXH/2gAIAQMBAT8QhYKH/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAEx/9oACAECAQE/EN0r/8QAGhABAAIDAQAAAAAAAAAAAAAAAQAhEXGB0f/aAAgBAQABPxCyb8sedmmoRoDNz//Z"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/8e7c5b9c7e43b34d7083642908bff733/0f5f5/lastenkirjallisuutta.webp 1920w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva useammasta lasten kirjasta kirjahyllyssä."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/8e7c5b9c7e43b34d7083642908bff733/baa03/lastenkirjallisuutta.jpg"
-                    data-srcset="/static/8e7c5b9c7e43b34d7083642908bff733/baa03/lastenkirjallisuutta.jpg 1920w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c23"
+                class="c21"
               >
                 <h2
-                  class="c24 c25"
+                  class="c22 c23"
                   id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                   itemprop="headline"
                 >
@@ -1076,16 +942,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen kerhotoiminta - lapsen etu meta-tiedot"
-              class="c26"
+              class="c24"
             >
               <div
-                class="c27"
+                class="c25"
               >
                 <span
-                  class="c28"
+                  class="c26"
                 >
                   <svg
-                    class="c29"
+                    class="c27"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1106,10 +972,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c30"
+                class="c28"
               >
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -1120,7 +986,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -1133,7 +999,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c32 c33"
+              class="c30 c31"
               itemprop="description"
             >
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -1162,7 +1028,7 @@ exports[`<Tag /> should render 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20 c21"
+                class="gatsby-image-wrapper c20"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1200,48 +1066,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c20 c22"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECA//EABUBAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAAGdAoKT/8QAGBAAAwEBAAAAAAAAAAAAAAAAAAECERL/2gAIAQEAAQUCk4VDp7//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAYEAACAwAAAAAAAAAAAAAAAAAAARASMf/aAAgBAQAGPwJl3sf/xAAZEAACAwEAAAAAAAAAAAAAAAAAAREhMUH/2gAIAQEAAT8hpTmCgSUzguyThI//2gAMAwEAAgADAAAAEAQP/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAR/9oACAEDAQE/EBdn/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQIBAT8QAn//xAAbEAEAAgIDAAAAAAAAAAAAAAABABEhoTFBUf/aAAgBAQABPxAeCsDvXSa0zucZYAT/2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/141eb2c91179a240d59da886f1a3a7e5/0f5f5/duploleikkeja.webp 1920w,/static/141eb2c91179a240d59da886f1a3a7e5/fe0d2/duploleikkeja.webp 3840w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva duploista laatikossa automaton päällä."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/141eb2c91179a240d59da886f1a3a7e5/baa03/duploleikkeja.jpg"
-                    data-srcset="/static/141eb2c91179a240d59da886f1a3a7e5/baa03/duploleikkeja.jpg 1920w,/static/141eb2c91179a240d59da886f1a3a7e5/63cd6/duploleikkeja.jpg 3840w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c23"
+                class="c21"
               >
                 <h2
-                  class="c24 c25"
+                  class="c22 c23"
                   id="kirkkonummi-lisa-on-sinunkin-etusi"
                   itemprop="headline"
                 >
@@ -1251,16 +1079,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kirkkonummi-lisä on sinunkin etusi meta-tiedot"
-              class="c26"
+              class="c24"
             >
               <div
-                class="c27"
+                class="c25"
               >
                 <span
-                  class="c28"
+                  class="c26"
                 >
                   <svg
-                    class="c29"
+                    class="c27"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1281,10 +1109,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c30"
+                class="c28"
               >
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -1295,7 +1123,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -1308,7 +1136,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c32 c33"
+              class="c30 c31"
               itemprop="description"
             >
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
@@ -1337,7 +1165,7 @@ exports[`<Tag /> should render 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20 c21"
+                class="gatsby-image-wrapper c20"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1375,48 +1203,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c20 c22"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAgAD/9oADAMBAAIQAxAAAAHacNINj//EABkQAAIDAQAAAAAAAAAAAAAAAAECAxESIf/aAAgBAQABBQJ0CKew7N//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAACEP/aAAgBAgEBPwFT/8QAFxAAAwEAAAAAAAAAAAAAAAAAAAEREP/aAAgBAQAGPwKoTmf/xAAYEAEBAQEBAAAAAAAAAAAAAAABESEAYf/aAAgBAQABPyFLsy7zIDSyZyKBw87/2gAMAwEAAgADAAAAEI/f/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QJ//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAgEBPxBOFhf/xAAZEAEBAQADAAAAAAAAAAAAAAABEQAhMWH/2gAIAQEAAT8QMpBgVLkSPQcC+YEgkCN//9k="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/793941e4a2aba874341601d28609dfd1/0f5f5/kotihoidossa.webp 1920w,/static/793941e4a2aba874341601d28609dfd1/fe0d2/kotihoidossa.webp 3840w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva neulotusta pehmolelusta, taustalla erinäisiä lasten leluja."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/793941e4a2aba874341601d28609dfd1/baa03/kotihoidossa.jpg"
-                    data-srcset="/static/793941e4a2aba874341601d28609dfd1/baa03/kotihoidossa.jpg 1920w,/static/793941e4a2aba874341601d28609dfd1/63cd6/kotihoidossa.jpg 3840w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c23"
+                class="c21"
               >
                 <h2
-                  class="c24 c25"
+                  class="c22 c23"
                   id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
                   itemprop="headline"
                 >
@@ -1426,16 +1216,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
-              class="c26"
+              class="c24"
             >
               <div
-                class="c27"
+                class="c25"
               >
                 <span
-                  class="c28"
+                  class="c26"
                 >
                   <svg
-                    class="c29"
+                    class="c27"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1456,10 +1246,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c30"
+                class="c28"
               >
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -1470,7 +1260,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c31"
+                  class="c29"
                 >
                   <a
                     class="c4"
@@ -1483,7 +1273,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c32 c33"
+              class="c30 c31"
               itemprop="description"
             >
               Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -1502,16 +1292,16 @@ exports[`<Tag /> should render 1`] = `
     </article>
   </main>
   <footer
-    class="c34"
+    class="c32"
   >
     <ul
-      class="c35"
+      class="c33"
     >
       <li
-        class="c36"
+        class="c34"
       >
         <a
-          class="c37"
+          class="c35"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1533,10 +1323,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c38"
+        class="c36"
       >
         <a
-          class="c37"
+          class="c35"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1558,10 +1348,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c39"
+        class="c37"
       >
         <a
-          class="c37"
+          class="c35"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1583,10 +1373,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c40"
+        class="c38"
       >
         <a
-          class="c37"
+          class="c35"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1608,10 +1398,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c41"
+        class="c39"
       >
         <a
-          class="c37"
+          class="c35"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1633,10 +1423,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c42"
+        class="c40"
       >
         <a
-          class="c37"
+          class="c35"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
