@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle({
         lineHeight: 1.5,
         tabSize: 4,
         fontFamily: fontFamilies.sans,
+        fontDisplay: 'swap',
         fontFeatureSettings: 'normal',
         fontVariationSettings: 'normal',
     },
