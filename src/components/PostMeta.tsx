@@ -8,7 +8,6 @@ import InternalLink from './InternalLink'
 const MetaContainer = styled.div({
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: sizes[0.5],
 })
 
 const Meta = styled.span({
@@ -33,6 +32,7 @@ const TagList = styled.ul({
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    marginTop: sizes[0.5],
 })
 
 const TagItem = styled.li({
@@ -66,13 +66,15 @@ const PostMetaComponent = ({ className, date, tags, ariaLabel }: Props): JSX.Ele
                     <time dateTime={dateAsDateTime}>{date}</time>
                 </Meta>
             </MetaContainer>
-            <TagList>
-                {tags.map((tag) => (
-                    <TagItem key={tag}>
-                        <InternalLink to={`/kategoria/${tag}/`}>#{tag}</InternalLink>
-                    </TagItem>
-                ))}
-            </TagList>
+            {tags.length > 0 && (
+                <TagList>
+                    {tags.map((tag) => (
+                        <TagItem key={tag}>
+                            <InternalLink to={`/kategoria/${tag}/`}>#{tag}</InternalLink>
+                        </TagItem>
+                    ))}
+                </TagList>
+            )}
         </aside>
     )
 }
