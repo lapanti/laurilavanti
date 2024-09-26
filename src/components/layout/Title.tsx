@@ -6,7 +6,6 @@ import {
     fontFamilies,
     fontSizes,
     fontWeights,
-    gradients,
     gridTemplateColumnsArticle,
     sizes,
     zIndices,
@@ -16,10 +15,9 @@ const H1 = styled.h1({
     gridColumnStart: 3,
     fontFamily: fontFamilies.mono,
     fontWeight: fontWeights.black,
-    color: colors.white,
+    color: colors.black,
     display: 'flex',
     alignItems: 'flex-end',
-    marginBottom: sizes[1],
     ...fontSizes['4xl'],
 })
 
@@ -40,13 +38,12 @@ const Title = styled(TitleComponent)({
     display: 'grid',
     gridTemplateColumns: gridTemplateColumnsArticle,
     gridColumn: '1 / -1',
-    marginTop: `-${sizes[14]}`,
     zIndex: zIndices[40],
     maxWidth: `min(100%, ${sizes.fullHd})`,
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginTop: sizes[1],
     width: '100%',
-    backgroundImage: gradients.fromBlackToTop,
 })
 
 export default Title
