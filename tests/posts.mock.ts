@@ -37,36 +37,6 @@ export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt =
         },
         description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
-    },
     metadata: {
         tags: [
             {
@@ -121,36 +91,6 @@ export const ourNatureIsOurAceInTheHole: ContentfulPost & ContentfulPostExcerpt 
                     },
                     width: 1921,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -215,36 +155,6 @@ export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
         },
         description: 'Kuva huonosti auratusta jalkakäytävästä, jonka vieressä on huolella aurattu autotie',
     },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAMBAgT/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAL/2gAMAwEAAhADEAAAAfLWvWiSop6Jgr//xAAZEAACAwEAAAAAAAAAAAAAAAAAAgESEyD/2gAIAQEAAQUCwUxUpHf/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAVEAEBAAAAAAAAAAAAAAAAAAAwQf/aAAgBAQAGPwKj/8QAGRABAAIDAAAAAAAAAAAAAAAAAQAQQVFx/9oACAEBAAE/ITZAOJ3hZf8A/9oADAMBAAIAAwAAABAAJ33/xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8QK//EABcRAAMBAAAAAAAAAAAAAAAAAAABERD/2gAIAQIBAT8QiIt//8QAGxABAAMBAAMAAAAAAAAAAAAAAQARITFBYYH/2gAIAQEAAT8QX34MLAVh29YtWYK8RZL9y4mWwvdez//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/4424dda9812f70ee0db1974ff3148849/e9145/2024-01-14_15.22.40.jpg',
-                            srcSet: '/static/4424dda9812f70ee0db1974ff3148849/e9145/2024-01-14_15.22.40.jpg 478w,\n/static/4424dda9812f70ee0db1974ff3148849/aa1fc/2024-01-14_15.22.40.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/4424dda9812f70ee0db1974ff3148849/ef8d1/2024-01-14_15.22.40.webp 478w,\n/static/4424dda9812f70ee0db1974ff3148849/94dc8/2024-01-14_15.22.40.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva huonosti auratusta jalkakäytävästä, jonka vieressä on huolella aurattu autotie',
-    },
     metadata: {
         tags: [
             {
@@ -299,36 +209,6 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
                     },
                     width: 1921,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -393,36 +273,6 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
         },
         description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAMCAP/aAAwDAQACEAMQAAABhbZSdzExTuqKnHBx/8QAGxAAAgIDAQAAAAAAAAAAAAAAAQIAAxESMTL/2gAIAQEAAQUCp63rMpRDHQGEykna1ysbv//EABURAQEAAAAAAAAAAAAAAAAAAAEg/9oACAEDAQE/AWP/xAAXEQEAAwAAAAAAAAAAAAAAAAAQEiFB/9oACAECAQE/AY0Yf//EABkQAQADAQEAAAAAAAAAAAAAAAEAEBEhEv/aAAgBAQAGPwIGIV6zswKZyv/EABoQAQADAQEBAAAAAAAAAAAAAAEAESExQWH/2gAIAQEAAT8h1yPsobBEXsMUHiDUB8YF6Nw2/IBwSy22f//aAAwDAQACAAMAAAAQo/cC/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQETH/2gAIAQMBAT8QRwmN/wD/xAAYEQEBAAMAAAAAAAAAAAAAAAABABARMf/aAAgBAgEBPxBTsYIcv//EABwQAQEAAgMBAQAAAAAAAAAAAAERADEhQVFx0f/aAAgBAQABPxC4ul2mAARSKjhFAvqmAVfmQ/cKrgok58fuAYfsTWGBBEOtzOrTnWNdRa87z//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg',
-                            srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/e9145/Lauri-Lavanti-21-9.jpg 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/aa1fc/Lauri-Lavanti-21-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/417ee201d5e9b3646c7f94feac814c4a/ef8d1/Lauri-Lavanti-21-9.webp 478w,\n/static/417ee201d5e9b3646c7f94feac814c4a/94dc8/Lauri-Lavanti-21-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
-    },
     metadata: {
         tags: [
             {
@@ -477,36 +327,6 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
                     },
                     width: 1920,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella.',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMCAf/EABcBAAMBAAAAAAAAAAAAAAAAAAECAwD/2gAMAwEAAhADEAAAAZzrjHrBKVmBMAX/AP/EAB0QAAIBBAMAAAAAAAAAAAAAAAECAAMREhMhMjT/2gAIAQEAAQUCenkKaajOMxZnssHdfSJ//8QAGBEAAwEBAAAAAAAAAAAAAAAAAAECECL/2gAIAQMBAT8BUuTsWf/EABoRAAICAwAAAAAAAAAAAAAAAAACARARIjH/2gAIAQIBAT8BlsmovK//xAAbEAADAAMBAQAAAAAAAAAAAAAAARECEDEhcf/aAAgBAQAGPwLsMvbVNRDxhwQ/j1//xAAgEAABBAIBBQAAAAAAAAAAAAABABEhQWHRMVFxkaHw/9oACAEBAAE/IWuY9htBcFgNqD19bRgYNYTwUJ4FJ6vgIQYLUQ/LIoX/2gAMAwEAAgADAAAAENDQfP/EABkRAAMAAwAAAAAAAAAAAAAAAAABESEx8P/aAAgBAwEBPxBZhHdDOlP/xAAWEQEBAQAAAAAAAAAAAAAAAAABESD/2gAIAQIBAT8QJ1cD/8QAHBABAAMBAAMBAAAAAAAAAAAAAQARMSFBUXHw/9oACAEBAAE/EBEAvbRfWR2YR0ClpHsHRofWHdbaKAJfOQga76pjM8wBev6yXqLAicdjdUNfqLWf/9k=',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/aaf0eb28b01d8691152f60fa8fa38218/e9145/sosiaali-ja-terveyskeskus.jpg',
-                            srcSet: '/static/aaf0eb28b01d8691152f60fa8fa38218/e9145/sosiaali-ja-terveyskeskus.jpg 478w,\n/static/aaf0eb28b01d8691152f60fa8fa38218/aa1fc/sosiaali-ja-terveyskeskus.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/aaf0eb28b01d8691152f60fa8fa38218/ef8d1/sosiaali-ja-terveyskeskus.webp 478w,\n/static/aaf0eb28b01d8691152f60fa8fa38218/94dc8/sosiaali-ja-terveyskeskus.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -571,36 +391,6 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
         },
         description: 'Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä.',
     },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQCA//EABcBAAMBAAAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAZl3Ob2BS7HHIPD/xAAbEAACAwEBAQAAAAAAAAAAAAABAgADEhEhIv/aAAgBAQABBQJavWrzOrNggsOSofVijAJn/8QAGREAAQUAAAAAAAAAAAAAAAAAAAEQETJB/9oACAEDAQE/AcZKkn//xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAgEBPwEp/8QAGxAAAgMAAwAAAAAAAAAAAAAAABEBECECMqH/2gAIAQEABj8C2UZLOnpkM2FXIdf/xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMUFRcZH/2gAIAQEAAT8hRWUa9xmcZ+Qo2z5kIoosvKksyXdPcMNLfMEUM//aAAwDAQACAAMAAAAQUydC/8QAGREAAwADAAAAAAAAAAAAAAAAAAEREDFR/9oACAEDAQE/EE9iLDXT/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAEQITH/2gAIAQIBAT8Qeljh/8QAHRABAQEBAAEFAAAAAAAAAAAAAREAITFBYXGhwf/aAAgBAQABPxCW8Wp1fmYhQCHGnAA4Eal+8HO1ChJhSrRtvdH0sffF3KACedYiSqe+vPjA0gb/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/9191e5858402a1213443faa945425bd8/e9145/lauri-lavanti-perusturvajaosto.jpg',
-                            srcSet: '/static/9191e5858402a1213443faa945425bd8/e9145/lauri-lavanti-perusturvajaosto.jpg 478w,\n/static/9191e5858402a1213443faa945425bd8/aa1fc/lauri-lavanti-perusturvajaosto.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/9191e5858402a1213443faa945425bd8/ef8d1/lauri-lavanti-perusturvajaosto.webp 478w,\n/static/9191e5858402a1213443faa945425bd8/94dc8/lauri-lavanti-perusturvajaosto.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä.',
-    },
     metadata: {
         tags: [
             {
@@ -652,36 +442,6 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
                     },
                     width: 1921,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää.',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAMEBQH/xAAXAQADAQAAAAAAAAAAAAAAAAABAgMA/9oADAMBAAIQAxAAAAG1Hl8M9VmF0tcm9sIf/8QAGhABAQEBAAMAAAAAAAAAAAAAAQIAAxExMv/aAAgBAQABBQIZddEjcGObOfMzBTJunuPj/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAECEBL/2gAIAQMBAT8BUEYV/wD/xAAZEQACAwEAAAAAAAAAAAAAAAAAAhAREzH/2gAIAQIBAT8B0s1YXsf/xAAbEAACAgMBAAAAAAAAAAAAAAAAAREhIDFhcf/aAAgBAQAGPwKmiaZsqMJ4Lw//xAAdEAADAAICAwAAAAAAAAAAAAAAAREhMUGBUXGR/9oACAEBAAE/IUNa7GdHDijCNTau1GmcrnwTXicVmeTd4Yiz1j//2gAMAwEAAgADAAAAEH/fQv/EABYRAQEBAAAAAAAAAAAAAAAAABABEf/aAAgBAwEBPxDQMP/EABkRAQACAwAAAAAAAAAAAAAAAAEAECExQf/aAAgBAgEBPxAeBEHlTuf/xAAeEAEBAQEAAgIDAAAAAAAAAAABESEAMUFRYXGRwf/aAAgBAQABPxCEBZ+XOZJUGyztcUuF5tV02uMNSANPDN+0/XCtaumy567NXnx2rWtHofngCWfw7//Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/21b2876e43d499dadd58d90d69279f91/e9145/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg',
-                            srcSet: '/static/21b2876e43d499dadd58d90d69279f91/e9145/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 478w,\n/static/21b2876e43d499dadd58d90d69279f91/aa1fc/Lauri-Lavanti-aluevaaliehdokas-16-9.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/21b2876e43d499dadd58d90d69279f91/ef8d1/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 478w,\n/static/21b2876e43d499dadd58d90d69279f91/94dc8/Lauri-Lavanti-aluevaaliehdokas-16-9.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -747,36 +507,6 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
                     },
                     width: 1923,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa.',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABprszR0GIaYFCz//EABwQAAICAgMAAAAAAAAAAAAAAAECAAMREgQTIf/aAAgBAQABBQLUCLa1ZTkeFcwLOpoBlrFxZsZ//8QAFhEAAwAAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/ASP/xAAWEQADAAAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8BK//EABkQAQEAAwEAAAAAAAAAAAAAAAABESExYf/aAAgBAQAGPwJqtrXriLh1/8QAHBABAAICAwEAAAAAAAAAAAAAAQARITFBUWGB/9oACAEBAAE/IUSmPsMaOnU99uF2alxW1iHCoFjUJWGdEB5T/9oADAMBAAIAAwAAABCMyD3/xAAXEQADAQAAAAAAAAAAAAAAAAABEBFB/9oACAEDAQE/EJQmL//EABkRAAIDAQAAAAAAAAAAAAAAAAARARAxQf/aAAgBAgEBPxCdYx2v/8QAHxABAAMAAQQDAAAAAAAAAAAAAQARITFBUWGBkaHR/9oACAEBAAE/EHLWC1Cq3J5lZV1KXtU3XP3DEcZOmQRXosfEGaj1CLaQTvp+xdEmKA+CGUEeGf/Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/dba123474668752335b4536b7dd70bd9/e9145/Muumimaailmassa.jpg',
-                            srcSet: '/static/dba123474668752335b4536b7dd70bd9/e9145/Muumimaailmassa.jpg 478w,\n/static/dba123474668752335b4536b7dd70bd9/aa1fc/Muumimaailmassa.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/dba123474668752335b4536b7dd70bd9/ef8d1/Muumimaailmassa.webp 478w,\n/static/dba123474668752335b4536b7dd70bd9/94dc8/Muumimaailmassa.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -870,36 +600,6 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
                     },
                     width: 1920,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva Winellska skolanista.',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAEDBAX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB01YrI6Dmq2ySwD//xAAcEAABBAMBAAAAAAAAAAAAAAABAgQRIQADIDL/2gAIAQEAAQUCLtGF3Q3Igeosgcf/xAAWEQEBAQAAAAAAAAAAAAAAAAARABD/2gAIAQMBAT8BI3//xAAWEQEBAQAAAAAAAAAAAAAAAAARABD/2gAIAQIBAT8BZ3//xAAcEAABAwUAAAAAAAAAAAAAAAAAAjGRASAhQUL/2gAIAQEABj8C2YSUGVB1Ayos/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITEQYUFRgf/aAAgBAQABPyHJo6Y3AbtfcUy0pqF9OvGBEbF6qb2F+SW8/wD/2gAMAwEAAgADAAAAEP8A+EH/xAAWEQEBAQAAAAAAAAAAAAAAAAARABD/2gAIAQMBAT8QEd//xAAWEQEBAQAAAAAAAAAAAAAAAAARABD/2gAIAQIBAT8QU9//xAAbEAEBAQEAAwEAAAAAAAAAAAABESEAMUFhUf/aAAgBAQABPxARbRT0I+9aPcTxN+dqHJBZz73jSpNx59tGiG7dOZlQlOljXqzz1f3v/9k=',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/89330cf9554dd6ac44855a98153a4daf/e9145/winellska-skolan-w.jpg',
-                            srcSet: '/static/89330cf9554dd6ac44855a98153a4daf/e9145/winellska-skolan-w.jpg 478w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/89330cf9554dd6ac44855a98153a4daf/ef8d1/winellska-skolan-w.webp 478w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -999,36 +699,6 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
         },
         description: 'Kuva Laajakallion päiväkodista talvella.',
     },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAQDAf/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAABx7Xkh5KmpWCSUan/xAAaEAACAwEBAAAAAAAAAAAAAAABAgADERIh/9oACAEBAAEFAmZQfDOYUtziwla2UQwjD//EABcRAAMBAAAAAAAAAAAAAAAAAAABExD/2gAIAQMBAT8Bmie//8QAFxEAAwEAAAAAAAAAAAAAAAAAAAETEP/aAAgBAgEBPwGrK7//xAAcEAAABgMAAAAAAAAAAAAAAAAAAQIQESESMZH/2gAIAQEABj8Ci3pYtRiMy4+zH//EAB4QAAICAQUBAAAAAAAAAAAAAAABESFBEDFRYXGR/9oACAEBAAE/Id1HiLIT70UEtzwJ5E9suhvMzAiZUL6H/9oADAMBAAIAAwAAABBsIP7/xAAZEQABBQAAAAAAAAAAAAAAAAAAARARMXH/2gAIAQMBAT8QkSzT/wD/xAAZEQABBQAAAAAAAAAAAAAAAAAAARARMXH/2gAIAQIBAT8QhWjD/wD/xAAaEAEAAgMBAAAAAAAAAAAAAAABABEhMXGR/9oACAEBAAE/EEKENtpA3RXiMmON35cuFVcZRR5UT0FkpXqS4EpNx8Bx/9k=',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/f3e1996f960b9094d00f01bcbfcdc88a/e9145/laajakallion-paivakoti.jpg',
-                            srcSet: '/static/f3e1996f960b9094d00f01bcbfcdc88a/e9145/laajakallion-paivakoti.jpg 478w,\n/static/f3e1996f960b9094d00f01bcbfcdc88a/aa1fc/laajakallion-paivakoti.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/f3e1996f960b9094d00f01bcbfcdc88a/ef8d1/laajakallion-paivakoti.webp 478w,\n/static/f3e1996f960b9094d00f01bcbfcdc88a/94dc8/laajakallion-paivakoti.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva Laajakallion päiväkodista talvella.',
-    },
     metadata: {
         tags: [
             {
@@ -1083,36 +753,6 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
                     },
                     width: 1920,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva useammasta lasten kirjasta kirjahyllyssä.',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAEFAgME/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQMC/9oADAMBAAIQAxAAAAGr3Oh1WLRmeck7gn//xAAdEAACAgEFAAAAAAAAAAAAAAABAgARMgMSEyEi/9oACAEBAAEFAmX1wxlKkZP1oMtzYohxD0P/xAAaEQAABwAAAAAAAAAAAAAAAAAAAQIQERIh/9oACAEDAQE/AVFsC7//xAAXEQEBAQEAAAAAAAAAAAAAAAARAAIQ/9oACAECAQE/Achxm//EAB0QAAICAgMBAAAAAAAAAAAAAAABAhExURIhQXH/2gAIAQEABj8CSjoj3koXwUtMtemDjSopJH//xAAaEAADAQEBAQAAAAAAAAAAAAAAAREhMUFh/9oACAEBAAE/IfMbTrN5aJpSiCs1fQpXNKKDODp0+QYpAkf/2gAMAwEAAgADAAAAEETfAP/EABkRAQADAQEAAAAAAAAAAAAAAAEAESFRwf/aAAgBAwEBPxBirnkoYx1tlE//xAAZEQEBAQADAAAAAAAAAAAAAAABABEhMVH/2gAIAQIBAT8QC2yO9QjjbXt//8QAHhABAAICAwADAAAAAAAAAAAAAQARIUExgdFxocH/2gAIAQEAAT8QNNwMh3EWow48Ia7jo7TYYYEtafkRXkV8L5LJYxq9xJCJoVfZaQvdr9nEiIBx9z//2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/9d968fa26ea2cd55cad7f9ab8709c9a2/e9145/lastenkirjallisuutta.jpg',
-                            srcSet: '/static/9d968fa26ea2cd55cad7f9ab8709c9a2/e9145/lastenkirjallisuutta.jpg 478w,\n/static/9d968fa26ea2cd55cad7f9ab8709c9a2/aa1fc/lastenkirjallisuutta.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/9d968fa26ea2cd55cad7f9ab8709c9a2/ef8d1/lastenkirjallisuutta.webp 478w,\n/static/9d968fa26ea2cd55cad7f9ab8709c9a2/94dc8/lastenkirjallisuutta.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },
@@ -1211,36 +851,6 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
         },
         description: 'Kuva duploista laatikossa automaton päällä.',
     },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAECAwT/xAAXAQADAQAAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAG1ZD0UXnjzk1IR/8QAGxABAAICAwAAAAAAAAAAAAAAAgABAxIiMUH/2gAIAQEAAQUCquKyILcRLWWQpuJ5fU//xAAYEQACAwAAAAAAAAAAAAAAAAAAARARUf/aAAgBAwEBPwG9Gp//xAAWEQEBAQAAAAAAAAAAAAAAAAABABD/2gAIAQIBAT8BId//xAAcEAACAgIDAAAAAAAAAAAAAAAAARAREiExMlH/2gAIAQEABj8C4VoUaM22dSvJ/8QAHBABAAIDAQEBAAAAAAAAAAAAAQARITFBUYGR/9oACAEBAAE/IWMexDR+z0dzGQz0y0agBr+XEp8WCJBT2BZlZ//aAAwDAQACAAMAAAAQ38dD/8QAGBEAAwEBAAAAAAAAAAAAAAAAAAERITH/2gAIAQMBAT8QlhlwfCH/xAAXEQADAQAAAAAAAAAAAAAAAAAAESEQ/9oACAECAQE/EGUIXf/EABwQAQADAAMBAQAAAAAAAAAAAAEAESExQWFRcf/aAAgBAQABPxB8O7AWh3BLASxXVxTRvWLvsRmAqqrj2HIohWLPl7K8VfG4/VZoC6BvBiEhrib1if/Z',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/22100376be4814e6916d2a04bced6268/e9145/duploleikkeja.jpg',
-                            srcSet: '/static/22100376be4814e6916d2a04bced6268/e9145/duploleikkeja.jpg 478w,\n/static/22100376be4814e6916d2a04bced6268/aa1fc/duploleikkeja.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/22100376be4814e6916d2a04bced6268/ef8d1/duploleikkeja.webp 478w,\n/static/22100376be4814e6916d2a04bced6268/94dc8/duploleikkeja.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
-                },
-            },
-        },
-        description: 'Kuva duploista laatikossa automaton päällä.',
-    },
     metadata: {
         tags: [
             {
@@ -1292,36 +902,6 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
                     },
                     width: 1920,
                     height: 384,
-                },
-            },
-        },
-        description: 'Kuva neulotusta pehmolelusta, taustalla erinäisiä lasten leluja.',
-    },
-    mobileHeaderImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAMEAf/EABcBAQEBAQAAAAAAAAAAAAAAAAEDAgT/2gAMAwEAAhADEAAAAYc35Rm0pvJFCI59f//EABsQAAMAAwEBAAAAAAAAAAAAAAABAgMRExIi/9oACAEBAAEFAuaQvUzytlRjknK6tuSEtt/Wz//EABURAQEAAAAAAAAAAAAAAAAAABAB/9oACAEDAQE/ASH/xAAaEQABBQEAAAAAAAAAAAAAAAAAAQIQEiEx/9oACAECAQE/AcLoP5H/xAAfEAACAQMFAQAAAAAAAAAAAAAAARECITEQIkFRcaH/2gAIAQEABj8ChT6Yu2TH0k2JKkwd25KtP//EABsQAQEBAAMBAQAAAAAAAAAAAAERACExQWGR/9oACAEBAAE/IfQmfvX7XQzNEvxgaJO65gAu2c6jIgkNetxBAGcZW//aAAwDAQACAAMAAAAQ2Dc+/8QAGBEBAAMBAAAAAAAAAAAAAAAAAQAQMSH/2gAIAQMBAT8QFxnZqv/EABcRAAMBAAAAAAAAAAAAAAAAAAEQETH/2gAIAQIBAT8QMCp1X//EAB4QAQEAAgICAwAAAAAAAAAAAAERACExYUFRcaGx/9oACAEBAAE/EAa+s2p2nrJeOEcTIAQ0EJ95Kg7UB+5yApaR0ZX4fGskN1Qb4xAgCQQDDOpn/9k=',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/e66d66a99b231f600c7dcae882e0520c/e9145/kotihoidossa.jpg',
-                            srcSet: '/static/e66d66a99b231f600c7dcae882e0520c/e9145/kotihoidossa.jpg 478w,\n/static/e66d66a99b231f600c7dcae882e0520c/aa1fc/kotihoidossa.jpg 956w',
-                            sizes: '478px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/e66d66a99b231f600c7dcae882e0520c/ef8d1/kotihoidossa.webp 478w,\n/static/e66d66a99b231f600c7dcae882e0520c/94dc8/kotihoidossa.webp 956w',
-                                type: 'image/webp',
-                                sizes: '478px',
-                            },
-                        ],
-                    },
-                    width: 478,
-                    height: 478,
                 },
             },
         },

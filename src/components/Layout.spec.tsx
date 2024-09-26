@@ -61,13 +61,7 @@ describe('<Layout />', () => {
 
     it('should render hero image', () => {
         const { container } = render(
-            <Layout
-                heroImage={mainImage}
-                heroImageAlt={mainImageDescription}
-                mobileHeroImageAlt={mainImageDescription}
-                mobileHeroImage={mainImage}
-                title={title}
-            >
+            <Layout heroImage={mainImage} heroImageAlt={mainImageDescription} title={title}>
                 {children}
             </Layout>
         )
@@ -81,7 +75,7 @@ describe('<Layout />', () => {
 
     it('should render hero image with no alt', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} title="" mobileHeroImage={mainImage}>
+            <Layout heroImage={mainImage} title="">
                 {children}
             </Layout>
         )
@@ -100,8 +94,6 @@ describe('<Layout />', () => {
                 heroImage={mainImage}
                 heroImageAlt={mainImageDescription}
                 isFrontPage
-                mobileHeroImage={mainImage}
-                mobileHeroImageAlt={mainImageDescription}
                 title={title}
                 subtitle={subtitle}
             >

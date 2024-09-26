@@ -190,8 +190,6 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
     secondaryTitle?: string
     heroImage?: ImageDataLike
     heroImageAlt?: string
-    mobileHeroImage?: ImageDataLike
-    mobileHeroImageAlt?: string
     backgroundImage?: ImageDataLike
     body?: RichBody
     preBody?: ReactNode
@@ -205,8 +203,6 @@ const LayoutComponent = ({
     secondaryTitle,
     heroImage,
     heroImageAlt,
-    mobileHeroImage,
-    mobileHeroImageAlt,
     backgroundImage,
     description,
     meta,
@@ -265,8 +261,8 @@ const LayoutComponent = ({
                         {!isFrontPage && heroImage && (
                             <DesktopHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
                         )}
-                        {!isFrontPage && mobileHeroImage && (
-                            <MobileHeroImage imageData={mobileHeroImage} alt={mobileHeroImageAlt || ''} />
+                        {!isFrontPage && heroImage && (
+                            <MobileHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
                         )}
                         {!isFrontPage && <Title title={title} />}
                         {preBody}

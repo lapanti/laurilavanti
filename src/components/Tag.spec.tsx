@@ -13,7 +13,6 @@ describe('<Tag />', () => {
             <Tag
                 data={{
                     contentfulPage: {
-                        mobileImage: { localFile: mainImage, description: mainImageDescription },
                         image: { localFile: mainImage, description: mainImageDescription },
                     },
                 }}

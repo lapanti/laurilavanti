@@ -10,13 +10,11 @@ const image = {
 
 const images = {
     image,
-    mobileImage: image,
     backgroundImage: null,
 }
 
 export const frontPage: ContentfulPage = {
     image,
-    mobileImage: image,
     backgroundImage: image,
     description: null,
     jsonLdType: 'WebSite',
