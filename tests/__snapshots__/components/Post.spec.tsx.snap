@@ -87,15 +87,7 @@ exports[`<Post /> should render basic post 1`] = `
   object-fit: cover;
 }
 
-.c41 {
-  display: flex!important;
-}
-
 .c40 {
-  display: none!important;
-}
-
-.c42 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -104,11 +96,11 @@ exports[`<Post /> should render basic post 1`] = `
   position: relative;
 }
 
-.c43 {
+.c41 {
   grid-column-start: auto;
 }
 
-.c44 {
+.c42 {
   margin-top: 0.25rem;
 }
 
@@ -129,14 +121,14 @@ exports[`<Post /> should render basic post 1`] = `
   text-decoration: underline;
 }
 
-.c48 {
+.c46 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c48 >* {
+.c46 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -145,13 +137,31 @@ exports[`<Post /> should render basic post 1`] = `
   transition-duration: 150ms;
 }
 
+.c45 {
+  padding: 0px;
+}
+
+.c45 :hover,
+.c45 :focus {
+  fill: #4267B2;
+}
+
 .c47 {
   padding: 0px;
 }
 
 .c47 :hover,
 .c47 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c48 {
+  padding: 0px;
+}
+
+.c48 :hover,
+.c48 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c49 {
@@ -160,7 +170,7 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c50 {
@@ -169,7 +179,7 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: url(#instagram-gradient);
+  fill: #6363ff;
 }
 
 .c51 {
@@ -178,28 +188,10 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c51 :hover,
 .c51 :focus {
-  fill: #0E76A8;
-}
-
-.c52 {
-  padding: 0px;
-}
-
-.c52 :hover,
-.c52 :focus {
-  fill: #6363ff;
-}
-
-.c53 {
-  padding: 0px;
-}
-
-.c53 :hover,
-.c53 :focus {
   fill: #0060df;
 }
 
-.c46 {
+.c44 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -207,7 +199,7 @@ exports[`<Post /> should render basic post 1`] = `
   gap: 1.5rem;
 }
 
-.c45 {
+.c43 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -404,18 +396,6 @@ exports[`<Post /> should render basic post 1`] = `
 .c19 {
   grid-column-start: 3;
   margin-top: 1rem;
-}
-
-@media (min-width: 479px) {
-  .c41 {
-    display: none!important;
-  }
-}
-
-@media (min-width: 479px) {
-  .c40 {
-    display: flex!important;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -936,7 +916,7 @@ exports[`<Post /> should render basic post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -974,48 +954,10 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w"
-                    sizes="1921px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg"
-                    data-srcset="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1921px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="sote-on-hyvinvointiyhteiskunnan-kulmakivi"
                   itemprop="headline"
                 >
@@ -1093,7 +1035,7 @@ exports[`<Post /> should render basic post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
@@ -1122,7 +1064,7 @@ exports[`<Post /> should render basic post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1160,48 +1102,10 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAZgjID//xAAWEAEBAQAAAAAAAAAAAAAAAAAAAQL/2gAIAQEAAQUCWM5f/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BJ//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/AWf/xAAXEAEAAwAAAAAAAAAAAAAAAAABABAy/9oACAEBAAY/AmtM/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIVExQf/aAAgBAQABPyHjt6UTLJU9dP/aAAwDAQACAAMAAAAQ/C//xAAWEQEBAQAAAAAAAAAAAAAAAAAAETH/2gAIAQMBAT8Qwr//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/EB//xAAbEAEBAAIDAQAAAAAAAAAAAAABEQAhMVFh0f/aAAgBAQABPxBsi2yPVy3NI6usulXw+Z//2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/3081a588f6ed21f6133274b7ee4ac20a/0f5f5/sosiaali-ja-terveyskeskus.webp 1920w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/3081a588f6ed21f6133274b7ee4ac20a/baa03/sosiaali-ja-terveyskeskus.jpg"
-                    data-srcset="/static/3081a588f6ed21f6133274b7ee4ac20a/baa03/sosiaali-ja-terveyskeskus.jpg 1920w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="mita-jos-terveyskeskusta-ei-olisikaan?"
                   itemprop="headline"
                 >
@@ -1279,7 +1183,7 @@ exports[`<Post /> should render basic post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
@@ -1308,7 +1212,7 @@ exports[`<Post /> should render basic post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -1346,48 +1250,10 @@ exports[`<Post /> should render basic post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAGDUkpGT//EABkQAAMAAwAAAAAAAAAAAAAAAAABAgMRMf/aAAgBAQABBQKN4ybtvp//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwGq/8QAGRAAAgMBAAAAAAAAAAAAAAAAAAECIjEy/9oACAEBAAY/AqyZ0zWf/8QAGhABAAIDAQAAAAAAAAAAAAAAAQAhEWFxkf/aAAgBAQABPyFE4morq5EbPpP/2gAMAwEAAgADAAAAEPP/AP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAwEBPxCYj//EABcRAQADAAAAAAAAAAAAAAAAAAEAETH/2gAIAQIBAT8QVWxV7P/EABkQAQEBAQEBAAAAAAAAAAAAAAERAEEhof/aAAgBAQABPxB0AWvhH5gJiepaZCuvb3//2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/3f069c44cba2cfce20e23a3b9ee9c50b/ba007/Lauri-Lavanti-aluevaaliehdokas-3-1.webp 1921w,/static/3f069c44cba2cfce20e23a3b9ee9c50b/d563d/Lauri-Lavanti-aluevaaliehdokas-3-1.webp 3842w"
-                    sizes="1921px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/3f069c44cba2cfce20e23a3b9ee9c50b/06c10/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg"
-                    data-srcset="/static/3f069c44cba2cfce20e23a3b9ee9c50b/06c10/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg 1921w,/static/3f069c44cba2cfce20e23a3b9ee9c50b/3ca67/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg 3842w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1921px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="ehdolle-aluevaaleihin"
                   itemprop="headline"
                 >
@@ -1465,7 +1331,7 @@ exports[`<Post /> should render basic post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
@@ -1484,16 +1350,16 @@ exports[`<Post /> should render basic post 1`] = `
     </article>
   </main>
   <footer
-    class="c45"
+    class="c43"
   >
     <ul
-      class="c46"
+      class="c44"
     >
       <li
-        class="c47"
+        class="c45"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1515,10 +1381,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c47"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1540,10 +1406,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c50"
+        class="c48"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1565,10 +1431,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c51"
+        class="c49"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1590,10 +1456,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c52"
+        class="c50"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1615,10 +1481,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c53"
+        class="c51"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1808,15 +1674,7 @@ exports[`<Post /> should render oldest post 1`] = `
   object-fit: cover;
 }
 
-.c41 {
-  display: flex!important;
-}
-
 .c40 {
-  display: none!important;
-}
-
-.c42 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -1825,11 +1683,11 @@ exports[`<Post /> should render oldest post 1`] = `
   position: relative;
 }
 
-.c43 {
+.c41 {
   grid-column-start: auto;
 }
 
-.c44 {
+.c42 {
   margin-top: 0.25rem;
 }
 
@@ -1850,14 +1708,14 @@ exports[`<Post /> should render oldest post 1`] = `
   text-decoration: underline;
 }
 
-.c48 {
+.c46 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c48 >* {
+.c46 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1866,13 +1724,31 @@ exports[`<Post /> should render oldest post 1`] = `
   transition-duration: 150ms;
 }
 
+.c45 {
+  padding: 0px;
+}
+
+.c45 :hover,
+.c45 :focus {
+  fill: #4267B2;
+}
+
 .c47 {
   padding: 0px;
 }
 
 .c47 :hover,
 .c47 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c48 {
+  padding: 0px;
+}
+
+.c48 :hover,
+.c48 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c49 {
@@ -1881,7 +1757,7 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c50 {
@@ -1890,7 +1766,7 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: url(#instagram-gradient);
+  fill: #6363ff;
 }
 
 .c51 {
@@ -1899,28 +1775,10 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c51 :hover,
 .c51 :focus {
-  fill: #0E76A8;
-}
-
-.c52 {
-  padding: 0px;
-}
-
-.c52 :hover,
-.c52 :focus {
-  fill: #6363ff;
-}
-
-.c53 {
-  padding: 0px;
-}
-
-.c53 :hover,
-.c53 :focus {
   fill: #0060df;
 }
 
-.c46 {
+.c44 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1928,7 +1786,7 @@ exports[`<Post /> should render oldest post 1`] = `
   gap: 1.5rem;
 }
 
-.c45 {
+.c43 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -2125,18 +1983,6 @@ exports[`<Post /> should render oldest post 1`] = `
 .c19 {
   grid-column-start: 3;
   margin-top: 1rem;
-}
-
-@media (min-width: 479px) {
-  .c41 {
-    display: none!important;
-  }
-}
-
-@media (min-width: 479px) {
-  .c40 {
-    display: flex!important;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -2677,7 +2523,7 @@ exports[`<Post /> should render oldest post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
               >
@@ -2715,48 +2561,10 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAEDBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAGvERAj/8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQABBQJ//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAGBABAAMBAAAAAAAAAAAAAAAAAQAhMRH/2gAIAQEAAT8hc3kwHrZAotn/2gAMAwEAAgADAAAAEH//AP/EABYRAAMAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAwEBPxARf//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EGf/xAAaEAEAAwADAAAAAAAAAAAAAAABACExEUFR/9oACAEBAAE/EG5VtJYvJZcRbq9n/9k="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/1154c65a6416b6a2623bd49bbcd7b417/ea55b/Muumimaailmassa.webp 1923w"
-                    sizes="1923px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/1154c65a6416b6a2623bd49bbcd7b417/d154e/Muumimaailmassa.jpg"
-                    data-srcset="/static/1154c65a6416b6a2623bd49bbcd7b417/d154e/Muumimaailmassa.jpg 1923w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1923px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="paivakodit-kaipaavat-opettajia"
                   itemprop="headline"
                 >
@@ -2823,7 +2631,7 @@ exports[`<Post /> should render oldest post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -2852,7 +2660,7 @@ exports[`<Post /> should render oldest post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -2890,48 +2698,10 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAP/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABrAiBH//EABgQAAMBAQAAAAAAAAAAAAAAAAECEQAh/9oACAEBAAEFAmWBBcV7/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BR//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/AVf/xAAWEAEBAQAAAAAAAAAAAAAAAAAAMQH/2gAIAQEABj8CVdf/xAAaEAEAAgMBAAAAAAAAAAAAAAABACExQYHh/9oACAEBAAE/ITS3oRLqzoJ7uf/aAAwDAQACAAMAAAAQc8//xAAXEQEBAQEAAAAAAAAAAAAAAAABABFR/9oACAEDAQE/EENbHL//xAAYEQACAwAAAAAAAAAAAAAAAAAAEQEhUf/aAAgBAgEBPxBzQ2n/xAAbEAEAAwADAQAAAAAAAAAAAAABABEhMWFxsf/aAAgBAQABPxBQGo4QOdkAqkGAPkO2XlJ//9k="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/5264e4f52e103a3645c44cc6d5e7852e/0f5f5/laajakallion-paivakoti.webp 1920w,/static/5264e4f52e103a3645c44cc6d5e7852e/fe0d2/laajakallion-paivakoti.webp 3840w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Laajakallion päiväkodista talvella."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/5264e4f52e103a3645c44cc6d5e7852e/baa03/laajakallion-paivakoti.jpg"
-                    data-srcset="/static/5264e4f52e103a3645c44cc6d5e7852e/baa03/laajakallion-paivakoti.jpg 1920w,/static/5264e4f52e103a3645c44cc6d5e7852e/63cd6/laajakallion-paivakoti.jpg 3840w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                   itemprop="headline"
                 >
@@ -3009,7 +2779,7 @@ exports[`<Post /> should render oldest post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -3038,7 +2808,7 @@ exports[`<Post /> should render oldest post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -3076,48 +2846,10 @@ exports[`<Post /> should render oldest post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQF/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAL/2gAMAwEAAhADEAAAAYKxWaIf/8QAFxABAAMAAAAAAAAAAAAAAAAAAQAhQf/aAAgBAQABBQImpf8A/8QAFREBAQAAAAAAAAAAAAAAAAAAAhD/2gAIAQMBAT8BU//EABYRAAMAAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPwERf//EABgQAAIDAAAAAAAAAAAAAAAAAAACARBh/9oACAEBAAY/AoF1a//EABoQAAICAwAAAAAAAAAAAAAAAAABEUEhcbH/2gAIAQEAAT8hyey4U0yRVD//2gAMAwEAAgADAAAAEAv/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAABMXH/2gAIAQMBAT8QhYKH/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAEx/9oACAECAQE/EN0r/8QAGhABAAIDAQAAAAAAAAAAAAAAAQAhEXGB0f/aAAgBAQABPxCyb8sedmmoRoDNz//Z"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/8e7c5b9c7e43b34d7083642908bff733/0f5f5/lastenkirjallisuutta.webp 1920w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva useammasta lasten kirjasta kirjahyllyssä."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/8e7c5b9c7e43b34d7083642908bff733/baa03/lastenkirjallisuutta.jpg"
-                    data-srcset="/static/8e7c5b9c7e43b34d7083642908bff733/baa03/lastenkirjallisuutta.jpg 1920w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                   itemprop="headline"
                 >
@@ -3184,7 +2916,7 @@ exports[`<Post /> should render oldest post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -3203,16 +2935,16 @@ exports[`<Post /> should render oldest post 1`] = `
     </article>
   </main>
   <footer
-    class="c45"
+    class="c43"
   >
     <ul
-      class="c46"
+      class="c44"
     >
       <li
-        class="c47"
+        class="c45"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3234,10 +2966,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c47"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3259,10 +2991,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c50"
+        class="c48"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3284,10 +3016,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c51"
+        class="c49"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3309,10 +3041,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c52"
+        class="c50"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3334,10 +3066,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c53"
+        class="c51"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3527,15 +3259,7 @@ exports[`<Post /> should render updated post 1`] = `
   object-fit: cover;
 }
 
-.c41 {
-  display: flex!important;
-}
-
 .c40 {
-  display: none!important;
-}
-
-.c42 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -3544,11 +3268,11 @@ exports[`<Post /> should render updated post 1`] = `
   position: relative;
 }
 
-.c43 {
+.c41 {
   grid-column-start: auto;
 }
 
-.c44 {
+.c42 {
   margin-top: 0.25rem;
 }
 
@@ -3569,14 +3293,14 @@ exports[`<Post /> should render updated post 1`] = `
   text-decoration: underline;
 }
 
-.c48 {
+.c46 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c48 >* {
+.c46 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -3585,13 +3309,31 @@ exports[`<Post /> should render updated post 1`] = `
   transition-duration: 150ms;
 }
 
+.c45 {
+  padding: 0px;
+}
+
+.c45 :hover,
+.c45 :focus {
+  fill: #4267B2;
+}
+
 .c47 {
   padding: 0px;
 }
 
 .c47 :hover,
 .c47 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c48 {
+  padding: 0px;
+}
+
+.c48 :hover,
+.c48 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c49 {
@@ -3600,7 +3342,7 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c50 {
@@ -3609,7 +3351,7 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: url(#instagram-gradient);
+  fill: #6363ff;
 }
 
 .c51 {
@@ -3618,28 +3360,10 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c51 :hover,
 .c51 :focus {
-  fill: #0E76A8;
-}
-
-.c52 {
-  padding: 0px;
-}
-
-.c52 :hover,
-.c52 :focus {
-  fill: #6363ff;
-}
-
-.c53 {
-  padding: 0px;
-}
-
-.c53 :hover,
-.c53 :focus {
   fill: #0060df;
 }
 
-.c46 {
+.c44 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -3647,7 +3371,7 @@ exports[`<Post /> should render updated post 1`] = `
   gap: 1.5rem;
 }
 
-.c45 {
+.c43 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -3844,18 +3568,6 @@ exports[`<Post /> should render updated post 1`] = `
 .c19 {
   grid-column-start: 3;
   margin-top: 1rem;
-}
-
-@media (min-width: 479px) {
-  .c41 {
-    display: none!important;
-  }
-}
-
-@media (min-width: 479px) {
-  .c40 {
-    display: flex!important;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -4449,7 +4161,7 @@ exports[`<Post /> should render updated post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -4487,48 +4199,10 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w"
-                    sizes="1921px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg"
-                    data-srcset="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1921px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="terveys-kuuluu-kaikille"
                   itemprop="headline"
                 >
@@ -4606,7 +4280,7 @@ exports[`<Post /> should render updated post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -4635,7 +4309,7 @@ exports[`<Post /> should render updated post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -4673,48 +4347,10 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAZgjID//xAAWEAEBAQAAAAAAAAAAAAAAAAAAAQL/2gAIAQEAAQUCWM5f/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BJ//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/AWf/xAAXEAEAAwAAAAAAAAAAAAAAAAABABAy/9oACAEBAAY/AmtM/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIVExQf/aAAgBAQABPyHjt6UTLJU9dP/aAAwDAQACAAMAAAAQ/C//xAAWEQEBAQAAAAAAAAAAAAAAAAAAETH/2gAIAQMBAT8Qwr//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/EB//xAAbEAEBAAIDAQAAAAAAAAAAAAABEQAhMVFh0f/aAAgBAQABPxBsi2yPVy3NI6usulXw+Z//2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/3081a588f6ed21f6133274b7ee4ac20a/0f5f5/sosiaali-ja-terveyskeskus.webp 1920w"
-                    sizes="1920px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/3081a588f6ed21f6133274b7ee4ac20a/baa03/sosiaali-ja-terveyskeskus.jpg"
-                    data-srcset="/static/3081a588f6ed21f6133274b7ee4ac20a/baa03/sosiaali-ja-terveyskeskus.jpg 1920w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1920px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="mita-jos-terveyskeskusta-ei-olisikaan?"
                   itemprop="headline"
                 >
@@ -4792,7 +4428,7 @@ exports[`<Post /> should render updated post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
@@ -4821,7 +4457,7 @@ exports[`<Post /> should render updated post 1`] = `
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c39 c40"
+                class="gatsby-image-wrapper c39"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -4859,48 +4495,10 @@ exports[`<Post /> should render updated post 1`] = `
                 </script>
               </div>
               <div
-                class="gatsby-image-wrapper c39 c41"
-                data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
-              >
-                <img
-                  alt=""
-                  aria-hidden="true"
-                  data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAGDUkpGT//EABkQAAMAAwAAAAAAAAAAAAAAAAABAgMRMf/aAAgBAQABBQKN4ybtvp//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwGq/8QAGRAAAgMBAAAAAAAAAAAAAAAAAAECIjEy/9oACAEBAAY/AqyZ0zWf/8QAGhABAAIDAQAAAAAAAAAAAAAAAQAhEWFxkf/aAAgBAQABPyFE4morq5EbPpP/2gAMAwEAAgADAAAAEPP/AP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAwEBPxCYj//EABcRAQADAAAAAAAAAAAAAAAAAAEAETH/2gAIAQIBAT8QVWxV7P/EABkQAQEBAQEBAAAAAAAAAAAAAAERAEEhof/aAAgBAQABPxB0AWvhH5gJiepaZCuvb3//2Q=="
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-                />
-                <picture>
-                  <source
-                    data-srcset="/static/3f069c44cba2cfce20e23a3b9ee9c50b/ba007/Lauri-Lavanti-aluevaaliehdokas-3-1.webp 1921w,/static/3f069c44cba2cfce20e23a3b9ee9c50b/d563d/Lauri-Lavanti-aluevaaliehdokas-3-1.webp 3842w"
-                    sizes="1921px"
-                    type="image/webp"
-                  />
-                  <img
-                    alt="Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää."
-                    data-gatsby-image-ssr=""
-                    data-main-image=""
-                    data-src="/static/3f069c44cba2cfce20e23a3b9ee9c50b/06c10/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg"
-                    data-srcset="/static/3f069c44cba2cfce20e23a3b9ee9c50b/06c10/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg 1921w,/static/3f069c44cba2cfce20e23a3b9ee9c50b/3ca67/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg 3842w"
-                    decoding="async"
-                    loading="lazy"
-                    sizes="1921px"
-                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-                  />
-                </picture>
-                <noscript />
-                <script
-                  type="module"
-                >
-                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-                </script>
-              </div>
-              <div
-                class="c42"
+                class="c40"
               >
                 <h2
-                  class="c35 c43"
+                  class="c35 c41"
                   id="ehdolle-aluevaaleihin"
                   itemprop="headline"
                 >
@@ -4978,7 +4576,7 @@ exports[`<Post /> should render updated post 1`] = `
               </ul>
             </aside>
             <p
-              class="c25 c44"
+              class="c25 c42"
               itemprop="description"
             >
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
@@ -4997,16 +4595,16 @@ exports[`<Post /> should render updated post 1`] = `
     </article>
   </main>
   <footer
-    class="c45"
+    class="c43"
   >
     <ul
-      class="c46"
+      class="c44"
     >
       <li
-        class="c47"
+        class="c45"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5028,10 +4626,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c47"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5053,10 +4651,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c50"
+        class="c48"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5078,10 +4676,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c51"
+        class="c49"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5103,10 +4701,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c52"
+        class="c50"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5128,10 +4726,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c53"
+        class="c51"
       >
         <a
-          class="c48"
+          class="c46"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"

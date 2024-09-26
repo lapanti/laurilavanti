@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { breakpoints, colors, sizes, zIndices } from '../../lib/styles'
+import { colors, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
@@ -20,20 +20,6 @@ const Image = styled(GatsbyImage)({
     display: 'flex',
     height: sizes[16],
     objectFit: 'cover',
-})
-
-const MobileImage = styled(Image)({
-    display: 'flex !important',
-    [breakpoints.biggerThanPhone.min]: {
-        display: 'none !important',
-    },
-})
-
-const DesktopImage = styled(Image)({
-    display: 'none !important',
-    [breakpoints.biggerThanPhone.min]: {
-        display: 'flex !important',
-    },
 })
 
 const H2Container = styled.div({
@@ -78,8 +64,7 @@ const ExcerptComponent = ({
         <li className={className}>
             <article aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
                 <Link to={`/blogi/${slug}/`} rel="permalink">
-                    {image && <DesktopImage image={image} alt={imageAlt} />}
-                    {image && <MobileImage image={image} alt={imageAlt} />}
+                    {image && <Image image={image} alt={imageAlt} />}
                     <H2Container>
                         <StyledH2 itemProp="headline">{title}</StyledH2>
                     </H2Container>
