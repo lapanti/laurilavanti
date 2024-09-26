@@ -21,8 +21,6 @@ const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         pathname={`/${slug}/`}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
-        mobileHeroImage={data?.contentfulPage?.mobileImage?.localFile}
-        mobileHeroImageAlt={data?.contentfulPage?.mobileImage?.description}
         description={getValueOrDefault(data?.contentfulPage?.description, '')}
         type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
@@ -93,23 +91,9 @@ export const query = graphql`
                     childImageSharp {
                         gatsbyImageData(
                             placeholder: BLURRED
-                            layout: FIXED
+                            layout: CONSTRAINED
                             height: 384
                             width: 1920
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
-                description
-            }
-            mobileImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: FIXED
-                            height: 384
-                            width: 478
                             transformOptions: { fit: OUTSIDE }
                         )
                     }

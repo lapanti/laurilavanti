@@ -64,8 +64,6 @@ interface Props extends Omit<PostMetaProps, 'ariaLabel'> {
     excerpt: string
     image: ImageDataLike
     imageAlt: string
-    mobileImage: ImageDataLike
-    mobileImageAlt: string
     slug: string
 }
 
@@ -77,19 +75,16 @@ const ExcerptComponent = ({
     tags,
     image: imageData,
     imageAlt,
-    mobileImage: mobileImageData,
-    mobileImageAlt,
     slug,
 }: Props): JSX.Element => {
     const image = getImage(imageData)
-    const mobileImage = getImage(mobileImageData)
 
     return (
         <li className={className}>
             <article aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
                 <Link to={`/blogi/${slug}/`} rel="permalink">
                     {image && <DesktopImage image={image} alt={imageAlt} />}
-                    {mobileImage && <MobileImage image={mobileImage} alt={mobileImageAlt} />}
+                    {image && <MobileImage image={image} alt={imageAlt} />}
                     <H2Container>
                         <StyledH2 itemProp="headline">{title}</StyledH2>
                     </H2Container>

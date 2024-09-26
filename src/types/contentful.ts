@@ -88,10 +88,10 @@ export interface ContentfulPage {
         localFile: ImageDataLike
         description: string
     }
-    mobileImage: {
+    mobileImage?: {
         localFile: ImageDataLike
         description: string
-    }
+    } | null
     backgroundImage: {
         localFile: ImageDataLike
     } | null
@@ -111,10 +111,10 @@ interface ContentfulPostCommon {
         localFile: ImageDataLike
         description: string
     }
-    mobileHeaderImage: {
+    mobileHeaderImage?: {
         localFile: ImageDataLike
         description: string
-    }
+    } | null
     excerpt: string
 }
 

@@ -25,7 +25,6 @@ describe('<FrontPage />', () => {
                         subtitle: null,
                         body: {},
                         image: { localFile: mainImage, description: '' },
-                        mobileImage: { localFile: mainImage, description: '' },
                         backgroundImage: null,
                         updatedAt: '',
                     },
