@@ -112,11 +112,17 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c23 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
 }
 
 .c22 {
@@ -321,7 +327,6 @@ exports[`<FrontPage /> should render 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin-bottom: 2rem;
 }
 
 .c9 {
@@ -345,6 +350,13 @@ exports[`<FrontPage /> should render 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c23 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -414,7 +426,6 @@ exports[`<FrontPage /> should render 1`] = `
   .c11 {
     height: 45rem;
     flex-direction: row-reverse;
-    margin-bottom: 3.5rem;
   }
 }
 
@@ -1514,7 +1525,6 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin-bottom: 2rem;
 }
 
 .c9 {
@@ -1592,7 +1602,6 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   .c11 {
     height: 45rem;
     flex-direction: row-reverse;
-    margin-bottom: 3.5rem;
   }
 }
 

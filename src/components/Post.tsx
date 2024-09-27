@@ -80,8 +80,7 @@ const Post = ({
                 siteUrl={siteUrl}
             />
             <H2>Muita kirjoituksia</H2>
-            <Hr />
-            <ExcerptList currentSlug={slug} limit={3} relatedTags={tags} />
+            <ExcerptList currentSlug={slug} limit={4} relatedTags={tags} />
         </Layout>
     )
 }

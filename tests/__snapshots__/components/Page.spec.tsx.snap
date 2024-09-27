@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Page /> should render about me page 1`] = `
-.c23 {
+.c22 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 700;
@@ -23,7 +23,21 @@ exports[`<Page /> should render about me page 1`] = `
   text-decoration: underline;
 }
 
-.c18 {
+.c17 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-family: "IBM Plex Sans";
+  font-weight: 400;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.c19 {
+  color: rgb(90, 94, 0);
+  text-decoration: underline;
+}
+
+.c21 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -33,32 +47,18 @@ exports[`<Page /> should render about me page 1`] = `
 }
 
 .c20 {
-  color: rgb(90, 94, 0);
-  text-decoration: underline;
-}
-
-.c22 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-family: "IBM Plex Sans";
-  font-weight: 400;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.c21 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
-.c27 {
+.c26 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c27 >* {
+.c26 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -67,13 +67,22 @@ exports[`<Page /> should render about me page 1`] = `
   transition-duration: 150ms;
 }
 
-.c26 {
+.c25 {
   padding: 0px;
 }
 
-.c26 :hover,
-.c26 :focus {
+.c25 :hover,
+.c25 :focus {
   fill: #4267B2;
+}
+
+.c27 {
+  padding: 0px;
+}
+
+.c27 :hover,
+.c27 :focus {
+  fill: rgb(0, 0, 0);
 }
 
 .c28 {
@@ -82,7 +91,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c28 :hover,
 .c28 :focus {
-  fill: rgb(0, 0, 0);
+  fill: url(#instagram-gradient);
 }
 
 .c29 {
@@ -91,7 +100,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c29 :hover,
 .c29 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c30 {
@@ -100,7 +109,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c30 :hover,
 .c30 :focus {
-  fill: #0E76A8;
+  fill: #6363ff;
 }
 
 .c31 {
@@ -109,19 +118,10 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c31 :hover,
 .c31 :focus {
-  fill: #6363ff;
-}
-
-.c32 {
-  padding: 0px;
-}
-
-.c32 :hover,
-.c32 :focus {
   fill: #0060df;
 }
 
-.c25 {
+.c24 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -129,7 +129,7 @@ exports[`<Page /> should render about me page 1`] = `
   gap: 1.5rem;
 }
 
-.c24 {
+.c23 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -218,7 +218,7 @@ exports[`<Page /> should render about me page 1`] = `
   position: relative;
 }
 
-.c17 {
+.c16 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 900;
@@ -229,7 +229,7 @@ exports[`<Page /> should render about me page 1`] = `
   line-height: 2.5rem;
 }
 
-.c16 {
+.c15 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -250,10 +250,6 @@ exports[`<Page /> should render about me page 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c10 .c15+* {
-  margin-top: 1rem;
-}
-
 .c14 {
   display: flex!important;
 }
@@ -262,7 +258,7 @@ exports[`<Page /> should render about me page 1`] = `
   display: none!important;
 }
 
-.c19 {
+.c18 {
   grid-column-start: 3;
 }
 
@@ -525,17 +521,17 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
         </div>
         <section
-          class="c15 c16"
+          class="c15"
         >
           <h1
-            class="c17"
+            class="c16"
             itemprop="headline"
           >
             Minusta
           </h1>
         </section>
         <p
-          class="c18 c19"
+          class="c17 c18"
         >
           Olen 
           <span
@@ -548,11 +544,11 @@ exports[`<Page /> should render about me page 1`] = `
           .
         </p>
         <p
-          class="c18 c19"
+          class="c17 c18"
         >
           Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös 
           <a
-            class="c20"
+            class="c19"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel=" noopener noreferrer"
             target="_blank"
@@ -561,7 +557,7 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
            ja 
           <a
-            class="c20"
+            class="c19"
             href="https://www.threads.net/@laurilavanti"
             rel=" noopener noreferrer"
             target="_blank"
@@ -571,20 +567,20 @@ exports[`<Page /> should render about me page 1`] = `
           .
         </p>
         <div
-          class="c21"
+          class="c20"
         >
           <div
-            class="c22"
+            class="c21"
           >
             <h2
-              class="c23"
+              class="c22"
               id="luottamustoimet"
             >
               Luottamustoimet
             </h2>
           </div>
           <div
-            class="c22"
+            class="c21"
           >
             <ul>
               <li>
@@ -653,17 +649,17 @@ exports[`<Page /> should render about me page 1`] = `
             </ul>
           </div>
           <div
-            class="c22"
+            class="c21"
           >
             <h2
-              class="c23"
+              class="c22"
               id="tyokokemus"
             >
               Työkokemus
             </h2>
           </div>
           <div
-            class="c22"
+            class="c21"
           >
             <ul>
               <li>
@@ -732,17 +728,17 @@ exports[`<Page /> should render about me page 1`] = `
             </ul>
           </div>
           <div
-            class="c22"
+            class="c21"
           >
             <h2
-              class="c23"
+              class="c22"
               id="koulutus"
             >
               Koulutus
             </h2>
           </div>
           <div
-            class="c22"
+            class="c21"
           >
             <ul>
               <li>
@@ -776,21 +772,21 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
         </div>
         <p
-          class="c18 c19"
+          class="c17 c18"
         />
       </article>
     </main>
     <footer
-      class="c24"
+      class="c23"
     >
       <ul
-        class="c25"
+        class="c24"
       >
         <li
-          class="c26"
+          class="c25"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -812,10 +808,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c27"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -837,10 +833,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c29"
+          class="c28"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -862,10 +858,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c30"
+          class="c29"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -887,10 +883,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c31"
+          class="c30"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -912,10 +908,10 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
         </li>
         <li
-          class="c32"
+          class="c31"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1020,7 +1016,7 @@ exports[`<Page /> should render about me page 1`] = `
 `;
 
 exports[`<Page /> should render blog page 1`] = `
-.c24 {
+.c23 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 700;
@@ -1042,7 +1038,7 @@ exports[`<Page /> should render blog page 1`] = `
   text-decoration: underline;
 }
 
-.c32 {
+.c31 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -1051,23 +1047,23 @@ exports[`<Page /> should render blog page 1`] = `
   margin-bottom: 1rem;
 }
 
-.c27 {
+.c26 {
   display: flex;
   flex-direction: row;
 }
 
-.c28 {
+.c27 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c27 :last-child {
   margin-right: 0px;
 }
 
-.c29 {
+.c28 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -1075,45 +1071,45 @@ exports[`<Page /> should render blog page 1`] = `
   flex-shrink: 0;
 }
 
-.c30 {
+.c29 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c31 {
+.c30 {
   margin-right: 1rem;
 }
 
-.c31 :last-child {
+.c30 :last-child {
   margin-right: 0px;
 }
 
-.c26 {
+.c25 {
   display: flex;
   flex-direction: column;
 }
 
-.c25 {
+.c24 {
   grid-column-start: auto;
 }
 
-.c20 {
+.c19 {
   color: rgb(0, 0, 0);
 }
 
-.c20:hover .c23 {
+.c19:hover .c22 {
   text-decoration: underline;
 }
 
-.c21 {
+.c20 {
   width: 100%;
   display: flex;
   aspect-ratio: 16/9;
 }
 
-.c22 {
+.c21 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -1122,30 +1118,36 @@ exports[`<Page /> should render blog page 1`] = `
   position: relative;
 }
 
-.c33 {
+.c32 {
   margin-top: 0.25rem;
 }
 
-.c19 {
+.c18 {
   max-width: 35rem;
 }
 
-.c18 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+.c17 {
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
 }
 
-.c38 {
+.c37 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c38 >* {
+.c37 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1154,13 +1156,22 @@ exports[`<Page /> should render blog page 1`] = `
   transition-duration: 150ms;
 }
 
-.c37 {
+.c36 {
   padding: 0px;
 }
 
-.c37 :hover,
-.c37 :focus {
+.c36 :hover,
+.c36 :focus {
   fill: #4267B2;
+}
+
+.c38 {
+  padding: 0px;
+}
+
+.c38 :hover,
+.c38 :focus {
+  fill: rgb(0, 0, 0);
 }
 
 .c39 {
@@ -1169,7 +1180,7 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: rgb(0, 0, 0);
+  fill: url(#instagram-gradient);
 }
 
 .c40 {
@@ -1178,7 +1189,7 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c41 {
@@ -1187,7 +1198,7 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c41 :hover,
 .c41 :focus {
-  fill: #0E76A8;
+  fill: #6363ff;
 }
 
 .c42 {
@@ -1196,19 +1207,10 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c42 :hover,
 .c42 :focus {
-  fill: #6363ff;
-}
-
-.c43 {
-  padding: 0px;
-}
-
-.c43 :hover,
-.c43 :focus {
   fill: #0060df;
 }
 
-.c36 {
+.c35 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1216,7 +1218,7 @@ exports[`<Page /> should render blog page 1`] = `
   gap: 1.5rem;
 }
 
-.c35 {
+.c34 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -1305,7 +1307,7 @@ exports[`<Page /> should render blog page 1`] = `
   position: relative;
 }
 
-.c17 {
+.c16 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 900;
@@ -1316,7 +1318,7 @@ exports[`<Page /> should render blog page 1`] = `
   line-height: 2.5rem;
 }
 
-.c16 {
+.c15 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -1337,10 +1339,6 @@ exports[`<Page /> should render blog page 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c10 .c15+* {
-  margin-top: 1rem;
-}
-
 .c14 {
   display: flex!important;
 }
@@ -1349,7 +1347,7 @@ exports[`<Page /> should render blog page 1`] = `
   display: none!important;
 }
 
-.c34 {
+.c33 {
   grid-column-start: 3;
 }
 
@@ -1361,6 +1359,13 @@ exports[`<Page /> should render blog page 1`] = `
   gap: 1.125rem;
   min-height: 100vh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c17 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1612,20 +1617,20 @@ exports[`<Page /> should render blog page 1`] = `
           </div>
         </div>
         <section
-          class="c15 c16"
+          class="c15"
         >
           <h1
-            class="c17"
+            class="c16"
             itemprop="headline"
           >
             Blogi
           </h1>
         </section>
         <ul
-          class="c18"
+          class="c17"
         >
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="VBO:n vaalit koskettavat meitä kaikkia"
@@ -1633,12 +1638,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1676,10 +1681,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                     itemprop="headline"
                   >
@@ -1689,16 +1694,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1719,10 +1724,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -1733,7 +1738,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -1744,7 +1749,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -1757,7 +1762,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
@@ -1773,7 +1778,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Luontomme on valttimme - vuodesta toiseen"
@@ -1781,12 +1786,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1824,10 +1829,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="luontomme-on-valttimme---vuodesta-toiseen"
                     itemprop="headline"
                   >
@@ -1837,16 +1842,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Luontomme on valttimme - vuodesta toiseen meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1867,10 +1872,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -1881,7 +1886,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -1892,7 +1897,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -1905,7 +1910,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
@@ -1921,7 +1926,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Uusi vuosi, tuttu talvikunnossapito"
@@ -1929,12 +1934,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1972,10 +1977,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="uusi-vuosi,-tuttu-talvikunnossapito"
                     itemprop="headline"
                   >
@@ -1985,16 +1990,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Uusi vuosi, tuttu talvikunnossapito meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2015,10 +2020,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2029,7 +2034,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2040,7 +2045,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2053,7 +2058,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
@@ -2069,7 +2074,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Terveys kuuluu kaikille"
@@ -2077,12 +2082,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -2120,10 +2125,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="terveys-kuuluu-kaikille"
                     itemprop="headline"
                   >
@@ -2133,16 +2138,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2163,10 +2168,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2177,7 +2182,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2188,7 +2193,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2201,7 +2206,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -2217,7 +2222,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
@@ -2225,12 +2230,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -2268,10 +2273,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="sote-on-hyvinvointiyhteiskunnan-kulmakivi"
                     itemprop="headline"
                   >
@@ -2281,16 +2286,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Sote on hyvinvointiyhteiskunnan kulmakivi meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2311,10 +2316,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2325,7 +2330,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2336,7 +2341,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2349,7 +2354,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
@@ -2365,7 +2370,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Mitä jos terveyskeskusta ei olisikaan?"
@@ -2373,12 +2378,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
                 >
@@ -2416,10 +2421,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="mita-jos-terveyskeskusta-ei-olisikaan?"
                     itemprop="headline"
                   >
@@ -2429,16 +2434,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2459,10 +2464,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2473,7 +2478,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2484,7 +2489,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2497,7 +2502,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
@@ -2513,7 +2518,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Perusturvajaosto - mikä se on?"
@@ -2521,12 +2526,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/perusturvajaosto-mika-se-on/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1922px; height: 384px;"
                 >
@@ -2564,10 +2569,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="perusturvajaosto---mika-se-on?"
                     itemprop="headline"
                   >
@@ -2577,16 +2582,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Perusturvajaosto - mikä se on? meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2607,10 +2612,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2621,7 +2626,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2634,7 +2639,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
@@ -2650,7 +2655,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Ehdolle aluevaaleihin"
@@ -2658,12 +2663,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -2701,10 +2706,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="ehdolle-aluevaaleihin"
                     itemprop="headline"
                   >
@@ -2714,16 +2719,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2744,10 +2749,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2758,7 +2763,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2769,7 +2774,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2782,7 +2787,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
@@ -2798,7 +2803,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Päiväkodit kaipaavat opettajia"
@@ -2806,12 +2811,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/paivakodit-kaipaavat-opettajia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
                 >
@@ -2849,10 +2854,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="paivakodit-kaipaavat-opettajia"
                     itemprop="headline"
                   >
@@ -2862,16 +2867,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Päiväkodit kaipaavat opettajia meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -2892,10 +2897,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2906,7 +2911,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -2919,7 +2924,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -2935,7 +2940,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Hyvin suunniteltu on puoliksi tehty, mutta"
@@ -2943,12 +2948,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
                 >
@@ -2986,10 +2991,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="hyvin-suunniteltu-on-puoliksi-tehty,-mutta"
                     itemprop="headline"
                   >
@@ -2999,16 +3004,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Hyvin suunniteltu on puoliksi tehty, mutta meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -3029,10 +3034,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3043,7 +3048,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3056,7 +3061,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
@@ -3072,7 +3077,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
@@ -3080,12 +3085,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
                 >
@@ -3123,10 +3128,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                     itemprop="headline"
                   >
@@ -3136,16 +3141,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Varhaiskasvatuksen riittävyydestä ei saa tinkiä meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -3166,10 +3171,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3180,7 +3185,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3191,7 +3196,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3204,7 +3209,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -3220,7 +3225,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
@@ -3228,12 +3233,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
                 >
@@ -3271,10 +3276,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                     itemprop="headline"
                   >
@@ -3284,16 +3289,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Varhaiskasvatuksen kerhotoiminta - lapsen etu meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -3314,10 +3319,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3328,7 +3333,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3341,7 +3346,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -3357,7 +3362,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Kirkkonummi-lisä on sinunkin etusi"
@@ -3365,12 +3370,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
                 >
@@ -3408,10 +3413,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="kirkkonummi-lisa-on-sinunkin-etusi"
                     itemprop="headline"
                   >
@@ -3421,16 +3426,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Kirkkonummi-lisä on sinunkin etusi meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -3451,10 +3456,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3465,7 +3470,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3478,7 +3483,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
@@ -3494,7 +3499,7 @@ exports[`<Page /> should render blog page 1`] = `
             </article>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <article
               aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
@@ -3502,12 +3507,12 @@ exports[`<Page /> should render blog page 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c20"
+                class="c4 c19"
                 href="/blogi/kotihoidon-tuen-kuntalisa/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c21"
+                  class="gatsby-image-wrapper c20"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
                 >
@@ -3545,10 +3550,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c22"
+                  class="c21"
                 >
                   <h2
-                    class="c23 c24 c25"
+                    class="c22 c23 c24"
                     id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
                     itemprop="headline"
                   >
@@ -3558,16 +3563,16 @@ exports[`<Page /> should render blog page 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
-                class="c26"
+                class="c25"
               >
                 <div
-                  class="c27"
+                  class="c26"
                 >
                   <span
-                    class="c28"
+                    class="c27"
                   >
                     <svg
-                      class="c29"
+                      class="c28"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -3588,10 +3593,10 @@ exports[`<Page /> should render blog page 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c30"
+                  class="c29"
                 >
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3602,7 +3607,7 @@ exports[`<Page /> should render blog page 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c31"
+                    class="c30"
                   >
                     <a
                       class="c4"
@@ -3615,7 +3620,7 @@ exports[`<Page /> should render blog page 1`] = `
                 </ul>
               </aside>
               <p
-                class="c32 c33"
+                class="c31 c32"
                 itemprop="description"
               >
                 Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -3632,21 +3637,21 @@ exports[`<Page /> should render blog page 1`] = `
           </li>
         </ul>
         <p
-          class="c32 c34"
+          class="c31 c33"
         />
       </article>
     </main>
     <footer
-      class="c35"
+      class="c34"
     >
       <ul
-        class="c36"
+        class="c35"
       >
         <li
-          class="c37"
+          class="c36"
         >
           <a
-            class="c38"
+            class="c37"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3668,10 +3673,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c38"
         >
           <a
-            class="c38"
+            class="c37"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3693,10 +3698,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c40"
+          class="c39"
         >
           <a
-            class="c38"
+            class="c37"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3718,10 +3723,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c41"
+          class="c40"
         >
           <a
-            class="c38"
+            class="c37"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3743,10 +3748,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c42"
+          class="c41"
         >
           <a
-            class="c38"
+            class="c37"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3768,10 +3773,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c43"
+          class="c42"
         >
           <a
-            class="c38"
+            class="c37"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3890,7 +3895,7 @@ exports[`<Page /> should render contact me page 1`] = `
   text-decoration: underline;
 }
 
-.c29 {
+.c28 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -3899,84 +3904,84 @@ exports[`<Page /> should render contact me page 1`] = `
   margin-bottom: 1rem;
 }
 
-.c21 {
+.c20 {
   color: rgb(90, 94, 0);
   text-decoration: underline;
 }
 
-.c22 {
+.c21 {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.c20 {
+.c19 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
 }
 
-.c23 {
+.c22 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
   fill: #4267B2;
 }
 
-.c24 {
+.c23 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
   fill: rgb(0, 0, 0);
 }
 
-.c25 {
+.c24 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
   fill: url(#instagram-gradient);
 }
 
-.c26 {
+.c25 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
   fill: #0E76A8;
 }
 
-.c27 {
+.c26 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
   fill: #6363ff;
 }
 
-.c28 {
+.c27 {
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
   fill: #0060df;
 }
 
-.c19 {
+.c18 {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.c18 {
+.c17 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
-.c34 {
+.c33 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c34 >* {
+.c33 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -3985,13 +3990,22 @@ exports[`<Page /> should render contact me page 1`] = `
   transition-duration: 150ms;
 }
 
-.c33 {
+.c32 {
   padding: 0px;
 }
 
-.c33 :hover,
-.c33 :focus {
+.c32 :hover,
+.c32 :focus {
   fill: #4267B2;
+}
+
+.c34 {
+  padding: 0px;
+}
+
+.c34 :hover,
+.c34 :focus {
+  fill: rgb(0, 0, 0);
 }
 
 .c35 {
@@ -4000,7 +4014,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c35 :hover,
 .c35 :focus {
-  fill: rgb(0, 0, 0);
+  fill: url(#instagram-gradient);
 }
 
 .c36 {
@@ -4009,7 +4023,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c36 :hover,
 .c36 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c37 {
@@ -4018,7 +4032,7 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c37 :hover,
 .c37 :focus {
-  fill: #0E76A8;
+  fill: #6363ff;
 }
 
 .c38 {
@@ -4027,19 +4041,10 @@ exports[`<Page /> should render contact me page 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: #6363ff;
-}
-
-.c39 {
-  padding: 0px;
-}
-
-.c39 :hover,
-.c39 :focus {
   fill: #0060df;
 }
 
-.c32 {
+.c31 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -4047,7 +4052,7 @@ exports[`<Page /> should render contact me page 1`] = `
   gap: 1.5rem;
 }
 
-.c31 {
+.c30 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -4136,7 +4141,7 @@ exports[`<Page /> should render contact me page 1`] = `
   position: relative;
 }
 
-.c17 {
+.c16 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 900;
@@ -4147,7 +4152,7 @@ exports[`<Page /> should render contact me page 1`] = `
   line-height: 2.5rem;
 }
 
-.c16 {
+.c15 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -4168,10 +4173,6 @@ exports[`<Page /> should render contact me page 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c10 .c15+* {
-  margin-top: 1rem;
-}
-
 .c14 {
   display: flex!important;
 }
@@ -4180,7 +4181,7 @@ exports[`<Page /> should render contact me page 1`] = `
   display: none!important;
 }
 
-.c30 {
+.c29 {
   grid-column-start: 3;
 }
 
@@ -4443,23 +4444,23 @@ exports[`<Page /> should render contact me page 1`] = `
           </div>
         </div>
         <section
-          class="c15 c16"
+          class="c15"
         >
           <h1
-            class="c17"
+            class="c16"
             itemprop="headline"
           >
             Ota yhteyttä
           </h1>
         </section>
         <ul
-          class="c18"
+          class="c17"
         >
           <li
-            class="c19"
+            class="c18"
           >
             <svg
-              class="c20"
+              class="c19"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -4477,16 +4478,16 @@ exports[`<Page /> should render contact me page 1`] = `
             </span>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <a
-              class="c21 c22"
+              class="c20 c21"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
             >
               <svg
-                class="c23"
+                class="c22"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -4505,16 +4506,16 @@ exports[`<Page /> should render contact me page 1`] = `
             </a>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <a
-              class="c21 c22"
+              class="c20 c21"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
             >
               <svg
-                class="c24"
+                class="c23"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -4533,16 +4534,16 @@ exports[`<Page /> should render contact me page 1`] = `
             </a>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <a
-              class="c21 c22"
+              class="c20 c21"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
             >
               <svg
-                class="c25"
+                class="c24"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -4561,16 +4562,16 @@ exports[`<Page /> should render contact me page 1`] = `
             </a>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <a
-              class="c21 c22"
+              class="c20 c21"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
             >
               <svg
-                class="c26"
+                class="c25"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -4589,16 +4590,16 @@ exports[`<Page /> should render contact me page 1`] = `
             </a>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <a
-              class="c21 c22"
+              class="c20 c21"
               href="https://mastodontti.fi/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
             >
               <svg
-                class="c27"
+                class="c26"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -4617,16 +4618,16 @@ exports[`<Page /> should render contact me page 1`] = `
             </a>
           </li>
           <li
-            class="c19"
+            class="c18"
           >
             <a
-              class="c21 c22"
+              class="c20 c21"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"
             >
               <svg
-                class="c28"
+                class="c27"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -4646,21 +4647,21 @@ exports[`<Page /> should render contact me page 1`] = `
           </li>
         </ul>
         <p
-          class="c29 c30"
+          class="c28 c29"
         />
       </article>
     </main>
     <footer
-      class="c31"
+      class="c30"
     >
       <ul
-        class="c32"
+        class="c31"
       >
         <li
-          class="c33"
+          class="c32"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -4682,10 +4683,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c35"
+          class="c34"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -4707,10 +4708,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c36"
+          class="c35"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -4732,10 +4733,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c37"
+          class="c36"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -4757,10 +4758,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c37"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -4782,10 +4783,10 @@ exports[`<Page /> should render contact me page 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c38"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"

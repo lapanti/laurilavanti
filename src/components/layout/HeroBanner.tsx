@@ -119,12 +119,9 @@ const HeroBanner = styled(HeroBannerComponent)({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'stretch',
-    marginBottom: sizes[2],
-
     [breakpoints[1200].min]: {
         height: sizes[45],
         flexDirection: 'row-reverse',
-        marginBottom: sizes[3.5],
     },
 })
 
