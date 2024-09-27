@@ -9,7 +9,8 @@ describe('<404 />', () => {
 
         expect(screen.getByText(/Etsimääsi sivua ei valitettavasti löytynyt/i)).toBeInTheDocument()
 
-        expect(screen.getAllByRole('article')).toHaveLength(6)
+        // 8 excerpts plus the main "article" itself
+        expect(screen.getAllByRole('article')).toHaveLength(9)
 
         expect(container).toMatchSnapshot()
     })

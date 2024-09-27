@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
 
-import { sizes } from '../lib/styles'
+import { breakpoints, sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt'
 
 interface Props {
@@ -111,11 +111,21 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
 ExcerptListComponent.displayName = 'ExcerptList'
 
 const ExcerptList = styled(ExcerptListComponent)({
-    gridColumnStart: 3,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: sizes[2],
+    gridColumn: '1 / -1',
+    marginLeft: sizes[0.5],
+    marginRight: sizes[0.5],
+    display: 'grid',
+    justifyItems: 'center',
+    justifyContent: 'center',
+    columnGap: sizes[4],
+    rowGap: sizes[3.5],
+    gridTemplateRows: 'auto',
+    gridTemplateColumns: `minmax(100%, ${sizes[35]})`,
+    marginTop: sizes[2],
+    [breakpoints[1200].min]: {
+        gridTemplateColumns: `repeat(2, ${sizes[35]})`,
+        marginTop: sizes[3.5],
+    },
 })
 
 export default ExcerptList

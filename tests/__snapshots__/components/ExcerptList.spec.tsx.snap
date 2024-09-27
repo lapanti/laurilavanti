@@ -112,11 +112,24 @@ exports[`<ExcerptList /> should not render those with same slug 1`] = `
 }
 
 .c0 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 <ul
@@ -2095,11 +2108,24 @@ exports[`<ExcerptList /> should only render those with given tag 1`] = `
 }
 
 .c0 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 <ul
@@ -2916,11 +2942,24 @@ exports[`<ExcerptList /> should render 1`] = `
 }
 
 .c0 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 <ul
@@ -5047,11 +5086,24 @@ exports[`<ExcerptList /> should render in related order 1`] = `
 }
 
 .c0 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 <ul
@@ -5605,11 +5657,24 @@ exports[`<ExcerptList /> should render in related order the otherway around 1`] 
 }
 
 .c0 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 <ul
@@ -6163,11 +6228,24 @@ exports[`<ExcerptList /> should render with limit 1`] = `
 }
 
 .c0 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 <ul

@@ -48,9 +48,6 @@ const Main = styled.main({
 const Article = styled.article({
     display: 'grid',
     gridTemplateColumns: gridTemplateColumnsArticle,
-    [`${Title} + *`]: {
-        marginTop: sizes[1],
-    },
 })
 
 const MobileHeroImage = styled(HeroImage)({

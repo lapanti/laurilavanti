@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<404 /> should render 1`] = `
-.c21 {
+.c20 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 700;
@@ -23,7 +23,7 @@ exports[`<404 /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c29 {
+.c28 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -32,23 +32,23 @@ exports[`<404 /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c24 {
+.c23 {
   display: flex;
   flex-direction: row;
 }
 
-.c25 {
+.c24 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c25 :last-child {
+.c24 :last-child {
   margin-right: 0px;
 }
 
-.c26 {
+.c25 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -56,45 +56,45 @@ exports[`<404 /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.c27 {
+.c26 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c28 {
+.c27 {
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c27 :last-child {
   margin-right: 0px;
 }
 
-.c23 {
+.c22 {
   display: flex;
   flex-direction: column;
 }
 
-.c22 {
+.c21 {
   grid-column-start: auto;
 }
 
-.c17 {
+.c16 {
   color: rgb(0, 0, 0);
 }
 
-.c17:hover .c20 {
+.c16:hover .c19 {
   text-decoration: underline;
 }
 
-.c18 {
+.c17 {
   width: 100%;
   display: flex;
   aspect-ratio: 16/9;
 }
 
-.c19 {
+.c18 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -103,30 +103,36 @@ exports[`<404 /> should render 1`] = `
   position: relative;
 }
 
-.c30 {
+.c29 {
   margin-top: 0.25rem;
 }
 
-.c16 {
+.c15 {
   max-width: 35rem;
 }
 
-.c15 {
-  grid-column-start: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+.c14 {
+  grid-column: 1/-1;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  column-gap: 4rem;
+  row-gap: 3.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: minmax(100%, 35rem);
+  margin-top: 2rem;
 }
 
-.c34 {
+.c33 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c34 >* {
+.c33 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -135,13 +141,22 @@ exports[`<404 /> should render 1`] = `
   transition-duration: 150ms;
 }
 
-.c33 {
+.c32 {
   padding: 0px;
 }
 
-.c33 :hover,
-.c33 :focus {
+.c32 :hover,
+.c32 :focus {
   fill: #4267B2;
+}
+
+.c34 {
+  padding: 0px;
+}
+
+.c34 :hover,
+.c34 :focus {
+  fill: rgb(0, 0, 0);
 }
 
 .c35 {
@@ -150,7 +165,7 @@ exports[`<404 /> should render 1`] = `
 
 .c35 :hover,
 .c35 :focus {
-  fill: rgb(0, 0, 0);
+  fill: url(#instagram-gradient);
 }
 
 .c36 {
@@ -159,7 +174,7 @@ exports[`<404 /> should render 1`] = `
 
 .c36 :hover,
 .c36 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c37 {
@@ -168,7 +183,7 @@ exports[`<404 /> should render 1`] = `
 
 .c37 :hover,
 .c37 :focus {
-  fill: #0E76A8;
+  fill: #6363ff;
 }
 
 .c38 {
@@ -177,19 +192,10 @@ exports[`<404 /> should render 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: #6363ff;
-}
-
-.c39 {
-  padding: 0px;
-}
-
-.c39 :hover,
-.c39 :focus {
   fill: #0060df;
 }
 
-.c32 {
+.c31 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -197,7 +203,7 @@ exports[`<404 /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c31 {
+.c30 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -269,7 +275,7 @@ exports[`<404 /> should render 1`] = `
   user-select: none;
 }
 
-.c13 {
+.c12 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 900;
@@ -280,7 +286,7 @@ exports[`<404 /> should render 1`] = `
   line-height: 2.5rem;
 }
 
-.c12 {
+.c11 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
@@ -301,10 +307,6 @@ exports[`<404 /> should render 1`] = `
   grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c10 .c11+* {
-  margin-top: 1rem;
-}
-
 .c0 {
   display: grid;
   grid-template-areas: " main " "footer";
@@ -315,12 +317,18 @@ exports[`<404 /> should render 1`] = `
   position: relative;
 }
 
-.c14 {
+.c13 {
   grid-column-start: 3;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin-top: 3.75rem;
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+@media (min-width: 1200px) {
+  .c14 {
+    grid-template-columns: repeat(2, 35rem);
+    margin-top: 3.5rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -454,23 +462,23 @@ exports[`<404 /> should render 1`] = `
         class="c10"
       >
         <section
-          class="c11 c12"
+          class="c11"
         >
           <h1
-            class="c13"
+            class="c12"
             itemprop="headline"
           />
         </section>
         <h1
-          class="c14"
+          class="c13"
         >
           Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?
         </h1>
         <ul
-          class="c15"
+          class="c14"
         >
           <li
-            class="c16"
+            class="c15"
           >
             <article
               aria-label="VBO:n vaalit koskettavat meitä kaikkia"
@@ -478,12 +486,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c17"
+                class="c4 c16"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c18"
+                  class="gatsby-image-wrapper c17"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -521,10 +529,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c19"
+                  class="c18"
                 >
                   <h2
-                    class="c20 c21 c22"
+                    class="c19 c20 c21"
                     id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                     itemprop="headline"
                   >
@@ -534,16 +542,16 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-                class="c23"
+                class="c22"
               >
                 <div
-                  class="c24"
+                  class="c23"
                 >
                   <span
-                    class="c25"
+                    class="c24"
                   >
                     <svg
-                      class="c26"
+                      class="c25"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -564,10 +572,10 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c27"
+                  class="c26"
                 >
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -578,7 +586,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -589,7 +597,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -602,7 +610,7 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c29 c30"
+                class="c28 c29"
                 itemprop="description"
               >
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
@@ -618,7 +626,7 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="c16"
+            class="c15"
           >
             <article
               aria-label="Luontomme on valttimme - vuodesta toiseen"
@@ -626,12 +634,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c17"
+                class="c4 c16"
                 href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c18"
+                  class="gatsby-image-wrapper c17"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -669,10 +677,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c19"
+                  class="c18"
                 >
                   <h2
-                    class="c20 c21 c22"
+                    class="c19 c20 c21"
                     id="luontomme-on-valttimme---vuodesta-toiseen"
                     itemprop="headline"
                   >
@@ -682,16 +690,16 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Luontomme on valttimme - vuodesta toiseen meta-tiedot"
-                class="c23"
+                class="c22"
               >
                 <div
-                  class="c24"
+                  class="c23"
                 >
                   <span
-                    class="c25"
+                    class="c24"
                   >
                     <svg
-                      class="c26"
+                      class="c25"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -712,10 +720,10 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c27"
+                  class="c26"
                 >
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -726,7 +734,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -737,7 +745,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -750,7 +758,7 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c29 c30"
+                class="c28 c29"
                 itemprop="description"
               >
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
@@ -766,7 +774,7 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="c16"
+            class="c15"
           >
             <article
               aria-label="Uusi vuosi, tuttu talvikunnossapito"
@@ -774,12 +782,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c17"
+                class="c4 c16"
                 href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c18"
+                  class="gatsby-image-wrapper c17"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -817,10 +825,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c19"
+                  class="c18"
                 >
                   <h2
-                    class="c20 c21 c22"
+                    class="c19 c20 c21"
                     id="uusi-vuosi,-tuttu-talvikunnossapito"
                     itemprop="headline"
                   >
@@ -830,16 +838,16 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Uusi vuosi, tuttu talvikunnossapito meta-tiedot"
-                class="c23"
+                class="c22"
               >
                 <div
-                  class="c24"
+                  class="c23"
                 >
                   <span
-                    class="c25"
+                    class="c24"
                   >
                     <svg
-                      class="c26"
+                      class="c25"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -860,10 +868,10 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c27"
+                  class="c26"
                 >
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -874,7 +882,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -885,7 +893,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -898,7 +906,7 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c29 c30"
+                class="c28 c29"
                 itemprop="description"
               >
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
@@ -914,7 +922,7 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="c16"
+            class="c15"
           >
             <article
               aria-label="Terveys kuuluu kaikille"
@@ -922,12 +930,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c17"
+                class="c4 c16"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c18"
+                  class="gatsby-image-wrapper c17"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -965,10 +973,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c19"
+                  class="c18"
                 >
                   <h2
-                    class="c20 c21 c22"
+                    class="c19 c20 c21"
                     id="terveys-kuuluu-kaikille"
                     itemprop="headline"
                   >
@@ -978,16 +986,16 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-                class="c23"
+                class="c22"
               >
                 <div
-                  class="c24"
+                  class="c23"
                 >
                   <span
-                    class="c25"
+                    class="c24"
                   >
                     <svg
-                      class="c26"
+                      class="c25"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1008,10 +1016,10 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c27"
+                  class="c26"
                 >
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -1022,7 +1030,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -1033,7 +1041,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -1046,7 +1054,7 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c29 c30"
+                class="c28 c29"
                 itemprop="description"
               >
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
@@ -1062,7 +1070,7 @@ exports[`<404 /> should render 1`] = `
             </article>
           </li>
           <li
-            class="c16"
+            class="c15"
           >
             <article
               aria-label="Sote on hyvinvointiyhteiskunnan kulmakivi"
@@ -1070,12 +1078,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c17"
+                class="c4 c16"
                 href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c18"
+                  class="gatsby-image-wrapper c17"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1113,10 +1121,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c19"
+                  class="c18"
                 >
                   <h2
-                    class="c20 c21 c22"
+                    class="c19 c20 c21"
                     id="sote-on-hyvinvointiyhteiskunnan-kulmakivi"
                     itemprop="headline"
                   >
@@ -1126,16 +1134,16 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Sote on hyvinvointiyhteiskunnan kulmakivi meta-tiedot"
-                class="c23"
+                class="c22"
               >
                 <div
-                  class="c24"
+                  class="c23"
                 >
                   <span
-                    class="c25"
+                    class="c24"
                   >
                     <svg
-                      class="c26"
+                      class="c25"
                       fill="currentColor"
                       height="1em"
                       stroke="currentColor"
@@ -1156,10 +1164,10 @@ exports[`<404 /> should render 1`] = `
                   </span>
                 </div>
                 <ul
-                  class="c27"
+                  class="c26"
                 >
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -1170,7 +1178,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -1181,7 +1189,7 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c28"
+                    class="c27"
                   >
                     <a
                       class="c4"
@@ -1194,7 +1202,7 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c29 c30"
+                class="c28 c29"
                 itemprop="description"
               >
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
@@ -1209,20 +1217,453 @@ exports[`<404 /> should render 1`] = `
               </p>
             </article>
           </li>
+          <li
+            class="c15"
+          >
+            <article
+              aria-label="Mitä jos terveyskeskusta ei olisikaan?"
+              itemscope=""
+              itemtype="https://schema.org/CreativeWork"
+            >
+              <a
+                class="c4 c16"
+                href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
+                rel="permalink"
+              >
+                <div
+                  class="gatsby-image-wrapper c17"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAID/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAAZgjID//xAAWEAEBAQAAAAAAAAAAAAAAAAAAAQL/2gAIAQEAAQUCWM5f/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BJ//EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/AWf/xAAXEAEAAwAAAAAAAAAAAAAAAAABABAy/9oACAEBAAY/AmtM/8QAGhAAAgMBAQAAAAAAAAAAAAAAAAERIVExQf/aAAgBAQABPyHjt6UTLJU9dP/aAAwDAQACAAMAAAAQ/C//xAAWEQEBAQAAAAAAAAAAAAAAAAAAETH/2gAIAQMBAT8Qwr//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/EB//xAAbEAEBAAIDAQAAAAAAAAAAAAABEQAhMVFh0f/aAAgBAQABPxBsi2yPVy3NI6usulXw+Z//2Q=="
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/3081a588f6ed21f6133274b7ee4ac20a/0f5f5/sosiaali-ja-terveyskeskus.webp 1920w"
+                      sizes="1920px"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella."
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/3081a588f6ed21f6133274b7ee4ac20a/baa03/sosiaali-ja-terveyskeskus.jpg"
+                      data-srcset="/static/3081a588f6ed21f6133274b7ee4ac20a/baa03/sosiaali-ja-terveyskeskus.jpg 1920w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="1920px"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="c18"
+                >
+                  <h2
+                    class="c19 c20 c21"
+                    id="mita-jos-terveyskeskusta-ei-olisikaan?"
+                    itemprop="headline"
+                  >
+                    Mitä jos terveyskeskusta ei olisikaan?
+                  </h2>
+                </div>
+              </a>
+              <aside
+                aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
+                class="c22"
+              >
+                <div
+                  class="c23"
+                >
+                  <span
+                    class="c24"
+                  >
+                    <svg
+                      class="c25"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
+                      />
+                    </svg>
+                    <time
+                      datetime="2021-11-15"
+                    >
+                      15.11.2021
+                    </time>
+                  </span>
+                </div>
+                <ul
+                  class="c26"
+                >
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/aluevaalit/"
+                    >
+                      #
+                      aluevaalit
+                    </a>
+                  </li>
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/kirkkonummi/"
+                    >
+                      #
+                      kirkkonummi
+                    </a>
+                  </li>
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/soteuudistus/"
+                    >
+                      #
+                      soteuudistus
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+              <p
+                class="c28 c29"
+                itemprop="description"
+              >
+                Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
+                 
+                <a
+                  class="c4"
+                  href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
+              </p>
+            </article>
+          </li>
+          <li
+            class="c15"
+          >
+            <article
+              aria-label="Perusturvajaosto - mikä se on?"
+              itemscope=""
+              itemtype="https://schema.org/CreativeWork"
+            >
+              <a
+                class="c4 c16"
+                href="/blogi/perusturvajaosto-mika-se-on/"
+                rel="permalink"
+              >
+                <div
+                  class="gatsby-image-wrapper c17"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; width: 1922px; height: 384px;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIB/8QAFAEBAAAAAAAAAAAAAAAAAAAAAv/aAAwDAQACEAMQAAABvAqQj//EABUQAQEAAAAAAAAAAAAAAAAAAAIQ/9oACAEBAAEFAlf/xAAVEQEBAAAAAAAAAAAAAAAAAAAQQf/aAAgBAwEBPwGH/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFRABAQAAAAAAAAAAAAAAAAAAERD/2gAIAQEABj8CC//EABcQAQEBAQAAAAAAAAAAAAAAAAEAESH/2gAIAQEAAT8hWPDGSS//2gAMAwEAAgADAAAAEHgP/8QAFREBAQAAAAAAAAAAAAAAAAAAEEH/2gAIAQMBAT8Qg//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/EKf/xAAZEAEAAgMAAAAAAAAAAAAAAAABACERMUH/2gAIAQEAAT8QFxaZrcHlQBn/2Q=="
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/de2d2bb15e1c79577704cf24d30de7c0/9109e/lauri-lavanti-perusturvajaosto.webp 1922w"
+                      sizes="1922px"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä."
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/de2d2bb15e1c79577704cf24d30de7c0/4497c/lauri-lavanti-perusturvajaosto.jpg"
+                      data-srcset="/static/de2d2bb15e1c79577704cf24d30de7c0/4497c/lauri-lavanti-perusturvajaosto.jpg 1922w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="1922px"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="c18"
+                >
+                  <h2
+                    class="c19 c20 c21"
+                    id="perusturvajaosto---mika-se-on?"
+                    itemprop="headline"
+                  >
+                    Perusturvajaosto - mikä se on?
+                  </h2>
+                </div>
+              </a>
+              <aside
+                aria-label="Kirjoituksen Perusturvajaosto - mikä se on? meta-tiedot"
+                class="c22"
+              >
+                <div
+                  class="c23"
+                >
+                  <span
+                    class="c24"
+                  >
+                    <svg
+                      class="c25"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
+                      />
+                    </svg>
+                    <time
+                      datetime="2021-10-30"
+                    >
+                      30.10.2021
+                    </time>
+                  </span>
+                </div>
+                <ul
+                  class="c26"
+                >
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/kirkkonummi/"
+                    >
+                      #
+                      kirkkonummi
+                    </a>
+                  </li>
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/perustuva/"
+                    >
+                      #
+                      perustuva
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+              <p
+                class="c28 c29"
+                itemprop="description"
+              >
+                Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
+                 
+                <a
+                  class="c4"
+                  href="/blogi/perusturvajaosto-mika-se-on/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
+              </p>
+            </article>
+          </li>
+          <li
+            class="c15"
+          >
+            <article
+              aria-label="Ehdolle aluevaaleihin"
+              itemscope=""
+              itemtype="https://schema.org/CreativeWork"
+            >
+              <a
+                class="c4 c16"
+                href="/blogi/ehdolle-aluevaaleihin/"
+                rel="permalink"
+              >
+                <div
+                  class="gatsby-image-wrapper c17"
+                  data-gatsby-image-wrapper=""
+                  style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    data-placeholder-image=""
+                    decoding="async"
+                    src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAQD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAQID/9oADAMBAAIQAxAAAAGDUkpGT//EABkQAAMAAwAAAAAAAAAAAAAAAAABAgMRMf/aAAgBAQABBQKN4ybtvp//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwGq/8QAGRAAAgMBAAAAAAAAAAAAAAAAAAECIjEy/9oACAEBAAY/AqyZ0zWf/8QAGhABAAIDAQAAAAAAAAAAAAAAAQAhEWFxkf/aAAgBAQABPyFE4morq5EbPpP/2gAMAwEAAgADAAAAEPP/AP/EABYRAQEBAAAAAAAAAAAAAAAAAAARAf/aAAgBAwEBPxCYj//EABcRAQADAAAAAAAAAAAAAAAAAAEAETH/2gAIAQIBAT8QVWxV7P/EABkQAQEBAQEBAAAAAAAAAAAAAAERAEEhof/aAAgBAQABPxB0AWvhH5gJiepaZCuvb3//2Q=="
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+                  />
+                  <picture>
+                    <source
+                      data-srcset="/static/3f069c44cba2cfce20e23a3b9ee9c50b/ba007/Lauri-Lavanti-aluevaaliehdokas-3-1.webp 1921w,/static/3f069c44cba2cfce20e23a3b9ee9c50b/d563d/Lauri-Lavanti-aluevaaliehdokas-3-1.webp 3842w"
+                      sizes="1921px"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää."
+                      data-gatsby-image-ssr=""
+                      data-main-image=""
+                      data-src="/static/3f069c44cba2cfce20e23a3b9ee9c50b/06c10/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg"
+                      data-srcset="/static/3f069c44cba2cfce20e23a3b9ee9c50b/06c10/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg 1921w,/static/3f069c44cba2cfce20e23a3b9ee9c50b/3ca67/Lauri-Lavanti-aluevaaliehdokas-3-1.jpg 3842w"
+                      decoding="async"
+                      loading="lazy"
+                      sizes="1921px"
+                      style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                    />
+                  </picture>
+                  <noscript />
+                  <script
+                    type="module"
+                  >
+                    const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                  </script>
+                </div>
+                <div
+                  class="c18"
+                >
+                  <h2
+                    class="c19 c20 c21"
+                    id="ehdolle-aluevaaleihin"
+                    itemprop="headline"
+                  >
+                    Ehdolle aluevaaleihin
+                  </h2>
+                </div>
+              </a>
+              <aside
+                aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
+                class="c22"
+              >
+                <div
+                  class="c23"
+                >
+                  <span
+                    class="c24"
+                  >
+                    <svg
+                      class="c25"
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
+                      />
+                    </svg>
+                    <time
+                      datetime="2021-09-27"
+                    >
+                      27.09.2021
+                    </time>
+                  </span>
+                </div>
+                <ul
+                  class="c26"
+                >
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/aluevaalit/"
+                    >
+                      #
+                      aluevaalit
+                    </a>
+                  </li>
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/kirkkonummi/"
+                    >
+                      #
+                      kirkkonummi
+                    </a>
+                  </li>
+                  <li
+                    class="c27"
+                  >
+                    <a
+                      class="c4"
+                      href="/kategoria/soteuudistus/"
+                    >
+                      #
+                      soteuudistus
+                    </a>
+                  </li>
+                </ul>
+              </aside>
+              <p
+                class="c28 c29"
+                itemprop="description"
+              >
+                Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
+                 
+                <a
+                  class="c4"
+                  href="/blogi/ehdolle-aluevaaleihin/"
+                  rel="permalink"
+                >
+                  Lue lisää »
+                </a>
+              </p>
+            </article>
+          </li>
         </ul>
       </article>
     </main>
     <footer
-      class="c31"
+      class="c30"
     >
       <ul
-        class="c32"
+        class="c31"
       >
         <li
-          class="c33"
+          class="c32"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1244,10 +1685,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c35"
+          class="c34"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1269,10 +1710,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c36"
+          class="c35"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1294,10 +1735,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c37"
+          class="c36"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1319,10 +1760,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c37"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1344,10 +1785,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c38"
         >
           <a
-            class="c34"
+            class="c33"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
