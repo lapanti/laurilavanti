@@ -11,15 +11,23 @@ import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
+const StyledH2 = styled(H2)({
+    gridColumnStart: 'auto',
+})
+
 const Link = styled(InternalLink)({
     color: colors.black,
+    '&:hover': {
+        [StyledH2]: {
+            textDecoration: 'underline',
+        },
+    },
 })
 
 const Image = styled(GatsbyImage)({
     width: '100%',
     display: 'flex',
-    height: sizes[16],
-    objectFit: 'cover',
+    aspectRatio: '16 / 9',
 })
 
 const H2Container = styled.div({
@@ -29,10 +37,6 @@ const H2Container = styled.div({
     width: '100%',
     zIndex: zIndices[40],
     position: 'relative',
-})
-
-const StyledH2 = styled(H2)({
-    gridColumnStart: 'auto',
 })
 
 const RemarginP = styled(Paragraph)({
@@ -83,6 +87,8 @@ const ExcerptComponent = ({
 
 ExcerptComponent.displayName = 'Excerpt'
 
-const Excerpt = styled(ExcerptComponent)({})
+const Excerpt = styled(ExcerptComponent)({
+    maxWidth: sizes[35],
+})
 
 export default Excerpt

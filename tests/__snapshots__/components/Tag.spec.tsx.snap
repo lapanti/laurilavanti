@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tag /> should render 1`] = `
-.c22 {
+.c24 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 700;
@@ -23,7 +23,7 @@ exports[`<Tag /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c30 {
+.c32 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-family: "IBM Plex Sans";
@@ -32,23 +32,23 @@ exports[`<Tag /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c25 {
+.c27 {
   display: flex;
   flex-direction: row;
 }
 
-.c26 {
+.c28 {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-right: 1rem;
 }
 
-.c26 :last-child {
+.c28 :last-child {
   margin-right: 0px;
 }
 
-.c27 {
+.c29 {
   height: 1.125rem;
   widht: 1.125rem;
   display: inline-block;
@@ -56,38 +56,45 @@ exports[`<Tag /> should render 1`] = `
   flex-shrink: 0;
 }
 
-.c28 {
+.c30 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c29 {
+.c31 {
   margin-right: 1rem;
 }
 
-.c29 :last-child {
+.c31 :last-child {
   margin-right: 0px;
 }
 
-.c24 {
+.c26 {
   display: flex;
   flex-direction: column;
 }
 
-.c19 {
-  color: rgb(0, 0, 0);
+.c25 {
+  grid-column-start: auto;
 }
 
 .c20 {
-  width: 100%;
-  display: flex;
-  height: 16rem;
-  object-fit: cover;
+  color: rgb(0, 0, 0);
+}
+
+.c20:hover .c23 {
+  text-decoration: underline;
 }
 
 .c21 {
+  width: 100%;
+  display: flex;
+  aspect-ratio: 16/9;
+}
+
+.c22 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -96,12 +103,12 @@ exports[`<Tag /> should render 1`] = `
   position: relative;
 }
 
-.c23 {
-  grid-column-start: auto;
+.c33 {
+  margin-top: 0.25rem;
 }
 
-.c31 {
-  margin-top: 0.25rem;
+.c19 {
+  max-width: 35rem;
 }
 
 .c18 {
@@ -111,14 +118,14 @@ exports[`<Tag /> should render 1`] = `
   gap: 2rem;
 }
 
-.c35 {
+.c37 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c35 >* {
+.c37 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -127,31 +134,13 @@ exports[`<Tag /> should render 1`] = `
   transition-duration: 150ms;
 }
 
-.c34 {
-  padding: 0px;
-}
-
-.c34 :hover,
-.c34 :focus {
-  fill: #4267B2;
-}
-
 .c36 {
   padding: 0px;
 }
 
 .c36 :hover,
 .c36 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c37 {
-  padding: 0px;
-}
-
-.c37 :hover,
-.c37 :focus {
-  fill: url(#instagram-gradient);
+  fill: #4267B2;
 }
 
 .c38 {
@@ -160,7 +149,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: #0E76A8;
+  fill: rgb(0, 0, 0);
 }
 
 .c39 {
@@ -169,7 +158,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: #6363ff;
+  fill: url(#instagram-gradient);
 }
 
 .c40 {
@@ -178,10 +167,28 @@ exports[`<Tag /> should render 1`] = `
 
 .c40 :hover,
 .c40 :focus {
+  fill: #0E76A8;
+}
+
+.c41 {
+  padding: 0px;
+}
+
+.c41 :hover,
+.c41 :focus {
+  fill: #6363ff;
+}
+
+.c42 {
+  padding: 0px;
+}
+
+.c42 :hover,
+.c42 :focus {
   fill: #0060df;
 }
 
-.c33 {
+.c35 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -189,7 +196,7 @@ exports[`<Tag /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c32 {
+.c34 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -593,7 +600,7 @@ exports[`<Tag /> should render 1`] = `
         class="c18"
       >
         <li
-          class=""
+          class="c19"
         >
           <article
             aria-label="Päiväkodit kaipaavat opettajia"
@@ -601,12 +608,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c19"
+              class="c4 c20"
               href="/blogi/paivakodit-kaipaavat-opettajia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1923px; height: 384px;"
               >
@@ -644,10 +651,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c21"
+                class="c22"
               >
                 <h2
-                  class="c22 c23"
+                  class="c23 c24 c25"
                   id="paivakodit-kaipaavat-opettajia"
                   itemprop="headline"
                 >
@@ -657,16 +664,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Päiväkodit kaipaavat opettajia meta-tiedot"
-              class="c24"
+              class="c26"
             >
               <div
-                class="c25"
+                class="c27"
               >
                 <span
-                  class="c26"
+                  class="c28"
                 >
                   <svg
-                    class="c27"
+                    class="c29"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -687,10 +694,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c28"
+                class="c30"
               >
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -701,7 +708,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -714,7 +721,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c30 c31"
+              class="c32 c33"
               itemprop="description"
             >
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
@@ -730,7 +737,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class=""
+          class="c19"
         >
           <article
             aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
@@ -738,12 +745,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c19"
+              class="c4 c20"
               href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -781,10 +788,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c21"
+                class="c22"
               >
                 <h2
-                  class="c22 c23"
+                  class="c23 c24 c25"
                   id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                   itemprop="headline"
                 >
@@ -794,16 +801,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen riittävyydestä ei saa tinkiä meta-tiedot"
-              class="c24"
+              class="c26"
             >
               <div
-                class="c25"
+                class="c27"
               >
                 <span
-                  class="c26"
+                  class="c28"
                 >
                   <svg
-                    class="c27"
+                    class="c29"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -824,10 +831,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c28"
+                class="c30"
               >
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -838,7 +845,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -849,7 +856,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -862,7 +869,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c30 c31"
+              class="c32 c33"
               itemprop="description"
             >
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
@@ -878,7 +885,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class=""
+          class="c19"
         >
           <article
             aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
@@ -886,12 +893,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c19"
+              class="c4 c20"
               href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -929,10 +936,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c21"
+                class="c22"
               >
                 <h2
-                  class="c22 c23"
+                  class="c23 c24 c25"
                   id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                   itemprop="headline"
                 >
@@ -942,16 +949,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen kerhotoiminta - lapsen etu meta-tiedot"
-              class="c24"
+              class="c26"
             >
               <div
-                class="c25"
+                class="c27"
               >
                 <span
-                  class="c26"
+                  class="c28"
                 >
                   <svg
-                    class="c27"
+                    class="c29"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -972,10 +979,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c28"
+                class="c30"
               >
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -986,7 +993,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -999,7 +1006,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c30 c31"
+              class="c32 c33"
               itemprop="description"
             >
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
@@ -1015,7 +1022,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class=""
+          class="c19"
         >
           <article
             aria-label="Kirkkonummi-lisä on sinunkin etusi"
@@ -1023,12 +1030,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c19"
+              class="c4 c20"
               href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1066,10 +1073,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c21"
+                class="c22"
               >
                 <h2
-                  class="c22 c23"
+                  class="c23 c24 c25"
                   id="kirkkonummi-lisa-on-sinunkin-etusi"
                   itemprop="headline"
                 >
@@ -1079,16 +1086,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kirkkonummi-lisä on sinunkin etusi meta-tiedot"
-              class="c24"
+              class="c26"
             >
               <div
-                class="c25"
+                class="c27"
               >
                 <span
-                  class="c26"
+                  class="c28"
                 >
                   <svg
-                    class="c27"
+                    class="c29"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1109,10 +1116,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c28"
+                class="c30"
               >
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -1123,7 +1130,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -1136,7 +1143,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c30 c31"
+              class="c32 c33"
               itemprop="description"
             >
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
@@ -1152,7 +1159,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class=""
+          class="c19"
         >
           <article
             aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
@@ -1160,12 +1167,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c19"
+              class="c4 c20"
               href="/blogi/kotihoidon-tuen-kuntalisa/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
               >
@@ -1203,10 +1210,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c21"
+                class="c22"
               >
                 <h2
-                  class="c22 c23"
+                  class="c23 c24 c25"
                   id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
                   itemprop="headline"
                 >
@@ -1216,16 +1223,16 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
-              class="c24"
+              class="c26"
             >
               <div
-                class="c25"
+                class="c27"
               >
                 <span
-                  class="c26"
+                  class="c28"
                 >
                   <svg
-                    class="c27"
+                    class="c29"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -1246,10 +1253,10 @@ exports[`<Tag /> should render 1`] = `
                 </span>
               </div>
               <ul
-                class="c28"
+                class="c30"
               >
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -1260,7 +1267,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c29"
+                  class="c31"
                 >
                   <a
                     class="c4"
@@ -1273,7 +1280,7 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c30 c31"
+              class="c32 c33"
               itemprop="description"
             >
               Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
@@ -1292,16 +1299,16 @@ exports[`<Tag /> should render 1`] = `
     </article>
   </main>
   <footer
-    class="c32"
+    class="c34"
   >
     <ul
-      class="c33"
+      class="c35"
     >
       <li
-        class="c34"
+        class="c36"
       >
         <a
-          class="c35"
+          class="c37"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1323,10 +1330,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c36"
+        class="c38"
       >
         <a
-          class="c35"
+          class="c37"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1348,10 +1355,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c37"
+        class="c39"
       >
         <a
-          class="c35"
+          class="c37"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1373,10 +1380,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c38"
+        class="c40"
       >
         <a
-          class="c35"
+          class="c37"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1398,10 +1405,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c39"
+        class="c41"
       >
         <a
-          class="c35"
+          class="c37"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1423,10 +1430,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c40"
+        class="c42"
       >
         <a
-          class="c35"
+          class="c37"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
