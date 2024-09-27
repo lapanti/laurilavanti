@@ -43,6 +43,10 @@ const RemarginP = styled(Paragraph)({
     marginTop: sizes[0.25],
 })
 
+const ReadMoreLink = styled(InternalLink)({
+    whiteSpace: 'nowrap',
+})
+
 interface Props extends Omit<PostMetaProps, 'ariaLabel'> {
     className?: string
     title: string
@@ -76,9 +80,9 @@ const ExcerptComponent = ({
                 <PostMeta date={date} tags={tags} ariaLabel={`Kirjoituksen ${title} meta-tiedot`} />
                 <RemarginP itemProp="description">
                     {excerpt}{' '}
-                    <InternalLink to={`/blogi/${slug}/`} rel="permalink">
+                    <ReadMoreLink to={`/blogi/${slug}/`} rel="permalink">
                         Lue lisää »
-                    </InternalLink>
+                    </ReadMoreLink>
                 </RemarginP>
             </article>
         </li>

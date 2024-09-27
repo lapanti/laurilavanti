@@ -107,6 +107,10 @@ exports[`<Post /> should render basic post 1`] = `
   margin-top: 0.25rem;
 }
 
+.c43 {
+  white-space: nowrap;
+}
+
 .c36 {
   max-width: 35rem;
 }
@@ -130,14 +134,14 @@ exports[`<Post /> should render basic post 1`] = `
   text-decoration: underline;
 }
 
-.c46 {
+.c47 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c46 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -146,22 +150,13 @@ exports[`<Post /> should render basic post 1`] = `
   transition-duration: 150ms;
 }
 
-.c45 {
+.c46 {
   padding: 0px;
 }
 
-.c45 :hover,
-.c45 :focus {
+.c46 :hover,
+.c46 :focus {
   fill: #4267B2;
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c48 {
@@ -170,7 +165,7 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c48 :hover,
 .c48 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c49 {
@@ -179,7 +174,7 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c50 {
@@ -188,7 +183,7 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c51 {
@@ -197,10 +192,19 @@ exports[`<Post /> should render basic post 1`] = `
 
 .c51 :hover,
 .c51 :focus {
+  fill: #6363ff;
+}
+
+.c52 {
+  padding: 0px;
+}
+
+.c52 :hover,
+.c52 :focus {
   fill: #0060df;
 }
 
-.c44 {
+.c45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -208,7 +212,7 @@ exports[`<Post /> should render basic post 1`] = `
   gap: 1.5rem;
 }
 
-.c43 {
+.c44 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -1050,7 +1054,7 @@ exports[`<Post /> should render basic post 1`] = `
               Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
@@ -1198,7 +1202,7 @@ exports[`<Post /> should render basic post 1`] = `
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
@@ -1346,7 +1350,7 @@ exports[`<Post /> should render basic post 1`] = `
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
@@ -1494,7 +1498,7 @@ exports[`<Post /> should render basic post 1`] = `
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
@@ -1507,16 +1511,16 @@ exports[`<Post /> should render basic post 1`] = `
     </article>
   </main>
   <footer
-    class="c43"
+    class="c44"
   >
     <ul
-      class="c44"
+      class="c45"
     >
       <li
-        class="c45"
+        class="c46"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1538,10 +1542,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c47"
+        class="c48"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1563,10 +1567,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c48"
+        class="c49"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1588,10 +1592,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c50"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1613,10 +1617,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c50"
+        class="c51"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1638,10 +1642,10 @@ exports[`<Post /> should render basic post 1`] = `
         </a>
       </li>
       <li
-        class="c51"
+        class="c52"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1851,6 +1855,10 @@ exports[`<Post /> should render oldest post 1`] = `
   margin-top: 0.25rem;
 }
 
+.c43 {
+  white-space: nowrap;
+}
+
 .c36 {
   max-width: 35rem;
 }
@@ -1874,14 +1882,14 @@ exports[`<Post /> should render oldest post 1`] = `
   text-decoration: underline;
 }
 
-.c46 {
+.c47 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c46 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1890,22 +1898,13 @@ exports[`<Post /> should render oldest post 1`] = `
   transition-duration: 150ms;
 }
 
-.c45 {
+.c46 {
   padding: 0px;
 }
 
-.c45 :hover,
-.c45 :focus {
+.c46 :hover,
+.c46 :focus {
   fill: #4267B2;
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c48 {
@@ -1914,7 +1913,7 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c48 :hover,
 .c48 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c49 {
@@ -1923,7 +1922,7 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c50 {
@@ -1932,7 +1931,7 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c51 {
@@ -1941,10 +1940,19 @@ exports[`<Post /> should render oldest post 1`] = `
 
 .c51 :hover,
 .c51 :focus {
+  fill: #6363ff;
+}
+
+.c52 {
+  padding: 0px;
+}
+
+.c52 :hover,
+.c52 :focus {
   fill: #0060df;
 }
 
-.c44 {
+.c45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1952,7 +1960,7 @@ exports[`<Post /> should render oldest post 1`] = `
   gap: 1.5rem;
 }
 
-.c43 {
+.c44 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -2803,7 +2811,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/paivakodit-kaipaavat-opettajia/"
                 rel="permalink"
               >
@@ -2951,7 +2959,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                 rel="permalink"
               >
@@ -3088,7 +3096,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                 rel="permalink"
               >
@@ -3225,7 +3233,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
                 rel="permalink"
               >
@@ -3238,16 +3246,16 @@ exports[`<Post /> should render oldest post 1`] = `
     </article>
   </main>
   <footer
-    class="c43"
+    class="c44"
   >
     <ul
-      class="c44"
+      class="c45"
     >
       <li
-        class="c45"
+        class="c46"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3269,10 +3277,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c47"
+        class="c48"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3294,10 +3302,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c48"
+        class="c49"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3319,10 +3327,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c50"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3344,10 +3352,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c50"
+        class="c51"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3369,10 +3377,10 @@ exports[`<Post /> should render oldest post 1`] = `
         </a>
       </li>
       <li
-        class="c51"
+        class="c52"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
@@ -3582,6 +3590,10 @@ exports[`<Post /> should render updated post 1`] = `
   margin-top: 0.25rem;
 }
 
+.c43 {
+  white-space: nowrap;
+}
+
 .c36 {
   max-width: 35rem;
 }
@@ -3605,14 +3617,14 @@ exports[`<Post /> should render updated post 1`] = `
   text-decoration: underline;
 }
 
-.c46 {
+.c47 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c46 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -3621,22 +3633,13 @@ exports[`<Post /> should render updated post 1`] = `
   transition-duration: 150ms;
 }
 
-.c45 {
+.c46 {
   padding: 0px;
 }
 
-.c45 :hover,
-.c45 :focus {
+.c46 :hover,
+.c46 :focus {
   fill: #4267B2;
-}
-
-.c47 {
-  padding: 0px;
-}
-
-.c47 :hover,
-.c47 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c48 {
@@ -3645,7 +3648,7 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c48 :hover,
 .c48 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c49 {
@@ -3654,7 +3657,7 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c49 :hover,
 .c49 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c50 {
@@ -3663,7 +3666,7 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c51 {
@@ -3672,10 +3675,19 @@ exports[`<Post /> should render updated post 1`] = `
 
 .c51 :hover,
 .c51 :focus {
+  fill: #6363ff;
+}
+
+.c52 {
+  padding: 0px;
+}
+
+.c52 :hover,
+.c52 :focus {
   fill: #0060df;
 }
 
-.c44 {
+.c45 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -3683,7 +3695,7 @@ exports[`<Post /> should render updated post 1`] = `
   gap: 1.5rem;
 }
 
-.c43 {
+.c44 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -4598,7 +4610,7 @@ exports[`<Post /> should render updated post 1`] = `
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
@@ -4746,7 +4758,7 @@ exports[`<Post /> should render updated post 1`] = `
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
@@ -4894,7 +4906,7 @@ exports[`<Post /> should render updated post 1`] = `
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
@@ -5042,7 +5054,7 @@ exports[`<Post /> should render updated post 1`] = `
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c4"
+                class="c4 c43"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
@@ -5055,16 +5067,16 @@ exports[`<Post /> should render updated post 1`] = `
     </article>
   </main>
   <footer
-    class="c43"
+    class="c44"
   >
     <ul
-      class="c44"
+      class="c45"
     >
       <li
-        class="c45"
+        class="c46"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5086,10 +5098,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c47"
+        class="c48"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5111,10 +5123,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c48"
+        class="c49"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5136,10 +5148,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c49"
+        class="c50"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5161,10 +5173,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c50"
+        class="c51"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -5186,10 +5198,10 @@ exports[`<Post /> should render updated post 1`] = `
         </a>
       </li>
       <li
-        class="c51"
+        class="c52"
       >
         <a
-          class="c46"
+          class="c47"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"

@@ -107,6 +107,10 @@ exports[`<FrontPage /> should render 1`] = `
   margin-top: 0.25rem;
 }
 
+.c37 {
+  white-space: nowrap;
+}
+
 .c24 {
   max-width: 35rem;
 }
@@ -130,14 +134,14 @@ exports[`<FrontPage /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c40 {
+.c41 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c40 >* {
+.c41 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -146,22 +150,13 @@ exports[`<FrontPage /> should render 1`] = `
   transition-duration: 150ms;
 }
 
-.c39 {
+.c40 {
   padding: 0px;
 }
 
-.c39 :hover,
-.c39 :focus {
+.c40 :hover,
+.c40 :focus {
   fill: #4267B2;
-}
-
-.c41 {
-  padding: 0px;
-}
-
-.c41 :hover,
-.c41 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c42 {
@@ -170,7 +165,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c42 :hover,
 .c42 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c43 {
@@ -179,7 +174,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c43 :hover,
 .c43 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c44 {
@@ -188,7 +183,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c44 :hover,
 .c44 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c45 {
@@ -197,10 +192,19 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c45 :hover,
 .c45 :focus {
+  fill: #6363ff;
+}
+
+.c46 {
+  padding: 0px;
+}
+
+.c46 :hover,
+.c46 :focus {
   fill: #0060df;
 }
 
-.c38 {
+.c39 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -208,7 +212,7 @@ exports[`<FrontPage /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c37 {
+.c38 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -775,7 +779,7 @@ exports[`<FrontPage /> should render 1`] = `
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                  
                 <a
-                  class="c4"
+                  class="c4 c37"
                   href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                   rel="permalink"
                 >
@@ -923,7 +927,7 @@ exports[`<FrontPage /> should render 1`] = `
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
                  
                 <a
-                  class="c4"
+                  class="c4 c37"
                   href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                   rel="permalink"
                 >
@@ -1071,7 +1075,7 @@ exports[`<FrontPage /> should render 1`] = `
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
                  
                 <a
-                  class="c4"
+                  class="c4 c37"
                   href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                   rel="permalink"
                 >
@@ -1087,16 +1091,16 @@ exports[`<FrontPage /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="c37"
+      class="c38"
     >
       <ul
-        class="c38"
+        class="c39"
       >
         <li
-          class="c39"
+          class="c40"
         >
           <a
-            class="c40"
+            class="c41"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1118,10 +1122,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c41"
+          class="c42"
         >
           <a
-            class="c40"
+            class="c41"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1143,10 +1147,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c42"
+          class="c43"
         >
           <a
-            class="c40"
+            class="c41"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1168,10 +1172,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c43"
+          class="c44"
         >
           <a
-            class="c40"
+            class="c41"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1193,10 +1197,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c44"
+          class="c45"
         >
           <a
-            class="c40"
+            class="c41"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1218,10 +1222,10 @@ exports[`<FrontPage /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c45"
+          class="c46"
         >
           <a
-            class="c40"
+            class="c41"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
