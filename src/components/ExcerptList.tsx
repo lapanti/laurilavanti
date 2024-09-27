@@ -114,6 +114,7 @@ const ExcerptList = styled(ExcerptListComponent)({
     gridColumnStart: 3,
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
     gap: sizes[2],
 })
 
