@@ -1122,6 +1122,10 @@ exports[`<Page /> should render blog page 1`] = `
   margin-top: 0.25rem;
 }
 
+.c33 {
+  white-space: nowrap;
+}
+
 .c18 {
   max-width: 35rem;
 }
@@ -1140,14 +1144,14 @@ exports[`<Page /> should render blog page 1`] = `
   margin-top: 2rem;
 }
 
-.c37 {
+.c38 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c37 >* {
+.c38 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1156,22 +1160,13 @@ exports[`<Page /> should render blog page 1`] = `
   transition-duration: 150ms;
 }
 
-.c36 {
+.c37 {
   padding: 0px;
 }
 
-.c36 :hover,
-.c36 :focus {
+.c37 :hover,
+.c37 :focus {
   fill: #4267B2;
-}
-
-.c38 {
-  padding: 0px;
-}
-
-.c38 :hover,
-.c38 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c39 {
@@ -1180,7 +1175,7 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c40 {
@@ -1189,7 +1184,7 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c41 {
@@ -1198,7 +1193,7 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c41 :hover,
 .c41 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c42 {
@@ -1207,10 +1202,19 @@ exports[`<Page /> should render blog page 1`] = `
 
 .c42 :hover,
 .c42 :focus {
+  fill: #6363ff;
+}
+
+.c43 {
+  padding: 0px;
+}
+
+.c43 :hover,
+.c43 :focus {
   fill: #0060df;
 }
 
-.c35 {
+.c36 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1218,7 +1222,7 @@ exports[`<Page /> should render blog page 1`] = `
   gap: 1.5rem;
 }
 
-.c34 {
+.c35 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -1347,7 +1351,7 @@ exports[`<Page /> should render blog page 1`] = `
   display: none!important;
 }
 
-.c33 {
+.c34 {
   grid-column-start: 3;
 }
 
@@ -1768,7 +1772,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                   rel="permalink"
                 >
@@ -1916,7 +1920,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                   rel="permalink"
                 >
@@ -2064,7 +2068,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                   rel="permalink"
                 >
@@ -2212,7 +2216,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/terveys-kuuluu-kaikille/"
                   rel="permalink"
                 >
@@ -2360,7 +2364,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                   rel="permalink"
                 >
@@ -2508,7 +2512,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                   rel="permalink"
                 >
@@ -2645,7 +2649,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/perusturvajaosto-mika-se-on/"
                   rel="permalink"
                 >
@@ -2793,7 +2797,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/ehdolle-aluevaaleihin/"
                   rel="permalink"
                 >
@@ -2930,7 +2934,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/paivakodit-kaipaavat-opettajia/"
                   rel="permalink"
                 >
@@ -3067,7 +3071,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Gesterbyn koulukeskuksen hankesuunnitelma on palautettu kunnanhallituksesta lisävalmisteluun jo kolme kertaa. Kokonaisuudessaan hanketta on selvitetty ja suuniteltu jo 6 vuotta, mutta uutta rakennusta ei ole vieläkään aloitettu rakentamaan.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/hyvin-suunniteltu-on-puoliksi-tehty-mutta/"
                   rel="permalink"
                 >
@@ -3215,7 +3219,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                   rel="permalink"
                 >
@@ -3352,7 +3356,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                   rel="permalink"
                 >
@@ -3489,7 +3493,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
                   rel="permalink"
                 >
@@ -3626,7 +3630,7 @@ exports[`<Page /> should render blog page 1`] = `
                 Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
                  
                 <a
-                  class="c4"
+                  class="c4 c33"
                   href="/blogi/kotihoidon-tuen-kuntalisa/"
                   rel="permalink"
                 >
@@ -3637,21 +3641,21 @@ exports[`<Page /> should render blog page 1`] = `
           </li>
         </ul>
         <p
-          class="c31 c33"
+          class="c31 c34"
         />
       </article>
     </main>
     <footer
-      class="c34"
+      class="c35"
     >
       <ul
-        class="c35"
+        class="c36"
       >
         <li
-          class="c36"
+          class="c37"
         >
           <a
-            class="c37"
+            class="c38"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3673,10 +3677,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c39"
         >
           <a
-            class="c37"
+            class="c38"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3698,10 +3702,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c40"
         >
           <a
-            class="c37"
+            class="c38"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3723,10 +3727,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c40"
+          class="c41"
         >
           <a
-            class="c37"
+            class="c38"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3748,10 +3752,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c41"
+          class="c42"
         >
           <a
-            class="c37"
+            class="c38"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -3773,10 +3777,10 @@ exports[`<Page /> should render blog page 1`] = `
           </a>
         </li>
         <li
-          class="c42"
+          class="c43"
         >
           <a
-            class="c37"
+            class="c38"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"

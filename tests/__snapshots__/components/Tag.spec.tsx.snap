@@ -107,6 +107,10 @@ exports[`<Tag /> should render 1`] = `
   margin-top: 0.25rem;
 }
 
+.c33 {
+  white-space: nowrap;
+}
+
 .c18 {
   max-width: 35rem;
 }
@@ -125,14 +129,14 @@ exports[`<Tag /> should render 1`] = `
   margin-top: 2rem;
 }
 
-.c36 {
+.c37 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c36 >* {
+.c37 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -141,22 +145,13 @@ exports[`<Tag /> should render 1`] = `
   transition-duration: 150ms;
 }
 
-.c35 {
+.c36 {
   padding: 0px;
 }
 
-.c35 :hover,
-.c35 :focus {
+.c36 :hover,
+.c36 :focus {
   fill: #4267B2;
-}
-
-.c37 {
-  padding: 0px;
-}
-
-.c37 :hover,
-.c37 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c38 {
@@ -165,7 +160,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c38 :hover,
 .c38 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c39 {
@@ -174,7 +169,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c39 :hover,
 .c39 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c40 {
@@ -183,7 +178,7 @@ exports[`<Tag /> should render 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c41 {
@@ -192,10 +187,19 @@ exports[`<Tag /> should render 1`] = `
 
 .c41 :hover,
 .c41 :focus {
+  fill: #6363ff;
+}
+
+.c42 {
+  padding: 0px;
+}
+
+.c42 :hover,
+.c42 :focus {
   fill: #0060df;
 }
 
-.c34 {
+.c35 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -203,7 +207,7 @@ exports[`<Tag /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c33 {
+.c34 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -737,7 +741,7 @@ exports[`<Tag /> should render 1`] = `
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
                
               <a
-                class="c4"
+                class="c4 c33"
                 href="/blogi/paivakodit-kaipaavat-opettajia/"
                 rel="permalink"
               >
@@ -885,7 +889,7 @@ exports[`<Tag /> should render 1`] = `
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
                
               <a
-                class="c4"
+                class="c4 c33"
                 href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                 rel="permalink"
               >
@@ -1022,7 +1026,7 @@ exports[`<Tag /> should render 1`] = `
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
                
               <a
-                class="c4"
+                class="c4 c33"
                 href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                 rel="permalink"
               >
@@ -1159,7 +1163,7 @@ exports[`<Tag /> should render 1`] = `
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
                
               <a
-                class="c4"
+                class="c4 c33"
                 href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
                 rel="permalink"
               >
@@ -1296,7 +1300,7 @@ exports[`<Tag /> should render 1`] = `
               Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
                
               <a
-                class="c4"
+                class="c4 c33"
                 href="/blogi/kotihoidon-tuen-kuntalisa/"
                 rel="permalink"
               >
@@ -1309,16 +1313,16 @@ exports[`<Tag /> should render 1`] = `
     </article>
   </main>
   <footer
-    class="c33"
+    class="c34"
   >
     <ul
-      class="c34"
+      class="c35"
     >
       <li
-        class="c35"
+        class="c36"
       >
         <a
-          class="c36"
+          class="c37"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1340,10 +1344,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c37"
+        class="c38"
       >
         <a
-          class="c36"
+          class="c37"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1365,10 +1369,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c38"
+        class="c39"
       >
         <a
-          class="c36"
+          class="c37"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1390,10 +1394,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c39"
+        class="c40"
       >
         <a
-          class="c36"
+          class="c37"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1415,10 +1419,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c40"
+        class="c41"
       >
         <a
-          class="c36"
+          class="c37"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -1440,10 +1444,10 @@ exports[`<Tag /> should render 1`] = `
         </a>
       </li>
       <li
-        class="c41"
+        class="c42"
       >
         <a
-          class="c36"
+          class="c37"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"

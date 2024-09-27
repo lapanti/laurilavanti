@@ -107,6 +107,10 @@ exports[`<404 /> should render 1`] = `
   margin-top: 0.25rem;
 }
 
+.c30 {
+  white-space: nowrap;
+}
+
 .c15 {
   max-width: 35rem;
 }
@@ -125,14 +129,14 @@ exports[`<404 /> should render 1`] = `
   margin-top: 2rem;
 }
 
-.c33 {
+.c34 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c33 >* {
+.c34 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -141,22 +145,13 @@ exports[`<404 /> should render 1`] = `
   transition-duration: 150ms;
 }
 
-.c32 {
+.c33 {
   padding: 0px;
 }
 
-.c32 :hover,
-.c32 :focus {
+.c33 :hover,
+.c33 :focus {
   fill: #4267B2;
-}
-
-.c34 {
-  padding: 0px;
-}
-
-.c34 :hover,
-.c34 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c35 {
@@ -165,7 +160,7 @@ exports[`<404 /> should render 1`] = `
 
 .c35 :hover,
 .c35 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c36 {
@@ -174,7 +169,7 @@ exports[`<404 /> should render 1`] = `
 
 .c36 :hover,
 .c36 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c37 {
@@ -183,7 +178,7 @@ exports[`<404 /> should render 1`] = `
 
 .c37 :hover,
 .c37 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c38 {
@@ -192,10 +187,19 @@ exports[`<404 /> should render 1`] = `
 
 .c38 :hover,
 .c38 :focus {
+  fill: #6363ff;
+}
+
+.c39 {
+  padding: 0px;
+}
+
+.c39 :hover,
+.c39 :focus {
   fill: #0060df;
 }
 
-.c31 {
+.c32 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -203,7 +207,7 @@ exports[`<404 /> should render 1`] = `
   gap: 1.5rem;
 }
 
-.c30 {
+.c31 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -616,7 +620,7 @@ exports[`<404 /> should render 1`] = `
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                   rel="permalink"
                 >
@@ -764,7 +768,7 @@ exports[`<404 /> should render 1`] = `
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                   rel="permalink"
                 >
@@ -912,7 +916,7 @@ exports[`<404 /> should render 1`] = `
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                   rel="permalink"
                 >
@@ -1060,7 +1064,7 @@ exports[`<404 /> should render 1`] = `
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/terveys-kuuluu-kaikille/"
                   rel="permalink"
                 >
@@ -1208,7 +1212,7 @@ exports[`<404 /> should render 1`] = `
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                   rel="permalink"
                 >
@@ -1356,7 +1360,7 @@ exports[`<404 /> should render 1`] = `
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                   rel="permalink"
                 >
@@ -1493,7 +1497,7 @@ exports[`<404 /> should render 1`] = `
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/perusturvajaosto-mika-se-on/"
                   rel="permalink"
                 >
@@ -1641,7 +1645,7 @@ exports[`<404 /> should render 1`] = `
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                  
                 <a
-                  class="c4"
+                  class="c4 c30"
                   href="/blogi/ehdolle-aluevaaleihin/"
                   rel="permalink"
                 >
@@ -1654,16 +1658,16 @@ exports[`<404 /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="c30"
+      class="c31"
     >
       <ul
-        class="c31"
+        class="c32"
       >
         <li
-          class="c32"
+          class="c33"
         >
           <a
-            class="c33"
+            class="c34"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1685,10 +1689,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c34"
+          class="c35"
         >
           <a
-            class="c33"
+            class="c34"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1710,10 +1714,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c35"
+          class="c36"
         >
           <a
-            class="c33"
+            class="c34"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1735,10 +1739,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c36"
+          class="c37"
         >
           <a
-            class="c33"
+            class="c34"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1760,10 +1764,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c37"
+          class="c38"
         >
           <a
-            class="c33"
+            class="c34"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1785,10 +1789,10 @@ exports[`<404 /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c39"
         >
           <a
-            class="c33"
+            class="c34"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"

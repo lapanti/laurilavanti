@@ -1920,6 +1920,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-top: 0.25rem;
 }
 
+.c29 {
+  white-space: nowrap;
+}
+
 .c14 {
   max-width: 35rem;
 }
@@ -1938,14 +1942,14 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-top: 2rem;
 }
 
-.c32 {
+.c33 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c32 >* {
+.c33 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1954,22 +1958,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   transition-duration: 150ms;
 }
 
-.c31 {
+.c32 {
   padding: 0px;
 }
 
-.c31 :hover,
-.c31 :focus {
+.c32 :hover,
+.c32 :focus {
   fill: #4267B2;
-}
-
-.c33 {
-  padding: 0px;
-}
-
-.c33 :hover,
-.c33 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c34 {
@@ -1978,7 +1973,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c34 :hover,
 .c34 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c35 {
@@ -1987,7 +1982,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c35 :hover,
 .c35 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c36 {
@@ -1996,7 +1991,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c36 :hover,
 .c36 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c37 {
@@ -2005,10 +2000,19 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c37 :hover,
 .c37 :focus {
+  fill: #6363ff;
+}
+
+.c38 {
+  padding: 0px;
+}
+
+.c38 :hover,
+.c38 :focus {
   fill: #0060df;
 }
 
-.c30 {
+.c31 {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2016,7 +2020,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   gap: 1.5rem;
 }
 
-.c29 {
+.c30 {
   grid-area: footer;
   background-color: rgb(40, 71, 52);
   color: rgb(255, 255, 255);
@@ -2416,7 +2420,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c4"
+                class="c4 c29"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
@@ -2429,16 +2433,16 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="c29"
+    class="c30"
   >
     <ul
-      class="c30"
+      class="c31"
     >
       <li
-        class="c31"
+        class="c32"
       >
         <a
-          class="c32"
+          class="c33"
           href="https://www.facebook.com/laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -2460,10 +2464,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c33"
+        class="c34"
       >
         <a
-          class="c32"
+          class="c33"
           href="https://www.threads.net/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -2485,10 +2489,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c34"
+        class="c35"
       >
         <a
-          class="c32"
+          class="c33"
           href="https://www.instagram.com/laurilavanti/"
           rel="me noopener noreferrer"
           target="_blank"
@@ -2510,10 +2514,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c35"
+        class="c36"
       >
         <a
-          class="c32"
+          class="c33"
           href="https://www.linkedin.com/in/lapanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -2535,10 +2539,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c36"
+        class="c37"
       >
         <a
-          class="c32"
+          class="c33"
           href="https://mastodontti.fi/@laurilavanti"
           rel="me noopener noreferrer"
           target="_blank"
@@ -2560,10 +2564,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         </a>
       </li>
       <li
-        class="c37"
+        class="c38"
       >
         <a
-          class="c32"
+          class="c33"
           href="https://bsky.app/profile/laurilavanti.fi"
           rel="me noopener noreferrer"
           target="_blank"
