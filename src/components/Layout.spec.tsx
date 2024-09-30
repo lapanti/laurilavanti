@@ -7,7 +7,7 @@ import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
 import { mainImage, mainImageDescription } from '../../tests/images.mock'
-import { coopElectionsConcernUsAll } from '../../tests/posts.mock'
+import { coopElectionsConcernUsAll, healthBelongsToAll } from '../../tests/posts.mock'
 import Layout from './Layout'
 
 interface SiteMetadata {
@@ -227,6 +227,7 @@ describe('<Layout />', () => {
                                 __typename: 'ContentfulExcerptList',
                                 contentful_id: '6kFlEZ2Nv6UXotMJJNIFGm',
                                 limit: 1,
+                                pinned: [{ slug: healthBelongsToAll.slug }],
                             },
                         ],
                     }}
@@ -234,6 +235,7 @@ describe('<Layout />', () => {
             )
 
             // Check ExcerptList is present
+            expect(screen.getByRole('article', { name: healthBelongsToAll.title })).toBeInTheDocument()
             expect(screen.getByRole('article', { name: coopElectionsConcernUsAll.title })).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()

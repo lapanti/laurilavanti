@@ -23,6 +23,23 @@ describe('<ExcerptList />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render pinned first', () => {
+        const pinnedExcerpts = [healthBelongsToAll, ourNatureIsOurAceInTheHole]
+        const pinned = pinnedExcerpts.map(({ slug }) => slug)
+        const pinnedAndUnpinned = pinnedExcerpts.concat(
+            excerptList.filter(({ slug }) => !pinned.find((s) => s === slug))
+        )
+        const { container } = render(<ExcerptList pinned={pinned} />)
+
+        const articles = screen.getAllByRole('article')
+        expect(articles).toHaveLength(excerptList.length)
+        articles.forEach((article, i) => {
+            expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i].title)
+        })
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should render with limit', () => {
         const { container } = render(<ExcerptList limit={limit} />)
 
