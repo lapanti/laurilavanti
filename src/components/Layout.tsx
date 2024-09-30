@@ -123,7 +123,14 @@ const options = {
         [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
             switch (node?.data?.target?.__typename) {
                 case 'ContentfulExcerptList':
-                    return <ExcerptList limit={node.data.target.limit} />
+                    return (
+                        <ExcerptList
+                            limit={node.data.target.limit}
+                            pinned={(node.data.target.pinned as { slug: string }[] | undefined)?.map(
+                                ({ slug }) => slug
+                            )}
+                        />
+                    )
                 case 'ContentfulImageWithCaption':
                     return (
                         <Image

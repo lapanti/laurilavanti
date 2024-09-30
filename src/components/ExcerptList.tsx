@@ -1,21 +1,23 @@
 import type { ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 
 import { breakpoints, sizes } from '../lib/styles'
+import { isContentfulPostExcerpt } from '../lib/typeGuards'
 import Excerpt from './excerptList/Excerpt'
 
 interface Props {
     className?: string
     limit?: number
+    pinned?: string[] // List of pinned posts slugs
     relatedTags?: string[]
     tag?: string
     currentSlug?: string
 }
 
-const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug }: Props): JSX.Element => {
+const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, currentSlug }: Props): JSX.Element => {
     const data = useStaticQuery<{
         allContentfulPost: {
             nodes: ContentfulPostExcerpt[]
@@ -47,8 +49,18 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
         }
     `)
 
+    const pinnedNodes = useMemo(() => {
+        if (pinned?.length) {
+            return pinned
+                .map((slug) => data.allContentfulPost.nodes.find((post) => post.slug === slug))
+                .filter(isContentfulPostExcerpt)
+        }
+    }, [pinned, data])
+
     const allNodes = useMemo(() => {
-        const all = data.allContentfulPost.nodes.filter((curr) => !currentSlug || currentSlug !== curr.slug)
+        const all = data.allContentfulPost.nodes.filter(
+            (curr) => !pinned?.includes(curr.slug) && (!currentSlug || currentSlug !== curr.slug)
+        )
         if (relatedTags?.length) {
             return all
                 .reduce<[ContentfulPostExcerpt, number][]>(
@@ -90,20 +102,26 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
 
     const nodes = useMemo(() => (limit ? allNodes.slice(0, limit) : allNodes), [allNodes, limit])
 
+    const nodeToExcerpt = useCallback(
+        (node: ContentfulPostExcerpt) => (
+            <Excerpt
+                key={node.publishDate || node.createdAt}
+                date={node.publishDate || node.createdAt}
+                slug={node.slug}
+                excerpt={node.excerpt}
+                image={node.headerImage.localFile}
+                imageAlt={node.headerImage.description}
+                title={node.title}
+                tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
+            />
+        ),
+        []
+    )
+
     return (
         <ul className={className}>
-            {nodes.map((node) => (
-                <Excerpt
-                    key={node.publishDate || node.createdAt}
-                    date={node.publishDate || node.createdAt}
-                    slug={node.slug}
-                    excerpt={node.excerpt}
-                    image={node.headerImage.localFile}
-                    imageAlt={node.headerImage.description}
-                    title={node.title}
-                    tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
-                />
-            ))}
+            {pinnedNodes?.map(nodeToExcerpt)}
+            {nodes.map(nodeToExcerpt)}
         </ul>
     )
 }

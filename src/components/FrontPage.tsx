@@ -56,6 +56,9 @@ export const query = graphql`
                         __typename
                         contentful_id
                         limit
+                        pinned {
+                            slug
+                        }
                     }
                     ... on ContentfulCurriculumVitae {
                         __typename
