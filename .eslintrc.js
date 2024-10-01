@@ -10,6 +10,7 @@ const config = {
         'plugin:@typescript-eslint/recommended',
         'prettier',
         'plugin:prettier/recommended',
+        'plugin:react/recommended',
     ],
     overrides: [
         {
@@ -67,7 +68,7 @@ const config = {
         ecmaFeatures: { experimentalObjectRestSpread: true },
         sourceType: 'module',
     },
-    plugins: ['@typescript-eslint', 'import', 'prettier', 'simple-import-sort'],
+    plugins: ['@typescript-eslint', 'import', 'prettier', 'simple-import-sort', 'react'],
     settings: {
         'import/resolver': {
             node: {
@@ -76,6 +77,9 @@ const config = {
             typescript: {
                 alwaysTryTypes: true,
             },
+        },
+        react: {
+            version: 'detect',
         },
     },
     rules: {
@@ -116,6 +120,7 @@ const config = {
         'prefer-arrow-callback': ['warn'],
         'simple-import-sort/exports': ['error'],
         'simple-import-sort/imports': ['error'],
+        'react/jsx-sort-props': ['error'],
     },
 }
 
