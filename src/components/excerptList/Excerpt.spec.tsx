@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage } from '../../../tests/images.mock'
 import Excerpt from './Excerpt'
 
 describe('<Excerpt />', () => {
@@ -21,7 +21,7 @@ describe('<Excerpt />', () => {
                 excerpt={excerpt}
                 tags={tags}
                 slug={slug}
-                image={mainImage}
+                image={inFrontOfWoodsImage}
                 imageAlt={imageAlt}
             />
         )

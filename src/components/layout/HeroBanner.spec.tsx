@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage, mainImageDescription } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../../tests/images.mock'
 import HeroBanner from './HeroBanner'
 
 describe('<HeroBanner />', () => {
@@ -28,7 +28,7 @@ describe('<HeroBanner />', () => {
     })
 
     it('should render minimal with image with no image alt', () => {
-        const { container } = render(<HeroBanner title={title} imageData={mainImage} />)
+        const { container } = render(<HeroBanner title={title} imageData={inFrontOfWoodsImage} />)
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         // When gatsby image has no alt, it has aria-role presentation
@@ -43,16 +43,16 @@ describe('<HeroBanner />', () => {
                 title={title}
                 subtitle={subtitle}
                 secondaryTitle={secondaryTitle}
-                imageAlt={mainImageDescription}
-                imageData={mainImage}
-                backgroundImage={mainImage}
+                imageAlt={inFrontOfWoodsImageDescription}
+                imageData={inFrontOfWoodsImage}
+                backgroundImage={inFrontOfWoodsImage}
             />
         )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         expect(screen.getByText(subtitle)).toBeInTheDocument()
         expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
-        expect(screen.getByRole('img', { name: mainImageDescription })).toBeInTheDocument()
+        expect(screen.getByRole('img', { name: inFrontOfWoodsImageDescription })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })

@@ -3,7 +3,7 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage } from '../../../tests/images.mock'
 import HeroImage from './HeroImage'
 
 describe('<HeroImage />', () => {
@@ -22,7 +22,7 @@ describe('<HeroImage />', () => {
     })
 
     it('should render actual image', () => {
-        const { container } = render(<HeroImage alt={alt} imageData={mainImage} />)
+        const { container } = render(<HeroImage alt={alt} imageData={inFrontOfWoodsImage} />)
 
         expect(screen.getByRole('img', { name: alt })).toBeInTheDocument()
 

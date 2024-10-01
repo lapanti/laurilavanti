@@ -1,20 +1,22 @@
 import type { ContentfulPage } from '../src/types/contentful'
 
 import { contactInfoLinks } from './contactInfo.mock'
-import { mainImage, mainImageDescription } from './images.mock'
+import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from './images.mock'
 
 const image = {
-    localFile: mainImage,
-    description: mainImageDescription,
+    localFile: inFrontOfWoodsImage,
+    description: inFrontOfWoodsImageDescription,
 }
 
 const images = {
     image,
+    socialImage: null,
     backgroundImage: null,
 }
 
 export const frontPage: ContentfulPage = {
     image,
+    socialImage: { localFile: smilingImage },
     backgroundImage: image,
     description: null,
     jsonLdType: 'WebSite',

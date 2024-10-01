@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage, mainImageDescription } from '../../tests/images.mock'
+import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../tests/images.mock'
 import { excerptList } from '../../tests/posts.mock'
 import Tag from './Tag'
 
@@ -13,7 +13,7 @@ describe('<Tag />', () => {
             <Tag
                 data={{
                     contentfulPage: {
-                        image: { localFile: mainImage, description: mainImageDescription },
+                        image: { localFile: inFrontOfWoodsImage, description: inFrontOfWoodsImageDescription },
                     },
                 }}
                 pageContext={{ tag }}

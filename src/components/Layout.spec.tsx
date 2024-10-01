@@ -6,7 +6,7 @@ import { parse } from 'date-fns'
 import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
-import { mainImage, mainImageDescription } from '../../tests/images.mock'
+import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../tests/images.mock'
 import { coopElectionsConcernUsAll, healthBelongsToAll } from '../../tests/posts.mock'
 import Layout from './Layout'
 
@@ -61,21 +61,21 @@ describe('<Layout />', () => {
 
     it('should render hero image', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} heroImageAlt={mainImageDescription} title={title}>
+            <Layout heroImage={inFrontOfWoodsImage} heroImageAlt={inFrontOfWoodsImageDescription} title={title}>
                 {children}
             </Layout>
         )
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
-        expect(screen.getAllByRole('img', { name: mainImageDescription })).not.toBeNull()
+        expect(screen.getAllByRole('img', { name: inFrontOfWoodsImageDescription })).not.toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render hero image with no alt', () => {
         const { container } = render(
-            <Layout heroImage={mainImage} title="">
+            <Layout heroImage={inFrontOfWoodsImage} title="">
                 {children}
             </Layout>
         )
@@ -91,8 +91,8 @@ describe('<Layout />', () => {
         const subtitle = 'Subtesxttitle'
         const { container } = render(
             <Layout
-                heroImage={mainImage}
-                heroImageAlt={mainImageDescription}
+                heroImage={inFrontOfWoodsImage}
+                heroImageAlt={inFrontOfWoodsImageDescription}
                 isFrontPage
                 title={title}
                 subtitle={subtitle}

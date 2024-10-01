@@ -3,7 +3,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import gatsbyConfig from '../../../gatsby-config'
-import { mainImage } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage } from '../../../tests/images.mock'
 import { BLOGPOSTING, JSON_LD_TYPES, WEBSITE } from '../../types/jsonld'
 import Seo from './Seo'
 
@@ -135,7 +135,7 @@ describe('<Seo />', () => {
             },
             height,
             width,
-        } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
+        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
         render(<Seo description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
 
@@ -151,7 +151,7 @@ describe('<Seo />', () => {
             },
             height,
             width,
-        } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
+        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
         render(<Seo description="" type={type} title={title} image={imgData} pathname="/" />)
@@ -175,7 +175,7 @@ describe('<Seo />', () => {
             },
             height,
             width,
-        } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
+        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
 
         render(
@@ -218,7 +218,7 @@ describe('<Seo />', () => {
             },
             height,
             width,
-        } = (mainImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
+        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
 
         render(
