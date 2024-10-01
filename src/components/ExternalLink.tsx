@@ -1,3 +1,5 @@
+/** This link actually has both target=_blank and rel=noopener, but eslint doesn't realize it */
+/* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
 import styled from 'styled-components'
 
