@@ -16,13 +16,13 @@ describe('<Excerpt />', () => {
 
         const { container } = render(
             <Excerpt
-                title={title}
                 date={date}
                 excerpt={excerpt}
-                tags={tags}
-                slug={slug}
                 image={inFrontOfWoodsImage}
                 imageAlt={imageAlt}
+                slug={slug}
+                tags={tags}
+                title={title}
             />
         )
 

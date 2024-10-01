@@ -10,7 +10,7 @@ describe('<PostMeta />', () => {
     const ariaLabel = 'ariaLabel'
 
     it('should render', () => {
-        const { container } = render(<PostMeta tags={tags} date={date} ariaLabel={ariaLabel} />)
+        const { container } = render(<PostMeta ariaLabel={ariaLabel} date={date} tags={tags} />)
 
         expect(screen.getByRole('complementary', { name: ariaLabel })).toBeInTheDocument()
 
@@ -23,7 +23,7 @@ describe('<PostMeta />', () => {
     })
 
     it('should render multiple minutes', () => {
-        const { container } = render(<PostMeta tags={tags} date={date} ariaLabel={ariaLabel} />)
+        const { container } = render(<PostMeta ariaLabel={ariaLabel} date={date} tags={tags} />)
 
         expect(screen.getByRole('complementary', { name: ariaLabel })).toBeInTheDocument()
 

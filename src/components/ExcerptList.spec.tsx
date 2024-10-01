@@ -52,7 +52,7 @@ describe('<ExcerptList />', () => {
 
     it('should render in related order', () => {
         const orderedExcerpts = [coopElectionsConcernUsAll, ourNatureIsOurAceInTheHole, wellPlannedIsWellDoneBut]
-        const { container } = render(<ExcerptList relatedTags={['kaavoitus', 'opetus']} limit={limit} />)
+        const { container } = render(<ExcerptList limit={limit} relatedTags={['kaavoitus', 'opetus']} />)
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(limit)
@@ -63,7 +63,7 @@ describe('<ExcerptList />', () => {
 
     it('should render in related order the otherway around', () => {
         const orderedExcerpts = [wellPlannedIsWellDoneBut, coopElectionsConcernUsAll, ourNatureIsOurAceInTheHole]
-        const { container } = render(<ExcerptList relatedTags={['opetus']} limit={limit} />)
+        const { container } = render(<ExcerptList limit={limit} relatedTags={['opetus']} />)
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(limit)

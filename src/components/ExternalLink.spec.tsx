@@ -10,7 +10,7 @@ describe('<ExternalLink />', () => {
         const rel = 'jotain hassua'
         const children = 'children'
         const { container } = render(
-            <ExternalLink href={href} title={title} rel={rel}>
+            <ExternalLink href={href} rel={rel} title={title}>
                 {children}
             </ExternalLink>
         )

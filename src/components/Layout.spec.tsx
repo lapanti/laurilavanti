@@ -94,8 +94,8 @@ describe('<Layout />', () => {
                 heroImage={inFrontOfWoodsImage}
                 heroImageAlt={inFrontOfWoodsImageDescription}
                 isFrontPage
-                title={title}
                 subtitle={subtitle}
+                title={title}
             >
                 {children}
             </Layout>
@@ -114,7 +114,6 @@ describe('<Layout />', () => {
             const paragraphText = 'Paragraph text'
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -136,6 +135,7 @@ describe('<Layout />', () => {
                         }),
                         references: [],
                     }}
+                    title=""
                 />
             )
 
@@ -148,7 +148,6 @@ describe('<Layout />', () => {
             const headingText = 'Heading text'
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -170,6 +169,7 @@ describe('<Layout />', () => {
                         }),
                         references: [],
                     }}
+                    title=""
                 />
             )
 
@@ -181,7 +181,6 @@ describe('<Layout />', () => {
         it('should render Hr', () => {
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -196,6 +195,7 @@ describe('<Layout />', () => {
                         }),
                         references: [],
                     }}
+                    title=""
                 />
             )
 
@@ -205,7 +205,6 @@ describe('<Layout />', () => {
         it('should render ExcerptList', () => {
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             nodeType: 'document',
@@ -231,6 +230,7 @@ describe('<Layout />', () => {
                             },
                         ],
                     }}
+                    title=""
                 />
             )
 
@@ -247,7 +247,6 @@ describe('<Layout />', () => {
 
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -303,6 +302,7 @@ describe('<Layout />', () => {
                             },
                         ],
                     }}
+                    title=""
                 />
             )
 
@@ -317,7 +317,6 @@ describe('<Layout />', () => {
             const email = 'test@example.com'
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             nodeType: 'document',
@@ -349,6 +348,7 @@ describe('<Layout />', () => {
                             },
                         ],
                     }}
+                    title=""
                 />
             )
 
@@ -363,7 +363,6 @@ describe('<Layout />', () => {
             const value = 'external link'
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -391,6 +390,7 @@ describe('<Layout />', () => {
                         }),
                         references: [],
                     }}
+                    title=""
                 />
             )
 
@@ -408,7 +408,6 @@ describe('<Layout />', () => {
             const value = 'external link'
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -450,6 +449,7 @@ describe('<Layout />', () => {
                             },
                         ],
                     }}
+                    title=""
                 />
             )
 
@@ -468,7 +468,6 @@ describe('<Layout />', () => {
             const cell = 'my table cell'
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -532,6 +531,7 @@ describe('<Layout />', () => {
                         }),
                         references: [],
                     }}
+                    title=""
                 />
             )
 
@@ -574,7 +574,6 @@ describe('<Layout />', () => {
         ])('should %s', (_, firstContent, isVisible) => {
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -589,6 +588,7 @@ describe('<Layout />', () => {
                         }),
                         references: [],
                     }}
+                    title=""
                 />
             )
 
@@ -607,7 +607,6 @@ describe('<Layout />', () => {
         ])('should render inline %s', (_, __typename, expected) => {
             const { container } = render(
                 <Layout
-                    title=""
                     body={{
                         raw: JSON.stringify({
                             data: {},
@@ -642,6 +641,7 @@ describe('<Layout />', () => {
                             },
                         ],
                     }}
+                    title=""
                 />
             )
 

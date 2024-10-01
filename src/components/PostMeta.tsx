@@ -59,7 +59,7 @@ const PostMetaComponent = ({ className, date, tags, ariaLabel }: Props): JSX.Ele
     }, [date])
 
     return (
-        <aside className={className} aria-label={ariaLabel}>
+        <aside aria-label={ariaLabel} className={className}>
             <MetaContainer>
                 <Meta>
                     <CalendarIcon />

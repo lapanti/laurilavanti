@@ -71,16 +71,16 @@ const ExcerptComponent = ({
     return (
         <li className={className}>
             <article aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
-                <Link to={`/blogi/${slug}/`} rel="permalink">
-                    {image && <Image image={image} alt={imageAlt} />}
+                <Link rel="permalink" to={`/blogi/${slug}/`}>
+                    {image && <Image alt={imageAlt} image={image} />}
                     <H2Container>
                         <StyledH2 itemProp="headline">{title}</StyledH2>
                     </H2Container>
                 </Link>
-                <PostMeta date={date} tags={tags} ariaLabel={`Kirjoituksen ${title} meta-tiedot`} />
+                <PostMeta ariaLabel={`Kirjoituksen ${title} meta-tiedot`} date={date} tags={tags} />
                 <RemarginP itemProp="description">
                     {excerpt}{' '}
-                    <ReadMoreLink to={`/blogi/${slug}/`} rel="permalink">
+                    <ReadMoreLink rel="permalink" to={`/blogi/${slug}/`}>
                         Lue lisää »
                     </ReadMoreLink>
                 </RemarginP>

@@ -17,13 +17,13 @@ describe('<Image />', () => {
             children: [],
             internal: { type: '', contentDigest: '', owner: '' },
         }
-        const { container } = render(<Image imageData={imageData} alt={alt} caption={caption} />)
+        const { container } = render(<Image alt={alt} caption={caption} imageData={imageData} />)
 
         expect(container.firstChild).toBeNull()
     })
 
     it('should render image with caption', () => {
-        const { container } = render(<Image imageData={inFrontOfWoodsImage} caption={caption} alt={alt} />)
+        const { container } = render(<Image alt={alt} caption={caption} imageData={inFrontOfWoodsImage} />)
 
         expect(screen.getByRole('img', { name: alt })).toBeInTheDocument()
         expect(screen.getByRole('figure', { name: caption })).toBeInTheDocument()

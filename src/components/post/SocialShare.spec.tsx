@@ -9,7 +9,7 @@ describe('<SocialShare />', () => {
     const ariaLabel = 'AriaLabel'
 
     it('should render', () => {
-        const { container } = render(<SocialShare title={title} siteUrl={siteUrl} ariaLabel={ariaLabel} />)
+        const { container } = render(<SocialShare ariaLabel={ariaLabel} siteUrl={siteUrl} title={title} />)
 
         expect(screen.getByRole('complementary', { name: ariaLabel })).toBeInTheDocument()
         expect(screen.getByRole('link', { name: /Jaa Facebookissa/i })).toHaveAttribute(

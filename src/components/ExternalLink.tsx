@@ -17,7 +17,7 @@ const ExternalLinkComponent = ({
     rel,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => (
-    <a className={className} href={href} target="_blank" title={title} rel={`${rel ?? ''} noopener noreferrer`}>
+    <a className={className} href={href} rel={`${rel ?? ''} noopener noreferrer`} target="_blank" title={title}>
         {children}
     </a>
 )

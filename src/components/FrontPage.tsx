@@ -16,19 +16,19 @@ interface Props {
 
 const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
-        title={data?.contentfulPage?.title}
-        subtitle={data?.contentfulPage?.subtitle ?? undefined}
-        secondaryTitle={data?.contentfulPage?.secondaryTitle ?? undefined}
-        pathname={`/${slug}/`}
+        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
+        body={data?.contentfulPage?.body}
+        description={data?.contentfulPage?.description ?? ''}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
-        socialImage={data?.contentfulPage?.socialImage?.localFile}
-        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
-        description={data?.contentfulPage?.description ?? ''}
-        type={data?.contentfulPage?.jsonLdType}
-        modified={data?.contentfulPage?.updatedAt}
-        body={data?.contentfulPage?.body}
         isFrontPage
+        modified={data?.contentfulPage?.updatedAt}
+        pathname={`/${slug}/`}
+        secondaryTitle={data?.contentfulPage?.secondaryTitle ?? undefined}
+        socialImage={data?.contentfulPage?.socialImage?.localFile}
+        subtitle={data?.contentfulPage?.subtitle ?? undefined}
+        title={data?.contentfulPage?.title}
+        type={data?.contentfulPage?.jsonLdType}
     />
 )
 

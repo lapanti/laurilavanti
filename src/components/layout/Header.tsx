@@ -95,18 +95,18 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
         <header className={className}>
             <HamburgerContainer>
                 <Hamburger
-                    toggled={isMobileOpen}
-                    easing={ANIMATION_EASING}
-                    duration={ANIMATION_DURATION}
-                    size={40}
-                    distance="sm"
                     color={colors.peach}
+                    distance="sm"
+                    duration={ANIMATION_DURATION}
+                    easing={ANIMATION_EASING}
                     label={isMobileOpen ? 'Sulje valikko' : 'Avaa valikko'}
+                    size={40}
                     toggle={setIsMobileOpen}
+                    toggled={isMobileOpen}
                 />
             </HamburgerContainer>
             <MobileMenu $isOpen={isMobileOpen}>
-                <NavLink title="Lauri Lavanti" slug="index" isFrontPage />
+                <NavLink isFrontPage slug="index" title="Lauri Lavanti" />
                 {data.contentfulMainNav.links
                     .filter(({ slug }) => slug !== 'index')
                     .map((nav) => (
@@ -114,7 +114,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                     ))}
             </MobileMenu>
             <Half>
-                <NavLink title="Lauri Lavanti" slug="index" isFrontPage />
+                <NavLink isFrontPage slug="index" title="Lauri Lavanti" />
             </Half>
             <Half>
                 {data.contentfulMainNav.links
