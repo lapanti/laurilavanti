@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage } from '../../tests/images.mock'
+import { inFrontOfWoodsImage } from '../../tests/images.mock'
 import { frontPage } from '../../tests/pages.mock'
 import FrontPage from './FrontPage'
 
@@ -13,6 +13,7 @@ describe('<FrontPage />', () => {
 
         expect(container).toMatchSnapshot()
     })
+
     it('should render with minimal', () => {
         const { container } = render(
             <FrontPage
@@ -24,7 +25,8 @@ describe('<FrontPage />', () => {
                         secondaryTitle: null,
                         subtitle: null,
                         body: {},
-                        image: { localFile: mainImage, description: '' },
+                        image: { localFile: inFrontOfWoodsImage, description: '' },
+                        socialImage: null,
                         backgroundImage: null,
                         updatedAt: '',
                     },

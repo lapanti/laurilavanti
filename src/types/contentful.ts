@@ -93,6 +93,9 @@ export interface ContentfulPage {
         localFile: ImageDataLike
         description: string
     } | null
+    socialImage: {
+        localFile: ImageDataLike
+    } | null
     backgroundImage: {
         localFile: ImageDataLike
     } | null

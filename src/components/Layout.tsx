@@ -195,6 +195,7 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
     heroImage?: ImageDataLike
     heroImageAlt?: string
     backgroundImage?: ImageDataLike
+    socialImage?: ImageDataLike
     body?: RichBody
     preBody?: ReactNode
     isFrontPage?: boolean
@@ -208,6 +209,7 @@ const LayoutComponent = ({
     heroImage,
     heroImageAlt,
     backgroundImage,
+    socialImage,
     description,
     meta,
     pathname,
@@ -233,6 +235,20 @@ const LayoutComponent = ({
               width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
           }
         : undefined
+    const socialImageToUse = socialImage as
+        | {
+              childImageSharp: {
+                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
+              }
+          }
+        | undefined
+    const socialImageObj = socialImageToUse
+        ? {
+              src: socialImageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
+              height: `${socialImageToUse?.childImageSharp.gatsbyImageData.height}`,
+              width: `${socialImageToUse?.childImageSharp.gatsbyImageData.width}`,
+          }
+        : undefined
 
     return (
         <>
@@ -242,7 +258,7 @@ const LayoutComponent = ({
                 description={description}
                 meta={meta}
                 pathname={pathname}
-                image={image}
+                image={socialImageObj ?? image}
                 type={type}
                 published={published}
                 modified={modified}

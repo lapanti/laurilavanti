@@ -3,7 +3,7 @@ import type { ImageDataLike } from 'gatsby-plugin-image'
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mainImage } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage } from '../../../tests/images.mock'
 import Image from './Image'
 
 describe('<Image />', () => {
@@ -23,7 +23,7 @@ describe('<Image />', () => {
     })
 
     it('should render image with caption', () => {
-        const { container } = render(<Image imageData={mainImage} caption={caption} alt={alt} />)
+        const { container } = render(<Image imageData={inFrontOfWoodsImage} caption={caption} alt={alt} />)
 
         expect(screen.getByRole('img', { name: alt })).toBeInTheDocument()
         expect(screen.getByRole('figure', { name: caption })).toBeInTheDocument()
