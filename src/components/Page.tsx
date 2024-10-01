@@ -17,15 +17,15 @@ interface Props {
 
 const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
-        title={data?.contentfulPage?.title}
-        pathname={`/${slug}/`}
+        body={data?.contentfulPage?.body}
+        description={getValueOrDefault(data?.contentfulPage?.description, '')}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
-        socialImage={data?.contentfulPage?.socialImage?.localFile}
-        description={getValueOrDefault(data?.contentfulPage?.description, '')}
-        type={data?.contentfulPage?.jsonLdType}
         modified={data?.contentfulPage?.updatedAt}
-        body={data?.contentfulPage?.body}
+        pathname={`/${slug}/`}
+        socialImage={data?.contentfulPage?.socialImage?.localFile}
+        title={data?.contentfulPage?.title}
+        type={data?.contentfulPage?.jsonLdType}
     />
 )
 

@@ -15,9 +15,9 @@ interface Props extends Link {
 
 const NavLinkComponent = ({ className, title, slug, isFrontPage }: Props): JSX.Element => (
     <InternalLink
+        activeStyle={isFrontPage ? undefined : { textDecoration: 'underline' }}
         className={className}
         partiallyActive={slug !== 'index'}
-        activeStyle={isFrontPage ? undefined : { textDecoration: 'underline' }}
         to={slug === 'index' ? '/' : `/${slug}/`}
     >
         {title}

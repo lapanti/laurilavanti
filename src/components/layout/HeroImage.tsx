@@ -26,7 +26,7 @@ const HeroImageComponent = ({ className, imageData, alt }: Props): JSX.Element |
     const image = getImage(imageData)
     return !image ? null : (
         <div className={className}>
-            <Image image={image} alt={alt} />
+            <Image alt={alt} image={image} />
         </div>
     )
 }

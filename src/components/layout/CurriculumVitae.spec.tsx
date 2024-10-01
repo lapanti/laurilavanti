@@ -15,8 +15,8 @@ describe('<CurriculumVitae />', () => {
     it('should render empty', () => {
         const { container } = render(
             <CurriculumVitae
-                degreesTitle={degreesTitle}
                 degrees={[]}
+                degreesTitle={degreesTitle}
                 fiduciaries={[]}
                 fiduciariesTitle={fiduciariesTitle}
                 jobExperiences={[]}
@@ -34,8 +34,8 @@ describe('<CurriculumVitae />', () => {
     it('should render full', () => {
         const { container } = render(
             <CurriculumVitae
-                degreesTitle={degreesTitle}
                 degrees={degrees}
+                degreesTitle={degreesTitle}
                 fiduciaries={fiduciaries}
                 fiduciariesTitle={fiduciariesTitle}
                 jobExperiences={jobExperiences}

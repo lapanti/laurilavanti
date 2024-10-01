@@ -105,14 +105,14 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
     const nodeToExcerpt = useCallback(
         (node: ContentfulPostExcerpt) => (
             <Excerpt
-                key={node.publishDate || node.createdAt}
                 date={node.publishDate || node.createdAt}
-                slug={node.slug}
                 excerpt={node.excerpt}
                 image={node.headerImage.localFile}
                 imageAlt={node.headerImage.description}
-                title={node.title}
+                key={node.publishDate || node.createdAt}
+                slug={node.slug}
                 tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
+                title={node.title}
             />
         ),
         []

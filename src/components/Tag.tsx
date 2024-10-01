@@ -20,8 +20,8 @@ const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
     <Layout
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
-        title={tag.replace(/^\w/, (c) => c.toUpperCase())}
         pathname={`/blogi/${tag}/`}
+        title={tag.replace(/^\w/, (c) => c.toUpperCase())}
         type={WEBPAGE}
     >
         <ExcerptList tag={tag} />

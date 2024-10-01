@@ -14,7 +14,7 @@ interface Props {
 const ContactInfoComponent = ({ className, links }: Props) => (
     <ul className={className}>
         {links.map((link) => (
-            <ContactInfoLink link={link} key={link.title} />
+            <ContactInfoLink key={link.title} link={link} />
         ))}
     </ul>
 )

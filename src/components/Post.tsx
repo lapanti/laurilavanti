@@ -56,27 +56,27 @@ const Post = ({
 
     return (
         <Layout
-            title={title}
-            pathname={`/blogi/${slug}/`}
+            body={body}
+            description={excerpt}
             heroImage={headerImage.localFile}
             heroImageAlt={headerImage.description}
-            description={excerpt}
-            type={BLOGPOSTING}
-            published={getValueOrDefault(publishedOld, published)}
             modified={updatedAt}
-            body={body}
+            pathname={`/blogi/${slug}/`}
             preBody={
                 <PositionedMeta
+                    ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
                     date={getValueOrDefault(publishDate, createdAt) as string}
                     tags={tags}
-                    ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
                 />
             }
+            published={getValueOrDefault(publishedOld, published)}
+            title={title}
+            type={BLOGPOSTING}
         >
             <SocialShare
                 ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`}
-                title={title}
                 siteUrl={siteUrl}
+                title={title}
             />
             <H2>Muita kirjoituksia</H2>
             <ExcerptList currentSlug={slug} limit={4} relatedTags={tags} />

@@ -134,9 +134,9 @@ const options = {
                 case 'ContentfulImageWithCaption':
                     return (
                         <Image
-                            imageData={node.data.target.image.localFile}
                             alt={node.data.target.image.description}
                             caption={node.data.target.caption}
+                            imageData={node.data.target.image.localFile}
                         />
                     )
                 case 'ContentfulContactInfo':
@@ -144,12 +144,12 @@ const options = {
                 case 'ContentfulCurriculumVitae':
                     return (
                         <CurriculumVitae
-                            degreesTitle={node.data.target.degreesTitle}
                             degrees={node.data.target.degrees}
-                            fiduciariesTitle={node.data.target.fiduciariesTitle}
+                            degreesTitle={node.data.target.degreesTitle}
                             fiduciaries={node.data.target.fiduciaries}
-                            jobExperiencesTitle={node.data.target.jobExperiencesTitle}
+                            fiduciariesTitle={node.data.target.fiduciariesTitle}
                             jobExperiences={node.data.target.jobExperiences}
+                            jobExperiencesTitle={node.data.target.jobExperiencesTitle}
                         />
                     )
             }
@@ -254,14 +254,14 @@ const LayoutComponent = ({
         <>
             <GlobalStyle />
             <Seo
-                title={title || ''}
                 description={description}
-                meta={meta}
-                pathname={pathname}
                 image={socialImageObj ?? image}
-                type={type}
-                published={published}
+                meta={meta}
                 modified={modified}
+                pathname={pathname}
+                published={published}
+                title={title || ''}
+                type={type}
             />
             <div className={className}>
                 <Header />
@@ -270,19 +270,19 @@ const LayoutComponent = ({
                     <Article>
                         {isFrontPage && (
                             <HeroBanner
-                                title={title}
                                 backgroundImage={backgroundImage}
-                                subtitle={subtitle}
-                                secondaryTitle={secondaryTitle}
-                                imageData={heroImage}
                                 imageAlt={heroImageAlt}
+                                imageData={heroImage}
+                                secondaryTitle={secondaryTitle}
+                                subtitle={subtitle}
+                                title={title}
                             />
                         )}
                         {!isFrontPage && heroImage && (
-                            <DesktopHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
+                            <DesktopHeroImage alt={heroImageAlt || ''} imageData={heroImage} />
                         )}
                         {!isFrontPage && heroImage && (
-                            <MobileHeroImage imageData={heroImage} alt={heroImageAlt || ''} />
+                            <MobileHeroImage alt={heroImageAlt || ''} imageData={heroImage} />
                         )}
                         {!isFrontPage && <Title title={title} />}
                         {preBody}

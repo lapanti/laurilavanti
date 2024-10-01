@@ -141,8 +141,6 @@ const Seo = ({
     return (
         <Helmet
             htmlAttributes={{ lang: 'fi' }}
-            title={title}
-            titleTemplate={title === site?.siteMetadata?.title ? '%s' : `%s | ${site?.siteMetadata?.title}`}
             link={canonical ? [{ rel: 'canonical', href: canonical }] : []}
             meta={[
                 {
@@ -204,6 +202,8 @@ const Seo = ({
                 ...cardMeta,
                 ...(meta ?? []),
             ]}
+            title={title}
+            titleTemplate={title === site?.siteMetadata?.title ? '%s' : `%s | ${site?.siteMetadata?.title}`}
         >
             <script type="application/ld+json">{JSON.stringify(jsonLD)}</script>
         </Helmet>

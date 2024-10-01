@@ -14,8 +14,8 @@ interface Props {
 const H2Component = ({ className, children, itemProp }: Props): JSX.Element => (
     <h2
         className={className}
-        itemProp={itemProp}
         id={children?.toString().toLowerCase().replace(/\s/gi, '-').replace(/ä/gi, 'a').replace(/ö/gi, 'o')}
+        itemProp={itemProp}
     >
         {children}
     </h2>

@@ -35,8 +35,8 @@ interface Props extends ImageProps {
 const ImageComponent = ({ className, imageData, alt, caption }: Props): JSX.Element | null => {
     const image = getImage(imageData)
     return !image ? null : (
-        <figure className={className} aria-label={caption}>
-            <Img image={image} alt={alt} />
+        <figure aria-label={caption} className={className}>
+            <Img alt={alt} image={image} />
             <Caption>{caption}</Caption>
         </figure>
     )

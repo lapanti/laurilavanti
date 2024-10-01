@@ -137,7 +137,7 @@ describe('<Seo />', () => {
             width,
         } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
-        render(<Seo description="" title={title} image={imgData} pathname="/" modified="2021-09-22" />)
+        render(<Seo description="" image={imgData} modified="2021-09-22" pathname="/" title={title} />)
 
         expectHelmetToHaveCorrectValues({ pageType: WEBSITE, pageTitle: title, canonical: `${siteUrl}/`, imgData })
 
@@ -154,7 +154,7 @@ describe('<Seo />', () => {
         } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
         const imgData = { src, height: `${height}`, width: `${width}` }
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
-        render(<Seo description="" type={type} title={title} image={imgData} pathname="/" />)
+        render(<Seo description="" image={imgData} pathname="/" title={title} type={type} />)
 
         expectHelmetToHaveCorrectValues({ pageType: type, pageTitle: title, canonical: `${siteUrl}/`, imgData })
 
@@ -181,10 +181,10 @@ describe('<Seo />', () => {
         render(
             <Seo
                 description={description}
-                title={blogTitle}
                 image={imgData}
                 pathname={pathname}
                 published={published}
+                title={blogTitle}
                 type={type}
             />
         )
@@ -224,13 +224,13 @@ describe('<Seo />', () => {
         render(
             <Seo
                 description={description}
-                title={blogTitle}
                 image={imgData}
-                pathname={pathname}
-                modified={modified}
-                published={published}
-                type={type}
                 meta={meta}
+                modified={modified}
+                pathname={pathname}
+                published={published}
+                title={blogTitle}
+                type={type}
             />
         )
 

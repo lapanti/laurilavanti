@@ -46,7 +46,7 @@ interface Props {
 }
 
 const SocialShareComponent = ({ className, siteUrl, title, ariaLabel }: Props): JSX.Element => (
-    <aside className={className} aria-label={ariaLabel}>
+    <aside aria-label={ariaLabel} className={className}>
         <Share>Jaa:</Share>
         <ExtLink href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`} title="Jaa Facebookissa">
             <Facebook />

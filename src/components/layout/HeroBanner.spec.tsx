@@ -19,7 +19,7 @@ describe('<HeroBanner />', () => {
     })
 
     it('should render minimal with borken image data', () => {
-        const { container } = render(<HeroBanner title={title} imageData={{ key: undefined }} />)
+        const { container } = render(<HeroBanner imageData={{ key: undefined }} title={title} />)
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         expect(screen.queryByRole('img')).toBeNull()
@@ -28,7 +28,7 @@ describe('<HeroBanner />', () => {
     })
 
     it('should render minimal with image with no image alt', () => {
-        const { container } = render(<HeroBanner title={title} imageData={inFrontOfWoodsImage} />)
+        const { container } = render(<HeroBanner imageData={inFrontOfWoodsImage} title={title} />)
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         // When gatsby image has no alt, it has aria-role presentation
@@ -40,12 +40,12 @@ describe('<HeroBanner />', () => {
     it('should render maximal', () => {
         const { container } = render(
             <HeroBanner
-                title={title}
-                subtitle={subtitle}
-                secondaryTitle={secondaryTitle}
+                backgroundImage={inFrontOfWoodsImage}
                 imageAlt={inFrontOfWoodsImageDescription}
                 imageData={inFrontOfWoodsImage}
-                backgroundImage={inFrontOfWoodsImage}
+                secondaryTitle={secondaryTitle}
+                subtitle={subtitle}
+                title={title}
             />
         )
 

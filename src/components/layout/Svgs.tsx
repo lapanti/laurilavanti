@@ -14,32 +14,32 @@ const Svgs = (): JSX.Element => (
         xmlnsXlink="http://www.w3.org/1999/xlink"
     >
         <defs>
-            <svg width="0" height="0">
-                <radialGradient id="instagram-gradient" r="150%" cx="30%" cy="107%">
-                    <stop stopColor="#fdf497" offset="0" />
-                    <stop stopColor="#fdf497" offset="0.05" />
-                    <stop stopColor="#fd5949" offset="0.45" />
-                    <stop stopColor="#d6249f" offset="0.6" />
-                    <stop stopColor="#285AEB" offset="0.9" />
+            <svg height="0" width="0">
+                <radialGradient cx="30%" cy="107%" id="instagram-gradient" r="150%">
+                    <stop offset="0" stopColor="#fdf497" />
+                    <stop offset="0.05" stopColor="#fdf497" />
+                    <stop offset="0.45" stopColor="#fd5949" />
+                    <stop offset="0.6" stopColor="#d6249f" />
+                    <stop offset="0.9" stopColor="#285AEB" />
                 </radialGradient>
             </svg>
             <symbol id="logo" viewBox="0 0 600 600">
                 <g>
                     <title>Lauri lavanti</title>
-                    <rect rx="50" id="svg_2" height="600" width="600" y="0" x="0" fill="#045a1c" />
+                    <rect fill="#045a1c" height="600" id="svg_2" rx="50" width="600" x="0" y="0" />
                     <text
-                        fontWeight="400"
-                        fontStyle="normal"
-                        transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
-                        xmlSpace="preserve"
-                        textAnchor="start"
+                        fill="#ffffff"
                         fontFamily="Times New Roman"
                         fontSize="24"
+                        fontStyle="normal"
+                        fontWeight="400"
                         id="svg_1"
-                        y="221.21152"
-                        x="217.25434"
                         stroke="#ffffff"
-                        fill="#ffffff"
+                        textAnchor="start"
+                        transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
+                        x="217.25434"
+                        xmlSpace="preserve"
+                        y="221.21152"
                     >
                         L²
                     </text>
