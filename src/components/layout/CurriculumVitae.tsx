@@ -13,7 +13,7 @@ export const yearsToString = (startYear: number, endYear?: number): string => {
 }
 
 const DivContainer = styled.div({
-    ...fontSizes.l,
+    ...fontSizes['2xl'],
     fontFamily: fontFamilies.sans,
     fontWeight: fontWeights.normal,
     marginTop: sizes[1],

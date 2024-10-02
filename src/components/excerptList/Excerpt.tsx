@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, sizes, zIndices } from '../../lib/styles'
+import { colors, fontSizes, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
@@ -39,7 +39,8 @@ const H2Container = styled.div({
     position: 'relative',
 })
 
-const RemarginP = styled(Paragraph)({
+const StyledParagraph = styled(Paragraph)({
+    ...fontSizes.l,
     marginTop: sizes[0.25],
 })
 
@@ -78,12 +79,12 @@ const ExcerptComponent = ({
                     </H2Container>
                 </Link>
                 <PostMeta ariaLabel={`Kirjoituksen ${title} meta-tiedot`} date={date} tags={tags} />
-                <RemarginP itemProp="description">
+                <StyledParagraph itemProp="description">
                     {excerpt}{' '}
                     <ReadMoreLink rel="permalink" to={`/blogi/${slug}/`}>
                         Lue lisää »
                     </ReadMoreLink>
-                </RemarginP>
+                </StyledParagraph>
             </article>
         </li>
     )
