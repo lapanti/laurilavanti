@@ -67,6 +67,7 @@ export const sizes = {
     [35]: '35rem' as const, // 560px
     [41]: '41rem' as const, // 656px
     [45]: '45rem' as const, // 720px
+    [75]: '75rem' as const, // 1200px
     fullHd: '1920px' as const,
 } as const
 
@@ -81,6 +82,7 @@ export const zIndices = {
 } as const
 
 export const HEADER_SIZE = sizes[3.75]
+export const CONTENT_SIZE = sizes[75]
 
 /** Spacing variables end */
 /** Grid variables start */
@@ -97,7 +99,7 @@ export const gridTemplateAreasLayout = `
 export const gridTemplateRowsLayout = `1fr ${sizes[6]}` as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle =
-    '1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr' as const
+    `1fr ${sizes[0.5]} min(calc(${sizes[75]} - ${sizes[1]}), calc(100% - ${sizes[1.125]})) ${sizes[0.5]} 1fr` as const
 
 /** Grid variables end */
 
