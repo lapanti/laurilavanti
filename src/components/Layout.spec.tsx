@@ -93,9 +93,9 @@ describe('<Layout />', () => {
             <Layout
                 heroImage={inFrontOfWoodsImage}
                 heroImageAlt={inFrontOfWoodsImageDescription}
-                isFrontPage
                 subtitle={subtitle}
                 title={title}
+                isFrontPage
             >
                 {children}
             </Layout>

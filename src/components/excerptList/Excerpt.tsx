@@ -70,7 +70,7 @@ const ExcerptComponent = ({
 
     return (
         <li className={className}>
-            <article aria-label={title} itemScope itemType="https://schema.org/CreativeWork">
+            <article aria-label={title} itemType="https://schema.org/CreativeWork" itemScope>
                 <Link rel="permalink" to={`/blogi/${slug}/`}>
                     {image && <Image alt={imageAlt} image={image} />}
                     <H2Container>
