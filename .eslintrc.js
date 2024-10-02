@@ -120,7 +120,15 @@ const config = {
         'prefer-arrow-callback': ['warn'],
         'simple-import-sort/exports': ['error'],
         'simple-import-sort/imports': ['error'],
-        'react/jsx-sort-props': ['error'],
+        'react/jsx-sort-props': [
+            'error',
+            {
+                callbacksLast: true,
+                shorthandLast: true,
+                reservedFirst: true,
+                ignoreCase: true,
+            },
+        ],
     },
 }
 
