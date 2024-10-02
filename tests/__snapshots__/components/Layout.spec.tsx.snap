@@ -178,7 +178,7 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -194,7 +194,7 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -762,7 +762,7 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -778,7 +778,7 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c13 {
@@ -1382,7 +1382,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -1398,7 +1398,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -1837,8 +1837,8 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c27 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -1917,6 +1917,8 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c28 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
@@ -2105,7 +2107,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -2121,7 +2123,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -3004,7 +3006,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -3020,7 +3022,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -3599,7 +3601,7 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -3615,7 +3617,7 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -4209,7 +4211,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -4225,7 +4227,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -4690,8 +4692,8 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 }
 
 .c13 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -4861,7 +4863,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -4877,7 +4879,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -5292,8 +5294,8 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 }
 
 .c13 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -5463,7 +5465,7 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -5479,7 +5481,7 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -5892,8 +5894,8 @@ exports[`<Layout /> rich body should render external links 1`] = `
 }
 
 .c13 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -6068,7 +6070,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -6084,7 +6086,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -6506,8 +6508,8 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 }
 
 .c13 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -6677,7 +6679,7 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -6693,7 +6695,7 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -7112,8 +7114,8 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 }
 
 .c13 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -7283,7 +7285,7 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -7299,7 +7301,7 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -7712,8 +7714,8 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 }
 
 .c13 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -7883,7 +7885,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -7899,7 +7901,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -8319,8 +8321,8 @@ exports[`<Layout /> rich body should render table 1`] = `
 }
 
 .c16 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Sans";
   font-weight: 400;
   margin-top: 1rem;
@@ -8490,7 +8492,7 @@ exports[`<Layout /> rich body should render table 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -8506,7 +8508,7 @@ exports[`<Layout /> rich body should render table 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c17 {
@@ -9180,7 +9182,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -9866,7 +9868,7 @@ exports[`<Layout /> should render hero image 1`] = `
 
 .c15 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -9882,7 +9884,7 @@ exports[`<Layout /> should render hero image 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -10596,7 +10598,7 @@ exports[`<Layout /> should render hero image with no alt 1`] = `
 
 .c15 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -10612,7 +10614,7 @@ exports[`<Layout /> should render hero image with no alt 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c14 {
@@ -11307,7 +11309,7 @@ exports[`<Layout /> should render minimal 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -11323,7 +11325,7 @@ exports[`<Layout /> should render minimal 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
@@ -11892,7 +11894,7 @@ exports[`<Layout /> should render title 1`] = `
 
 .c11 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
   grid-column: 1/-1;
   z-index: 40;
   max-width: min(100%, 1920px);
@@ -11908,7 +11910,7 @@ exports[`<Layout /> should render title 1`] = `
 
 .c10 {
   display: grid;
-  grid-template-columns: 1fr 0.5rem min(80ch, calc(100% - 1.125rem)) 0.5rem 1fr;
+  grid-template-columns: 1fr 0.5rem min(calc(1200px - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
 .c0 {
