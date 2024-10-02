@@ -27,7 +27,7 @@ const H2 = styled(H2Component)({
     gridColumnStart: 3,
     fontFamily: fontFamilies.mono,
     fontWeight: fontWeights.bold,
-    ...fontSizes['2xl'],
+    ...fontSizes['3xl'],
 })
 
 export default H2

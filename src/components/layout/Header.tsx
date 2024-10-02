@@ -60,17 +60,34 @@ const MobileMenu = styled.div<{ $isOpen: boolean }>(
     })
 )
 
-/** Half of desktop header */
-const Half = styled.div({
+const DesktopMenu = styled.div({
     display: 'none',
+    /** Show the whole thing only on desktop */
     [breakpoints[1200].min]: {
-        width: '50%',
         display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: sizes[2.5],
+        width: sizes[75],
+        flexDirection: 'row',
+        margin: 'auto',
+        paddingLeft: sizes[0.5],
+        paddingRight: sizes[0.5],
     },
 })
+
+/** Half of desktop header */
+const Half = styled.div<{ $end?: boolean }>(
+    {
+        display: 'none',
+        [breakpoints[1200].min]: {
+            width: '50%',
+            display: 'flex',
+            alignItems: 'center',
+            gap: sizes[2.5],
+        },
+    },
+    ({ $end }) => ({
+        justifyContent: $end ? 'flex-end' : 'flex-start',
+    })
+)
 
 interface Props {
     className?: string
@@ -113,16 +130,18 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                         <NavLink {...nav} key={nav.slug} />
                     ))}
             </MobileMenu>
-            <Half>
-                <NavLink slug="index" title="Lauri Lavanti" isFrontPage />
-            </Half>
-            <Half>
-                {data.contentfulMainNav.links
-                    .filter(({ slug }) => slug !== 'index')
-                    .map((nav) => (
-                        <NavLink {...nav} key={nav.slug} />
-                    ))}
-            </Half>
+            <DesktopMenu>
+                <Half>
+                    <NavLink slug="index" title="Lauri Lavanti" isFrontPage />
+                </Half>
+                <Half $end>
+                    {data.contentfulMainNav.links
+                        .filter(({ slug }) => slug !== 'index')
+                        .map((nav) => (
+                            <NavLink {...nav} key={nav.slug} />
+                        ))}
+                </Half>
+            </DesktopMenu>
         </header>
     )
 }
