@@ -106,7 +106,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                 />
             </HamburgerContainer>
             <MobileMenu $isOpen={isMobileOpen}>
-                <NavLink isFrontPage slug="index" title="Lauri Lavanti" />
+                <NavLink slug="index" title="Lauri Lavanti" isFrontPage />
                 {data.contentfulMainNav.links
                     .filter(({ slug }) => slug !== 'index')
                     .map((nav) => (
@@ -114,7 +114,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                     ))}
             </MobileMenu>
             <Half>
-                <NavLink isFrontPage slug="index" title="Lauri Lavanti" />
+                <NavLink slug="index" title="Lauri Lavanti" isFrontPage />
             </Half>
             <Half>
                 {data.contentfulMainNav.links

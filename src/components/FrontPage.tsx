@@ -21,7 +21,6 @@ const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         description={data?.contentfulPage?.description ?? ''}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
-        isFrontPage
         modified={data?.contentfulPage?.updatedAt}
         pathname={`/${slug}/`}
         secondaryTitle={data?.contentfulPage?.secondaryTitle ?? undefined}
@@ -29,6 +28,7 @@ const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         subtitle={data?.contentfulPage?.subtitle ?? undefined}
         title={data?.contentfulPage?.title}
         type={data?.contentfulPage?.jsonLdType}
+        isFrontPage
     />
 )
 
