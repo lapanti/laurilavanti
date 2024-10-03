@@ -45,7 +45,7 @@ const ImageComponent = ({ className, imageData, alt, caption }: Props): JSX.Elem
 ImageComponent.displayName = 'Image'
 
 const Image = styled(ImageComponent)({
-    gridColumn: '1 / -1',
+    gridColumnStart: 3,
     marginTop: sizes[1],
     marginBottom: sizes[1],
 })
