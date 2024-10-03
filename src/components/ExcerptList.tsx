@@ -129,7 +129,7 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
 ExcerptListComponent.displayName = 'ExcerptList'
 
 const ExcerptList = styled(ExcerptListComponent)({
-    gridColumn: '1 / -1',
+    gridColumnStart: 3,
     marginLeft: sizes[0.5],
     marginRight: sizes[0.5],
     display: 'grid',
