@@ -20,6 +20,7 @@ import {
     gridTemplateColumns,
     gridTemplateColumnsArticle,
     gridTemplateRowsLayout,
+    gridTemplateRowsLayoutMobile,
     sizes,
 } from '../lib/styles'
 import ExcerptList from './ExcerptList'
@@ -304,11 +305,14 @@ LayoutComponent.displayName = 'Layout'
 const Layout = styled(LayoutComponent)({
     display: 'grid',
     gridTemplateAreas: gridTemplateAreasLayout,
-    gridTemplateRows: gridTemplateRowsLayout,
+    gridTemplateRows: gridTemplateRowsLayoutMobile,
     gridTemplateColumns: gridTemplateColumns,
     gap: sizes[1.125],
     minHeight: '100vh',
     position: 'relative',
+    [breakpoints[1200].min]: {
+        gridTemplateRows: gridTemplateRowsLayout,
+    },
 })
 
 export default Layout
