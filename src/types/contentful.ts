@@ -115,7 +115,7 @@ interface ContentfulPostCommon {
         localFile: ImageDataLike
         description: string
     }
-    mobileHeaderImage?: {
+    excerptImage?: {
         localFile: ImageDataLike
         description: string
     } | null

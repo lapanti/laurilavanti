@@ -43,6 +43,14 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                         }
                         description
                     }
+                    excerptImage {
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData(placeholder: BLURRED)
+                            }
+                        }
+                        description
+                    }
                     slug
                 }
             }
@@ -108,8 +116,8 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                 key={node.publishDate || node.createdAt}
                 date={node.publishDate || node.createdAt}
                 excerpt={node.excerpt}
-                image={node.headerImage.localFile}
-                imageAlt={node.headerImage.description}
+                image={node.excerptImage?.localFile ?? node.headerImage.localFile}
+                imageAlt={node.excerptImage?.description ?? node.headerImage.description}
                 slug={node.slug}
                 tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
                 title={node.title}
