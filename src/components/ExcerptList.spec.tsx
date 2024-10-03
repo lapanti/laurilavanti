@@ -32,7 +32,7 @@ describe('<ExcerptList />', () => {
         const { container } = render(<ExcerptList pinned={pinned} />)
 
         const articles = screen.getAllByRole('article')
-        expect(articles).toHaveLength(excerptList.length)
+        expect(articles).toHaveLength(pinnedAndUnpinned.length)
         articles.forEach((article, i) => {
             expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i].title)
         })
@@ -46,6 +46,24 @@ describe('<ExcerptList />', () => {
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(limit)
         articles.forEach((article, i) => expect(article).toHaveAttribute('aria-label', excerptList[i].title))
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render pinned first with limit', () => {
+        const pinnedExcerpts = [healthBelongsToAll, ourNatureIsOurAceInTheHole]
+        const pinned = pinnedExcerpts.map(({ slug }) => slug)
+        const pinnedAndUnpinned = pinnedExcerpts.concat(
+            excerptList.filter(({ slug }) => !pinned.find((s) => s === slug)).slice(0, limit)
+        )
+        const { container } = render(<ExcerptList limit={limit} pinned={pinned} />)
+
+        const articles = screen.getAllByRole('article')
+        expect(articles).toHaveLength(pinnedAndUnpinned.length)
+        expect(articles).toHaveLength(limit + pinnedExcerpts.length)
+        articles.forEach((article, i) => {
+            expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i].title)
+        })
 
         expect(container.firstChild).toMatchSnapshot()
     })
