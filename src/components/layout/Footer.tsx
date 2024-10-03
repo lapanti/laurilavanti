@@ -1,18 +1,45 @@
 import type { FooterNav } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { colors, gridAreas, sizes } from '../../lib/styles'
+import { breakpoints, colors, gridAreas, sizes } from '../../lib/styles'
 import FooterLink from './footer/FooterLink'
 
+const ImageContainer = styled.div({})
+
 const List = styled.ul({
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
     gap: sizes[1.5],
+})
+
+const ContentContainer = styled.div({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: sizes[1.5],
+
+    [`> ${ImageContainer}, > ${List}`]: {
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
+    [breakpoints[1200].min]: {
+        width: sizes[75],
+        paddingLeft: sizes[0.5],
+        paddingRight: sizes[0.5],
+        flexDirection: 'row',
+        [`> ${ImageContainer}`]: {
+            justifyContent: 'flex-start',
+        },
+        [`> ${List}`]: {
+            justifyContent: 'flex-end',
+        },
+    },
 })
 
 interface Props {
@@ -35,11 +62,22 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
 
     return (
         <footer className={className}>
-            <List>
-                {data.contentfulFooterNav.links.map((link) => (
-                    <FooterLink key={link.title} link={link} />
-                ))}
-            </List>
+            <ContentContainer>
+                <ImageContainer>
+                    <StaticImage
+                        alt='Vihreiden logo ja teksti "Vihreät De Gröna"'
+                        backgroundColor="transparent"
+                        src="../../../static/images/Vihreat_Logo_HOR_NEG_FIN_SWE.png"
+                        transformOptions={{ fit: 'contain' }}
+                        width={200}
+                    />
+                </ImageContainer>
+                <List>
+                    {data.contentfulFooterNav.links.map((link) => (
+                        <FooterLink key={link.title} link={link} />
+                    ))}
+                </List>
+            </ContentContainer>
         </footer>
     )
 }
@@ -48,13 +86,11 @@ FooterComponent.displayName = 'Footer'
 
 const Footer = styled(FooterComponent)({
     gridArea: gridAreas.footer,
-    backgroundColor: colors.greenDarkBackground,
+    backgroundColor: colors.evening,
     color: colors.white,
     display: 'flex',
-    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100%',
 })
 
 export default Footer
