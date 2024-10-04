@@ -28,6 +28,7 @@ describe('<FrontPage />', () => {
                         image: { localFile: inFrontOfWoodsImage, description: '' },
                         socialImage: null,
                         backgroundImage: null,
+                        leftAlignedTitle: true,
                         updatedAt: '',
                     },
                 }}

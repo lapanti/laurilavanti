@@ -10,7 +10,7 @@ describe('<TitleBanner />', () => {
     const tags = ['kirkkonummi', 'kuntavaalit']
 
     it('should render minimal', () => {
-        const { container } = render(<TitleBanner title={title} />)
+        const { container } = render(<TitleBanner title={title} leftAlignedTitle />)
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
 
@@ -18,7 +18,9 @@ describe('<TitleBanner />', () => {
     })
 
     it('should render image without alt', () => {
-        const { container } = render(<TitleBanner imageData={inFrontOfWoodsImage} title={title} />)
+        const { container } = render(
+            <TitleBanner imageData={inFrontOfWoodsImage} leftAlignedTitle={false} title={title} />
+        )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         // When no alt, image has role "presentation"
@@ -35,6 +37,7 @@ describe('<TitleBanner />', () => {
                 publishDate={publishDate}
                 tags={tags}
                 title={title}
+                leftAlignedTitle
             />
         )
 
@@ -53,6 +56,7 @@ describe('<TitleBanner />', () => {
                 imageAlt={inFrontOfWoodsImageDescription}
                 imageData={inFrontOfWoodsImage}
                 title={title}
+                leftAlignedTitle
                 showMeta
             />
         )
@@ -71,6 +75,7 @@ describe('<TitleBanner />', () => {
                 publishDate={publishDate}
                 tags={tags}
                 title={title}
+                leftAlignedTitle
                 showMeta
             />
         )
