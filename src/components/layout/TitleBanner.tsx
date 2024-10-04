@@ -38,16 +38,22 @@ const BiggerMeta = styled(PostMeta)({
     },
 })
 
-const Content = styled.div({
-    [breakpoints[1200].min]: {
-        display: 'flex',
-        flexDirection: 'row-reverse',
-        margin: 'auto',
-        [`> ${Image}, > ${TitleContainer}`]: {
-            width: '50%',
+const Content = styled.div<{ $leftAlignedTitle: boolean }>(
+    {
+        [breakpoints[1200].min]: {
+            display: 'flex',
+            margin: 'auto',
+            [`> ${Image}, > ${TitleContainer}`]: {
+                width: '50%',
+            },
         },
     },
-})
+    ({ $leftAlignedTitle }) => ({
+        [breakpoints[1200].min]: {
+            flexDirection: $leftAlignedTitle ? 'row-reverse' : 'row',
+        },
+    })
+)
 
 interface Props {
     className?: string
@@ -57,6 +63,7 @@ interface Props {
     showMeta?: boolean
     tags?: string[]
     publishDate?: string
+    leftAlignedTitle: boolean
 }
 
 const TitleBannerComponent = ({
@@ -67,12 +74,13 @@ const TitleBannerComponent = ({
     showMeta,
     tags,
     publishDate,
+    leftAlignedTitle,
 }: Props): JSX.Element => {
     const image = imageData ? getImage(imageData) : undefined
 
     return (
         <div className={className}>
-            <Content>
+            <Content $leftAlignedTitle={leftAlignedTitle}>
                 {image && <Image alt={imageAlt ?? ''} image={image} />}
                 <TitleContainer>
                     <Title>{title}</Title>

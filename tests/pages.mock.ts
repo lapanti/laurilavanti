@@ -17,6 +17,7 @@ const images = {
 export const frontPage: ContentfulPage = {
     image,
     socialImage: { localFile: smilingImage },
+    leftAlignedTitle: true,
     backgroundImage: image,
     description: null,
     jsonLdType: 'WebSite',
@@ -43,6 +44,7 @@ export const aboutMe: ContentfulPage = {
     jsonLdType: 'Person',
     title: 'Minusta',
     subtitle: null,
+    leftAlignedTitle: false,
     secondaryTitle: null,
     body: {
         raw: '{"nodeType":"document","data":{},"content":[{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Olen ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"fvxZI2eLzqnwfebd6CPUO","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"-vuotias diplomi-insinööri, Vihreiden luottamushenkilö ja kolmen pienen lapsen isä Kirkkonummelta. Politiikassa minulle tärkeimpiä asioita ovat lasten ja nuorten hyvinvointi, oikeudenmukaisuus, tasa-arvo, demokratia ja kestävä toiminta niin luonnon kuin taloudenkin kannalta. Päivätyöni on toimia ohjelmistokehitystiimin esihenkilönä ja ohjelmiston arkkitehtuurin suunnittelijana, huolehtien osaltani yrityksen kehityksen kestävästä suunnasta. ","marks":[],"data":{}},{"nodeType":"text","value":"Alapuolelta voit lukea tarkemman listauksen erinäisistä luottamustoimistani ja työhistoriastani","marks":[],"data":{}},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://bsky.app/profile/laurilavanti.fi"},"content":[{"nodeType":"text","value":"Blueskyssa","marks":[],"data":{}}]},{"nodeType":"text","value":" ja ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://www.threads.net/@laurilavanti"},"content":[{"nodeType":"text","value":"Threadsissä","marks":[],"data":{}}]},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"embedded-entry-block","data":{"target":{"sys":{"id":"69ER5TaS3Gi3EG0xwHPOLv","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]}]}',
@@ -193,6 +195,7 @@ export const blog: ContentfulPage = {
     ...images,
     description: null,
     jsonLdType: 'WebPage',
+    leftAlignedTitle: true,
     title: 'Blogi',
     subtitle: null,
     secondaryTitle: null,
@@ -211,6 +214,7 @@ export const blog: ContentfulPage = {
 export const contactMe: ContentfulPage = {
     ...images,
     description: 'Yhteystiedot',
+    leftAlignedTitle: true,
     jsonLdType: 'Person',
     title: 'Ota yhteyttä',
     subtitle: null,
