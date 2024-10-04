@@ -31,7 +31,7 @@ const NavLink = styled(NavLinkComponent)(
         color: colors.peach,
     },
     ({ isFrontPage }) => ({
-        ...(isFrontPage ? fontSizes['3xl'] : fontSizes['2xl']),
+        ...(isFrontPage ? fontSizes[1.75] : fontSizes[1.5]),
         fontFamily: isFrontPage ? fontFamilies.heading : fontFamilies.sans,
     })
 )

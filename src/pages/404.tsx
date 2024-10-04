@@ -8,7 +8,7 @@ import { fontSizes, HEADER_SIZE } from '../lib/styles'
 const H1 = styled.h1({
     gridColumnStart: 3,
     marginTop: HEADER_SIZE,
-    ...fontSizes['2xl'],
+    ...fontSizes['1.5'],
 })
 
 const FourZeroFour = (): JSX.Element => (
