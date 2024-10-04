@@ -12,7 +12,7 @@ const H1 = styled.h1({
 })
 
 const FourZeroFour = (): JSX.Element => (
-    <Layout title="">
+    <Layout title="" leftAlignedTitle>
         <H1>Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?</H1>
         <ExcerptList limit={8} />
     </Layout>
