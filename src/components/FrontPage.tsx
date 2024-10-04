@@ -29,6 +29,7 @@ const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         title={data?.contentfulPage?.title}
         type={data?.contentfulPage?.jsonLdType}
         isFrontPage
+        leftAlignedTitle
     />
 )
 
