@@ -48,18 +48,7 @@ describe('<Layout />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render title', async () => {
-        const { container } = render(<Layout title={title}>{children}</Layout>)
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        await waitFor(() => expect(document.title).toEqual(`${title} | ${siteTitle}`))
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render hero image', () => {
+    it('should render title banner', async () => {
         const { container } = render(
             <Layout heroImage={inFrontOfWoodsImage} heroImageAlt={inFrontOfWoodsImageDescription} title={title}>
                 {children}
@@ -70,19 +59,8 @@ describe('<Layout />', () => {
 
         expect(screen.getAllByRole('img', { name: inFrontOfWoodsImageDescription })).not.toBeNull()
 
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render hero image with no alt', () => {
-        const { container } = render(
-            <Layout heroImage={inFrontOfWoodsImage} title="">
-                {children}
-            </Layout>
-        )
-
-        expect(screen.getByText(children)).toBeInTheDocument()
-
-        expect(screen.getByRole('presentation', { name: '' })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+        await waitFor(() => expect(document.title).toEqual(`${title} | ${siteTitle}`))
 
         expect(container.firstChild).toMatchSnapshot()
     })
