@@ -23,7 +23,7 @@ exports[`<Excerpt /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c14 {
+.c11 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -35,39 +35,15 @@ exports[`<Excerpt /> should render 1`] = `
 .c9 {
   display: flex;
   flex-direction: row;
-}
-
-.c10 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.c10 :last-child {
-  margin-right: 0px;
-}
-
-.c11 {
-  height: 1.125rem;
-  widht: 1.125rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
-
-.c12 {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c13 {
+.c10 {
   margin-right: 1rem;
 }
 
-.c13 :last-child {
+.c10 :last-child {
   margin-right: 0px;
 }
 
@@ -103,13 +79,13 @@ exports[`<Excerpt /> should render 1`] = `
   position: relative;
 }
 
-.c15 {
+.c12 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c16 {
+.c13 {
   white-space: nowrap;
 }
 
@@ -195,38 +171,16 @@ exports[`<Excerpt /> should render 1`] = `
       aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
       class="c8"
     >
-      <div
+      <time
+        datetime="2022-01-19"
+      >
+        19.01.2022
+      </time>
+      <ul
         class="c9"
       >
-        <span
-          class="c10"
-        >
-          <svg
-            class="c11"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 448 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-            />
-          </svg>
-          <time
-            datetime="2022-01-19"
-          >
-            19.01.2022
-          </time>
-        </span>
-      </div>
-      <ul
-        class="c12"
-      >
         <li
-          class="c13"
+          class="c10"
         >
           <a
             class="c1"
@@ -237,7 +191,7 @@ exports[`<Excerpt /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c13"
+          class="c10"
         >
           <a
             class="c1"
@@ -248,7 +202,7 @@ exports[`<Excerpt /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c13"
+          class="c10"
         >
           <a
             class="c1"
@@ -261,13 +215,13 @@ exports[`<Excerpt /> should render 1`] = `
       </ul>
     </aside>
     <p
-      class="c14 c15"
+      class="c11 c12"
       itemprop="description"
     >
       Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
        
       <a
-        class="c1 c16"
+        class="c1 c13"
         href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
         rel="permalink"
       >

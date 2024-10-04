@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Tag /> should render 1`] = `
-.c25 {
+.c24 {
   grid-column-start: 3;
   font-family: "IBM Plex Mono";
   font-weight: 700;
@@ -23,7 +23,7 @@ exports[`<Tag /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c33 {
+.c29 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -32,69 +32,45 @@ exports[`<Tag /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c28 {
-  display: flex;
-  flex-direction: row;
-}
-
-.c29 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.c29 :last-child {
-  margin-right: 0px;
-}
-
-.c30 {
-  height: 1.125rem;
-  widht: 1.125rem;
-  display: inline-block;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
-
-.c31 {
+.c27 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c32 {
+.c28 {
   margin-right: 1rem;
 }
 
-.c32 :last-child {
+.c28 :last-child {
   margin-right: 0px;
 }
 
-.c27 {
+.c26 {
   display: flex;
   flex-direction: column;
 }
 
-.c26 {
+.c25 {
   grid-column-start: auto;
 }
 
-.c21 {
+.c20 {
   color: rgb(0, 0, 0);
 }
 
-.c21:hover .c24 {
+.c20:hover .c23 {
   text-decoration: underline;
 }
 
-.c22 {
+.c21 {
   width: 100%;
   display: flex;
   aspect-ratio: 16/9;
 }
 
-.c23 {
+.c22 {
   display: flex;
   align-items: flex-end;
   margin-top: 0.25rem;
@@ -103,21 +79,21 @@ exports[`<Tag /> should render 1`] = `
   position: relative;
 }
 
-.c34 {
+.c30 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c35 {
+.c31 {
   white-space: nowrap;
 }
 
-.c20 {
+.c19 {
   max-width: 35rem;
 }
 
-.c19 {
+.c18 {
   grid-column-start: 3;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -131,14 +107,14 @@ exports[`<Tag /> should render 1`] = `
   margin-top: 2rem;
 }
 
-.c41 {
+.c37 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
 }
 
-.c41 >* {
+.c37 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -147,13 +123,49 @@ exports[`<Tag /> should render 1`] = `
   transition-duration: 150ms;
 }
 
+.c36 {
+  padding: 0px;
+}
+
+.c36 :hover,
+.c36 :focus {
+  fill: #4267B2;
+}
+
+.c38 {
+  padding: 0px;
+}
+
+.c38 :hover,
+.c38 :focus {
+  fill: rgb(0, 0, 0);
+}
+
+.c39 {
+  padding: 0px;
+}
+
+.c39 :hover,
+.c39 :focus {
+  fill: url(#instagram-gradient);
+}
+
 .c40 {
   padding: 0px;
 }
 
 .c40 :hover,
 .c40 :focus {
-  fill: #4267B2;
+  fill: #0E76A8;
+}
+
+.c41 {
+  padding: 0px;
+}
+
+.c41 :hover,
+.c41 :focus {
+  fill: #6363ff;
 }
 
 .c42 {
@@ -162,58 +174,22 @@ exports[`<Tag /> should render 1`] = `
 
 .c42 :hover,
 .c42 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c43 {
-  padding: 0px;
-}
-
-.c43 :hover,
-.c43 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c44 {
-  padding: 0px;
-}
-
-.c44 :hover,
-.c44 :focus {
-  fill: #0E76A8;
-}
-
-.c45 {
-  padding: 0px;
-}
-
-.c45 :hover,
-.c45 :focus {
-  fill: #6363ff;
-}
-
-.c46 {
-  padding: 0px;
-}
-
-.c46 :hover,
-.c46 :focus {
   fill: #0060df;
 }
 
-.c39 {
+.c35 {
   justify-content: center;
   gap: 1.5rem;
 }
 
-.c37 {
+.c33 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c37 >.,
-.c37 >.c38 {
+.c33 >.,
+.c33 >.c34 {
   flex: 1;
   display: flex;
   flex-direction: row;
@@ -221,7 +197,7 @@ exports[`<Tag /> should render 1`] = `
   justify-content: center;
 }
 
-.c36 {
+.c32 {
   grid-area: footer;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -301,44 +277,22 @@ exports[`<Tag /> should render 1`] = `
   user-select: none;
 }
 
-.c15 {
-  margin-left: auto;
-  margin-right: auto;
-  height: 24rem!important;
-  width: 100%!important;
-  object-fit: cover;
-  max-width: 1920px;
-  overflow: hidden;
-}
-
-.c13 {
-  padding-top: 3.75rem;
-  display: flex;
-  grid-column: 1/-1;
-  position: relative;
-}
-
-.c18 {
-  grid-column-start: 3;
-  font-family: "IBM Plex Mono";
-  font-weight: 900;
-  color: rgb(0, 0, 0);
-  display: flex;
-  align-items: flex-end;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.c16 {
+  background-color: rgb(255, 255, 255);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 1rem;
 }
 
 .c17 {
-  display: grid;
-  grid-template-columns: 1fr 0.5rem min(calc(75rem - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
+  font-size: 3rem;
+  line-height: 1;
+  font-family: "Krana Fat";
+}
+
+.c13 {
   grid-column: 1/-1;
-  z-index: 40;
-  max-width: min(100%, 1920px);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1rem;
-  width: 100%;
+  padding-top: 3.75rem;
 }
 
 .c11 {
@@ -348,14 +302,6 @@ exports[`<Tag /> should render 1`] = `
 .c12 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(calc(75rem - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
-}
-
-.c16 {
-  display: flex!important;
-}
-
-.c14 {
-  display: none!important;
 }
 
 .c0 {
@@ -369,25 +315,25 @@ exports[`<Tag /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c19 {
+  .c18 {
     grid-template-columns: repeat(2, 35rem);
     margin-top: 3.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c37 {
+  .c33 {
     width: 75rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     flex-direction: row;
   }
 
-  .c37 >.{
+  .c33 >.{
     justify-content: flex-start;
   }
 
-  .c37 >.c38 {
+  .c33 >.c34 {
     justify-content: flex-end;
   }
 }
@@ -433,15 +379,33 @@ exports[`<Tag /> should render 1`] = `
   }
 }
 
-@media (min-width: 479px) {
+@media (min-width: 1200px) {
   .c16 {
-    display: none!important;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 37.5rem;
   }
 }
 
-@media (min-width: 479px) {
+@media (min-width: 1200px) {
+  .c17 {
+    font-size: 5rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1200px) {
   .c14 {
-    display: flex!important;
+    display: flex;
+    flex-direction: row-reverse;
+    margin: auto;
+  }
+
+  .c14 >.,
+  .c14 >.c15 {
+    width: 50%;
   }
 }
 
@@ -563,126 +527,76 @@ exports[`<Tag /> should render 1`] = `
       class="c12"
     >
       <div
-        class="c13 c14"
+        class="c13"
       >
         <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c15"
-          data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+          class="c14"
         >
           <div
-            style="max-width: 4032px; display: block;"
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+            data-gatsby-image-wrapper=""
+            style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >
+            <div
+              style="max-width: 4032px; display: block;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                role="presentation"
+                src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+                style="max-width: 100%; display: block; position: static;"
+              />
+            </div>
             <img
               alt=""
               aria-hidden="true"
-              role="presentation"
-              src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-              style="max-width: 100%; display: block; position: static;"
-            />
-          </div>
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-          <picture>
-            <source
-              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-              sizes="(min-width: 4032px) 4032px, 100vw"
-              type="image/webp"
-            />
-            <img
-              alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-              data-gatsby-image-ssr=""
-              data-main-image=""
-              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+              data-placeholder-image=""
               decoding="async"
-              loading="lazy"
-              sizes="(min-width: 4032px) 4032px, 100vw"
-              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+              src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+              style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
             />
-          </picture>
-          <noscript />
-          <script
-            type="module"
-          >
-            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-          </script>
-        </div>
-      </div>
-      <div
-        class="c13 c16"
-      >
-        <div
-          class="gatsby-image-wrapper gatsby-image-wrapper-constrained c15"
-          data-gatsby-image-wrapper=""
-          style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
-        >
+            <picture>
+              <source
+                data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+                sizes="(min-width: 4032px) 4032px, 100vw"
+                type="image/webp"
+              />
+              <img
+                alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
+                data-gatsby-image-ssr=""
+                data-main-image=""
+                data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+                data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+                decoding="async"
+                loading="lazy"
+                sizes="(min-width: 4032px) 4032px, 100vw"
+                style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+              />
+            </picture>
+            <noscript />
+            <script
+              type="module"
+            >
+              const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+            </script>
+          </div>
           <div
-            style="max-width: 4032px; display: block;"
+            class="c15 c16"
           >
-            <img
-              alt=""
-              aria-hidden="true"
-              role="presentation"
-              src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-              style="max-width: 100%; display: block; position: static;"
-            />
+            <h1
+              class="c17"
+            >
+              Varhaiskasvatus
+            </h1>
           </div>
-          <img
-            alt=""
-            aria-hidden="true"
-            data-placeholder-image=""
-            decoding="async"
-            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-            style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-          />
-          <picture>
-            <source
-              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-              sizes="(min-width: 4032px) 4032px, 100vw"
-              type="image/webp"
-            />
-            <img
-              alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-              data-gatsby-image-ssr=""
-              data-main-image=""
-              data-src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-              data-srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-              decoding="async"
-              loading="lazy"
-              sizes="(min-width: 4032px) 4032px, 100vw"
-              style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
-            />
-          </picture>
-          <noscript />
-          <script
-            type="module"
-          >
-            const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-          </script>
         </div>
       </div>
-      <section
-        class="c17"
-      >
-        <h1
-          class="c18"
-          itemprop="headline"
-        >
-          Varhaiskasvatus
-        </h1>
-      </section>
       <ul
-        class="c19"
+        class="c18"
       >
         <li
-          class="c20"
+          class="c19"
         >
           <article
             aria-label="Päiväkodit kaipaavat opettajia"
@@ -690,12 +604,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c21"
+              class="c4 c20"
               href="/blogi/paivakodit-kaipaavat-opettajia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c22"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -733,10 +647,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c23"
+                class="c22"
               >
                 <h2
-                  class="c24 c25 c26"
+                  class="c23 c24 c25"
                   id="paivakodit-kaipaavat-opettajia"
                   itemprop="headline"
                 >
@@ -746,40 +660,18 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Päiväkodit kaipaavat opettajia meta-tiedot"
-              class="c27"
+              class="c26"
             >
-              <div
-                class="c28"
+              <time
+                datetime="2021-06-07"
               >
-                <span
-                  class="c29"
-                >
-                  <svg
-                    class="c30"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 448 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-                    />
-                  </svg>
-                  <time
-                    datetime="2021-06-07"
-                  >
-                    07.06.2021
-                  </time>
-                </span>
-              </div>
+                07.06.2021
+              </time>
               <ul
-                class="c31"
+                class="c27"
               >
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -790,7 +682,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -803,13 +695,13 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c33 c34"
+              class="c29 c30"
               itemprop="description"
             >
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
                
               <a
-                class="c4 c35"
+                class="c4 c31"
                 href="/blogi/paivakodit-kaipaavat-opettajia/"
                 rel="permalink"
               >
@@ -819,7 +711,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <article
             aria-label="Varhaiskasvatuksen riittävyydestä ei saa tinkiä"
@@ -827,12 +719,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c21"
+              class="c4 c20"
               href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c22"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -870,10 +762,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c23"
+                class="c22"
               >
                 <h2
-                  class="c24 c25 c26"
+                  class="c23 c24 c25"
                   id="varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia"
                   itemprop="headline"
                 >
@@ -883,40 +775,18 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen riittävyydestä ei saa tinkiä meta-tiedot"
-              class="c27"
+              class="c26"
             >
-              <div
-                class="c28"
+              <time
+                datetime="2021-03-05"
               >
-                <span
-                  class="c29"
-                >
-                  <svg
-                    class="c30"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 448 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-                    />
-                  </svg>
-                  <time
-                    datetime="2021-03-05"
-                  >
-                    05.03.2021
-                  </time>
-                </span>
-              </div>
+                05.03.2021
+              </time>
               <ul
-                class="c31"
+                class="c27"
               >
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -927,7 +797,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -938,7 +808,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -951,13 +821,13 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c33 c34"
+              class="c29 c30"
               itemprop="description"
             >
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
                
               <a
-                class="c4 c35"
+                class="c4 c31"
                 href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                 rel="permalink"
               >
@@ -967,7 +837,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <article
             aria-label="Varhaiskasvatuksen kerhotoiminta - lapsen etu"
@@ -975,12 +845,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c21"
+              class="c4 c20"
               href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c22"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -1018,10 +888,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c23"
+                class="c22"
               >
                 <h2
-                  class="c24 c25 c26"
+                  class="c23 c24 c25"
                   id="varhaiskasvatuksen-kerhotoiminta---lapsen-etu"
                   itemprop="headline"
                 >
@@ -1031,40 +901,18 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen kerhotoiminta - lapsen etu meta-tiedot"
-              class="c27"
+              class="c26"
             >
-              <div
-                class="c28"
+              <time
+                datetime="2021-02-18"
               >
-                <span
-                  class="c29"
-                >
-                  <svg
-                    class="c30"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 448 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-                    />
-                  </svg>
-                  <time
-                    datetime="2021-02-18"
-                  >
-                    18.02.2021
-                  </time>
-                </span>
-              </div>
+                18.02.2021
+              </time>
               <ul
-                class="c31"
+                class="c27"
               >
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -1075,7 +923,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -1088,13 +936,13 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c33 c34"
+              class="c29 c30"
               itemprop="description"
             >
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
                
               <a
-                class="c4 c35"
+                class="c4 c31"
                 href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                 rel="permalink"
               >
@@ -1104,7 +952,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <article
             aria-label="Kirkkonummi-lisä on sinunkin etusi"
@@ -1112,12 +960,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c21"
+              class="c4 c20"
               href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c22"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -1155,10 +1003,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c23"
+                class="c22"
               >
                 <h2
-                  class="c24 c25 c26"
+                  class="c23 c24 c25"
                   id="kirkkonummi-lisa-on-sinunkin-etusi"
                   itemprop="headline"
                 >
@@ -1168,40 +1016,18 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kirkkonummi-lisä on sinunkin etusi meta-tiedot"
-              class="c27"
+              class="c26"
             >
-              <div
-                class="c28"
+              <time
+                datetime="2021-02-15"
               >
-                <span
-                  class="c29"
-                >
-                  <svg
-                    class="c30"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 448 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-                    />
-                  </svg>
-                  <time
-                    datetime="2021-02-15"
-                  >
-                    15.02.2021
-                  </time>
-                </span>
-              </div>
+                15.02.2021
+              </time>
               <ul
-                class="c31"
+                class="c27"
               >
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -1212,7 +1038,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -1225,13 +1051,13 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c33 c34"
+              class="c29 c30"
               itemprop="description"
             >
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
                
               <a
-                class="c4 c35"
+                class="c4 c31"
                 href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
                 rel="permalink"
               >
@@ -1241,7 +1067,7 @@ exports[`<Tag /> should render 1`] = `
           </article>
         </li>
         <li
-          class="c20"
+          class="c19"
         >
           <article
             aria-label="Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys"
@@ -1249,12 +1075,12 @@ exports[`<Tag /> should render 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c21"
+              class="c4 c20"
               href="/blogi/kotihoidon-tuen-kuntalisa/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c22"
+                class="gatsby-image-wrapper c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -1292,10 +1118,10 @@ exports[`<Tag /> should render 1`] = `
                 </script>
               </div>
               <div
-                class="c23"
+                class="c22"
               >
                 <h2
-                  class="c24 c25 c26"
+                  class="c23 c24 c25"
                   id="kotihoidon-tuen-kuntalisa---pieni-kustannus,-suuri-merkitys"
                   itemprop="headline"
                 >
@@ -1305,40 +1131,18 @@ exports[`<Tag /> should render 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
-              class="c27"
+              class="c26"
             >
-              <div
-                class="c28"
+              <time
+                datetime="2021-02-04"
               >
-                <span
-                  class="c29"
-                >
-                  <svg
-                    class="c30"
-                    fill="currentColor"
-                    height="1em"
-                    stroke="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 448 512"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192h80v56H48V192zm0 104h80v64H48V296zm128 0h96v64H176V296zm144 0h80v64H320V296zm80-48H320V192h80v56zm0 160v40c0 8.8-7.2 16-16 16H320V408h80zm-128 0v56H176V408h96zm-144 0v56H64c-8.8 0-16-7.2-16-16V408h80zM272 248H176V192h96v56z"
-                    />
-                  </svg>
-                  <time
-                    datetime="2021-02-04"
-                  >
-                    04.02.2021
-                  </time>
-                </span>
-              </div>
+                04.02.2021
+              </time>
               <ul
-                class="c31"
+                class="c27"
               >
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -1349,7 +1153,7 @@ exports[`<Tag /> should render 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c32"
+                  class="c28"
                 >
                   <a
                     class="c4"
@@ -1362,13 +1166,13 @@ exports[`<Tag /> should render 1`] = `
               </ul>
             </aside>
             <p
-              class="c33 c34"
+              class="c29 c30"
               itemprop="description"
             >
               Joulun alla Kirkkonummen kunnanvaltuusto päätti lopettaa kotihoidon tuen kuntalisän, eli niin kutsutun Kirkkonummi-lisän. Kuntalisää Kirkkonummella maksettiin 150 euroa kuukaudessa per alle 2-vuotias lapsi, joka on kotihoidossa
                
               <a
-                class="c4 c35"
+                class="c4 c31"
                 href="/blogi/kotihoidon-tuen-kuntalisa/"
                 rel="permalink"
               >
@@ -1381,10 +1185,10 @@ exports[`<Tag /> should render 1`] = `
     </article>
   </main>
   <footer
-    class="c36"
+    class="c32"
   >
     <div
-      class="c37"
+      class="c33"
     >
       <div
         class=""
@@ -1396,13 +1200,13 @@ exports[`<Tag /> should render 1`] = `
         />
       </div>
       <ul
-        class="c38 c39"
+        class="c34 c35"
       >
         <li
-          class="c40"
+          class="c36"
         >
           <a
-            class="c41"
+            class="c37"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1424,10 +1228,10 @@ exports[`<Tag /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c42"
+          class="c38"
         >
           <a
-            class="c41"
+            class="c37"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1449,10 +1253,10 @@ exports[`<Tag /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c43"
+          class="c39"
         >
           <a
-            class="c41"
+            class="c37"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1474,10 +1278,10 @@ exports[`<Tag /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c44"
+          class="c40"
         >
           <a
-            class="c41"
+            class="c37"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1499,10 +1303,10 @@ exports[`<Tag /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c45"
+          class="c41"
         >
           <a
-            class="c41"
+            class="c37"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1524,10 +1328,10 @@ exports[`<Tag /> should render 1`] = `
           </a>
         </li>
         <li
-          class="c46"
+          class="c42"
         >
           <a
-            class="c41"
+            class="c37"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
