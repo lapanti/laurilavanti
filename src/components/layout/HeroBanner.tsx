@@ -8,19 +8,19 @@ import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE,
 
 const Title = styled.h1({
     fontFamily: fontFamilies.heading,
-    ...fontSizes['6xl'],
+    ...fontSizes[3.75],
     [breakpoints[1200].min]: {
-        ...fontSizes['8xl'],
+        ...fontSizes[6],
     },
 })
 
 const Subtitle = styled.p({
-    ...fontSizes['2xl'],
+    ...fontSizes[1.5],
     fontWeight: fontWeights.bold,
 })
 
 const SecondaryTitle = styled.h2({
-    ...fontSizes['4xl'],
+    ...fontSizes[2.25],
     fontWeight: fontWeights.bold,
 })
 

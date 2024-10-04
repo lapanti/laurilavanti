@@ -113,7 +113,7 @@ const BlockQuote = styled.div({
     fontFamily: fontFamilies.mono,
     fontWeight: fontWeights.normal,
     fontStyle: 'italic',
-    ...fontSizes['2xl'],
+    ...fontSizes[1.5],
 })
 
 const options = {
@@ -266,7 +266,6 @@ const LayoutComponent = ({
             />
             <div className={className}>
                 <Header />
-
                 <Main>
                     <Article>
                         {isFrontPage && (

@@ -40,7 +40,7 @@ const H2Container = styled.div({
 })
 
 const StyledParagraph = styled(Paragraph)({
-    ...fontSizes.l,
+    ...fontSizes[1.125],
     marginTop: sizes[0.25],
 })
 

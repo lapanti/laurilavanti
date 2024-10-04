@@ -18,7 +18,7 @@ const H1 = styled.h1({
     color: colors.black,
     display: 'flex',
     alignItems: 'flex-end',
-    ...fontSizes['4xl'],
+    ...fontSizes[2.25],
 })
 
 interface Props {

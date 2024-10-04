@@ -19,7 +19,7 @@ const Caption = styled.figcaption({
     flexDirection: 'row',
     justifyContent: 'center',
     width: '100%',
-    ...fontSizes.m,
+    ...fontSizes[1],
 })
 
 export interface ImageProps {
