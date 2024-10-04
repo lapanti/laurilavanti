@@ -5,7 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import { breakpoints, colors, gridAreas, sizes } from '../../lib/styles'
+import { breakpoints, colors, CONTENT_PADDING, gridAreas, sizes } from '../../lib/styles'
 import FooterLink from './footer/FooterLink'
 
 const ImageContainer = styled.div({})
@@ -30,8 +30,8 @@ const ContentContainer = styled.div({
 
     [breakpoints[1200].min]: {
         width: sizes[75],
-        paddingLeft: sizes[0.5],
-        paddingRight: sizes[0.5],
+        paddingLeft: CONTENT_PADDING,
+        paddingRight: CONTENT_PADDING,
         flexDirection: 'row',
         [`> ${ImageContainer}`]: {
             justifyContent: 'flex-start',

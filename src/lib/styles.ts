@@ -83,6 +83,7 @@ export const zIndices = {
 
 export const HEADER_SIZE = sizes[3.75]
 export const CONTENT_SIZE = sizes[75]
+export const CONTENT_PADDING = sizes[0.5]
 
 /** Spacing variables end */
 /** Grid variables start */
@@ -100,7 +101,7 @@ export const gridTemplateRowsLayout = `1fr ${sizes[6]}` as const
 export const gridTemplateRowsLayoutMobile = `1fr ${sizes[9]}` as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle =
-    `1fr ${sizes[0.5]} min(calc(${sizes[75]} - ${sizes[1]}), calc(100% - ${sizes[1.125]})) ${sizes[0.5]} 1fr` as const
+    `1fr ${CONTENT_PADDING} min(calc(${sizes[75]} - ${sizes[1]}), calc(100% - ${sizes[1.125]})) ${CONTENT_PADDING} 1fr` as const
 
 /** Grid variables end */
 
