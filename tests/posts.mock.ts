@@ -411,7 +411,7 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
             },
         ],
     },
-    title: 'Sote on hyvinvointiyhteiskunnan kulmakivi',
+    title: 'Sote on hyvinvointi­yhteiskunnan kulmakivi',
     updatedAt: '2022-07-31T20:25:33.142Z',
     publishedOld: '2021-12-20',
     published: '2022-06-18T19:32:02.110Z',

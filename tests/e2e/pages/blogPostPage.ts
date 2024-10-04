@@ -19,7 +19,7 @@ export class BlogPostPage extends AnyPage {
     constructor(
         page: Page,
         url = '/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi',
-        title = 'Sote on hyvinvointiyhteiskunnan kulmakivi',
+        title = 'Sote on hyvinvointi­yhteiskunnan kulmakivi',
         date = /20.12.2021/i,
         tags: [string | RegExp, string][] = [
             [/#aluevaalit/i, '/kategoria/aluevaalit/'],
