@@ -41,7 +41,11 @@ describe('<Layout />', () => {
     const { title: siteTitle } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     it('should render minimal', () => {
-        const { container } = render(<Layout title="">{children}</Layout>)
+        const { container } = render(
+            <Layout title="" leftAlignedTitle>
+                {children}
+            </Layout>
+        )
 
         expect(screen.getByText(children)).toBeInTheDocument()
 
@@ -50,7 +54,12 @@ describe('<Layout />', () => {
 
     it('should render title banner', async () => {
         const { container } = render(
-            <Layout heroImage={inFrontOfWoodsImage} heroImageAlt={inFrontOfWoodsImageDescription} title={title}>
+            <Layout
+                heroImage={inFrontOfWoodsImage}
+                heroImageAlt={inFrontOfWoodsImageDescription}
+                leftAlignedTitle={false}
+                title={title}
+            >
                 {children}
             </Layout>
         )
@@ -74,6 +83,7 @@ describe('<Layout />', () => {
                 subtitle={subtitle}
                 title={title}
                 isFrontPage
+                leftAlignedTitle
             >
                 {children}
             </Layout>
@@ -114,6 +124,7 @@ describe('<Layout />', () => {
                         references: [],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -148,6 +159,7 @@ describe('<Layout />', () => {
                         references: [],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -174,6 +186,7 @@ describe('<Layout />', () => {
                         references: [],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -209,6 +222,7 @@ describe('<Layout />', () => {
                         ],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -281,6 +295,7 @@ describe('<Layout />', () => {
                         ],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -327,6 +342,7 @@ describe('<Layout />', () => {
                         ],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -369,6 +385,7 @@ describe('<Layout />', () => {
                         references: [],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -428,6 +445,7 @@ describe('<Layout />', () => {
                         ],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -510,6 +528,7 @@ describe('<Layout />', () => {
                         references: [],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -567,6 +586,7 @@ describe('<Layout />', () => {
                         references: [],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
@@ -620,6 +640,7 @@ describe('<Layout />', () => {
                         ],
                     }}
                     title=""
+                    leftAlignedTitle
                 />
             )
 
