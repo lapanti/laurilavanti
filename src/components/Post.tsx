@@ -11,12 +11,6 @@ import ExcerptList from './ExcerptList'
 import H2 from './H2'
 import Layout from './Layout'
 import SocialShare from './post/SocialShare'
-import PostMeta from './PostMeta'
-
-const PositionedMeta = styled(PostMeta)({
-    gridColumnStart: 3,
-    marginTop: sizes[1],
-})
 
 interface Props {
     data: {
@@ -62,16 +56,12 @@ const Post = ({
             heroImageAlt={headerImage.description}
             modified={updatedAt}
             pathname={`/blogi/${slug}/`}
-            preBody={
-                <PositionedMeta
-                    ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
-                    date={getValueOrDefault(publishDate, createdAt) as string}
-                    tags={tags}
-                />
-            }
+            publishDate={getValueOrDefault(publishDate, createdAt) as string}
             published={getValueOrDefault(publishedOld, published)}
+            tags={tags}
             title={title}
             type={BLOGPOSTING}
+            showMeta
         >
             <SocialShare
                 ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`}

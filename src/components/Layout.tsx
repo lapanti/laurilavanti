@@ -34,11 +34,10 @@ import Footer from './layout/Footer'
 import GlobalStyle from './layout/GlobalStyle'
 import Header from './layout/Header'
 import HeroBanner from './layout/HeroBanner'
-import HeroImage from './layout/HeroImage'
 import Image from './layout/Image'
 import Seo from './layout/Seo'
 import Svgs from './layout/Svgs'
-import Title from './layout/Title'
+import TitleBanner from './layout/TitleBanner'
 import YearsFrom from './layout/YearsFrom'
 import Paragraph from './Paragraph'
 
@@ -49,20 +48,6 @@ const Main = styled.main({
 const Article = styled.article({
     display: 'grid',
     gridTemplateColumns: gridTemplateColumnsArticle,
-})
-
-const MobileHeroImage = styled(HeroImage)({
-    display: 'flex !important',
-    [breakpoints.biggerThanPhone.min]: {
-        display: 'none !important',
-    },
-})
-
-const DesktopHeroImage = styled(HeroImage)({
-    display: 'none !important',
-    [breakpoints.biggerThanPhone.min]: {
-        display: 'flex !important',
-    },
 })
 
 const PositionedP = styled(Paragraph)({
@@ -198,8 +183,10 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
     backgroundImage?: ImageDataLike
     socialImage?: ImageDataLike
     body?: RichBody
-    preBody?: ReactNode
     isFrontPage?: boolean
+    showMeta?: boolean
+    publishDate?: string
+    tags?: string[]
 }
 
 const LayoutComponent = ({
@@ -217,9 +204,11 @@ const LayoutComponent = ({
     type,
     published,
     modified,
-    preBody,
     body,
     isFrontPage,
+    showMeta,
+    publishDate,
+    tags,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const imageToUse = heroImage as
@@ -278,14 +267,16 @@ const LayoutComponent = ({
                                 title={title}
                             />
                         )}
-                        {!isFrontPage && heroImage && (
-                            <DesktopHeroImage alt={heroImageAlt || ''} imageData={heroImage} />
+                        {!isFrontPage && (
+                            <TitleBanner
+                                imageAlt={heroImageAlt}
+                                imageData={heroImage}
+                                publishDate={publishDate}
+                                showMeta={showMeta}
+                                tags={tags}
+                                title={title}
+                            />
                         )}
-                        {!isFrontPage && heroImage && (
-                            <MobileHeroImage alt={heroImageAlt || ''} imageData={heroImage} />
-                        )}
-                        {!isFrontPage && <Title title={title} />}
-                        {preBody}
                         {body && renderRichText(body, options)}
                         {children}
                     </Article>

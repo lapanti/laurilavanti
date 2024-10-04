@@ -1,32 +1,8 @@
 import React, { useMemo } from 'react'
-import { FaRegCalendarDays } from 'react-icons/fa6'
 import styled from 'styled-components'
 
 import { sizes } from '../lib/styles'
 import InternalLink from './InternalLink'
-
-const MetaContainer = styled.div({
-    display: 'flex',
-    flexDirection: 'row',
-})
-
-const Meta = styled.span({
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginRight: sizes[1],
-    ':last-child': {
-        marginRight: sizes[0],
-    },
-})
-
-const CalendarIcon = styled(FaRegCalendarDays)({
-    height: sizes[1.125],
-    widht: sizes[1.125],
-    display: 'inline-block',
-    marginRight: sizes[0.5],
-    flexShrink: 0,
-})
 
 const TagList = styled.ul({
     display: 'flex',
@@ -60,12 +36,7 @@ const PostMetaComponent = ({ className, date, tags, ariaLabel }: Props): JSX.Ele
 
     return (
         <aside aria-label={ariaLabel} className={className}>
-            <MetaContainer>
-                <Meta>
-                    <CalendarIcon />
-                    <time dateTime={dateAsDateTime}>{date}</time>
-                </Meta>
-            </MetaContainer>
+            <time dateTime={dateAsDateTime}>{date}</time>
             {tags.length > 0 && (
                 <TagList>
                     {tags.map((tag) => (
