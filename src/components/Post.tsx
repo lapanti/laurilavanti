@@ -37,6 +37,7 @@ const Post = ({
             publishedOld,
             published,
             excerpt,
+            leftAlignedTitle,
         },
         site: {
             siteMetadata: { siteUrl },
@@ -52,6 +53,7 @@ const Post = ({
             description={excerpt}
             heroImage={headerImage.localFile}
             heroImageAlt={headerImage.description}
+            leftAlignedTitle={leftAlignedTitle}
             modified={updatedAt}
             pathname={`/blogi/${slug}/`}
             publishDate={getValueOrDefault(publishDate, createdAt) as string}
@@ -125,6 +127,7 @@ export const query = graphql`
             publishedOld: publishDate
             published: createdAt
             excerpt
+            leftAlignedTitle
         }
         site {
             siteMetadata {

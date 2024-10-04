@@ -100,6 +100,7 @@ export interface ContentfulPage {
         localFile: ImageDataLike
     } | null
     updatedAt: string
+    leftAlignedTitle: boolean
 }
 
 interface ContentfulPostCommon {
@@ -120,6 +121,7 @@ interface ContentfulPostCommon {
         description: string
     } | null
     excerpt: string
+    leftAlignedTitle: boolean
 }
 
 export interface ContentfulPostExcerpt extends ContentfulPostCommon {

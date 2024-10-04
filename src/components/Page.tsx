@@ -21,6 +21,7 @@ const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         description={getValueOrDefault(data?.contentfulPage?.description, '')}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
+        leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
         modified={data?.contentfulPage?.updatedAt}
         pathname={`/${slug}/`}
         socialImage={data?.contentfulPage?.socialImage?.localFile}
@@ -118,6 +119,7 @@ export const query = graphql`
                 }
             }
             updatedAt
+            leftAlignedTitle
         }
     }
 `
