@@ -2,10 +2,8 @@ import type { ContentfulPost } from '../types/contentful'
 
 import { graphql } from 'gatsby'
 import React, { useMemo } from 'react'
-import styled from 'styled-components'
 
 import { getValueOrDefault } from '../lib/string'
-import { sizes } from '../lib/styles'
 import { BLOGPOSTING } from '../types/jsonld'
 import ExcerptList from './ExcerptList'
 import H2 from './H2'
