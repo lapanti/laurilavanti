@@ -16,8 +16,8 @@ const DivContainer = styled.div({
     ...fontSizes[1.5],
     fontFamily: fontFamilies.sans,
     fontWeight: fontWeights.normal,
-    marginTop: sizes[1],
     marginBottom: sizes[1],
+    marginTop: sizes[1],
 })
 
 interface Props {
