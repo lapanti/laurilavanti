@@ -16,27 +16,27 @@ const StyledH2 = styled(H2)({
 })
 
 const Link = styled(InternalLink)({
-    color: colors.black,
     '&:hover': {
         [StyledH2]: {
             textDecoration: 'underline',
         },
     },
+    color: colors.black,
 })
 
 const Image = styled(GatsbyImage)({
-    width: '100%',
-    display: 'flex',
     aspectRatio: '16 / 9',
+    display: 'flex',
+    width: '100%',
 })
 
 const H2Container = styled.div({
-    display: 'flex',
     alignItems: 'flex-end',
+    display: 'flex',
     marginTop: sizes[0.25],
+    position: 'relative',
     width: '100%',
     zIndex: zIndices[40],
-    position: 'relative',
 })
 
 const StyledParagraph = styled(Paragraph)({
