@@ -12,10 +12,10 @@ describe('<Image />', () => {
 
     it('should return null if no image data', () => {
         const imageData: ImageDataLike = {
-            id: '',
-            parent: null,
             children: [],
-            internal: { type: '', contentDigest: '', owner: '' },
+            id: '',
+            internal: { contentDigest: '', owner: '', type: '' },
+            parent: null,
         }
         const { container } = render(<Image alt={alt} caption={caption} imageData={imageData} />)
 
