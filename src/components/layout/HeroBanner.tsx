@@ -32,26 +32,26 @@ const Titles = styled.div({
     padding: sizes[0.875],
 
     [breakpoints[1200].min]: {
-        width: '50%',
-        gap: sizes[3],
-        padding: sizes[3.75],
-        alignItems: 'flex-start',
-        justifyContent: 'center',
         [SecondaryTitle]: {
             marginTop: sizes[3],
         },
+        alignItems: 'flex-start',
+        gap: sizes[3],
+        justifyContent: 'center',
+        padding: sizes[3.75],
+        width: '50%',
     },
 })
 
 const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
     {
-        flex: 1,
         display: 'flex',
-        position: 'relative',
+        flex: 1,
         overflow: 'hidden',
+        position: 'relative',
         [breakpoints[1200].min]: {
-            width: '50%',
             overflow: 'visible',
+            width: '50%',
         },
     },
     ({ $backgroundSrc }) =>
@@ -65,9 +65,9 @@ const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
 
 // @ts-expect-error for some reason the typing does not include 'absolute !important', although it's valid CSS
 const Image = styled(GatsbyImage)({
+    bottom: 0,
     marginTop: 'auto',
     right: `-${sizes[5]}`,
-    bottom: 0,
     [breakpoints[1200].min]: {
         position: 'absolute !important', // Otherwise gatsby image wrapper overrides it in production
     },
@@ -112,16 +112,16 @@ const HeroBannerComponent = ({
 HeroBannerComponent.displayName = 'HeroBanner'
 
 const HeroBanner = styled(HeroBannerComponent)({
+    alignItems: 'stretch',
     background: colors.evening,
-    height: '100vh',
-    gridColumn: '1 / -1',
-    paddingTop: HEADER_SIZE,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'stretch',
+    gridColumn: '1 / -1',
+    height: '100vh',
+    paddingTop: HEADER_SIZE,
     [breakpoints[1200].min]: {
-        height: sizes[45],
         flexDirection: 'row-reverse',
+        height: sizes[45],
     },
 })
 

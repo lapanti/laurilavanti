@@ -24,29 +24,30 @@ exports[`<HeroBanner /> should render maximal 1`] = `
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 0.875rem;
 }
 
 .c6 {
-  flex: 1;
   display: flex;
-  position: relative;
+  flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .c7 {
+  bottom: 0;
   margin-top: auto;
   right: -5rem;
-  bottom: 0;
 }
 
 .c0 {
+  align-items: stretch;
   background: rgb(0, 98, 114);
-  height: 100vh;
-  grid-column: 1/-1;
-  padding-top: 3.75rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  grid-column: 1/-1;
+  height: 100vh;
+  padding-top: 3.75rem;
 }
 
 @media (min-width: 1200px) {
@@ -58,11 +59,11 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 
 @media (min-width: 1200px) {
   .c1 {
-    width: 50%;
-    gap: 3rem;
-    padding: 3.75rem;
     align-items: flex-start;
+    gap: 3rem;
     justify-content: center;
+    padding: 3.75rem;
+    width: 50%;
   }
 
   .c1 .c4 {
@@ -72,8 +73,8 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 
 @media (min-width: 1200px) {
   .c6 {
-    width: 50%;
     overflow: visible;
+    width: 50%;
   }
 }
 
@@ -92,8 +93,8 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 
 @media (min-width: 1200px) {
   .c0 {
-    height: 45rem;
     flex-direction: row-reverse;
+    height: 45rem;
   }
 }
 
@@ -187,23 +188,24 @@ exports[`<HeroBanner /> should render minimal 1`] = `
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 0.875rem;
 }
 
 .c3 {
-  flex: 1;
   display: flex;
-  position: relative;
+  flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .c0 {
+  align-items: stretch;
   background: rgb(0, 98, 114);
-  height: 100vh;
-  grid-column: 1/-1;
-  padding-top: 3.75rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  grid-column: 1/-1;
+  height: 100vh;
+  padding-top: 3.75rem;
 }
 
 @media (min-width: 1200px) {
@@ -215,25 +217,25 @@ exports[`<HeroBanner /> should render minimal 1`] = `
 
 @media (min-width: 1200px) {
   .c1 {
-    width: 50%;
-    gap: 3rem;
-    padding: 3.75rem;
     align-items: flex-start;
+    gap: 3rem;
     justify-content: center;
+    padding: 3.75rem;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c3 {
-    width: 50%;
     overflow: visible;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c0 {
-    height: 45rem;
     flex-direction: row-reverse;
+    height: 45rem;
   }
 }
 
@@ -267,23 +269,24 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 0.875rem;
 }
 
 .c3 {
-  flex: 1;
   display: flex;
-  position: relative;
+  flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .c0 {
+  align-items: stretch;
   background: rgb(0, 98, 114);
-  height: 100vh;
-  grid-column: 1/-1;
-  padding-top: 3.75rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  grid-column: 1/-1;
+  height: 100vh;
+  padding-top: 3.75rem;
 }
 
 @media (min-width: 1200px) {
@@ -295,25 +298,25 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
 
 @media (min-width: 1200px) {
   .c1 {
-    width: 50%;
-    gap: 3rem;
-    padding: 3.75rem;
     align-items: flex-start;
+    gap: 3rem;
     justify-content: center;
+    padding: 3.75rem;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c3 {
-    width: 50%;
     overflow: visible;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c0 {
-    height: 45rem;
     flex-direction: row-reverse;
+    height: 45rem;
   }
 }
 
@@ -347,29 +350,30 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 0.875rem;
 }
 
 .c3 {
-  flex: 1;
   display: flex;
-  position: relative;
+  flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .c4 {
+  bottom: 0;
   margin-top: auto;
   right: -5rem;
-  bottom: 0;
 }
 
 .c0 {
+  align-items: stretch;
   background: rgb(0, 98, 114);
-  height: 100vh;
-  grid-column: 1/-1;
-  padding-top: 3.75rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  grid-column: 1/-1;
+  height: 100vh;
+  padding-top: 3.75rem;
 }
 
 @media (min-width: 1200px) {
@@ -381,18 +385,18 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
 
 @media (min-width: 1200px) {
   .c1 {
-    width: 50%;
-    gap: 3rem;
-    padding: 3.75rem;
     align-items: flex-start;
+    gap: 3rem;
     justify-content: center;
+    padding: 3.75rem;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c3 {
-    width: 50%;
     overflow: visible;
+    width: 50%;
   }
 }
 
@@ -404,8 +408,8 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
 
 @media (min-width: 1200px) {
   .c0 {
-    height: 45rem;
     flex-direction: row-reverse;
+    height: 45rem;
   }
 }
 
