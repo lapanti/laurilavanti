@@ -141,7 +141,7 @@ const Seo = ({
     return (
         <Helmet
             htmlAttributes={{ lang: 'fi' }}
-            link={canonical ? [{ rel: 'canonical', href: canonical }] : []}
+            link={canonical ? [{ href: canonical, rel: 'canonical' }] : []}
             meta={[
                 {
                     content: site?.siteMetadata?.keywords.join(', '),
