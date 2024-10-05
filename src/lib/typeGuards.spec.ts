@@ -30,8 +30,8 @@ describe('typeGuards lib', () => {
             expect(isContentfulPostExcerpt({ slug: 'slug' })).toBeFalsy()
             expect(isContentfulPostExcerpt({ title: 'title' })).toBeFalsy()
             expect(isContentfulPostExcerpt({ excerpt: 'excerpt' })).toBeFalsy()
-            expect(isContentfulPostExcerpt({ title: 'title', excerpt: 'excerpt' })).toBeFalsy()
-            expect(isContentfulPostExcerpt({ slug: 'slug', excerpt: 'excerpt' })).toBeFalsy()
+            expect(isContentfulPostExcerpt({ excerpt: 'excerpt', title: 'title' })).toBeFalsy()
+            expect(isContentfulPostExcerpt({ excerpt: 'excerpt', slug: 'slug' })).toBeFalsy()
             expect(isContentfulPostExcerpt({ slug: 'slug', title: 'title' })).toBeFalsy()
         })
 
