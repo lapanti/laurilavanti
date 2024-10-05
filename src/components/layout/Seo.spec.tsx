@@ -103,17 +103,17 @@ describe('<Seo />', () => {
         )
         expect(helmet.scriptTags[0].type).toEqual('application/ld+json')
         expect(JSON.parse(helmet.scriptTags[0].innerHTML)).toEqual({
-            description: pageDescription,
-            url: canonical || null,
+            '@context': 'https://schema.org',
             '@type': JSON_LD_TYPES.includes(pageType) ? pageType : WEBSITE,
-            headline: pageTitle,
-            image: imgData ? `${siteUrl}${imgData.src}` : undefined,
             author: { '@type': 'Person', name: author },
             dateModified: pageType === BLOGPOSTING ? modified : undefined,
             datePublished: pageType === BLOGPOSTING ? published : undefined,
-            '@context': 'https://schema.org',
+            description: pageDescription,
+            headline: pageTitle,
+            image: imgData ? `${siteUrl}${imgData.src}` : undefined,
             mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
             name: pageType === WEBSITE ? title : undefined,
+            url: canonical || null,
             ...(pageType === WEBSITE ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon, bluesky] } : {}),
         })
 
@@ -139,7 +139,7 @@ describe('<Seo />', () => {
         const imgData = { src, height: `${height}`, width: `${width}` }
         render(<Seo description="" image={imgData} modified="2021-09-22" pathname="/" title={title} />)
 
-        expectHelmetToHaveCorrectValues({ pageType: WEBSITE, pageTitle: title, canonical: `${siteUrl}/`, imgData })
+        expectHelmetToHaveCorrectValues({ canonical: `${siteUrl}/`, imgData, pageTitle: title, pageType: WEBSITE })
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -156,7 +156,7 @@ describe('<Seo />', () => {
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
         render(<Seo description="" image={imgData} pathname="/" title={title} type={type} />)
 
-        expectHelmetToHaveCorrectValues({ pageType: type, pageTitle: title, canonical: `${siteUrl}/`, imgData })
+        expectHelmetToHaveCorrectValues({ canonical: `${siteUrl}/`, imgData, pageTitle: title, pageType: type })
 
         await waitFor(() => expect(document.title).toEqual(title))
     })
@@ -176,7 +176,7 @@ describe('<Seo />', () => {
             height,
             width,
         } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { src, height: `${height}`, width: `${width}` }
+        const imgData = { height: `${height}`, src, width: `${width}` }
 
         render(
             <Seo
@@ -190,12 +190,12 @@ describe('<Seo />', () => {
         )
 
         expectHelmetToHaveCorrectValues({
-            pageType: type,
-            pageTitle: blogTitle,
             canonical: `${siteUrl}${pathname}`,
             imgData,
-            pageDescription: description,
             modified: published,
+            pageDescription: description,
+            pageTitle: blogTitle,
+            pageType: type,
             published,
         })
 
@@ -210,7 +210,7 @@ describe('<Seo />', () => {
         const type = 'BlogPosting'
         const published = '2021-11-15'
         const modified = '2021-12-15'
-        const meta = [{ name: 'kissa', content: 'koira' }]
+        const meta = [{ content: 'koira', name: 'kissa' }]
 
         const {
             images: {
@@ -219,7 +219,7 @@ describe('<Seo />', () => {
             height,
             width,
         } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { src, height: `${height}`, width: `${width}` }
+        const imgData = { height: `${height}`, src, width: `${width}` }
 
         render(
             <Seo
@@ -235,14 +235,14 @@ describe('<Seo />', () => {
         )
 
         expectHelmetToHaveCorrectValues({
-            pageType: type,
-            pageTitle: blogTitle,
             canonical: `${siteUrl}${pathname}`,
             imgData,
-            pageDescription: description,
-            modified,
-            published,
             meta,
+            modified,
+            pageDescription: description,
+            pageTitle: blogTitle,
+            pageType: type,
+            published,
         })
 
         await waitFor(() => expect(document.title).toEqual(`${blogTitle} | ${title}`))

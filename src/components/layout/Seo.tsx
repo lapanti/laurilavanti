@@ -74,40 +74,40 @@ const Seo = ({
     const cardMeta = metaImage?.src
         ? [
               {
-                  property: 'og:image',
                   content: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
+                  property: 'og:image',
               },
               {
-                  property: 'og:image:width',
                   content: metaImage.width,
+                  property: 'og:image:width',
               },
               {
-                  property: 'og:image:height',
                   content: metaImage.height,
+                  property: 'og:image:height',
               },
               {
-                  name: 'twitter:card',
                   content: 'summary_large_image',
+                  name: 'twitter:card',
               },
           ]
         : [
               {
-                  name: 'twitter:card',
                   content: 'summary',
+                  name: 'twitter:card',
               },
           ]
     const canonical = pathname ? `${site?.siteMetadata?.siteUrl}${pathname}` : null
 
     const jsonLD = {
-        description: metaDescription,
-        url: canonical,
+        '@context': 'https://schema.org',
         '@type': JSON_LD_TYPES.includes(type) ? type : WEBSITE,
-        headline: title,
         author: {
             '@type': 'Person',
             name: site?.siteMetadata?.author,
         },
-        '@context': 'https://schema.org',
+        description: metaDescription,
+        headline: title,
+        url: canonical,
         ...(metaImage
             ? {
                   image: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
@@ -115,16 +115,17 @@ const Seo = ({
             : {}),
         ...(type === BLOGPOSTING
             ? {
-                  datePublished: published,
                   dateModified: modified ?? published,
+                  datePublished: published,
                   mainEntityOfPage: {
-                      '@type': WEBPAGE,
                       '@id': canonical,
+                      '@type': WEBPAGE,
                   },
               }
             : {}),
         ...(type === WEBSITE
             ? {
+                  name: site?.siteMetadata?.title,
                   sameAs: [
                       site?.siteMetadata?.facebook,
                       site?.siteMetadata?.twitter,
@@ -133,7 +134,6 @@ const Seo = ({
                       site?.siteMetadata?.mastodon,
                       site?.siteMetadata?.bluesky,
                   ],
-                  name: site?.siteMetadata?.title,
               }
             : {}),
     }
@@ -144,60 +144,60 @@ const Seo = ({
             link={canonical ? [{ rel: 'canonical', href: canonical }] : []}
             meta={[
                 {
-                    name: 'keywords',
                     content: site?.siteMetadata?.keywords.join(', '),
+                    name: 'keywords',
                 },
                 {
+                    content: title,
                     property: 'og:title',
-                    content: title,
                 },
                 {
-                    name: 'author',
                     content: site?.siteMetadata?.author,
+                    name: 'author',
                 },
                 {
-                    name: 'og:locale',
                     content: site?.siteMetadata?.locale,
+                    name: 'og:locale',
                 },
                 {
+                    content: metaDescription,
                     name: 'description',
-                    content: metaDescription,
                 },
                 {
+                    content: metaDescription,
                     property: 'og:description',
-                    content: metaDescription,
                 },
                 {
-                    name: 'og:url',
                     content: canonical ?? site?.siteMetadata?.siteUrl,
+                    name: 'og:url',
                 },
                 {
-                    name: 'og:site_name',
                     content: site?.siteMetadata?.title,
+                    name: 'og:site_name',
                 },
                 {
-                    name: 'twitter:title',
                     content: title,
+                    name: 'twitter:title',
                 },
                 {
-                    name: 'twitter:site',
                     content: site?.siteMetadata?.twSite,
+                    name: 'twitter:site',
                 },
                 {
-                    name: 'twitter:creator',
                     content: site?.siteMetadata?.twCreator,
+                    name: 'twitter:creator',
                 },
                 {
-                    name: 'article:publisher',
                     content: site?.siteMetadata?.facebook,
+                    name: 'article:publisher',
                 },
                 {
-                    property: 'og:type',
                     content: 'website',
+                    property: 'og:type',
                 },
                 {
-                    name: 'twitter:description',
                     content: metaDescription,
+                    name: 'twitter:description',
                 },
                 ...cardMeta,
                 ...(meta ?? []),
