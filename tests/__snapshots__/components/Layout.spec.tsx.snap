@@ -9648,29 +9648,30 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  padding: 0.875rem;
 }
 
 .c17 {
-  flex: 1;
   display: flex;
-  position: relative;
+  flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .c18 {
+  bottom: 0;
   margin-top: auto;
   right: -5rem;
-  bottom: 0;
 }
 
 .c13 {
+  align-items: stretch;
   background: rgb(0, 98, 114);
-  height: 100vh;
-  grid-column: 1/-1;
-  padding-top: 3.75rem;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  grid-column: 1/-1;
+  height: 100vh;
+  padding-top: 3.75rem;
 }
 
 .c11 {
@@ -9759,18 +9760,18 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 @media (min-width: 1200px) {
   .c14 {
-    width: 50%;
-    gap: 3rem;
-    padding: 3.75rem;
     align-items: flex-start;
+    gap: 3rem;
     justify-content: center;
+    padding: 3.75rem;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c17 {
-    width: 50%;
     overflow: visible;
+    width: 50%;
   }
 }
 
@@ -9782,8 +9783,8 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 @media (min-width: 1200px) {
   .c13 {
-    height: 45rem;
     flex-direction: row-reverse;
+    height: 45rem;
   }
 }
 
