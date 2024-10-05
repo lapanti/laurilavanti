@@ -3,7 +3,7 @@ import type { FooterNav } from '../../types/contentful'
 import { graphql, useStaticQuery } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../../lib/styles'
 import FooterLink from './footer/FooterLink'

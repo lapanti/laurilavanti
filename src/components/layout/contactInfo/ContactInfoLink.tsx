@@ -10,7 +10,7 @@ import {
     FaMastodon,
     FaSquareThreads,
 } from 'react-icons/fa6'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, sizes } from '../../../lib/styles'
 import ExternalLink from '../../ExternalLink'

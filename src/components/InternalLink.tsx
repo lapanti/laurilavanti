@@ -1,5 +1,5 @@
 import { Link as GatsbyLink } from 'gatsby'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, transitions } from '../lib/styles'
 

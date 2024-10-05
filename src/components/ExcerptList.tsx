@@ -2,7 +2,7 @@ import type { ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import React, { useCallback, useMemo } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, CONTENT_PADDING, sizes } from '../lib/styles'
 import { isContentfulPostExcerpt } from '../lib/typeGuards'

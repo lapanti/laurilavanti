@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { fontFamilies, fontSizes, fontWeights } from '../lib/styles'
 
