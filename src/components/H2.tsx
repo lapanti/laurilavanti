@@ -24,9 +24,9 @@ const H2Component = ({ className, children, itemProp }: Props): JSX.Element => (
 H2Component.displayName = 'H2'
 
 const H2 = styled(H2Component)({
-    gridColumnStart: 3,
     fontFamily: fontFamilies.mono,
     fontWeight: fontWeights.bold,
+    gridColumnStart: 3,
     ...fontSizes[1.75],
 })
 
