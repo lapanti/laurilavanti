@@ -13,7 +13,7 @@ describe('<Tag />', () => {
             <Tag
                 data={{
                     contentfulPage: {
-                        image: { localFile: inFrontOfWoodsImage, description: inFrontOfWoodsImageDescription },
+                        image: { description: inFrontOfWoodsImageDescription, localFile: inFrontOfWoodsImage },
                     },
                 }}
                 pageContext={{ tag }}
