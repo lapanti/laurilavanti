@@ -137,17 +137,17 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
 ExcerptListComponent.displayName = 'ExcerptList'
 
 const ExcerptList = styled(ExcerptListComponent)({
+    columnGap: sizes[4],
+    display: 'grid',
     gridColumnStart: 3,
+    gridTemplateColumns: `minmax(100%, ${sizes[35]})`,
+    gridTemplateRows: 'auto',
+    justifyContent: 'center',
+    justifyItems: 'center',
     marginLeft: CONTENT_PADDING,
     marginRight: CONTENT_PADDING,
-    display: 'grid',
-    justifyItems: 'center',
-    justifyContent: 'center',
-    columnGap: sizes[4],
-    rowGap: sizes[3.5],
-    gridTemplateRows: 'auto',
-    gridTemplateColumns: `minmax(100%, ${sizes[35]})`,
     marginTop: sizes[2],
+    rowGap: sizes[3.5],
     [breakpoints[1200].min]: {
         gridTemplateColumns: `repeat(2, ${sizes[35]})`,
         marginTop: sizes[3.5],
