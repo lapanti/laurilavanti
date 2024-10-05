@@ -12,9 +12,9 @@ const ANIMATION_DURATION = 0.3
 const ANIMATION_EASING = 'ease-in-out'
 
 const HamburgerContainer = styled.div({
-    flex: 1,
-    display: 'flex',
     alignItems: 'center',
+    display: 'flex',
+    flex: 1,
     justifyContent: 'flex-end',
     marginRight: sizes[1.75],
     [breakpoints[1200].min]: {
@@ -24,39 +24,36 @@ const HamburgerContainer = styled.div({
 
 const MobileMenu = styled.div<{ $isOpen: boolean }>(
     {
-        background: colors.evening,
-        position: 'absolute',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: sizes[2.5],
-        top: HEADER_SIZE,
-        width: '100vw',
-        overflow: 'hidden',
-
-        transition: `height ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
         '@media (prefers-reduced-motion)': {
             transition: undefined,
         },
-
+        [NavLink]: {
+            '@media (prefers-reduced-motion)': {
+                transition: undefined,
+            },
+            transition: `opacity ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
+        },
+        alignItems: 'center',
+        background: colors.evening,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: sizes[2.5],
+        justifyContent: 'center',
+        overflow: 'hidden',
+        position: 'absolute',
+        top: HEADER_SIZE,
+        transition: `height ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
+        width: '100vw',
         /** Hide the whole thing on desktop */
         [breakpoints[1200].min]: {
             display: 'none',
         },
-
-        [NavLink]: {
-            transition: `opacity ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
-            '@media (prefers-reduced-motion)': {
-                transition: undefined,
-            },
-        },
     },
     ({ $isOpen }) => ({
-        height: $isOpen ? `calc(100vh - ${HEADER_SIZE})` : '0',
         [NavLink]: {
             opacity: $isOpen ? 100 : 0,
         },
+        height: $isOpen ? `calc(100vh - ${HEADER_SIZE})` : '0',
     })
 )
 
@@ -65,11 +62,11 @@ const DesktopMenu = styled.div({
     /** Show the whole thing only on desktop */
     [breakpoints[1200].min]: {
         display: 'flex',
-        width: CONTENT_SIZE,
         flexDirection: 'row',
         margin: 'auto',
         paddingLeft: CONTENT_PADDING,
         paddingRight: CONTENT_PADDING,
+        width: CONTENT_SIZE,
     },
 })
 
@@ -78,10 +75,10 @@ const Half = styled.div<{ $end?: boolean }>(
     {
         display: 'none',
         [breakpoints[1200].min]: {
-            width: '50%',
-            display: 'flex',
             alignItems: 'center',
+            display: 'flex',
             gap: sizes[2.5],
+            width: '50%',
         },
     },
     ({ $end }) => ({
@@ -150,14 +147,14 @@ HeaderComponent.displayName = 'Header'
 
 const Header = styled(HeaderComponent)({
     backgroundColor: colors.evening,
+    boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'row',
-    boxSizing: 'border-box',
     height: HEADER_SIZE,
-    width: '100%',
     position: 'fixed',
-    zIndex: zIndices[50],
     userSelect: 'none',
+    width: '100%',
+    zIndex: zIndices[50],
 })
 
 export default Header
