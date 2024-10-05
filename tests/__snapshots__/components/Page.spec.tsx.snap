@@ -52,10 +52,10 @@ exports[`<Page /> should render about me page 1`] = `
 }
 
 .c29 {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: 100%;
+  justify-content: center;
 }
 
 .c29 >* {
@@ -322,10 +322,11 @@ exports[`<Page /> should render about me page 1`] = `
 
 @media (min-width: 1200px) {
   .c16 {
-    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 37.5rem;
+    padding-top: 0;
   }
 }
 
@@ -955,83 +956,6 @@ exports[`<Page /> should render about me page 1`] = `
         </ul>
       </div>
     </footer>
-    <svg
-      aria-hidden="true"
-      style="position: absolute; width: 0px; height: 0px; overflow: hidden;"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <defs>
-        <svg
-          height="0"
-          width="0"
-        >
-          <radialgradient
-            cx="30%"
-            cy="107%"
-            id="instagram-gradient"
-            r="150%"
-          >
-            <stop
-              offset="0"
-              stop-color="#fdf497"
-            />
-            <stop
-              offset="0.05"
-              stop-color="#fdf497"
-            />
-            <stop
-              offset="0.45"
-              stop-color="#fd5949"
-            />
-            <stop
-              offset="0.6"
-              stop-color="#d6249f"
-            />
-            <stop
-              offset="0.9"
-              stop-color="#285AEB"
-            />
-          </radialgradient>
-        </svg>
-        <symbol
-          id="logo"
-          viewBox="0 0 600 600"
-        >
-          <g>
-            <title>
-              Lauri lavanti
-            </title>
-            <rect
-              fill="#045a1c"
-              height="600"
-              id="svg_2"
-              rx="50"
-              width="600"
-              x="0"
-              y="0"
-            />
-            <text
-              fill="#ffffff"
-              font-family="Times New Roman"
-              font-size="24"
-              font-style="normal"
-              font-weight="400"
-              id="svg_1"
-              stroke="#ffffff"
-              text-anchor="start"
-              transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
-              x="217.25434"
-              xml:space="preserve"
-              y="221.21152"
-            >
-              L²
-            </text>
-          </g>
-        </symbol>
-      </defs>
-    </svg>
   </div>
 </div>
 `;
@@ -1144,10 +1068,10 @@ exports[`<Page /> should render blog page 1`] = `
 }
 
 .c38 {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: 100%;
+  justify-content: center;
 }
 
 .c38 >* {
@@ -1421,10 +1345,11 @@ exports[`<Page /> should render blog page 1`] = `
 
 @media (min-width: 1200px) {
   .c16 {
-    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 37.5rem;
+    padding-top: 0;
   }
 }
 
@@ -3515,83 +3440,6 @@ exports[`<Page /> should render blog page 1`] = `
         </ul>
       </div>
     </footer>
-    <svg
-      aria-hidden="true"
-      style="position: absolute; width: 0px; height: 0px; overflow: hidden;"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <defs>
-        <svg
-          height="0"
-          width="0"
-        >
-          <radialgradient
-            cx="30%"
-            cy="107%"
-            id="instagram-gradient"
-            r="150%"
-          >
-            <stop
-              offset="0"
-              stop-color="#fdf497"
-            />
-            <stop
-              offset="0.05"
-              stop-color="#fdf497"
-            />
-            <stop
-              offset="0.45"
-              stop-color="#fd5949"
-            />
-            <stop
-              offset="0.6"
-              stop-color="#d6249f"
-            />
-            <stop
-              offset="0.9"
-              stop-color="#285AEB"
-            />
-          </radialgradient>
-        </svg>
-        <symbol
-          id="logo"
-          viewBox="0 0 600 600"
-        >
-          <g>
-            <title>
-              Lauri lavanti
-            </title>
-            <rect
-              fill="#045a1c"
-              height="600"
-              id="svg_2"
-              rx="50"
-              width="600"
-              x="0"
-              y="0"
-            />
-            <text
-              fill="#ffffff"
-              font-family="Times New Roman"
-              font-size="24"
-              font-style="normal"
-              font-weight="400"
-              id="svg_1"
-              stroke="#ffffff"
-              text-anchor="start"
-              transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
-              x="217.25434"
-              xml:space="preserve"
-              y="221.21152"
-            >
-              L²
-            </text>
-          </g>
-        </symbol>
-      </defs>
-    </svg>
   </div>
 </div>
 `;
@@ -3626,63 +3474,63 @@ exports[`<Page /> should render contact me page 1`] = `
 }
 
 .c22 {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .c20 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
 }
 
 .c23 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
   fill: #4267B2;
 }
 
 .c24 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
   fill: rgb(0, 0, 0);
 }
 
 .c25 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
   fill: url(#instagram-gradient);
 }
 
 .c26 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
   fill: #0E76A8;
 }
 
 .c27 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
   fill: #6363ff;
 }
 
 .c28 {
-  width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+  width: 1rem;
   fill: #0060df;
 }
 
 .c19 {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .c18 {
@@ -3691,10 +3539,10 @@ exports[`<Page /> should render contact me page 1`] = `
 }
 
 .c36 {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: 100%;
+  justify-content: center;
 }
 
 .c36 >* {
@@ -3961,10 +3809,11 @@ exports[`<Page /> should render contact me page 1`] = `
 
 @media (min-width: 1200px) {
   .c16 {
-    padding-top: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 37.5rem;
+    padding-top: 0;
   }
 }
 
@@ -4546,83 +4395,6 @@ exports[`<Page /> should render contact me page 1`] = `
         </ul>
       </div>
     </footer>
-    <svg
-      aria-hidden="true"
-      style="position: absolute; width: 0px; height: 0px; overflow: hidden;"
-      version="1.1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-      <defs>
-        <svg
-          height="0"
-          width="0"
-        >
-          <radialgradient
-            cx="30%"
-            cy="107%"
-            id="instagram-gradient"
-            r="150%"
-          >
-            <stop
-              offset="0"
-              stop-color="#fdf497"
-            />
-            <stop
-              offset="0.05"
-              stop-color="#fdf497"
-            />
-            <stop
-              offset="0.45"
-              stop-color="#fd5949"
-            />
-            <stop
-              offset="0.6"
-              stop-color="#d6249f"
-            />
-            <stop
-              offset="0.9"
-              stop-color="#285AEB"
-            />
-          </radialgradient>
-        </svg>
-        <symbol
-          id="logo"
-          viewBox="0 0 600 600"
-        >
-          <g>
-            <title>
-              Lauri lavanti
-            </title>
-            <rect
-              fill="#045a1c"
-              height="600"
-              id="svg_2"
-              rx="50"
-              width="600"
-              x="0"
-              y="0"
-            />
-            <text
-              fill="#ffffff"
-              font-family="Times New Roman"
-              font-size="24"
-              font-style="normal"
-              font-weight="400"
-              id="svg_1"
-              stroke="#ffffff"
-              text-anchor="start"
-              transform="matrix(22.2798, 0, 0, 22.2798, -4774.17, -4448.06)"
-              x="217.25434"
-              xml:space="preserve"
-              y="221.21152"
-            >
-              L²
-            </text>
-          </g>
-        </symbol>
-      </defs>
-    </svg>
   </div>
 </div>
 `;

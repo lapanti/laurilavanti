@@ -10,10 +10,10 @@ const Share = styled.span({
 })
 
 const ExtLink = styled(ExternalLink)({
-    marginRight: sizes[0.5],
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    marginRight: sizes[0.5],
 })
 
 const logoStyles = {
@@ -75,11 +75,11 @@ const SocialShareComponent = ({ className, siteUrl, title, ariaLabel }: Props): 
 SocialShareComponent.displayName = 'SocialShare'
 
 const SocialShare = styled(SocialShareComponent)({
-    gridColumnStart: 3,
     display: 'flex',
     flexDirection: 'row',
-    marginTop: sizes[1],
+    gridColumnStart: 3,
     marginBottom: sizes[2],
+    marginTop: sizes[1],
 })
 
 export default SocialShare

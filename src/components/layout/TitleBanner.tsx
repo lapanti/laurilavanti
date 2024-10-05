@@ -15,11 +15,11 @@ const TitleContainer = styled.div({
     paddingRight: CONTENT_PADDING,
     paddingTop: sizes[1],
     [breakpoints[1200].min]: {
-        paddingTop: 0,
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        maxWidth: sizes['37.5'],
+        maxWidth: sizes[37.5],
+        paddingTop: 0,
     },
 })
 

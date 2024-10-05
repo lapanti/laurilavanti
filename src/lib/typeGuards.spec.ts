@@ -15,7 +15,7 @@ describe('typeGuards lib', () => {
             expect(isObject(123)).toBeFalsy()
             expect(isObject(true)).toBeFalsy()
             expect(isObject(null)).toBeFalsy()
-            expect(isObject(() => console.log('töttöröö'))).toBeFalsy()
+            expect(isObject(() => ({ object: 'key' }))).toBeFalsy()
         })
     })
 
