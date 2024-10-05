@@ -7,17 +7,17 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 import { fontSizes, sizes } from '../../lib/styles'
 
 const Img = styled(GatsbyImage)({
-    width: '100%',
-    height: 'auto',
     display: 'flex',
+    height: 'auto',
+    width: '100%',
 })
 
 const Caption = styled.figcaption({
-    marginTop: sizes[0.5],
-    fontStyle: 'italic',
     display: 'flex',
     flexDirection: 'row',
+    fontStyle: 'italic',
     justifyContent: 'center',
+    marginTop: sizes[0.5],
     width: '100%',
     ...fontSizes[1],
 })
@@ -46,8 +46,8 @@ ImageComponent.displayName = 'Image'
 
 const Image = styled(ImageComponent)({
     gridColumnStart: 3,
-    marginTop: sizes[1],
     marginBottom: sizes[1],
+    marginTop: sizes[1],
 })
 
 export default Image
