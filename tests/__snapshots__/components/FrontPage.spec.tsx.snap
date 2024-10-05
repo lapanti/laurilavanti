@@ -346,10 +346,10 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: "main" "footer";
-  grid-template-rows: 1fr 9rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
+  grid-template-areas: "main" "footer";
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: 1fr 9rem;
   min-height: 100vh;
   position: relative;
 }
@@ -1476,10 +1476,10 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 
 .c0 {
   display: grid;
-  grid-template-areas: "main" "footer";
-  grid-template-rows: 1fr 9rem;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.125rem;
+  grid-template-areas: "main" "footer";
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: 1fr 9rem;
   min-height: 100vh;
   position: relative;
 }
