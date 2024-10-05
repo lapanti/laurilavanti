@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { colors, fontFamilies, sizes } from '../../lib/styles'
+import { colors, fontFamilies, fontWeights, sizes } from '../../lib/styles'
 
 const GlobalStyle = createGlobalStyle({
     '@font-face': {
         fontFamily: fontFamilies.heading,
-        fontWeight: 1000,
+        fontWeight: fontWeights.black,
         fontDisplay: 'swap',
         fontStyle: 'normal',
         src: 'url(/fonts/Krana_Fat_B.otf) format("opentype")',
