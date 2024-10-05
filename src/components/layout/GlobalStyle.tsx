@@ -3,42 +3,29 @@ import { createGlobalStyle } from 'styled-components'
 import { colors, fontFamilies, fontWeights, sizes } from '../../lib/styles'
 
 const GlobalStyle = createGlobalStyle({
+    '*, ::before, ::after': {
+        borderColor: 'currentcolor',
+        borderStyle: 'solid',
+        borderWidth: sizes[0],
+        boxSizing: 'border-box',
+    },
     '@font-face': {
-        fontFamily: fontFamilies.heading,
-        fontWeight: fontWeights.black,
         fontDisplay: 'swap',
+        fontFamily: fontFamilies.heading,
         fontStyle: 'normal',
+        fontWeight: fontWeights.black,
         src: 'url(/fonts/Krana_Fat_B.otf) format("opentype")',
     },
-    '*, ::before, ::after': {
-        boxSizing: 'border-box',
-        borderWidth: sizes[0],
-        borderStyle: 'solid',
-        borderColor: 'currentcolor',
-    },
-    html: {
-        lineHeight: 1.5,
-        tabSize: 4,
-        fontFamily: fontFamilies.sans,
-        fontDisplay: 'swap',
-        fontFeatureSettings: 'normal',
-        fontVariationSettings: 'normal',
-    },
-    body: {
-        margin: sizes[0],
-        lineHeight: 'inherit',
-    },
-    'ol, ul, menu': {
-        listStyle: 'none',
-        margin: sizes[0],
-        padding: sizes[0],
+    a: {
+        color: 'inherit',
+        textDecoration: 'inherit',
     },
     'blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre': {
         margin: sizes[0],
     },
-    'h1, h2, h3, h4, h5, h6': {
-        fontSize: 'inherit',
-        fontWeight: 'inherit',
+    body: {
+        lineHeight: 'inherit',
+        margin: sizes[0],
     },
     'button, [role="button"]': {
         cursor: 'pointer',
@@ -48,32 +35,45 @@ const GlobalStyle = createGlobalStyle({
         backgroundColor: colors.transparent,
         backgroundImage: 'none',
     },
+    'button, input, optgroup, select, textarea': {
+        color: 'inherit',
+        fontFamily: 'inherit',
+        fontFeatureSettings: 'inherit',
+        fontSize: '100%',
+        fontVariationSettings: 'inherit',
+        fontWeight: 'inherit',
+        lineHeight: 'inherit',
+        margin: sizes[0],
+        padding: sizes[0],
+    },
     'button, select': {
         textTransform: 'none',
     },
-    'button, input, optgroup, select, textarea': {
-        fontFamily: 'inherit',
-        fontFeatureSettings: 'inherit',
-        fontVariationSettings: 'inherit',
-        fontSize: '100%',
+    'h1, h2, h3, h4, h5, h6': {
+        fontSize: 'inherit',
         fontWeight: 'inherit',
-        lineHeight: 'inherit',
+    },
+    hr: {
+        borderTopWidth: '1px',
         color: 'inherit',
-        margin: sizes[0],
-        padding: sizes[0],
+        height: sizes[0],
+    },
+    html: {
+        fontDisplay: 'swap',
+        fontFamily: fontFamilies.sans,
+        fontFeatureSettings: 'normal',
+        fontVariationSettings: 'normal',
+        lineHeight: 1.5,
+        tabSize: 4,
     },
     'img, svg, video, canvas, audio, iframe, embed, object': {
         display: 'block',
         verticalAlign: 'middle',
     },
-    a: {
-        color: 'inherit',
-        textDecoration: 'inherit',
-    },
-    hr: {
-        height: sizes[0],
-        color: 'inherit',
-        borderTopWidth: '1px',
+    'ol, ul, menu': {
+        listStyle: 'none',
+        margin: sizes[0],
+        padding: sizes[0],
     },
 })
 
