@@ -104,21 +104,21 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    data: {},
                                     content: [
                                         {
                                             data: {},
                                             marks: [],
-                                            value: paragraphText,
                                             nodeType: 'text',
+                                            value: paragraphText,
                                         },
                                     ],
+                                    data: {},
                                     nodeType: BLOCKS.PARAGRAPH,
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [],
@@ -139,21 +139,21 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    data: {},
                                     content: [
                                         {
                                             data: {},
                                             marks: [],
-                                            value: headingText,
                                             nodeType: 'text',
+                                            value: headingText,
                                         },
                                     ],
+                                    data: {},
                                     nodeType: BLOCKS.HEADING_2,
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [],
@@ -173,14 +173,14 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    data: {},
                                     content: [],
+                                    data: {},
                                     nodeType: BLOCKS.HR,
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [],
@@ -198,19 +198,19 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            nodeType: 'document',
-                            data: {},
                             content: [
                                 {
-                                    nodeType: 'embedded-entry-block',
+                                    content: [],
                                     data: {
                                         target: {
-                                            sys: { id: '6kFlEZ2Nv6UXotMJJNIFGm', type: 'Link', linkType: 'Entry' },
+                                            sys: { id: '6kFlEZ2Nv6UXotMJJNIFGm', linkType: 'Entry', type: 'Link' },
                                         },
                                     },
-                                    content: [],
+                                    nodeType: 'embedded-entry-block',
                                 },
                             ],
+                            data: {},
+                            nodeType: 'document',
                         }),
                         references: [
                             {
@@ -241,55 +241,55 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
+                                    content: [],
                                     data: {
                                         target: {
-                                            sys: { id: '3U3GBuOeUwedsXLCVVuJ1j', type: 'Link', linkType: 'Entry' },
+                                            sys: { id: '3U3GBuOeUwedsXLCVVuJ1j', linkType: 'Entry', type: 'Link' },
                                         },
                                     },
-                                    content: [],
                                     nodeType: 'embedded-entry-block',
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [
                             {
                                 __typename: 'ContentfulImageWithCaption',
-                                contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
-                                caption,
                                 altText: 'alt',
+                                caption,
+                                contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
                                 image: {
+                                    description: altText,
                                     localFile: {
                                         childImageSharp: {
                                             gatsbyImageData: {
+                                                height: 780,
+                                                images: {
+                                                    fallback: {
+                                                        sizes: '(min-width: 1820px) 1820px, 100vw',
+                                                        src: '/static/cab598b604510ca253fe4f749766f06b/f7471/gesterbyn-parakit-w.jpg',
+                                                        srcSet: '/static/cab598b604510ca253fe4f749766f06b/95548/gesterbyn-parakit-w.jpg 455w,\n/static/cab598b604510ca253fe4f749766f06b/e6bdc/gesterbyn-parakit-w.jpg 910w,\n/static/cab598b604510ca253fe4f749766f06b/f7471/gesterbyn-parakit-w.jpg 1820w',
+                                                    },
+                                                    sources: [
+                                                        {
+                                                            sizes: '(min-width: 1820px) 1820px, 100vw',
+                                                            srcSet: '/static/cab598b604510ca253fe4f749766f06b/7bfa3/gesterbyn-parakit-w.webp 455w,\n/static/cab598b604510ca253fe4f749766f06b/d32f3/gesterbyn-parakit-w.webp 910w,\n/static/cab598b604510ca253fe4f749766f06b/9e6d8/gesterbyn-parakit-w.webp 1820w',
+                                                            type: 'image/webp',
+                                                        },
+                                                    ],
+                                                },
                                                 layout: 'constrained',
                                                 placeholder: {
                                                     fallback:
                                                         'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABaVugzR8j/8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIAEwMQEf/aAAgBAQABBQK4cd2cV5W0YJ//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwGI/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8Bqv/EAB0QAAECBwAAAAAAAAAAAAAAAAABAhESIDJBcZH/2gAIAQEABj8CtcZ0RSbtH//EABwQAAICAgMAAAAAAAAAAAAAAAARATEhQVFhgf/aAAgBAQABPyG5m4RKmkaoRgCdKQVK+n//2gAMAwEAAgADAAAAEEc//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxAP/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QtT//xAAcEAACAgIDAAAAAAAAAAAAAAAAAREhMUFxgZH/2gAIAQEAAT8QSmotjexqhP1tsnpI3FJdGBm4Mw//2Q==',
                                                 },
-                                                images: {
-                                                    fallback: {
-                                                        src: '/static/cab598b604510ca253fe4f749766f06b/f7471/gesterbyn-parakit-w.jpg',
-                                                        srcSet: '/static/cab598b604510ca253fe4f749766f06b/95548/gesterbyn-parakit-w.jpg 455w,\n/static/cab598b604510ca253fe4f749766f06b/e6bdc/gesterbyn-parakit-w.jpg 910w,\n/static/cab598b604510ca253fe4f749766f06b/f7471/gesterbyn-parakit-w.jpg 1820w',
-                                                        sizes: '(min-width: 1820px) 1820px, 100vw',
-                                                    },
-                                                    sources: [
-                                                        {
-                                                            srcSet: '/static/cab598b604510ca253fe4f749766f06b/7bfa3/gesterbyn-parakit-w.webp 455w,\n/static/cab598b604510ca253fe4f749766f06b/d32f3/gesterbyn-parakit-w.webp 910w,\n/static/cab598b604510ca253fe4f749766f06b/9e6d8/gesterbyn-parakit-w.webp 1820w',
-                                                            type: 'image/webp',
-                                                            sizes: '(min-width: 1820px) 1820px, 100vw',
-                                                        },
-                                                    ],
-                                                },
                                                 width: 1820,
-                                                height: 780,
                                             },
                                         },
                                     } as unknown as ImageDataLike,
-                                    description: altText,
                                 },
                             },
                         ],
@@ -312,19 +312,19 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            nodeType: 'document',
-                            data: {},
                             content: [
                                 {
-                                    nodeType: 'embedded-entry-block',
+                                    content: [],
                                     data: {
                                         target: {
-                                            sys: { id: '5p1Xu3HEt01ELvRawwh6HF', type: 'Link', linkType: 'Entry' },
+                                            sys: { id: '5p1Xu3HEt01ELvRawwh6HF', linkType: 'Entry', type: 'Link' },
                                         },
                                     },
-                                    content: [],
+                                    nodeType: 'embedded-entry-block',
                                 },
                             ],
+                            data: {},
+                            nodeType: 'document',
                         }),
                         references: [
                             {
@@ -333,9 +333,9 @@ describe('<Layout />', () => {
                                 links: [
                                     {
                                         contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',
+                                        icon: 'envelope',
                                         title: email,
                                         url: null,
-                                        icon: 'envelope',
                                     },
                                 ],
                             },
@@ -359,27 +359,27 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    data: {},
                                     content: [
                                         {
-                                            data: { uri },
                                             content: [
                                                 {
                                                     data: {},
                                                     marks: [],
-                                                    value,
                                                     nodeType: 'text',
+                                                    value,
                                                 },
                                             ],
+                                            data: { uri },
                                             nodeType: 'hyperlink',
                                         },
                                     ],
+                                    data: {},
                                     nodeType: 'paragraph',
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [],
@@ -405,35 +405,35 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    data: {},
                                     content: [
                                         {
-                                            data: {
-                                                target: {
-                                                    sys: {
-                                                        id: '55DEJPnoQSfP3jJzD7jDSJ',
-                                                        type: 'Link',
-                                                        linkType: 'Entry',
-                                                    },
-                                                },
-                                            },
                                             content: [
                                                 {
                                                     data: {},
                                                     marks: [],
-                                                    value,
                                                     nodeType: 'text',
+                                                    value,
                                                 },
                                             ],
+                                            data: {
+                                                target: {
+                                                    sys: {
+                                                        id: '55DEJPnoQSfP3jJzD7jDSJ',
+                                                        linkType: 'Entry',
+                                                        type: 'Link',
+                                                    },
+                                                },
+                                            },
                                             nodeType: 'entry-hyperlink',
                                         },
                                     ],
+                                    data: {},
                                     nodeType: 'paragraph',
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [
@@ -466,63 +466,63 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    nodeType: 'table',
-                                    data: {},
                                     content: [
                                         {
-                                            nodeType: 'table-row',
-                                            data: {},
                                             content: [
                                                 {
-                                                    nodeType: 'table-header-cell',
-                                                    data: {},
                                                     content: [
                                                         {
-                                                            nodeType: 'paragraph',
-                                                            data: {},
                                                             content: [
                                                                 {
+                                                                    data: {},
+                                                                    marks: [],
                                                                     nodeType: 'text',
                                                                     value: header,
-                                                                    marks: [],
-                                                                    data: {},
                                                                 },
                                                             ],
+                                                            data: {},
+                                                            nodeType: 'paragraph',
                                                         },
                                                     ],
+                                                    data: {},
+                                                    nodeType: 'table-header-cell',
                                                 },
                                             ],
+                                            data: {},
+                                            nodeType: 'table-row',
                                         },
                                         {
-                                            nodeType: 'table-row',
-                                            data: {},
                                             content: [
                                                 {
-                                                    nodeType: 'table-cell',
-                                                    data: {},
                                                     content: [
                                                         {
-                                                            nodeType: 'paragraph',
-                                                            data: {},
                                                             content: [
                                                                 {
+                                                                    data: {},
+                                                                    marks: [],
                                                                     nodeType: 'text',
                                                                     value: cell,
-                                                                    marks: [],
-                                                                    data: {},
                                                                 },
                                                             ],
+                                                            data: {},
+                                                            nodeType: 'paragraph',
                                                         },
                                                     ],
+                                                    data: {},
+                                                    nodeType: 'table-cell',
                                                 },
                                             ],
+                                            data: {},
+                                            nodeType: 'table-row',
                                         },
                                     ],
+                                    data: {},
+                                    nodeType: 'table',
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [],
@@ -545,26 +545,26 @@ describe('<Layout />', () => {
             [
                 'render BlockQuote',
                 {
-                    nodeType: BLOCKS.PARAGRAPH,
-                    data: {},
                     content: [
                         {
+                            data: {},
+                            marks: [],
                             nodeType: 'text',
                             value: quoteText,
-                            marks: [],
-                            data: {},
                         },
                     ],
+                    data: {},
+                    nodeType: BLOCKS.PARAGRAPH,
                 },
                 true,
             ],
             [
                 'not render a BlockQuote if it has wrong children',
                 {
+                    data: {},
+                    marks: [],
                     nodeType: 'text',
                     value: quoteText,
-                    marks: [],
-                    data: {},
                 },
                 false,
             ],
@@ -573,14 +573,14 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    nodeType: BLOCKS.QUOTE,
-                                    data: {},
                                     content: [firstContent],
+                                    data: {},
+                                    nodeType: BLOCKS.QUOTE,
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [],
@@ -607,28 +607,28 @@ describe('<Layout />', () => {
                 <Layout
                     body={{
                         raw: JSON.stringify({
-                            data: {},
                             content: [
                                 {
-                                    data: {},
                                     content: [
                                         {
+                                            content: [],
                                             data: {
                                                 target: {
                                                     sys: {
                                                         id: 'fvxZI2eLzqnwfebd6CPUO',
-                                                        type: 'Link',
                                                         linkType: 'Entry',
+                                                        type: 'Link',
                                                     },
                                                 },
                                             },
-                                            content: [],
                                             nodeType: 'embedded-entry-inline',
                                         },
                                     ],
+                                    data: {},
                                     nodeType: 'paragraph',
                                 },
                             ],
+                            data: {},
                             nodeType: 'document',
                         }),
                         references: [

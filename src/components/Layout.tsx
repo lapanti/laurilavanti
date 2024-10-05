@@ -55,48 +55,48 @@ const PositionedP = styled(Paragraph)({
 
 const TableContainer = styled.div({
     gridColumn: '1 / -1',
-    overflowX: 'auto',
     maxWidth: '100vw',
+    overflowX: 'auto',
 })
 
 const Table = styled.table({
-    marginTop: sizes[1],
+    borderCollapse: 'separate',
     marginBottom: sizes[1],
     marginLeft: 'auto',
     marginRight: 'auto',
+    marginTop: sizes[1],
     tableLayout: 'auto',
-    borderCollapse: 'separate',
 })
 
 const TableHeaderCell = styled.th({
     backgroundColor: colors.gray,
-    paddingLeft: sizes[1],
-    paddingRight: sizes[1],
-    borderWidth: '1px',
     borderColor: colors.black,
     borderStyle: 'solid',
+    borderWidth: '1px',
+    paddingLeft: sizes[1],
+    paddingRight: sizes[1],
     whiteSpace: 'nowrap',
 })
 
 const TableCell = styled.td({
-    paddingLeft: sizes[1],
-    paddingRight: sizes[1],
-    borderWidth: '1px',
     borderColor: colors.black,
     borderStyle: 'solid',
+    borderWidth: '1px',
+    paddingLeft: sizes[1],
+    paddingRight: sizes[1],
     whiteSpace: 'nowrap',
 })
 
 const BlockQuote = styled.div({
+    borderLeftColor: colors.sand,
     borderLeftWidth: '4px',
+    fontFamily: fontFamilies.mono,
+    fontStyle: 'italic',
+    fontWeight: fontWeights.normal,
+    gridColumnStart: 3,
+    paddingBottom: sizes[0.5],
     paddingLeft: sizes[0.5],
     paddingTop: sizes[0.5],
-    paddingBottom: sizes[0.5],
-    borderLeftColor: colors.sand,
-    gridColumnStart: 3,
-    fontFamily: fontFamilies.mono,
-    fontWeight: fontWeights.normal,
-    fontStyle: 'italic',
     ...fontSizes[1.5],
 })
 
@@ -221,8 +221,8 @@ const LayoutComponent = ({
         | undefined
     const image = imageToUse
         ? {
-              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
               height: `${imageToUse?.childImageSharp.gatsbyImageData.height}`,
+              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
               width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
           }
         : undefined
@@ -235,8 +235,8 @@ const LayoutComponent = ({
         | undefined
     const socialImageObj = socialImageToUse
         ? {
-              src: socialImageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
               height: `${socialImageToUse?.childImageSharp.gatsbyImageData.height}`,
+              src: socialImageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
               width: `${socialImageToUse?.childImageSharp.gatsbyImageData.width}`,
           }
         : undefined
@@ -294,10 +294,10 @@ LayoutComponent.displayName = 'Layout'
 
 const Layout = styled(LayoutComponent)({
     display: 'grid',
-    gridTemplateAreas: gridTemplateAreasLayout,
-    gridTemplateRows: gridTemplateRowsLayoutMobile,
-    gridTemplateColumns: gridTemplateColumns,
     gap: sizes[1.125],
+    gridTemplateAreas: gridTemplateAreasLayout,
+    gridTemplateColumns: gridTemplateColumns,
+    gridTemplateRows: gridTemplateRowsLayoutMobile,
     minHeight: '100vh',
     position: 'relative',
     [breakpoints[1200].min]: {
