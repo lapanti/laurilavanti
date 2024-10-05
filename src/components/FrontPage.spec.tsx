@@ -19,16 +19,16 @@ describe('<FrontPage />', () => {
             <FrontPage
                 data={{
                     contentfulPage: {
-                        description: null,
-                        jsonLdType: 'WebSite',
-                        title: '',
-                        secondaryTitle: null,
-                        subtitle: null,
-                        body: {},
-                        image: { localFile: inFrontOfWoodsImage, description: '' },
-                        socialImage: null,
                         backgroundImage: null,
+                        body: {},
+                        description: null,
+                        image: { description: '', localFile: inFrontOfWoodsImage },
+                        jsonLdType: 'WebSite',
                         leftAlignedTitle: true,
+                        secondaryTitle: null,
+                        socialImage: null,
+                        subtitle: null,
+                        title: '',
                         updatedAt: '',
                     },
                 }}
