@@ -12,10 +12,11 @@ const TagList = styled.ul({
 })
 
 const TagItem = styled.li({
-    marginRight: sizes[1],
     ':last-child': {
         marginRight: sizes[0],
     },
+
+    marginRight: sizes[1],
 })
 
 export interface PostMetaProps {
