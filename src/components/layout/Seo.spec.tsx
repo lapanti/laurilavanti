@@ -136,7 +136,7 @@ describe('<Seo />', () => {
             height,
             width,
         } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { src, height: `${height}`, width: `${width}` }
+        const imgData = { height: `${height}`, src, width: `${width}` }
         render(<Seo description="" image={imgData} modified="2021-09-22" pathname="/" title={title} />)
 
         expectHelmetToHaveCorrectValues({ canonical: `${siteUrl}/`, imgData, pageTitle: title, pageType: WEBSITE })
@@ -152,7 +152,7 @@ describe('<Seo />', () => {
             height,
             width,
         } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { src, height: `${height}`, width: `${width}` }
+        const imgData = { height: `${height}`, src, width: `${width}` }
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
         render(<Seo description="" image={imgData} pathname="/" title={title} type={type} />)
 
