@@ -7,17 +7,16 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 import { colors, sizes, transitions } from '../../../lib/styles'
 
 const Link = styled.a({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100%',
-
     '> *': {
         fill: colors.gray,
         height: sizes[2.25],
         width: sizes[2.25],
         ...transitions.base,
     },
+    alignItems: 'center',
+    display: 'flex',
+    height: '100%',
+    justifyContent: 'center',
 })
 
 const iconToHoverColor = (icon: ContactInfoLink['icon']): string | undefined => {

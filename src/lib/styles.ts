@@ -33,6 +33,7 @@ export const sizes = {
     [9]: '9rem' as const, // 144px
     [24]: '24rem' as const, // 384px
     [35]: '35rem' as const, // 560px
+    [37.5]: '37.5rem' as const, // 600px
     [45]: '45rem' as const, // 720px
     [75]: '75rem' as const, // 1200px
 } as const

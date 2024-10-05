@@ -16,12 +16,12 @@ import { colors, sizes } from '../../../lib/styles'
 import ExternalLink from '../../ExternalLink'
 
 const RowExternalLink = styled(ExternalLink)({
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
 })
 
-const logoStyles = { width: sizes[1], height: sizes[1], marginRight: sizes[0.5] }
+const logoStyles = { height: sizes[1], marginRight: sizes[0.5], width: sizes[1] }
 
 const Envelope = styled(FaEnvelope)(logoStyles)
 
@@ -65,9 +65,9 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
 ContactInfoLinkComponent.displayName = 'ContactInfoLink'
 
 const ContactInfoLink = styled(ContactInfoLinkComponent)({
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
 })
 
 export default ContactInfoLink

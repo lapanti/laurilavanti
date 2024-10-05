@@ -36,7 +36,6 @@ import Header from './layout/Header'
 import HeroBanner from './layout/HeroBanner'
 import Image from './layout/Image'
 import Seo from './layout/Seo'
-import Svgs from './layout/Svgs'
 import TitleBanner from './layout/TitleBanner'
 import YearsFrom from './layout/YearsFrom'
 import Paragraph from './Paragraph'
@@ -286,8 +285,6 @@ const LayoutComponent = ({
                 </Main>
 
                 <Footer />
-
-                <Svgs />
             </div>
         </>
     )
