@@ -221,25 +221,25 @@ exports[`<Tag /> should render 1`] = `
 }
 
 .c2 {
-  flex: 1;
-  display: flex;
   align-items: center;
+  display: flex;
+  flex: 1;
   justify-content: flex-end;
   margin-right: 1.75rem;
 }
 
 .c3 {
+  align-items: center;
   background: rgb(0, 98, 114);
-  position: absolute;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 2.5rem;
-  top: 3.75rem;
-  width: 100vw;
+  justify-content: center;
   overflow: hidden;
+  position: absolute;
+  top: 3.75rem;
   transition: height 0.3s ease-in-out;
+  width: 100vw;
   height: 0;
 }
 
@@ -267,14 +267,14 @@ exports[`<Tag /> should render 1`] = `
 
 .c1 {
   background-color: rgb(0, 98, 114);
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  box-sizing: border-box;
   height: 3.75rem;
-  width: 100%;
   position: fixed;
-  z-index: 50;
   user-select: none;
+  width: 100%;
+  z-index: 50;
 }
 
 .c16 {
@@ -353,29 +353,29 @@ exports[`<Tag /> should render 1`] = `
 @media (min-width: 1200px) {
   .c8 {
     display: flex;
-    width: 75rem;
     flex-direction: row;
     margin: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    width: 75rem;
   }
 }
 
 @media (min-width: 1200px) {
   .c9 {
-    width: 50%;
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 2.5rem;
+    width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
   .c10 {
-    width: 50%;
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 2.5rem;
+    width: 50%;
   }
 }
 
