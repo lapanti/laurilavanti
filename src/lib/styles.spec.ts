@@ -4,13 +4,11 @@ import {
     fontFamilies,
     fontSizes,
     fontWeights,
-    gradients,
     gridAreas,
     gridTemplateAreasLayout,
     gridTemplateColumns,
     gridTemplateColumnsArticle,
     gridTemplateRowsLayout,
-    shadows,
     sizes,
     transitions,
     zIndices,
@@ -73,18 +71,6 @@ describe('styles lib', () => {
         describe('colors', () => {
             it('should match snapshot', () => {
                 expect(colors).toMatchSnapshot()
-            })
-        })
-
-        describe('gradients', () => {
-            it('should match snapshot', () => {
-                expect(gradients).toMatchSnapshot()
-            })
-        })
-
-        describe('shadows', () => {
-            it('should match snapshot', () => {
-                expect(shadows).toMatchSnapshot()
             })
         })
     })

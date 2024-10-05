@@ -5,7 +5,7 @@ import { Squash as Hamburger } from 'hamburger-react'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { breakpoints, colors, CONTENT_PADDING, HEADER_SIZE, sizes, zIndices } from '../../lib/styles'
+import { breakpoints, colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes, zIndices } from '../../lib/styles'
 import NavLink from './header/NavLink'
 
 const ANIMATION_DURATION = 0.3
@@ -65,7 +65,7 @@ const DesktopMenu = styled.div({
     /** Show the whole thing only on desktop */
     [breakpoints[1200].min]: {
         display: 'flex',
-        width: sizes[75],
+        width: CONTENT_SIZE,
         flexDirection: 'row',
         margin: 'auto',
         paddingLeft: CONTENT_PADDING,
