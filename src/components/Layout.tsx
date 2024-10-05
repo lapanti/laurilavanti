@@ -7,7 +7,7 @@ import type { SeoProps } from './layout/Seo'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import {
     breakpoints,

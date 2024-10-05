@@ -3,7 +3,7 @@ import type { PostMetaProps } from '../PostMeta'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, fontSizes, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'

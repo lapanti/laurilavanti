@@ -3,7 +3,7 @@ import type { MainNav } from '../../types/contentful'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Squash as Hamburger } from 'hamburger-react'
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes, zIndices } from '../../lib/styles'
 import NavLink from './header/NavLink'

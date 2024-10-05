@@ -2,7 +2,7 @@ import type { ContactInfoLink } from '../../../types/contentful'
 
 import React from 'react'
 import { FaBluesky, FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads } from 'react-icons/fa6'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, sizes, transitions } from '../../../lib/styles'
 

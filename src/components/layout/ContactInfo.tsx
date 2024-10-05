@@ -1,7 +1,7 @@
 import type { ContactInfoLink as ContactInfoLinkType } from '../../types/contentful'
 
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { sizes } from '../../lib/styles'
 import ContactInfoLink from './contactInfo/ContactInfoLink'
