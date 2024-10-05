@@ -46,52 +46,38 @@ const config = {
             },
         },
         {
-            files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
             env: {
                 jest: true,
             },
+            files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
             plugins: ['jest'],
             rules: {
                 '@typescript-eslint/no-empty-function': ['off'],
                 'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-                'react/display-name': ['off'],
                 'jest/expect-expect': ['warn', { assertFunctionNames: ['expect', 'expect[A-Z]\\w+'] }],
                 'jest/no-done-callback': ['error'],
                 'jest/no-standalone-expect': ['warn'],
                 'no-console': ['warn'],
+                'react/display-name': ['off'],
             },
         },
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: 6,
         ecmaFeatures: { experimentalObjectRestSpread: true },
+        ecmaVersion: 6,
         sourceType: 'module',
     },
     plugins: ['@typescript-eslint', 'import', 'prettier', 'simple-import-sort', 'react'],
-    settings: {
-        'import/resolver': {
-            node: {
-                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
-            },
-            typescript: {
-                alwaysTryTypes: true,
-            },
-        },
-        react: {
-            version: 'detect',
-        },
-    },
     rules: {
-        'no-duplicate-imports': ['off'],
         '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
         '@typescript-eslint/no-extra-semi': ['off'],
         '@typescript-eslint/no-unused-vars': [
             'error',
             {
-                vars: 'all',
                 args: 'after-used',
                 ignoreRestSiblings: true,
+                vars: 'all',
             },
         ],
         '@typescript-eslint/no-use-before-define': ['error'],
@@ -112,23 +98,38 @@ const config = {
         'import/no-unresolved': ['error'],
         'linebreak-style': ['error', 'unix'],
         'max-depth': ['warn', 3],
+        'no-duplicate-imports': ['off'],
         'no-else-return': ['error', { allowElseIf: false }],
         'no-empty': ['error', { allowEmptyCatch: true }],
         'no-eq-null': ['warn'],
         'no-irregular-whitespace': ['error', { skipTemplates: true }],
         'nonblock-statement-body-position': ['error'],
         'prefer-arrow-callback': ['warn'],
-        'simple-import-sort/exports': ['error'],
-        'simple-import-sort/imports': ['error'],
         'react/jsx-sort-props': [
             'error',
             {
                 callbacksLast: true,
-                shorthandLast: true,
-                reservedFirst: true,
                 ignoreCase: true,
+                reservedFirst: true,
+                shorthandLast: true,
             },
         ],
+        'simple-import-sort/exports': ['error'],
+        'simple-import-sort/imports': ['error'],
+        'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
+    },
+    settings: {
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
+            },
+            typescript: {
+                alwaysTryTypes: true,
+            },
+        },
+        react: {
+            version: 'detect',
+        },
     },
 }
 
