@@ -11,8 +11,8 @@ import FooterLink from './footer/FooterLink'
 const ImageContainer = styled.div({})
 
 const List = styled.ul({
-    justifyContent: 'center',
     gap: sizes[1.5],
+    justifyContent: 'center',
 })
 
 const ContentContainer = styled.div({
@@ -21,18 +21,18 @@ const ContentContainer = styled.div({
     gap: sizes[1.5],
 
     [`> ${ImageContainer}, > ${List}`]: {
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'row',
         alignItems: 'center',
+        display: 'flex',
+        flex: 1,
+        flexDirection: 'row',
         justifyContent: 'center',
     },
 
     [breakpoints[1200].min]: {
-        width: CONTENT_SIZE,
+        flexDirection: 'row',
         paddingLeft: CONTENT_PADDING,
         paddingRight: CONTENT_PADDING,
-        flexDirection: 'row',
+        width: CONTENT_SIZE,
         [`> ${ImageContainer}`]: {
             justifyContent: 'flex-start',
         },
@@ -85,11 +85,11 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
 FooterComponent.displayName = 'Footer'
 
 const Footer = styled(FooterComponent)({
-    gridArea: gridAreas.footer,
+    alignItems: 'center',
     backgroundColor: colors.evening,
     color: colors.white,
     display: 'flex',
-    alignItems: 'center',
+    gridArea: gridAreas.footer,
     justifyContent: 'center',
 })
 
