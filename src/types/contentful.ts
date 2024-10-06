@@ -13,7 +13,6 @@ interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
 
 interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
     caption: string
-    altText: string
     image: {
         localFile: ImageDataLike
         description: string

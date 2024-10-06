@@ -789,9 +789,8 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
         references: [
             {
                 __typename: 'ContentfulImageWithCaption',
-                contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
                 caption: 'Gesterbyn koulukeskuksen parakkirakennuksia',
-                altText: 'Gesterbyn koulukeskuksen parakkirakennuksia',
+                contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
                 image: {
                     localFile: {
                         childImageSharp: {
@@ -915,7 +914,6 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
                 __typename: 'ContentfulImageWithCaption',
                 contentful_id: '7eQfs1inDm3NB5zf0Ejn7G',
                 caption: 'Keskustan alueen päiväkodit',
-                altText: 'Keskustan alueen päiväkodit kartalla',
                 image: {
                     localFile: {
                         childImageSharp: {
@@ -1130,7 +1128,6 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
                 __typename: 'ContentfulImageWithCaption',
                 contentful_id: '1XlmtDxnOehtYJIkzhbYnQ',
                 caption: 'Kirkkonummen avoimet varhaiskasvatuksen työpaikat',
-                altText: 'Kirkkonummen avoimet varhaiskasvatuksen työpaikat',
                 image: {
                     localFile: {
                         childImageSharp: {
