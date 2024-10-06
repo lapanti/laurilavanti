@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<404 /> should render 1`] = `
-.c25 {
+.c26 {
   font-family: "IBM Plex Mono";
   font-weight: 700;
   grid-column-start: 3;
@@ -10,11 +10,11 @@ exports[`<404 /> should render 1`] = `
 }
 
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -23,7 +23,35 @@ exports[`<404 /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c30 {
+.c21 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c21 :hover,
+.c21 :active,
+.c21 :focus {
+  text-decoration: none;
+}
+
+.c31 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c31 :hover,
+.c31 :active,
+.c31 :focus {
+  text-decoration: underline;
+}
+
+.c32 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -32,45 +60,45 @@ exports[`<404 /> should render 1`] = `
   margin-top: 1rem;
 }
 
-.c28 {
+.c29 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c29 {
+.c30 {
   margin-right: 1rem;
 }
 
-.c29 :last-child {
+.c30 :last-child {
   margin-right: 0px;
 }
 
-.c27 {
+.c28 {
   display: flex;
   flex-direction: column;
 }
 
-.c26 {
+.c27 {
   grid-column-start: auto;
 }
 
-.c21 {
+.c22 {
   color: rgb(0, 0, 0);
 }
 
-.c21:hover .c24 {
+.c22:hover .c25 {
   text-decoration: underline;
 }
 
-.c22 {
+.c23 {
   aspect-ratio: 16/9;
   display: flex;
   width: 100%;
 }
 
-.c23 {
+.c24 {
   align-items: flex-end;
   display: flex;
   margin-top: 0.25rem;
@@ -79,13 +107,13 @@ exports[`<404 /> should render 1`] = `
   z-index: 40;
 }
 
-.c31 {
+.c33 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c32 {
+.c34 {
   white-space: nowrap;
 }
 
@@ -107,14 +135,14 @@ exports[`<404 /> should render 1`] = `
   row-gap: 3.5rem;
 }
 
-.c38 {
+.c40 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c38 >* {
+.c40 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -123,31 +151,13 @@ exports[`<404 /> should render 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c37 {
-  padding: 0px;
-}
-
-.c37 :hover,
-.c37 :focus {
-  fill: #4267B2;
-}
-
 .c39 {
   padding: 0px;
 }
 
 .c39 :hover,
 .c39 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c40 {
-  padding: 0px;
-}
-
-.c40 :hover,
-.c40 :focus {
-  fill: url(#instagram-gradient);
+  fill: #4267B2;
 }
 
 .c41 {
@@ -156,7 +166,7 @@ exports[`<404 /> should render 1`] = `
 
 .c41 :hover,
 .c41 :focus {
-  fill: #0E76A8;
+  fill: rgb(0, 0, 0);
 }
 
 .c42 {
@@ -165,7 +175,7 @@ exports[`<404 /> should render 1`] = `
 
 .c42 :hover,
 .c42 :focus {
-  fill: #6363ff;
+  fill: url(#instagram-gradient);
 }
 
 .c43 {
@@ -174,22 +184,40 @@ exports[`<404 /> should render 1`] = `
 
 .c43 :hover,
 .c43 :focus {
+  fill: #0E76A8;
+}
+
+.c44 {
+  padding: 0px;
+}
+
+.c44 :hover,
+.c44 :focus {
+  fill: #6363ff;
+}
+
+.c45 {
+  padding: 0px;
+}
+
+.c45 :hover,
+.c45 :focus {
   fill: #0060df;
 }
 
-.c36 {
+.c38 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c34 {
+.c36 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c34 >.,
-.c34 >.c35 {
+.c36 >.,
+.c36 >.c37 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -197,7 +225,7 @@ exports[`<404 /> should render 1`] = `
   justify-content: center;
 }
 
-.c33 {
+.c35 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -207,14 +235,12 @@ exports[`<404 /> should render 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -329,18 +355,18 @@ exports[`<404 /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c34 {
+  .c36 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c34 >.{
+  .c36 >.{
     justify-content: flex-start;
   }
 
-  .c34 >.c35 {
+  .c36 >.c37 {
     justify-content: flex-end;
   }
 }
@@ -571,12 +597,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -614,10 +640,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                     itemprop="headline"
                   >
@@ -627,7 +653,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2024-04-03"
@@ -635,13 +661,13 @@ exports[`<404 /> should render 1`] = `
                   03.04.2024
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kaavoitus/"
                     >
                       #
@@ -649,10 +675,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -660,10 +686,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/osuuskauppavaalit/"
                     >
                       #
@@ -673,13 +699,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                   rel="permalink"
                 >
@@ -697,12 +723,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -740,10 +766,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="luontomme-on-valttimme---vuodesta-toiseen"
                     itemprop="headline"
                   >
@@ -753,7 +779,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Luontomme on valttimme - vuodesta toiseen meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2024-01-31"
@@ -761,13 +787,13 @@ exports[`<404 /> should render 1`] = `
                   31.01.2024
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/infra/"
                     >
                       #
@@ -775,10 +801,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kaavoitus/"
                     >
                       #
@@ -786,10 +812,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -799,13 +825,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                   rel="permalink"
                 >
@@ -823,12 +849,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -866,10 +892,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="uusi-vuosi,-tuttu-talvikunnossapito"
                     itemprop="headline"
                   >
@@ -879,7 +905,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Uusi vuosi, tuttu talvikunnossapito meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2024-01-12"
@@ -887,13 +913,13 @@ exports[`<404 /> should render 1`] = `
                   12.01.2024
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/infra/"
                     >
                       #
@@ -901,10 +927,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -912,10 +938,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/liikenne/"
                     >
                       #
@@ -925,13 +951,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                   rel="permalink"
                 >
@@ -949,12 +975,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -992,10 +1018,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="terveys-kuuluu-kaikille"
                     itemprop="headline"
                   >
@@ -1005,7 +1031,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2022-01-19"
@@ -1013,13 +1039,13 @@ exports[`<404 /> should render 1`] = `
                   19.01.2022
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1027,10 +1053,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1038,10 +1064,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1051,13 +1077,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/terveys-kuuluu-kaikille/"
                   rel="permalink"
                 >
@@ -1075,12 +1101,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1118,10 +1144,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="sote-on-hyvinvointi­yhteiskunnan-kulmakivi"
                     itemprop="headline"
                   >
@@ -1131,7 +1157,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Sote on hyvinvointi­yhteiskunnan kulmakivi meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2021-12-20"
@@ -1139,13 +1165,13 @@ exports[`<404 /> should render 1`] = `
                   20.12.2021
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1153,10 +1179,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1164,10 +1190,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1177,13 +1203,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                   rel="permalink"
                 >
@@ -1201,12 +1227,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1244,10 +1270,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="mita-jos-terveyskeskusta-ei-olisikaan?"
                     itemprop="headline"
                   >
@@ -1257,7 +1283,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2021-11-15"
@@ -1265,13 +1291,13 @@ exports[`<404 /> should render 1`] = `
                   15.11.2021
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1279,10 +1305,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1290,10 +1316,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1303,13 +1329,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                   rel="permalink"
                 >
@@ -1327,12 +1353,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/perusturvajaosto-mika-se-on/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1370,10 +1396,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="perusturvajaosto---mika-se-on?"
                     itemprop="headline"
                   >
@@ -1383,7 +1409,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Perusturvajaosto - mikä se on? meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2021-10-30"
@@ -1391,13 +1417,13 @@ exports[`<404 /> should render 1`] = `
                   30.10.2021
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1405,10 +1431,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/perustuva/"
                     >
                       #
@@ -1418,13 +1444,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Perusturvajaosto vastaa asukkaiden oikaisuvaatimuksiin perusturvaan liittyvissä asioissa. Vaikka kokousten sisältö on yksityisyydensuojan alaista, voi näistä tapauksista ottaa opiksi.
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/perusturvajaosto-mika-se-on/"
                   rel="permalink"
                 >
@@ -1442,12 +1468,12 @@ exports[`<404 /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c21"
+                class="c21 c22"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c22"
+                  class="gatsby-image-wrapper c23"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1485,10 +1511,10 @@ exports[`<404 /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c23"
+                  class="c24"
                 >
                   <h2
-                    class="c24 c25 c26"
+                    class="c25 c26 c27"
                     id="ehdolle-aluevaaleihin"
                     itemprop="headline"
                   >
@@ -1498,7 +1524,7 @@ exports[`<404 /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
-                class="c27"
+                class="c28"
               >
                 <time
                   datetime="2021-09-27"
@@ -1506,13 +1532,13 @@ exports[`<404 /> should render 1`] = `
                   27.09.2021
                 </time>
                 <ul
-                  class="c28"
+                  class="c29"
                 >
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/aluevaalit/"
                     >
                       #
@@ -1520,10 +1546,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1531,10 +1557,10 @@ exports[`<404 /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c29"
+                    class="c30"
                   >
                     <a
-                      class="c4"
+                      class="c31"
                       href="/kategoria/soteuudistus/"
                     >
                       #
@@ -1544,13 +1570,13 @@ exports[`<404 /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c30 c31"
+                class="c32 c33"
                 itemprop="description"
               >
                 Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                  
                 <a
-                  class="c4 c32"
+                  class="c31 c34"
                   href="/blogi/ehdolle-aluevaaleihin/"
                   rel="permalink"
                 >
@@ -1563,10 +1589,10 @@ exports[`<404 /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="c33"
+      class="c35"
     >
       <div
-        class="c34"
+        class="c36"
       >
         <div
           class=""
@@ -1578,13 +1604,13 @@ exports[`<404 /> should render 1`] = `
           />
         </div>
         <ul
-          class="c35 c36"
+          class="c37 c38"
         >
           <li
-            class="c37"
+            class="c39"
           >
             <a
-              class="c38"
+              class="c40"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1606,10 +1632,10 @@ exports[`<404 /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c39"
+            class="c41"
           >
             <a
-              class="c38"
+              class="c40"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1631,10 +1657,10 @@ exports[`<404 /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c40"
+            class="c42"
           >
             <a
-              class="c38"
+              class="c40"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1656,10 +1682,10 @@ exports[`<404 /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c41"
+            class="c43"
           >
             <a
-              class="c38"
+              class="c40"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1681,10 +1707,10 @@ exports[`<404 /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c42"
+            class="c44"
           >
             <a
-              class="c38"
+              class="c40"
               href="https://mastodontti.fi/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1706,10 +1732,10 @@ exports[`<404 /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c43"
+            class="c45"
           >
             <a
-              class="c38"
+              class="c40"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"

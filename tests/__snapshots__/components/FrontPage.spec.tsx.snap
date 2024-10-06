@@ -10,16 +10,44 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
 .c4 :active,
 .c4 :focus {
+  text-decoration: underline;
+}
+
+.c27 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c27 :hover,
+.c27 :active,
+.c27 :focus {
+  text-decoration: none;
+}
+
+.c36 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c36 :hover,
+.c36 :active,
+.c36 :focus {
   text-decoration: underline;
 }
 
@@ -32,45 +60,45 @@ exports[`<FrontPage /> should render 1`] = `
   margin-top: 1rem;
 }
 
-.c33 {
+.c34 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c34 {
+.c35 {
   margin-right: 1rem;
 }
 
-.c34 :last-child {
+.c35 :last-child {
   margin-right: 0px;
 }
 
-.c32 {
+.c33 {
   display: flex;
   flex-direction: column;
 }
 
-.c31 {
+.c32 {
   grid-column-start: auto;
 }
 
-.c27 {
+.c28 {
   color: rgb(0, 0, 0);
 }
 
-.c27:hover .c30 {
+.c28:hover .c31 {
   text-decoration: underline;
 }
 
-.c28 {
+.c29 {
   aspect-ratio: 16/9;
   display: flex;
   width: 100%;
 }
 
-.c29 {
+.c30 {
   align-items: flex-end;
   display: flex;
   margin-top: 0.25rem;
@@ -79,13 +107,13 @@ exports[`<FrontPage /> should render 1`] = `
   z-index: 40;
 }
 
-.c35 {
+.c37 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c36 {
+.c38 {
   white-space: nowrap;
 }
 
@@ -112,14 +140,14 @@ exports[`<FrontPage /> should render 1`] = `
   margin-bottom: 1rem;
 }
 
-.c42 {
+.c44 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c42 >* {
+.c44 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -128,31 +156,13 @@ exports[`<FrontPage /> should render 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c41 {
-  padding: 0px;
-}
-
-.c41 :hover,
-.c41 :focus {
-  fill: #4267B2;
-}
-
 .c43 {
   padding: 0px;
 }
 
 .c43 :hover,
 .c43 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c44 {
-  padding: 0px;
-}
-
-.c44 :hover,
-.c44 :focus {
-  fill: url(#instagram-gradient);
+  fill: #4267B2;
 }
 
 .c45 {
@@ -161,7 +171,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c45 :hover,
 .c45 :focus {
-  fill: #0E76A8;
+  fill: rgb(0, 0, 0);
 }
 
 .c46 {
@@ -170,7 +180,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c46 :hover,
 .c46 :focus {
-  fill: #6363ff;
+  fill: url(#instagram-gradient);
 }
 
 .c47 {
@@ -179,22 +189,40 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c47 :hover,
 .c47 :focus {
+  fill: #0E76A8;
+}
+
+.c48 {
+  padding: 0px;
+}
+
+.c48 :hover,
+.c48 :focus {
+  fill: #6363ff;
+}
+
+.c49 {
+  padding: 0px;
+}
+
+.c49 :hover,
+.c49 :focus {
   fill: #0060df;
 }
 
-.c40 {
+.c42 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c38 {
+.c40 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c38 >.,
-.c38 >.c39 {
+.c40 >.,
+.c40 >.c41 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -202,7 +230,7 @@ exports[`<FrontPage /> should render 1`] = `
   justify-content: center;
 }
 
-.c37 {
+.c39 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -212,14 +240,12 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -362,18 +388,18 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c38 {
+  .c40 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c38 >.{
+  .c40 >.{
     justify-content: flex-start;
   }
 
-  .c38 >.c39 {
+  .c40 >.c41 {
     justify-content: flex-end;
   }
 }
@@ -693,12 +719,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c27"
+                class="c27 c28"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c28"
+                  class="gatsby-image-wrapper c29"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -736,10 +762,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c29"
+                  class="c30"
                 >
                   <h2
-                    class="c30 c21 c31"
+                    class="c31 c21 c32"
                     id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                     itemprop="headline"
                   >
@@ -749,7 +775,7 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-                class="c32"
+                class="c33"
               >
                 <time
                   datetime="2024-04-03"
@@ -757,13 +783,13 @@ exports[`<FrontPage /> should render 1`] = `
                   03.04.2024
                 </time>
                 <ul
-                  class="c33"
+                  class="c34"
                 >
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/kaavoitus/"
                     >
                       #
@@ -771,10 +797,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -782,10 +808,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/osuuskauppavaalit/"
                     >
                       #
@@ -795,13 +821,13 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c22 c35"
+                class="c22 c37"
                 itemprop="description"
               >
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                  
                 <a
-                  class="c4 c36"
+                  class="c36 c38"
                   href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                   rel="permalink"
                 >
@@ -819,12 +845,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c27"
+                class="c27 c28"
                 href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c28"
+                  class="gatsby-image-wrapper c29"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -862,10 +888,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c29"
+                  class="c30"
                 >
                   <h2
-                    class="c30 c21 c31"
+                    class="c31 c21 c32"
                     id="luontomme-on-valttimme---vuodesta-toiseen"
                     itemprop="headline"
                   >
@@ -875,7 +901,7 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Luontomme on valttimme - vuodesta toiseen meta-tiedot"
-                class="c32"
+                class="c33"
               >
                 <time
                   datetime="2024-01-31"
@@ -883,13 +909,13 @@ exports[`<FrontPage /> should render 1`] = `
                   31.01.2024
                 </time>
                 <ul
-                  class="c33"
+                  class="c34"
                 >
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/infra/"
                     >
                       #
@@ -897,10 +923,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/kaavoitus/"
                     >
                       #
@@ -908,10 +934,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -921,13 +947,13 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c22 c35"
+                class="c22 c37"
                 itemprop="description"
               >
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
                  
                 <a
-                  class="c4 c36"
+                  class="c36 c38"
                   href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                   rel="permalink"
                 >
@@ -945,12 +971,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c4 c27"
+                class="c27 c28"
                 href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c28"
+                  class="gatsby-image-wrapper c29"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -988,10 +1014,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c29"
+                  class="c30"
                 >
                   <h2
-                    class="c30 c21 c31"
+                    class="c31 c21 c32"
                     id="uusi-vuosi,-tuttu-talvikunnossapito"
                     itemprop="headline"
                   >
@@ -1001,7 +1027,7 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Uusi vuosi, tuttu talvikunnossapito meta-tiedot"
-                class="c32"
+                class="c33"
               >
                 <time
                   datetime="2024-01-12"
@@ -1009,13 +1035,13 @@ exports[`<FrontPage /> should render 1`] = `
                   12.01.2024
                 </time>
                 <ul
-                  class="c33"
+                  class="c34"
                 >
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/infra/"
                     >
                       #
@@ -1023,10 +1049,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1034,10 +1060,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c34"
+                    class="c35"
                   >
                     <a
-                      class="c4"
+                      class="c36"
                       href="/kategoria/liikenne/"
                     >
                       #
@@ -1047,13 +1073,13 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c22 c35"
+                class="c22 c37"
                 itemprop="description"
               >
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
                  
                 <a
-                  class="c4 c36"
+                  class="c36 c38"
                   href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                   rel="permalink"
                 >
@@ -1069,10 +1095,10 @@ exports[`<FrontPage /> should render 1`] = `
       </article>
     </main>
     <footer
-      class="c37"
+      class="c39"
     >
       <div
-        class="c38"
+        class="c40"
       >
         <div
           class=""
@@ -1084,13 +1110,13 @@ exports[`<FrontPage /> should render 1`] = `
           />
         </div>
         <ul
-          class="c39 c40"
+          class="c41 c42"
         >
           <li
-            class="c41"
+            class="c43"
           >
             <a
-              class="c42"
+              class="c44"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1112,10 +1138,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c43"
+            class="c45"
           >
             <a
-              class="c42"
+              class="c44"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1137,10 +1163,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c44"
+            class="c46"
           >
             <a
-              class="c42"
+              class="c44"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1162,10 +1188,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c45"
+            class="c47"
           >
             <a
-              class="c42"
+              class="c44"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1187,10 +1213,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c46"
+            class="c48"
           >
             <a
-              class="c42"
+              class="c44"
               href="https://mastodontti.fi/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1212,10 +1238,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c47"
+            class="c49"
           >
             <a
-              class="c42"
+              class="c44"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1287,11 +1313,11 @@ exports[`<FrontPage /> should render 1`] = `
 
 exports[`<FrontPage /> should render with minimal 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -1400,14 +1426,12 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";

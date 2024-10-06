@@ -15,6 +15,7 @@ interface Props extends Link {
 
 const NavLinkComponent = ({ className, title, slug, isFrontPage }: Props): JSX.Element => (
     <InternalLink
+        $color={colors.peach}
         activeStyle={isFrontPage ? undefined : { textDecoration: 'underline' }}
         className={className}
         partiallyActive={slug !== 'index'}
@@ -26,14 +27,9 @@ const NavLinkComponent = ({ className, title, slug, isFrontPage }: Props): JSX.E
 
 NavLinkComponent.displayName = 'NavLink'
 
-const NavLink = styled(NavLinkComponent)(
-    {
-        color: colors.peach,
-    },
-    ({ isFrontPage }) => ({
-        ...(isFrontPage ? fontSizes[1.75] : fontSizes[1.5]),
-        fontFamily: isFrontPage ? fontFamilies.heading : fontFamilies.sans,
-    })
-)
+const NavLink = styled(NavLinkComponent)(({ isFrontPage }) => ({
+    ...(isFrontPage ? fontSizes[1.75] : fontSizes[1.5]),
+    fontFamily: isFrontPage ? fontFamilies.heading : fontFamilies.sans,
+}))
 
 export default NavLink
