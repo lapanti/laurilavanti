@@ -15,7 +15,7 @@ const StyledH2 = styled(H2)({
     gridColumnStart: 'auto',
 })
 
-const Link = styled(InternalLink)({
+const Link = styled(InternalLink).attrs({ $noHover: true })({
     '&:hover': {
         [StyledH2]: {
             textDecoration: 'underline',

@@ -2,11 +2,11 @@
 
 exports[`<Layout /> rich body should not render a BlockQuote if it has wrong children 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -115,14 +115,12 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -625,11 +623,11 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 
 exports[`<Layout /> rich body should render BlockQuote 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -738,14 +736,12 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -1267,11 +1263,11 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 
 exports[`<Layout /> rich body should render ContactInfo 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -1397,14 +1393,12 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -1931,7 +1925,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 `;
 
 exports[`<Layout /> rich body should render ExcerptList 1`] = `
-.c24 {
+.c25 {
   font-family: "IBM Plex Mono";
   font-weight: 700;
   grid-column-start: 3;
@@ -1940,11 +1934,11 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -1953,7 +1947,35 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   text-decoration: underline;
 }
 
-.c29 {
+.c20 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c20 :hover,
+.c20 :active,
+.c20 :focus {
+  text-decoration: none;
+}
+
+.c30 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c30 :hover,
+.c30 :active,
+.c30 :focus {
+  text-decoration: underline;
+}
+
+.c31 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -1962,45 +1984,45 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-top: 1rem;
 }
 
-.c27 {
+.c28 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c28 {
+.c29 {
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c29 :last-child {
   margin-right: 0px;
 }
 
-.c26 {
+.c27 {
   display: flex;
   flex-direction: column;
 }
 
-.c25 {
+.c26 {
   grid-column-start: auto;
 }
 
-.c20 {
+.c21 {
   color: rgb(0, 0, 0);
 }
 
-.c20:hover .c23 {
+.c21:hover .c24 {
   text-decoration: underline;
 }
 
-.c21 {
+.c22 {
   aspect-ratio: 16/9;
   display: flex;
   width: 100%;
 }
 
-.c22 {
+.c23 {
   align-items: flex-end;
   display: flex;
   margin-top: 0.25rem;
@@ -2009,13 +2031,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   z-index: 40;
 }
 
-.c30 {
+.c32 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c31 {
+.c33 {
   white-space: nowrap;
 }
 
@@ -2037,14 +2059,14 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   row-gap: 3.5rem;
 }
 
-.c37 {
+.c39 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c37 >* {
+.c39 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -2053,31 +2075,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c36 {
-  padding: 0px;
-}
-
-.c36 :hover,
-.c36 :focus {
-  fill: #4267B2;
-}
-
 .c38 {
   padding: 0px;
 }
 
 .c38 :hover,
 .c38 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c39 {
-  padding: 0px;
-}
-
-.c39 :hover,
-.c39 :focus {
-  fill: url(#instagram-gradient);
+  fill: #4267B2;
 }
 
 .c40 {
@@ -2086,7 +2090,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: #0E76A8;
+  fill: rgb(0, 0, 0);
 }
 
 .c41 {
@@ -2095,7 +2099,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c41 :hover,
 .c41 :focus {
-  fill: #6363ff;
+  fill: url(#instagram-gradient);
 }
 
 .c42 {
@@ -2104,22 +2108,40 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c42 :hover,
 .c42 :focus {
+  fill: #0E76A8;
+}
+
+.c43 {
+  padding: 0px;
+}
+
+.c43 :hover,
+.c43 :focus {
+  fill: #6363ff;
+}
+
+.c44 {
+  padding: 0px;
+}
+
+.c44 :hover,
+.c44 :focus {
   fill: #0060df;
 }
 
-.c35 {
+.c37 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c33 {
+.c35 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c33 >.,
-.c33 >.c34 {
+.c35 >.,
+.c35 >.c36 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -2127,7 +2149,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   justify-content: center;
 }
 
-.c32 {
+.c34 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -2137,14 +2159,12 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -2252,18 +2272,18 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c33 {
+  .c35 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c33 >.{
+  .c35 >.{
     justify-content: flex-start;
   }
 
-  .c33 >.c34 {
+  .c35 >.c36 {
     justify-content: flex-end;
   }
 }
@@ -2488,12 +2508,12 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c20"
+              class="c20 c21"
               href="/blogi/terveys-kuuluu-kaikille/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c21"
+                class="gatsby-image-wrapper c22"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -2531,10 +2551,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <div
-                class="c22"
+                class="c23"
               >
                 <h2
-                  class="c23 c24 c25"
+                  class="c24 c25 c26"
                   id="terveys-kuuluu-kaikille"
                   itemprop="headline"
                 >
@@ -2544,7 +2564,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-              class="c26"
+              class="c27"
             >
               <time
                 datetime="2022-01-19"
@@ -2552,13 +2572,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 19.01.2022
               </time>
               <ul
-                class="c27"
+                class="c28"
               >
                 <li
-                  class="c28"
+                  class="c29"
                 >
                   <a
-                    class="c4"
+                    class="c30"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -2566,10 +2586,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c29"
                 >
                   <a
-                    class="c4"
+                    class="c30"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2577,10 +2597,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c29"
                 >
                   <a
-                    class="c4"
+                    class="c30"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -2590,13 +2610,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="c29 c30"
+              class="c31 c32"
               itemprop="description"
             >
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                
               <a
-                class="c4 c31"
+                class="c30 c33"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
@@ -2614,12 +2634,12 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
             itemtype="https://schema.org/CreativeWork"
           >
             <a
-              class="c4 c20"
+              class="c20 c21"
               href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c21"
+                class="gatsby-image-wrapper c22"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -2657,10 +2677,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 </script>
               </div>
               <div
-                class="c22"
+                class="c23"
               >
                 <h2
-                  class="c23 c24 c25"
+                  class="c24 c25 c26"
                   id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                   itemprop="headline"
                 >
@@ -2670,7 +2690,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-              class="c26"
+              class="c27"
             >
               <time
                 datetime="2024-04-03"
@@ -2678,13 +2698,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 03.04.2024
               </time>
               <ul
-                class="c27"
+                class="c28"
               >
                 <li
-                  class="c28"
+                  class="c29"
                 >
                   <a
-                    class="c4"
+                    class="c30"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -2692,10 +2712,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c29"
                 >
                   <a
-                    class="c4"
+                    class="c30"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2703,10 +2723,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c29"
                 >
                   <a
-                    class="c4"
+                    class="c30"
                     href="/kategoria/osuuskauppavaalit/"
                   >
                     #
@@ -2716,13 +2736,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="c29 c30"
+              class="c31 c32"
               itemprop="description"
             >
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c4 c31"
+                class="c30 c33"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
@@ -2735,10 +2755,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     </article>
   </main>
   <footer
-    class="c32"
+    class="c34"
   >
     <div
-      class="c33"
+      class="c35"
     >
       <div
         class=""
@@ -2750,13 +2770,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         />
       </div>
       <ul
-        class="c34 c35"
+        class="c36 c37"
       >
         <li
-          class="c36"
+          class="c38"
         >
           <a
-            class="c37"
+            class="c39"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2778,10 +2798,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           </a>
         </li>
         <li
-          class="c38"
+          class="c40"
         >
           <a
-            class="c37"
+            class="c39"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2803,10 +2823,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           </a>
         </li>
         <li
-          class="c39"
+          class="c41"
         >
           <a
-            class="c37"
+            class="c39"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2828,10 +2848,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           </a>
         </li>
         <li
-          class="c40"
+          class="c42"
         >
           <a
-            class="c37"
+            class="c39"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2853,10 +2873,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           </a>
         </li>
         <li
-          class="c41"
+          class="c43"
         >
           <a
-            class="c37"
+            class="c39"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2878,10 +2898,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           </a>
         </li>
         <li
-          class="c42"
+          class="c44"
         >
           <a
-            class="c37"
+            class="c39"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2918,11 +2938,11 @@ exports[`<Layout /> rich body should render H2 1`] = `
 }
 
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -3031,14 +3051,12 @@ exports[`<Layout /> rich body should render H2 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -3547,11 +3565,11 @@ exports[`<Layout /> rich body should render H2 1`] = `
 
 exports[`<Layout /> rich body should render Hr 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -3665,14 +3683,12 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -4178,11 +4194,11 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 
 exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -4291,14 +4307,12 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -4883,11 +4897,11 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 
 exports[`<Layout /> rich body should render Paragraph 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -5005,14 +5019,12 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -5524,11 +5536,11 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 
 exports[`<Layout /> rich body should render borken internal links 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -5646,14 +5658,12 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -6163,11 +6173,11 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 
 exports[`<Layout /> rich body should render external links 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -6290,14 +6300,12 @@ exports[`<Layout /> rich body should render external links 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -6816,11 +6824,11 @@ exports[`<Layout /> rich body should render external links 1`] = `
 
 exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -6938,14 +6946,12 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -7461,11 +7467,11 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 
 exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -7583,14 +7589,12 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -8100,16 +8104,30 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 
 exports[`<Layout /> rich body should render internal links 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
 .c4 :active,
 .c4 :focus {
+  text-decoration: underline;
+}
+
+.c20 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(90, 94, 0);
+}
+
+.c20 :hover,
+.c20 :active,
+.c20 :focus {
   text-decoration: underline;
 }
 
@@ -8122,14 +8140,14 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   margin-top: 1rem;
 }
 
-.c25 {
+.c26 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c25 >* {
+.c26 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -8138,22 +8156,13 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c24 {
+.c25 {
   padding: 0px;
 }
 
-.c24 :hover,
-.c24 :focus {
+.c25 :hover,
+.c25 :focus {
   fill: #4267B2;
-}
-
-.c26 {
-  padding: 0px;
-}
-
-.c26 :hover,
-.c26 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c27 {
@@ -8162,7 +8171,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c27 :hover,
 .c27 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c28 {
@@ -8171,7 +8180,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c28 :hover,
 .c28 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c29 {
@@ -8180,7 +8189,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c29 :hover,
 .c29 :focus {
-  fill: #6363ff;
+  fill: #0E76A8;
 }
 
 .c30 {
@@ -8189,22 +8198,31 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c30 :hover,
 .c30 :focus {
+  fill: #6363ff;
+}
+
+.c31 {
+  padding: 0px;
+}
+
+.c31 :hover,
+.c31 :focus {
   fill: #0060df;
 }
 
-.c23 {
+.c24 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c21 {
+.c22 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c21 >.,
-.c21 >.c22 {
+.c22 >.,
+.c22 >.c23 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -8212,7 +8230,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -8222,14 +8240,12 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -8334,18 +8350,18 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c21 {
+  .c22 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c21 >.{
+  .c22 >.{
     justify-content: flex-start;
   }
 
-  .c21 >.c22 {
+  .c22 >.c23 {
     justify-content: flex-end;
   }
 }
@@ -8562,7 +8578,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         class="c18 c19"
       >
         <a
-          class="c4"
+          class="c20"
           href="/blogi/this-is-an-internal/link/"
         >
           external link
@@ -8571,10 +8587,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     </article>
   </main>
   <footer
-    class="c20"
+    class="c21"
   >
     <div
-      class="c21"
+      class="c22"
     >
       <div
         class=""
@@ -8586,13 +8602,13 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         />
       </div>
       <ul
-        class="c22 c23"
+        class="c23 c24"
       >
         <li
-          class="c24"
+          class="c25"
         >
           <a
-            class="c25"
+            class="c26"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -8614,10 +8630,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           </a>
         </li>
         <li
-          class="c26"
+          class="c27"
         >
           <a
-            class="c25"
+            class="c26"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -8639,10 +8655,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           </a>
         </li>
         <li
-          class="c27"
+          class="c28"
         >
           <a
-            class="c25"
+            class="c26"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -8664,10 +8680,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c29"
         >
           <a
-            class="c25"
+            class="c26"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -8689,10 +8705,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           </a>
         </li>
         <li
-          class="c29"
+          class="c30"
         >
           <a
-            class="c25"
+            class="c26"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -8714,10 +8730,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
           </a>
         </li>
         <li
-          class="c30"
+          class="c31"
         >
           <a
-            class="c25"
+            class="c26"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
@@ -8746,11 +8762,11 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 exports[`<Layout /> rich body should render table 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -8868,14 +8884,12 @@ exports[`<Layout /> rich body should render table 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -9448,11 +9462,11 @@ exports[`<Layout /> rich body should render table 1`] = `
 
 exports[`<Layout /> should render hero banner for front page 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -9561,14 +9575,12 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -10155,11 +10167,11 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 exports[`<Layout /> should render minimal 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -10268,14 +10280,12 @@ exports[`<Layout /> should render minimal 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
@@ -10779,11 +10789,11 @@ exports[`<Layout /> should render minimal 1`] = `
 
 exports[`<Layout /> should render title banner 1`] = `
 .c4 {
-  color: rgb(90, 94, 0);
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
 }
 
 .c4 :hover,
@@ -10892,14 +10902,12 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 .c6 {
-  color: rgb(248, 207, 169);
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat";
 }
 
 .c7 {
-  color: rgb(248, 207, 169);
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans";
