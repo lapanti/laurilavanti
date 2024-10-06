@@ -86,7 +86,6 @@ export const query = graphql`
                         __typename
                         contentful_id
                         caption
-                        altText
                         image {
                             localFile {
                                 childImageSharp {

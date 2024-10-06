@@ -234,7 +234,7 @@ describe('<Layout />', () => {
         })
 
         it('should render ImageWithCaption', () => {
-            const altText = 'alt text'
+            const description = 'alt text'
             const caption = 'caption'
 
             const { container } = render(
@@ -258,11 +258,10 @@ describe('<Layout />', () => {
                         references: [
                             {
                                 __typename: 'ContentfulImageWithCaption',
-                                altText: 'alt',
                                 caption,
                                 contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
                                 image: {
-                                    description: altText,
+                                    description: description,
                                     localFile: {
                                         childImageSharp: {
                                             gatsbyImageData: {
@@ -300,7 +299,7 @@ describe('<Layout />', () => {
             )
 
             // Check ImageWithCaption is present
-            expect(screen.getByRole('img', { name: altText })).toBeInTheDocument()
+            expect(screen.getByRole('img', { name: description })).toBeInTheDocument()
             expect(screen.getByRole('figure', { name: caption })).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()
