@@ -42,6 +42,7 @@ import YearsFrom from './layout/YearsFrom'
 import Paragraph from './Paragraph'
 
 const Main = styled.main({
+    backgroundColor: colors.white,
     gridArea: gridAreas.main,
 })
 

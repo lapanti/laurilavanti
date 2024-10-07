@@ -59,6 +59,7 @@ const GlobalStyle = createGlobalStyle({
         height: sizes[0],
     },
     html: {
+        backgroundColor: colors.evening,
         fontDisplay: 'swap',
         fontFamily: fontFamilies.sans,
         fontFeatureSettings: 'normal',
