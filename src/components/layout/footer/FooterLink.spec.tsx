@@ -12,13 +12,4 @@ describe('<FooterLink />', () => {
 
         expect(container.firstChild).toMatchSnapshot()
     })
-
-    it('should render null when unsupported link', () => {
-        const link = { ...footerNav.links[0], url: undefined }
-        const { container } = render(<FooterLink link={link} />)
-
-        expect(screen.queryByRole('link', { name: link.title })).toBeNull()
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
 })

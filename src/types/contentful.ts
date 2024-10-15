@@ -22,7 +22,7 @@ interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
 export interface ContactInfoLink {
     contentful_id: string
     title: string
-    url?: string | null
+    url: string
     icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope' | 'threads'
 }
 
