@@ -1,6 +1,6 @@
-import type { ContactInfoLink as ContactInfoLinkType } from '../../../types/contentful'
+import type { ContactInfoLink as ContactInfoLinkType } from '../../types/contentful'
 
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     FaBluesky,
     FaEnvelope,
