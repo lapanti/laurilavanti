@@ -1,6 +1,6 @@
 import type { ContactInfoLink as ContactInfoLinkType } from '../../types/contentful'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
     FaBluesky,
     FaEnvelope,
@@ -42,29 +42,18 @@ interface Props {
     link: ContactInfoLinkType
 }
 
-const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
-    const isMailToLink = link.url.startsWith('mailto:')
-    const [href, setHref] = useState(isMailToLink ? undefined : link.url)
-
-    useEffect(() => {
-        if (isMailToLink) {
-            setHref(link.url)
-        }
-    }, [isMailToLink, link.url, setHref])
-
-    return (
-        <RowExternalLink className={className} href={href} rel="me">
-            {link.icon === 'envelope' && <Envelope />}
-            {link.icon === 'facebook' && <Facebook />}
-            {link.icon === 'bluesky' && <Bluesky />}
-            {link.icon === 'threads' && <Threads />}
-            {link.icon === 'instagram' && <Instagram />}
-            {link.icon === 'linkedin' && <LinkedIn />}
-            {link.icon === 'mastodon' && <Mastodon />}
-            <span>{link.title}</span>
-        </RowExternalLink>
-    )
-}
+const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => (
+    <RowExternalLink className={className} href={link.url} rel="me">
+        {link.icon === 'envelope' && <Envelope />}
+        {link.icon === 'facebook' && <Facebook />}
+        {link.icon === 'bluesky' && <Bluesky />}
+        {link.icon === 'threads' && <Threads />}
+        {link.icon === 'instagram' && <Instagram />}
+        {link.icon === 'linkedin' && <LinkedIn />}
+        {link.icon === 'mastodon' && <Mastodon />}
+        <span>{link.title}</span>
+    </RowExternalLink>
+)
 
 ContactInfoLinkComponent.displayName = 'ContactInfoLink'
 

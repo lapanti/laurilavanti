@@ -4,7 +4,7 @@ export const mailLink: ContactInfoLink = {
     contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',
     icon: 'envelope',
     title: 'lauri.lavanti@kirkkonummi.fi',
-    url: 'mail:lauri.lavanti@kirkkonummi.fi',
+    url: 'mailto:lauri.lavanti@kirkkonummi.fi',
 }
 
 export const facebookLink: ContactInfoLink = {

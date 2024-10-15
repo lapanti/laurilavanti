@@ -58,15 +58,15 @@ interface Props {
     link: ContactInfoLink
 }
 
-const FooterLinkComponent = ({ className, link }: Props): JSX.Element | null => {
+const FooterLinkComponent = ({ className, link }: Props): JSX.Element => {
     const Icon = iconToIconComponent(link.icon)
-    return link.url ? (
+    return (
         <li className={className}>
             <Link href={link.url} rel="me noopener noreferrer" target="_blank" title={link.title}>
                 {Icon && <Icon />}
             </Link>
         </li>
-    ) : null
+    )
 }
 
 FooterLinkComponent.displayName = 'FooterLink'
