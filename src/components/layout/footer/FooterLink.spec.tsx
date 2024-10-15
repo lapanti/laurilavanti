@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { mailLink } from '../../../../tests/contactInfo.mock'
 import { footerNav } from '../../../../tests/footerNav.mock'
 import FooterLink from './FooterLink'
 
@@ -15,7 +14,7 @@ describe('<FooterLink />', () => {
     })
 
     it('should render null when unsupported link', () => {
-        const link = mailLink
+        const link = { ...footerNav.links[0], url: undefined }
         const { container } = render(<FooterLink link={link} />)
 
         expect(screen.queryByRole('link', { name: link.title })).toBeNull()

@@ -28,7 +28,7 @@ import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import Hr from './Hr'
 import InternalLink from './InternalLink'
-import ContactInfo from './layout/ContactInfo'
+import ContactInfoLink from './layout/ContactInfoLink'
 import CurriculumVitae from './layout/CurriculumVitae'
 import Footer from './layout/Footer'
 import GlobalStyle from './layout/GlobalStyle'
@@ -126,8 +126,6 @@ const options = {
                             imageData={node.data.target.image.localFile}
                         />
                     )
-                case 'ContentfulContactInfo':
-                    return <ContactInfo links={node.data.target.links} />
                 case 'ContentfulCurriculumVitae':
                     return (
                         <CurriculumVitae
@@ -169,6 +167,9 @@ const options = {
         [INLINES.EMBEDDED_ENTRY]: (node: Block | Inline) => {
             if (node?.data?.target?.__typename === 'ContentfulYearsFrom') {
                 return <YearsFrom dateToCountFrom={node.data.target.dateToCountFrom} />
+            }
+            if (node?.data?.target?.__typename === 'ContentfulContactInfoLink') {
+                return <ContactInfoLink link={node.data.target} />
             }
         },
     },

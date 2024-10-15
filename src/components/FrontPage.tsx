@@ -44,16 +44,6 @@ export const query = graphql`
             body {
                 raw
                 references {
-                    ... on ContentfulContactInfo {
-                        __typename
-                        contentful_id
-                        links {
-                            contentful_id
-                            title
-                            url
-                            icon
-                        }
-                    }
                     ... on ContentfulExcerptList {
                         __typename
                         contentful_id
@@ -87,6 +77,12 @@ export const query = graphql`
                             startYear
                             endYear
                         }
+                    }
+                    ... on ContentfulContactInfoLink {
+                        __typename
+                        title
+                        url
+                        icon
                     }
                 }
             }

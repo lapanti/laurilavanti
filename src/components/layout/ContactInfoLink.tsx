@@ -1,6 +1,6 @@
 import type { ContactInfoLink as ContactInfoLinkType } from '../../../types/contentful'
 
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
     FaBluesky,
     FaEnvelope,
@@ -12,8 +12,8 @@ import {
 } from 'react-icons/fa6'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, sizes } from '../../../lib/styles'
-import ExternalLink from '../../ExternalLink'
+import { colors, sizes } from '../../lib/styles'
+import ExternalLink from '../ExternalLink'
 
 const RowExternalLink = styled(ExternalLink)({
     alignItems: 'center',
@@ -23,7 +23,7 @@ const RowExternalLink = styled(ExternalLink)({
 
 const logoStyles = { height: sizes[1], marginRight: sizes[0.5], width: sizes[1] }
 
-const Envelope = styled(FaEnvelope)(logoStyles)
+const Envelope = styled(FaEnvelope)(logoStyles, { fill: colors.black })
 
 const Facebook = styled(FaFacebook)(logoStyles, { fill: colors.facebook })
 
@@ -43,22 +43,26 @@ interface Props {
 }
 
 const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => {
-    const Wrapper = link.url ? RowExternalLink : React.Fragment
+    const isMailToLink = link.url.startsWith('mailto:')
+    const [href, setHref] = useState(isMailToLink ? undefined : link.url)
+
+    useEffect(() => {
+        if (isMailToLink) {
+            setHref(link.url)
+        }
+    }, [isMailToLink, link.url, setHref])
 
     return (
-        <li className={className}>
-            {/* @ts-expect-error typescript doesn't like this */}
-            <Wrapper {...(link.url ? { href: link.url, rel: 'me' } : {})}>
-                {link.icon === 'envelope' && <Envelope />}
-                {link.icon === 'facebook' && <Facebook />}
-                {link.icon === 'bluesky' && <Bluesky />}
-                {link.icon === 'threads' && <Threads />}
-                {link.icon === 'instagram' && <Instagram />}
-                {link.icon === 'linkedin' && <LinkedIn />}
-                {link.icon === 'mastodon' && <Mastodon />}
-                <span>{link.title}</span>
-            </Wrapper>
-        </li>
+        <RowExternalLink className={className} href={href} rel="me">
+            {link.icon === 'envelope' && <Envelope />}
+            {link.icon === 'facebook' && <Facebook />}
+            {link.icon === 'bluesky' && <Bluesky />}
+            {link.icon === 'threads' && <Threads />}
+            {link.icon === 'instagram' && <Instagram />}
+            {link.icon === 'linkedin' && <LinkedIn />}
+            {link.icon === 'mastodon' && <Mastodon />}
+            <span>{link.title}</span>
+        </RowExternalLink>
     )
 }
 

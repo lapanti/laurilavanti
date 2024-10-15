@@ -213,21 +213,15 @@ export const blog: ContentfulPage = {
 
 export const contactMe: ContentfulPage = {
     ...images,
-    description: 'Yhteystiedot',
-    leftAlignedTitle: true,
-    jsonLdType: 'Person',
-    title: 'Ota yhteyttä',
-    subtitle: null,
-    secondaryTitle: null,
     body: {
-        raw: '{"data":{},"content":[{"data":{"target":{"sys":{"id":"5p1Xu3HEt01ELvRawwh6HF","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
-        references: [
-            {
-                __typename: 'ContentfulContactInfo',
-                contentful_id: '5p1Xu3HEt01ELvRawwh6HF',
-                links: contactInfoLinks,
-            },
-        ],
+        raw: '{"nodeType":"document","data":{},"content":[{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Sähköposti: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"4N9FJRjt9I5wHNGDWjp3Ox","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Facebook: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"6ylApa8B8wgGibypB2UIB9","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Bluesky: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"huwFXuirHu64btphW6KuN","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Threads: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"25USXEVEz9KLBF6JMtgVsx","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Instagram: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"o7sDXDUNJVK7NUQSQarQQ","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"LinkedIn: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"vl12ZwQDYvDaOBWKlWU09","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Mastodon: ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"2uZGyVH5uV3hzs4fjd685d","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"","marks":[],"data":{}}]}]}',
+        references: contactInfoLinks.map((link) => ({ ...link, __typename: 'ContentfulContactInfoLink' })),
     },
+    description: 'Yhteystiedot',
+    jsonLdType: 'Person',
+    leftAlignedTitle: true,
+    secondaryTitle: null,
+    subtitle: null,
+    title: 'Ota yhteyttä',
     updatedAt: '2022-07-31T20:25:55.535Z',
 }

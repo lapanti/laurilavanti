@@ -58,8 +58,10 @@ interface CurriculumVitae extends ContentfulRichTextGatsbyReference {
     jobExperiences: JobExperience[]
 }
 
-interface ContactInfoReference extends ContentfulRichTextGatsbyReference {
-    links: ContactInfoLink[]
+interface ContactInfoLinkReference extends ContentfulRichTextGatsbyReference {
+    title: string
+    url?: string | null
+    icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope' | 'threads'
 }
 
 interface YearsFromReference extends ContentfulRichTextGatsbyReference {
@@ -70,7 +72,7 @@ type RichReferences =
     | ExcerptListReference
     | RichTextPostReference
     | RichTextImageReference
-    | ContactInfoReference
+    | ContactInfoLinkReference
     | ContentfulRichTextGatsbyReference
     | CurriculumVitae
     | YearsFromReference
