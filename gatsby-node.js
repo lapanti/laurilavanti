@@ -1,3 +1,4 @@
+/* eslint-disable-next-line @typescript-eslint/no-require-imports */
 const chalk = require('chalk')
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -34,9 +35,9 @@ exports.createPages = async ({ graphql, actions }) => {
             post.oldSlugs.forEach((from) =>
                 createRedirect({
                     fromPath: `/${from}`,
-                    toPath: `blogi/${post.slug}`,
                     isPermanent: true,
                     redirectInBrowser: true,
+                    toPath: `blogi/${post.slug}`,
                 })
             )
         )
@@ -46,28 +47,28 @@ exports.createPages = async ({ graphql, actions }) => {
 
     data.pages.nodes.forEach(({ slug }) => {
         actions.createPage({
-            path: slug === 'index' ? '/' : slug,
             component:
                 slug === 'index'
                     ? require.resolve('./src/components/FrontPage.tsx')
                     : require.resolve('./src/components/Page.tsx'),
             context: { slug },
+            path: slug === 'index' ? '/' : slug,
         })
     })
 
     data.posts.nodes.forEach(({ slug }) => {
         actions.createPage({
-            path: `/blogi/${slug}`,
             component: require.resolve('./src/components/Post.tsx'),
             context: { slug },
+            path: `/blogi/${slug}`,
         })
     })
 
     data.tagsGroup.nodes.forEach(({ contentful_id }) => {
         actions.createPage({
-            path: `/kategoria/${contentful_id}`,
             component: require.resolve('./src/components/Tag.tsx'),
             context: { tag: contentful_id },
+            path: `/kategoria/${contentful_id}`,
         })
     })
 }

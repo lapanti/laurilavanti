@@ -305,8 +305,9 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render ContactInfo', () => {
-            const email = 'test@example.com'
+        it('should render ContactInfoLink', () => {
+            const title = 'Facebook'
+            const url = `https://www.facebook.com/laurilavanti`
             const { container } = render(
                 <Layout
                     body={{
@@ -319,7 +320,7 @@ describe('<Layout />', () => {
                                             sys: { id: '5p1Xu3HEt01ELvRawwh6HF', linkType: 'Entry', type: 'Link' },
                                         },
                                     },
-                                    nodeType: 'embedded-entry-block',
+                                    nodeType: 'embedded-inline-block',
                                 },
                             ],
                             data: {},
@@ -327,16 +328,11 @@ describe('<Layout />', () => {
                         }),
                         references: [
                             {
-                                __typename: 'ContentfulContactInfo',
-                                contentful_id: '5p1Xu3HEt01ELvRawwh6HF',
-                                links: [
-                                    {
-                                        contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',
-                                        icon: 'envelope',
-                                        title: email,
-                                        url: null,
-                                    },
-                                ],
+                                __typename: 'ContentfulContactInfoLink',
+                                contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',
+                                icon: 'envelope',
+                                title,
+                                url,
                             },
                         ],
                     }}
@@ -345,8 +341,8 @@ describe('<Layout />', () => {
                 />
             )
 
-            // Check ContactInfo is present
-            expect(screen.getByText(email)).toBeInTheDocument()
+            // Check ContactInfoLink is present
+            expect(screen.getByRole('link', { name: title })).toHaveAttribute('href', url)
 
             expect(container.firstChild).toMatchSnapshot()
         })

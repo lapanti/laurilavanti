@@ -301,7 +301,7 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -936,7 +936,7 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -1261,7 +1261,7 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 </div>
 `;
 
-exports[`<Layout /> rich body should render ContactInfo 1`] = `
+exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 .c4 {
   text-decoration: none;
   transition-duration: 150ms;
@@ -1276,31 +1276,14 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   text-decoration: underline;
 }
 
-.c20 {
-  height: 1rem;
-  margin-right: 0.5rem;
-  width: 1rem;
-}
-
-.c19 {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-}
-
-.c18 {
-  grid-column-start: 3;
-  margin-top: 1rem;
-}
-
-.c26 {
+.c23 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c26 >* {
+.c23 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -1309,13 +1292,40 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.c22 {
+  padding: 0px;
+}
+
+.c22 :hover,
+.c22 :focus {
+  fill: #4267B2;
+}
+
+.c24 {
+  padding: 0px;
+}
+
+.c24 :hover,
+.c24 :focus {
+  fill: rgb(0, 0, 0);
+}
+
 .c25 {
   padding: 0px;
 }
 
 .c25 :hover,
 .c25 :focus {
-  fill: #4267B2;
+  fill: url(#instagram-gradient);
+}
+
+.c26 {
+  padding: 0px;
+}
+
+.c26 :hover,
+.c26 :focus {
+  fill: #0E76A8;
 }
 
 .c27 {
@@ -1324,7 +1334,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 
 .c27 :hover,
 .c27 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #6363ff;
 }
 
 .c28 {
@@ -1333,49 +1343,22 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 
 .c28 :hover,
 .c28 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c29 {
-  padding: 0px;
-}
-
-.c29 :hover,
-.c29 :focus {
-  fill: #0E76A8;
-}
-
-.c30 {
-  padding: 0px;
-}
-
-.c30 :hover,
-.c30 :focus {
-  fill: #6363ff;
-}
-
-.c31 {
-  padding: 0px;
-}
-
-.c31 :hover,
-.c31 :focus {
   fill: #0060df;
 }
 
-.c24 {
+.c21 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c22 {
+.c19 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c22 >.,
-.c22 >.c23 {
+.c19 >.,
+.c19 >.c20 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -1383,7 +1366,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
   justify-content: center;
 }
 
-.c21 {
+.c18 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -1499,18 +1482,18 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c22 {
+  .c19 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c22 >.{
+  .c19 >.{
     justify-content: flex-start;
   }
 
-  .c22 >.c23 {
+  .c19 >.c20 {
     justify-content: flex-end;
   }
 }
@@ -1579,7 +1562,7 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -1723,38 +1706,13 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           </div>
         </div>
       </div>
-      <ul
-        class="c18"
-      >
-        <li
-          class="c19"
-        >
-          <svg
-            class="c20"
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 512 512"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-            />
-          </svg>
-          <span>
-            test@example.com
-          </span>
-        </li>
-      </ul>
     </article>
   </main>
   <footer
-    class="c21"
+    class="c18"
   >
     <div
-      class="c22"
+      class="c19"
     >
       <div
         class=""
@@ -1766,13 +1724,13 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
         />
       </div>
       <ul
-        class="c23 c24"
+        class="c20 c21"
       >
         <li
-          class="c25"
+          class="c22"
         >
           <a
-            class="c26"
+            class="c23"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1794,10 +1752,10 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           </a>
         </li>
         <li
-          class="c27"
+          class="c24"
         >
           <a
-            class="c26"
+            class="c23"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1819,10 +1777,10 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c25"
         >
           <a
-            class="c26"
+            class="c23"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1844,10 +1802,10 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           </a>
         </li>
         <li
-          class="c29"
+          class="c26"
         >
           <a
-            class="c26"
+            class="c23"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1869,10 +1827,10 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           </a>
         </li>
         <li
-          class="c30"
+          class="c27"
         >
           <a
-            class="c26"
+            class="c23"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -1894,10 +1852,10 @@ exports[`<Layout /> rich body should render ContactInfo 1`] = `
           </a>
         </li>
         <li
-          class="c31"
+          class="c28"
         >
           <a
-            class="c26"
+            class="c23"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
@@ -2352,7 +2310,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -3237,7 +3195,7 @@ exports[`<Layout /> rich body should render H2 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -3869,7 +3827,7 @@ exports[`<Layout /> rich body should render Hr 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -4516,7 +4474,7 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -5209,7 +5167,7 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -5848,7 +5806,7 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -6490,7 +6448,7 @@ exports[`<Layout /> rich body should render external links 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -7136,7 +7094,7 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -7779,7 +7737,7 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -8430,7 +8388,7 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -9108,7 +9066,7 @@ exports[`<Layout /> rich body should render table 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
@@ -10466,7 +10424,7 @@ exports[`<Layout /> should render minimal 1`] = `
     margin: auto;
   }
 
-  .c14 >.sc-fufdwm,
+  .c14 >.sc-UblHX,
   .c14 >.c15 {
     width: 50%;
   }
