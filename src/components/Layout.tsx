@@ -1,10 +1,10 @@
 import type { Block, Inline, Text } from '@contentful/rich-text-types'
-import type { ImageDataLike } from 'gatsby-plugin-image'
 import type { ReactNode } from 'react'
 import type { RichBody } from '../types/contentful'
 import type { SeoProps } from './layout/Seo'
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { GatsbyImage, getImage, type ImageDataLike } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
@@ -102,6 +102,10 @@ const BlockQuote = styled.div({
     ...fontSizes[1.5],
 })
 
+const StyledImage = styled(GatsbyImage)({
+    gridColumnStart: 3,
+})
+
 const options = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
@@ -171,6 +175,10 @@ const options = {
             if (node?.data?.target?.__typename === 'ContentfulContactInfoLink') {
                 return <ContactInfoLink link={node.data.target} />
             }
+        },
+        [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
+            const image = getImage(node?.data?.target?.localFile)
+            return image ? <StyledImage alt={node.data.target.description} image={image} /> : null
         },
     },
 }

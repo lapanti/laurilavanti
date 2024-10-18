@@ -11,12 +11,17 @@ interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
     slug: string
 }
 
-interface RichTextImageReference extends ContentfulRichTextGatsbyReference {
+interface ImageWithCaptionReference extends ContentfulRichTextGatsbyReference {
     caption: string
     image: {
         localFile: ImageDataLike
         description: string
     }
+}
+
+interface ImageReference extends ContentfulRichTextGatsbyReference {
+    description: string
+    localFile: ImageDataLike
 }
 
 export interface ContactInfoLink {
@@ -71,11 +76,12 @@ interface YearsFromReference extends ContentfulRichTextGatsbyReference {
 type RichReferences =
     | ExcerptListReference
     | RichTextPostReference
-    | RichTextImageReference
+    | ImageWithCaptionReference
     | ContactInfoLinkReference
     | ContentfulRichTextGatsbyReference
     | CurriculumVitae
     | YearsFromReference
+    | ImageReference
 
 export type RichBody = RenderRichTextData<RichReferences>
 
