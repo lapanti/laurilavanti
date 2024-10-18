@@ -372,6 +372,46 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
+        it('should render nothing when embedded asset has no image', () => {
+            const description = 'alt text'
+
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [],
+                                    data: {
+                                        target: {
+                                            sys: { id: '3U3GBuOeUwedsXLCVVuJ1j', linkType: 'Asset', type: 'Link' },
+                                        },
+                                    },
+                                    nodeType: 'embedded-asset-block',
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename: 'ContentfulAsset',
+                                contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
+                                description,
+                            },
+                        ],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
+
+            // Check image is not present
+            expect(screen.queryByRole('img', { name: description })).toBeNull()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
         it('should render ContactInfoLink', () => {
             const title = 'Facebook'
             const url = `https://www.facebook.com/laurilavanti`
