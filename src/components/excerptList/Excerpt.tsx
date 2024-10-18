@@ -5,13 +5,14 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, fontSizes, sizes, zIndices } from '../../lib/styles'
+import { colors, fontFamilies, fontSizes, sizes, zIndices } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
 import PostMeta from '../PostMeta'
 
 const StyledH2 = styled(H2)({
+    fontFamily: fontFamilies.sans,
     gridColumnStart: 'auto',
 })
 
