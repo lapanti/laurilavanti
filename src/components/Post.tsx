@@ -95,6 +95,16 @@ export const query = graphql`
                             description
                         }
                     }
+                    ... on ContentfulAsset {
+                        __typename
+                        contentful_id
+                        localFile {
+                            childImageSharp {
+                                gatsbyImageData
+                            }
+                        }
+                        description
+                    }
                     ... on ContentfulPost {
                         __typename
                         contentful_id

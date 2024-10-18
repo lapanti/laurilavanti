@@ -305,6 +305,73 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
+        it('should render embedded image', () => {
+            const description = 'alt text'
+
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [],
+                                    data: {
+                                        target: {
+                                            sys: { id: '3U3GBuOeUwedsXLCVVuJ1j', linkType: 'Asset', type: 'Link' },
+                                        },
+                                    },
+                                    nodeType: 'embedded-asset-block',
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename: 'ContentfulAsset',
+                                contentful_id: '3U3GBuOeUwedsXLCVVuJ1j',
+                                description,
+                                localFile: {
+                                    childImageSharp: {
+                                        gatsbyImageData: {
+                                            height: 780,
+                                            images: {
+                                                fallback: {
+                                                    sizes: '(min-width: 1820px) 1820px, 100vw',
+                                                    src: '/static/cab598b604510ca253fe4f749766f06b/f7471/gesterbyn-parakit-w.jpg',
+                                                    srcSet: '/static/cab598b604510ca253fe4f749766f06b/95548/gesterbyn-parakit-w.jpg 455w,\n/static/cab598b604510ca253fe4f749766f06b/e6bdc/gesterbyn-parakit-w.jpg 910w,\n/static/cab598b604510ca253fe4f749766f06b/f7471/gesterbyn-parakit-w.jpg 1820w',
+                                                },
+                                                sources: [
+                                                    {
+                                                        sizes: '(min-width: 1820px) 1820px, 100vw',
+                                                        srcSet: '/static/cab598b604510ca253fe4f749766f06b/7bfa3/gesterbyn-parakit-w.webp 455w,\n/static/cab598b604510ca253fe4f749766f06b/d32f3/gesterbyn-parakit-w.webp 910w,\n/static/cab598b604510ca253fe4f749766f06b/9e6d8/gesterbyn-parakit-w.webp 1820w',
+                                                        type: 'image/webp',
+                                                    },
+                                                ],
+                                            },
+                                            layout: 'constrained',
+                                            placeholder: {
+                                                fallback:
+                                                    'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAJABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAQBAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAABaVugzR8j/8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIAEwMQEf/aAAgBAQABBQK4cd2cV5W0YJ//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwGI/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8Bqv/EAB0QAAECBwAAAAAAAAAAAAAAAAABAhESIDJBcZH/2gAIAQEABj8CtcZ0RSbtH//EABwQAAICAgMAAAAAAAAAAAAAAAARATEhQVFhgf/aAAgBAQABPyG5m4RKmkaoRgCdKQVK+n//2gAMAwEAAgADAAAAEEc//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxAP/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQIBAT8QtT//xAAcEAACAgIDAAAAAAAAAAAAAAAAAREhMUFxgZH/2gAIAQEAAT8QSmotjexqhP1tsnpI3FJdGBm4Mw//2Q==',
+                                            },
+                                            width: 1820,
+                                        },
+                                    },
+                                },
+                            },
+                        ],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
+
+            // Check image is present
+            expect(screen.getByRole('img', { name: description })).toBeInTheDocument()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
         it('should render ContactInfoLink', () => {
             const title = 'Facebook'
             const url = `https://www.facebook.com/laurilavanti`
