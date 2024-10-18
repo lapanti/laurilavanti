@@ -14,7 +14,6 @@ export class AnyPage {
     readonly footerBlueskyLink: Locator
     readonly footerInstagramLink: Locator
     readonly footerLinkedInLink: Locator
-    readonly footerMastodonLink: Locator
 
     constructor(page: Page) {
         this.page = page
@@ -28,7 +27,6 @@ export class AnyPage {
         this.footerBlueskyLink = page.locator('footer').locator('a[title="Bluesky"]')
         this.footerInstagramLink = page.locator('footer').locator('a[title="Instagram"]')
         this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
-        this.footerMastodonLink = page.locator('footer').locator('a[title="Mastodon"]')
     }
 
     async openMainNavigation() {
@@ -79,7 +77,6 @@ export class AnyPage {
         await expect(this.footerBlueskyLink).toHaveAttribute('href', 'https://bsky.app/profile/laurilavanti.fi')
         await expect(this.footerInstagramLink).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
-        await expect(this.footerMastodonLink).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
     }
 
     async testScreenshot() {
