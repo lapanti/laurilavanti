@@ -40,6 +40,7 @@ const BiggerMeta = styled(PostMeta)({
 
 const Content = styled.div<{ $leftAlignedTitle: boolean }>(
     {
+        backgroundColor: colors.white,
         [breakpoints[1200].min]: {
             display: 'flex',
             margin: 'auto',
@@ -100,6 +101,7 @@ const TitleBannerComponent = ({
 TitleBannerComponent.displayName = 'TitleBanner'
 
 const TitleBanner = styled(TitleBannerComponent)({
+    backgroundColor: colors.evening,
     gridColumn: '1 / -1',
     paddingTop: HEADER_SIZE,
 })
