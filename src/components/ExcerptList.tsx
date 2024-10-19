@@ -24,7 +24,7 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
         }
     }>(graphql`
         {
-            allContentfulPost(sort: { publishDate: DESC }) {
+            allContentfulPost(sort: { createdAt: DESC }) {
                 nodes {
                     title
                     createdAt(formatString: "L", locale: "fi")
