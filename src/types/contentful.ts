@@ -145,7 +145,7 @@ export interface ContentfulPost extends ContentfulPostCommon {
 export interface MainNav {
     links: {
         contentful_id: string
-        title: string
+        navigationTitle: string
         slug: string
     }[]
 }

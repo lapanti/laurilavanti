@@ -6,11 +6,12 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 import { colors, fontFamilies, fontSizes } from '../../../lib/styles'
 import InternalLink from '../../InternalLink'
 
-type Link = Omit<MainNav['links'][number], 'contentful_id'>
+type Link = Omit<MainNav['links'][number], 'contentful_id' | 'navigationTitle'>
 
 interface Props extends Link {
     className?: string
     isFrontPage?: boolean
+    title: string
 }
 
 const NavLinkComponent = ({ className, title, slug, isFrontPage }: Props): JSX.Element => (
