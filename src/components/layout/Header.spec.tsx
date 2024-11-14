@@ -15,7 +15,7 @@ describe('<Header />', () => {
         expect(screen.getByRole('link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
 
         mainNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
+            expect(screen.getByRole('link', { name: link.navigationTitle })).toHaveAttribute('href', `/${link.slug}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -33,7 +33,7 @@ describe('<Header />', () => {
         expect(screen.getByRole('link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
 
         mainNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
+            expect(screen.getByRole('link', { name: link.navigationTitle })).toHaveAttribute('href', `/${link.slug}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
