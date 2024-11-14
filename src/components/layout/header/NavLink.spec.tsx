@@ -7,13 +7,13 @@ import NavLink from './NavLink'
 
 describe('<NavLink />', () => {
     const slug = 'my-slug-is-here'
-    const title = 'This is my title'
-    const nav: MainNav['links'][number] = { contentful_id: 'contentful_id', slug, title }
+    const navigationTitle = 'This is my title'
+    const nav: MainNav['links'][number] = { contentful_id: 'contentful_id', slug, navigationTitle }
 
     it('should render', () => {
         const { container } = render(<NavLink {...nav} />)
 
-        expect(screen.getByRole('link', { name: title })).toHaveAttribute('href', `/${slug}/`)
+        expect(screen.getByRole('link', { name: navigationTitle })).toHaveAttribute('href', `/${slug}/`)
 
         expect(container.firstChild).toMatchSnapshot()
     })
