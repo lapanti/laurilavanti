@@ -3,7 +3,7 @@ import type { Degree, Fiduciary, JobExperience } from '../../types/contentful'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
+import { colors, fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 import H2 from '../H2'
 
 /** Only exported for testing purposes */
@@ -18,6 +18,24 @@ const DivContainer = styled.div({
     fontWeight: fontWeights.normal,
     marginBottom: sizes[1],
     marginTop: sizes[1],
+})
+
+const Li = styled.li({
+    '&:before': {
+        color: colors.evening,
+        content: '"»"',
+        left: 0,
+        position: 'absolute',
+    },
+    marginLeft: sizes[1.25],
+})
+
+const Ul = styled.ul({
+    '> li:not(:first-child)': {
+        marginTop: sizes[0.5],
+    },
+    listStyle: 'none',
+    position: 'relative',
 })
 
 interface Props {
@@ -44,37 +62,39 @@ const CurriculumVitaeComponent = ({
             <H2>{fiduciariesTitle}</H2>
         </DivContainer>
         <DivContainer>
-            <ul>
+            <Ul>
                 {fiduciaries.map(({ duty, organization, startYear, endYear }) => (
-                    <li key={`${duty}-${organization}-${startYear}`}>
+                    <Li key={`${duty}-${organization}-${startYear}`}>
                         {duty}, {organization} - {yearsToString(startYear, endYear)}
-                    </li>
+                    </Li>
                 ))}
-            </ul>
+            </Ul>
         </DivContainer>
+        <br />
         <DivContainer>
             <H2>{jobExperiencesTitle}</H2>
         </DivContainer>
         <DivContainer>
-            <ul>
+            <Ul>
                 {jobExperiences.map(({ title, company, location, startYear, endYear }) => (
-                    <li key={`${title}-${company}`}>
+                    <Li key={`${title}-${company}`}>
                         {title}, {company} ({location}) - {yearsToString(startYear, endYear)}
-                    </li>
+                    </Li>
                 ))}
-            </ul>
+            </Ul>
         </DivContainer>
+        <br />
         <DivContainer>
             <H2>{degreesTitle}</H2>
         </DivContainer>
         <DivContainer>
-            <ul>
+            <Ul>
                 {degrees.map(({ degree, school, location, startYear, endYear }) => (
-                    <li key={`${degree}-${school}`}>
+                    <Li key={`${degree}-${school}`}>
                         {degree}, {school} ({location}) - {yearsToString(startYear, endYear)}
-                    </li>
+                    </Li>
                 ))}
-            </ul>
+            </Ul>
         </DivContainer>
     </div>
 )

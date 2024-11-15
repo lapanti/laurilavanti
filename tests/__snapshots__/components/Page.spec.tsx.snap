@@ -46,19 +46,39 @@ exports[`<Page /> should render about me page 1`] = `
   margin-top: 1rem;
 }
 
+.c25 {
+  margin-left: 1.25rem;
+}
+
+.c25:before {
+  color: rgb(0, 98, 114);
+  content: "»";
+  left: 0;
+  position: absolute;
+}
+
+.c24 {
+  list-style: none;
+  position: relative;
+}
+
+.c24 >li:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
 .c21 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
-.c29 {
+.c31 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c29 >* {
+.c31 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -67,31 +87,13 @@ exports[`<Page /> should render about me page 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c28 {
-  padding: 0px;
-}
-
-.c28 :hover,
-.c28 :focus {
-  fill: #4267B2;
-}
-
 .c30 {
   padding: 0px;
 }
 
 .c30 :hover,
 .c30 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c31 {
-  padding: 0px;
-}
-
-.c31 :hover,
-.c31 :focus {
-  fill: url(#instagram-gradient);
+  fill: #4267B2;
 }
 
 .c32 {
@@ -100,7 +102,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c32 :hover,
 .c32 :focus {
-  fill: #0E76A8;
+  fill: rgb(0, 0, 0);
 }
 
 .c33 {
@@ -109,7 +111,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c33 :hover,
 .c33 :focus {
-  fill: #6363ff;
+  fill: url(#instagram-gradient);
 }
 
 .c34 {
@@ -118,22 +120,40 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c34 :hover,
 .c34 :focus {
+  fill: #0E76A8;
+}
+
+.c35 {
+  padding: 0px;
+}
+
+.c35 :hover,
+.c35 :focus {
+  fill: #6363ff;
+}
+
+.c36 {
+  padding: 0px;
+}
+
+.c36 :hover,
+.c36 :focus {
   fill: #0060df;
 }
 
-.c27 {
+.c29 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c25 {
+.c27 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c25 >.,
-.c25 >.c26 {
+.c27 >.,
+.c27 >.c28 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -141,7 +161,7 @@ exports[`<Page /> should render about me page 1`] = `
   justify-content: center;
 }
 
-.c24 {
+.c26 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -267,18 +287,18 @@ exports[`<Page /> should render about me page 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c25 {
+  .c27 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c25 >.{
+  .c27 >.{
     justify-content: flex-start;
   }
 
-  .c25 >.c26 {
+  .c27 >.c28 {
     justify-content: flex-end;
   }
 }
@@ -595,64 +615,84 @@ exports[`<Page /> should render about me page 1`] = `
           <div
             class="c22"
           >
-            <ul>
-              <li>
+            <ul
+              class="c24"
+            >
+              <li
+                class="c25"
+              >
                 Toimitilapalvelujen lautakunnan varajäsen
                 , 
                 Kirkkonummen kunta
                  - 
                 2023-
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Hallituksen varajäsen
                 , 
                 Kirkkonummen Vihreät
                  - 
                 2023-
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Länsi-Uudenmaan pelastuslaitos -liikelaitoksen johtokunnan varajäsen
                 , 
                 Länsi-Uudenmaan hyvinvointialue
                  - 
                 2022-
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen
                 , 
                 Kirkkonummen kunta
                  - 
                 2021-
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Perusturvajaoston jäsen
                 , 
                 Kirkkonummen kunta
                  - 
                 2021-2022
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 KV-kapteeni
                 , 
                 Informaatioverkostojen kilta Athene
                  - 
                 2015
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Hallituksen puheenjohtaja
                 , 
                 Aalto Predators
                  - 
                 2014-2015
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Hallituksen jäsen
                 , 
                 Aalto Predators
                  - 
                 2013
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Nuorisovaltuuston hallituksen puheenjohtaja
                 , 
                 Kirkkonummen kunta
@@ -661,6 +701,7 @@ exports[`<Page /> should render about me page 1`] = `
               </li>
             </ul>
           </div>
+          <br />
           <div
             class="c22"
           >
@@ -674,8 +715,12 @@ exports[`<Page /> should render about me page 1`] = `
           <div
             class="c22"
           >
-            <ul>
-              <li>
+            <ul
+              class="c24"
+            >
+              <li
+                class="c25"
+              >
                 Team Lead
                 , 
                 Verkkokauppa.com
@@ -684,7 +729,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2022-
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Software developer
                 , 
                 Verkkokauppa.com
@@ -693,7 +740,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2019-2022
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Software developer
                 , 
                 Gofore
@@ -702,7 +751,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2018-2019
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Software engineer
                 , 
                 Zalando
@@ -711,7 +762,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2017-2018
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Software developer
                 , 
                 Futurice
@@ -720,7 +773,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2015-2017
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Software developer
                 , 
                 Pulmaton Solutions Oy
@@ -729,7 +784,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2014
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Seasonal trainee
                 , 
                 Nokia Solutions & Networks
@@ -740,6 +797,7 @@ exports[`<Page /> should render about me page 1`] = `
               </li>
             </ul>
           </div>
+          <br />
           <div
             class="c22"
           >
@@ -753,8 +811,12 @@ exports[`<Page /> should render about me page 1`] = `
           <div
             class="c22"
           >
-            <ul>
-              <li>
+            <ul
+              class="c24"
+            >
+              <li
+                class="c25"
+              >
                 Diplomi-insinööri (informaatioverkostot)
                 , 
                 Aalto-yliopisto
@@ -763,7 +825,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2012-2018
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Datanomi
                 , 
                 Omnia ammattiopisto
@@ -772,7 +836,9 @@ exports[`<Page /> should render about me page 1`] = `
                 ) - 
                 2007-2011
               </li>
-              <li>
+              <li
+                class="c25"
+              >
                 Ylioppilas
                 , 
                 Masalan lukio
@@ -790,10 +856,10 @@ exports[`<Page /> should render about me page 1`] = `
       </article>
     </main>
     <footer
-      class="c24"
+      class="c26"
     >
       <div
-        class="c25"
+        class="c27"
       >
         <div
           class=""
@@ -805,13 +871,13 @@ exports[`<Page /> should render about me page 1`] = `
           />
         </div>
         <ul
-          class="c26 c27"
+          class="c28 c29"
         >
           <li
-            class="c28"
+            class="c30"
           >
             <a
-              class="c29"
+              class="c31"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -833,10 +899,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c30"
+            class="c32"
           >
             <a
-              class="c29"
+              class="c31"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -858,10 +924,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c31"
+            class="c33"
           >
             <a
-              class="c29"
+              class="c31"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
@@ -883,10 +949,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c32"
+            class="c34"
           >
             <a
-              class="c29"
+              class="c31"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -908,10 +974,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c33"
+            class="c35"
           >
             <a
-              class="c29"
+              class="c31"
               href="https://mastodontti.fi/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -933,10 +999,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c34"
+            class="c36"
           >
             <a
-              class="c29"
+              class="c31"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"

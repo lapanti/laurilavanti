@@ -18,6 +18,15 @@ exports[`<CurriculumVitae /> should render empty 1`] = `
   margin-top: 1rem;
 }
 
+.c3 {
+  list-style: none;
+  position: relative;
+}
+
+.c3 >li:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
 .c0 {
   grid-column-start: 3;
   margin-top: 1rem;
@@ -39,8 +48,11 @@ exports[`<CurriculumVitae /> should render empty 1`] = `
   <div
     class="c1"
   >
-    <ul />
+    <ul
+      class="c3"
+    />
   </div>
+  <br />
   <div
     class="c1"
   >
@@ -54,8 +66,11 @@ exports[`<CurriculumVitae /> should render empty 1`] = `
   <div
     class="c1"
   >
-    <ul />
+    <ul
+      class="c3"
+    />
   </div>
+  <br />
   <div
     class="c1"
   >
@@ -69,7 +84,9 @@ exports[`<CurriculumVitae /> should render empty 1`] = `
   <div
     class="c1"
   >
-    <ul />
+    <ul
+      class="c3"
+    />
   </div>
 </div>
 `;
@@ -92,6 +109,26 @@ exports[`<CurriculumVitae /> should render full 1`] = `
   margin-top: 1rem;
 }
 
+.c4 {
+  margin-left: 1.25rem;
+}
+
+.c4:before {
+  color: rgb(0, 98, 114);
+  content: "»";
+  left: 0;
+  position: absolute;
+}
+
+.c3 {
+  list-style: none;
+  position: relative;
+}
+
+.c3 >li:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
 .c0 {
   grid-column-start: 3;
   margin-top: 1rem;
@@ -113,64 +150,84 @@ exports[`<CurriculumVitae /> should render full 1`] = `
   <div
     class="c1"
   >
-    <ul>
-      <li>
+    <ul
+      class="c3"
+    >
+      <li
+        class="c4"
+      >
         Toimitilapalvelujen lautakunnan varajäsen
         , 
         Kirkkonummen kunta
          - 
         2023-
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Hallituksen varajäsen
         , 
         Kirkkonummen Vihreät
          - 
         2023-
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Länsi-Uudenmaan pelastuslaitos -liikelaitoksen johtokunnan varajäsen
         , 
         Länsi-Uudenmaan hyvinvointialue
          - 
         2022-
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen
         , 
         Kirkkonummen kunta
          - 
         2021-
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Perusturvajaoston jäsen
         , 
         Kirkkonummen kunta
          - 
         2021-2022
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         KV-kapteeni
         , 
         Informaatioverkostojen kilta Athene
          - 
         2015
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Hallituksen puheenjohtaja
         , 
         Aalto Predators
          - 
         2014-2015
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Hallituksen jäsen
         , 
         Aalto Predators
          - 
         2013
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Nuorisovaltuuston hallituksen puheenjohtaja
         , 
         Kirkkonummen kunta
@@ -179,6 +236,7 @@ exports[`<CurriculumVitae /> should render full 1`] = `
       </li>
     </ul>
   </div>
+  <br />
   <div
     class="c1"
   >
@@ -192,8 +250,12 @@ exports[`<CurriculumVitae /> should render full 1`] = `
   <div
     class="c1"
   >
-    <ul>
-      <li>
+    <ul
+      class="c3"
+    >
+      <li
+        class="c4"
+      >
         Team Lead
         , 
         Verkkokauppa.com
@@ -202,7 +264,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2022-
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Software developer
         , 
         Verkkokauppa.com
@@ -211,7 +275,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2019-2022
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Software developer
         , 
         Gofore
@@ -220,7 +286,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2018-2019
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Software engineer
         , 
         Zalando
@@ -229,7 +297,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2017-2018
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Software developer
         , 
         Futurice
@@ -238,7 +308,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2015-2017
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Software developer
         , 
         Pulmaton Solutions Oy
@@ -247,7 +319,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2014
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Seasonal trainee
         , 
         Nokia Solutions & Networks
@@ -258,6 +332,7 @@ exports[`<CurriculumVitae /> should render full 1`] = `
       </li>
     </ul>
   </div>
+  <br />
   <div
     class="c1"
   >
@@ -271,8 +346,12 @@ exports[`<CurriculumVitae /> should render full 1`] = `
   <div
     class="c1"
   >
-    <ul>
-      <li>
+    <ul
+      class="c3"
+    >
+      <li
+        class="c4"
+      >
         Diplomi-insinööri (informaatioverkostot)
         , 
         Aalto-yliopisto
@@ -281,7 +360,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2012-2018
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Datanomi
         , 
         Omnia ammattiopisto
@@ -290,7 +371,9 @@ exports[`<CurriculumVitae /> should render full 1`] = `
         ) - 
         2007-2011
       </li>
-      <li>
+      <li
+        class="c4"
+      >
         Ylioppilas
         , 
         Masalan lukio
