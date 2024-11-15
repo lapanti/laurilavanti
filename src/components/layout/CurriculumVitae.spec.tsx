@@ -47,23 +47,24 @@ describe('<CurriculumVitae />', () => {
         expect(screen.getByRole('heading', { name: jobExperiencesTitle })).toBeInTheDocument()
         expect(screen.getByRole('heading', { name: degreesTitle })).toBeInTheDocument()
 
-        fiduciaries.forEach(({ duty, organization, startYear, endYear }) =>
-            expect(
-                screen.getByText(`${duty}, ${organization} - ${yearsToString(startYear, endYear)}`)
-            ).toBeInTheDocument()
-        )
+        fiduciaries.forEach(({ duty, organization, startYear, endYear }) => {
+            expect(screen.getByText(duty)).toBeInTheDocument()
+            expect(screen.getByText(`${organization} — ${yearsToString(startYear, endYear)}`)).toBeInTheDocument()
+        })
 
-        jobExperiences.forEach(({ title, company, location, startYear, endYear }) =>
+        jobExperiences.forEach(({ title, company, location, startYear, endYear }) => {
+            expect(screen.getAllByText(title).length).toBeGreaterThan(0)
             expect(
-                screen.getByText(`${title}, ${company} (${location}) - ${yearsToString(startYear, endYear)}`)
+                screen.getByText(`${company} (${location}) — ${yearsToString(startYear, endYear)}`)
             ).toBeInTheDocument()
-        )
+        })
 
-        degrees.forEach(({ degree, school, location, startYear, endYear }) =>
+        degrees.forEach(({ degree, school, location, startYear, endYear }) => {
+            expect(screen.getByText(degree)).toBeInTheDocument()
             expect(
-                screen.getByText(`${degree}, ${school} (${location}) - ${yearsToString(startYear, endYear)}`)
+                screen.getByText(`${school} (${location}) — ${yearsToString(startYear, endYear)}`)
             ).toBeInTheDocument()
-        )
+        })
 
         expect(container.firstChild).toMatchSnapshot()
     })
