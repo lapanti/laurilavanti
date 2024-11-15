@@ -65,7 +65,10 @@ const CurriculumVitaeComponent = ({
             <Ul>
                 {fiduciaries.map(({ duty, organization, startYear, endYear }) => (
                     <Li key={`${duty}-${organization}-${startYear}`}>
-                        {duty}, {organization} - {yearsToString(startYear, endYear)}
+                        <span>{duty} </span>
+                        <i>
+                            {organization} — {yearsToString(startYear, endYear)}
+                        </i>
                     </Li>
                 ))}
             </Ul>
@@ -78,7 +81,10 @@ const CurriculumVitaeComponent = ({
             <Ul>
                 {jobExperiences.map(({ title, company, location, startYear, endYear }) => (
                     <Li key={`${title}-${company}`}>
-                        {title}, {company} ({location}) - {yearsToString(startYear, endYear)}
+                        <span>{title} </span>
+                        <i>
+                            {company} ({location}) — {yearsToString(startYear, endYear)}
+                        </i>
                     </Li>
                 ))}
             </Ul>
@@ -91,7 +97,10 @@ const CurriculumVitaeComponent = ({
             <Ul>
                 {degrees.map(({ degree, school, location, startYear, endYear }) => (
                     <Li key={`${degree}-${school}`}>
-                        {degree}, {school} ({location}) - {yearsToString(startYear, endYear)}
+                        <span>{degree} </span>
+                        <i>
+                            {school} ({location}) — {yearsToString(startYear, endYear)}
+                        </i>
                     </Li>
                 ))}
             </Ul>
