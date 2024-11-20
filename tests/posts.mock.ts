@@ -39,6 +39,7 @@ export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt =
         description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -157,6 +158,7 @@ export const ourNatureIsOurAceInTheHole: ContentfulPost & ContentfulPostExcerpt 
         description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -213,36 +215,6 @@ export const ourNatureIsOurAceInTheHole: ContentfulPost & ContentfulPostExcerpt 
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -305,6 +277,7 @@ export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva huonosti auratusta jalkakäytävästä, jonka vieressä on huolella aurattu autotie',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -361,36 +334,6 @@ export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -453,6 +396,7 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -509,36 +453,6 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -601,6 +515,7 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista, taustalla näkyy metsää',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -657,36 +572,6 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -749,6 +634,7 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
         description: 'Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä sama ruotsiksi alapuolella.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -805,36 +691,6 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -897,6 +753,7 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista Kirkkonummen kunnantalon edessä.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -953,36 +810,6 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -1042,6 +869,7 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -1098,36 +926,6 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -1196,6 +994,7 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
         description: 'Kuva Lauri Lavannista leikkimässä tyttärensä kanssa Muumimaailmassa.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -1252,36 +1051,6 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -1377,6 +1146,7 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
         description: 'Kuva Winellska skolanista.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -1433,36 +1203,6 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -1559,6 +1299,7 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
         description: 'Kuva Laajakallion päiväkodista talvella.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -1615,36 +1356,6 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -1707,6 +1418,7 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
         description: 'Kuva useammasta lasten kirjasta kirjahyllyssä.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -1763,36 +1475,6 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [
@@ -1887,37 +1569,8 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
         },
         description: 'Kuva duploista laatikossa automaton päällä.',
     },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
-    },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -2033,6 +1686,7 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
         description: 'Kuva neulotusta pehmolelusta, taustalla erinäisiä lasten leluja.',
     },
     backgroundImage: {
+        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
         localFile: {
             childImageSharp: {
                 gatsbyImageData: {
@@ -2089,36 +1743,6 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
                 },
             },
         },
-    },
-    excerptImage: {
-        localFile: {
-            childImageSharp: {
-                gatsbyImageData: {
-                    layout: 'fixed',
-                    placeholder: {
-                        fallback:
-                            'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-                    },
-                    images: {
-                        fallback: {
-                            src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                            srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                            sizes: '1921px',
-                        },
-                        sources: [
-                            {
-                                srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                                type: 'image/webp',
-                                sizes: '1921px',
-                            },
-                        ],
-                    },
-                    width: 1921,
-                    height: 384,
-                },
-            },
-        },
-        description: 'Kuva Lauri Lavannista, taustalla näkyy koira',
     },
     metadata: {
         tags: [

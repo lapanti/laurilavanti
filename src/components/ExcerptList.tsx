@@ -43,7 +43,7 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                         }
                         description
                     }
-                    excerptImage {
+                    backgroundImage {
                         localFile {
                             childImageSharp {
                                 gatsbyImageData(placeholder: BLURRED)
@@ -116,8 +116,8 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                 key={node.publishDate || node.createdAt}
                 date={node.publishDate || node.createdAt}
                 excerpt={node.excerpt}
-                image={node.excerptImage?.localFile ?? node.headerImage.localFile}
-                imageAlt={node.excerptImage?.description ?? node.headerImage.description}
+                image={node.backgroundImage?.localFile ?? node.headerImage.localFile}
+                imageAlt={node.backgroundImage?.description ?? node.headerImage.description}
                 slug={node.slug}
                 tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
                 title={node.title}

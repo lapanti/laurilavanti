@@ -4,14 +4,14 @@ import { contactInfoLinks } from './contactInfo.mock'
 import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from './images.mock'
 
 const image = {
-    localFile: inFrontOfWoodsImage,
     description: inFrontOfWoodsImageDescription,
+    localFile: inFrontOfWoodsImage,
 }
 
 const images = {
+    backgroundImage: { localFile: smilingImage },
     image,
     socialImage: { localFile: smilingImage },
-    backgroundImage: { localFile: smilingImage },
 }
 
 export const frontPage: ContentfulPage = {
