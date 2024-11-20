@@ -281,6 +281,7 @@ const LayoutComponent = ({
                         )}
                         {!isFrontPage && (
                             <TitleBanner
+                                backgroundImage={backgroundImage}
                                 imageAlt={heroImageAlt}
                                 imageData={heroImage}
                                 leftAlignedTitle={leftAlignedTitle}

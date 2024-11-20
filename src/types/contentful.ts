@@ -123,6 +123,12 @@ interface ContentfulPostCommon {
         localFile: ImageDataLike
         description: string
     }
+    backgroundImage?: {
+        localFile: ImageDataLike
+    } | null
+    socialImage?: {
+        localFile: ImageDataLike
+    } | null
     excerptImage?: {
         localFile: ImageDataLike
         description: string

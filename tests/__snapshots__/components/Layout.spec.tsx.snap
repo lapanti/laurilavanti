@@ -12159,14 +12159,14 @@ exports[`<Layout /> should render title banner 1`] = `
   text-decoration: underline;
 }
 
-.c23 {
+.c25 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c23 >* {
+.c25 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -12175,31 +12175,13 @@ exports[`<Layout /> should render title banner 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c22 {
-  padding: 0px;
-}
-
-.c22 :hover,
-.c22 :focus {
-  fill: #4267B2;
-}
-
 .c24 {
   padding: 0px;
 }
 
 .c24 :hover,
 .c24 :focus {
-  fill: rgb(0, 0, 0);
-}
-
-.c25 {
-  padding: 0px;
-}
-
-.c25 :hover,
-.c25 :focus {
-  fill: url(#instagram-gradient);
+  fill: #4267B2;
 }
 
 .c26 {
@@ -12208,7 +12190,7 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c26 :hover,
 .c26 :focus {
-  fill: #0E76A8;
+  fill: rgb(0, 0, 0);
 }
 
 .c27 {
@@ -12217,7 +12199,7 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c27 :hover,
 .c27 :focus {
-  fill: #6363ff;
+  fill: url(#instagram-gradient);
 }
 
 .c28 {
@@ -12226,22 +12208,40 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c28 :hover,
 .c28 :focus {
+  fill: #0E76A8;
+}
+
+.c29 {
+  padding: 0px;
+}
+
+.c29 :hover,
+.c29 :focus {
+  fill: #6363ff;
+}
+
+.c30 {
+  padding: 0px;
+}
+
+.c30 :hover,
+.c30 :focus {
   fill: #0060df;
 }
 
-.c21 {
+.c23 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c19 {
+.c21 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c19 >.,
-.c19 >.c20 {
+.c21 >.,
+.c21 >.c22 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -12249,7 +12249,7 @@ exports[`<Layout /> should render title banner 1`] = `
   justify-content: center;
 }
 
-.c18 {
+.c20 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -12328,13 +12328,19 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 .c16 {
+  background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7)),url(/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c17 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat";
@@ -12371,18 +12377,18 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c19 {
+  .c21 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c19 >.{
+  .c21 >.{
     justify-content: flex-start;
   }
 
-  .c19 >.c20 {
+  .c21 >.c22 {
     justify-content: flex-end;
   }
 }
@@ -12429,7 +12435,7 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c16 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12439,7 +12445,7 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c17 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -12451,8 +12457,8 @@ exports[`<Layout /> should render title banner 1`] = `
     margin: auto;
   }
 
-  .c14 >.,
-  .c14 >.c15 {
+  .c14 >.c15,
+  .c14 >.c17 {
     width: 50%;
   }
 }
@@ -12587,7 +12593,7 @@ exports[`<Layout /> should render title banner 1`] = `
           class="c14"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c15 c16"
             data-gatsby-image-wrapper=""
             style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >
@@ -12636,10 +12642,10 @@ exports[`<Layout /> should render title banner 1`] = `
             </script>
           </div>
           <div
-            class="c15 c16"
+            class="c17 c18"
           >
             <h1
-              class="c17"
+              class="c19"
             >
               Title
             </h1>
@@ -12650,10 +12656,10 @@ exports[`<Layout /> should render title banner 1`] = `
     </article>
   </main>
   <footer
-    class="c18"
+    class="c20"
   >
     <div
-      class="c19"
+      class="c21"
     >
       <div
         class=""
@@ -12665,13 +12671,13 @@ exports[`<Layout /> should render title banner 1`] = `
         />
       </div>
       <ul
-        class="c20 c21"
+        class="c22 c23"
       >
         <li
-          class="c22"
+          class="c24"
         >
           <a
-            class="c23"
+            class="c25"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12693,10 +12699,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c24"
+          class="c26"
         >
           <a
-            class="c23"
+            class="c25"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12718,10 +12724,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c25"
+          class="c27"
         >
           <a
-            class="c23"
+            class="c25"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12743,10 +12749,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c26"
+          class="c28"
         >
           <a
-            class="c23"
+            class="c25"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12768,10 +12774,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c27"
+          class="c29"
         >
           <a
-            class="c23"
+            class="c25"
             href="https://mastodontti.fi/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12793,10 +12799,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c30"
         >
           <a
-            class="c23"
+            class="c25"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
