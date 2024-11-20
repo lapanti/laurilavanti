@@ -31,6 +31,8 @@ const Post = ({
             publishDate,
             body,
             headerImage,
+            backgroundImage,
+            socialImage,
             metadata,
             title,
             updatedAt,
@@ -49,6 +51,7 @@ const Post = ({
 
     return (
         <Layout
+            backgroundImage={backgroundImage?.localFile}
             body={body}
             description={excerpt}
             heroImage={headerImage.localFile}
@@ -58,6 +61,7 @@ const Post = ({
             pathname={`/blogi/${slug}/`}
             publishDate={getValueOrDefault(publishDate, createdAt) as string}
             published={getValueOrDefault(publishedOld, published)}
+            socialImage={socialImage?.localFile}
             tags={tags}
             title={title}
             type={BLOGPOSTING}
@@ -125,6 +129,32 @@ export const query = graphql`
                     }
                 }
                 description
+            }
+            backgroundImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: CONSTRAINED
+                            width: 864
+                            formats: [AUTO, WEBP, AVIF]
+                            transformOptions: { fit: OUTSIDE }
+                        )
+                    }
+                }
+            }
+            socialImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: CONSTRAINED
+                            width: 600
+                            formats: [AUTO, WEBP, AVIF]
+                            transformOptions: { fit: OUTSIDE }
+                        )
+                    }
+                }
             }
             metadata {
                 tags {

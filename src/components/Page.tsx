@@ -17,6 +17,7 @@ interface Props {
 
 const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
+        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
         body={data?.contentfulPage?.body}
         description={getValueOrDefault(data?.contentfulPage?.description, '')}
         heroImage={data?.contentfulPage?.image?.localFile}
@@ -101,6 +102,19 @@ export const query = graphql`
                     }
                 }
                 description
+            }
+            backgroundImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: CONSTRAINED
+                            width: 864
+                            formats: [AUTO, WEBP, AVIF]
+                            transformOptions: { fit: OUTSIDE }
+                        )
+                    }
+                }
             }
             socialImage {
                 localFile {

@@ -1,13 +1,20 @@
 import type { ImageDataLike } from 'gatsby-plugin-image'
 
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, CONTENT_PADDING, fontFamilies, fontSizes, HEADER_SIZE, sizes } from '../../lib/styles'
 import PostMeta from '../PostMeta'
 
-const Image = styled(GatsbyImage)({})
+const Image = styled(GatsbyImage)<{ $backgroundSrc?: string }>(
+    ({ $backgroundSrc }) =>
+        $backgroundSrc && {
+            backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70}), url(${$backgroundSrc})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+        }
+)
 
 const TitleContainer = styled.div({
     backgroundColor: colors.white,
@@ -58,6 +65,7 @@ const Content = styled.div<{ $leftAlignedTitle: boolean }>(
 
 interface Props {
     className?: string
+    backgroundImage?: ImageDataLike
     imageData?: ImageDataLike
     imageAlt?: string
     title: string
@@ -74,15 +82,17 @@ const TitleBannerComponent = ({
     title,
     showMeta,
     tags,
+    backgroundImage,
     publishDate,
     leftAlignedTitle,
 }: Props): JSX.Element => {
     const image = imageData ? getImage(imageData) : undefined
+    const backgroundSrc = backgroundImage ? getSrc(backgroundImage) : undefined
 
     return (
         <div className={className}>
             <Content $leftAlignedTitle={leftAlignedTitle}>
-                {image && <Image alt={imageAlt ?? ''} image={image} />}
+                {image && <Image $backgroundSrc={backgroundSrc} alt={imageAlt ?? ''} image={image} />}
                 <TitleContainer>
                     <Title>{title}</Title>
                     {showMeta && (

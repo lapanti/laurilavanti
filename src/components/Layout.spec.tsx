@@ -6,7 +6,7 @@ import { parse } from 'date-fns'
 import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
-import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../tests/images.mock'
+import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../tests/images.mock'
 import { coopElectionsConcernUsAll, healthBelongsToAll } from '../../tests/posts.mock'
 import Layout from './Layout'
 
@@ -55,6 +55,7 @@ describe('<Layout />', () => {
     it('should render title banner', async () => {
         const { container } = render(
             <Layout
+                backgroundImage={smilingImage}
                 heroImage={inFrontOfWoodsImage}
                 heroImageAlt={inFrontOfWoodsImageDescription}
                 leftAlignedTitle={false}

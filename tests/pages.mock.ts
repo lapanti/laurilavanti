@@ -10,8 +10,8 @@ const image = {
 
 const images = {
     image,
-    socialImage: null,
-    backgroundImage: null,
+    socialImage: { localFile: smilingImage },
+    backgroundImage: { localFile: smilingImage },
 }
 
 export const frontPage: ContentfulPage = {

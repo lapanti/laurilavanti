@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../../tests/images.mock'
 import TitleBanner from './TitleBanner'
 
 describe('<TitleBanner />', () => {
@@ -19,7 +19,12 @@ describe('<TitleBanner />', () => {
 
     it('should render image without alt', () => {
         const { container } = render(
-            <TitleBanner imageData={inFrontOfWoodsImage} leftAlignedTitle={false} title={title} />
+            <TitleBanner
+                backgroundImage={smilingImage}
+                imageData={inFrontOfWoodsImage}
+                leftAlignedTitle={false}
+                title={title}
+            />
         )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
