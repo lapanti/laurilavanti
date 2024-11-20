@@ -125,13 +125,10 @@ interface ContentfulPostCommon {
     }
     backgroundImage?: {
         localFile: ImageDataLike
+        description: string
     } | null
     socialImage?: {
         localFile: ImageDataLike
-    } | null
-    excerptImage?: {
-        localFile: ImageDataLike
-        description: string
     } | null
     excerpt: string
     leftAlignedTitle: boolean
