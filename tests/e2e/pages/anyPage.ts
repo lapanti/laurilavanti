@@ -10,6 +10,8 @@ export class AnyPage {
     readonly navLinkAboutMe: Locator
     readonly navLinkBlog: Locator
     readonly navLinkContactInfo: Locator
+    readonly navLinkAboutMeSwe: Locator
+    readonly navLinkAboutMeEn: Locator
     readonly footerFacebookLink: Locator
     readonly footerBlueskyLink: Locator
     readonly footerInstagramLink: Locator
@@ -23,6 +25,8 @@ export class AnyPage {
         this.navLinkAboutMe = page.getByRole('link', { name: /Kuka Lauri?/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
+        this.navLinkAboutMeSwe = page.getByRole('link', { name: /På svenska/i })
+        this.navLinkAboutMeEn = page.getByRole('link', { name: /In english/i })
         this.footerFacebookLink = page.locator('footer').locator('a[title="Facebook"]')
         this.footerBlueskyLink = page.locator('footer').locator('a[title="Bluesky"]')
         this.footerInstagramLink = page.locator('footer').locator('a[title="Instagram"]')
@@ -39,6 +43,8 @@ export class AnyPage {
         await expect(this.navLinkAboutMe).toHaveAttribute('href', '/minusta/')
         await expect(this.navLinkBlog).toHaveAttribute('href', '/blogi/')
         await expect(this.navLinkContactInfo).toHaveAttribute('href', '/ota-yhteytta/')
+        await expect(this.navLinkAboutMeSwe).toHaveAttribute('href', '/om-mig/')
+        await expect(this.navLinkAboutMeEn).toHaveAttribute('href', '/about-me/')
     }
 
     async goToNavLink(navLink: Locator) {
