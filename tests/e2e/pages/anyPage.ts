@@ -14,6 +14,7 @@ export class AnyPage {
     readonly navLinkAboutMeEn: Locator
     readonly footerFacebookLink: Locator
     readonly footerBlueskyLink: Locator
+    readonly footerThreadsLink: Locator
     readonly footerInstagramLink: Locator
     readonly footerLinkedInLink: Locator
 
@@ -25,10 +26,11 @@ export class AnyPage {
         this.navLinkAboutMe = page.getByRole('link', { name: /Kuka Lauri?/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
-        this.navLinkAboutMeSwe = page.getByRole('link', { name: /På svenska/i })
-        this.navLinkAboutMeEn = page.getByRole('link', { name: /In english/i })
+        this.navLinkAboutMeSwe = page.getByRole('link', { name: /🇸🇪/i })
+        this.navLinkAboutMeEn = page.getByRole('link', { name: /🇬🇧/i })
         this.footerFacebookLink = page.locator('footer').locator('a[title="Facebook"]')
         this.footerBlueskyLink = page.locator('footer').locator('a[title="Bluesky"]')
+        this.footerThreadsLink = page.locator('footer').locator('a[title="Threads"]')
         this.footerInstagramLink = page.locator('footer').locator('a[title="Instagram"]')
         this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
     }
@@ -81,6 +83,7 @@ export class AnyPage {
     async checkFooter() {
         await expect(this.footerFacebookLink).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
         await expect(this.footerBlueskyLink).toHaveAttribute('href', 'https://bsky.app/profile/laurilavanti.fi')
+        await expect(this.footerThreadsLink).toHaveAttribute('href', 'https://www.threads.net/@laurilavanti')
         await expect(this.footerInstagramLink).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
     }
