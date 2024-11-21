@@ -8,7 +8,8 @@ import NavLink from './NavLink'
 describe('<NavLink />', () => {
     const slug = 'my-slug-is-here'
     const navigationTitle = 'This is my title'
-    const nav: MainNav['links'][number] = { contentful_id: 'contentful_id', navigationTitle, slug }
+    const title = 'Title'
+    const nav: MainNav['links'][number] = { contentful_id: 'contentful_id', navigationTitle, slug, title }
 
     it('should render', () => {
         const { container } = render(<NavLink {...nav} title={navigationTitle} />)
@@ -19,7 +20,7 @@ describe('<NavLink />', () => {
     })
 
     it('should render link to front page', () => {
-        const frontPageNav = { ...nav, slug: 'index', title: 'Lauri Lavanti' }
+        const frontPageNav = { contentful_id: nav.contentful_id, slug: 'index', title: 'Lauri Lavanti' }
 
         const { container } = render(<NavLink {...frontPageNav} isFrontPage />)
 

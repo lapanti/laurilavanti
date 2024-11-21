@@ -6,23 +6,23 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 import { colors, fontFamilies, fontSizes } from '../../../lib/styles'
 import InternalLink from '../../InternalLink'
 
-type Link = Omit<MainNav['links'][number], 'contentful_id' | 'navigationTitle'>
+type Link = Omit<MainNav['links'][number], 'contentful_id'>
 
 interface Props extends Link {
     className?: string
     isFrontPage?: boolean
-    title: string
 }
 
-const NavLinkComponent = ({ className, title, slug, isFrontPage }: Props): JSX.Element => (
+const NavLinkComponent = ({ className, title, navigationTitle, slug, isFrontPage }: Props): JSX.Element => (
     <InternalLink
         $color={colors.peach}
         activeStyle={isFrontPage ? undefined : { textDecoration: 'underline' }}
         className={className}
         partiallyActive={slug !== 'index'}
+        title={title}
         to={slug === 'index' ? '/' : `/${slug}/`}
     >
-        {title}
+        {navigationTitle || title}
     </InternalLink>
 )
 
