@@ -12,10 +12,10 @@ describe('<Header />', () => {
         expect(screen.getByRole('button', { name: /Avaa valikko/i })).toBeEnabled()
         expect(screen.queryByRole('button', { name: /Sulje valikko/i })).toBeNull()
 
-        expect(screen.getByRole('link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
+        expect(screen.getByRole('link', { name: /Lauri Lavanti$/i })).toHaveAttribute('href', '/')
 
         mainNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.navigationTitle })).toHaveAttribute('href', `/${link.slug}/`)
+            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -30,10 +30,10 @@ describe('<Header />', () => {
         expect(screen.getByRole('button', { name: /Sulje valikko/i })).toBeEnabled()
         expect(screen.queryByRole('button', { name: /Avaa valikko/i })).toBeNull()
 
-        expect(screen.getByRole('link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
+        expect(screen.getByRole('link', { name: /Lauri Lavanti$/i })).toHaveAttribute('href', '/')
 
         mainNav.links.forEach((link) =>
-            expect(screen.getByRole('link', { name: link.navigationTitle })).toHaveAttribute('href', `/${link.slug}/`)
+            expect(screen.getByRole('link', { name: link.title })).toHaveAttribute('href', `/${link.slug}/`)
         )
 
         expect(container.firstChild).toMatchSnapshot()
