@@ -96,6 +96,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
             contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
                 links {
                     contentful_id
+                    title
                     navigationTitle
                     slug
                 }
@@ -124,7 +125,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                 {data.contentfulMainNav.links
                     .filter(({ slug }) => slug !== 'index')
                     .map((nav) => (
-                        <NavLink {...nav} key={nav.slug} title={nav.navigationTitle} />
+                        <NavLink {...nav} key={nav.slug} />
                     ))}
             </MobileMenu>
             <DesktopMenu>
@@ -135,7 +136,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                     {data.contentfulMainNav.links
                         .filter(({ slug }) => slug !== 'index')
                         .map((nav) => (
-                            <NavLink {...nav} key={nav.slug} title={nav.navigationTitle} />
+                            <NavLink {...nav} key={nav.slug} />
                         ))}
                 </Half>
             </DesktopMenu>
