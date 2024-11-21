@@ -10,7 +10,7 @@ export class AboutPage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.aboutMeTitle = page.getByRole('heading', { name: /Kuka Lauri?/i })
+        this.aboutMeTitle = page.getByRole('heading', { name: /Lauri Lavanti — Liberaalia ja kestävää politiikkaa/i })
         this.positionsTitle = page.getByRole('heading', { name: /Luottamustoimet/i })
     }
 
