@@ -86,29 +86,6 @@ export const query = graphql`
             body {
                 raw
                 references {
-                    ... on ContentfulImageWithCaption {
-                        __typename
-                        contentful_id
-                        caption
-                        image {
-                            localFile {
-                                childImageSharp {
-                                    gatsbyImageData
-                                }
-                            }
-                            description
-                        }
-                    }
-                    ... on ContentfulAsset {
-                        __typename
-                        contentful_id
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
-                        description
-                    }
                     ... on ContentfulPost {
                         __typename
                         contentful_id
