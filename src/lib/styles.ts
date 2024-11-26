@@ -105,7 +105,7 @@ export const fontSizes = {
 } as const
 
 export const fontFamilies = {
-    heading: `"Krana Fat"` as const,
+    heading: `"Krana Fat", Trebuchet MS` as const,
     mono: `"IBM Plex Mono"` as const,
     sans: `"IBM Plex Sans"` as const,
 } as const
