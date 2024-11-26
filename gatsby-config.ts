@@ -43,12 +43,6 @@ const config: GatsbyConfig = {
                 downloadLocal: true,
             },
         },
-        {
-            resolve: `gatsby-plugin-google-fonts`,
-            options: {
-                fonts: [`IBM Plex Sans: 300,400,400i,500`, `IBM Plex Mono: 400,400i`],
-            },
-        },
         'gatsby-plugin-styled-components',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
