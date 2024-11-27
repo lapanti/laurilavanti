@@ -26,6 +26,8 @@ const TitleContainer = styled.div({
         flexDirection: 'column',
         justifyContent: 'center',
         maxWidth: sizes[37.5],
+        paddingLeft: sizes[5],
+        paddingRight: sizes[5],
         paddingTop: 0,
     },
 })
