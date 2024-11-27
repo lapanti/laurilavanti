@@ -9,7 +9,7 @@ import Layout from './Layout'
 
 interface Props {
     data: {
-        contentfulPage: Pick<ContentfulPage, 'image'>
+        contentfulPage: Pick<ContentfulPage, 'image' | 'backgroundImage' | 'leftAlignedTitle' | 'socialImage'>
     }
     pageContext: {
         tag: string
@@ -18,12 +18,14 @@ interface Props {
 
 const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
     <Layout
+        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
         heroImage={data?.contentfulPage?.image?.localFile}
         heroImageAlt={data?.contentfulPage?.image?.description}
+        leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
         pathname={`/blogi/${tag}/`}
+        socialImage={data?.contentfulPage?.socialImage?.localFile}
         title={tag.replace(/^\w/, (c) => c.toUpperCase())}
         type={WEBPAGE}
-        leftAlignedTitle
     >
         <ExcerptList tag={tag} />
     </Layout>
@@ -46,6 +48,33 @@ export const query = graphql`
                 }
                 description
             }
+            backgroundImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: BLURRED
+                            layout: CONSTRAINED
+                            width: 864
+                            formats: [AUTO, WEBP, AVIF]
+                            transformOptions: { fit: OUTSIDE }
+                        )
+                    }
+                }
+            }
+            socialImage {
+                localFile {
+                    childImageSharp {
+                        gatsbyImageData(
+                            placeholder: NONE
+                            layout: CONSTRAINED
+                            width: 600
+                            formats: [AUTO, WEBP, AVIF]
+                            transformOptions: { fit: OUTSIDE }
+                        )
+                    }
+                }
+            }
+            leftAlignedTitle
         }
     }
 `
