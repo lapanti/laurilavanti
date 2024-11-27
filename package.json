@@ -28,7 +28,8 @@
     "test:e2e-dev": "start-server-and-test develop http://localhost:8000 test:e2e",
     "test:e2e": "playwright test",
     "test:e2e:setup": "playwright install --with-deps",
-    "test:e2e:update": "npm run test:e2e --  --update-snapshots"
+    "test:e2e:update": "npm run test:e2e --  --update-snapshots",
+    "knip": "knip"
   },
   "dependencies": {
     "@fontsource/ibm-plex-mono": "5.1.0",
@@ -81,6 +82,7 @@
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "jest-styled-components": "7.2.0",
+    "knip": "5.38.1",
     "prettier": "3.4.1",
     "start-server-and-test": "2.0.8",
     "typescript": "5.7.2"
