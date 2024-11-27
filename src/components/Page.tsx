@@ -122,7 +122,7 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: NONE
                             layout: CONSTRAINED
-                            width: 600
+                            width: 576
                             formats: [AUTO, WEBP, AVIF]
                             transformOptions: { fit: OUTSIDE }
                         )
