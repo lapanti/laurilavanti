@@ -94,6 +94,7 @@ export const query = graphql`
                             layout: CONSTRAINED
                             width: 576
                             aspectRatio: 1
+                            sizes: "(min-width: 560px) 560px, 100vw"
                             formats: [AUTO, WEBP, AVIF]
                             transformOptions: { fit: OUTSIDE }
                         )
