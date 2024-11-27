@@ -38,7 +38,13 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                     headerImage {
                         localFile {
                             childImageSharp {
-                                gatsbyImageData(placeholder: BLURRED)
+                                gatsbyImageData(
+                                    placeholder: BLURRED
+                                    layout: CONSTRAINED
+                                    width: 560
+                                    formats: [AUTO, WEBP, AVIF]
+                                    transformOptions: { fit: OUTSIDE }
+                                )
                             }
                         }
                         description
@@ -46,7 +52,13 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                     backgroundImage {
                         localFile {
                             childImageSharp {
-                                gatsbyImageData(placeholder: BLURRED)
+                                gatsbyImageData(
+                                    placeholder: BLURRED
+                                    layout: CONSTRAINED
+                                    width: 560
+                                    formats: [AUTO, WEBP, AVIF]
+                                    transformOptions: { fit: OUTSIDE }
+                                )
                             }
                         }
                         description
