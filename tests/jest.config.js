@@ -42,6 +42,7 @@ const config = {
         '!gatsby-node.js',
         '!gatsby-ssr.js',
         '!playwright.config.ts',
+        '!knip.config.ts',
         '!tests/jest-preprocess.js',
         '!tests/jest.config.js',
         '!tests/snapshotResolver.js',
