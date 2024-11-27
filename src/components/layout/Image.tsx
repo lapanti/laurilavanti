@@ -22,7 +22,7 @@ const Caption = styled.figcaption({
     ...fontSizes[1],
 })
 
-export interface ImageProps {
+interface ImageProps {
     alt: string
     caption: string
 }
