@@ -137,10 +137,6 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - uses: actions/download-artifact@v4
-        with:
-          name: build-folder
-          path: public
       - name: Run Playwright tests
         run: npm run test:e2e-dev
         timeout-minutes: 30
