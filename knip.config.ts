@@ -1,6 +1,7 @@
 import type { KnipConfig } from 'knip'
 
 const config: KnipConfig = {
+    ignore: ['lighthouserc.js'],
     ignoreDependencies: ['babel-preset-gatsby', 'identity-obj-proxy', 'jest-environment-jsdom'],
     jest: {
         config: ['jest.config.{js,ts,mjs,cjs,json}', 'package.json'],
