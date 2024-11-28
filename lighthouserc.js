@@ -1,7 +1,7 @@
 module.exports = {
     ci: {
         collect: {
-            startServerCommand: 'npm run serve',
+            startServerCommand: 'npm run develop',
             url: ['http://localhost:9000'],
         },
         upload: {
