@@ -24,6 +24,10 @@ jobs:
         run: npm ci
       - name: build it
         run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-folder
+          path: public
 
   lint:
     runs-on: ubuntu-latest
@@ -102,13 +106,17 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-folder
+          path: public
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy build --project-name=laurilavanti
+          command: pages deploy public --project-name=laurilavanti
 
   lighthouse:
     runs-on: ubuntu-latest
