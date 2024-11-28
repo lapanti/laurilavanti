@@ -1,5 +1,4 @@
-/* eslint-disable-next-line @typescript-eslint/no-require-imports */
-const chalk = require('chalk')
+import chalk from 'chalk'
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createRedirect } = actions
