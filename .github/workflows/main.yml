@@ -139,11 +139,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: run Lighthouse CI
-        env: 
-          LHCI_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: |
           npm install -g @lhci/cli@0.14.x
-          lhci autorun
+          lhci autorun --collect.url=${{ needs.deploy.outputs.pages-deployment-alias-url }}
 
   test-e2e:
     runs-on: ubuntu-latest
