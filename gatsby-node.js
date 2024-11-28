@@ -1,5 +1,3 @@
-import chalk from 'chalk'
-
 exports.createPages = async ({ graphql, actions }) => {
     const { createRedirect } = actions
     const { errors, data } = await graphql(`
@@ -41,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
             )
         )
 
-        console.log(`${chalk.green('success')} created redirects`)
+        console.log(`created redirects`)
     }
 
     data.pages.nodes.forEach(({ slug }) => {
