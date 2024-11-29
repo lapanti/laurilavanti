@@ -16,6 +16,7 @@ const config = {
     setupFilesAfterEnv: ['<rootDir>/tests/setup-test-env.ts'],
     rootDir: '..',
     snapshotResolver: '<rootDir>/tests/snapshotResolver.js',
+    coverageProvider: 'v8',
     collectCoverageFrom: [
         '**/*.{js,jsx,ts,tsx}',
         '!**/*.spec.{js,jsx,ts,tsx}',
