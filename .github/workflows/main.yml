@@ -231,10 +231,8 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests
-        env: 
-          E2E_URL: http://laurilavanti.fi/
-        run: npm run test:e2e
+      - name: Run Playwright tests against develop
+        run: npm run test:e2e-dev
         timeout-minutes: 30
       - uses: actions/upload-artifact@v4
         if: always()
