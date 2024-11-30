@@ -90,14 +90,14 @@ export const query = graphql`
                 }
             }
             image {
-                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, width: 768, formats: [AUTO, WEBP, AVIF])
                 description
             }
             backgroundImage {
-                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, width: 768, formats: [AUTO, WEBP, AVIF])
             }
             socialImage {
-                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, width: 768, formats: [AUTO, WEBP, AVIF])
             }
             updatedAt
             leftAlignedTitle
