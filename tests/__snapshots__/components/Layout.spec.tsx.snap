@@ -10441,14 +10441,14 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   text-decoration: underline;
 }
 
-.c24 {
+.c25 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c24 >* {
+.c25 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -10457,22 +10457,13 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c23 {
+.c24 {
   padding: 0px;
 }
 
-.c23 :hover,
-.c23 :focus {
+.c24 :hover,
+.c24 :focus {
   fill: #4267B2;
-}
-
-.c25 {
-  padding: 0px;
-}
-
-.c25 :hover,
-.c25 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c26 {
@@ -10481,7 +10472,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c26 :hover,
 .c26 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c27 {
@@ -10490,7 +10481,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c27 :hover,
 .c27 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c28 {
@@ -10499,22 +10490,31 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c28 :hover,
 .c28 :focus {
+  fill: #0E76A8;
+}
+
+.c29 {
+  padding: 0px;
+}
+
+.c29 :hover,
+.c29 :focus {
   fill: #0060df;
 }
 
-.c22 {
+.c23 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c20 {
+.c21 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c20 >.,
-.c20 >.c21 {
+.c21 >.,
+.c21 >.c22 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -10522,7 +10522,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   justify-content: center;
 }
 
-.c19 {
+.c20 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -10620,6 +10620,12 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   padding: 0.875rem;
 }
 
+.c19 {
+  bottom: 0;
+  margin-top: auto;
+  right: -5rem;
+}
+
 .c17 {
   display: flex;
   flex: 1;
@@ -10627,10 +10633,8 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   position: relative;
 }
 
-.c18 {
-  bottom: 0;
-  margin-top: auto;
-  right: -5rem;
+.c17 .c18 {
+  width: 360px;
 }
 
 .c13 {
@@ -10664,18 +10668,18 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c21 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c20 >.{
+  .c21 >.{
     justify-content: flex-start;
   }
 
-  .c20 >.c21 {
+  .c21 >.c22 {
     justify-content: flex-end;
   }
 }
@@ -10739,15 +10743,19 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c17 {
-    overflow: visible;
-    width: 50%;
+  .c19 {
+    position: absolute!important;
   }
 }
 
 @media (min-width: 1200px) {
-  .c18 {
-    position: absolute!important;
+  .c17 {
+    overflow: visible;
+    width: 50%;
+  }
+
+  .c17 .c18 {
+    width: 560px;
   }
 }
 
@@ -10904,7 +10912,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           class="c17"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c18"
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c18 c19"
             data-gatsby-image-wrapper=""
             style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >
@@ -10958,10 +10966,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
     </article>
   </main>
   <footer
-    class="c19"
+    class="c20"
   >
     <div
-      class="c20"
+      class="c21"
     >
       <div
         class=""
@@ -10973,13 +10981,13 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         />
       </div>
       <ul
-        class="c21 c22"
+        class="c22 c23"
       >
         <li
-          class="c23"
+          class="c24"
         >
           <a
-            class="c24"
+            class="c25"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -11001,10 +11009,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c25"
+          class="c26"
         >
           <a
-            class="c24"
+            class="c25"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -11026,10 +11034,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c26"
+          class="c27"
         >
           <a
-            class="c24"
+            class="c25"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -11051,10 +11059,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c27"
+          class="c28"
         >
           <a
-            class="c24"
+            class="c25"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -11076,10 +11084,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c29"
         >
           <a
-            class="c24"
+            class="c25"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
