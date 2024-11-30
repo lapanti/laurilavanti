@@ -14,8 +14,6 @@ interface SiteMetadata {
     locale: string
     description: string
     siteUrl: string
-    twSite: string
-    twCreator: string
     facebook: string
     instagram: string
     linkedIn: string

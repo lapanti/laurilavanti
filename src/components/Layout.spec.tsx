@@ -15,8 +15,6 @@ interface SiteMetadata {
     locale: string
     description: string
     siteUrl: string
-    twSite: string
-    twCreator: string
     facebook: string
     instagram: string
     linkedIn: string
@@ -53,7 +51,7 @@ describe('<Layout />', () => {
     it('should render title banner', async () => {
         const { container } = render(
             <Layout
-                backgroundImage={{ gatsbyImageData: smilingImage }}
+                backgroundImage={smilingImage}
                 heroImage={inFrontOfWoodsImage}
                 heroImageAlt={inFrontOfWoodsImageDescription}
                 leftAlignedTitle={false}
@@ -77,7 +75,7 @@ describe('<Layout />', () => {
         const subtitle = 'Subtesxttitle'
         const { container } = render(
             <Layout
-                heroImage={{ gatsbyImageData: inFrontOfWoodsImage }}
+                heroImage={inFrontOfWoodsImage}
                 heroImageAlt={inFrontOfWoodsImageDescription}
                 subtitle={subtitle}
                 title={title}
