@@ -16,15 +16,15 @@ interface Props {
 
 const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
     <Layout
-        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
+        backgroundImage={data?.contentfulPage?.backgroundImage?.gatsbyImageData}
         body={data?.contentfulPage?.body}
         description={data?.contentfulPage?.description ?? ''}
-        heroImage={data?.contentfulPage?.image?.localFile}
+        heroImage={data?.contentfulPage?.image.gatsbyImageData}
         heroImageAlt={data?.contentfulPage?.image?.description}
         modified={data?.contentfulPage?.updatedAt}
         pathname={`/${slug}/`}
         secondaryTitle={data?.contentfulPage?.secondaryTitle ?? undefined}
-        socialImage={data?.contentfulPage?.socialImage?.localFile}
+        socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
         subtitle={data?.contentfulPage?.subtitle ?? undefined}
         title={data?.contentfulPage?.title}
         type={data?.contentfulPage?.jsonLdType}
@@ -87,42 +87,14 @@ export const query = graphql`
                 }
             }
             image {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: NONE
-                            layout: CONSTRAINED
-                            aspectRatio: 1
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, aspectRatio: 1, formats: [AUTO, WEBP, AVIF])
                 description
             }
             socialImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: NONE
-                            layout: CONSTRAINED
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
             }
             backgroundImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
             }
             updatedAt
         }

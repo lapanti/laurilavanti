@@ -36,31 +36,11 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                         }
                     }
                     headerImage {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData(
-                                    placeholder: BLURRED
-                                    layout: CONSTRAINED
-                                    width: 560
-                                    formats: [AUTO, WEBP, AVIF]
-                                    transformOptions: { fit: OUTSIDE }
-                                )
-                            }
-                        }
+                        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
                         description
                     }
                     backgroundImage {
-                        localFile {
-                            childImageSharp {
-                                gatsbyImageData(
-                                    placeholder: BLURRED
-                                    layout: CONSTRAINED
-                                    width: 560
-                                    formats: [AUTO, WEBP, AVIF]
-                                    transformOptions: { fit: OUTSIDE }
-                                )
-                            }
-                        }
+                        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
                         description
                     }
                     slug
@@ -128,7 +108,7 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                 key={node.publishDate || node.createdAt}
                 date={node.publishDate || node.createdAt}
                 excerpt={node.excerpt}
-                image={node.backgroundImage?.localFile ?? node.headerImage.localFile}
+                image={node.backgroundImage?.gatsbyImageData ?? node.headerImage.gatsbyImageData}
                 imageAlt={node.backgroundImage?.description ?? node.headerImage.description}
                 slug={node.slug}
                 tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}

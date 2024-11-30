@@ -5,18 +5,18 @@ import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } fro
 
 const image = {
     description: inFrontOfWoodsImageDescription,
-    localFile: inFrontOfWoodsImage,
+    gatsbyImageData: inFrontOfWoodsImage,
 }
 
 const images = {
-    backgroundImage: { localFile: smilingImage },
+    backgroundImage: { gatsbyImageData: smilingImage },
     image,
-    socialImage: { localFile: smilingImage },
+    socialImage: { gatsbyImageData: smilingImage },
 }
 
 export const frontPage: ContentfulPage = {
     image,
-    socialImage: { localFile: smilingImage },
+    socialImage: { gatsbyImageData: smilingImage },
     leftAlignedTitle: true,
     backgroundImage: image,
     description: null,

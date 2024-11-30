@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import type { PostMetaProps } from '../PostMeta'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
@@ -53,7 +53,7 @@ interface Props extends Omit<PostMetaProps, 'ariaLabel'> {
     className?: string
     title: string
     excerpt: string
-    image: ImageDataLike
+    image: IGatsbyImageData
     imageAlt: string
     slug: string
 }

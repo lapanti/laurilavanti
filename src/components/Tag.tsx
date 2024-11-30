@@ -18,12 +18,12 @@ interface Props {
 
 const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
     <Layout
-        backgroundImage={data?.contentfulPage?.backgroundImage?.localFile}
-        heroImage={data?.contentfulPage?.image?.localFile}
+        backgroundImage={data?.contentfulPage?.backgroundImage?.gatsbyImageData}
+        heroImage={data?.contentfulPage?.image.gatsbyImageData}
         heroImageAlt={data?.contentfulPage?.image?.description}
         leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
         pathname={`/blogi/${tag}/`}
-        socialImage={data?.contentfulPage?.socialImage?.localFile}
+        socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
         title={tag.replace(/^\w/, (c) => c.toUpperCase())}
         type={WEBPAGE}
     >
@@ -35,44 +35,14 @@ export const query = graphql`
     {
         contentfulPage(slug: { eq: "blogi" }) {
             image {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            width: 864
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
                 description
             }
             backgroundImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            width: 864
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
             }
             socialImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: NONE
-                            layout: CONSTRAINED
-                            width: 576
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
             }
             leftAlignedTitle
         }
