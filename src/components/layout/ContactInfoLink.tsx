@@ -1,15 +1,7 @@
 import type { ContactInfoLink as ContactInfoLinkType } from '../../types/contentful'
 
 import React from 'react'
-import {
-    FaBluesky,
-    FaEnvelope,
-    FaFacebook,
-    FaInstagram,
-    FaLinkedin,
-    FaMastodon,
-    FaSquareThreads,
-} from 'react-icons/fa6'
+import { FaBluesky, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaSquareThreads } from 'react-icons/fa6'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, sizes } from '../../lib/styles'
@@ -33,8 +25,6 @@ const Instagram = styled(FaInstagram)(logoStyles, { fill: colors.instagramGradie
 
 const LinkedIn = styled(FaLinkedin)(logoStyles, { fill: colors.linkedin })
 
-const Mastodon = styled(FaMastodon)(logoStyles, { fill: colors.mastodon })
-
 const Bluesky = styled(FaBluesky)(logoStyles, { fill: colors.bluesky })
 
 interface Props {
@@ -50,7 +40,6 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => (
         {link.icon === 'threads' && <Threads />}
         {link.icon === 'instagram' && <Instagram />}
         {link.icon === 'linkedin' && <LinkedIn />}
-        {link.icon === 'mastodon' && <Mastodon />}
         <span>{link.title}</span>
     </RowExternalLink>
 )

@@ -28,7 +28,7 @@ export interface ContactInfoLink {
     contentful_id: string
     title: string
     url: string
-    icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope' | 'threads'
+    icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'envelope' | 'threads'
 }
 
 export interface Fiduciary {
@@ -66,7 +66,7 @@ interface CurriculumVitae extends ContentfulRichTextGatsbyReference {
 interface ContactInfoLinkReference extends ContentfulRichTextGatsbyReference {
     title: string
     url?: string | null
-    icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'mastodon' | 'envelope' | 'threads'
+    icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'envelope' | 'threads'
 }
 
 interface YearsFromReference extends ContentfulRichTextGatsbyReference {
