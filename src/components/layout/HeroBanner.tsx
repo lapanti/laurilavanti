@@ -103,7 +103,7 @@ const HeroBannerComponent = ({
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
             <ImageContainer $backgroundSrc={backgroundSrc}>
-                {image && <Image alt={imageAlt ?? ''} image={image} objectFit="contain" />}
+                {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" objectFit="contain" />}
             </ImageContainer>
         </div>
     )

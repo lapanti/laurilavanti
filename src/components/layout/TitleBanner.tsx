@@ -94,7 +94,7 @@ const TitleBannerComponent = ({
     return (
         <div className={className}>
             <Content $leftAlignedTitle={leftAlignedTitle}>
-                {image && <Image $backgroundSrc={backgroundSrc} alt={imageAlt ?? ''} image={image} />}
+                {image && <Image $backgroundSrc={backgroundSrc} alt={imageAlt ?? ''} image={image} loading="eager" />}
                 <TitleContainer>
                     <Title>{title}</Title>
                     {showMeta && (
