@@ -19,10 +19,20 @@ describe('<NavLink />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render link to front page', () => {
+    it('should render main link', () => {
         const frontPageNav = { contentful_id: nav.contentful_id, slug: 'index', title: 'Lauri Lavanti' }
 
-        const { container } = render(<NavLink {...frontPageNav} isFrontPage />)
+        const { container } = render(<NavLink {...frontPageNav} mainLink />)
+
+        expect(screen.getByRole('link', { name: frontPageNav.title })).toHaveAttribute('href', `/`)
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render link that is hidden when current', () => {
+        const frontPageNav = { contentful_id: nav.contentful_id, slug: 'index', title: 'Lauri Lavanti' }
+
+        const { container } = render(<NavLink {...frontPageNav} hideIfCurrent />)
 
         expect(screen.getByRole('link', { name: frontPageNav.title })).toHaveAttribute('href', `/`)
 

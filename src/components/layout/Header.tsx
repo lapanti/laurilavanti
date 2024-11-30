@@ -15,7 +15,8 @@ const HamburgerContainer = styled.div({
     alignItems: 'center',
     display: 'flex',
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
+    marginLeft: sizes[1.75],
     marginRight: sizes[1.75],
     [breakpoints[1200].min]: {
         display: 'none',
@@ -109,6 +110,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
     return (
         <header className={className}>
             <HamburgerContainer>
+                <NavLink slug="index" title="Lauri Lavanti" hideIfCurrent mainLink />
                 <Hamburger
                     color={colors.peach}
                     distance="sm"
@@ -121,7 +123,6 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                 />
             </HamburgerContainer>
             <MobileMenu $isOpen={isMobileOpen}>
-                <NavLink slug="index" title="Lauri Lavanti" isFrontPage />
                 {data.contentfulMainNav.links
                     .filter(({ slug }) => slug !== 'index')
                     .map((nav) => (
@@ -130,7 +131,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
             </MobileMenu>
             <DesktopMenu>
                 <Half>
-                    <NavLink slug="index" title="Lauri Lavanti" isFrontPage />
+                    <NavLink slug="index" title="Lauri Lavanti" mainLink />
                 </Half>
                 <Half $end>
                     {data.contentfulMainNav.links
