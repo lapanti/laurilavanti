@@ -43,13 +43,29 @@ const Titles = styled.div({
     },
 })
 
+// @ts-expect-error for some reason the typing does not include 'absolute !important', although it's valid CSS
+const Image = styled(GatsbyImage)({
+    bottom: 0,
+    marginTop: 'auto',
+    right: `-${sizes[5]}`,
+    [breakpoints[1200].min]: {
+        position: 'absolute !important', // Otherwise gatsby image wrapper overrides it in production
+    },
+})
+
 const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
     {
+        [Image]: {
+            width: '360px',
+        },
         display: 'flex',
         flex: 1,
         overflow: 'hidden',
         position: 'relative',
         [breakpoints[1200].min]: {
+            [Image]: {
+                width: '560px',
+            },
             overflow: 'visible',
             width: '50%',
         },
@@ -62,16 +78,6 @@ const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
             },
         }
 )
-
-// @ts-expect-error for some reason the typing does not include 'absolute !important', although it's valid CSS
-const Image = styled(GatsbyImage)({
-    bottom: 0,
-    marginTop: 'auto',
-    right: `-${sizes[5]}`,
-    [breakpoints[1200].min]: {
-        position: 'absolute !important', // Otherwise gatsby image wrapper overrides it in production
-    },
-})
 
 interface Props {
     className?: string
