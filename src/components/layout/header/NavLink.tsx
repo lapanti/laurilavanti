@@ -10,13 +10,14 @@ type Link = Omit<MainNav['links'][number], 'contentful_id'>
 
 interface Props extends Link {
     className?: string
-    isFrontPage?: boolean
+    mainLink?: boolean
+    hideIfCurrent?: boolean
 }
 
-const NavLinkComponent = ({ className, title, navigationTitle, slug, isFrontPage }: Props): JSX.Element => (
+const NavLinkComponent = ({ className, title, navigationTitle, slug, mainLink, hideIfCurrent }: Props): JSX.Element => (
     <InternalLink
         $color={colors.peach}
-        activeStyle={isFrontPage ? undefined : { textDecoration: 'underline' }}
+        activeStyle={hideIfCurrent ? { visibility: 'hidden' } : mainLink ? undefined : { textDecoration: 'underline' }}
         className={className}
         partiallyActive={slug !== 'index'}
         title={title}
@@ -28,9 +29,9 @@ const NavLinkComponent = ({ className, title, navigationTitle, slug, isFrontPage
 
 NavLinkComponent.displayName = 'NavLink'
 
-const NavLink = styled(NavLinkComponent)(({ isFrontPage }) => ({
-    ...(isFrontPage ? fontSizes[1.75] : fontSizes[1.5]),
-    fontFamily: isFrontPage ? fontFamilies.heading : fontFamilies.sans,
+const NavLink = styled(NavLinkComponent)(({ mainLink }) => ({
+    ...(mainLink ? fontSizes[1.75] : fontSizes[1.5]),
+    fontFamily: mainLink ? fontFamilies.heading : fontFamilies.sans,
 }))
 
 export default NavLink

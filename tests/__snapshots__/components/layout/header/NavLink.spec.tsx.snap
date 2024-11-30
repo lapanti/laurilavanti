@@ -30,7 +30,37 @@ exports[`<NavLink /> should render 1`] = `
 </a>
 `;
 
-exports[`<NavLink /> should render link to front page 1`] = `
+exports[`<NavLink /> should render link that is hidden when current 1`] = `
+.c0 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
+}
+
+.c0 :hover,
+.c0 :active,
+.c0 :focus {
+  text-decoration: underline;
+}
+
+.c1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans",Trebuchet MS;
+}
+
+<a
+  class="c0 c1"
+  href="/"
+  title="Lauri Lavanti"
+>
+  Lauri Lavanti
+</a>
+`;
+
+exports[`<NavLink /> should render main link 1`] = `
 .c0 {
   text-decoration: none;
   transition-duration: 150ms;

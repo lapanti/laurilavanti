@@ -9,7 +9,7 @@ exports[`<404 /> should render 1`] = `
   line-height: 2.25rem;
 }
 
-.c4 {
+.c3 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -17,9 +17,9 @@ exports[`<404 /> should render 1`] = `
   color: rgb(248, 207, 169);
 }
 
-.c4 :hover,
-.c4 :active,
-.c4 :focus {
+.c3 :hover,
+.c3 :active,
+.c3 :focus {
   text-decoration: underline;
 }
 
@@ -226,7 +226,7 @@ exports[`<404 /> should render 1`] = `
   justify-content: center;
 }
 
-.c6 {
+.c5 {
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
@@ -242,11 +242,12 @@ exports[`<404 /> should render 1`] = `
   align-items: center;
   display: flex;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-left: 1.75rem;
   margin-right: 1.75rem;
 }
 
-.c3 {
+.c6 {
   align-items: center;
   background: rgb(0, 98, 114);
   display: flex;
@@ -261,11 +262,11 @@ exports[`<404 /> should render 1`] = `
   height: 0;
 }
 
-.c3 .c5 {
+.c6 .c4 {
   transition: opacity 0.3s ease-in-out;
 }
 
-.c3 .c5 {
+.c6 .c4 {
   opacity: 0;
 }
 
@@ -376,7 +377,7 @@ exports[`<404 /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c3 {
+  .c6 {
     display: none;
   }
 }
@@ -463,6 +464,13 @@ exports[`<404 /> should render 1`] = `
       <div
         class="c2"
       >
+        <a
+          class="c3 c4 c5"
+          href="/"
+          title="Lauri Lavanti"
+        >
+          Lauri Lavanti
+        </a>
         <div
           aria-expanded="false"
           aria-label="Avaa valikko"
@@ -495,31 +503,24 @@ exports[`<404 /> should render 1`] = `
         </div>
       </div>
       <div
-        class="c3"
+        class="c6"
       >
         <a
-          class="c4 c5 c6"
-          href="/"
-          title="Lauri Lavanti"
-        >
-          Lauri Lavanti
-        </a>
-        <a
-          class="c4 c5 c7"
+          class="c3 c4 c7"
           href="/minusta/"
           title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
         >
           Minusta
         </a>
         <a
-          class="c4 c5 c7"
+          class="c3 c4 c7"
           href="/blogi/"
           title="Blogi"
         >
           Blogi
         </a>
         <a
-          class="c4 c5 c7"
+          class="c3 c4 c7"
           href="/ota-yhteytta/"
           title="Ota yhteyttä"
         >
@@ -533,7 +534,7 @@ exports[`<404 /> should render 1`] = `
           class="c9"
         >
           <a
-            class="c4 c5 c6"
+            class="c3 c4 c5"
             href="/"
             title="Lauri Lavanti"
           >
@@ -544,21 +545,21 @@ exports[`<404 /> should render 1`] = `
           class="c10"
         >
           <a
-            class="c4 c5 c7"
+            class="c3 c4 c7"
             href="/minusta/"
             title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
           >
             Minusta
           </a>
           <a
-            class="c4 c5 c7"
+            class="c3 c4 c7"
             href="/blogi/"
             title="Blogi"
           >
             Blogi
           </a>
           <a
-            class="c4 c5 c7"
+            class="c3 c4 c7"
             href="/ota-yhteytta/"
             title="Ota yhteyttä"
           >
