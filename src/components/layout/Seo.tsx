@@ -40,11 +40,10 @@ const Seo = ({
                 twSite: string
                 twCreator: string
                 facebook: string
-                twitter: string
                 instagram: string
                 linkedIn: string
-                mastodon: string
                 bluesky: string
+                threads: string
             }
         }
     }>(graphql`
@@ -60,11 +59,10 @@ const Seo = ({
                     twSite
                     twCreator
                     facebook
-                    twitter
                     instagram
                     linkedIn
-                    mastodon
                     bluesky
+                    threads
                 }
             }
         }
@@ -85,17 +83,8 @@ const Seo = ({
                   content: metaImage.height,
                   property: 'og:image:height',
               },
-              {
-                  content: 'summary_large_image',
-                  name: 'twitter:card',
-              },
           ]
-        : [
-              {
-                  content: 'summary',
-                  name: 'twitter:card',
-              },
-          ]
+        : []
     const canonical = pathname ? `${site?.siteMetadata?.siteUrl}${pathname}` : null
 
     const jsonLD = {
@@ -128,11 +117,10 @@ const Seo = ({
                   name: site?.siteMetadata?.title,
                   sameAs: [
                       site?.siteMetadata?.facebook,
-                      site?.siteMetadata?.twitter,
                       site?.siteMetadata?.instagram,
                       site?.siteMetadata?.linkedIn,
-                      site?.siteMetadata?.mastodon,
                       site?.siteMetadata?.bluesky,
+                      site?.siteMetadata?.threads,
                   ],
               }
             : {}),
@@ -176,28 +164,12 @@ const Seo = ({
                     name: 'og:site_name',
                 },
                 {
-                    content: title,
-                    name: 'twitter:title',
-                },
-                {
-                    content: site?.siteMetadata?.twSite,
-                    name: 'twitter:site',
-                },
-                {
-                    content: site?.siteMetadata?.twCreator,
-                    name: 'twitter:creator',
-                },
-                {
                     content: site?.siteMetadata?.facebook,
                     name: 'article:publisher',
                 },
                 {
                     content: 'website',
                     property: 'og:type',
-                },
-                {
-                    content: metaDescription,
-                    name: 'twitter:description',
                 },
                 ...cardMeta,
                 ...(meta ?? []),

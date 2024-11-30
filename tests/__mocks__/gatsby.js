@@ -7,7 +7,6 @@ const gatsby = jest.requireActual('gatsby')
 
 module.exports = {
     ...gatsby,
-    graphql: jest.fn(),
     Link: jest.fn().mockImplementation(
         // these props are invalid for an `a` tag
         ({ activeClassName, activeStyle, getProps, innerRef, partiallyActive, ref, replace, to, ...rest }) =>
@@ -17,27 +16,20 @@ module.exports = {
             })
     ),
     StaticQuery: jest.fn(),
+    graphql: jest.fn(),
     useStaticQuery: jest.fn(() => ({
         allContentfulPost: {
             nodes: excerptList,
         },
-        contentfulMainNav: mainNav,
         contentfulFooterNav: footerNav,
+        contentfulMainNav: mainNav,
         site: {
             siteMetadata: {
-                siteUrl: 'https://laurilavanti.fi',
-                title: 'Lauri Lavanti',
-                description: 'Kirkkonummelainen isä, ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
                 author: 'laurilavanti',
-                locale: 'fi_FI',
-                twSite: '@laurilavanti',
-                twCreator: '@laurilavanti',
-                facebook: 'https://www.facebook.com/laurilavanti',
-                twitter: 'https://twitter.com/laurilavanti',
-                instagram: 'https://www.instagram.com/laurilavanti/',
-                linkedIn: 'https://www.linkedin.com/in/lapanti',
-                mastodon: 'https://mastodontti.fi/@laurilavanti',
                 bluesky: 'https://bsky.app/profile/laurilavanti.fi',
+                description: 'Kirkkonummelainen isä, Lead Software Developer, diplomi-insinööri, Lauri Lavanti.',
+                facebook: 'https://www.facebook.com/laurilavanti',
+                instagram: 'https://www.instagram.com/laurilavanti/',
                 keywords: [
                     'Kirkkonummi',
                     'Länsi-Uusimaa',
@@ -49,6 +41,11 @@ module.exports = {
                     'Lavanti',
                     'poliitikko',
                 ],
+                linkedIn: 'https://www.linkedin.com/in/lapanti',
+                locale: 'fi_FI',
+                siteUrl: 'https://laurilavanti.fi',
+                threads: 'https://www.threads.net/@laurilavanti',
+                title: 'Lauri Lavanti',
             },
         },
     })),

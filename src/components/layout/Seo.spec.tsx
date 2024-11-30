@@ -17,30 +17,15 @@ interface SiteMetadata {
     twSite: string
     twCreator: string
     facebook: string
-    twitter: string
     instagram: string
     linkedIn: string
-    mastodon: string
     bluesky: string
+    threads: string
 }
 
 describe('<Seo />', () => {
-    const {
-        title,
-        keywords,
-        author,
-        locale,
-        description,
-        siteUrl,
-        twSite,
-        twCreator,
-        facebook,
-        twitter,
-        instagram,
-        linkedIn,
-        mastodon,
-        bluesky,
-    } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
+    const { title, keywords, author, locale, description, siteUrl, facebook, instagram, linkedIn, bluesky, threads } =
+        gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = ({
         pageType,
@@ -79,20 +64,15 @@ describe('<Seo />', () => {
                 { content: pageDescription, property: 'og:description' },
                 { content: canonical || siteUrl, name: 'og:url' },
                 { content: title, name: 'og:site_name' },
-                { content: pageTitle, name: 'twitter:title' },
-                { content: twSite, name: 'twitter:site' },
-                { content: twCreator, name: 'twitter:creator' },
                 { content: facebook, name: 'article:publisher' },
                 { content: 'website', property: 'og:type' },
-                { content: pageDescription, name: 'twitter:description' },
                 ...(imgData
                     ? [
                           { content: `${siteUrl}${imgData.src}`, property: 'og:image' },
                           { content: imgData.width, property: 'og:image:width' },
                           { content: imgData.height, property: 'og:image:height' },
-                          { content: 'summary_large_image', name: 'twitter:card' },
                       ]
-                    : [{ content: 'summary', name: 'twitter:card' }]),
+                    : []),
             ].concat(meta)
         )
         expect(helmet.scriptTags[0].type).toEqual('application/ld+json')
@@ -108,7 +88,7 @@ describe('<Seo />', () => {
             mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
             name: pageType === WEBSITE ? title : undefined,
             url: canonical || null,
-            ...(pageType === WEBSITE ? { sameAs: [facebook, twitter, instagram, linkedIn, mastodon, bluesky] } : {}),
+            ...(pageType === WEBSITE ? { sameAs: [facebook, instagram, linkedIn, bluesky, threads] } : {}),
         })
 
         expect(helmet).toMatchSnapshot()

@@ -18,10 +18,10 @@ interface SiteMetadata {
     twSite: string
     twCreator: string
     facebook: string
-    twitter: string
     instagram: string
     linkedIn: string
-    mastodon: string
+    threads: string
+    bluesky: string
 }
 
 describe('<Layout />', () => {
