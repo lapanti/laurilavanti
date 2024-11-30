@@ -43,6 +43,12 @@ const config: GatsbyConfig = {
             resolve: 'gatsby-plugin-sharp',
         },
         'gatsby-transformer-sharp',
+        {
+            options: {
+                domains: ['https://images.ctfassets.net', 'https://static.cloudflareinsights.com'],
+            },
+            resolve: 'gatsby-plugin-preconnect',
+        },
     ],
     siteMetadata: {
         author: 'laurilavanti',
