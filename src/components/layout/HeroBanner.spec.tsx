@@ -1,3 +1,5 @@
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
+
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
@@ -19,7 +21,9 @@ describe('<HeroBanner />', () => {
     })
 
     it('should render minimal with borken image data', () => {
-        const { container } = render(<HeroBanner imageData={{ key: undefined }} title={title} />)
+        const { container } = render(
+            <HeroBanner imageData={{ key: undefined } as unknown as IGatsbyImageData} title={title} />
+        )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         expect(screen.queryByRole('img')).toBeNull()

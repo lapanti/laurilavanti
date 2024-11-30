@@ -37,8 +37,6 @@ const Seo = ({
                 keywords: string[]
                 siteUrl: string
                 locale: string
-                twSite: string
-                twCreator: string
                 facebook: string
                 instagram: string
                 linkedIn: string
@@ -56,8 +54,6 @@ const Seo = ({
                     keywords
                     siteUrl
                     locale
-                    twSite
-                    twCreator
                     facebook
                     instagram
                     linkedIn
