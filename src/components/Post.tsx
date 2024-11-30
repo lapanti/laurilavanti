@@ -51,17 +51,17 @@ const Post = ({
 
     return (
         <Layout
-            backgroundImage={backgroundImage?.localFile}
+            backgroundImage={backgroundImage?.gatsbyImageData}
             body={body}
             description={excerpt}
-            heroImage={headerImage.localFile}
+            heroImage={headerImage.gatsbyImageData}
             heroImageAlt={headerImage.description}
             leftAlignedTitle={leftAlignedTitle}
             modified={updatedAt}
             pathname={`/blogi/${slug}/`}
             publishDate={getValueOrDefault(publishDate, createdAt) as string}
             published={getValueOrDefault(publishedOld, published)}
-            socialImage={socialImage?.localFile}
+            socialImage={socialImage?.gatsbyImageData}
             tags={tags}
             title={title}
             type={BLOGPOSTING}
@@ -94,41 +94,14 @@ export const query = graphql`
                 }
             }
             headerImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
                 description
             }
             backgroundImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
             }
             socialImage {
-                localFile {
-                    childImageSharp {
-                        gatsbyImageData(
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                            formats: [AUTO, WEBP, AVIF]
-                            transformOptions: { fit: OUTSIDE }
-                        )
-                    }
-                }
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
             }
             metadata {
                 tags {

@@ -67,8 +67,8 @@ const FooterComponent = ({ className }: Props): JSX.Element => {
                     <StaticImage
                         alt='Vihreiden logo ja teksti "Vihreät De Gröna"'
                         backgroundColor="transparent"
+                        objectFit="contain"
                         src="../../../static/images/Vihreat_Logo_HOR_NEG_FIN_SWE_ENG.png"
-                        transformOptions={{ fit: 'contain' }}
                         width={200}
                     />
                 </ImageContainer>

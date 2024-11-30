@@ -24,12 +24,6 @@ interface SiteMetadata {
     bluesky: string
 }
 
-interface ImageSeoData {
-    childImageSharp: {
-        gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
-    }
-}
-
 describe('<Seo />', () => {
     const {
         title,
@@ -130,13 +124,11 @@ describe('<Seo />', () => {
 
     it('should render home page SEO', async () => {
         const {
-            images: {
-                fallback: { src },
-            },
+            images: { fallback },
             height,
             width,
-        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { height: `${height}`, src, width: `${width}` }
+        } = inFrontOfWoodsImage
+        const imgData = { height: `${height}`, src: fallback?.src ?? '', width: `${width}` }
         render(<Seo description="" image={imgData} modified="2021-09-22" pathname="/" title={title} />)
 
         expectHelmetToHaveCorrectValues({ canonical: `${siteUrl}/`, imgData, pageTitle: title, pageType: WEBSITE })
@@ -146,13 +138,11 @@ describe('<Seo />', () => {
 
     it('should render borken home page SEO', async () => {
         const {
-            images: {
-                fallback: { src },
-            },
+            images: { fallback },
             height,
             width,
-        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { height: `${height}`, src, width: `${width}` }
+        } = inFrontOfWoodsImage
+        const imgData = { height: `${height}`, src: fallback?.src ?? '', width: `${width}` }
         const type = 'KikkaKokkare' as unknown as (typeof JSON_LD_TYPES)[number]
         render(<Seo description="" image={imgData} pathname="/" title={title} type={type} />)
 
@@ -170,13 +160,11 @@ describe('<Seo />', () => {
         const published = '2021-11-15'
 
         const {
-            images: {
-                fallback: { src },
-            },
+            images: { fallback },
             height,
             width,
-        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { height: `${height}`, src, width: `${width}` }
+        } = inFrontOfWoodsImage
+        const imgData = { height: `${height}`, src: fallback?.src ?? '', width: `${width}` }
 
         render(
             <Seo
@@ -213,13 +201,11 @@ describe('<Seo />', () => {
         const meta = [{ content: 'koira', name: 'kissa' }]
 
         const {
-            images: {
-                fallback: { src },
-            },
+            images: { fallback },
             height,
             width,
-        } = (inFrontOfWoodsImage as unknown as ImageSeoData).childImageSharp.gatsbyImageData
-        const imgData = { height: `${height}`, src, width: `${width}` }
+        } = inFrontOfWoodsImage
+        const imgData = { height: `${height}`, src: fallback?.src ?? '', width: `${width}` }
 
         render(
             <Seo

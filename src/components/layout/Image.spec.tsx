@@ -1,5 +1,3 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
-
 import { render, screen } from '@testing-library/react'
 import React from 'react'
 
@@ -11,13 +9,7 @@ describe('<Image />', () => {
     const caption = 'My caption'
 
     it('should return null if no image data', () => {
-        const imageData: ImageDataLike = {
-            children: [],
-            id: '',
-            internal: { contentDigest: '', owner: '', type: '' },
-            parent: null,
-        }
-        const { container } = render(<Image alt={alt} caption={caption} imageData={imageData} />)
+        const { container } = render(<Image alt={alt} caption={caption} />)
 
         expect(container.firstChild).toBeNull()
     })

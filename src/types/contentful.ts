@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import type { ContentfulRichTextGatsbyReference, RenderRichTextData } from 'gatsby-source-contentful/rich-text'
 import type { JsonLdType } from './jsonld'
 
@@ -14,14 +14,14 @@ interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
 interface ImageWithCaptionReference extends ContentfulRichTextGatsbyReference {
     caption: string
     image: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
         description: string
     }
 }
 
 interface ImageReference extends ContentfulRichTextGatsbyReference {
     description: string
-    localFile: ImageDataLike
+    gatsbyImageData: IGatsbyImageData
 }
 
 export interface ContactInfoLink {
@@ -93,18 +93,14 @@ export interface ContentfulPage {
     secondaryTitle: string | null
     body: RichBody
     image: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
         description: string
     }
-    mobileImage?: {
-        localFile: ImageDataLike
-        description: string
-    } | null
     socialImage: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
     } | null
     backgroundImage: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
     } | null
     updatedAt: string
     leftAlignedTitle: boolean
@@ -120,15 +116,15 @@ interface ContentfulPostCommon {
         }[]
     }
     headerImage: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
         description: string
     }
     backgroundImage?: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
         description: string
     } | null
     socialImage?: {
-        localFile: ImageDataLike
+        gatsbyImageData: IGatsbyImageData
     } | null
     excerpt: string
     leftAlignedTitle: boolean

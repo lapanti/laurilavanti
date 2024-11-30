@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 import React from 'react'
@@ -75,12 +75,12 @@ const Image = styled(GatsbyImage)({
 
 interface Props {
     className?: string
-    imageData?: ImageDataLike
+    imageData?: IGatsbyImageData
     imageAlt?: string
     title: string
     subtitle?: string
     secondaryTitle?: string
-    backgroundImage?: ImageDataLike
+    backgroundImage?: IGatsbyImageData
 }
 
 const HeroBannerComponent = ({

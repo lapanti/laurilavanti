@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
 import React from 'react'
@@ -67,8 +67,8 @@ const Content = styled.div<{ $leftAlignedTitle: boolean }>(
 
 interface Props {
     className?: string
-    backgroundImage?: ImageDataLike
-    imageData?: ImageDataLike
+    backgroundImage?: IGatsbyImageData
+    imageData?: IGatsbyImageData
     imageAlt?: string
     title: string
     showMeta?: boolean

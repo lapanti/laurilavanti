@@ -1,10 +1,11 @@
 import type { Block, Inline, Text } from '@contentful/rich-text-types'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import type { ReactNode } from 'react'
 import type { RichBody } from '../types/contentful'
 import type { SeoProps } from './layout/Seo'
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
-import { GatsbyImage, getImage, type ImageDataLike } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
@@ -127,7 +128,7 @@ const options = {
                         <Image
                             alt={node.data.target.image.description}
                             caption={node.data.target.caption}
-                            imageData={node.data.target.image.localFile}
+                            imageData={node.data.target.image}
                         />
                     )
                 case 'ContentfulCurriculumVitae':
@@ -177,7 +178,7 @@ const options = {
             }
         },
         [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
-            const image = getImage(node?.data?.target?.localFile)
+            const image = getImage(node?.data?.target)
             return image ? <StyledImage alt={node.data.target.description} image={image} /> : null
         },
     },
@@ -188,10 +189,10 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
     title: string
     subtitle?: string
     secondaryTitle?: string
-    heroImage?: ImageDataLike
+    heroImage?: IGatsbyImageData
     heroImageAlt?: string
-    backgroundImage?: ImageDataLike
-    socialImage?: ImageDataLike
+    backgroundImage?: IGatsbyImageData
+    socialImage?: IGatsbyImageData
     body?: RichBody
     isFrontPage?: boolean
     showMeta?: boolean
@@ -223,32 +224,18 @@ const LayoutComponent = ({
     leftAlignedTitle,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
-    const imageToUse = heroImage as
-        | {
-              childImageSharp: {
-                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
-              }
-          }
-        | undefined
-    const image = imageToUse
+    const image = heroImage
         ? {
-              height: `${imageToUse?.childImageSharp.gatsbyImageData.height}`,
-              src: imageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
-              width: `${imageToUse?.childImageSharp.gatsbyImageData.width}`,
+              height: `${heroImage.height}`,
+              src: heroImage.images?.fallback?.src ?? '',
+              width: `${heroImage.width}`,
           }
         : undefined
-    const socialImageToUse = socialImage as
-        | {
-              childImageSharp: {
-                  gatsbyImageData: { images: { fallback: { src: string } }; height: number; width: number }
-              }
-          }
-        | undefined
-    const socialImageObj = socialImageToUse
+    const socialImageObj = socialImage
         ? {
-              height: `${socialImageToUse?.childImageSharp.gatsbyImageData.height}`,
-              src: socialImageToUse.childImageSharp.gatsbyImageData.images.fallback.src,
-              width: `${socialImageToUse?.childImageSharp.gatsbyImageData.width}`,
+              height: `${socialImage.height}`,
+              src: socialImage.images?.fallback?.src ?? '',
+              width: `${socialImage.width}`,
           }
         : undefined
 

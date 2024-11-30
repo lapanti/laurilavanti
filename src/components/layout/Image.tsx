@@ -1,4 +1,4 @@
-import type { ImageDataLike } from 'gatsby-plugin-image'
+import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
@@ -29,7 +29,7 @@ interface ImageProps {
 
 interface Props extends ImageProps {
     className?: string
-    imageData: ImageDataLike
+    imageData?: IGatsbyImageData
 }
 
 const ImageComponent = ({ className, imageData, alt, caption }: Props): JSX.Element | null => {
