@@ -92,10 +92,7 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: NONE
                             layout: CONSTRAINED
-                            width: 560
                             aspectRatio: 1
-                            sizes: "(min-width: 560px) 560px, 360px"
-                            outputPixelDensities: [0.25, 0.5, 0.75, 1, 2]
                             formats: [AUTO, WEBP, AVIF]
                             transformOptions: { fit: OUTSIDE }
                         )
@@ -109,7 +106,6 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: NONE
                             layout: CONSTRAINED
-                            width: 576
                             formats: [AUTO, WEBP, AVIF]
                             transformOptions: { fit: OUTSIDE }
                         )
@@ -122,7 +118,6 @@ export const query = graphql`
                         gatsbyImageData(
                             placeholder: BLURRED
                             layout: CONSTRAINED
-                            width: 576
                             formats: [AUTO, WEBP, AVIF]
                             transformOptions: { fit: OUTSIDE }
                         )
