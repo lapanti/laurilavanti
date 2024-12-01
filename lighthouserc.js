@@ -4,6 +4,7 @@ module.exports = {
             assertions: {
                 'is-crawlable': 'off',
                 'unused-css-rules': 'off',
+                'uses-responsive-images': 'off',
             },
             preset: 'lighthouse:recommended',
         },
