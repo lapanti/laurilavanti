@@ -36,11 +36,11 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                         }
                     }
                     headerImage {
-                        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
+                        gatsbyImageData(layout: CONSTRAINED)
                         description
                     }
                     backgroundImage {
-                        gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED, formats: [AUTO, WEBP, AVIF])
+                        gatsbyImageData(layout: CONSTRAINED)
                         description
                     }
                     slug
