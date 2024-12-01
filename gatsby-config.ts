@@ -37,6 +37,7 @@ const config: GatsbyConfig = {
         {
             options: {
                 defaults: {
+                    formats: ['auto', 'webp', 'avif'],
                     placeholder: 'blurred',
                 },
             },
