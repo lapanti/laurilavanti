@@ -90,14 +90,19 @@ export const query = graphql`
                 }
             }
             image {
-                gatsbyImageData(layout: CONSTRAINED, width: 768)
+                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
                 description
             }
             backgroundImage {
-                gatsbyImageData(layout: CONSTRAINED, width: 768)
+                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
             }
             socialImage {
-                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, width: 768)
+                gatsbyImageData(
+                    placeholder: NONE
+                    layout: CONSTRAINED
+                    width: 768
+                    sizes: "(min-width: 1200px) 50vw, 100vw"
+                )
             }
             updatedAt
             leftAlignedTitle
