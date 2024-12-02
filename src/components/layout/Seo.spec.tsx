@@ -62,15 +62,18 @@ describe('<Seo />', () => {
                 { content: pageDescription, property: 'og:description' },
                 { content: canonical || siteUrl, name: 'og:url' },
                 { content: title, name: 'og:site_name' },
+                { content: pageTitle, name: 'twitter:title' },
                 { content: facebook, name: 'article:publisher' },
                 { content: 'website', property: 'og:type' },
+                { content: pageDescription, name: 'twitter:description' },
                 ...(imgData
                     ? [
                           { content: `${siteUrl}${imgData.src}`, property: 'og:image' },
                           { content: imgData.width, property: 'og:image:width' },
                           { content: imgData.height, property: 'og:image:height' },
+                          { content: 'summary_large_image', name: 'twitter:card' },
                       ]
-                    : []),
+                    : [{ content: 'summary', name: 'twitter:card' }]),
             ].concat(meta)
         )
         expect(helmet.scriptTags[0].type).toEqual('application/ld+json')
