@@ -68,7 +68,7 @@ const Seo = ({
     const cardMeta = metaImage?.src
         ? [
               {
-                  content: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
+                  content: metaImage.src,
                   property: 'og:image',
               },
               {
@@ -104,7 +104,7 @@ const Seo = ({
         url: canonical,
         ...(metaImage
             ? {
-                  image: `${site?.siteMetadata?.siteUrl}${metaImage.src}`,
+                  image: metaImage.src,
               }
             : {}),
         ...(type === BLOGPOSTING
