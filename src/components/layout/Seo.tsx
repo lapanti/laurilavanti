@@ -79,8 +79,17 @@ const Seo = ({
                   content: metaImage.height,
                   property: 'og:image:height',
               },
+              {
+                  content: 'summary_large_image',
+                  name: 'twitter:card',
+              },
           ]
-        : []
+        : [
+              {
+                  content: 'summary',
+                  name: 'twitter:card',
+              },
+          ]
     const canonical = pathname ? `${site?.siteMetadata?.siteUrl}${pathname}` : null
 
     const jsonLD = {
@@ -160,12 +169,20 @@ const Seo = ({
                     name: 'og:site_name',
                 },
                 {
+                    content: title,
+                    name: 'twitter:title',
+                },
+                {
                     content: site?.siteMetadata?.facebook,
                     name: 'article:publisher',
                 },
                 {
                     content: 'website',
                     property: 'og:type',
+                },
+                {
+                    content: metaDescription,
+                    name: 'twitter:description',
                 },
                 ...cardMeta,
                 ...(meta ?? []),
