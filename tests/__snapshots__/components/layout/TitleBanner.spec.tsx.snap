@@ -1,29 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TitleBanner /> should "render" meta 1`] = `
-.c6 {
+.c8 {
   display: flex;
   flex-direction: column;
 }
 
-.c2 {
+.c4 {
+  align-self: flex-bottom;
+}
+
+.c3 {
+  display: flex;
   position: relative;
 }
 
-.c4 {
+.c6 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c5 {
+.c7 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c7 {
+.c9 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -39,26 +44,31 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c5 {
+  .c6 {
+    padding-left: 0.5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c7 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c7 {
+  .c9 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -70,8 +80,8 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
     margin: auto;
   }
 
-  .c1 >.,
-  .c1 >.c3 {
+  .c1 >.c2,
+  .c1 >.c5 {
     width: 50%;
   }
 }
@@ -89,10 +99,10 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 c3"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -142,16 +152,16 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
       </div>
     </div>
     <div
-      class="c3 c4"
+      class="c5 c6"
     >
       <h1
-        class="c5"
+        class="c7"
       >
         Banner title
       </h1>
       <aside
         aria-label="Kirjoituksen Banner title meta-tiedot"
-        class="c6 c7"
+        class="c8 c9"
       >
         <time
           datetime="undefined-undefined-"
@@ -163,18 +173,23 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
 `;
 
 exports[`<TitleBanner /> should not render meta, even if present 1`] = `
-.c2 {
+.c4 {
+  align-self: flex-bottom;
+}
+
+.c3 {
+  display: flex;
   position: relative;
 }
 
-.c4 {
+.c6 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c5 {
+.c7 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -191,19 +206,24 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c5 {
+  .c6 {
+    padding-left: 0.5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c7 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -215,8 +235,8 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
     margin: auto;
   }
 
-  .c1 >.,
-  .c1 >.c3 {
+  .c1 >.c2,
+  .c1 >.c5 {
     width: 50%;
   }
 }
@@ -234,10 +254,10 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 c3"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -287,10 +307,10 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
       </div>
     </div>
     <div
-      class="c3 c4"
+      class="c5 c6"
     >
       <h1
-        class="c5"
+        class="c7"
       >
         Banner title
       </h1>
@@ -300,18 +320,23 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
 `;
 
 exports[`<TitleBanner /> should render image without alt 1`] = `
-.c2 {
-  position: relative;
+.c5 {
+  align-self: flex-bottom;
 }
 
 .c3 {
+  display: flex;
+  position: relative;
+}
+
+.c4 {
   display: flex;
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c3:after {
+.c4:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -321,14 +346,14 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
   width: 100%;
 }
 
-.c5 {
+.c7 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c6 {
+.c8 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -345,19 +370,24 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c5 {
+  .c7 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c7 {
+    padding-left: 5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c8 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -369,8 +399,8 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
     margin: auto;
   }
 
-  .c1 >.,
-  .c1 >.c4 {
+  .c1 >.c2,
+  .c1 >.c6 {
     width: 50%;
   }
 }
@@ -388,10 +418,10 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 c3"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c3"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -442,7 +472,7 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
         </script>
       </div>
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c5"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -492,10 +522,10 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
       </div>
     </div>
     <div
-      class="c4 c5"
+      class="c6 c7"
     >
       <h1
-        class="c6"
+        class="c8"
       >
         Banner title
       </h1>
@@ -505,7 +535,7 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
 `;
 
 exports[`<TitleBanner /> should render meta 1`] = `
-.c10 {
+.c12 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -513,50 +543,55 @@ exports[`<TitleBanner /> should render meta 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c10 :hover,
-.c10 :active,
-.c10 :focus {
+.c12 :hover,
+.c12 :active,
+.c12 :focus {
   text-decoration: underline;
 }
 
-.c8 {
+.c10 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c9 {
+.c11 {
   margin-right: 1rem;
 }
 
-.c9 :last-child {
+.c11 :last-child {
   margin-right: 0px;
 }
 
-.c6 {
+.c8 {
   display: flex;
   flex-direction: column;
 }
 
-.c2 {
+.c4 {
+  align-self: flex-bottom;
+}
+
+.c3 {
+  display: flex;
   position: relative;
 }
 
-.c4 {
+.c6 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c5 {
+.c7 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c7 {
+.c9 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -572,26 +607,31 @@ exports[`<TitleBanner /> should render meta 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c5 {
+  .c6 {
+    padding-left: 0.5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c7 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c7 {
+  .c9 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -603,8 +643,8 @@ exports[`<TitleBanner /> should render meta 1`] = `
     margin: auto;
   }
 
-  .c1 >.,
-  .c1 >.c3 {
+  .c1 >.c2,
+  .c1 >.c5 {
     width: 50%;
   }
 }
@@ -622,10 +662,10 @@ exports[`<TitleBanner /> should render meta 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 c3"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c4"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -675,16 +715,16 @@ exports[`<TitleBanner /> should render meta 1`] = `
       </div>
     </div>
     <div
-      class="c3 c4"
+      class="c5 c6"
     >
       <h1
-        class="c5"
+        class="c7"
       >
         Banner title
       </h1>
       <aside
         aria-label="Kirjoituksen Banner title meta-tiedot"
-        class="c6 c7"
+        class="c8 c9"
       >
         <time
           datetime="2024-10-4"
@@ -692,13 +732,13 @@ exports[`<TitleBanner /> should render meta 1`] = `
           4.10.2024
         </time>
         <ul
-          class="c8"
+          class="c10"
         >
           <li
-            class="c9"
+            class="c11"
           >
             <a
-              class="c10"
+              class="c12"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -706,10 +746,10 @@ exports[`<TitleBanner /> should render meta 1`] = `
             </a>
           </li>
           <li
-            class="c9"
+            class="c11"
           >
             <a
-              class="c10"
+              class="c12"
               href="/kategoria/kuntavaalit/"
             >
               #
@@ -724,18 +764,19 @@ exports[`<TitleBanner /> should render meta 1`] = `
 `;
 
 exports[`<TitleBanner /> should render minimal 1`] = `
-.c2 {
+.c3 {
+  display: flex;
   position: relative;
 }
 
-.c4 {
+.c5 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c5 {
+.c6 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -752,19 +793,24 @@ exports[`<TitleBanner /> should render minimal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
   .c5 {
+    padding-left: 0.5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c6 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -776,8 +822,8 @@ exports[`<TitleBanner /> should render minimal 1`] = `
     margin: auto;
   }
 
-  .c1 >.sc-dntaoT,
-  .c1 >.c3 {
+  .c1 >.c2,
+  .c1 >.c4 {
     width: 50%;
   }
 }
@@ -795,13 +841,13 @@ exports[`<TitleBanner /> should render minimal 1`] = `
     class="c1"
   >
     <div
-      class="c2"
+      class="c2 c3"
     />
     <div
-      class="c3 c4"
+      class="c4 c5"
     >
       <h1
-        class="c5"
+        class="c6"
       >
         Banner title
       </h1>

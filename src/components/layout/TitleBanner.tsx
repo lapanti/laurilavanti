@@ -7,9 +7,12 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 import { breakpoints, colors, CONTENT_PADDING, fontFamilies, fontSizes, HEADER_SIZE, sizes } from '../../lib/styles'
 import PostMeta from '../PostMeta'
 
-const Image = styled(GatsbyImage)({})
+const Image = styled(GatsbyImage)({
+    alignSelf: 'flex-bottom',
+})
 
 const ImageContainer = styled.div({
+    display: 'flex',
     position: 'relative',
 })
 
@@ -29,21 +32,27 @@ const BackgroundImage = styled(GatsbyImage)({
     width: '100%',
 })
 
-const TitleContainer = styled.div({
-    backgroundColor: colors.white,
-    paddingLeft: CONTENT_PADDING,
-    paddingRight: CONTENT_PADDING,
-    paddingTop: sizes[1],
-    [breakpoints[1200].min]: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        maxWidth: sizes[37.5],
-        paddingLeft: sizes[5],
-        paddingRight: sizes[5],
-        paddingTop: 0,
+const TitleContainer = styled.div<{ $leftAlignedTitle: boolean }>(
+    {
+        backgroundColor: colors.white,
+        paddingLeft: CONTENT_PADDING,
+        paddingRight: CONTENT_PADDING,
+        paddingTop: sizes[1],
+        [breakpoints[1200].min]: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            maxWidth: sizes[37.5],
+            paddingTop: 0,
+        },
     },
-})
+    ({ $leftAlignedTitle }) => ({
+        [breakpoints[1200].min]: {
+            paddingLeft: $leftAlignedTitle ? sizes[0.5] : sizes[5],
+            paddingRight: $leftAlignedTitle ? sizes[5] : sizes[0.5],
+        },
+    })
+)
 
 const Title = styled.h1({
     ...fontSizes[3],
@@ -66,7 +75,7 @@ const Content = styled.div<{ $leftAlignedTitle: boolean }>(
         [breakpoints[1200].min]: {
             display: 'flex',
             margin: 'auto',
-            [`> ${Image}, > ${TitleContainer}`]: {
+            [`> ${ImageContainer}, > ${TitleContainer}`]: {
                 width: '50%',
             },
         },
@@ -113,7 +122,7 @@ const TitleBannerComponent = ({
                     )}
                     {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" />}
                 </ImageContainer>
-                <TitleContainer>
+                <TitleContainer $leftAlignedTitle={leftAlignedTitle}>
                     <Title>{title}</Title>
                     {showMeta && (
                         <BiggerMeta
