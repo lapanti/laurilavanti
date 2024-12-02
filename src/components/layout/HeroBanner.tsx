@@ -1,6 +1,6 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
-import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
@@ -53,31 +53,39 @@ const Image = styled(GatsbyImage)({
     },
 })
 
-const ImageContainer = styled.div<{ $backgroundSrc?: string }>(
-    {
-        [Image]: {
-            width: '360px',
-        },
-        display: 'flex',
-        flex: 1,
-        overflow: 'hidden',
-        position: 'relative',
-        [breakpoints[1200].min]: {
-            [Image]: {
-                width: '560px',
-            },
-            overflow: 'visible',
-            width: '50%',
-        },
+const ImageContainer = styled.div({
+    [Image]: {
+        width: '360px',
     },
-    ({ $backgroundSrc }) =>
-        $backgroundSrc && {
-            [breakpoints[1200].min]: {
-                backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70}), url(${$backgroundSrc})`,
-                backgroundSize: 'cover',
-            },
-        }
-)
+    display: 'flex',
+    flex: 1,
+    overflow: 'hidden',
+    position: 'relative',
+    [breakpoints[1200].min]: {
+        [Image]: {
+            width: '560px',
+        },
+        overflow: 'visible',
+        width: '50%',
+    },
+})
+
+const BackgroundImage = styled(GatsbyImage)({
+    '&:after': {
+        backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70})`,
+        content: '""',
+        height: '100%',
+        position: 'absolute',
+        width: '100%',
+    },
+    display: 'none',
+    height: '100%',
+    position: 'absolute',
+    width: '100%',
+    [breakpoints[1200].min]: {
+        display: 'flex',
+    },
+})
 
 interface Props {
     className?: string
@@ -99,7 +107,7 @@ const HeroBannerComponent = ({
     backgroundImage,
 }: Props): JSX.Element => {
     const image = imageData ? getImage(imageData) : undefined
-    const backgroundSrc = backgroundImage ? getSrc(backgroundImage) : undefined
+    const backgroundImg = backgroundImage ? getImage(backgroundImage) : undefined
 
     return (
         <div className={className}>
@@ -108,7 +116,8 @@ const HeroBannerComponent = ({
                 {subtitle && <Subtitle>{subtitle}</Subtitle>}
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
-            <ImageContainer $backgroundSrc={backgroundSrc}>
+            <ImageContainer>
+                {backgroundImg && <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />}
                 {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" objectFit="contain" />}
             </ImageContainer>
         </div>
