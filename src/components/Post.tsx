@@ -96,20 +96,32 @@ export const query = graphql`
                         contentful_id
                         caption
                         image {
-                            gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
+                            gatsbyImageData(
+                                layout: CONSTRAINED
+                                width: 768
+                                sizes: "(max-width: 560px) 360px, ((min-width: 560px) and (max-width: 1200px)) 800px, (min-width: 1200px) 1200px, 100vw"
+                            )
                         }
                     }
                 }
             }
             headerImage {
-                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 768
+                    sizes: "(max-width: 560px) 360px, ((min-width: 560px) and (max-width: 1200px)) 600px, (min-width: 1200px) 50vw, 100vw"
+                )
                 description
             }
             backgroundImage {
-                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
+                gatsbyImageData(
+                    layout: CONSTRAINED
+                    width: 768
+                    sizes: "(max-width: 560px) 360px, ((min-width: 560px) and (max-width: 1200px)) 600px, (min-width: 1200px) 50vw, 100vw"
+                )
             }
             socialImage {
-                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
+                gatsbyImageData(layout: CONSTRAINED, width: 560)
             }
             metadata {
                 tags {
