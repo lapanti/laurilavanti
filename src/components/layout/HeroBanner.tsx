@@ -71,9 +71,13 @@ const ImageContainer = styled.div({
 })
 
 const BackgroundContainer = styled.div({
+    display: 'none',
     height: '100%',
     position: 'absolute',
     width: '100%',
+    [breakpoints[1200].min]: {
+        display: 'flex',
+    },
 })
 
 const BackgroundImage = styled(GatsbyImage)({
@@ -86,12 +90,8 @@ const BackgroundImage = styled(GatsbyImage)({
         top: 0,
         width: '100%',
     },
-    display: 'none',
     height: '100%',
     width: '100%',
-    [breakpoints[1200].min]: {
-        display: 'flex',
-    },
 })
 
 interface Props {
