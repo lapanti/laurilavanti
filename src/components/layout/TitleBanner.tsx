@@ -16,9 +16,11 @@ const ImageContainer = styled.div({
 const BackgroundImage = styled(GatsbyImage)({
     '&:after': {
         backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70})`,
+        bottom: 0,
         content: '""',
         height: '100%',
         position: 'absolute',
+        top: 0,
         width: '100%',
     },
     display: 'flex',
