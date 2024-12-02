@@ -1,25 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TitleBanner /> should "render" meta 1`] = `
-.c5 {
+.c6 {
   display: flex;
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
+  position: relative;
+}
+
+.c4 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c4 {
+.c5 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c6 {
+.c7 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -35,7 +39,7 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c3 {
+  .c4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,14 +51,14 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c5 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c7 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -67,7 +71,7 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
   }
 
   .c1 >.,
-  .c1 >.c2 {
+  .c1 >.c3 {
     width: 50%;
   }
 }
@@ -85,65 +89,69 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
     class="c1"
   >
     <div
-      class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
-      data-gatsby-image-wrapper=""
-      style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      class="c2"
     >
       <div
-        style="max-width: 4032px; display: block;"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        data-gatsby-image-wrapper=""
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
+        <div
+          style="max-width: 4032px; display: block;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+            style="max-width: 100%; display: block; position: static;"
+          />
+        </div>
         <img
           alt=""
           aria-hidden="true"
-          role="presentation"
-          src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-          style="max-width: 100%; display: block; position: static;"
-        />
-      </div>
-      <img
-        alt=""
-        aria-hidden="true"
-        data-placeholder-image=""
-        decoding="async"
-        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-      />
-      <picture>
-        <source
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-          type="image/webp"
-        />
-        <img
-          alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-          data-gatsby-image-ssr=""
-          data-main-image=""
+          data-placeholder-image=""
           decoding="async"
-          loading="eager"
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
         />
-      </picture>
-      <noscript />
-      <script
-        type="module"
-      >
-        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-      </script>
+        <picture>
+          <source
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+            type="image/webp"
+          />
+          <img
+            alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
+            data-gatsby-image-ssr=""
+            data-main-image=""
+            decoding="async"
+            loading="eager"
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          />
+        </picture>
+        <noscript />
+        <script
+          type="module"
+        >
+          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+        </script>
+      </div>
     </div>
     <div
-      class="c2 c3"
+      class="c3 c4"
     >
       <h1
-        class="c4"
+        class="c5"
       >
         Banner title
       </h1>
       <aside
         aria-label="Kirjoituksen Banner title meta-tiedot"
-        class="c5 c6"
+        class="c6 c7"
       >
         <time
           datetime="undefined-undefined-"
@@ -155,14 +163,18 @@ exports[`<TitleBanner /> should "render" meta 1`] = `
 `;
 
 exports[`<TitleBanner /> should not render meta, even if present 1`] = `
-.c3 {
+.c2 {
+  position: relative;
+}
+
+.c4 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c4 {
+.c5 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -179,7 +191,7 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c3 {
+  .c4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -191,7 +203,7 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c5 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -204,7 +216,7 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
   }
 
   .c1 >.,
-  .c1 >.c2 {
+  .c1 >.c3 {
     width: 50%;
   }
 }
@@ -222,59 +234,63 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
     class="c1"
   >
     <div
-      class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
-      data-gatsby-image-wrapper=""
-      style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      class="c2"
     >
       <div
-        style="max-width: 4032px; display: block;"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        data-gatsby-image-wrapper=""
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
+        <div
+          style="max-width: 4032px; display: block;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+            style="max-width: 100%; display: block; position: static;"
+          />
+        </div>
         <img
           alt=""
           aria-hidden="true"
-          role="presentation"
-          src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-          style="max-width: 100%; display: block; position: static;"
-        />
-      </div>
-      <img
-        alt=""
-        aria-hidden="true"
-        data-placeholder-image=""
-        decoding="async"
-        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-      />
-      <picture>
-        <source
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-          type="image/webp"
-        />
-        <img
-          alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-          data-gatsby-image-ssr=""
-          data-main-image=""
+          data-placeholder-image=""
           decoding="async"
-          loading="eager"
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
         />
-      </picture>
-      <noscript />
-      <script
-        type="module"
-      >
-        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-      </script>
+        <picture>
+          <source
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+            type="image/webp"
+          />
+          <img
+            alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
+            data-gatsby-image-ssr=""
+            data-main-image=""
+            decoding="async"
+            loading="eager"
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          />
+        </picture>
+        <noscript />
+        <script
+          type="module"
+        >
+          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+        </script>
+      </div>
     </div>
     <div
-      class="c2 c3"
+      class="c3 c4"
     >
       <h1
-        class="c4"
+        class="c5"
       >
         Banner title
       </h1>
@@ -284,10 +300,23 @@ exports[`<TitleBanner /> should not render meta, even if present 1`] = `
 `;
 
 exports[`<TitleBanner /> should render image without alt 1`] = `
+.c2 {
+  position: relative;
+}
+
 .c3 {
-  background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7)),url(/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg);
-  background-position: center;
-  background-size: cover;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.c3:after {
+  background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .c5 {
@@ -338,7 +367,7 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
     margin: auto;
   }
 
-  .c1 >.c2,
+  .c1 >.,
   .c1 >.c4 {
     width: 50%;
   }
@@ -357,53 +386,108 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
     class="c1"
   >
     <div
-      class="gatsby-image-wrapper gatsby-image-wrapper-constrained c2 c3"
-      data-gatsby-image-wrapper=""
-      style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      class="c2"
     >
       <div
-        style="max-width: 4032px; display: block;"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c3"
+        data-gatsby-image-wrapper=""
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
+        <div
+          style="max-width: 600px; display: block;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='400'%20width='600'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+            style="max-width: 100%; display: block; position: static;"
+          />
+        </div>
+        <div
+          aria-hidden="true"
+          data-placeholder-image=""
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
+        />
+        <picture>
+          <source
+            sizes="(min-width: 600px) 600px, 100vw"
+            srcset="/static/6e2d9e3635750bc519675010efe8d804/7e42a/Lauri_Lavanti_-_hymyillen_nojaten.avif 150w,/static/6e2d9e3635750bc519675010efe8d804/6e445/Lauri_Lavanti_-_hymyillen_nojaten.avif 300w,/static/6e2d9e3635750bc519675010efe8d804/6175a/Lauri_Lavanti_-_hymyillen_nojaten.avif 600w,/static/6e2d9e3635750bc519675010efe8d804/b9d9f/Lauri_Lavanti_-_hymyillen_nojaten.avif 1200w"
+            type="image/avif"
+          />
+          <source
+            sizes="(min-width: 600px) 600px, 100vw"
+            srcset="/static/6e2d9e3635750bc519675010efe8d804/00a0c/Lauri_Lavanti_-_hymyillen_nojaten.webp 150w,/static/6e2d9e3635750bc519675010efe8d804/3c8b5/Lauri_Lavanti_-_hymyillen_nojaten.webp 300w,/static/6e2d9e3635750bc519675010efe8d804/e5002/Lauri_Lavanti_-_hymyillen_nojaten.webp 600w,/static/6e2d9e3635750bc519675010efe8d804/6c281/Lauri_Lavanti_-_hymyillen_nojaten.webp 1200w"
+            type="image/webp"
+          />
+          <img
+            alt=""
+            data-gatsby-image-ssr=""
+            data-main-image=""
+            decoding="async"
+            loading="eager"
+            sizes="(min-width: 600px) 600px, 100vw"
+            src="/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg"
+            srcset="/static/6e2d9e3635750bc519675010efe8d804/457e3/Lauri_Lavanti_-_hymyillen_nojaten.jpg 150w,/static/6e2d9e3635750bc519675010efe8d804/b6e33/Lauri_Lavanti_-_hymyillen_nojaten.jpg 300w,/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg 600w,/static/6e2d9e3635750bc519675010efe8d804/a12ee/Lauri_Lavanti_-_hymyillen_nojaten.jpg 1200w"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
+          />
+        </picture>
+        <noscript />
+        <script
+          type="module"
+        >
+          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+        </script>
+      </div>
+      <div
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        data-gatsby-image-wrapper=""
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      >
+        <div
+          style="max-width: 4032px; display: block;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+            style="max-width: 100%; display: block; position: static;"
+          />
+        </div>
         <img
           alt=""
           aria-hidden="true"
-          role="presentation"
-          src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-          style="max-width: 100%; display: block; position: static;"
-        />
-      </div>
-      <img
-        alt=""
-        aria-hidden="true"
-        data-placeholder-image=""
-        decoding="async"
-        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-      />
-      <picture>
-        <source
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-          type="image/webp"
-        />
-        <img
-          alt=""
-          data-gatsby-image-ssr=""
-          data-main-image=""
+          data-placeholder-image=""
           decoding="async"
-          loading="eager"
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
         />
-      </picture>
-      <noscript />
-      <script
-        type="module"
-      >
-        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-      </script>
+        <picture>
+          <source
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+            type="image/webp"
+          />
+          <img
+            alt=""
+            data-gatsby-image-ssr=""
+            data-main-image=""
+            decoding="async"
+            loading="eager"
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          />
+        </picture>
+        <noscript />
+        <script
+          type="module"
+        >
+          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+        </script>
+      </div>
     </div>
     <div
       class="c4 c5"
@@ -419,7 +503,7 @@ exports[`<TitleBanner /> should render image without alt 1`] = `
 `;
 
 exports[`<TitleBanner /> should render meta 1`] = `
-.c9 {
+.c10 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -427,46 +511,50 @@ exports[`<TitleBanner /> should render meta 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c9 :hover,
-.c9 :active,
-.c9 :focus {
+.c10 :hover,
+.c10 :active,
+.c10 :focus {
   text-decoration: underline;
 }
 
-.c7 {
+.c8 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c8 {
+.c9 {
   margin-right: 1rem;
 }
 
-.c8 :last-child {
+.c9 :last-child {
   margin-right: 0px;
 }
 
-.c5 {
+.c6 {
   display: flex;
   flex-direction: column;
 }
 
-.c3 {
+.c2 {
+  position: relative;
+}
+
+.c4 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c4 {
+.c5 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c6 {
+.c7 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -482,7 +570,7 @@ exports[`<TitleBanner /> should render meta 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c3 {
+  .c4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -494,14 +582,14 @@ exports[`<TitleBanner /> should render meta 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c5 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c7 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -514,7 +602,7 @@ exports[`<TitleBanner /> should render meta 1`] = `
   }
 
   .c1 >.,
-  .c1 >.c2 {
+  .c1 >.c3 {
     width: 50%;
   }
 }
@@ -532,65 +620,69 @@ exports[`<TitleBanner /> should render meta 1`] = `
     class="c1"
   >
     <div
-      class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
-      data-gatsby-image-wrapper=""
-      style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+      class="c2"
     >
       <div
-        style="max-width: 4032px; display: block;"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained "
+        data-gatsby-image-wrapper=""
+        style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
+        <div
+          style="max-width: 4032px; display: block;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            role="presentation"
+            src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+            style="max-width: 100%; display: block; position: static;"
+          />
+        </div>
         <img
           alt=""
           aria-hidden="true"
-          role="presentation"
-          src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='1728'%20width='4032'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-          style="max-width: 100%; display: block; position: static;"
-        />
-      </div>
-      <img
-        alt=""
-        aria-hidden="true"
-        data-placeholder-image=""
-        decoding="async"
-        src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
-        style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-      />
-      <picture>
-        <source
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
-          type="image/webp"
-        />
-        <img
-          alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
-          data-gatsby-image-ssr=""
-          data-main-image=""
+          data-placeholder-image=""
           decoding="async"
-          loading="eager"
-          sizes="(min-width: 4032px) 4032px, 100vw"
-          src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
-          srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-          style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAJABQDAREAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABQT/xAAiEAACAQIGAwEAAAAAAAAAAAABAhEAAwQFEhMxcTI1QXL/xAAYAQEAAwEAAAAAAAAAAAAAAAADAAIEAf/EABsRAQACAwEBAAAAAAAAAAAAAAABAgMRMSES/9oADAMBAAIRAxEAPwA6zlpYFt6BMERxQ7X+TOZ4BsFhVu7qvpUK2lYHdTLTUbHb3kASzIYVWjn6aBWfV9vxPVLLQQz71dj8iu5OQO/Atrg91msN/9k="
+          style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
         />
-      </picture>
-      <noscript />
-      <script
-        type="module"
-      >
-        const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-      </script>
+        <picture>
+          <source
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&q=50&fm=webp 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&q=50&fm=webp 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&q=50&fm=webp 4000w"
+            type="image/webp"
+          />
+          <img
+            alt="Kuva Lauri Lavannista, taustalla näkyy metsää"
+            data-gatsby-image-ssr=""
+            data-main-image=""
+            decoding="async"
+            loading="eager"
+            sizes="(min-width: 4032px) 4032px, 100vw"
+            src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
+            srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
+            style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+          />
+        </picture>
+        <noscript />
+        <script
+          type="module"
+        >
+          const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+        </script>
+      </div>
     </div>
     <div
-      class="c2 c3"
+      class="c3 c4"
     >
       <h1
-        class="c4"
+        class="c5"
       >
         Banner title
       </h1>
       <aside
         aria-label="Kirjoituksen Banner title meta-tiedot"
-        class="c5 c6"
+        class="c6 c7"
       >
         <time
           datetime="2024-10-4"
@@ -598,13 +690,13 @@ exports[`<TitleBanner /> should render meta 1`] = `
           4.10.2024
         </time>
         <ul
-          class="c7"
+          class="c8"
         >
           <li
-            class="c8"
+            class="c9"
           >
             <a
-              class="c9"
+              class="c10"
               href="/kategoria/kirkkonummi/"
             >
               #
@@ -612,10 +704,10 @@ exports[`<TitleBanner /> should render meta 1`] = `
             </a>
           </li>
           <li
-            class="c8"
+            class="c9"
           >
             <a
-              class="c9"
+              class="c10"
               href="/kategoria/kuntavaalit/"
             >
               #
@@ -630,14 +722,18 @@ exports[`<TitleBanner /> should render meta 1`] = `
 `;
 
 exports[`<TitleBanner /> should render minimal 1`] = `
-.c3 {
+.c2 {
+  position: relative;
+}
+
+.c4 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c4 {
+.c5 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -654,7 +750,7 @@ exports[`<TitleBanner /> should render minimal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c3 {
+  .c4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -666,7 +762,7 @@ exports[`<TitleBanner /> should render minimal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c4 {
+  .c5 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -679,7 +775,7 @@ exports[`<TitleBanner /> should render minimal 1`] = `
   }
 
   .c1 >.sc-dntaoT,
-  .c1 >.c2 {
+  .c1 >.c3 {
     width: 50%;
   }
 }
@@ -697,10 +793,13 @@ exports[`<TitleBanner /> should render minimal 1`] = `
     class="c1"
   >
     <div
-      class="c2 c3"
+      class="c2"
+    />
+    <div
+      class="c3 c4"
     >
       <h1
-        class="c4"
+        class="c5"
       >
         Banner title
       </h1>

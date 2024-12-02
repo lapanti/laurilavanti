@@ -28,8 +28,8 @@ describe('<TitleBanner />', () => {
         )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        // When no alt, image has role "presentation"
-        expect(screen.getByRole('presentation')).toBeInTheDocument()
+        // When no alt, image has role "presentation" and the background image is already there, so should find 2 pieces
+        expect(screen.getAllByRole('presentation')).toHaveLength(2)
 
         expect(container.firstChild).toMatchSnapshot()
     })
