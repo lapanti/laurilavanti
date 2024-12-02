@@ -11972,14 +11972,14 @@ exports[`<Layout /> should render title banner 1`] = `
   text-decoration: underline;
 }
 
-.c27 {
+.c28 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c27 >* {
+.c28 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -11988,22 +11988,13 @@ exports[`<Layout /> should render title banner 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c26 {
+.c27 {
   padding: 0px;
 }
 
-.c26 :hover,
-.c26 :focus {
+.c27 :hover,
+.c27 :focus {
   fill: #4267B2;
-}
-
-.c28 {
-  padding: 0px;
-}
-
-.c28 :hover,
-.c28 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c29 {
@@ -12012,7 +12003,7 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c29 :hover,
 .c29 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c30 {
@@ -12021,7 +12012,7 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c30 :hover,
 .c30 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c31 {
@@ -12030,22 +12021,31 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c31 :hover,
 .c31 :focus {
+  fill: #0E76A8;
+}
+
+.c32 {
+  padding: 0px;
+}
+
+.c32 :hover,
+.c32 :focus {
   fill: #0060df;
 }
 
-.c25 {
+.c26 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c23 {
+.c24 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c23 >.,
-.c23 >.c24 {
+.c24 >.,
+.c24 >.c25 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -12053,7 +12053,7 @@ exports[`<Layout /> should render title banner 1`] = `
   justify-content: center;
 }
 
-.c22 {
+.c23 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -12132,7 +12132,7 @@ exports[`<Layout /> should render title banner 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c19 {
   align-self: flex-bottom;
 }
 
@@ -12142,13 +12142,17 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 .c17 {
-  display: flex;
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c17:after {
+.c18 {
+  height: 100%;
+  width: 100%;
+}
+
+.c18:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -12158,14 +12162,14 @@ exports[`<Layout /> should render title banner 1`] = `
   width: 100%;
 }
 
-.c20 {
+.c21 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c22 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -12202,18 +12206,18 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c24 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c23 >.{
+  .c24 >.{
     justify-content: flex-start;
   }
 
-  .c23 >.c24 {
+  .c24 >.c25 {
     justify-content: flex-end;
   }
 }
@@ -12260,7 +12264,7 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c21 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12270,14 +12274,14 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c21 {
     padding-left: 5rem;
     padding-right: 0.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c21 {
+  .c22 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -12290,7 +12294,7 @@ exports[`<Layout /> should render title banner 1`] = `
   }
 
   .c14 >.c15,
-  .c14 >.c19 {
+  .c14 >.c20 {
     width: 50%;
   }
 }
@@ -12436,58 +12440,62 @@ exports[`<Layout /> should render title banner 1`] = `
             class="c15 c16"
           >
             <div
-              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c17"
-              data-gatsby-image-wrapper=""
-              style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
+              class="c17"
             >
               <div
-                style="max-width: 600px; display: block;"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c18"
+                data-gatsby-image-wrapper=""
+                style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
-                <img
-                  alt=""
+                <div
+                  style="max-width: 600px; display: block;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    role="presentation"
+                    src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='400'%20width='600'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+                    style="max-width: 100%; display: block; position: static;"
+                  />
+                </div>
+                <div
                   aria-hidden="true"
-                  role="presentation"
-                  src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='400'%20width='600'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
-                  style="max-width: 100%; display: block; position: static;"
+                  data-placeholder-image=""
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
                 />
+                <picture>
+                  <source
+                    sizes="(min-width: 600px) 600px, 100vw"
+                    srcset="/static/6e2d9e3635750bc519675010efe8d804/7e42a/Lauri_Lavanti_-_hymyillen_nojaten.avif 150w,/static/6e2d9e3635750bc519675010efe8d804/6e445/Lauri_Lavanti_-_hymyillen_nojaten.avif 300w,/static/6e2d9e3635750bc519675010efe8d804/6175a/Lauri_Lavanti_-_hymyillen_nojaten.avif 600w,/static/6e2d9e3635750bc519675010efe8d804/b9d9f/Lauri_Lavanti_-_hymyillen_nojaten.avif 1200w"
+                    type="image/avif"
+                  />
+                  <source
+                    sizes="(min-width: 600px) 600px, 100vw"
+                    srcset="/static/6e2d9e3635750bc519675010efe8d804/00a0c/Lauri_Lavanti_-_hymyillen_nojaten.webp 150w,/static/6e2d9e3635750bc519675010efe8d804/3c8b5/Lauri_Lavanti_-_hymyillen_nojaten.webp 300w,/static/6e2d9e3635750bc519675010efe8d804/e5002/Lauri_Lavanti_-_hymyillen_nojaten.webp 600w,/static/6e2d9e3635750bc519675010efe8d804/6c281/Lauri_Lavanti_-_hymyillen_nojaten.webp 1200w"
+                    type="image/webp"
+                  />
+                  <img
+                    alt=""
+                    data-gatsby-image-ssr=""
+                    data-main-image=""
+                    decoding="async"
+                    loading="eager"
+                    sizes="(min-width: 600px) 600px, 100vw"
+                    src="/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg"
+                    srcset="/static/6e2d9e3635750bc519675010efe8d804/457e3/Lauri_Lavanti_-_hymyillen_nojaten.jpg 150w,/static/6e2d9e3635750bc519675010efe8d804/b6e33/Lauri_Lavanti_-_hymyillen_nojaten.jpg 300w,/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg 600w,/static/6e2d9e3635750bc519675010efe8d804/a12ee/Lauri_Lavanti_-_hymyillen_nojaten.jpg 1200w"
+                    style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
+                  />
+                </picture>
+                <noscript />
+                <script
+                  type="module"
+                >
+                  const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
+                </script>
               </div>
-              <div
-                aria-hidden="true"
-                data-placeholder-image=""
-                style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
-              />
-              <picture>
-                <source
-                  sizes="(min-width: 600px) 600px, 100vw"
-                  srcset="/static/6e2d9e3635750bc519675010efe8d804/7e42a/Lauri_Lavanti_-_hymyillen_nojaten.avif 150w,/static/6e2d9e3635750bc519675010efe8d804/6e445/Lauri_Lavanti_-_hymyillen_nojaten.avif 300w,/static/6e2d9e3635750bc519675010efe8d804/6175a/Lauri_Lavanti_-_hymyillen_nojaten.avif 600w,/static/6e2d9e3635750bc519675010efe8d804/b9d9f/Lauri_Lavanti_-_hymyillen_nojaten.avif 1200w"
-                  type="image/avif"
-                />
-                <source
-                  sizes="(min-width: 600px) 600px, 100vw"
-                  srcset="/static/6e2d9e3635750bc519675010efe8d804/00a0c/Lauri_Lavanti_-_hymyillen_nojaten.webp 150w,/static/6e2d9e3635750bc519675010efe8d804/3c8b5/Lauri_Lavanti_-_hymyillen_nojaten.webp 300w,/static/6e2d9e3635750bc519675010efe8d804/e5002/Lauri_Lavanti_-_hymyillen_nojaten.webp 600w,/static/6e2d9e3635750bc519675010efe8d804/6c281/Lauri_Lavanti_-_hymyillen_nojaten.webp 1200w"
-                  type="image/webp"
-                />
-                <img
-                  alt=""
-                  data-gatsby-image-ssr=""
-                  data-main-image=""
-                  decoding="async"
-                  loading="eager"
-                  sizes="(min-width: 600px) 600px, 100vw"
-                  src="/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg"
-                  srcset="/static/6e2d9e3635750bc519675010efe8d804/457e3/Lauri_Lavanti_-_hymyillen_nojaten.jpg 150w,/static/6e2d9e3635750bc519675010efe8d804/b6e33/Lauri_Lavanti_-_hymyillen_nojaten.jpg 300w,/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg 600w,/static/6e2d9e3635750bc519675010efe8d804/a12ee/Lauri_Lavanti_-_hymyillen_nojaten.jpg 1200w"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: cover; opacity: 0;"
-                />
-              </picture>
-              <noscript />
-              <script
-                type="module"
-              >
-                const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
-              </script>
             </div>
             <div
-              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c18"
+              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c19"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
             >
@@ -12537,10 +12545,10 @@ exports[`<Layout /> should render title banner 1`] = `
             </div>
           </div>
           <div
-            class="c19 c20"
+            class="c20 c21"
           >
             <h1
-              class="c21"
+              class="c22"
             >
               Title
             </h1>
@@ -12551,10 +12559,10 @@ exports[`<Layout /> should render title banner 1`] = `
     </article>
   </main>
   <footer
-    class="c22"
+    class="c23"
   >
     <div
-      class="c23"
+      class="c24"
     >
       <div
         class=""
@@ -12566,13 +12574,13 @@ exports[`<Layout /> should render title banner 1`] = `
         />
       </div>
       <ul
-        class="c24 c25"
+        class="c25 c26"
       >
         <li
-          class="c26"
+          class="c27"
         >
           <a
-            class="c27"
+            class="c28"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12594,10 +12602,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c29"
         >
           <a
-            class="c27"
+            class="c28"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12619,10 +12627,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c29"
+          class="c30"
         >
           <a
-            class="c27"
+            class="c28"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12644,10 +12652,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c30"
+          class="c31"
         >
           <a
-            class="c27"
+            class="c28"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12669,10 +12677,10 @@ exports[`<Layout /> should render title banner 1`] = `
           </a>
         </li>
         <li
-          class="c31"
+          class="c32"
         >
           <a
-            class="c27"
+            class="c28"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"
