@@ -91,6 +91,14 @@ export const query = graphql`
                         contentful_id
                         slug
                     }
+                    ... on ContentfulImageWithCaption {
+                        __typename
+                        contentful_id
+                        caption
+                        image {
+                            gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "(min-width: 1200px) 50vw, 100vw")
+                        }
+                    }
                 }
             }
             headerImage {

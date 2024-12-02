@@ -36,7 +36,7 @@ const ImageComponent = ({ className, imageData, alt, caption }: Props): JSX.Elem
     const image = getImage(imageData ?? null)
     return !image ? null : (
         <figure aria-label={caption} className={className}>
-            <Img alt={alt} image={image} />
+            <Img alt={alt} image={image} objectFit="contain" />
             <Caption>{caption}</Caption>
         </figure>
     )
