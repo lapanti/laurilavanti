@@ -16,6 +16,12 @@ const ImageContainer = styled.div({
     position: 'relative',
 })
 
+const BackgroundContainer = styled.div({
+    height: '100%',
+    position: 'absolute',
+    width: '100%',
+})
+
 const BackgroundImage = styled(GatsbyImage)({
     '&:after': {
         backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70})`,
@@ -26,9 +32,7 @@ const BackgroundImage = styled(GatsbyImage)({
         top: 0,
         width: '100%',
     },
-    display: 'flex',
     height: '100%',
-    position: 'absolute',
     width: '100%',
 })
 
@@ -118,7 +122,9 @@ const TitleBannerComponent = ({
             <Content $leftAlignedTitle={leftAlignedTitle}>
                 <ImageContainer>
                     {backgroundImg && (
-                        <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />
+                        <BackgroundContainer>
+                            <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />
+                        </BackgroundContainer>
                     )}
                     {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" />}
                 </ImageContainer>

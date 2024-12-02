@@ -70,6 +70,12 @@ const ImageContainer = styled.div({
     },
 })
 
+const BackgroundContainer = styled.div({
+    height: '100%',
+    position: 'absolute',
+    width: '100%',
+})
+
 const BackgroundImage = styled(GatsbyImage)({
     '&:after': {
         backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70})`,
@@ -82,7 +88,6 @@ const BackgroundImage = styled(GatsbyImage)({
     },
     display: 'none',
     height: '100%',
-    position: 'absolute',
     width: '100%',
     [breakpoints[1200].min]: {
         display: 'flex',
@@ -119,7 +124,11 @@ const HeroBannerComponent = ({
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
             <ImageContainer>
-                {backgroundImg && <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />}
+                {backgroundImg && (
+                    <BackgroundContainer>
+                        <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />
+                    </BackgroundContainer>
+                )}
                 {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" objectFit="contain" />}
             </ImageContainer>
         </div>
