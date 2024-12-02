@@ -76,7 +76,7 @@ jobs:
 
   unit-test:
     runs-on: ubuntu-latest
-    name: Unit tests and SonarCloud analysis
+    name: Unit tests
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
