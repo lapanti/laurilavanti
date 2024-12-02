@@ -1,20 +1,31 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
-import { GatsbyImage, getImage, getSrc } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, CONTENT_PADDING, fontFamilies, fontSizes, HEADER_SIZE, sizes } from '../../lib/styles'
 import PostMeta from '../PostMeta'
 
-const Image = styled(GatsbyImage)<{ $backgroundSrc?: string }>(
-    ({ $backgroundSrc }) =>
-        $backgroundSrc && {
-            backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70}), url(${$backgroundSrc})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-        }
-)
+const Image = styled(GatsbyImage)({})
+
+const ImageContainer = styled.div({
+    position: 'relative',
+})
+
+const BackgroundImage = styled(GatsbyImage)({
+    '&:after': {
+        backgroundImage: `linear-gradient(${colors.evening70}, ${colors.evening70})`,
+        content: '""',
+        height: '100%',
+        position: 'absolute',
+        width: '100%',
+    },
+    display: 'flex',
+    height: '100%',
+    position: 'absolute',
+    width: '100%',
+})
 
 const TitleContainer = styled.div({
     backgroundColor: colors.white,
@@ -89,12 +100,17 @@ const TitleBannerComponent = ({
     leftAlignedTitle,
 }: Props): JSX.Element => {
     const image = imageData ? getImage(imageData) : undefined
-    const backgroundSrc = backgroundImage ? getSrc(backgroundImage) : undefined
+    const backgroundImg = backgroundImage ? getImage(backgroundImage) : undefined
 
     return (
         <div className={className}>
             <Content $leftAlignedTitle={leftAlignedTitle}>
-                {image && <Image $backgroundSrc={backgroundSrc} alt={imageAlt ?? ''} image={image} loading="eager" />}
+                <ImageContainer>
+                    {backgroundImg && (
+                        <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />
+                    )}
+                    {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" />}
+                </ImageContainer>
                 <TitleContainer>
                     <Title>{title}</Title>
                     {showMeta && (
