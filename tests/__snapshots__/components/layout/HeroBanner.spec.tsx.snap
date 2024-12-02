@@ -45,13 +45,13 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 }
 
 .c7 {
+  display: none;
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
 .c8 {
-  display: none;
   height: 100%;
   width: 100%;
 }
@@ -115,7 +115,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c8 {
+  .c7 {
     display: flex;
   }
 }
