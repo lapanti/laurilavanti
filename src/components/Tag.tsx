@@ -38,7 +38,7 @@ export const query = graphql`
                 gatsbyImageData(
                     layout: CONSTRAINED
                     width: 768
-                    sizes: "(max-width: 560px) 360px, ((min-width: 560px) and (max-width: 1200px)) 600px, (min-width: 1200px) 50vw, 100vw"
+                    sizes: "(min-width: 768px) 768px, (min-width: 1200px): 50vw, 100vw"
                 )
                 description
             }
@@ -46,7 +46,7 @@ export const query = graphql`
                 gatsbyImageData(
                     layout: CONSTRAINED
                     width: 768
-                    sizes: "(max-width: 560px) 360px, ((min-width: 560px) and (max-width: 1200px)) 600px, (min-width: 1200px) 50vw, 100vw"
+                    sizes: "(min-width: 768px) 768px, (min-width: 1200px): 50vw, 100vw"
                 )
             }
             socialImage {
