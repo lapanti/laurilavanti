@@ -36,19 +36,11 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                         }
                     }
                     headerImage {
-                        gatsbyImageData(
-                            layout: CONSTRAINED
-                            width: 560
-                            sizes: "(max-width: 560px) 360px, (min-width: 1200px) 560px, 100vw"
-                        )
+                        gatsbyImageData(layout: CONSTRAINED, width: 560, sizes: "(min-width: 560px) 560px, 100vw")
                         description
                     }
                     backgroundImage {
-                        gatsbyImageData(
-                            layout: CONSTRAINED
-                            width: 560
-                            sizes: "(max-width: 560px) 360px, (min-width: 1200px) 560px, 100vw"
-                        )
+                        gatsbyImageData(layout: CONSTRAINED, width: 560, sizes: "(min-width: 560px) 560px, 100vw")
                         description
                     }
                     slug

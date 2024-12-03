@@ -91,16 +91,12 @@ export const query = graphql`
                     placeholder: NONE
                     layout: CONSTRAINED
                     width: 560
-                    sizes: "(min-width: 560px) 560px, 320px"
+                    sizes: "(min-width: 1200px) 560px, 360px"
                 )
                 description
             }
             backgroundImage {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    width: 768
-                    sizes: "(max-width: 560px) 360px, ((min-width: 560px) and (max-width: 1200px)) 600px, (min-width: 1200px) 50vw, 100vw"
-                )
+                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "50vw")
             }
             socialImage {
                 gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, width: 768)
