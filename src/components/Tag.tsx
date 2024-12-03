@@ -36,6 +36,7 @@ export const query = graphql`
         contentfulPage(slug: { eq: "blogi" }) {
             image {
                 gatsbyImageData(
+                    placeholder: NONE
                     layout: CONSTRAINED
                     width: 768
                     sizes: "(min-width: 768px) 768px, (min-width: 1200px): 50vw, 100vw"
@@ -44,6 +45,7 @@ export const query = graphql`
             }
             backgroundImage {
                 gatsbyImageData(
+                    placeholder: NONE
                     layout: CONSTRAINED
                     width: 768
                     sizes: "(min-width: 768px) 768px, (min-width: 1200px): 50vw, 100vw"

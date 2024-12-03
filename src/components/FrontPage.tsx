@@ -96,7 +96,7 @@ export const query = graphql`
                 description
             }
             backgroundImage {
-                gatsbyImageData(layout: CONSTRAINED, width: 768, sizes: "50vw")
+                gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, width: 768, sizes: "50vw")
             }
             socialImage {
                 gatsbyImageData(placeholder: NONE, layout: CONSTRAINED, width: 768)
