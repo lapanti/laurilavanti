@@ -38,7 +38,7 @@ const config: GatsbyConfig = {
             options: {
                 defaults: {
                     breakpoints: [320, 360, 560, 640, 720, 768, 1200, 1536, 2400, 3600],
-                    formats: ['auto', 'webp', 'avif'],
+                    formats: ['webp', 'auto'],
                     placeholder: 'blurred',
                     quality: 50,
                 },
