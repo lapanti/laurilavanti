@@ -27,7 +27,7 @@ module.exports = {
             siteMetadata: {
                 author: 'laurilavanti',
                 bluesky: 'https://bsky.app/profile/laurilavanti.fi',
-                description: 'Kirkkonummelainen isä, Lead Software Developer, diplomi-insinööri, Lauri Lavanti.',
+                description: 'Kirkkonummelainen isä, johtava ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
                 facebook: 'https://www.facebook.com/laurilavanti',
                 instagram: 'https://www.instagram.com/laurilavanti/',
                 keywords: [
