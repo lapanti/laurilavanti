@@ -294,7 +294,6 @@ LayoutComponent.displayName = 'Layout'
 
 const Layout = styled(LayoutComponent)({
     display: 'grid',
-    gap: sizes[1.125],
     gridTemplateAreas: gridTemplateAreasLayout,
     gridTemplateColumns: gridTemplateColumns,
     gridTemplateRows: gridTemplateRowsLayoutMobile,
