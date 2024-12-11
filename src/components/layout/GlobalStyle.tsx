@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle({
     },
     '@font-face': {
         fontDisplay: 'swap',
-        fontFamily: fontFamilies.heading,
+        fontFamily: fontFamilies.heading.split(',')?.[0] ?? '',
         fontStyle: 'normal',
         fontWeight: fontWeights.black,
         src: 'url(/fonts/Krana_Fat_B.otf) format("opentype")',
