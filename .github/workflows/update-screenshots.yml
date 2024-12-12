@@ -18,16 +18,14 @@ on:
 
 jobs:   
   updatescreenshots:
-    # Run this job only on comments of pull requests that strictly match
-    # the "/update-snapshots" string
+    runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/update-snapshots'}}
     name: Update screenshots
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
+    env:
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
     steps:
-      # Checkout
       - uses: actions/checkout@v4
-      # Setup testing environment
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
@@ -37,11 +35,10 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      # Update the snapshots based on the current UI
-      - name: Update snapshots
+      - name: Actually update screenshots
         run: npx start-server-and-test develop http://localhost:8000 test:e2e -- update-snapshots
-      # Commit the changes to the pull request branch
-      - run: |
+      - name: Commit update
+        run: |
           date > generated.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
