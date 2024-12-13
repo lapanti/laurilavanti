@@ -34,9 +34,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npm run test:e2e:setup
       - name: Actually update screenshots
-        run: npx start-server-and-test develop http://localhost:8000 test:e2e -- update-snapshots
+        run: npm run test:e2e:update-ci
       - name: Commit update
         run: |
           date > generated.txt
