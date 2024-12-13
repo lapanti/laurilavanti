@@ -29,6 +29,7 @@
     "test:e2e": "playwright test",
     "test:e2e:setup": "playwright install --with-deps",
     "test:e2e:update": "npm run test:e2e --  --update-snapshots",
+    "test:e2e:update-ci": "start-server-and-test develop http://localhost:8000 playwright test --update-snapshots",
     "knip": "knip"
   },
   "dependencies": {
