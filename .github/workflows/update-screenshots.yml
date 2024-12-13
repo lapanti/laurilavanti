@@ -18,7 +18,6 @@ on:
 jobs:   
   updatescreenshots:
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/update-screenshots'}}
     name: Update screenshots
     env:
       CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
