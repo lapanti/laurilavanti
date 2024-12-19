@@ -297,7 +297,7 @@ exports[`<Tag /> should render 1`] = `
 }
 
 .c19 {
-  align-self: flex-bottom;
+  margin-top: auto;
 }
 
 .c16 {
@@ -460,6 +460,7 @@ exports[`<Tag /> should render 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     display: flex;
+    height: 100%;
     margin: auto;
   }
 
@@ -472,6 +473,12 @@ exports[`<Tag /> should render 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c13 {
+    height: 45rem;
   }
 }
 
@@ -703,7 +710,7 @@ exports[`<Tag /> should render 1`] = `
                   sizes="(min-width: 4032px) 4032px, 100vw"
                   src="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg"
                   srcset="https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=1008&h=432&fl=progressive&q=50&fm=jpg 1008w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=2016&h=864&fl=progressive&q=50&fm=jpg 2016w,https://images.ctfassets.net/44t6u1r4zgqq/5aPvGwEnquvx8jkXJmkYE5/25e52ab22adc2730dce65ab3686cf060/Lauri-Lavanti-21-9.jpg?w=4000&h=1714&fl=progressive&q=50&fm=jpg 4000w"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
                 />
               </picture>
               <noscript />

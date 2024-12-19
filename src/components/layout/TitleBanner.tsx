@@ -8,7 +8,7 @@ import { breakpoints, colors, CONTENT_PADDING, fontFamilies, fontSizes, HEADER_S
 import PostMeta from '../PostMeta'
 
 const Image = styled(GatsbyImage)({
-    alignSelf: 'flex-bottom',
+    marginTop: 'auto',
 })
 
 const ImageContainer = styled.div({
@@ -78,6 +78,7 @@ const Content = styled.div<{ $leftAlignedTitle: boolean }>(
         backgroundColor: colors.white,
         [breakpoints[1200].min]: {
             display: 'flex',
+            height: '100%',
             margin: 'auto',
             [`> ${ImageContainer}, > ${TitleContainer}`]: {
                 width: '50%',
@@ -126,7 +127,7 @@ const TitleBannerComponent = ({
                             <BackgroundImage alt="" image={backgroundImg} loading="eager" objectFit="cover" />
                         </BackgroundContainer>
                     )}
-                    {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" />}
+                    {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" objectFit="contain" />}
                 </ImageContainer>
                 <TitleContainer $leftAlignedTitle={leftAlignedTitle}>
                     <Title>{title}</Title>
@@ -149,6 +150,9 @@ const TitleBanner = styled(TitleBannerComponent)({
     backgroundColor: colors.evening,
     gridColumn: '1 / -1',
     paddingTop: HEADER_SIZE,
+    [breakpoints[1200].min]: {
+        height: sizes[45],
+    },
 })
 
 export default TitleBanner

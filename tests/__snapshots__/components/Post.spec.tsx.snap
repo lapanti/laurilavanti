@@ -302,7 +302,7 @@ exports[`<Post /> should render basic post 1`] = `
 }
 
 .c19 {
-  align-self: flex-bottom;
+  margin-top: auto;
 }
 
 .c16 {
@@ -528,6 +528,7 @@ exports[`<Post /> should render basic post 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     display: flex;
+    height: 100%;
     margin: auto;
   }
 
@@ -540,6 +541,12 @@ exports[`<Post /> should render basic post 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c13 {
+    height: 45rem;
   }
 }
 
@@ -747,7 +754,7 @@ exports[`<Post /> should render basic post 1`] = `
                   sizes="1921px"
                   src="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg"
                   srcset="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
                 />
               </picture>
               <noscript />
@@ -1971,7 +1978,7 @@ exports[`<Post /> should render oldest post 1`] = `
 }
 
 .c19 {
-  align-self: flex-bottom;
+  margin-top: auto;
 }
 
 .c16 {
@@ -2197,6 +2204,7 @@ exports[`<Post /> should render oldest post 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     display: flex;
+    height: 100%;
     margin: auto;
   }
 
@@ -2209,6 +2217,12 @@ exports[`<Post /> should render oldest post 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c13 {
+    height: 45rem;
   }
 }
 
@@ -2416,7 +2430,7 @@ exports[`<Post /> should render oldest post 1`] = `
                   sizes="1920px"
                   src="/static/793941e4a2aba874341601d28609dfd1/baa03/kotihoidossa.jpg"
                   srcset="/static/793941e4a2aba874341601d28609dfd1/baa03/kotihoidossa.jpg 1920w,/static/793941e4a2aba874341601d28609dfd1/63cd6/kotihoidossa.jpg 3840w"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
                 />
               </picture>
               <noscript />
@@ -3627,7 +3641,7 @@ exports[`<Post /> should render updated post 1`] = `
 }
 
 .c19 {
-  align-self: flex-bottom;
+  margin-top: auto;
 }
 
 .c16 {
@@ -3853,6 +3867,7 @@ exports[`<Post /> should render updated post 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     display: flex;
+    height: 100%;
     margin: auto;
   }
 
@@ -3865,6 +3880,12 @@ exports[`<Post /> should render updated post 1`] = `
 @media (min-width: 1200px) {
   .c14 {
     flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c13 {
+    height: 45rem;
   }
 }
 
@@ -4072,7 +4093,7 @@ exports[`<Post /> should render updated post 1`] = `
                   sizes="1921px"
                   src="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg"
                   srcset="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w"
-                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
+                  style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; object-fit: contain; opacity: 0;"
                 />
               </picture>
               <noscript />
