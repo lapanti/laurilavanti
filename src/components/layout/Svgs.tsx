@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Svgs = (): JSX.Element => (
     <svg
         aria-hidden="true"

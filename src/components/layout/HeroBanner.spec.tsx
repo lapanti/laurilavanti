@@ -1,7 +1,6 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 
 import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../../tests/images.mock'
 import HeroBanner from './HeroBanner'

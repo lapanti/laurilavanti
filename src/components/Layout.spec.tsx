@@ -1,7 +1,6 @@
 import { BLOCKS } from '@contentful/rich-text-types'
 import { render, screen, waitFor } from '@testing-library/react'
 import { parse } from 'date-fns'
-import React from 'react'
 
 import gatsbyConfig from '../../gatsby-config'
 import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../tests/images.mock'

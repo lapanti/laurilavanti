@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 
 import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../../tests/images.mock'
 import TitleBanner from './TitleBanner'

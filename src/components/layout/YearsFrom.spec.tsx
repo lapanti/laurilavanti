@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react'
 import { parse } from 'date-fns'
-import React from 'react'
 
 import YearsFrom from './YearsFrom'
 
