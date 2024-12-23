@@ -140,20 +140,22 @@ HeroBannerComponent.displayName = 'HeroBanner'
 const HeroBanner = styled(HeroBannerComponent)(
     {
         height: '100vh',
-    },{
+    },
+    {
         height: '100dvh',
     },
     {
-    alignItems: 'stretch',
-    background: colors.evening,
-    display: 'flex',
-    flexDirection: 'column',
-    gridColumn: '1 / -1',
-    paddingTop: HEADER_SIZE,
-    [breakpoints[1200].min]: {
-        flexDirection: 'row-reverse',
-        height: sizes[45],
-    },
-})
+        alignItems: 'stretch',
+        background: colors.evening,
+        display: 'flex',
+        flexDirection: 'column',
+        gridColumn: '1 / -1',
+        paddingTop: HEADER_SIZE,
+        [breakpoints[1200].min]: {
+            flexDirection: 'row-reverse',
+            height: sizes[45],
+        },
+    }
+)
 
 export default HeroBanner
