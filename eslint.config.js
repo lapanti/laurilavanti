@@ -1,15 +1,15 @@
 // @ts-check
 
-import simpleImportSort from "eslint-plugin-simple-import-sort"
-import react from 'eslint-plugin-react'
-import globals from 'globals'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
-import jest from 'eslint-plugin-jest'
-import importPlugin from 'eslint-plugin-import'
-import js from '@eslint/js'
-import tseslint from 'typescript-eslint'
+const  simpleImportSort = require('eslint-plugin-simple-import-sort')
+const  react = require('eslint-plugin-react')
+const  globals = require('globals')
+const  eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended')
+const  jest = require('eslint-plugin-jest')
+const  importPlugin = require('eslint-plugin-import')
+const  js = require('@eslint/js')
+const  tseslint = require('typescript-eslint')
 
-export default tseslint.config(
+module.exports = tseslint.config(
     js.configs.recommended,
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
