@@ -1,7 +1,6 @@
 import type { ContentfulPage } from '../types/contentful'
 
 import { graphql } from 'gatsby'
-import React from 'react'
 
 import { WEBPAGE } from '../types/jsonld'
 import ExcerptList from './ExcerptList'

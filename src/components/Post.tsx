@@ -1,7 +1,7 @@
 import type { ContentfulPost } from '../types/contentful'
 
 import { graphql } from 'gatsby'
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 
 import { getValueOrDefault } from '../lib/string'
 import { BLOGPOSTING } from '../types/jsonld'

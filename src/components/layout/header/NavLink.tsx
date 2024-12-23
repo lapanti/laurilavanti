@@ -1,6 +1,5 @@
 import type { MainNav } from '../../../types/contentful'
 
-import React from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, fontFamilies, fontSizes } from '../../../lib/styles'

@@ -1,6 +1,5 @@
 import type { ContactInfoLink } from '../../../types/contentful'
 
-import React from 'react'
 import { FaBluesky, FaFacebook, FaInstagram, FaLinkedin, FaThreads } from 'react-icons/fa6'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 

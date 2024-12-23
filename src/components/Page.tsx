@@ -1,7 +1,6 @@
 import type { ContentfulPage } from '../types/contentful'
 
 import { graphql } from 'gatsby'
-import React from 'react'
 
 import { getValueOrDefault } from '../lib/string'
 import Layout from './Layout'

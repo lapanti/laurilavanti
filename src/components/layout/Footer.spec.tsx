@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 
 import { footerNav } from '../../../tests/footerNav.mock'
 import Footer from './Footer'

@@ -3,6 +3,7 @@ import type { GatsbyConfig } from 'gatsby'
 import './env'
 
 const config: GatsbyConfig = {
+    jsxRuntime: 'automatic',
     plugins: [
         {
             options: {

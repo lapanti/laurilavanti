@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import React from 'react'
 
 import { aboutMe, blog, contactMe } from '../../tests/pages.mock'
 import Page from './Page'

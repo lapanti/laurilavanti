@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaBluesky, FaFacebook, FaLinkedin, FaThreads } from 'react-icons/fa6'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 

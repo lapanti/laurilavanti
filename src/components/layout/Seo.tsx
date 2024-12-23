@@ -1,7 +1,7 @@
 import type { JsonLdType } from '../../types/jsonld'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+
 import { Helmet } from 'react-helmet'
 
 import { getValueOrDefault } from '../../lib/string'
