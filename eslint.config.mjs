@@ -7,6 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
+import testingLibrary from 'eslint-plugin-testing-library'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 
@@ -135,6 +136,10 @@ export default tseslint.config(
         },
     },
     {
+        files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
+        ...testingLibrary.configs['flat/react'],
+    },
+    {
         languageOptions: {
             globals: jest.environments.globals.globals,
         },
@@ -148,6 +153,7 @@ export default tseslint.config(
             'jest/no-standalone-expect': ['warn'],
             'no-console': ['warn'],
             'react/display-name': ['off'],
+            'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
         },
     },
     eslintPluginPrettierRecommended
