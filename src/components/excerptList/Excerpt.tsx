@@ -2,7 +2,6 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import type { PostMetaProps } from '../PostMeta'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, fontFamilies, fontSizes, sizes, zIndices } from '../../lib/styles'
