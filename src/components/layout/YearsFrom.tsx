@@ -1,5 +1,4 @@
 import { differenceInYears, parse } from 'date-fns'
-
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 interface Props {

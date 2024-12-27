@@ -7,6 +7,7 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
+// eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
@@ -24,16 +25,15 @@ export default tseslint.config(
         },
     },
     {
-        files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
+        files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
         plugins: {
-            import: importPlugin,
             'simple-import-sort': simpleImportSort,
             react,
-        },    
+        },
         languageOptions: {
             parserOptions: {
                 ecmaFeatures: {
-                jsx: true,
+                    jsx: true,
                 },
             },
             globals: {
@@ -103,7 +103,7 @@ export default tseslint.config(
         },
     },
     {
-        files: ['*.js', '*.jsx'],
+        files: ['**/*.js', '**/*.jsx'],
         rules: {
             '@typescript-eslint/explicit-module-boundary-types': ['off'],
             '@typescript-eslint/no-unsafe-call': ['off'],
@@ -118,7 +118,7 @@ export default tseslint.config(
          * This magic grouping moves `import type` statements as their own group.
          * @see https://github.com/lydell/eslint-plugin-simple-import-sort#custom-grouping
          */
-        files: ['*.ts', '*.tsx'],
+        files: ['**/*.ts', '**/*.tsx'],
         rules: {
             'simple-import-sort/imports': [
                 'error',
@@ -150,5 +150,5 @@ export default tseslint.config(
             'react/display-name': ['off'],
         },
     },
-    eslintPluginPrettierRecommended,
+    eslintPluginPrettierRecommended
 )

@@ -1,7 +1,6 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE, sizes } from '../../lib/styles'

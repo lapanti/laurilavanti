@@ -7,7 +7,6 @@ import type { SeoProps } from './layout/Seo'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import {
