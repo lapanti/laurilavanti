@@ -16,8 +16,8 @@ const HamburgerContainer = styled.div({
     display: 'flex',
     flex: 1,
     justifyContent: 'space-between',
-    marginLeft: sizes[1.75],
-    marginRight: sizes[1.75],
+    marginLeft: CONTENT_PADDING,
+    marginRight: CONTENT_PADDING,
     [breakpoints[1200].min]: {
         display: 'none',
     },

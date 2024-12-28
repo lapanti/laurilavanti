@@ -3,13 +3,26 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE, sizes } from '../../lib/styles'
+import {
+    breakpoints,
+    colors,
+    fontFamilies,
+    fontSizes,
+    fontWeights,
+    HEADER_SIZE,
+    sizes,
+    zIndices,
+} from '../../lib/styles'
 
 const Title = styled.h1({
+    ...fontSizes[3],
     fontFamily: fontFamilies.heading,
-    ...fontSizes[3.75],
+    position: 'fixed',
+    top: sizes[0.5],
+    zIndex: zIndices[50],
     [breakpoints[1200].min]: {
         ...fontSizes[6],
+        position: 'relative',
     },
 })
 
@@ -70,7 +83,7 @@ const ImageContainer = styled.div({
 })
 
 const BackgroundContainer = styled.div({
-    display: 'none',
+    display: 'flex',
     height: '100%',
     position: 'absolute',
     width: '100%',
@@ -136,25 +149,18 @@ const HeroBannerComponent = ({
 
 HeroBannerComponent.displayName = 'HeroBanner'
 
-const HeroBanner = styled(HeroBannerComponent)(
-    {
-        height: '100vh',
+const HeroBanner = styled(HeroBannerComponent)({
+    alignItems: 'stretch',
+    background: colors.evening,
+    display: 'flex',
+    flexDirection: 'column',
+    gridColumn: '1 / -1',
+    height: '100vh',
+    paddingTop: HEADER_SIZE,
+    [breakpoints[1200].min]: {
+        flexDirection: 'row-reverse',
+        height: sizes[45],
     },
-    {
-        height: '100dvh',
-    },
-    {
-        alignItems: 'stretch',
-        background: colors.evening,
-        display: 'flex',
-        flexDirection: 'column',
-        gridColumn: '1 / -1',
-        paddingTop: HEADER_SIZE,
-        [breakpoints[1200].min]: {
-            flexDirection: 'row-reverse',
-            height: sizes[45],
-        },
-    }
-)
+})
 
 export default HeroBanner

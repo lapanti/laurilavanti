@@ -248,8 +248,8 @@ exports[`<FrontPage /> should render 1`] = `
   display: flex;
   flex: 1;
   justify-content: space-between;
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .c6 {
@@ -302,9 +302,12 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c15 {
-  font-family: "Krana Fat",Trebuchet MS;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
+  font-family: "Krana Fat",Trebuchet MS;
+  position: fixed;
+  top: 0.5rem;
+  z-index: 50;
 }
 
 .c16 {
@@ -345,7 +348,7 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c20 {
-  display: none;
+  display: flex;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -367,13 +370,12 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 .c13 {
-  height: 100vh;
-  height: 100dvh;
   align-items: stretch;
   background: rgb(0, 98, 114);
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
+  height: 100vh;
   padding-top: 3.75rem;
 }
 
@@ -469,6 +471,7 @@ exports[`<FrontPage /> should render 1`] = `
   .c15 {
     font-size: 6rem;
     line-height: 1;
+    position: relative;
   }
 }
 
@@ -1492,8 +1495,8 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   display: flex;
   flex: 1;
   justify-content: space-between;
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .c6 {
@@ -1546,9 +1549,12 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 }
 
 .c15 {
-  font-family: "Krana Fat",Trebuchet MS;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
+  font-family: "Krana Fat",Trebuchet MS;
+  position: fixed;
+  top: 0.5rem;
+  z-index: 50;
 }
 
 .c14 {
@@ -1577,13 +1583,12 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 }
 
 .c13 {
-  height: 100vh;
-  height: 100dvh;
   align-items: stretch;
   background: rgb(0, 98, 114);
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
+  height: 100vh;
   padding-top: 3.75rem;
 }
 
@@ -1668,6 +1673,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   .c15 {
     font-size: 6rem;
     line-height: 1;
+    position: relative;
   }
 }
 
