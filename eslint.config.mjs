@@ -8,11 +8,14 @@ import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
 import testingLibrary from 'eslint-plugin-testing-library'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
     js.configs.recommended,
+    jsxA11y.flatConfigs.recommended,
+    jsxA11y.flatConfigs.strict,
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
     tseslint.configs.recommended,
