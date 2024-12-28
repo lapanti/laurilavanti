@@ -2,9 +2,12 @@
 
 exports[`<HeroBanner /> should render maximal 1`] = `
 .c2 {
-  font-family: "Krana Fat",Trebuchet MS;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
+  font-family: "Krana Fat",Trebuchet MS;
+  position: fixed;
+  top: 0.5rem;
+  z-index: 50;
 }
 
 .c3 {
@@ -45,7 +48,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 }
 
 .c7 {
-  display: none;
+  display: flex;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -67,13 +70,12 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 }
 
 .c0 {
-  height: 100vh;
-  height: 100dvh;
   align-items: stretch;
   background: rgb(0, 98, 114);
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
+  height: 100vh;
   padding-top: 3.75rem;
 }
 
@@ -81,6 +83,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
   .c2 {
     font-size: 6rem;
     line-height: 1;
+    position: relative;
   }
 }
 
@@ -261,9 +264,12 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 
 exports[`<HeroBanner /> should render minimal 1`] = `
 .c2 {
-  font-family: "Krana Fat",Trebuchet MS;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
+  font-family: "Krana Fat",Trebuchet MS;
+  position: fixed;
+  top: 0.5rem;
+  z-index: 50;
 }
 
 .c1 {
@@ -282,13 +288,12 @@ exports[`<HeroBanner /> should render minimal 1`] = `
 }
 
 .c0 {
-  height: 100vh;
-  height: 100dvh;
   align-items: stretch;
   background: rgb(0, 98, 114);
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
+  height: 100vh;
   padding-top: 3.75rem;
 }
 
@@ -296,6 +301,7 @@ exports[`<HeroBanner /> should render minimal 1`] = `
   .c2 {
     font-size: 6rem;
     line-height: 1;
+    position: relative;
   }
 }
 
@@ -343,9 +349,12 @@ exports[`<HeroBanner /> should render minimal 1`] = `
 
 exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
 .c2 {
-  font-family: "Krana Fat",Trebuchet MS;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
+  font-family: "Krana Fat",Trebuchet MS;
+  position: fixed;
+  top: 0.5rem;
+  z-index: 50;
 }
 
 .c1 {
@@ -364,13 +373,12 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
 }
 
 .c0 {
-  height: 100vh;
-  height: 100dvh;
   align-items: stretch;
   background: rgb(0, 98, 114);
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
+  height: 100vh;
   padding-top: 3.75rem;
 }
 
@@ -378,6 +386,7 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
   .c2 {
     font-size: 6rem;
     line-height: 1;
+    position: relative;
   }
 }
 
@@ -425,9 +434,12 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
 
 exports[`<HeroBanner /> should render minimal with image with no image alt 1`] = `
 .c2 {
-  font-family: "Krana Fat",Trebuchet MS;
-  font-size: 3.75rem;
+  font-size: 3rem;
   line-height: 1;
+  font-family: "Krana Fat",Trebuchet MS;
+  position: fixed;
+  top: 0.5rem;
+  z-index: 50;
 }
 
 .c1 {
@@ -456,13 +468,12 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
 }
 
 .c0 {
-  height: 100vh;
-  height: 100dvh;
   align-items: stretch;
   background: rgb(0, 98, 114);
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
+  height: 100vh;
   padding-top: 3.75rem;
 }
 
@@ -470,6 +481,7 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
   .c2 {
     font-size: 6rem;
     line-height: 1;
+    position: relative;
   }
 }
 
