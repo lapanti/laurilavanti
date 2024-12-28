@@ -18,7 +18,6 @@ const config = {
         '!gatsby-ssr.js',
         '!playwright.config.ts',
         '!knip.config.ts',
-        '!lighthouserc.js',
         '!tests/jest-preprocess.js',
         '!tests/jest.config.js',
         '!tests/snapshotResolver.js',
