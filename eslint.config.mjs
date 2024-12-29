@@ -9,6 +9,7 @@ import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
 import testingLibrary from 'eslint-plugin-testing-library'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
+import playwright from 'eslint-plugin-playwright'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 
@@ -150,6 +151,10 @@ export default tseslint.config(
             'react/display-name': ['off'],
             'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
         },
+    },
+    {
+        ...playwright.configs['flat/recommended'],
+        files: ['tests/e2e/**/*.spec.ts', 'tests/e2e/pages/**/*.ts'],
     },
     eslintPluginPrettierRecommended
 )
