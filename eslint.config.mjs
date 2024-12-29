@@ -140,12 +140,9 @@ export default tseslint.config(
     },
     {
         files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
-        ...testingLibrary.configs['flat/react'],
-    },
-    {
-        files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
         ...jest.configs['flat/recommended'],
         ...jest.configs['flat/style'],
+        ...testingLibrary.configs['flat/react'],
         rules: {
             '@typescript-eslint/no-empty-function': ['off'],
             'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
