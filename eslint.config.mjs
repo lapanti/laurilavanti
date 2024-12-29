@@ -143,17 +143,12 @@ export default tseslint.config(
         ...testingLibrary.configs['flat/react'],
     },
     {
-        languageOptions: {
-            globals: jest.environments.globals.globals,
-        },
         files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
-        plugins: { jest },
+        ...jest.configs['flat/recommended'],
+        ...jest.configs['flat/style'],
         rules: {
             '@typescript-eslint/no-empty-function': ['off'],
             'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-            'jest/expect-expect': ['warn', { assertFunctionNames: ['expect', 'expect[A-Z]\\w+'] }],
-            'jest/no-done-callback': ['error'],
-            'jest/no-standalone-expect': ['warn'],
             'no-console': ['warn'],
             'react/display-name': ['off'],
             'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
