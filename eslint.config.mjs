@@ -12,6 +12,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import playwright from 'eslint-plugin-playwright'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
+import restrictedGlobals from 'confusing-browser-globals'
 
 export default tseslint.config(
     js.configs.recommended,
@@ -81,6 +82,7 @@ export default tseslint.config(
             'no-empty': ['error', { allowEmptyCatch: true }],
             'no-eq-null': ['warn'],
             'no-irregular-whitespace': ['error', { skipTemplates: true }],
+            'no-restricted-globals': ['error'].concat(restrictedGlobals),
             'nonblock-statement-body-position': ['error'],
             'prefer-arrow-callback': ['warn'],
             'react/jsx-sort-props': [
