@@ -24,7 +24,8 @@ const config: GatsbyConfig = {
         {
             options: {
                 background_color: '#006275',
-                description: 'Kirkkonummelainen isä, johtava ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
+                description:
+                    'Kirkkonummen Vihreiden puheenjohtaja, isä, johtava ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
                 display: 'standalone',
                 icon: 'logo.svg',
                 lang: 'fi',
@@ -57,7 +58,8 @@ const config: GatsbyConfig = {
     siteMetadata: {
         author: 'laurilavanti',
         bluesky: 'https://bsky.app/profile/laurilavanti.fi',
-        description: 'Kirkkonummelainen isä, johtava ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
+        description:
+            'Kirkkonummen Vihreiden puheenjohtaja, isä, johtava ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
         facebook: 'https://www.facebook.com/laurilavanti',
         instagram: 'https://www.instagram.com/laurilavanti/',
         keywords: [
