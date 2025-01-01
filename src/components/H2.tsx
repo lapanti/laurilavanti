@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 
+import '@fontsource/ibm-plex-mono/700.css'
+
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { fontFamilies, fontSizes, fontWeights } from '../lib/styles'
