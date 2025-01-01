@@ -28,6 +28,7 @@ import ExternalLink from './ExternalLink'
 import H2 from './H2'
 import Hr from './Hr'
 import InternalLink from './InternalLink'
+import BlockQuote from './layout/BlockQuote'
 import ContactInfoLink from './layout/ContactInfoLink'
 import CurriculumVitae from './layout/CurriculumVitae'
 import Footer from './layout/Footer'
@@ -87,19 +88,6 @@ const TableCell = styled.td({
     paddingLeft: sizes[1],
     paddingRight: sizes[1],
     whiteSpace: 'nowrap',
-})
-
-const BlockQuote = styled.div({
-    borderLeftColor: colors.sand,
-    borderLeftWidth: '4px',
-    fontFamily: fontFamilies.mono,
-    fontStyle: 'italic',
-    fontWeight: fontWeights.normal,
-    gridColumnStart: 3,
-    paddingBottom: sizes[0.5],
-    paddingLeft: sizes[0.5],
-    paddingTop: sizes[0.5],
-    ...fontSizes[1.5],
 })
 
 const StyledImage = styled(GatsbyImage)({

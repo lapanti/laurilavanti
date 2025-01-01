@@ -638,6 +638,20 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   text-decoration: underline;
 }
 
+.c20 {
+  border-left-color: rgb(214, 210, 196);
+  border-left-width: 4px;
+  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
+  font-style: italic;
+  font-weight: 400;
+  grid-column-start: 3;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .c26 {
   align-items: center;
   display: flex;
@@ -834,20 +848,6 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 .c12 {
   display: grid;
   grid-template-columns: 1fr 0.5rem min(calc(75rem - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
-}
-
-.c20 {
-  border-left-color: rgb(214, 210, 196);
-  border-left-width: 4px;
-  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
-  font-style: italic;
-  font-weight: 400;
-  grid-column-start: 3;
-  padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .c0 {
@@ -1109,11 +1109,11 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
           </div>
         </div>
       </div>
-      <div
+      <blockquote
         class="c20"
       >
         Quote text
-      </div>
+      </blockquote>
     </article>
   </main>
   <footer

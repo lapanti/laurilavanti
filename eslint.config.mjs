@@ -67,6 +67,7 @@ export default tseslint.config(
                 'never',
                 {
                     json: 'always',
+                    css: 'always',
                 },
             ],
             'import/first': ['error'],
