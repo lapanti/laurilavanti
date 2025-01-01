@@ -12,9 +12,6 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 import {
     breakpoints,
     colors,
-    fontFamilies,
-    fontSizes,
-    fontWeights,
     gridAreas,
     gridTemplateAreasLayout,
     gridTemplateColumns,

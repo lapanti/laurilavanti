@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 
 import '@fontsource/ibm-plex-mono/400-italic.css'
 
-import styled from 'styled-components'
+import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 
