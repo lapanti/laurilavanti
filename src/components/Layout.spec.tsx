@@ -65,7 +65,7 @@ describe('<Layout />', () => {
         expect(screen.getAllByRole('img', { name: inFrontOfWoodsImageDescription })).not.toBeNull()
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        await waitFor(() => expect(document.title).toEqual(`${title} | ${siteTitle}`))
+        await waitFor(() => expect(document.title).toBe(`${title} | ${siteTitle}`))
 
         expect(container.firstChild).toMatchSnapshot()
     })
@@ -485,10 +485,8 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it.each([
-            [' ', 'ContentfulPost', true],
-            [' borken ', 'This will never match', false],
-        ])('should render%sinternal links', (_, __typename, isVisible) => {
+        it('should render internal links', () => {
+            const __typename = 'ContentfulPost'
             const slug = 'this-is-an-internal/link'
             const value = 'external link'
             const { container } = render(
@@ -539,12 +537,65 @@ describe('<Layout />', () => {
                 />
             )
 
-            if (isVisible) {
-                // Check internal link is present
-                expect(screen.getByRole('link', { name: value })).toHaveAttribute('href', `/blogi/${slug}/`)
-            } else {
-                expect(screen.queryByRole('link', { name: value })).toBeNull()
-            }
+            // Check internal link is present
+            expect(screen.getByRole('link', { name: value })).toHaveAttribute('href', `/blogi/${slug}/`)
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
+        it('should render borken internal links', () => {
+            const __typename = 'This will never match'
+            const slug = 'this-is-an-internal/link'
+            const value = 'external link'
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [
+                                        {
+                                            content: [
+                                                {
+                                                    data: {},
+                                                    marks: [],
+                                                    nodeType: 'text',
+                                                    value,
+                                                },
+                                            ],
+                                            data: {
+                                                target: {
+                                                    sys: {
+                                                        id: '55DEJPnoQSfP3jJzD7jDSJ',
+                                                        linkType: 'Entry',
+                                                        type: 'Link',
+                                                    },
+                                                },
+                                            },
+                                            nodeType: 'entry-hyperlink',
+                                        },
+                                    ],
+                                    data: {},
+                                    nodeType: 'paragraph',
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename,
+                                contentful_id: '55DEJPnoQSfP3jJzD7jDSJ',
+                                slug,
+                            },
+                        ],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
+
+            expect(screen.queryByRole('link', { name: value })).toBeNull()
 
             expect(container.firstChild).toMatchSnapshot()
         })
@@ -631,34 +682,19 @@ describe('<Layout />', () => {
 
         const quoteText = 'Quote text'
 
-        it.each([
-            [
-                'render BlockQuote',
-                {
-                    content: [
-                        {
-                            data: {},
-                            marks: [],
-                            nodeType: 'text',
-                            value: quoteText,
-                        },
-                    ],
-                    data: {},
-                    nodeType: BLOCKS.PARAGRAPH,
-                },
-                true,
-            ],
-            [
-                'not render a BlockQuote if it has wrong children',
-                {
-                    data: {},
-                    marks: [],
-                    nodeType: 'text',
-                    value: quoteText,
-                },
-                false,
-            ],
-        ])('should %s', (_, firstContent, isVisible) => {
+        it('should render BlockQuote', () => {
+            const firstContent = {
+                content: [
+                    {
+                        data: {},
+                        marks: [],
+                        nodeType: 'text',
+                        value: quoteText,
+                    },
+                ],
+                data: {},
+                nodeType: BLOCKS.PARAGRAPH,
+            }
             const { container } = render(
                 <Layout
                     body={{
@@ -680,19 +716,46 @@ describe('<Layout />', () => {
                 />
             )
 
-            if (isVisible) {
-                expect(screen.getByText(quoteText)).toBeInTheDocument()
-            } else {
-                expect(screen.queryByText(quoteText)).toBeNull()
-            }
+            expect(screen.getByText(quoteText)).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it.each([
-            ['YearsFrom', 'ContentfulYearsFrom', '20'],
-            ['borken stuff', 'Never Going to Match Anything', null],
-        ])('should render inline %s', (_, __typename, expected) => {
+        it('should not render a BlockQuote if it has wrong children', () => {
+            const firstContent = {
+                data: {},
+                marks: [],
+                nodeType: 'text',
+                value: quoteText,
+            }
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [firstContent],
+                                    data: {},
+                                    nodeType: BLOCKS.QUOTE,
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
+
+            expect(screen.queryByText(quoteText)).toBeNull()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
+        it('should render inline YearsFrom', () => {
+            const __typename = 'ContentfulYearsFrom'
             const { container } = render(
                 <Layout
                     body={{
@@ -734,10 +797,54 @@ describe('<Layout />', () => {
                 />
             )
 
-            if (expected) {
-                // Check YearsFrom is present
-                expect(screen.getByText(expected)).toBeInTheDocument()
-            }
+            // Check YearsFrom is present
+            expect(screen.getByText('20')).toBeInTheDocument()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
+        it('should render inline borken stuff', () => {
+            const __typename = 'Never Going to Match Anything'
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [
+                                        {
+                                            content: [],
+                                            data: {
+                                                target: {
+                                                    sys: {
+                                                        id: 'fvxZI2eLzqnwfebd6CPUO',
+                                                        linkType: 'Entry',
+                                                        type: 'Link',
+                                                    },
+                                                },
+                                            },
+                                            nodeType: 'embedded-entry-inline',
+                                        },
+                                    ],
+                                    data: {},
+                                    nodeType: 'paragraph',
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [
+                            {
+                                __typename,
+                                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
+                                dateToCountFrom: '2000-01-01',
+                            },
+                        ],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
 
             expect(container.firstChild).toMatchSnapshot()
         })

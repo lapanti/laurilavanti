@@ -75,7 +75,7 @@ describe('<Seo />', () => {
                     : [{ content: 'summary', name: 'twitter:card' }]),
             ].concat(meta)
         )
-        expect(helmet.scriptTags[0].type).toEqual('application/ld+json')
+        expect(helmet.scriptTags[0].type).toBe('application/ld+json')
         expect(JSON.parse(helmet.scriptTags[0].innerHTML)).toEqual({
             '@context': 'https://schema.org',
             '@type': JSON_LD_TYPES.includes(pageType) ? pageType : WEBSITE,
@@ -99,7 +99,7 @@ describe('<Seo />', () => {
 
         expectHelmetToHaveCorrectValues({ pageType: WEBSITE })
 
-        await waitFor(() => expect(document.title).toEqual(title))
+        await waitFor(() => expect(document.title).toBe(title))
     })
 
     it('should render home page SEO', async () => {
@@ -128,7 +128,7 @@ describe('<Seo />', () => {
 
         expectHelmetToHaveCorrectValues({ canonical: `${siteUrl}/`, imgData, pageTitle: title, pageType: type })
 
-        await waitFor(() => expect(document.title).toEqual(title))
+        await waitFor(() => expect(document.title).toBe(title))
     })
 
     it('should render blog post SEO', async () => {
@@ -167,7 +167,7 @@ describe('<Seo />', () => {
             published,
         })
 
-        await waitFor(() => expect(document.title).toEqual(`${blogTitle} | ${title}`))
+        await waitFor(() => expect(document.title).toBe(`${blogTitle} | ${title}`))
     })
 
     it('should render edited blog post SEO', async () => {
@@ -211,6 +211,6 @@ describe('<Seo />', () => {
             published,
         })
 
-        await waitFor(() => expect(document.title).toEqual(`${blogTitle} | ${title}`))
+        await waitFor(() => expect(document.title).toBe(`${blogTitle} | ${title}`))
     })
 })
