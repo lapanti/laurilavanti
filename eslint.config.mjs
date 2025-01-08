@@ -14,6 +14,8 @@ import playwright from 'eslint-plugin-playwright'
 import tseslint from 'typescript-eslint'
 import restrictedGlobals from 'confusing-browser-globals'
 
+const testFileGlob = ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx']
+
 export default tseslint.config(
     js.configs.recommended,
     jsxA11y.flatConfigs.recommended,
@@ -143,10 +145,19 @@ export default tseslint.config(
         },
     },
     {
-        files: ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx'],
+        files: testFileGlob,
         ...jest.configs['flat/recommended'],
+    },
+    {
+        files: testFileGlob,
         ...jest.configs['flat/style'],
+    },
+    {
+        files: testFileGlob,
         ...testingLibrary.configs['flat/react'],
+    },
+    {
+        files: testFileGlob,
         rules: {
             '@typescript-eslint/no-empty-function': ['off'],
             'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
