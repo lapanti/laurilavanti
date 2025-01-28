@@ -3,12 +3,18 @@ import { render, screen } from '@testing-library/react'
 import BlockQuote from './BlockQuote'
 
 describe('<BlockQuote />', () => {
-    it('should render', () => {
-        const testText = 'Test text'
-        const { container } = render(<BlockQuote>{testText}</BlockQuote>)
+    const testText = 'Test text'
+    const renderHelper = () => render(<BlockQuote>{testText}</BlockQuote>)
 
-        expect(screen.getByRole('blockquote', { name: '' })).toHaveTextContent(testText)
+    it('should render', () => {
+        const { container } = renderHelper()
 
         expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render the block', () => {
+        renderHelper()
+
+        expect(screen.getByRole('blockquote', { name: '' })).toHaveTextContent(testText)
     })
 })
