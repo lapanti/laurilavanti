@@ -1,4 +1,4 @@
-import type { MainNav } from '../../../types/contentful'
+import type { MainNav } from '../../../../types/contentful'
 
 import { render, screen } from '@testing-library/react'
 

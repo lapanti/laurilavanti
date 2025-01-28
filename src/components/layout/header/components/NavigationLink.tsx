@@ -1,9 +1,9 @@
-import type { MainNav } from '../../../types/contentful'
+import type { MainNav } from '../../../../types/contentful'
 
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, fontFamilies, fontSizes } from '../../../lib/styles'
-import InternalLink from '../../InternalLink'
+import { colors, fontFamilies, fontSizes } from '../../../../lib/styles'
+import InternalLink from '../../../InternalLink'
 
 type Link = Omit<MainNav['links'][number], 'contentful_id'>
 
