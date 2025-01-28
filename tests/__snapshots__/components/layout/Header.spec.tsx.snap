@@ -15,7 +15,7 @@ exports[`<Header /> should render closed menu 1`] = `
   text-decoration: underline;
 }
 
-.c4 {
+.c3 {
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
@@ -36,7 +36,7 @@ exports[`<Header /> should render closed menu 1`] = `
   margin-right: 0.5rem;
 }
 
-.c5 {
+.c4 {
   align-items: center;
   background: rgb(0, 98, 114);
   display: flex;
@@ -51,11 +51,11 @@ exports[`<Header /> should render closed menu 1`] = `
   height: 0;
 }
 
-.c5 .c3 {
+.c4 .c5 {
   transition: opacity 0.3s ease-in-out;
 }
 
-.c5 .c3 {
+.c4 .c5 {
   opacity: 0;
 }
 
@@ -92,7 +92,7 @@ exports[`<Header /> should render closed menu 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c5 {
+  .c4 {
     display: none;
   }
 }
@@ -133,7 +133,7 @@ exports[`<Header /> should render closed menu 1`] = `
     class="c1"
   >
     <a
-      class="c2 c3 c4"
+      class="c2 c3"
       href="/"
       title="Lauri Lavanti"
     >
@@ -171,24 +171,24 @@ exports[`<Header /> should render closed menu 1`] = `
     </div>
   </div>
   <div
-    class="c5"
+    class="c4"
   >
     <a
-      class="c2 c3 c6"
+      class="c2 c5 c6"
       href="/minusta/"
       title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
     >
       Minusta
     </a>
     <a
-      class="c2 c3 c6"
+      class="c2 c5 c6"
       href="/blogi/"
       title="Blogi"
     >
       Blogi
     </a>
     <a
-      class="c2 c3 c6"
+      class="c2 c5 c6"
       href="/ota-yhteytta/"
       title="Ota yhteyttä"
     >
@@ -202,7 +202,7 @@ exports[`<Header /> should render closed menu 1`] = `
       class="c8"
     >
       <a
-        class="c2 c3 c4"
+        class="c2 c3"
         href="/"
         title="Lauri Lavanti"
       >
@@ -213,21 +213,21 @@ exports[`<Header /> should render closed menu 1`] = `
       class="c9"
     >
       <a
-        class="c2 c3 c6"
+        class="c2 c5 c6"
         href="/minusta/"
         title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
       >
         Minusta
       </a>
       <a
-        class="c2 c3 c6"
+        class="c2 c5 c6"
         href="/blogi/"
         title="Blogi"
       >
         Blogi
       </a>
       <a
-        class="c2 c3 c6"
+        class="c2 c5 c6"
         href="/ota-yhteytta/"
         title="Ota yhteyttä"
       >
@@ -253,7 +253,7 @@ exports[`<Header /> should render open 1`] = `
   text-decoration: underline;
 }
 
-.c4 {
+.c3 {
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
@@ -274,15 +274,15 @@ exports[`<Header /> should render open 1`] = `
   margin-right: 0.5rem;
 }
 
-.c10 .c3 {
+.c10 .c5 {
   transition: opacity 0.3s ease-in-out;
 }
 
-.c10 .c3 {
+.c10 .c5 {
   opacity: 0;
 }
 
-.c5 {
+.c4 {
   align-items: center;
   background: rgb(0, 98, 114);
   display: flex;
@@ -297,11 +297,11 @@ exports[`<Header /> should render open 1`] = `
   height: calc(100vh - 3.75rem);
 }
 
-.c5 .c3 {
+.c4 .c5 {
   transition: opacity 0.3s ease-in-out;
 }
 
-.c5 .c3 {
+.c4 .c5 {
   opacity: 100;
 }
 
@@ -342,7 +342,7 @@ exports[`<Header /> should render open 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c5 {
+  .c4 {
     display: none;
   }
 }
@@ -383,7 +383,7 @@ exports[`<Header /> should render open 1`] = `
     class="c1"
   >
     <a
-      class="c2 c3 c4"
+      class="c2 c3"
       href="/"
       title="Lauri Lavanti"
     >
@@ -421,24 +421,24 @@ exports[`<Header /> should render open 1`] = `
     </div>
   </div>
   <div
-    class="c5"
+    class="c4"
   >
     <a
-      class="c2 c3 c6"
+      class="c2 c5 c6"
       href="/minusta/"
       title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
     >
       Minusta
     </a>
     <a
-      class="c2 c3 c6"
+      class="c2 c5 c6"
       href="/blogi/"
       title="Blogi"
     >
       Blogi
     </a>
     <a
-      class="c2 c3 c6"
+      class="c2 c5 c6"
       href="/ota-yhteytta/"
       title="Ota yhteyttä"
     >
@@ -452,7 +452,7 @@ exports[`<Header /> should render open 1`] = `
       class="c8"
     >
       <a
-        class="c2 c3 c4"
+        class="c2 c3"
         href="/"
         title="Lauri Lavanti"
       >
@@ -463,21 +463,21 @@ exports[`<Header /> should render open 1`] = `
       class="c9"
     >
       <a
-        class="c2 c3 c6"
+        class="c2 c5 c6"
         href="/minusta/"
         title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
       >
         Minusta
       </a>
       <a
-        class="c2 c3 c6"
+        class="c2 c5 c6"
         href="/blogi/"
         title="Blogi"
       >
         Blogi
       </a>
       <a
-        class="c2 c3 c6"
+        class="c2 c5 c6"
         href="/ota-yhteytta/"
         title="Ota yhteyttä"
       >
