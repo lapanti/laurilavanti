@@ -6,7 +6,8 @@ import { useState } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes, zIndices } from '../../lib/styles'
-import NavLink from './header/NavLink'
+import MainNavigationLink from './header/MainNavigationLink'
+import NavigationLink from './header/NavigationLink'
 
 const ANIMATION_DURATION = 0.3
 const ANIMATION_EASING = 'ease-in-out'
@@ -28,7 +29,7 @@ const MobileMenu = styled.div<{ $isOpen: boolean }>(
         '@media (prefers-reduced-motion)': {
             transition: undefined,
         },
-        [NavLink]: {
+        [NavigationLink]: {
             '@media (prefers-reduced-motion)': {
                 transition: undefined,
             },
@@ -51,7 +52,7 @@ const MobileMenu = styled.div<{ $isOpen: boolean }>(
         },
     },
     ({ $isOpen }) => ({
-        [NavLink]: {
+        [NavigationLink]: {
             opacity: $isOpen ? 100 : 0,
         },
         height: $isOpen ? `calc(100vh - ${HEADER_SIZE})` : '0',
@@ -110,7 +111,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
     return (
         <header className={className}>
             <HamburgerContainer>
-                <NavLink slug="index" title="Lauri Lavanti" hideIfCurrent mainLink />
+                <MainNavigationLink title="Lauri Lavanti" hideIfCurrent />
                 <Hamburger
                     color={colors.peach}
                     distance="sm"
@@ -126,18 +127,18 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
                 {data.contentfulMainNav.links
                     .filter(({ slug }) => slug !== 'index')
                     .map((nav) => (
-                        <NavLink {...nav} key={nav.slug} />
+                        <NavigationLink {...nav} key={nav.slug} />
                     ))}
             </MobileMenu>
             <DesktopMenu>
                 <Half>
-                    <NavLink slug="index" title="Lauri Lavanti" mainLink />
+                    <MainNavigationLink title="Lauri Lavanti" />
                 </Half>
                 <Half $end>
                     {data.contentfulMainNav.links
                         .filter(({ slug }) => slug !== 'index')
                         .map((nav) => (
-                            <NavLink {...nav} key={nav.slug} />
+                            <NavigationLink {...nav} key={nav.slug} />
                         ))}
                 </Half>
             </DesktopMenu>
