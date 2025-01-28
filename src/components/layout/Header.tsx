@@ -1,92 +1,28 @@
 import type { MainNav } from '../../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import { Squash as Hamburger } from 'hamburger-react'
-import { useState } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { breakpoints, colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes, zIndices } from '../../lib/styles'
-import MainNavigationLink from './header/MainNavigationLink'
-import NavigationLink from './header/NavigationLink'
+import { breakpoints, colors, HEADER_SIZE, zIndices } from '../../lib/styles'
+import DesktopMenu from './header/DesktopMenu'
+import MobileMenu from './header/MobileMenu'
 
-const ANIMATION_DURATION = 0.3
-const ANIMATION_EASING = 'ease-in-out'
-
-const HamburgerContainer = styled.div({
-    alignItems: 'center',
+const StyledMobileMenu = styled(MobileMenu)({
     display: 'flex',
-    flex: 1,
-    justifyContent: 'space-between',
-    marginLeft: CONTENT_PADDING,
-    marginRight: CONTENT_PADDING,
+    // Hide mobile menu on desktop
     [breakpoints[1200].min]: {
         display: 'none',
     },
 })
 
-const MobileMenu = styled.div<{ $isOpen: boolean }>(
-    {
-        '@media (prefers-reduced-motion)': {
-            transition: undefined,
-        },
-        [NavigationLink]: {
-            '@media (prefers-reduced-motion)': {
-                transition: undefined,
-            },
-            transition: `opacity ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
-        },
-        alignItems: 'center',
-        background: colors.evening,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: sizes[2.5],
-        justifyContent: 'center',
-        overflow: 'hidden',
-        position: 'absolute',
-        top: HEADER_SIZE,
-        transition: `height ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
-        width: '100vw',
-        /** Hide the whole thing on desktop */
-        [breakpoints[1200].min]: {
-            display: 'none',
-        },
-    },
-    ({ $isOpen }) => ({
-        [NavigationLink]: {
-            opacity: $isOpen ? 100 : 0,
-        },
-        height: $isOpen ? `calc(100vh - ${HEADER_SIZE})` : '0',
-    })
-)
-
-const DesktopMenu = styled.div({
+const StyledDesktopMenu = styled(DesktopMenu)({
+    // Hide desktop menu on mobile
     display: 'none',
-    /** Show the whole thing only on desktop */
     [breakpoints[1200].min]: {
         display: 'flex',
-        flexDirection: 'row',
-        margin: 'auto',
-        paddingLeft: CONTENT_PADDING,
-        paddingRight: CONTENT_PADDING,
-        width: CONTENT_SIZE,
     },
 })
-
-/** Half of desktop header */
-const Half = styled.div<{ $end?: boolean }>(
-    {
-        display: 'none',
-        [breakpoints[1200].min]: {
-            alignItems: 'center',
-            display: 'flex',
-            gap: sizes[2.5],
-            width: '50%',
-        },
-    },
-    ({ $end }) => ({
-        justifyContent: $end ? 'flex-end' : 'flex-start',
-    })
-)
 
 interface Props {
     className?: string
@@ -106,42 +42,15 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
         }
     `)
 
-    const [isMobileOpen, setIsMobileOpen] = useState(false)
+    const links = useMemo(
+        () => data.contentfulMainNav.links.filter(({ slug }) => slug !== 'index'),
+        [data.contentfulMainNav.links]
+    )
 
     return (
         <header className={className}>
-            <HamburgerContainer>
-                <MainNavigationLink title="Lauri Lavanti" hideIfCurrent />
-                <Hamburger
-                    color={colors.peach}
-                    distance="sm"
-                    duration={ANIMATION_DURATION}
-                    easing={ANIMATION_EASING}
-                    label={isMobileOpen ? 'Sulje valikko' : 'Avaa valikko'}
-                    size={40}
-                    toggle={setIsMobileOpen}
-                    toggled={isMobileOpen}
-                />
-            </HamburgerContainer>
-            <MobileMenu $isOpen={isMobileOpen}>
-                {data.contentfulMainNav.links
-                    .filter(({ slug }) => slug !== 'index')
-                    .map((nav) => (
-                        <NavigationLink {...nav} key={nav.slug} />
-                    ))}
-            </MobileMenu>
-            <DesktopMenu>
-                <Half>
-                    <MainNavigationLink title="Lauri Lavanti" />
-                </Half>
-                <Half $end>
-                    {data.contentfulMainNav.links
-                        .filter(({ slug }) => slug !== 'index')
-                        .map((nav) => (
-                            <NavigationLink {...nav} key={nav.slug} />
-                        ))}
-                </Half>
-            </DesktopMenu>
+            <StyledMobileMenu links={links} />
+            <StyledDesktopMenu links={links} />
         </header>
     )
 }

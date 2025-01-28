@@ -1,25 +1,24 @@
 import { render, screen } from '@testing-library/react'
 
+import config from '../../../../../gatsby-config'
 import MainNavigationLink from './MainNavigationLink'
 
 describe('<MainNavigationLink />', () => {
-    const title = 'Lauri Lavanti'
-
     it('should render', () => {
-        const { container } = render(<MainNavigationLink title={title} />)
+        const { container } = render(<MainNavigationLink />)
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render link that is hidden when current', () => {
-        const { container } = render(<MainNavigationLink title={title} hideIfCurrent />)
+        const { container } = render(<MainNavigationLink hideIfCurrent />)
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render the actual link', () => {
-        render(<MainNavigationLink title={title} />)
+        render(<MainNavigationLink />)
 
-        expect(screen.getByRole('link', { name: title })).toHaveAttribute('href', `/`)
+        expect(screen.getByRole('link', { name: `${config?.siteMetadata?.title ?? ''}` })).toHaveAttribute('href', `/`)
     })
 })
