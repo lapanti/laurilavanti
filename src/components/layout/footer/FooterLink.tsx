@@ -55,6 +55,7 @@ interface Props {
 
 const FooterLinkComponent = ({ className, link }: Props): JSX.Element => {
     const Icon = iconToIconComponent(link.icon)
+
     return (
         <li className={className}>
             <Link href={link.url} rel="me noopener noreferrer" target="_blank" title={link.title}>
