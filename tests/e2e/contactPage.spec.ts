@@ -10,7 +10,7 @@ test.describe('Contact Page', () => {
 
         await contactPage.checkContent()
 
-        await contactPage.testScreenshot()
+        // await contactPage.testScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {

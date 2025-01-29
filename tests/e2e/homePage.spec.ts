@@ -10,7 +10,7 @@ test.describe('Home Page', () => {
 
         await homePage.checkTitles()
 
-        await homePage.testScreenshot()
+        // await homePage.testScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {

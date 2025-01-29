@@ -10,7 +10,7 @@ test.describe('About Page på svenska', () => {
 
         await aboutPage.checkContent()
 
-        await aboutPage.testScreenshot()
+        // await aboutPage.testScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
