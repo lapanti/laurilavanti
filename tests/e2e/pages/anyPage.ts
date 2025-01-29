@@ -38,7 +38,7 @@ export class AnyPage {
     async openMainNavigation() {
         await expect(this.navOpenButton).toBeVisible()
         await this.navOpenButton.click()
-        await expect(this.navOpenButton).not.toBeVisible()
+        await expect(this.navOpenButton).toBeHidden()
     }
 
     async checkMainNavigationLinks() {
@@ -65,7 +65,7 @@ export class AnyPage {
     async closeMainNavigation() {
         await expect(this.navCloseButton).toBeVisible()
         await this.navCloseButton.click()
-        await expect(this.navCloseButton).not.toBeVisible()
+        await expect(this.navCloseButton).toBeHidden()
     }
 
     async checkMainNavigation() {
