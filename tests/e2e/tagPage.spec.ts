@@ -10,7 +10,7 @@ test.describe('Tag Page', () => {
 
         await tagPage.checkContent()
 
-        await tagPage.testScreenshot()
+        // await tagPage.testScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {

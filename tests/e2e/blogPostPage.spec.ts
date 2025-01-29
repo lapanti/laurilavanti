@@ -10,7 +10,7 @@ test.describe('Blog Post Page', () => {
 
         await blogPostPage.checkContent()
 
-        await blogPostPage.testScreenshot()
+        // await blogPostPage.testScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {

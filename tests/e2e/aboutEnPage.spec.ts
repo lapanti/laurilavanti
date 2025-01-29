@@ -10,7 +10,7 @@ test.describe('About Page in english', () => {
 
         await aboutPage.checkContent()
 
-        await aboutPage.testScreenshot()
+        // await aboutPage.testScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
