@@ -1,7 +1,8 @@
-const React = require('react')
-const { excerptList } = require('../posts.mock')
-const { mainNav } = require('../mainNav.mock')
-const { footerNav } = require('../footerNav.mock')
+import React from 'react'
+
+import { footerNav } from '../footerNav.mock'
+import { mainNav } from '../mainNav.mock'
+import { excerptList } from '../posts.mock'
 
 const gatsby = jest.requireActual('gatsby')
 

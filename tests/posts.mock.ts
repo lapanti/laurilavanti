@@ -1514,32 +1514,6 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
         },
     },
     leftAlignedTitle: true,
-    publishDate: '04.02.2021',
-    socialImage: {
-        gatsbyImageData: {
-            layout: 'fixed',
-            placeholder: {
-                fallback:
-                    'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
-            },
-            images: {
-                fallback: {
-                    src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
-                    srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
-                    sizes: '1921px',
-                },
-                sources: [
-                    {
-                        srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
-                        type: 'image/webp',
-                        sizes: '1921px',
-                    },
-                ],
-            },
-            width: 1921,
-            height: 384,
-        },
-    },
     metadata: {
         tags: [
             {
@@ -1550,11 +1524,37 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
             },
         ],
     },
+    publishDate: '04.02.2021',
+    published: '2022-06-18T18:25:13.554Z',
+    publishedOld: '2021-02-04',
+    slug: 'kotihoidon-tuen-kuntalisa',
+    socialImage: {
+        gatsbyImageData: {
+            height: 384,
+            images: {
+                fallback: {
+                    sizes: '1921px',
+                    src: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg',
+                    srcSet: '/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w',
+                },
+                sources: [
+                    {
+                        sizes: '1921px',
+                        srcSet: '/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,\n/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w',
+                        type: 'image/webp',
+                    },
+                ],
+            },
+            layout: 'fixed',
+            placeholder: {
+                fallback:
+                    'data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q==',
+            },
+            width: 1921,
+        },
+    },
     title: 'Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys',
     updatedAt: '2022-07-31T20:22:49.591Z',
-    publishedOld: '2021-02-04',
-    published: '2022-06-18T18:25:13.554Z',
-    slug: 'kotihoidon-tuen-kuntalisa',
 }
 
 export const excerptList = [

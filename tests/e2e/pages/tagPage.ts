@@ -13,7 +13,7 @@ export class TagPage extends AnyPage {
     constructor(page: Page, url = '/kategoria/kirkkonummi', title = 'Kirkkonummi', minNumberOfArticles = 2) {
         super(page)
         this.url = url
-        this.title = page.getByRole('heading', { name: title, exact: true })
+        this.title = page.getByRole('heading', { exact: true, name: title })
         this.minNumberOfArtices = minNumberOfArticles
         this.articles = page.getByRole('article')
     }
@@ -26,6 +26,6 @@ export class TagPage extends AnyPage {
     }
 
     async checkContent() {
-        await expect(await this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArtices)
+        expect(this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArtices)
     }
 }
