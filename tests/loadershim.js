@@ -1,5 +1,3 @@
-import jest from 'jest'
-
 global.___loader = {
-    enqueue: jest.fn(),
+    enqueue: jest.fn(), // eslint-disable-line no-undef
 }
