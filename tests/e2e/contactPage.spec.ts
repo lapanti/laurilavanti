@@ -10,7 +10,7 @@ test.describe('Contact Page', () => {
 
         await contactPage.checkContent()
 
-        // await contactPage.testScreenshot()
+        await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
