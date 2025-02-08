@@ -153,7 +153,14 @@ export default tseslint.config(
         ...jest.configs['flat/style'],
     },
     {
-        files: testFileGlob,
+        // Don't want to match these to e2e tests
+        files: [
+            'tests/__mocks__/**/*.js',
+            'src/**/*.spec.js',
+            'src/**/*.spec.jsx',
+            'src/**/*.spec.ts',
+            'src/**/*.spec.tsx',
+        ],
         ...testingLibrary.configs['flat/react'],
     },
     {
