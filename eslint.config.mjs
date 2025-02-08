@@ -14,7 +14,13 @@ import playwright from 'eslint-plugin-playwright'
 import tseslint from 'typescript-eslint'
 import restrictedGlobals from 'confusing-browser-globals'
 
-const testFileGlob = ['tests/__mocks__/**/*.js', '**/*.spec.js', '**/*.spec.jsx', '**/*.spec.ts', '**/*.spec.tsx']
+const testFileGlob = [
+    'tests/__mocks__/**/*.js',
+    'src/**/*.spec.js',
+    'src/**/*.spec.jsx',
+    'src/**/*.spec.ts',
+    'src/**/*.spec.tsx',
+]
 
 export default tseslint.config(
     js.configs.recommended,
@@ -154,13 +160,7 @@ export default tseslint.config(
     },
     {
         // Don't want to match these to e2e tests
-        files: [
-            'tests/__mocks__/**/*.js',
-            'src/**/*.spec.js',
-            'src/**/*.spec.jsx',
-            'src/**/*.spec.ts',
-            'src/**/*.spec.tsx',
-        ],
+        files: testFileGlob,
         ...testingLibrary.configs['flat/react'],
     },
     {
@@ -174,8 +174,8 @@ export default tseslint.config(
         },
     },
     {
-        ...playwright.configs['flat/recommended'],
         files: ['tests/e2e/**/*.spec.ts', 'tests/e2e/pages/**/*.ts'],
+        ...playwright.configs['flat/recommended'],
     },
     eslintPluginPrettierRecommended
 )
