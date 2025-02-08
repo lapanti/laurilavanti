@@ -15,15 +15,7 @@ const images = {
 }
 
 export const frontPage: ContentfulPage = {
-    image,
-    socialImage: { gatsbyImageData: smilingImage },
-    leftAlignedTitle: true,
     backgroundImage: image,
-    description: null,
-    jsonLdType: 'WebSite',
-    title: 'Lauri Lavanti',
-    subtitle: 'Ehdolla kunta- ja aluevaaleissa 2025',
-    secondaryTitle: 'Kasvava ja kestävä Kirkkonummi',
     body: {
         raw: '{"data":{},"content":[{"data":{},"content":[{"data":{},"marks":[],"value":"Lyhyesti","nodeType":"text"}],"nodeType":"heading-2"},{"data":{},"content":[{"data":{},"marks":[],"value":"Kirkkonummelainen politiikasta kiinnostunut diplomi-insinööri. Vihreiden luottamushenkilö (entisen perusturvajaoston jäsen, suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen), ohjelmistokehittäjä ja kolmen lapsen isä.","nodeType":"text"}],"nodeType":"paragraph"},{"data":{},"content":[{"data":{},"marks":[],"value":"Uusimmat kirjoitukset","nodeType":"text"}],"nodeType":"heading-2"},{"data":{},"content":[],"nodeType":"hr"},{"data":{"target":{"sys":{"id":"6kFlEZ2Nv6UXotMJJNIFGm","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
         references: [
@@ -34,25 +26,51 @@ export const frontPage: ContentfulPage = {
             },
         ],
     },
+    description: null,
+    image,
+    jsonLdType: 'WebSite',
+    leftAlignedTitle: true,
+    secondaryTitle: 'Kasvava ja kestävä Kirkkonummi',
+    socialImage: {
+        gatsbyImageData: smilingImage,
+    },
+    subtitle: 'Ehdolla kunta- ja aluevaaleissa 2025',
+    title: 'Lauri Lavanti',
     updatedAt: '2023-05-24T14:51:46.661Z',
 }
 
 export const aboutMe: ContentfulPage = {
     ...images,
-    description:
-        'Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.',
-    jsonLdType: 'Person',
-    title: 'Minusta',
-    subtitle: null,
-    leftAlignedTitle: false,
-    secondaryTitle: null,
     body: {
         raw: '{"nodeType":"document","data":{},"content":[{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Olen ","marks":[],"data":{}},{"nodeType":"embedded-entry-inline","data":{"target":{"sys":{"id":"fvxZI2eLzqnwfebd6CPUO","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"text","value":"-vuotias diplomi-insinööri, Vihreiden luottamushenkilö ja kolmen pienen lapsen isä Kirkkonummelta. Politiikassa minulle tärkeimpiä asioita ovat lasten ja nuorten hyvinvointi, oikeudenmukaisuus, tasa-arvo, demokratia ja kestävä toiminta niin luonnon kuin taloudenkin kannalta. Päivätyöni on toimia ohjelmistokehitystiimin esihenkilönä ja ohjelmiston arkkitehtuurin suunnittelijana, huolehtien osaltani yrityksen kehityksen kestävästä suunnasta. ","marks":[],"data":{}},{"nodeType":"text","value":"Alapuolelta voit lukea tarkemman listauksen erinäisistä luottamustoimistani ja työhistoriastani","marks":[],"data":{}},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://bsky.app/profile/laurilavanti.fi"},"content":[{"nodeType":"text","value":"Blueskyssa","marks":[],"data":{}}]},{"nodeType":"text","value":" ja ","marks":[],"data":{}},{"nodeType":"hyperlink","data":{"uri":"https://www.threads.net/@laurilavanti"},"content":[{"nodeType":"text","value":"Threadsissä","marks":[],"data":{}}]},{"nodeType":"text","value":".","marks":[],"data":{}}]},{"nodeType":"embedded-entry-block","data":{"target":{"sys":{"id":"69ER5TaS3Gi3EG0xwHPOLv","type":"Link","linkType":"Entry"}}},"content":[]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]}]}',
         references: [
             {
                 __typename: 'ContentfulCurriculumVitae',
                 contentful_id: '69ER5TaS3Gi3EG0xwHPOLv',
-                fiduciariesTitle: 'Luottamustoimet',
+                degrees: [
+                    {
+                        degree: 'Diplomi-insinööri (informaatioverkostot)',
+                        endYear: 2018,
+                        location: 'Espoo',
+                        school: 'Aalto-yliopisto',
+                        startYear: 2012,
+                    },
+                    {
+                        degree: 'Datanomi',
+                        endYear: 2011,
+                        location: 'Kirkkonummi',
+                        school: 'Omnia ammattiopisto',
+                        startYear: 2007,
+                    },
+                    {
+                        degree: 'Ylioppilas',
+                        endYear: 2011,
+                        location: 'Kirkkonummi',
+                        school: 'Masalan lukio',
+                        startYear: 2007,
+                    },
+                ],
+                degreesTitle: 'Koulutus',
                 fiduciaries: [
                     {
                         duty: 'Toimitilapalvelujen lautakunnan varajäsen',
@@ -76,129 +94,107 @@ export const aboutMe: ContentfulPage = {
                     },
                     {
                         duty: 'Perusturvajaoston jäsen',
+                        endYear: 2022,
                         organization: 'Kirkkonummen kunta',
                         startYear: 2021,
-                        endYear: 2022,
                     },
                     {
                         duty: 'KV-kapteeni',
+                        endYear: 2015,
                         organization: 'Informaatioverkostojen kilta Athene',
                         startYear: 2015,
-                        endYear: 2015,
                     },
                     {
                         duty: 'Hallituksen puheenjohtaja',
+                        endYear: 2015,
                         organization: 'Aalto Predators',
                         startYear: 2014,
-                        endYear: 2015,
                     },
                     {
                         duty: 'Hallituksen jäsen',
+                        endYear: 2013,
                         organization: 'Aalto Predators',
                         startYear: 2013,
-                        endYear: 2013,
                     },
                     {
                         duty: 'Nuorisovaltuuston hallituksen puheenjohtaja',
+                        endYear: 2010,
                         organization: 'Kirkkonummen kunta',
                         startYear: 2010,
-                        endYear: 2010,
                     },
                 ],
-                degreesTitle: 'Koulutus',
-                degrees: [
-                    {
-                        degree: 'Diplomi-insinööri (informaatioverkostot)',
-                        school: 'Aalto-yliopisto',
-                        location: 'Espoo',
-                        startYear: 2012,
-                        endYear: 2018,
-                    },
-                    {
-                        degree: 'Datanomi',
-                        school: 'Omnia ammattiopisto',
-                        location: 'Kirkkonummi',
-                        startYear: 2007,
-                        endYear: 2011,
-                    },
-                    {
-                        degree: 'Ylioppilas',
-                        school: 'Masalan lukio',
-                        location: 'Kirkkonummi',
-                        startYear: 2007,
-                        endYear: 2011,
-                    },
-                ],
-                jobExperiencesTitle: 'Työkokemus',
+                fiduciariesTitle: 'Luottamustoimet',
                 jobExperiences: [
                     {
-                        title: 'Team Lead',
                         company: 'Verkkokauppa.com',
                         location: 'Helsinki',
                         startYear: 2022,
+                        title: 'Team Lead',
                     },
                     {
-                        title: 'Software developer',
                         company: 'Verkkokauppa.com',
+                        endYear: 2022,
                         location: 'Helsinki',
                         startYear: 2019,
-                        endYear: 2022,
+                        title: 'Software developer',
                     },
                     {
-                        title: 'Software developer',
                         company: 'Gofore',
+                        endYear: 2019,
                         location: 'Helsinki',
                         startYear: 2018,
-                        endYear: 2019,
+                        title: 'Software developer',
                     },
                     {
-                        title: 'Software engineer',
                         company: 'Zalando',
+                        endYear: 2018,
                         location: 'Helsinki',
                         startYear: 2017,
-                        endYear: 2018,
+                        title: 'Software engineer',
                     },
                     {
-                        title: 'Software developer',
                         company: 'Futurice',
+                        endYear: 2017,
                         location: 'Helsinki',
                         startYear: 2015,
-                        endYear: 2017,
+                        title: 'Software developer',
                     },
                     {
-                        title: 'Software developer',
                         company: 'Pulmaton Solutions Oy',
+                        endYear: 2014,
                         location: 'Helsinki',
                         startYear: 2014,
-                        endYear: 2014,
+                        title: 'Software developer',
                     },
                     {
-                        title: 'Seasonal trainee',
                         company: 'Nokia Solutions & Networks',
+                        endYear: 2013,
                         location: 'Espoo',
                         startYear: 2013,
-                        endYear: 2013,
+                        title: 'Seasonal trainee',
                     },
                 ],
+                jobExperiencesTitle: 'Työkokemus',
             },
             {
                 __typename: 'ContentfulYearsFrom',
-                dateToCountFrom: '1991-10-01',
                 contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
+                dateToCountFrom: '1991-10-01',
             },
         ],
     },
+    description:
+        'Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.',
+    jsonLdType: 'Person',
+    leftAlignedTitle: false,
+    secondaryTitle: null,
+    subtitle: null,
+    title: 'Minusta',
     updatedAt: '2023-10-17T03:58:48.870Z',
 }
 
 export const blog: ContentfulPage = {
     ...images,
-    description: null,
-    jsonLdType: 'WebPage',
-    leftAlignedTitle: true,
-    title: 'Blogi',
-    subtitle: null,
-    secondaryTitle: null,
     body: {
         raw: '{"data":{},"content":[{"data":{"target":{"sys":{"id":"2xbkM6orHOjGAeP19QeSoW","type":"Link","linkType":"Entry"}}},"content":[],"nodeType":"embedded-entry-block"},{"data":{},"content":[{"data":{},"marks":[],"value":"","nodeType":"text"}],"nodeType":"paragraph"}],"nodeType":"document"}',
         references: [
@@ -208,6 +204,12 @@ export const blog: ContentfulPage = {
             },
         ],
     },
+    description: null,
+    jsonLdType: 'WebPage',
+    leftAlignedTitle: true,
+    secondaryTitle: null,
+    subtitle: null,
+    title: 'Blogi',
     updatedAt: '2022-07-31T20:26:27.574Z',
 }
 

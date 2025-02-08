@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 module.exports = {
     /** Resolve path from test to snapshot path. The inverse of @see resolveTestPath */
