@@ -26,6 +26,6 @@ export class TagPage extends AnyPage {
     }
 
     async checkContent() {
-        expect(this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArtices)
+        expect(await this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArtices)
     }
 }
