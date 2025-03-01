@@ -1,6 +1,7 @@
 import type { ContentfulPage } from '../types/contentful'
 
 import { graphql } from 'gatsby'
+import { useEffect } from 'react'
 
 import { getValueOrDefault } from '../lib/string'
 import Layout from './Layout'
@@ -14,21 +15,30 @@ interface Props {
     }
 }
 
-const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => (
-    <Layout
-        backgroundImage={data?.contentfulPage?.backgroundImage?.gatsbyImageData}
-        body={data?.contentfulPage?.body}
-        description={getValueOrDefault(data?.contentfulPage?.description, '')}
-        heroImage={data?.contentfulPage?.image.gatsbyImageData}
-        heroImageAlt={data?.contentfulPage?.image?.description}
-        leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
-        modified={data?.contentfulPage?.updatedAt}
-        pathname={`/${slug}/`}
-        socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
-        title={data?.contentfulPage?.title}
-        type={data?.contentfulPage?.jsonLdType}
-    />
-)
+const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => {
+    useEffect(() => {
+        if (slug === 'lahjoita') {
+            window.location.href =
+                'https://vaalit.vihreat.fi/embed/ehdokas/?kieli=fi&vaali=kuntavaalit-2025&kunta=k257&ehdokas=lavanti-lauri-7479&valilehti=donate'
+        }
+    }, [slug])
+
+    return (
+        <Layout
+            backgroundImage={data?.contentfulPage?.backgroundImage?.gatsbyImageData}
+            body={data?.contentfulPage?.body}
+            description={getValueOrDefault(data?.contentfulPage?.description, '')}
+            heroImage={data?.contentfulPage?.image.gatsbyImageData}
+            heroImageAlt={data?.contentfulPage?.image?.description}
+            leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
+            modified={data?.contentfulPage?.updatedAt}
+            pathname={`/${slug}/`}
+            socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
+            title={data?.contentfulPage?.title}
+            type={data?.contentfulPage?.jsonLdType}
+        />
+    )
+}
 
 export const query = graphql`
     query ($slug: String!) {
