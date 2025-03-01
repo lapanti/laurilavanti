@@ -31,16 +31,16 @@ describe('<Page />', () => {
     })
 
     it('should redirect to donation page', async () => {
+        const replace = jest.fn()
         window = Object.create(window) // eslint-disable-line no-global-assign
         Object.defineProperty(window, 'location', {
             value: {
-                href: '',
+                replace,
             },
-            writable: true,
         })
         render(<Page data={{ contentfulPage: aboutMe }} pageContext={{ slug: 'lahjoita' }} />)
 
-        expect(window.location.href).toBe(
+        expect(replace).toHaveBeenCalledWith(
             'https://vaalit.vihreat.fi/embed/ehdokas/?kieli=fi&vaali=kuntavaalit-2025&kunta=k257&ehdokas=lavanti-lauri-7479&valilehti=donate'
         )
     })
