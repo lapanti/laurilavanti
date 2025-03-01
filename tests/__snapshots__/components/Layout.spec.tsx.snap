@@ -10976,9 +10976,8 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
-  position: fixed;
+  position: relative;
   top: 0.5rem;
-  z-index: 50;
 }
 
 .c18 {
@@ -10997,8 +10996,8 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c21 {
   bottom: 0;
+  margin-left: -5rem;
   margin-top: auto;
-  right: -5rem;
 }
 
 .c19 {
@@ -11009,7 +11008,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 .c19 .c20 {
-  width: 360px;
+  width: 560px;
 }
 
 .c15 {
@@ -11086,7 +11085,6 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   .c17 {
     font-size: 6rem;
     line-height: 1;
-    position: relative;
   }
 }
 
@@ -11103,6 +11101,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 @media (min-width: 1200px) {
   .c21 {
     position: absolute!important;
+    right: -5rem;
   }
 }
 
@@ -11110,10 +11109,6 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   .c19 {
     overflow: visible;
     width: 50%;
-  }
-
-  .c19 .c20 {
-    width: 560px;
   }
 }
 
