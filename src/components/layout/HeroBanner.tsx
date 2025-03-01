@@ -3,26 +3,15 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import {
-    breakpoints,
-    colors,
-    fontFamilies,
-    fontSizes,
-    fontWeights,
-    HEADER_SIZE,
-    sizes,
-    zIndices,
-} from '../../lib/styles'
+import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE, sizes } from '../../lib/styles'
 
 const Title = styled.h1({
     ...fontSizes[3],
     fontFamily: fontFamilies.heading,
-    position: 'fixed',
+    position: 'relative',
     top: sizes[0.5],
-    zIndex: zIndices[50],
     [breakpoints[1200].min]: {
         ...fontSizes[6],
-        position: 'relative',
     },
 })
 
@@ -58,37 +47,36 @@ const Titles = styled.div({
 // @ts-expect-error for some reason the typing does not include 'absolute !important', although it's valid CSS
 const Image = styled(GatsbyImage)({
     bottom: 0,
+    marginLeft: `-${sizes[5]}`,
     marginTop: 'auto',
-    right: `-${sizes[5]}`,
     [breakpoints[1200].min]: {
         position: 'absolute !important', // Otherwise gatsby image wrapper overrides it in production
+        right: `-${sizes[5]}`,
     },
 })
 
 const ImageContainer = styled.div({
     [Image]: {
-        width: '360px',
+        width: '560px',
     },
     display: 'flex',
     flex: 1,
     overflow: 'hidden',
     position: 'relative',
     [breakpoints[1200].min]: {
-        [Image]: {
-            width: '560px',
-        },
         overflow: 'visible',
         width: '50%',
     },
 })
 
 const BackgroundContainer = styled.div({
-    display: 'flex',
-    height: '100%',
-    position: 'absolute',
-    width: '100%',
+    /** Only show background image in desktop */
+    display: 'none',
     [breakpoints[1200].min]: {
         display: 'flex',
+        height: '100%',
+        position: 'absolute',
+        width: '100%',
     },
 })
 
