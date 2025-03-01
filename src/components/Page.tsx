@@ -17,10 +17,13 @@ interface Props {
 
 const Page = ({ data, pageContext: { slug } }: Props): JSX.Element => {
     useEffect(() => {
-        if (slug === 'lahjoita') {
+        const redirect = async () => {
             window.location.replace(
                 'https://vaalit.vihreat.fi/embed/ehdokas/?kieli=fi&vaali=kuntavaalit-2025&kunta=k257&ehdokas=lavanti-lauri-7479&valilehti=donate'
             )
+        }
+        if (slug === 'lahjoita') {
+            redirect()
         }
     }, [slug])
 
