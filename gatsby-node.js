@@ -28,6 +28,12 @@ exports.createPages = async ({ graphql, actions }) => {
     if (errors) {
         console.log(errors)
     } else {
+        createRedirect({
+            fromPath: '/lahjoita',
+            isPermanent: true,
+            toPath: 'https://vaalit.vihreat.fi/embed/ehdokas/?kieli=fi&vaali=kuntavaalit-2025&kunta=k257&ehdokas=lavanti-lauri-7479&valilehti=donate',
+        })
+
         data.redirects.nodes.forEach((post) =>
             post.oldSlugs.forEach((from) =>
                 createRedirect({
