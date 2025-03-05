@@ -38,7 +38,9 @@ import Seo from './layout/Seo'
 import Svgs from './layout/Svgs'
 import TitleBanner from './layout/TitleBanner'
 import YearsFrom from './layout/YearsFrom'
+import LI from './LI'
 import Paragraph from './Paragraph'
+import UL from './UL'
 
 const Main = styled.main({
     backgroundColor: colors.white,
@@ -97,6 +99,8 @@ const options = {
         [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
         [BLOCKS.HEADING_2]: (_: Block | Inline, children: ReactNode) => <H2>{children}</H2>,
         [BLOCKS.HEADING_3]: (_: Block | Inline, children: ReactNode) => <H3>{children}</H3>,
+        [BLOCKS.UL_LIST]: (_: Block | Inline, children: ReactNode) => <UL>{children}</UL>,
+        [BLOCKS.LIST_ITEM]: (_: Block | Inline, children: ReactNode) => <LI>{children}</LI>,
         [BLOCKS.HR]: () => <Hr />,
         [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
             switch (node?.data?.target?.__typename) {

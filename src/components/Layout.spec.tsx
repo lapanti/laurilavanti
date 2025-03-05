@@ -199,6 +199,48 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
+        it('should render UL and LI', () => {
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [
+                                        {
+                                            content: [
+                                                {
+                                                    data: {},
+                                                    marks: [],
+                                                    nodeType: 'text',
+                                                    value: 'text',
+                                                },
+                                            ],
+                                            data: {},
+                                            nodeType: BLOCKS.LIST_ITEM,
+                                        },
+                                    ],
+                                    data: {},
+                                    nodeType: BLOCKS.UL_LIST,
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
+
+            // There is already one list in the footer
+            expect(screen.getAllByRole('list')).toHaveLength(2)
+            expect(screen.getAllByRole('listitem')).toHaveLength(6)
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
         it('should render Hr', () => {
             const { container } = render(
                 <Layout
