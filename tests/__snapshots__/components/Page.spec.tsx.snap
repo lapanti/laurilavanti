@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Page /> should render about me page 1`] = `
-.c30 {
+.c31 {
   font-family: "IBM Plex Mono",Lucida Sans Typewriter;
   font-weight: 700;
   grid-column-start: 3;
+  margin-top: 1rem;
   font-size: 1.75rem;
   line-height: 2.25rem;
 }
@@ -23,7 +24,7 @@ exports[`<Page /> should render about me page 1`] = `
   text-decoration: underline;
 }
 
-.c25 {
+.c26 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
@@ -32,53 +33,62 @@ exports[`<Page /> should render about me page 1`] = `
   margin-top: 1rem;
 }
 
-.c27 {
+.c28 {
   color: rgb(90, 94, 0);
   text-decoration: underline;
 }
 
-.c29 {
+.c33 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
-
-.c32 {
   margin-left: 1.25rem;
 }
 
-.c32:before {
+.c33 >.c25 {
+  margin: 0;
+}
+
+.c33:before {
   color: rgb(0, 98, 114);
   content: "»";
   left: 0;
   position: absolute;
 }
 
-.c31 {
+.c32 {
+  grid-column-start: 3;
   list-style: none;
   position: relative;
 }
 
-.c31 >li:not(:first-child) {
+.c32 >li:not(:first-child) {
   margin-top: 0.5rem;
 }
 
-.c28 {
+.c30 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.c29 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
-.c38 {
+.c39 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c38 >* {
+.c39 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -87,22 +97,13 @@ exports[`<Page /> should render about me page 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c37 {
+.c38 {
   padding: 0px;
 }
 
-.c37 :hover,
-.c37 :focus {
+.c38 :hover,
+.c38 :focus {
   fill: #4267B2;
-}
-
-.c39 {
-  padding: 0px;
-}
-
-.c39 :hover,
-.c39 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c40 {
@@ -111,7 +112,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c40 :hover,
 .c40 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c41 {
@@ -120,7 +121,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c41 :hover,
 .c41 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c42 {
@@ -129,22 +130,31 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c42 :hover,
 .c42 :focus {
+  fill: #0E76A8;
+}
+
+.c43 {
+  padding: 0px;
+}
+
+.c43 :hover,
+.c43 :focus {
   fill: #0060df;
 }
 
-.c36 {
+.c37 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c34 {
+.c35 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c34 >.,
-.c34 >.c35 {
+.c35 >.,
+.c35 >.c36 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -152,7 +162,7 @@ exports[`<Page /> should render about me page 1`] = `
   justify-content: center;
 }
 
-.c33 {
+.c34 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -313,7 +323,7 @@ exports[`<Page /> should render about me page 1`] = `
   grid-template-columns: 1fr 0.5rem min(calc(75rem - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c26 {
+.c27 {
   grid-column-start: 3;
 }
 
@@ -327,18 +337,18 @@ exports[`<Page /> should render about me page 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c34 {
+  .c35 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c34 >.{
+  .c35 >.{
     justify-content: flex-start;
   }
 
-  .c34 >.c35 {
+  .c35 >.c36 {
     justify-content: flex-end;
   }
 }
@@ -668,7 +678,7 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
         </div>
         <p
-          class="c25 c26"
+          class="c25 c26 c27"
         >
           Olen 
           <span
@@ -681,11 +691,11 @@ exports[`<Page /> should render about me page 1`] = `
           .
         </p>
         <p
-          class="c25 c26"
+          class="c25 c26 c27"
         >
           Pyrin kirjoittamaan täällä aiheista, jotka koskettavat erityisesti Kirkkonummea tai vaativat muuten pidempää pureskelua. Valtakunnan politiikasta ja ajatuksistani muutenkin kirjoitan aktiivisesti myös 
           <a
-            class="c27"
+            class="c28"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel=" noopener noreferrer"
             target="_blank"
@@ -694,7 +704,7 @@ exports[`<Page /> should render about me page 1`] = `
           </a>
            ja 
           <a
-            class="c27"
+            class="c28"
             href="https://www.threads.net/@laurilavanti"
             rel=" noopener noreferrer"
             target="_blank"
@@ -704,26 +714,26 @@ exports[`<Page /> should render about me page 1`] = `
           .
         </p>
         <div
-          class="c28"
+          class="c29"
         >
           <div
-            class="c29"
+            class="c30"
           >
             <h2
-              class="c30"
+              class="c31"
               id="luottamustoimet"
             >
               Luottamustoimet
             </h2>
           </div>
           <div
-            class="c29"
+            class="c30"
           >
             <ul
-              class="c31"
+              class="c32"
             >
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Toimitilapalvelujen lautakunnan varajäsen
@@ -736,7 +746,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Hallituksen varajäsen
@@ -749,7 +759,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Länsi-Uudenmaan pelastuslaitos -liikelaitoksen johtokunnan varajäsen
@@ -762,7 +772,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen
@@ -775,7 +785,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Perusturvajaoston jäsen
@@ -788,7 +798,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   KV-kapteeni
@@ -801,7 +811,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Hallituksen puheenjohtaja
@@ -814,7 +824,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Hallituksen jäsen
@@ -827,7 +837,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Nuorisovaltuuston hallituksen puheenjohtaja
@@ -843,23 +853,23 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
           <br />
           <div
-            class="c29"
+            class="c30"
           >
             <h2
-              class="c30"
+              class="c31"
               id="tyokokemus"
             >
               Työkokemus
             </h2>
           </div>
           <div
-            class="c29"
+            class="c30"
           >
             <ul
-              class="c31"
+              class="c32"
             >
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Team Lead
@@ -874,7 +884,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Software developer
@@ -889,7 +899,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Software developer
@@ -904,7 +914,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Software engineer
@@ -919,7 +929,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Software developer
@@ -934,7 +944,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Software developer
@@ -949,7 +959,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Seasonal trainee
@@ -967,23 +977,23 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
           <br />
           <div
-            class="c29"
+            class="c30"
           >
             <h2
-              class="c30"
+              class="c31"
               id="koulutus"
             >
               Koulutus
             </h2>
           </div>
           <div
-            class="c29"
+            class="c30"
           >
             <ul
-              class="c31"
+              class="c32"
             >
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Diplomi-insinööri (informaatioverkostot)
@@ -998,7 +1008,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Datanomi
@@ -1013,7 +1023,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c32"
+                class="c33"
               >
                 <span>
                   Ylioppilas
@@ -1031,15 +1041,15 @@ exports[`<Page /> should render about me page 1`] = `
           </div>
         </div>
         <p
-          class="c25 c26"
+          class="c25 c26 c27"
         />
       </article>
     </main>
     <footer
-      class="c33"
+      class="c34"
     >
       <div
-        class="c34"
+        class="c35"
       >
         <div
           class=""
@@ -1051,13 +1061,13 @@ exports[`<Page /> should render about me page 1`] = `
           />
         </div>
         <ul
-          class="c35 c36"
+          class="c36 c37"
         >
           <li
-            class="c37"
+            class="c38"
           >
             <a
-              class="c38"
+              class="c39"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1079,10 +1089,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c39"
+            class="c40"
           >
             <a
-              class="c38"
+              class="c39"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1104,10 +1114,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c40"
+            class="c41"
           >
             <a
-              class="c38"
+              class="c39"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1129,10 +1139,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c41"
+            class="c42"
           >
             <a
-              class="c38"
+              class="c39"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1154,10 +1164,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c42"
+            class="c43"
           >
             <a
-              class="c38"
+              class="c39"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1232,6 +1242,7 @@ exports[`<Page /> should render blog page 1`] = `
   font-family: "IBM Plex Mono",Lucida Sans Typewriter;
   font-weight: 700;
   grid-column-start: 3;
+  margin-top: 1rem;
   font-size: 1.75rem;
   line-height: 2.25rem;
 }

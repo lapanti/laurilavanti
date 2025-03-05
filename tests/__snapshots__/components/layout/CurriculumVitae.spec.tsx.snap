@@ -5,8 +5,19 @@ exports[`<CurriculumVitae /> should render empty 1`] = `
   font-family: "IBM Plex Mono",Lucida Sans Typewriter;
   font-weight: 700;
   grid-column-start: 3;
+  margin-top: 1rem;
   font-size: 1.75rem;
   line-height: 2.25rem;
+}
+
+.c3 {
+  grid-column-start: 3;
+  list-style: none;
+  position: relative;
+}
+
+.c3 >li:not(:first-child) {
+  margin-top: 0.5rem;
 }
 
 .c1 {
@@ -16,15 +27,6 @@ exports[`<CurriculumVitae /> should render empty 1`] = `
   font-weight: 400;
   margin-bottom: 1rem;
   margin-top: 1rem;
-}
-
-.c3 {
-  list-style: none;
-  position: relative;
-}
-
-.c3 >li:not(:first-child) {
-  margin-top: 0.5rem;
 }
 
 .c0 {
@@ -96,21 +98,21 @@ exports[`<CurriculumVitae /> should render full 1`] = `
   font-family: "IBM Plex Mono",Lucida Sans Typewriter;
   font-weight: 700;
   grid-column-start: 3;
+  margin-top: 1rem;
   font-size: 1.75rem;
   line-height: 2.25rem;
 }
 
-.c1 {
+.c4 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-left: 1.25rem;
 }
 
-.c4 {
-  margin-left: 1.25rem;
+.c4 >.sc-gjcoXW {
+  margin: 0;
 }
 
 .c4:before {
@@ -121,12 +123,22 @@ exports[`<CurriculumVitae /> should render full 1`] = `
 }
 
 .c3 {
+  grid-column-start: 3;
   list-style: none;
   position: relative;
 }
 
 .c3 >li:not(:first-child) {
   margin-top: 0.5rem;
+}
+
+.c1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .c0 {
