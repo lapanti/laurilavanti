@@ -27,7 +27,13 @@ describe('<ExcerptList />', () => {
 
     it('should render pinned first', () => {
         const pinnedExcerpts: ContentfulPinnedPage[] = [aboutMe, blog].map(
-            ({ backgroundImage, description, slug, title }) => ({ backgroundImage, description, slug, title })
+            ({ backgroundImage, description, image, slug, title }) => ({
+                backgroundImage,
+                description,
+                image,
+                slug,
+                title,
+            })
         )
         const pinnedAndUnpinned = pinnedExcerpts.map(({ title }) => title).concat(excerptList.map(({ title }) => title))
         const { container } = render(<ExcerptList pinned={pinnedExcerpts} />)
@@ -53,7 +59,13 @@ describe('<ExcerptList />', () => {
 
     it('should render pinned first with limit', () => {
         const pinnedExcerpts: ContentfulPinnedPage[] = [aboutMe, blog].map(
-            ({ backgroundImage, description, slug, title }) => ({ backgroundImage, description, slug, title })
+            ({ backgroundImage, description, image, slug, title }) => ({
+                backgroundImage,
+                description,
+                image,
+                slug,
+                title,
+            })
         )
         const pinnedAndUnpinned = pinnedExcerpts
             .map(({ title }) => title)

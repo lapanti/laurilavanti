@@ -1,6 +1,11 @@
 import { render, screen } from '@testing-library/react'
 
-import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../tests/images.mock'
+import {
+    inFrontOfWoodsImage,
+    inFrontOfWoodsImageDescription,
+    smilingImage,
+    smilingImageDescription,
+} from '../../tests/images.mock'
 import { excerptList } from '../../tests/posts.mock'
 import Tag from './Tag'
 
@@ -12,7 +17,7 @@ describe('<Tag />', () => {
             <Tag
                 data={{
                     contentfulPage: {
-                        backgroundImage: { gatsbyImageData: smilingImage },
+                        backgroundImage: { description: smilingImageDescription, gatsbyImageData: smilingImage },
                         image: { description: inFrontOfWoodsImageDescription, gatsbyImageData: inFrontOfWoodsImage },
                         leftAlignedTitle: false,
                         socialImage: { gatsbyImageData: inFrontOfWoodsImage },
