@@ -164,6 +164,41 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
+        it('should render H3', () => {
+            const headingText = 'Heading text'
+            const { container } = render(
+                <Layout
+                    body={{
+                        raw: JSON.stringify({
+                            content: [
+                                {
+                                    content: [
+                                        {
+                                            data: {},
+                                            marks: [],
+                                            nodeType: 'text',
+                                            value: headingText,
+                                        },
+                                    ],
+                                    data: {},
+                                    nodeType: BLOCKS.HEADING_3,
+                                },
+                            ],
+                            data: {},
+                            nodeType: 'document',
+                        }),
+                        references: [],
+                    }}
+                    title=""
+                    leftAlignedTitle
+                />
+            )
+
+            expect(screen.getByRole('heading', { name: headingText })).toBeInTheDocument()
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
         it('should render Hr', () => {
             const { container } = render(
                 <Layout
