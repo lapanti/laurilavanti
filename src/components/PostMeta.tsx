@@ -19,7 +19,7 @@ const TagItem = styled.li({
     marginRight: sizes[1],
 })
 
-export interface PostMetaProps {
+interface PostMetaProps {
     date: string
     tags: string[]
     ariaLabel: string
