@@ -5,14 +5,16 @@ import Excerpt from './Excerpt'
 
 describe('<Excerpt />', () => {
     const title = 'Terveys kuuluu kaikille'
-    const date = '19.01.2022'
+    const defaultDate = '19.01.2022'
     const excerpt =
         'Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.'
-    const tags = ['aluevaalit', 'soteuudistus', 'kirkkonummi']
+    const defaultTags = ['aluevaalit', 'soteuudistus', 'kirkkonummi']
     const slug = 'sote-on-hyvinvointiyhteiskunnan-kulmakivi'
     const imageAlt = 'imageAlt'
 
-    const renderHelper = () =>
+    const renderHelper = (
+        { date, tags }: { date?: string; tags?: string[] } = { date: defaultDate, tags: defaultTags }
+    ) =>
         render(
             <Excerpt
                 date={date}
@@ -55,14 +57,14 @@ describe('<Excerpt />', () => {
         renderHelper()
 
         const mainLink = screen.getByRole('link', { name: new RegExp(title, 'i') })
-        expect(mainLink).toHaveAttribute('href', `/blogi/${slug}/`)
+        expect(mainLink).toHaveAttribute('href', `/${slug}/`)
         expect(mainLink).toHaveAttribute('rel', 'permalink')
     })
 
     it('should render all tags', () => {
         renderHelper()
 
-        tags.forEach((tag) => {
+        defaultTags.forEach((tag) => {
             expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
         })
     })
@@ -70,7 +72,21 @@ describe('<Excerpt />', () => {
     it('should render date', () => {
         renderHelper()
 
-        expect(screen.getByText(date)).toBeInTheDocument()
+        expect(screen.getByText(defaultDate)).toBeInTheDocument()
+    })
+
+    it('should not render meta if no tags', () => {
+        renderHelper({ date: defaultDate })
+
+        expect(screen.queryByText(defaultDate)).toBeNull()
+    })
+
+    it('should not render meta if no date', () => {
+        renderHelper({ tags: defaultTags })
+
+        defaultTags.forEach((tag) => {
+            expect(screen.queryByRole('link', { name: `#${tag}` })).toBeNull()
+        })
     })
 
     it('should render description text', () => {

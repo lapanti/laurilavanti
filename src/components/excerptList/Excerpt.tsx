@@ -1,5 +1,4 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
-import type { PostMetaProps } from '../PostMeta'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
@@ -48,13 +47,15 @@ const ReadMoreLink = styled(InternalLink)({
     whiteSpace: 'nowrap',
 })
 
-interface Props extends Omit<PostMetaProps, 'ariaLabel'> {
+interface Props {
     className?: string
     title: string
     excerpt: string
     image: IGatsbyImageData
     imageAlt: string
     slug: string
+    date?: string
+    tags?: string[]
 }
 
 const ExcerptComponent = ({
@@ -72,16 +73,16 @@ const ExcerptComponent = ({
     return (
         <li className={className}>
             <article aria-label={title} itemType="https://schema.org/CreativeWork" itemScope>
-                <Link rel="permalink" to={`/blogi/${slug}/`}>
+                <Link rel="permalink" to={`/${slug}/`}>
                     {image && <Image alt={imageAlt} image={image} />}
                     <H2Container>
                         <StyledH2 itemProp="headline">{title}</StyledH2>
                     </H2Container>
                 </Link>
-                <PostMeta ariaLabel={`Kirjoituksen ${title} meta-tiedot`} date={date} tags={tags} />
+                {date && tags && <PostMeta ariaLabel={`Kirjoituksen ${title} meta-tiedot`} date={date} tags={tags} />}
                 <StyledParagraph itemProp="description">
                     {excerpt}{' '}
-                    <ReadMoreLink rel="permalink" to={`/blogi/${slug}/`}>
+                    <ReadMoreLink rel="permalink" to={`/${slug}/`}>
                         Lue lisää »
                     </ReadMoreLink>
                 </StyledParagraph>
