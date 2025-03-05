@@ -97,8 +97,8 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
                 <Excerpt
                     key={node.slug}
                     excerpt={node.description}
-                    image={node.backgroundImage?.gatsbyImageData}
-                    imageAlt={node.backgroundImage?.description}
+                    image={node.backgroundImage?.gatsbyImageData ?? node.image.gatsbyImageData}
+                    imageAlt={node.backgroundImage?.description ?? node.image.description}
                     slug={node.slug}
                     title={node.title}
                 />

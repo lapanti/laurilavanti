@@ -20,11 +20,12 @@ describe('<FrontPage />', () => {
                     contentfulPage: {
                         backgroundImage: null,
                         body: {},
-                        description: null,
+                        description: 'Kotisivuni',
                         image: { description: inFrontOfWoodsImageDescription, gatsbyImageData: inFrontOfWoodsImage },
                         jsonLdType: 'WebSite',
                         leftAlignedTitle: true,
                         secondaryTitle: null,
+                        slug: 'index',
                         socialImage: null,
                         subtitle: null,
                         title: '',

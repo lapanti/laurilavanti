@@ -86,7 +86,7 @@ type RichReferences =
 export type RichBody = RenderRichTextData<RichReferences>
 
 export interface ContentfulPage {
-    description: string | null
+    description: string
     jsonLdType: JsonLdType
     title: string
     subtitle: string | null
@@ -108,7 +108,7 @@ export interface ContentfulPage {
     slug: string
 }
 
-export type ContentfulPinnedPage = Pick<ContentfulPage, 'description' | 'title' | 'backgroundImage' | 'slug'>
+export type ContentfulPinnedPage = Pick<ContentfulPage, 'description' | 'title' | 'backgroundImage' | 'image' | 'slug'>
 
 interface ContentfulPostCommon {
     title: string

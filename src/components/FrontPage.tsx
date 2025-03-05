@@ -58,6 +58,14 @@ export const query = graphql`
                                 )
                                 description
                             }
+                            image {
+                                gatsbyImageData(
+                                    layout: CONSTRAINED
+                                    width: 560
+                                    sizes: "(min-width: 560px) 560px, 100vw"
+                                )
+                                description
+                            }
                             title
                             description
                             slug
