@@ -23,6 +23,7 @@ import {
 import ExcerptList from './ExcerptList'
 import ExternalLink from './ExternalLink'
 import H2 from './H2'
+import H3 from './H3'
 import Hr from './Hr'
 import InternalLink from './InternalLink'
 import BlockQuote from './layout/BlockQuote'
@@ -95,6 +96,7 @@ const options = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (_: Block | Inline, children: ReactNode) => <PositionedP>{children}</PositionedP>,
         [BLOCKS.HEADING_2]: (_: Block | Inline, children: ReactNode) => <H2>{children}</H2>,
+        [BLOCKS.HEADING_3]: (_: Block | Inline, children: ReactNode) => <H3>{children}</H3>,
         [BLOCKS.HR]: () => <Hr />,
         [BLOCKS.EMBEDDED_ENTRY]: (node: Block | Inline) => {
             switch (node?.data?.target?.__typename) {
