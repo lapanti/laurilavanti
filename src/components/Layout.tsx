@@ -106,12 +106,7 @@ const options = {
             switch (node?.data?.target?.__typename) {
                 case 'ContentfulExcerptList':
                     return (
-                        <ExcerptList
-                            limit={node.data.target.limit}
-                            pinned={(node.data.target.pinned as { slug: string }[] | undefined)?.map(
-                                ({ slug }) => slug
-                            )}
-                        />
+                        <ExcerptList limit={node.data.target.limit} pinned={node.data.target.pinned?.filter(Boolean)} />
                     )
                 case 'ContentfulImageWithCaption':
                     return (

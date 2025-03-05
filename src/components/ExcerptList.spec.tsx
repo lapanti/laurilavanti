@@ -1,5 +1,8 @@
+import type { ContentfulPinnedPage } from '../types/contentful'
+
 import { render, screen } from '@testing-library/react'
 
+import { aboutMe, blog } from '../../tests/pages.mock'
 import {
     coopElectionsConcernUsAll,
     excerptList,
@@ -23,17 +26,16 @@ describe('<ExcerptList />', () => {
     })
 
     it('should render pinned first', () => {
-        const pinnedExcerpts = [healthBelongsToAll, ourNatureIsOurAceInTheHole]
-        const pinned = pinnedExcerpts.map(({ slug }) => slug)
-        const pinnedAndUnpinned = pinnedExcerpts.concat(
-            excerptList.filter(({ slug }) => !pinned.find((s) => s === slug))
+        const pinnedExcerpts: ContentfulPinnedPage[] = [aboutMe, blog].map(
+            ({ backgroundImage, description, slug, title }) => ({ backgroundImage, description, slug, title })
         )
-        const { container } = render(<ExcerptList pinned={pinned} />)
+        const pinnedAndUnpinned = pinnedExcerpts.map(({ title }) => title).concat(excerptList.map(({ title }) => title))
+        const { container } = render(<ExcerptList pinned={pinnedExcerpts} />)
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(pinnedAndUnpinned.length)
         articles.forEach((article, i) => {
-            expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i].title)
+            expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i])
         })
 
         expect(container.firstChild).toMatchSnapshot()
@@ -50,18 +52,19 @@ describe('<ExcerptList />', () => {
     })
 
     it('should render pinned first with limit', () => {
-        const pinnedExcerpts = [healthBelongsToAll, ourNatureIsOurAceInTheHole]
-        const pinned = pinnedExcerpts.map(({ slug }) => slug)
-        const pinnedAndUnpinned = pinnedExcerpts.concat(
-            excerptList.filter(({ slug }) => !pinned.find((s) => s === slug)).slice(0, limit)
+        const pinnedExcerpts: ContentfulPinnedPage[] = [aboutMe, blog].map(
+            ({ backgroundImage, description, slug, title }) => ({ backgroundImage, description, slug, title })
         )
-        const { container } = render(<ExcerptList limit={limit} pinned={pinned} />)
+        const pinnedAndUnpinned = pinnedExcerpts
+            .map(({ title }) => title)
+            .concat(excerptList.map(({ title }) => title).slice(0, limit))
+        const { container } = render(<ExcerptList limit={limit} pinned={pinnedExcerpts} />)
 
         const articles = screen.getAllByRole('article')
         expect(articles).toHaveLength(pinnedAndUnpinned.length)
         expect(articles).toHaveLength(limit + pinnedExcerpts.length)
         articles.forEach((article, i) => {
-            expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i].title)
+            expect(article).toHaveAttribute('aria-label', pinnedAndUnpinned[i])
         })
 
         expect(container.firstChild).toMatchSnapshot()
@@ -78,7 +81,7 @@ describe('<ExcerptList />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render in related order the otherway around', () => {
+    it('should render in related order the other way around', () => {
         const orderedExcerpts = [wellPlannedIsWellDoneBut, coopElectionsConcernUsAll, ourNatureIsOurAceInTheHole]
         const { container } = render(<ExcerptList limit={limit} relatedTags={['opetus']} />)
 

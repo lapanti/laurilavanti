@@ -101,10 +101,14 @@ export interface ContentfulPage {
     } | null
     backgroundImage: {
         gatsbyImageData: IGatsbyImageData
+        description: string
     } | null
     updatedAt: string
     leftAlignedTitle: boolean
+    slug: string
 }
+
+export type ContentfulPinnedPage = Pick<ContentfulPage, 'description' | 'title' | 'backgroundImage' | 'slug'>
 
 interface ContentfulPostCommon {
     title: string

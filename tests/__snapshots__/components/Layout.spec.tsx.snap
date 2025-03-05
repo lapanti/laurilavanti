@@ -1932,7 +1932,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   text-decoration: none;
 }
 
-.c34 {
+.c33 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1940,13 +1940,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c34 :hover,
-.c34 :active,
-.c34 :focus {
+.c33 :hover,
+.c33 :active,
+.c33 :focus {
   text-decoration: underline;
 }
 
-.c35 {
+.c31 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
@@ -1955,22 +1955,22 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   margin-top: 1rem;
 }
 
-.c32 {
+.c36 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c33 {
+.c37 {
   margin-right: 1rem;
 }
 
-.c33 :last-child {
+.c37 :last-child {
   margin-right: 0px;
 }
 
-.c31 {
+.c35 {
   display: flex;
   flex-direction: column;
 }
@@ -2003,13 +2003,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   z-index: 40;
 }
 
-.c36 {
+.c32 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c37 {
+.c34 {
   white-space: nowrap;
 }
 
@@ -2504,43 +2504,56 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
           class="c23"
         >
           <article
-            aria-label="Terveys kuuluu kaikille"
+            aria-label="Minusta"
             itemscope=""
             itemtype="https://schema.org/CreativeWork"
           >
             <a
               class="c24 c25"
-              href="/blogi/terveys-kuuluu-kaikille/"
+              href="/minusta/"
               rel="permalink"
             >
               <div
-                class="gatsby-image-wrapper c26"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c26"
                 data-gatsby-image-wrapper=""
-                style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
+                style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
-                <img
-                  alt=""
+                <div
+                  style="max-width: 600px; display: block;"
+                >
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    role="presentation"
+                    src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='400'%20width='600'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
+                    style="max-width: 100%; display: block; position: static;"
+                  />
+                </div>
+                <div
                   aria-hidden="true"
                   data-placeholder-image=""
-                  decoding="async"
-                  src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAEABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAMEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABhugssDP/xAAXEAADAQAAAAAAAAAAAAAAAAAAAQID/9oACAEBAAEFAlnJtCiT/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8BZ//EABURAQEAAAAAAAAAAAAAAAAAABBB/9oACAECAQE/AYf/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAY/AhZP/8QAGBAAAgMAAAAAAAAAAAAAAAAAAAERITH/2gAIAQEAAT8h1WPJnkWSf//aAAwDAQACAAMAAAAQh+//xAAVEQEBAAAAAAAAAAAAAAAAAAAQMf/aAAgBAwEBPxCT/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAx/9oACAECAQE/EDS//8QAGBABAQEBAQAAAAAAAAAAAAAAAREhADH/2gAIAQEAAT8QwKqz3ktUFq5LysQC753/2Q=="
                   style="height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;"
                 />
                 <picture>
                   <source
-                    data-srcset="/static/963e993925c36bdbb3eea7c759902afb/ba007/lauri-lavanti.webp 1921w,/static/963e993925c36bdbb3eea7c759902afb/d563d/lauri-lavanti.webp 3842w"
-                    sizes="1921px"
+                    data-srcset="/static/6e2d9e3635750bc519675010efe8d804/7e42a/Lauri_Lavanti_-_hymyillen_nojaten.avif 150w,/static/6e2d9e3635750bc519675010efe8d804/6e445/Lauri_Lavanti_-_hymyillen_nojaten.avif 300w,/static/6e2d9e3635750bc519675010efe8d804/6175a/Lauri_Lavanti_-_hymyillen_nojaten.avif 600w,/static/6e2d9e3635750bc519675010efe8d804/b9d9f/Lauri_Lavanti_-_hymyillen_nojaten.avif 1200w"
+                    sizes="(min-width: 600px) 600px, 100vw"
+                    type="image/avif"
+                  />
+                  <source
+                    data-srcset="/static/6e2d9e3635750bc519675010efe8d804/00a0c/Lauri_Lavanti_-_hymyillen_nojaten.webp 150w,/static/6e2d9e3635750bc519675010efe8d804/3c8b5/Lauri_Lavanti_-_hymyillen_nojaten.webp 300w,/static/6e2d9e3635750bc519675010efe8d804/e5002/Lauri_Lavanti_-_hymyillen_nojaten.webp 600w,/static/6e2d9e3635750bc519675010efe8d804/6c281/Lauri_Lavanti_-_hymyillen_nojaten.webp 1200w"
+                    sizes="(min-width: 600px) 600px, 100vw"
                     type="image/webp"
                   />
                   <img
-                    alt="Kuva Lauri Lavannista, taustalla näkyy koira"
+                    alt="Kuva Lauri Lavannista hymyilemässä, katsoen oikealle, samalla kun hän nojaa pöytään ja käsiinsä"
                     data-gatsby-image-ssr=""
                     data-main-image=""
-                    data-src="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg"
-                    data-srcset="/static/963e993925c36bdbb3eea7c759902afb/06c10/lauri-lavanti.jpg 1921w,/static/963e993925c36bdbb3eea7c759902afb/3ca67/lauri-lavanti.jpg 3842w"
+                    data-src="/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg"
+                    data-srcset="/static/6e2d9e3635750bc519675010efe8d804/457e3/Lauri_Lavanti_-_hymyillen_nojaten.jpg 150w,/static/6e2d9e3635750bc519675010efe8d804/b6e33/Lauri_Lavanti_-_hymyillen_nojaten.jpg 300w,/static/6e2d9e3635750bc519675010efe8d804/49d07/Lauri_Lavanti_-_hymyillen_nojaten.jpg 600w,/static/6e2d9e3635750bc519675010efe8d804/a12ee/Lauri_Lavanti_-_hymyillen_nojaten.jpg 1200w"
                     decoding="async"
                     loading="lazy"
-                    sizes="1921px"
+                    sizes="(min-width: 600px) 600px, 100vw"
                     style="height: 100%; left: 0px; position: absolute; top: 0px; transform: translateZ(0); transition: opacity 250ms linear; width: 100%; will-change: opacity; opacity: 0;"
                   />
                 </picture>
@@ -2556,69 +2569,22 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               >
                 <h2
                   class="c28 c29 c30"
-                  id="terveys-kuuluu-kaikille"
+                  id="minusta"
                   itemprop="headline"
                 >
-                  Terveys kuuluu kaikille
+                  Minusta
                 </h2>
               </div>
             </a>
-            <aside
-              aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-              class="c31"
-            >
-              <time
-                datetime="2022-01-19"
-              >
-                19.01.2022
-              </time>
-              <ul
-                class="c32"
-              >
-                <li
-                  class="c33"
-                >
-                  <a
-                    class="c34"
-                    href="/kategoria/aluevaalit/"
-                  >
-                    #
-                    aluevaalit
-                  </a>
-                </li>
-                <li
-                  class="c33"
-                >
-                  <a
-                    class="c34"
-                    href="/kategoria/kirkkonummi/"
-                  >
-                    #
-                    kirkkonummi
-                  </a>
-                </li>
-                <li
-                  class="c33"
-                >
-                  <a
-                    class="c34"
-                    href="/kategoria/soteuudistus/"
-                  >
-                    #
-                    soteuudistus
-                  </a>
-                </li>
-              </ul>
-            </aside>
             <p
-              class="c35 c36"
+              class="c31 c32"
               itemprop="description"
             >
-              Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
+              Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.
                
               <a
-                class="c34 c37"
-                href="/blogi/terveys-kuuluu-kaikille/"
+                class="c33 c34"
+                href="/minusta/"
                 rel="permalink"
               >
                 Lue lisää »
@@ -2691,7 +2657,7 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-              class="c31"
+              class="c35"
             >
               <time
                 datetime="2024-04-03"
@@ -2699,13 +2665,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                 03.04.2024
               </time>
               <ul
-                class="c32"
+                class="c36"
               >
                 <li
-                  class="c33"
+                  class="c37"
                 >
                   <a
-                    class="c34"
+                    class="c33"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -2713,10 +2679,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c33"
+                  class="c37"
                 >
                   <a
-                    class="c34"
+                    class="c33"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2724,10 +2690,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c33"
+                  class="c37"
                 >
                   <a
-                    class="c34"
+                    class="c33"
                     href="/kategoria/osuuskauppavaalit/"
                   >
                     #
@@ -2737,13 +2703,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
               </ul>
             </aside>
             <p
-              class="c35 c36"
+              class="c31 c32"
               itemprop="description"
             >
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c34 c37"
+                class="c33 c34"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >

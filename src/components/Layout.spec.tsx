@@ -4,7 +4,8 @@ import { parse } from 'date-fns'
 
 import gatsbyConfig from '../../gatsby-config'
 import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../tests/images.mock'
-import { coopElectionsConcernUsAll, healthBelongsToAll } from '../../tests/posts.mock'
+import { aboutMe } from '../../tests/pages.mock'
+import { coopElectionsConcernUsAll } from '../../tests/posts.mock'
 import Layout from './Layout'
 
 interface SiteMetadata {
@@ -290,7 +291,12 @@ describe('<Layout />', () => {
                                 __typename: 'ContentfulExcerptList',
                                 contentful_id: '6kFlEZ2Nv6UXotMJJNIFGm',
                                 limit: 1,
-                                pinned: [{ slug: healthBelongsToAll.slug }],
+                                pinned: [aboutMe].map(({ backgroundImage, description, slug, title }) => ({
+                                    backgroundImage,
+                                    description,
+                                    slug,
+                                    title,
+                                })),
                             },
                         ],
                     }}
@@ -300,7 +306,7 @@ describe('<Layout />', () => {
             )
 
             // Check ExcerptList is present
-            expect(screen.getByRole('article', { name: healthBelongsToAll.title })).toBeInTheDocument()
+            expect(screen.getByRole('article', { name: aboutMe.title })).toBeInTheDocument()
             expect(screen.getByRole('article', { name: coopElectionsConcernUsAll.title })).toBeInTheDocument()
 
             expect(container.firstChild).toMatchSnapshot()

@@ -1,7 +1,12 @@
 import type { ContentfulPage } from '../src/types/contentful'
 
 import { contactInfoLinks } from './contactInfo.mock'
-import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from './images.mock'
+import {
+    inFrontOfWoodsImage,
+    inFrontOfWoodsImageDescription,
+    smilingImage,
+    smilingImageDescription,
+} from './images.mock'
 
 const image = {
     description: inFrontOfWoodsImageDescription,
@@ -9,7 +14,7 @@ const image = {
 }
 
 const images = {
-    backgroundImage: { gatsbyImageData: smilingImage },
+    backgroundImage: { description: smilingImageDescription, gatsbyImageData: smilingImage },
     image,
     socialImage: { gatsbyImageData: smilingImage },
 }
@@ -31,6 +36,7 @@ export const frontPage: ContentfulPage = {
     jsonLdType: 'WebSite',
     leftAlignedTitle: true,
     secondaryTitle: 'Kasvava ja kestävä Kirkkonummi',
+    slug: 'index',
     socialImage: {
         gatsbyImageData: smilingImage,
     },
@@ -188,6 +194,7 @@ export const aboutMe: ContentfulPage = {
     jsonLdType: 'Person',
     leftAlignedTitle: false,
     secondaryTitle: null,
+    slug: 'minusta',
     subtitle: null,
     title: 'Minusta',
     updatedAt: '2023-10-17T03:58:48.870Z',
@@ -208,6 +215,7 @@ export const blog: ContentfulPage = {
     jsonLdType: 'WebPage',
     leftAlignedTitle: true,
     secondaryTitle: null,
+    slug: 'blogi',
     subtitle: null,
     title: 'Blogi',
     updatedAt: '2022-07-31T20:26:27.574Z',
@@ -223,6 +231,7 @@ export const contactMe: ContentfulPage = {
     jsonLdType: 'Person',
     leftAlignedTitle: true,
     secondaryTitle: null,
+    slug: 'ota-yhteytta',
     subtitle: null,
     title: 'Ota yhteyttä',
     updatedAt: '2022-07-31T20:25:55.535Z',

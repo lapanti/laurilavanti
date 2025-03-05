@@ -1,17 +1,16 @@
-import type { ContentfulPostExcerpt } from '../types/contentful'
+import type { ContentfulPinnedPage, ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
-import { useCallback, useMemo } from 'react'
+import { useMemo } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, CONTENT_PADDING, sizes } from '../lib/styles'
-import { isContentfulPostExcerpt } from '../lib/typeGuards'
 import Excerpt from './excerptList/Excerpt'
 
 interface Props {
     className?: string
     limit?: number
-    pinned?: string[] // List of pinned posts slugs
+    pinned?: ContentfulPinnedPage[] // List of pinned pages
     relatedTags?: string[]
     tag?: string
     currentSlug?: string
@@ -49,18 +48,8 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
         }
     `)
 
-    const pinnedNodes = useMemo(() => {
-        if (pinned?.length) {
-            return pinned
-                .map((slug) => data.allContentfulPost.nodes.find((post) => post.slug === slug))
-                .filter(isContentfulPostExcerpt)
-        }
-    }, [pinned, data])
-
     const allNodes = useMemo(() => {
-        const all = data.allContentfulPost.nodes.filter(
-            (curr) => !pinned?.includes(curr.slug) && (!currentSlug || currentSlug !== curr.slug)
-        )
+        const all = data.allContentfulPost.nodes.filter((curr) => !currentSlug || currentSlug !== curr.slug)
         if (relatedTags?.length) {
             return all
                 .reduce<[ContentfulPostExcerpt, number][]>(
@@ -102,26 +91,30 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
 
     const nodes = useMemo(() => (limit ? allNodes.slice(0, limit) : allNodes), [allNodes, limit])
 
-    const nodeToExcerpt = useCallback(
-        (node: ContentfulPostExcerpt) => (
-            <Excerpt
-                key={node.publishDate || node.createdAt}
-                date={node.publishDate || node.createdAt}
-                excerpt={node.excerpt}
-                image={node.backgroundImage?.gatsbyImageData ?? node.headerImage.gatsbyImageData}
-                imageAlt={node.backgroundImage?.description ?? node.headerImage.description}
-                slug={node.slug}
-                tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
-                title={node.title}
-            />
-        ),
-        []
-    )
-
     return (
         <ul className={className}>
-            {pinnedNodes?.map(nodeToExcerpt)}
-            {nodes.map(nodeToExcerpt)}
+            {pinned?.map((node: ContentfulPinnedPage) => (
+                <Excerpt
+                    key={node.slug}
+                    excerpt={node.description}
+                    image={node.backgroundImage?.gatsbyImageData}
+                    imageAlt={node.backgroundImage?.description}
+                    slug={node.slug}
+                    title={node.title}
+                />
+            ))}
+            {nodes.map((node: ContentfulPostExcerpt) => (
+                <Excerpt
+                    key={`blogi/${node.slug}`}
+                    date={node.publishDate || node.createdAt}
+                    excerpt={node.excerpt}
+                    image={node.backgroundImage?.gatsbyImageData ?? node.headerImage.gatsbyImageData}
+                    imageAlt={node.backgroundImage?.description ?? node.headerImage.description}
+                    slug={`blogi/${node.slug}`}
+                    tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
+                    title={node.title}
+                />
+            ))}
         </ul>
     )
 }
