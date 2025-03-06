@@ -24,7 +24,6 @@ const FrontPage = ({ data, pageContext: { slug } }: Props): JSX.Element => (
         pathname={`/${slug}/`}
         secondaryTitle={data?.contentfulPage?.secondaryTitle ?? undefined}
         socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
-        subtitle={data?.contentfulPage?.subtitle ?? undefined}
         title={data?.contentfulPage?.title}
         type={data?.contentfulPage?.jsonLdType}
         isFrontPage
@@ -38,7 +37,6 @@ export const query = graphql`
             description
             jsonLdType
             title
-            subtitle
             secondaryTitle
             body {
                 raw

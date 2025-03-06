@@ -7,6 +7,7 @@ import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE,
 
 const Title = styled.h1({
     ...fontSizes[3],
+    color: colors.peach,
     fontFamily: fontFamilies.heading,
     position: 'relative',
     top: sizes[0.5],
@@ -15,30 +16,22 @@ const Title = styled.h1({
     },
 })
 
-const Subtitle = styled.p({
-    ...fontSizes[1.5],
-    fontWeight: fontWeights.bold,
-})
-
 const SecondaryTitle = styled.h2({
     ...fontSizes[2.25],
+    color: colors.white,
     fontWeight: fontWeights.bold,
 })
 
 const Titles = styled.div({
-    color: colors.peach,
     display: 'flex',
     flexDirection: 'column',
     gap: sizes[1.5],
     padding: sizes[0.875],
 
     [breakpoints[1200].min]: {
-        [SecondaryTitle]: {
-            marginTop: sizes[3],
-        },
-        alignItems: 'flex-start',
+        alignItems: 'flex-end',
         gap: sizes[3],
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         padding: sizes[3.75],
         width: '50%',
     },
@@ -99,7 +92,6 @@ interface Props {
     imageData?: IGatsbyImageData
     imageAlt?: string
     title: string
-    subtitle?: string
     secondaryTitle?: string
     backgroundImage?: IGatsbyImageData
 }
@@ -109,7 +101,6 @@ const HeroBannerComponent = ({
     imageData,
     imageAlt,
     title,
-    subtitle,
     secondaryTitle,
     backgroundImage,
 }: Props): JSX.Element => {
@@ -120,7 +111,6 @@ const HeroBannerComponent = ({
         <div className={className}>
             <Titles>
                 <Title>{title}</Title>
-                {subtitle && <Subtitle>{subtitle}</Subtitle>}
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
             <ImageContainer>

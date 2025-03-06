@@ -172,7 +172,6 @@ const options = {
 interface Props extends Omit<SeoProps, 'title' | 'image'> {
     className?: string
     title: string
-    subtitle?: string
     secondaryTitle?: string
     heroImage?: IGatsbyImageData
     heroImageAlt?: string
@@ -189,7 +188,6 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
 const LayoutComponent = ({
     className,
     title,
-    subtitle,
     secondaryTitle,
     heroImage,
     heroImageAlt,
@@ -247,7 +245,6 @@ const LayoutComponent = ({
                                 imageAlt={heroImageAlt}
                                 imageData={heroImage}
                                 secondaryTitle={secondaryTitle}
-                                subtitle={subtitle}
                                 title={title}
                             />
                         )}

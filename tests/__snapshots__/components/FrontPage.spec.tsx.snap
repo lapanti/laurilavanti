@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<FrontPage /> should render 1`] = `
-.c26 {
+.c24 {
   font-family: "IBM Plex Mono",Lucida Sans Typewriter;
   font-weight: 700;
   grid-column-start: 3;
@@ -24,7 +24,7 @@ exports[`<FrontPage /> should render 1`] = `
   text-decoration: underline;
 }
 
-.c32 {
+.c30 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -32,13 +32,13 @@ exports[`<FrontPage /> should render 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c32 :hover,
-.c32 :active,
-.c32 :focus {
+.c30 :hover,
+.c30 :active,
+.c30 :focus {
   text-decoration: none;
 }
 
-.c41 {
+.c39 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -46,13 +46,13 @@ exports[`<FrontPage /> should render 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c41 :hover,
-.c41 :active,
-.c41 :focus {
+.c39 :hover,
+.c39 :active,
+.c39 :focus {
   text-decoration: underline;
 }
 
-.c27 {
+.c25 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
@@ -61,46 +61,46 @@ exports[`<FrontPage /> should render 1`] = `
   margin-top: 1rem;
 }
 
-.c39 {
+.c37 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c40 {
+.c38 {
   margin-right: 1rem;
 }
 
-.c40 :last-child {
+.c38 :last-child {
   margin-right: 0px;
 }
 
-.c38 {
+.c36 {
   display: flex;
   flex-direction: column;
 }
 
-.c37 {
+.c35 {
   font-family: "IBM Plex Sans",Trebuchet MS;
   grid-column-start: auto;
 }
 
-.c33 {
+.c31 {
   color: rgb(0, 0, 0);
 }
 
-.c33:hover .c36 {
+.c31:hover .c34 {
   text-decoration: underline;
 }
 
-.c34 {
+.c32 {
   aspect-ratio: 16/9;
   display: flex;
   width: 100%;
 }
 
-.c35 {
+.c33 {
   align-items: flex-end;
   display: flex;
   margin-top: 0.25rem;
@@ -109,21 +109,21 @@ exports[`<FrontPage /> should render 1`] = `
   z-index: 40;
 }
 
-.c42 {
+.c40 {
   font-size: 1.125rem;
   line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
-.c43 {
+.c41 {
   white-space: nowrap;
 }
 
-.c31 {
+.c29 {
   max-width: 35rem;
 }
 
-.c30 {
+.c28 {
   column-gap: 4rem;
   display: grid;
   grid-column-start: 3;
@@ -137,19 +137,19 @@ exports[`<FrontPage /> should render 1`] = `
   row-gap: 3.5rem;
 }
 
-.c29 {
+.c27 {
   grid-column-start: 3;
   margin-bottom: 1rem;
 }
 
-.c49 {
+.c47 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c49 >* {
+.c47 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -158,13 +158,31 @@ exports[`<FrontPage /> should render 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.c46 {
+  padding: 0px;
+}
+
+.c46 :hover,
+.c46 :focus {
+  fill: #4267B2;
+}
+
 .c48 {
   padding: 0px;
 }
 
 .c48 :hover,
 .c48 :focus {
-  fill: #4267B2;
+  fill: rgb(0, 0, 0);
+}
+
+.c49 {
+  padding: 0px;
+}
+
+.c49 :hover,
+.c49 :focus {
+  fill: url(#instagram-gradient);
 }
 
 .c50 {
@@ -173,7 +191,7 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c50 :hover,
 .c50 :focus {
-  fill: rgb(0, 0, 0);
+  fill: #0E76A8;
 }
 
 .c51 {
@@ -182,40 +200,22 @@ exports[`<FrontPage /> should render 1`] = `
 
 .c51 :hover,
 .c51 :focus {
-  fill: url(#instagram-gradient);
-}
-
-.c52 {
-  padding: 0px;
-}
-
-.c52 :hover,
-.c52 :focus {
-  fill: #0E76A8;
-}
-
-.c53 {
-  padding: 0px;
-}
-
-.c53 :hover,
-.c53 :focus {
   fill: #0060df;
 }
 
-.c47 {
+.c45 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c45 {
+.c43 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c45 >.,
-.c45 >.c46 {
+.c43 >.,
+.c43 >.c44 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -223,7 +223,7 @@ exports[`<FrontPage /> should render 1`] = `
   justify-content: center;
 }
 
-.c44 {
+.c42 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -324,58 +324,53 @@ exports[`<FrontPage /> should render 1`] = `
 .c17 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
 .c18 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.c20 {
   font-size: 2.25rem;
   line-height: 2.5rem;
+  color: rgb(255, 255, 255);
   font-weight: 700;
 }
 
 .c16 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 0.875rem;
 }
 
-.c25 {
+.c23 {
   bottom: 0;
   margin-left: -5rem;
   margin-top: auto;
 }
 
-.c21 {
+.c19 {
   display: flex;
   flex: 1;
   overflow: hidden;
   position: relative;
 }
 
-.c21 .c24 {
+.c19 .c22 {
   width: 560px;
 }
 
-.c22 {
+.c20 {
   display: none;
 }
 
-.c23 {
+.c21 {
   height: 100%;
   width: 100%;
 }
 
-.c23:after {
+.c21:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -405,7 +400,7 @@ exports[`<FrontPage /> should render 1`] = `
   grid-template-columns: 1fr 0.5rem min(calc(75rem - 1rem), calc(100% - 1.125rem)) 0.5rem 1fr;
 }
 
-.c28 {
+.c26 {
   grid-column-start: 3;
 }
 
@@ -419,25 +414,25 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c30 {
+  .c28 {
     grid-template-columns: repeat(2, 35rem);
     margin-top: 3.5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c45 {
+  .c43 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c45 >.{
+  .c43 >.{
     justify-content: flex-start;
   }
 
-  .c45 >.c46 {
+  .c43 >.c44 {
     justify-content: flex-end;
   }
 }
@@ -475,34 +470,30 @@ exports[`<FrontPage /> should render 1`] = `
 
 @media (min-width: 1200px) {
   .c16 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
-  }
-
-  .c16 .c19 {
-    margin-top: 3rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c25 {
+  .c23 {
     position: absolute!important;
     right: -5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     overflow: visible;
     width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  .c22 {
+  .c20 {
     display: flex;
     height: 100%;
     position: absolute;
@@ -654,25 +645,20 @@ exports[`<FrontPage /> should render 1`] = `
             >
               Lauri Lavanti
             </h1>
-            <p
-              class="c18"
-            >
-              Ehdolla kunta- ja aluevaaleissa 2025
-            </p>
             <h2
-              class="c19 c20"
+              class="c18"
             >
               Kasvava ja kestävä Kirkkonummi
             </h2>
           </div>
           <div
-            class="c21"
+            class="c19"
           >
             <div
-              class="c22"
+              class="c20"
             >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c23"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c21"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -722,7 +708,7 @@ exports[`<FrontPage /> should render 1`] = `
               </div>
             </div>
             <div
-              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c24 c25"
+              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c22 c23"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
             >
@@ -773,30 +759,30 @@ exports[`<FrontPage /> should render 1`] = `
           </div>
         </div>
         <h2
-          class="c26"
+          class="c24"
           id="lyhyesti"
         >
           Lyhyesti
         </h2>
         <p
-          class="c27 c28"
+          class="c25 c26"
         >
           Kirkkonummelainen politiikasta kiinnostunut diplomi-insinööri. Vihreiden luottamushenkilö (entisen perusturvajaoston jäsen, suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen), ohjelmistokehittäjä ja kolmen lapsen isä.
         </p>
         <h2
-          class="c26"
+          class="c24"
           id="uusimmat-kirjoitukset"
         >
           Uusimmat kirjoitukset
         </h2>
         <hr
-          class="c29"
+          class="c27"
         />
         <ul
-          class="c30"
+          class="c28"
         >
           <li
-            class="c31"
+            class="c29"
           >
             <article
               aria-label="VBO:n vaalit koskettavat meitä kaikkia"
@@ -804,12 +790,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c32 c33"
+                class="c30 c31"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c34"
+                  class="gatsby-image-wrapper c32"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -847,10 +833,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c35"
+                  class="c33"
                 >
                   <h2
-                    class="c36 c26 c37"
+                    class="c34 c24 c35"
                     id="vbo:n-vaalit-koskettavat-meita-kaikkia"
                     itemprop="headline"
                   >
@@ -860,7 +846,7 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-                class="c38"
+                class="c36"
               >
                 <time
                   datetime="2024-04-03"
@@ -868,13 +854,13 @@ exports[`<FrontPage /> should render 1`] = `
                   03.04.2024
                 </time>
                 <ul
-                  class="c39"
+                  class="c37"
                 >
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/kaavoitus/"
                     >
                       #
@@ -882,10 +868,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -893,10 +879,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/osuuskauppavaalit/"
                     >
                       #
@@ -906,13 +892,13 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c27 c42"
+                class="c25 c40"
                 itemprop="description"
               >
                 Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                  
                 <a
-                  class="c41 c43"
+                  class="c39 c41"
                   href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                   rel="permalink"
                 >
@@ -922,7 +908,7 @@ exports[`<FrontPage /> should render 1`] = `
             </article>
           </li>
           <li
-            class="c31"
+            class="c29"
           >
             <article
               aria-label="Luontomme on valttimme - vuodesta toiseen"
@@ -930,12 +916,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c32 c33"
+                class="c30 c31"
                 href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c34"
+                  class="gatsby-image-wrapper c32"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -973,10 +959,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c35"
+                  class="c33"
                 >
                   <h2
-                    class="c36 c26 c37"
+                    class="c34 c24 c35"
                     id="luontomme-on-valttimme---vuodesta-toiseen"
                     itemprop="headline"
                   >
@@ -986,7 +972,7 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Luontomme on valttimme - vuodesta toiseen meta-tiedot"
-                class="c38"
+                class="c36"
               >
                 <time
                   datetime="2024-01-31"
@@ -994,13 +980,13 @@ exports[`<FrontPage /> should render 1`] = `
                   31.01.2024
                 </time>
                 <ul
-                  class="c39"
+                  class="c37"
                 >
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/infra/"
                     >
                       #
@@ -1008,10 +994,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/kaavoitus/"
                     >
                       #
@@ -1019,10 +1005,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1032,13 +1018,13 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c27 c42"
+                class="c25 c40"
                 itemprop="description"
               >
                 Kirkkonummen tärkeimpiä vetovoimia on meidän luontomme. Nyt alkanut osallistava budjetointi on sen jälleen osoittanut.
                  
                 <a
-                  class="c41 c43"
+                  class="c39 c41"
                   href="/blogi/luontomme-on-valttimme-vuodesta-toiseen/"
                   rel="permalink"
                 >
@@ -1048,7 +1034,7 @@ exports[`<FrontPage /> should render 1`] = `
             </article>
           </li>
           <li
-            class="c31"
+            class="c29"
           >
             <article
               aria-label="Uusi vuosi, tuttu talvikunnossapito"
@@ -1056,12 +1042,12 @@ exports[`<FrontPage /> should render 1`] = `
               itemtype="https://schema.org/CreativeWork"
             >
               <a
-                class="c32 c33"
+                class="c30 c31"
                 href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                 rel="permalink"
               >
                 <div
-                  class="gatsby-image-wrapper c34"
+                  class="gatsby-image-wrapper c32"
                   data-gatsby-image-wrapper=""
                   style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
                 >
@@ -1099,10 +1085,10 @@ exports[`<FrontPage /> should render 1`] = `
                   </script>
                 </div>
                 <div
-                  class="c35"
+                  class="c33"
                 >
                   <h2
-                    class="c36 c26 c37"
+                    class="c34 c24 c35"
                     id="uusi-vuosi,-tuttu-talvikunnossapito"
                     itemprop="headline"
                   >
@@ -1112,7 +1098,7 @@ exports[`<FrontPage /> should render 1`] = `
               </a>
               <aside
                 aria-label="Kirjoituksen Uusi vuosi, tuttu talvikunnossapito meta-tiedot"
-                class="c38"
+                class="c36"
               >
                 <time
                   datetime="2024-01-12"
@@ -1120,13 +1106,13 @@ exports[`<FrontPage /> should render 1`] = `
                   12.01.2024
                 </time>
                 <ul
-                  class="c39"
+                  class="c37"
                 >
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/infra/"
                     >
                       #
@@ -1134,10 +1120,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/kirkkonummi/"
                     >
                       #
@@ -1145,10 +1131,10 @@ exports[`<FrontPage /> should render 1`] = `
                     </a>
                   </li>
                   <li
-                    class="c40"
+                    class="c38"
                   >
                     <a
-                      class="c41"
+                      class="c39"
                       href="/kategoria/liikenne/"
                     >
                       #
@@ -1158,13 +1144,13 @@ exports[`<FrontPage /> should render 1`] = `
                 </ul>
               </aside>
               <p
-                class="c27 c42"
+                class="c25 c40"
                 itemprop="description"
               >
                 Kirkkonummen talvikunnossapito on jälleen osoittautunut yhtä huonoksi kuin edellisinäkin vuosina. Asiat voisivat olla myös toisin, kunhan vain yhdessä päättäisimme tavoitella laatua.
                  
                 <a
-                  class="c41 c43"
+                  class="c39 c41"
                   href="/blogi/uusi-vuosi-tuttu-talvikunnossapito/"
                   rel="permalink"
                 >
@@ -1175,15 +1161,15 @@ exports[`<FrontPage /> should render 1`] = `
           </li>
         </ul>
         <p
-          class="c27 c28"
+          class="c25 c26"
         />
       </article>
     </main>
     <footer
-      class="c44"
+      class="c42"
     >
       <div
-        class="c45"
+        class="c43"
       >
         <div
           class=""
@@ -1195,13 +1181,13 @@ exports[`<FrontPage /> should render 1`] = `
           />
         </div>
         <ul
-          class="c46 c47"
+          class="c44 c45"
         >
           <li
-            class="c48"
+            class="c46"
           >
             <a
-              class="c49"
+              class="c47"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1223,10 +1209,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c50"
+            class="c48"
           >
             <a
-              class="c49"
+              class="c47"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1248,10 +1234,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c51"
+            class="c49"
           >
             <a
-              class="c49"
+              class="c47"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1273,10 +1259,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c52"
+            class="c50"
           >
             <a
-              class="c49"
+              class="c47"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1298,10 +1284,10 @@ exports[`<FrontPage /> should render 1`] = `
             </a>
           </li>
           <li
-            class="c53"
+            class="c51"
           >
             <a
-              class="c49"
+              class="c47"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1568,13 +1554,13 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 .c17 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
 .c16 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -1677,9 +1663,9 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 
 @media (min-width: 1200px) {
   .c16 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
   }

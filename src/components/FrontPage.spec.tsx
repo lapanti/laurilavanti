@@ -27,7 +27,6 @@ describe('<FrontPage />', () => {
                         secondaryTitle: null,
                         slug: 'index',
                         socialImage: null,
-                        subtitle: null,
                         title: '',
                         updatedAt: '',
                     },
