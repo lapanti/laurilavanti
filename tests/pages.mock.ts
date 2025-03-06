@@ -40,7 +40,6 @@ export const frontPage: ContentfulPage = {
     socialImage: {
         gatsbyImageData: smilingImage,
     },
-    subtitle: 'Ehdolla kunta- ja aluevaaleissa 2025',
     title: 'Lauri Lavanti',
     updatedAt: '2023-05-24T14:51:46.661Z',
 }
@@ -195,7 +194,6 @@ export const aboutMe: ContentfulPage = {
     leftAlignedTitle: false,
     secondaryTitle: null,
     slug: 'minusta',
-    subtitle: null,
     title: 'Minusta',
     updatedAt: '2023-10-17T03:58:48.870Z',
 }
@@ -216,7 +214,6 @@ export const blog: ContentfulPage = {
     leftAlignedTitle: true,
     secondaryTitle: null,
     slug: 'blogi',
-    subtitle: null,
     title: 'Blogi',
     updatedAt: '2022-07-31T20:26:27.574Z',
 }
@@ -232,7 +229,6 @@ export const contactMe: ContentfulPage = {
     leftAlignedTitle: true,
     secondaryTitle: null,
     slug: 'ota-yhteytta',
-    subtitle: null,
     title: 'Ota yhteyttä',
     updatedAt: '2022-07-31T20:25:55.535Z',
 }

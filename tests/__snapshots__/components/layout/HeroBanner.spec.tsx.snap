@@ -4,58 +4,53 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 .c2 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
 .c3 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.c5 {
   font-size: 2.25rem;
   line-height: 2.5rem;
+  color: rgb(255, 255, 255);
   font-weight: 700;
 }
 
 .c1 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 0.875rem;
 }
 
-.c10 {
+.c8 {
   bottom: 0;
   margin-left: -5rem;
   margin-top: auto;
 }
 
-.c6 {
+.c4 {
   display: flex;
   flex: 1;
   overflow: hidden;
   position: relative;
 }
 
-.c6 .c9 {
+.c4 .c7 {
   width: 560px;
 }
 
-.c7 {
+.c5 {
   display: none;
 }
 
-.c8 {
+.c6 {
   height: 100%;
   width: 100%;
 }
 
-.c8:after {
+.c6:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -84,34 +79,30 @@ exports[`<HeroBanner /> should render maximal 1`] = `
 
 @media (min-width: 1200px) {
   .c1 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
-  }
-
-  .c1 .c4 {
-    margin-top: 3rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c10 {
+  .c8 {
     position: absolute!important;
     right: -5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c4 {
     overflow: visible;
     width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  .c7 {
+  .c5 {
     display: flex;
     height: 100%;
     position: absolute;
@@ -137,25 +128,20 @@ exports[`<HeroBanner /> should render maximal 1`] = `
     >
       Test Title
     </h1>
-    <p
-      class="c3"
-    >
-      Sub test sub title
-    </p>
     <h2
-      class="c4 c5"
+      class="c3"
     >
       Secondary test secondary title
     </h2>
   </div>
   <div
-    class="c6"
+    class="c4"
   >
     <div
-      class="c7"
+      class="c5"
     >
       <div
-        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c8"
+        class="gatsby-image-wrapper gatsby-image-wrapper-constrained c6"
         data-gatsby-image-wrapper=""
         style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
       >
@@ -205,7 +191,7 @@ exports[`<HeroBanner /> should render maximal 1`] = `
       </div>
     </div>
     <div
-      class="gatsby-image-wrapper gatsby-image-wrapper-constrained c9 c10"
+      class="gatsby-image-wrapper gatsby-image-wrapper-constrained c7 c8"
       data-gatsby-image-wrapper=""
       style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
     >
@@ -261,13 +247,13 @@ exports[`<HeroBanner /> should render minimal 1`] = `
 .c2 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
 .c1 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -300,9 +286,9 @@ exports[`<HeroBanner /> should render minimal 1`] = `
 
 @media (min-width: 1200px) {
   .c1 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
   }
@@ -344,13 +330,13 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
 .c2 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
 .c1 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -383,9 +369,9 @@ exports[`<HeroBanner /> should render minimal with borken image data 1`] = `
 
 @media (min-width: 1200px) {
   .c1 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
   }
@@ -427,13 +413,13 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
 .c2 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
 .c1 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -476,9 +462,9 @@ exports[`<HeroBanner /> should render minimal with image with no image alt 1`] =
 
 @media (min-width: 1200px) {
   .c1 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
   }

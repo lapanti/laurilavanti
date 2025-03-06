@@ -12064,14 +12064,14 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   text-decoration: underline;
 }
 
-.c27 {
+.c26 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c27 >* {
+.c26 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -12080,13 +12080,22 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c26 {
+.c25 {
   padding: 0px;
 }
 
-.c26 :hover,
-.c26 :focus {
+.c25 :hover,
+.c25 :focus {
   fill: #4267B2;
+}
+
+.c27 {
+  padding: 0px;
+}
+
+.c27 :hover,
+.c27 :focus {
+  fill: rgb(0, 0, 0);
 }
 
 .c28 {
@@ -12095,7 +12104,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c28 :hover,
 .c28 :focus {
-  fill: rgb(0, 0, 0);
+  fill: url(#instagram-gradient);
 }
 
 .c29 {
@@ -12104,7 +12113,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c29 :hover,
 .c29 :focus {
-  fill: url(#instagram-gradient);
+  fill: #0E76A8;
 }
 
 .c30 {
@@ -12113,31 +12122,22 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c30 :hover,
 .c30 :focus {
-  fill: #0E76A8;
-}
-
-.c31 {
-  padding: 0px;
-}
-
-.c31 :hover,
-.c31 :focus {
   fill: #0060df;
 }
 
-.c25 {
+.c24 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c23 {
+.c22 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c23 >.,
-.c23 >.c24 {
+.c22 >.,
+.c22 >.c23 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -12145,7 +12145,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   justify-content: center;
 }
 
-.c22 {
+.c21 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -12246,39 +12246,33 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 .c17 {
   font-size: 3rem;
   line-height: 1;
+  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
   position: relative;
   top: 0.5rem;
 }
 
-.c18 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
 .c16 {
-  color: rgb(248, 207, 169);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 0.875rem;
 }
 
-.c21 {
+.c20 {
   bottom: 0;
   margin-left: -5rem;
   margin-top: auto;
 }
 
-.c19 {
+.c18 {
   display: flex;
   flex: 1;
   overflow: hidden;
   position: relative;
 }
 
-.c19 .c20 {
+.c18 .c19 {
   width: 560px;
 }
 
@@ -12312,18 +12306,18 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c22 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c23 >.{
+  .c22 >.{
     justify-content: flex-start;
   }
 
-  .c23 >.c24 {
+  .c22 >.c23 {
     justify-content: flex-end;
   }
 }
@@ -12361,23 +12355,23 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 @media (min-width: 1200px) {
   .c16 {
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 3rem;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 3.75rem;
     width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  .c21 {
+  .c20 {
     position: absolute!important;
     right: -5rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .c19 {
+  .c18 {
     overflow: visible;
     width: 50%;
   }
@@ -12526,17 +12520,12 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           >
             Title
           </h1>
-          <p
-            class="c18"
-          >
-            Subtesxttitle
-          </p>
         </div>
         <div
-          class="c19"
+          class="c18"
         >
           <div
-            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c20 c21"
+            class="gatsby-image-wrapper gatsby-image-wrapper-constrained c19 c20"
             data-gatsby-image-wrapper=""
             style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
           >
@@ -12590,10 +12579,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
     </article>
   </main>
   <footer
-    class="c22"
+    class="c21"
   >
     <div
-      class="c23"
+      class="c22"
     >
       <div
         class=""
@@ -12605,13 +12594,13 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
         />
       </div>
       <ul
-        class="c24 c25"
+        class="c23 c24"
       >
         <li
-          class="c26"
+          class="c25"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.facebook.com/laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12633,10 +12622,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c28"
+          class="c27"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.threads.net/@laurilavanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12658,10 +12647,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c29"
+          class="c28"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.instagram.com/laurilavanti/"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12683,10 +12672,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c30"
+          class="c29"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://www.linkedin.com/in/lapanti"
             rel="me noopener noreferrer"
             target="_blank"
@@ -12708,10 +12697,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
           </a>
         </li>
         <li
-          class="c31"
+          class="c30"
         >
           <a
-            class="c27"
+            class="c26"
             href="https://bsky.app/profile/laurilavanti.fi"
             rel="me noopener noreferrer"
             target="_blank"

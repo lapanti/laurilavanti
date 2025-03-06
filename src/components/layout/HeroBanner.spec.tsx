@@ -7,7 +7,6 @@ import HeroBanner from './HeroBanner'
 
 describe('<HeroBanner />', () => {
     const title = 'Test Title'
-    const subtitle = 'Sub test sub title'
     const secondaryTitle = 'Secondary test secondary title'
 
     it('should render minimal', () => {
@@ -47,13 +46,11 @@ describe('<HeroBanner />', () => {
                 imageAlt={inFrontOfWoodsImageDescription}
                 imageData={inFrontOfWoodsImage}
                 secondaryTitle={secondaryTitle}
-                subtitle={subtitle}
                 title={title}
             />
         )
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByText(subtitle)).toBeInTheDocument()
         expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
         expect(screen.getByRole('img', { name: inFrontOfWoodsImageDescription })).toBeInTheDocument()
 
