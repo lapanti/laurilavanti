@@ -24,10 +24,10 @@ describe('<HeroBanner />', () => {
         render(
             <HeroBanner
                 backgroundImage={backgroundImage}
-                communalElectionNumber={communalElectionNumber ?? null}
+                communalElectionNumber={communalElectionNumber}
                 imageAlt={imageAlt}
                 imageData={imageData}
-                regionalElectionNumber={regionalElectionNumber ?? null}
+                regionalElectionNumber={regionalElectionNumber}
                 secondaryTitle={secondaryTitle}
                 title={title ?? mockTitle}
             />
