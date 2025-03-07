@@ -1,97 +1,123 @@
+import type { ComponentProps } from 'react'
+
 import { render, screen } from '@testing-library/react'
 
-import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription, smilingImage } from '../../../tests/images.mock'
+import { inFrontOfWoodsImage, smilingImage, smilingImageDescription } from '../../../tests/images.mock'
 import TitleBanner from './TitleBanner'
 
 describe('<TitleBanner />', () => {
-    const title = 'Banner title'
-    const publishDate = '4.10.2024'
-    const tags = ['kirkkonummi', 'kuntavaalit']
+    const mockTitle = 'Banner title'
+    const mockPublishDate = '4.10.2024'
+    const mockTags = ['kirkkonummi', 'kuntavaalit']
 
-    it('should render minimal', () => {
-        const { container } = render(<TitleBanner title={title} leftAlignedTitle />)
+    const renderHelper = ({
+        backgroundImage,
+        communalElectionNumber,
+        imageAlt,
+        imageData,
+        leftAlignedTitle,
+        publishDate,
+        regionalElectionNumber,
+        showMeta,
+        tags,
+        title,
+    }: Partial<ComponentProps<typeof TitleBanner>> = {}) =>
+        render(
+            <TitleBanner
+                backgroundImage={backgroundImage}
+                communalElectionNumber={communalElectionNumber}
+                imageAlt={imageAlt}
+                imageData={imageData}
+                leftAlignedTitle={leftAlignedTitle ?? false}
+                publishDate={publishDate}
+                regionalElectionNumber={regionalElectionNumber}
+                showMeta={showMeta}
+                tags={tags}
+                title={title ?? mockTitle}
+            />
+        )
 
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+    describe.each([
+        ['left aligned', true],
+        ['right aligned', false],
+    ])('%s', (_, leftAlignedTitle) => {
+        it('should render minimal', () => {
+            const { container } = renderHelper({ leftAlignedTitle })
 
-        expect(container.firstChild).toMatchSnapshot()
+            expect(container.firstChild).toMatchSnapshot()
+        })
+
+        it('should render', () => {
+            const { container } = renderHelper({
+                backgroundImage: inFrontOfWoodsImage,
+                communalElectionNumber: 999,
+                imageAlt: smilingImageDescription,
+                imageData: smilingImage,
+                leftAlignedTitle,
+                publishDate: mockPublishDate,
+                regionalElectionNumber: 1234,
+                showMeta: true,
+                tags: mockTags,
+                title: mockTitle,
+            })
+
+            expect(container.firstChild).toMatchSnapshot()
+        })
     })
 
     it('should render image without alt', () => {
-        const { container } = render(
-            <TitleBanner
-                backgroundImage={smilingImage}
-                imageData={inFrontOfWoodsImage}
-                leftAlignedTitle={false}
-                title={title}
-            />
-        )
+        renderHelper({ backgroundImage: inFrontOfWoodsImage, imageData: smilingImage })
 
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         // When no alt, image has role "presentation" and the background image is already there, so should find 2 pieces
         expect(screen.getAllByRole('presentation')).toHaveLength(2)
-
-        expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should not render meta, even if present', () => {
-        const { container } = render(
-            <TitleBanner
-                imageAlt={inFrontOfWoodsImageDescription}
-                imageData={inFrontOfWoodsImage}
-                publishDate={publishDate}
-                tags={tags}
-                title={title}
-                leftAlignedTitle
-            />
-        )
+    it('should render image with alt', () => {
+        renderHelper({
+            backgroundImage: inFrontOfWoodsImage,
+            imageAlt: smilingImageDescription,
+            imageData: smilingImage,
+        })
+
+        expect(screen.getByRole('presentation')).toBeInTheDocument()
+        expect(screen.getByRole('img', { name: smilingImageDescription })).toBeInTheDocument()
+    })
+
+    it('should render title', () => {
+        const title = 'This is a test title'
+        renderHelper({ title })
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByRole('img', { name: inFrontOfWoodsImageDescription })).toBeInTheDocument()
+    })
 
-        expect(screen.queryByText(publishDate)).toBeNull()
-        tags.forEach((tag) => expect(screen.queryByRole('link', { name: `#${tag}` })).toBeNull())
+    it('should render election numbers', () => {
+        const communalElectionNumber = 999
+        const regionalElectionNumber = 1234
+        renderHelper({ communalElectionNumber, regionalElectionNumber })
 
-        expect(container.firstChild).toMatchSnapshot()
+        expect(screen.getByText(`${communalElectionNumber}`)).toBeInTheDocument()
+        expect(screen.getByText(`${regionalElectionNumber}`)).toBeInTheDocument()
+    })
+
+    it('should not render meta, even if present, when no show meta', () => {
+        renderHelper({ publishDate: mockPublishDate, tags: mockTags })
+
+        expect(screen.queryByText(mockPublishDate)).toBeNull()
+        mockTags.forEach((tag) => expect(screen.queryByRole('link', { name: `#${tag}` })).toBeNull())
     })
 
     it('should "render" meta', () => {
-        const { container } = render(
-            <TitleBanner
-                imageAlt={inFrontOfWoodsImageDescription}
-                imageData={inFrontOfWoodsImage}
-                title={title}
-                leftAlignedTitle
-                showMeta
-            />
-        )
-
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByRole('img', { name: inFrontOfWoodsImageDescription })).toBeInTheDocument()
+        const { container } = renderHelper({ showMeta: true })
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render meta', () => {
-        const { container } = render(
-            <TitleBanner
-                imageAlt={inFrontOfWoodsImageDescription}
-                imageData={inFrontOfWoodsImage}
-                publishDate={publishDate}
-                tags={tags}
-                title={title}
-                leftAlignedTitle
-                showMeta
-            />
-        )
+        renderHelper({ publishDate: mockPublishDate, showMeta: true, tags: mockTags })
 
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByRole('img', { name: inFrontOfWoodsImageDescription })).toBeInTheDocument()
-
-        expect(screen.getByText(publishDate)).toBeInTheDocument()
-        tags.forEach((tag) =>
+        expect(screen.getByText(mockPublishDate)).toBeInTheDocument()
+        mockTags.forEach((tag) =>
             expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
         )
-
-        expect(container.firstChild).toMatchSnapshot()
     })
 })

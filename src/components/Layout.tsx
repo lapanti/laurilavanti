@@ -272,10 +272,12 @@ const LayoutComponent = ({
                         {!isFrontPage && (
                             <TitleBanner
                                 backgroundImage={backgroundImage}
+                                communalElectionNumber={site?.siteMetadata?.communalElectionNumber}
                                 imageAlt={heroImageAlt}
                                 imageData={heroImage}
                                 leftAlignedTitle={leftAlignedTitle}
                                 publishDate={publishDate}
+                                regionalElectionNumber={site?.siteMetadata?.regionalElectionNumber}
                                 showMeta={showMeta}
                                 tags={tags}
                                 title={title}
