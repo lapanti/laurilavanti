@@ -131,10 +131,10 @@ const BackgroundImage = styled(GatsbyImage)({
 
 interface Props {
     className?: string
-    communalElectionNumber?: number
+    communalElectionNumber?: number | null
     imageData?: IGatsbyImageData
     imageAlt?: string
-    regionalElectionNumber?: number
+    regionalElectionNumber?: number | null
     title: string
     secondaryTitle?: string
     backgroundImage?: IGatsbyImageData

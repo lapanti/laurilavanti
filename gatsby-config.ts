@@ -58,6 +58,7 @@ const config: GatsbyConfig = {
     siteMetadata: {
         author: 'laurilavanti',
         bluesky: 'https://bsky.app/profile/laurilavanti.fi',
+        communalElectionNumber: null,
         description:
             'Kirkkonummen Vihreiden puheenjohtaja, isä, johtava ohjelmistokehittäjä, diplomi-insinööri, Lauri Lavanti.',
         facebook: 'https://www.facebook.com/laurilavanti',
@@ -75,6 +76,7 @@ const config: GatsbyConfig = {
         ],
         linkedIn: 'https://www.linkedin.com/in/lapanti',
         locale: 'fi_FI',
+        regionalElectionNumber: null,
         siteUrl: 'https://laurilavanti.fi',
         threads: 'https://www.threads.net/@laurilavanti',
         title: 'Lauri Lavanti',
