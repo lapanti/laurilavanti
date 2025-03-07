@@ -141,10 +141,10 @@ const Content = styled.div<{ $leftAlignedTitle: boolean }>(
 interface Props {
     className?: string
     backgroundImage?: IGatsbyImageData
-    communalElectionNumber?: number | null
+    communalElectionNumber?: number
     imageData?: IGatsbyImageData
     imageAlt?: string
-    regionalElectionNumber?: number | null
+    regionalElectionNumber?: number
     title: string
     showMeta?: boolean
     tags?: string[]
