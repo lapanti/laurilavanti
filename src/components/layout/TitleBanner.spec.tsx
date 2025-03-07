@@ -25,12 +25,12 @@ describe('<TitleBanner />', () => {
         render(
             <TitleBanner
                 backgroundImage={backgroundImage}
-                communalElectionNumber={communalElectionNumber}
+                communalElectionNumber={communalElectionNumber ?? null}
                 imageAlt={imageAlt}
                 imageData={imageData}
                 leftAlignedTitle={leftAlignedTitle ?? false}
                 publishDate={publishDate}
-                regionalElectionNumber={regionalElectionNumber}
+                regionalElectionNumber={regionalElectionNumber ?? null}
                 showMeta={showMeta}
                 tags={tags}
                 title={title ?? mockTitle}
