@@ -211,8 +211,8 @@ const LayoutComponent = ({
     const { site } = useStaticQuery<{
         site: {
             siteMetadata: {
-                communalElectionNumber?: number | null
-                regionalElectionNumber?: number | null
+                communalElectionNumber?: number
+                regionalElectionNumber?: number
             }
         }
     }>(graphql`
