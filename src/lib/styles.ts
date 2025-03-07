@@ -32,6 +32,7 @@ export const sizes = {
     [6]: '6rem' as const, // 96px
     [8]: '8rem' as const, // 128px
     [9]: '9rem' as const, // 144px
+    [14]: '14rem' as const, // 224px
     [24]: '24rem' as const, // 384px
     [35]: '35rem' as const, // 560px
     [37.5]: '37.5rem' as const, // 600px
@@ -73,6 +74,7 @@ export const gridTemplateColumnsArticle =
 export const colors = {
     black: 'rgb(0, 0, 0)' as const,
     bluesky: '#0060df' as const,
+    darkGreenText: 'rgb(0, 104, 69)' as const,
     evening: 'rgb(0, 98, 114)' as const,
     evening70: 'rgba(0, 98, 114, 0.7)' as const,
     facebook: '#4267B2' as const,
@@ -81,6 +83,7 @@ export const colors = {
     linkedin: '#0E76A8' as const,
     moss: 'rgb(90, 94, 0)' as const,
     peach: 'rgb(248, 207, 169)' as const,
+    regionalPurple: '#865C97' as const,
     sand: 'rgb(214, 210, 196)' as const,
     threads: 'rgb(0, 0, 0)' as const,
     transparent: 'transparent' as const,
