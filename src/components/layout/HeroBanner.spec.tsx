@@ -1,4 +1,5 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
+import type { ComponentProps } from 'react'
 
 import { render, screen } from '@testing-library/react'
 
@@ -6,54 +7,87 @@ import { inFrontOfWoodsImage, inFrontOfWoodsImageDescription } from '../../../te
 import HeroBanner from './HeroBanner'
 
 describe('<HeroBanner />', () => {
-    const title = 'Test Title'
-    const secondaryTitle = 'Secondary test secondary title'
+    const mockTitle = 'Test Title'
+    const mockSecondaryTitle = 'Secondary test secondary title'
+    const mockCommunalElectionNumber = 285
+    const mockRegionalElectionNumber = 2835
+
+    const renderHelper = ({
+        backgroundImage,
+        communalElectionNumber,
+        imageAlt,
+        imageData,
+        regionalElectionNumber,
+        secondaryTitle,
+        title,
+    }: Partial<ComponentProps<typeof HeroBanner>> = {}) =>
+        render(
+            <HeroBanner
+                backgroundImage={backgroundImage}
+                communalElectionNumber={communalElectionNumber}
+                imageAlt={imageAlt}
+                imageData={imageData}
+                regionalElectionNumber={regionalElectionNumber}
+                secondaryTitle={secondaryTitle}
+                title={title ?? mockTitle}
+            />
+        )
 
     it('should render minimal', () => {
-        const { container } = render(<HeroBanner title={title} />)
+        const { container } = renderHelper()
 
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         expect(screen.queryByRole('img')).toBeNull()
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render minimal with borken image data', () => {
-        const { container } = render(
-            <HeroBanner imageData={{ key: undefined } as unknown as IGatsbyImageData} title={title} />
-        )
+        renderHelper({ imageData: { key: undefined } as unknown as IGatsbyImageData })
 
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         expect(screen.queryByRole('img')).toBeNull()
-
-        expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render minimal with image with no image alt', () => {
-        const { container } = render(<HeroBanner imageData={inFrontOfWoodsImage} title={title} />)
+        renderHelper({ imageData: inFrontOfWoodsImage })
 
-        expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
         // When gatsby image has no alt, it has aria-role presentation
         expect(screen.getByRole('presentation', { name: '' })).toBeInTheDocument()
+    })
+
+    it('should render', () => {
+        const { container } = renderHelper({
+            backgroundImage: inFrontOfWoodsImage,
+            communalElectionNumber: mockCommunalElectionNumber,
+            imageAlt: inFrontOfWoodsImageDescription,
+            imageData: inFrontOfWoodsImage,
+            regionalElectionNumber: mockRegionalElectionNumber,
+            secondaryTitle: mockSecondaryTitle,
+            title: mockTitle,
+        })
 
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render maximal', () => {
-        const { container } = render(
-            <HeroBanner
-                backgroundImage={inFrontOfWoodsImage}
-                imageAlt={inFrontOfWoodsImageDescription}
-                imageData={inFrontOfWoodsImage}
-                secondaryTitle={secondaryTitle}
-                title={title}
-            />
-        )
+    it('should render title', () => {
+        const title = 'A title for testing purposes'
+        renderHelper({ title })
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-        expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
-        expect(screen.getByRole('img', { name: inFrontOfWoodsImageDescription })).toBeInTheDocument()
+    })
 
-        expect(container.firstChild).toMatchSnapshot()
+    it('should render secondaryTitle', () => {
+        const secondaryTitle = 'A secondary title for testing purposes'
+        renderHelper({ secondaryTitle })
+
+        expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
+    })
+
+    it('should render election numbers', () => {
+        const communalElectionNumber = 999
+        const regionalElectionNumber = 1234
+        renderHelper({ communalElectionNumber, regionalElectionNumber })
+
+        expect(screen.getByText(`${communalElectionNumber}`)).toBeInTheDocument()
+        expect(screen.getByText(`${regionalElectionNumber}`)).toBeInTheDocument()
     })
 })
