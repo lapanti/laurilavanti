@@ -5,6 +5,7 @@ import type { RichBody } from '../types/contentful'
 import type { SeoProps } from './layout/Seo'
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
+import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
@@ -207,6 +208,24 @@ const LayoutComponent = ({
     leftAlignedTitle,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
+    const { site } = useStaticQuery<{
+        site: {
+            siteMetadata: {
+                communalElectionNumber?: number
+                regionalElectionNumber?: number
+            }
+        }
+    }>(graphql`
+        query {
+            site {
+                siteMetadata {
+                    communalElectionNumber
+                    regionalElectionNumber
+                }
+            }
+        }
+    `)
+
     const image = heroImage
         ? {
               height: `${heroImage.height}`,
@@ -242,8 +261,10 @@ const LayoutComponent = ({
                         {isFrontPage && (
                             <HeroBanner
                                 backgroundImage={backgroundImage}
+                                communalElectionNumber={site?.siteMetadata?.communalElectionNumber}
                                 imageAlt={heroImageAlt}
                                 imageData={heroImage}
+                                regionalElectionNumber={site?.siteMetadata?.regionalElectionNumber}
                                 secondaryTitle={secondaryTitle}
                                 title={title}
                             />
