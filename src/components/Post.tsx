@@ -119,7 +119,13 @@ export const query = graphql`
                 )
             }
             socialImage {
-                gatsbyImageData(layout: CONSTRAINED, width: 2310)
+                gatsbyImageData(
+                    placeholder: NONE
+                    layout: CONSTRAINED
+                    jpegProgressive: false
+                    quality: 100
+                    width: 1120
+                )
             }
             metadata {
                 tags {
