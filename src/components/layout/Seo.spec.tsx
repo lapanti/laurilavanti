@@ -67,7 +67,7 @@ describe('<Seo />', () => {
                 { content: pageDescription, name: 'twitter:description' },
                 ...(imgData
                     ? [
-                          { content: imgData.src, property: 'og:image' },
+                          { content: imgData.src.replace(/&amp;/g, '&'), property: 'og:image' },
                           { content: imgData.width, property: 'og:image:width' },
                           { content: imgData.height, property: 'og:image:height' },
                           { content: 'summary_large_image', name: 'twitter:card' },
@@ -84,7 +84,7 @@ describe('<Seo />', () => {
             datePublished: pageType === BLOGPOSTING ? published : undefined,
             description: pageDescription,
             headline: pageTitle,
-            image: imgData ? imgData.src : undefined,
+            image: imgData ? imgData.src.replace(/&amp;/g, '&') : undefined,
             mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
             name: pageType === WEBSITE ? title : undefined,
             url: canonical || null,
