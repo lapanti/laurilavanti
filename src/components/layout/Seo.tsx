@@ -67,7 +67,7 @@ const Seo = ({
     const cardMeta = metaImage?.src
         ? [
               {
-                  content: metaImage.src.replace(/&amp;/g, '&'),
+                  content: metaImage.src.split('?')[0],
                   property: 'og:image',
               },
               {
@@ -103,7 +103,7 @@ const Seo = ({
         url: canonical,
         ...(metaImage
             ? {
-                  image: metaImage.src.replace(/&amp;/g, '&'),
+                  image: metaImage.src.split('?')[0],
               }
             : {}),
         ...(type === BLOGPOSTING
