@@ -131,7 +131,8 @@ export const query = graphql`
                     layout: CONSTRAINED
                     jpegProgressive: false
                     quality: 100
-                    width: 560
+                    width: 1120
+                    height: 582
                 )
             }
             updatedAt
