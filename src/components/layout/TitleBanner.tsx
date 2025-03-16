@@ -180,8 +180,12 @@ const TitleBannerComponent = ({
                     {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" objectFit="contain" />}
                     {communalElectionNumber && regionalElectionNumber && (
                         <ElectionNumberRow $leftAlignedTitle={leftAlignedTitle}>
-                            <CommunalElectionNumber>{communalElectionNumber}</CommunalElectionNumber>
-                            <RegionalElectionNumber>{regionalElectionNumber}</RegionalElectionNumber>
+                            <CommunalElectionNumber>
+                                <span>{communalElectionNumber}</span>
+                            </CommunalElectionNumber>
+                            <RegionalElectionNumber>
+                                <span>{regionalElectionNumber}</span>
+                            </RegionalElectionNumber>
                         </ElectionNumberRow>
                     )}
                 </ImageContainer>
