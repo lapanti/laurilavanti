@@ -60,6 +60,7 @@ const ElectionNumberRow = styled.div<{ $leftAlignedTitle?: boolean }>(
 
 const CommunalElectionNumber = styled.span({
     ...fontSizes[3],
+    alignContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.white,
     borderRadius: '50%',

@@ -57,6 +57,7 @@ const ElectionNumberRow = styled.div({
 
 const CommunalElectionNumber = styled.span({
     ...fontSizes[3],
+    alignContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.white,
     borderRadius: '50%',
