@@ -160,8 +160,12 @@ const HeroBannerComponent = ({
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
                 {communalElectionNumber && regionalElectionNumber && (
                     <ElectionNumberRow>
-                        <CommunalElectionNumber>{communalElectionNumber}</CommunalElectionNumber>
-                        <RegionalElectionNumber>{regionalElectionNumber}</RegionalElectionNumber>
+                        <CommunalElectionNumber>
+                            <span>{communalElectionNumber}</span>
+                        </CommunalElectionNumber>
+                        <RegionalElectionNumber>
+                            <span>{regionalElectionNumber}</span>
+                        </RegionalElectionNumber>
                     </ElectionNumberRow>
                 )}
             </Titles>
