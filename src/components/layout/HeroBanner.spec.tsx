@@ -9,25 +9,19 @@ import HeroBanner from './HeroBanner'
 describe('<HeroBanner />', () => {
     const mockTitle = 'Test Title'
     const mockSecondaryTitle = 'Secondary test secondary title'
-    const mockCommunalElectionNumber = 285
-    const mockRegionalElectionNumber = 2835
 
     const renderHelper = ({
         backgroundImage,
-        communalElectionNumber,
         imageAlt,
         imageData,
-        regionalElectionNumber,
         secondaryTitle,
         title,
     }: Partial<ComponentProps<typeof HeroBanner>> = {}) =>
         render(
             <HeroBanner
                 backgroundImage={backgroundImage}
-                communalElectionNumber={communalElectionNumber}
                 imageAlt={imageAlt}
                 imageData={imageData}
-                regionalElectionNumber={regionalElectionNumber}
                 secondaryTitle={secondaryTitle}
                 title={title ?? mockTitle}
             />
@@ -57,10 +51,8 @@ describe('<HeroBanner />', () => {
     it('should render', () => {
         const { container } = renderHelper({
             backgroundImage: inFrontOfWoodsImage,
-            communalElectionNumber: mockCommunalElectionNumber,
             imageAlt: inFrontOfWoodsImageDescription,
             imageData: inFrontOfWoodsImage,
-            regionalElectionNumber: mockRegionalElectionNumber,
             secondaryTitle: mockSecondaryTitle,
             title: mockTitle,
         })
@@ -80,14 +72,5 @@ describe('<HeroBanner />', () => {
         renderHelper({ secondaryTitle })
 
         expect(screen.getByRole('heading', { name: secondaryTitle })).toBeInTheDocument()
-    })
-
-    it('should render election numbers', () => {
-        const communalElectionNumber = 999
-        const regionalElectionNumber = 1234
-        renderHelper({ communalElectionNumber, regionalElectionNumber })
-
-        expect(screen.getByText(`${communalElectionNumber}`)).toBeInTheDocument()
-        expect(screen.getByText(`${regionalElectionNumber}`)).toBeInTheDocument()
     })
 })
