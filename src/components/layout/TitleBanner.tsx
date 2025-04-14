@@ -35,54 +35,6 @@ const BackgroundImage = styled(GatsbyImage)({
     width: '100%',
 })
 
-const ElectionNumberRow = styled.div<{ $leftAlignedTitle?: boolean }>(
-    {
-        display: 'flex',
-        flexDirection: 'column',
-        gap: sizes[0.5],
-        position: 'absolute',
-
-        [breakpoints[1200].min]: {
-            gap: sizes[2],
-            top: sizes[5],
-        },
-    },
-    ({ $leftAlignedTitle }) => ({
-        left: $leftAlignedTitle ? sizes[0.5] : 'auto',
-        right: $leftAlignedTitle ? 'auto' : sizes[0.5],
-
-        [breakpoints[1200].min]: {
-            left: $leftAlignedTitle ? sizes[2] : 'auto',
-            right: $leftAlignedTitle ? 'auto' : sizes[2],
-        },
-    })
-)
-
-const CommunalElectionNumber = styled.span({
-    ...fontSizes[3],
-    alignContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.white,
-    borderRadius: '50%',
-    color: colors.darkGreenText,
-    display: 'flex',
-    fontFamily: fontFamilies.heading,
-    height: sizes[9],
-    justifyContent: 'center',
-    width: sizes[9],
-
-    [breakpoints[1200].min]: {
-        ...fontSizes[5],
-        height: sizes[14],
-        width: sizes[14],
-    },
-})
-
-const RegionalElectionNumber = styled(CommunalElectionNumber)({
-    backgroundColor: colors.regionalPurple,
-    color: colors.white,
-})
-
 const TitleContainer = styled.div<{ $leftAlignedTitle: boolean }>(
     {
         backgroundColor: colors.white,
@@ -142,10 +94,8 @@ const Content = styled.div<{ $leftAlignedTitle: boolean }>(
 interface Props {
     className?: string
     backgroundImage?: IGatsbyImageData
-    communalElectionNumber?: number
     imageData?: IGatsbyImageData
     imageAlt?: string
-    regionalElectionNumber?: number
     title: string
     showMeta?: boolean
     tags?: string[]
@@ -155,10 +105,8 @@ interface Props {
 
 const TitleBannerComponent = ({
     className,
-    communalElectionNumber,
     imageData,
     imageAlt,
-    regionalElectionNumber,
     title,
     showMeta,
     tags,
@@ -179,16 +127,6 @@ const TitleBannerComponent = ({
                         </BackgroundContainer>
                     )}
                     {image && <Image alt={imageAlt ?? ''} image={image} loading="eager" objectFit="contain" />}
-                    {communalElectionNumber && regionalElectionNumber && (
-                        <ElectionNumberRow $leftAlignedTitle={leftAlignedTitle}>
-                            <CommunalElectionNumber>
-                                <span>{communalElectionNumber}</span>
-                            </CommunalElectionNumber>
-                            <RegionalElectionNumber>
-                                <span>{regionalElectionNumber}</span>
-                            </RegionalElectionNumber>
-                        </ElectionNumberRow>
-                    )}
                 </ImageContainer>
                 <TitleContainer $leftAlignedTitle={leftAlignedTitle}>
                     <Title>{title}</Title>

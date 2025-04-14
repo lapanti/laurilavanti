@@ -37,49 +37,6 @@ const Titles = styled.div({
     },
 })
 
-const ElectionNumberRow = styled.div({
-    display: 'flex',
-    flexDirection: 'column',
-    gap: sizes[0.5],
-    position: 'absolute',
-    right: sizes[0.875],
-    top: sizes[14],
-
-    [breakpoints[1200].min]: {
-        flexDirection: 'row',
-        gap: sizes[3],
-        justifyContent: 'flex-end',
-        position: 'relative',
-        right: 'auto',
-        top: 'auto',
-    },
-})
-
-const CommunalElectionNumber = styled.span({
-    ...fontSizes[3],
-    alignContent: 'center',
-    alignItems: 'center',
-    backgroundColor: colors.white,
-    borderRadius: '50%',
-    color: colors.darkGreenText,
-    display: 'flex',
-    fontFamily: fontFamilies.heading,
-    height: sizes[9],
-    justifyContent: 'center',
-    width: sizes[9],
-
-    [breakpoints[1200].min]: {
-        ...fontSizes[5],
-        height: sizes[14],
-        width: sizes[14],
-    },
-})
-
-const RegionalElectionNumber = styled(CommunalElectionNumber)({
-    backgroundColor: colors.regionalPurple,
-    color: colors.white,
-})
-
 // @ts-expect-error for some reason the typing does not include 'absolute !important', although it's valid CSS
 const Image = styled(GatsbyImage)({
     bottom: 0,
@@ -132,10 +89,8 @@ const BackgroundImage = styled(GatsbyImage)({
 
 interface Props {
     className?: string
-    communalElectionNumber?: number
     imageData?: IGatsbyImageData
     imageAlt?: string
-    regionalElectionNumber?: number
     title: string
     secondaryTitle?: string
     backgroundImage?: IGatsbyImageData
@@ -143,10 +98,8 @@ interface Props {
 
 const HeroBannerComponent = ({
     className,
-    communalElectionNumber,
     imageData,
     imageAlt,
-    regionalElectionNumber,
     title,
     secondaryTitle,
     backgroundImage,
@@ -159,16 +112,6 @@ const HeroBannerComponent = ({
             <Titles>
                 <Title>{title}</Title>
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
-                {communalElectionNumber && regionalElectionNumber && (
-                    <ElectionNumberRow>
-                        <CommunalElectionNumber>
-                            <span>{communalElectionNumber}</span>
-                        </CommunalElectionNumber>
-                        <RegionalElectionNumber>
-                            <span>{regionalElectionNumber}</span>
-                        </RegionalElectionNumber>
-                    </ElectionNumberRow>
-                )}
             </Titles>
             <ImageContainer>
                 {backgroundImg && (

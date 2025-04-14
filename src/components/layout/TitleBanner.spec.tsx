@@ -12,12 +12,10 @@ describe('<TitleBanner />', () => {
 
     const renderHelper = ({
         backgroundImage,
-        communalElectionNumber,
         imageAlt,
         imageData,
         leftAlignedTitle,
         publishDate,
-        regionalElectionNumber,
         showMeta,
         tags,
         title,
@@ -25,12 +23,10 @@ describe('<TitleBanner />', () => {
         render(
             <TitleBanner
                 backgroundImage={backgroundImage}
-                communalElectionNumber={communalElectionNumber}
                 imageAlt={imageAlt}
                 imageData={imageData}
                 leftAlignedTitle={leftAlignedTitle ?? false}
                 publishDate={publishDate}
-                regionalElectionNumber={regionalElectionNumber}
                 showMeta={showMeta}
                 tags={tags}
                 title={title ?? mockTitle}
@@ -50,12 +46,10 @@ describe('<TitleBanner />', () => {
         it('should render', () => {
             const { container } = renderHelper({
                 backgroundImage: inFrontOfWoodsImage,
-                communalElectionNumber: 999,
                 imageAlt: smilingImageDescription,
                 imageData: smilingImage,
                 leftAlignedTitle,
                 publishDate: mockPublishDate,
-                regionalElectionNumber: 1234,
                 showMeta: true,
                 tags: mockTags,
                 title: mockTitle,
@@ -88,15 +82,6 @@ describe('<TitleBanner />', () => {
         renderHelper({ title })
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
-    })
-
-    it('should render election numbers', () => {
-        const communalElectionNumber = 999
-        const regionalElectionNumber = 1234
-        renderHelper({ communalElectionNumber, regionalElectionNumber })
-
-        expect(screen.getByText(`${communalElectionNumber}`)).toBeInTheDocument()
-        expect(screen.getByText(`${regionalElectionNumber}`)).toBeInTheDocument()
     })
 
     it('should not render meta, even if present, when no show meta', () => {
