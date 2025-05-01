@@ -43,29 +43,6 @@ export const query = graphql`
                         __typename
                         contentful_id
                         limit
-                        pinned {
-                            __typename
-                            contentful_id
-                            backgroundImage {
-                                gatsbyImageData(
-                                    layout: CONSTRAINED
-                                    width: 560
-                                    sizes: "(min-width: 560px) 560px, 100vw"
-                                )
-                                description
-                            }
-                            image {
-                                gatsbyImageData(
-                                    layout: CONSTRAINED
-                                    width: 560
-                                    sizes: "(min-width: 560px) 560px, 100vw"
-                                )
-                                description
-                            }
-                            title
-                            description
-                            slug
-                        }
                     }
                     ... on ContentfulCurriculumVitae {
                         __typename

@@ -4,7 +4,6 @@ import type { JsonLdType } from './jsonld'
 
 interface ExcerptListReference extends ContentfulRichTextGatsbyReference {
     limit: number
-    pinned?: { slug: string }[]
 }
 
 interface RichTextPostReference extends ContentfulRichTextGatsbyReference {
