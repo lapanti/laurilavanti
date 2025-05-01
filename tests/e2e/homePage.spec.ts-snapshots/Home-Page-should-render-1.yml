@@ -1,32 +1,25 @@
 - main:
   - article:
     - heading "Lauri Lavanti" [level=1]
-    - heading "Kasvava ja kestävä Kirkkonummi" [level=2]
+    - heading "Liberaalia ja kestävää politiikkaa" [level=2]
     - img "Lauri Lavanti, nojaamassa pöytään, pää käsien varassa, puku päällä. Katsoo kuvassa oikealle päin ja hymyilee"
     - list:
       - listitem:
-        - article /Kunta- ja aluevaalit \d+/:
-          - link /Lauri Lavanti retkeilyvaatteissa metsässä, nojaa puuhun ja katsoo ylös sen runkoa Kunta- ja aluevaalit \d+/:
-            - img "Lauri Lavanti retkeilyvaatteissa metsässä, nojaa puuhun ja katsoo ylös sen runkoa"
-            - heading /Kunta- ja aluevaalit \d+/ [level=2]
+        - article "Kylmä riihi Kirkkonummelle":
+          - link "Kuva Kirkkonummen keskustasta korkealta, taustalla aurinko matalalla Kylmä riihi Kirkkonummelle":
+            - img "Kuva Kirkkonummen keskustasta korkealta, taustalla aurinko matalalla"
+            - heading "Kylmä riihi Kirkkonummelle" [level=2]
+          - complementary "Kirjoituksen Kylmä riihi Kirkkonummelle meta-tiedot":
+            - time: /\d+\.\d+\.\d+/
+            - list:
+              - listitem:
+                - link "#kirkkonummi"
+              - listitem:
+                - link "#opetus"
+              - listitem:
+                - link "#varhaiskasvatus"
           - paragraph:
-            - text: /Olen ehdolla kasvavan ja kestävän Kirkkonummen puolesta kuntavaaleissa \d+\. Olen myös ehdolla aluevaaleissa Länsi-Uudellamaalla\. Tärkeintä minulle on huolehtia lasten ja nuorten mahdollisuuksista\./
-            - link "Lue lisää »"
-      - listitem:
-        - article /Kommunal- och välfärds­områdes­valet \d+/:
-          - link /Kuva lapsesta ja Lauri Lavannista leikkipaikalla leikkimässä\. Kommunal- och välfärds­områdes­valet \d+/:
-            - img "Kuva lapsesta ja Lauri Lavannista leikkipaikalla leikkimässä."
-            - heading /Kommunal- och välfärds­områdes­valet \d+/ [level=2]
-          - paragraph:
-            - text: /Jag kandiderar för ett växande och hållbart Kyrkslätt i kommunalvalet \d+\. Jag kandiderar även till välfärdsområdesvalet i Västra Nyland\. Det viktigaste för mig är att ta vara på möjligheterna för barn och unga\./
-            - link "Lue lisää »"
-      - listitem:
-        - article /Municipal and county elections \d+/:
-          - link /Lauri Lavanti työntämässä rattaita hiekkatietä, vieressä lapsi kävelee ja taustalla on taloja\. Municipal and county elections \d+/:
-            - img "Lauri Lavanti työntämässä rattaita hiekkatietä, vieressä lapsi kävelee ja taustalla on taloja."
-            - heading /Municipal and county elections \d+/ [level=2]
-          - paragraph:
-            - text: /I am running for a growing and sustainable Kirkkonummi in the municipal elections of \d+\. I am also running in the county elections in Western Uusimaa\. The most important thing for me is to take care of opportunities of children and young people\./
+            - text: Hallituksen puoliväliriihestä tuli kylmä suihku vastavalituille kuntapäättäjille. Leikkaukset valtionosuuksiin ja yhteisöveroon kaventavat kunnanvaltuutettujen liikkumatilaa ja lisäävät painetta kuntaveron nostoon.
             - link "Lue lisää »"
       - listitem:
         - article "Koulutus on kunnan tärkein tehtävä":
@@ -103,20 +96,5 @@
                 - link "#lansi-uusimaa"
           - paragraph:
             - text: Vaalien alla puolueet tykkäävät markkinoida itseään erityisesti erilaisilla mielikuvilla. Kannattaa kuitenkin haastaa ehdokkaita siitä, mihin nämä mielikuvat perustuvat, ja miten asiat todellisuudessa ovat. Saatat yllättyä.
-            - link "Lue lisää »"
-      - listitem:
-        - article "Kuntavaaleissa ratkaistaan arjen asioita":
-          - link "Valkoiset ulkoportaat, jotka johtavat tielle, joka vie talolle. Kuntavaaleissa ratkaistaan arjen asioita":
-            - img "Valkoiset ulkoportaat, jotka johtavat tielle, joka vie talolle."
-            - heading "Kuntavaaleissa ratkaistaan arjen asioita" [level=2]
-          - complementary "Kirjoituksen Kuntavaaleissa ratkaistaan arjen asioita meta-tiedot":
-            - time: /\d+\.\d+\.\d+/
-            - list:
-              - listitem:
-                - link "#kirkkonummi"
-              - listitem:
-                - link "#kuntavaalit2025"
-          - paragraph:
-            - text: Kuntavaalit voivat tuntua vaikeilta, tylsiltä tai monimutkaisilta. Kunnallispolitiikka saattaa tuntua vieraalta ja oudolta. Loppuviimein kyse on kuitenkin meidän kaikkien arjen asioista, joista päättää ihan tavalliset ihmiset.
             - link "Lue lisää »"
     - paragraph

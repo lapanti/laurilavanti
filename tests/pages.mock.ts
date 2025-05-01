@@ -35,7 +35,7 @@ export const frontPage: ContentfulPage = {
     image,
     jsonLdType: 'WebSite',
     leftAlignedTitle: true,
-    secondaryTitle: 'Kasvava ja kestävä Kirkkonummi',
+    secondaryTitle: 'Liberaalia ja kestävää politiikkaa',
     slug: 'index',
     socialImage: {
         gatsbyImageData: smilingImage,
