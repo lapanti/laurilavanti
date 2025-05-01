@@ -1,4 +1,4 @@
-import type { ContentfulPinnedPage, ContentfulPostExcerpt } from '../types/contentful'
+import type { ContentfulPostExcerpt } from '../types/contentful'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import { useMemo } from 'react'
@@ -10,13 +10,12 @@ import Excerpt from './excerptList/Excerpt'
 interface Props {
     className?: string
     limit?: number
-    pinned?: ContentfulPinnedPage[] // List of pinned pages
     relatedTags?: string[]
     tag?: string
     currentSlug?: string
 }
 
-const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, currentSlug }: Props): JSX.Element => {
+const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug }: Props): JSX.Element => {
     const data = useStaticQuery<{
         allContentfulPost: {
             nodes: ContentfulPostExcerpt[]
@@ -93,16 +92,6 @@ const ExcerptListComponent = ({ className, limit, pinned, relatedTags, tag, curr
 
     return (
         <ul className={className}>
-            {pinned?.map((node: ContentfulPinnedPage) => (
-                <Excerpt
-                    key={node.slug}
-                    excerpt={node.description}
-                    image={node.backgroundImage?.gatsbyImageData ?? node.image.gatsbyImageData}
-                    imageAlt={node.backgroundImage?.description ?? node.image.description}
-                    slug={node.slug}
-                    title={node.title}
-                />
-            ))}
             {nodes.map((node: ContentfulPostExcerpt) => (
                 <Excerpt
                     key={`blogi/${node.slug}`}
