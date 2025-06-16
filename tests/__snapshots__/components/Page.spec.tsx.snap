@@ -76,19 +76,23 @@ exports[`<Page /> should render about me page 1`] = `
   margin-top: 1rem;
 }
 
+.c34 {
+  font-weight: 700;
+}
+
 .c29 {
   grid-column-start: 3;
   margin-top: 1rem;
 }
 
-.c39 {
+.c40 {
   align-items: center;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 
-.c39 >* {
+.c40 >* {
   fill: rgb(235, 235, 236);
   height: 2.25rem;
   width: 2.25rem;
@@ -97,22 +101,13 @@ exports[`<Page /> should render about me page 1`] = `
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.c38 {
+.c39 {
   padding: 0px;
 }
 
-.c38 :hover,
-.c38 :focus {
+.c39 :hover,
+.c39 :focus {
   fill: #4267B2;
-}
-
-.c40 {
-  padding: 0px;
-}
-
-.c40 :hover,
-.c40 :focus {
-  fill: rgb(0, 0, 0);
 }
 
 .c41 {
@@ -121,7 +116,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c41 :hover,
 .c41 :focus {
-  fill: url(#instagram-gradient);
+  fill: rgb(0, 0, 0);
 }
 
 .c42 {
@@ -130,7 +125,7 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c42 :hover,
 .c42 :focus {
-  fill: #0E76A8;
+  fill: url(#instagram-gradient);
 }
 
 .c43 {
@@ -139,22 +134,31 @@ exports[`<Page /> should render about me page 1`] = `
 
 .c43 :hover,
 .c43 :focus {
+  fill: #0E76A8;
+}
+
+.c44 {
+  padding: 0px;
+}
+
+.c44 :hover,
+.c44 :focus {
   fill: #0060df;
 }
 
-.c37 {
+.c38 {
   gap: 1.5rem;
   justify-content: center;
 }
 
-.c35 {
+.c36 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.c35 >.,
-.c35 >.c36 {
+.c36 >.,
+.c36 >.c37 {
   align-items: center;
   display: flex;
   flex: 1;
@@ -162,7 +166,7 @@ exports[`<Page /> should render about me page 1`] = `
   justify-content: center;
 }
 
-.c34 {
+.c35 {
   align-items: center;
   background-color: rgb(0, 98, 114);
   color: rgb(255, 255, 255);
@@ -337,18 +341,18 @@ exports[`<Page /> should render about me page 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c35 {
+  .c36 {
     flex-direction: row;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     width: 75rem;
   }
 
-  .c35 >.{
+  .c36 >.{
     justify-content: flex-start;
   }
 
-  .c35 >.c36 {
+  .c36 >.c37 {
     justify-content: flex-end;
   }
 }
@@ -733,7 +737,7 @@ exports[`<Page /> should render about me page 1`] = `
               class="c32"
             >
               <li
-                class="c33"
+                class="c33 c34"
               >
                 <span>
                   Toimitilapalvelujen lautakunnan varajäsen
@@ -746,7 +750,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c33"
+                class="c33 c34"
               >
                 <span>
                   Hallituksen varajäsen
@@ -759,7 +763,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c33"
+                class="c33 c34"
               >
                 <span>
                   Länsi-Uudenmaan pelastuslaitos -liikelaitoksen johtokunnan varajäsen
@@ -772,7 +776,7 @@ exports[`<Page /> should render about me page 1`] = `
                 </i>
               </li>
               <li
-                class="c33"
+                class="c33 c34"
               >
                 <span>
                   Suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen
@@ -869,7 +873,7 @@ exports[`<Page /> should render about me page 1`] = `
               class="c32"
             >
               <li
-                class="c33"
+                class="c33 c34"
               >
                 <span>
                   Team Lead
@@ -1046,10 +1050,10 @@ exports[`<Page /> should render about me page 1`] = `
       </article>
     </main>
     <footer
-      class="c34"
+      class="c35"
     >
       <div
-        class="c35"
+        class="c36"
       >
         <div
           class=""
@@ -1061,13 +1065,13 @@ exports[`<Page /> should render about me page 1`] = `
           />
         </div>
         <ul
-          class="c36 c37"
+          class="c37 c38"
         >
           <li
-            class="c38"
+            class="c39"
           >
             <a
-              class="c39"
+              class="c40"
               href="https://www.facebook.com/laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1089,10 +1093,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c40"
+            class="c41"
           >
             <a
-              class="c39"
+              class="c40"
               href="https://www.threads.net/@laurilavanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1114,10 +1118,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c41"
+            class="c42"
           >
             <a
-              class="c39"
+              class="c40"
               href="https://www.instagram.com/laurilavanti/"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1139,10 +1143,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c42"
+            class="c43"
           >
             <a
-              class="c39"
+              class="c40"
               href="https://www.linkedin.com/in/lapanti"
               rel="me noopener noreferrer"
               target="_blank"
@@ -1164,10 +1168,10 @@ exports[`<Page /> should render about me page 1`] = `
             </a>
           </li>
           <li
-            class="c43"
+            class="c44"
           >
             <a
-              class="c39"
+              class="c40"
               href="https://bsky.app/profile/laurilavanti.fi"
               rel="me noopener noreferrer"
               target="_blank"
