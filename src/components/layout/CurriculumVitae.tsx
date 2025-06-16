@@ -21,6 +21,10 @@ const DivContainer = styled.div({
     marginTop: sizes[1],
 })
 
+const ListItem = styled(LI)<{ $isCurrent: boolean }>(({ $isCurrent }) =>
+    $isCurrent ? { fontWeight: fontWeights.bold } : {}
+)
+
 interface Props {
     className?: string
     degreesTitle: string
@@ -47,12 +51,12 @@ const CurriculumVitaeComponent = ({
         <DivContainer>
             <UL>
                 {fiduciaries.map(({ duty, organization, startYear, endYear }) => (
-                    <LI key={`${duty}-${organization}-${startYear}`}>
+                    <ListItem key={`${duty}-${organization}-${startYear}`} $isCurrent={!endYear}>
                         <span>{duty} </span>
                         <i>
                             {organization} — {yearsToString(startYear, endYear)}
                         </i>
-                    </LI>
+                    </ListItem>
                 ))}
             </UL>
         </DivContainer>
@@ -63,12 +67,12 @@ const CurriculumVitaeComponent = ({
         <DivContainer>
             <UL>
                 {jobExperiences.map(({ title, company, location, startYear, endYear }) => (
-                    <LI key={`${title}-${company}`}>
+                    <ListItem key={`${title}-${company}`} $isCurrent={!endYear}>
                         <span>{title} </span>
                         <i>
                             {company} ({location}) — {yearsToString(startYear, endYear)}
                         </i>
-                    </LI>
+                    </ListItem>
                 ))}
             </UL>
         </DivContainer>
@@ -79,12 +83,12 @@ const CurriculumVitaeComponent = ({
         <DivContainer>
             <UL>
                 {degrees.map(({ degree, school, location, startYear, endYear }) => (
-                    <LI key={`${degree}-${school}`}>
+                    <ListItem key={`${degree}-${school}`} $isCurrent={!endYear}>
                         <span>{degree} </span>
                         <i>
                             {school} ({location}) — {yearsToString(startYear, endYear)}
                         </i>
-                    </LI>
+                    </ListItem>
                 ))}
             </UL>
         </DivContainer>
