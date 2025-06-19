@@ -69,7 +69,7 @@ const Post = ({
         >
             <SocialShare
                 ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`}
-                siteUrl={siteUrl}
+                shareUrl={`${siteUrl}/blogi/${slug}`}
                 title={title}
             />
             <H2>Muita kirjoituksia</H2>

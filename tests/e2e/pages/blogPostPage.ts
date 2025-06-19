@@ -53,19 +53,19 @@ export class BlogPostPage extends AnyPage {
 
         await expect(this.shareFacebook).toHaveAttribute(
             'href',
-            'https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi'
+            `https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi${this.url}`
         )
         await expect(this.shareThreads).toHaveAttribute(
             'href',
-            `https://threads.net/intent/post?text=${encodeURI(this.title)}%20https://laurilavanti.fi`
+            `https://threads.net/intent/post?text=${encodeURI(this.title)}%20https://laurilavanti.fi${this.url}`
         )
         await expect(this.shareBluesky).toHaveAttribute(
             'href',
-            `https://bsky.app/intent/compose?text=${encodeURI(this.title)}%20https://laurilavanti.fi`
+            `https://bsky.app/intent/compose?text=${encodeURI(this.title)}%20https://laurilavanti.fi${this.url}`
         )
         await expect(this.shareLinkedIn).toHaveAttribute(
             'href',
-            'https://www.linkedin.com/sharing/share-offsite/?url=https://laurilavanti.fi'
+            `https://www.linkedin.com/sharing/share-offsite/?url=https://laurilavanti.fi${this.url}`
         )
 
         await expect(this.otherPostsTitle).toBeVisible()

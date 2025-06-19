@@ -39,31 +39,31 @@ const LinkedIn = styled(FaLinkedin)(logoStyles, {
 
 interface Props {
     className?: string
-    siteUrl: string
+    shareUrl: string
     title: string
     ariaLabel: string
 }
 
-const SocialShareComponent = ({ className, siteUrl, title, ariaLabel }: Props): JSX.Element => (
+const SocialShareComponent = ({ className, shareUrl, title, ariaLabel }: Props): JSX.Element => (
     <aside aria-label={ariaLabel} className={className}>
         <Share>Jaa:</Share>
-        <ExtLink href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(siteUrl)}`} title="Jaa Facebookissa">
+        <ExtLink href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`} title="Jaa Facebookissa">
             <Facebook />
         </ExtLink>
         <ExtLink
-            href={`https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
+            href={`https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
             title="Jaa Threadsissä"
         >
             <Threads />
         </ExtLink>
         <ExtLink
-            href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(siteUrl)}`}
+            href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
             title="Jaa Blueskyssa"
         >
             <Bluesky />
         </ExtLink>
         <ExtLink
-            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(siteUrl)}`}
+            href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
             title="Jaa LinkedInissä"
         >
             <LinkedIn />
