@@ -85,15 +85,15 @@ export default tseslint.config(
             'import/no-duplicates': ['error'],
             'import/no-unresolved': ['error'],
             'linebreak-style': ['error', 'unix'],
-            'max-depth': ['warn', 3],
+            'max-depth': ['error', 3],
             'no-duplicate-imports': ['off'],
             'no-else-return': ['error', { allowElseIf: false }],
             'no-empty': ['error', { allowEmptyCatch: true }],
-            'no-eq-null': ['warn'],
+            'no-eq-null': ['error'],
             'no-irregular-whitespace': ['error', { skipTemplates: true }],
             'no-restricted-globals': ['error'].concat(restrictedGlobals),
             'nonblock-statement-body-position': ['error'],
-            'prefer-arrow-callback': ['warn'],
+            'prefer-arrow-callback': ['error'],
             'react/jsx-sort-props': [
                 'error',
                 {
