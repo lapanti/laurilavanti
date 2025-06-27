@@ -5,6 +5,7 @@ module.exports = {
     resolveSnapshotPath: (testPath, snapshotExtension) => {
         if (testPath.includes('src')) {
             const finalTestPath = testPath.replace('src', `tests${path.sep}__snapshots__`)
+
             return `${finalTestPath}${snapshotExtension}`
         }
         // Remove this block of code after all tests live under `src/`

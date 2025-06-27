@@ -162,6 +162,7 @@ const options = {
         },
         [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
             const image = getImage(node?.data?.target)
+
             return image ? <StyledImage alt={node.data.target.description} image={image} objectFit="contain" /> : null
         },
     },
