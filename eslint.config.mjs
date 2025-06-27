@@ -121,6 +121,7 @@ export default tseslint.config(
             '@stylistic/no-mixed-spaces-and-tabs': ['error'],
             '@stylistic/no-multi-spaces': ['error'],
             '@stylistic/no-multiple-empty-lines': ['error'],
+            '@stylistic/spaced-comment': ['error', 'always'],
         },
         settings: {
             'import/resolver': {
