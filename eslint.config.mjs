@@ -10,6 +10,7 @@ import js from '@eslint/js'
 import testingLibrary from 'eslint-plugin-testing-library'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import playwright from 'eslint-plugin-playwright'
+import stylistic from '@stylistic/eslint-plugin'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 import restrictedGlobals from 'confusing-browser-globals'
@@ -43,6 +44,7 @@ export default tseslint.config(
         plugins: {
             'simple-import-sort': simpleImportSort,
             react,
+            '@stylistic': stylistic,
         },
         languageOptions: {
             parserOptions: {
@@ -106,6 +108,7 @@ export default tseslint.config(
             'simple-import-sort/exports': ['error'],
             'simple-import-sort/imports': ['error'],
             'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
+            '@stylistic/linebreak-style': ['error', 'unix'],
         },
         settings: {
             'import/resolver': {
