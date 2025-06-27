@@ -122,6 +122,7 @@ export default tseslint.config(
             '@stylistic/no-multi-spaces': ['error'],
             '@stylistic/no-multiple-empty-lines': ['error'],
             '@stylistic/spaced-comment': ['error', 'always'],
+            '@stylistic/template-curly-spacing': ['error', 'never'],
         },
         settings: {
             'import/resolver': {
