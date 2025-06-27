@@ -117,6 +117,7 @@ export default tseslint.config(
                 { blankLine: 'always', prev: 'const', next: 'throw' },
                 { blankLine: 'always', prev: 'let', next: 'throw' },
             ],
+            '@stylistic/multiline-comment-style': ['error', 'starred-block'],
         },
         settings: {
             'import/resolver': {
