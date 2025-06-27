@@ -119,6 +119,7 @@ export default tseslint.config(
             ],
             '@stylistic/multiline-comment-style': ['error', 'starred-block'],
             '@stylistic/no-mixed-spaces-and-tabs': ['error'],
+            '@stylistic/no-multi-spaces': ['error'],
         },
         settings: {
             'import/resolver': {
