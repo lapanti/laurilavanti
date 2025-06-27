@@ -109,6 +109,7 @@ export default tseslint.config(
             'simple-import-sort/imports': ['error'],
             'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
             '@stylistic/linebreak-style': ['error', 'unix'],
+            '@stylistic/lines-around-comment': ['error', { beforeBlockComment: true }],
         },
         settings: {
             'import/resolver': {
