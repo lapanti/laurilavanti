@@ -32,6 +32,7 @@ interface Props extends PostMetaProps {
 const PostMetaComponent = ({ className, date, tags, ariaLabel }: Props): JSX.Element => {
     const dateAsDateTime = useMemo(() => {
         const [day, month, year] = date.split('.')
+
         return `${year}-${month}-${day}`
     }, [date])
 

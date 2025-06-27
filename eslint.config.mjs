@@ -110,6 +110,13 @@ export default tseslint.config(
             'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
             '@stylistic/linebreak-style': ['error', 'unix'],
             '@stylistic/lines-around-comment': ['error', { beforeBlockComment: true }],
+            '@stylistic/padding-line-between-statements': [
+                'error',
+                { blankLine: 'always', prev: 'const', next: 'return' },
+                { blankLine: 'always', prev: 'let', next: 'return' },
+                { blankLine: 'always', prev: 'const', next: 'throw' },
+                { blankLine: 'always', prev: 'let', next: 'throw' },
+            ],
         },
         settings: {
             'import/resolver': {

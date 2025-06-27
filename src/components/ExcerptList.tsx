@@ -75,6 +75,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                     if (a[1] === b[1]) {
                         const [aDay, aMonth, aYear] = a[0].createdAt.split('.').map((s) => parseInt(s, 10))
                         const [bDay, bMonth, bYear] = b[0].createdAt.split('.').map((s) => parseInt(s, 10))
+
                         return new Date(bYear, bMonth - 1, bDay).getTime() - new Date(aYear, aMonth - 1, aDay).getTime()
                     }
                     // Higher points first
