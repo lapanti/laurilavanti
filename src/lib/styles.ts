@@ -82,6 +82,7 @@ export const colors = {
     gray: 'rgb(235, 235, 236)' as const,
     instagramGradient: 'url(#instagram-gradient)' as const,
     linkedin: '#0E76A8' as const,
+    mastodon: '#6363ff' as const,
     moss: 'rgb(90, 94, 0)' as const,
     peach: 'rgb(248, 207, 169)' as const,
     regionalPurple: '#865C97' as const,

@@ -17,6 +17,7 @@ interface SiteMetadata {
     facebook: string
     instagram: string
     linkedIn: string
+    mastodon: string
     threads: string
     bluesky: string
 }
@@ -233,7 +234,7 @@ describe('<Layout />', () => {
 
             // There is already one list in the footer
             expect(screen.getAllByRole('list')).toHaveLength(2)
-            expect(screen.getAllByRole('listitem')).toHaveLength(6)
+            expect(screen.getAllByRole('listitem')).toHaveLength(7)
 
             expect(container.firstChild).toMatchSnapshot()
         })

@@ -1,6 +1,6 @@
 import type { ContactInfoLink } from '../../../types/contentful'
 
-import { FaBluesky, FaFacebook, FaInstagram, FaLinkedin, FaThreads } from 'react-icons/fa6'
+import { FaBluesky, FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads } from 'react-icons/fa6'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { colors, sizes, transitions } from '../../../lib/styles'
@@ -20,16 +20,18 @@ const Link = styled.a({
 
 const iconToHoverColor = (icon: ContactInfoLink['icon']): string | undefined => {
     switch (icon) {
+        case 'bluesky':
+            return colors.bluesky
         case 'facebook':
             return colors.facebook
         case 'instagram':
             return colors.instagramGradient
         case 'linkedin':
             return colors.linkedin
+        case 'mastodon':
+            return colors.mastodon
         case 'threads':
             return colors.threads
-        case 'bluesky':
-            return colors.bluesky
     }
 }
 
@@ -45,6 +47,8 @@ const iconToIconComponent = (icon: ContactInfoLink['icon']) => {
             return FaLinkedin
         case 'bluesky':
             return FaBluesky
+        case 'mastodon':
+            return FaMastodon
     }
 }
 

@@ -39,6 +39,7 @@ const Seo = ({
                 facebook: string
                 instagram: string
                 linkedIn: string
+                mastodon: string
                 bluesky: string
                 threads: string
             }
@@ -55,6 +56,7 @@ const Seo = ({
                     locale
                     facebook
                     instagram
+                    mastodon
                     linkedIn
                     bluesky
                     threads
@@ -122,6 +124,7 @@ const Seo = ({
                   sameAs: [
                       site?.siteMetadata?.facebook,
                       site?.siteMetadata?.instagram,
+                      site?.siteMetadata?.mastodon,
                       site?.siteMetadata?.linkedIn,
                       site?.siteMetadata?.bluesky,
                       site?.siteMetadata?.threads,

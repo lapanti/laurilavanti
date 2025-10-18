@@ -3,8 +3,8 @@ import type { ContactInfoLink } from '../src/types/contentful'
 export const mailLink: ContactInfoLink = {
     contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',
     icon: 'envelope',
-    title: 'lauri.lavanti@kirkkonummi.fi',
-    url: 'mailto:lauri.lavanti@kirkkonummi.fi',
+    title: 'lauri@laurilavanti.fi',
+    url: 'mailto:lauri@laurilavanti.fi',
 }
 
 export const facebookLink: ContactInfoLink = {
@@ -28,6 +28,13 @@ export const instagramLink: ContactInfoLink = {
     url: 'https://www.instagram.com/laurilavanti/',
 }
 
+export const mastodonLink: ContactInfoLink = {
+    contentful_id: 'o7sDXDUNJVK7NUQSQarwd',
+    icon: 'mastodon',
+    title: 'Mastodon',
+    url: 'https://mastodontti.fi/@laurilavanti',
+}
+
 export const linkedInLink: ContactInfoLink = {
     contentful_id: 'vl12ZwQDYvDaOBWKlWU09',
     icon: 'linkedin',
@@ -42,4 +49,12 @@ export const blueskyLink: ContactInfoLink = {
     url: 'https://bsky.app/profile/laurilavanti.fi',
 }
 
-export const contactInfoLinks = [mailLink, facebookLink, threadsLink, instagramLink, linkedInLink, blueskyLink]
+export const contactInfoLinks = [
+    mailLink,
+    facebookLink,
+    threadsLink,
+    instagramLink,
+    mastodonLink,
+    linkedInLink,
+    blueskyLink,
+]
