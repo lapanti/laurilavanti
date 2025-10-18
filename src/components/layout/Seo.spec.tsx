@@ -16,13 +16,26 @@ interface SiteMetadata {
     facebook: string
     instagram: string
     linkedIn: string
+    mastodon: string
     bluesky: string
     threads: string
 }
 
 describe('<Seo />', () => {
-    const { title, keywords, author, locale, description, siteUrl, facebook, instagram, linkedIn, bluesky, threads } =
-        gatsbyConfig.siteMetadata as unknown as SiteMetadata
+    const {
+        title,
+        keywords,
+        author,
+        locale,
+        description,
+        siteUrl,
+        facebook,
+        instagram,
+        linkedIn,
+        mastodon,
+        bluesky,
+        threads,
+    } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = ({
         pageType,
@@ -88,7 +101,7 @@ describe('<Seo />', () => {
             mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
             name: pageType === WEBSITE ? title : undefined,
             url: canonical || null,
-            ...(pageType === WEBSITE ? { sameAs: [facebook, instagram, linkedIn, bluesky, threads] } : {}),
+            ...(pageType === WEBSITE ? { sameAs: [facebook, instagram, mastodon, linkedIn, bluesky, threads] } : {}),
         })
 
         expect(helmet).toMatchSnapshot()

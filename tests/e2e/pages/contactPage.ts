@@ -10,14 +10,16 @@ export class ContactPage extends AnyPage {
     readonly bluesky: Locator
     readonly instagram: Locator
     readonly linkedIn: Locator
+    readonly mastodon: Locator
 
     constructor(page: Page) {
         super(page)
-        this.email = page.getByText('lauri.lavanti@kirkkonummi.fi')
+        this.email = page.getByText('lauri@laurilavanti.fi')
         this.facebook = page.getByRole('link', { name: /Facebook/i }).first()
         this.bluesky = page.getByRole('link', { name: /Bluesky/i }).first()
         this.instagram = page.getByRole('link', { name: /Instagram/i }).first()
         this.linkedIn = page.getByRole('link', { name: /LinkedIn/i }).first()
+        this.mastodon = page.getByRole('link', { name: /Mastodon/i }).first()
     }
 
     async goTo() {
@@ -32,6 +34,7 @@ export class ContactPage extends AnyPage {
         await expect(this.bluesky).toHaveAttribute('href', 'https://bsky.app/profile/laurilavanti.fi')
         await expect(this.instagram).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.linkedIn).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
+        await expect(this.mastodon).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
 
         await this.checkFooter()
     }

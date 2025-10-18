@@ -75,6 +75,7 @@ const config: GatsbyConfig = {
         ],
         linkedIn: 'https://www.linkedin.com/in/lapanti',
         locale: 'fi_FI',
+        mastodon: 'https://mastodontti.fi/@laurilavanti',
         siteUrl: 'https://laurilavanti.fi',
         threads: 'https://www.threads.net/@laurilavanti',
         title: 'Lauri Lavanti',
