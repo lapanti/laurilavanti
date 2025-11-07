@@ -186,6 +186,10 @@ const Seo = ({
                     content: metaDescription,
                     name: 'twitter:description',
                 },
+                {
+                    content: '@laurilavanti@mastodontti.fi',
+                    name: 'fediverse:creator',
+                },
                 ...cardMeta,
                 ...(meta ?? []),
             ]}

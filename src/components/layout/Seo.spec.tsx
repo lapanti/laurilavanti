@@ -78,6 +78,7 @@ describe('<Seo />', () => {
                 { content: facebook, name: 'article:publisher' },
                 { content: 'website', property: 'og:type' },
                 { content: pageDescription, name: 'twitter:description' },
+                { content: '@laurilavanti@mastodontti.fi', name: 'fediverse:creator' },
                 ...(imgData
                     ? [
                           { content: imgData.src.split('?')[0], property: 'og:image' },
