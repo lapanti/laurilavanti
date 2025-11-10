@@ -1,4 +1,5 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
+import type { Tag } from '../../types/contentful'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
@@ -98,7 +99,7 @@ interface Props {
     imageAlt?: string
     title: string
     showMeta?: boolean
-    tags?: string[]
+    tags?: Tag[]
     publishDate?: string
     leftAlignedTitle: boolean
 }

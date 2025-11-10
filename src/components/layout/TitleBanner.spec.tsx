@@ -8,7 +8,10 @@ import TitleBanner from './TitleBanner'
 describe('<TitleBanner />', () => {
     const mockTitle = 'Banner title'
     const mockPublishDate = '4.10.2024'
-    const mockTags = ['kirkkonummi', 'kuntavaalit']
+    const mockTags = [
+        { contentful_id: 'kirkkonummi', name: 'Kirkkonummi' },
+        { contentful_id: 'kuntavaalit', name: 'kuntavaalit' },
+    ]
 
     const renderHelper = ({
         backgroundImage,
@@ -88,7 +91,7 @@ describe('<TitleBanner />', () => {
         renderHelper({ publishDate: mockPublishDate, tags: mockTags })
 
         expect(screen.queryByText(mockPublishDate)).toBeNull()
-        mockTags.forEach((tag) => expect(screen.queryByRole('link', { name: `#${tag}` })).toBeNull())
+        mockTags.forEach((tag) => expect(screen.queryByRole('link', { name: `#${tag.name}` })).toBeNull())
     })
 
     it('should "render" meta', () => {
@@ -102,7 +105,10 @@ describe('<TitleBanner />', () => {
 
         expect(screen.getByText(mockPublishDate)).toBeInTheDocument()
         mockTags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
+            expect(screen.getByRole('link', { name: `#${tag.name}` })).toHaveAttribute(
+                'href',
+                `/kategoria/${tag.contentful_id}/`
+            )
         )
     })
 })

@@ -62,7 +62,7 @@ const Post = ({
             publishDate={getValueOrDefault(publishDate, createdAt) as string}
             published={getValueOrDefault(publishedOld, published)}
             socialImage={socialImage?.gatsbyImageData}
-            tags={tags}
+            tags={metadata.tags}
             title={title}
             type={BLOGPOSTING}
             showMeta
@@ -131,6 +131,7 @@ export const query = graphql`
             metadata {
                 tags {
                     contentful_id
+                    name
                 }
             }
             title

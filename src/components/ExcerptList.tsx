@@ -31,6 +31,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                     metadata {
                         tags {
                             contentful_id
+                            name
                         }
                     }
                     headerImage {
@@ -101,7 +102,7 @@ const ExcerptListComponent = ({ className, limit, relatedTags, tag, currentSlug 
                     image={node.backgroundImage?.gatsbyImageData ?? node.headerImage.gatsbyImageData}
                     imageAlt={node.backgroundImage?.description ?? node.headerImage.description}
                     slug={`blogi/${node.slug}`}
-                    tags={node.metadata.tags.map(({ contentful_id }) => contentful_id)}
+                    tags={node.metadata.tags}
                     title={node.title}
                 />
             ))}

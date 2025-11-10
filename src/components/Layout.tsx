@@ -1,7 +1,7 @@
 import type { Block, Inline, Text } from '@contentful/rich-text-types'
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import type { ReactNode } from 'react'
-import type { RichBody } from '../types/contentful'
+import type { RichBody, Tag } from '../types/contentful'
 import type { SeoProps } from './layout/Seo'
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
@@ -181,7 +181,7 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
     isFrontPage?: boolean
     showMeta?: boolean
     publishDate?: string
-    tags?: string[]
+    tags?: Tag[]
     leftAlignedTitle: boolean
 }
 

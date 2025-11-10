@@ -1,3 +1,5 @@
+import type { Tag } from '../../types/contentful'
+
 import { render, screen } from '@testing-library/react'
 
 import { inFrontOfWoodsImage } from '../../../tests/images.mock'
@@ -8,13 +10,15 @@ describe('<Excerpt />', () => {
     const defaultDate = '19.01.2022'
     const excerpt =
         'Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.'
-    const defaultTags = ['aluevaalit', 'soteuudistus', 'kirkkonummi']
+    const defaultTags = [
+        { contentful_id: 'aluevaalit', name: 'aluevaalit' },
+        { contentful_id: 'soteuudistus', name: 'soteuudistus' },
+        { contentful_id: 'kirkkonummi', name: 'Kirkkonummi' },
+    ]
     const slug = 'sote-on-hyvinvointiyhteiskunnan-kulmakivi'
     const imageAlt = 'imageAlt'
 
-    const renderHelper = (
-        { date, tags }: { date?: string; tags?: string[] } = { date: defaultDate, tags: defaultTags }
-    ) =>
+    const renderHelper = ({ date, tags }: { date?: string; tags?: Tag[] } = { date: defaultDate, tags: defaultTags }) =>
         render(
             <Excerpt
                 date={date}
@@ -65,7 +69,10 @@ describe('<Excerpt />', () => {
         renderHelper()
 
         defaultTags.forEach((tag) => {
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
+            expect(screen.getByRole('link', { name: `#${tag.name}` })).toHaveAttribute(
+                'href',
+                `/kategoria/${tag.contentful_id}/`
+            )
         })
     })
 
@@ -85,7 +92,7 @@ describe('<Excerpt />', () => {
         renderHelper({ tags: defaultTags })
 
         defaultTags.forEach((tag) => {
-            expect(screen.queryByRole('link', { name: `#${tag}` })).toBeNull()
+            expect(screen.queryByRole('link', { name: `#${tag.name}` })).toBeNull()
         })
     })
 

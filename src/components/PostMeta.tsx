@@ -1,3 +1,5 @@
+import type { Tag } from '../types/contentful'
+
 import { useMemo } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
@@ -21,7 +23,7 @@ const TagItem = styled.li({
 
 interface PostMetaProps {
     date: string
-    tags: string[]
+    tags: Tag[]
     ariaLabel: string
 }
 
@@ -42,8 +44,8 @@ const PostMetaComponent = ({ className, date, tags, ariaLabel }: Props): JSX.Ele
             {tags.length > 0 && (
                 <TagList>
                     {tags.map((tag) => (
-                        <TagItem key={tag}>
-                            <InternalLink to={`/kategoria/${tag}/`}>#{tag}</InternalLink>
+                        <TagItem key={tag.contentful_id}>
+                            <InternalLink to={`/kategoria/${tag.contentful_id}/`}>#{tag.name}</InternalLink>
                         </TagItem>
                     ))}
                 </TagList>

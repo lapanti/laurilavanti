@@ -114,6 +114,7 @@ interface ContentfulPostCommon {
     metadata: {
         tags: {
             contentful_id: string
+            name: string
         }[]
     }
     headerImage: {
@@ -153,4 +154,9 @@ export interface MainNav {
 
 export interface FooterNav {
     links: ContactInfoLink[]
+}
+
+export interface Tag {
+    contentful_id: string
+    name: string
 }

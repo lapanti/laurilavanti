@@ -3,7 +3,12 @@ import { render, screen } from '@testing-library/react'
 import PostMeta from './PostMeta'
 
 describe('<PostMeta />', () => {
-    const tags = ['kirkkonummi', 'aluevaalit', 'sote', 'kuntavaalit']
+    const tags = [
+        { contentful_id: 'kirkkonummi', name: 'Kirkkonummi' },
+        { contentful_id: 'aluevaalit', name: 'aluevaalit' },
+        { contentful_id: 'sote', name: 'sote' },
+        { contentful_id: 'kuntavaalit', name: 'kuntavaalit' },
+    ]
     const date = '16.3.2022'
     const dateAsDateTime = '2022-3-16'
     const ariaLabel = 'ariaLabel'
@@ -15,7 +20,10 @@ describe('<PostMeta />', () => {
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
+            expect(screen.getByRole('link', { name: `#${tag.name}` })).toHaveAttribute(
+                'href',
+                `/kategoria/${tag.contentful_id}/`
+            )
         )
 
         expect(container.firstChild).toMatchSnapshot()
@@ -28,7 +36,10 @@ describe('<PostMeta />', () => {
 
         expect(screen.getByText(date)).toHaveAttribute('datetime', dateAsDateTime)
         tags.forEach((tag) =>
-            expect(screen.getByRole('link', { name: `#${tag}` })).toHaveAttribute('href', `/kategoria/${tag}/`)
+            expect(screen.getByRole('link', { name: `#${tag.name}` })).toHaveAttribute(
+                'href',
+                `/kategoria/${tag.contentful_id}/`
+            )
         )
 
         expect(container.firstChild).toMatchSnapshot()
