@@ -72,10 +72,12 @@ describe('<Layout />', () => {
     })
 
     it('should render hero banner for front page', () => {
+        const subtitle = 'Subtitle test'
         const { container } = render(
             <Layout
                 heroImage={inFrontOfWoodsImage}
                 heroImageAlt={inFrontOfWoodsImageDescription}
+                subtitle={subtitle}
                 title={title}
                 isFrontPage
                 leftAlignedTitle
@@ -87,6 +89,7 @@ describe('<Layout />', () => {
         expect(screen.getByText(children)).toBeInTheDocument()
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+        expect(screen.getByText(subtitle)).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })

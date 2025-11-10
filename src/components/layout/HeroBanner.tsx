@@ -16,20 +16,25 @@ const Title = styled.h1({
     },
 })
 
+const Subtitle = styled.p({
+    ...fontSizes[1.5],
+    fontWeight: fontWeights.bold,
+})
+
 const SecondaryTitle = styled.h2({
     ...fontSizes[2.25],
-    color: colors.white,
     fontWeight: fontWeights.bold,
 })
 
 const Titles = styled.div({
+    color: colors.white,
     display: 'flex',
     flexDirection: 'column',
     gap: sizes[1.5],
     padding: sizes[0.875],
 
     [breakpoints[1200].min]: {
-        alignItems: 'flex-end',
+        alignItems: 'flex-start',
         gap: sizes[3],
         justifyContent: 'flex-start',
         padding: sizes[3.75],
@@ -92,6 +97,7 @@ interface Props {
     imageData?: IGatsbyImageData
     imageAlt?: string
     title: string
+    subtitle?: string
     secondaryTitle?: string
     backgroundImage?: IGatsbyImageData
 }
@@ -101,6 +107,7 @@ const HeroBannerComponent = ({
     imageData,
     imageAlt,
     title,
+    subtitle,
     secondaryTitle,
     backgroundImage,
 }: Props): JSX.Element => {
@@ -111,6 +118,7 @@ const HeroBannerComponent = ({
         <div className={className}>
             <Titles>
                 <Title>{title}</Title>
+                {subtitle && <Subtitle>{subtitle}</Subtitle>}
                 {secondaryTitle && <SecondaryTitle>{secondaryTitle}</SecondaryTitle>}
             </Titles>
             <ImageContainer>
