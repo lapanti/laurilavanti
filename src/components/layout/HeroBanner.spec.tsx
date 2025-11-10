@@ -16,6 +16,7 @@ describe('<HeroBanner />', () => {
         imageData,
         secondaryTitle,
         title,
+        subtitle,
     }: Partial<ComponentProps<typeof HeroBanner>> = {}) =>
         render(
             <HeroBanner
@@ -23,6 +24,7 @@ describe('<HeroBanner />', () => {
                 imageAlt={imageAlt}
                 imageData={imageData}
                 secondaryTitle={secondaryTitle}
+                subtitle={subtitle}
                 title={title ?? mockTitle}
             />
         )
@@ -65,6 +67,13 @@ describe('<HeroBanner />', () => {
         renderHelper({ title })
 
         expect(screen.getByRole('heading', { name: title })).toBeInTheDocument()
+    })
+
+    it('should render subtitle', () => {
+        const subtitle = 'A title for testing purposes'
+        renderHelper({ subtitle })
+
+        expect(screen.getByText(subtitle)).toBeInTheDocument()
     })
 
     it('should render secondaryTitle', () => {
