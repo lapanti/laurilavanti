@@ -21,6 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
             tagsGroup: allContentfulTag {
                 nodes {
                     contentful_id
+                    name
                 }
             }
         }
@@ -67,11 +68,11 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    data.tagsGroup.nodes.forEach(({ contentful_id }) => {
+    data.tagsGroup.nodes.forEach((tag) => {
         actions.createPage({
             component: require.resolve('./src/components/Tag.tsx'),
-            context: { tag: contentful_id },
-            path: `/kategoria/${contentful_id}`,
+            context: { name: tag.name, tag: tag.contentful_id },
+            path: `/kategoria/${tag.contentful_id}`,
         })
     })
 }

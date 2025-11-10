@@ -11,11 +11,12 @@ interface Props {
         contentfulPage: Pick<ContentfulPage, 'image' | 'backgroundImage' | 'leftAlignedTitle' | 'socialImage'>
     }
     pageContext: {
+        name: string
         tag: string
     }
 }
 
-const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
+const Tag = ({ data, pageContext: { name, tag } }: Props): JSX.Element => (
     <Layout
         backgroundImage={data?.contentfulPage?.backgroundImage?.gatsbyImageData}
         heroImage={data?.contentfulPage?.image.gatsbyImageData}
@@ -23,7 +24,7 @@ const Tag = ({ data, pageContext: { tag } }: Props): JSX.Element => (
         leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
         pathname={`/blogi/${tag}/`}
         socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
-        title={tag.replace(/^\w/, (c) => c.toUpperCase())}
+        title={name.replace(/^\w/, (c) => c.toUpperCase())}
         type={WEBPAGE}
     >
         <ExcerptList tag={tag} />
