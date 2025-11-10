@@ -22,9 +22,9 @@ export class BlogPostPage extends AnyPage {
         title = 'Sote on hyvinvointi­yhteiskunnan kulmakivi',
         date = /20.12.2021/i,
         tags: [string | RegExp, string][] = [
-            [/#aluevaalit2022/i, '/kategoria/aluevaalit2022/'],
+            [/#aluevaalit 2022/i, '/kategoria/aluevaalit2022/'],
             [/#soteuudistus/i, '/kategoria/soteuudistus/'],
-            [/#kirkkonummi/i, '/kategoria/kirkkonummi/'],
+            [/#Kirkkonummi/i, '/kategoria/kirkkonummi/'],
         ]
     ) {
         super(page)
