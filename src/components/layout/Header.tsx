@@ -26,9 +26,10 @@ const StyledDesktopMenu = styled(DesktopMenu)({
 
 interface Props {
     className?: string
+    isFrontPage?: boolean
 }
 
-const HeaderComponent = ({ className }: Props): JSX.Element => {
+const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
     const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
         {
             contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
@@ -49,7 +50,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
 
     return (
         <header className={className}>
-            <StyledMobileMenu links={links} />
+            <StyledMobileMenu isFrontPage={isFrontPage} links={links} />
             <StyledDesktopMenu links={links} />
         </header>
     )

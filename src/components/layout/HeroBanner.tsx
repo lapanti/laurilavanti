@@ -7,12 +7,29 @@ import { breakpoints, colors, fontFamilies, fontSizes, fontWeights, HEADER_SIZE,
 
 const Title = styled.h1({
     ...fontSizes[3],
+    // Hide title on mobile
+    border: 0,
+    clip: 'rect(0, 0, 0, 0)',
     color: colors.peach,
     fontFamily: fontFamilies.heading,
-    position: 'relative',
+    height: '1px',
+    margin: '-1px',
+    overflow: 'hidden',
+    padding: 0,
+    position: 'absolute',
     top: sizes[0.5],
+    whiteSpace: 'nowrap',
+    width: '1px',
+
     [breakpoints[1200].min]: {
         ...fontSizes[6],
+        clip: undefined,
+        display: 'flex',
+        height: 'auto',
+        margin: 0,
+        overflow: 'auto',
+        position: 'relative',
+        width: 'auto',
     },
 })
 
