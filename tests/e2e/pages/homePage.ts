@@ -6,12 +6,14 @@ import { AnyPage } from './anyPage'
 
 export class HomePage extends AnyPage {
     readonly mainTitle: Locator
+    readonly subtitle: Locator
     readonly secondaryTitle: Locator
 
     constructor(page: Page) {
         super(page)
         this.mainTitle = page.getByRole('heading', { name: /Lauri Lavanti/i })
-        this.secondaryTitle = page.getByRole('heading', { name: /Liberaalia ja kestävää politiikkaa/i })
+        this.subtitle = page.getByText('DI, Lead Developer, kunnanvaltuutettu')
+        this.secondaryTitle = page.getByRole('heading', { name: /Ohjelmistot, yksityisyydensuoja ja digitalisaatio/i })
     }
 
     async goHome() {
@@ -23,6 +25,8 @@ export class HomePage extends AnyPage {
 
     async checkTitles() {
         await expect(this.mainTitle).toBeVisible()
+
+        await expect(this.subtitle).toBeVisible()
 
         await expect(this.secondaryTitle).toBeVisible()
 
