@@ -7,6 +7,7 @@ import InternalLink from '../../../InternalLink'
 interface Props {
     className?: string
     hideIfCurrent?: boolean
+    isFrontPage?: boolean
 }
 
 const MainNavigationLinkComponent = ({ className, hideIfCurrent }: Props): JSX.Element => {
@@ -39,9 +40,12 @@ const MainNavigationLinkComponent = ({ className, hideIfCurrent }: Props): JSX.E
 
 MainNavigationLinkComponent.displayName = 'MainNavigationLink'
 
-const MainNavigationLink = styled(MainNavigationLinkComponent)({
-    ...fontSizes[1.75],
-    fontFamily: fontFamilies.heading,
-})
+const MainNavigationLink = styled(MainNavigationLinkComponent)(
+    {
+        ...fontSizes[1.75],
+        fontFamily: fontFamilies.heading,
+    },
+    ({ isFrontPage }) => (isFrontPage ? { ...fontSizes[3] } : {})
+)
 
 export default MainNavigationLink

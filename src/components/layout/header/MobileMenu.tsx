@@ -60,16 +60,17 @@ const Menu = styled.div<{ $isOpen: boolean }>(
 
 interface Props {
     className?: string
+    isFrontPage?: boolean
     links: MainNav['links']
 }
 
-const MobileMenuComponent = ({ className, links }: Props): JSX.Element => {
+const MobileMenuComponent = ({ className, isFrontPage, links }: Props): JSX.Element => {
     const [isMobileOpen, setIsMobileOpen] = useState(false)
 
     return (
         <>
             <HamburgerContainer className={className}>
-                <MainNavigationLink hideIfCurrent />
+                <MainNavigationLink isFrontPage={isFrontPage} />
                 <Hamburger
                     color={colors.peach}
                     distance="sm"
