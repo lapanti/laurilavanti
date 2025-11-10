@@ -1,4 +1,5 @@
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
+import type { Tag } from '../../types/contentful'
 
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
@@ -55,7 +56,7 @@ interface Props {
     imageAlt: string
     slug: string
     date?: string
-    tags?: string[]
+    tags?: Tag[]
 }
 
 const ExcerptComponent = ({

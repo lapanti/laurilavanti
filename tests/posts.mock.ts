@@ -65,12 +65,15 @@ export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt =
         tags: [
             {
                 contentful_id: 'kaavoitus',
+                name: 'kaavoitus',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'osuuskauppavaalit',
+                name: 'osuuskauppavaalit',
             },
         ],
     },
@@ -146,12 +149,15 @@ export const ourNatureIsOurAceInTheHole: ContentfulPost & ContentfulPostExcerpt 
         tags: [
             {
                 contentful_id: 'infra',
+                name: 'infra',
             },
             {
                 contentful_id: 'kaavoitus',
+                name: 'kaavoitus',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
         ],
     },
@@ -253,12 +259,15 @@ export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
         tags: [
             {
                 contentful_id: 'infra',
+                name: 'infra',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'liikenne',
+                name: 'liikenne',
             },
         ],
     },
@@ -360,12 +369,15 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
         tags: [
             {
                 contentful_id: 'aluevaalit',
+                name: 'aluevaalit',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'soteuudistus',
+                name: 'soteuudistus',
             },
         ],
     },
@@ -467,12 +479,15 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
         tags: [
             {
                 contentful_id: 'aluevaalit',
+                name: 'aluevaalit',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'soteuudistus',
+                name: 'soteuudistus',
             },
         ],
     },
@@ -574,12 +589,15 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
         tags: [
             {
                 contentful_id: 'aluevaalit',
+                name: 'aluevaalit',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'soteuudistus',
+                name: 'soteuudistus',
             },
         ],
     },
@@ -681,9 +699,11 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
         tags: [
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'perustuva',
+                name: 'perusturva',
             },
         ],
     },
@@ -785,12 +805,15 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
         tags: [
             {
                 contentful_id: 'aluevaalit',
+                name: 'aluevaalit',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'soteuudistus',
+                name: 'soteuudistus',
             },
         ],
     },
@@ -898,9 +921,11 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
         tags: [
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'varhaiskasvatus',
+                name: 'varhaiskasvatus',
             },
         ],
     },
@@ -1034,9 +1059,11 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
         tags: [
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'opetus',
+                name: 'opetus',
             },
         ],
     },
@@ -1171,12 +1198,15 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
         tags: [
             {
                 contentful_id: 'kaavoitus',
+                name: 'kaavoitus',
             },
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'varhaiskasvatus',
+                name: 'varhaiskasvatus',
             },
         ],
     },
@@ -1278,9 +1308,11 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
         tags: [
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'varhaiskasvatus',
+                name: 'varhaiskasvatus',
             },
         ],
     },
@@ -1414,9 +1446,11 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
         tags: [
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'varhaiskasvatus',
+                name: 'varhaiskasvatus',
             },
         ],
     },
@@ -1518,9 +1552,11 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
         tags: [
             {
                 contentful_id: 'kirkkonummi',
+                name: 'Kirkkonummi',
             },
             {
                 contentful_id: 'varhaiskasvatus',
+                name: 'varhaiskasvatus',
             },
         ],
     },
