@@ -10,7 +10,8 @@ import { excerptList } from '../../tests/posts.mock'
 import Tag from './Tag'
 
 describe('<Tag />', () => {
-    const tag = 'varhaiskasvatus'
+    const name = 'tekoäly'
+    const tag = 'tekoaly'
 
     it('should render', () => {
         const { container } = render(
@@ -23,7 +24,7 @@ describe('<Tag />', () => {
                         socialImage: { gatsbyImageData: inFrontOfWoodsImage },
                     },
                 }}
-                pageContext={{ tag }}
+                pageContext={{ name, tag }}
             />
         )
 
@@ -33,7 +34,7 @@ describe('<Tag />', () => {
             ).length + 1
         )
 
-        expect(screen.getByRole('heading', { name: tag.replace(/^\w/, (c) => c.toUpperCase()) })).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: name.replace(/^\w/, (c) => c.toUpperCase()) })).toBeInTheDocument()
 
         expect(container.firstChild).toMatchSnapshot()
     })
