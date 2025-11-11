@@ -6,7 +6,7 @@ describe('<404 />', () => {
     it('should render', () => {
         const { container } = render(<FourZeroFour />)
 
-        expect(screen.getByText(/Etsimääsi sivua ei valitettavasti löytynyt/i)).toBeInTheDocument()
+        expect(screen.getByRole('heading', { name: /Etsimääsi sivua ei valitettavasti löytynyt/i })).toBeInTheDocument()
 
         // 8 excerpts plus the main "article" itself
         expect(screen.getAllByRole('article')).toHaveLength(9)
