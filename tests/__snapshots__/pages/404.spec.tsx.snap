@@ -325,19 +325,19 @@ exports[`<404 /> should render 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -428,24 +428,19 @@ exports[`<404 /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -454,19 +449,15 @@ exports[`<404 /> should render 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -610,14 +601,14 @@ exports[`<404 /> should render 1`] = `
           >
             <div
               class="c17 c18"
-            />
-            <div
-              class="c19 c20"
             >
               <h1
-                class="c21"
+                class="c19"
               />
             </div>
+            <div
+              class="c20 c21"
+            />
           </div>
         </div>
         <h1

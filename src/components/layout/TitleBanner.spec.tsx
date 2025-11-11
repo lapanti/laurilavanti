@@ -17,7 +17,6 @@ describe('<TitleBanner />', () => {
         backgroundImage,
         imageAlt,
         imageData,
-        leftAlignedTitle,
         publishDate,
         showMeta,
         tags,
@@ -28,7 +27,6 @@ describe('<TitleBanner />', () => {
                 backgroundImage={backgroundImage}
                 imageAlt={imageAlt}
                 imageData={imageData}
-                leftAlignedTitle={leftAlignedTitle ?? false}
                 publishDate={publishDate}
                 showMeta={showMeta}
                 tags={tags}
@@ -36,30 +34,24 @@ describe('<TitleBanner />', () => {
             />
         )
 
-    describe.each([
-        ['left aligned', true],
-        ['right aligned', false],
-    ])('%s', (_, leftAlignedTitle) => {
-        it('should render minimal', () => {
-            const { container } = renderHelper({ leftAlignedTitle })
+    it('should render minimal', () => {
+        const { container } = renderHelper({})
 
-            expect(container.firstChild).toMatchSnapshot()
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render', () => {
+        const { container } = renderHelper({
+            backgroundImage: inFrontOfWoodsImage,
+            imageAlt: smilingImageDescription,
+            imageData: smilingImage,
+            publishDate: mockPublishDate,
+            showMeta: true,
+            tags: mockTags,
+            title: mockTitle,
         })
 
-        it('should render', () => {
-            const { container } = renderHelper({
-                backgroundImage: inFrontOfWoodsImage,
-                imageAlt: smilingImageDescription,
-                imageData: smilingImage,
-                leftAlignedTitle,
-                publishDate: mockPublishDate,
-                showMeta: true,
-                tags: mockTags,
-                title: mockTitle,
-            })
-
-            expect(container.firstChild).toMatchSnapshot()
-        })
+        expect(container.firstChild).toMatchSnapshot()
     })
 
     it('should render image without alt', () => {

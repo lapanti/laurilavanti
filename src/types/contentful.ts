@@ -103,7 +103,6 @@ export interface ContentfulPage {
         description: string
     } | null
     updatedAt: string
-    leftAlignedTitle: boolean
     slug: string
 }
 
@@ -129,7 +128,6 @@ interface ContentfulPostCommon {
         gatsbyImageData: IGatsbyImageData
     } | null
     excerpt: string
-    leftAlignedTitle: boolean
 }
 
 export interface ContentfulPostExcerpt extends ContentfulPostCommon {

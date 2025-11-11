@@ -217,27 +217,27 @@ exports[`<Tag /> should render 1`] = `
   z-index: 50;
 }
 
-.c21 {
+.c24 {
   margin-top: auto;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c19 {
+.c22 {
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c20 {
+.c23 {
   height: 100%;
   width: 100%;
 }
 
-.c20:after {
+.c23:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -247,14 +247,14 @@ exports[`<Tag /> should render 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c24 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -338,24 +338,19 @@ exports[`<Tag /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c23 {
-    padding-left: 5rem;
-    padding-right: 0.5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c24 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -364,19 +359,15 @@ exports[`<Tag /> should render 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c22 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row;
   }
 }
 
@@ -520,11 +511,20 @@ exports[`<Tag /> should render 1`] = `
           <div
             class="c17 c18"
           >
-            <div
+            <h1
               class="c19"
             >
+              Tekoäly
+            </h1>
+          </div>
+          <div
+            class="c20 c21"
+          >
+            <div
+              class="c22"
+            >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c20"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c23"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -576,7 +576,7 @@ exports[`<Tag /> should render 1`] = `
               </div>
             </div>
             <div
-              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c21"
+              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c24"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
             >
@@ -624,15 +624,6 @@ exports[`<Tag /> should render 1`] = `
                 const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
               </script>
             </div>
-          </div>
-          <div
-            class="c22 c23"
-          >
-            <h1
-              class="c24"
-            >
-              Tekoäly
-            </h1>
           </div>
         </div>
       </div>

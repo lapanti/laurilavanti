@@ -182,7 +182,6 @@ interface Props extends Omit<SeoProps, 'title' | 'image'> {
     showMeta?: boolean
     publishDate?: string
     tags?: Tag[]
-    leftAlignedTitle: boolean
 }
 
 const LayoutComponent = ({
@@ -205,7 +204,6 @@ const LayoutComponent = ({
     showMeta,
     publishDate,
     tags,
-    leftAlignedTitle,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
     const image = heroImage
@@ -255,7 +253,6 @@ const LayoutComponent = ({
                                 backgroundImage={backgroundImage}
                                 imageAlt={heroImageAlt}
                                 imageData={heroImage}
-                                leftAlignedTitle={leftAlignedTitle}
                                 publishDate={publishDate}
                                 showMeta={showMeta}
                                 tags={tags}
