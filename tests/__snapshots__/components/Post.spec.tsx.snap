@@ -24,7 +24,7 @@ exports[`<Post /> should render basic post 1`] = `
   text-decoration: underline;
 }
 
-.c29 {
+.c24 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -32,9 +32,9 @@ exports[`<Post /> should render basic post 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c29 :hover,
-.c29 :active,
-.c29 :focus {
+.c24 :hover,
+.c24 :active,
+.c24 :focus {
   text-decoration: underline;
 }
 
@@ -61,22 +61,22 @@ exports[`<Post /> should render basic post 1`] = `
   margin-top: 1rem;
 }
 
-.c27 {
+.c22 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c28 {
+.c23 {
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c23 :last-child {
   margin-right: 0px;
 }
 
-.c25 {
+.c20 {
   display: flex;
   flex-direction: column;
 }
@@ -330,27 +330,27 @@ exports[`<Post /> should render basic post 1`] = `
   z-index: 50;
 }
 
-.c21 {
+.c29 {
   margin-top: auto;
 }
 
-.c18 {
+.c26 {
   display: flex;
   position: relative;
 }
 
-.c19 {
+.c27 {
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c20 {
+.c28 {
   height: 100%;
   width: 100%;
 }
 
-.c20:after {
+.c28:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -360,20 +360,20 @@ exports[`<Post /> should render basic post 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c24 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c26 {
+.c21 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -507,31 +507,26 @@ exports[`<Post /> should render basic post 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c23 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c24 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c26 {
+  .c21 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -540,19 +535,15 @@ exports[`<Post /> should render basic post 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c22 {
+  .c16 >.c25,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -696,11 +687,67 @@ exports[`<Post /> should render basic post 1`] = `
           <div
             class="c17 c18"
           >
-            <div
+            <h1
               class="c19"
             >
+              Terveys kuuluu kaikille
+            </h1>
+            <aside
+              aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
+              class="c20 c21"
+            >
+              <time
+                datetime="2022-01-19"
+              >
+                19.01.2022
+              </time>
+              <ul
+                class="c22"
+              >
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/aluevaalit/"
+                  >
+                    #
+                    aluevaalit
+                  </a>
+                </li>
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/kirkkonummi/"
+                  >
+                    #
+                    Kirkkonummi
+                  </a>
+                </li>
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/soteuudistus/"
+                  >
+                    #
+                    soteuudistus
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div
+            class="c25 c26"
+          >
+            <div
+              class="c27"
+            >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c28"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -739,7 +786,7 @@ exports[`<Post /> should render basic post 1`] = `
               </div>
             </div>
             <div
-              class="gatsby-image-wrapper c21"
+              class="gatsby-image-wrapper c29"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
             >
@@ -776,62 +823,6 @@ exports[`<Post /> should render basic post 1`] = `
                 const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
               </script>
             </div>
-          </div>
-          <div
-            class="c22 c23"
-          >
-            <h1
-              class="c24"
-            >
-              Terveys kuuluu kaikille
-            </h1>
-            <aside
-              aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-              class="c25 c26"
-            >
-              <time
-                datetime="2022-01-19"
-              >
-                19.01.2022
-              </time>
-              <ul
-                class="c27"
-              >
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/aluevaalit/"
-                  >
-                    #
-                    aluevaalit
-                  </a>
-                </li>
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/kirkkonummi/"
-                  >
-                    #
-                    Kirkkonummi
-                  </a>
-                </li>
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/soteuudistus/"
-                  >
-                    #
-                    soteuudistus
-                  </a>
-                </li>
-              </ul>
-            </aside>
           </div>
         </div>
       </div>
@@ -1097,7 +1088,7 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Sote on hyvinvointi­yhteiskunnan kulmakivi meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-12-20"
@@ -1105,13 +1096,13 @@ exports[`<Post /> should render basic post 1`] = `
                 20.12.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -1119,10 +1110,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1130,10 +1121,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -1149,7 +1140,7 @@ exports[`<Post /> should render basic post 1`] = `
               Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/sote-on-hyvinvointiyhteiskunnan-kulmakivi/"
                 rel="permalink"
               >
@@ -1223,7 +1214,7 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-11-15"
@@ -1231,13 +1222,13 @@ exports[`<Post /> should render basic post 1`] = `
                 15.11.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -1245,10 +1236,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1256,10 +1247,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -1275,7 +1266,7 @@ exports[`<Post /> should render basic post 1`] = `
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
@@ -1349,7 +1340,7 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-09-27"
@@ -1357,13 +1348,13 @@ exports[`<Post /> should render basic post 1`] = `
                 27.09.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -1371,10 +1362,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1382,10 +1373,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -1401,7 +1392,7 @@ exports[`<Post /> should render basic post 1`] = `
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
@@ -1475,7 +1466,7 @@ exports[`<Post /> should render basic post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2024-04-03"
@@ -1483,13 +1474,13 @@ exports[`<Post /> should render basic post 1`] = `
                 03.04.2024
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -1497,10 +1488,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -1508,10 +1499,10 @@ exports[`<Post /> should render basic post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/osuuskauppavaalit/"
                   >
                     #
@@ -1527,7 +1518,7 @@ exports[`<Post /> should render basic post 1`] = `
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >
@@ -1737,7 +1728,7 @@ exports[`<Post /> should render oldest post 1`] = `
   text-decoration: underline;
 }
 
-.c29 {
+.c24 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1745,9 +1736,9 @@ exports[`<Post /> should render oldest post 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c29 :hover,
-.c29 :active,
-.c29 :focus {
+.c24 :hover,
+.c24 :active,
+.c24 :focus {
   text-decoration: underline;
 }
 
@@ -1774,22 +1765,22 @@ exports[`<Post /> should render oldest post 1`] = `
   margin-top: 1rem;
 }
 
-.c27 {
+.c22 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c28 {
+.c23 {
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c23 :last-child {
   margin-right: 0px;
 }
 
-.c25 {
+.c20 {
   display: flex;
   flex-direction: column;
 }
@@ -2043,27 +2034,27 @@ exports[`<Post /> should render oldest post 1`] = `
   z-index: 50;
 }
 
-.c21 {
+.c29 {
   margin-top: auto;
 }
 
-.c18 {
+.c26 {
   display: flex;
   position: relative;
 }
 
-.c19 {
+.c27 {
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c20 {
+.c28 {
   height: 100%;
   width: 100%;
 }
 
-.c20:after {
+.c28:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -2073,20 +2064,20 @@ exports[`<Post /> should render oldest post 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c24 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c26 {
+.c21 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -2220,31 +2211,26 @@ exports[`<Post /> should render oldest post 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c23 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c24 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c26 {
+  .c21 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -2253,19 +2239,15 @@ exports[`<Post /> should render oldest post 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c22 {
+  .c16 >.c25,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -2409,11 +2391,56 @@ exports[`<Post /> should render oldest post 1`] = `
           <div
             class="c17 c18"
           >
-            <div
+            <h1
               class="c19"
             >
+              Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
+            </h1>
+            <aside
+              aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
+              class="c20 c21"
+            >
+              <time
+                datetime="2021-02-04"
+              >
+                04.02.2021
+              </time>
+              <ul
+                class="c22"
+              >
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/kirkkonummi/"
+                  >
+                    #
+                    Kirkkonummi
+                  </a>
+                </li>
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/varhaiskasvatus/"
+                  >
+                    #
+                    varhaiskasvatus
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div
+            class="c25 c26"
+          >
+            <div
+              class="c27"
+            >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c28"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -2452,7 +2479,7 @@ exports[`<Post /> should render oldest post 1`] = `
               </div>
             </div>
             <div
-              class="gatsby-image-wrapper c21"
+              class="gatsby-image-wrapper c29"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 1920px; height: 384px;"
             >
@@ -2489,51 +2516,6 @@ exports[`<Post /> should render oldest post 1`] = `
                 const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
               </script>
             </div>
-          </div>
-          <div
-            class="c22 c23"
-          >
-            <h1
-              class="c24"
-            >
-              Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys
-            </h1>
-            <aside
-              aria-label="Kirjoituksen Kotihoidon tuen kuntalisä - pieni kustannus, suuri merkitys meta-tiedot"
-              class="c25 c26"
-            >
-              <time
-                datetime="2021-02-04"
-              >
-                04.02.2021
-              </time>
-              <ul
-                class="c27"
-              >
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/kirkkonummi/"
-                  >
-                    #
-                    Kirkkonummi
-                  </a>
-                </li>
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/varhaiskasvatus/"
-                  >
-                    #
-                    varhaiskasvatus
-                  </a>
-                </li>
-              </ul>
-            </aside>
           </div>
         </div>
       </div>
@@ -2830,7 +2812,7 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Päiväkodit kaipaavat opettajia meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-06-07"
@@ -2838,13 +2820,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 07.06.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2852,10 +2834,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -2871,7 +2853,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Päiväkodeissa on huutava pula varhaiskasvatuksen opettajista. Kirkkonummella olisi nyt mahdollisuus rakentaa uudenlaista työympäristöä ja tehdä siitä valttikortti uusien opettajien palkkaamiseen sekä nykyisten viihtymiseen!
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/paivakodit-kaipaavat-opettajia/"
                 rel="permalink"
               >
@@ -2945,7 +2927,7 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen riittävyydestä ei saa tinkiä meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-03-05"
@@ -2953,13 +2935,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 05.03.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -2967,10 +2949,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -2978,10 +2960,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -2997,7 +2979,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Keskustan alueella on nyt jo pulaa päiväkotipaikoista. Uusien asemakaavojen myötä tarve tulee vain kasvamaan, eikä Jokirinne ole siihen vastaus. Kunnassa pitää huolehtia varhaiskasvatuspaikkojen riittävyydestä!
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/varhaiskasvatuksen-riittavyydesta-ei-saa-tinkia/"
                 rel="permalink"
               >
@@ -3071,7 +3053,7 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Varhaiskasvatuksen kerhotoiminta - lapsen etu meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-02-18"
@@ -3079,13 +3061,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 18.02.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -3093,10 +3075,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -3112,7 +3094,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Samalla, kun kunnanvaltuusto päätti lopettaa alle 2-vuotiaiden kotihoidontuen kuntalisän, lopetettiin myös Kirkkonummella toiminut varhaiskasvatuksen kerhotoiminta.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/varhaiskasvatuksen-kerhotoiminta/"
                 rel="permalink"
               >
@@ -3186,7 +3168,7 @@ exports[`<Post /> should render oldest post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Kirkkonummi-lisä on sinunkin etusi meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-02-15"
@@ -3194,13 +3176,13 @@ exports[`<Post /> should render oldest post 1`] = `
                 15.02.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -3208,10 +3190,10 @@ exports[`<Post /> should render oldest post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/varhaiskasvatus/"
                   >
                     #
@@ -3227,7 +3209,7 @@ exports[`<Post /> should render oldest post 1`] = `
               Kirkkonummi-lisästä hyötyvät sitä saavien perheiden lisäksi myös koko muukin kunta. Tarjoamalla lapsiperheille hyviä palveluita sekä kannustimia muuttaa Kirkkonummelle, saamme pidettyä kuntamme elinvoimaisena ja myös tulevaisuus on turvattu.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/kirkkonummi-lisa-on-sinunkin-etusi/"
                 rel="permalink"
               >
@@ -3437,7 +3419,7 @@ exports[`<Post /> should render updated post 1`] = `
   text-decoration: underline;
 }
 
-.c29 {
+.c24 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -3445,9 +3427,9 @@ exports[`<Post /> should render updated post 1`] = `
   color: rgb(90, 94, 0);
 }
 
-.c29 :hover,
-.c29 :active,
-.c29 :focus {
+.c24 :hover,
+.c24 :active,
+.c24 :focus {
   text-decoration: underline;
 }
 
@@ -3474,22 +3456,22 @@ exports[`<Post /> should render updated post 1`] = `
   margin-top: 1rem;
 }
 
-.c27 {
+.c22 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0.5rem;
 }
 
-.c28 {
+.c23 {
   margin-right: 1rem;
 }
 
-.c28 :last-child {
+.c23 :last-child {
   margin-right: 0px;
 }
 
-.c25 {
+.c20 {
   display: flex;
   flex-direction: column;
 }
@@ -3743,27 +3725,27 @@ exports[`<Post /> should render updated post 1`] = `
   z-index: 50;
 }
 
-.c21 {
+.c29 {
   margin-top: auto;
 }
 
-.c18 {
+.c26 {
   display: flex;
   position: relative;
 }
 
-.c19 {
+.c27 {
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c20 {
+.c28 {
   height: 100%;
   width: 100%;
 }
 
-.c20:after {
+.c28:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -3773,20 +3755,20 @@ exports[`<Post /> should render updated post 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c24 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
 }
 
-.c26 {
+.c21 {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -3920,31 +3902,26 @@ exports[`<Post /> should render updated post 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c23 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c24 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
 }
 
 @media (min-width: 1200px) {
-  .c26 {
+  .c21 {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -3953,19 +3930,15 @@ exports[`<Post /> should render updated post 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c22 {
+  .c16 >.c25,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -4109,11 +4082,67 @@ exports[`<Post /> should render updated post 1`] = `
           <div
             class="c17 c18"
           >
-            <div
+            <h1
               class="c19"
             >
+              Sote on hyvinvointi­yhteiskunnan kulmakivi
+            </h1>
+            <aside
+              aria-label="Kirjoituksen Sote on hyvinvointi­yhteiskunnan kulmakivi meta-tiedot"
+              class="c20 c21"
+            >
+              <time
+                datetime="2021-12-20"
+              >
+                20.12.2021
+              </time>
+              <ul
+                class="c22"
+              >
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/aluevaalit/"
+                  >
+                    #
+                    aluevaalit
+                  </a>
+                </li>
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/kirkkonummi/"
+                  >
+                    #
+                    Kirkkonummi
+                  </a>
+                </li>
+                <li
+                  class="c23"
+                >
+                  <a
+                    class="c24"
+                    href="/kategoria/soteuudistus/"
+                  >
+                    #
+                    soteuudistus
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div
+            class="c25 c26"
+          >
+            <div
+              class="c27"
+            >
               <div
-                class="gatsby-image-wrapper c20"
+                class="gatsby-image-wrapper c28"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
               >
@@ -4152,7 +4181,7 @@ exports[`<Post /> should render updated post 1`] = `
               </div>
             </div>
             <div
-              class="gatsby-image-wrapper c21"
+              class="gatsby-image-wrapper c29"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; width: 1921px; height: 384px;"
             >
@@ -4189,62 +4218,6 @@ exports[`<Post /> should render updated post 1`] = `
                 const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
               </script>
             </div>
-          </div>
-          <div
-            class="c22 c23"
-          >
-            <h1
-              class="c24"
-            >
-              Sote on hyvinvointi­yhteiskunnan kulmakivi
-            </h1>
-            <aside
-              aria-label="Kirjoituksen Sote on hyvinvointi­yhteiskunnan kulmakivi meta-tiedot"
-              class="c25 c26"
-            >
-              <time
-                datetime="2021-12-20"
-              >
-                20.12.2021
-              </time>
-              <ul
-                class="c27"
-              >
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/aluevaalit/"
-                  >
-                    #
-                    aluevaalit
-                  </a>
-                </li>
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/kirkkonummi/"
-                  >
-                    #
-                    Kirkkonummi
-                  </a>
-                </li>
-                <li
-                  class="c28"
-                >
-                  <a
-                    class="c29"
-                    href="/kategoria/soteuudistus/"
-                  >
-                    #
-                    soteuudistus
-                  </a>
-                </li>
-              </ul>
-            </aside>
           </div>
         </div>
       </div>
@@ -4583,7 +4556,7 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Terveys kuuluu kaikille meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2022-01-19"
@@ -4591,13 +4564,13 @@ exports[`<Post /> should render updated post 1`] = `
                 19.01.2022
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -4605,10 +4578,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4616,10 +4589,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -4635,7 +4608,7 @@ exports[`<Post /> should render updated post 1`] = `
               Poistamalla sosiaali- ja terveydenhuollon asiakasmaksut, säästämme byrokratiassa. Lisäksi pääsemme hoitamaan ongelmia ennen kuin niistä tulee merkittäviä. Ja tärkeimpänä varmistamme, ettei kukaan jää ilman hoitoa taloudellisista syistä.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/terveys-kuuluu-kaikille/"
                 rel="permalink"
               >
@@ -4709,7 +4682,7 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Mitä jos terveyskeskusta ei olisikaan? meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-11-15"
@@ -4717,13 +4690,13 @@ exports[`<Post /> should render updated post 1`] = `
                 15.11.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -4731,10 +4704,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4742,10 +4715,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -4761,7 +4734,7 @@ exports[`<Post /> should render updated post 1`] = `
               Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/mita-jos-terveyskeskusta-ei-olisikaan/"
                 rel="permalink"
               >
@@ -4835,7 +4808,7 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen Ehdolle aluevaaleihin meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2021-09-27"
@@ -4843,13 +4816,13 @@ exports[`<Post /> should render updated post 1`] = `
                 27.09.2021
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/aluevaalit/"
                   >
                     #
@@ -4857,10 +4830,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4868,10 +4841,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/soteuudistus/"
                   >
                     #
@@ -4887,7 +4860,7 @@ exports[`<Post /> should render updated post 1`] = `
               Sote-uudituksessa tärkeintä on huolehtia lähipalvelujen säilymisestä lähellä, terveydenhuollon pitäminen julkisena palveluna, hoitohenkilökunnan hyvinvoinnista ja riittävyydestä sekä ratkaista hoitajapula ja hoitovelka.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/ehdolle-aluevaaleihin/"
                 rel="permalink"
               >
@@ -4961,7 +4934,7 @@ exports[`<Post /> should render updated post 1`] = `
             </a>
             <aside
               aria-label="Kirjoituksen VBO:n vaalit koskettavat meitä kaikkia meta-tiedot"
-              class="c25"
+              class="c20"
             >
               <time
                 datetime="2024-04-03"
@@ -4969,13 +4942,13 @@ exports[`<Post /> should render updated post 1`] = `
                 03.04.2024
               </time>
               <ul
-                class="c27"
+                class="c22"
               >
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kaavoitus/"
                   >
                     #
@@ -4983,10 +4956,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/kirkkonummi/"
                   >
                     #
@@ -4994,10 +4967,10 @@ exports[`<Post /> should render updated post 1`] = `
                   </a>
                 </li>
                 <li
-                  class="c28"
+                  class="c23"
                 >
                   <a
-                    class="c29"
+                    class="c24"
                     href="/kategoria/osuuskauppavaalit/"
                   >
                     #
@@ -5013,7 +4986,7 @@ exports[`<Post /> should render updated post 1`] = `
               Varuboden-Oslan osuuskauppavaalit ovat nyt käynnissä. Äänestämällä vaikutat ihmisten työpaikkoihin, kulutuskäyttäytymiseen sekä lähipalveluihin.
                
               <a
-                class="c29 c50"
+                class="c24 c50"
                 href="/blogi/osuuskauppavaalit-koskettavat-meita-kaikkia/"
                 rel="permalink"
               >

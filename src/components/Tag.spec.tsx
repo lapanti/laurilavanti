@@ -20,7 +20,6 @@ describe('<Tag />', () => {
                     contentfulPage: {
                         backgroundImage: { description: smilingImageDescription, gatsbyImageData: smilingImage },
                         image: { description: inFrontOfWoodsImageDescription, gatsbyImageData: inFrontOfWoodsImage },
-                        leftAlignedTitle: false,
                         socialImage: { gatsbyImageData: inFrontOfWoodsImage },
                     },
                 }}

@@ -8,7 +8,7 @@ import Layout from './Layout'
 
 interface Props {
     data: {
-        contentfulPage: Pick<ContentfulPage, 'image' | 'backgroundImage' | 'leftAlignedTitle' | 'socialImage'>
+        contentfulPage: Pick<ContentfulPage, 'image' | 'backgroundImage' | 'socialImage'>
     }
     pageContext: {
         name: string
@@ -21,7 +21,6 @@ const Tag = ({ data, pageContext: { name, tag } }: Props): JSX.Element => (
         backgroundImage={data?.contentfulPage?.backgroundImage?.gatsbyImageData}
         heroImage={data?.contentfulPage?.image.gatsbyImageData}
         heroImageAlt={data?.contentfulPage?.image?.description}
-        leftAlignedTitle={data?.contentfulPage?.leftAlignedTitle}
         pathname={`/blogi/${tag}/`}
         socialImage={data?.contentfulPage?.socialImage?.gatsbyImageData}
         title={name.replace(/^\w/, (c) => c.toUpperCase())}
@@ -54,7 +53,6 @@ export const query = graphql`
             socialImage {
                 gatsbyImageData(layout: CONSTRAINED, width: 560)
             }
-            leftAlignedTitle
         }
     }
 `

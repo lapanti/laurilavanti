@@ -34,7 +34,6 @@ export const frontPage: ContentfulPage = {
     description: 'Kotisivuni.',
     image,
     jsonLdType: 'WebSite',
-    leftAlignedTitle: true,
     secondaryTitle: 'Ohjelmistoja, yksityisyydensuojaa ja politiikkaa',
     slug: 'index',
     socialImage: {
@@ -192,7 +191,6 @@ export const aboutMe: ContentfulPage = {
     description:
         'Olen ikäni Kirkkonummella asunut 29-vuotias isä, ohjelmistokehittäjä ja diplomi-insinööri. Haluan huolehtia siitä, että lapsilla ja nuorilla on hyvä kasvuympäristö ja valoisa tulevaisuus.',
     jsonLdType: 'Person',
-    leftAlignedTitle: false,
     secondaryTitle: null,
     slug: 'minusta',
     subtitle: null,
@@ -213,7 +211,6 @@ export const blog: ContentfulPage = {
     },
     description: 'Blogitekstejä',
     jsonLdType: 'WebPage',
-    leftAlignedTitle: true,
     secondaryTitle: null,
     slug: 'blogi',
     subtitle: null,
@@ -229,7 +226,6 @@ export const contactMe: ContentfulPage = {
     },
     description: 'Yhteystiedot',
     jsonLdType: 'Person',
-    leftAlignedTitle: true,
     secondaryTitle: null,
     slug: 'ota-yhteytta',
     subtitle: null,

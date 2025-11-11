@@ -203,19 +203,19 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -292,24 +292,19 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -318,19 +313,15 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -473,14 +464,14 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
     </article>
@@ -876,19 +867,19 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -965,24 +956,19 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -991,19 +977,15 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -1146,14 +1128,14 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <blockquote
@@ -1540,19 +1522,19 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -1629,24 +1611,19 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -1655,19 +1632,15 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -1810,14 +1783,14 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
     </article>
@@ -2321,19 +2294,19 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -2417,24 +2390,19 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -2443,19 +2411,15 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -2598,14 +2562,14 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <ul
@@ -3126,19 +3090,19 @@ exports[`<Layout /> rich body should render H2 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -3215,24 +3179,19 @@ exports[`<Layout /> rich body should render H2 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -3241,19 +3200,15 @@ exports[`<Layout /> rich body should render H2 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -3396,14 +3351,14 @@ exports[`<Layout /> rich body should render H2 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <h2
@@ -3800,19 +3755,19 @@ exports[`<Layout /> rich body should render H3 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -3889,24 +3844,19 @@ exports[`<Layout /> rich body should render H3 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -3915,19 +3865,15 @@ exports[`<Layout /> rich body should render H3 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -4070,14 +4016,14 @@ exports[`<Layout /> rich body should render H3 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <h3
@@ -4470,19 +4416,19 @@ exports[`<Layout /> rich body should render Hr 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -4559,24 +4505,19 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -4585,19 +4526,15 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -4740,14 +4677,14 @@ exports[`<Layout /> rich body should render Hr 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <hr
@@ -5155,19 +5092,19 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   margin-top: 1rem;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -5244,24 +5181,19 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -5270,19 +5202,15 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -5425,14 +5353,14 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <figure
@@ -5882,19 +5810,19 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -5975,24 +5903,19 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -6001,19 +5924,15 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -6156,14 +6075,14 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <p
@@ -6579,19 +6498,19 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -6668,24 +6587,19 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -6694,19 +6608,15 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -6849,14 +6759,14 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <ul
@@ -7256,19 +7166,19 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -7349,24 +7259,19 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -7375,19 +7280,15 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -7530,14 +7431,14 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <p
@@ -7922,19 +7823,19 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -8015,24 +7916,19 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -8041,19 +7937,15 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -8196,14 +8088,14 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <div
@@ -8648,19 +8540,19 @@ exports[`<Layout /> rich body should render external links 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -8741,24 +8633,19 @@ exports[`<Layout /> rich body should render external links 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -8767,19 +8654,15 @@ exports[`<Layout /> rich body should render external links 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -8922,14 +8805,14 @@ exports[`<Layout /> rich body should render external links 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <p
@@ -9332,19 +9215,19 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -9425,24 +9308,19 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -9451,19 +9329,15 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -9606,14 +9480,14 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <p
@@ -10013,19 +9887,19 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -10106,24 +9980,19 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -10132,19 +10001,15 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -10287,14 +10152,14 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <p
@@ -10702,19 +10567,19 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -10795,24 +10660,19 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -10821,19 +10681,15 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -10976,14 +10832,14 @@ exports[`<Layout /> rich body should render internal links 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <p
@@ -11375,19 +11231,19 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -11464,24 +11320,19 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -11490,19 +11341,15 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -11645,14 +11492,14 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
     </article>
@@ -12043,19 +11890,19 @@ exports[`<Layout /> rich body should render table 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -12170,24 +12017,19 @@ exports[`<Layout /> rich body should render table 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -12196,19 +12038,15 @@ exports[`<Layout /> rich body should render table 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -12351,14 +12189,14 @@ exports[`<Layout /> rich body should render table 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       <div
@@ -13518,19 +13356,19 @@ exports[`<Layout /> should render minimal 1`] = `
   z-index: 50;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c20 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c21 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -13607,24 +13445,19 @@ exports[`<Layout /> should render minimal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c20 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c20 {
-    padding-left: 0.5rem;
-    padding-right: 5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c21 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -13633,19 +13466,15 @@ exports[`<Layout /> should render minimal 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c19 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row-reverse;
   }
 }
 
@@ -13788,14 +13617,14 @@ exports[`<Layout /> should render minimal 1`] = `
         >
           <div
             class="c17 c18"
-          />
-          <div
-            class="c19 c20"
           >
             <h1
-              class="c21"
+              class="c19"
             />
           </div>
+          <div
+            class="c20 c21"
+          />
         </div>
       </div>
       Children
@@ -14178,27 +14007,27 @@ exports[`<Layout /> should render title banner 1`] = `
   z-index: 50;
 }
 
-.c21 {
+.c24 {
   margin-top: auto;
 }
 
-.c18 {
+.c21 {
   display: flex;
   position: relative;
 }
 
-.c19 {
+.c22 {
   height: 100%;
   position: absolute;
   width: 100%;
 }
 
-.c20 {
+.c23 {
   height: 100%;
   width: 100%;
 }
 
-.c20:after {
+.c23:after {
   background-image: linear-gradient(rgba(0, 98, 114, 0.7), rgba(0, 98, 114, 0.7));
   bottom: 0;
   content: "";
@@ -14208,14 +14037,14 @@ exports[`<Layout /> should render title banner 1`] = `
   width: 100%;
 }
 
-.c23 {
+.c18 {
   background-color: rgb(255, 255, 255);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1rem;
 }
 
-.c24 {
+.c19 {
   font-size: 3rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
@@ -14292,24 +14121,19 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c23 {
+  .c18 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 37.5rem;
+    padding-left: 0.5rem;
+    padding-right: 5rem;
     padding-top: 0;
   }
 }
 
 @media (min-width: 1200px) {
-  .c23 {
-    padding-left: 5rem;
-    padding-right: 0.5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c24 {
+  .c19 {
     font-size: 5rem;
     line-height: 1;
   }
@@ -14318,19 +14142,15 @@ exports[`<Layout /> should render title banner 1`] = `
 @media (min-width: 1200px) {
   .c16 {
     display: flex;
+    flex-direction: row;
     height: 100%;
+    justify-content: flex-end;
     margin: auto;
   }
 
-  .c16 >.c17,
-  .c16 >.c22 {
+  .c16 >.c20,
+  .c16 >.c17 {
     width: 50%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c16 {
-    flex-direction: row;
   }
 }
 
@@ -14474,11 +14294,20 @@ exports[`<Layout /> should render title banner 1`] = `
           <div
             class="c17 c18"
           >
-            <div
+            <h1
               class="c19"
             >
+              Title
+            </h1>
+          </div>
+          <div
+            class="c20 c21"
+          >
+            <div
+              class="c22"
+            >
               <div
-                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c20"
+                class="gatsby-image-wrapper gatsby-image-wrapper-constrained c23"
                 data-gatsby-image-wrapper=""
                 style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
               >
@@ -14530,7 +14359,7 @@ exports[`<Layout /> should render title banner 1`] = `
               </div>
             </div>
             <div
-              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c21"
+              class="gatsby-image-wrapper gatsby-image-wrapper-constrained c24"
               data-gatsby-image-wrapper=""
               style="position: relative; overflow: hidden; display: inline-block; vertical-align: top;"
             >
@@ -14578,15 +14407,6 @@ exports[`<Layout /> should render title banner 1`] = `
                 const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}
               </script>
             </div>
-          </div>
-          <div
-            class="c22 c23"
-          >
-            <h1
-              class="c24"
-            >
-              Title
-            </h1>
           </div>
         </div>
       </div>

@@ -60,7 +60,6 @@ export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt =
             width: 1921,
         },
     },
-    leftAlignedTitle: false,
     metadata: {
         tags: [
             {
@@ -144,7 +143,6 @@ export const ourNatureIsOurAceInTheHole: ContentfulPost & ContentfulPostExcerpt 
             width: 1921,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -254,7 +252,6 @@ export const newYearSameUpkeep: ContentfulPost & ContentfulPostExcerpt = {
             width: 1921,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -364,7 +361,6 @@ export const healthBelongsToAll: ContentfulPost & ContentfulPostExcerpt = {
             width: 1921,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -474,7 +470,6 @@ export const soteIsBedrock: ContentfulPost & ContentfulPostExcerpt = {
             width: 1921,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -584,7 +579,6 @@ export const whatIfNoHealthCareCenter: ContentfulPost & ContentfulPostExcerpt = 
             width: 1920,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -694,7 +688,6 @@ export const perusturvajaostoWhatIs: ContentfulPost & ContentfulPostExcerpt = {
             width: 1922,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -800,7 +793,6 @@ export const runningForAluevaalit: ContentfulPost & ContentfulPostExcerpt = {
             width: 1921,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -916,7 +908,6 @@ export const daycareNeedsTeachers: ContentfulPost & ContentfulPostExcerpt = {
             width: 1923,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -1054,7 +1045,6 @@ export const wellPlannedIsWellDoneBut: ContentfulPost & ContentfulPostExcerpt = 
             width: 1920,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -1193,7 +1183,6 @@ export const daycareCannotBeCompromised: ContentfulPost & ContentfulPostExcerpt 
             width: 1920,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -1303,7 +1292,6 @@ export const preschoolClubChildBenefit: ContentfulPost & ContentfulPostExcerpt =
             width: 1920,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -1441,7 +1429,6 @@ export const kirkkonummiAddIsYourBenefit: ContentfulPost & ContentfulPostExcerpt
             width: 1920,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
@@ -1547,7 +1534,6 @@ export const homecareMunicipalityExtra: ContentfulPost & ContentfulPostExcerpt =
             width: 1920,
         },
     },
-    leftAlignedTitle: true,
     metadata: {
         tags: [
             {
