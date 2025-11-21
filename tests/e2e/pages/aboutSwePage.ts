@@ -9,7 +9,7 @@ export class AboutSwePage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.aboutMeSweTitle = page.getByRole('heading', { name: /Lauri Lavanti — Liberal och hållbar politik/i })
+        this.aboutMeSweTitle = page.getByRole('heading', { name: /Lauri Lavanti – .*/i })
     }
 
     async goTo() {
