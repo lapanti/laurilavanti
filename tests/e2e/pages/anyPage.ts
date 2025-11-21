@@ -24,7 +24,7 @@ export class AnyPage {
         this.isMobile = (page.viewportSize()?.width ?? 0) < 1200
         this.navOpenButton = page.getByRole('button', { name: /Avaa valikko/i })
         this.navCloseButton = page.getByRole('button', { name: /Sulje valikko/i })
-        this.navLinkAboutMe = page.getByRole('link', { name: /Kuka Lauri?/i })
+        this.navLinkAboutMe = page.getByRole('link', { name: /Kuka\?/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
         this.navLinkAboutMeSwe = page.getByRole('link', { name: /🇸🇪/i })
