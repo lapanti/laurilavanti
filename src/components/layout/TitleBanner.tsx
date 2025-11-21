@@ -38,6 +38,7 @@ const BackgroundImage = styled(GatsbyImage)({
 
 const TitleContainer = styled.div({
     backgroundColor: colors.white,
+    paddingBottom: sizes[1],
     paddingLeft: CONTENT_PADDING,
     paddingRight: CONTENT_PADDING,
     paddingTop: sizes[1],
@@ -46,6 +47,7 @@ const TitleContainer = styled.div({
         flexDirection: 'column',
         justifyContent: 'center',
         maxWidth: sizes[37.5],
+        paddingBottom: 0,
         paddingLeft: sizes[0.5],
         paddingRight: sizes[5],
         paddingTop: 0,
