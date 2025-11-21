@@ -10,7 +10,7 @@ import UL from '../UL'
 /** Only exported for testing purposes */
 export const yearsToString = (startYear: number, endYear?: number): string => {
     if (startYear === endYear) return `${startYear}`
-    return `${startYear}-${endYear ?? ''}`
+    return `${startYear}–${endYear ?? ''}`
 }
 
 const DivContainer = styled.div({
@@ -54,7 +54,7 @@ const CurriculumVitaeComponent = ({
                     <ListItem key={`${duty}-${organization}-${startYear}`} $isCurrent={!endYear}>
                         <span>{duty} </span>
                         <i>
-                            {organization} — {yearsToString(startYear, endYear)}
+                            {organization} {yearsToString(startYear, endYear)}
                         </i>
                     </ListItem>
                 ))}
@@ -70,7 +70,7 @@ const CurriculumVitaeComponent = ({
                     <ListItem key={`${title}-${company}`} $isCurrent={!endYear}>
                         <span>{title} </span>
                         <i>
-                            {company} ({location}) — {yearsToString(startYear, endYear)}
+                            {company} ({location}) {yearsToString(startYear, endYear)}
                         </i>
                     </ListItem>
                 ))}
@@ -86,7 +86,7 @@ const CurriculumVitaeComponent = ({
                     <ListItem key={`${degree}-${school}`} $isCurrent={!endYear}>
                         <span>{degree} </span>
                         <i>
-                            {school} ({location}) — {yearsToString(startYear, endYear)}
+                            {school} ({location}) {yearsToString(startYear, endYear)}
                         </i>
                     </ListItem>
                 ))}
