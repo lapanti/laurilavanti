@@ -808,54 +808,6 @@ describe('<Layout />', () => {
             expect(container.firstChild).toMatchSnapshot()
         })
 
-        it('should render inline YearsFrom', () => {
-            const __typename = 'ContentfulYearsFrom'
-            const { container } = render(
-                <Layout
-                    body={{
-                        raw: JSON.stringify({
-                            content: [
-                                {
-                                    content: [
-                                        {
-                                            content: [],
-                                            data: {
-                                                target: {
-                                                    sys: {
-                                                        id: 'fvxZI2eLzqnwfebd6CPUO',
-                                                        linkType: 'Entry',
-                                                        type: 'Link',
-                                                    },
-                                                },
-                                            },
-                                            nodeType: 'embedded-entry-inline',
-                                        },
-                                    ],
-                                    data: {},
-                                    nodeType: 'paragraph',
-                                },
-                            ],
-                            data: {},
-                            nodeType: 'document',
-                        }),
-                        references: [
-                            {
-                                __typename,
-                                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
-                                dateToCountFrom: '2000-01-01',
-                            },
-                        ],
-                    }}
-                    title=""
-                />
-            )
-
-            // Check YearsFrom is present
-            expect(screen.getByText('20')).toBeInTheDocument()
-
-            expect(container.firstChild).toMatchSnapshot()
-        })
-
         it('should render inline borken stuff', () => {
             const __typename = 'Never Going to Match Anything'
             const { container } = render(

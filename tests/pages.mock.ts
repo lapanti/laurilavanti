@@ -181,11 +181,6 @@ export const aboutMe: ContentfulPage = {
                 ],
                 jobExperiencesTitle: 'Työkokemus',
             },
-            {
-                __typename: 'ContentfulYearsFrom',
-                contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
-                dateToCountFrom: '1991-10-01',
-            },
         ],
     },
     description:

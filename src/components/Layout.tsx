@@ -37,7 +37,6 @@ import Image from './layout/Image'
 import Seo from './layout/Seo'
 import Svgs from './layout/Svgs'
 import TitleBanner from './layout/TitleBanner'
-import YearsFrom from './layout/YearsFrom'
 import LI from './LI'
 import Paragraph from './Paragraph'
 import UL from './UL'
@@ -153,9 +152,6 @@ const options = {
             }
         },
         [INLINES.EMBEDDED_ENTRY]: (node: Block | Inline) => {
-            if (node?.data?.target?.__typename === 'ContentfulYearsFrom') {
-                return <YearsFrom dateToCountFrom={node.data.target.dateToCountFrom} />
-            }
             if (node?.data?.target?.__typename === 'ContentfulContactInfoLink') {
                 return <ContactInfoLink link={node.data.target} />
             }

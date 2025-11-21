@@ -77,11 +77,6 @@ export const query = graphql`
                         url
                         title
                     }
-                    ... on ContentfulYearsFrom {
-                        __typename
-                        contentful_id
-                        dateToCountFrom
-                    }
                 }
             }
             image {
