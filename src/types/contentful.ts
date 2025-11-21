@@ -68,10 +68,6 @@ interface ContactInfoLinkReference extends ContentfulRichTextGatsbyReference {
     icon: 'facebook' | 'bluesky' | 'instagram' | 'linkedin' | 'envelope' | 'threads' | 'mastodon'
 }
 
-interface YearsFromReference extends ContentfulRichTextGatsbyReference {
-    dateToCountFrom?: string // In the format 'yyyy-MM-dd'
-}
-
 type RichReferences =
     | ExcerptListReference
     | RichTextPostReference
@@ -79,7 +75,6 @@ type RichReferences =
     | ContactInfoLinkReference
     | ContentfulRichTextGatsbyReference
     | CurriculumVitae
-    | YearsFromReference
     | ImageReference
 
 export type RichBody = RenderRichTextData<RichReferences>
