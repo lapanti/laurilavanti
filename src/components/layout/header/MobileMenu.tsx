@@ -35,7 +35,9 @@ const Menu = styled.div<{ $isOpen: boolean }>(
             transition: `opacity ${ANIMATION_DURATION}s ${ANIMATION_EASING}`,
         },
         alignItems: 'center',
-        background: colors.evening,
+        background:
+            'linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%)',
+        backgroundColor: colors.evening,
         display: 'flex',
         flexDirection: 'column',
         gap: sizes[2.5],

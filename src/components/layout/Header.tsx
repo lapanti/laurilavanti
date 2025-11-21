@@ -59,7 +59,10 @@ const HeaderComponent = ({ className, isFrontPage }: Props): JSX.Element => {
 HeaderComponent.displayName = 'Header'
 
 const Header = styled(HeaderComponent)({
+    background:
+        'linear-gradient(45deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%)',
     backgroundColor: colors.evening,
+    boxShadow: 'hsla(0 0% 0% / 0.1) 0 0.5rem 1rem',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'row',
