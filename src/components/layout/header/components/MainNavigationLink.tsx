@@ -6,10 +6,9 @@ import InternalLink from '../../../InternalLink'
 
 interface Props {
     className?: string
-    hideIfCurrent?: boolean
 }
 
-const MainNavigationLinkComponent = ({ className, hideIfCurrent }: Props): JSX.Element => {
+const MainNavigationLinkComponent = ({ className }: Props): JSX.Element => {
     const {
         site: {
             siteMetadata: { title },
@@ -25,13 +24,7 @@ const MainNavigationLinkComponent = ({ className, hideIfCurrent }: Props): JSX.E
     `)
 
     return (
-        <InternalLink
-            $color={colors.peach}
-            activeStyle={hideIfCurrent ? { visibility: 'hidden' } : undefined}
-            className={className}
-            title={title}
-            to="/"
-        >
+        <InternalLink $color={colors.peach} className={className} title={title} to="/">
             {title}
         </InternalLink>
     )

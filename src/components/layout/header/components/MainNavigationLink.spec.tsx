@@ -10,18 +10,6 @@ describe('<MainNavigationLink />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
-    it('should render link that is hidden when current', () => {
-        const { container } = render(<MainNavigationLink hideIfCurrent />)
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
-    it('should render link for front page', () => {
-        const { container } = render(<MainNavigationLink isFrontPage />)
-
-        expect(container.firstChild).toMatchSnapshot()
-    })
-
     it('should render the actual link', () => {
         render(<MainNavigationLink />)
 
