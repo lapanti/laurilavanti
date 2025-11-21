@@ -3,7 +3,7 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { fontSizes, sizes } from '../../lib/styles'
+import { sizes, typographics } from '../../lib/styles'
 
 const Img = styled(GatsbyImage)({
     display: 'flex',
@@ -12,13 +12,12 @@ const Img = styled(GatsbyImage)({
 })
 
 const Caption = styled.figcaption({
+    ...typographics.additionalInfo,
     display: 'flex',
     flexDirection: 'row',
-    fontStyle: 'italic',
     justifyContent: 'center',
     marginTop: sizes[0.5],
     width: '100%',
-    ...fontSizes[1],
 })
 
 interface ImageProps {

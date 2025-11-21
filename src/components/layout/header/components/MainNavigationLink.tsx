@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, fontFamilies, fontSizes } from '../../../../lib/styles'
+import { colors, fontSizes, typographics } from '../../../../lib/styles'
 import InternalLink from '../../../InternalLink'
 
 interface Props {
@@ -40,8 +40,8 @@ const MainNavigationLinkComponent = ({ className, hideIfCurrent }: Props): JSX.E
 MainNavigationLinkComponent.displayName = 'MainNavigationLink'
 
 const MainNavigationLink = styled(MainNavigationLinkComponent)({
+    ...typographics.h1,
     ...fontSizes[1.75],
-    fontFamily: fontFamilies.heading,
 })
 
 export default MainNavigationLink

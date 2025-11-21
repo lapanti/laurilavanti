@@ -2,7 +2,7 @@ import type { MainNav } from '../../../../types/contentful'
 
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, fontFamilies, fontSizes } from '../../../../lib/styles'
+import { colors, fontSizes, typographics } from '../../../../lib/styles'
 import InternalLink from '../../../InternalLink'
 
 type Link = Omit<MainNav['links'][number], 'contentful_id'>
@@ -27,8 +27,8 @@ const NavigationLinkComponent = ({ className, title, navigationTitle, slug }: Pr
 NavigationLinkComponent.displayName = 'NavigationLink'
 
 const NavigationLink = styled(NavigationLinkComponent)({
+    ...typographics.body,
     ...fontSizes[1.5],
-    fontFamily: fontFamilies.sans,
 })
 
 export default NavigationLink

@@ -2,7 +2,7 @@ import type { Degree, Fiduciary, JobExperience } from '../../types/contentful'
 
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
+import { fontWeights, sizes, typographics } from '../../lib/styles'
 import H2 from '../H2'
 import LI from '../LI'
 import UL from '../UL'
@@ -14,15 +14,13 @@ export const yearsToString = (startYear: number, endYear?: number): string => {
 }
 
 const DivContainer = styled.div({
-    ...fontSizes[1.5],
-    fontFamily: fontFamilies.sans,
-    fontWeight: fontWeights.normal,
+    ...typographics.body,
     marginBottom: sizes[1],
     marginTop: sizes[1],
 })
 
 const ListItem = styled(LI)<{ $isCurrent: boolean }>(({ $isCurrent }) =>
-    $isCurrent ? { fontWeight: fontWeights.bold } : {}
+    $isCurrent ? { fontWeight: fontWeights.black } : {}
 )
 
 interface Props {

@@ -61,6 +61,10 @@ exports[`styles lib fonts fontSizes should match snapshot 1`] = `
     "fontSize": "1.75rem",
     "lineHeight": "2.25rem",
   },
+  "1.875": {
+    "fontSize": "1.875rem",
+    "lineHeight": "2.25rem",
+  },
   "2.25": {
     "fontSize": "2.25rem",
     "lineHeight": "2.5rem",
@@ -87,8 +91,71 @@ exports[`styles lib fonts fontSizes should match snapshot 1`] = `
 exports[`styles lib fonts fontWeights should match snapshot 1`] = `
 {
   "black": 1000,
-  "bold": 700,
-  "normal": 400,
+  "light": 300,
+  "medium": 500,
+  "regular": 400,
+}
+`;
+
+exports[`styles lib fonts typographics should match snapshot 1`] = `
+{
+  "additionalInfo": {
+    "fontFamily": ""IBM Plex Mono", Lucida Sans Typewriter",
+    "fontSize": "1rem",
+    "fontWeight": 400,
+    "lineHeight": "1.5rem",
+  },
+  "blockQuote": {
+    "fontFamily": ""IBM Plex Mono", Lucida Sans Typewriter",
+    "fontSize": "1.5rem",
+    "fontStyle": "italic",
+    "fontWeight": 400,
+    "lineHeight": "2rem",
+  },
+  "body": {
+    "fontFamily": ""IBM Plex Sans", Trebuchet MS",
+    "fontSize": "1.125rem",
+    "fontWeight": 400,
+    "lineHeight": "1.75rem",
+  },
+  "definition": {
+    "fontFamily": ""IBM Plex Mono", Lucida Sans Typewriter",
+    "fontSize": "1rem",
+    "fontWeight": 500,
+    "lineHeight": "1.5rem",
+    "textTransform": "uppercase",
+  },
+  "h1": {
+    "fontFamily": ""Krana Fat", Trebuchet MS",
+    "fontSize": "3.75rem",
+    "fontWeight": 1000,
+    "lineHeight": "1",
+  },
+  "h2": {
+    "fontFamily": ""Krana Fat", Trebuchet MS",
+    "fontSize": "2.25rem",
+    "fontWeight": 1000,
+    "lineHeight": "2.5rem",
+  },
+  "h3": {
+    "fontFamily": ""IBM Plex Sans", Trebuchet MS",
+    "fontSize": "1.5rem",
+    "fontWeight": 500,
+    "lineHeight": "2rem",
+  },
+  "ingress": {
+    "fontFamily": ""IBM Plex Sans", Trebuchet MS",
+    "fontSize": "1.875rem",
+    "fontWeight": 300,
+    "lineHeight": "2.25rem",
+  },
+  "quote": {
+    "fontFamily": ""IBM Plex Sans", Trebuchet MS",
+    "fontSize": "1.125rem",
+    "fontStyle": "italic",
+    "fontWeight": 400,
+    "lineHeight": "1.75rem",
+  },
 }
 `;
 
@@ -123,6 +190,7 @@ exports[`styles lib spacing sizes should match snapshot 1`] = `
   "1.25": "1.25rem",
   "1.5": "1.5rem",
   "1.75": "1.75rem",
+  "1.875": "1.875rem",
   "14": "14rem",
   "2": "2rem",
   "2.25": "2.25rem",

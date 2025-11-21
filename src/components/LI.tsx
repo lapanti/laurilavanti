@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, fontFamilies, fontSizes, fontWeights, sizes } from '../lib/styles'
+import { colors, sizes, typographics } from '../lib/styles'
 import Paragraph from './Paragraph'
 
 interface Props {
@@ -15,6 +15,7 @@ const LIComponent = ({ className, children }: Props): JSX.Element => <li classNa
 LIComponent.displayName = 'LI'
 
 const LI = styled(LIComponent)({
+    ...typographics.body,
     [`> ${Paragraph}`]: {
         margin: 0,
     },
@@ -24,9 +25,6 @@ const LI = styled(LIComponent)({
         left: 0,
         position: 'absolute',
     },
-    ...fontSizes[1.5],
-    fontFamily: fontFamilies.sans,
-    fontWeight: fontWeights.normal,
     marginLeft: sizes[1.25],
 })
 

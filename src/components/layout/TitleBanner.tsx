@@ -4,7 +4,7 @@ import type { Tag } from '../../types/contentful'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { breakpoints, colors, CONTENT_PADDING, fontFamilies, fontSizes, HEADER_SIZE, sizes } from '../../lib/styles'
+import { breakpoints, colors, CONTENT_PADDING, HEADER_SIZE, sizes, typographics } from '../../lib/styles'
 import PostMeta from '../PostMeta'
 
 const Image = styled(GatsbyImage)({
@@ -55,18 +55,11 @@ const TitleContainer = styled.div({
 })
 
 const Title = styled.h1({
-    ...fontSizes[3],
-    fontFamily: fontFamilies.heading,
-    [breakpoints[1200].min]: {
-        ...fontSizes[5],
-    },
+    ...typographics.h1,
 })
 
 const BiggerMeta = styled(PostMeta)({
-    ...fontSizes[1.25],
-    [breakpoints[1200].min]: {
-        ...fontSizes[1.5],
-    },
+    ...typographics.ingress,
 })
 
 const Content = styled.div({

@@ -4,7 +4,7 @@ import '@fontsource/ibm-plex-mono/700.css'
 
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { fontFamilies, fontSizes, fontWeights, sizes } from '../lib/styles'
+import { sizes, typographics } from '../lib/styles'
 
 interface Props {
     className?: string
@@ -25,11 +25,9 @@ const H3Component = ({ className, children, itemProp }: Props): JSX.Element => (
 H3Component.displayName = 'H3'
 
 const H3 = styled(H3Component)({
-    fontFamily: fontFamilies.mono,
-    fontWeight: fontWeights.bold,
+    ...typographics.h3,
     gridColumnStart: 3,
     marginTop: sizes[1],
-    ...fontSizes[1.5],
 })
 
 export default H3
