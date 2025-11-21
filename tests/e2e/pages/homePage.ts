@@ -12,7 +12,7 @@ export class HomePage extends AnyPage {
     constructor(page: Page) {
         super(page)
         this.mainTitle = page.getByRole('heading', { name: /Lauri Lavanti/i })
-        this.subtitle = page.getByText('DI, Lead Developer, kunnanvaltuutettu')
+        this.subtitle = page.getByText('Johtava ohjelmistokehittäjä, diplomi-insinööri, kunnanvaltuutettu')
         this.secondaryTitle = page.getByRole('heading', { name: /Ohjelmistot, yksityisyydensuoja, digitalisaatio/i })
     }
 
