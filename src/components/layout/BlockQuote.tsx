@@ -4,7 +4,7 @@ import '@fontsource/ibm-plex-mono/400-italic.css'
 
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
+import { colors, sizes, typographics } from '../../lib/styles'
 
 interface Props {
     className?: string
@@ -18,16 +18,13 @@ const BlockQuoteComponent = ({ className, children }: Props): JSX.Element => (
 BlockQuoteComponent.displayName = 'BlockQuote'
 
 const BlockQuote = styled(BlockQuoteComponent)({
+    ...typographics.blockQuote,
     borderLeftColor: colors.sand,
     borderLeftWidth: '4px',
-    fontFamily: fontFamilies.mono,
-    fontStyle: 'italic',
-    fontWeight: fontWeights.normal,
     gridColumnStart: 3,
     paddingBottom: sizes[0.5],
     paddingLeft: sizes[0.5],
     paddingTop: sizes[0.5],
-    ...fontSizes[1.5],
 })
 
 export default BlockQuote

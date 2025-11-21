@@ -118,12 +118,14 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -220,9 +222,10 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -305,13 +308,6 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -671,17 +667,17 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 }
 
 .c22 {
-  border-left-color: rgb(214, 210, 196);
-  border-left-width: 4px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-family: "IBM Plex Mono",Lucida Sans Typewriter;
   font-style: italic;
   font-weight: 400;
+  border-left-color: rgb(214, 210, 196);
+  border-left-width: 4px;
   grid-column-start: 3;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .c28 {
@@ -787,12 +783,14 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -889,9 +887,10 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -974,13 +973,6 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -1447,12 +1439,14 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -1549,9 +1543,10 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -1634,13 +1629,6 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -1986,12 +1974,12 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 
 exports[`<Layout /> rich body should render ExcerptList 1`] = `
 .c29 {
-  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
-  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
   grid-column-start: 3;
   margin-top: 1rem;
-  font-size: 1.75rem;
-  line-height: 2.25rem;
 }
 
 .c4 {
@@ -2037,8 +2025,8 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c35 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -2053,6 +2041,11 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c33 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
+  font-weight: 500;
+  text-transform: uppercase;
   margin-right: 1rem;
 }
 
@@ -2066,7 +2059,6 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c30 {
-  font-family: "IBM Plex Sans",Trebuchet MS;
   grid-column-start: auto;
 }
 
@@ -2094,8 +2086,6 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c36 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
   margin-top: 0.25rem;
 }
 
@@ -2224,12 +2214,14 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -2326,9 +2318,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -2418,13 +2411,6 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -2900,12 +2886,12 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 exports[`<Layout /> rich body should render H2 1`] = `
 .c22 {
-  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
-  font-weight: 700;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
   grid-column-start: 3;
   margin-top: 1rem;
-  font-size: 1.75rem;
-  line-height: 2.25rem;
 }
 
 .c4 {
@@ -3025,12 +3011,14 @@ exports[`<Layout /> rich body should render H2 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -3127,9 +3115,10 @@ exports[`<Layout /> rich body should render H2 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -3212,13 +3201,6 @@ exports[`<Layout /> rich body should render H2 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -3584,12 +3566,12 @@ exports[`<Layout /> rich body should render H3 1`] = `
 }
 
 .c22 {
-  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
-  font-weight: 700;
-  grid-column-start: 3;
-  margin-top: 1rem;
   font-size: 1.5rem;
   line-height: 2rem;
+  font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 500;
+  grid-column-start: 3;
+  margin-top: 1rem;
 }
 
 .c28 {
@@ -3695,12 +3677,14 @@ exports[`<Layout /> rich body should render H3 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -3797,9 +3781,10 @@ exports[`<Layout /> rich body should render H3 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -3882,13 +3867,6 @@ exports[`<Layout /> rich body should render H3 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -4361,12 +4339,14 @@ exports[`<Layout /> rich body should render Hr 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -4463,9 +4443,10 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -4548,13 +4529,6 @@ exports[`<Layout /> rich body should render Hr 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -5019,12 +4993,14 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -5114,14 +5090,15 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 }
 
 .c24 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "IBM Plex Mono",Lucida Sans Typewriter;
+  font-weight: 400;
   display: flex;
   flex-direction: row;
-  font-style: italic;
   justify-content: center;
   margin-top: 0.5rem;
   width: 100%;
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 .c22 {
@@ -5144,9 +5121,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -5229,13 +5207,6 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -5654,8 +5625,8 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 }
 
 .c22 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -5765,12 +5736,14 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -5867,9 +5840,10 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -5956,13 +5930,6 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -6327,8 +6294,8 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
 }
 
 .c23 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-left: 1.25rem;
@@ -6458,12 +6425,14 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -6560,9 +6529,10 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -6645,13 +6615,6 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -7020,8 +6983,8 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 }
 
 .c22 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -7131,12 +7094,14 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -7233,9 +7198,10 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -7322,13 +7288,6 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -7793,12 +7752,14 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -7895,9 +7856,10 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -7984,13 +7946,6 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -8399,8 +8354,8 @@ exports[`<Layout /> rich body should render external links 1`] = `
 }
 
 .c22 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -8515,12 +8470,14 @@ exports[`<Layout /> rich body should render external links 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -8617,9 +8574,10 @@ exports[`<Layout /> rich body should render external links 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -8706,13 +8664,6 @@ exports[`<Layout /> rich body should render external links 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -9084,8 +9035,8 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 }
 
 .c22 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -9195,12 +9146,14 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -9297,9 +9250,10 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -9386,13 +9340,6 @@ exports[`<Layout /> rich body should render inline YearsFrom 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -9761,8 +9708,8 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 }
 
 .c22 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -9872,12 +9819,14 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -9974,9 +9923,10 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -10063,13 +10013,6 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -10446,8 +10389,8 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 }
 
 .c22 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -10557,12 +10500,14 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -10659,9 +10604,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -10748,13 +10694,6 @@ exports[`<Layout /> rich body should render internal links 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -11226,12 +11165,14 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -11328,9 +11269,10 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -11413,13 +11355,6 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -11779,8 +11714,8 @@ exports[`<Layout /> rich body should render table 1`] = `
 }
 
 .c25 {
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -11890,12 +11825,14 @@ exports[`<Layout /> rich body should render table 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -11992,9 +11929,10 @@ exports[`<Layout /> rich body should render table 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -12115,13 +12053,6 @@ exports[`<Layout /> rich body should render table 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -12615,12 +12546,14 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -12704,17 +12637,19 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 }
 
 .c17 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
-  color: rgb(248, 207, 169);
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
+  color: rgb(248, 207, 169);
   top: 0.5rem;
 }
 
 .c18 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 300;
 }
 
 .c16 {
@@ -12809,13 +12744,6 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 @media (min-width: 1200px) {
   .c10 {
     display: flex;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c17 {
-    font-size: 6rem;
-    line-height: 1;
   }
 }
 
@@ -13343,12 +13271,14 @@ exports[`<Layout /> should render minimal 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -13445,9 +13375,10 @@ exports[`<Layout /> should render minimal 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -13530,13 +13461,6 @@ exports[`<Layout /> should render minimal 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 
@@ -13999,12 +13923,14 @@ exports[`<Layout /> should render title banner 1`] = `
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c8 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
 }
 
 .c11 {
@@ -14126,9 +14052,10 @@ exports[`<Layout /> should render title banner 1`] = `
 }
 
 .c19 {
-  font-size: 3rem;
+  font-size: 3.75rem;
   line-height: 1;
   font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
 }
 
 .c16 {
@@ -14211,13 +14138,6 @@ exports[`<Layout /> should render title banner 1`] = `
     padding-left: 0.5rem;
     padding-right: 5rem;
     padding-top: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  .c19 {
-    font-size: 5rem;
-    line-height: 1;
   }
 }
 

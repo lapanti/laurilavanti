@@ -3,7 +3,7 @@ import type { Tag } from '../types/contentful'
 import { useMemo } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { sizes } from '../lib/styles'
+import { sizes, typographics } from '../lib/styles'
 import InternalLink from './InternalLink'
 
 const TagList = styled.ul({
@@ -14,6 +14,7 @@ const TagList = styled.ul({
 })
 
 const TagItem = styled.li({
+    ...typographics.definition,
     ':last-child': {
         marginRight: sizes[0],
     },

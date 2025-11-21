@@ -3,36 +3,20 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import {
-    breakpoints,
-    colors,
-    fontFamilies,
-    fontSizes,
-    fontWeights,
-    HEADER_SIZE,
-    sizes,
-    zIndices,
-} from '../../lib/styles'
+import { breakpoints, colors, HEADER_SIZE, sizes, typographics, zIndices } from '../../lib/styles'
 
 const Title = styled.h1({
-    ...fontSizes[3],
+    ...typographics.h1,
     color: colors.peach,
-    fontFamily: fontFamilies.heading,
     top: sizes[0.5],
-
-    [breakpoints[1200].min]: {
-        ...fontSizes[6],
-    },
 })
 
 const Subtitle = styled.p({
-    ...fontSizes[1.5],
-    fontWeight: fontWeights.bold,
+    ...typographics.ingress,
 })
 
 const SecondaryTitle = styled.h2({
-    ...fontSizes[2.25],
-    fontWeight: fontWeights.bold,
+    ...typographics.h2,
 })
 
 const Titles = styled.div({

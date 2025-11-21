@@ -20,6 +20,7 @@ export const sizes = {
     [1.25]: '1.25rem' as const, // 20px
     [1.75]: '1.75rem' as const, // 28px
     [1.125]: '1.125rem' as const, // 18px
+    [1.875]: '1.875rem' as const, // 30px
     [2]: '2rem' as const, // 32px
     [2.5]: '2.5rem' as const, // 40px
     [2.25]: '2.25rem' as const, // 36px
@@ -102,6 +103,7 @@ export const fontSizes = {
     [1.25]: { fontSize: sizes[1.25], lineHeight: '1.75rem' } as const,
     [1.75]: { fontSize: sizes[1.75], lineHeight: '2.25rem' } as const,
     [1.125]: { fontSize: sizes[1.125], lineHeight: '1.75rem' } as const,
+    [1.875]: { fontSize: sizes[1.875], lineHeight: '2.25rem' } as const,
     [2.25]: { fontSize: sizes[2.25], lineHeight: '2.5rem' } as const,
     [3]: { fontSize: sizes[3], lineHeight: '1' } as const,
     [3.75]: { fontSize: sizes[3.75], lineHeight: '1' } as const,
@@ -117,8 +119,31 @@ export const fontFamilies = {
 
 export const fontWeights = {
     black: 1000,
-    bold: 700,
-    normal: 400,
+    light: 300,
+    medium: 500,
+    regular: 400,
+} as const
+
+export const typographics = {
+    additionalInfo: { ...fontSizes[1], fontFamily: fontFamilies.mono, fontWeight: fontWeights.regular },
+    blockQuote: {
+        ...fontSizes[1.5],
+        fontFamily: fontFamilies.mono,
+        fontStyle: 'italic',
+        fontWeight: fontWeights.regular,
+    },
+    body: { ...fontSizes[1.125], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
+    definition: {
+        ...fontSizes[1],
+        fontFamily: fontFamilies.mono,
+        fontWeight: fontWeights.medium,
+        textTransform: 'uppercase',
+    },
+    h1: { ...fontSizes[3.75], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
+    h2: { ...fontSizes[2.25], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
+    h3: { ...fontSizes[1.5], fontFamily: fontFamilies.sans, fontWeight: fontWeights.medium },
+    ingress: { ...fontSizes[1.875], fontFamily: fontFamilies.sans, fontWeight: fontWeights.light },
+    quote: { ...fontSizes[1.125], fontFamily: fontFamilies.sans, fontStyle: 'italic', fontWeight: fontWeights.regular },
 } as const
 
 /** Fonts end */

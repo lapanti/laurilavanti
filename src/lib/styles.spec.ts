@@ -11,6 +11,7 @@ import {
     gridTemplateRowsLayout,
     sizes,
     transitions,
+    typographics,
     zIndices,
 } from './styles'
 
@@ -91,6 +92,12 @@ describe('styles lib', () => {
         describe('fontWeights', () => {
             it('should match snapshot', () => {
                 expect(fontWeights).toMatchSnapshot()
+            })
+        })
+
+        describe('typographics', () => {
+            it('should match snapshot', () => {
+                expect(typographics).toMatchSnapshot()
             })
         })
     })
