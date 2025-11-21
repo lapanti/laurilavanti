@@ -235,7 +235,7 @@ const LayoutComponent = ({
                 type={type}
             />
             <div className={className}>
-                <Header isFrontPage={isFrontPage} />
+                <Header />
                 <Main>
                     <Article>
                         {isFrontPage && (
