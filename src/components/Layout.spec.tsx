@@ -842,7 +842,6 @@ describe('<Layout />', () => {
                             {
                                 __typename,
                                 contentful_id: 'fvxZI2eLzqnwfebd6CPUO',
-                                dateToCountFrom: '2000-01-01',
                             },
                         ],
                     }}
