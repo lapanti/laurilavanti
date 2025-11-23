@@ -13,6 +13,11 @@ const Title = styled.h1({
 
 const Subtitle = styled.p({
     ...typographics.ingress,
+    display: 'none',
+
+    [breakpoints[1200].min]: {
+        display: 'flex',
+    },
 })
 
 const SecondaryTitle = styled.h2({

@@ -11977,6 +11977,7 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   line-height: 2.25rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
   font-weight: 300;
+  display: none;
 }
 
 .c16 {
@@ -12070,6 +12071,12 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 @media (min-width: 1200px) {
   .c10 {
+    display: flex;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c18 {
     display: flex;
   }
 }
