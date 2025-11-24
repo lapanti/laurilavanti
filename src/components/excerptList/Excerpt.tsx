@@ -4,7 +4,7 @@ import type { Tag } from '../../types/contentful'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, sizes, zIndices } from '../../lib/styles'
+import { colors, sizes } from '../../lib/styles'
 import H2 from '../H2'
 import InternalLink from '../InternalLink'
 import Paragraph from '../Paragraph'
@@ -35,7 +35,6 @@ const H2Container = styled.div({
     marginTop: sizes[0.25],
     position: 'relative',
     width: '100%',
-    zIndex: zIndices[40],
 })
 
 const StyledParagraph = styled(Paragraph)({

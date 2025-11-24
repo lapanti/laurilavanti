@@ -5,8 +5,8 @@ import { useState } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import { breakpoints, colors, CONTENT_PADDING, HEADER_SIZE, sizes } from '../../../lib/styles'
-import MainNavigationLink from './components/MainNavigationLink'
-import NavigationLink from './components/NavigationLink'
+import MainNavigationLink from '../header/components/MainNavigationLink'
+import NavigationLink from '../header/components/NavigationLink'
 
 const ANIMATION_DURATION = 0.3
 const ANIMATION_EASING = 'ease-in-out'
@@ -18,6 +18,7 @@ const HamburgerContainer = styled.div({
     justifyContent: 'space-between',
     marginLeft: CONTENT_PADDING,
     marginRight: CONTENT_PADDING,
+
     [breakpoints[1200].min]: {
         display: 'none',
     },
