@@ -139,7 +139,7 @@ const HeroBanner = styled(HeroBannerComponent)({
     display: 'flex',
     flexDirection: 'column',
     gridColumn: '1 / -1',
-    height: '100vh',
+    height: '100dvh',
 
     [breakpoints[1200].min]: {
         flexDirection: 'row-reverse',
