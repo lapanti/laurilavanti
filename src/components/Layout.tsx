@@ -294,7 +294,7 @@ const Layout = styled(LayoutComponent)({
     gridTemplateAreas: gridTemplateAreasLayout,
     gridTemplateColumns: gridTemplateColumns,
     gridTemplateRows: gridTemplateRowsLayoutMobile,
-    minHeight: '100vh',
+    minHeight: '100dvh',
     position: 'relative',
     [breakpoints[1200].min]: {
         gridTemplateRows: gridTemplateRowsLayout,
