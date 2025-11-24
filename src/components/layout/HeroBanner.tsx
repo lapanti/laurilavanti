@@ -3,7 +3,7 @@ import type { IGatsbyImageData } from 'gatsby-plugin-image'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { breakpoints, colors, HEADER_SIZE, sizes, typographics, zIndices } from '../../lib/styles'
+import { breakpoints, colors, HEADER_SIZE, sizes, typographics } from '../../lib/styles'
 
 const Title = styled.h1({
     ...typographics.h1,
@@ -140,13 +140,11 @@ const HeroBanner = styled(HeroBannerComponent)({
     flexDirection: 'column',
     gridColumn: '1 / -1',
     height: '100vh',
-    zIndex: zIndices[60],
 
     [breakpoints[1200].min]: {
         flexDirection: 'row-reverse',
         height: sizes[45],
         paddingTop: HEADER_SIZE,
-        zIndex: zIndices[40],
     },
 })
 
