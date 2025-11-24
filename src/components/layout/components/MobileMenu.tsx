@@ -28,7 +28,7 @@ const HamburgerContainer = styled.div({
     },
 })
 
-const Menu = styled.div<{ $isOpen: boolean }>(
+const Menu = styled.div<{ $hideBackgroundAndTitle?: boolean; $isOpen: boolean }>(
     {
         '@media (prefers-reduced-motion)': {
             transition: undefined,
@@ -57,10 +57,14 @@ const Menu = styled.div<{ $isOpen: boolean }>(
             display: 'none',
         },
     },
-    ({ $isOpen }) => ({
+    ({ $isOpen, $hideBackgroundAndTitle }) => ({
         [NavigationLink]: {
             opacity: $isOpen ? 100 : 0,
         },
+        background: $hideBackgroundAndTitle
+            ? `linear-gradient(0deg, ${colors.evening} 85%, rgba(255, 255, 255, 0) 100%)`
+            : 'linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%)',
+        backgroundColor: !$hideBackgroundAndTitle ? colors.evening : '',
         height: $isOpen ? `calc(100dvh - ${HEADER_SIZE})` : '0',
     })
 )
@@ -89,7 +93,7 @@ const MobileMenuComponent = ({ className, hideBackgroundAndTitle, links }: Props
                     toggled={isMobileOpen}
                 />
             </HamburgerContainer>
-            <Menu $isOpen={isMobileOpen} className={className}>
+            <Menu $hideBackgroundAndTitle={hideBackgroundAndTitle} $isOpen={isMobileOpen} className={className}>
                 {links.map((nav) => (
                     <NavigationLink {...nav} key={nav.slug} />
                 ))}
