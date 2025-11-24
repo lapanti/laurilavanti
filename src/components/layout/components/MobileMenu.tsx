@@ -61,7 +61,7 @@ const Menu = styled.div<{ $isOpen: boolean }>(
         [NavigationLink]: {
             opacity: $isOpen ? 100 : 0,
         },
-        height: $isOpen ? `calc(100vh - ${HEADER_SIZE})` : '0',
+        height: $isOpen ? `calc(100dvh - ${HEADER_SIZE})` : '0',
     })
 )
 
