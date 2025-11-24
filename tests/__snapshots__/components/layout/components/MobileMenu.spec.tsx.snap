@@ -31,6 +31,10 @@ exports[`<MobileMenu /> should render 1`] = `
   margin-right: 0.5rem;
 }
 
+.c0 >.hamburger-react {
+  margin-left: auto;
+}
+
 @media (min-width: 1200px) {
   .c0 {
     display: none;
@@ -51,6 +55,66 @@ exports[`<MobileMenu /> should render 1`] = `
   >
     Lauri Lavanti
   </a>
+  <div
+    aria-expanded="false"
+    aria-label="Avaa valikko"
+    class="hamburger-react"
+    role="button"
+    style="cursor: pointer; height: 48px; position: relative; transition: 0.3s ease-in-out; user-select: none; width: 48px; outline: none;"
+    tabindex="0"
+  >
+    <div
+      style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+    >
+      <div
+        style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 12px; transition: 0.15s ease-in-out 0s; transform: none;"
+      />
+    </div>
+    <div
+      style="transition: 0.15s ease-in-out; opacity: 1;"
+    >
+      <div
+        style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 23px; transition: 0.15s ease-in-out;"
+      />
+    </div>
+    <div
+      style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+    >
+      <div
+        style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 34px; transition: 0.15s ease-in-out 0s; transform: none;"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<MobileMenu /> should render with hidden title 1`] = `
+.c0 {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c0 >.hamburger-react {
+  margin-left: auto;
+}
+
+@media (min-width: 1200px) {
+  .c0 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+
+}
+
+<div
+  class="c0 "
+>
   <div
     aria-expanded="false"
     aria-label="Avaa valikko"

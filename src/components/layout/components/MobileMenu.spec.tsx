@@ -6,10 +6,17 @@ import { mainNav } from '../../../../tests/mainNav.mock'
 import MobileMenu from './MobileMenu'
 
 describe('<MobileMenu />', () => {
-    const renderHelper = () => render(<MobileMenu links={mainNav.links} />)
+    const renderHelper = (hideBackgroundAndTitle = false) =>
+        render(<MobileMenu hideBackgroundAndTitle={hideBackgroundAndTitle} links={mainNav.links} />)
 
     it('should render', () => {
         const { container } = renderHelper()
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
+    it('should render with hidden title', () => {
+        const { container } = renderHelper(true)
 
         expect(container.firstChild).toMatchSnapshot()
     })

@@ -10,6 +10,12 @@ describe('<Header />', () => {
         expect(container.firstChild).toMatchSnapshot()
     })
 
+    it('should render with hidden background and title', () => {
+        const { container } = render(<Header hideBackgroundAndTitle />)
+
+        expect(container.firstChild).toMatchSnapshot()
+    })
+
     it('should render all links', () => {
         render(<Header />)
 

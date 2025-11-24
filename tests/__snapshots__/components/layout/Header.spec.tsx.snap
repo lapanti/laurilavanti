@@ -38,6 +38,10 @@ exports[`<Header /> should render 1`] = `
   margin-right: 0.5rem;
 }
 
+.c1 >.hamburger-react {
+  margin-left: auto;
+}
+
 .c5 {
   align-items: center;
   background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
@@ -96,17 +100,17 @@ exports[`<Header /> should render 1`] = `
 }
 
 .c0 {
-  background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
-  background-color: rgb(0, 98, 114);
-  box-shadow: hsla(0 0% 0% / 0.1) 0 0.5rem 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   height: 3.75rem;
-  position: fixed;
   user-select: none;
   width: 100%;
   z-index: 50;
+  background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+  background-color: rgb(0, 98, 114);
+  box-shadow: hsla(0 0% 0% / 0.1) 0 0.5rem 1rem;
+  position: fixed;
 }
 
 @media (min-width: 1200px) {
@@ -235,6 +239,245 @@ exports[`<Header /> should render 1`] = `
       </a>
       <a
         class="c3 c6 c7"
+        href="/ota-yhteytta/"
+        title="Ota yhteyttä"
+      >
+        Ota yhteyttä
+      </a>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`<Header /> should render with hidden background and title 1`] = `
+.c4 {
+  text-decoration: none;
+  transition-duration: 150ms;
+  transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  color: rgb(248, 207, 169);
+}
+
+.c4 :hover,
+.c4 :active,
+.c4 :focus {
+  text-decoration: underline;
+}
+
+.c10 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-family: "Krana Fat",Trebuchet MS;
+  font-weight: 1000;
+}
+
+.c6 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "IBM Plex Sans",Trebuchet MS;
+  font-weight: 400;
+}
+
+.c1 {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.c1 >.hamburger-react {
+  margin-left: auto;
+}
+
+.c3 {
+  align-items: center;
+  background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+  background-color: rgb(0, 98, 114);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  top: 3.75rem;
+  transition: height 0.3s ease-in-out;
+  width: 100vw;
+  height: 0;
+}
+
+.c3 .c5 {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.c3 .c5 {
+  opacity: 0;
+}
+
+.c9 {
+  align-items: center;
+  display: flex;
+  gap: 2.5rem;
+  width: 50%;
+  justify-content: flex-start;
+}
+
+.c11 {
+  align-items: center;
+  display: flex;
+  gap: 2.5rem;
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.c7 {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 75rem;
+}
+
+.c2 {
+  display: flex;
+}
+
+.c8 {
+  display: none;
+}
+
+.c0 {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 3.75rem;
+  user-select: none;
+  width: 100%;
+  z-index: 50;
+  position: absolute;
+}
+
+@media (min-width: 1200px) {
+  .c1 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c3 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c8 {
+    display: flex;
+  }
+}
+
+<header
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <div
+      aria-expanded="false"
+      aria-label="Avaa valikko"
+      class="hamburger-react"
+      role="button"
+      style="cursor: pointer; height: 48px; position: relative; transition: 0.3s ease-in-out; user-select: none; width: 48px; outline: none;"
+      tabindex="0"
+    >
+      <div
+        style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+      >
+        <div
+          style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 12px; transition: 0.15s ease-in-out 0s; transform: none;"
+        />
+      </div>
+      <div
+        style="transition: 0.15s ease-in-out; opacity: 1;"
+      >
+        <div
+          style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 23px; transition: 0.15s ease-in-out;"
+        />
+      </div>
+      <div
+        style="transition: 0.15s ease-in-out 0.15s; transform: none;"
+      >
+        <div
+          style="background: rgb(248, 207, 169); height: 3px; left: 4px; position: absolute; width: 40px; top: 34px; transition: 0.15s ease-in-out 0s; transform: none;"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="c3 c2"
+  >
+    <a
+      class="c4 c5 c6"
+      href="/minusta/"
+      title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
+    >
+      Minusta
+    </a>
+    <a
+      class="c4 c5 c6"
+      href="/blogi/"
+      title="Blogi"
+    >
+      Blogi
+    </a>
+    <a
+      class="c4 c5 c6"
+      href="/ota-yhteytta/"
+      title="Ota yhteyttä"
+    >
+      Ota yhteyttä
+    </a>
+  </div>
+  <div
+    class="c7 c8"
+  >
+    <div
+      class="c9"
+    >
+      <a
+        class="c4 c10"
+        href="/"
+        title="Lauri Lavanti"
+      >
+        Lauri Lavanti
+      </a>
+    </div>
+    <div
+      class="c11"
+    >
+      <a
+        class="c4 c5 c6"
+        href="/minusta/"
+        title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
+      >
+        Minusta
+      </a>
+      <a
+        class="c4 c5 c6"
+        href="/blogi/"
+        title="Blogi"
+      >
+        Blogi
+      </a>
+      <a
+        class="c4 c5 c6"
         href="/ota-yhteytta/"
         title="Ota yhteyttä"
       >

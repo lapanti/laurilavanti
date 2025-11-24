@@ -12,6 +12,10 @@ const ANIMATION_DURATION = 0.3
 const ANIMATION_EASING = 'ease-in-out'
 
 const HamburgerContainer = styled.div({
+    '> .hamburger-react': {
+        marginLeft: 'auto',
+    },
+
     alignItems: 'center',
     display: 'flex',
     flex: 1,
@@ -63,16 +67,17 @@ const Menu = styled.div<{ $isOpen: boolean }>(
 
 interface Props {
     className?: string
+    hideBackgroundAndTitle?: boolean
     links: MainNav['links']
 }
 
-const MobileMenuComponent = ({ className, links }: Props): JSX.Element => {
+const MobileMenuComponent = ({ className, hideBackgroundAndTitle, links }: Props): JSX.Element => {
     const [isMobileOpen, setIsMobileOpen] = useState(false)
 
     return (
         <>
             <HamburgerContainer className={className}>
-                <MainNavigationLink />
+                {!hideBackgroundAndTitle && <MainNavigationLink />}
                 <Hamburger
                     color={colors.peach}
                     distance="sm"
