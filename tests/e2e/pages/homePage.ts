@@ -12,7 +12,7 @@ export class HomePage extends AnyPage {
         super(page)
         this.mainTitle = page.getByRole('heading', { name: /Lauri Lavanti/i })
         this.secondaryTitle = page.getByRole('heading', {
-            name: /Ohjelmistojen, digitalisaation ja {2}yksityisyydensuojan asiantuntija/i,
+            name: /Ohjelmistojen, digitalisaation ja yksityisyydensuojan asiantuntija/i,
         })
     }
 

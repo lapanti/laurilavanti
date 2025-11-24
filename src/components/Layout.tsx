@@ -1,12 +1,12 @@
 import type { Block, Inline, Text } from '@contentful/rich-text-types'
 import type { IGatsbyImageData } from 'gatsby-plugin-image'
-import type { ReactNode } from 'react'
 import type { RichBody, Tag } from '../types/contentful'
 import type { SeoProps } from './layout/Seo'
 
 import { BLOCKS, INLINES } from '@contentful/rich-text-types'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { type ReactNode, useCallback, useEffect, useState } from 'react'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
 import {
@@ -202,6 +202,26 @@ const LayoutComponent = ({
     tags,
     children,
 }: React.PropsWithChildren<Props>): JSX.Element => {
+    const [hideBackgroundAndTitle, setHideBackgroundAndTitle] = useState(isFrontPage)
+
+    const listenToScroll = useCallback(() => {
+        if (window.scrollY >= window.innerHeight) {
+            setHideBackgroundAndTitle(false)
+        } else {
+            setHideBackgroundAndTitle(true)
+        }
+    }, [setHideBackgroundAndTitle])
+
+    useEffect(() => {
+        if (isFrontPage) {
+            window.addEventListener('scroll', listenToScroll, { passive: true })
+
+            return () => {
+                window.removeEventListener('scroll', listenToScroll)
+            }
+        }
+    }, [isFrontPage, listenToScroll])
+
     const image = heroImage
         ? {
               height: `${heroImage.height}`,
@@ -231,7 +251,7 @@ const LayoutComponent = ({
                 type={type}
             />
             <div className={className}>
-                <Header />
+                <Header hideBackgroundAndTitle={hideBackgroundAndTitle} />
                 <Main>
                     <Article>
                         {isFrontPage && (

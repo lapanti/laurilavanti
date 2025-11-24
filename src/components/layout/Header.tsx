@@ -26,9 +26,10 @@ const StyledDesktopMenu = styled(DesktopMenu)({
 
 interface Props {
     className?: string
+    hideBackgroundAndTitle?: boolean
 }
 
-const HeaderComponent = ({ className }: Props): JSX.Element => {
+const HeaderComponent = ({ className, hideBackgroundAndTitle }: Props): JSX.Element => {
     const data = useStaticQuery<{ contentfulMainNav: MainNav }>(graphql`
         {
             contentfulMainNav(titleToBeIgnored: { eq: "Main nav" }) {
@@ -49,7 +50,7 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
 
     return (
         <header className={className}>
-            <StyledMobileMenu links={links} />
+            <StyledMobileMenu hideBackgroundAndTitle={hideBackgroundAndTitle} links={links} />
             <StyledDesktopMenu links={links} />
         </header>
     )
@@ -57,19 +58,28 @@ const HeaderComponent = ({ className }: Props): JSX.Element => {
 
 HeaderComponent.displayName = 'Header'
 
-const Header = styled(HeaderComponent)({
-    background:
-        'linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%)',
-    backgroundColor: colors.evening,
-    boxShadow: 'hsla(0 0% 0% / 0.1) 0 0.5rem 1rem',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'row',
-    height: HEADER_SIZE,
-    position: 'fixed',
-    userSelect: 'none',
-    width: '100%',
-    zIndex: zIndices[50],
-})
+const Header = styled(HeaderComponent)(
+    {
+        boxSizing: 'border-box',
+        display: 'flex',
+        flexDirection: 'row',
+        height: HEADER_SIZE,
+        userSelect: 'none',
+        width: '100%',
+        zIndex: zIndices[50],
+    },
+    ({ hideBackgroundAndTitle }) =>
+        !hideBackgroundAndTitle
+            ? {
+                  background:
+                      'linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%)',
+                  backgroundColor: colors.evening,
+                  boxShadow: 'hsla(0 0% 0% / 0.1) 0 0.5rem 1rem',
+                  position: 'fixed',
+              }
+            : {
+                  position: 'absolute',
+              }
+)
 
 export default Header

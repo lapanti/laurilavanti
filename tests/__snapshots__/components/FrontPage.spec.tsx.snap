@@ -10,7 +10,7 @@ exports[`<FrontPage /> should render 1`] = `
   margin-top: 1rem;
 }
 
-.c4 {
+.c5 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -18,9 +18,9 @@ exports[`<FrontPage /> should render 1`] = `
   color: rgb(248, 207, 169);
 }
 
-.c4 :hover,
-.c4 :active,
-.c4 :focus {
+.c5 :hover,
+.c5 :active,
+.c5 :focus {
   text-decoration: underline;
 }
 
@@ -242,14 +242,14 @@ exports[`<FrontPage /> should render 1`] = `
   justify-content: center;
 }
 
-.c5 {
+.c11 {
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
   font-weight: 1000;
 }
 
-.c8 {
+.c7 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
@@ -265,7 +265,11 @@ exports[`<FrontPage /> should render 1`] = `
   margin-right: 0.5rem;
 }
 
-.c6 {
+.c2 >.hamburger-react {
+  margin-left: auto;
+}
+
+.c4 {
   align-items: center;
   background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   background-color: rgb(0, 98, 114);
@@ -281,15 +285,15 @@ exports[`<FrontPage /> should render 1`] = `
   height: 0;
 }
 
-.c6 .c7 {
+.c4 .c6 {
   transition: opacity 0.3s ease-in-out;
 }
 
-.c6 .c7 {
+.c4 .c6 {
   opacity: 0;
 }
 
-.c11 {
+.c10 {
   align-items: center;
   display: flex;
   gap: 2.5rem;
@@ -305,7 +309,7 @@ exports[`<FrontPage /> should render 1`] = `
   justify-content: flex-end;
 }
 
-.c9 {
+.c8 {
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -318,22 +322,19 @@ exports[`<FrontPage /> should render 1`] = `
   display: flex;
 }
 
-.c10 {
+.c9 {
   display: none;
 }
 
 .c1 {
-  background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
-  background-color: rgb(0, 98, 114);
-  box-shadow: hsla(0 0% 0% / 0.1) 0 0.5rem 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   height: 3.75rem;
-  position: fixed;
   user-select: none;
   width: 100%;
   z-index: 50;
+  position: absolute;
 }
 
 .c17 {
@@ -467,7 +468,7 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c4 {
     display: none;
   }
 }
@@ -479,7 +480,7 @@ exports[`<FrontPage /> should render 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c10 {
+  .c9 {
     display: flex;
   }
 }
@@ -547,13 +548,6 @@ exports[`<FrontPage /> should render 1`] = `
       <div
         class="c2 c3"
       >
-        <a
-          class="c4 c5"
-          href="/"
-          title="Lauri Lavanti"
-        >
-          Lauri Lavanti
-        </a>
         <div
           aria-expanded="false"
           aria-label="Avaa valikko"
@@ -586,24 +580,24 @@ exports[`<FrontPage /> should render 1`] = `
         </div>
       </div>
       <div
-        class="c6 c3"
+        class="c4 c3"
       >
         <a
-          class="c4 c7 c8"
+          class="c5 c6 c7"
           href="/minusta/"
           title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
         >
           Minusta
         </a>
         <a
-          class="c4 c7 c8"
+          class="c5 c6 c7"
           href="/blogi/"
           title="Blogi"
         >
           Blogi
         </a>
         <a
-          class="c4 c7 c8"
+          class="c5 c6 c7"
           href="/ota-yhteytta/"
           title="Ota yhteyttä"
         >
@@ -611,13 +605,13 @@ exports[`<FrontPage /> should render 1`] = `
         </a>
       </div>
       <div
-        class="c9 c10"
+        class="c8 c9"
       >
         <div
-          class="c11"
+          class="c10"
         >
           <a
-            class="c4 c5"
+            class="c5 c11"
             href="/"
             title="Lauri Lavanti"
           >
@@ -628,21 +622,21 @@ exports[`<FrontPage /> should render 1`] = `
           class="c12"
         >
           <a
-            class="c4 c7 c8"
+            class="c5 c6 c7"
             href="/minusta/"
             title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
           >
             Minusta
           </a>
           <a
-            class="c4 c7 c8"
+            class="c5 c6 c7"
             href="/blogi/"
             title="Blogi"
           >
             Blogi
           </a>
           <a
-            class="c4 c7 c8"
+            class="c5 c6 c7"
             href="/ota-yhteytta/"
             title="Ota yhteyttä"
           >
@@ -1411,7 +1405,7 @@ exports[`<FrontPage /> should render 1`] = `
 `;
 
 exports[`<FrontPage /> should render with minimal 1`] = `
-.c4 {
+.c5 {
   text-decoration: none;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
@@ -1419,9 +1413,9 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   color: rgb(248, 207, 169);
 }
 
-.c4 :hover,
-.c4 :active,
-.c4 :focus {
+.c5 :hover,
+.c5 :active,
+.c5 :focus {
   text-decoration: underline;
 }
 
@@ -1524,14 +1518,14 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   justify-content: center;
 }
 
-.c5 {
+.c11 {
   font-size: 1.75rem;
   line-height: 2.25rem;
   font-family: "Krana Fat",Trebuchet MS;
   font-weight: 1000;
 }
 
-.c8 {
+.c7 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: "IBM Plex Sans",Trebuchet MS;
@@ -1547,7 +1541,11 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   margin-right: 0.5rem;
 }
 
-.c6 {
+.c2 >.hamburger-react {
+  margin-left: auto;
+}
+
+.c4 {
   align-items: center;
   background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   background-color: rgb(0, 98, 114);
@@ -1563,15 +1561,15 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   height: 0;
 }
 
-.c6 .c7 {
+.c4 .c6 {
   transition: opacity 0.3s ease-in-out;
 }
 
-.c6 .c7 {
+.c4 .c6 {
   opacity: 0;
 }
 
-.c11 {
+.c10 {
   align-items: center;
   display: flex;
   gap: 2.5rem;
@@ -1587,7 +1585,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   justify-content: flex-end;
 }
 
-.c9 {
+.c8 {
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -1600,22 +1598,19 @@ exports[`<FrontPage /> should render with minimal 1`] = `
   display: flex;
 }
 
-.c10 {
+.c9 {
   display: none;
 }
 
 .c1 {
-  background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
-  background-color: rgb(0, 98, 114);
-  box-shadow: hsla(0 0% 0% / 0.1) 0 0.5rem 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   height: 3.75rem;
-  position: fixed;
   user-select: none;
   width: 100%;
   z-index: 50;
+  position: absolute;
 }
 
 .c17 {
@@ -1704,7 +1699,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c6 {
+  .c4 {
     display: none;
   }
 }
@@ -1716,7 +1711,7 @@ exports[`<FrontPage /> should render with minimal 1`] = `
 }
 
 @media (min-width: 1200px) {
-  .c10 {
+  .c9 {
     display: flex;
   }
 }
@@ -1769,13 +1764,6 @@ exports[`<FrontPage /> should render with minimal 1`] = `
       <div
         class="c2 c3"
       >
-        <a
-          class="c4 c5"
-          href="/"
-          title="Lauri Lavanti"
-        >
-          Lauri Lavanti
-        </a>
         <div
           aria-expanded="false"
           aria-label="Avaa valikko"
@@ -1808,24 +1796,24 @@ exports[`<FrontPage /> should render with minimal 1`] = `
         </div>
       </div>
       <div
-        class="c6 c3"
+        class="c4 c3"
       >
         <a
-          class="c4 c7 c8"
+          class="c5 c6 c7"
           href="/minusta/"
           title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
         >
           Minusta
         </a>
         <a
-          class="c4 c7 c8"
+          class="c5 c6 c7"
           href="/blogi/"
           title="Blogi"
         >
           Blogi
         </a>
         <a
-          class="c4 c7 c8"
+          class="c5 c6 c7"
           href="/ota-yhteytta/"
           title="Ota yhteyttä"
         >
@@ -1833,13 +1821,13 @@ exports[`<FrontPage /> should render with minimal 1`] = `
         </a>
       </div>
       <div
-        class="c9 c10"
+        class="c8 c9"
       >
         <div
-          class="c11"
+          class="c10"
         >
           <a
-            class="c4 c5"
+            class="c5 c11"
             href="/"
             title="Lauri Lavanti"
           >
@@ -1850,21 +1838,21 @@ exports[`<FrontPage /> should render with minimal 1`] = `
           class="c12"
         >
           <a
-            class="c4 c7 c8"
+            class="c5 c6 c7"
             href="/minusta/"
             title="Lauri Lavanti - Liberaalia ja kestävää politiikkaa"
           >
             Minusta
           </a>
           <a
-            class="c4 c7 c8"
+            class="c5 c6 c7"
             href="/blogi/"
             title="Blogi"
           >
             Blogi
           </a>
           <a
-            class="c4 c7 c8"
+            class="c5 c6 c7"
             href="/ota-yhteytta/"
             title="Ota yhteyttä"
           >
