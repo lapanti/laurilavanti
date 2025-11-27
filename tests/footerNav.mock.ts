@@ -1,7 +1,15 @@
 import type { FooterNav } from '../src/types/contentful'
 
-import { blueskyLink, facebookLink, instagramLink, linkedInLink, mastodonLink, threadsLink } from './contactInfo.mock'
+import {
+    blueskyLink,
+    facebookLink,
+    instagramLink,
+    linkedInLink,
+    mastodonLink,
+    threadsLink,
+    tiktokLink,
+} from './contactInfo.mock'
 
 export const footerNav: FooterNav = {
-    links: [facebookLink, threadsLink, instagramLink, linkedInLink, mastodonLink, blueskyLink],
+    links: [facebookLink, threadsLink, instagramLink, linkedInLink, mastodonLink, blueskyLink, tiktokLink],
 }

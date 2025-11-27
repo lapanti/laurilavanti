@@ -42,6 +42,7 @@ const Seo = ({
                 mastodon: string
                 bluesky: string
                 threads: string
+                tiktok: string
             }
         }
     }>(graphql`
@@ -60,6 +61,7 @@ const Seo = ({
                     linkedIn
                     bluesky
                     threads
+                    tiktok
                 }
             }
         }
@@ -128,6 +130,7 @@ const Seo = ({
                       site?.siteMetadata?.linkedIn,
                       site?.siteMetadata?.bluesky,
                       site?.siteMetadata?.threads,
+                      site?.siteMetadata?.tiktok,
                   ],
               }
             : {}),

@@ -13,6 +13,7 @@ import styled from 'styled-components' /* eslint-disable-line import/no-named-as
 
 import { colors, sizes } from '../../lib/styles'
 import ExternalLink from '../ExternalLink'
+import TikTok from '../TikTok'
 
 const RowExternalLink = styled(ExternalLink)({
     alignItems: 'center',
@@ -20,7 +21,7 @@ const RowExternalLink = styled(ExternalLink)({
     flexDirection: 'row',
 })
 
-const logoStyles = { height: sizes[1], marginRight: sizes[0.5], width: sizes[1] }
+const logoStyles = { height: sizes[1], marginRight: sizes[0.25], width: sizes[1] }
 
 const Bluesky = styled(FaBluesky)(logoStyles, { fill: colors.bluesky })
 
@@ -36,6 +37,8 @@ const Mastodon = styled(FaMastodon)(logoStyles, { fill: colors.mastodon })
 
 const Threads = styled(FaSquareThreads)(logoStyles, { fill: colors.threads })
 
+const StyledTikTok = styled(TikTok)(logoStyles)
+
 interface Props {
     className?: string
     link: ContactInfoLinkType
@@ -50,6 +53,7 @@ const ContactInfoLinkComponent = ({ className, link }: Props): JSX.Element => (
         {link.icon === 'linkedin' && <LinkedIn />}
         {link.icon === 'mastodon' && <Mastodon />}
         {link.icon === 'threads' && <Threads />}
+        {link.icon === 'tiktok' && <StyledTikTok noHover />}
         <span>{link.title}</span>
     </RowExternalLink>
 )

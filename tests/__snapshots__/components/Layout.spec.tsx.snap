@@ -24,8 +24,8 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 
 .c27 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -83,6 +83,10 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
 .c32 :hover,
 .c32 :focus {
   fill: #0060df;
+}
+
+.c33 {
+  padding: 0px;
 }
 
 .c25 {
@@ -261,6 +265,13 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c27 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -651,6 +662,50 @@ exports[`<Layout /> rich body should not render a BlockQuote if it has wrong chi
             </svg>
           </a>
         </li>
+        <li
+          class="c33"
+        >
+          <a
+            class="c27"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -695,8 +750,8 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 
 .c28 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -754,6 +809,10 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
 .c33 :hover,
 .c33 :focus {
   fill: #0060df;
+}
+
+.c34 {
+  padding: 0px;
 }
 
 .c26 {
@@ -932,6 +991,13 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c28 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1327,6 +1393,50 @@ exports[`<Layout /> rich body should render BlockQuote 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c34"
+        >
+          <a
+            class="c28"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -1357,8 +1467,8 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 
 .c27 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1416,6 +1526,10 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
 .c32 :hover,
 .c32 :focus {
   fill: #0060df;
+}
+
+.c33 {
+  padding: 0px;
 }
 
 .c25 {
@@ -1594,6 +1708,13 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c27 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1984,6 +2105,50 @@ exports[`<Layout /> rich body should render ContactInfoLink 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c33"
+        >
+          <a
+            class="c27"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -2137,8 +2302,8 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 
 .c43 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2196,6 +2361,10 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
 .c48 :hover,
 .c48 :focus {
   fill: #0060df;
+}
+
+.c49 {
+  padding: 0px;
 }
 
 .c41 {
@@ -2380,6 +2549,13 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
   .c22 {
     grid-template-columns: repeat(2, 35rem);
     margin-top: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c43 >* {
+    height: 2.25rem;
+    width: 2.25rem;
   }
 }
 
@@ -2901,6 +3077,50 @@ exports[`<Layout /> rich body should render ExcerptList 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c49"
+        >
+          <a
+            class="c43"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -2940,8 +3160,8 @@ exports[`<Layout /> rich body should render H2 1`] = `
 
 .c28 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2999,6 +3219,10 @@ exports[`<Layout /> rich body should render H2 1`] = `
 .c33 :hover,
 .c33 :focus {
   fill: #0060df;
+}
+
+.c34 {
+  padding: 0px;
 }
 
 .c26 {
@@ -3177,6 +3401,13 @@ exports[`<Layout /> rich body should render H2 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c28 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -3573,6 +3804,50 @@ exports[`<Layout /> rich body should render H2 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c34"
+        >
+          <a
+            class="c28"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -3612,8 +3887,8 @@ exports[`<Layout /> rich body should render H3 1`] = `
 
 .c28 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -3671,6 +3946,10 @@ exports[`<Layout /> rich body should render H3 1`] = `
 .c33 :hover,
 .c33 :focus {
   fill: #0060df;
+}
+
+.c34 {
+  padding: 0px;
 }
 
 .c26 {
@@ -3849,6 +4128,13 @@ exports[`<Layout /> rich body should render H3 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c28 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -4245,6 +4531,50 @@ exports[`<Layout /> rich body should render H3 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c34"
+        >
+          <a
+            class="c28"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -4280,8 +4610,8 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 
 .c28 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -4339,6 +4669,10 @@ exports[`<Layout /> rich body should render Hr 1`] = `
 .c33 :hover,
 .c33 :focus {
   fill: #0060df;
+}
+
+.c34 {
+  padding: 0px;
 }
 
 .c26 {
@@ -4517,6 +4851,13 @@ exports[`<Layout /> rich body should render Hr 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c28 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -4910,6 +5251,50 @@ exports[`<Layout /> rich body should render Hr 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c34"
+        >
+          <a
+            class="c28"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -4940,8 +5325,8 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 
 .c30 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -4999,6 +5384,10 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
 .c35 :hover,
 .c35 :focus {
   fill: #0060df;
+}
+
+.c36 {
+  padding: 0px;
 }
 
 .c28 {
@@ -5201,6 +5590,13 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c30 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -5650,6 +6046,50 @@ exports[`<Layout /> rich body should render ImageWithCaption 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c36"
+        >
+          <a
+            class="c30"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -5689,8 +6129,8 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 
 .c29 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -5748,6 +6188,10 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
 .c34 :hover,
 .c34 :focus {
   fill: #0060df;
+}
+
+.c35 {
+  padding: 0px;
 }
 
 .c27 {
@@ -5930,6 +6374,13 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c29 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -6325,6 +6776,50 @@ exports[`<Layout /> rich body should render Paragraph 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c35"
+        >
+          <a
+            class="c29"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -6384,8 +6879,8 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
 
 .c29 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -6443,6 +6938,10 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
 .c34 :hover,
 .c34 :focus {
   fill: #0060df;
+}
+
+.c35 {
+  padding: 0px;
 }
 
 .c27 {
@@ -6621,6 +7120,13 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c29 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -7020,6 +7526,50 @@ exports[`<Layout /> rich body should render UL and LI 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c35"
+        >
+          <a
+            class="c29"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -7059,8 +7609,8 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 
 .c29 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -7118,6 +7668,10 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
 .c34 :hover,
 .c34 :focus {
   fill: #0060df;
+}
+
+.c35 {
+  padding: 0px;
 }
 
 .c27 {
@@ -7300,6 +7854,13 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c29 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -7693,6 +8254,50 @@ exports[`<Layout /> rich body should render borken internal links 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c35"
+        >
+          <a
+            class="c29"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -7723,8 +8328,8 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
 
 .c28 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -7782,6 +8387,10 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
 .c33 :hover,
 .c33 :focus {
   fill: #0060df;
+}
+
+.c34 {
+  padding: 0px;
 }
 
 .c26 {
@@ -7964,6 +8573,13 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c28 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -8403,6 +9019,50 @@ exports[`<Layout /> rich body should render embedded image 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c34"
+        >
+          <a
+            class="c28"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -8447,8 +9107,8 @@ exports[`<Layout /> rich body should render external links 1`] = `
 
 .c30 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -8506,6 +9166,10 @@ exports[`<Layout /> rich body should render external links 1`] = `
 .c35 :hover,
 .c35 :focus {
   fill: #0060df;
+}
+
+.c36 {
+  padding: 0px;
 }
 
 .c28 {
@@ -8688,6 +9352,13 @@ exports[`<Layout /> rich body should render external links 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c30 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -9090,6 +9761,50 @@ exports[`<Layout /> rich body should render external links 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c36"
+        >
+          <a
+            class="c30"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -9129,8 +9844,8 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 
 .c29 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -9188,6 +9903,10 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
 .c34 :hover,
 .c34 :focus {
   fill: #0060df;
+}
+
+.c35 {
+  padding: 0px;
 }
 
 .c27 {
@@ -9370,6 +10089,13 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c29 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -9763,6 +10489,50 @@ exports[`<Layout /> rich body should render inline borken stuff 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c35"
+        >
+          <a
+            class="c29"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -9816,8 +10586,8 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 
 .c30 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -9875,6 +10645,10 @@ exports[`<Layout /> rich body should render internal links 1`] = `
 .c35 :hover,
 .c35 :focus {
   fill: #0060df;
+}
+
+.c36 {
+  padding: 0px;
 }
 
 .c28 {
@@ -10057,6 +10831,13 @@ exports[`<Layout /> rich body should render internal links 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c30 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -10457,6 +11238,50 @@ exports[`<Layout /> rich body should render internal links 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c36"
+        >
+          <a
+            class="c30"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -10487,8 +11312,8 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
 
 .c27 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -10546,6 +11371,10 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
 .c32 :hover,
 .c32 :focus {
   fill: #0060df;
+}
+
+.c33 {
+  padding: 0px;
 }
 
 .c25 {
@@ -10724,6 +11553,13 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c27 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -11114,6 +11950,50 @@ exports[`<Layout /> rich body should render nothing when embedded asset has no i
             </svg>
           </a>
         </li>
+        <li
+          class="c33"
+        >
+          <a
+            class="c27"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -11153,8 +12033,8 @@ exports[`<Layout /> rich body should render table 1`] = `
 
 .c33 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -11212,6 +12092,10 @@ exports[`<Layout /> rich body should render table 1`] = `
 .c38 :hover,
 .c38 :focus {
   fill: #0060df;
+}
+
+.c39 {
+  padding: 0px;
 }
 
 .c31 {
@@ -11428,6 +12312,13 @@ exports[`<Layout /> rich body should render table 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c33 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -11850,6 +12741,50 @@ exports[`<Layout /> rich body should render table 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c39"
+        >
+          <a
+            class="c33"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -11880,8 +12815,8 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 
 .c27 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -11939,6 +12874,10 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
 .c32 :hover,
 .c32 :focus {
   fill: #0060df;
+}
+
+.c33 {
+  padding: 0px;
 }
 
 .c25 {
@@ -12134,6 +13073,13 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c27 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -12575,6 +13521,50 @@ exports[`<Layout /> should render hero banner for front page 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c33"
+        >
+          <a
+            class="c27"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -12605,8 +13595,8 @@ exports[`<Layout /> should render minimal 1`] = `
 
 .c27 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -12664,6 +13654,10 @@ exports[`<Layout /> should render minimal 1`] = `
 .c32 :hover,
 .c32 :focus {
   fill: #0060df;
+}
+
+.c33 {
+  padding: 0px;
 }
 
 .c25 {
@@ -12842,6 +13836,13 @@ exports[`<Layout /> should render minimal 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c27 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -13233,6 +14234,50 @@ exports[`<Layout /> should render minimal 1`] = `
             </svg>
           </a>
         </li>
+        <li
+          class="c33"
+        >
+          <a
+            class="c27"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
+            </svg>
+          </a>
+        </li>
       </ul>
     </div>
   </footer>
@@ -13263,8 +14308,8 @@ exports[`<Layout /> should render title banner 1`] = `
 
 .c30 >* {
   fill: rgb(235, 235, 236);
-  height: 2.25rem;
-  width: 2.25rem;
+  height: 1.75rem;
+  width: 1.75rem;
   transition-duration: 150ms;
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -13322,6 +14367,10 @@ exports[`<Layout /> should render title banner 1`] = `
 .c35 :hover,
 .c35 :focus {
   fill: #0060df;
+}
+
+.c36 {
+  padding: 0px;
 }
 
 .c28 {
@@ -13525,6 +14574,13 @@ exports[`<Layout /> should render title banner 1`] = `
   grid-template-rows: 1fr 9rem;
   min-height: 100dvh;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+  .c30 >* {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -14020,6 +15076,50 @@ exports[`<Layout /> should render title banner 1`] = `
               <path
                 d="M407.8 294.7c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3zM288 227.1C261.9 176.4 190.9 81.9 124.9 35.3C61.6-9.4 37.5-1.7 21.6 5.5C3.3 13.8 0 41.9 0 58.4S9.1 194 15 213.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3 .5-6.6 1-10 1.4C74.3 308.6-9.1 342.8 100.3 464.5C220.6 589.1 265.1 437.8 288 361.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4 .4 6.7 .9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7C566.9 194 576 75 576 58.4s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8C385.1 81.9 314.1 176.4 288 227.1z"
               />
+            </svg>
+          </a>
+        </li>
+        <li
+          class="c36"
+        >
+          <a
+            class="c30"
+            href="https://www.tiktok.com/@laurilavanti"
+            rel="me noopener noreferrer"
+            target="_blank"
+            title="Tiktok"
+          >
+            <svg
+              class=""
+              height="1em"
+              viewBox="-3 -2 36 36"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="M10.7908 12.33v-1.22a9.003 9.003 0 00-1.28-.11C5.36 10.9912 1.685 13.681.4387 17.6403c-1.2465 3.9592.2248 8.269 3.632 10.6397-2.5522-2.7315-3.2609-6.708-1.8094-10.153 1.4514-3.445 4.792-5.7155 8.5295-5.797z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M11.0208 26.15c2.3207-.0031 4.2284-1.8315 4.33-4.15V1.31h3.78a7.09 7.09 0 01-.11-1.31h-5.17v20.67c-.086 2.3303-1.9981 4.1762-4.33 4.18a4.3996 4.3996 0 01-2-.5 4.34 4.34 0 003.5 1.8zm15.17-17.82V7.18a7.06 7.06 0 01-3.91-1.18 7.17 7.17 0 003.91 2.33z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M22.2808 6a7.12 7.12 0 01-1.77-4.7h-1.38a7.16 7.16 0 003.15 4.7zm-12.77 10.17c-1.9916.0102-3.7206 1.3746-4.1936 3.3092-.473 1.9346.4314 3.9428 2.1936 4.8708a4.33 4.33 0 013.51-6.87c.434.0054.865.0728 1.28.2v-5.26a9.0809 9.0809 0 00-1.28-.1h-.23v4a4.45 4.45 0 00-1.28-.15z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M26.1908 8.33v4a12.2701 12.2701 0 01-7.17-2.33v10.51c-.011 5.2444-4.2656 9.49-9.51 9.49a9.4097 9.4097 0 01-5.44-1.72c2.6562 2.8568 6.79 3.7972 10.4207 2.3706 3.6306-1.4267 6.0184-4.9297 6.0193-8.8306V11.34a12.29 12.29 0 007.18 2.3V8.49a7.3297 7.3297 0 01-1.5-.16z"
+                  fill="rgb(255, 255, 255)"
+                />
+                <path
+                  d="M19.0208 20.51V10a12.27 12.27 0 007.18 2.3v-4a7.17 7.17 0 01-3.92-2.3 7.16 7.16 0 01-3.15-4.7h-3.78V22c-.0756 1.8468-1.3126 3.443-3.082 3.9772-1.7695.5342-3.683-.1108-4.768-1.6072-1.7622-.928-2.6666-2.9362-2.1936-4.8708.473-1.9346 2.202-3.299 4.1936-3.3092a4.451 4.451 0 011.28.2v-4c-3.7585.0637-7.1243 2.342-8.5799 5.8077-1.4555 3.4657-.726 7.464 1.8599 10.1923a9.41 9.41 0 005.45 1.61c5.2444 0 9.499-4.2456 9.51-9.49z"
+                  fill="rgb(255, 255, 255)"
+                />
+              </g>
             </svg>
           </a>
         </li>

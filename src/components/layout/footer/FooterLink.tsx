@@ -3,14 +3,19 @@ import type { ContactInfoLink } from '../../../types/contentful'
 import { FaBluesky, FaFacebook, FaInstagram, FaLinkedin, FaMastodon, FaThreads } from 'react-icons/fa6'
 import styled from 'styled-components' /* eslint-disable-line import/no-named-as-default */
 
-import { colors, sizes, transitions } from '../../../lib/styles'
+import { breakpoints, colors, sizes, transitions } from '../../../lib/styles'
+import TikTok from '../../TikTok'
 
 const Link = styled.a({
     '> *': {
         fill: colors.gray,
-        height: sizes[2.25],
-        width: sizes[2.25],
+        height: sizes[1.75],
+        width: sizes[1.75],
         ...transitions.base,
+        [breakpoints[1200].min]: {
+            height: sizes[2.25],
+            width: sizes[2.25],
+        },
     },
     alignItems: 'center',
     display: 'flex',
@@ -32,6 +37,8 @@ const iconToHoverColor = (icon: ContactInfoLink['icon']): string | undefined => 
             return colors.mastodon
         case 'threads':
             return colors.threads
+        case 'tiktok':
+            return undefined
     }
 }
 
@@ -49,6 +56,8 @@ const iconToIconComponent = (icon: ContactInfoLink['icon']) => {
             return FaBluesky
         case 'mastodon':
             return FaMastodon
+        case 'tiktok':
+            return TikTok
     }
 }
 
