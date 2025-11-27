@@ -18,6 +18,7 @@ export class AnyPage {
     readonly footerInstagramLink: Locator
     readonly footerLinkedInLink: Locator
     readonly footerMastodonLink: Locator
+    readonly footerTikTokLink: Locator
 
     constructor(page: Page) {
         this.page = page
@@ -35,6 +36,7 @@ export class AnyPage {
         this.footerInstagramLink = page.locator('footer').locator('a[title="Instagram"]')
         this.footerLinkedInLink = page.locator('footer').locator('a[title="LinkedIn"]')
         this.footerMastodonLink = page.locator('footer').locator('a[title="Mastodon"]')
+        this.footerTikTokLink = page.locator('footer').locator('a[title="TikTok"]')
     }
 
     async openMainNavigation() {
@@ -89,6 +91,7 @@ export class AnyPage {
         await expect(this.footerInstagramLink).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
         await expect(this.footerMastodonLink).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
+        await expect(this.footerTikTokLink).toHaveAttribute('href', 'https://www.tiktok.com/@laurilavanti')
     }
 
     async testScreenshot() {
