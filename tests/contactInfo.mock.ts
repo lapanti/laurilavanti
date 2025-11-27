@@ -49,6 +49,13 @@ export const blueskyLink: ContactInfoLink = {
     url: 'https://bsky.app/profile/laurilavanti.fi',
 }
 
+export const tiktokLink: ContactInfoLink = {
+    contentful_id: '12310293i09ajsdaiwdo',
+    icon: 'tiktok',
+    title: 'Tiktok',
+    url: 'https://www.tiktok.com/@laurilavanti',
+}
+
 export const contactInfoLinks = [
     mailLink,
     facebookLink,
@@ -57,4 +64,5 @@ export const contactInfoLinks = [
     mastodonLink,
     linkedInLink,
     blueskyLink,
+    tiktokLink,
 ]

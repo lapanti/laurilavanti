@@ -48,6 +48,7 @@ module.exports = {
                 mastodon: 'https://mastodontti.fi/@laurilavanti',
                 siteUrl: 'https://laurilavanti.fi',
                 threads: 'https://www.threads.net/@laurilavanti',
+                tiktok: 'https://www.tiktok.com/@laurilavanti',
                 title: 'Lauri Lavanti',
             },
         },

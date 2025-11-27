@@ -19,6 +19,7 @@ interface SiteMetadata {
     mastodon: string
     bluesky: string
     threads: string
+    tiktok: string
 }
 
 describe('<Seo />', () => {
@@ -35,6 +36,7 @@ describe('<Seo />', () => {
         mastodon,
         bluesky,
         threads,
+        tiktok,
     } = gatsbyConfig.siteMetadata as unknown as SiteMetadata
 
     const expectHelmetToHaveCorrectValues = ({
@@ -102,7 +104,9 @@ describe('<Seo />', () => {
             mainEntityOfPage: pageType === BLOGPOSTING ? { '@id': canonical, '@type': 'WebPage' } : undefined,
             name: pageType === WEBSITE ? title : undefined,
             url: canonical || null,
-            ...(pageType === WEBSITE ? { sameAs: [facebook, instagram, mastodon, linkedIn, bluesky, threads] } : {}),
+            ...(pageType === WEBSITE
+                ? { sameAs: [facebook, instagram, mastodon, linkedIn, bluesky, threads, tiktok] }
+                : {}),
         })
 
         expect(helmet).toMatchSnapshot()
