@@ -11,6 +11,7 @@ export class ContactPage extends AnyPage {
     readonly instagram: Locator
     readonly linkedIn: Locator
     readonly mastodon: Locator
+    readonly tiktok: Locator
 
     constructor(page: Page) {
         super(page)
@@ -20,6 +21,7 @@ export class ContactPage extends AnyPage {
         this.instagram = page.getByRole('link', { name: /Instagram/i }).first()
         this.linkedIn = page.getByRole('link', { name: /LinkedIn/i }).first()
         this.mastodon = page.getByRole('link', { name: /Mastodon/i }).first()
+        this.tiktok = page.getByRole('link', { name: /TikTok/i }).first()
     }
 
     async goTo() {
@@ -35,6 +37,7 @@ export class ContactPage extends AnyPage {
         await expect(this.instagram).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
         await expect(this.linkedIn).toHaveAttribute('href', 'https://www.linkedin.com/in/lapanti')
         await expect(this.mastodon).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
+        await expect(this.tiktok).toHaveAttribute('href', 'https://www.tiktok.com/@laurilavanti')
 
         await this.checkFooter()
     }
