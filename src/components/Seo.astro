@@ -1,0 +1,75 @@
+---
+import { WEBSITE } from '../types/jsonld'
+
+const {
+    description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
+    title,
+    type,
+} = Astro.props
+
+const canonical = Astro.site
+
+const name = 'Lauri Lavanti'
+
+const bluesky = 'https://bsky.app/profile/laurilavanti.fi'
+const facebook = 'https://www.facebook.com/laurilavanti'
+const instagram = 'https://www.instagram.com/laurilavanti/'
+const linkedIn = 'https://www.linkedin.com/in/lapanti'
+const mastodon = 'https://mastodontti.fi/@laurilavanti'
+const threads = 'https://www.threads.net/@laurilavanti'
+const tikTok = 'https://www.tiktok.com/@laurilavanti'
+
+const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': WEBSITE,
+    author: {
+        '@type': 'Person',
+        name,
+    },
+    description,
+    headline: title,
+    url: canonical,
+    ...(type === WEBSITE
+        ? {
+              name,
+              sameAs: [bluesky, facebook, instagram, linkedIn, mastodon, threads, tikTok],
+          }
+        : {}),
+})
+
+const keywords = [
+    'Kirkkonummi',
+    'Länsi-Uusimaa',
+    'Uusimaa',
+    'kuntavaalit',
+    'aluevaalit',
+    'Vihreät',
+    'Lauri Lavanti',
+    'Lauri',
+    'Lavanti',
+    'poliitikko',
+    'digitalisaatio',
+    'tekoäly',
+    'teknologia',
+    'tietopolitiikka',
+].join(', ')
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta content={keywords} name="keywords" />
+<meta content={title} name="og:title" />
+<meta content={name} name="author" />
+<meta content="fi_FI" name="og:locale" />
+<meta content={description} name="description" />
+<meta content={description} name="og:description" />
+<meta content={canonical} name="og:url" />
+<meta content={name} name="og:site_name" />
+<meta content={title} name="twitter:title" />
+<meta content={facebook} name="article:publisher" />
+<meta content="website" name="og:type" />
+<meta content={description} name="twitter:description" />
+<meta content="@laurilavanti@mastodontti.fi" name="fediverse:creator" />
+<link href={canonical} rel="canonical" />
+<title>{title}</title>
+<script set:html={jsonLd} type="application/ld+json" />
