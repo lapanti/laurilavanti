@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import FourZeroFour from './404'
+import FourZeroFour from './_404'
 
 describe('<404 />', () => {
     it('should render', () => {

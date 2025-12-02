@@ -8,6 +8,15 @@ const config = {
     tabWidth: 4,
     trailingComma: 'es5',
     useTabs: false,
+    plugins: ['prettier-plugin-astro'],
+    overrides: [
+        {
+            files: '*.astro',
+            options: {
+                parser: 'astro',
+            },
+        },
+    ],
 }
 
-module.exports = config
+export default config

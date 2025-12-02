@@ -8,9 +8,9 @@ import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
 import testingLibrary from 'eslint-plugin-testing-library'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
 import playwright from 'eslint-plugin-playwright'
 import stylistic from '@stylistic/eslint-plugin'
+import eslintPluginAstro from 'eslint-plugin-astro'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 import restrictedGlobals from 'confusing-browser-globals'
@@ -25,13 +25,13 @@ const testFileGlob = [
 
 export default tseslint.config(
     js.configs.recommended,
-    jsxA11y.flatConfigs.recommended,
-    jsxA11y.flatConfigs.strict,
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
     tseslint.configs.recommended,
     react.configs.flat.recommended,
     react.configs.flat['jsx-runtime'],
+    eslintPluginAstro.configs.recommended,
+    eslintPluginAstro.configs['jsx-a11y-strict'],
     {
         settings: {
             react: {
@@ -165,6 +165,13 @@ export default tseslint.config(
                     ],
                 },
             ],
+        },
+    },
+    {
+        files: ['**/*.astro'],
+        rules: {
+            'react/no-unescaped-entities': ['off'],
+            'react/no-unknown-property': ['off'],
         },
     },
     {
