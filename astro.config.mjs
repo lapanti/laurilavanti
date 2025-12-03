@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig, envField } from 'astro/config'
 
 import react from '@astrojs/react'
 
@@ -20,4 +20,12 @@ export default defineConfig({
     },
 
     integrations: [react()],
+
+    env: {
+        schema: {
+            CONTENTFUL_SPACE_ID: envField.string({ context: 'server', access: 'public' }),
+            CONTENTFUL_DELIVERY_TOKEN: envField.string({ context: 'server', access: 'public' }),
+            CONTENTFUL_PREVIEW_TOKEN: envField.string({ context: 'server', access: 'public' }),
+        },
+    },
 })
