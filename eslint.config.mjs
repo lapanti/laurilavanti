@@ -3,7 +3,6 @@
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import react from 'eslint-plugin-react'
 import globals from 'globals'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
@@ -170,6 +169,7 @@ export default tseslint.config(
     {
         files: ['**/*.astro'],
         rules: {
+            'react/jsx-key': ['off'],
             'react/no-unescaped-entities': ['off'],
             'react/no-unknown-property': ['off'],
         },
@@ -200,6 +200,5 @@ export default tseslint.config(
     {
         files: ['tests/e2e/**/*.spec.ts', 'tests/e2e/pages/**/*.ts'],
         ...playwright.configs['flat/recommended'],
-    },
-    eslintPluginPrettierRecommended
+    }
 )

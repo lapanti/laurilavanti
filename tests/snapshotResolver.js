@@ -1,6 +1,7 @@
 import path from 'path'
 
 module.exports = {
+
     /** Resolve path from test to snapshot path. The inverse of @see resolveTestPath */
     resolveSnapshotPath: (testPath, snapshotExtension) => {
         if (testPath.includes('src')) {
@@ -13,6 +14,7 @@ module.exports = {
             testPath
         )}${snapshotExtension}`
     },
+
     /** Resolve path from snapshot to test. The inverse of @see resolveTestPath */
     resolveTestPath: (snapshotFilePath, snapshotExtension) => {
         if (snapshotFilePath.includes(`tests${path.sep}__snapshots__`)) {
@@ -21,6 +23,7 @@ module.exports = {
         // Remove this block of code after all tests live under `src/`
         return snapshotFilePath.replace('__snapshots__', '').slice(0, -snapshotExtension.length)
     },
+
     /** Example test path used for preflight check of previous */
     testPathForConsistencyCheck: 'src/components/Link.spec.tsx',
 }

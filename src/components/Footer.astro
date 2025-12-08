@@ -1,0 +1,86 @@
+---
+import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+
+import { contentfulClient } from '../lib/contentful'
+import type { TypeFooterNav } from '../types/contenful'
+import { colors, gridAreas, sizes, CONTENT_PADDING, CONTENT_SIZE } from '../lib/styles'
+import greensLogo from '../assets/greensLogo3Languages.png'
+import Link from './footer/Link.astro'
+import InstagramLink from './footer/InstagramLink.astro'
+import TikTokLink from './footer/TikTokLink.astro'
+
+/** Only one footer nav there */
+const footerNav = await contentfulClient.getEntry<TypeFooterNav>('4aw1Sed11FQi8rnU5dRVby')
+---
+
+<style define:vars={{ sizes15: sizes[1.5], contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>
+    footer > div {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes15);
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+            padding-left: var(--contentPadding);
+            padding-right: var(--contentPadding);
+            width: var(--contentSize);
+        }
+
+        > * {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        > div {
+            @media (min-width: 1200px) {
+                justify-content: flex-start;
+            }
+        }
+
+        > ul {
+            gap: var(--sizes15);
+            @media (min-width: 1200px) {
+                justify-content: flex-end;
+            }
+        }
+    }
+</style>
+<footer
+    style={{
+        alignItems: 'center',
+        backgroundColor: colors.evening,
+        color: colors.white,
+        display: 'flex',
+        gridArea: gridAreas.footer,
+        justifyContent: 'center',
+    }}
+>
+    <div>
+        <div>
+            <Picture
+                formats={['avif', 'webp']}
+                alt='Vihreiden logo ja teksti "Vihreät De Gröna The Greens"'
+                fit="contain"
+                src={greensLogo}
+                densities={[2]}
+                width={200}
+            />
+        </div>
+        <ul>
+            {
+                footerNav?.fields?.links?.map((link) =>
+                    link.fields.icon === 'instagram' ? (
+                        <InstagramLink title={link.fields.title} url={link.fields.url} />
+                    ) : link.fields.icon === 'tiktok' ? (
+                        <TikTokLink title={link.fields.title} url={link.fields.url} />
+                    ) : (
+                        <Link title={link.fields.title} icon={link.fields.icon} url={link.fields.url} />
+                    )
+                )
+            }
+        </ul>
+    </div>
+</footer>

@@ -1,12 +1,11 @@
 ---
 import GlobalStyle from '../components/GlobalStyle.astro'
 import Seo from '../components/Seo.astro'
+import Footer from '../components/Footer.astro'
 
 import {
-    gridTemplateAreasLayout,
     gridTemplateColumns,
     gridTemplateRowsLayoutMobile,
-    breakpoints,
     gridTemplateRowsLayout,
     colors,
     gridTemplateColumnsArticle,
@@ -22,24 +21,28 @@ const { title } = Astro.props
         <Seo title={title} />
     </head>
     <body>
-        <div
-            style={{
-                display: 'grid',
-                gridTemplateAreas: gridTemplateAreasLayout,
-                gridTemplateColumns: gridTemplateColumns,
-                gridTemplateRows: gridTemplateRowsLayoutMobile,
-                minHeight: '100dvh',
-                position: 'relative',
-                [breakpoints[1200].min]: {
-                    gridTemplateRows: gridTemplateRowsLayout,
-                },
-            }}
-        >
+        <style define:vars={{ gridTemplateColumns, gridTemplateRowsLayoutMobile, gridTemplateRowsLayout }}>
+            body > div {
+                display: grid;
+                grid-template-areas:
+                    'main'
+                    'footer';
+                grid-template-columns: var(--gridTemplateColumns);
+                grid-template-rows: var(--gridTemplateRowsLayoutMobile);
+                min-height: 100dvh;
+                position: relative;
+                @media (min-width: 1200px) {
+                    grid-template-rows: var(--gridTemplateRowsLayout);
+                }
+            }
+        </style>
+        <div>
             <main style={{ backgroundColor: colors.white, gridArea: gridAreas.main }}>
                 <article style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsArticle }}>
                     <slot />
                 </article>
             </main>
+            <Footer />
         </div>
     </body>
 </html>

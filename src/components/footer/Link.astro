@@ -1,0 +1,82 @@
+---
+import { Icon } from 'astro-icon/components'
+import type { TypeContactInfoLinkFields } from '../../types/contentful'
+
+import { colors, sizes } from '../../lib/styles.ts'
+const { title, icon, url } = Astro.props
+
+const iconToHoverColor = (icon: TypeContactInfoLinkFields['icon']): string | undefined => {
+    if (String(icon) === 'bluesky') {
+        return colors.bluesky
+    }
+    if (String(icon) === 'facebook') {
+        return colors.facebook
+    }
+    if (String(icon) === 'instagram') {
+        return colors.instagramGradient
+    }
+    if (String(icon) === 'linkedin') {
+        return colors.linkedin
+    }
+    if (String(icon) === 'mastodon') {
+        return colors.mastodon
+    }
+    if (String(icon) === 'bluesky') {
+        return colors.bluesky
+    }
+    if (String(icon) === 'threads') {
+        return colors.threads
+    }
+    if (String(icon) === 'tiktok') {
+        return undefined
+    }
+}
+
+const hoverColor = iconToHoverColor(icon)
+---
+
+<style
+    define:vars={{
+        sizes0: sizes[0],
+        hoverColor,
+        colorsGray: colors.gray,
+        sizes175: sizes[1.75],
+        sizes225: sizes[2.25],
+    }}
+>
+    li {
+        padding: var(--sizes0);
+        svg {
+            color: var(--colorsGray);
+            height: var(--sizes175);
+            width: var(--sizes175);
+            stroke: currentColor;
+            fill: currentColor;
+            @media (min-width: 1200px) {
+                height: var(--sizes225);
+                width: var(--sizes225);
+            }
+        }
+        :hover,
+        :focus {
+            color: var(--hoverColor);
+        }
+    }
+</style>
+<li>
+    <a
+        href={url}
+        rel="me noopener noreferrer"
+        target="_blank"
+        title={title}
+        aria-label={title}
+        style={{
+            alignItems: 'center',
+            display: 'flex',
+            height: '100%',
+            justifyContent: 'center',
+        }}
+    >
+        <Icon name={`fa7-brands:${icon}`} />
+    </a>
+</li>

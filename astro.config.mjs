@@ -2,6 +2,7 @@
 import { defineConfig, envField } from 'astro/config'
 
 import react from '@astrojs/react'
+import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
         defaultStrategy: 'hover',
     },
 
-    integrations: [react()],
+    integrations: [react(), icon({ include: { 'fa7-brands': ['*'] } })],
 
     env: {
         schema: {
