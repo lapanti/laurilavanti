@@ -1,0 +1,19 @@
+---
+
+import { colors, fontSizes, typographics } from '../../../lib/styles'
+
+const { slug, navigationTitle, title } = Astro.props
+const { pathname } = Astro.url
+---
+<style>
+    a[aria-current="page"] {
+        text-decoration: underline;
+    }
+</style>
+    <a
+    href={`/${slug}/`}
+    title={title}
+    style={{ ...typographics.body, ...fontSizes[1.5], color: colors.peach }}
+    aria-current={pathname.slice(1).replace(/\//, '') === slug ? 'page' : 'false'}
+    >{navigationTitle ?? title}
+</a>

@@ -2,6 +2,7 @@
 import GlobalStyle from '../components/GlobalStyle.astro'
 import Seo from '../components/Seo.astro'
 import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
 
 import {
     gridTemplateColumns,
@@ -37,6 +38,7 @@ const { title } = Astro.props
             }
         </style>
         <div>
+            <Header />
             <main style={{ backgroundColor: colors.white, gridArea: gridAreas.main }}>
                 <article style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsArticle }}>
                     <slot />

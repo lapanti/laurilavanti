@@ -1,0 +1,31 @@
+---
+import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
+import NavigationLink from './desktopMenu/NavigationLink.astro'
+import MainNavigationLink from './desktopMenu/MainNavigationLink.astro'
+
+const { links } = Astro.props
+
+const sharedHalfStyles = {
+    alignItems: 'center',
+        display: 'flex',
+        gap: sizes[2.5],
+        width: '50%',
+}
+---
+    <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        margin: 'auto',
+        paddingLeft: CONTENT_PADDING,
+        paddingRight: CONTENT_PADDING,
+        width: CONTENT_SIZE,
+    }}>
+        <div style={{ ...sharedHalfStyles, justifyContent: 'flex-start' }}>
+            <MainNavigationLink />
+        </div>
+        <div style={{ ...sharedHalfStyles, justifyContent: 'flex-end' }}>
+            {links.map((link) => (
+                <NavigationLink slug={link.fields.slug} title={link.fields.title} navigationTitle={link.fields.navigationTitle} />
+            ))}
+        </div>
+    </div>
