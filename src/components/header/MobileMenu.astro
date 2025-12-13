@@ -1,5 +1,5 @@
 ---
-import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, ANIMATION_DURATION, ANIMATION_EASING, sizes } from '../../lib/styles'
+import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 
 const sharedHalfStyles = {
@@ -24,8 +24,6 @@ const sharedLineStyles = {
     colorsEvening: colors.evening,
     sizes25: sizes[2.5],
     headerSize: HEADER_SIZE,
-    animationDuration: ANIMATION_DURATION,
-    animationEasing: ANIMATION_EASING,
 }}>
     .container {
         align-items: center;
@@ -51,6 +49,10 @@ const sharedLineStyles = {
         input[type="checkbox"]:checked ~ div > .line3 {
             transform: rotate(-45deg);
         }
+
+        input[type="checkbox"]:checked ~ .links {
+            height: calc(100dvh - var(--headerSize));
+        }
     }
     .links {
         @media (prefers-reduced-motion) {
@@ -60,7 +62,7 @@ const sharedLineStyles = {
             @media (prefers-reduced-motion) {
                 transition: none;
             }
-            transition: opacity var(--animationDuration) var(--animationEasing);
+            transition: opacity 0.3s ease-in-out;
         }
         align-items: center;
         background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
@@ -73,9 +75,9 @@ const sharedLineStyles = {
         overflow: hidden;
         position: absolute;
         top: var(--headerSize);
-        transition: height var(--animationDuration)s var(--animationEasing);
+        transition: height 0.3s ease-in-out;
         width: 100vw;
-        height: calc(100dvh - var(--headerSize));
+        height: 0;
         /** Hide the whole thing on desktop */
         @media (min-width: 1200px) {
             display: none;
