@@ -1,0 +1,129 @@
+---
+import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, ANIMATION_DURATION, ANIMATION_EASING, sizes } from '../../lib/styles'
+import MainNavigationLink from './components/MainNavigationLink.astro'
+
+const sharedHalfStyles = {
+    alignItems: 'center',
+        display: 'flex',
+        gap: sizes[2.5],
+        width: '50%',
+}
+
+const sharedLineStyles = {
+
+    display: 'block',
+            height: sizes[0.25],
+            width: '100%',
+            borderRadius: '10px',
+            background: colors.peach,
+}
+---
+<style define:vars={{
+    contentPadding: CONTENT_PADDING,
+    contentSize: CONTENT_SIZE,
+    colorsEvening: colors.evening,
+    sizes25: sizes[2.5],
+    headerSize: HEADER_SIZE,
+    animationDuration: ANIMATION_DURATION,
+    animationEasing: ANIMATION_EASING,
+}}>
+    .container {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left:  var(--contentPadding);
+        margin-right: var(--contentPadding);
+        width: var(--contentSize);
+        
+        @media (min-width: 1200px) {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked ~ div > .line1 {
+            transform: rotate(45deg);
+        }
+
+        input[type="checkbox"]:checked ~ div > .line2 {
+            transform: scaleY(0);
+        }
+
+        input[type="checkbox"]:checked ~ div > .line3 {
+            transform: rotate(-45deg);
+        }
+    }
+    .links {
+        @media (prefers-reduced-motion) {
+            transition: none;
+        }
+        a {
+            @media (prefers-reduced-motion) {
+                transition: none;
+            }
+            transition: opacity var(--animationDuration) var(--animationEasing);
+        }
+        align-items: center;
+        background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+        background-color: var(--colorsEvening);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes25);
+        justify-content: center;
+        left: 0;
+        overflow: hidden;
+        position: absolute;
+        top: var(--headerSize);
+        transition: height var(--animationDuration)s var(--animationEasing);
+        width: 100vw;
+        height: calc(100dvh - var(--headerSize));
+        /** Hide the whole thing on desktop */
+        @media (min-width: 1200px) {
+            display: none;
+        }
+    }
+</style>
+<div class="container">
+    <div style={{ ...sharedHalfStyles, justifyContent: 'flex-start' }}>
+        <MainNavigationLink />
+    </div>
+    <div style={{ ...sharedHalfStyles, justifyContent: 'flex-end' }}>
+        <input style={{
+            position: 'absolute',
+            display: 'block',
+            height: sizes[3],
+            width: sizes[3],
+            right: sizes[0.5],
+            zIndex: 5,
+            opacity: 0,
+            cursor: 'pointer',
+        }} type="checkbox" name="" id="mobile-hamburger" />
+        <div style={{
+            height: sizes[2.5],
+            width: sizes[3],
+            right: sizes[0.5],
+            paddingTop: sizes[0.25],
+            paddingBottom: sizes[0.25],
+            position: 'absolute',
+            zIndex: 2,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+        }}>
+          <span class="line1" style={{
+            ...sharedLineStyles,
+            transformOrigin: '0% 0%',
+            transition: 'transform 0.25s ease-in-out',
+          }} />
+          <span class="line2" style={{
+            ...sharedLineStyles,
+            transition: 'transform 0.1s ease-in-out',
+          }} />
+          <span class="line3" style={{
+            ...sharedLineStyles,
+            transformOrigin: '0% 100%',
+            transition: 'transform 0.25s ease-in-out',
+          }} />
+        </div>
+        <div class="links"></div>
+    </div>
+</div>
