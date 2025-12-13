@@ -1,6 +1,7 @@
 ---
 import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
+import NavigationLink from './components/NavigationLink.astro'
 
 const sharedHalfStyles = {
     alignItems: 'center',
@@ -17,6 +18,8 @@ const sharedLineStyles = {
             borderRadius: '10px',
             background: colors.peach,
 }
+
+const { links } = Astro.props
 ---
 <style define:vars={{
     contentPadding: CONTENT_PADDING,
@@ -52,6 +55,9 @@ const sharedLineStyles = {
 
         input[type="checkbox"]:checked ~ .links {
             height: calc(100dvh - var(--headerSize));
+            a {
+                opacity: 100%;
+            }
         }
     }
     .links {
@@ -63,6 +69,7 @@ const sharedLineStyles = {
                 transition: none;
             }
             transition: opacity 0.3s ease-in-out;
+            opacity: 0;
         }
         align-items: center;
         background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
@@ -126,6 +133,10 @@ const sharedLineStyles = {
             transition: 'transform 0.25s ease-in-out',
           }} />
         </div>
-        <div class="links"></div>
+        <div class="links">
+            {links.map((link) => (
+                <NavigationLink slug={link.fields.slug} title={link.fields.title} navigationTitle={link.fields.navigationTitle} />
+            ))}
+        </div>
     </div>
 </div>
