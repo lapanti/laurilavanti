@@ -20,6 +20,10 @@ export default defineConfig({
         defaultStrategy: 'hover',
     },
 
+    image: {
+        domains: ['images.ctfassets.net'],
+    },
+
     integrations: [react(), icon({ include: { 'fa7-brands': ['*'] } })],
 
     env: {

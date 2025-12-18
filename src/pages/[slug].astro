@@ -12,13 +12,14 @@ export async function getStaticPaths() {
     params: { slug: item.fields.slug },
     props: {
       title: item.fields.title,
+      image: item.fields.image,
     },
   }));
 
   return pages;
 }
 
-const { title } = Astro.props
+const { title, image } = Astro.props
 ---
 
-<Layout title={title} />
+<Layout title={title} heroImage={image} />
