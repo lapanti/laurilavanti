@@ -1,0 +1,70 @@
+---
+import { colors, sizes, HEADER_SIZE, CONTENT_PADDING, typographics } from '../lib/styles'
+
+const { title } = Astro.props
+---
+<style define:vars={{
+    colorsEvening: colors.evening,
+    colorsWhite: colors.white,
+    sizes05: sizes[0.5],
+    sizes1: sizes[1],
+    sizes5: sizes[5],
+    sizes375: sizes[37.5],
+    sizes45: sizes[45],
+    headerSize: HEADER_SIZE,
+    contentPadding: CONTENT_PADDING,
+    }}>
+    .container {
+        background-color: var(--colorsEvening);
+        grid-column: 1 / -1;
+        padding-top: var(--headerSize);
+        @media (min-width: 1200px) {
+            height: var(--sizes45);
+        }
+    }
+    
+
+    .content {
+        background-color: var(--colorsWhite);
+        @media (min-width: 1200px) {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: flex-end;
+            margin: auto;
+        }
+    }
+    
+    .content .title-container,
+    .content .image-container {
+        @media (min-width: 1200px) {
+            width: 50%;
+        }
+    }
+
+    .title-container {
+        background-color: var(--colorsWhite);
+        padding-bottom: var(--sizes1);
+        padding-left: var(--contentPadding);
+        padding-right: var(--contentPadding);
+        padding-top: var(--sizes1);
+        @media (min-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: var(--sizes375);
+            padding-bottom: 0;
+            padding-left: var(--sizes05);
+            padding-right: var(--sizes5);
+            padding-top: 0;
+        }
+    }
+</style>
+<div class="container">
+    <div class="content">
+        <div class="title-container">
+            <h1 style={{ ...typographics.h1 }}>{title}</h1>
+        </div>
+        <div class="image-container"></div>
+    </div>
+</div>
