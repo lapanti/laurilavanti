@@ -171,6 +171,7 @@ export default tseslint.config(
         rules: {
             'react/jsx-key': ['off'],
             'react/jsx-no-undef': ['off'],
+            'react/jsx-no-target-blank': ['off'],
             'react/no-unescaped-entities': ['off'],
             'react/no-unknown-property': ['off'],
         },

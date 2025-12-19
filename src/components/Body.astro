@@ -42,6 +42,11 @@ const children = Array.isArray(node) ? node : node?.content || [];
                 />
             )
         }
+        {childNode.nodeType === INLINES.EMBEDDED_ENTRY && 
+            childNode.data.target.sys.contentType.sys.id === 'contactInfoLink' && (
+                <ExternalLink href={childNode.data.target.fields.url} rel="me">{childNode.data.target.fields.username}</ExternalLink>
+            )
+        }
       </>
     ))
 }
