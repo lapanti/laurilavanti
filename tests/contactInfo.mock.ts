@@ -1,4 +1,4 @@
-import type { ContactInfoLink } from '../src/types/contentful'
+import type { ContactInfoLink } from '../src/types/contentfulCodegen'
 
 export const mailLink: ContactInfoLink = {
     contentful_id: '4N9FJRjt9I5wHNGDWjp3Ox',

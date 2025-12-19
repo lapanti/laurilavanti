@@ -2,15 +2,15 @@
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
 import { contentfulClient } from '../lib/contentful'
-import type { TypeFooterNav } from '../types/contentful'
 import { colors, gridAreas, sizes, CONTENT_PADDING, CONTENT_SIZE } from '../lib/styles'
 import greensLogo from '../assets/greensLogo3Languages.png'
 import Link from './footer/Link.astro'
 import InstagramLink from './footer/InstagramLink.astro'
 import TikTokLink from './footer/TikTokLink.astro'
+import type { FooterNav } from '../types/contentful'
 
 /** Only one footer nav there */
-const footerNav = await contentfulClient.getEntry<TypeFooterNav>('4aw1Sed11FQi8rnU5dRVby')
+const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5dRVby')
 ---
 
 <style define:vars={{ sizes15: sizes[1.5], contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>

@@ -1,0 +1,40 @@
+---
+import { contentfulClient } from '../lib/contentful'
+import { CONTENT_PADDING, sizes } from '../lib/styles'
+import type { Post } from '../types/contentful'
+import Excerpt from './excerptList/Excerpt.astro'
+
+const entries = await contentfulClient.getEntries<Post>({
+    content_type: 'post',
+    include: 0,
+})
+
+const { limit } = Astro.props
+
+const nodes = limit ? entries.items.slice(0, limit) : entries.items
+---
+<style define:vars={{ contentPadding: CONTENT_PADDING, sizes2: sizes[2], sizes35: sizes[35], sizes3point5: sizes[3.5], sizes4: sizes[4] }}>
+    ul {
+        column-gap: var(--sizes4);
+        display: grid;
+        grid-column-start: 3;
+        grid-template-columns: minmax(100%, var(--sizes35));
+        grid-template-rows: auto;
+        justify-content: center;
+        justify-items: center;
+        margin-left: var(--contentPadding);
+        margin-right: var(--contentPadding);
+        margin-top: var(--sizes2);
+        row-gap: var(--sizes3point5);
+        
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(2, var(--sizes35));
+            margin-top: var(--sizes3point5);
+        }
+    }
+</style>
+<ul>
+    {nodes.map((node) => (
+        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} />
+    ))}
+</ul>

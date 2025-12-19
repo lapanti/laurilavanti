@@ -1,5 +1,7 @@
 ---
 import { sizes, typographics } from '../lib/styles'
+
+const { itemProp } = Astro.props
 ---
 <h2
     style={{
@@ -7,6 +9,7 @@ import { sizes, typographics } from '../lib/styles'
         gridColumnStart: 3,
         marginTop: sizes[1],
     }}
+    itemprop={itemProp}
 >
     <slot />
 </h2>

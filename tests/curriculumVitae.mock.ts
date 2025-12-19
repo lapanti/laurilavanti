@@ -1,4 +1,4 @@
-import type { Degree, Fiduciary, JobExperience } from '../src/types/contentful'
+import type { Degree, Fiduciary, JobExperience } from '../src/types/contentfulCodegen'
 
 export const degreesTitle: string = 'Koulutus'
 

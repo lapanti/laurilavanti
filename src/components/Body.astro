@@ -5,6 +5,7 @@ import Paragraph from './Paragraph.astro'
 import H2 from './H2.astro'
 import ExternalLink from "./ExternalLink.astro"
 import CurriculumVitae from "./body/CurriculumVitae.astro";
+import ExcerptList from "./ExcerptList.astro";
 
 const { node } = Astro.props
 
@@ -30,18 +31,23 @@ const children = Array.isArray(node) ? node : node?.content || [];
               <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content} /></ExternalLink>
             )
         }
-        {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY &&
-            childNode.data.target.sys.contentType.sys.id === 'curriculumVitae' && (
-                <CurriculumVitae
-                    degrees={childNode.data.target.fields.degrees}
-                    degreesTitle={childNode.data.target.fields.degreesTitle}
-                    fiduciaries={childNode.data.target.fields.fiduciaries}
-                    fiduciariesTitle={childNode.data.target.fields.fiduciariesTitle}
-                    jobExperiences={childNode.data.target.fields.jobExperiences}
-                    jobExperiencesTitle={childNode.data.target.fields.jobExperiencesTitle}
-                />
-            )
-        }
+        {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY && (
+            <>
+                {childNode.data.target.sys.contentType.sys.id === 'curriculumVitae' && (
+                    <CurriculumVitae
+                        degrees={childNode.data.target.fields.degrees}
+                        degreesTitle={childNode.data.target.fields.degreesTitle}
+                        fiduciaries={childNode.data.target.fields.fiduciaries}
+                        fiduciariesTitle={childNode.data.target.fields.fiduciariesTitle}
+                        jobExperiences={childNode.data.target.fields.jobExperiences}
+                        jobExperiencesTitle={childNode.data.target.fields.jobExperiencesTitle}
+                    />
+                )}
+                {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
+                    <ExcerptList limit={childNode.data.target.fields.limit} />
+                )}
+            </>
+        )}
         {childNode.nodeType === INLINES.EMBEDDED_ENTRY && 
             childNode.data.target.sys.contentType.sys.id === 'contactInfoLink' && (
                 <ExternalLink href={childNode.data.target.fields.url} rel="me">{childNode.data.target.fields.username}</ExternalLink>

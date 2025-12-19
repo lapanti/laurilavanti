@@ -1,4 +1,4 @@
-import type { ContentfulPost, ContentfulPostExcerpt } from '../src/types/contentful'
+import type { ContentfulPost, ContentfulPostExcerpt } from '../src/types/contentfulCodegen'
 
 export const coopElectionsConcernUsAll: ContentfulPost & ContentfulPostExcerpt = {
     backgroundImage: {

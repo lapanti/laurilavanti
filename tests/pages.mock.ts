@@ -1,4 +1,4 @@
-import type { ContentfulPage } from '../src/types/contentful'
+import type { ContentfulPage } from '../src/types/contentfulCodegen'
 
 import { contactInfoLinks } from './contactInfo.mock'
 import {

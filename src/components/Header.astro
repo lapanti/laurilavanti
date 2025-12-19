@@ -3,10 +3,10 @@ import { contentfulClient } from '../lib/contentful'
 import { colors, HEADER_SIZE, zIndices } from '../lib/styles'
 import DesktopMenu from './header/DesktopMenu.astro'
 import MobileMenu from './header/MobileMenu.astro'
-import type { TypeMainNav } from '../types/contentful'
+import type { MainNav } from '../types/contentful'
 
 /** Only one main nav there */
-const mainNav = await contentfulClient.getEntry<TypeMainNav>('7EKHWYCNVfmLLfc5TuKo9A')
+const mainNav = await contentfulClient.getEntry<MainNav>('7EKHWYCNVfmLLfc5TuKo9A')
 
 const links = mainNav.fields.links.filter((link) => link.fields.slug !== 'index')
 ---

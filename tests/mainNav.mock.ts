@@ -1,4 +1,4 @@
-import type { MainNav } from '../src/types/contentful'
+import type { MainNav } from '../src/types/contentfulCodegen'
 
 export const mainNav: MainNav = {
     links: [

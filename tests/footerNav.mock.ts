@@ -1,4 +1,4 @@
-import type { FooterNav } from '../src/types/contentful'
+import type { FooterNav } from '../src/types/contentfulCodegen'
 
 import {
     blueskyLink,

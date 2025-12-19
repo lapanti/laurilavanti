@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import { contentfulClient } from "../lib/contentful";
-import type { TypePage } from '../types/contentful'
+import type { Page } from '../types/contentful';
 
 export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries<TypePage>({
+  const entries = await contentfulClient.getEntries<Page>({
     content_type: "page",
     include: 10,
   });
