@@ -7,13 +7,13 @@ const { links } = Astro.props
 
 const sharedHalfStyles = {
     alignItems: 'center',
-        display: 'flex',
-        gap: sizes[2.5],
-        width: '50%',
+    display: 'flex',
+    gap: sizes[2.5],
+    width: '50%',
 }
 ---
 <style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>
-    div {
+    .container {
         display: none;
         flex-direction: row;
         margin: auto;
@@ -26,7 +26,7 @@ const sharedHalfStyles = {
         }
     }
 </style>
-<div>
+<div class="container">
     <div style={{ ...sharedHalfStyles, justifyContent: 'flex-start' }}>
         <MainNavigationLink />
     </div>
