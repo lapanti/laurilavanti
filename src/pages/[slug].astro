@@ -6,6 +6,7 @@ import type { TypePage } from '../types/contentful'
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<TypePage>({
     content_type: "page",
+    include: 10,
   });
 
   const pages = entries.items.map((item) => ({

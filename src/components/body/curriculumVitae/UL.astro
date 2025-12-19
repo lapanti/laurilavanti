@@ -1,0 +1,17 @@
+---
+import { sizes } from '../../../lib/styles'
+---
+<style define:vars={{ sizes05: sizes[0.5] }}>
+    ul > li:not(:first-child) {
+        margin-top: var(--sizes05);
+    }
+</style>
+<ul 
+    style={{
+        gridColumnStart: 3,
+        listStyle: 'none',
+        position: 'relative',
+    }}
+>
+    <slot />
+</ul>

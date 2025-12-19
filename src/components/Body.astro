@@ -3,7 +3,8 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 import Paragraph from './Paragraph.astro'
 import H2 from './H2.astro'
-import ExternalLink from "./ExternalLink.astro";
+import ExternalLink from "./ExternalLink.astro"
+import CurriculumVitae from "./body/CurriculumVitae.astro";
 
 const { node } = Astro.props
 
@@ -30,6 +31,18 @@ const children = Array.isArray(node) ? node : node?.content || [];
               <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content} /></ExternalLink>
             )}
           </>
+        )}
+        {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY && (
+            <>{childNode.data.target.sys.contentType.sys.id === 'curriculumVitae' && (
+                <CurriculumVitae
+                    degrees={childNode.data.target.fields.degrees}
+                    degreesTitle={childNode.data.target.fields.degreesTitle}
+                    fiduciaries={childNode.data.target.fields.fiduciaries}
+                    fiduciariesTitle={childNode.data.target.fields.fiduciariesTitle}
+                    jobExperiences={childNode.data.target.fields.jobExperiences}
+                    jobExperiencesTitle={childNode.data.target.fields.jobExperiencesTitle}
+                />
+            )}</>
         )}
       </>
     ))

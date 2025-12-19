@@ -1,0 +1,75 @@
+---
+import { sizes, typographics } from '../../lib/styles'
+import H2 from '../H2.astro'
+import LI from './curriculumVitae/LI.astro'
+import UL from './curriculumVitae/UL.astro'
+
+const yearsToString = (startYear: number, endYear?: number): string => {
+    if (startYear === endYear) return `${startYear}`
+    return `${startYear}–${endYear ?? ''}`
+}
+
+const divStyles = {
+    ...typographics.body,
+    marginBottom: sizes[1],
+    marginTop: sizes[1],
+}
+
+const {
+    degreesTitle,
+    degrees,
+    fiduciariesTitle,
+    fiduciaries,
+    jobExperiencesTitle,
+    jobExperiences,
+} = Astro.props
+---
+<div style={{ gridColumnStart: 3, marginTop: sizes[1] }}>
+    <div style={divStyles}>
+        <H2>{fiduciariesTitle}</H2>
+    </div>
+    <div style={divStyles}>
+        <UL>
+            {fiduciaries.map(({ fields: { duty, organization, startYear, endYear } }) => (
+                <LI key={`${duty}-${organization}-${startYear}`} heavy={!endYear}>
+                    <span>{duty} </span>
+                    <i>
+                        {organization} {yearsToString(startYear, endYear)}
+                    </i>
+                </LI>
+            ))}
+        </UL>
+    </div>
+    <br />
+    <div style={divStyles}>
+        <H2>{jobExperiencesTitle}</H2>
+    </div>
+    <div style={divStyles}>
+        <UL>
+            {jobExperiences.map(({ fields: { title, company, location, startYear, endYear } }) => (
+                <LI key={`${title}-${company}`} heavy={!endYear}>
+                    <span>{title} </span>
+                    <i>
+                        {company} ({location}) {yearsToString(startYear, endYear)}
+                    </i>
+                </LI>
+            ))}
+        </UL>
+    </div>
+    <br />
+    <div style={divStyles}>
+        <H2>{degreesTitle}</H2>
+    </div>
+    <div style={divStyles}>
+        <UL>
+            {degrees.map(({ fields: { degree, school, location, startYear, endYear } }) => (
+                <LI key={`${degree}-${school}`} heavy={!endYear}>
+                    <span>{degree} </span>
+                    <i>
+                        {school} ({location}) {yearsToString(startYear, endYear)}
+                    </i>
+                </LI>
+            ))}
+        </UL>
+    </div>
+</div>

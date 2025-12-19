@@ -1,0 +1,23 @@
+---
+import { colors, fontWeights, sizes, typographics } from '../../../lib/styles'
+
+const { heavy } = Astro.props
+---
+<style define:vars={{ colorsEvening: colors.evening }}>
+    li > p {
+        margin: 0;
+    }
+
+    li:before {
+        color: var(--colorsEvening);
+        content: "»";
+        left: 0;
+        position: absolute;
+    }
+</style>
+<li
+    style={{ ...typographics.body, ...(heavy ? { fontWeight: fontWeights.black } : {}), marginLeft: sizes[1.25] }}
+>
+    <slot />
+</li>
+
