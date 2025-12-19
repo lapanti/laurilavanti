@@ -1,0 +1,14 @@
+---
+import { colors, sizes } from '../lib/styles'
+
+const { href } = Astro.props
+---
+<a
+    href={href}
+    rel='noopener noreferrer'
+    style={{ color: colors.moss, textDecoration: 'underline', textDecorationThickness: sizes[0.125] }}
+    target="_blank"
+>
+    <slot />
+</a>
+

@@ -4,6 +4,7 @@ import Seo from '../components/Seo.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import TitleBanner from '../components/TitleBanner.astro'
+import Body from '../components/Body.astro'
 
 import {
     gridTemplateColumns,
@@ -14,7 +15,7 @@ import {
     gridAreas,
 } from '../lib/styles'
 
-const { title, heroImage } = Astro.props
+const { title, heroImage, body } = Astro.props
 ---
 
 <html lang="fi">
@@ -43,7 +44,7 @@ const { title, heroImage } = Astro.props
             <main style={{ backgroundColor: colors.white, gridArea: gridAreas.main }}>
                 <article style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsArticle }}>
                     <TitleBanner title={title} heroImage={heroImage} />
-                    <slot />
+                    {body && <Body node={body} />}
                 </article>
             </main>
             <Footer />

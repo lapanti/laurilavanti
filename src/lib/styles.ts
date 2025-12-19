@@ -14,6 +14,7 @@ export const sizes = {
     [0]: '0px' as const,
     [0.5]: '0.5rem' as const, // 8px
     [0.25]: '0.25rem' as const, // 4px
+    [0.125]: '0.125rem' as const, // 2px
     [0.875]: '0.875rem' as const, // 14px
     [0.1875]: '0.1875rem' as const, // 3px
     [1]: '1rem' as const, // 16px

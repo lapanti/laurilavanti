@@ -1,0 +1,36 @@
+---
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+
+import Paragraph from './Paragraph.astro'
+import H2 from './H2.astro'
+import ExternalLink from "./ExternalLink.astro";
+
+const { node } = Astro.props
+
+const children = Array.isArray(node) ? node : node?.content || [];
+---
+{
+  Array.isArray(children) &&
+    children.map((childNode) => (
+      <>
+        {childNode.nodeType === "text" && (
+            <Fragment set:html={childNode.value} />
+        )}
+        {childNode.nodeType === BLOCKS.PARAGRAPH && (
+          <Paragraph inGrid>
+            <Astro.self node={childNode.content} />
+          </Paragraph>
+        )}
+        {childNode.nodeType === BLOCKS.HEADING_2 && (
+            <H2><Astro.self node={childNode.content} /></H2>
+        )}
+        {childNode.nodeType === INLINES.HYPERLINK && (
+          <>
+            {childNode?.data?.uri && (
+              <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content} /></ExternalLink>
+            )}
+          </>
+        )}
+      </>
+    ))
+}

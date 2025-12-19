@@ -1,0 +1,12 @@
+---
+import { sizes, typographics } from '../lib/styles'
+---
+<h2
+    style={{
+        ...typographics.h2,
+        gridColumnStart: 3,
+        marginTop: sizes[1],
+    }}
+>
+    <slot />
+</h2>

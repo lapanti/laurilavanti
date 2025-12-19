@@ -170,6 +170,7 @@ export default tseslint.config(
         files: ['**/*.astro'],
         rules: {
             'react/jsx-key': ['off'],
+            'react/jsx-no-undef': ['off'],
             'react/no-unescaped-entities': ['off'],
             'react/no-unknown-property': ['off'],
         },
