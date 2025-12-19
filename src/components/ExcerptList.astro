@@ -6,7 +6,7 @@ import Excerpt from './excerptList/Excerpt.astro'
 
 const entries = await contentfulClient.getEntries<Post>({
     content_type: 'post',
-    include: 0,
+    include: 1,
 })
 
 const { limit } = Astro.props
@@ -26,7 +26,7 @@ const nodes = limit ? entries.items.slice(0, limit) : entries.items
         margin-right: var(--contentPadding);
         margin-top: var(--sizes2);
         row-gap: var(--sizes3point5);
-        
+
         @media (min-width: 1200px) {
             grid-template-columns: repeat(2, var(--sizes35));
             margin-top: var(--sizes3point5);
@@ -35,6 +35,6 @@ const nodes = limit ? entries.items.slice(0, limit) : entries.items
 </style>
 <ul>
     {nodes.map((node) => (
-        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} />
+        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} image={node.fields.image} />
     ))}
 </ul>

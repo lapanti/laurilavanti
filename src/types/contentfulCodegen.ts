@@ -866,6 +866,13 @@ export interface TypePostFields {
      * @localized false
      */
     publishDate?: EntryFieldTypes.Date;
+
+    /**
+     * Field type definition for field 'image' (Image)
+     * @name Image
+     * @localized false
+     */
+    image: EntryFieldTypes.AssetLink;
 }
 
 /**
@@ -874,7 +881,7 @@ export interface TypePostFields {
  * @type {TypePostSkeleton}
  * @author 0gveB6TBChXdFEnRDwWnyH
  * @since 2022-06-18T17:31:59.190Z
- * @version 51
+ * @version 53
  */
 export type TypePostSkeleton = EntrySkeletonType<TypePostFields, "post">;
 
@@ -884,7 +891,7 @@ export type TypePostSkeleton = EntrySkeletonType<TypePostFields, "post">;
  * @type {TypePost}
  * @author Lauri Lavanti<laurilavanti@gmail.com>
  * @since 2022-06-18T17:31:59.190Z
- * @version 51
+ * @version 53
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/post
  */
 export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePostSkeleton, Modifiers, Locales>;

@@ -1,9 +1,11 @@
 ---
+import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+
 import { colors, sizes } from '../../lib/styles'
 import H2 from '../H2.astro'
 import Paragraph from '../Paragraph.astro'
 
-const { title, excerpt, slug } = Astro.props
+const { title, excerpt, slug, image } = Astro.props
 ---
 <style define:vars={{ sizes35: sizes[35] }}>
     li {
@@ -26,6 +28,16 @@ const { title, excerpt, slug } = Astro.props
             }
         </style>
         <a class="main-link" rel="permalink" href={`/${slug}/`}>
+            {image && <Picture
+                src={`https:${image.fields.file.url}`}
+                sizes="(max-width: 560px) 100vw, 560px"
+                widths={[360, 560]}
+                formats={['avif', 'webp']}
+                fit="cover"
+                alt={image.fields.description}
+                width="560"
+                height="315"
+            />}
             <style define:vars={{ sizes025: sizes[0.25] }}>
                 div {
                     align-items: flex-end;
