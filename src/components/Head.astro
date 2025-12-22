@@ -1,4 +1,6 @@
 ---
+import { Font } from 'astro:assets'
+
 import { WEBSITE } from '../types/jsonld'
 
 const {
@@ -75,3 +77,5 @@ const keywords = [
 <link rel="manifest" href="/app.webmanifest" />
 <title>{title}</title>
 <script set:html={jsonLd} type="application/ld+json" />
+<Font cssVariable="--ibmPlexMono" preload />
+<Font cssVariable="--ibmPlexSans" preload />

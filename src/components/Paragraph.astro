@@ -1,16 +1,24 @@
 ---
 import { sizes, typographics } from "../lib/styles"
 
-const { inGrid, itemProp } = Astro.props
+const { inGrid, itemProp, smallMarginTop } = Astro.props
 ---
-<p 
-    style={{
-        ...typographics.body,
-        ...(inGrid ? { gridColumnStart: 3 } : {}),
-        marginBottom: sizes[1],
-        marginTop: sizes[1],
-    }}
-    itemprop={itemProp}
->
+<style define:vars={{
+    sizes1: sizes[1],
+    marginTop: smallMarginTop ? sizes[0.25] : sizes[1],
+    bodyFontWeight: typographics.body.fontWeight,
+    bodyFontSize: typographics.body.fontSize,
+    bodyLineHeight: typographics.body.lineHeight,
+}}>
+    p {
+        margin-bottom: var(--sizes1);
+        margin-top: var(--marginTop);
+        font-family: var(--ibmPlexSans);
+        font-weight: var(--bodyFontWeight);
+        font-size: var(--bodyFontSize);
+        line-height: var(--bodyLineHeight);
+    }
+</style>
+<p style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }} itemprop={itemProp}>
     <slot />
 </p>

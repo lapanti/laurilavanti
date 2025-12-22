@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config'
+import { defineConfig, envField, fontProviders } from 'astro/config'
 
 import react from '@astrojs/react'
 import icon from 'astro-icon'
@@ -13,6 +13,21 @@ export default defineConfig({
 
     build: {
         inlineStylesheets: 'auto',
+    },
+
+    experimental: {
+        fonts: [
+            {
+                name: "IBM Plex Mono",
+                cssVariable: '--ibmPlexMono',
+                provider: fontProviders.fontsource(),
+            },
+            {
+                name: "IBM Plex Sans",
+                cssVariable: '--ibmPlexSans',
+                provider: fontProviders.fontsource(),
+            }
+        ]
     },
 
     prefetch: {
