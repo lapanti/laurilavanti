@@ -21,11 +21,19 @@ export default defineConfig({
                 name: "IBM Plex Mono",
                 cssVariable: '--ibmPlexMono',
                 provider: fontProviders.fontsource(),
+                weights: [300, 400, 500, 1000],
+                styles: ['normal', 'italic'],
+                subsets: ['latin', 'latin-ext'],
+                fallbacks: ['Lucida Sans Typewriter'],
             },
             {
                 name: "IBM Plex Sans",
                 cssVariable: '--ibmPlexSans',
                 provider: fontProviders.fontsource(),
+                weights: [300, 400, 500, 1000],
+                styles: ['normal', 'italic'],
+                subsets: ['latin', 'latin-ext'],
+                fallbacks: ['Trebuchet MS'],
             }
         ]
     },
