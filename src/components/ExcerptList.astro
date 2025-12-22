@@ -35,6 +35,6 @@ const nodes = limit ? entries.items.slice(0, limit) : entries.items
 </style>
 <ul>
     {nodes.map((node) => (
-        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} image={node.fields.image} />
+        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} image={node.fields.image} date={node.fields.publishDate || node.sys.createdAt} tags={node.metadata.tags} />
     ))}
 </ul>
