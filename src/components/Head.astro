@@ -1,15 +1,17 @@
 ---
 import { Font } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
-import { WEBSITE } from '../types/jsonld'
+import { JSON_LD_TYPES, WEBSITE } from '../lib/jsonld'
 
 const {
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
     title,
     type,
+    slug,
+    image,
 } = Astro.props
 
-const canonical = Astro.site
+const canonical = slug ? `${Astro.site}${slug}` : null
 
 const name = 'Lauri Lavanti'
 
@@ -23,7 +25,7 @@ const tikTok = 'https://www.tiktok.com/@laurilavanti'
 
 const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': WEBSITE,
+    '@type': JSON_LD_TYPES.includes(type) ? type : WEBSITE,
     author: {
         '@type': 'Person',
         name,
@@ -31,6 +33,11 @@ const jsonLd = JSON.stringify({
     description,
     headline: title,
     url: canonical,
+    ...(image?.fields?.file?.url
+        ? {
+            image: `https${image.fields.file.url}`,
+        }
+        : {}),
     ...(type === WEBSITE
         ? {
               name,
@@ -65,17 +72,36 @@ const keywords = [
 <meta content="fi_FI" name="og:locale" />
 <meta content={description} name="description" />
 <meta content={description} name="og:description" />
-<meta content={canonical} name="og:url" />
 <meta content={name} name="og:site_name" />
 <meta content={title} name="twitter:title" />
 <meta content={facebook} name="article:publisher" />
 <meta content="website" name="og:type" />
 <meta content={description} name="twitter:description" />
 <meta content="@laurilavanti@mastodontti.fi" name="fediverse:creator" />
-<link href={canonical} rel="canonical" />
+{canonical && (
+    <>
+        <meta content={canonical} name="og:url" />
+        <link href={canonical} rel="canonical" />
+    </>
+)}
+{image?.fields?.file?.url ? (
+    <>
+        <meta content={`https${image.fields.file.url}`} name="og:image" />
+        <meta content={image.fields.file.details.image.height} name="og:image:height" />
+        <meta content={image.fields.file.details.image.width} name="og:image:width" />
+        <meta content="summary_large_image" name="twitter:card" />
+    </>
+) : (<meta content="summary" name="twitter:card" />)}
+<meta name="theme_color" content="#006275" />
+<meta name="apple-mobile-web-app-title" content="Lauri Lavanti" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
 <link rel="manifest" href="/app.webmanifest" />
-<title>{title}</title>
+<title>{title === 'Lauri Lavanti' ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 <Font cssVariable="--ibmPlexMono" preload />
 <Font cssVariable="--ibmPlexSans" preload />
+<link crossorigin="" href="https://images.ctfassets.net" rel="preconnect">
+<link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect">

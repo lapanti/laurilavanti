@@ -15,13 +15,13 @@ import {
     gridAreas,
 } from '../lib/styles'
 
-const { title, heroImage, body, tags } = Astro.props
+const { description, title, heroImage, body, slug, type, tags } = Astro.props
 ---
 
 <html lang="fi">
     <head>
         <GlobalStyle />
-        <Head title={title} />
+        <Head description={description} title={title} slug={slug} image={heroImage} type={type} />
     </head>
     <body>
         <style define:vars={{ gridTemplateColumns, gridTemplateRowsLayoutMobile, gridTemplateRowsLayout }}>

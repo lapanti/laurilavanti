@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import { contentfulClient } from "../lib/contentful";
 import type { Page } from '../types/contentful';
+import { WEBPAGE } from '../lib/jsonld'
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Page>({
@@ -14,9 +15,11 @@ export async function getStaticPaths() {
   const pages = entries.items.map((item) => ({
     params: { slug: item.fields.slug },
     props: {
+      description: item.fields.description,
       title: item.fields.title,
       image: item.fields.image,
       body: item.fields.body,
+      slug: item.fields.slug,
       tags,
     },
   }));
@@ -24,7 +27,7 @@ export async function getStaticPaths() {
   return pages;
 }
 
-const { title, image, body, tags } = Astro.props
+const { description, title, image, body, slug, tags } = Astro.props
 ---
 
-<Layout title={title} heroImage={image} body={body} tags={tags} />
+<Layout description={description} title={title} heroImage={image} body={body} slug={slug} type={WEBPAGE} tags={tags} />
