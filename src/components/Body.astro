@@ -1,11 +1,31 @@
 ---
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
 
 import Paragraph from './Paragraph.astro'
 import H2 from './H2.astro'
 import ExternalLink from "./ExternalLink.astro"
 import CurriculumVitae from "./body/CurriculumVitae.astro";
 import ExcerptList from "./ExcerptList.astro";
+
+const markRenderers = {
+  [MARKS.ITALIC]: (text: string) => `<i>${text}</i>`,
+};
+
+const renderText = (node) => {
+  const result = node.value
+
+  if (node.marks.length > 0) {
+    return node.marks.reduce((value, mark) => {
+      if (markRenderers[mark.type]) {
+        return markRenderers[mark.type](value)
+      }
+
+      return value
+    }, result)
+  }
+
+  return result
+}
 
 const { node, tags } = Astro.props
 
@@ -16,7 +36,7 @@ const children = Array.isArray(node) ? node : node?.content || [];
     children.map((childNode) => (
       <>
         {childNode.nodeType === "text" && (
-            <Fragment set:html={childNode.value} />
+            <Fragment set:html={renderText(childNode)} />
         )}
         {childNode.nodeType === BLOCKS.PARAGRAPH && (
           <Paragraph inGrid>
