@@ -45,6 +45,7 @@ const { description, title, heroImage, body, slug, type, tags } = Astro.props
                 <article style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsArticle }}>
                     <TitleBanner title={title} heroImage={heroImage} />
                     {body && <Body node={body} tags={tags} />}
+                    <slot />
                 </article>
             </main>
             <Footer />

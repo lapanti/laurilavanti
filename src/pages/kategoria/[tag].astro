@@ -1,0 +1,27 @@
+---
+import ExcerptList from '../../components/ExcerptList.astro';
+import Layout from '../../layouts/Layout.astro'
+import { contentfulClient } from "../../lib/contentful";
+
+export async function getStaticPaths() {
+  const tags = await contentfulClient.getTags()
+
+  const pages = tags.items.map((item) => ({
+    params: { tag: item.sys.id },
+    props: {
+      tags,
+      tag: item
+    },
+  }));
+
+  return pages;
+}
+
+const { tags, tag } = Astro.props
+
+const capitalizedName = `${tag.name[0].toUpperCase()}${tag.name.slice(1)}`
+---
+
+<Layout title={capitalizedName} tags={tags}>
+    <ExcerptList tags={tags} tag={tag.sys.id} />
+</Layout>

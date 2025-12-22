@@ -9,9 +9,11 @@ const entries = await contentfulClient.getEntries<Post>({
     include: 1,
 })
 
-const { limit, tags } = Astro.props
+const { limit, tags, tag } = Astro.props
 
-const nodes = limit ? entries.items.slice(0, limit) : entries.items
+const filtered = tag ? entries.items.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : entries.items
+
+const nodes = limit ? filtered.slice(0, limit) : filtered
 ---
 <style define:vars={{ contentPadding: CONTENT_PADDING, sizes2: sizes[2], sizes35: sizes[35], sizes3point5: sizes[3.5], sizes4: sizes[4] }}>
     ul {
