@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { contentfulClient } from "../../lib/contentful";
+import type { Post } from '../../types/contentful';
+
+export async function getStaticPaths() {
+  const entries = await contentfulClient.getEntries<Post>({
+    content_type: "post",
+    include: 10,
+  });
+
+  const tags = await contentfulClient.getTags()
+
+    const pages = entries.items.map((item) => ({
+        params: { slug: `/${item.fields.slug}` },
+        props: {
+            allTags: tags,
+            body: item.fields.body,
+            description: item.fields.excerpt,
+            image: item.fields.image,
+            title: item.fields.title,
+        },
+    }));
+
+  return pages;
+}
+
+const { allTags, body, description, image, title } = Astro.props
+
+---
+
+<Layout description={description} body={body} heroImage={image} title={title} tags={allTags}>
+</Layout>
