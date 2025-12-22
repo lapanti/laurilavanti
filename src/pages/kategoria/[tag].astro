@@ -23,5 +23,5 @@ const capitalizedName = `${tag.name[0].toUpperCase()}${tag.name.slice(1)}`
 ---
 
 <Layout title={capitalizedName} tags={tags}>
-    <ExcerptList tags={tags} tag={tag.sys.id} />
+    <ExcerptList allTags={tags} tag={tag.sys.id} />
 </Layout>

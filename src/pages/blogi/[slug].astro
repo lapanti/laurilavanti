@@ -1,8 +1,10 @@
 ---
 import SocialShare from '../../components/SocialShare.astro';
+import H2 from '../../components/H2.astro'
 import Layout from '../../layouts/Layout.astro'
 import { contentfulClient } from "../../lib/contentful";
 import type { Post } from '../../types/contentful';
+import ExcerptList from '../../components/ExcerptList.astro';
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
@@ -33,4 +35,6 @@ const { allTags, body, description, image, title, slug } = Astro.props
 
 <Layout description={description} body={body} heroImage={image} title={title} tags={allTags}>
     <SocialShare ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`} shareUrl={`https://laurilavanti.fi/blogi/${slug}`} title={title} />
+    <H2>Muita kirjoituksia</H2>
+    <ExcerptList limit={4} allTags={allTags} />
 </Layout>

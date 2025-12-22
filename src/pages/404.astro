@@ -7,5 +7,5 @@ const tags = await contentfulClient.getTags()
 ---
 
 <Layout title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
-    <ExcerptList limit={8} tags={tags} />
+    <ExcerptList limit={8} allTags={tags} />
 </Layout>

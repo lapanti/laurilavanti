@@ -71,7 +71,7 @@ const children = Array.isArray(node) ? node : node?.content || [];
                     />
                 )}
                 {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
-                    <ExcerptList limit={childNode.data.target.fields.limit} tags={tags} />
+                    <ExcerptList limit={childNode.data.target.fields.limit} allTags={tags} />
                 )}
             </>
         )}

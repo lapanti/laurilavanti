@@ -9,7 +9,7 @@ const entries = await contentfulClient.getEntries<Post>({
     include: 1,
 })
 
-const { limit, tags, tag } = Astro.props
+const { limit, allTags, tag } = Astro.props
 
 const sorted = entries.items.toSorted((a, b) => (new Date(b.sys.createdAt)).valueOf() - (new Date(a.sys.createdAt)).valueOf())
 
@@ -39,6 +39,6 @@ const nodes = limit ? filtered.slice(0, limit) : filtered
 </style>
 <ul>
     {nodes.map((node) => (
-        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} image={node.fields.image} date={node.fields.publishDate || node.sys.createdAt} allTags={tags} tags={node.metadata.tags} />
+        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} image={node.fields.image} date={node.fields.publishDate || node.sys.createdAt} allTags={allTags} tags={node.metadata.tags} />
     ))}
 </ul>
