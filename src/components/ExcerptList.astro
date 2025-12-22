@@ -11,7 +11,9 @@ const entries = await contentfulClient.getEntries<Post>({
 
 const { limit, tags, tag } = Astro.props
 
-const filtered = tag ? entries.items.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : entries.items
+const sorted = entries.items.toSorted((a, b) => (new Date(b.sys.createdAt)).valueOf() - (new Date(a.sys.createdAt)).valueOf())
+
+const filtered = tag ? sorted.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : sorted
 
 const nodes = limit ? filtered.slice(0, limit) : filtered
 ---
