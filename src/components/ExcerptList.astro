@@ -1,7 +1,7 @@
 ---
 import type { Entry } from 'contentful'
 import { contentfulClient } from '../lib/contentful'
-import { CONTENT_PADDING, sizes } from '../lib/styles'
+import { sizes } from '../lib/styles'
 import type { Post } from '../types/contentful'
 import Excerpt from './excerptList/Excerpt.astro'
 
@@ -46,7 +46,7 @@ const tagSorted = relatedTags ? dateSorted
 
 const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
-<style define:vars={{ contentPadding: CONTENT_PADDING, sizes2: sizes[2], sizes35: sizes[35], sizes3point5: sizes[3.5], sizes4: sizes[4] }}>
+<style define:vars={{ sizes2: sizes[2], sizes35: sizes[35], sizes3point5: sizes[3.5], sizes4: sizes[4] }}>
     ul {
         column-gap: var(--sizes4);
         display: grid;
@@ -55,8 +55,6 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
         grid-template-rows: auto;
         justify-content: center;
         justify-items: center;
-        margin-left: var(--contentPadding);
-        margin-right: var(--contentPadding);
         margin-top: var(--sizes2);
         row-gap: var(--sizes3point5);
 
