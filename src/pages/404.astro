@@ -1,5 +1,11 @@
 ---
+import ExcerptList from '../components/ExcerptList.astro'
 import Layout from '../layouts/Layout.astro'
+import { contentfulClient } from '../lib/contentful'
+
+const tags = await contentfulClient.getTags()
 ---
 
-<Layout title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?" />
+<Layout title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
+    <ExcerptList limit={8} tags={tags} />
+</Layout>
