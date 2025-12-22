@@ -1,0 +1,29 @@
+---
+import { colors, sizes, typographics } from '../../lib/styles'
+---
+<style define:vars={{
+    fontStyle: typographics.blockQuote.fontStyle,
+    fontSize: typographics.blockQuote.fontSize,
+    fontWeight: typographics.blockQuote.fontWeight,
+    lineHeight: typographics.blockQuote.lineHeight,
+    colorsSand: colors.sand,
+    sizes025: sizes[0.25],
+    sizes05: sizes[0.5],
+}}>
+    blockquote {
+        font-family: var(--ibmPlexMono);
+        font-style: var(--fontStyle);
+        font-size: var(--fontSize);
+        font-weight: var(--fontWeight);
+        line-height: var(--lineHeight);
+        border-left-color: var(--colorsSand);
+        border-left-width: var(--sizes025);
+        grid-column-start: 3;
+        padding-bottom: var(--sizes05);
+        padding-left: var(--sizes05);
+        padding-top: var(--sizes05);
+    }
+</style>
+<blockquote>
+    <slot />
+</blockquote>
