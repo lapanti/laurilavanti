@@ -1,4 +1,5 @@
 ---
+import SocialShare from '../../components/SocialShare.astro';
 import Layout from '../../layouts/Layout.astro'
 import { contentfulClient } from "../../lib/contentful";
 import type { Post } from '../../types/contentful';
@@ -19,15 +20,17 @@ export async function getStaticPaths() {
             description: item.fields.excerpt,
             image: item.fields.image,
             title: item.fields.title,
+            slug: item.fields.slug,
         },
     }));
 
   return pages;
 }
 
-const { allTags, body, description, image, title } = Astro.props
+const { allTags, body, description, image, title, slug } = Astro.props
 
 ---
 
 <Layout description={description} body={body} heroImage={image} title={title} tags={allTags}>
+    <SocialShare ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`} shareUrl={`https://laurilavanti.fi/blogi/${slug}`} title={title} />
 </Layout>

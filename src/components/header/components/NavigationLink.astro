@@ -39,6 +39,6 @@ const { pathname } = Astro.url
     href={`/${slug}/`}
     title={title}
     style={{ ...typographics.body, ...fontSizes[1.5], position: 'relative', color: colors.peach, overflow: 'hidden' }}
-    aria-current={pathname.slice(1).replace(/\//, '') === slug ? 'page' : 'false'}
+    aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'}
     >{navigationTitle ?? title}
 </a>
