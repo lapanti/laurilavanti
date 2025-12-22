@@ -15,7 +15,7 @@ import {
     gridAreas,
 } from '../lib/styles'
 
-const { title, heroImage, body } = Astro.props
+const { title, heroImage, body, tags } = Astro.props
 ---
 
 <html lang="fi">
@@ -44,7 +44,7 @@ const { title, heroImage, body } = Astro.props
             <main style={{ backgroundColor: colors.white, gridArea: gridAreas.main }}>
                 <article style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsArticle }}>
                     <TitleBanner title={title} heroImage={heroImage} />
-                    {body && <Body node={body} />}
+                    {body && <Body node={body} tags={tags} />}
                 </article>
             </main>
             <Footer />

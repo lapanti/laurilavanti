@@ -1,10 +1,7 @@
 ---
-import { contentfulClient } from '../lib/contentful'
 import { colors, sizes, typographics } from '../lib/styles'
 
-const allTags = await contentfulClient.getTags()
-
-const { date, tags, ariaLabel } = Astro.props
+const { date, tags, ariaLabel, allTags } = Astro.props
 
 const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')

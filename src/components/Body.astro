@@ -7,7 +7,7 @@ import ExternalLink from "./ExternalLink.astro"
 import CurriculumVitae from "./body/CurriculumVitae.astro";
 import ExcerptList from "./ExcerptList.astro";
 
-const { node } = Astro.props
+const { node, tags } = Astro.props
 
 const children = Array.isArray(node) ? node : node?.content || [];
 ---
@@ -44,7 +44,7 @@ const children = Array.isArray(node) ? node : node?.content || [];
                     />
                 )}
                 {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
-                    <ExcerptList limit={childNode.data.target.fields.limit} />
+                    <ExcerptList limit={childNode.data.target.fields.limit} tags={tags} />
                 )}
             </>
         )}
