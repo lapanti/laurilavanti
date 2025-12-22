@@ -1,4 +1,5 @@
 ---
+import type { Entry } from 'contentful'
 import { contentfulClient } from '../lib/contentful'
 import { CONTENT_PADDING, sizes } from '../lib/styles'
 import type { Post } from '../types/contentful'
@@ -9,13 +10,41 @@ const entries = await contentfulClient.getEntries<Post>({
     include: 1,
 })
 
-const { limit, allTags, tag } = Astro.props
+const { limit, allTags, currentSlug, tag, relatedTags } = Astro.props
 
-const sorted = entries.items.toSorted((a, b) => (new Date(b.sys.createdAt)).valueOf() - (new Date(a.sys.createdAt)).valueOf())
+const noCurrent = currentSlug ? entries.items.filter((item) => item.fields.slug !== currentSlug) : entries.items
 
-const filtered = tag ? sorted.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : sorted
+const tagFiltered = tag ? noCurrent.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : noCurrent
 
-const nodes = limit ? filtered.slice(0, limit) : filtered
+const dateSorted = tagFiltered.toSorted((a, b) => (new Date(b.sys.createdAt)).valueOf() - (new Date(a.sys.createdAt)).valueOf())
+
+const tagSorted = relatedTags ? dateSorted
+                .reduce<[Entry<Post, undefined, undefined>, number][]>(
+                    (acc, curr) => [
+                        ...acc,
+                        [
+                            curr,
+                            // 1 point per matching tag
+                            relatedTags.reduce(
+                                (pointsAcc, currentRelatedTag) =>
+                                    pointsAcc +
+                                    (curr.metadata.tags.map((someTag) => someTag.sys.id).includes(currentRelatedTag.sys.id)
+                                        ? 1
+                                        : 0),
+                                0
+                            ),
+                        ],
+                    ],
+                    []
+                )
+                .toSorted((a, b) => {
+                    // Higher points first
+                    return a[1] < b[1] ? 1 : -1
+                })
+                .map((postWithPoints) => postWithPoints[0])
+                : dateSorted
+
+const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
 <style define:vars={{ contentPadding: CONTENT_PADDING, sizes2: sizes[2], sizes35: sizes[35], sizes3point5: sizes[3.5], sizes4: sizes[4] }}>
     ul {

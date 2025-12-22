@@ -23,18 +23,19 @@ export async function getStaticPaths() {
             image: item.fields.image,
             title: item.fields.title,
             slug: item.fields.slug,
+            tags: item.metadata.tags,
         },
     }));
 
   return pages;
 }
 
-const { allTags, body, description, image, title, slug } = Astro.props
+const { allTags, body, description, image, title, slug, tags } = Astro.props
 
 ---
 
 <Layout description={description} body={body} heroImage={image} title={title} tags={allTags}>
     <SocialShare ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`} shareUrl={`https://laurilavanti.fi/blogi/${slug}`} title={title} />
     <H2>Muita kirjoituksia</H2>
-    <ExcerptList limit={4} allTags={allTags} />
+    <ExcerptList limit={4} currentSlug={slug} relatedTags={tags} allTags={allTags} />
 </Layout>
