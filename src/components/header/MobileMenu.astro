@@ -4,22 +4,6 @@ import type { Page } from '../../types/contentful'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
-const sharedHalfStyles = {
-    alignItems: 'center',
-        display: 'flex',
-        gap: sizes[2.5],
-        width: '50%',
-}
-
-const sharedLineStyles = {
-
-    display: 'block',
-            height: sizes[0.25],
-            width: '100%',
-            borderRadius: '10px',
-            background: colors.peach,
-}
-
 interface Props {
     links: Page[]
 }
@@ -30,7 +14,11 @@ const { links } = Astro.props
     contentPadding: CONTENT_PADDING,
     contentSize: CONTENT_SIZE,
     colorsEvening: colors.evening,
+    colorsPeach: colors.peach,
+    sizes025: sizes[0.25],
+    sizes05: sizes[0.5],
     sizes25: sizes[2.5],
+    sizes3: sizes[3],
     headerSize: HEADER_SIZE,
 }}>
     .container {
@@ -41,41 +29,68 @@ const { links } = Astro.props
         margin-left:  var(--contentPadding);
         margin-right: var(--contentPadding);
         width: var(--contentSize);
-        
-        @media (min-width: 1200px) {
-            display: none;
-        }
-
-        input[type="checkbox"]:checked ~ div > .line1 {
-            transform: rotate(45deg);
-        }
-
-        input[type="checkbox"]:checked ~ div > .line2 {
-            transform: scaleY(0);
-        }
-
-        input[type="checkbox"]:checked ~ div > .line3 {
-            transform: rotate(-45deg);
-        }
-
-        input[type="checkbox"]:checked ~ .links {
-            height: calc(100dvh - var(--headerSize));
-            a {
-                opacity: 100%;
-            }
-        }
     }
+
+    .container > div {
+        align-items: center;
+        display: flex;
+        gap: var(--sizes25);
+        width: 50%;
+        justify-content: flex-start;
+    }
+
+    .container > div ~ div {
+        justify-content: flex-end;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        display: block;
+        height: var(--sizes3);
+        width: var(--sizes3);
+        right: var(--sizes05);
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .hamburger-lines-container {
+        height: var(--sizes25);
+        width: var(--sizes3);
+        right: var(--sizes05);
+        padding-top: var(--sizes025);
+        padding-bottom: var(--sizes025);
+        position: absolute;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .line1,
+    .line2,
+    .line3 {
+        display: block;
+        height: var(--sizes025);
+        width: 100%;
+        border-radius: 10px;
+        background: var(--colorsPeach);
+        transition: transform 0.25s ease-in-out;
+    }
+
+    .line1 {
+        transform-origin: 0% 0%;
+    }
+    
+    .line2 {
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .line3 {
+        transform-origin: 0% 100%;
+    }
+
     .links {
-        @media (prefers-reduced-motion) {
-            transition: none;
-        }
-        a {
-            @media (prefers-reduced-motion) {
-                transition: none;
-            }
-            transition: opacity 0.3s ease-in-out;
-            opacity: 0;
-        }
         align-items: center;
         background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
         background-color: var(--colorsEvening);
@@ -90,53 +105,57 @@ const { links } = Astro.props
         transition: height 0.3s ease-in-out;
         width: 100vw;
         height: 0;
-        /** Hide the whole thing on desktop */
-        @media (min-width: 1200px) {
+    }
+
+    .links a {
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .container input[type="checkbox"]:checked ~ div > .line1 {
+        transform: rotate(45deg);
+    }
+
+    .container input[type="checkbox"]:checked ~ div > .line2 {
+        transform: scaleY(0);
+    }
+
+    .container input[type="checkbox"]:checked ~ div > .line3 {
+        transform: rotate(-45deg);
+    }
+
+    .container input[type="checkbox"]:checked ~ .links {
+        height: calc(100dvh - var(--headerSize));
+    }
+
+    .container input[type="checkbox"]:checked ~ .links a {
+        opacity: 100%;
+    }
+
+    @media (min-width: 1200px) {
+        .container,
+        .links {
             display: none;
+        }
+    }
+
+    @media (prefers-reduced-motion) {
+        .links,
+        .links a {
+            transition: none;
         }
     }
 </style>
 <div class="container">
-    <div style={{ ...sharedHalfStyles, justifyContent: 'flex-start' }}>
+    <div>
         <MainNavigationLink />
     </div>
-    <div style={{ ...sharedHalfStyles, justifyContent: 'flex-end' }}>
-        <input style={{
-            position: 'absolute',
-            display: 'block',
-            height: sizes[3],
-            width: sizes[3],
-            right: sizes[0.5],
-            zIndex: 5,
-            opacity: 0,
-            cursor: 'pointer',
-        }} type="checkbox" name="" id="mobile-hamburger" />
-        <div style={{
-            height: sizes[2.5],
-            width: sizes[3],
-            right: sizes[0.5],
-            paddingTop: sizes[0.25],
-            paddingBottom: sizes[0.25],
-            position: 'absolute',
-            zIndex: 2,
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-        }}>
-          <span class="line1" style={{
-            ...sharedLineStyles,
-            transformOrigin: '0% 0%',
-            transition: 'transform 0.25s ease-in-out',
-          }} />
-          <span class="line2" style={{
-            ...sharedLineStyles,
-            transition: 'transform 0.1s ease-in-out',
-          }} />
-          <span class="line3" style={{
-            ...sharedLineStyles,
-            transformOrigin: '0% 100%',
-            transition: 'transform 0.25s ease-in-out',
-          }} />
+    <div>
+        <input type="checkbox" name="" id="mobile-hamburger" />
+        <div class="hamburger-lines-container">
+          <span class="line1" />
+          <span class="line2" />
+          <span class="line3" />
         </div>
         <div class="links">
             {links.map((link) => (

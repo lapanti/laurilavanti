@@ -8,10 +8,16 @@ interface Props {
 
 const { href, rel } = Astro.props
 ---
+<style define:vars={{ colorsMoss: colors.moss, sizes0125: sizes[0.125] }}>
+    a {
+        color: var(--colorsMoss);
+        text-decoration: underline;
+        text-decoration-thickness: var(--sizes0125);
+    }
+</style>
 <a
     href={href}
     rel={`${rel ? rel : ''} noopener noreferrer`}
-    style={{ color: colors.moss, textDecoration: 'underline', textDecorationThickness: sizes[0.125] }}
     target="_blank"
 >
     <slot />

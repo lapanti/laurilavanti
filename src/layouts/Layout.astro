@@ -38,7 +38,14 @@ const { description, title, heroImage, body, slug, type, tags } = Astro.props
         <Head description={description} title={title} slug={slug} image={heroImage} type={type} />
     </head>
     <body>
-        <style define:vars={{ gridTemplateColumns, gridTemplateRowsLayoutMobile, gridTemplateRowsLayout }}>
+        <style define:vars={{
+            gridTemplateColumns,
+            gridTemplateRowsLayoutMobile,
+            gridTemplateRowsLayout,
+            gridTemplateColumnsArticle,
+            colorsWhite: colors.white,
+            gridAreasMain: gridAreas.main
+        }}>
             body > div {
                 display: grid;
                 grid-template-areas:
@@ -48,15 +55,28 @@ const { description, title, heroImage, body, slug, type, tags } = Astro.props
                 grid-template-rows: var(--gridTemplateRowsLayoutMobile);
                 min-height: 100dvh;
                 position: relative;
-                @media (min-width: 1200px) {
+            }
+
+            main {
+                background-color: var(--colorsWhite);
+                grid-area: var(--gridAreasMain);
+            }
+
+            main > article {
+                display: grid;
+                grid-template-columns: var(--gridTemplateColumnsArticle);
+            }
+            
+            @media (min-width: 1200px) {
+                body > div {
                     grid-template-rows: var(--gridTemplateRowsLayout);
                 }
             }
         </style>
         <div>
             <Header />
-            <main style={{ backgroundColor: colors.white, gridArea: gridAreas.main }}>
-                <article style={{ display: 'grid', gridTemplateColumns: gridTemplateColumnsArticle }}>
+            <main>
+                <article>
                     <TitleBanner title={title} heroImage={heroImage} />
                     {body && <Body node={body} tags={tags} />}
                     <slot />

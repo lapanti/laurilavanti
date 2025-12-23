@@ -18,13 +18,24 @@ const { title, url } = Astro.props
 >
     li {
         padding: var(--sizes0);
-        svg {
-            height: var(--sizes175);
-            width: var(--sizes175);
-            @media (min-width: 1200px) {
-                height: var(--sizes225);
-                width: var(--sizes225);
-            }
+    }
+
+    li a {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+
+    li svg {
+        height: var(--sizes175);
+        width: var(--sizes175);
+    }
+    
+    @media (min-width: 1200px) {
+        li svg {
+            height: var(--sizes225);
+            width: var(--sizes225);
         }
     }
 </style>
@@ -35,12 +46,6 @@ const { title, url } = Astro.props
         target="_blank"
         title={title}
         aria-label={title}
-        style={{
-            alignItems: 'center',
-            display: 'flex',
-            height: '100%',
-            justifyContent: 'center',
-        }}
         id="tiktok-footer-link"
     >
         <svg height="1em" viewBox="-3 -2 36 36" width="1em" xmlns="http://www.w3.org/2000/svg">

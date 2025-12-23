@@ -1,7 +1,8 @@
 ---
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
-import { colors, sizes, HEADER_SIZE, CONTENT_PADDING, typographics } from '../lib/styles'
+import { colors, sizes, HEADER_SIZE, CONTENT_PADDING } from '../lib/styles'
+import H1 from './titleBanner/H1.astro'
 import type { Image } from '../types/contentful'
 
 interface Props {
@@ -21,32 +22,15 @@ const { title, heroImage } = Astro.props
     sizes45: sizes[45],
     headerSize: HEADER_SIZE,
     contentPadding: CONTENT_PADDING,
-    }}>
+}}>
     .container {
         background-color: var(--colorsEvening);
         grid-column: 1 / -1;
         padding-top: var(--headerSize);
-        @media (min-width: 1200px) {
-            height: var(--sizes45);
-        }
     }
 
     .content {
         background-color: var(--colorsWhite);
-        @media (min-width: 1200px) {
-            display: flex;
-            flex-direction: row;
-            height: 100%;
-            justify-content: flex-end;
-            margin: auto;
-        }
-    }
-    
-    .content .title-container,
-    .content .image-container {
-        @media (min-width: 1200px) {
-            width: 50%;
-        }
     }
 
     .title-container {
@@ -55,7 +39,28 @@ const { title, heroImage } = Astro.props
         padding-left: var(--contentPadding);
         padding-right: var(--contentPadding);
         padding-top: var(--sizes1);
-        @media (min-width: 1200px) {
+    }
+
+    
+    @media (min-width: 1200px) {
+        .container {
+            height: var(--sizes45);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            justify-content: flex-end;
+            margin: auto;
+        }
+
+        .content .title-container,
+        .content .image-container {
+                width: 50%;
+        }
+
+        .title-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -70,7 +75,7 @@ const { title, heroImage } = Astro.props
 <div class="container">
     <div class="content">
         <div class="title-container">
-            <h1 style={{ ...typographics.h1 }}>{title}</h1>
+            <H1>{title}</H1>
         </div>
         <style>
             .image-container {

@@ -65,8 +65,10 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
         justify-items: center;
         margin-top: var(--sizes2);
         row-gap: var(--sizes3point5);
+    }
 
-        @media (min-width: 1200px) {
+    @media (min-width: 1200px) {
+        ul {
             grid-template-columns: repeat(2, var(--sizes35));
             margin-top: var(--sizes3point5);
         }

@@ -10,12 +10,6 @@ const yearsToString = (startYear: number, endYear?: number): string => {
     return `${startYear}–${endYear ?? ''}`
 }
 
-const divStyles = {
-    ...typographics.body,
-    marginBottom: sizes[1],
-    marginTop: sizes[1],
-}
-
 interface Props {
     degreesTitle: CurriculumVitae['fields']['degreesTitle']
     degrees: CurriculumVitae['fields']['degrees']
@@ -34,11 +28,28 @@ const {
     jobExperiences,
 } = Astro.props
 ---
-<div style={{ gridColumnStart: 3, marginTop: sizes[1] }}>
-    <div style={divStyles}>
-        <H2>{fiduciariesTitle}</H2>
-    </div>
-    <div style={divStyles}>
+<style define:vars={{
+    bodyFontWeight: typographics.body.fontWeight,
+    bodyFontSize: typographics.body.fontSize,
+    bodyLineHeight: typographics.body.lineHeight,
+    sizes1: sizes[1],
+}}>
+    .container {
+        grid-column-start: 3;
+    }
+
+    .container > div {
+        font-family: var(--ibmPlexSans);
+        font-weight: var(--bodyFontWeight);
+        font-size: var(--bodyFontSize);
+        line-height: var(--bodyLineHeight);
+        margin-bottom: var(--sizes1);
+        margin-top: var(--sizes1);
+    }
+</style>
+<div class="container">
+    <H2>{fiduciariesTitle}</H2>
+    <div>
         <UL>
             {fiduciaries?.filter((f) => f !== undefined).map(({ fields: { duty, organization, startYear, endYear } }) => (
                 <LI heavy={!endYear}>
@@ -50,11 +61,8 @@ const {
             ))}
         </UL>
     </div>
-    <br />
-    <div style={divStyles}>
-        <H2>{jobExperiencesTitle}</H2>
-    </div>
-    <div style={divStyles}>
+    <H2>{jobExperiencesTitle}</H2>
+    <div>
         <UL>
             {jobExperiences?.filter((j) => j !== undefined).map(({ fields: { title, company, location, startYear, endYear } }) => (
                 <LI heavy={!endYear}>
@@ -66,11 +74,8 @@ const {
             ))}
         </UL>
     </div>
-    <br />
-    <div style={divStyles}>
-        <H2>{degreesTitle}</H2>
-    </div>
-    <div style={divStyles}>
+    <H2>{degreesTitle}</H2>
+    <div>
         <UL>
             {degrees?.filter((d) => d !== undefined).map(({ fields: { degree, school, location, startYear, endYear } }) => (
                 <LI heavy={!endYear}>

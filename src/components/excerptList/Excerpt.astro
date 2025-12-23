@@ -20,58 +20,60 @@ interface Props {
 
 const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
 ---
-<style define:vars={{ sizes35: sizes[35] }}>
+<style define:vars={{ colorsMoss: colors.moss, sizes01875: sizes[0.1875], sizes025: sizes[0.25], sizes35: sizes[35] }}>
     li {
         max-width: var(--sizes35);
     }
+
     h2 {
         grid-column-start: auto;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a.main-link:hover {
+        text-decoration: underline;
+        text-decoration-thickness: var(--sizes01875);
+    }
+
+    a.main-link div {
+        align-items: flex-end;
+        display: flex;
+        margin-top: var(--sizes025);
+        position: relative;
+        width: 100%;
+    }
+
+    .excerpt-image {
+        max-height: 315px;
+        max-width: 560px;
+        height: 100%;
+        width: 100%;
+    }
+
+    a.read-more {
+        color: var(--colorsMoss);
+        text-decoration: none;
+        white-space: nowrap;
     }
 </style>
 <li>
     <article aria-label={title} itemtype="https://schema.org/CreativeWork" itemscope>
-        <style define:vars={{ sizes01875: sizes[0.1875] }}>
-            a {
-                color: black;
-                text-decoration: none;
-            }
-            a.main-link:hover {
-                text-decoration: underline;
-                text-decoration-thickness: var(--sizes01875);
-            }
-        </style>
         <a class="main-link" rel="permalink" href={`/${slug}/`}>
-            {image && (
-            <>
-                <style>
-                    .excerpt-image {
-                        max-height: 315px;
-                        max-width: 560px;
-                        height: 100%;
-                        width: 100%;
-                    }
-                </style>
-                {image && (<Picture
-                    src={`https:${image.fields.file?.url}`}
-                    sizes="(max-width: 560px) 100vw, 560px"
-                    widths={[360, 560]}
-                    formats={['avif', 'webp']}
-                    fit="cover"
-                    alt={image.fields.description ?? null}
-                    width="560"
-                    height="315"
-                    class="excerpt-image"
-                />)}
-            </>)}
-            <style define:vars={{ sizes025: sizes[0.25] }}>
-                div {
-                    align-items: flex-end;
-                    display: flex;
-                    margin-top: var(--sizes025);
-                    position: relative;
-                    width: 100%;
-                }
-            </style>
+            {image && <Picture
+                src={`https:${image.fields.file?.url}`}
+                sizes="(max-width: 560px) 100vw, 560px"
+                widths={[360, 560]}
+                formats={['avif', 'webp']}
+                fit="cover"
+                alt={image.fields.description ?? null}
+                width="560"
+                height="315"
+                class="excerpt-image"
+            />}
             <div>
                 <H2 itemProp="headline">{title}</H2>
             </div>
@@ -79,13 +81,6 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
         {date && tags && <PostMeta ariaLabel={`Kirjoituksen "${title}" meta-tiedot`} date={date} allTags={allTags} tags={tags} />}
         <Paragraph itemProp="description" smallMarginTop>
             {excerpt}{' '}
-            <style define:vars={{ colorsMoss: colors.moss }}>
-                a.read-more {
-                    color: var(--colorsMoss);
-                    text-decoration: none;
-                    white-space: nowrap;
-                }
-            </style>
             <a class="read-more" rel="permalink" href={`/${slug}/`}>
                 Lue lisää »
             </a>

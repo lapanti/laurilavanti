@@ -19,17 +19,30 @@ const { title, url } = Astro.props
 >
     li {
         padding: var(--sizes0);
-        svg {
-            fill: var(--colorsGray);
-            height: var(--sizes175);
-            width: var(--sizes175);
-            @media (min-width: 1200px) {
-                height: var(--sizes225);
-                width: var(--sizes225);
-            }
-        }
-        :hover, :focus {
-            fill: url(#instagram-gradient);
+    }
+
+    li a {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+
+    li svg {
+        fill: var(--colorsGray);
+        height: var(--sizes175);
+        width: var(--sizes175);
+    }
+
+    li svg:hover, li svg:focus {
+        fill: url(#instagram-gradient);
+    }
+
+    
+    @media (min-width: 1200px) {
+        li svg {
+            height: var(--sizes225);
+            width: var(--sizes225);
         }
     }
 </style>
@@ -40,12 +53,6 @@ const { title, url } = Astro.props
         target="_blank"
         title={title}
         aria-label={title}
-        style={{
-            alignItems: 'center',
-            display: 'flex',
-            height: '100%',
-            justifyContent: 'center',
-        }}
     >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->

@@ -7,13 +7,22 @@ interface Props {
 
 const { itemProp } = Astro.props
 ---
-<h2
-    style={{
-        ...typographics.h2,
-        gridColumnStart: 3,
-        marginTop: sizes[1],
-    }}
-    itemprop={itemProp}
->
+<style define:vars={{
+    h2FontFamily: typographics.h2.fontFamily,
+    h2FontWeight: typographics.h2.fontWeight,
+    h2FontSize: typographics.h2.fontSize,
+    h2LineHeight: typographics.h2.lineHeight,
+    sizes1: sizes[1],
+}}>
+    h2 {
+        font-family: var(--h2FontFamily);
+        font-weight: var(--h2FontWeight);
+        font-size: var(--h2FontSize);
+        line-height: var(--h2LineHeight);
+        grid-column-start: 3;
+        margin-top: var(--sizes1);
+    }
+</style>
+<h2 itemprop={itemProp}>
     <slot />
 </h2>

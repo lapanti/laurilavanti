@@ -4,7 +4,24 @@ import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
 
 const { pathname } = Astro.url
 ---
-<style define:vars={{ colorsPeach: colors.peach, sizes01875: sizes[0.1875] }}>
+<style define:vars={{
+    h1FontFamily: typographics.h1.fontFamily,
+    h1FontWeight: typographics.h1.fontWeight,
+    h1FontSize: fontSizes[1.75].fontSize,
+    h1LineHeight: fontSizes[1.75].lineHeight,
+    colorsPeach: colors.peach,
+    sizes01875: sizes[0.1875],
+}}>
+    a {
+        font-family: var(--h1FontFamily);
+        font-weight: var(--h1FontWeight);
+        font-size: var(--h1FontSize);
+        line-height: var(--h1LineHeight);
+        color: var(--colorsPeach);
+        position: relative;
+        overflow: hidden;
+    }
+
     a[aria-current="page"] {
         text-decoration: underline;
         text-decoration-thickness: var(--sizes01875);
@@ -36,7 +53,6 @@ const { pathname } = Astro.url
 <a
     href="/"
     title="Lauri Lavanti"
-    style={{ ...typographics.h1, ...fontSizes[1.75], color: colors.peach, position: 'relative', overflow: 'hidden' }}
     aria-current={pathname.slice(1).replace(/\//, '') === '' ? 'page' : 'false'}
 >
     Lauri Lavanti

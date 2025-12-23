@@ -7,7 +7,21 @@ interface Props {
 
 const { heavy } = Astro.props
 ---
-<style define:vars={{ colorsEvening: colors.evening }}>
+<style define:vars={{
+    bodyFontWeight: typographics.body.fontWeight,
+    bodyFontSize: typographics.body.fontSize,
+    bodyLineHeight: typographics.body.lineHeight,
+    colorsEvening: colors.evening,
+    sizes125: sizes[1.25],
+}}>
+    li {
+        font-family: var(--ibmPlexSans);
+        font-weight: var(--bodyFontWeight);
+        font-size: var(--bodyFontSize);
+        line-height: var(--bodyLineHeight);
+        margin-left: var(--sizes125);
+    }
+
     li > p {
         margin: 0;
     }
@@ -19,9 +33,7 @@ const { heavy } = Astro.props
         position: absolute;
     }
 </style>
-<li
-    style={{ ...typographics.body, ...(heavy ? { fontWeight: fontWeights.black } : {}), marginLeft: sizes[1.25] }}
->
+<li style={{ ...(heavy ? { fontWeight: fontWeights.black } : {}) }}>
     <slot />
 </li>
 

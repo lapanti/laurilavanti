@@ -51,20 +51,32 @@ const hoverColor = iconToHoverColor(icon)
 >
     li {
         padding: var(--sizes0);
-        svg {
-            color: var(--colorsGray);
-            height: var(--sizes175);
-            width: var(--sizes175);
-            stroke: currentColor;
-            fill: currentColor;
-            @media (min-width: 1200px) {
-                height: var(--sizes225);
-                width: var(--sizes225);
-            }
-        }
-        :hover,
-        :focus {
-            color: var(--hoverColor);
+    }
+
+    li a {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+    }
+
+    li svg {
+        color: var(--colorsGray);
+        height: var(--sizes175);
+        width: var(--sizes175);
+        stroke: currentColor;
+        fill: currentColor;
+    }
+
+    li svg:hover,
+    li svg:focus {
+        color: var(--hoverColor);
+    }
+
+    @media (min-width: 1200px) {
+        li svg {
+            height: var(--sizes225);
+            width: var(--sizes225);
         }
     }
 </style>
@@ -75,12 +87,6 @@ const hoverColor = iconToHoverColor(icon)
         target="_blank"
         title={title}
         aria-label={title}
-        style={{
-            alignItems: 'center',
-            display: 'flex',
-            height: '100%',
-            justifyContent: 'center',
-        }}
     >
         <Icon name={`fa7-brands:${icon}`} />
     </a>

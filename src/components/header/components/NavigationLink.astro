@@ -11,7 +11,23 @@ interface Props {
 const { slug, navigationTitle, title } = Astro.props
 const { pathname } = Astro.url
 ---
-<style define:vars={{ colorsPeach: colors.peach, sizes01875: sizes[0.1875]}}>
+<style define:vars={{
+    bodyFontWeight: typographics.body.fontWeight,
+    bodyFontSize: fontSizes[1.5].fontSize,
+    bodyLineHeight: fontSizes[1.5].lineHeight,
+    colorsPeach: colors.peach,
+    sizes01875: sizes[0.1875],
+}}>
+    a {
+        font-family: var(--ibmPlexSans);
+        font-weight: var(--bodyFontWeight);
+        font-size: var(--bodyFontSize);
+        line-height: var(--bodyLineHeight);
+        color: var(--colorsPeach);
+        position: relative;
+        overflow: hidden;
+    }
+
     a[aria-current="page"] {
         text-decoration: underline;
         text-decoration-thickness: var(--sizes01875);
@@ -44,7 +60,6 @@ const { pathname } = Astro.url
     <a
     href={`/${slug}/`}
     title={title}
-    style={{ ...typographics.body, ...fontSizes[1.5], position: 'relative', color: colors.peach, overflow: 'hidden' }}
     aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'}
     >{navigationTitle ?? title}
 </a>

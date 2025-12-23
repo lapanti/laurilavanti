@@ -9,15 +9,8 @@ interface Props {
 }
 
 const { links } = Astro.props
-
-const sharedHalfStyles = {
-    alignItems: 'center',
-    display: 'flex',
-    gap: sizes[2.5],
-    width: '50%',
-}
 ---
-<style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>
+<style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE, sizes25: sizes[2.5] }}>
     .container {
         display: none;
         flex-direction: row;
@@ -25,17 +18,31 @@ const sharedHalfStyles = {
         padding-left: var(--contentPadding);
         padding-right: var(--contentPadding);
         width: var(--contentSize);
-        
-        @media (min-width: 1200px) {
+    }
+
+    .container > div {
+        align-items: center;
+        display: flex;
+        gap: var(--sizes25);
+        width: 50%;
+        justify-content: flex-start;
+    }
+
+    .container > div ~ div {
+        justify-content: flex-end;
+    }
+
+    @media (min-width: 1200px) {
+        .container {
             display: flex;
         }
     }
 </style>
 <div class="container">
-    <div style={{ ...sharedHalfStyles, justifyContent: 'flex-start' }}>
+    <div>
         <MainNavigationLink />
     </div>
-    <div style={{ ...sharedHalfStyles, justifyContent: 'flex-end' }}>
+    <div>
         {links.map((link) => (
             <NavigationLink slug={link.fields.slug} title={link.fields.title} navigationTitle={link.fields.navigationTitle} />
         ))}

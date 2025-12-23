@@ -13,52 +13,60 @@ import type { FooterNav } from '../types/contentful'
 const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5dRVby')
 ---
 
-<style define:vars={{ sizes15: sizes[1.5], contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>
-    footer > div {
+<style define:vars={{ 
+    colorsEvening: colors.evening,
+    colorsWhite: colors.white,
+    gridAreasFooter: gridAreas.footer,
+    sizes15: sizes[1.5],
+    contentPadding: CONTENT_PADDING,
+    contentSize: CONTENT_SIZE,
+}}>
+    footer {
+        align-items: center;
+        background-color: var(--colorsEvening);
+        color: var(--colorsWhite);
+        display: flex;
+        grid-area: var(--gridAreasFooter);
+        justify-content: center;
+    }
+    .container {
         display: flex;
         flex-direction: column;
         gap: var(--sizes15);
+    }
 
-        @media (min-width: 1200px) {
+    .container > div,
+    .container > ul {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container > ul {
+        gap: var(--sizes15);
+    }
+
+    @media (min-width: 1200px) {
+        .container {
             flex-direction: row;
             padding-left: var(--contentPadding);
             padding-right: var(--contentPadding);
             width: var(--contentSize);
         }
 
-        > * {
-            align-items: center;
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            justify-content: center;
+        .container > div {
+            justify-content: flex-start;
         }
 
-        > div {
-            @media (min-width: 1200px) {
-                justify-content: flex-start;
-            }
-        }
-
-        > ul {
-            gap: var(--sizes15);
-            @media (min-width: 1200px) {
-                justify-content: flex-end;
-            }
+        .container > ul {
+            justify-content: flex-end;
         }
     }
 </style>
-<footer
-    style={{
-        alignItems: 'center',
-        backgroundColor: colors.evening,
-        color: colors.white,
-        display: 'flex',
-        gridArea: gridAreas.footer,
-        justifyContent: 'center',
-    }}
->
-    <div>
+<footer>
+    <div class="container">
         <div>
             {/* @ts-expect-error for some reason Picture has issues */}
             <Picture
