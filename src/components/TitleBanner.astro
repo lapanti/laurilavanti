@@ -3,14 +3,19 @@ import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolv
 
 import { colors, sizes, HEADER_SIZE, CONTENT_PADDING } from '../lib/styles'
 import H1 from './titleBanner/H1.astro'
+import Meta from './Meta.astro'
 import type { Image } from '../types/contentful'
+import type { TagCollection, TagLink } from 'contentful'
 
 interface Props {
     title: string
     heroImage?: Image
+    createdAt?: string
+    tags?: { sys: TagLink }[]
+    allTags?: TagCollection
 }
 
-const { title, heroImage } = Astro.props
+const { title, heroImage, createdAt, tags, allTags } = Astro.props
 ---
 <style define:vars={{
     colorsEvening: colors.evening,
@@ -76,6 +81,7 @@ const { title, heroImage } = Astro.props
     <div class="content">
         <div class="title-container">
             <H1>{title}</H1>
+            {(createdAt && tags && allTags) && <Meta bigDateTime ariaLabel={`Kirjoituksen ${title} meta-tiedot`} date={createdAt} tags={tags} allTags={allTags} />}
         </div>
         <style>
             .image-container {

@@ -55,10 +55,11 @@ const { allTags, body, description, image, title, slug, tags, createdAt, updated
   body={body}
   heroImage={image}
   title={title}
-  tags={allTags}
+  allTags={allTags}
   slug={`blogi/${slug}`}
   createdAt={createdAt}
   updatedAt={updatedAt}
+  tags={tags}
   type={BLOGPOSTING}
 >
     <SocialShare ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`} shareUrl={`https://laurilavanti.fi/blogi/${slug}`} title={title} />

@@ -1,15 +1,16 @@
 ---
 import type { TagCollection, TagLink } from 'contentful'
-import { colors, sizes, typographics } from '../../../lib/styles'
+import { colors, sizes, typographics } from '../lib/styles'
 
 interface Props {
+    bigDateTime?: boolean
     date: string
     tags: { sys: TagLink }[]
     ariaLabel: string
     allTags: TagCollection
 }
 
-const { date, tags, ariaLabel, allTags } = Astro.props
+const { bigDateTime, date, tags, ariaLabel, allTags } = Astro.props
 
 const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')
@@ -57,7 +58,7 @@ const tagsToRender = tags.map((tag) => allTags.items.find((aTag) => aTag.sys.id 
     }
 </style>
 <aside aria-label={ariaLabel}>
-    <time datetime={dateOnly}>{dateToDisplay}</time>
+    <time datetime={dateOnly} style={{ ...(bigDateTime ? typographics.ingress : {})}}>{dateToDisplay}</time>
     {tags.length > 0 && (
         <ul>
             {tagsToRender.map((tag) => (

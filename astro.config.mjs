@@ -30,7 +30,7 @@ export default defineConfig({
                 name: "IBM Plex Sans",
                 cssVariable: '--ibmPlexSans',
                 provider: fontProviders.fontsource(),
-                weights: [400, 1000],
+                weights: [300, 400, 1000],
                 styles: ['normal', 'italic'],
                 subsets: ['latin', 'latin-ext'],
                 fallbacks: ['Trebuchet MS'],

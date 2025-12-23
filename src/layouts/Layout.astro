@@ -16,7 +16,7 @@ import {
     gridAreas,
 } from '../lib/styles'
 import type { Document } from '@contentful/rich-text-types'
-import type { TagCollection } from 'contentful'
+import type { TagCollection, TagLink } from 'contentful'
 import type { JsonLdType } from '../lib/jsonld'
 
 interface Props {
@@ -28,10 +28,11 @@ interface Props {
     type?: JsonLdType
     createdAt?: string
     updatedAt?: string
-    tags?: TagCollection
+    tags?: { sys: TagLink }[]
+    allTags?: TagCollection
 }
 
-const { description, title, heroImage, body, slug, type, createdAt, updatedAt, tags } = Astro.props
+const { description, title, heroImage, body, slug, type, createdAt, updatedAt, tags, allTags } = Astro.props
 ---
 
 <html lang="fi">
@@ -87,8 +88,8 @@ const { description, title, heroImage, body, slug, type, createdAt, updatedAt, t
             <Header />
             <main>
                 <article>
-                    <TitleBanner title={title} heroImage={heroImage} />
-                    {body && <Body node={body} tags={tags} />}
+                    <TitleBanner title={title} heroImage={heroImage} createdAt={createdAt} tags={tags} allTags={allTags} />
+                    {body && <Body node={body} allTags={allTags} />}
                     <slot />
                 </article>
             </main>

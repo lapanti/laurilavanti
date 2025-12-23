@@ -39,10 +39,10 @@ type Node = Document | Block | Inline | Text
 
 interface Props {
   node: Node
-  tags: TagCollection
+  allTags: TagCollection
 }
 
-const { node, tags } = Astro.props
+const { node, allTags } = Astro.props
 
 const children = Array.isArray(node) ? node : 'content' in node ? node.content : [];
 ---
@@ -85,7 +85,7 @@ const children = Array.isArray(node) ? node : 'content' in node ? node.content :
                     />
                 )}
                 {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
-                    <ExcerptList limit={childNode.data.target.fields.limit} allTags={tags} />
+                    <ExcerptList limit={childNode.data.target.fields.limit} allTags={allTags} />
                 )}
             </>
         )}
