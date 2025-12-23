@@ -32,7 +32,7 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
             {image && (
             <>
                 <style>
-                    img {
+                    .excerpt-image {
                         max-height: 315px;
                         max-width: 560px;
                         height: 100%;
@@ -48,6 +48,7 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
                     alt={image.fields.description}
                     width="560"
                     height="315"
+                    class="excerpt-image"
                 />
             </>)}
             <style define:vars={{ sizes025: sizes[0.25] }}>
