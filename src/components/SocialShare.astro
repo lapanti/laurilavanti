@@ -2,6 +2,12 @@
 import { Icon } from 'astro-icon/components'
 import { colors, sizes } from '../lib/styles'
 
+interface Props {
+    title: string
+    shareUrl: string
+    ariaLabel: string
+}
+
 const { title, shareUrl, ariaLabel } = Astro.props
 ---
 <style define:vars={{

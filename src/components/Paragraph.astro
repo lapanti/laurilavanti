@@ -1,6 +1,12 @@
 ---
 import { sizes, typographics } from "../lib/styles"
 
+interface Props {
+    inGrid?: boolean
+    smallMarginTop?: boolean
+    itemProp?: string
+}
+
 const { inGrid, itemProp, smallMarginTop } = Astro.props
 ---
 <style define:vars={{

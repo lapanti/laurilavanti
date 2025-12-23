@@ -2,6 +2,11 @@
 import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
 import NavigationLink from './components/NavigationLink.astro'
 import MainNavigationLink from './components/MainNavigationLink.astro'
+import type { Page } from '../../types/contentful'
+
+interface Props {
+    links: Page[]
+}
 
 const { links } = Astro.props
 

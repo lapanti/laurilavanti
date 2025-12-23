@@ -1,5 +1,13 @@
 ---
-import { colors, sizes, typographics } from '../lib/styles'
+import type { TagCollection, TagLink } from 'contentful'
+import { colors, sizes, typographics } from '../../../lib/styles'
+
+interface Props {
+    date: string
+    tags: { sys: TagLink }[]
+    ariaLabel: string
+    allTags: TagCollection
+}
 
 const { date, tags, ariaLabel, allTags } = Astro.props
 
@@ -7,7 +15,7 @@ const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')
 const dateToDisplay = `${day}.${month}.${year}`
 
-const tagsToRender = tags.map((tag) => allTags.items.find((aTag) => aTag.sys.id === tag.sys.id))
+const tagsToRender = tags.map((tag) => allTags.items.find((aTag) => aTag.sys.id === tag.sys.id)).filter((tag) => tag !== undefined)
 ---
 <style define:vars={{
     sizes0: sizes[0],

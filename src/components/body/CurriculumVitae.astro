@@ -1,4 +1,5 @@
 ---
+import type { CurriculumVitae } from '../../types/contentful'
 import { sizes, typographics } from '../../lib/styles'
 import H2 from '../H2.astro'
 import LI from './curriculumVitae/LI.astro'
@@ -13,6 +14,15 @@ const divStyles = {
     ...typographics.body,
     marginBottom: sizes[1],
     marginTop: sizes[1],
+}
+
+interface Props {
+    degreesTitle: CurriculumVitae['fields']['degreesTitle']
+    degrees: CurriculumVitae['fields']['degrees']
+    fiduciariesTitle: CurriculumVitae['fields']['fiduciariesTitle']
+    fiduciaries: CurriculumVitae['fields']['fiduciaries']
+    jobExperiencesTitle: CurriculumVitae['fields']['jobExperiencesTitle']
+    jobExperiences: CurriculumVitae['fields']['jobExperiences']
 }
 
 const {
@@ -30,8 +40,8 @@ const {
     </div>
     <div style={divStyles}>
         <UL>
-            {fiduciaries.map(({ fields: { duty, organization, startYear, endYear } }) => (
-                <LI key={`${duty}-${organization}-${startYear}`} heavy={!endYear}>
+            {fiduciaries?.filter((f) => f !== undefined).map(({ fields: { duty, organization, startYear, endYear } }) => (
+                <LI heavy={!endYear}>
                     <span>{duty} </span>
                     <i>
                         {organization} {yearsToString(startYear, endYear)}
@@ -46,8 +56,8 @@ const {
     </div>
     <div style={divStyles}>
         <UL>
-            {jobExperiences.map(({ fields: { title, company, location, startYear, endYear } }) => (
-                <LI key={`${title}-${company}`} heavy={!endYear}>
+            {jobExperiences?.filter((j) => j !== undefined).map(({ fields: { title, company, location, startYear, endYear } }) => (
+                <LI heavy={!endYear}>
                     <span>{title} </span>
                     <i>
                         {company} ({location}) {yearsToString(startYear, endYear)}
@@ -62,8 +72,8 @@ const {
     </div>
     <div style={divStyles}>
         <UL>
-            {degrees.map(({ fields: { degree, school, location, startYear, endYear } }) => (
-                <LI key={`${degree}-${school}`} heavy={!endYear}>
+            {degrees?.filter((d) => d !== undefined).map(({ fields: { degree, school, location, startYear, endYear } }) => (
+                <LI heavy={!endYear}>
                     <span>{degree} </span>
                     <i>
                         {school} ({location}) {yearsToString(startYear, endYear)}

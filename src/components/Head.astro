@@ -1,7 +1,16 @@
 ---
 import { Font } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
-import { JSON_LD_TYPES, WEBSITE } from '../lib/jsonld'
+import { JSON_LD_TYPES, WEBSITE, type JsonLdType } from '../lib/jsonld'
+import type { Image } from '../types/contentful'
+
+interface Props {
+    description?: string
+    title: string
+    type?: JsonLdType
+    slug?: string
+    image?: Image
+}
 
 const {
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
@@ -25,7 +34,7 @@ const tikTok = 'https://www.tiktok.com/@laurilavanti'
 
 const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': JSON_LD_TYPES.includes(type) ? type : WEBSITE,
+    '@type': type && JSON_LD_TYPES.includes(type) ? type : WEBSITE,
     author: {
         '@type': 'Person',
         name,
@@ -87,8 +96,8 @@ const keywords = [
 {image?.fields?.file?.url ? (
     <>
         <meta content={`https${image.fields.file.url}`} name="og:image" />
-        <meta content={image.fields.file.details.image.height} name="og:image:height" />
-        <meta content={image.fields.file.details.image.width} name="og:image:width" />
+        <meta content={`${image.fields.file.details.image?.height}`} name="og:image:height" />
+        <meta content={`${image.fields.file.details.image?.width}`} name="og:image:width" />
         <meta content="summary_large_image" name="twitter:card" />
     </>
 ) : (<meta content="summary" name="twitter:card" />)}

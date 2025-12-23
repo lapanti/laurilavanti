@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import Body from '../components/Body.astro'
+import type { Image } from '../types/contentful'
 
 import {
     gridTemplateColumns,
@@ -14,6 +15,19 @@ import {
     gridTemplateColumnsArticle,
     gridAreas,
 } from '../lib/styles'
+import type { Document } from '@contentful/rich-text-types'
+import type { TagCollection } from 'contentful'
+import type { JsonLdType } from '../lib/jsonld'
+
+interface Props {
+    description?: string
+    title: string
+    heroImage?: Image
+    body?: Document
+    slug?: string
+    type?: JsonLdType
+    tags?: TagCollection
+}
 
 const { description, title, heroImage, body, slug, type, tags } = Astro.props
 ---

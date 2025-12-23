@@ -4,7 +4,19 @@ import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolv
 import { colors, sizes } from '../../lib/styles'
 import H2 from '../H2.astro'
 import Paragraph from '../Paragraph.astro'
-import PostMeta from '../PostMeta.astro'
+import PostMeta from './excerpt/PostMeta.astro'
+import type { Image } from '../../types/contentful'
+import type { TagCollection, TagLink } from 'contentful'
+
+interface Props {
+    title: string
+    excerpt?: string
+    slug?: string
+    image?: Image
+    date?: string
+    tags?: { sys: TagLink }[]
+    allTags: TagCollection
+}
 
 const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
 ---
@@ -39,17 +51,17 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
                         width: 100%;
                     }
                 </style>
-                <Picture
-                    src={`https:${image.fields.file.url}`}
+                {image && (<Picture
+                    src={`https:${image.fields.file?.url}`}
                     sizes="(max-width: 560px) 100vw, 560px"
                     widths={[360, 560]}
                     formats={['avif', 'webp']}
                     fit="cover"
-                    alt={image.fields.description}
+                    alt={image.fields.description ?? null}
                     width="560"
                     height="315"
                     class="excerpt-image"
-                />
+                />)}
             </>)}
             <style define:vars={{ sizes025: sizes[0.25] }}>
                 div {

@@ -1,6 +1,11 @@
 ---
 import { colors, sizes } from '../lib/styles'
 
+interface Props {
+    href: string
+    rel?: string
+}
+
 const { href, rel } = Astro.props
 ---
 <a

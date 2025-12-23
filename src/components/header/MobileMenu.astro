@@ -1,5 +1,6 @@
 ---
 import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
+import type { Page } from '../../types/contentful'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
@@ -17,6 +18,10 @@ const sharedLineStyles = {
             width: '100%',
             borderRadius: '10px',
             background: colors.peach,
+}
+
+interface Props {
+    links: Page[]
 }
 
 const { links } = Astro.props

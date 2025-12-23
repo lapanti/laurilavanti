@@ -1,40 +1,45 @@
 ---
 import { Icon } from 'astro-icon/components'
-import type { TypeContactInfoLinkFields } from '../../types/contentfulCodegen.ts'
 
 import { colors, sizes } from '../../lib/styles.ts'
+
+interface Props {
+    title: string
+    icon?: string
+    url: string
+}
+
 const { title, icon, url } = Astro.props
 
-const iconToHoverColor = (icon: TypeContactInfoLinkFields['icon']): string | undefined => {
-    if (String(icon) === 'bluesky') {
+const iconToHoverColor = (icon?: string): string | undefined => {
+    if (icon === 'bluesky') {
         return colors.bluesky
     }
-    if (String(icon) === 'facebook') {
+    if (icon === 'facebook') {
         return colors.facebook
     }
-    if (String(icon) === 'instagram') {
+    if (icon === 'instagram') {
         return colors.instagramGradient
     }
-    if (String(icon) === 'linkedin') {
+    if (icon === 'linkedin') {
         return colors.linkedin
     }
-    if (String(icon) === 'mastodon') {
+    if (icon === 'mastodon') {
         return colors.mastodon
     }
-    if (String(icon) === 'bluesky') {
+    if (icon === 'bluesky') {
         return colors.bluesky
     }
-    if (String(icon) === 'threads') {
+    if (icon === 'threads') {
         return colors.threads
     }
-    if (String(icon) === 'tiktok') {
+    if (icon === 'tiktok') {
         return undefined
     }
 }
 
 const hoverColor = iconToHoverColor(icon)
 ---
-
 <style
     define:vars={{
         sizes0: sizes[0],

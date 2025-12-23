@@ -60,18 +60,20 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
 >
     <div>
         <div>
+            {/* @ts-expect-error for some reason Picture has issues */}
             <Picture
                 formats={['avif', 'webp']}
                 alt='Vihreiden logo ja teksti "Vihreät De Gröna The Greens"'
                 fit="contain"
                 src={greensLogo}
-                densities={[2]}
+                densities={[1, 2, 4]}
                 width={200}
             />
         </div>
         <ul>
             {
-                footerNav?.fields?.links?.map((link) =>
+                (footerNav?.fields?.links as FooterNav['fields']['links'] | undefined)?.map((link) =>
+                    !link ? null :
                     link.fields.icon === 'instagram' ? (
                         <InstagramLink title={link.fields.title} url={link.fields.url} />
                     ) : link.fields.icon === 'tiktok' ? (

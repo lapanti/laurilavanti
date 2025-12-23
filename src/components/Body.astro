@@ -1,5 +1,5 @@
 ---
-import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS, type Block, type Document, type Inline, type Text } from "@contentful/rich-text-types";
 
 import Paragraph from './Paragraph.astro'
 import H2 from './H2.astro'
@@ -7,18 +7,25 @@ import ExternalLink from "./ExternalLink.astro"
 import CurriculumVitae from "./body/CurriculumVitae.astro";
 import BlockQuote from "./body/BlockQuote.astro";
 import ExcerptList from "./ExcerptList.astro";
+import type { TagCollection } from "contentful";
 
-const markRenderers = {
-  [MARKS.ITALIC]: (text: string) => `<i>${text}</i>`,
-};
+const supportedMarks: string[] = [MARKS.ITALIC]
 
-const renderText = (node) => {
+const renderMark = (mark: string, text: string) => {
+  if (mark === MARKS.ITALIC) {
+    return `<i>${text}</i>`
+  }
+
+  return text
+}
+
+const renderText = (node: Text) => {
   const result = node.value
 
   if (node.marks.length > 0) {
     return node.marks.reduce((value, mark) => {
-      if (markRenderers[mark.type]) {
-        return markRenderers[mark.type](value)
+      if (supportedMarks.includes(mark.type)) {
+        return renderMark(mark.type, value)
       }
 
       return value
@@ -28,9 +35,16 @@ const renderText = (node) => {
   return result
 }
 
+type Node = Document | Block | Inline | Text
+
+interface Props {
+  node: Node
+  tags: TagCollection
+}
+
 const { node, tags } = Astro.props
 
-const children = Array.isArray(node) ? node : node?.content || [];
+const children = Array.isArray(node) ? node : 'content' in node ? node.content : [];
 ---
 <style>
   i {
@@ -46,16 +60,16 @@ const children = Array.isArray(node) ? node : node?.content || [];
         )}
         {childNode.nodeType === BLOCKS.PARAGRAPH && (
           <Paragraph inGrid>
-            <Astro.self node={childNode.content} />
+            <Astro.self node={childNode.content as Node} />
           </Paragraph>
         )}
         {childNode.nodeType === BLOCKS.HEADING_2 && (
-            <H2><Astro.self node={childNode.content} /></H2>
+            <H2><Astro.self node={childNode.content as Node} /></H2>
         )}
         {childNode.nodeType === BLOCKS.QUOTE && (<BlockQuote>{childNode.content[0].content[0].value}</BlockQuote>)}
         {childNode.nodeType === INLINES.HYPERLINK && 
             childNode?.data?.uri && (
-              <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content} /></ExternalLink>
+              <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content as Node} /></ExternalLink>
             )
         }
         {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY && (

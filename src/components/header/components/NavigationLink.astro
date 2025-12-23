@@ -2,6 +2,12 @@
 
 import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
 
+interface Props {
+    slug: string
+    navigationTitle: string
+    title: string
+}
+
 const { slug, navigationTitle, title } = Astro.props
 const { pathname } = Astro.url
 ---

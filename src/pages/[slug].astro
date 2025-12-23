@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import { contentfulClient } from "../lib/contentful";
 import type { Page } from '../types/contentful';
 import { WEBPAGE } from '../lib/jsonld'
+import type { TagCollection } from 'contentful';
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Page>({
@@ -25,6 +26,15 @@ export async function getStaticPaths() {
   }));
 
   return pages;
+}
+
+interface Props {
+  description: Page['fields']['description']
+  title: Page['fields']['title']
+  slug: Page['fields']['slug']
+  body: Page['fields']['body']
+  image: Page['fields']['image']
+  tags: TagCollection
 }
 
 const { description, title, image, body, slug, tags } = Astro.props

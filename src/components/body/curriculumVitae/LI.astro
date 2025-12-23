@@ -1,6 +1,10 @@
 ---
 import { colors, fontWeights, sizes, typographics } from '../../../lib/styles'
 
+interface Props {
+    heavy?: boolean
+}
+
 const { heavy } = Astro.props
 ---
 <style define:vars={{ colorsEvening: colors.evening }}>
