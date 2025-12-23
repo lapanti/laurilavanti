@@ -58,13 +58,14 @@ const { title, shareUrl, ariaLabel } = Astro.props
 </style>
 <aside aria-label={ariaLabel}>
     <span class="share">Jaa:</span>
-    <a rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`} title="Jaa Facebookissa">
+    <a rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`} title="Jaa Facebookissa" aria-label="Jaa Facebookissa">
         <Icon class="facebook" name="fa7-brands:facebook" />
     </a>
     <a
         rel="noopener noreferrer"
         href={`https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         title="Jaa Threadsissä"
+        aria-label="Jaa Threadsissä"
     >
         <Icon class="threads" name="fa7-brands:threads" />
     </a>
@@ -72,6 +73,7 @@ const { title, shareUrl, ariaLabel } = Astro.props
         rel="noopener norefferer"
         href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         title="Jaa Blueskyssa"
+        aria-label="Jaa Blueskyssa"
     >
         <Icon class="bluesky" name="fa7-brands:bluesky" />
     </a>
@@ -79,6 +81,7 @@ const { title, shareUrl, ariaLabel } = Astro.props
         rel="noopener norefferer"
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
         title="Jaa LinkedInissä"
+        aria-label="Jaa LinkedInissä"
     >
         <Icon class="linkedin" name="fa7-brands:linkedin" />
     </a>
