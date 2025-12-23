@@ -26,16 +26,26 @@ interface Props {
     body?: Document
     slug?: string
     type?: JsonLdType
+    createdAt?: string
+    updatedAt?: string
     tags?: TagCollection
 }
 
-const { description, title, heroImage, body, slug, type, tags } = Astro.props
+const { description, title, heroImage, body, slug, type, createdAt, updatedAt, tags } = Astro.props
 ---
 
 <html lang="fi">
     <head>
         <GlobalStyle />
-        <Head description={description} title={title} slug={slug} image={heroImage} type={type} />
+        <Head
+            description={description}
+            title={title}
+            slug={slug}
+            image={heroImage}
+            type={type}
+            createdAt={createdAt}
+            updatedAt={updatedAt}
+        />
     </head>
     <body>
         <style define:vars={{

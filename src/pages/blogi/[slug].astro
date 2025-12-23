@@ -6,6 +6,7 @@ import { contentfulClient } from "../../lib/contentful";
 import type { Post } from '../../types/contentful';
 import ExcerptList from '../../components/ExcerptList.astro';
 import type { TagCollection } from 'contentful';
+import { BLOGPOSTING } from '../../lib/jsonld';
 
 export async function getStaticPaths() {
   const entries = await contentfulClient.getEntries<Post>({
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 
   const tags = await contentfulClient.getTags()
 
-    const pages = entries.items.map((item) => ({
+    const posts = entries.items.map((item) => ({
         params: { slug: `/${item.fields.slug}` },
         props: {
             allTags: tags,
@@ -25,10 +26,12 @@ export async function getStaticPaths() {
             title: item.fields.title,
             slug: item.fields.slug,
             tags: item.metadata.tags,
+            createdAt: item.sys.createdAt,
+            updatedAt: item.sys.updatedAt,
         },
     }));
 
-  return pages;
+  return posts;
 }
 
 interface Props {
@@ -39,13 +42,25 @@ interface Props {
     title: Post['fields']['title']
     slug: Post['fields']['slug']
     tags: Post['metadata']['tags']
+    createdAt: Post['sys']['createdAt']
+    updatedAt: Post['sys']['updatedAt']
 }
 
-const { allTags, body, description, image, title, slug, tags } = Astro.props
+const { allTags, body, description, image, title, slug, tags, createdAt, updatedAt } = Astro.props
 
 ---
 
-<Layout description={description} body={body} heroImage={image} title={title} tags={allTags}>
+<Layout
+  description={description}
+  body={body}
+  heroImage={image}
+  title={title}
+  tags={allTags}
+  slug={`blogi/${slug}`}
+  createdAt={createdAt}
+  updatedAt={updatedAt}
+  type={BLOGPOSTING}
+>
     <SocialShare ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`} shareUrl={`https://laurilavanti.fi/blogi/${slug}`} title={title} />
     <H2>Muita kirjoituksia</H2>
     <ExcerptList limit={4} currentSlug={slug} relatedTags={tags} allTags={allTags} />

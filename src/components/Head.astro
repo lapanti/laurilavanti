@@ -1,7 +1,7 @@
 ---
 import { Font } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
-import { JSON_LD_TYPES, WEBSITE, type JsonLdType } from '../lib/jsonld'
+import { BLOGPOSTING, JSON_LD_TYPES, WEBPAGE, WEBSITE, type JsonLdType } from '../lib/jsonld'
 import type { Image } from '../types/contentful'
 
 interface Props {
@@ -10,6 +10,8 @@ interface Props {
     type?: JsonLdType
     slug?: string
     image?: Image
+    createdAt?: string
+    updatedAt?: string
 }
 
 const {
@@ -18,6 +20,8 @@ const {
     type,
     slug,
     image,
+    createdAt,
+    updatedAt,
 } = Astro.props
 
 const canonical = slug ? `${Astro.site}${slug}` : null
@@ -46,6 +50,16 @@ const jsonLd = JSON.stringify({
         ? {
             image: `https${image.fields.file.url}`,
         }
+        : {}),
+    ...(type === BLOGPOSTING
+        ? {
+                dateModified: updatedAt ?? createdAt,
+                datePublished: createdAt,
+                mainEntityOfPage: {
+                    '@id': canonical,
+                    '@type': WEBPAGE,
+                },
+            }
         : {}),
     ...(type === WEBSITE
         ? {
