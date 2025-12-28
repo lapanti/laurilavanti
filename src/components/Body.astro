@@ -8,6 +8,7 @@ import CurriculumVitae from "./body/CurriculumVitae.astro";
 import BlockQuote from "./body/BlockQuote.astro";
 import ExcerptList from "./ExcerptList.astro";
 import type { TagCollection } from "contentful";
+import ImageWithCaption from "./body/ImageWithCaption.astro";
 
 const supportedMarks: string[] = [MARKS.ITALIC]
 
@@ -86,6 +87,9 @@ const children = Array.isArray(node) ? node : 'content' in node ? node.content :
                 )}
                 {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
                     <ExcerptList limit={childNode.data.target.fields.limit} allTags={allTags} />
+                )}
+                {childNode.data.target.sys.contentType.sys.id === 'imageWithCaption' && (
+                  <ImageWithCaption image={childNode.data.target.fields.image} caption={childNode.data.target.fields.caption} />
                 )}
             </>
         )}
