@@ -4,6 +4,7 @@ import { BLOCKS, INLINES, MARKS, type Block, type Document, type Inline, type Te
 import Paragraph from './Paragraph.astro'
 import H2 from './H2.astro'
 import ExternalLink from "./ExternalLink.astro"
+import Link from "./Link.astro"
 import CurriculumVitae from "./body/CurriculumVitae.astro";
 import BlockQuote from "./body/BlockQuote.astro";
 import ExcerptList from "./ExcerptList.astro";
@@ -73,6 +74,13 @@ const children = Array.isArray(node) ? node : 'content' in node ? node.content :
               <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content as Node} /></ExternalLink>
             )
         }
+        {childNode.nodeType === INLINES.ENTRY_HYPERLINK && (
+          <>
+            {childNode.data.target.sys.contentType.sys.id === 'post' && (
+              <Link href={`/blogi/${childNode.data.target.fields.slug}/`}><Astro.self node={childNode.content} /></Link>
+            )}
+          </>
+        )}
         {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY && (
             <>
                 {childNode.data.target.sys.contentType.sys.id === 'curriculumVitae' && (

@@ -15,10 +15,6 @@ const { href, rel } = Astro.props
         text-decoration-thickness: var(--sizes0125);
     }
 </style>
-<a
-    href={href}
-    rel={`${rel ? rel : ''} noopener noreferrer`}
-    target="_blank"
->
+<a href={href} rel={`${rel ? rel : ''}`}>
     <slot />
 </a>
