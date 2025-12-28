@@ -1,0 +1,27 @@
+---
+import { sizes, typographics } from '../../lib/styles'
+
+interface Props {
+    itemProp?: string
+}
+
+const { itemProp } = Astro.props
+---
+<style define:vars={{
+    h3FontWeight: typographics.h3.fontWeight,
+    h3FontSize: typographics.h3.fontSize,
+    h3LineHeight: typographics.h3.lineHeight,
+    sizes1: sizes[1],
+}}>
+    h3 {
+        font-family: var(--ibmPlexSans);
+        font-weight: var(--h3FontWeight);
+        font-size: var(--h3FontSize);
+        line-height: var(--h3LineHeight);
+        grid-column-start: 3;
+        margin-top: var(--sizes1);
+    }
+</style>
+<h3 itemprop={itemProp}>
+    <slot />
+</h3>
