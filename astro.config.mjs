@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig, envField, fontProviders } from 'astro/config'
 
-import react from '@astrojs/react'
 import icon from 'astro-icon'
 
 // https://astro.build/config
@@ -47,7 +46,7 @@ export default defineConfig({
         domains: ['images.ctfassets.net'],
     },
 
-    integrations: [react(), icon({ include: { 'fa7-brands': ['*'] } })],
+    integrations: [icon({ include: { 'fa7-brands': ['*'] } })],
 
     env: {
         schema: {
