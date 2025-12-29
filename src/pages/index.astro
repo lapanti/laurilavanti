@@ -14,16 +14,18 @@ const tags = await contentfulClient.getTags()
 
 /** There should always be one and only one page with the slug "index" */
 const [frontPage] = pages.items
-
-console.log('frontPage', frontPage)
 ---
 
 <Layout
     title={frontPage.fields.title}
+    subtitle={frontPage.fields.subtitle}
+    secondaryTitle={frontPage.fields.secondaryTitle}
+    backgroundImage={frontPage.fields.backgroundImage}
     heroImage={frontPage.fields.image}
     description={frontPage.fields.description}
     body={frontPage.fields.body}
     slug="index"
     type={frontPage.fields.jsonLdType}
     allTags={tags}
+    heroBanner
 />

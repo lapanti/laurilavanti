@@ -18,10 +18,14 @@ import {
 import type { Document } from '@contentful/rich-text-types'
 import type { TagCollection, TagLink } from 'contentful'
 import type { JsonLdType } from '../lib/jsonld'
+import HeroBanner from '../components/HeroBanner.astro'
 
 interface Props {
     description?: string
     title: string
+    subtitle?: string
+    secondaryTitle?: string
+    backgroundImage?: Image
     heroImage?: Image
     body?: Document
     slug?: string
@@ -30,9 +34,10 @@ interface Props {
     updatedAt?: string
     tags?: { sys: TagLink }[]
     allTags?: TagCollection
+    heroBanner?: boolean
 }
 
-const { description, title, heroImage, body, slug, type, createdAt, updatedAt, tags, allTags } = Astro.props
+const { description, title, subtitle, secondaryTitle, backgroundImage, heroImage, body, slug, type, createdAt, updatedAt, tags, allTags, heroBanner } = Astro.props
 ---
 
 <html lang="fi">
@@ -88,7 +93,17 @@ const { description, title, heroImage, body, slug, type, createdAt, updatedAt, t
             <Header />
             <main>
                 <article>
-                    <TitleBanner title={title} heroImage={heroImage} createdAt={createdAt} tags={tags} allTags={allTags} />
+                    {heroBanner ? (
+                        <HeroBanner
+                            title={title}
+                            subtitle={subtitle}
+                            secondaryTitle={secondaryTitle}
+                            image={heroImage}
+                            backgroundImage={backgroundImage}
+                        />
+                    ) : (
+                        <TitleBanner title={title} heroImage={heroImage} createdAt={createdAt} tags={tags} allTags={allTags} />
+                    )}
                     {body && <Body node={body} allTags={allTags} />}
                     <slot />
                 </article>
