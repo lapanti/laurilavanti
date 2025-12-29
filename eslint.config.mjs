@@ -11,7 +11,6 @@ import stylistic from '@stylistic/eslint-plugin'
 import { configs } from 'eslint-plugin-astro'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
-import restrictedGlobals from 'confusing-browser-globals'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 const testFileGlob = [
@@ -77,7 +76,7 @@ export default tseslint.config(
             'no-empty': ['error', { allowEmptyCatch: true }],
             'no-eq-null': ['error'],
             'no-irregular-whitespace': ['error', { skipTemplates: true }],
-            'no-restricted-globals': ['error'].concat(restrictedGlobals),
+            'no-restricted-globals': ['error'],
             'nonblock-statement-body-position': ['error'],
             'prefer-arrow-callback': ['error'],
             'simple-import-sort/exports': ['error'],
