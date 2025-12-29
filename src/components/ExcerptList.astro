@@ -8,8 +8,6 @@ import Excerpt from './excerptList/Excerpt.astro'
 const entries = await contentfulClient.getEntries<Post>({
     content_type: 'post',
     include: 1,
-    /* @ts-expect-error Contentful has not typed it properly */
-    order: '-sys.createdAt',
 })
 
 interface Props {
@@ -26,7 +24,9 @@ const noCurrent = currentSlug ? entries.items.filter((item) => item.fields.slug 
 
 const tagFiltered = tag ? noCurrent.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : noCurrent
 
-const tagSorted = relatedTags ? tagFiltered
+const dateSorted = tagFiltered.toSorted((a, b) => (new Date(b.sys.createdAt)).valueOf() - (new Date(a.sys.createdAt)).valueOf())
+
+const tagSorted = relatedTags ? dateSorted
                 .reduce<[Entry<Post, undefined, LocaleCode>, number][]>(
                     (acc, curr) => [
                         ...acc,
@@ -46,11 +46,15 @@ const tagSorted = relatedTags ? tagFiltered
                     []
                 )
                 .toSorted((a, b) => {
+                    // If same points, sort by date
+                    if (a[1] === b[1]) {
+                        return (new Date(b[0].sys.createdAt)).valueOf() - (new Date(a[0].sys.createdAt)).valueOf()
+                    }
                     // Higher points first
                     return a[1] < b[1] ? 1 : -1
                 })
                 .map((postWithPoints) => postWithPoints[0])
-                : tagFiltered
+                : dateSorted
 
 const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
