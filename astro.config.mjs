@@ -2,6 +2,7 @@
 import { defineConfig, envField, fontProviders } from 'astro/config'
 
 import icon from 'astro-icon'
+import { imageService } from '@unpic/astro/service'
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,7 +18,7 @@ export default defineConfig({
     experimental: {
         fonts: [
             {
-                name: "IBM Plex Mono",
+                name: 'IBM Plex Mono',
                 cssVariable: '--ibmPlexMono',
                 provider: fontProviders.fontsource(),
                 weights: [400, 500],
@@ -26,15 +27,15 @@ export default defineConfig({
                 fallbacks: ['Lucida Sans Typewriter'],
             },
             {
-                name: "IBM Plex Sans",
+                name: 'IBM Plex Sans',
                 cssVariable: '--ibmPlexSans',
                 provider: fontProviders.fontsource(),
                 weights: [300, 400, 1000],
                 styles: ['normal', 'italic'],
                 subsets: ['latin', 'latin-ext'],
                 fallbacks: ['Trebuchet MS'],
-            }
-        ]
+            },
+        ],
     },
 
     prefetch: {
@@ -44,6 +45,7 @@ export default defineConfig({
 
     image: {
         domains: ['images.ctfassets.net'],
+        service: imageService(),
     },
 
     integrations: [icon({ include: { 'fa7-brands': ['*'] } })],

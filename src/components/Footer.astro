@@ -71,10 +71,8 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
 <footer>
     <div class="container">
         <div>
-            {/* @ts-expect-error for some reason Picture has issues */}
             <Picture
                 alt='Vihreiden logo ja teksti "Vihreät De Gröna The Greens"'
-                densities={[1, 2, 4]}
                 fit="contain"
                 formats={['avif', 'webp']}
                 src={greensLogo}
