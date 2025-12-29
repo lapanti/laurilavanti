@@ -21,11 +21,10 @@ const entries = await contentfulClient.getEntries<Post>({
     /* @ts-expect-error Contentful hasn't typed this properly */
     order: '-sys.createdAt',
     'fields.slug[ne]': currentSlug,
+    'metadata.tags.sys.id[in]': tag ? [tag] : undefined,
 })
 
-const tagFiltered = tag ? entries.items.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : entries.items
-
-const tagSorted = relatedTags ? tagFiltered
+const tagSorted = relatedTags ? entries.items
                 .reduce<[Entry<Post, undefined, LocaleCode>, number][]>(
                     (acc, curr) => [
                         ...acc,
@@ -53,7 +52,7 @@ const tagSorted = relatedTags ? tagFiltered
                     return a[1] < b[1] ? 1 : -1
                 })
                 .map((postWithPoints) => postWithPoints[0])
-                : tagFiltered
+                : entries.items
 
 const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
