@@ -1,12 +1,13 @@
 import type { KnipConfig } from 'knip'
 
 const config: KnipConfig = {
-    ignore: [],
-    ignoreDependencies: ['eslint-import-resolver-typescript'],
-    jest: {
-        config: ['jest.config.{js,ts,mjs,cjs,json}', 'package.json'],
-        entry: ['**/tests/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-    },
+    ignore: ['src/types/contentfulCodegen.ts'],
+    ignoreDependencies: [
+        '@fontsource/ibm-plex-mono',
+        '@fontsource/ibm-plex-sans',
+        '@iconify-json/fa7-brands',
+        'eslint-plugin-jsx-a11y',
+    ],
 }
 
 export default config

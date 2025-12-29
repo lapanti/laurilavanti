@@ -1,9 +1,9 @@
 import type { Asset, LocaleCode } from 'contentful'
 import type { TypeCurriculumVitae, TypeFooterNav, TypeMainNav, TypePage, TypePost } from './contentfulCodegen'
 
-export type LC = LocaleCode
-export type WITH_LINKS = 'WITHOUT_LINK_RESOLUTION'
-export type WITH_ENTRIES = 'WITHOUT_UNRESOLVABLE_LINKS'
+type LC = LocaleCode
+// type WITH_LINKS = 'WITHOUT_LINK_RESOLUTION'
+type WITH_ENTRIES = 'WITHOUT_UNRESOLVABLE_LINKS'
 
 export type FooterNav = { contentTypeId: 'footerNav' } & TypeFooterNav<WITH_ENTRIES, LC>
 
