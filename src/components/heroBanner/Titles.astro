@@ -1,0 +1,82 @@
+---
+import { colors, sizes, typographics } from '../../lib/styles'
+
+interface Props {
+    title: string
+    subtitle?: string
+    secondaryTitle?: string
+}
+
+const { title, subtitle, secondaryTitle } = Astro.props
+---
+<style define:vars={{
+    h1FontFamily: typographics.h1.fontFamily,
+    h1FontWeight: typographics.h1.fontWeight,
+    h1FontSize: typographics.h1.fontSize,
+    h1LineHeight: typographics.h1.lineHeight,
+    h2FontFamily: typographics.h2.fontFamily,
+    h2FontWeight: typographics.h2.fontWeight,
+    h2FontSize: typographics.h2.fontSize,
+    h2LineHeight: typographics.h2.lineHeight,
+    ingressFontWeight: typographics.ingress.fontWeight,
+    ingressFontSize: typographics.ingress.fontSize,
+    ingressLineHeight: typographics.ingress.lineHeight,
+    colorsPeach: colors.peach,
+    colorsWhite: colors.white,
+    sizes05: sizes[0.5],
+    sizes0875: sizes[0.875],
+    sizes15: sizes[1.5],
+    sizes3: sizes[3],
+    sizes375: sizes[3.75],
+}}>
+    div {
+        color: var(--colorsWhite);
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes15);
+        padding: var(--sizes0875);
+    }
+
+    h1 {
+        font-family: var(--h1FontFamily);
+        font-weight: var(--h1FontWeight);
+        font-size: var(--h1FontSize);
+        line-height: var(--h1LineHeight);
+        color: var(--colorsPeach);
+        top: var(--sizes05);
+    }
+
+    h2 {
+        font-family: var(--h2FontFamily);
+        font-weight: var(--h2FontWeight);
+        font-size: var(--h2FontSize);
+        line-height: var(--h2LineHeight);
+    }
+
+    p {
+        font-family: var(--ibmPlexSans);
+        font-weight: var(--ingressFontWeight);
+        font-size: var(--ingressFontSize);
+        line-height: var(--ingressLineHeight);
+        display: none;
+    }
+
+    @media (min-width: 1200px) {
+        div {
+            align-items: flex-start;
+            gap: var(--sizes3);
+            justify-content: flex-start;
+            padding: var(--sizes375);
+            width: 50%;
+        }
+
+        p {
+            display: flex;
+        }
+    }
+</style>
+<div>
+    <h1>{title}</h1>
+    {subtitle && <p>{subtitle}</p>}
+    {secondaryTitle && <h2>{secondaryTitle}</h2>}
+</div>
