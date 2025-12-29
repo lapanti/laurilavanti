@@ -2,8 +2,8 @@
 import type { CurriculumVitae } from '../../types/contentful'
 import { sizes, typographics } from '../../lib/styles'
 import H2 from '../H2.astro'
-import LI from './curriculumVitae/LI.astro'
-import UL from './curriculumVitae/UL.astro'
+import LI from '../LI.astro'
+import UL from '../UL.astro'
 
 const yearsToString = (startYear: number, endYear?: number): string => {
     if (startYear === endYear) return `${startYear}`

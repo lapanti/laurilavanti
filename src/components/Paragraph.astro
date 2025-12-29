@@ -3,26 +3,32 @@ import { sizes, typographics } from "../lib/styles"
 
 interface Props {
     inGrid?: boolean
-    smallMarginTop?: boolean
     itemProp?: string
+    smallMarginTop?: boolean
+    noMargins?: boolean
 }
 
-const { inGrid, itemProp, smallMarginTop } = Astro.props
+const { inGrid, itemProp, smallMarginTop, noMargins } = Astro.props
 ---
 <style define:vars={{
-    sizes1: sizes[1],
-    marginTop: smallMarginTop ? sizes[0.25] : sizes[1],
+    marginBottom: noMargins ? 0 : sizes[1],
+    marginTop: noMargins ? 0 : smallMarginTop ? sizes[0.25] : sizes[1],
     bodyFontWeight: typographics.body.fontWeight,
     bodyFontSize: typographics.body.fontSize,
     bodyLineHeight: typographics.body.lineHeight,
 }}>
     p {
-        margin-bottom: var(--sizes1);
+        margin-bottom: var(--marginBottom);
         margin-top: var(--marginTop);
         font-family: var(--ibmPlexSans);
         font-weight: var(--bodyFontWeight);
         font-size: var(--bodyFontSize);
         line-height: var(--bodyLineHeight);
+    }
+
+    li > p {
+        margin-bottom: 0;
+        margin-top: 0;
     }
 </style>
 <p style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }} itemprop={itemProp}>
