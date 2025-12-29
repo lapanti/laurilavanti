@@ -1,0 +1,31 @@
+---
+import type { Image } from '../../types/contentful'
+import BackgroundImage from './images/BackgroundImage.astro'
+import Hero from './images/Hero.astro'
+
+interface Props {
+    backgroundImage?: Image
+    image?: Image
+}
+
+const {backgroundImage, image } = Astro.props
+---
+<style>
+    .container {
+        display: flex;
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            overflow: visible;
+            width: 50%;
+        }
+    }
+</style>
+<div class="container">
+    <BackgroundImage image={backgroundImage} />
+    <Hero image={image} />
+</div>

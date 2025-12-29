@@ -1,0 +1,41 @@
+---
+import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+
+import { sizes } from '../../../lib/styles'
+import type { Image } from '../../../types/contentful'
+
+interface Props {
+    image?: Image
+}
+
+const { image } = Astro.props
+---
+<style define:vars={{ sizes5Negative: `-${sizes[5]}`, sizes8Negative: `-${sizes[8]}` }}>
+    img {
+        margin-left: var(--sizes8Negative);
+    }
+
+    @media (min-width: 1200px) {
+        img {
+            bottom: 0;
+            position: absolute;
+            right: var(--sizes5Negative);
+            margin-top: auto;
+        }
+    }
+</style>
+<>
+    {image?.fields?.file?.url && (
+        <Picture
+            src={`https:${image.fields.file.url}`}
+            alt={image.fields.description ?? null}
+            priority
+            layout="constrained"
+            fit="cover"
+            sizes="50vw"
+            formats={['avif', 'webp']}
+            widths={[560, 768, 992, 1280, 2560]}
+            width="560"
+            height="562"
+    />)}
+</>
