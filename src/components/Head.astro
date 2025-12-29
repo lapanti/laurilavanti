@@ -24,7 +24,7 @@ const {
     updatedAt,
 } = Astro.props
 
-const canonical = slug ? `${Astro.site}${slug}` : null
+const canonical = slug === 'index' ? Astro.site : slug ? `${Astro.site}${slug}` : null
 
 const name = 'Lauri Lavanti'
 
