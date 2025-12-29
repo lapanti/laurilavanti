@@ -5,13 +5,6 @@ import { sizes } from '../lib/styles'
 import type { Post } from '../types/contentful'
 import Excerpt from './excerptList/Excerpt.astro'
 
-const entries = await contentfulClient.getEntries<Post>({
-    content_type: 'post',
-    include: 1,
-    /* @ts-expect-error Contentful hasn't typed this properly */
-    order: '-sys.createdAt',
-})
-
 interface Props {
     limit?: number
     allTags: TagCollection
@@ -22,9 +15,15 @@ interface Props {
 
 const { limit, allTags, currentSlug, tag, relatedTags } = Astro.props
 
-const noCurrent = currentSlug ? entries.items.filter((item) => item.fields.slug !== currentSlug) : entries.items
+const entries = await contentfulClient.getEntries<Post>({
+    content_type: 'post',
+    include: 1,
+    /* @ts-expect-error Contentful hasn't typed this properly */
+    order: '-sys.createdAt',
+    'fields.slug[ne]': currentSlug,
+})
 
-const tagFiltered = tag ? noCurrent.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : noCurrent
+const tagFiltered = tag ? entries.items.filter((item) => item.metadata.tags.some((someTag) => someTag.sys.id === tag)) : entries.items
 
 const tagSorted = relatedTags ? tagFiltered
                 .reduce<[Entry<Post, undefined, LocaleCode>, number][]>(
