@@ -5,6 +5,7 @@ import Paragraph from './Paragraph.astro'
 import H2 from './H2.astro'
 import H3 from './body/H3.astro'
 import UL from './UL.astro'
+import Hr from './body/Hr.astro'
 import LI from './LI.astro'
 import ExternalLink from "./ExternalLink.astro"
 import Link from "./Link.astro"
@@ -80,6 +81,9 @@ const children = Array.isArray(node) ? node : 'content' in node ? node.content :
         )}
         {childNode.nodeType === BLOCKS.LIST_ITEM && (
             <LI><Astro.self node={childNode.content as Node} noMargins /></LI>
+        )}
+        {childNode.nodeType === BLOCKS.HR && (
+          <Hr />
         )}
         {childNode.nodeType === BLOCKS.QUOTE && (<BlockQuote>{childNode.content[0].content[0].value}</BlockQuote>)}
         {childNode.nodeType === INLINES.HYPERLINK && 
