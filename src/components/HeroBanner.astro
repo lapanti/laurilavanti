@@ -25,18 +25,17 @@ const { image, title, subtitle, secondaryTitle, backgroundImage } = Astro.props
         display: flex;
         flex-direction: column;
         grid-column: 1 / -1;
-        height: 100dvh;
     }
 
     @media (min-width: 1200px) {
         div {
-            flex-direction: row-reverse;
+            flex-direction: row;
             height: var(--sizes45);
             padding-top: var(--headerSize);
         }
     }
 </style>
 <div>
-    <Titles title={title} subtitle={subtitle} secondaryTitle={secondaryTitle} />
     <Images backgroundImage={backgroundImage} image={image} />
+    <Titles title={title} subtitle={subtitle} secondaryTitle={secondaryTitle} />
 </div>

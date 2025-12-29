@@ -23,7 +23,6 @@ const { title, subtitle, secondaryTitle } = Astro.props
     ingressLineHeight: typographics.ingress.lineHeight,
     colorsPeach: colors.peach,
     colorsWhite: colors.white,
-    sizes05: sizes[0.5],
     sizes0875: sizes[0.875],
     sizes15: sizes[1.5],
     sizes3: sizes[3],
@@ -43,7 +42,6 @@ const { title, subtitle, secondaryTitle } = Astro.props
         font-size: var(--h1FontSize);
         line-height: var(--h1LineHeight);
         color: var(--colorsPeach);
-        top: var(--sizes05);
     }
 
     h2 {
@@ -58,7 +56,6 @@ const { title, subtitle, secondaryTitle } = Astro.props
         font-weight: var(--ingressFontWeight);
         font-size: var(--ingressFontSize);
         line-height: var(--ingressLineHeight);
-        display: none;
     }
 
     @media (min-width: 1200px) {
@@ -68,10 +65,6 @@ const { title, subtitle, secondaryTitle } = Astro.props
             justify-content: flex-start;
             padding: var(--sizes375);
             width: 50%;
-        }
-
-        p {
-            display: flex;
         }
     }
 </style>
