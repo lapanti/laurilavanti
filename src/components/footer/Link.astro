@@ -1,11 +1,12 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
 import { Icon } from 'astro-icon/components'
 
-import { colors, sizes } from '../../lib/styles.ts'
+import { colors, sizes } from '../../lib/styles'
 
 interface Props {
-    title: string
     icon?: string
+    title: string
     url: string
 }
 
@@ -40,11 +41,12 @@ const iconToHoverColor = (icon?: string): string | undefined => {
 
 const hoverColor = iconToHoverColor(icon)
 ---
+
 <style
     define:vars={{
-        sizes0: sizes[0],
-        hoverColor,
         colorsGray: colors.gray,
+        hoverColor,
+        sizes0: sizes[0],
         sizes175: sizes[1.75],
         sizes225: sizes[2.25],
     }}
@@ -81,13 +83,7 @@ const hoverColor = iconToHoverColor(icon)
     }
 </style>
 <li>
-    <a
-        href={url}
-        rel="me noopener noreferrer"
-        target="_blank"
-        title={title}
-        aria-label={title}
-    >
+    <a aria-label={title} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
         <Icon name={`fa7-brands:${icon}`} />
     </a>
 </li>

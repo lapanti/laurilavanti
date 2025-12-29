@@ -1,5 +1,6 @@
 ---
-import { colors, sizes } from '../../lib/styles.ts'
+/* eslint-disable prettier/prettier */
+import { colors, sizes } from '../../lib/styles'
 
 interface Props {
     title: string
@@ -31,7 +32,7 @@ const { title, url } = Astro.props
         height: var(--sizes175);
         width: var(--sizes175);
     }
-    
+
     @media (min-width: 1200px) {
         li svg {
             height: var(--sizes225);
@@ -40,14 +41,7 @@ const { title, url } = Astro.props
     }
 </style>
 <li>
-    <a
-        href={url}
-        rel="me noopener noreferrer"
-        target="_blank"
-        title={title}
-        aria-label={title}
-        id="tiktok-footer-link"
-    >
+    <a aria-label={title} href={url} id="tiktok-footer-link" rel="me noopener noreferrer" target="_blank" title={title}>
         <svg height="1em" viewBox="-3 -2 36 36" width="1em" xmlns="http://www.w3.org/2000/svg">
             <g fill="none">
                 <path
@@ -70,13 +64,9 @@ const { title, url } = Astro.props
     </a>
 </li>
 <script>
-const turquoiseHex = '#25F4EE';
-const redHex = '#FE2C55';
-const colorsGray = 'rgb(235, 235, 236)';
-const link = document.getElementById('tiktok-footer-link');
-const paths = link?.getElementsByTagName('path');
-const focusEvents = ['pointerenter', 'focus'];
-focusEvents.forEach((event) => {
+const turquoiseHex = '#25F4EE'; const redHex = '#FE2C55'; const colorsGray = 'rgb(235, 235, 236)'; const link =
+document.getElementById('tiktok-footer-link'); const paths = link?.getElementsByTagName('path'); const focusEvents =
+['pointerenter', 'focus']; focusEvents.forEach((event) => {
     link?.addEventListener(event, () => {
         paths?.[0].setAttribute('fill', turquoiseHex)
         paths?.[1].setAttribute('fill', turquoiseHex)
@@ -84,9 +74,7 @@ focusEvents.forEach((event) => {
         paths?.[3].setAttribute('fill', redHex)
         paths?.[4].setAttribute('fill', 'black')
     })
-});
-const blurEvents = ['pointerleave', 'blur'];
-blurEvents.forEach((event) => {
+}); const blurEvents = ['pointerleave', 'blur']; blurEvents.forEach((event) => {
     link?.addEventListener(event, () => {
         paths?.[0].setAttribute('fill', colorsGray)
         paths?.[1].setAttribute('fill', colorsGray)
@@ -94,5 +82,5 @@ blurEvents.forEach((event) => {
         paths?.[3].setAttribute('fill', colorsGray)
         paths?.[4].setAttribute('fill', colorsGray)
     })
-});
+})
 </script>

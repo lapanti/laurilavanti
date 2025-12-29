@@ -1,8 +1,9 @@
 ---
-import type {  Entry, LocaleCode, TagCollection, TagLink } from 'contentful'
+import type { Entry, LocaleCode, TagCollection, TagLink } from 'contentful'
+import type { Post } from '../types/contentful'
+
 import { contentfulClient } from '../lib/contentful'
 import { sizes } from '../lib/styles'
-import type { Post } from '../types/contentful'
 import Excerpt from './excerptList/Excerpt.astro'
 
 interface Props {
@@ -17,46 +18,48 @@ const { limit, allTags, currentSlug, tag, relatedTags } = Astro.props
 
 const entries = await contentfulClient.getEntries<Post>({
     content_type: 'post',
+    'fields.slug[ne]': currentSlug,
     include: 1,
+    'metadata.tags.sys.id[in]': tag ? [tag] : undefined,
     /* @ts-expect-error Contentful hasn't typed this properly */
     order: '-sys.createdAt',
-    'fields.slug[ne]': currentSlug,
-    'metadata.tags.sys.id[in]': tag ? [tag] : undefined,
 })
 
-const tagSorted = relatedTags ? entries.items
-                .reduce<[Entry<Post, undefined, LocaleCode>, number][]>(
-                    (acc, curr) => [
-                        ...acc,
-                        [
-                            curr,
-                            // 1 point per matching tag
-                            relatedTags.reduce(
-                                (pointsAcc, currentRelatedTag) =>
-                                    pointsAcc +
-                                    (curr.metadata.tags.map((someTag) => someTag.sys.id).includes(currentRelatedTag.sys.id)
-                                        ? 1
-                                        : 0),
-                                0
-                            ),
-                        ],
-                    ],
-                    []
-                )
-                .toSorted((a, b) => {
-                    // If same points, sort by date
-                    if (a[1] === b[1]) {
-                        return (new Date(b[0].sys.createdAt)).valueOf() - (new Date(a[0].sys.createdAt)).valueOf()
-                    }
-                    // Higher points first
-                    return a[1] < b[1] ? 1 : -1
-                })
-                .map((postWithPoints) => postWithPoints[0])
-                : entries.items
+const tagSorted = relatedTags
+    ? entries.items
+          .reduce<[Entry<Post, undefined, LocaleCode>, number][]>(
+              (acc, curr) => [
+                  ...acc,
+                  [
+                      curr,
+                      // 1 point per matching tag
+                      relatedTags.reduce(
+                          (pointsAcc, currentRelatedTag) =>
+                              pointsAcc +
+                              (curr.metadata.tags.map((someTag) => someTag.sys.id).includes(currentRelatedTag.sys.id)
+                                  ? 1
+                                  : 0),
+                          0
+                      ),
+                  ],
+              ],
+              []
+          )
+          .toSorted((a, b) => {
+              // If same points, sort by date
+              if (a[1] === b[1]) {
+                  return new Date(b[0].sys.createdAt).valueOf() - new Date(a[0].sys.createdAt).valueOf()
+              }
+              // Higher points first
+              return a[1] < b[1] ? 1 : -1
+          })
+          .map((postWithPoints) => postWithPoints[0])
+    : entries.items
 
 const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
-<style define:vars={{ sizes2: sizes[2], sizes35: sizes[35], sizes3point5: sizes[3.5], sizes4: sizes[4] }}>
+
+<style define:vars={{ sizes2: sizes[2], sizes3point5: sizes[3.5], sizes4: sizes[4], sizes35: sizes[35] }}>
     ul {
         column-gap: var(--sizes4);
         display: grid;
@@ -77,7 +80,17 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
     }
 </style>
 <ul>
-    {nodes.map((node) => (
-        <Excerpt title={node.fields.title} excerpt={node.fields.excerpt} slug={`blogi/${node.fields.slug}`} image={node.fields.image} date={node.fields.publishDate || node.sys.createdAt} allTags={allTags} tags={node.metadata.tags} />
-    ))}
+    {
+        nodes.map((node) => (
+            <Excerpt
+                allTags={allTags}
+                date={node.fields.publishDate || node.sys.createdAt}
+                excerpt={node.fields.excerpt}
+                image={node.fields.image}
+                slug={`blogi/${node.fields.slug}`}
+                tags={node.metadata.tags}
+                title={node.fields.title}
+            />
+        ))
+    }
 </ul>

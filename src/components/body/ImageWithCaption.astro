@@ -1,24 +1,27 @@
 ---
+import type { Image } from '../../types/contentful'
+
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
 import { sizes, typographics } from '../../lib/styles'
 
-import type { Image } from '../../types/contentful'
-
 interface Props {
-    image: Image
     caption: string
+    image: Image
 }
 
 const { image, caption } = Astro.props
 ---
-<style define:vars={{ 
-    additionalInfoFontWeight: typographics.additionalInfo.fontWeight,
-    additionalInfoFontSize: typographics.additionalInfo.fontSize,
-    additionalInfoLineHeight: typographics.additionalInfo.lineHeight,
-    sizes05: sizes[0.5],
-    sizes1: sizes[1],
-}}>
+
+<style
+    define:vars={{
+        additionalInfoFontSize: typographics.additionalInfo.fontSize,
+        additionalInfoFontWeight: typographics.additionalInfo.fontWeight,
+        additionalInfoLineHeight: typographics.additionalInfo.lineHeight,
+        sizes05: sizes[0.5],
+        sizes1: sizes[1],
+    }}
+>
     figure {
         grid-column-start: 3;
         margin-bottom: var(--sizes1);
@@ -37,19 +40,21 @@ const { image, caption } = Astro.props
         width: 100%;
     }
 </style>
-{image?.fields?.file?.url && (
-    <figure aria-label={caption}>
-        <Picture 
-            src={`https:${image.fields.file.url}`}
-            layout="full-width"
-            fit="contain"
-            sizes="(max-width: 1200px) 100vw, 1184px"
-            widths={[360, 576, 768, 992, 1200, 2400]}
-            formats={['avif', 'webp']}
-            alt={image.fields.description ?? null}
-            width="1184"
-            height="329"
-        />
-        <figcaption>{caption}</figcaption>
-    </figure>
-)}
+{
+    image?.fields?.file?.url && (
+        <figure aria-label={caption}>
+            <Picture
+                alt={image.fields.description ?? null}
+                fit="contain"
+                formats={['avif', 'webp']}
+                height="329"
+                layout="full-width"
+                sizes="(max-width: 1200px) 100vw, 1184px"
+                src={`https:${image.fields.file.url}`}
+                width="1184"
+                widths={[360, 576, 768, 992, 1200, 2400]}
+            />
+            <figcaption>{caption}</figcaption>
+        </figure>
+    )
+}

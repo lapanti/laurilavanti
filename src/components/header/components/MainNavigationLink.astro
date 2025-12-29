@@ -1,17 +1,19 @@
 ---
-
 import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
 
 const { pathname } = Astro.url
 ---
-<style define:vars={{
-    h1FontFamily: typographics.h1.fontFamily,
-    h1FontWeight: typographics.h1.fontWeight,
-    h1FontSize: fontSizes[1.75].fontSize,
-    h1LineHeight: fontSizes[1.75].lineHeight,
-    colorsPeach: colors.peach,
-    sizes01875: sizes[0.1875],
-}}>
+
+<style
+    define:vars={{
+        colorsPeach: colors.peach,
+        h1FontFamily: typographics.h1.fontFamily,
+        h1FontSize: fontSizes[1.75].fontSize,
+        h1FontWeight: typographics.h1.fontWeight,
+        h1LineHeight: fontSizes[1.75].lineHeight,
+        sizes01875: sizes[0.1875],
+    }}
+>
     a {
         font-family: var(--h1FontFamily);
         font-weight: var(--h1FontWeight);
@@ -30,25 +32,21 @@ const { pathname } = Astro.url
         width: 100%;
         height: var(--sizes01875);
         transition: transform 200ms ease-in-out;
-        opacity 1;
+        opacity: 1;
         transform: translate3d(-100%, 0, 0);
         background-color: var(--colorsPeach);
     }
 
     a:hover::after,
-    a:focus::after{
+    a:focus::after {
         transform: translate3d(0, 0, 0);
     }
 
-    a[aria-current="page"]:hover::after,
-    a[aria-current="page"]:focus::after {
+    a[aria-current='page']:hover::after,
+    a[aria-current='page']:focus::after {
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a
-    href="/"
-    title="Lauri Lavanti"
-    aria-current={pathname.slice(1).replace(/\//, '') === '' ? 'page' : 'false'}
->
+<a aria-current={pathname.slice(1).replace(/\//, '') === '' ? 'page' : 'false'} href="/" title="Lauri Lavanti">
     Lauri Lavanti
 </a>

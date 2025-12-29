@@ -1,23 +1,25 @@
 ---
-
 import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
 
 interface Props {
-    slug: string
     navigationTitle: string
+    slug: string
     title: string
 }
 
 const { slug, navigationTitle, title } = Astro.props
 const { pathname } = Astro.url
 ---
-<style define:vars={{
-    bodyFontWeight: typographics.body.fontWeight,
-    bodyFontSize: fontSizes[1.5].fontSize,
-    bodyLineHeight: fontSizes[1.5].lineHeight,
-    colorsPeach: colors.peach,
-    sizes01875: sizes[0.1875],
-}}>
+
+<style
+    define:vars={{
+        bodyFontSize: fontSizes[1.5].fontSize,
+        bodyFontWeight: typographics.body.fontWeight,
+        bodyLineHeight: fontSizes[1.5].lineHeight,
+        colorsPeach: colors.peach,
+        sizes01875: sizes[0.1875],
+    }}
+>
     a {
         font-family: var(--ibmPlexSans);
         font-weight: var(--bodyFontWeight);
@@ -28,11 +30,10 @@ const { pathname } = Astro.url
         overflow: hidden;
     }
 
-    a[aria-current="page"] {
+    a[aria-current='page'] {
         text-decoration: underline;
         text-decoration-thickness: var(--sizes01875);
     }
-
 
     a::after {
         content: '';
@@ -42,24 +43,21 @@ const { pathname } = Astro.url
         width: 100%;
         height: var(--sizes01875);
         transition: transform 200ms ease-in-out;
-        opacity 1;
+        opacity: 1;
         transform: translate3d(-100%, 0, 0);
         background-color: var(--colorsPeach);
     }
 
     a:hover::after,
-    a:focus::after{
+    a:focus::after {
         transform: translate3d(0, 0, 0);
     }
 
-    a[aria-current="page"]:hover::after,
-    a[aria-current="page"]:focus::after {
+    a[aria-current='page']:hover::after,
+    a[aria-current='page']:focus::after {
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-    <a
-    href={`/${slug}/`}
-    title={title}
-    aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'}
+<a aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'} href={`/${slug}/`} title={title}
     >{navigationTitle ?? title}
 </a>

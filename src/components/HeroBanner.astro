@@ -1,6 +1,7 @@
 ---
-import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import type { Image } from '../types/contentful'
+
+import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import Images from './heroBanner/Images.astro'
 import Titles from './heroBanner/Titles.astro'
 
@@ -14,11 +15,14 @@ interface Props {
 
 const { image, title, subtitle, secondaryTitle, backgroundImage } = Astro.props
 ---
-<style define:vars={{
-    colorsEvening: colors.evening,
-    sizes45: sizes[45],
-    headerSize: HEADER_SIZE,
-}}>
+
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        headerSize: HEADER_SIZE,
+        sizes45: sizes[45],
+    }}
+>
     div {
         align-items: stretch;
         background: var(--colorsEvening);
@@ -37,5 +41,5 @@ const { image, title, subtitle, secondaryTitle, backgroundImage } = Astro.props
 </style>
 <div>
     <Images backgroundImage={backgroundImage} image={image} />
-    <Titles title={title} subtitle={subtitle} secondaryTitle={secondaryTitle} />
+    <Titles secondaryTitle={secondaryTitle} subtitle={subtitle} title={title} />
 </div>

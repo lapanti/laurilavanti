@@ -1,128 +1,143 @@
 ---
-import { BLOCKS, INLINES, MARKS, type Block, type Document, type Inline, type Text } from "@contentful/rich-text-types";
+/* eslint-disable astro/no-unused-css-selector */
+import type { TagCollection } from 'contentful'
 
-import Paragraph from './Paragraph.astro'
-import H2 from './H2.astro'
+import { type Block, BLOCKS, type Document, type Inline, INLINES, MARKS, type Text } from '@contentful/rich-text-types'
+
+import BlockQuote from './body/BlockQuote.astro'
+import CurriculumVitae from './body/CurriculumVitae.astro'
 import H3 from './body/H3.astro'
-import UL from './UL.astro'
 import Hr from './body/Hr.astro'
+import ImageWithCaption from './body/ImageWithCaption.astro'
+import ExcerptList from './ExcerptList.astro'
+import ExternalLink from './ExternalLink.astro'
+import H2 from './H2.astro'
 import LI from './LI.astro'
-import ExternalLink from "./ExternalLink.astro"
-import Link from "./Link.astro"
-import CurriculumVitae from "./body/CurriculumVitae.astro";
-import BlockQuote from "./body/BlockQuote.astro";
-import ExcerptList from "./ExcerptList.astro";
-import type { TagCollection } from "contentful";
-import ImageWithCaption from "./body/ImageWithCaption.astro";
+import Link from './Link.astro'
+import Paragraph from './Paragraph.astro'
+import UL from './UL.astro'
 
 const supportedMarks: string[] = [MARKS.ITALIC]
 
 const renderMark = (mark: string, text: string) => {
-  if (mark === MARKS.ITALIC) {
-    return `<i>${text}</i>`
-  }
+    if (mark === MARKS.ITALIC) {
+        return `<i>${text}</i>`
+    }
 
-  return text
+    return text
 }
 
 const renderText = (node: Text) => {
-  const result = node.value
+    const result = node.value
 
-  if (node.marks.length > 0) {
-    return node.marks.reduce((value, mark) => {
-      if (supportedMarks.includes(mark.type)) {
-        return renderMark(mark.type, value)
-      }
+    if (node.marks.length > 0) {
+        return node.marks.reduce((value, mark) => {
+            if (supportedMarks.includes(mark.type)) {
+                return renderMark(mark.type, value)
+            }
 
-      return value
-    }, result)
-  }
+            return value
+        }, result)
+    }
 
-  return result
+    return result
 }
 
 type Node = Document | Block | Inline | Text
 
 interface Props {
-  node: Node
-  allTags: TagCollection
-  noMargins?: boolean
+    node: Node
+    allTags: TagCollection
+    noMargins?: boolean
 }
 
 const { node, allTags, noMargins } = Astro.props
 
-const children = Array.isArray(node) ? node : 'content' in node ? node.content : [];
+const children = Array.isArray(node) ? node : 'content' in node ? node.content : []
 ---
+
 <style>
-  i {
-    font-family: var(--ibmPlexSans);
-  }
+    i {
+        font-family: var(--ibmPlexSans);
+    }
 </style>
 {
-  Array.isArray(children) &&
-    children.map((childNode) => (
-      <>
-        {childNode.nodeType === "text" && (
-            <Fragment set:html={renderText(childNode)} />
-        )}
-        {childNode.nodeType === BLOCKS.PARAGRAPH && (
-          <Paragraph inGrid noMargins={noMargins}>
-            <Astro.self node={childNode.content as Node} noMargins={noMargins} />
-          </Paragraph>
-        )}
-        {childNode.nodeType === BLOCKS.HEADING_2 && (
-            <H2><Astro.self node={childNode.content as Node} /></H2>
-        )}
-        {childNode.nodeType === BLOCKS.HEADING_3 && (
-            <H3><Astro.self node={childNode.content as Node} /></H3>
-        )}
-        {childNode.nodeType === BLOCKS.UL_LIST && (
-            <UL><Astro.self node={childNode.content as Node} /></UL>
-        )}
-        {childNode.nodeType === BLOCKS.LIST_ITEM && (
-            <LI><Astro.self node={childNode.content as Node} noMargins /></LI>
-        )}
-        {childNode.nodeType === BLOCKS.HR && (
-          <Hr />
-        )}
-        {childNode.nodeType === BLOCKS.QUOTE && (<BlockQuote>{childNode.content[0].content[0].value}</BlockQuote>)}
-        {childNode.nodeType === INLINES.HYPERLINK && 
-            childNode?.data?.uri && (
-              <ExternalLink href={childNode.data.uri}><Astro.self node={childNode.content as Node} noMargins={noMargins} /></ExternalLink>
-            )
-        }
-        {childNode.nodeType === INLINES.ENTRY_HYPERLINK && (
-          <>
-            {childNode.data.target.sys.contentType.sys.id === 'post' && (
-              <Link href={`/blogi/${childNode.data.target.fields.slug}/`}><Astro.self node={childNode.content} noMargins={noMargins} /></Link>
-            )}
-          </>
-        )}
-        {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY && (
+    Array.isArray(children) &&
+        children.map((childNode) => (
             <>
-                {childNode.data.target.sys.contentType.sys.id === 'curriculumVitae' && (
-                    <CurriculumVitae
-                        degrees={childNode.data.target.fields.degrees}
-                        degreesTitle={childNode.data.target.fields.degreesTitle}
-                        fiduciaries={childNode.data.target.fields.fiduciaries}
-                        fiduciariesTitle={childNode.data.target.fields.fiduciariesTitle}
-                        jobExperiences={childNode.data.target.fields.jobExperiences}
-                        jobExperiencesTitle={childNode.data.target.fields.jobExperiencesTitle}
-                    />
+                {childNode.nodeType === 'text' && <Fragment set:html={renderText(childNode)} />}
+                {childNode.nodeType === BLOCKS.PARAGRAPH && (
+                    <Paragraph inGrid noMargins={noMargins}>
+                        <Astro.self node={childNode.content as Node} noMargins={noMargins} />
+                    </Paragraph>
                 )}
-                {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
-                    <ExcerptList limit={childNode.data.target.fields.limit} allTags={allTags} />
+                {childNode.nodeType === BLOCKS.HEADING_2 && (
+                    <H2>
+                        <Astro.self node={childNode.content as Node} />
+                    </H2>
                 )}
-                {childNode.data.target.sys.contentType.sys.id === 'imageWithCaption' && (
-                  <ImageWithCaption image={childNode.data.target.fields.image} caption={childNode.data.target.fields.caption} />
+                {childNode.nodeType === BLOCKS.HEADING_3 && (
+                    <H3>
+                        <Astro.self node={childNode.content as Node} />
+                    </H3>
                 )}
+                {childNode.nodeType === BLOCKS.UL_LIST && (
+                    <UL>
+                        <Astro.self node={childNode.content as Node} />
+                    </UL>
+                )}
+                {childNode.nodeType === BLOCKS.LIST_ITEM && (
+                    <LI>
+                        <Astro.self node={childNode.content as Node} noMargins />
+                    </LI>
+                )}
+                {childNode.nodeType === BLOCKS.HR && <Hr />}
+                {childNode.nodeType === BLOCKS.QUOTE && (
+                    <BlockQuote>{childNode.content[0].content[0].value}</BlockQuote>
+                )}
+                {childNode.nodeType === INLINES.HYPERLINK && childNode?.data?.uri && (
+                    <ExternalLink href={childNode.data.uri}>
+                        <Astro.self node={childNode.content as Node} noMargins={noMargins} />
+                    </ExternalLink>
+                )}
+                {childNode.nodeType === INLINES.ENTRY_HYPERLINK && (
+                    <>
+                        {childNode.data.target.sys.contentType.sys.id === 'post' && (
+                            <Link href={`/blogi/${childNode.data.target.fields.slug}/`}>
+                                <Astro.self node={childNode.content} noMargins={noMargins} />
+                            </Link>
+                        )}
+                    </>
+                )}
+                {childNode.nodeType === BLOCKS.EMBEDDED_ENTRY && (
+                    <>
+                        {childNode.data.target.sys.contentType.sys.id === 'curriculumVitae' && (
+                            <CurriculumVitae
+                                degrees={childNode.data.target.fields.degrees}
+                                degreesTitle={childNode.data.target.fields.degreesTitle}
+                                fiduciaries={childNode.data.target.fields.fiduciaries}
+                                fiduciariesTitle={childNode.data.target.fields.fiduciariesTitle}
+                                jobExperiences={childNode.data.target.fields.jobExperiences}
+                                jobExperiencesTitle={childNode.data.target.fields.jobExperiencesTitle}
+                            />
+                        )}
+                        {childNode.data.target.sys.contentType.sys.id === 'excerptList' && (
+                            <ExcerptList allTags={allTags} limit={childNode.data.target.fields.limit} />
+                        )}
+                        {childNode.data.target.sys.contentType.sys.id === 'imageWithCaption' && (
+                            <ImageWithCaption
+                                caption={childNode.data.target.fields.caption}
+                                image={childNode.data.target.fields.image}
+                            />
+                        )}
+                    </>
+                )}
+                {childNode.nodeType === INLINES.EMBEDDED_ENTRY &&
+                    childNode.data.target.sys.contentType.sys.id === 'contactInfoLink' && (
+                        <ExternalLink href={childNode.data.target.fields.url} rel="me">
+                            {childNode.data.target.fields.username}
+                        </ExternalLink>
+                    )}
             </>
-        )}
-        {childNode.nodeType === INLINES.EMBEDDED_ENTRY && 
-            childNode.data.target.sys.contentType.sys.id === 'contactInfoLink' && (
-                <ExternalLink href={childNode.data.target.fields.url} rel="me">{childNode.data.target.fields.username}</ExternalLink>
-            )
-        }
-      </>
-    ))
+        ))
 }

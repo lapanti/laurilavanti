@@ -1,24 +1,29 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
 import { Icon } from 'astro-icon/components'
+
 import { colors, sizes } from '../lib/styles'
 
 interface Props {
-    title: string
-    shareUrl: string
     ariaLabel: string
+    shareUrl: string
+    title: string
 }
 
 const { title, shareUrl, ariaLabel } = Astro.props
 ---
-<style define:vars={{
-    colorsFacebook: colors.facebook,
-    colorsThreads: colors.threads,
-    colorsBluesky: colors.bluesky,
-    colorsLinkedin: colors.linkedin,
-    sizes05: sizes[0.5],
-    sizes1: sizes[1],
-    sizes2: sizes[2],
-}}>
+
+<style
+    define:vars={{
+        colorsBluesky: colors.bluesky,
+        colorsFacebook: colors.facebook,
+        colorsLinkedin: colors.linkedin,
+        colorsThreads: colors.threads,
+        sizes05: sizes[0.5],
+        sizes1: sizes[1],
+        sizes2: sizes[2],
+    }}
+>
     aside {
         display: flex;
         flex-direction: row;
@@ -37,7 +42,7 @@ const { title, shareUrl, ariaLabel } = Astro.props
         flex-direction: row;
         margin-right: var(--sizes05);
     }
-    
+
     svg {
         display: inline-block;
         height: var(--sizes1);
@@ -64,30 +69,35 @@ const { title, shareUrl, ariaLabel } = Astro.props
 </style>
 <aside aria-label={ariaLabel}>
     <span class="share">Jaa:</span>
-    <a rel="noopener noreferrer" href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`} title="Jaa Facebookissa" aria-label="Jaa Facebookissa">
+    <a
+        aria-label="Jaa Facebookissa"
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`}
+        rel="noopener noreferrer"
+        title="Jaa Facebookissa"
+    >
         <Icon class="facebook" name="fa7-brands:facebook" />
     </a>
     <a
-        rel="noopener noreferrer"
-        href={`https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
-        title="Jaa Threadsissä"
         aria-label="Jaa Threadsissä"
+        href={`https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
+        rel="noopener noreferrer"
+        title="Jaa Threadsissä"
     >
         <Icon class="threads" name="fa7-brands:threads" />
     </a>
     <a
-        rel="noopener norefferer"
-        href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
-        title="Jaa Blueskyssa"
         aria-label="Jaa Blueskyssa"
+        href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
+        rel="noopener norefferer"
+        title="Jaa Blueskyssa"
     >
         <Icon class="bluesky" name="fa7-brands:bluesky" />
     </a>
     <a
-        rel="noopener norefferer"
-        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
-        title="Jaa LinkedInissä"
         aria-label="Jaa LinkedInissä"
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
+        rel="noopener norefferer"
+        title="Jaa LinkedInissä"
     >
         <Icon class="linkedin" name="fa7-brands:linkedin" />
     </a>

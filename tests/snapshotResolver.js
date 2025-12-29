@@ -1,7 +1,6 @@
 import path from 'path'
 
 module.exports = {
-
     /** Resolve path from test to snapshot path. The inverse of @see resolveTestPath */
     resolveSnapshotPath: (testPath, snapshotExtension) => {
         if (testPath.includes('src')) {

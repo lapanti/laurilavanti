@@ -1,22 +1,26 @@
 ---
-import { sizes, typographics } from "../lib/styles"
+/* eslint-disable astro/no-unused-css-selector */
+import { sizes, typographics } from '../lib/styles'
 
 interface Props {
     inGrid?: boolean
     itemProp?: string
-    smallMarginTop?: boolean
     noMargins?: boolean
+    smallMarginTop?: boolean
 }
 
 const { inGrid, itemProp, smallMarginTop, noMargins } = Astro.props
 ---
-<style define:vars={{
-    marginBottom: noMargins ? 0 : sizes[1],
-    marginTop: noMargins ? 0 : smallMarginTop ? sizes[0.25] : sizes[1],
-    bodyFontWeight: typographics.body.fontWeight,
-    bodyFontSize: typographics.body.fontSize,
-    bodyLineHeight: typographics.body.lineHeight,
-}}>
+
+<style
+    define:vars={{
+        bodyFontSize: typographics.body.fontSize,
+        bodyFontWeight: typographics.body.fontWeight,
+        bodyLineHeight: typographics.body.lineHeight,
+        marginBottom: noMargins ? 0 : sizes[1],
+        marginTop: noMargins ? 0 : smallMarginTop ? sizes[0.25] : sizes[1],
+    }}
+>
     p {
         margin-bottom: var(--marginBottom);
         margin-top: var(--marginTop);
@@ -31,6 +35,6 @@ const { inGrid, itemProp, smallMarginTop, noMargins } = Astro.props
         margin-top: 0;
     }
 </style>
-<p style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }} itemprop={itemProp}>
+<p itemprop={itemProp} style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }}>
     <slot />
 </p>

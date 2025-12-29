@@ -1,33 +1,38 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
+import type { TagCollection, TagLink } from 'contentful'
+import type { Image } from '../types/contentful'
+
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
-import { colors, sizes, HEADER_SIZE, CONTENT_PADDING } from '../lib/styles'
-import H1 from './titleBanner/H1.astro'
+import { colors, CONTENT_PADDING, HEADER_SIZE, sizes } from '../lib/styles'
 import Meta from './Meta.astro'
-import type { Image } from '../types/contentful'
-import type { TagCollection, TagLink } from 'contentful'
+import H1 from './titleBanner/H1.astro'
 
 interface Props {
-    title: string
-    heroImage?: Image
-    createdAt?: string
-    tags?: { sys: TagLink }[]
     allTags?: TagCollection
+    createdAt?: string
+    heroImage?: Image
+    tags?: { sys: TagLink }[]
+    title: string
 }
 
 const { title, heroImage, createdAt, tags, allTags } = Astro.props
 ---
-<style define:vars={{
-    colorsEvening: colors.evening,
-    colorsWhite: colors.white,
-    sizes05: sizes[0.5],
-    sizes1: sizes[1],
-    sizes5: sizes[5],
-    sizes375: sizes[37.5],
-    sizes45: sizes[45],
-    headerSize: HEADER_SIZE,
-    contentPadding: CONTENT_PADDING,
-}}>
+
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        colorsWhite: colors.white,
+        contentPadding: CONTENT_PADDING,
+        headerSize: HEADER_SIZE,
+        sizes05: sizes[0.5],
+        sizes1: sizes[1],
+        sizes5: sizes[5],
+        sizes45: sizes[45],
+        sizes375: sizes[37.5],
+    }}
+>
     .container {
         background-color: var(--colorsEvening);
         grid-column: 1 / -1;
@@ -46,7 +51,6 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
         padding-top: var(--sizes1);
     }
 
-    
     @media (min-width: 1200px) {
         .container {
             height: var(--sizes45);
@@ -62,7 +66,7 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
 
         .content .title-container,
         .content .image-container {
-                width: 50%;
+            width: 50%;
         }
 
         .title-container {
@@ -81,7 +85,17 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
     <div class="content">
         <div class="title-container">
             <H1>{title}</H1>
-            {(createdAt && tags && allTags) && <Meta bigDateTime ariaLabel={`Kirjoituksen ${title} meta-tiedot`} date={createdAt} tags={tags} allTags={allTags} />}
+            {
+                createdAt && tags && allTags && (
+                    <Meta
+                        allTags={allTags}
+                        ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
+                        bigDateTime
+                        date={createdAt}
+                        tags={tags}
+                    />
+                )
+            }
         </div>
         <style>
             .image-container {
@@ -101,18 +115,22 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
             }
         </style>
         <div class="image-container">
-            {heroImage?.fields?.file?.url && (<Picture
-                src={`https:${heroImage.fields.file.url}`}
-                layout="full-width"
-                sizes="(max-width: 1200px) 100vw, 50vw"
-                widths={[360, 576, 768, 992, 1200, 1280, 2560]}
-                fit="cover"
-                formats={['avif', 'webp']}
-                alt={heroImage.fields.description ?? null}
-                width="768"
-                height="588"
-                priority
-            />)}
+            {
+                heroImage?.fields?.file?.url && (
+                    <Picture
+                        alt={heroImage.fields.description ?? null}
+                        fit="cover"
+                        formats={['avif', 'webp']}
+                        height="588"
+                        layout="full-width"
+                        priority
+                        sizes="(max-width: 1200px) 100vw, 50vw"
+                        src={`https:${heroImage.fields.file.url}`}
+                        width="768"
+                        widths={[360, 576, 768, 992, 1200, 1280, 2560]}
+                    />
+                )
+            }
         </div>
     </div>
 </div>

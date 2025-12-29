@@ -9,25 +9,28 @@ interface Props {
 
 const { title, subtitle, secondaryTitle } = Astro.props
 ---
-<style define:vars={{
-    h1FontFamily: typographics.h1.fontFamily,
-    h1FontWeight: typographics.h1.fontWeight,
-    h1FontSize: typographics.h1.fontSize,
-    h1LineHeight: typographics.h1.lineHeight,
-    h2FontFamily: typographics.h2.fontFamily,
-    h2FontWeight: typographics.h2.fontWeight,
-    h2FontSize: typographics.h2.fontSize,
-    h2LineHeight: typographics.h2.lineHeight,
-    ingressFontWeight: typographics.ingress.fontWeight,
-    ingressFontSize: typographics.ingress.fontSize,
-    ingressLineHeight: typographics.ingress.lineHeight,
-    colorsPeach: colors.peach,
-    colorsWhite: colors.white,
-    sizes0875: sizes[0.875],
-    sizes15: sizes[1.5],
-    sizes3: sizes[3],
-    sizes375: sizes[3.75],
-}}>
+
+<style
+    define:vars={{
+        colorsPeach: colors.peach,
+        colorsWhite: colors.white,
+        h1FontFamily: typographics.h1.fontFamily,
+        h1FontSize: typographics.h1.fontSize,
+        h1FontWeight: typographics.h1.fontWeight,
+        h1LineHeight: typographics.h1.lineHeight,
+        h2FontFamily: typographics.h2.fontFamily,
+        h2FontSize: typographics.h2.fontSize,
+        h2FontWeight: typographics.h2.fontWeight,
+        h2LineHeight: typographics.h2.lineHeight,
+        ingressFontSize: typographics.ingress.fontSize,
+        ingressFontWeight: typographics.ingress.fontWeight,
+        ingressLineHeight: typographics.ingress.lineHeight,
+        sizes0875: sizes[0.875],
+        sizes3: sizes[3],
+        sizes15: sizes[1.5],
+        sizes375: sizes[3.75],
+    }}
+>
     div {
         color: var(--colorsWhite);
         display: flex;

@@ -1,13 +1,14 @@
 ---
 import type { TagCollection, TagLink } from 'contentful'
+
 import { colors, sizes, typographics } from '../lib/styles'
 
 interface Props {
+    allTags: TagCollection
+    ariaLabel: string
     bigDateTime?: boolean
     date: string
     tags: { sys: TagLink }[]
-    ariaLabel: string
-    allTags: TagCollection
 }
 
 const { bigDateTime, date, tags, ariaLabel, allTags } = Astro.props
@@ -16,18 +17,23 @@ const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')
 const dateToDisplay = `${day}.${month}.${year}`
 
-const tagsToRender = tags.map((tag) => allTags.items.find((aTag) => aTag.sys.id === tag.sys.id)).filter((tag) => tag !== undefined)
+const tagsToRender = tags
+    .map((tag) => allTags.items.find((aTag) => aTag.sys.id === tag.sys.id))
+    .filter((tag) => tag !== undefined)
 ---
-<style define:vars={{
-    sizes0: sizes[0],
-    sizes05: sizes[0.5],
-    sizes1: sizes[1],
-    definitionFontSize: typographics.definition.fontSize,
-    definitionLineHeight: typographics.definition.lineHeight,
-    definitionFontWeight: typographics.definition.fontWeight,
-    definitionTextTransform: typographics.definition.textTransform,
-    colorsMoss: colors.moss,
-}}>
+
+<style
+    define:vars={{
+        colorsMoss: colors.moss,
+        definitionFontSize: typographics.definition.fontSize,
+        definitionFontWeight: typographics.definition.fontWeight,
+        definitionLineHeight: typographics.definition.lineHeight,
+        definitionTextTransform: typographics.definition.textTransform,
+        sizes0: sizes[0],
+        sizes05: sizes[0.5],
+        sizes1: sizes[1],
+    }}
+>
     aside {
         display: flex;
         flex-direction: column;
@@ -58,14 +64,16 @@ const tagsToRender = tags.map((tag) => allTags.items.find((aTag) => aTag.sys.id 
     }
 </style>
 <aside aria-label={ariaLabel}>
-    <time datetime={dateOnly} style={{ ...(bigDateTime ? typographics.ingress : {})}}>{dateToDisplay}</time>
-    {tags.length > 0 && (
-        <ul>
-            {tagsToRender.map((tag) => (
-                <li>
-                    <a href={`/kategoria/${tag.sys.id}/`}>#{tag.name}</a>
-                </li>
-            ))}
-        </ul>
-    )}
+    <time datetime={dateOnly} style={{ ...(bigDateTime ? typographics.ingress : {}) }}>{dateToDisplay}</time>
+    {
+        tags.length > 0 && (
+            <ul>
+                {tagsToRender.map((tag) => (
+                    <li>
+                        <a href={`/kategoria/${tag.sys.id}/`}>#{tag.name}</a>
+                    </li>
+                ))}
+            </ul>
+        )
+    }
 </aside>

@@ -1,14 +1,15 @@
 ---
+import type { Page } from '../types/contentful'
+
 import Layout from '../layouts/Layout.astro'
-import { contentfulClient } from "../lib/contentful";
-import type { Page } from '../types/contentful';
+import { contentfulClient } from '../lib/contentful'
 
 const pages = await contentfulClient.getEntries<Page>({
-    content_type: "page",
-    include: 10,
+    content_type: 'page',
     /* @ts-expect-error apparently Contentful doesn't know how to make their client typesafe */
     'fields.slug': 'index',
-});
+    include: 10,
+})
 
 const tags = await contentfulClient.getTags()
 
@@ -17,15 +18,15 @@ const [frontPage] = pages.items
 ---
 
 <Layout
-    title={frontPage.fields.title}
-    subtitle={frontPage.fields.subtitle}
-    secondaryTitle={frontPage.fields.secondaryTitle}
-    backgroundImage={frontPage.fields.backgroundImage}
-    heroImage={frontPage.fields.image}
-    description={frontPage.fields.description}
-    body={frontPage.fields.body}
-    slug="index"
-    type={frontPage.fields.jsonLdType}
     allTags={tags}
+    backgroundImage={frontPage.fields.backgroundImage}
+    body={frontPage.fields.body}
+    description={frontPage.fields.description}
     heroBanner
+    heroImage={frontPage.fields.image}
+    secondaryTitle={frontPage.fields.secondaryTitle}
+    slug="index"
+    subtitle={frontPage.fields.subtitle}
+    title={frontPage.fields.title}
+    type={frontPage.fields.jsonLdType}
 />

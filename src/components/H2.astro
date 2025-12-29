@@ -7,13 +7,16 @@ interface Props {
 
 const { itemProp } = Astro.props
 ---
-<style define:vars={{
-    h2FontFamily: typographics.h2.fontFamily,
-    h2FontWeight: typographics.h2.fontWeight,
-    h2FontSize: typographics.h2.fontSize,
-    h2LineHeight: typographics.h2.lineHeight,
-    sizes1: sizes[1],
-}}>
+
+<style
+    define:vars={{
+        h2FontFamily: typographics.h2.fontFamily,
+        h2FontSize: typographics.h2.fontSize,
+        h2FontWeight: typographics.h2.fontWeight,
+        h2LineHeight: typographics.h2.lineHeight,
+        sizes1: sizes[1],
+    }}
+>
     h2 {
         font-family: var(--h2FontFamily);
         font-weight: var(--h2FontWeight);

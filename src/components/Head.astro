@@ -1,16 +1,17 @@
 ---
-import { Font } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
-
-import { BLOGPOSTING, JSON_LD_TYPES, WEBPAGE, WEBSITE, type JsonLdType } from '../lib/jsonld'
 import type { Image } from '../types/contentful'
 
+import { Font } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+
+import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '../lib/jsonld'
+
 interface Props {
+    createdAt?: string
     description?: string
+    image?: Image
+    slug?: string
     title: string
     type?: JsonLdType
-    slug?: string
-    image?: Image
-    createdAt?: string
     updatedAt?: string
 }
 
@@ -48,18 +49,18 @@ const jsonLd = JSON.stringify({
     url: canonical,
     ...(image?.fields?.file?.url
         ? {
-            image: `https${image.fields.file.url}`,
-        }
+              image: `https${image.fields.file.url}`,
+          }
         : {}),
     ...(type === BLOGPOSTING
         ? {
-                dateModified: updatedAt ?? createdAt,
-                datePublished: createdAt,
-                mainEntityOfPage: {
-                    '@id': canonical,
-                    '@type': WEBPAGE,
-                },
-            }
+              dateModified: updatedAt ?? createdAt,
+              datePublished: createdAt,
+              mainEntityOfPage: {
+                  '@id': canonical,
+                  '@type': WEBPAGE,
+              },
+          }
         : {}),
     ...(type === WEBSITE
         ? {
@@ -88,7 +89,7 @@ const keywords = [
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
 <meta content={keywords} name="keywords" />
 <meta content={title} name="og:title" />
 <meta content={name} name="author" />
@@ -101,30 +102,36 @@ const keywords = [
 <meta content="website" name="og:type" />
 <meta content={description} name="twitter:description" />
 <meta content="@laurilavanti@mastodontti.fi" name="fediverse:creator" />
-{canonical && (
-    <>
-        <meta content={canonical} name="og:url" />
-        <link href={canonical} rel="canonical" />
-    </>
-)}
-{image?.fields?.file?.url ? (
-    <>
-        <meta content={`https${image.fields.file.url}`} name="og:image" />
-        <meta content={`${image.fields.file.details.image?.height}`} name="og:image:height" />
-        <meta content={`${image.fields.file.details.image?.width}`} name="og:image:width" />
-        <meta content="summary_large_image" name="twitter:card" />
-    </>
-) : (<meta content="summary" name="twitter:card" />)}
-<meta name="theme_color" content="#006275" />
-<meta name="apple-mobile-web-app-title" content="Lauri Lavanti" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="manifest" href="/app.webmanifest" />
+{
+    canonical && (
+        <>
+            <meta content={canonical} name="og:url" />
+            <link href={canonical} rel="canonical" />
+        </>
+    )
+}
+{
+    image?.fields?.file?.url ? (
+        <>
+            <meta content={`https${image.fields.file.url}`} name="og:image" />
+            <meta content={`${image.fields.file.details.image?.height}`} name="og:image:height" />
+            <meta content={`${image.fields.file.details.image?.width}`} name="og:image:width" />
+            <meta content="summary_large_image" name="twitter:card" />
+        </>
+    ) : (
+        <meta content="summary" name="twitter:card" />
+    )
+}
+<meta content="#006275" name="theme_color" />
+<meta content="Lauri Lavanti" name="apple-mobile-web-app-title" />
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+<link href="/favicon.ico" rel="shortcut icon" />
+<link href="/app.webmanifest" rel="manifest" />
 <title>{title === 'Lauri Lavanti' ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 <Font cssVariable="--ibmPlexMono" preload />
 <Font cssVariable="--ibmPlexSans" preload />
-<link crossorigin="" href="https://images.ctfassets.net" rel="preconnect">
-<link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect">
+<link crossorigin="" href="https://images.ctfassets.net" rel="preconnect" />
+<link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect" />

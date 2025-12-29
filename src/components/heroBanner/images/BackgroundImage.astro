@@ -1,8 +1,10 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
+import type { Image } from '../../../types/contentful'
+
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
 import { colors } from '../../../lib/styles'
-import type { Image } from '../../../types/contentful'
 
 interface Props {
     image?: Image
@@ -10,6 +12,7 @@ interface Props {
 
 const { image } = Astro.props
 ---
+
 <style define:vars={{ colorsEvening70: colors.evening70 }}>
     div {
         display: none;
@@ -27,7 +30,7 @@ const { image } = Astro.props
     picture:after {
         background-image: linear-gradient(var(--colorsEvening70), var(--colorsEvening70));
         bottom: 0;
-        content: "";
+        content: '';
         height: 100%;
         position: absolute;
         top: 0;
@@ -44,20 +47,22 @@ const { image } = Astro.props
     }
 </style>
 <>
-    {image?.fields?.file?.url && (
-        <div>
-            <Picture
-                src={`https:${image.fields.file.url}`}
-                alt=""
-                priority
-                layout="full-width"
-                fit="cover"
-                sizes="50vw"
-                formats={['avif', 'webp']}
-                widths={[576, 768, 992, 1280, 2560]}
-                width="768"
-                height="588"
-            />
-        </div>
-    )}
+    {
+        image?.fields?.file?.url && (
+            <div>
+                <Picture
+                    alt=""
+                    fit="cover"
+                    formats={['avif', 'webp']}
+                    height="588"
+                    layout="full-width"
+                    priority
+                    sizes="50vw"
+                    src={`https:${image.fields.file.url}`}
+                    width="768"
+                    widths={[576, 768, 992, 1280, 2560]}
+                />
+            </div>
+        )
+    }
 </>

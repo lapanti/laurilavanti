@@ -1,5 +1,6 @@
 ---
 import type { CurriculumVitae } from '../../types/contentful'
+
 import { sizes, typographics } from '../../lib/styles'
 import H2 from '../H2.astro'
 import LI from '../LI.astro'
@@ -11,29 +12,25 @@ const yearsToString = (startYear: number, endYear?: number): string => {
 }
 
 interface Props {
-    degreesTitle: CurriculumVitae['fields']['degreesTitle']
     degrees: CurriculumVitae['fields']['degrees']
-    fiduciariesTitle: CurriculumVitae['fields']['fiduciariesTitle']
+    degreesTitle: CurriculumVitae['fields']['degreesTitle']
     fiduciaries: CurriculumVitae['fields']['fiduciaries']
-    jobExperiencesTitle: CurriculumVitae['fields']['jobExperiencesTitle']
+    fiduciariesTitle: CurriculumVitae['fields']['fiduciariesTitle']
     jobExperiences: CurriculumVitae['fields']['jobExperiences']
+    jobExperiencesTitle: CurriculumVitae['fields']['jobExperiencesTitle']
 }
 
-const {
-    degreesTitle,
-    degrees,
-    fiduciariesTitle,
-    fiduciaries,
-    jobExperiencesTitle,
-    jobExperiences,
-} = Astro.props
+const { degreesTitle, degrees, fiduciariesTitle, fiduciaries, jobExperiencesTitle, jobExperiences } = Astro.props
 ---
-<style define:vars={{
-    bodyFontWeight: typographics.body.fontWeight,
-    bodyFontSize: typographics.body.fontSize,
-    bodyLineHeight: typographics.body.lineHeight,
-    sizes1: sizes[1],
-}}>
+
+<style
+    define:vars={{
+        bodyFontSize: typographics.body.fontSize,
+        bodyFontWeight: typographics.body.fontWeight,
+        bodyLineHeight: typographics.body.lineHeight,
+        sizes1: sizes[1],
+    }}
+>
     .container {
         grid-column-start: 3;
     }
@@ -51,40 +48,52 @@ const {
     <H2>{fiduciariesTitle}</H2>
     <div>
         <UL>
-            {fiduciaries?.filter((f) => f !== undefined).map(({ fields: { duty, organization, startYear, endYear } }) => (
-                <LI heavy={!endYear}>
-                    <span>{duty} </span>
-                    <i>
-                        {organization} {yearsToString(startYear, endYear)}
-                    </i>
-                </LI>
-            ))}
+            {
+                fiduciaries
+                    ?.filter((f) => f !== undefined)
+                    .map(({ fields: { duty, organization, startYear, endYear } }) => (
+                        <LI heavy={!endYear}>
+                            <span>{duty} </span>
+                            <i>
+                                {organization} {yearsToString(startYear, endYear)}
+                            </i>
+                        </LI>
+                    ))
+            }
         </UL>
     </div>
     <H2>{jobExperiencesTitle}</H2>
     <div>
         <UL>
-            {jobExperiences?.filter((j) => j !== undefined).map(({ fields: { title, company, location, startYear, endYear } }) => (
-                <LI heavy={!endYear}>
-                    <span>{title} </span>
-                    <i>
-                        {company} ({location}) {yearsToString(startYear, endYear)}
-                    </i>
-                </LI>
-            ))}
+            {
+                jobExperiences
+                    ?.filter((j) => j !== undefined)
+                    .map(({ fields: { title, company, location, startYear, endYear } }) => (
+                        <LI heavy={!endYear}>
+                            <span>{title} </span>
+                            <i>
+                                {company} ({location}) {yearsToString(startYear, endYear)}
+                            </i>
+                        </LI>
+                    ))
+            }
         </UL>
     </div>
     <H2>{degreesTitle}</H2>
     <div>
         <UL>
-            {degrees?.filter((d) => d !== undefined).map(({ fields: { degree, school, location, startYear, endYear } }) => (
-                <LI heavy={!endYear}>
-                    <span>{degree} </span>
-                    <i>
-                        {school} ({location}) {yearsToString(startYear, endYear)}
-                    </i>
-                </LI>
-            ))}
+            {
+                degrees
+                    ?.filter((d) => d !== undefined)
+                    .map(({ fields: { degree, school, location, startYear, endYear } }) => (
+                        <LI heavy={!endYear}>
+                            <span>{degree} </span>
+                            <i>
+                                {school} ({location}) {yearsToString(startYear, endYear)}
+                            </i>
+                        </LI>
+                    ))
+            }
         </UL>
     </div>
 </div>

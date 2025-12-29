@@ -1,8 +1,10 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
+import type { Image } from '../../types/contentful'
+
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
 import { sizes } from '../../lib/styles'
-import type { Image } from '../../types/contentful'
 import BackgroundImage from './images/BackgroundImage.astro'
 
 interface Props {
@@ -10,8 +12,9 @@ interface Props {
     image?: Image
 }
 
-const {backgroundImage, image } = Astro.props
+const { backgroundImage, image } = Astro.props
 ---
+
 <style define:vars={{ sizes5Negative: `-${sizes[5]}`, sizes8Negative: `-${sizes[8]}` }}>
     .container {
         display: flex;
@@ -31,7 +34,7 @@ const {backgroundImage, image } = Astro.props
             width: 50%;
             margin-top: 0;
         }
-        
+
         .image {
             bottom: 0;
             position: absolute;
@@ -42,18 +45,21 @@ const {backgroundImage, image } = Astro.props
 </style>
 <div class="container">
     <BackgroundImage image={backgroundImage} />
-    {image?.fields?.file?.url && (
-        <Picture
-            class="image"
-            src={`https:${image.fields.file.url}`}
-            alt={image.fields.description ?? null}
-            priority
-            layout="constrained"
-            fit="cover"
-            sizes="50vw"
-            formats={['avif', 'webp']}
-            widths={[560, 768, 992, 1280, 2560]}
-            width="560"
-            height="562"
-    />)}
+    {
+        image?.fields?.file?.url && (
+            <Picture
+                alt={image.fields.description ?? null}
+                class="image"
+                fit="cover"
+                formats={['avif', 'webp']}
+                height="562"
+                layout="constrained"
+                priority
+                sizes="50vw"
+                src={`https:${image.fields.file.url}`}
+                width="560"
+                widths={[560, 768, 992, 1280, 2560]}
+            />
+        )
+    }
 </div>

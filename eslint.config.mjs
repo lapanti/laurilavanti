@@ -1,7 +1,6 @@
 // @ts-check
 
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
-import react from 'eslint-plugin-react'
 import globals from 'globals'
 import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
@@ -9,10 +8,11 @@ import js from '@eslint/js'
 import testingLibrary from 'eslint-plugin-testing-library'
 import playwright from 'eslint-plugin-playwright'
 import stylistic from '@stylistic/eslint-plugin'
-import eslintPluginAstro from 'eslint-plugin-astro'
+import { configs } from 'eslint-plugin-astro'
 // eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 import restrictedGlobals from 'confusing-browser-globals'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 const testFileGlob = [
     'tests/__mocks__/**/*.js',
@@ -27,30 +27,15 @@ export default tseslint.config(
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
     tseslint.configs.recommended,
-    react.configs.flat.recommended,
-    react.configs.flat['jsx-runtime'],
-    eslintPluginAstro.configs.recommended,
-    eslintPluginAstro.configs['jsx-a11y-strict'],
+    configs.recommended,
+    configs['jsx-a11y-strict'],
     {
-        settings: {
-            react: {
-                version: 'detect',
-            },
-        },
-    },
-    {
-        files: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
+        files: ['**/*.js', '**/*.ts', '**/*.astro'],
         plugins: {
             'simple-import-sort': simpleImportSort,
-            react,
             '@stylistic': stylistic,
         },
         languageOptions: {
-            parserOptions: {
-                ecmaFeatures: {
-                    jsx: true,
-                },
-            },
             globals: {
                 ...globals.browser,
                 ...globals.node,
@@ -95,15 +80,6 @@ export default tseslint.config(
             'no-restricted-globals': ['error'].concat(restrictedGlobals),
             'nonblock-statement-body-position': ['error'],
             'prefer-arrow-callback': ['error'],
-            'react/jsx-sort-props': [
-                'error',
-                {
-                    callbacksLast: true,
-                    ignoreCase: true,
-                    reservedFirst: true,
-                    shorthandLast: true,
-                },
-            ],
             'simple-import-sort/exports': ['error'],
             'simple-import-sort/imports': ['error'],
             'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
@@ -123,15 +99,16 @@ export default tseslint.config(
             '@stylistic/spaced-comment': ['error', 'always'],
             '@stylistic/template-curly-spacing': ['error', 'never'],
         },
-        settings: {
-            'import/resolver': {
-                node: {
-                    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
-                },
-                typescript: {
-                    alwaysTryTypes: true,
-                },
-            },
+    },
+    {
+        files: ['**/*.astro'],
+        rules: {
+            'astro/no-set-text-directive': ['error'],
+            'astro/no-unused-css-selector': ['error'],
+            'astro/prefer-class-list-directive': ['error'],
+            'astro/prefer-object-class-list': ['error'],
+            'astro/prefer-split-class-list': ['error'],
+            'astro/sort-attributes': ['error'],
         },
     },
     {
@@ -150,7 +127,7 @@ export default tseslint.config(
          * This magic grouping moves `import type` statements as their own group.
          * @see https://github.com/lydell/eslint-plugin-simple-import-sort#custom-grouping
          */
-        files: ['**/*.ts', '**/*.tsx'],
+        files: ['**/*.ts', '**/*.tsx', '**/*.astro'],
         rules: {
             'simple-import-sort/imports': [
                 'error',
@@ -164,16 +141,6 @@ export default tseslint.config(
                     ],
                 },
             ],
-        },
-    },
-    {
-        files: ['**/*.astro'],
-        rules: {
-            'react/jsx-key': ['off'],
-            'react/jsx-no-undef': ['off'],
-            'react/jsx-no-target-blank': ['off'],
-            'react/no-unescaped-entities': ['off'],
-            'react/no-unknown-property': ['off'],
         },
     },
     {
@@ -202,5 +169,6 @@ export default tseslint.config(
     {
         files: ['tests/e2e/**/*.spec.ts', 'tests/e2e/pages/**/*.ts'],
         ...playwright.configs['flat/recommended'],
-    }
+    },
+    eslintPluginPrettierRecommended
 )

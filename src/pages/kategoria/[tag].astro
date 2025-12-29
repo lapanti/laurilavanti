@@ -1,26 +1,27 @@
 ---
-import type { Tag, TagCollection } from 'contentful';
-import ExcerptList from '../../components/ExcerptList.astro';
+import type { Tag, TagCollection } from 'contentful'
+
+import ExcerptList from '../../components/ExcerptList.astro'
 import Layout from '../../layouts/Layout.astro'
-import { contentfulClient } from "../../lib/contentful";
+import { contentfulClient } from '../../lib/contentful'
 
 export async function getStaticPaths() {
-  const tags = await contentfulClient.getTags()
+    const tags = await contentfulClient.getTags()
 
-  const pages = tags.items.map((item) => ({
-    params: { tag: item.sys.id },
-    props: {
-      tags,
-      tag: item
-    },
-  }));
+    const pages = tags.items.map((item) => ({
+        params: { tag: item.sys.id },
+        props: {
+            tag: item,
+            tags,
+        },
+    }))
 
-  return pages;
+    return pages
 }
 
 interface Props {
-  tags: TagCollection
-  tag: Tag
+    tags: TagCollection
+    tag: Tag
 }
 
 const { tags, tag } = Astro.props
@@ -28,6 +29,6 @@ const { tags, tag } = Astro.props
 const capitalizedName = `${tag.name[0].toUpperCase()}${tag.name.slice(1)}`
 ---
 
-<Layout title={capitalizedName} allTags={tags}>
+<Layout allTags={tags} title={capitalizedName}>
     <ExcerptList allTags={tags} tag={tag.sys.id} />
 </Layout>

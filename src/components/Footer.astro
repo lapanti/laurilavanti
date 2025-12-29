@@ -1,26 +1,29 @@
 ---
+import type { FooterNav } from '../types/contentful'
+
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
-import { contentfulClient } from '../lib/contentful'
-import { colors, gridAreas, sizes, CONTENT_PADDING, CONTENT_SIZE } from '../lib/styles'
 import greensLogo from '../assets/greensLogo3Languages.png'
-import Link from './footer/Link.astro'
+import { contentfulClient } from '../lib/contentful'
+import { colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../lib/styles'
 import InstagramLink from './footer/InstagramLink.astro'
+import Link from './footer/Link.astro'
 import TikTokLink from './footer/TikTokLink.astro'
-import type { FooterNav } from '../types/contentful'
 
 /** Only one footer nav there */
 const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5dRVby')
 ---
 
-<style define:vars={{ 
-    colorsEvening: colors.evening,
-    colorsWhite: colors.white,
-    gridAreasFooter: gridAreas.footer,
-    sizes15: sizes[1.5],
-    contentPadding: CONTENT_PADDING,
-    contentSize: CONTENT_SIZE,
-}}>
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        colorsWhite: colors.white,
+        contentPadding: CONTENT_PADDING,
+        contentSize: CONTENT_SIZE,
+        gridAreasFooter: gridAreas.footer,
+        sizes15: sizes[1.5],
+    }}
+>
     footer {
         align-items: center;
         background-color: var(--colorsEvening);
@@ -70,24 +73,23 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
         <div>
             {/* @ts-expect-error for some reason Picture has issues */}
             <Picture
-                formats={['avif', 'webp']}
                 alt='Vihreiden logo ja teksti "Vihreät De Gröna The Greens"'
-                fit="contain"
-                src={greensLogo}
                 densities={[1, 2, 4]}
+                fit="contain"
+                formats={['avif', 'webp']}
+                src={greensLogo}
                 width={200}
             />
         </div>
         <ul>
             {
                 (footerNav?.fields?.links as FooterNav['fields']['links'] | undefined)?.map((link) =>
-                    !link ? null :
-                    link.fields.icon === 'instagram' ? (
+                    !link ? null : link.fields.icon === 'instagram' ? (
                         <InstagramLink title={link.fields.title} url={link.fields.url} />
                     ) : link.fields.icon === 'tiktok' ? (
                         <TikTokLink title={link.fields.title} url={link.fields.url} />
                     ) : (
-                        <Link title={link.fields.title} icon={link.fields.icon} url={link.fields.url} />
+                        <Link icon={link.fields.icon} title={link.fields.title} url={link.fields.url} />
                     )
                 )
             }

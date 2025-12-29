@@ -1,5 +1,5 @@
-import type { Asset, LocaleCode } from "contentful";
-import type { TypeCurriculumVitae, TypeFooterNav, TypeMainNav, TypePage, TypePost } from "./contentfulCodegen";
+import type { Asset, LocaleCode } from 'contentful'
+import type { TypeCurriculumVitae, TypeFooterNav, TypeMainNav, TypePage, TypePost } from './contentfulCodegen'
 
 export type LC = LocaleCode
 export type WITH_LINKS = 'WITHOUT_LINK_RESOLUTION'

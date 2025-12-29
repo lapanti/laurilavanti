@@ -1,26 +1,29 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
+import type { TagCollection, TagLink } from 'contentful'
+import type { Image } from '../../types/contentful'
+
 import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
 
 import { colors, sizes } from '../../lib/styles'
 import H2 from '../H2.astro'
-import Paragraph from '../Paragraph.astro'
 import Meta from '../Meta.astro'
-import type { Image } from '../../types/contentful'
-import type { TagCollection, TagLink } from 'contentful'
+import Paragraph from '../Paragraph.astro'
 
 interface Props {
-    title: string
-    excerpt?: string
-    slug?: string
-    image?: Image
-    date?: string
-    tags?: { sys: TagLink }[]
     allTags: TagCollection
+    date?: string
+    excerpt?: string
+    image?: Image
+    slug?: string
+    tags?: { sys: TagLink }[]
+    title: string
 }
 
 const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
 ---
-<style define:vars={{ colorsMoss: colors.moss, sizes01875: sizes[0.1875], sizes025: sizes[0.25], sizes35: sizes[35] }}>
+
+<style define:vars={{ colorsMoss: colors.moss, sizes025: sizes[0.25], sizes01875: sizes[0.1875], sizes35: sizes[35] }}>
     li {
         max-width: var(--sizes35);
     }
@@ -61,29 +64,35 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
     }
 </style>
 <li>
-    <article aria-label={title} itemtype="https://schema.org/CreativeWork" itemscope>
-        <a class="main-link" rel="permalink" href={`/${slug}/`}>
-            {image && <Picture
-                src={`https:${image.fields.file?.url}`}
-                sizes="(max-width: 560px) 100vw, 560px"
-                widths={[360, 560]}
-                formats={['avif', 'webp']}
-                fit="cover"
-                alt={image.fields.description ?? null}
-                width="560"
-                height="315"
-                class="excerpt-image"
-            />}
+    <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
+        <a class="main-link" href={`/${slug}/`} rel="permalink">
+            {
+                image && (
+                    <Picture
+                        alt={image.fields.description ?? null}
+                        class="excerpt-image"
+                        fit="cover"
+                        formats={['avif', 'webp']}
+                        height="315"
+                        sizes="(max-width: 560px) 100vw, 560px"
+                        src={`https:${image.fields.file?.url}`}
+                        width="560"
+                        widths={[360, 560]}
+                    />
+                )
+            }
             <div>
                 <H2 itemProp="headline">{title}</H2>
             </div>
         </a>
-        {date && tags && <Meta ariaLabel={`Kirjoituksen "${title}" meta-tiedot`} date={date} allTags={allTags} tags={tags} />}
+        {
+            date && tags && (
+                <Meta allTags={allTags} ariaLabel={`Kirjoituksen "${title}" meta-tiedot`} date={date} tags={tags} />
+            )
+        }
         <Paragraph itemProp="description" smallMarginTop>
             {excerpt}{' '}
-            <a class="read-more" rel="permalink" href={`/${slug}/`}>
-                Lue lisää »
-            </a>
+            <a class="read-more" href={`/${slug}/`} rel="permalink"> Lue lisää » </a>
         </Paragraph>
     </article>
 </li>

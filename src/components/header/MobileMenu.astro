@@ -1,6 +1,8 @@
 ---
-import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
+/* eslint-disable astro/no-unused-css-selector */
 import type { Page } from '../../types/contentful'
+
+import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
@@ -10,23 +12,26 @@ interface Props {
 
 const { links } = Astro.props
 ---
-<style define:vars={{
-    contentPadding: CONTENT_PADDING,
-    contentSize: CONTENT_SIZE,
-    colorsEvening: colors.evening,
-    colorsPeach: colors.peach,
-    sizes025: sizes[0.25],
-    sizes05: sizes[0.5],
-    sizes25: sizes[2.5],
-    sizes3: sizes[3],
-    headerSize: HEADER_SIZE,
-}}>
+
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        colorsPeach: colors.peach,
+        contentPadding: CONTENT_PADDING,
+        contentSize: CONTENT_SIZE,
+        headerSize: HEADER_SIZE,
+        sizes05: sizes[0.5],
+        sizes025: sizes[0.25],
+        sizes3: sizes[3],
+        sizes25: sizes[2.5],
+    }}
+>
     .container {
         align-items: center;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-left:  var(--contentPadding);
+        margin-left: var(--contentPadding);
         margin-right: var(--contentPadding);
         width: var(--contentSize);
     }
@@ -43,7 +48,7 @@ const { links } = Astro.props
         justify-content: flex-end;
     }
 
-    input[type="checkbox"] {
+    input[type='checkbox'] {
         position: absolute;
         display: block;
         height: var(--sizes3);
@@ -81,7 +86,7 @@ const { links } = Astro.props
     .line1 {
         transform-origin: 0% 0%;
     }
-    
+
     .line2 {
         transition: transform 0.1s ease-in-out;
     }
@@ -92,7 +97,13 @@ const { links } = Astro.props
 
     .links {
         align-items: center;
-        background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 25%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.15) 25%,
+            rgba(255, 255, 255, 0) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
         background-color: var(--colorsEvening);
         display: flex;
         flex-direction: column;
@@ -112,23 +123,23 @@ const { links } = Astro.props
         opacity: 0;
     }
 
-    .container input[type="checkbox"]:checked ~ div > .line1 {
+    .container input[type='checkbox']:checked ~ div > .line1 {
         transform: rotate(45deg);
     }
 
-    .container input[type="checkbox"]:checked ~ div > .line2 {
+    .container input[type='checkbox']:checked ~ div > .line2 {
         transform: scaleY(0);
     }
 
-    .container input[type="checkbox"]:checked ~ div > .line3 {
+    .container input[type='checkbox']:checked ~ div > .line3 {
         transform: rotate(-45deg);
     }
 
-    .container input[type="checkbox"]:checked ~ .links {
+    .container input[type='checkbox']:checked ~ .links {
         height: calc(100dvh - var(--headerSize));
     }
 
-    .container input[type="checkbox"]:checked ~ .links a {
+    .container input[type='checkbox']:checked ~ .links a {
         opacity: 100%;
     }
 
@@ -151,16 +162,22 @@ const { links } = Astro.props
         <MainNavigationLink />
     </div>
     <div>
-        <input type="checkbox" name="" id="mobile-hamburger" />
+        <input id="mobile-hamburger" name="" type="checkbox" />
         <div class="hamburger-lines-container">
-          <span class="line1" />
-          <span class="line2" />
-          <span class="line3" />
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
         </div>
         <div class="links">
-            {links.map((link) => (
-                <NavigationLink slug={link.fields.slug} title={link.fields.title} navigationTitle={link.fields.navigationTitle} />
-            ))}
+            {
+                links.map((link) => (
+                    <NavigationLink
+                        navigationTitle={link.fields.navigationTitle}
+                        slug={link.fields.slug}
+                        title={link.fields.title}
+                    />
+                ))
+            }
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
+import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from 'contentful'
 
 /**
  * Fields type definition for content type 'TypeContactInfo'
@@ -7,20 +7,19 @@ import type { ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleC
  * @memberof TypeContactInfo
  */
 export interface TypeContactInfoFields {
-
     /**
      * Field type definition for field 'titleToBeIgnored' (Title to be ignored)
      * @name Title to be ignored
      * @localized false
      */
-    titleToBeIgnored: EntryFieldTypes.Symbol<"Contact info">;
+    titleToBeIgnored: EntryFieldTypes.Symbol<'Contact info'>
 
     /**
      * Field type definition for field 'links' (Links)
      * @name Links
      * @localized false
      */
-    links?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeContactInfoLinkSkeleton>>;
+    links?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeContactInfoLinkSkeleton>>
 }
 
 /**
@@ -31,7 +30,7 @@ export interface TypeContactInfoFields {
  * @since 2022-06-19T18:24:19.260Z
  * @version 13
  */
-export type TypeContactInfoSkeleton = EntrySkeletonType<TypeContactInfoFields, "contactInfo">;
+export type TypeContactInfoSkeleton = EntrySkeletonType<TypeContactInfoFields, 'contactInfo'>
 
 /**
  * Entry type definition for content type 'contactInfo' (📇 Contact info)
@@ -42,7 +41,11 @@ export type TypeContactInfoSkeleton = EntrySkeletonType<TypeContactInfoFields, "
  * @version 13
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/contactInfo
  */
-export type TypeContactInfo<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeContactInfoSkeleton, Modifiers, Locales>;
+export type TypeContactInfo<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeContactInfoSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeContactInfoLink'
@@ -51,34 +54,35 @@ export type TypeContactInfo<Modifiers extends ChainModifiers, Locales extends Lo
  * @memberof TypeContactInfoLink
  */
 export interface TypeContactInfoLinkFields {
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized true
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'icon' (Icon)
      * @name Icon
      * @localized false
      */
-    icon: EntryFieldTypes.Symbol<"bluesky" | "envelope" | "facebook" | "instagram" | "linkedin" | "mastodon" | "threads" | "tiktok" | "twitter">;
+    icon: EntryFieldTypes.Symbol<
+        'bluesky' | 'envelope' | 'facebook' | 'instagram' | 'linkedin' | 'mastodon' | 'threads' | 'tiktok' | 'twitter'
+    >
 
     /**
      * Field type definition for field 'url' (URL)
      * @name URL
      * @localized false
      */
-    url: EntryFieldTypes.Symbol;
+    url: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'username' (Username)
      * @name Username
      * @localized false
      */
-    username: EntryFieldTypes.Symbol;
+    username: EntryFieldTypes.Symbol
 }
 
 /**
@@ -89,7 +93,7 @@ export interface TypeContactInfoLinkFields {
  * @since 2022-06-21T07:14:27.940Z
  * @version 15
  */
-export type TypeContactInfoLinkSkeleton = EntrySkeletonType<TypeContactInfoLinkFields, "contactInfoLink">;
+export type TypeContactInfoLinkSkeleton = EntrySkeletonType<TypeContactInfoLinkFields, 'contactInfoLink'>
 
 /**
  * Entry type definition for content type 'contactInfoLink' (🔗 Contact info link)
@@ -100,7 +104,11 @@ export type TypeContactInfoLinkSkeleton = EntrySkeletonType<TypeContactInfoLinkF
  * @version 15
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/contactInfoLink
  */
-export type TypeContactInfoLink<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeContactInfoLinkSkeleton, Modifiers, Locales>;
+export type TypeContactInfoLink<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeContactInfoLinkSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeCurriculumVitae'
@@ -109,55 +117,54 @@ export type TypeContactInfoLink<Modifiers extends ChainModifiers, Locales extend
  * @memberof TypeCurriculumVitae
  */
 export interface TypeCurriculumVitaeFields {
-
     /**
      * Field type definition for field 'internalName' (Internal name)
      * @name Internal name
      * @localized false
      */
-    internalName: EntryFieldTypes.Symbol;
+    internalName: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'fiduciariesTitle' (Fiduciaries title)
      * @name Fiduciaries title
      * @localized true
      */
-    fiduciariesTitle: EntryFieldTypes.Symbol;
+    fiduciariesTitle: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'fiduciaries' (Fiduciaries)
      * @name Fiduciaries
      * @localized false
      */
-    fiduciaries?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeFiduciariesSkeleton>>;
+    fiduciaries?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeFiduciariesSkeleton>>
 
     /**
      * Field type definition for field 'jobExperiencesTitle' (Job experiences title)
      * @name Job experiences title
      * @localized true
      */
-    jobExperiencesTitle: EntryFieldTypes.Symbol;
+    jobExperiencesTitle: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'jobExperiences' (Job experiences)
      * @name Job experiences
      * @localized false
      */
-    jobExperiences?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeJobExperienceSkeleton>>;
+    jobExperiences?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeJobExperienceSkeleton>>
 
     /**
      * Field type definition for field 'degreesTitle' (Degrees title)
      * @name Degrees title
      * @localized true
      */
-    degreesTitle: EntryFieldTypes.Symbol;
+    degreesTitle: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'degrees' (Degrees)
      * @name Degrees
      * @localized false
      */
-    degrees?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeEducationSkeleton>>;
+    degrees?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeEducationSkeleton>>
 }
 
 /**
@@ -168,7 +175,7 @@ export interface TypeCurriculumVitaeFields {
  * @since 2023-10-16T06:38:18.079Z
  * @version 3
  */
-export type TypeCurriculumVitaeSkeleton = EntrySkeletonType<TypeCurriculumVitaeFields, "curriculumVitae">;
+export type TypeCurriculumVitaeSkeleton = EntrySkeletonType<TypeCurriculumVitaeFields, 'curriculumVitae'>
 
 /**
  * Entry type definition for content type 'curriculumVitae' (🗃️ Curriculum Vitae)
@@ -179,7 +186,11 @@ export type TypeCurriculumVitaeSkeleton = EntrySkeletonType<TypeCurriculumVitaeF
  * @version 3
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/curriculumVitae
  */
-export type TypeCurriculumVitae<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeCurriculumVitaeSkeleton, Modifiers, Locales>;
+export type TypeCurriculumVitae<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeCurriculumVitaeSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeEducation'
@@ -188,48 +199,47 @@ export type TypeCurriculumVitae<Modifiers extends ChainModifiers, Locales extend
  * @memberof TypeEducation
  */
 export interface TypeEducationFields {
-
     /**
      * Field type definition for field 'internalName' (Internal name)
      * @name Internal name
      * @localized false
      */
-    internalName: EntryFieldTypes.Symbol;
+    internalName: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'school' (School)
      * @name School
      * @localized false
      */
-    school: EntryFieldTypes.Symbol;
+    school: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'location' (Location)
      * @name Location
      * @localized false
      */
-    location: EntryFieldTypes.Symbol;
+    location: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'degree' (Degree)
      * @name Degree
      * @localized false
      */
-    degree: EntryFieldTypes.Symbol;
+    degree: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'startYear' (Start year)
      * @name Start year
      * @localized false
      */
-    startYear: EntryFieldTypes.Integer;
+    startYear: EntryFieldTypes.Integer
 
     /**
      * Field type definition for field 'endYear' (End year)
      * @name End year
      * @localized false
      */
-    endYear?: EntryFieldTypes.Integer;
+    endYear?: EntryFieldTypes.Integer
 }
 
 /**
@@ -240,7 +250,7 @@ export interface TypeEducationFields {
  * @since 2023-10-16T03:58:12.146Z
  * @version 11
  */
-export type TypeEducationSkeleton = EntrySkeletonType<TypeEducationFields, "education">;
+export type TypeEducationSkeleton = EntrySkeletonType<TypeEducationFields, 'education'>
 
 /**
  * Entry type definition for content type 'education' (🎫 Education)
@@ -251,7 +261,11 @@ export type TypeEducationSkeleton = EntrySkeletonType<TypeEducationFields, "educ
  * @version 11
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/education
  */
-export type TypeEducation<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeEducationSkeleton, Modifiers, Locales>;
+export type TypeEducation<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeEducationSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeExcerptList'
@@ -260,27 +274,26 @@ export type TypeEducation<Modifiers extends ChainModifiers, Locales extends Loca
  * @memberof TypeExcerptList
  */
 export interface TypeExcerptListFields {
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized false
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'pinned' (Pinned)
      * @name Pinned
      * @localized false
      */
-    pinned?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypePageSkeleton | TypePostSkeleton>>;
+    pinned?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypePageSkeleton | TypePostSkeleton>>
 
     /**
      * Field type definition for field 'limit' (Limit)
      * @name Limit
      * @localized false
      */
-    limit?: EntryFieldTypes.Integer;
+    limit?: EntryFieldTypes.Integer
 }
 
 /**
@@ -291,7 +304,7 @@ export interface TypeExcerptListFields {
  * @since 2022-06-19T17:36:37.650Z
  * @version 15
  */
-export type TypeExcerptListSkeleton = EntrySkeletonType<TypeExcerptListFields, "excerptList">;
+export type TypeExcerptListSkeleton = EntrySkeletonType<TypeExcerptListFields, 'excerptList'>
 
 /**
  * Entry type definition for content type 'excerptList' (🪣 Excerpt List)
@@ -302,7 +315,11 @@ export type TypeExcerptListSkeleton = EntrySkeletonType<TypeExcerptListFields, "
  * @version 15
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/excerptList
  */
-export type TypeExcerptList<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeExcerptListSkeleton, Modifiers, Locales>;
+export type TypeExcerptList<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeExcerptListSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeFiduciaries'
@@ -311,41 +328,40 @@ export type TypeExcerptList<Modifiers extends ChainModifiers, Locales extends Lo
  * @memberof TypeFiduciaries
  */
 export interface TypeFiduciariesFields {
-
     /**
      * Field type definition for field 'internalName' (Internal name)
      * @name Internal name
      * @localized false
      */
-    internalName: EntryFieldTypes.Symbol;
+    internalName: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'organization' (Organization)
      * @name Organization
      * @localized false
      */
-    organization: EntryFieldTypes.Symbol;
+    organization: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'duty' (Duty)
      * @name Duty
      * @localized false
      */
-    duty: EntryFieldTypes.Symbol;
+    duty: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'startYear' (Start year)
      * @name Start year
      * @localized false
      */
-    startYear: EntryFieldTypes.Integer;
+    startYear: EntryFieldTypes.Integer
 
     /**
      * Field type definition for field 'endYear' (End year)
      * @name End year
      * @localized false
      */
-    endYear?: EntryFieldTypes.Integer;
+    endYear?: EntryFieldTypes.Integer
 }
 
 /**
@@ -356,7 +372,7 @@ export interface TypeFiduciariesFields {
  * @since 2023-10-16T03:57:49.422Z
  * @version 11
  */
-export type TypeFiduciariesSkeleton = EntrySkeletonType<TypeFiduciariesFields, "fiduciaries">;
+export type TypeFiduciariesSkeleton = EntrySkeletonType<TypeFiduciariesFields, 'fiduciaries'>
 
 /**
  * Entry type definition for content type 'fiduciaries' (🎫 Fiduciary)
@@ -367,7 +383,11 @@ export type TypeFiduciariesSkeleton = EntrySkeletonType<TypeFiduciariesFields, "
  * @version 11
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/fiduciaries
  */
-export type TypeFiduciaries<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeFiduciariesSkeleton, Modifiers, Locales>;
+export type TypeFiduciaries<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeFiduciariesSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeFooterLink'
@@ -376,27 +396,28 @@ export type TypeFiduciaries<Modifiers extends ChainModifiers, Locales extends Lo
  * @memberof TypeFooterLink
  */
 export interface TypeFooterLinkFields {
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized true
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'url' (URL)
      * @name URL
      * @localized false
      */
-    url: EntryFieldTypes.Symbol;
+    url: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'icon' (Icon)
      * @name Icon
      * @localized false
      */
-    icon?: EntryFieldTypes.Symbol<"bluesky" | "facebook" | "instagram" | "linkedin" | "mastodon" | "threads" | "twitter">;
+    icon?: EntryFieldTypes.Symbol<
+        'bluesky' | 'facebook' | 'instagram' | 'linkedin' | 'mastodon' | 'threads' | 'twitter'
+    >
 }
 
 /**
@@ -407,7 +428,7 @@ export interface TypeFooterLinkFields {
  * @since 2022-06-21T05:37:26.042Z
  * @version 9
  */
-export type TypeFooterLinkSkeleton = EntrySkeletonType<TypeFooterLinkFields, "footerLink">;
+export type TypeFooterLinkSkeleton = EntrySkeletonType<TypeFooterLinkFields, 'footerLink'>
 
 /**
  * Entry type definition for content type 'footerLink' (🔗 Footer link)
@@ -418,7 +439,11 @@ export type TypeFooterLinkSkeleton = EntrySkeletonType<TypeFooterLinkFields, "fo
  * @version 9
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/footerLink
  */
-export type TypeFooterLink<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeFooterLinkSkeleton, Modifiers, Locales>;
+export type TypeFooterLink<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeFooterLinkSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeFooterNav'
@@ -427,20 +452,19 @@ export type TypeFooterLink<Modifiers extends ChainModifiers, Locales extends Loc
  * @memberof TypeFooterNav
  */
 export interface TypeFooterNavFields {
-
     /**
      * Field type definition for field 'titleToBeIgnored' (Title to be ignored)
      * @name Title to be ignored
      * @localized false
      */
-    titleToBeIgnored: EntryFieldTypes.Symbol<"Footer nav">;
+    titleToBeIgnored: EntryFieldTypes.Symbol<'Footer nav'>
 
     /**
      * Field type definition for field 'links' (Links)
      * @name Links
      * @localized false
      */
-    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeContactInfoLinkSkeleton | TypeFooterLinkSkeleton>>;
+    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeContactInfoLinkSkeleton | TypeFooterLinkSkeleton>>
 }
 
 /**
@@ -451,7 +475,7 @@ export interface TypeFooterNavFields {
  * @since 2022-06-21T05:38:25.011Z
  * @version 7
  */
-export type TypeFooterNavSkeleton = EntrySkeletonType<TypeFooterNavFields, "footerNav">;
+export type TypeFooterNavSkeleton = EntrySkeletonType<TypeFooterNavFields, 'footerNav'>
 
 /**
  * Entry type definition for content type 'footerNav' (🍔 Footer nav)
@@ -462,7 +486,11 @@ export type TypeFooterNavSkeleton = EntrySkeletonType<TypeFooterNavFields, "foot
  * @version 7
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/footerNav
  */
-export type TypeFooterNav<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeFooterNavSkeleton, Modifiers, Locales>;
+export type TypeFooterNav<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeFooterNavSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeHomeTitle'
@@ -471,20 +499,19 @@ export type TypeFooterNav<Modifiers extends ChainModifiers, Locales extends Loca
  * @memberof TypeHomeTitle
  */
 export interface TypeHomeTitleFields {
-
     /**
      * Field type definition for field 'titleToBeIgnored' (Title to be ignored)
      * @name Title to be ignored
      * @localized false
      */
-    titleToBeIgnored: EntryFieldTypes.Symbol<"Home title">;
+    titleToBeIgnored: EntryFieldTypes.Symbol<'Home title'>
 
     /**
      * Field type definition for field 'empty' (Empty)
      * @name Empty
      * @localized false
      */
-    empty?: EntryFieldTypes.Boolean;
+    empty?: EntryFieldTypes.Boolean
 }
 
 /**
@@ -495,7 +522,7 @@ export interface TypeHomeTitleFields {
  * @since 2022-06-19T18:24:00.934Z
  * @version 7
  */
-export type TypeHomeTitleSkeleton = EntrySkeletonType<TypeHomeTitleFields, "homeTitle">;
+export type TypeHomeTitleSkeleton = EntrySkeletonType<TypeHomeTitleFields, 'homeTitle'>
 
 /**
  * Entry type definition for content type 'homeTitle' (🏠 Home title)
@@ -506,7 +533,11 @@ export type TypeHomeTitleSkeleton = EntrySkeletonType<TypeHomeTitleFields, "home
  * @version 7
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/homeTitle
  */
-export type TypeHomeTitle<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeHomeTitleSkeleton, Modifiers, Locales>;
+export type TypeHomeTitle<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeHomeTitleSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeImageWithCaption'
@@ -515,27 +546,26 @@ export type TypeHomeTitle<Modifiers extends ChainModifiers, Locales extends Loca
  * @memberof TypeImageWithCaption
  */
 export interface TypeImageWithCaptionFields {
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized false
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'image' (Image)
      * @name Image
      * @localized false
      */
-    image: EntryFieldTypes.AssetLink;
+    image: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'caption' (Caption)
      * @name Caption
      * @localized true
      */
-    caption: EntryFieldTypes.Symbol;
+    caption: EntryFieldTypes.Symbol
 }
 
 /**
@@ -546,7 +576,7 @@ export interface TypeImageWithCaptionFields {
  * @since 2022-06-18T17:35:41.420Z
  * @version 15
  */
-export type TypeImageWithCaptionSkeleton = EntrySkeletonType<TypeImageWithCaptionFields, "imageWithCaption">;
+export type TypeImageWithCaptionSkeleton = EntrySkeletonType<TypeImageWithCaptionFields, 'imageWithCaption'>
 
 /**
  * Entry type definition for content type 'imageWithCaption' (🩻 Image With Caption)
@@ -557,7 +587,11 @@ export type TypeImageWithCaptionSkeleton = EntrySkeletonType<TypeImageWithCaptio
  * @version 15
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/imageWithCaption
  */
-export type TypeImageWithCaption<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeImageWithCaptionSkeleton, Modifiers, Locales>;
+export type TypeImageWithCaption<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeImageWithCaptionSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeJobExperience'
@@ -566,48 +600,47 @@ export type TypeImageWithCaption<Modifiers extends ChainModifiers, Locales exten
  * @memberof TypeJobExperience
  */
 export interface TypeJobExperienceFields {
-
     /**
      * Field type definition for field 'internalName' (Internal name)
      * @name Internal name
      * @localized false
      */
-    internalName: EntryFieldTypes.Symbol;
+    internalName: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'company' (Company)
      * @name Company
      * @localized false
      */
-    company: EntryFieldTypes.Symbol;
+    company: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'location' (Location)
      * @name Location
      * @localized false
      */
-    location: EntryFieldTypes.Symbol;
+    location: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized false
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'startYear' (Start year)
      * @name Start year
      * @localized false
      */
-    startYear: EntryFieldTypes.Integer;
+    startYear: EntryFieldTypes.Integer
 
     /**
      * Field type definition for field 'endYear' (End year)
      * @name End year
      * @localized false
      */
-    endYear?: EntryFieldTypes.Integer;
+    endYear?: EntryFieldTypes.Integer
 }
 
 /**
@@ -618,7 +651,7 @@ export interface TypeJobExperienceFields {
  * @since 2023-10-16T04:01:27.432Z
  * @version 7
  */
-export type TypeJobExperienceSkeleton = EntrySkeletonType<TypeJobExperienceFields, "jobExperience">;
+export type TypeJobExperienceSkeleton = EntrySkeletonType<TypeJobExperienceFields, 'jobExperience'>
 
 /**
  * Entry type definition for content type 'jobExperience' (🎫 Job experience)
@@ -629,7 +662,11 @@ export type TypeJobExperienceSkeleton = EntrySkeletonType<TypeJobExperienceField
  * @version 7
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/jobExperience
  */
-export type TypeJobExperience<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeJobExperienceSkeleton, Modifiers, Locales>;
+export type TypeJobExperience<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeJobExperienceSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeMainNav'
@@ -638,20 +675,19 @@ export type TypeJobExperience<Modifiers extends ChainModifiers, Locales extends 
  * @memberof TypeMainNav
  */
 export interface TypeMainNavFields {
-
     /**
      * Field type definition for field 'titleToBeIgnored' (Title to be ignored)
      * @name Title to be ignored
      * @localized false
      */
-    titleToBeIgnored: EntryFieldTypes.Symbol<"Main nav">;
+    titleToBeIgnored: EntryFieldTypes.Symbol<'Main nav'>
 
     /**
      * Field type definition for field 'links' (Links)
      * @name Links
      * @localized false
      */
-    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypePageSkeleton>>;
+    links: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypePageSkeleton>>
 }
 
 /**
@@ -662,7 +698,7 @@ export interface TypeMainNavFields {
  * @since 2022-06-21T04:55:35.073Z
  * @version 7
  */
-export type TypeMainNavSkeleton = EntrySkeletonType<TypeMainNavFields, "mainNav">;
+export type TypeMainNavSkeleton = EntrySkeletonType<TypeMainNavFields, 'mainNav'>
 
 /**
  * Entry type definition for content type 'mainNav' (🍔 Main nav)
@@ -673,7 +709,11 @@ export type TypeMainNavSkeleton = EntrySkeletonType<TypeMainNavFields, "mainNav"
  * @version 7
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/mainNav
  */
-export type TypeMainNav<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeMainNavSkeleton, Modifiers, Locales>;
+export type TypeMainNav<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeMainNavSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypePage'
@@ -682,90 +722,89 @@ export type TypeMainNav<Modifiers extends ChainModifiers, Locales extends Locale
  * @memberof TypePage
  */
 export interface TypePageFields {
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized true
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'navigationTitle' (Navigation title)
      * @name Navigation title
      * @localized false
      */
-    navigationTitle: EntryFieldTypes.Symbol;
+    navigationTitle: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'subtitle' (Subtitle)
      * @name Subtitle
      * @localized true
      */
-    subtitle?: EntryFieldTypes.Symbol;
+    subtitle?: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'secondaryTitle' (Secondary title)
      * @name Secondary title
      * @localized true
      */
-    secondaryTitle?: EntryFieldTypes.Symbol;
+    secondaryTitle?: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'slug' (Slug)
      * @name Slug
      * @localized false
      */
-    slug: EntryFieldTypes.Symbol;
+    slug: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'description' (Description)
      * @name Description
      * @localized false
      */
-    description: EntryFieldTypes.Symbol;
+    description: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'body' (Body)
      * @name Body
      * @localized true
      */
-    body: EntryFieldTypes.RichText;
+    body: EntryFieldTypes.RichText
 
     /**
      * Field type definition for field 'image' (Image)
      * @name Image
      * @localized false
      */
-    image: EntryFieldTypes.AssetLink;
+    image: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'backgroundImage' (Background image)
      * @name Background image
      * @localized false
      */
-    backgroundImage?: EntryFieldTypes.AssetLink;
+    backgroundImage?: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'leftAlignedTitle' (Title alignment)
      * @name Title alignment
      * @localized false
      */
-    leftAlignedTitle: EntryFieldTypes.Boolean;
+    leftAlignedTitle: EntryFieldTypes.Boolean
 
     /**
      * Field type definition for field 'socialImage' (Social Image)
      * @name Social Image
      * @localized false
      */
-    socialImage?: EntryFieldTypes.AssetLink;
+    socialImage?: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'jsonLdType' (JSON-LD type)
      * @name JSON-LD type
      * @localized false
      */
-    jsonLdType: EntryFieldTypes.Symbol<"Person" | "WebPage" | "WebSite">;
+    jsonLdType: EntryFieldTypes.Symbol<'Person' | 'WebPage' | 'WebSite'>
 }
 
 /**
@@ -776,7 +815,7 @@ export interface TypePageFields {
  * @since 2022-06-19T18:22:24.481Z
  * @version 55
  */
-export type TypePageSkeleton = EntrySkeletonType<TypePageFields, "page">;
+export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>
 
 /**
  * Entry type definition for content type 'page' (🗏 Page)
@@ -787,7 +826,11 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, "page">;
  * @version 55
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/page
  */
-export type TypePage<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePageSkeleton, Modifiers, Locales>;
+export type TypePage<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypePageSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypePost'
@@ -796,83 +839,82 @@ export type TypePage<Modifiers extends ChainModifiers, Locales extends LocaleCod
  * @memberof TypePost
  */
 export interface TypePostFields {
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized true
      */
-    title: EntryFieldTypes.Symbol;
+    title: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'slug' (Slug)
      * @name Slug
      * @localized false
      */
-    slug?: EntryFieldTypes.Symbol;
+    slug?: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'excerpt' (Excerpt)
      * @name Excerpt
      * @localized true
      */
-    excerpt: EntryFieldTypes.Symbol;
+    excerpt: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'body' (Body)
      * @name Body
      * @localized true
      */
-    body: EntryFieldTypes.RichText;
+    body: EntryFieldTypes.RichText
 
     /**
      * Field type definition for field 'headerImage' (Header Image)
      * @name Header Image
      * @localized false
      */
-    headerImage: EntryFieldTypes.AssetLink;
+    headerImage: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'backgroundImage' (Background image)
      * @name Background image
      * @localized false
      */
-    backgroundImage?: EntryFieldTypes.AssetLink;
+    backgroundImage?: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'leftAlignedTitle' (Title alignment)
      * @name Title alignment
      * @localized false
      */
-    leftAlignedTitle: EntryFieldTypes.Boolean;
+    leftAlignedTitle: EntryFieldTypes.Boolean
 
     /**
      * Field type definition for field 'socialImage' (Social image)
      * @name Social image
      * @localized false
      */
-    socialImage?: EntryFieldTypes.AssetLink;
+    socialImage?: EntryFieldTypes.AssetLink
 
     /**
      * Field type definition for field 'oldSlugs' (Old slugs)
      * @name Old slugs
      * @localized false
      */
-    oldSlugs?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
+    oldSlugs?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
 
     /**
      * Field type definition for field 'publishDate' (Publish date)
      * @name Publish date
      * @localized false
      */
-    publishDate?: EntryFieldTypes.Date;
+    publishDate?: EntryFieldTypes.Date
 
     /**
      * Field type definition for field 'image' (Image)
      * @name Image
      * @localized false
      */
-    image: EntryFieldTypes.AssetLink;
+    image: EntryFieldTypes.AssetLink
 }
 
 /**
@@ -883,7 +925,7 @@ export interface TypePostFields {
  * @since 2022-06-18T17:31:59.190Z
  * @version 53
  */
-export type TypePostSkeleton = EntrySkeletonType<TypePostFields, "post">;
+export type TypePostSkeleton = EntrySkeletonType<TypePostFields, 'post'>
 
 /**
  * Entry type definition for content type 'post' (🪧 Post)
@@ -894,7 +936,11 @@ export type TypePostSkeleton = EntrySkeletonType<TypePostFields, "post">;
  * @version 53
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/post
  */
-export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePostSkeleton, Modifiers, Locales>;
+export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypePostSkeleton,
+    Modifiers,
+    Locales
+>
 
 /**
  * Fields type definition for content type 'TypeYearsFrom'
@@ -903,20 +949,19 @@ export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCod
  * @memberof TypeYearsFrom
  */
 export interface TypeYearsFromFields {
-
     /**
      * Field type definition for field 'internalName' (Internal name)
      * @name Internal name
      * @localized false
      */
-    internalName: EntryFieldTypes.Symbol;
+    internalName: EntryFieldTypes.Symbol
 
     /**
      * Field type definition for field 'dateToCountFrom' (Date to count from)
      * @name Date to count from
      * @localized false
      */
-    dateToCountFrom: EntryFieldTypes.Date;
+    dateToCountFrom: EntryFieldTypes.Date
 }
 
 /**
@@ -927,7 +972,7 @@ export interface TypeYearsFromFields {
  * @since 2024-08-31T15:58:07.944Z
  * @version 1
  */
-export type TypeYearsFromSkeleton = EntrySkeletonType<TypeYearsFromFields, "yearsFrom">;
+export type TypeYearsFromSkeleton = EntrySkeletonType<TypeYearsFromFields, 'yearsFrom'>
 
 /**
  * Entry type definition for content type 'yearsFrom' (📆 Years from)
@@ -938,4 +983,8 @@ export type TypeYearsFromSkeleton = EntrySkeletonType<TypeYearsFromFields, "year
  * @version 1
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/yearsFrom
  */
-export type TypeYearsFrom<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeYearsFromSkeleton, Modifiers, Locales>;
+export type TypeYearsFrom<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeYearsFromSkeleton,
+    Modifiers,
+    Locales
+>

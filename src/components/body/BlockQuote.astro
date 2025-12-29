@@ -1,14 +1,17 @@
 ---
 import { colors, sizes, typographics } from '../../lib/styles'
 ---
-<style define:vars={{
-    fontStyle: typographics.blockQuote.fontStyle,
-    fontSize: typographics.blockQuote.fontSize,
-    fontWeight: typographics.blockQuote.fontWeight,
-    lineHeight: typographics.blockQuote.lineHeight,
-    colorsSand: colors.sand,
-    sizes05: sizes[0.5],
-}}>
+
+<style
+    define:vars={{
+        colorsSand: colors.sand,
+        fontSize: typographics.blockQuote.fontSize,
+        fontStyle: typographics.blockQuote.fontStyle,
+        fontWeight: typographics.blockQuote.fontWeight,
+        lineHeight: typographics.blockQuote.lineHeight,
+        sizes05: sizes[0.5],
+    }}
+>
     blockquote {
         font-family: var(--ibmPlexMono);
         font-style: var(--fontStyle);

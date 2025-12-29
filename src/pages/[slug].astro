@@ -1,44 +1,53 @@
 ---
+import type { TagCollection } from 'contentful'
+import type { Page } from '../types/contentful'
+
 import Layout from '../layouts/Layout.astro'
-import { contentfulClient } from "../lib/contentful";
-import type { Page } from '../types/contentful';
-import type { TagCollection } from 'contentful';
+import { contentfulClient } from '../lib/contentful'
 
 export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries<Page>({
-    content_type: "page",
-    include: 10,
-  });
+    const entries = await contentfulClient.getEntries<Page>({
+        content_type: 'page',
+        include: 10,
+    })
 
-  const tags = await contentfulClient.getTags()
+    const tags = await contentfulClient.getTags()
 
-  const pages = entries.items.map((item) => ({
-    params: { slug: item.fields.slug },
-    props: {
-      description: item.fields.description,
-      title: item.fields.title,
-      image: item.fields.image,
-      body: item.fields.body,
-      slug: item.fields.slug,
-      jsonLdType: item.fields.jsonLdType,
-      tags,
-    },
-  }));
+    const pages = entries.items.map((item) => ({
+        params: { slug: item.fields.slug },
+        props: {
+            body: item.fields.body,
+            description: item.fields.description,
+            image: item.fields.image,
+            jsonLdType: item.fields.jsonLdType,
+            slug: item.fields.slug,
+            tags,
+            title: item.fields.title,
+        },
+    }))
 
-  return pages;
+    return pages
 }
 
 interface Props {
-  description: Page['fields']['description']
-  title: Page['fields']['title']
-  slug: Page['fields']['slug']
-  body: Page['fields']['body']
-  image: Page['fields']['image']
-  jsonLdType: Page['fields']['jsonLdType']
-  tags: TagCollection
+    body: Page['fields']['body']
+    description: Page['fields']['description']
+    image: Page['fields']['image']
+    jsonLdType: Page['fields']['jsonLdType']
+    slug: Page['fields']['slug']
+    tags: TagCollection
+    title: Page['fields']['title']
 }
 
 const { description, title, image, body, slug, jsonLdType, tags } = Astro.props
 ---
 
-<Layout description={description} title={title} heroImage={image} body={body} slug={slug} type={jsonLdType} allTags={tags} />
+<Layout
+    allTags={tags}
+    body={body}
+    description={description}
+    heroImage={image}
+    slug={slug}
+    title={title}
+    type={jsonLdType}
+/>

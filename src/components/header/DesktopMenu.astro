@@ -1,8 +1,9 @@
 ---
-import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
-import NavigationLink from './components/NavigationLink.astro'
-import MainNavigationLink from './components/MainNavigationLink.astro'
 import type { Page } from '../../types/contentful'
+
+import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
+import MainNavigationLink from './components/MainNavigationLink.astro'
+import NavigationLink from './components/NavigationLink.astro'
 
 interface Props {
     links: Page[]
@@ -10,6 +11,7 @@ interface Props {
 
 const { links } = Astro.props
 ---
+
 <style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE, sizes25: sizes[2.5] }}>
     .container {
         display: none;
@@ -43,8 +45,14 @@ const { links } = Astro.props
         <MainNavigationLink />
     </div>
     <div>
-        {links.map((link) => (
-            <NavigationLink slug={link.fields.slug} title={link.fields.title} navigationTitle={link.fields.navigationTitle} />
-        ))}
+        {
+            links.map((link) => (
+                <NavigationLink
+                    navigationTitle={link.fields.navigationTitle}
+                    slug={link.fields.slug}
+                    title={link.fields.title}
+                />
+            ))
+        }
     </div>
 </div>

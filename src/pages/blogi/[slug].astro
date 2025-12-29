@@ -1,68 +1,72 @@
 ---
-import SocialShare from '../../components/SocialShare.astro';
+import type { TagCollection } from 'contentful'
+import type { Post } from '../../types/contentful'
+
+import ExcerptList from '../../components/ExcerptList.astro'
 import H2 from '../../components/H2.astro'
+import SocialShare from '../../components/SocialShare.astro'
 import Layout from '../../layouts/Layout.astro'
-import { contentfulClient } from "../../lib/contentful";
-import type { Post } from '../../types/contentful';
-import ExcerptList from '../../components/ExcerptList.astro';
-import type { TagCollection } from 'contentful';
-import { BLOGPOSTING } from '../../lib/jsonld';
+import { contentfulClient } from '../../lib/contentful'
+import { BLOGPOSTING } from '../../lib/jsonld'
 
 export async function getStaticPaths() {
-  const entries = await contentfulClient.getEntries<Post>({
-    content_type: "post",
-    include: 10,
-  });
+    const entries = await contentfulClient.getEntries<Post>({
+        content_type: 'post',
+        include: 10,
+    })
 
-  const tags = await contentfulClient.getTags()
+    const tags = await contentfulClient.getTags()
 
     const posts = entries.items.map((item) => ({
         params: { slug: `/${item.fields.slug}` },
         props: {
             allTags: tags,
             body: item.fields.body,
+            createdAt: item.sys.createdAt,
             description: item.fields.excerpt,
             image: item.fields.image,
-            title: item.fields.title,
             slug: item.fields.slug,
             tags: item.metadata.tags,
-            createdAt: item.sys.createdAt,
+            title: item.fields.title,
             updatedAt: item.sys.updatedAt,
         },
-    }));
+    }))
 
-  return posts;
+    return posts
 }
 
 interface Props {
     allTags: TagCollection
     body: Post['fields']['body']
+    createdAt: Post['sys']['createdAt']
     description: Post['fields']['excerpt']
     image: Post['fields']['image']
-    title: Post['fields']['title']
     slug: Post['fields']['slug']
     tags: Post['metadata']['tags']
-    createdAt: Post['sys']['createdAt']
+    title: Post['fields']['title']
     updatedAt: Post['sys']['updatedAt']
 }
 
 const { allTags, body, description, image, title, slug, tags, createdAt, updatedAt } = Astro.props
-
 ---
 
 <Layout
-  description={description}
-  body={body}
-  heroImage={image}
-  title={title}
-  allTags={allTags}
-  slug={`blogi/${slug}`}
-  createdAt={createdAt}
-  updatedAt={updatedAt}
-  tags={tags}
-  type={BLOGPOSTING}
+    allTags={allTags}
+    body={body}
+    createdAt={createdAt}
+    description={description}
+    heroImage={image}
+    slug={`blogi/${slug}`}
+    tags={tags}
+    title={title}
+    type={BLOGPOSTING}
+    updatedAt={updatedAt}
 >
-    <SocialShare ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`} shareUrl={`https://laurilavanti.fi/blogi/${slug}`} title={title} />
+    <SocialShare
+        ariaLabel={`Kirjoituksen ${title} sosiaalisen median jakolinkit`}
+        shareUrl={`https://laurilavanti.fi/blogi/${slug}`}
+        title={title}
+    />
     <H2>Muita kirjoituksia</H2>
-    <ExcerptList limit={4} currentSlug={slug} relatedTags={tags} allTags={allTags} />
+    <ExcerptList allTags={allTags} currentSlug={slug} limit={4} relatedTags={tags} />
 </Layout>

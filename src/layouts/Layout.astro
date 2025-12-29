@@ -1,67 +1,84 @@
 ---
-import GlobalStyle from '../components/GlobalStyle.astro'
-import Head from '../components/Head.astro'
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
-import TitleBanner from '../components/TitleBanner.astro'
-import Body from '../components/Body.astro'
-import type { Image } from '../types/contentful'
-
-import {
-    gridTemplateColumns,
-    gridTemplateRowsLayoutMobile,
-    gridTemplateRowsLayout,
-    colors,
-    gridTemplateColumnsArticle,
-    gridAreas,
-} from '../lib/styles'
 import type { Document } from '@contentful/rich-text-types'
 import type { TagCollection, TagLink } from 'contentful'
 import type { JsonLdType } from '../lib/jsonld'
+import type { Image } from '../types/contentful'
+
+import Body from '../components/Body.astro'
+import Footer from '../components/Footer.astro'
+import GlobalStyle from '../components/GlobalStyle.astro'
+import Head from '../components/Head.astro'
+import Header from '../components/Header.astro'
 import HeroBanner from '../components/HeroBanner.astro'
+import TitleBanner from '../components/TitleBanner.astro'
+import {
+    colors,
+    gridAreas,
+    gridTemplateColumns,
+    gridTemplateColumnsArticle,
+    gridTemplateRowsLayout,
+    gridTemplateRowsLayoutMobile,
+} from '../lib/styles'
 
 interface Props {
-    description?: string
-    title: string
-    subtitle?: string
-    secondaryTitle?: string
-    backgroundImage?: Image
-    heroImage?: Image
-    body?: Document
-    slug?: string
-    type?: JsonLdType
-    createdAt?: string
-    updatedAt?: string
-    tags?: { sys: TagLink }[]
     allTags?: TagCollection
+    backgroundImage?: Image
+    body?: Document
+    createdAt?: string
+    description?: string
     heroBanner?: boolean
+    heroImage?: Image
+    secondaryTitle?: string
+    slug?: string
+    subtitle?: string
+    tags?: { sys: TagLink }[]
+    title: string
+    type?: JsonLdType
+    updatedAt?: string
 }
 
-const { description, title, subtitle, secondaryTitle, backgroundImage, heroImage, body, slug, type, createdAt, updatedAt, tags, allTags, heroBanner } = Astro.props
+const {
+    allTags,
+    backgroundImage,
+    body,
+    createdAt,
+    description,
+    heroBanner,
+    heroImage,
+    secondaryTitle,
+    slug,
+    subtitle,
+    tags,
+    title,
+    type,
+    updatedAt,
+} = Astro.props
 ---
 
 <html lang="fi">
     <head>
         <GlobalStyle />
         <Head
-            description={description}
-            title={title}
-            slug={slug}
-            image={heroImage}
-            type={type}
             createdAt={createdAt}
+            description={description}
+            image={heroImage}
+            slug={slug}
+            title={title}
+            type={type}
             updatedAt={updatedAt}
         />
     </head>
     <body>
-        <style define:vars={{
-            gridTemplateColumns,
-            gridTemplateRowsLayoutMobile,
-            gridTemplateRowsLayout,
-            gridTemplateColumnsArticle,
-            colorsWhite: colors.white,
-            gridAreasMain: gridAreas.main
-        }}>
+        <style
+            define:vars={{
+                colorsWhite: colors.white,
+                gridAreasMain: gridAreas.main,
+                gridTemplateColumns,
+                gridTemplateColumnsArticle,
+                gridTemplateRowsLayout,
+                gridTemplateRowsLayoutMobile,
+            }}
+        >
             body > div {
                 display: grid;
                 grid-template-areas:
@@ -82,7 +99,7 @@ const { description, title, subtitle, secondaryTitle, backgroundImage, heroImage
                 display: grid;
                 grid-template-columns: var(--gridTemplateColumnsArticle);
             }
-            
+
             @media (min-width: 1200px) {
                 body > div {
                     grid-template-rows: var(--gridTemplateRowsLayout);
@@ -93,18 +110,26 @@ const { description, title, subtitle, secondaryTitle, backgroundImage, heroImage
             <Header />
             <main>
                 <article>
-                    {heroBanner ? (
-                        <HeroBanner
-                            title={title}
-                            subtitle={subtitle}
-                            secondaryTitle={secondaryTitle}
-                            image={heroImage}
-                            backgroundImage={backgroundImage}
-                        />
-                    ) : (
-                        <TitleBanner title={title} heroImage={heroImage} createdAt={createdAt} tags={tags} allTags={allTags} />
-                    )}
-                    {body && <Body node={body} allTags={allTags} />}
+                    {
+                        heroBanner ? (
+                            <HeroBanner
+                                backgroundImage={backgroundImage}
+                                image={heroImage}
+                                secondaryTitle={secondaryTitle}
+                                subtitle={subtitle}
+                                title={title}
+                            />
+                        ) : (
+                            <TitleBanner
+                                allTags={allTags}
+                                createdAt={createdAt}
+                                heroImage={heroImage}
+                                tags={tags}
+                                title={title}
+                            />
+                        )
+                    }
+                    {body && <Body allTags={allTags} node={body} />}
                     <slot />
                 </article>
             </main>
