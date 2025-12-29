@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro'
 import { contentfulClient } from "../lib/contentful";
 import type { Page } from '../types/contentful';
-import { WEBPAGE } from '../lib/jsonld'
 import type { TagCollection } from 'contentful';
 
 export async function getStaticPaths() {
@@ -21,6 +20,7 @@ export async function getStaticPaths() {
       image: item.fields.image,
       body: item.fields.body,
       slug: item.fields.slug,
+      jsonLdType: item.fields.jsonLdType,
       tags,
     },
   }));
@@ -34,10 +34,11 @@ interface Props {
   slug: Page['fields']['slug']
   body: Page['fields']['body']
   image: Page['fields']['image']
+  jsonLdType: Page['fields']['jsonLdType']
   tags: TagCollection
 }
 
-const { description, title, image, body, slug, tags } = Astro.props
+const { description, title, image, body, slug, jsonLdType, tags } = Astro.props
 ---
 
-<Layout description={description} title={title} heroImage={image} body={body} slug={slug} type={WEBPAGE} allTags={tags} />
+<Layout description={description} title={title} heroImage={image} body={body} slug={slug} type={jsonLdType} allTags={tags} />
