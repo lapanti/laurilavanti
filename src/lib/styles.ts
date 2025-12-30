@@ -1,13 +1,3 @@
-/** Screen sizes start */
-
-export const breakpoints = {
-    [1200]: {
-        max: '@media not all and (min-width: 1200px)',
-        min: '@media (min-width: 1200px)',
-    } as const,
-} as const
-
-/** Screen sizes end */
 /** Spacing variables start */
 
 export const sizes = {

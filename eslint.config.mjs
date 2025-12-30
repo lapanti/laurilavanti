@@ -2,11 +2,9 @@
 
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
-import jest from 'eslint-plugin-jest'
 import importPlugin from 'eslint-plugin-import'
 import js from '@eslint/js'
-import testingLibrary from 'eslint-plugin-testing-library'
-import playwright from 'eslint-plugin-playwright'
+import vitest from '@vitest/eslint-plugin'
 import stylistic from '@stylistic/eslint-plugin'
 import { configs } from 'eslint-plugin-astro'
 // eslint-disable-next-line import/no-unresolved
@@ -144,30 +142,22 @@ export default tseslint.config(
     },
     {
         files: testFileGlob,
-        ...jest.configs['flat/recommended'],
-    },
-    {
-        files: testFileGlob,
-        ...jest.configs['flat/style'],
-    },
-    {
-        // Don't want to match these to e2e tests
-        files: testFileGlob,
-        ...testingLibrary.configs['flat/react'],
-    },
-    {
-        files: testFileGlob,
-        rules: {
-            '@typescript-eslint/no-empty-function': ['off'],
-            'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-            'no-console': ['warn'],
-            'react/display-name': ['off'],
-            'testing-library/no-node-access': ['error', { allowContainerFirstChild: true }],
+        plugins: {
+            vitest,
         },
-    },
-    {
-        files: ['tests/e2e/**/*.spec.ts', 'tests/e2e/pages/**/*.ts'],
-        ...playwright.configs['flat/recommended'],
+        rules: {
+            ...vitest.configs.all.rules,
+        },
+        settings: {
+            vitest: {
+                typecheck: true,
+            },
+        },
+        languageOptions: {
+            globals: {
+                ...vitest.environments.env.globals,
+            },
+        },
     },
     eslintPluginPrettierRecommended
 )

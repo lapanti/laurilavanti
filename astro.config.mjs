@@ -1,8 +1,8 @@
 // @ts-check
-import { defineConfig, envField, fontProviders } from 'astro/config'
+import { defineConfig, envField, fontProviders } from 'astro/config' // eslint-disable-line import/no-unresolved
 
-import icon from 'astro-icon'
-import { imageService } from '@unpic/astro/service'
+import icon from 'astro-icon' // eslint-disable-line import/no-unresolved
+import { imageService } from '@unpic/astro/service' // eslint-disable-line import/no-unresolved
 
 // https://astro.build/config
 export default defineConfig({
@@ -45,7 +45,9 @@ export default defineConfig({
 
     image: {
         domains: ['images.ctfassets.net'],
-        service: imageService(),
+        service: imageService({
+            placeholder: 'blurhash',
+        }),
     },
 
     integrations: [icon({ include: { 'fa7-brands': ['*'] } })],
