@@ -149,12 +149,15 @@ export default defineConfig([
             globals: {
                 ...vitest.environments.env.globals,
             },
+            parserOptions: {
+                projectService: true,
+            },
         },
         plugins: {
             vitest,
         },
         rules: {
-            ...vitest.configs.all.rules,
+            ...vitest.configs.recommended.rules,
         },
         settings: {
             vitest: {

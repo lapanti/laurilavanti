@@ -137,15 +137,3 @@ export const typographics = {
 } as const
 
 /** Fonts end */
-/** Transitions begin */
-
-export const transitions = {
-    base: {
-        transitionDuration: '150ms',
-        transitionProperty:
-            'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-    } as const,
-} as const
-
-/** Transitions end */
