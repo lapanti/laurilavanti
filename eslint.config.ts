@@ -1,15 +1,13 @@
-// @ts-check
-
+import js from '@eslint/js'
+import stylistic from '@stylistic/eslint-plugin'
+import vitest from '@vitest/eslint-plugin'
+import { defineConfig } from 'eslint/config' // eslint-disable-line import/no-unresolved
+import { configs } from 'eslint-plugin-astro'
+import importPlugin from 'eslint-plugin-import'
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
-import importPlugin from 'eslint-plugin-import'
-import js from '@eslint/js'
-import vitest from '@vitest/eslint-plugin'
-import stylistic from '@stylistic/eslint-plugin'
-import { configs } from 'eslint-plugin-astro'
-// eslint-disable-next-line import/no-unresolved
-import tseslint from 'typescript-eslint'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import tseslint from 'typescript-eslint' // eslint-disable-line import/no-unresolved
 
 const testFileGlob = [
     'tests/__mocks__/**/*.js',
@@ -19,8 +17,13 @@ const testFileGlob = [
     'src/**/*.spec.tsx',
 ]
 
-export default tseslint.config(
-    js.configs.recommended,
+export default defineConfig([
+    {
+        extends: ['js/recommended'],
+        files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
+        languageOptions: { globals: globals.browser },
+        plugins: { js },
+    },
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
     tseslint.configs.recommended,
@@ -28,10 +31,6 @@ export default tseslint.config(
     configs['jsx-a11y-strict'],
     {
         files: ['**/*.js', '**/*.ts', '**/*.astro'],
-        plugins: {
-            'simple-import-sort': simpleImportSort,
-            '@stylistic': stylistic,
-        },
         languageOptions: {
             globals: {
                 ...globals.browser,
@@ -39,7 +38,26 @@ export default tseslint.config(
                 ...globals.es2015,
             },
         },
+        plugins: {
+            '@stylistic': stylistic,
+            'simple-import-sort': simpleImportSort,
+        },
         rules: {
+            '@stylistic/linebreak-style': ['error', 'unix'],
+            '@stylistic/lines-around-comment': ['error', { beforeBlockComment: true }],
+            '@stylistic/multiline-comment-style': ['error', 'starred-block'],
+            '@stylistic/no-mixed-spaces-and-tabs': ['error'],
+            '@stylistic/no-multi-spaces': ['error'],
+            '@stylistic/no-multiple-empty-lines': ['error'],
+            '@stylistic/padding-line-between-statements': [
+                'error',
+                { blankLine: 'always', next: 'return', prev: 'const' },
+                { blankLine: 'always', next: 'return', prev: 'let' },
+                { blankLine: 'always', next: 'throw', prev: 'const' },
+                { blankLine: 'always', next: 'throw', prev: 'let' },
+            ],
+            '@stylistic/spaced-comment': ['error', 'always'],
+            '@stylistic/template-curly-spacing': ['error', 'never'],
             '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
             '@typescript-eslint/no-extra-semi': ['off'],
             '@typescript-eslint/no-unused-vars': [
@@ -57,8 +75,8 @@ export default tseslint.config(
                 'error',
                 'never',
                 {
-                    json: 'always',
                     css: 'always',
+                    json: 'always',
                 },
             ],
             'import/first': ['error'],
@@ -80,21 +98,6 @@ export default tseslint.config(
             'simple-import-sort/exports': ['error'],
             'simple-import-sort/imports': ['error'],
             'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
-            '@stylistic/linebreak-style': ['error', 'unix'],
-            '@stylistic/lines-around-comment': ['error', { beforeBlockComment: true }],
-            '@stylistic/padding-line-between-statements': [
-                'error',
-                { blankLine: 'always', prev: 'const', next: 'return' },
-                { blankLine: 'always', prev: 'let', next: 'return' },
-                { blankLine: 'always', prev: 'const', next: 'throw' },
-                { blankLine: 'always', prev: 'let', next: 'throw' },
-            ],
-            '@stylistic/multiline-comment-style': ['error', 'starred-block'],
-            '@stylistic/no-mixed-spaces-and-tabs': ['error'],
-            '@stylistic/no-multi-spaces': ['error'],
-            '@stylistic/no-multiple-empty-lines': ['error'],
-            '@stylistic/spaced-comment': ['error', 'always'],
-            '@stylistic/template-curly-spacing': ['error', 'never'],
         },
     },
     {
@@ -142,6 +145,11 @@ export default tseslint.config(
     },
     {
         files: testFileGlob,
+        languageOptions: {
+            globals: {
+                ...vitest.environments.env.globals,
+            },
+        },
         plugins: {
             vitest,
         },
@@ -153,11 +161,6 @@ export default tseslint.config(
                 typecheck: true,
             },
         },
-        languageOptions: {
-            globals: {
-                ...vitest.environments.env.globals,
-            },
-        },
     },
-    eslintPluginPrettierRecommended
-)
+    eslintPluginPrettierRecommended,
+])
