@@ -1,3 +1,5 @@
+// @ts-check
+
 import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import vitest from '@vitest/eslint-plugin'
@@ -30,7 +32,7 @@ export default defineConfig([
     configs.recommended,
     configs['jsx-a11y-strict'],
     {
-        files: ['**/*.js', '**/*.ts', '**/*.astro'],
+        files: ['**/*.js', '**/*.ts', '**/*.astro', '**/*.spec.js', '**/*.spec.ts'],
         languageOptions: {
             globals: {
                 ...globals.browser,
@@ -112,7 +114,7 @@ export default defineConfig([
         },
     },
     {
-        files: ['**/*.js', '**/*.jsx'],
+        files: ['**/*.js'],
         rules: {
             '@typescript-eslint/explicit-module-boundary-types': ['off'],
             '@typescript-eslint/no-unsafe-call': ['off'],
@@ -127,7 +129,7 @@ export default defineConfig([
          * This magic grouping moves `import type` statements as their own group.
          * @see https://github.com/lydell/eslint-plugin-simple-import-sort#custom-grouping
          */
-        files: ['**/*.ts', '**/*.tsx', '**/*.astro'],
+        files: ['**/*.spec.ts', '**/*.ts', '**/*.astro'],
         rules: {
             'simple-import-sort/imports': [
                 'error',
