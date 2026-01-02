@@ -1,8 +1,6 @@
 ---
 import type { Image } from '../types/contentful'
 
-import { Font } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
-
 import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '../lib/jsonld'
 
 interface Props {
@@ -131,7 +129,5 @@ const keywords = [
 <link href="/app.webmanifest" rel="manifest" />
 <title>{title === 'Lauri Lavanti' ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
-<Font cssVariable="--ibmPlexMono" preload />
-<Font cssVariable="--ibmPlexSans" preload />
 <link crossorigin="" href="https://images.ctfassets.net" rel="preconnect" />
 <link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect" />

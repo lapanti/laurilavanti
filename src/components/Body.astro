@@ -1,9 +1,13 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
+// @ts-expect-error for some reason the types are not found
+import type { Block, Document, Inline, Mark, Node, Text } from '@contentful/rich-text-types'
 import type { TagCollection } from 'contentful'
 
-import { type Block, BLOCKS, type Document, type Inline, INLINES, MARKS, type Text } from '@contentful/rich-text-types'
+// @ts-expect-error for some reason the types are not found
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
 
+import { fontFamilies } from '../lib/styles'
 import BlockQuote from './body/BlockQuote.astro'
 import CurriculumVitae from './body/CurriculumVitae.astro'
 import H3 from './body/H3.astro'
@@ -28,10 +32,10 @@ const renderMark = (mark: string, text: string) => {
 }
 
 const renderText = (node: Text) => {
-    const result = node.value
+    const result: string = node.value
 
     if (node.marks.length > 0) {
-        return node.marks.reduce((value, mark) => {
+        return (node.marks as Mark[]).reduce((value, mark) => {
             if (supportedMarks.includes(mark.type)) {
                 return renderMark(mark.type, value)
             }
@@ -53,12 +57,12 @@ interface Props {
 
 const { node, allTags, noMargins } = Astro.props
 
-const children = Array.isArray(node) ? node : 'content' in node ? node.content : []
+const children: Node[] = Array.isArray(node) ? node : 'content' in node ? node.content : []
 ---
 
-<style>
+<style define:vars={{ iFontFamily: fontFamilies.sans }}>
     i {
-        font-family: var(--ibmPlexSans);
+        font-family: var(--iFontFamily);
     }
 </style>
 {

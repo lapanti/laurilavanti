@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField, fontProviders } from 'astro/config' // eslint-disable-line import/no-unresolved
+import { defineConfig, envField } from 'astro/config' // eslint-disable-line import/no-unresolved
 
 import icon from 'astro-icon' // eslint-disable-line import/no-unresolved
 import { imageService } from '@unpic/astro/service' // eslint-disable-line import/no-unresolved
@@ -13,29 +13,6 @@ export default defineConfig({
 
     build: {
         inlineStylesheets: 'auto',
-    },
-
-    experimental: {
-        fonts: [
-            {
-                name: 'IBM Plex Mono',
-                cssVariable: '--ibmPlexMono',
-                provider: fontProviders.fontsource(),
-                weights: [400, 500],
-                styles: ['normal', 'italic'],
-                subsets: ['latin', 'latin-ext'],
-                fallbacks: ['Lucida Sans Typewriter'],
-            },
-            {
-                name: 'IBM Plex Sans',
-                cssVariable: '--ibmPlexSans',
-                provider: fontProviders.fontsource(),
-                weights: [300, 400, 1000],
-                styles: ['normal', 'italic'],
-                subsets: ['latin', 'latin-ext'],
-                fallbacks: ['Trebuchet MS'],
-            },
-        ],
     },
 
     prefetch: {

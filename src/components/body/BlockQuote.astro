@@ -4,20 +4,21 @@ import { colors, sizes, typographics } from '../../lib/styles'
 
 <style
     define:vars={{
+        blockQuoteFontFamily: typographics.blockQuote.fontFamily,
+        blockQuoteFontSize: typographics.blockQuote.fontSize,
+        blockQuoteFontStyle: typographics.blockQuote.fontStyle,
+        blockQuoteFontWeight: typographics.blockQuote.fontWeight,
+        blockQuoteLineHeight: typographics.blockQuote.lineHeight,
         colorsSand: colors.sand,
-        fontSize: typographics.blockQuote.fontSize,
-        fontStyle: typographics.blockQuote.fontStyle,
-        fontWeight: typographics.blockQuote.fontWeight,
-        lineHeight: typographics.blockQuote.lineHeight,
         sizes05: sizes[0.5],
     }}
 >
     blockquote {
-        font-family: var(--ibmPlexMono);
-        font-style: var(--fontStyle);
-        font-size: var(--fontSize);
-        font-weight: var(--fontWeight);
-        line-height: var(--lineHeight);
+        font-family: var(--blockQuoteFontFamily);
+        font-style: var(--blockQuoteFontStyle);
+        font-size: var(--blockQuoteFontSize);
+        font-weight: var(--blockQuoteFontWeight);
+        line-height: var(--blockQuoteLineHeight);
         border-left-color: var(--colorsSand);
         border-left-width: var(--sizes05);
         grid-column-start: 3;

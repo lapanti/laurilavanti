@@ -15,6 +15,7 @@ const { image, caption } = Astro.props
 
 <style
     define:vars={{
+        additionalInfoFontFamily: typographics.additionalInfo.fontFamily,
         additionalInfoFontSize: typographics.additionalInfo.fontSize,
         additionalInfoFontWeight: typographics.additionalInfo.fontWeight,
         additionalInfoLineHeight: typographics.additionalInfo.lineHeight,
@@ -29,7 +30,7 @@ const { image, caption } = Astro.props
     }
 
     figcaption {
-        font-family: var(--ibmPlexMono);
+        font-family: var(--additionalInfoFontFamily);
         font-weight: var(--additionalInfoFontWeight);
         font-size: var(--additionalInfoFontSize);
         line-height: var(--additionalInfoLineHeight);
