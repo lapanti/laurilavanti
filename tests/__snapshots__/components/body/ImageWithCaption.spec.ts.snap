@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ImageWithCaption /> > should render 1`] = `
+<figure
+  aria-label="Test Caption"
+  data-astro-cid-u75m2whm=""
+  data-astro-source-file="/home/lapanti/code/laurilavanti/src/components/body/ImageWithCaption.astro"
+  data-astro-source-loc="46:38"
+  style="--additionalInfoFontFamily: &#34;IBM Plex Mono&#34;, Lucida Sans Typewriter;--additionalInfoFontSize: 1rem;--additionalInfoFontWeight: 400;--additionalInfoLineHeight: 1.5rem;--sizes05: 0.5rem;--sizes1: 1rem;"
+>
+  <picture
+    data-astro-cid-u75m2whm="true"
+    data-astro-source-file="/home/lapanti/code/laurilavanti/node_modules/astro/components/Picture.astro"
+    data-astro-source-loc="114:33"
+  >
+     
+    <source
+      data-astro-source-file="/home/lapanti/code/laurilavanti/node_modules/astro/components/Picture.astro"
+      data-astro-source-loc="122:6"
+      sizes="(max-width: 1200px) 100vw, 1184px"
+      srcset="https://images.contentful.com/test.jpg 360w, https://images.contentful.com/test.jpg 576w, https://images.contentful.com/test.jpg 768w, https://images.contentful.com/test.jpg 992w, https://images.contentful.com/test.jpg 1200w, https://images.contentful.com/test.jpg 2400w"
+      type="image/jpeg"
+    />
+    <source
+      data-astro-source-file="/home/lapanti/code/laurilavanti/node_modules/astro/components/Picture.astro"
+      data-astro-source-loc="122:6"
+      sizes="(max-width: 1200px) 100vw, 1184px"
+      srcset="https://images.contentful.com/test.jpg 360w, https://images.contentful.com/test.jpg 576w, https://images.contentful.com/test.jpg 768w, https://images.contentful.com/test.jpg 992w, https://images.contentful.com/test.jpg 1200w, https://images.contentful.com/test.jpg 2400w"
+      type="image/jpeg"
+    />
+      
+    <img
+      alt="Test image description"
+      data-astro-cid-u75m2whm="true"
+      data-astro-image="full-width"
+      data-astro-source-file="/home/lapanti/code/laurilavanti/node_modules/astro/components/Picture.astro"
+      data-astro-source-loc="131:3"
+      data-image-component="true"
+      decoding="async"
+      fetchpriority="auto"
+      height="329"
+      loading="lazy"
+      sizes="(max-width: 1200px) 100vw, 1184px"
+      src="https://images.contentful.com/test.jpg"
+      srcset="https://images.contentful.com/test.jpg 360w, https://images.contentful.com/test.jpg 576w, https://images.contentful.com/test.jpg 768w, https://images.contentful.com/test.jpg 992w, https://images.contentful.com/test.jpg 1200w, https://images.contentful.com/test.jpg 2400w"
+      style="--fit: contain; --pos: center;"
+      width="1184"
+    />
+     
+  </picture>
+  <figcaption
+    data-astro-cid-u75m2whm=""
+    data-astro-source-file="/home/lapanti/code/laurilavanti/src/components/body/ImageWithCaption.astro"
+    data-astro-source-loc="58:25"
+    style="--additionalInfoFontFamily: &#34;IBM Plex Mono&#34;, Lucida Sans Typewriter;--additionalInfoFontSize: 1rem;--additionalInfoFontWeight: 400;--additionalInfoLineHeight: 1.5rem;--sizes05: 0.5rem;--sizes1: 1rem;"
+  >
+    Test Caption
+  </figcaption>
+</figure>
+`;
