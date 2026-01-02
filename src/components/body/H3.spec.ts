@@ -1,7 +1,7 @@
 import { getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
-import { renderAstroComponent } from '../../../test/helpers'
+import { renderAstroComponent } from '../../../tests/helpers'
 import H3 from './H3.astro'
 
 describe('<H3 />', () => {
@@ -10,18 +10,7 @@ describe('<H3 />', () => {
             slots: { default: 'Heading' },
         })
 
-        expect(result).toMatchInlineSnapshot(`
-          <div>
-            <h3
-              data-astro-cid-3va6lj73=""
-              data-astro-source-file="/home/lapanti/code/laurilavanti/src/components/body/H3.astro"
-              data-astro-source-loc="28:25"
-              style="--h3FontSize: 1.5rem;--h3FontWeight: 500;--h3LineHeight: 2rem;--sizes1: 1rem;"
-            >
-               Heading 
-            </h3>
-          </div>
-        `)
+        expect(result.firstChild).toMatchSnapshot()
     })
 
     it('should render the element', async () => {
