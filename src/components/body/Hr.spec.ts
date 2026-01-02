@@ -1,15 +1,31 @@
-import { experimental_AstroContainer as AstroContainer } from 'astro/container' // eslint-disable-line import/no-unresolved
+import { getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
+import { renderAstroComponent } from '../../../test/helpers'
 import Hr from './Hr.astro'
 
 describe('<Hr />', () => {
     it('should render', async () => {
-        const container = await AstroContainer.create()
-        const result = await container.renderToString(Hr, {})
+        const result = await renderAstroComponent(Hr)
 
         expect(result).toMatchInlineSnapshot(
-            `"<hr data-astro-cid-ynkeys4z style="--sizes1: 1rem;" data-astro-source-file="/home/lapanti/code/laurilavanti/src/components/body/Hr.astro" data-astro-source-loc="11:2">"`
+            `
+          <div>
+            <hr
+              data-astro-cid-ynkeys4z=""
+              data-astro-source-file="/home/lapanti/code/laurilavanti/src/components/body/Hr.astro"
+              data-astro-source-loc="11:2"
+              style="--sizes1: 1rem;"
+            />
+          </div>
+        `
         )
+    })
+
+    it('should render the element', async () => {
+        const result = await renderAstroComponent(Hr)
+
+        const hr = getByRole(result, 'separator')
+        expect(hr).toBeDefined()
     })
 })

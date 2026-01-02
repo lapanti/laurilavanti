@@ -3,6 +3,7 @@ import { getViteConfig } from 'astro/config' // eslint-disable-line import/no-un
 
 export default getViteConfig({
     test: {
-        // Vitest configuration options
+        environment: 'happy-dom',
+        setupFiles: ['./test/setup.ts'],
     },
 })
