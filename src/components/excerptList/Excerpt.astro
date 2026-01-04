@@ -1,14 +1,11 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
 import type { TagCollection, TagLink } from 'contentful'
 import type { Image } from '../../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
-
-import { colors, sizes } from '../../lib/styles'
-import H2 from '../H2.astro'
+import { sizes } from '../../lib/styles'
 import Meta from '../Meta.astro'
-import Paragraph from '../Paragraph.astro'
+import Banner from './excerpt/Banner.astro'
+import Description from './excerpt/Description.astro'
 
 interface Props {
     allTags: TagCollection
@@ -23,76 +20,19 @@ interface Props {
 const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
 ---
 
-<style define:vars={{ colorsMoss: colors.moss, sizes025: sizes[0.25], sizes01875: sizes[0.1875], sizes35: sizes[35] }}>
+<style define:vars={{ sizes35: sizes[35] }}>
     li {
         max-width: var(--sizes35);
-    }
-
-    h2 {
-        grid-column-start: auto;
-    }
-
-    a {
-        color: black;
-        text-decoration: none;
-    }
-
-    a.main-link:hover {
-        text-decoration: underline;
-        text-decoration-thickness: var(--sizes01875);
-    }
-
-    a.main-link div {
-        align-items: flex-end;
-        display: flex;
-        margin-top: var(--sizes025);
-        position: relative;
-        width: 100%;
-    }
-
-    .excerpt-image {
-        max-height: 315px;
-        max-width: 560px;
-        height: 100%;
-        width: 100%;
-    }
-
-    a.read-more {
-        color: var(--colorsMoss);
-        text-decoration: none;
-        white-space: nowrap;
     }
 </style>
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
-        <a class="main-link" href={`/${slug}/`} rel="permalink">
-            {
-                image && (
-                    <Picture
-                        alt={image.fields.description ?? null}
-                        class="excerpt-image"
-                        fit="cover"
-                        formats={['avif', 'webp']}
-                        height="315"
-                        sizes="(max-width: 560px) 100vw, 560px"
-                        src={`https:${image.fields.file?.url}`}
-                        width="560"
-                        widths={[360, 560]}
-                    />
-                )
-            }
-            <div>
-                <H2 itemProp="headline">{title}</H2>
-            </div>
-        </a>
+        <Banner image={image} slug={slug} title={title} />
         {
             date && tags && (
                 <Meta allTags={allTags} ariaLabel={`Kirjoituksen "${title}" meta-tiedot`} date={date} tags={tags} />
             )
         }
-        <Paragraph itemProp="description" smallMarginTop>
-            {excerpt}{' '}
-            <a class="read-more" href={`/${slug}/`} rel="permalink"> Lue lisää » </a>
-        </Paragraph>
+        <Description excerpt={excerpt} slug={slug} />
     </article>
 </li>
