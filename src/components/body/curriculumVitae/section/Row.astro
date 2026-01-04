@@ -1,0 +1,29 @@
+---
+import LI from '../../../LI.astro'
+
+interface Props {
+    duty?: string
+    title?: string
+    degree?: string
+    organization?: string
+    company?: string
+    school?: string
+    location?: string
+    startYear: number
+    endYear?: number
+}
+
+const { duty, title, degree, organization, company, school, location, startYear, endYear } = Astro.props
+
+const years = startYear === endYear ? `${startYear}` : `${startYear}–${endYear ?? ''}`
+---
+
+<LI heavy={!endYear}>
+    <span>
+        {duty || title || degree || ''}
+    </span>
+    <i>
+        {organization || company || school || ''}{location ? ` (${location}) ` : ' '}
+        {years}
+    </i>
+</LI>
