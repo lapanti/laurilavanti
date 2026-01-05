@@ -1,14 +1,14 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import type { Image } from '../../../types/contentful'
+import type { Image as ContentfulImage } from '../../../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+import { Image } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 import { sizes } from '../../../lib/styles'
 import H2 from '../../H2.astro'
 
 interface Props {
-    image?: Image
+    image?: ContentfulImage
     slug?: string
     title: string
 }
@@ -49,16 +49,12 @@ const { title, slug, image } = Astro.props
 <a href={`/${slug}/`} rel="permalink">
     {
         image && (
-            <Picture
+            <Image
                 alt={image.fields.description ?? null}
                 class="excerpt-image"
-                fit="cover"
-                formats={['avif', 'webp']}
                 height="315"
-                sizes="(max-width: 560px) 100vw, 560px"
                 src={`https:${image.fields.file?.url}`}
                 width="560"
-                widths={[360, 560]}
             />
         )
     }
