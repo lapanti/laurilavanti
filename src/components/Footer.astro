@@ -67,7 +67,9 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
 </style>
 <footer>
     <div class="container">
-        <div><img alt="Vihreiden logo ja teksti" src="/images/greensLogo3Languages.min.svg" width="144" /></div>
+        <div>
+            <img alt="Vihreiden logo ja teksti" loading="lazy" src="/images/greensLogo3Languages.min.svg" width="144" />
+        </div>
         <ul>
             {
                 (footerNav?.fields?.links as FooterNav['fields']['links'] | undefined)?.map((link) =>
