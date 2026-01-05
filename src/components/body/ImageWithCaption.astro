@@ -1,13 +1,13 @@
 ---
-import type { Image } from '../../types/contentful'
+import type { Image as ContentfulImage } from '../../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+import { Image } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 import { sizes, typographics } from '../../lib/styles'
 
 interface Props {
     caption: string
-    image: Image
+    image: ContentfulImage
 }
 
 const { image, caption } = Astro.props
@@ -44,16 +44,12 @@ const { image, caption } = Astro.props
 {
     image?.fields?.file?.url && (
         <figure aria-label={caption}>
-            <Picture
+            <Image
                 alt={image.fields.description ?? null}
-                fit="contain"
-                formats={['avif', 'webp']}
-                height="329"
-                layout="full-width"
-                sizes="(max-width: 1200px) 100vw, 1184px"
+                height="500"
+                layout="constrained"
                 src={`https:${image.fields.file.url}`}
-                width="1184"
-                widths={[360, 576, 768, 992, 1200, 2400]}
+                width="1200"
             />
             <figcaption>{caption}</figcaption>
         </figure>

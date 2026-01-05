@@ -8,7 +8,7 @@ const mockImage = {
     fields: {
         description: 'Test image description',
         file: {
-            url: '//images.contentful.com/test.jpg',
+            url: '//images.ctfassets.net/44t6u1r4zgqq/22zkTYrMQVwAfvrEW3WGeX/9d5c7c3e5e853a9dede1b5cc0e539486/TekoÃ_ly.jpg',
         },
     },
 }
