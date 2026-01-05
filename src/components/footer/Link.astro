@@ -28,9 +28,6 @@ const iconToHoverColor = (icon?: string): string | undefined => {
     if (icon === 'mastodon') {
         return colors.mastodon
     }
-    if (icon === 'bluesky') {
-        return colors.bluesky
-    }
     if (icon === 'threads') {
         return colors.threads
     }
@@ -84,6 +81,6 @@ const hoverColor = iconToHoverColor(icon)
 </style>
 <li>
     <a aria-label={title} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
-        <Icon name={`fa7-brands:${icon}`} />
+        {icon && <Icon name={`fa7-brands:${icon}`} />}
     </a>
 </li>
