@@ -1,13 +1,13 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import type { Image } from '../../../types/contentful'
+import type { Image as ContentfulImage } from '../../../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+import { Image } from '@unpic/astro' // eslint-disable-line import/no-unresolved
 
 import { colors } from '../../../lib/styles'
 
 interface Props {
-    image?: Image
+    image?: ContentfulImage
 }
 
 const { image } = Astro.props
@@ -27,7 +27,7 @@ const { image } = Astro.props
         object-fit: cover;
     }
 
-    picture:after {
+    div:after {
         background-image: linear-gradient(var(--colorsEvening70), var(--colorsEvening70));
         bottom: 0;
         content: '';
@@ -50,17 +50,13 @@ const { image } = Astro.props
     {
         image?.fields?.file?.url && (
             <div>
-                <Picture
+                <Image
                     alt=""
-                    fit="cover"
-                    formats={['avif', 'webp']}
                     height="588"
                     layout="full-width"
                     priority
-                    sizes="50vw"
                     src={`https:${image.fields.file.url}`}
                     width="768"
-                    widths={[576, 768, 992, 1280, 2560]}
                 />
             </div>
         )
