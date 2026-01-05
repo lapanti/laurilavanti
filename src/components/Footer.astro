@@ -1,9 +1,6 @@
 ---
 import type { FooterNav } from '../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
-
-import greensLogo from '../assets/greensLogo3Languages.png'
 import { contentfulClient } from '../lib/contentful'
 import { colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../lib/styles'
 import InstagramLink from './footer/InstagramLink.astro'
@@ -70,15 +67,7 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
 </style>
 <footer>
     <div class="container">
-        <div>
-            <Picture
-                alt='Vihreiden logo ja teksti "Vihreät De Gröna The Greens"'
-                fit="contain"
-                formats={['avif', 'webp']}
-                src={greensLogo}
-                width={200}
-            />
-        </div>
+        <div><img alt="Vihreiden logo ja teksti" src="/images/greensLogo3Languages.min.svg" width="144" /></div>
         <ul>
             {
                 (footerNav?.fields?.links as FooterNav['fields']['links'] | undefined)?.map((link) =>
