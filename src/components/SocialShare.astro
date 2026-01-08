@@ -88,7 +88,7 @@ const { title, shareUrl, ariaLabel } = Astro.props
     <a
         aria-label="Jaa Blueskyssa"
         href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
-        rel="noopener norefferer"
+        rel="noopener noreferrer"
         title="Jaa Blueskyssa"
     >
         <Icon class="bluesky" name="fa7-brands:bluesky" />
@@ -96,7 +96,7 @@ const { title, shareUrl, ariaLabel } = Astro.props
     <a
         aria-label="Jaa LinkedInissä"
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
-        rel="noopener norefferer"
+        rel="noopener noreferrer"
         title="Jaa LinkedInissä"
     >
         <Icon class="linkedin" name="fa7-brands:linkedin" />
