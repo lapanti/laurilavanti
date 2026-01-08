@@ -4,7 +4,6 @@
 import type { Block, Document, Inline, Mark, Node, Text } from '@contentful/rich-text-types'
 import type { TagCollection } from 'contentful'
 
-// @ts-expect-error for some reason the types are not found
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
 
 import { fontFamilies } from '../lib/styles'
@@ -72,36 +71,38 @@ const children: Node[] = Array.isArray(node) ? node : 'content' in node ? node.c
                 {childNode.nodeType === 'text' && <Fragment set:html={renderText(childNode)} />}
                 {childNode.nodeType === BLOCKS.PARAGRAPH && (
                     <Paragraph inGrid noMargins={noMargins}>
-                        <Astro.self node={childNode.content as Node} noMargins={noMargins} />
+                        <Astro.self node={childNode.content as unknown as Node} noMargins={noMargins} />
                     </Paragraph>
                 )}
                 {childNode.nodeType === BLOCKS.HEADING_2 && (
                     <H2>
-                        <Astro.self node={childNode.content as Node} />
+                        <Astro.self node={childNode.content as unknown as Node} />
                     </H2>
                 )}
                 {childNode.nodeType === BLOCKS.HEADING_3 && (
                     <H3>
-                        <Astro.self node={childNode.content as Node} />
+                        <Astro.self node={childNode.content as unknown as Node} />
                     </H3>
                 )}
                 {childNode.nodeType === BLOCKS.UL_LIST && (
                     <UL>
-                        <Astro.self node={childNode.content as Node} />
+                        <Astro.self node={childNode.content as unknown as Node} />
                     </UL>
                 )}
                 {childNode.nodeType === BLOCKS.LIST_ITEM && (
                     <LI>
-                        <Astro.self node={childNode.content as Node} noMargins />
+                        <Astro.self node={childNode.content as unknown as Node} noMargins />
                     </LI>
                 )}
                 {childNode.nodeType === BLOCKS.HR && <Hr />}
                 {childNode.nodeType === BLOCKS.QUOTE && (
-                    <BlockQuote>{childNode.content[0].content[0].value}</BlockQuote>
+                    <BlockQuote>
+                        {((childNode.content[0] as unknown as Inline).content[0] as unknown as Text).value}
+                    </BlockQuote>
                 )}
                 {childNode.nodeType === INLINES.HYPERLINK && childNode?.data?.uri && (
                     <ExternalLink href={childNode.data.uri}>
-                        <Astro.self node={childNode.content as Node} noMargins={noMargins} />
+                        <Astro.self node={childNode.content as unknown as Node} noMargins={noMargins} />
                     </ExternalLink>
                 )}
                 {childNode.nodeType === INLINES.ENTRY_HYPERLINK && (

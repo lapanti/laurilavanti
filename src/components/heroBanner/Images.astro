@@ -51,11 +51,11 @@ const { backgroundImage, image } = Astro.props
                 alt={image.fields.description ?? null}
                 background="transparent"
                 class="image"
-                height="562"
+                height={562}
                 layout="constrained"
                 priority
                 src={`https:${image.fields.file.url}`}
-                width="560"
+                width={560}
             />
         )
     }

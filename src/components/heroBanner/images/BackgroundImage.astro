@@ -52,11 +52,11 @@ const { image } = Astro.props
             <div>
                 <Image
                     alt=""
-                    height="588"
-                    layout="full-width"
+                    height={660}
+                    layout="fullWidth"
                     priority
                     src={`https:${image.fields.file.url}`}
-                    width="768"
+                    width={768}
                 />
             </div>
         )

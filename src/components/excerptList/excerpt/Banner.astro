@@ -52,9 +52,9 @@ const { title, slug, image } = Astro.props
             <Image
                 alt={image.fields.description ?? null}
                 class="excerpt-image"
-                height="315"
+                height={315}
                 src={`https:${image.fields.file?.url}`}
-                width="560"
+                width={560}
             />
         )
     }

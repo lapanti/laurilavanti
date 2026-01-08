@@ -46,10 +46,10 @@ const { image, caption } = Astro.props
         <figure aria-label={caption}>
             <Image
                 alt={image.fields.description ?? null}
-                height="500"
+                height={500}
                 layout="constrained"
                 src={`https:${image.fields.file.url}`}
-                width="1200"
+                width={1200}
             />
             <figcaption>{caption}</figcaption>
         </figure>
