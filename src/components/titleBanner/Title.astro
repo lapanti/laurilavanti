@@ -1,0 +1,63 @@
+---
+import type { TagCollection, TagLink } from 'contentful'
+
+import { colors, CONTENT_PADDING, sizes } from '../../lib/styles'
+import Meta from '../Meta.astro'
+import H1 from './title/H1.astro'
+
+interface Props {
+    allTags?: TagCollection
+    createdAt?: string
+    tags?: { sys: TagLink }[]
+    title: string
+}
+
+const { title, createdAt, tags, allTags } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsWhite: colors.white,
+        contentPadding: CONTENT_PADDING,
+        sizes05: sizes[0.5],
+        sizes1: sizes[1],
+        sizes5: sizes[5],
+        sizes375: sizes[37.5],
+    }}
+>
+    .title-container {
+        background-color: var(--colorsWhite);
+        padding-bottom: var(--sizes1);
+        padding-left: var(--contentPadding);
+        padding-right: var(--contentPadding);
+        padding-top: var(--sizes1);
+    }
+
+    @media (min-width: 1200px) {
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: var(--sizes375);
+            padding-bottom: 0;
+            padding-left: var(--sizes05);
+            padding-right: var(--sizes5);
+            padding-top: 0;
+            width: 50%;
+        }
+    }
+</style>
+<div class="title-container">
+    <H1>{title}</H1>
+    {
+        createdAt && tags && allTags && (
+            <Meta
+                allTags={allTags}
+                ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
+                bigDateTime
+                date={createdAt}
+                tags={tags}
+            />
+        )
+    }
+</div>

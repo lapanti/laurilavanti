@@ -1,18 +1,15 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
 import type { TagCollection, TagLink } from 'contentful'
-import type { Image } from '../types/contentful'
+import type { Image as ContentfulImage } from '../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
-
-import { colors, CONTENT_PADDING, HEADER_SIZE, sizes } from '../lib/styles'
-import Meta from './Meta.astro'
-import H1 from './titleBanner/H1.astro'
+import { colors, HEADER_SIZE, sizes } from '../lib/styles'
+import Image from './titleBanner/Image.astro'
+import Title from './titleBanner/Title.astro'
 
 interface Props {
     allTags?: TagCollection
     createdAt?: string
-    heroImage?: Image
+    heroImage?: ContentfulImage
     tags?: { sys: TagLink }[]
     title: string
 }
@@ -24,13 +21,8 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
     define:vars={{
         colorsEvening: colors.evening,
         colorsWhite: colors.white,
-        contentPadding: CONTENT_PADDING,
         headerSize: HEADER_SIZE,
-        sizes05: sizes[0.5],
-        sizes1: sizes[1],
-        sizes5: sizes[5],
         sizes45: sizes[45],
-        sizes375: sizes[37.5],
     }}
 >
     .container {
@@ -41,14 +33,6 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
 
     .content {
         background-color: var(--colorsWhite);
-    }
-
-    .title-container {
-        background-color: var(--colorsWhite);
-        padding-bottom: var(--sizes1);
-        padding-left: var(--contentPadding);
-        padding-right: var(--contentPadding);
-        padding-top: var(--sizes1);
     }
 
     @media (min-width: 1200px) {
@@ -63,74 +47,11 @@ const { title, heroImage, createdAt, tags, allTags } = Astro.props
             justify-content: flex-end;
             margin: auto;
         }
-
-        .content .title-container,
-        .content .image-container {
-            width: 50%;
-        }
-
-        .title-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            max-width: var(--sizes375);
-            padding-bottom: 0;
-            padding-left: var(--sizes05);
-            padding-right: var(--sizes5);
-            padding-top: 0;
-        }
     }
 </style>
 <div class="container">
     <div class="content">
-        <div class="title-container">
-            <H1>{title}</H1>
-            {
-                createdAt && tags && allTags && (
-                    <Meta
-                        allTags={allTags}
-                        ariaLabel={`Kirjoituksen ${title} meta-tiedot`}
-                        bigDateTime
-                        date={createdAt}
-                        tags={tags}
-                    />
-                )
-            }
-        </div>
-        <style>
-            .image-container {
-                display: flex;
-                overflow: hidden;
-                position: relative;
-                aspect-ratio: 7 / 6;
-            }
-
-            img {
-                top: 0;
-                left: 0;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        </style>
-        <div class="image-container">
-            {
-                heroImage?.fields?.file?.url && (
-                    <Picture
-                        alt={heroImage.fields.description ?? null}
-                        fit="cover"
-                        formats={['avif', 'webp']}
-                        height="588"
-                        layout="full-width"
-                        priority
-                        sizes="(max-width: 1200px) 100vw, 50vw"
-                        src={`https:${heroImage.fields.file.url}`}
-                        width="768"
-                        widths={[360, 576, 768, 992, 1200, 1280, 2560]}
-                    />
-                )
-            }
-        </div>
+        <Title allTags={allTags} createdAt={createdAt} tags={tags} title={title} />
+        <Image heroImage={heroImage} />
     </div>
 </div>
