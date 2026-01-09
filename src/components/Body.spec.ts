@@ -87,10 +87,16 @@ describe('<Body />', () => {
             },
         })
 
-        expect(getByText(result, value)).toHaveAttribute(
-            'data-astro-source-file',
-            '/home/lapanti/code/laurilavanti/src/components/Paragraph.astro'
-        )
+        expect(result).toMatchInlineSnapshot(`
+          <div>
+            <p
+              data-astro-cid-ho6gvodc=""
+              style="grid-column-start:3;--bodyFontSize: 1.125rem;--bodyFontWeight: 400;--bodyLineHeight: 1.75rem;--marginBottom: 1rem;--marginTop: 1rem;"
+            >
+               Hello, world! 
+            </p>
+          </div>
+        `)
     })
 
     it('should render H2 when provided', async () => {
@@ -383,10 +389,14 @@ describe('<Body />', () => {
             },
         })
 
-        expect(result.firstChild).toHaveAttribute(
-            'data-astro-source-file',
-            '/home/lapanti/code/laurilavanti/src/components/ExcerptList.astro'
-        )
+        expect(result.firstChild).toMatchInlineSnapshot(`
+          <ul
+            data-astro-cid-zweomfls=""
+            style="--sizes2: 2rem;--sizes3point5: 3.5rem;--sizes4: 4rem;--sizes35: 35rem;"
+          >
+              
+          </ul>
+        `)
     })
 
     it('should render image with caption when provided', async () => {
