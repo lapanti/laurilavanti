@@ -49,10 +49,6 @@ export const gridAreas = {
     footer: 'footer' as const,
     main: 'main' as const,
 } as const
-export const gridTemplateAreasLayout = `
-    "${gridAreas.main}"
-    "${gridAreas.footer}"
-`
 
 export const gridTemplateRowsLayout = `1fr ${sizes[6]}` as const
 export const gridTemplateRowsLayoutMobile = `1fr ${sizes[9]}` as const
