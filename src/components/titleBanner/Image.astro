@@ -1,11 +1,10 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
-import type { Image } from '../../types/contentful'
+import type { Image as ContentfulImage } from '../../types/contentful'
 
-import { Picture } from 'astro:assets' /* eslint-disable-line import/no-unresolved */
+import { Image } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 interface Props {
-    heroImage?: Image
+    heroImage?: ContentfulImage
 }
 
 const { heroImage } = Astro.props
@@ -19,17 +18,8 @@ const { heroImage } = Astro.props
         aspect-ratio: 7 / 6;
     }
 
-    img {
-        top: 0;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
     @media (min-width: 1200px) {
-        .content .image-container {
+        .image-container {
             width: 50%;
         }
     }
@@ -37,17 +27,11 @@ const { heroImage } = Astro.props
 <div class="image-container">
     {
         heroImage?.fields?.file?.url && (
-            <Picture
+            <Image
                 alt={heroImage.fields.description ?? null}
-                fit="cover"
-                formats={['avif', 'webp']}
-                height="588"
-                layout="full-width"
+                layout="fullWidth"
                 priority
-                sizes="(max-width: 1200px) 100vw, 50vw"
                 src={`https:${heroImage.fields.file.url}`}
-                width="768"
-                widths={[360, 576, 768, 992, 1200, 1280, 2560]}
             />
         )
     }

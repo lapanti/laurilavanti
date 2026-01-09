@@ -1,5 +1,4 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
 import type { Image as ContentfulImage } from '../../../types/contentful'
 
 import { Image } from '@unpic/astro' // eslint-disable-line import/no-unresolved
@@ -16,15 +15,6 @@ const { image } = Astro.props
 <style define:vars={{ colorsEvening70: colors.evening70 }}>
     div {
         display: none;
-    }
-
-    img {
-        top: 0;
-        left: 0;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
     }
 
     div:after {
@@ -50,14 +40,7 @@ const { image } = Astro.props
     {
         image?.fields?.file?.url && (
             <div>
-                <Image
-                    alt=""
-                    height={660}
-                    layout="fullWidth"
-                    priority
-                    src={`https:${image.fields.file.url}`}
-                    width={768}
-                />
+                <Image alt="" layout="fullWidth" priority src={`https:${image.fields.file.url}`} />
             </div>
         )
     }
