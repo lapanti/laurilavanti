@@ -1,7 +1,7 @@
 ---
 import type { Image as ContentfulImage } from '../../types/contentful'
 
-import { Image } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { Image as UnpicImage } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 interface Props {
     heroImage?: ContentfulImage
@@ -27,7 +27,7 @@ const { heroImage } = Astro.props
 <div class="image-container">
     {
         heroImage?.fields?.file?.url && (
-            <Image
+            <UnpicImage
                 alt={heroImage.fields.description ?? null}
                 layout="fullWidth"
                 priority
