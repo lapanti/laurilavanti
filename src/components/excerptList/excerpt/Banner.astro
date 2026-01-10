@@ -17,7 +17,7 @@ const { title, slug, image } = Astro.props
 
 const sharedProps = {
     height: 315,
-    operations: { contentful: { f: 'face', q: 80 } },
+    operations: { contentful: { f: 'face' as const, q: 80 } },
     src: `https:${image?.fields?.file?.url}`,
     width: 560,
 }
