@@ -11,7 +11,7 @@ export class HomePage extends AnyPage {
     constructor(page: Page) {
         super(page)
         this.mainTitle = page.getByRole('heading', { level: 1, name: /Lauri Lavanti/i })
-        this.secondaryTitle = page.getByRole('heading', { level: 2, name: /Digitalisaatio arjessa/i })
+        this.secondaryTitle = page.getByRole('heading', { level: 2, name: /Arjesta digitalisaation keskellä/i })
     }
 
     async goHome() {
