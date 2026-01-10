@@ -2,7 +2,7 @@
 /* eslint-disable astro/no-unused-css-selector */
 import type { Image as ContentfulImage } from '../../../types/contentful'
 
-import { Image } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 import { sizes } from '../../../lib/styles'
 import H2 from '../../H2.astro'
@@ -14,6 +14,13 @@ interface Props {
 }
 
 const { title, slug, image } = Astro.props
+
+const sharedProps = {
+    height: 315,
+    operations: { contentful: { q: 80 } },
+    src: `https:${image?.fields?.file?.url}`,
+    width: 560,
+}
 ---
 
 <style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
@@ -49,13 +56,11 @@ const { title, slug, image } = Astro.props
 <a href={`/${slug}/`} rel="permalink">
     {
         image && (
-            <Image
-                alt={image.fields.description ?? null}
-                class="excerpt-image"
-                height={315}
-                src={`https:${image.fields.file?.url}`}
-                width={560}
-            />
+            <picture>
+                <Source {...sharedProps} type="image/avif" />
+                <Source {...sharedProps} type="image/webp" />
+                <Image alt={image.fields.description ?? null} class="excerpt-image" {...sharedProps} />
+            </picture>
         )
     }
     <div>
