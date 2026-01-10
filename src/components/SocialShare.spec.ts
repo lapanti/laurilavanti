@@ -97,7 +97,7 @@ describe('<SocialShare />', () => {
 
         expect(getByRole(result, 'link', { name: 'Jaa Threadsissä' })).toHaveAttribute(
             'href',
-            `https://threads.net/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
+            `https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
         )
     })
 

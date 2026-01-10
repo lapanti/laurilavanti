@@ -2,11 +2,12 @@
 import { colors, sizes } from '../lib/styles'
 
 interface Props {
+    ariaLabel?: string
     href: string
     rel?: string
 }
 
-const { href, rel } = Astro.props
+const { ariaLabel, href, rel } = Astro.props
 ---
 
 <style define:vars={{ colorsMoss: colors.moss, sizes0125: sizes[0.125] }}>
@@ -16,6 +17,6 @@ const { href, rel } = Astro.props
         text-decoration-thickness: var(--sizes0125);
     }
 </style>
-<a href={href} rel={`${rel ? rel : ''} noopener noreferrer`} target="_blank">
+<a aria-label={ariaLabel} href={href} rel={`${rel ? rel : ''} noopener noreferrer`} target="_blank">
     <slot />
 </a>

@@ -139,7 +139,11 @@ const children: Node[] = Array.isArray(node) ? node : 'content' in node ? node.c
                 )}
                 {childNode.nodeType === INLINES.EMBEDDED_ENTRY &&
                     childNode.data.target.sys.contentType.sys.id === 'contactInfoLink' && (
-                        <ExternalLink href={childNode.data.target.fields.url} rel="me">
+                        <ExternalLink
+                            ariaLabel={`${childNode.data.target.fields.title} ${childNode.data.target.fields.username}`}
+                            href={childNode.data.target.fields.url}
+                            rel="me"
+                        >
                             {childNode.data.target.fields.username}
                         </ExternalLink>
                     )}

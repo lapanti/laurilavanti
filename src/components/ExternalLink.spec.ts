@@ -76,4 +76,19 @@ describe('<ExternalLink />', () => {
 
         expect(getByRole(result, 'link', { name: text })).toHaveAttribute('rel', `${rel} noopener noreferrer`)
     })
+
+    it('should render with aria label', async () => {
+        const ariaLabel = 'A completely other text'
+        const result = await renderAstroComponent(ExternalLink, {
+            props: {
+                ariaLabel,
+                href,
+            },
+            slots: {
+                default: text,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: ariaLabel })).toBeDefined()
+    })
 })

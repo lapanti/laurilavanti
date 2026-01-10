@@ -26,6 +26,16 @@ describe('<MobileMenu />', () => {
         expect(result.firstChild).toMatchSnapshot()
     })
 
+    it('should render the menu input', async () => {
+        const result = await renderAstroComponent(MobileMenu, {
+            props: {
+                links,
+            },
+        })
+
+        expect(getByRole(result, 'checkbox', { name: /Avaa valikko/i })).not.toBeChecked()
+    })
+
     it('should render the main link', async () => {
         const result = await renderAstroComponent(MobileMenu, {
             props: {

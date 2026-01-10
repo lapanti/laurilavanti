@@ -444,6 +444,7 @@ describe('<Body />', () => {
     it('should render contact info link when provided', async () => {
         const url = 'https://mastodontti.fi/laurilavanti'
         const username = '@laurilavanti@mastodontti.fi'
+        const title = 'Mastodon'
         const result = await renderAstroComponent(Body, {
             props: {
                 allTags: { items: [] },
@@ -453,6 +454,7 @@ describe('<Body />', () => {
                             data: {
                                 target: {
                                     fields: {
+                                        title,
                                         url,
                                         username,
                                     },
@@ -472,7 +474,8 @@ describe('<Body />', () => {
             },
         })
 
-        const link = getByRole(result, 'link', { name: username })
+        const link = getByRole(result, 'link', { name: `${title} ${username}` })
+        expect(link).toHaveTextContent(username)
         expect(link).toHaveAttribute('href', url)
         expect(link).toHaveAttribute('target', '_blank')
     })
