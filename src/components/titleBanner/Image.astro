@@ -1,13 +1,19 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
 import type { Image as ContentfulImage } from '../../types/contentful'
 
-import { Image as UnpicImage } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { Image as UnpicImage, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 interface Props {
     heroImage?: ContentfulImage
 }
 
 const { heroImage } = Astro.props
+
+const sharedProps = {
+    operations: { contentful: { f: 'face' as const, q: 80 } },
+    src: `https:${heroImage?.fields?.file?.url}`,
+}
 ---
 
 <style>
@@ -15,24 +21,30 @@ const { heroImage } = Astro.props
         display: flex;
         overflow: hidden;
         position: relative;
-        aspect-ratio: 7 / 6;
+    }
+
+    img {
+        aspect-ratio: 1.777777777777;
     }
 
     @media (min-width: 1200px) {
         .image-container {
             width: 50%;
         }
+
+        img {
+            aspect-ratio: 1.1;
+        }
     }
 </style>
 <div class="image-container">
     {
         heroImage?.fields?.file?.url && (
-            <UnpicImage
-                alt={heroImage.fields.description ?? null}
-                layout="fullWidth"
-                priority
-                src={`https:${heroImage.fields.file.url}`}
-            />
+            <picture>
+                <Source {...sharedProps} type="image/avif" />
+                <Source {...sharedProps} type="image/webp" />
+                <UnpicImage {...sharedProps} alt={heroImage.fields.description ?? null} layout="fullWidth" priority />
+            </picture>
         )
     }
 </div>
