@@ -1,7 +1,7 @@
 ---
 import type { Image as ContentfulImage } from '../../types/contentful'
 
-import { Image } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 import { sizes, typographics } from '../../lib/styles'
 
@@ -11,6 +11,13 @@ interface Props {
 }
 
 const { image, caption } = Astro.props
+
+const sharedProps = {
+    height: 500,
+    operations: { contentful: { q: 80 } },
+    src: `https:${image?.fields?.file?.url}`,
+    width: 1200,
+}
 ---
 
 <style
@@ -44,13 +51,11 @@ const { image, caption } = Astro.props
 {
     image?.fields?.file?.url && (
         <figure aria-label={caption}>
-            <Image
-                alt={image.fields.description ?? null}
-                height={500}
-                layout="constrained"
-                src={`https:${image.fields.file.url}`}
-                width={1200}
-            />
+            <picture>
+                <Source {...sharedProps} type="image/avif" />
+                <Source {...sharedProps} type="image/webp" />
+                <Image {...sharedProps} alt={image.fields.description ?? null} layout="constrained" />
+            </picture>
             <figcaption>{caption}</figcaption>
         </figure>
     )
