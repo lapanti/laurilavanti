@@ -21,6 +21,7 @@
     "astro": "astro",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:e2e:setup": "playwright install --with-deps",
     "test:e2e:update": "npm run test:e2e --  --update-snapshots",
     "test:e2e": "playwright test",
     "knip": "knip",
