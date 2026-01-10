@@ -1,7 +1,7 @@
 ---
 import type { Image as ContentfulImage } from '../../../types/contentful'
 
-import { Image } from '@unpic/astro' // eslint-disable-line import/no-unresolved
+import { Image, Source } from '@unpic/astro' // eslint-disable-line import/no-unresolved
 
 import { colors } from '../../../lib/styles'
 
@@ -10,6 +10,11 @@ interface Props {
 }
 
 const { image } = Astro.props
+
+const sharedProps = {
+    operations: { contentful: { q: 80 } },
+    src: `https:${image?.fields?.file?.url}`,
+}
 ---
 
 <style define:vars={{ colorsEvening70: colors.evening70 }}>
@@ -40,7 +45,11 @@ const { image } = Astro.props
     {
         image?.fields?.file?.url && (
             <div>
-                <Image alt="" layout="fullWidth" priority src={`https:${image.fields.file.url}`} />
+                <picture>
+                    <Source {...sharedProps} type="image/avif" />
+                    <Source {...sharedProps} type="image/webp" />
+                    <Image {...sharedProps} alt="" layout="fullWidth" priority />
+                </picture>
             </div>
         )
     }
