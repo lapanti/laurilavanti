@@ -28,13 +28,27 @@ export class AnyPage {
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
         this.navLinkAboutMeSwe = page.getByRole('link', { name: /🇸🇪/i })
         this.navLinkAboutMeEn = page.getByRole('link', { name: /🇬🇧/i })
-        this.footerFacebookLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa Facebook"]')
-        this.footerBlueskyLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa Bluesky"]')
-        this.footerThreadsLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa Threads"]')
-        this.footerInstagramLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa Instagram"]')
-        this.footerLinkedInLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa LinkedIn"]')
-        this.footerMastodonLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa Mastodon"]')
-        this.footerTikTokLink = page.locator('footer').locator('a[aria-label="Lauri Lavanti palvelussa TikTok"]')
+        this.footerFacebookLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa Facebook (linkki aukeaa uudessa välilehdessä)"]')
+        this.footerBlueskyLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa Bluesky (linkki aukeaa uudessa välilehdessä)"]')
+        this.footerThreadsLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa Threads (linkki aukeaa uudessa välilehdessä)"]')
+        this.footerInstagramLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa Instagram (linkki aukeaa uudessa välilehdessä)"]')
+        this.footerLinkedInLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa LinkedIn (linkki aukeaa uudessa välilehdessä)"]')
+        this.footerMastodonLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa Mastodon (linkki aukeaa uudessa välilehdessä)"]')
+        this.footerTikTokLink = page
+            .locator('footer')
+            .locator('a[aria-label="Lauri Lavanti palvelussa TikTok (linkki aukeaa uudessa välilehdessä)"]')
     }
 
     async openMainNavigation() {
