@@ -89,6 +89,6 @@ describe('<ExternalLink />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: ariaLabel })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `${ariaLabel} (linkki aukeaa uudessa välilehdessä)` })).toBeDefined()
     })
 })

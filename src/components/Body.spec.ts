@@ -474,7 +474,7 @@ describe('<Body />', () => {
             },
         })
 
-        const link = getByRole(result, 'link', { name: `${title} ${username}` })
+        const link = getByRole(result, 'link', { name: `${title} ${username} (linkki aukeaa uudessa välilehdessä)` })
         expect(link).toHaveTextContent(username)
         expect(link).toHaveAttribute('href', url)
         expect(link).toHaveAttribute('target', '_blank')
