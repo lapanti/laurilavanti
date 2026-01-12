@@ -34,10 +34,10 @@ export class BlogPostPage extends AnyPage {
         this.date = page.getByText(date)
         this.tagsAndUrls = tags.map(([tag, url]) => [page.getByRole('link', { name: tag }).first(), url])
 
-        this.shareFacebook = page.getByRole('link', { name: /Jaa Facebookissa/i })
-        this.shareBluesky = page.getByRole('link', { name: /Jaa Blueskyssa/i })
-        this.shareThreads = page.getByRole('link', { name: /Jaa Threadsissä/i })
-        this.shareLinkedIn = page.getByRole('link', { name: /Jaa LinkedInissä/i })
+        this.shareFacebook = page.getByRole('link', { name: `Jaa kirjoitus "${title}" Facebookissa` })
+        this.shareBluesky = page.getByRole('link', { name: `Jaa kirjoitus "${title}" Blueskyssa` })
+        this.shareThreads = page.getByRole('link', { name: `Jaa kirjoitus "${title}" Threadsissä` })
+        this.shareLinkedIn = page.getByRole('link', { name: `Jaa kirjoitus "${title}" LinkedInissä` })
         this.otherPostsTitle = page.getByRole('heading', { name: /Muita kirjoituksia/i })
     }
 
