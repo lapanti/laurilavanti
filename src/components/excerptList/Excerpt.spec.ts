@@ -1,4 +1,4 @@
-import { getByRole, queryByRole } from '@testing-library/dom'
+import { getByRole, getByText, queryByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../../tests/helpers'
@@ -77,17 +77,17 @@ describe('<Excerpt />', () => {
     })
 
     it('should render Description component', async () => {
+        const excerpt = 'Test excerpt'
         const result = await renderAstroComponent(Excerpt, {
             props: {
                 allTags: [],
-                excerpt: 'Test excerpt',
+                excerpt,
                 slug: 'test-article',
                 title: 'Test Article',
             },
         })
 
-        const link = getByRole(result, 'link', { name: /Lue lisää »/i })
-        expect(link).toBeDefined()
+        expect(getByText(result, excerpt)).toBeDefined()
     })
 
     it('should render Meta when date and tags are provided', async () => {
