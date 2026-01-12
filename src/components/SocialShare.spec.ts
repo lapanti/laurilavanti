@@ -44,7 +44,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Facebookissa' })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toBeDefined()
     })
 
     it('should render correct url for facebook link', async () => {
@@ -56,7 +56,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Facebookissa' })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toHaveAttribute(
             'href',
             `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`
         )
@@ -71,7 +71,25 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Facebookissa' })).toHaveAttribute('rel', 'noopener noreferrer')
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toHaveAttribute(
+            'rel',
+            'noopener noreferrer'
+        )
+    })
+
+    it('should render correct title for facebook link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toHaveAttribute(
+            'title',
+            'Jaa Facebookissa'
+        )
     })
 
     it('should render threads link', async () => {
@@ -83,7 +101,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Threadsissä' })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toBeDefined()
     })
 
     it('should render correct url for threads link', async () => {
@@ -95,7 +113,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Threadsissä' })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toHaveAttribute(
             'href',
             `https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
         )
@@ -110,7 +128,25 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Threadsissä' })).toHaveAttribute('rel', 'noopener noreferrer')
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toHaveAttribute(
+            'rel',
+            'noopener noreferrer'
+        )
+    })
+
+    it('should render correct title for threads link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toHaveAttribute(
+            'title',
+            'Jaa Threadsissä'
+        )
     })
 
     it('should render bluesky link', async () => {
@@ -122,7 +158,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Blueskyssa' })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toBeDefined()
     })
 
     it('should render correct url for bluesky link', async () => {
@@ -134,7 +170,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Blueskyssa' })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toHaveAttribute(
             'href',
             `https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
         )
@@ -149,7 +185,25 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa Blueskyssa' })).toHaveAttribute('rel', 'noopener noreferrer')
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toHaveAttribute(
+            'rel',
+            'noopener noreferrer'
+        )
+    })
+
+    it('should render correct title for bluesky link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toHaveAttribute(
+            'title',
+            'Jaa Blueskyssa'
+        )
     })
 
     it('should render linkedin link', async () => {
@@ -161,7 +215,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa LinkedInissä' })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toBeDefined()
     })
 
     it('should render correct url for linkedin link', async () => {
@@ -173,7 +227,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa LinkedInissä' })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toHaveAttribute(
             'href',
             `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`
         )
@@ -188,6 +242,24 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Jaa LinkedInissä' })).toHaveAttribute('rel', 'noopener noreferrer')
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toHaveAttribute(
+            'rel',
+            'noopener noreferrer'
+        )
+    })
+
+    it('should render correct title for linkedin link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toHaveAttribute(
+            'title',
+            'Jaa LinkedInissä'
+        )
     })
 })
