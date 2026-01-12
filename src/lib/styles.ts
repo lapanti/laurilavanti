@@ -36,6 +36,7 @@ export const sizes = {
 
 export const zIndices = {
     [50]: 50 as const,
+    [100]: 100 as const,
 } as const
 
 export const HEADER_SIZE = sizes[3.75]

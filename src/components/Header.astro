@@ -5,6 +5,7 @@ import { contentfulClient } from '../lib/contentful'
 import { colors, HEADER_SIZE, zIndices } from '../lib/styles'
 import DesktopMenu from './header/DesktopMenu.astro'
 import MobileMenu from './header/MobileMenu.astro'
+import SkipLinks from './header/SkipLinks.astro'
 
 /** Only one main nav there */
 const mainNav = await contentfulClient.getEntry<MainNav>('7EKHWYCNVfmLLfc5TuKo9A')
@@ -42,6 +43,7 @@ const links = (mainNav.fields.links as (Page | undefined)[])
     }
 </style>
 <header>
+    <SkipLinks />
     <MobileMenu links={links} />
     <DesktopMenu links={links} />
 </header>

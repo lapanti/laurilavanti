@@ -1,0 +1,26 @@
+---
+import { colors, sizes, zIndices } from '../../lib/styles'
+---
+
+<style define:vars={{ colorsWhite: colors.white, rem05: sizes[0.5], zIndices100: zIndices[100] }}>
+    a {
+        background-color: var(--colorsWhite);
+        left: var(--rem05);
+        padding: var(--rem05);
+        position: absolute;
+        top: var(--rem05);
+        z-index: var(--zIndices100);
+    }
+
+    a:not(:focus):not(:focus-within) {
+        border: 0px;
+        clip: rect(0px, 0px, 0px, 0px);
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+        padding: 0px;
+        white-space: nowrap;
+    }
+</style>
+<a href="#main">Siirry pääsisältöön &#x27A1;</a>
+<a href="#footer">Siirry alatunnisteeseen &#x27A1;</a>
