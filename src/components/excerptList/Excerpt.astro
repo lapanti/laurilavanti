@@ -33,6 +33,6 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
                 <Meta allTags={allTags} ariaLabel={`Kirjoituksen "${title}" meta-tiedot`} date={date} tags={tags} />
             )
         }
-        <Description excerpt={excerpt} slug={slug} />
+        <Description excerpt={excerpt} />
     </article>
 </li>
