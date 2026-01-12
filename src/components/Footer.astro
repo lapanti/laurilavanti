@@ -74,11 +74,15 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
             {
                 (footerNav?.fields?.links as FooterNav['fields']['links'] | undefined)?.map((link) =>
                     !link ? null : link.fields.icon === 'instagram' ? (
-                        <InstagramLink title={link.fields.title} url={link.fields.url} />
+                        <InstagramLink title={`Lauri Lavanti palvelussa ${link.fields.title}`} url={link.fields.url} />
                     ) : link.fields.icon === 'tiktok' ? (
-                        <TikTokLink title={link.fields.title} url={link.fields.url} />
+                        <TikTokLink title={`Lauri Lavanti palvelussa ${link.fields.title}`} url={link.fields.url} />
                     ) : (
-                        <Link icon={link.fields.icon} title={link.fields.title} url={link.fields.url} />
+                        <Link
+                            icon={link.fields.icon}
+                            title={`Lauri Lavanti palvelussa ${link.fields.title}`}
+                            url={link.fields.url}
+                        />
                     )
                 )
             }
