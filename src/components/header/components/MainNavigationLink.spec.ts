@@ -25,12 +25,6 @@ describe('<MainNavigationLink />', () => {
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
     })
 
-    it('should set title attribute', async () => {
-        const result = await renderAstroComponent(MainNavigationLink, {})
-
-        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('title', 'Lauri Lavanti')
-    })
-
     it('should have aria-current as false when not in home page', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {
             request: new Request('https://laurilavanti.fi/minusta'),

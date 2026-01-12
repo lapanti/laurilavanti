@@ -47,6 +47,4 @@ const { pathname } = Astro.url
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a aria-current={pathname.slice(1).replace(/\//, '') === '' ? 'page' : 'false'} href="/" title="Lauri Lavanti">
-    Lauri Lavanti
-</a>
+<a aria-current={pathname.slice(1).replace(/\//, '') === '' ? 'page' : 'false'} href="/">Lauri Lavanti</a>
