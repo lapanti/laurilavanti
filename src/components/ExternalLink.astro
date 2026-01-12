@@ -17,6 +17,11 @@ const { ariaLabel, href, rel } = Astro.props
         text-decoration-thickness: var(--sizes0125);
     }
 </style>
-<a aria-label={ariaLabel} href={href} rel={`${rel ? rel : ''} noopener noreferrer`} target="_blank">
+<a
+    aria-label={ariaLabel ? `${ariaLabel} (linkki aukeaa uudessa välilehdessä)` : null}
+    href={href}
+    rel={`${rel ? rel : ''} noopener noreferrer`}
+    target="_blank"
+>
     <slot />
 </a>
