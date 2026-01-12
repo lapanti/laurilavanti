@@ -54,7 +54,7 @@ describe('styles', () => {
 
     describe('zIndices', () => {
         it('should stay the same', () => {
-            expect(zIndices).toEqual({ [50]: 50 })
+            expect(zIndices).toEqual({ [50]: 50, [100]: 100 })
         })
     })
 
