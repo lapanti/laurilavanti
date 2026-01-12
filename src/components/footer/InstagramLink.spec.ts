@@ -51,7 +51,7 @@ describe('<InstagramLink />', () => {
 
         expect(getByRole(result, 'link', { name: /Follow on Instagram/i })).toHaveAttribute(
             'aria-label',
-            'Follow on Instagram'
+            'Follow on Instagram (linkki aukeaa uudessa välilehdessä)'
         )
     })
 

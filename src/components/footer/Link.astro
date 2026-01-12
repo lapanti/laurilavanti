@@ -80,7 +80,13 @@ const hoverColor = iconToHoverColor(icon)
     }
 </style>
 <li>
-    <a aria-label={title} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
+    <a
+        aria-label={`${title} (linkki aukeaa uudessa välilehdessä)`}
+        href={url}
+        rel="me noopener noreferrer"
+        target="_blank"
+        title={title}
+    >
         {icon && <Icon name={`fa7-brands:${icon}`} />}
     </a>
 </li>

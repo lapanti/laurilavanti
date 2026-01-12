@@ -53,7 +53,7 @@ describe('<TikTokLink />', () => {
 
         expect(getByRole(result, 'link', { name: /Follow on TikTok/i })).toHaveAttribute(
             'aria-label',
-            'Follow on TikTok'
+            'Follow on TikTok (linkki aukeaa uudessa välilehdessä)'
         )
     })
 

@@ -47,7 +47,13 @@ const { title, url } = Astro.props
     }
 </style>
 <li>
-    <a aria-label={title} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
+    <a
+        aria-label={`${title} (linkki aukeaa uudessa välilehdessä)`}
+        href={url}
+        rel="me noopener noreferrer"
+        target="_blank"
+        title={title}
+    >
         <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
             <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
             <path
