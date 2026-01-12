@@ -58,6 +58,6 @@ const { pathname } = Astro.url
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'} href={`/${slug}/`} title={title}
+<a aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'} aria-label={title} href={`/${slug}/`}
     >{navigationTitle ?? title}
 </a>

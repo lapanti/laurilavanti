@@ -8,12 +8,13 @@ import DesktopMenu from './DesktopMenu.astro'
 
 describe('<DesktopMenu />', () => {
     const aboutMeNavigationTitle = 'Laurista'
+    const aboutTitle = 'Minusta'
     const aboutMeSlug = 'minusta'
     const blogNavigationTitle = 'Blogi'
     const blogSlug = 'blogi'
     const links = [
-        { fields: { navigationTitle: aboutMeNavigationTitle, slug: aboutMeSlug, title: 'Minusta' } },
-        { fields: { navigationTitle: blogNavigationTitle, slug: blogSlug, title: 'Blogi' } },
+        { fields: { navigationTitle: aboutMeNavigationTitle, slug: aboutMeSlug, title: aboutTitle } },
+        { fields: { navigationTitle: blogNavigationTitle, slug: blogSlug, title: blogNavigationTitle } },
     ]
 
     it('should render', async () => {
@@ -43,7 +44,7 @@ describe('<DesktopMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: aboutMeNavigationTitle })).toHaveAttribute('href', `/${aboutMeSlug}/`)
+        expect(getByRole(result, 'link', { name: aboutTitle })).toHaveAttribute('href', `/${aboutMeSlug}/`)
         expect(getByRole(result, 'link', { name: blogNavigationTitle })).toHaveAttribute('href', `/${blogSlug}/`)
     })
 })

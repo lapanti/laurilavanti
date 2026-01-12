@@ -8,11 +8,12 @@ import MobileMenu from './MobileMenu.astro'
 
 describe('<MobileMenu />', () => {
     const aboutMeNavigationTitle = 'Laurista'
+    const aboutMeTitle = 'Minusta'
     const aboutMeSlug = 'minusta'
     const blogNavigationTitle = 'Blogi'
     const blogSlug = 'blogi'
     const links = [
-        { fields: { navigationTitle: aboutMeNavigationTitle, slug: aboutMeSlug, title: 'Minusta' } },
+        { fields: { navigationTitle: aboutMeNavigationTitle, slug: aboutMeSlug, title: aboutMeTitle } },
         { fields: { navigationTitle: blogNavigationTitle, slug: blogSlug, title: 'Blogi' } },
     ]
 
@@ -53,7 +54,7 @@ describe('<MobileMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: aboutMeNavigationTitle })).toHaveAttribute('href', `/${aboutMeSlug}/`)
+        expect(getByRole(result, 'link', { name: aboutMeTitle })).toHaveAttribute('href', `/${aboutMeSlug}/`)
         expect(getByRole(result, 'link', { name: blogNavigationTitle })).toHaveAttribute('href', `/${blogSlug}/`)
     })
 })

@@ -32,7 +32,7 @@ describe('<NavigationLink />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: navigationTitle })).toBeDefined()
+        expect(getByRole(result, 'link', { name: title })).toBeDefined()
     })
 
     it('should have correct href attribute', async () => {
@@ -44,10 +44,10 @@ describe('<NavigationLink />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: navigationTitle })).toHaveAttribute('href', `/${slug}/`)
+        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('href', `/${slug}/`)
     })
 
-    it('should set title attribute', async () => {
+    it('should set aria-label attribute', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
                 navigationTitle,
@@ -56,7 +56,7 @@ describe('<NavigationLink />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: navigationTitle })).toHaveAttribute('title', title)
+        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-label', title)
     })
 
     it('should have aria-current as false when not in correct page', async () => {
@@ -69,7 +69,7 @@ describe('<NavigationLink />', () => {
             request: new Request('https://laurilavanti.fi/'),
         })
 
-        expect(getByRole(result, 'link', { name: navigationTitle })).toHaveAttribute('aria-current', 'false')
+        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-current', 'false')
     })
 
     it('should have aria-current as page when in correct page', async () => {
@@ -82,6 +82,6 @@ describe('<NavigationLink />', () => {
             request: new Request(`https://laurilavanti.fi/${slug}/`),
         })
 
-        expect(getByRole(result, 'link', { name: navigationTitle })).toHaveAttribute('aria-current', 'page')
+        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-current', 'page')
     })
 })
