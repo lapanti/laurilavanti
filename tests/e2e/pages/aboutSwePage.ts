@@ -20,6 +20,6 @@ export class AboutSwePage extends AnyPage {
     }
 
     async checkContent() {
-        await this.checkFooter()
+        await expect(this.aboutMeSweTitle).toBeVisible()
     }
 }

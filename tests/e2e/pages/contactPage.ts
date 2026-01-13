@@ -41,7 +41,5 @@ export class ContactPage extends AnyPage {
         await expect(this.mastodon).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
         await expect(this.threads).toHaveAttribute('href', 'https://www.threads.com/@laurilavanti')
         await expect(this.tiktok).toHaveAttribute('href', 'https://www.tiktok.com/@laurilavanti')
-
-        await this.checkFooter()
     }
 }

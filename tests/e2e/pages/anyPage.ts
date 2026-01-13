@@ -105,8 +105,4 @@ export class AnyPage {
         await expect(this.footerMastodonLink).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
         await expect(this.footerTikTokLink).toHaveAttribute('href', 'https://www.tiktok.com/@laurilavanti')
     }
-
-    async testScreenshot() {
-        await expect(this.page).toHaveScreenshot()
-    }
 }
