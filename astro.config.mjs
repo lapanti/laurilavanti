@@ -6,6 +6,8 @@ import { imageService } from '@unpic/astro/service' // eslint-disable-line impor
 
 import sitemap from '@astrojs/sitemap';
 
+import partytown from '@astrojs/partytown';
+
 // https://astro.build/config
 export default defineConfig({
     site: 'https://laurilavanti.fi',
@@ -29,7 +31,7 @@ export default defineConfig({
         }),
     },
 
-    integrations: [icon({ include: { 'fa7-brands': ['*'] } }), sitemap()],
+    integrations: [icon({ include: { 'fa7-brands': ['*'] } }), sitemap(), partytown()],
 
     env: {
         schema: {
