@@ -28,7 +28,7 @@ jobs:
       - uses: actions/upload-artifact@v5
         with:
           name: build-folder
-          path: public
+          path: dist
 
   lint:
     runs-on: ubuntu-latest
@@ -124,7 +124,7 @@ jobs:
       - uses: actions/download-artifact@v6
         with:
           name: build-folder
-          path: public
+          path: dist
       - id: deploy
         name: Deploy
         uses: cloudflare/wrangler-action@v3
