@@ -20,6 +20,6 @@ export class AboutEnPage extends AnyPage {
     }
 
     async checkContent() {
-        await this.checkFooter()
+        await expect(this.aboutMeEnTitle).toBeVisible()
     }
 }

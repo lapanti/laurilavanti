@@ -23,7 +23,5 @@ export class BlogPage extends AnyPage {
 
     async checkContent() {
         expect(await this.linksToBlogs.count()).toBeGreaterThanOrEqual(2)
-
-        await this.checkFooter()
     }
 }

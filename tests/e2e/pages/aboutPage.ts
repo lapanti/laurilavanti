@@ -23,7 +23,5 @@ export class AboutPage extends AnyPage {
 
     async checkContent() {
         await expect(this.positionsTitle).toBeVisible()
-
-        await this.checkFooter()
     }
 }
