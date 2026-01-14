@@ -5,7 +5,7 @@ import { expect } from '@playwright/test'
 import { AnyPage } from './anyPage'
 
 export class ContactPage extends AnyPage {
-    readonly email: Locator
+    readonly number: Locator
     readonly bluesky: Locator
     readonly facebook: Locator
     readonly instagram: Locator
@@ -16,7 +16,7 @@ export class ContactPage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.email = page.getByText('lauri@laurilavanti.fi')
+        this.number = page.getByText('040 761 7605')
         this.bluesky = page.getByRole('link', { name: /Bluesky @laurilavanti.fi/i }).first()
         this.facebook = page.getByRole('link', { name: /Facebook laurilavanti/i }).first()
         this.instagram = page.getByRole('link', { name: /Instagram @laurilavanti/i }).first()
@@ -30,7 +30,7 @@ export class ContactPage extends AnyPage {
         await this.goToNavLink(this.navLinkContactInfo)
 
         // Wait to ensure we are at the correct page
-        await expect(this.email).toBeVisible()
+        await expect(this.number).toBeVisible()
     }
 
     async checkContent() {
