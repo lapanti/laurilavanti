@@ -13,7 +13,7 @@ export class AboutSwePage extends AnyPage {
     }
 
     async goTo() {
-        await this.goToNavLink(this.navLinkAboutMeSwe)
+        await this.page.goto('/om-mig/')
 
         // Wait to ensure we are at the correct page
         await expect(this.aboutMeSweTitle).toBeVisible()
