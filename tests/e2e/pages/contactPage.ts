@@ -27,7 +27,7 @@ export class ContactPage extends AnyPage {
     }
 
     async goTo() {
-        await this.goToNavLink(this.navLinkContactInfo)
+        await this.page.goto('/ota-yhteytta/')
 
         // Wait to ensure we are at the correct page
         await expect(this.number).toBeVisible()

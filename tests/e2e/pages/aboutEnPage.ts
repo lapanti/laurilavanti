@@ -13,7 +13,7 @@ export class AboutEnPage extends AnyPage {
     }
 
     async goTo() {
-        await this.goToNavLink(this.navLinkAboutMeEn)
+        await this.page.goto('/about-me/')
 
         // Wait to ensure we are at the correct page
         await expect(this.aboutMeEnTitle).toBeVisible()

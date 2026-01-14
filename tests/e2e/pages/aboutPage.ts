@@ -15,7 +15,7 @@ export class AboutPage extends AnyPage {
     }
 
     async goTo() {
-        await this.goToNavLink(this.navLinkAboutMe)
+        await this.page.goto('/minusta/')
 
         // Wait to ensure we are at the correct page
         await expect(this.aboutMeTitle).toBeVisible()
