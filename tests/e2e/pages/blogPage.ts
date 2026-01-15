@@ -15,7 +15,7 @@ export class BlogPage extends AnyPage {
     }
 
     async goTo() {
-        await this.goToNavLink(this.navLinkBlog)
+        await this.page.goto('/blogi/')
 
         // Wait to ensure we are at the correct page
         await expect(this.title).toBeVisible()
