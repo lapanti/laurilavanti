@@ -22,13 +22,13 @@ const sharedProps = {
 }
 ---
 
-<style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes5Negative: `-${sizes[5]}` }}>
+<style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes3: sizes[3], sizes5Negative: `-${sizes[5]}` }}>
     .container {
         display: flex;
         flex: 1;
         overflow: hidden;
         position: relative;
-        margin-top: calc(100dvh - 562px);
+        margin-top: var(--sizes3);
     }
 
     .image {
