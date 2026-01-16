@@ -27,6 +27,7 @@ const { title, subtitle, secondaryTitle } = Astro.props
         ingressLineHeight: typographics.ingress.lineHeight,
         sizes0875: sizes[0.875],
         sizes3: sizes[3],
+        sizes5: sizes[5],
         sizes15: sizes[1.5],
         sizes375: sizes[3.75],
     }}
@@ -36,6 +37,7 @@ const { title, subtitle, secondaryTitle } = Astro.props
         display: flex;
         flex-direction: column;
         gap: var(--sizes15);
+        margin-top: var(--sizes5);
         padding: var(--sizes0875);
     }
 

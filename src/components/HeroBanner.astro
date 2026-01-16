@@ -33,13 +33,13 @@ const { image, title, subtitle, secondaryTitle, backgroundImage } = Astro.props
 
     @media (min-width: 1200px) {
         div {
-            flex-direction: row;
+            flex-direction: row-reverse;
             height: var(--sizes45);
             padding-top: var(--headerSize);
         }
     }
 </style>
 <div>
-    <Images backgroundImage={backgroundImage} image={image} />
     <Titles secondaryTitle={secondaryTitle} subtitle={subtitle} title={title} />
+    <Images backgroundImage={backgroundImage} image={image} />
 </div>
