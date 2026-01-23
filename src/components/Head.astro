@@ -89,21 +89,22 @@ const keywords = [
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
 <meta content={keywords} name="keywords" />
-<meta content={title} name="og:title" />
+<meta content={title} property="og:title" />
 <meta content={name} name="author" />
-<meta content="fi_FI" name="og:locale" />
+<meta content="fi_FI" property="og:locale" />
 <meta content={description} name="description" />
-<meta content={description} name="og:description" />
-<meta content={name} name="og:site_name" />
-<meta content={title} name="twitter:title" />
-<meta content={facebook} name="article:publisher" />
-<meta content="website" name="og:type" />
+<meta content={description} property="og:description" />
+<meta content={name} property="og:site_name" />
+<meta content={title} property="twitter:title" />
+<meta content={name} property="article:author" />
+<meta content={createdAt} property="article:published_time" />
+<meta content="website" property="og:type" />
 <meta content={description} name="twitter:description" />
 <meta content="@laurilavanti@mastodontti.fi" name="fediverse:creator" />
 {
     canonical && (
         <>
-            <meta content={canonical} name="og:url" />
+            <meta content={canonical} property="og:url" />
             <link href={canonical} rel="canonical" />
         </>
     )
@@ -111,9 +112,9 @@ const keywords = [
 {
     image?.fields?.file?.url ? (
         <>
-            <meta content={`https${image.fields.file.url}`} name="og:image" />
-            <meta content={`${image.fields.file.details.image?.height}`} name="og:image:height" />
-            <meta content={`${image.fields.file.details.image?.width}`} name="og:image:width" />
+            <meta content={`https${image.fields.file.url}`} property="og:image" />
+            <meta content={`${image.fields.file.details.image?.height}`} property="og:image:height" />
+            <meta content={`${image.fields.file.details.image?.width}`} property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />
         </>
     ) : (
