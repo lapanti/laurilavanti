@@ -23,6 +23,7 @@ export async function getStaticPaths() {
             allTags: tags,
             body: item.fields.body,
             createdAt: item.sys.createdAt,
+            croppedImage: item.fields.croppedImage,
             description: item.fields.excerpt,
             image: item.fields.image,
             slug: item.fields.slug,
@@ -39,6 +40,7 @@ interface Props {
     allTags: TagCollection
     body: Post['fields']['body']
     createdAt: Post['sys']['createdAt']
+    croppedImage: Post['fields']['croppedImage']
     description: Post['fields']['excerpt']
     image: Post['fields']['image']
     slug: Post['fields']['slug']
@@ -47,13 +49,14 @@ interface Props {
     updatedAt: Post['sys']['updatedAt']
 }
 
-const { allTags, body, description, image, title, slug, tags, createdAt, updatedAt } = Astro.props
+const { allTags, body, croppedImage, description, image, title, slug, tags, createdAt, updatedAt } = Astro.props
 ---
 
 <Layout
     allTags={allTags}
     body={body}
     createdAt={createdAt}
+    croppedHeroImage={croppedImage}
     description={description}
     heroImage={image}
     slug={`blogi/${slug}`}
