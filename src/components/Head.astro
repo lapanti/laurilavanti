@@ -23,7 +23,7 @@ const {
     updatedAt,
 } = Astro.props
 
-const canonical = slug === 'index' ? Astro.site : slug ? `${Astro.site}${slug}` : null
+const canonical = slug === 'index' ? Astro.site : slug ? new URL(slug, Astro.site) : null
 
 const name = 'Lauri Lavanti'
 
@@ -113,6 +113,7 @@ const keywords = [
     image?.fields?.file?.url ? (
         <>
             <meta content={`https${image.fields.file.url}`} property="og:image" />
+            <meta content={image.fields.description} name="og:image:alt" />
             <meta content={`${image.fields.file.details.image?.height}`} property="og:image:height" />
             <meta content={`${image.fields.file.details.image?.width}`} property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />
