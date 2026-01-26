@@ -13,7 +13,6 @@ export interface TypeContactInfoFields {
      * @localized false
      */
     titleToBeIgnored: EntryFieldTypes.Symbol<'Contact info'>
-
     /**
      * Field type definition for field 'links' (Links)
      * @name Links
@@ -31,7 +30,6 @@ export interface TypeContactInfoFields {
  * @version 13
  */
 export type TypeContactInfoSkeleton = EntrySkeletonType<TypeContactInfoFields, 'contactInfo'>
-
 /**
  * Entry type definition for content type 'contactInfo' (📇 Contact info)
  * @name TypeContactInfo
@@ -60,7 +58,6 @@ export interface TypeContactInfoLinkFields {
      * @localized true
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'icon' (Icon)
      * @name Icon
@@ -69,14 +66,12 @@ export interface TypeContactInfoLinkFields {
     icon: EntryFieldTypes.Symbol<
         'bluesky' | 'envelope' | 'facebook' | 'instagram' | 'linkedin' | 'mastodon' | 'threads' | 'tiktok' | 'twitter'
     >
-
     /**
      * Field type definition for field 'url' (URL)
      * @name URL
      * @localized false
      */
     url: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'username' (Username)
      * @name Username
@@ -94,7 +89,6 @@ export interface TypeContactInfoLinkFields {
  * @version 15
  */
 export type TypeContactInfoLinkSkeleton = EntrySkeletonType<TypeContactInfoLinkFields, 'contactInfoLink'>
-
 /**
  * Entry type definition for content type 'contactInfoLink' (🔗 Contact info link)
  * @name TypeContactInfoLink
@@ -123,42 +117,36 @@ export interface TypeCurriculumVitaeFields {
      * @localized false
      */
     internalName: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'fiduciariesTitle' (Fiduciaries title)
      * @name Fiduciaries title
      * @localized true
      */
     fiduciariesTitle: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'fiduciaries' (Fiduciaries)
      * @name Fiduciaries
      * @localized false
      */
     fiduciaries?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeFiduciariesSkeleton>>
-
     /**
      * Field type definition for field 'jobExperiencesTitle' (Job experiences title)
      * @name Job experiences title
      * @localized true
      */
     jobExperiencesTitle: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'jobExperiences' (Job experiences)
      * @name Job experiences
      * @localized false
      */
     jobExperiences?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypeJobExperienceSkeleton>>
-
     /**
      * Field type definition for field 'degreesTitle' (Degrees title)
      * @name Degrees title
      * @localized true
      */
     degreesTitle: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'degrees' (Degrees)
      * @name Degrees
@@ -176,7 +164,6 @@ export interface TypeCurriculumVitaeFields {
  * @version 3
  */
 export type TypeCurriculumVitaeSkeleton = EntrySkeletonType<TypeCurriculumVitaeFields, 'curriculumVitae'>
-
 /**
  * Entry type definition for content type 'curriculumVitae' (🗃️ Curriculum Vitae)
  * @name TypeCurriculumVitae
@@ -205,35 +192,30 @@ export interface TypeEducationFields {
      * @localized false
      */
     internalName: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'school' (School)
      * @name School
      * @localized false
      */
     school: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'location' (Location)
      * @name Location
      * @localized false
      */
     location: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'degree' (Degree)
      * @name Degree
      * @localized false
      */
     degree: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'startYear' (Start year)
      * @name Start year
      * @localized false
      */
     startYear: EntryFieldTypes.Integer
-
     /**
      * Field type definition for field 'endYear' (End year)
      * @name End year
@@ -251,7 +233,6 @@ export interface TypeEducationFields {
  * @version 11
  */
 export type TypeEducationSkeleton = EntrySkeletonType<TypeEducationFields, 'education'>
-
 /**
  * Entry type definition for content type 'education' (🎫 Education)
  * @name TypeEducation
@@ -280,14 +261,12 @@ export interface TypeExcerptListFields {
      * @localized false
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'pinned' (Pinned)
      * @name Pinned
      * @localized false
      */
     pinned?: EntryFieldTypes.Array<EntryFieldTypes.EntryLink<TypePageSkeleton | TypePostSkeleton>>
-
     /**
      * Field type definition for field 'limit' (Limit)
      * @name Limit
@@ -305,7 +284,6 @@ export interface TypeExcerptListFields {
  * @version 15
  */
 export type TypeExcerptListSkeleton = EntrySkeletonType<TypeExcerptListFields, 'excerptList'>
-
 /**
  * Entry type definition for content type 'excerptList' (🪣 Excerpt List)
  * @name TypeExcerptList
@@ -334,28 +312,24 @@ export interface TypeFiduciariesFields {
      * @localized false
      */
     internalName: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'organization' (Organization)
      * @name Organization
      * @localized false
      */
     organization: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'duty' (Duty)
      * @name Duty
      * @localized false
      */
     duty: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'startYear' (Start year)
      * @name Start year
      * @localized false
      */
     startYear: EntryFieldTypes.Integer
-
     /**
      * Field type definition for field 'endYear' (End year)
      * @name End year
@@ -373,7 +347,6 @@ export interface TypeFiduciariesFields {
  * @version 11
  */
 export type TypeFiduciariesSkeleton = EntrySkeletonType<TypeFiduciariesFields, 'fiduciaries'>
-
 /**
  * Entry type definition for content type 'fiduciaries' (🎫 Fiduciary)
  * @name TypeFiduciaries
@@ -402,14 +375,12 @@ export interface TypeFooterLinkFields {
      * @localized true
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'url' (URL)
      * @name URL
      * @localized false
      */
     url: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'icon' (Icon)
      * @name Icon
@@ -429,7 +400,6 @@ export interface TypeFooterLinkFields {
  * @version 9
  */
 export type TypeFooterLinkSkeleton = EntrySkeletonType<TypeFooterLinkFields, 'footerLink'>
-
 /**
  * Entry type definition for content type 'footerLink' (🔗 Footer link)
  * @name TypeFooterLink
@@ -458,7 +428,6 @@ export interface TypeFooterNavFields {
      * @localized false
      */
     titleToBeIgnored: EntryFieldTypes.Symbol<'Footer nav'>
-
     /**
      * Field type definition for field 'links' (Links)
      * @name Links
@@ -476,7 +445,6 @@ export interface TypeFooterNavFields {
  * @version 7
  */
 export type TypeFooterNavSkeleton = EntrySkeletonType<TypeFooterNavFields, 'footerNav'>
-
 /**
  * Entry type definition for content type 'footerNav' (🍔 Footer nav)
  * @name TypeFooterNav
@@ -505,7 +473,6 @@ export interface TypeHomeTitleFields {
      * @localized false
      */
     titleToBeIgnored: EntryFieldTypes.Symbol<'Home title'>
-
     /**
      * Field type definition for field 'empty' (Empty)
      * @name Empty
@@ -523,7 +490,6 @@ export interface TypeHomeTitleFields {
  * @version 7
  */
 export type TypeHomeTitleSkeleton = EntrySkeletonType<TypeHomeTitleFields, 'homeTitle'>
-
 /**
  * Entry type definition for content type 'homeTitle' (🏠 Home title)
  * @name TypeHomeTitle
@@ -552,14 +518,12 @@ export interface TypeImageWithCaptionFields {
      * @localized false
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'image' (Image)
      * @name Image
      * @localized false
      */
     image: EntryFieldTypes.AssetLink
-
     /**
      * Field type definition for field 'caption' (Caption)
      * @name Caption
@@ -577,7 +541,6 @@ export interface TypeImageWithCaptionFields {
  * @version 15
  */
 export type TypeImageWithCaptionSkeleton = EntrySkeletonType<TypeImageWithCaptionFields, 'imageWithCaption'>
-
 /**
  * Entry type definition for content type 'imageWithCaption' (🩻 Image With Caption)
  * @name TypeImageWithCaption
@@ -606,35 +569,30 @@ export interface TypeJobExperienceFields {
      * @localized false
      */
     internalName: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'company' (Company)
      * @name Company
      * @localized false
      */
     company: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'location' (Location)
      * @name Location
      * @localized false
      */
     location: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'title' (Title)
      * @name Title
      * @localized false
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'startYear' (Start year)
      * @name Start year
      * @localized false
      */
     startYear: EntryFieldTypes.Integer
-
     /**
      * Field type definition for field 'endYear' (End year)
      * @name End year
@@ -652,7 +610,6 @@ export interface TypeJobExperienceFields {
  * @version 7
  */
 export type TypeJobExperienceSkeleton = EntrySkeletonType<TypeJobExperienceFields, 'jobExperience'>
-
 /**
  * Entry type definition for content type 'jobExperience' (🎫 Job experience)
  * @name TypeJobExperience
@@ -681,7 +638,6 @@ export interface TypeMainNavFields {
      * @localized false
      */
     titleToBeIgnored: EntryFieldTypes.Symbol<'Main nav'>
-
     /**
      * Field type definition for field 'links' (Links)
      * @name Links
@@ -699,7 +655,6 @@ export interface TypeMainNavFields {
  * @version 7
  */
 export type TypeMainNavSkeleton = EntrySkeletonType<TypeMainNavFields, 'mainNav'>
-
 /**
  * Entry type definition for content type 'mainNav' (🍔 Main nav)
  * @name TypeMainNav
@@ -728,77 +683,60 @@ export interface TypePageFields {
      * @localized true
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'navigationTitle' (Navigation title)
      * @name Navigation title
      * @localized false
      */
     navigationTitle: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'subtitle' (Subtitle)
      * @name Subtitle
      * @localized true
      */
     subtitle?: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'secondaryTitle' (Secondary title)
      * @name Secondary title
      * @localized true
      */
     secondaryTitle?: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'slug' (Slug)
      * @name Slug
      * @localized false
      */
     slug: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'description' (Description)
      * @name Description
      * @localized false
      */
     description: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'body' (Body)
      * @name Body
      * @localized true
      */
     body: EntryFieldTypes.RichText
-
     /**
      * Field type definition for field 'image' (Image)
      * @name Image
      * @localized false
      */
     image: EntryFieldTypes.AssetLink
-
+    /**
+     * Field type definition for field 'croppedImage' (Cropped Image (4:3))
+     * @name Cropped Image (4:3)
+     * @localized false
+     */
+    croppedImage?: EntryFieldTypes.AssetLink
     /**
      * Field type definition for field 'backgroundImage' (Background image)
      * @name Background image
      * @localized false
      */
     backgroundImage?: EntryFieldTypes.AssetLink
-
-    /**
-     * Field type definition for field 'leftAlignedTitle' (Title alignment)
-     * @name Title alignment
-     * @localized false
-     */
-    leftAlignedTitle: EntryFieldTypes.Boolean
-
-    /**
-     * Field type definition for field 'socialImage' (Social Image)
-     * @name Social Image
-     * @localized false
-     */
-    socialImage?: EntryFieldTypes.AssetLink
-
     /**
      * Field type definition for field 'jsonLdType' (JSON-LD type)
      * @name JSON-LD type
@@ -813,17 +751,16 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 0gveB6TBChXdFEnRDwWnyH
  * @since 2022-06-19T18:22:24.481Z
- * @version 55
+ * @version 61
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>
-
 /**
  * Entry type definition for content type 'page' (🗏 Page)
  * @name TypePage
  * @type {TypePage}
  * @author Lauri Lavanti<laurilavanti@gmail.com>
  * @since 2022-06-19T18:22:24.481Z
- * @version 55
+ * @version 61
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/page
  */
 export type TypePage<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
@@ -845,76 +782,42 @@ export interface TypePostFields {
      * @localized true
      */
     title: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'slug' (Slug)
      * @name Slug
      * @localized false
      */
     slug?: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'excerpt' (Excerpt)
      * @name Excerpt
      * @localized true
      */
     excerpt: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'body' (Body)
      * @name Body
      * @localized true
      */
     body: EntryFieldTypes.RichText
-
-    /**
-     * Field type definition for field 'headerImage' (Header Image)
-     * @name Header Image
-     * @localized false
-     */
-    headerImage: EntryFieldTypes.AssetLink
-
-    /**
-     * Field type definition for field 'backgroundImage' (Background image)
-     * @name Background image
-     * @localized false
-     */
-    backgroundImage?: EntryFieldTypes.AssetLink
-
-    /**
-     * Field type definition for field 'leftAlignedTitle' (Title alignment)
-     * @name Title alignment
-     * @localized false
-     */
-    leftAlignedTitle: EntryFieldTypes.Boolean
-
-    /**
-     * Field type definition for field 'socialImage' (Social image)
-     * @name Social image
-     * @localized false
-     */
-    socialImage?: EntryFieldTypes.AssetLink
-
-    /**
-     * Field type definition for field 'oldSlugs' (Old slugs)
-     * @name Old slugs
-     * @localized false
-     */
-    oldSlugs?: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
-
     /**
      * Field type definition for field 'publishDate' (Publish date)
      * @name Publish date
      * @localized false
      */
     publishDate?: EntryFieldTypes.Date
-
     /**
      * Field type definition for field 'image' (Image)
      * @name Image
      * @localized false
      */
     image: EntryFieldTypes.AssetLink
+    /**
+     * Field type definition for field 'croppedImage' (Cropped Image (4:3))
+     * @name Cropped Image (4:3)
+     * @localized false
+     */
+    croppedImage?: EntryFieldTypes.AssetLink
 }
 
 /**
@@ -923,17 +826,16 @@ export interface TypePostFields {
  * @type {TypePostSkeleton}
  * @author 0gveB6TBChXdFEnRDwWnyH
  * @since 2022-06-18T17:31:59.190Z
- * @version 53
+ * @version 65
  */
 export type TypePostSkeleton = EntrySkeletonType<TypePostFields, 'post'>
-
 /**
  * Entry type definition for content type 'post' (🪧 Post)
  * @name TypePost
  * @type {TypePost}
  * @author Lauri Lavanti<laurilavanti@gmail.com>
  * @since 2022-06-18T17:31:59.190Z
- * @version 53
+ * @version 65
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/post
  */
 export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
@@ -955,7 +857,6 @@ export interface TypeYearsFromFields {
      * @localized false
      */
     internalName: EntryFieldTypes.Symbol
-
     /**
      * Field type definition for field 'dateToCountFrom' (Date to count from)
      * @name Date to count from
@@ -973,7 +874,6 @@ export interface TypeYearsFromFields {
  * @version 1
  */
 export type TypeYearsFromSkeleton = EntrySkeletonType<TypeYearsFromFields, 'yearsFrom'>
-
 /**
  * Entry type definition for content type 'yearsFrom' (📆 Years from)
  * @name TypeYearsFrom
