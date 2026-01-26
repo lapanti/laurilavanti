@@ -5,6 +5,7 @@ import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '.
 
 interface Props {
     createdAt?: string
+    croppedImage?: Image
     description?: string
     image?: Image
     slug?: string
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const {
+    croppedImage,
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
     title,
     type,
@@ -24,6 +26,10 @@ const {
 } = Astro.props
 
 const canonical = slug === 'index' ? Astro.site : slug ? new URL(slug, Astro.site) : null
+
+const imageUrl = croppedImage?.fields?.file?.url ?? image?.fields?.file?.url
+const imageAlt = croppedImage?.fields?.description ?? image?.fields?.description
+const imageDetails = croppedImage?.fields?.file?.details.image ?? image?.fields?.file?.details.image
 
 const name = 'Lauri Lavanti'
 
@@ -45,9 +51,9 @@ const jsonLd = JSON.stringify({
     description,
     headline: title,
     url: canonical,
-    ...(image?.fields?.file?.url
+    ...(imageUrl
         ? {
-              image: `https${image.fields.file.url}`,
+              image: `https${imageUrl}`,
           }
         : {}),
     ...(type === BLOGPOSTING
@@ -110,12 +116,12 @@ const keywords = [
     )
 }
 {
-    image?.fields?.file?.url ? (
+    imageUrl ? (
         <>
-            <meta content={`https${image.fields.file.url}`} property="og:image" />
-            <meta content={image.fields.description} name="og:image:alt" />
-            <meta content={`${image.fields.file.details.image?.height}`} property="og:image:height" />
-            <meta content={`${image.fields.file.details.image?.width}`} property="og:image:width" />
+            <meta content={`https${imageUrl}`} property="og:image" />
+            <meta content={imageAlt} name="og:image:alt" />
+            <meta content={`${imageDetails?.height}`} property="og:image:height" />
+            <meta content={`${imageDetails?.width}`} property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />
         </>
     ) : (

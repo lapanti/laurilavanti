@@ -17,6 +17,7 @@ export async function getStaticPaths() {
         params: { slug: item.fields.slug },
         props: {
             body: item.fields.body,
+            croppedImage: item.fields.croppedImage,
             description: item.fields.description,
             image: item.fields.image,
             jsonLdType: item.fields.jsonLdType,
@@ -31,6 +32,7 @@ export async function getStaticPaths() {
 
 interface Props {
     body: Page['fields']['body']
+    croppedImage: Page['fields']['croppedImage']
     description: Page['fields']['description']
     image: Page['fields']['image']
     jsonLdType: Page['fields']['jsonLdType']
@@ -39,12 +41,13 @@ interface Props {
     title: Page['fields']['title']
 }
 
-const { description, title, image, body, slug, jsonLdType, tags } = Astro.props
+const { croppedImage, description, title, image, body, slug, jsonLdType, tags } = Astro.props
 ---
 
 <Layout
     allTags={tags}
     body={body}
+    croppedHeroImage={croppedImage}
     description={description}
     heroImage={image}
     slug={slug}

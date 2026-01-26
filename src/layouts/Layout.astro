@@ -25,6 +25,7 @@ interface Props {
     backgroundImage?: Image
     body?: Document
     createdAt?: string
+    croppedHeroImage?: Image
     description?: string
     heroBanner?: boolean
     heroImage?: Image
@@ -42,6 +43,7 @@ const {
     backgroundImage,
     body,
     createdAt,
+    croppedHeroImage,
     description,
     heroBanner,
     heroImage,
@@ -60,6 +62,7 @@ const {
         <GlobalStyle />
         <Head
             createdAt={createdAt}
+            croppedImage={croppedHeroImage}
             description={description}
             image={heroImage}
             slug={slug}
