@@ -25,7 +25,7 @@ const {
     updatedAt,
 } = Astro.props
 
-const canonical = slug === 'index' ? Astro.site : slug ? new URL(slug, Astro.site) : null
+const canonical = slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null
 
 const imageUrl = croppedImage?.fields?.file?.url ?? image?.fields?.file?.url
 const imageAlt = croppedImage?.fields?.description ?? image?.fields?.description
