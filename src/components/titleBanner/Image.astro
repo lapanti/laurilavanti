@@ -5,14 +5,24 @@ import type { Image as ContentfulImage } from '../../types/contentful'
 import { Image as UnpicImage, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
 interface Props {
+    croppedHeroImage?: ContentfulImage
     heroImage?: ContentfulImage
 }
 
-const { heroImage } = Astro.props
+const { croppedHeroImage, heroImage } = Astro.props
 
 const sharedProps = {
     operations: { contentful: { f: 'face' as const, q: 80 } },
+}
+
+const sharedDesktopProps = {
+    ...sharedProps,
     src: `https:${heroImage?.fields?.file?.url}`,
+}
+
+const sharedMobileProps = {
+    ...sharedProps,
+    src: `https:${croppedHeroImage?.fields?.file?.url}`,
 }
 ---
 
@@ -25,6 +35,8 @@ const sharedProps = {
 
     img {
         aspect-ratio: 1.3333333333;
+        object-fit: cover;
+        width: 100%;
     }
 
     @media (min-width: 1200px) {
@@ -41,9 +53,13 @@ const sharedProps = {
     {
         heroImage?.fields?.file?.url && (
             <picture>
-                <Source {...sharedProps} type="image/avif" />
-                <Source {...sharedProps} type="image/webp" />
-                <UnpicImage {...sharedProps} alt={heroImage.fields.description ?? null} layout="fullWidth" priority />
+                <Source {...sharedMobileProps} layout="fullWidth" media="(max-width: 1200px)" type="image/avif" />
+                <Source {...sharedMobileProps} layout="fullWidth" media="(max-width: 1200px)" type="image/webp" />
+                <Source {...sharedMobileProps} layout="fullWidth" media="(max-width: 1200px)" />
+                <Source {...sharedDesktopProps} layout="fullWidth" media="(min-width: 1200px)" type="image/avif" />
+                <Source {...sharedDesktopProps} layout="fullWidth" media="(min-width: 1200px)" type="image/webp" />
+                <Source {...sharedDesktopProps} layout="fullWidth" media="(min-width: 1200px)" />
+                <UnpicImage {...sharedDesktopProps} alt={heroImage.fields.description ?? null} priority unstyled />
             </picture>
         )
     }
