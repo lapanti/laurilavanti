@@ -119,7 +119,7 @@ const keywords = [
     imageUrl ? (
         <>
             <meta content={`https:${imageUrl}`} property="og:image" />
-            <meta content={imageAlt} name="og:image:alt" />
+            <meta content={imageAlt} property="og:image:alt" />
             <meta content={`${imageDetails?.height}`} property="og:image:height" />
             <meta content={`${imageDetails?.width}`} property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />
