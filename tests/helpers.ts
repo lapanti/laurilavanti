@@ -20,7 +20,7 @@ export const renderAstroComponent = async <T extends AstroComponentFactory>(
     Component: T,
     options: ComponentContainerRenderOptions<T> = {}
 ) => {
-    const container = await AstroContainer.create()
+    const container = await AstroContainer.create({ astroConfig: { site: 'https://example.com' } })
     const result = await container.renderToString(Component, options)
 
     const div = document.createElement('div')
