@@ -751,7 +751,7 @@ export interface TypePageFields {
  * @type {TypePageSkeleton}
  * @author 0gveB6TBChXdFEnRDwWnyH
  * @since 2022-06-19T18:22:24.481Z
- * @version 61
+ * @version 63
  */
 export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>
 /**
@@ -760,7 +760,7 @@ export type TypePageSkeleton = EntrySkeletonType<TypePageFields, 'page'>
  * @type {TypePage}
  * @author Lauri Lavanti<laurilavanti@gmail.com>
  * @since 2022-06-19T18:22:24.481Z
- * @version 61
+ * @version 63
  * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/page
  */
 export type TypePage<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
@@ -840,6 +840,63 @@ export type TypePostSkeleton = EntrySkeletonType<TypePostFields, 'post'>
  */
 export type TypePost<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
     TypePostSkeleton,
+    Modifiers,
+    Locales
+>
+
+/**
+ * Fields type definition for content type 'TypeSummaryBox'
+ * @name TypeSummaryBoxFields
+ * @type {TypeSummaryBoxFields}
+ * @memberof TypeSummaryBox
+ */
+export interface TypeSummaryBoxFields {
+    /**
+     * Field type definition for field 'internalName' (Internal name)
+     * @name Internal name
+     * @localized false
+     */
+    internalName: EntryFieldTypes.Symbol
+    /**
+     * Field type definition for field 'title' (Title)
+     * @name Title
+     * @localized false
+     */
+    title: EntryFieldTypes.Symbol
+    /**
+     * Field type definition for field 'summaryRows' (Summary rows)
+     * @name Summary rows
+     * @localized false
+     */
+    summaryRows: EntryFieldTypes.Array<EntryFieldTypes.Symbol>
+    /**
+     * Field type definition for field 'ariaLabel' (Aria label)
+     * @name Aria label
+     * @localized false
+     */
+    ariaLabel?: EntryFieldTypes.Symbol
+}
+
+/**
+ * Entry skeleton type definition for content type 'summaryBox' (🗄️ Summary box)
+ * @name TypeSummaryBoxSkeleton
+ * @type {TypeSummaryBoxSkeleton}
+ * @author 0gveB6TBChXdFEnRDwWnyH
+ * @since 2026-02-23T12:48:36.546Z
+ * @version 7
+ */
+export type TypeSummaryBoxSkeleton = EntrySkeletonType<TypeSummaryBoxFields, 'summaryBox'>
+/**
+ * Entry type definition for content type 'summaryBox' (🗄️ Summary box)
+ * @name TypeSummaryBox
+ * @type {TypeSummaryBox}
+ * @author Lauri Lavanti<laurilavanti@gmail.com>
+ * @since 2026-02-23T12:48:36.546Z
+ * @version 7
+ * @link https://app.contentful.com/spaces/44t6u1r4zgqq/environments/main/content_types/summaryBox
+ */
+export type TypeSummaryBox<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<
+    TypeSummaryBoxSkeleton,
     Modifiers,
     Locales
 >
