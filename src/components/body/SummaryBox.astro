@@ -1,0 +1,32 @@
+---
+import type { SummaryBox } from '../../types/contentful'
+
+import { colors, sizes } from '../../lib/styles'
+import H2 from '../H2.astro'
+import LI from '../LI.astro'
+import UL from '../UL.astro'
+
+interface Props {
+    ariaLabel?: SummaryBox['fields']['ariaLabel']
+    summaryRows: SummaryBox['fields']['summaryRows']
+    title: SummaryBox['fields']['title']
+}
+
+const { ariaLabel, summaryRows, title } = Astro.props
+---
+
+<style define:vars={{ colorsGray: colors.gray, sizes1: sizes[1] }}>
+    aside {
+        background-color: var(--colorsGray);
+        grid-column-start: 3;
+        margin-top: var(--sizes1);
+        padding: var(--sizes1);
+        padding-top: 0;
+    }
+</style>
+<aside aria-label={ariaLabel}>
+    <H2>{title}</H2>
+    <UL>
+        {summaryRows.map((row) => <LI>{row}</LI>)}
+    </UL>
+</aside>
