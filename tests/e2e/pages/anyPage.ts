@@ -23,11 +23,11 @@ export class AnyPage {
         this.page = page
         this.isMobile = (page.viewportSize()?.width ?? 0) < 1200
         this.navButton = page.getByRole('checkbox', { name: /Avaa valikko/i })
-        this.navLinkAboutMe = page.getByRole('link', { name: /Lauri Lavanti – Digivarma valinta/i })
+        this.navLinkAboutMe = page.getByRole('link', { name: /Teknologian ja yhteiskunnan rajapinnassa/i })
         this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
         this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
-        this.navLinkAboutMeSwe = page.getByRole('link', { name: /Lauri Lavanti – Digicertain val/i })
-        this.navLinkAboutMeEn = page.getByRole('link', { name: /Lauri Lavanti – Digicertain choice/i })
+        this.navLinkAboutMeSwe = page.getByRole('link', { name: /I gränslandet mellan teknik och samhälle/i })
+        this.navLinkAboutMeEn = page.getByRole('link', { name: /At the intersection between technology and society/i })
         this.footerFacebookLink = page
             .locator('footer')
             .locator('a[aria-label="Lauri Lavanti palvelussa Facebook (linkki aukeaa uudessa välilehdessä)"]')

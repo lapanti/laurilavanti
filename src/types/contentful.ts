@@ -1,5 +1,12 @@
 import type { Asset, LocaleCode } from 'contentful'
-import type { TypeCurriculumVitae, TypeFooterNav, TypeMainNav, TypePage, TypePost } from './contentfulCodegen'
+import type {
+    TypeCurriculumVitae,
+    TypeFooterNav,
+    TypeMainNav,
+    TypePage,
+    TypePost,
+    TypeSummaryBox,
+} from './contentfulCodegen'
 
 type LC = LocaleCode
 // type WITH_LINKS = 'WITHOUT_LINK_RESOLUTION'
@@ -16,3 +23,5 @@ export type Post = { contentTypeId: 'post' } & TypePost<WITH_ENTRIES, LC>
 export type Image = Asset<WITH_ENTRIES, LC>
 
 export type CurriculumVitae = { contentTypeId: 'curriculumVitae' } & TypeCurriculumVitae<WITH_ENTRIES, LC>
+
+export type SummaryBox = { contentTypeId: 'summaryBox' } & TypeSummaryBox<WITH_ENTRIES, LC>

@@ -12,6 +12,7 @@ import CurriculumVitae from './body/CurriculumVitae.astro'
 import H3 from './body/H3.astro'
 import Hr from './body/Hr.astro'
 import ImageWithCaption from './body/ImageWithCaption.astro'
+import SummaryBox from './body/SummaryBox.astro'
 import ExcerptList from './ExcerptList.astro'
 import ExternalLink from './ExternalLink.astro'
 import H2 from './H2.astro'
@@ -133,6 +134,13 @@ const children: Node[] = Array.isArray(node) ? node : 'content' in node ? node.c
                             <ImageWithCaption
                                 caption={childNode.data.target.fields.caption}
                                 image={childNode.data.target.fields.image}
+                            />
+                        )}
+                        {childNode.data.target.sys.contentType.sys.id === 'summaryBox' && (
+                            <SummaryBox
+                                ariaLabel={childNode.data.target.fields.ariaLabel}
+                                summaryRows={childNode.data.target.fields.summaryRows}
+                                title={childNode.data.target.fields.title}
                             />
                         )}
                     </>

@@ -9,7 +9,9 @@ export class AboutEnPage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.aboutMeEnTitle = page.getByRole('heading', { name: /Lauri Lavanti – .*/i })
+        this.aboutMeEnTitle = page.getByRole('heading', {
+            name: /At the intersection between technology and society/i,
+        })
     }
 
     async goTo() {
