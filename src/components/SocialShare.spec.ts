@@ -32,7 +32,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'complementary', { name: ariaLabel.replaceAll('"', '&#34;') })).toBeDefined()
+        expect(getByRole(result, 'complementary', { name: ariaLabel })).toBeDefined()
     })
 
     it('should render facebook link', async () => {
@@ -44,7 +44,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Facebookissa` })).toBeDefined()
     })
 
     it('should render correct url for facebook link', async () => {
@@ -56,7 +56,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Facebookissa` })).toHaveAttribute(
             'href',
             `https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`
         )
@@ -71,7 +71,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Facebookissa` })).toHaveAttribute(
             'rel',
             'noopener noreferrer'
         )
@@ -86,7 +86,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Facebookissa` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Facebookissa` })).toHaveAttribute(
             'title',
             'Jaa Facebookissa'
         )
@@ -101,7 +101,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Threadsissä` })).toBeDefined()
     })
 
     it('should render correct url for threads link', async () => {
@@ -113,7 +113,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Threadsissä` })).toHaveAttribute(
             'href',
             `https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
         )
@@ -128,7 +128,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Threadsissä` })).toHaveAttribute(
             'rel',
             'noopener noreferrer'
         )
@@ -143,7 +143,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Threadsissä` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Threadsissä` })).toHaveAttribute(
             'title',
             'Jaa Threadsissä'
         )
@@ -158,7 +158,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Blueskyssa` })).toBeDefined()
     })
 
     it('should render correct url for bluesky link', async () => {
@@ -170,7 +170,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Blueskyssa` })).toHaveAttribute(
             'href',
             `https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
         )
@@ -185,7 +185,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Blueskyssa` })).toHaveAttribute(
             'rel',
             'noopener noreferrer'
         )
@@ -200,7 +200,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; Blueskyssa` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Blueskyssa` })).toHaveAttribute(
             'title',
             'Jaa Blueskyssa'
         )
@@ -215,7 +215,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toBeDefined()
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" LinkedInissä` })).toBeDefined()
     })
 
     it('should render correct url for linkedin link', async () => {
@@ -227,7 +227,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" LinkedInissä` })).toHaveAttribute(
             'href',
             `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`
         )
@@ -242,7 +242,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" LinkedInissä` })).toHaveAttribute(
             'rel',
             'noopener noreferrer'
         )
@@ -257,7 +257,7 @@ describe('<SocialShare />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: `Jaa kirjoitus &#34;${title}&#34; LinkedInissä` })).toHaveAttribute(
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" LinkedInissä` })).toHaveAttribute(
             'title',
             'Jaa LinkedInissä'
         )
