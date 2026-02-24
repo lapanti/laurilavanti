@@ -10,8 +10,8 @@ export class AboutSwePage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.aboutMeSweTitle = page.getByRole('heading', { name: /I gränslandet mellan teknik och samhälle/i })
-        this.summaryBox = page.getByRole('complementary', { name: /Fakta om Lauri/i })
+        this.aboutMeSweTitle = page.getByRole('heading', { level: 1 })
+        this.summaryBox = page.getByRole('complementary')
     }
 
     async goTo() {

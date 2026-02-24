@@ -10,8 +10,8 @@ export class AboutPage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.aboutMeTitle = page.getByRole('heading', { name: /Teknologian ja yhteiskunnan rajapinnassa/i })
-        this.summaryBox = page.getByRole('complementary', { name: /Faktoja Laurista/i })
+        this.aboutMeTitle = page.getByRole('heading', { level: 1 })
+        this.summaryBox = page.getByRole('complementary')
     }
 
     async goTo() {

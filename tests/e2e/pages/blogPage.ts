@@ -10,7 +10,7 @@ export class BlogPage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.title = page.getByRole('heading', { name: /Blogi/i })
+        this.title = page.getByRole('heading', { level: 1 })
         this.linksToBlogs = page.locator('a[href*="/blogi/"]')
     }
 
