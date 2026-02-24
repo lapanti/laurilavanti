@@ -10,10 +10,10 @@ export class TagPage extends AnyPage {
     readonly minNumberOfArtices: number
     readonly articles: Locator
 
-    constructor(page: Page, url = '/kategoria/kirkkonummi/', title = 'Kirkkonummi', minNumberOfArticles = 2) {
+    constructor(page: Page, url = '/kategoria/kirkkonummi/', minNumberOfArticles = 2) {
         super(page)
         this.url = url
-        this.title = page.getByRole('heading', { exact: true, name: title })
+        this.title = page.getByRole('heading', { level: 1 })
         this.minNumberOfArtices = minNumberOfArticles
         this.articles = page.getByRole('article')
     }

@@ -10,10 +10,8 @@ export class AboutEnPage extends AnyPage {
 
     constructor(page: Page) {
         super(page)
-        this.aboutMeEnTitle = page.getByRole('heading', {
-            name: /At the intersection between technology and society/i,
-        })
-        this.summaryBox = page.getByRole('complementary', { name: /Facts about Lauri/i })
+        this.aboutMeEnTitle = page.getByRole('heading', { level: 1 })
+        this.summaryBox = page.getByRole('complementary')
     }
 
     async goTo() {

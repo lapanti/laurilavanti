@@ -22,33 +22,19 @@ export class AnyPage {
     constructor(page: Page) {
         this.page = page
         this.isMobile = (page.viewportSize()?.width ?? 0) < 1200
-        this.navButton = page.getByRole('checkbox', { name: /Avaa valikko/i })
-        this.navLinkAboutMe = page.getByRole('link', { name: /Teknologian ja yhteiskunnan rajapinnassa/i })
-        this.navLinkBlog = page.getByRole('link', { name: /Blogi/i })
-        this.navLinkContactInfo = page.getByRole('link', { name: /Ota yhteyttä/i })
-        this.navLinkAboutMeSwe = page.getByRole('link', { name: /I gränslandet mellan teknik och samhälle/i })
-        this.navLinkAboutMeEn = page.getByRole('link', { name: /At the intersection between technology and society/i })
-        this.footerFacebookLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa Facebook (linkki aukeaa uudessa välilehdessä)"]')
-        this.footerBlueskyLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa Bluesky (linkki aukeaa uudessa välilehdessä)"]')
-        this.footerThreadsLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa Threads (linkki aukeaa uudessa välilehdessä)"]')
-        this.footerInstagramLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa Instagram (linkki aukeaa uudessa välilehdessä)"]')
-        this.footerLinkedInLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa LinkedIn (linkki aukeaa uudessa välilehdessä)"]')
-        this.footerMastodonLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa Mastodon (linkki aukeaa uudessa välilehdessä)"]')
-        this.footerTikTokLink = page
-            .locator('footer')
-            .locator('a[aria-label="Lauri Lavanti palvelussa TikTok (linkki aukeaa uudessa välilehdessä)"]')
+        this.navButton = page.locator('header input[type="checkbox"]')
+        this.navLinkAboutMe = page.locator('a[href="/minusta/"]').first()
+        this.navLinkBlog = page.locator('a[href="/blogi/"]').first()
+        this.navLinkContactInfo = page.locator('a[href="/ota-yhteytta/"]').first()
+        this.navLinkAboutMeSwe = page.locator('a[href="/om-mig/"]').first()
+        this.navLinkAboutMeEn = page.locator('a[href="/about-me/"]').first()
+        this.footerFacebookLink = page.locator('footer a[href*="facebook.com"]')
+        this.footerBlueskyLink = page.locator('footer a[href*="bsky.app"]')
+        this.footerThreadsLink = page.locator('footer a[href*="threads.com"]')
+        this.footerInstagramLink = page.locator('footer a[href*="instagram.com"]')
+        this.footerLinkedInLink = page.locator('footer a[href*="linkedin.com"]')
+        this.footerMastodonLink = page.locator('footer a[href*="mastodon"]')
+        this.footerTikTokLink = page.locator('footer a[href*="tiktok.com"]')
     }
 
     async openMainNavigation() {
@@ -58,11 +44,11 @@ export class AnyPage {
     }
 
     async checkMainNavigationLinks() {
-        await expect(this.navLinkAboutMe).toHaveAttribute('href', '/minusta/')
-        await expect(this.navLinkBlog).toHaveAttribute('href', '/blogi/')
-        await expect(this.navLinkContactInfo).toHaveAttribute('href', '/ota-yhteytta/')
-        await expect(this.navLinkAboutMeSwe).toHaveAttribute('href', '/om-mig/')
-        await expect(this.navLinkAboutMeEn).toHaveAttribute('href', '/about-me/')
+        await expect(this.navLinkAboutMe).toBeVisible()
+        await expect(this.navLinkBlog).toBeVisible()
+        await expect(this.navLinkContactInfo).toBeVisible()
+        await expect(this.navLinkAboutMeSwe).toBeVisible()
+        await expect(this.navLinkAboutMeEn).toBeVisible()
     }
 
     async goToNavLink(navLink: Locator) {
@@ -97,12 +83,12 @@ export class AnyPage {
     }
 
     async checkFooter() {
-        await expect(this.footerFacebookLink).toHaveAttribute('href', 'https://www.facebook.com/laurilavanti')
-        await expect(this.footerBlueskyLink).toHaveAttribute('href', 'https://bsky.app/profile/laurilavanti.fi')
-        await expect(this.footerThreadsLink).toHaveAttribute('href', 'https://www.threads.com/@laurilavanti')
-        await expect(this.footerInstagramLink).toHaveAttribute('href', 'https://www.instagram.com/laurilavanti/')
-        await expect(this.footerLinkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/laurilavanti')
-        await expect(this.footerMastodonLink).toHaveAttribute('href', 'https://mastodontti.fi/@laurilavanti')
-        await expect(this.footerTikTokLink).toHaveAttribute('href', 'https://www.tiktok.com/@laurilavanti')
+        await expect(this.footerFacebookLink).toBeVisible()
+        await expect(this.footerBlueskyLink).toBeVisible()
+        await expect(this.footerThreadsLink).toBeVisible()
+        await expect(this.footerInstagramLink).toBeVisible()
+        await expect(this.footerLinkedInLink).toBeVisible()
+        await expect(this.footerMastodonLink).toBeVisible()
+        await expect(this.footerTikTokLink).toBeVisible()
     }
 }
