@@ -6,12 +6,14 @@ import { AnyPage } from './anyPage'
 
 export class AboutEnPage extends AnyPage {
     readonly aboutMeEnTitle: Locator
+    readonly summaryBox: Locator
 
     constructor(page: Page) {
         super(page)
         this.aboutMeEnTitle = page.getByRole('heading', {
             name: /At the intersection between technology and society/i,
         })
+        this.summaryBox = page.getByRole('complementary', { name: /Facts about Lauri/i })
     }
 
     async goTo() {
@@ -22,6 +24,6 @@ export class AboutEnPage extends AnyPage {
     }
 
     async checkContent() {
-        await expect(this.aboutMeEnTitle).toBeVisible()
+        await expect(this.summaryBox).toBeVisible()
     }
 }
