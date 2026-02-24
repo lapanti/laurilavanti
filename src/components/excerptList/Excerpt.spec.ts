@@ -101,9 +101,7 @@ describe('<Excerpt />', () => {
             },
         })
 
-        expect(
-            getByRole(result, 'complementary', { name: /Kirjoituksen &#34;Test Article&#34; meta-tiedot/i })
-        ).toBeDefined()
+        expect(getByRole(result, 'complementary', { name: /Kirjoituksen "Test Article" meta-tiedot/i })).toBeDefined()
     })
 
     it('should not render Meta when date is missing', async () => {
