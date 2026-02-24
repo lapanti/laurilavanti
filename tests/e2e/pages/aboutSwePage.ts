@@ -6,10 +6,12 @@ import { AnyPage } from './anyPage'
 
 export class AboutSwePage extends AnyPage {
     readonly aboutMeSweTitle: Locator
+    readonly summaryBox: Locator
 
     constructor(page: Page) {
         super(page)
         this.aboutMeSweTitle = page.getByRole('heading', { name: /I gränslandet mellan teknik och samhälle/i })
+        this.summaryBox = page.getByRole('complementary', { name: /Fakta om Lauri/i })
     }
 
     async goTo() {
@@ -20,6 +22,6 @@ export class AboutSwePage extends AnyPage {
     }
 
     async checkContent() {
-        await expect(this.aboutMeSweTitle).toBeVisible()
+        await expect(this.summaryBox).toBeVisible()
     }
 }
