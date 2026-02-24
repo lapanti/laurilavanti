@@ -15,7 +15,7 @@ export class BlogPostPage extends AnyPage {
         this.url = url
         this.titleLocator = page.getByRole('heading', { level: 1 })
         this.tagLinks = page.locator('a[href*="/kategoria/"]')
-        this.otherPostsSection = page.getByRole('heading', { level: 2 })
+        this.otherPostsSection = page.getByRole('heading', { level: 2 }).first()
     }
 
     async goTo() {
