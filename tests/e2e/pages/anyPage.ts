@@ -22,12 +22,18 @@ export class AnyPage {
     constructor(page: Page) {
         this.page = page
         this.isMobile = (page.viewportSize()?.width ?? 0) < 1200
+        /*
+         * MobileMenu is rendered before DesktopMenu in the DOM.
+         * On desktop the mobile container is display:none (nth 1 → desktop link).
+         * On mobile the desktop container is display:none (nth 0 → mobile link).
+         */
+        const navIdx = this.isMobile ? 0 : 1
         this.navButton = page.locator('header input[type="checkbox"]')
-        this.navLinkAboutMe = page.locator('a[href="/minusta/"]').first()
-        this.navLinkBlog = page.locator('a[href="/blogi/"]').first()
-        this.navLinkContactInfo = page.locator('a[href="/ota-yhteytta/"]').first()
-        this.navLinkAboutMeSwe = page.locator('a[href="/om-mig/"]').first()
-        this.navLinkAboutMeEn = page.locator('a[href="/about-me/"]').first()
+        this.navLinkAboutMe = page.locator('a[href="/minusta/"]').nth(navIdx)
+        this.navLinkBlog = page.locator('a[href="/blogi/"]').nth(navIdx)
+        this.navLinkContactInfo = page.locator('a[href="/ota-yhteytta/"]').nth(navIdx)
+        this.navLinkAboutMeSwe = page.locator('a[href="/om-mig/"]').nth(navIdx)
+        this.navLinkAboutMeEn = page.locator('a[href="/about-me/"]').nth(navIdx)
         this.footerFacebookLink = page.locator('footer a[href*="facebook.com"]')
         this.footerBlueskyLink = page.locator('footer a[href*="bsky.app"]')
         this.footerThreadsLink = page.locator('footer a[href*="threads.com"]')
