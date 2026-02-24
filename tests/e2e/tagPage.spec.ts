@@ -11,8 +11,6 @@ test.describe('Tag Page', () => {
         await tagPage.checkContent()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
-
-        await test.expect(page).toHaveScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {

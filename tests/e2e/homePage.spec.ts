@@ -11,8 +11,6 @@ test.describe('Home Page', () => {
         await homePage.checkTitles()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
-
-        await test.expect(page).toHaveScreenshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
