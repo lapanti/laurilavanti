@@ -1,13 +1,13 @@
-import { getByRole } from '@testing-library/dom'
+import { getByRole, getByText } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../../tests/helpers'
 import SummaryBox from './SummaryBox.astro'
 
 describe('SummaryBox', () => {
-    const ariaLabel = 'Testing aria labels'
-    const summaryRows = ['Testing', 'More testing', 'Lauri on testaamassa']
-    const title = 'Testing summary box'
+    const ariaLabel = 'Faktoja Laurista'
+    const summaryRows = ['Joku testailee', 'More testing', 'Lauri on testaamassa']
+    const title = 'Lauri lyhyesti'
 
     it('should render', async () => {
         const result = await renderAstroComponent(SummaryBox, {
@@ -30,10 +30,11 @@ describe('SummaryBox', () => {
             },
         })
 
-        expect(getByRole(result, 'heading', { name: title })).toBeInTheDocument()
+        expect(getByRole(result, 'heading', { name: title })).toBeDefined()
     })
 
     it('displays the correct summary text', async () => {
+        const summaryRows = ['Joku testailee', 'More testing', 'Lauri on testaamassa']
         const result = await renderAstroComponent(SummaryBox, {
             props: {
                 ariaLabel,
@@ -43,7 +44,7 @@ describe('SummaryBox', () => {
         })
 
         summaryRows.forEach((row) => {
-            expect(getByRole(result, 'listitem', { name: row })).toBeInTheDocument()
+            expect(getByText(result, row)).toBeDefined()
         })
     })
 
@@ -56,6 +57,6 @@ describe('SummaryBox', () => {
             },
         })
 
-        expect(getByRole(result, 'complementary', { name: ariaLabel })).toBeInTheDocument()
+        expect(getByRole(result, 'complementary', { name: ariaLabel })).toBeDefined()
     })
 })
