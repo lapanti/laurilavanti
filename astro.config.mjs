@@ -4,6 +4,7 @@ import { defineConfig, envField } from 'astro/config' // eslint-disable-line imp
 import icon from 'astro-icon' // eslint-disable-line import/no-unresolved
 import { imageService } from '@unpic/astro/service' // eslint-disable-line import/no-unresolved
 
+import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 import partytown from '@astrojs/partytown';
@@ -31,7 +32,7 @@ export default defineConfig({
         }),
     },
 
-    integrations: [icon({ include: { 'fa7-brands': ['*'] } }), sitemap(), partytown()],
+    integrations: [mdx(), icon({ include: { 'fa7-brands': ['*'] } }), sitemap(), partytown()],
 
     env: {
         schema: {
