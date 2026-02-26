@@ -1,0 +1,73 @@
+---
+layout: '../../../layouts/MdxLayout.astro'
+title: 'At the intersection between technology and society'
+description: 'I am a lead developer, Master of Science (Tech.), and politician. I work where technology is changing society—and where decision-making should keep pace'
+slug: 'en/about'
+type: 'Person'
+localHeroImage: 'Lauri-sitting-in-front-of-a-window_1-1'
+localCroppedHeroImage: 'Lauri-sitting-in-front-of-a-window_4-3'
+localAlt: 'Lauri Lavanti'
+---
+
+import CurriculumVitae from '../../../components/CurriculumVitae.astro'
+import ExternalLink from '../../../components/ExternalLink.astro'
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+import SummaryBox from '../../../components/SummaryBox.astro'
+import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/en-cv'
+
+export const components = { a: ExternalLink, h2: H2, p: Paragraph }
+
+<SummaryBox
+    ariaLabel="Facts about Lauri"
+    summaryRows={[
+        'Lauri works as a lead developer in a bank.',
+        'Lauri has graduated as a Master of Science (Tech.) from the Information Networks study programme in Aalto University.',
+        'Lauri is a municipal councillor in Kirkkonummi.',
+        'Lauri is the chair of the Green council group.',
+        'Lauri has four kids, three daughters and a boy.',
+        'The themes Lauri focuses on in politics and work are digitalization, privacy and the responsible introduction of AI.',
+    ]}
+    title="Lauri in TL;DR -format"
+/>
+
+I am a lead developer, Master of Science (Tech.), and politician. I work where technology is changing society—and where decision-making should keep pace.
+
+Digitalization, privacy, and the responsible implementation of artificial intelligence are all part of the same whole: how we build technological development that is both competitive and sustainable for nature and people.
+
+## Expert in digitalization and privacy
+
+I work as a lead developer and am responsible for the technical solutions of our team's services. My work focuses on the design, development, and maintenance of demanding systems. I manage technical guidelines and engage in active dialogue with stakeholders to ensure that solutions meet real needs and stand the test of time.
+
+For me, digitalization is not just a technical issue, but also a social and ethical one. I make sure that solutions are not only functional today, but also secure and maintainable tomorrow. Technology must be safe, functional, and serve people.
+
+## Multidisciplinarity and a broad perspective
+
+By training, I am a Master of Science (Tech.) from the study programme of information networks. The program is based on information technology, but it also covers other subjects such as aesthetics and philosophy. The program taught me to view systems as both technical and humane entities.
+
+My multidisciplinary background has given me the ability to act smoothly as a bridge builder, fostering mutual understanding between different professional groups. I also always examine technology from the perspective of its significance, impact, and responsibility.
+
+## In politics
+
+I serve as a municipal councilor in Kirkkonummi and as chair of the Green council group.
+
+In politics, I focus particularly on digitalization, privacy protection, and the controlled introduction of artificial intelligence. Society is rapidly becoming digitalized, but public administration and decision-making do not always keep pace with developments.
+
+We need a better understanding of the opportunities and risks presented by technology, as well as the courage to invest in education and high-productivity technological development. It is important that Finland does not fall behind in terms of expertise or competitiveness.
+
+## At home and off duty
+
+My four children are the focus of my free time. Everyday life consists of hobbies, excursions, and moments spent together. Parenting teaches me a lot about emotional skills, interaction, and continuous practice and development.
+
+Board games, video games, literature, and team sports have been a part of my life for a long time. Even though my busy schedule limits my time, I think it's important to make room for these interests—and I replace team sports with active jogging.
+
+You can find my latest thoughts on [Instagram](https://www.instagram.com/laurilavanti/), [Mastodon](https://mastodontti.fi/@laurilavanti), [LinkedIn](https://www.linkedin.com/in/laurilavanti/), [Facebook](https://www.facebook.com/laurilavanti), [Bluesky](https://bsky.app/profile/laurilavanti.fi), [Threads](https://www.threads.net/@laurilavanti) and [TikTok](https://www.tiktok.com/@laurilavanti).
+
+<CurriculumVitae
+    degrees={degrees}
+    degreesTitle={degreesTitle}
+    fiduciaries={fiduciaries}
+    fiduciariesTitle={fiduciariesTitle}
+    jobExperiences={jobExperiences}
+    jobExperiencesTitle={jobExperiencesTitle}
+/>
