@@ -1,5 +1,5 @@
 ---
-layout: '../../../layouts/Layout.astro'
+layout: '../../../layouts/MdxLayout.astro'
 title: 'Teknologian ja yhteiskunnan rajapinnassa'
 description: 'Olen johtava ohjelmistokehittäjä, diplomi-insinööri ja poliitikko. Työskentelen siellä, missä teknologia muuttaa yhteiskuntaa – ja missä päätöksenteon pitäisi pysyä mukana'
 slug: 'fi/about'
@@ -7,31 +7,28 @@ type: 'Person'
 localHeroImage: 'Lauri-sitting-in-front-of-a-window_1-1'
 localCroppedHeroImage: 'Lauri-sitting-in-front-of-a-window_4-3'
 localAlt: 'Lauri Lavanti'
-summaryBox:
-    ariaLabel: 'Faktoja Laurista'
-    title: 'Lauri lyhyesti'
-    summaryRows:
-        - 'Lauri toimii johtavana ohjelmistokehittäjänä pankissa.'
-        - 'Lauri on valmistunut diplomi-insinööriksi informaatioverkostojen koulutusohjelmasta Aalto-yliopistosta.'
-        - 'Lauri on kunnanvaltuutettu Kirkkonummella.'
-        - 'Lauri on Vihreän valtuustoryhmän puheenjohtaja.'
-        - 'Laurilla on neljä lasta, kolme tytärtä ja yksi poika.'
-        - 'Teemat, joihin Lauri keskittyy politiikassa ja työelämässä ovat digitalisaatio, yksityisyyden suoja sekä tekoälyn vastuullinen käyttöönotto.'
 ---
 
-import CurriculumVitaeComponent from '../../../components/CurriculumVitae.astro'
+import CurriculumVitae from '../../../components/CurriculumVitae.astro'
 import ExternalLink from '../../../components/ExternalLink.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
-import SummaryBoxComponent from '../../../components/SummaryBox.astro'
+import SummaryBox from '../../../components/SummaryBox.astro'
 import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/fi-cv'
 
 export const components = { a: ExternalLink, h2: H2, p: Paragraph }
 
-<SummaryBoxComponent
-    ariaLabel={summaryBox.ariaLabel}
-    summaryRows={summaryBox.summaryRows}
-    title={summaryBox.title}
+<SummaryBox
+    ariaLabel="Faktoja Laurista"
+    summaryRows={[
+        'Lauri toimii johtavana ohjelmistokehittäjänä pankissa.',
+        'Lauri on valmistunut diplomi-insinööriksi informaatioverkostojen koulutusohjelmasta Aalto-yliopistosta.',
+        'Lauri on kunnanvaltuutettu Kirkkonummella.',
+        'Lauri on Vihreän valtuustoryhmän puheenjohtaja.',
+        'Laurilla on neljä lasta, kolme tytärtä ja yksi poika.',
+        'Teemat, joihin Lauri keskittyy politiikassa ja työelämässä ovat digitalisaatio, yksityisyyden suoja sekä tekoälyn vastuullinen käyttöönotto.',
+    ]}
+    title="Lauri lyhyesti"
 />
 
 Olen johtava ohjelmistokehittäjä, diplomi-insinööri ja poliitikko. Työskentelen siellä, missä teknologia muuttaa yhteiskuntaa – ja missä päätöksenteon pitäisi pysyä mukana.
@@ -66,7 +63,7 @@ Lautapelit, videopelit, kirjallisuus ja joukkueurheilu ovat kulkeneen mukanani p
 
 Ajankohtaisimmat ajatukseni löydät [Instagramista](https://www.instagram.com/laurilavanti/), [Mastodonista](https://mastodontti.fi/@laurilavanti), [LinkedInistä](https://www.linkedin.com/in/laurilavanti/), [Facebookista](https://www.facebook.com/laurilavanti), [Blueskysta](https://bsky.app/profile/laurilavanti.fi) ja [Threadsistä](https://www.threads.net/@laurilavanti).
 
-<CurriculumVitaeComponent
+<CurriculumVitae
     degrees={degrees}
     degreesTitle={degreesTitle}
     fiduciaries={fiduciaries}

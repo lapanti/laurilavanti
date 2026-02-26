@@ -1,0 +1,30 @@
+---
+import type { MDXLayoutProps } from 'astro'
+import type { JsonLdType } from '../lib/jsonld'
+
+import Layout from './Layout.astro'
+
+type Props = MDXLayoutProps<{
+    description?: string
+    localAlt?: string
+    localCroppedHeroImage?: string
+    localHeroImage?: string
+    slug?: string
+    title: string
+    type?: JsonLdType
+}>
+
+const { frontmatter } = Astro.props
+---
+
+<Layout
+    description={frontmatter.description}
+    localAlt={frontmatter.localAlt}
+    localCroppedHeroImage={frontmatter.localCroppedHeroImage}
+    localHeroImage={frontmatter.localHeroImage}
+    slug={frontmatter.slug}
+    title={frontmatter.title}
+    type={frontmatter.type}
+>
+    <slot />
+</Layout>
