@@ -1,5 +1,5 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
+import type { ImageMetadata } from 'astro'
 import type { Image as ContentfulImage } from '../../types/contentful'
 
 import { Image as UnpicImage, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
@@ -7,9 +7,12 @@ import { Image as UnpicImage, Source } from '@unpic/astro' /* eslint-disable-lin
 interface Props {
     croppedHeroImage?: ContentfulImage
     heroImage?: ContentfulImage
+    localAlt?: string
+    localCroppedHeroImage?: string
+    localHeroImage?: string
 }
 
-const { croppedHeroImage, heroImage } = Astro.props
+const { croppedHeroImage, heroImage, localAlt, localCroppedHeroImage, localHeroImage } = Astro.props
 
 const sharedProps = {
     operations: { contentful: { f: 'face' as const, q: 80 } },
@@ -24,6 +27,10 @@ const sharedMobileProps = {
     ...sharedProps,
     src: `https:${croppedHeroImage?.fields?.file?.url}`,
 }
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.jpg', { eager: true, import: 'default' })
+const resolvedHero = localHeroImage ? allLocalImages[`../../images/${localHeroImage}.jpg`] : null
+const resolvedCropped = localCroppedHeroImage ? allLocalImages[`../../images/${localCroppedHeroImage}.jpg`] : null
 ---
 
 <style>
@@ -33,7 +40,7 @@ const sharedMobileProps = {
         position: relative;
     }
 
-    img {
+    .image-container :global(img) {
         aspect-ratio: 1.3333333333;
         object-fit: cover;
         width: 100%;
@@ -44,14 +51,24 @@ const sharedMobileProps = {
             width: 50%;
         }
 
-        img {
+        .image-container :global(img) {
             aspect-ratio: 1;
         }
     }
 </style>
 <div class="image-container">
     {
-        heroImage?.fields?.file?.url && (
+        resolvedHero && resolvedCropped ? (
+            <picture>
+                <Source layout="fullWidth" media="(max-width: 1199px)" src={resolvedCropped} type="image/avif" />
+                <Source layout="fullWidth" media="(max-width: 1199px)" src={resolvedCropped} type="image/webp" />
+                <Source layout="fullWidth" media="(max-width: 1199px)" src={resolvedCropped} />
+                <Source layout="fullWidth" media="(min-width: 1200px)" src={resolvedHero} type="image/avif" />
+                <Source layout="fullWidth" media="(min-width: 1200px)" src={resolvedHero} type="image/webp" />
+                <Source layout="fullWidth" media="(min-width: 1200px)" src={resolvedHero} />
+                <UnpicImage alt={localAlt ?? ''} layout="fullWidth" priority src={resolvedHero} unstyled />
+            </picture>
+        ) : heroImage?.fields?.file?.url ? (
             <picture>
                 <Source {...sharedMobileProps} layout="fullWidth" media="(max-width: 1200px)" type="image/avif" />
                 <Source {...sharedMobileProps} layout="fullWidth" media="(max-width: 1200px)" type="image/webp" />
@@ -61,6 +78,6 @@ const sharedMobileProps = {
                 <Source {...sharedDesktopProps} layout="fullWidth" media="(min-width: 1200px)" />
                 <UnpicImage {...sharedDesktopProps} alt={heroImage.fields.description ?? null} priority unstyled />
             </picture>
-        )
+        ) : null
     }
 </div>

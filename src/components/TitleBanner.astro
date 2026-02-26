@@ -11,11 +11,24 @@ interface Props {
     createdAt?: string
     croppedHeroImage?: ContentfulImage
     heroImage?: ContentfulImage
+    localAlt?: string
+    localCroppedHeroImage?: string
+    localHeroImage?: string
     tags?: { sys: TagLink }[]
     title: string
 }
 
-const { title, croppedHeroImage, heroImage, createdAt, tags, allTags } = Astro.props
+const {
+    allTags,
+    createdAt,
+    croppedHeroImage,
+    heroImage,
+    localAlt,
+    localCroppedHeroImage,
+    localHeroImage,
+    tags,
+    title,
+} = Astro.props
 ---
 
 <style
@@ -53,6 +66,12 @@ const { title, croppedHeroImage, heroImage, createdAt, tags, allTags } = Astro.p
 <div class="container">
     <div class="content">
         <Title allTags={allTags} createdAt={createdAt} tags={tags} title={title} />
-        <Image croppedHeroImage={croppedHeroImage} heroImage={heroImage} />
+        <Image
+            croppedHeroImage={croppedHeroImage}
+            heroImage={heroImage}
+            localAlt={localAlt}
+            localCroppedHeroImage={localCroppedHeroImage}
+            localHeroImage={localHeroImage}
+        />
     </div>
 </div>

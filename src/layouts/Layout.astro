@@ -29,6 +29,9 @@ interface Props {
     description?: string
     heroBanner?: boolean
     heroImage?: Image
+    localAlt?: string
+    localCroppedHeroImage?: string
+    localHeroImage?: string
     secondaryTitle?: string
     slug?: string
     subtitle?: string
@@ -47,6 +50,9 @@ const {
     description,
     heroBanner,
     heroImage,
+    localAlt,
+    localCroppedHeroImage,
+    localHeroImage,
     secondaryTitle,
     slug,
     subtitle,
@@ -128,6 +134,9 @@ const {
                                 createdAt={createdAt}
                                 croppedHeroImage={croppedHeroImage}
                                 heroImage={heroImage}
+                                localAlt={localAlt}
+                                localCroppedHeroImage={localCroppedHeroImage}
+                                localHeroImage={localHeroImage}
                                 tags={tags}
                                 title={title}
                             />
