@@ -1,3 +1,39 @@
+---
+layout: '../../../layouts/Layout.astro'
+title: 'Teknologian ja yhteiskunnan rajapinnassa'
+description: 'Olen johtava ohjelmistokehittäjä, diplomi-insinööri ja poliitikko. Työskentelen siellä, missä teknologia muuttaa yhteiskuntaa – ja missä päätöksenteon pitäisi pysyä mukana'
+slug: 'fi/about'
+type: 'Person'
+localHeroImage: 'Lauri-sitting-in-front-of-a-window_1-1'
+localCroppedHeroImage: 'Lauri-sitting-in-front-of-a-window_4-3'
+localAlt: 'Lauri Lavanti'
+summaryBox:
+    ariaLabel: 'Faktoja Laurista'
+    title: 'Lauri lyhyesti'
+    summaryRows:
+        - 'Lauri toimii johtavana ohjelmistokehittäjänä pankissa.'
+        - 'Lauri on valmistunut diplomi-insinööriksi informaatioverkostojen koulutusohjelmasta Aalto-yliopistosta.'
+        - 'Lauri on kunnanvaltuutettu Kirkkonummella.'
+        - 'Lauri on Vihreän valtuustoryhmän puheenjohtaja.'
+        - 'Laurilla on neljä lasta, kolme tytärtä ja yksi poika.'
+        - 'Teemat, joihin Lauri keskittyy politiikassa ja työelämässä ovat digitalisaatio, yksityisyyden suoja sekä tekoälyn vastuullinen käyttöönotto.'
+---
+
+import CurriculumVitaeComponent from '../../../components/CurriculumVitae.astro'
+import ExternalLink from '../../../components/ExternalLink.astro'
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+import SummaryBoxComponent from '../../../components/SummaryBox.astro'
+import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/fi-cv'
+
+export const components = { a: ExternalLink, h2: H2, p: Paragraph }
+
+<SummaryBoxComponent
+    ariaLabel={summaryBox.ariaLabel}
+    summaryRows={summaryBox.summaryRows}
+    title={summaryBox.title}
+/>
+
 Olen johtava ohjelmistokehittäjä, diplomi-insinööri ja poliitikko. Työskentelen siellä, missä teknologia muuttaa yhteiskuntaa – ja missä päätöksenteon pitäisi pysyä mukana.
 
 Digitalisaatio, yksityisyyden suoja ja tekoälyn vastuullinen käyttöönotto ovat osa samaa kokonaisuutta: miten rakennamme teknologista kehitystä, joka on sekä kilpailukykyistä että kestävää niin luonnolle kuin ihmisille.
@@ -29,3 +65,12 @@ Vapaa-ajallani keskiössä ovat neljä lastani. Arki koostuu harrastuksista, ret
 Lautapelit, videopelit, kirjallisuus ja joukkueurheilu ovat kulkeneen mukanani pitkään. Vaikka ruuhkavuodet rajaavat aikaa, pidän tärkeänä säilyttää tilaa myös näille kiinnostuksen kohteille – ja korvaan joukkueurheilua aktiivisella lenkkeilyllä.
 
 Ajankohtaisimmat ajatukseni löydät [Instagramista](https://www.instagram.com/laurilavanti/), [Mastodonista](https://mastodontti.fi/@laurilavanti), [LinkedInistä](https://www.linkedin.com/in/laurilavanti/), [Facebookista](https://www.facebook.com/laurilavanti), [Blueskysta](https://bsky.app/profile/laurilavanti.fi) ja [Threadsistä](https://www.threads.net/@laurilavanti).
+
+<CurriculumVitaeComponent
+    degrees={degrees}
+    degreesTitle={degreesTitle}
+    fiduciaries={fiduciaries}
+    fiduciariesTitle={fiduciariesTitle}
+    jobExperiences={jobExperiences}
+    jobExperiencesTitle={jobExperiencesTitle}
+/>
