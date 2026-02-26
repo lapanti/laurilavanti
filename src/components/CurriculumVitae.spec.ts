@@ -1,7 +1,7 @@
 import { getAllByRole, getByRole, queryAllByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
-import { renderAstroComponent } from '../../../tests/helpers'
+import { renderAstroComponent } from '../../tests/helpers'
 import CurriculumVitae from './CurriculumVitae.astro'
 
 describe('<CurriculumVitae />', () => {
