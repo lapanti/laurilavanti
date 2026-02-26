@@ -1,0 +1,73 @@
+---
+layout: '../../../layouts/MdxLayout.astro'
+title: 'I gränslandet mellan teknologi och samhälle'
+description: 'Jag är en ledande mjukvaruutvecklare, diplomingenjör och politiker. Jag arbetar där teknologin förändrar samhället – och där beslutsfattandet borde hänga med'
+slug: 'sv/about'
+type: 'Person'
+localHeroImage: 'Lauri-sitting-in-front-of-a-window_1-1'
+localCroppedHeroImage: 'Lauri-sitting-in-front-of-a-window_4-3'
+localAlt: 'Lauri Lavanti'
+---
+
+import CurriculumVitae from '../../../components/CurriculumVitae.astro'
+import ExternalLink from '../../../components/ExternalLink.astro'
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+import SummaryBox from '../../../components/SummaryBox.astro'
+import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/sv-cv'
+
+export const components = { a: ExternalLink, h2: H2, p: Paragraph }
+
+<SummaryBox
+    ariaLabel="Fakta om Lauri"
+    summaryRows={[
+        'Lauri arbetar som ledande mjukvaruutvecklare på en bank.',
+        'Lauri har avlagt diplomingenjörsexamen i informationsnätverk vid Aalto-universitetet.',
+        'Lauri är kommunfullmäktigeledamot i Kyrkslätt.',
+        'Lauri är ordförande för Gröna fullmäktigegruppen.',
+        'Lauri har fyra barn, tre döttrar och en son.',
+        'Teman som Lauri fokuserar på i politik och arbetsliv är digitalisering, integritetsskydd och ansvarsfull implementering av artificiell intelligens.',
+    ]}
+    title="Lauri i korthet"
+/>
+
+Jag är en ledande mjukvaruutvecklare, diplomingenjör och politiker. Jag arbetar där teknologin förändrar samhället – och där beslutsfattandet borde hänga med.
+
+Digitalisering, integritetsskydd och ansvarsfull implementering av artificiell intelligens är delar av samma helhet: hur vi bygger teknologisk utveckling som är både konkurrenskraftig och hållbar för naturen och människorna.
+
+## Expert på digitalisering och integritetsskydd
+
+Jag arbetar som ledande mjukvaruutvecklare och ansvarar för de tekniska lösningarna i vårt teams tjänster. I mitt arbete står planering, utveckling och underhåll av krävande helheter i centrum. Jag leder tekniska riktlinjer och för en aktiv dialog med intressenter för att säkerställa att lösningarna motsvarar verkliga behov och håller över tid.
+
+Digitalisering är inte bara en teknisk fråga för mig, utan också en samhällelig och etisk. Jag ser till att lösningarna inte bara fungerar idag, utan också är säkra och underhållbara imorgon. Teknologin ska vara säker, funktionell och tjäna människan.
+
+## Mångdisciplinär och bred syn
+
+Jag är utbildad diplomingenjör i informationsnätverk. Utbildningsprogrammet bygger på datateknik, men breddas från teknik till bland annat estetik och filosofi. Utbildningen lärde mig att se system som både tekniska och mänskliga helheter.
+
+Mångdisciplinariteten har gett mig förmågan att smidigt fungera som brobyggare och bygga gemensam förståelse med olika yrkesgrupper. Jag granskar teknologin alltid också ur perspektiven av betydelse, påverkan och ansvar.
+
+## I politiken
+
+Jag är kommunfullmäktigeledamot i Kyrkslätt och ordförande för Gröna fullmäktigegruppen.
+
+I politiken fokuserar jag särskilt på digitalisering, integritetsskydd och kontrollerad implementering av artificiell intelligens. Samhället digitaliseras snabbt, men den offentliga förvaltningen och beslutsfattandet hänger inte alltid med i utvecklingen.
+
+Vi behöver bättre förståelse för teknologins möjligheter och risker samt mod att satsa på utbildning och högproduktiv teknologisk utveckling. Det är viktigt att Finland inte halkar efter i kompetens eller konkurrenskraft.
+
+## Hemma och på fritiden
+
+På fritiden står mina fyra barn i centrum. Vardagen består av hobbyer, utflykter och gemensamma stunder. Föräldraskapet lär mig mycket om emotionella färdigheter, interaktion och ständig övning och utveckling.
+
+Brädspel, datorspel, litteratur och lagsport har följt med mig länge. Även om de hektiska åren begränsar tiden, tycker jag det är viktigt att bevara utrymme även för dessa intressen – och ersätter lagsport med aktiv löpning.
+
+Mina senaste tankar hittar du på [Instagram](https://www.instagram.com/laurilavanti/), [Mastodon](https://mastodontti.fi/@laurilavanti), [LinkedIn](https://www.linkedin.com/in/laurilavanti/), [Facebook](https://www.facebook.com/laurilavanti), [Bluesky](https://bsky.app/profile/laurilavanti.fi) och [Threads](https://www.threads.net/@laurilavanti).
+
+<CurriculumVitae
+    degrees={degrees}
+    degreesTitle={degreesTitle}
+    fiduciaries={fiduciaries}
+    fiduciariesTitle={fiduciariesTitle}
+    jobExperiences={jobExperiences}
+    jobExperiencesTitle={jobExperiencesTitle}
+/>
