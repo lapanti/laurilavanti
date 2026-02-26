@@ -8,6 +8,6 @@ interface Props {
 const { excerpt } = Astro.props
 ---
 
-<Paragraph itemProp="description" smallMarginTop>
+<Paragraph inGrid={false} itemProp="description" smallMarginTop>
     {excerpt}
 </Paragraph>

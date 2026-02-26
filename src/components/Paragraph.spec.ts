@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import Paragraph from './Paragraph.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/Paragraph.spec.ts
-
 describe('<Paragraph />', () => {
     const itemProp = 'description'
     const content = 'Test content for the paragraph.'
@@ -21,10 +19,10 @@ describe('<Paragraph />', () => {
         expect(result.firstChild).toMatchSnapshot()
     })
 
-    it('should render in grid', async () => {
+    it('should render without grid', async () => {
         const result = await renderAstroComponent(Paragraph, {
             props: {
-                inGrid: true,
+                inGrid: false,
             },
             slots: {
                 default: content,
