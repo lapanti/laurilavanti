@@ -28,9 +28,9 @@ const sharedMobileProps = {
     src: `https:${croppedHeroImage?.fields?.file?.url}`,
 }
 
-const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.jpg', { eager: true, import: 'default' })
-const resolvedHero = localHeroImage ? allLocalImages[`../../images/${localHeroImage}.jpg`] : null
-const resolvedCropped = localCroppedHeroImage ? allLocalImages[`../../images/${localCroppedHeroImage}.jpg`] : null
+const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.{jpg,png}', { eager: true, import: 'default' })
+const resolvedHero = localHeroImage ? allLocalImages[`../../images/${localHeroImage}`] : null
+const resolvedCropped = localCroppedHeroImage ? allLocalImages[`../../images/${localCroppedHeroImage}`] : null
 ---
 
 <style>
