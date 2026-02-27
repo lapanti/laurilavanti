@@ -20,4 +20,11 @@ test.describe('Blog Page', () => {
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
+
+    test('should match screenshot', async ({ page }) => {
+        const blogPage = new BlogPage(page)
+        await blogPage.goTo()
+
+        await test.expect(page).toHaveScreenshot()
+    })
 })

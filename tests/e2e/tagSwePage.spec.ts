@@ -1,29 +1,29 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
-import { test } from '@playwright/test'
+import test from '@playwright/test'
 
-import { HomePage } from './pages/homePage'
+import { TagSwePage } from './pages/tagSwePage'
 
-test.describe('Home Page', () => {
+test.describe('Tag/Category Page på svenska', () => {
     test('should render', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const tagPage = new TagSwePage(page)
+        await tagPage.goTo()
 
-        await homePage.checkTitles()
+        await tagPage.checkContent()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const tagPage = new TagSwePage(page)
+        await tagPage.goTo()
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 
     test('should match screenshot', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const tagPage = new TagSwePage(page)
+        await tagPage.goTo()
 
         await test.expect(page).toHaveScreenshot()
     })

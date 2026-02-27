@@ -1,29 +1,29 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
-import { test } from '@playwright/test'
+import test from '@playwright/test'
 
-import { HomePage } from './pages/homePage'
+import { NotFoundPage } from './pages/notFoundPage'
 
-test.describe('Home Page', () => {
+test.describe('404 Not Found Page', () => {
     test('should render', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goTo()
 
-        await homePage.checkTitles()
+        await notFoundPage.checkContent()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goTo()
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 
     test('should match screenshot', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goTo()
 
         await test.expect(page).toHaveScreenshot()
     })

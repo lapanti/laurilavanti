@@ -20,4 +20,11 @@ test.describe('About Page på svenska', () => {
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
+
+    test('should match screenshot', async ({ page }) => {
+        const aboutPage = new AboutSwePage(page)
+        await aboutPage.goTo()
+
+        await test.expect(page).toHaveScreenshot()
+    })
 })

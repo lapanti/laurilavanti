@@ -1,29 +1,29 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
-import { test } from '@playwright/test'
+import test from '@playwright/test'
 
-import { HomePage } from './pages/homePage'
+import { ContactEnPage } from './pages/contactEnPage'
 
-test.describe('Home Page', () => {
+test.describe('Contact Page in English', () => {
     test('should render', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const contactPage = new ContactEnPage(page)
+        await contactPage.goTo()
 
-        await homePage.checkTitles()
+        await contactPage.checkContent()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const contactPage = new ContactEnPage(page)
+        await contactPage.goTo()
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 
     test('should match screenshot', async ({ page }) => {
-        const homePage = new HomePage(page)
-        await homePage.goHome()
+        const contactPage = new ContactEnPage(page)
+        await contactPage.goTo()
 
         await test.expect(page).toHaveScreenshot()
     })
