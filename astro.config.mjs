@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig, envField } from 'astro/config' // eslint-disable-line import/no-unresolved
+import { defineConfig } from 'astro/config' // eslint-disable-line import/no-unresolved
 
 import icon from 'astro-icon' // eslint-disable-line import/no-unresolved
 import { imageService } from '@unpic/astro/service' // eslint-disable-line import/no-unresolved
@@ -95,20 +95,19 @@ export default defineConfig({
         defaultStrategy: 'hover',
     },
 
+    i18n: {
+        defaultLocale: 'fi',
+        locales: ['en', 'fi', 'sv'],
+        routing: {
+            prefixDefaultLocale: true,
+        },
+    },
+
     image: {
-        domains: ['images.ctfassets.net'],
         service: imageService({
             placeholder: 'blurhash',
         }),
     },
 
     integrations: [mdx(), icon({ include: { 'fa7-brands': ['*'] } }), sitemap(), partytown()],
-
-    env: {
-        schema: {
-            CONTENTFUL_SPACE_ID: envField.string({ context: 'server', access: 'public' }),
-            CONTENTFUL_DELIVERY_TOKEN: envField.string({ context: 'server', access: 'public' }),
-            CONTENTFUL_PREVIEW_TOKEN: envField.string({ context: 'server', access: 'public' }),
-        },
-    },
 })
