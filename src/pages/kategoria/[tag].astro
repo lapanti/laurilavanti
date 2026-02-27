@@ -1,34 +1,9 @@
 ---
-import type { Tag, TagCollection } from 'contentful'
+import { tags } from '../../content/tags'
 
-import ExcerptList from '../../components/ExcerptList.astro'
-import Layout from '../../layouts/Layout.astro'
-import { contentfulClient } from '../../lib/contentful'
-
-export async function getStaticPaths() {
-    const tags = await contentfulClient.getTags()
-
-    const pages = tags.items.map((item) => ({
-        params: { tag: item.sys.id },
-        props: {
-            tag: item,
-            tags,
-        },
-    }))
-
-    return pages
+export function getStaticPaths() {
+    return tags.map((t) => ({ params: { tag: t.id } }))
 }
 
-interface Props {
-    tags: TagCollection
-    tag: Tag
-}
-
-const { tags, tag } = Astro.props
-
-const capitalizedName = `${tag.name[0].toUpperCase()}${tag.name.slice(1)}`
+return Astro.redirect(`/fi/kategoria/${Astro.params.tag}/`, 301)
 ---
-
-<Layout allTags={tags} title={capitalizedName}>
-    <ExcerptList allTags={tags} tag={tag.sys.id} />
-</Layout>

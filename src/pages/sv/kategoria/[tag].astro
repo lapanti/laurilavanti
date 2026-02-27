@@ -1,0 +1,22 @@
+---
+import type { LocalTag } from '../../../content/tags'
+
+import ExcerptList from '../../../components/ExcerptList.astro'
+import { buildTagCollection, tags } from '../../../content/tags'
+import Layout from '../../../layouts/Layout.astro'
+
+export function getStaticPaths() {
+    return tags.map((t) => ({ params: { tag: t.id }, props: { tag: t } }))
+}
+
+interface Props {
+    tag: LocalTag
+}
+
+const { tag } = Astro.props
+const allTags = buildTagCollection('sv')
+---
+
+<Layout allTags={allTags} lang="sv" slug={`sv/kategoria/${tag.id}`} title={tag.names.sv}>
+    <ExcerptList allTags={allTags} lang="sv" tag={tag.id} />
+</Layout>
