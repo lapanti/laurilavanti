@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro'
 import type { Image as ContentfulImage } from '../../types/contentful'
 
 import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
@@ -7,10 +8,15 @@ import { sizes, typographics } from '../../lib/styles'
 
 interface Props {
     caption: string
-    image: ContentfulImage
+    image?: ContentfulImage
+    localAlt?: string
+    localImage?: string
 }
 
-const { image, caption } = Astro.props
+const { image, caption, localImage, localAlt } = Astro.props
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.{jpg,png}', { eager: true, import: 'default' })
+const resolvedLocal = localImage ? allLocalImages[`../../images/${localImage}`] : null
 
 const sharedProps = {
     height: 500,
@@ -49,14 +55,25 @@ const sharedProps = {
     }
 </style>
 {
-    image?.fields?.file?.url && (
+    resolvedLocal ? (
         <figure aria-label={caption}>
             <picture>
-                <Source {...sharedProps} type="image/avif" />
-                <Source {...sharedProps} type="image/webp" />
-                <Image {...sharedProps} alt={image.fields.description ?? null} layout="constrained" />
+                <Source layout="constrained" src={resolvedLocal} type="image/avif" />
+                <Source layout="constrained" src={resolvedLocal} type="image/webp" />
+                <Image alt={localAlt ?? ''} layout="constrained" src={resolvedLocal} />
             </picture>
             <figcaption>{caption}</figcaption>
         </figure>
+    ) : (
+        image?.fields?.file?.url && (
+            <figure aria-label={caption}>
+                <picture>
+                    <Source {...sharedProps} type="image/avif" />
+                    <Source {...sharedProps} type="image/webp" />
+                    <Image {...sharedProps} alt={image.fields.description ?? null} layout="constrained" />
+                </picture>
+                <figcaption>{caption}</figcaption>
+            </figure>
+        )
     )
 }
