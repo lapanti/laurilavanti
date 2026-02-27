@@ -14,6 +14,7 @@ export default defineConfig({
     site: 'https://laurilavanti.fi/',
     redirects: {
         '/': '/fi/',
+        '/blogi/': '/fi/blog/',
     },
     trailingSlash: 'always',
     output: 'static',
