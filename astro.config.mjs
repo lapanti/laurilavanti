@@ -17,6 +17,7 @@ export default defineConfig({
         '/blogi/': '/fi/blog/',
         '/ota-yhteytta/': '/fi/contact/',
         '/minusta/': '/fi/about/',
+        '/om-mig/': '/sv/about/',
     },
     trailingSlash: 'always',
     output: 'static',
