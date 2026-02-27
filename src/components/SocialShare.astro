@@ -6,11 +6,50 @@ import { colors, sizes } from '../lib/styles'
 
 interface Props {
     ariaLabel: string
+    locale?: 'en' | 'fi' | 'sv'
     shareUrl: string
     title: string
 }
 
-const { title, shareUrl, ariaLabel } = Astro.props
+const { title, shareUrl, ariaLabel, locale = 'fi' } = Astro.props
+
+const labels = {
+    en: {
+        bluesky: (t: string) => `Share post "${t}" on Bluesky`,
+        blueskyTitle: 'Share on Bluesky',
+        facebook: (t: string) => `Share post "${t}" on Facebook`,
+        facebookTitle: 'Share on Facebook',
+        linkedin: (t: string) => `Share post "${t}" on LinkedIn`,
+        linkedinTitle: 'Share on LinkedIn',
+        share: 'Share:',
+        threads: (t: string) => `Share post "${t}" on Threads`,
+        threadsTitle: 'Share on Threads',
+    },
+    fi: {
+        bluesky: (t: string) => `Jaa kirjoitus "${t}" Blueskyssa`,
+        blueskyTitle: 'Jaa Blueskyssa',
+        facebook: (t: string) => `Jaa kirjoitus "${t}" Facebookissa`,
+        facebookTitle: 'Jaa Facebookissa',
+        linkedin: (t: string) => `Jaa kirjoitus "${t}" LinkedInissä`,
+        linkedinTitle: 'Jaa LinkedInissä',
+        share: 'Jaa:',
+        threads: (t: string) => `Jaa kirjoitus "${t}" Threadsissä`,
+        threadsTitle: 'Jaa Threadsissä',
+    },
+    sv: {
+        bluesky: (t: string) => `Dela inlägget "${t}" på Bluesky`,
+        blueskyTitle: 'Dela på Bluesky',
+        facebook: (t: string) => `Dela inlägget "${t}" på Facebook`,
+        facebookTitle: 'Dela på Facebook',
+        linkedin: (t: string) => `Dela inlägget "${t}" på LinkedIn`,
+        linkedinTitle: 'Dela på LinkedIn',
+        share: 'Dela:',
+        threads: (t: string) => `Dela inlägget "${t}" på Threads`,
+        threadsTitle: 'Dela på Threads',
+    },
+}
+
+const l = labels[locale]
 ---
 
 <style
@@ -68,36 +107,36 @@ const { title, shareUrl, ariaLabel } = Astro.props
     }
 </style>
 <aside aria-label={ariaLabel}>
-    <span class="share">Jaa:</span>
+    <span class="share">{l.share}</span>
     <a
-        aria-label={`Jaa kirjoitus "${title}" Facebookissa`}
+        aria-label={l.facebook(title)}
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
-        title="Jaa Facebookissa"
+        title={l.facebookTitle}
     >
         <Icon class="facebook" name="fa7-brands:facebook" />
     </a>
     <a
-        aria-label={`Jaa kirjoitus "${title}" Threadsissä`}
+        aria-label={l.threads(title)}
         href={`https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
-        title="Jaa Threadsissä"
+        title={l.threadsTitle}
     >
         <Icon class="threads" name="fa7-brands:threads" />
     </a>
     <a
-        aria-label={`Jaa kirjoitus "${title}" Blueskyssa`}
+        aria-label={l.bluesky(title)}
         href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
-        title="Jaa Blueskyssa"
+        title={l.blueskyTitle}
     >
         <Icon class="bluesky" name="fa7-brands:bluesky" />
     </a>
     <a
-        aria-label={`Jaa kirjoitus "${title}" LinkedInissä`}
+        aria-label={l.linkedin(title)}
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
-        title="Jaa LinkedInissä"
+        title={l.linkedinTitle}
     >
         <Icon class="linkedin" name="fa7-brands:linkedin" />
     </a>
