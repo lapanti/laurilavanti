@@ -1,6 +1,5 @@
 ---
 import type { TagCollection, TagLink } from 'contentful'
-import type { Image } from '../../types/contentful'
 
 import { sizes } from '../../lib/styles'
 import Meta from '../Meta.astro'
@@ -11,7 +10,6 @@ interface Props {
     allTags: TagCollection
     date?: string
     excerpt?: string
-    image?: Image
     lang?: 'en' | 'fi' | 'sv'
     localAlt?: string
     localImage?: string
@@ -20,7 +18,7 @@ interface Props {
     title: string
 }
 
-const { allTags, date, excerpt, image, lang = 'fi', localAlt, localImage, slug, tags, title } = Astro.props
+const { allTags, date, excerpt, lang = 'fi', localAlt, localImage, slug, tags, title } = Astro.props
 
 const metaAriaLabels = {
     en: (t: string) => `Meta information for post "${t}"`,
@@ -36,7 +34,7 @@ const metaAriaLabels = {
 </style>
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
-        <Banner image={image} localAlt={localAlt} localImage={localImage} slug={slug} title={title} />
+        <Banner localAlt={localAlt} localImage={localImage} slug={slug} title={title} />
         {
             date && tags && (
                 <Meta allTags={allTags} ariaLabel={metaAriaLabels[lang](title)} date={date} lang={lang} tags={tags} />
