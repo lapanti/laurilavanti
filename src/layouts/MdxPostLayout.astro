@@ -81,5 +81,5 @@ const t = i18n[lang]
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
     <H2>{t.otherPosts}</H2>
-    <ExcerptList allTags={allTags} currentSlug={slug} limit={4} relatedTags={tagObjects} />
+    <ExcerptList allTags={allTags} currentSlug={slug} lang={lang} limit={4} relatedTags={tagObjects} />
 </Layout>

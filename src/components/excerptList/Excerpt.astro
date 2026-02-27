@@ -37,7 +37,11 @@ const metaAriaLabels = {
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
         <Banner image={image} localAlt={localAlt} localImage={localImage} slug={slug} title={title} />
-        {date && tags && <Meta allTags={allTags} ariaLabel={metaAriaLabels[lang](title)} date={date} tags={tags} />}
+        {
+            date && tags && (
+                <Meta allTags={allTags} ariaLabel={metaAriaLabels[lang](title)} date={date} lang={lang} tags={tags} />
+            )
+        }
         <Description excerpt={excerpt} />
     </article>
 </li>

@@ -8,10 +8,13 @@ interface Props {
     ariaLabel: string
     bigDateTime?: boolean
     date: string
+    lang?: 'en' | 'fi' | 'sv'
     tags: { sys: TagLink }[]
 }
 
-const { bigDateTime, date, tags, ariaLabel, allTags } = Astro.props
+const { allTags, ariaLabel, bigDateTime, date, lang = 'fi', tags } = Astro.props
+
+const tagBasePaths = { en: '/en/category', fi: '/fi/kategoria', sv: '/sv/kategoria' }
 
 const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')
@@ -71,7 +74,7 @@ const tagsToRender = tags
             <ul>
                 {tagsToRender.map((tag) => (
                     <li>
-                        <a href={`/kategoria/${tag.sys.id}/`}>#{tag.name}</a>
+                        <a href={`${tagBasePaths[lang]}/${tag.sys.id}/`}>#{tag.name}</a>
                     </li>
                 ))}
             </ul>
