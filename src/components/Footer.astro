@@ -1,14 +1,18 @@
 ---
-import type { FooterNav } from '../types/contentful'
+import type { Lang } from '../content/nav'
 
-import { contentfulClient } from '../lib/contentful'
+import { footerAriaLabel, footerLinks } from '../content/footer'
 import { colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../lib/styles'
 import InstagramLink from './footer/InstagramLink.astro'
 import Link from './footer/Link.astro'
 import TikTokLink from './footer/TikTokLink.astro'
 
-/** Only one footer nav there */
-const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5dRVby')
+interface Props {
+    lang?: Lang
+}
+
+const { lang = 'fi' } = Astro.props
+const getAriaLabel = footerAriaLabel[lang]
 ---
 
 <style
@@ -72,17 +76,13 @@ const footerNav = await contentfulClient.getEntry<FooterNav>('4aw1Sed11FQi8rnU5d
         </div>
         <ul>
             {
-                (footerNav?.fields?.links as FooterNav['fields']['links'] | undefined)?.map((link) =>
-                    !link ? null : link.fields.icon === 'instagram' ? (
-                        <InstagramLink title={`Lauri Lavanti palvelussa ${link.fields.title}`} url={link.fields.url} />
-                    ) : link.fields.icon === 'tiktok' ? (
-                        <TikTokLink title={`Lauri Lavanti palvelussa ${link.fields.title}`} url={link.fields.url} />
+                footerLinks.map((link) =>
+                    link.icon === 'instagram' ? (
+                        <InstagramLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
+                    ) : link.icon === 'tiktok' ? (
+                        <TikTokLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
                     ) : (
-                        <Link
-                            icon={link.fields.icon}
-                            title={`Lauri Lavanti palvelussa ${link.fields.title}`}
-                            url={link.fields.url}
-                        />
+                        <Link ariaLabel={getAriaLabel(link.title)} icon={link.icon} title={link.title} url={link.url} />
                     )
                 )
             }

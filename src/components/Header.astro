@@ -1,18 +1,18 @@
 ---
-import type { MainNav, Page } from '../types/contentful'
+import type { Lang } from '../content/nav'
 
-import { contentfulClient } from '../lib/contentful'
+import { navLinks } from '../content/nav'
 import { colors, HEADER_SIZE, zIndices } from '../lib/styles'
 import DesktopMenu from './header/DesktopMenu.astro'
 import MobileMenu from './header/MobileMenu.astro'
 import SkipLinks from './header/SkipLinks.astro'
 
-/** Only one main nav there */
-const mainNav = await contentfulClient.getEntry<MainNav>('7EKHWYCNVfmLLfc5TuKo9A')
+interface Props {
+    lang?: Lang
+}
 
-const links = (mainNav.fields.links as (Page | undefined)[])
-    .filter((link) => link !== undefined && link !== null)
-    .filter((link) => link.fields.slug !== 'index')
+const { lang = 'fi' } = Astro.props
+const links = navLinks[lang]
 ---
 
 <style

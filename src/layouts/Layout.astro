@@ -133,7 +133,7 @@ const localOgImage = localCroppedHeroImage
             }
         </style>
         <div>
-            <Header />
+            <Header lang={lang as 'en' | 'fi' | 'sv' | undefined} />
             <main id="main">
                 <article>
                     {
@@ -167,7 +167,7 @@ const localOgImage = localCroppedHeroImage
                     <slot />
                 </article>
             </main>
-            <Footer />
+            <Footer lang={lang as 'en' | 'fi' | 'sv' | undefined} />
         </div>
         <!-- 100% privacy-first analytics -->
         <script src="https://scripts.simpleanalyticscdn.com/latest.js" type="text/partytown"></script>

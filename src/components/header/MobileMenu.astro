@@ -1,13 +1,13 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import type { Page } from '../../types/contentful'
+import type { NavLink } from '../../content/nav'
 
 import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
 interface Props {
-    links: Page[]
+    links: NavLink[]
 }
 
 const { links } = Astro.props
@@ -169,15 +169,7 @@ const { links } = Astro.props
             <span class="line3"></span>
         </div>
         <div class="links">
-            {
-                links.map((link) => (
-                    <NavigationLink
-                        navigationTitle={link.fields.navigationTitle}
-                        slug={link.fields.slug}
-                        title={link.fields.title}
-                    />
-                ))
-            }
+            {links.map((link) => <NavigationLink href={link.href} label={link.label} title={link.title} />)}
         </div>
     </div>
 </div>

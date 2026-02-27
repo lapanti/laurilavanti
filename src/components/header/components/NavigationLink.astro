@@ -2,12 +2,12 @@
 import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
 
 interface Props {
-    navigationTitle: string
-    slug: string
+    href: string
+    label: string
     title: string
 }
 
-const { slug, navigationTitle, title } = Astro.props
+const { href, label, title } = Astro.props
 const { pathname } = Astro.url
 ---
 
@@ -58,6 +58,4 @@ const { pathname } = Astro.url
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a aria-current={pathname.split('/')[1] === slug ? 'page' : 'false'} aria-label={title} href={`/${slug}/`}
-    >{navigationTitle ?? title}
-</a>
+<a aria-current={pathname.startsWith(href) ? 'page' : 'false'} aria-label={title} href={href}>{label} </a>

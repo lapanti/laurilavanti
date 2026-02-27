@@ -5,12 +5,13 @@ import { Icon } from 'astro-icon/components'
 import { colors, sizes } from '../../lib/styles'
 
 interface Props {
+    ariaLabel: string
     icon?: string
     title: string
     url: string
 }
 
-const { title, icon, url } = Astro.props
+const { ariaLabel, icon, title, url } = Astro.props
 
 const iconToHoverColor = (icon?: string): string | undefined => {
     if (icon === 'bluesky') {
@@ -80,13 +81,7 @@ const hoverColor = iconToHoverColor(icon)
     }
 </style>
 <li>
-    <a
-        aria-label={`${title} (linkki aukeaa uudessa välilehdessä)`}
-        href={url}
-        rel="me noopener noreferrer"
-        target="_blank"
-        title={title}
-    >
+    <a aria-label={ariaLabel} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
         {icon && <Icon name={`fa7-brands:${icon}`} />}
     </a>
 </li>
