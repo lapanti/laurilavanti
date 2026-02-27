@@ -12,6 +12,9 @@ import partytown from '@astrojs/partytown';
 // https://astro.build/config
 export default defineConfig({
     site: 'https://laurilavanti.fi/',
+    redirects: {
+        '/': '/fi/',
+    },
     trailingSlash: 'always',
     output: 'static',
     compressHTML: true,
