@@ -67,7 +67,10 @@ const {
     updatedAt,
 } = Astro.props
 
-const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,png}', { eager: true, import: 'default' })
+const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
+    eager: true,
+    import: 'default',
+})
 const localOgImage = localCroppedHeroImage
     ? allLocalImages[`../images/${localCroppedHeroImage}`]
     : localHeroImage
