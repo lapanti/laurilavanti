@@ -27,7 +27,7 @@ export class ContactPage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/ota-yhteytta/')
+        await this.page.goto('/fi/contact/')
 
         // Wait to ensure we are at the correct page
         await expect(this.heading).toBeVisible()

@@ -11,11 +11,11 @@ export class BlogPage extends AnyPage {
     constructor(page: Page) {
         super(page)
         this.title = page.getByRole('heading', { level: 1 })
-        this.linksToBlogs = page.locator('a[href*="/blogi/"]')
+        this.linksToBlogs = page.locator('a[href*="/fi/blog/"]')
     }
 
     async goTo() {
-        await this.page.goto('/blogi/')
+        await this.page.goto('/fi/blog/')
 
         // Wait to ensure we are at the correct page
         await expect(this.title).toBeVisible()

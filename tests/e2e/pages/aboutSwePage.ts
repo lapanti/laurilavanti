@@ -15,7 +15,7 @@ export class AboutSwePage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/om-mig/')
+        await this.page.goto('/sv/about/')
 
         // Wait to ensure we are at the correct page
         await expect(this.aboutMeSweTitle).toBeVisible()
