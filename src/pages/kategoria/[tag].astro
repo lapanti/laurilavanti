@@ -5,5 +5,5 @@ export function getStaticPaths() {
     return tags.map((t) => ({ params: { tag: t.id } }))
 }
 
-return Astro.redirect(`/fi/kategoria/${Astro.params.tag}/`, 301)
+return Astro.redirect(`/fi/category/${Astro.params.tag}/`, 301)
 ---

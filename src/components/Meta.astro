@@ -14,7 +14,7 @@ interface Props {
 
 const { allTags, ariaLabel, bigDateTime, date, lang = 'fi', tags } = Astro.props
 
-const tagBasePaths = { en: '/en/category', fi: '/fi/kategoria', sv: '/sv/kategoria' }
+const tagBasePaths = { en: '/en/category', fi: '/fi/category', sv: '/sv/category' }
 
 const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')

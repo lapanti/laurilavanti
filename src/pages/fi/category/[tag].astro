@@ -17,6 +17,6 @@ const { tag } = Astro.props
 const allTags = buildTagCollection('fi')
 ---
 
-<Layout allTags={allTags} lang="fi" slug={`fi/kategoria/${tag.id}`} title={tag.names.fi}>
+<Layout allTags={allTags} lang="fi" slug={`fi/category/${tag.id}`} title={tag.names.fi}>
     <ExcerptList allTags={allTags} lang="fi" tag={tag.id} />
 </Layout>
