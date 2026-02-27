@@ -16,12 +16,13 @@ localCroppedHeroImage: 'backgroundImages/Joukkoliikenne_ei_voi_kallistua_loputto
 localAlt: 'Lauri Lavanti'
 ---
 
+import BlockQuote from '../../../../../components/body/BlockQuote.astro'
 import ExternalLink from '../../../../../components/ExternalLink.astro'
 import H2 from '../../../../../components/H2.astro'
 import H3 from '../../../../../components/body/H3.astro'
 import Paragraph from '../../../../../components/Paragraph.astro'
 
-export const components = { a: ExternalLink, h2: H2, h3: H3, p: Paragraph }
+export const components = { blockquote: BlockQuote, a: ExternalLink, h2: H2, h3: H3, p: Paragraph }
 
 Pääkaupunkiseudun joukkoliikenteestä vastaava HSL-kuntayhtymä suunnittelee lähivuosille tuntuvia korotuksia bussien ja junien lippujen hintoihin. Esillä on ollut jopa 20 prosentin korotus joihinkin lipputyyppeihin vuoteen 2028 mennessä. Pelkästään ensi vuodelle on kaavailtu yli kuuden prosentin hinnannousua kaikkeen matkustamiseen. Nykyinen suunta ja koko HSL:n rahoitusmalli on kestämättömällä pohjalla.
 

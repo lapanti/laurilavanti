@@ -14,12 +14,13 @@ localCroppedHeroImage: 'backgroundImages/Lauri-Lavanti-21-9.jpg'
 localAlt: 'Lauri Lavanti'
 ---
 
+import BlockQuote from '../../../../../components/body/BlockQuote.astro'
 import ExternalLink from '../../../../../components/ExternalLink.astro'
 import H2 from '../../../../../components/H2.astro'
 import H3 from '../../../../../components/body/H3.astro'
 import Paragraph from '../../../../../components/Paragraph.astro'
 
-export const components = { a: ExternalLink, h2: H2, h3: H3, p: Paragraph }
+export const components = { blockquote: BlockQuote, a: ExternalLink, h2: H2, h3: H3, p: Paragraph }
 
 Valtioneuvoston [tiedonanto](https://julkaisut.valtioneuvosto.fi/bitstream/handle/10024/165110/VN_tiedonanto_31082023.pdf) yhdenvertaisuuden, tasa-arvon ja syrjimättömyyden edistämisestä suomalaisessa yhteiskunnassa, eli tuttavallisemmin rasismitiedonanto, on tärkeä askel yhteiskuntamme suhtautumisessa rasismiin. Kuten tiedonannossa todetaan, on meillä ongelmia rakenteellisen rasismin ja syrjinnän kanssa, eikä niiden kieltäminen edesauta niiden korjaamista.
 

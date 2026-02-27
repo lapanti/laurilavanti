@@ -15,12 +15,13 @@ localCroppedHeroImage: 'backgroundImages/Kirkkonummi_092.jpg'
 localAlt: 'Lauri Lavanti'
 ---
 
+import BlockQuote from '../../../../../components/body/BlockQuote.astro'
 import ExternalLink from '../../../../../components/ExternalLink.astro'
 import H2 from '../../../../../components/H2.astro'
 import H3 from '../../../../../components/body/H3.astro'
 import Paragraph from '../../../../../components/Paragraph.astro'
 
-export const components = { a: ExternalLink, h2: H2, h3: H3, p: Paragraph }
+export const components = { blockquote: BlockQuote, a: ExternalLink, h2: H2, h3: H3, p: Paragraph }
 
 Kuntavaalit tulevat jälleen. Kirjoitushetkellä niihin on alle kolme kuukautta. Kuntavaalit ovat kaikista vaaleistamme ehkä hienoimmat ja tärkeimmät, sillä niissä äänestetään paikallisia ehdokkaita päättämään paikallisista asioista. Jokaisen meidän arjestamme ja siitä, mihin suuntaan se kehittyy seuraavien neljän vuoden aikana.
 
