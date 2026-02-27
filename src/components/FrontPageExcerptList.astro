@@ -2,7 +2,12 @@
 import { contentfulClient } from '../lib/contentful'
 import ExcerptList from './ExcerptList.astro'
 
+interface Props {
+    limit?: number
+}
+
+const { limit } = Astro.props
 const allTags = await contentfulClient.getTags()
 ---
 
-<ExcerptList allTags={allTags} limit={8} />
+<ExcerptList allTags={allTags} limit={limit} />
