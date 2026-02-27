@@ -1,15 +1,15 @@
 ---
-import type { CurriculumVitae } from '../types/contentful'
+import type { CvRow } from '../types/local'
 
 import Section from './curriculumVitae/Section.astro'
 
 interface Props {
-    degrees: CurriculumVitae['fields']['degrees']
-    degreesTitle: CurriculumVitae['fields']['degreesTitle']
-    fiduciaries: CurriculumVitae['fields']['fiduciaries']
-    fiduciariesTitle: CurriculumVitae['fields']['fiduciariesTitle']
-    jobExperiences: CurriculumVitae['fields']['jobExperiences']
-    jobExperiencesTitle: CurriculumVitae['fields']['jobExperiencesTitle']
+    degrees: CvRow[]
+    degreesTitle: string
+    fiduciaries: CvRow[]
+    fiduciariesTitle: string
+    jobExperiences: CvRow[]
+    jobExperiencesTitle: string
 }
 
 const { degreesTitle, degrees, fiduciariesTitle, fiduciaries, jobExperiencesTitle, jobExperiences } = Astro.props

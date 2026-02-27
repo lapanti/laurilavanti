@@ -62,69 +62,6 @@ describe('<Head />', () => {
         expect(ogDescMeta).toHaveAttribute('content', description)
     })
 
-    it('should set og:image meta tags when image is provided', async () => {
-        const imageUrl = '//images.example.com/test.jpg'
-        const imageAlt = 'Test image'
-        const result = await renderAstroComponent(Head, {
-            props: {
-                image: {
-                    fields: {
-                        description: imageAlt,
-                        file: {
-                            details: {
-                                image: {
-                                    height: 600,
-                                    width: 1200,
-                                },
-                            },
-                            url: imageUrl,
-                        },
-                    },
-                },
-                title: 'Test Page',
-            },
-        })
-
-        expect(result.querySelector('meta[property="og:image"]')).toHaveAttribute('content', `https:${imageUrl}`)
-        expect(result.querySelector('meta[property="og:image:alt"]')).toHaveAttribute('content', imageAlt)
-        expect(result.querySelector('meta[property="og:image:width"]')).toHaveAttribute('content', '1200')
-        expect(result.querySelector('meta[property="og:image:height"]')).toHaveAttribute('content', '600')
-    })
-
-    it('should prefer croppedImage over image', async () => {
-        const croppedImageUrl = '//images.example.com/cropped.jpg'
-        const imageUrl = '//images.example.com/original.jpg'
-        const result = await renderAstroComponent(Head, {
-            props: {
-                croppedImage: {
-                    fields: {
-                        description: 'Cropped',
-                        file: {
-                            details: {
-                                image: { height: 600, width: 1200 },
-                            },
-                            url: croppedImageUrl,
-                        },
-                    },
-                },
-                image: {
-                    fields: {
-                        description: 'Original',
-                        file: {
-                            details: {
-                                image: { height: 300, width: 600 },
-                            },
-                            url: imageUrl,
-                        },
-                    },
-                },
-                title: 'Test Page',
-            },
-        })
-
-        expect(result.querySelector('meta[property="og:image"]')).toHaveAttribute('content', `https:${croppedImageUrl}`)
-    })
-
     it('should include JSON-LD script tag', async () => {
         const result = await renderAstroComponent(Head, {
             props: {
@@ -164,7 +101,7 @@ describe('<Head />', () => {
         expect(authorMeta).toHaveAttribute('content', 'Lauri Lavanti')
     })
 
-    it('should set twitter card meta tag', async () => {
+    it('should set twitter card to summary when no image provided', async () => {
         const result = await renderAstroComponent(Head, {
             props: {
                 title: 'Test Page',
@@ -173,27 +110,5 @@ describe('<Head />', () => {
 
         const twitterCard = result.querySelector('meta[name="twitter:card"]')
         expect(twitterCard).toHaveAttribute('content', 'summary')
-    })
-
-    it('should set twitter:card to summary_large_image when image is provided', async () => {
-        const result = await renderAstroComponent(Head, {
-            props: {
-                image: {
-                    fields: {
-                        description: 'Test',
-                        file: {
-                            details: {
-                                image: { height: 600, width: 1200 },
-                            },
-                            url: '//test.jpg',
-                        },
-                    },
-                },
-                title: 'Test Page',
-            },
-        })
-
-        const twitterCard = result.querySelector('meta[name="twitter:card"]')
-        expect(twitterCard).toHaveAttribute('content', 'summary_large_image')
     })
 })

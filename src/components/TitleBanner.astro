@@ -1,6 +1,5 @@
 ---
-import type { TagCollection, TagLink } from 'contentful'
-import type { Image as ContentfulImage } from '../types/contentful'
+import type { TagCollection, TagLink } from '../types/local'
 
 import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import Image from './titleBanner/Image.astro'
@@ -9,8 +8,6 @@ import Title from './titleBanner/Title.astro'
 interface Props {
     allTags?: TagCollection
     createdAt?: string
-    croppedHeroImage?: ContentfulImage
-    heroImage?: ContentfulImage
     localAlt?: string
     localCroppedHeroImage?: string
     localHeroImage?: string
@@ -18,17 +15,7 @@ interface Props {
     title: string
 }
 
-const {
-    allTags,
-    createdAt,
-    croppedHeroImage,
-    heroImage,
-    localAlt,
-    localCroppedHeroImage,
-    localHeroImage,
-    tags,
-    title,
-} = Astro.props
+const { allTags, createdAt, localAlt, localCroppedHeroImage, localHeroImage, tags, title } = Astro.props
 ---
 
 <style
@@ -66,12 +53,6 @@ const {
 <div class="container">
     <div class="content">
         <Title allTags={allTags} createdAt={createdAt} tags={tags} title={title} />
-        <Image
-            croppedHeroImage={croppedHeroImage}
-            heroImage={heroImage}
-            localAlt={localAlt}
-            localCroppedHeroImage={localCroppedHeroImage}
-            localHeroImage={localHeroImage}
-        />
+        <Image localAlt={localAlt} localCroppedHeroImage={localCroppedHeroImage} localHeroImage={localHeroImage} />
     </div>
 </div>

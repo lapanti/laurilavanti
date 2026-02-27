@@ -1,5 +1,3 @@
-import type { CurriculumVitae } from '../types/contentful'
-
 export const fiduciariesTitle = 'Civic roles'
 export const fiduciaries = [
     {
@@ -103,7 +101,7 @@ export const fiduciaries = [
             startYear: 2010,
         },
     },
-] as unknown as CurriculumVitae['fields']['fiduciaries']
+]
 
 export const jobExperiencesTitle = 'Work experience'
 export const jobExperiences = [
@@ -178,7 +176,7 @@ export const jobExperiences = [
             title: 'Seasonal trainee',
         },
     },
-] as unknown as CurriculumVitae['fields']['jobExperiences']
+]
 
 export const degreesTitle = 'Education'
 export const degrees = [
@@ -209,4 +207,4 @@ export const degrees = [
             startYear: 2007,
         },
     },
-] as unknown as CurriculumVitae['fields']['degrees']
+]

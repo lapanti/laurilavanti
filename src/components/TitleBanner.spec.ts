@@ -12,14 +12,6 @@ describe('<TitleBanner />', () => {
             props: {
                 allTags: { items: [{ name: 'Tekoäly', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
                 createdAt,
-                heroImage: {
-                    fields: {
-                        description: 'Test image',
-                        file: {
-                            url: '//images.ctfassets.net/44t6u1r4zgqq/22zkTYrMQVwAfvrEW3WGeX/9d5c7c3e5e853a9dede1b5cc0e539486/TekoÃ_ly.jpg',
-                        },
-                    },
-                },
                 tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
                 title,
             },

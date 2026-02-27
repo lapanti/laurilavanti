@@ -1,4 +1,4 @@
-import type { TagCollection } from 'contentful'
+import type { TagCollection } from '../types/local'
 
 export interface LocalTag {
     id: string

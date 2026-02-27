@@ -1,14 +1,11 @@
 ---
 import type { ImageMetadata } from 'astro'
-import type { Image } from '../types/contentful'
 
 import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '../lib/jsonld'
 
 interface Props {
     createdAt?: string
-    croppedImage?: Image
     description?: string
-    image?: Image
     localOgImage?: ImageMetadata
     localOgImageAlt?: string
     slug?: string
@@ -18,12 +15,10 @@ interface Props {
 }
 
 const {
-    croppedImage,
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
     title,
     type,
     slug,
-    image,
     localOgImage,
     localOgImageAlt,
     createdAt,
@@ -31,10 +26,6 @@ const {
 } = Astro.props
 
 const canonical = slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null
-
-const imageUrl = croppedImage?.fields?.file?.url ?? image?.fields?.file?.url
-const imageAlt = croppedImage?.fields?.description ?? image?.fields?.description
-const imageDetails = croppedImage?.fields?.file?.details.image ?? image?.fields?.file?.details.image
 
 const localOgImageUrl = localOgImage && Astro.site ? new URL(localOgImage.src, Astro.site).toString() : null
 
@@ -58,13 +49,7 @@ const jsonLd = JSON.stringify({
     description,
     headline: title,
     url: canonical,
-    ...(imageUrl
-        ? {
-              image: `https${imageUrl}`,
-          }
-        : localOgImageUrl
-          ? { image: localOgImageUrl }
-          : {}),
+    ...(localOgImageUrl ? { image: localOgImageUrl } : {}),
     ...(type === BLOGPOSTING
         ? {
               dateModified: updatedAt ?? createdAt,
@@ -125,15 +110,7 @@ const keywords = [
     )
 }
 {
-    imageUrl ? (
-        <>
-            <meta content={`https:${imageUrl}`} property="og:image" />
-            <meta content={imageAlt} property="og:image:alt" />
-            <meta content={`${imageDetails?.height}`} property="og:image:height" />
-            <meta content={`${imageDetails?.width}`} property="og:image:width" />
-            <meta content="summary_large_image" name="twitter:card" />
-        </>
-    ) : localOgImageUrl ? (
+    localOgImageUrl ? (
         <>
             <meta content={localOgImageUrl} property="og:image" />
             <meta content={localOgImageAlt} property="og:image:alt" />
@@ -154,6 +131,5 @@ const keywords = [
 <link href="/app.webmanifest" rel="manifest" />
 <title>{title === 'Lauri Lavanti' ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
-<link crossorigin="" href="https://images.ctfassets.net" rel="preconnect" />
 <link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect" />
 <link href="/sitemap-index.xml" rel="sitemap" />

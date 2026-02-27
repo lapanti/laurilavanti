@@ -1,11 +1,8 @@
 ---
-import type { Document } from '@contentful/rich-text-types'
 import type { ImageMetadata } from 'astro'
-import type { TagCollection, TagLink } from 'contentful'
 import type { JsonLdType } from '../lib/jsonld'
-import type { Image } from '../types/contentful'
+import type { TagCollection, TagLink } from '../types/local'
 
-import Body from '../components/Body.astro'
 import Footer from '../components/Footer.astro'
 import GlobalStyle from '../components/GlobalStyle.astro'
 import Head from '../components/Head.astro'
@@ -23,13 +20,9 @@ import {
 
 interface Props {
     allTags?: TagCollection
-    backgroundImage?: Image
-    body?: Document
     createdAt?: string
-    croppedHeroImage?: Image
     description?: string
     heroBanner?: boolean
-    heroImage?: Image
     lang?: string
     localAlt?: string
     localBackgroundImage?: string
@@ -46,13 +39,9 @@ interface Props {
 
 const {
     allTags,
-    backgroundImage,
-    body,
     createdAt,
-    croppedHeroImage,
     description,
     heroBanner,
-    heroImage,
     lang,
     localAlt,
     localBackgroundImage,
@@ -83,9 +72,7 @@ const localOgImage = localCroppedHeroImage
         <GlobalStyle />
         <Head
             createdAt={createdAt}
-            croppedImage={croppedHeroImage}
             description={description}
-            image={heroImage}
             localOgImage={localOgImage ?? undefined}
             localOgImageAlt={localAlt}
             slug={slug}
@@ -139,8 +126,6 @@ const localOgImage = localCroppedHeroImage
                     {
                         heroBanner ? (
                             <HeroBanner
-                                backgroundImage={backgroundImage}
-                                image={heroImage}
                                 localAlt={localAlt}
                                 localBackgroundImage={localBackgroundImage}
                                 localCroppedHeroImage={localCroppedHeroImage}
@@ -153,8 +138,6 @@ const localOgImage = localCroppedHeroImage
                             <TitleBanner
                                 allTags={allTags}
                                 createdAt={createdAt}
-                                croppedHeroImage={croppedHeroImage}
-                                heroImage={heroImage}
                                 localAlt={localAlt}
                                 localCroppedHeroImage={localCroppedHeroImage}
                                 localHeroImage={localHeroImage}
@@ -163,7 +146,6 @@ const localOgImage = localCroppedHeroImage
                             />
                         )
                     }
-                    {body && <Body allTags={allTags} node={body} />}
                     <slot />
                 </article>
             </main>

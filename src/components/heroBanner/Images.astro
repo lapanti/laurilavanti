@@ -1,7 +1,6 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
 import type { ImageMetadata } from 'astro'
-import type { Image as ContentfulImage } from '../../types/contentful'
 
 import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
 
@@ -9,26 +8,17 @@ import { sizes } from '../../lib/styles'
 import BackgroundImage from './images/BackgroundImage.astro'
 
 interface Props {
-    backgroundImage?: ContentfulImage
-    image?: ContentfulImage
     localAlt?: string
     localBackgroundImage?: string
     localCroppedHeroImage?: string
     localHeroImage?: string
 }
 
-const { backgroundImage, image, localAlt, localBackgroundImage, localCroppedHeroImage, localHeroImage } = Astro.props
+const { localAlt, localBackgroundImage, localCroppedHeroImage, localHeroImage } = Astro.props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.{jpg,png}', { eager: true, import: 'default' })
 const resolvedHero = localHeroImage ? allLocalImages[`../../images/${localHeroImage}`] : null
 const resolvedCropped = localCroppedHeroImage ? allLocalImages[`../../images/${localCroppedHeroImage}`] : null
-
-const sharedProps = {
-    height: 562,
-    operations: { contentful: { f: 'face' as const, q: 80 } },
-    src: `https:${image?.fields?.file?.url}`,
-    width: 560,
-}
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes2: sizes[2], sizes5Negative: `-${sizes[5]}` }}>
@@ -60,9 +50,9 @@ const sharedProps = {
     }
 </style>
 <div class="container">
-    <BackgroundImage image={backgroundImage} localImage={localBackgroundImage} />
+    <BackgroundImage localImage={localBackgroundImage} />
     {
-        resolvedHero && resolvedCropped ? (
+        resolvedHero && resolvedCropped && (
             <picture>
                 <Source height={562} src={resolvedCropped} type="image/avif" width={560} />
                 <Source height={562} src={resolvedCropped} type="image/webp" width={560} />
@@ -77,19 +67,6 @@ const sharedProps = {
                     width={560}
                 />
             </picture>
-        ) : image?.fields?.file?.url ? (
-            <picture>
-                <Source {...sharedProps} type="image/avif" />
-                <Source {...sharedProps} type="image/webp" />
-                <Image
-                    {...sharedProps}
-                    alt={image.fields.description ?? null}
-                    background="transparent"
-                    class="image"
-                    layout="constrained"
-                    priority
-                />
-            </picture>
-        ) : null
+        )
     }
 </div>

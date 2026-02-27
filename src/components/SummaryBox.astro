@@ -1,15 +1,13 @@
 ---
-import type { SummaryBox } from '../types/contentful'
-
 import { colors, sizes } from '../lib/styles'
 import H2 from './H2.astro'
 import LI from './LI.astro'
 import UL from './UL.astro'
 
 interface Props {
-    ariaLabel?: SummaryBox['fields']['ariaLabel']
-    summaryRows: SummaryBox['fields']['summaryRows']
-    title: SummaryBox['fields']['title']
+    ariaLabel?: string
+    summaryRows: string[]
+    title: string
 }
 
 const { ariaLabel, summaryRows, title } = Astro.props

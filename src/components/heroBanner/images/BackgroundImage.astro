@@ -1,28 +1,21 @@
 ---
 import type { ImageMetadata } from 'astro'
-import type { Image as ContentfulImage } from '../../../types/contentful'
 
 import { Image, Source } from '@unpic/astro' // eslint-disable-line import/no-unresolved
 
 import { colors } from '../../../lib/styles'
 
 interface Props {
-    image?: ContentfulImage
     localImage?: string
 }
 
-const { image, localImage } = Astro.props
+const { localImage } = Astro.props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../../../images/**/*.{jpg,png}', {
     eager: true,
     import: 'default',
 })
 const resolvedLocalImage = localImage ? allLocalImages[`../../../images/${localImage}`] : null
-
-const sharedProps = {
-    operations: { contentful: { q: 60 } },
-    src: `https:${image?.fields?.file?.url}`,
-}
 ---
 
 <style define:vars={{ colorsEvening70: colors.evening70 }}>
@@ -52,7 +45,7 @@ const sharedProps = {
 </style>
 <>
     {
-        resolvedLocalImage ? (
+        resolvedLocalImage && (
             <div>
                 <picture>
                     <Source height={660} layout="fullWidth" src={resolvedLocalImage} type="image/avif" />
@@ -60,14 +53,6 @@ const sharedProps = {
                     <Image alt="" height={660} layout="fullWidth" priority src={resolvedLocalImage} />
                 </picture>
             </div>
-        ) : image?.fields?.file?.url ? (
-            <div>
-                <picture>
-                    <Source {...sharedProps} type="image/avif" />
-                    <Source {...sharedProps} type="image/webp" />
-                    <Image {...sharedProps} alt="" height={660} layout="fullWidth" priority />
-                </picture>
-            </div>
-        ) : null
+        )
     }
 </>

@@ -1,5 +1,5 @@
 ---
-import type { CurriculumVitae } from '../../types/contentful'
+import type { CvRow } from '../../types/local'
 
 import { sizes, typographics } from '../../lib/styles'
 import H2 from '../H2.astro'
@@ -7,14 +7,8 @@ import UL from '../UL.astro'
 import Row from './section/Row.astro'
 
 interface Props {
-    title:
-        | CurriculumVitae['fields']['fiduciariesTitle']
-        | CurriculumVitae['fields']['degreesTitle']
-        | CurriculumVitae['fields']['jobExperiencesTitle']
-    items:
-        | CurriculumVitae['fields']['fiduciaries']
-        | CurriculumVitae['fields']['degrees']
-        | CurriculumVitae['fields']['jobExperiences']
+    title: string
+    items: CvRow[]
 }
 
 const { title, items } = Astro.props
