@@ -15,6 +15,7 @@ export default defineConfig({
     redirects: {
         '/': '/fi/',
         '/blogi/': '/fi/blog/',
+        '/ota-yhteytta/': '/fi/contact/',
     },
     trailingSlash: 'always',
     output: 'static',
