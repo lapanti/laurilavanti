@@ -1,0 +1,8 @@
+---
+import { contentfulClient } from '../lib/contentful'
+import ExcerptList from './ExcerptList.astro'
+
+const allTags = await contentfulClient.getTags()
+---
+
+<ExcerptList allTags={allTags} limit={8} />
