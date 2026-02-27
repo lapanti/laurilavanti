@@ -2,27 +2,39 @@
 import type { MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
+import { contentfulClient } from '../lib/contentful'
 import Layout from './Layout.astro'
 
 type Props = MDXLayoutProps<{
     description?: string
+    heroBanner?: boolean
     localAlt?: string
+    localBackgroundImage?: string
     localCroppedHeroImage?: string
     localHeroImage?: string
+    secondaryTitle?: string
     slug?: string
+    subtitle?: string
     title: string
     type?: JsonLdType
 }>
 
 const { frontmatter } = Astro.props
+
+const allTags = frontmatter.heroBanner ? await contentfulClient.getTags() : undefined
 ---
 
 <Layout
+    allTags={allTags}
     description={frontmatter.description}
+    heroBanner={frontmatter.heroBanner}
     localAlt={frontmatter.localAlt}
+    localBackgroundImage={frontmatter.localBackgroundImage}
     localCroppedHeroImage={frontmatter.localCroppedHeroImage}
     localHeroImage={frontmatter.localHeroImage}
+    secondaryTitle={frontmatter.secondaryTitle}
     slug={frontmatter.slug}
+    subtitle={frontmatter.subtitle}
     title={frontmatter.title}
     type={frontmatter.type}
 >
