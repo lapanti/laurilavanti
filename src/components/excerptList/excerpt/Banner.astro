@@ -1,5 +1,6 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
+import type { ImageMetadata } from 'astro'
 import type { Image as ContentfulImage } from '../../../types/contentful'
 
 import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
@@ -9,11 +10,19 @@ import H2 from '../../H2.astro'
 
 interface Props {
     image?: ContentfulImage
+    localAlt?: string
+    localImage?: string
     slug?: string
     title: string
 }
 
-const { title, slug, image } = Astro.props
+const { image, localAlt, localImage, slug, title } = Astro.props
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../../../images/**/*.{jpg,JPG,jpeg,png}', {
+    eager: true,
+    import: 'default',
+})
+const resolvedLocal = localImage ? allLocalImages[`../../../images/${localImage}`] : null
 
 const sharedProps = {
     height: 315,
@@ -55,12 +64,27 @@ const sharedProps = {
 </style>
 <a href={`/${slug}/`} rel="permalink">
     {
-        image && (
+        resolvedLocal ? (
             <picture>
-                <Source {...sharedProps} type="image/avif" />
-                <Source {...sharedProps} type="image/webp" />
-                <Image alt={image.fields.description ?? null} class="excerpt-image" {...sharedProps} />
+                <Source layout="constrained" src={resolvedLocal} type="image/avif" />
+                <Source layout="constrained" src={resolvedLocal} type="image/webp" />
+                <Image
+                    alt={localAlt ?? ''}
+                    class="excerpt-image"
+                    height={315}
+                    layout="constrained"
+                    src={resolvedLocal}
+                    width={560}
+                />
             </picture>
+        ) : (
+            image && (
+                <picture>
+                    <Source {...sharedProps} type="image/avif" />
+                    <Source {...sharedProps} type="image/webp" />
+                    <Image alt={image.fields.description ?? null} class="excerpt-image" {...sharedProps} />
+                </picture>
+            )
         )
     }
     <div>

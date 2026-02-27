@@ -12,12 +12,21 @@ interface Props {
     date?: string
     excerpt?: string
     image?: Image
+    lang?: 'en' | 'fi' | 'sv'
+    localAlt?: string
+    localImage?: string
     slug?: string
     tags?: { sys: TagLink }[]
     title: string
 }
 
-const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
+const { allTags, date, excerpt, image, lang = 'fi', localAlt, localImage, slug, tags, title } = Astro.props
+
+const metaAriaLabels = {
+    en: (t: string) => `Meta information for post "${t}"`,
+    fi: (t: string) => `Kirjoituksen "${t}" meta-tiedot`,
+    sv: (t: string) => `Metainformation för inlägget "${t}"`,
+}
 ---
 
 <style define:vars={{ sizes35: sizes[35] }}>
@@ -27,12 +36,8 @@ const { title, excerpt, slug, image, date, tags, allTags } = Astro.props
 </style>
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
-        <Banner image={image} slug={slug} title={title} />
-        {
-            date && tags && (
-                <Meta allTags={allTags} ariaLabel={`Kirjoituksen "${title}" meta-tiedot`} date={date} tags={tags} />
-            )
-        }
+        <Banner image={image} localAlt={localAlt} localImage={localImage} slug={slug} title={title} />
+        {date && tags && <Meta allTags={allTags} ariaLabel={metaAriaLabels[lang](title)} date={date} tags={tags} />}
         <Description excerpt={excerpt} />
     </article>
 </li>

@@ -1,20 +1,22 @@
 ---
-import type { Entry, LocaleCode, TagCollection, TagLink } from 'contentful'
+import type { TagCollection, TagLink } from 'contentful'
 import type { Post } from '../types/contentful'
 
 import { contentfulClient } from '../lib/contentful'
+import { allMdxPosts } from '../lib/mdxPosts'
 import { sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt.astro'
 
 interface Props {
-    limit?: number
     allTags: TagCollection
     currentSlug?: string
-    tag?: string
+    lang?: 'en' | 'fi' | 'sv'
+    limit?: number
     relatedTags?: { sys: TagLink }[]
+    tag?: string
 }
 
-const { limit, allTags, currentSlug, tag, relatedTags } = Astro.props
+const { allTags, currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
 
 const entries = await contentfulClient.getEntries<Post>({
     content_type: 'post',
@@ -25,20 +27,61 @@ const entries = await contentfulClient.getEntries<Post>({
     order: '-sys.createdAt',
 })
 
+interface NormalisedPost {
+    date: string
+    excerpt?: string
+    image?: Post['fields']['image']
+    lang: 'en' | 'fi' | 'sv'
+    localAlt?: string
+    localImage?: string
+    slug: string
+    tags: { sys: TagLink }[]
+    title: string
+}
+
+const contentfulNormalised: NormalisedPost[] = entries.items.map((node) => ({
+    date: node.fields.publishDate || node.sys.createdAt,
+    excerpt: node.fields.excerpt,
+    image: node.fields.croppedImage || node.fields.image,
+    lang: 'fi',
+    slug: `blogi/${node.fields.slug}`,
+    tags: node.metadata.tags,
+    title: node.fields.title,
+}))
+
+const mdxNormalised: NormalisedPost[] = allMdxPosts
+    .filter((p) => !currentSlug || p.slug !== currentSlug)
+    .filter((p) => !tag || p.tags.includes(tag))
+    .map((p) => ({
+        date: p.publishDate,
+        excerpt: p.description,
+        lang: p.lang,
+        localAlt: p.localAlt,
+        localImage: p.localCroppedHeroImage,
+        /* strip leading slash for consistent de-duplication */
+        slug: p.url.replace(/^\//, '').replace(/\/$/, ''),
+        tags: p.tags.map((id) => ({ sys: { id, linkType: 'Tag' as const, type: 'Link' as const } })),
+        title: p.title,
+    }))
+
+/* Merge, de-duplicate by slug, keep newest-first */
+const contentfulSlugs = new Set(contentfulNormalised.map((p) => p.slug))
+const merged: NormalisedPost[] = [
+    ...contentfulNormalised,
+    ...mdxNormalised.filter((p) => !contentfulSlugs.has(p.slug)),
+].sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+
 const tagSorted = relatedTags
-    ? entries.items
-          .reduce<[Entry<Post, undefined, LocaleCode>, number][]>(
+    ? merged
+          .reduce<[NormalisedPost, number][]>(
               (acc, curr) => [
                   ...acc,
                   [
                       curr,
-                      // 1 point per matching tag
                       relatedTags.reduce(
                           (pointsAcc, currentRelatedTag) =>
                               pointsAcc +
-                              (curr.metadata.tags.map((someTag) => someTag.sys.id).includes(currentRelatedTag.sys.id)
-                                  ? 1
-                                  : 0),
+                              (curr.tags.map((someTag) => someTag.sys.id).includes(currentRelatedTag.sys.id) ? 1 : 0),
                           0
                       ),
                   ],
@@ -46,15 +89,14 @@ const tagSorted = relatedTags
               []
           )
           .toSorted((a, b) => {
-              // If same points, sort by date
               if (a[1] === b[1]) {
-                  return new Date(b[0].sys.createdAt).valueOf() - new Date(a[0].sys.createdAt).valueOf()
+                  return new Date(b[0].date).valueOf() - new Date(a[0].date).valueOf()
               }
-              // Higher points first
+
               return a[1] < b[1] ? 1 : -1
           })
           .map((postWithPoints) => postWithPoints[0])
-    : entries.items
+    : merged
 
 const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
@@ -84,12 +126,15 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
         nodes.map((node) => (
             <Excerpt
                 allTags={allTags}
-                date={node.fields.publishDate || node.sys.createdAt}
-                excerpt={node.fields.excerpt}
-                image={node.fields.croppedImage || node.fields.image}
-                slug={`blogi/${node.fields.slug}`}
-                tags={node.metadata.tags}
-                title={node.fields.title}
+                date={node.date}
+                excerpt={node.excerpt}
+                image={node.image}
+                lang={lang}
+                localAlt={node.localAlt}
+                localImage={node.localImage}
+                slug={node.slug}
+                tags={node.tags}
+                title={node.title}
             />
         ))
     }
