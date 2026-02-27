@@ -18,6 +18,7 @@ export default defineConfig({
         '/ota-yhteytta/': '/fi/contact/',
         '/minusta/': '/fi/about/',
         '/om-mig/': '/sv/about/',
+        '/about-me/': '/en/about/',
     },
     trailingSlash: 'always',
     output: 'static',
