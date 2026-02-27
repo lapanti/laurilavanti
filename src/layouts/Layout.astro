@@ -29,6 +29,7 @@ interface Props {
     description?: string
     heroBanner?: boolean
     heroImage?: Image
+    lang?: string
     localAlt?: string
     localBackgroundImage?: string
     localCroppedHeroImage?: string
@@ -51,6 +52,7 @@ const {
     description,
     heroBanner,
     heroImage,
+    lang,
     localAlt,
     localBackgroundImage,
     localCroppedHeroImage,
@@ -65,7 +67,7 @@ const {
 } = Astro.props
 ---
 
-<html lang="fi">
+<html lang={lang ?? 'fi'}>
     <head>
         <GlobalStyle />
         <Head
