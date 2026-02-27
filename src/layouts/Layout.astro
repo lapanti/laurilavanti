@@ -1,5 +1,6 @@
 ---
 import type { Document } from '@contentful/rich-text-types'
+import type { ImageMetadata } from 'astro'
 import type { TagCollection, TagLink } from 'contentful'
 import type { JsonLdType } from '../lib/jsonld'
 import type { Image } from '../types/contentful'
@@ -65,6 +66,13 @@ const {
     type,
     updatedAt,
 } = Astro.props
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,png}', { eager: true, import: 'default' })
+const localOgImage = localCroppedHeroImage
+    ? allLocalImages[`../images/${localCroppedHeroImage}`]
+    : localHeroImage
+      ? allLocalImages[`../images/${localHeroImage}`]
+      : null
 ---
 
 <html lang={lang ?? 'fi'}>
@@ -75,6 +83,8 @@ const {
             croppedImage={croppedHeroImage}
             description={description}
             image={heroImage}
+            localOgImage={localOgImage ?? undefined}
+            localOgImageAlt={localAlt}
             slug={slug}
             title={title}
             type={type}
