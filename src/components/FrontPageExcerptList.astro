@@ -1,13 +1,14 @@
 ---
-import { contentfulClient } from '../lib/contentful'
+import { buildTagCollection } from '../content/tags'
 import ExcerptList from './ExcerptList.astro'
 
 interface Props {
+    lang?: 'en' | 'fi' | 'sv'
     limit?: number
 }
 
-const { limit } = Astro.props
-const allTags = await contentfulClient.getTags()
+const { lang = 'fi', limit } = Astro.props
+const allTags = buildTagCollection(lang)
 ---
 
-<ExcerptList allTags={allTags} limit={limit} />
+<ExcerptList allTags={allTags} lang={lang} limit={limit} />

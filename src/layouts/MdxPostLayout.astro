@@ -1,11 +1,10 @@
 ---
 import type { MDXLayoutProps } from 'astro'
-import type { TagCollection } from 'contentful'
 
 import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
-import { contentfulClient } from '../lib/contentful'
+import { buildTagCollection } from '../content/tags'
 import { BLOGPOSTING } from '../lib/jsonld'
 import Layout from './Layout.astro'
 
@@ -38,7 +37,7 @@ const {
     updatedDate,
 } = frontmatter
 
-const allTags: TagCollection = await contentfulClient.getTags()
+const allTags = buildTagCollection(lang)
 
 const tagObjects = tags.map((tagId) => ({
     sys: { id: tagId, linkType: 'Tag' as const, type: 'Link' as const },
