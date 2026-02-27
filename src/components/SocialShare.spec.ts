@@ -262,4 +262,119 @@ describe('<SocialShare />', () => {
             'Jaa LinkedInissä'
         )
     })
+    describe('when locale is en', () => {
+        const enAriaLabel = 'Sharing post "Test post" on social media'
+        const enTitle = 'Test post'
+        const enShareUrl = 'https://laurilavanti.fi/en/blog/test'
+
+        it('should render facebook link with English label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Facebook` })).toBeDefined()
+        })
+
+        it('should render threads link with English label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Threads` })).toBeDefined()
+        })
+
+        it('should render bluesky link with English label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Bluesky` })).toBeDefined()
+        })
+
+        it('should render linkedin link with English label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on LinkedIn` })).toBeDefined()
+        })
+    })
+
+    describe('when locale is sv', () => {
+        const svAriaLabel = 'Dela inlägget "Testinlägg" på sociala medier'
+        const svTitle = 'Testinlägg'
+        const svShareUrl = 'https://laurilavanti.fi/sv/blog/test'
+
+        it('should render facebook link with Swedish label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Facebook` })).toBeDefined()
+        })
+
+        it('should render threads link with Swedish label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Threads` })).toBeDefined()
+        })
+
+        it('should render bluesky link with Swedish label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Bluesky` })).toBeDefined()
+        })
+
+        it('should render linkedin link with Swedish label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på LinkedIn` })).toBeDefined()
+        })
+    })
 })

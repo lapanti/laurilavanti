@@ -111,4 +111,44 @@ describe('<Head />', () => {
         const twitterCard = result.querySelector('meta[name="twitter:card"]')
         expect(twitterCard).toHaveAttribute('content', 'summary')
     })
+
+    it('should not set canonical link when no slug provided', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'Test Page',
+            },
+        })
+
+        expect(result.querySelector('link[rel="canonical"]')).toBeNull()
+        expect(result.querySelector('meta[property="og:url"]')).toBeNull()
+    })
+
+    it('should set WebSite JSON-LD when type is WebSite', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'Home',
+                type: 'WebSite',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('WebSite')
+        expect(jsonLd.sameAs).toBeDefined()
+    })
+
+    it('should fall back dateModified to createdAt when updatedAt is absent', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-06-01',
+                title: 'Blog post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.dateModified).toBe('2024-06-01')
+        expect(jsonLd.datePublished).toBe('2024-06-01')
+    })
 })

@@ -4,17 +4,10 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../../tests/helpers'
 import MobileMenu from './MobileMenu.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/header/MobileMenu.spec.ts
-
 describe('<MobileMenu />', () => {
-    const aboutMeNavigationTitle = 'Laurista'
-    const aboutMeTitle = 'Minusta'
-    const aboutMeSlug = 'minusta'
-    const blogNavigationTitle = 'Blogi'
-    const blogSlug = 'blogi'
     const links = [
-        { fields: { navigationTitle: aboutMeNavigationTitle, slug: aboutMeSlug, title: aboutMeTitle } },
-        { fields: { navigationTitle: blogNavigationTitle, slug: blogSlug, title: 'Blogi' } },
+        { href: '/fi/about/', label: 'Laurista', title: 'Minusta' },
+        { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
     ]
 
     it('should render', async () => {
@@ -54,7 +47,7 @@ describe('<MobileMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: aboutMeTitle })).toHaveAttribute('href', `/${aboutMeSlug}/`)
-        expect(getByRole(result, 'link', { name: blogNavigationTitle })).toHaveAttribute('href', `/${blogSlug}/`)
+        expect(getByRole(result, 'link', { name: 'Minusta' })).toHaveAttribute('href', '/fi/about/')
+        expect(getByRole(result, 'link', { name: 'Blogi' })).toHaveAttribute('href', '/fi/blog/')
     })
 })

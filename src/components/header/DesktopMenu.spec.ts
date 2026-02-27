@@ -4,17 +4,10 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../../tests/helpers'
 import DesktopMenu from './DesktopMenu.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/header/DesktopMenu.spec.ts
-
 describe('<DesktopMenu />', () => {
-    const aboutMeNavigationTitle = 'Laurista'
-    const aboutTitle = 'Minusta'
-    const aboutMeSlug = 'minusta'
-    const blogNavigationTitle = 'Blogi'
-    const blogSlug = 'blogi'
     const links = [
-        { fields: { navigationTitle: aboutMeNavigationTitle, slug: aboutMeSlug, title: aboutTitle } },
-        { fields: { navigationTitle: blogNavigationTitle, slug: blogSlug, title: blogNavigationTitle } },
+        { href: '/fi/about/', label: 'Laurista', title: 'Minusta' },
+        { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
     ]
 
     it('should render', async () => {
@@ -44,7 +37,7 @@ describe('<DesktopMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: aboutTitle })).toHaveAttribute('href', `/${aboutMeSlug}/`)
-        expect(getByRole(result, 'link', { name: blogNavigationTitle })).toHaveAttribute('href', `/${blogSlug}/`)
+        expect(getByRole(result, 'link', { name: 'Minusta' })).toHaveAttribute('href', '/fi/about/')
+        expect(getByRole(result, 'link', { name: 'Blogi' })).toHaveAttribute('href', '/fi/blog/')
     })
 })

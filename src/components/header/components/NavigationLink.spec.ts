@@ -4,18 +4,16 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../../../tests/helpers'
 import NavigationLink from './NavigationLink.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/header/components/NavigationLink.spec.ts
-
 describe('<NavigationLink />', () => {
-    const slug = 'minusta'
+    const href = '/fi/about/'
+    const label = 'Laurista'
     const title = 'Minusta'
-    const navigationTitle = 'Laurista'
 
     it('should render', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
-                navigationTitle,
-                slug,
+                href,
+                label,
                 title,
             },
         })
@@ -26,8 +24,8 @@ describe('<NavigationLink />', () => {
     it('should render a link element', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
-                navigationTitle,
-                slug,
+                href,
+                label,
                 title,
             },
         })
@@ -38,20 +36,20 @@ describe('<NavigationLink />', () => {
     it('should have correct href attribute', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
-                navigationTitle,
-                slug,
+                href,
+                label,
                 title,
             },
         })
 
-        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('href', `/${slug}/`)
+        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('href', href)
     })
 
     it('should set aria-label attribute', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
-                navigationTitle,
-                slug,
+                href,
+                label,
                 title,
             },
         })
@@ -62,8 +60,8 @@ describe('<NavigationLink />', () => {
     it('should have aria-current as false when not in correct page', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
-                navigationTitle,
-                slug,
+                href,
+                label,
                 title,
             },
             request: new Request('https://laurilavanti.fi/'),
@@ -75,11 +73,11 @@ describe('<NavigationLink />', () => {
     it('should have aria-current as page when in correct page', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
-                navigationTitle,
-                slug,
+                href,
+                label,
                 title,
             },
-            request: new Request(`https://laurilavanti.fi/${slug}/`),
+            request: new Request(`https://laurilavanti.fi${href}`),
         })
 
         expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-current', 'page')

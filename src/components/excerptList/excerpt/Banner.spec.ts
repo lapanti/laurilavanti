@@ -8,14 +8,6 @@ describe('<Banner />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(Banner, {
             props: {
-                image: {
-                    fields: {
-                        description: 'Test image',
-                        file: {
-                            url: '//images.ctfassets.net/44t6u1r4zgqq/22zkTYrMQVwAfvrEW3WGeX/9d5c7c3e5e853a9dede1b5cc0e539486/TekoÃ_ly.jpg',
-                        },
-                    },
-                },
                 slug: 'test-slug',
                 title: 'Test Title',
             },
@@ -50,28 +42,7 @@ describe('<Banner />', () => {
         expect(heading).toHaveTextContent('My Article')
     })
 
-    it('should render image when provided', async () => {
-        const result = await renderAstroComponent(Banner, {
-            props: {
-                image: {
-                    fields: {
-                        description: 'Test image',
-                        file: {
-                            url: '//images.ctfassets.net/44t6u1r4zgqq/22zkTYrMQVwAfvrEW3WGeX/9d5c7c3e5e853a9dede1b5cc0e539486/TekoÃ_ly.jpg',
-                        },
-                    },
-                },
-                slug: 'test-slug',
-                title: 'Test Title',
-            },
-        })
-
-        const image = getByRole(result, 'img', { name: /Test image/i })
-        expect(image).toBeDefined()
-        expect(image).toHaveAttribute('alt', 'Test image')
-    })
-
-    it('should not render image when not provided', async () => {
+    it('should not render image when no local image provided', async () => {
         const result = await renderAstroComponent(Banner, {
             props: {
                 slug: 'test-slug',

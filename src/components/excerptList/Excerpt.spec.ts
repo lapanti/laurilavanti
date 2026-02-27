@@ -136,14 +136,6 @@ describe('<Excerpt />', () => {
                 allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
                 date: '2024-01-01',
                 excerpt: 'Test excerpt',
-                image: {
-                    fields: {
-                        description: 'Test image',
-                        file: {
-                            url: '//images.ctfassets.net/44t6u1r4zgqq/22zkTYrMQVwAfvrEW3WGeX/9d5c7c3e5e853a9dede1b5cc0e539486/TekoÃ_ly.jpg',
-                        },
-                    },
-                },
                 slug: 'test-article',
                 tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
                 title: 'Test Article',
@@ -151,5 +143,37 @@ describe('<Excerpt />', () => {
         })
 
         expect(getByRole(result, 'article', { name: /Test Article/i })).toBeDefined()
+    })
+
+    it('should render Meta with English aria-label when lang is en', async () => {
+        const result = await renderAstroComponent(Excerpt, {
+            props: {
+                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                date: '2024-01-01',
+                lang: 'en',
+                slug: 'test-article',
+                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                title: 'Test Article',
+            },
+        })
+
+        expect(getByRole(result, 'complementary', { name: /Meta information for post "Test Article"/i })).toBeDefined()
+    })
+
+    it('should render Meta with Swedish aria-label when lang is sv', async () => {
+        const result = await renderAstroComponent(Excerpt, {
+            props: {
+                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                date: '2024-01-01',
+                lang: 'sv',
+                slug: 'test-article',
+                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                title: 'Test Article',
+            },
+        })
+
+        expect(
+            getByRole(result, 'complementary', { name: /Metainformation för inlägget "Test Article"/i })
+        ).toBeDefined()
     })
 })
