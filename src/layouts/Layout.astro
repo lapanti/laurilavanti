@@ -30,6 +30,7 @@ interface Props {
     heroBanner?: boolean
     heroImage?: Image
     localAlt?: string
+    localBackgroundImage?: string
     localCroppedHeroImage?: string
     localHeroImage?: string
     secondaryTitle?: string
@@ -51,6 +52,7 @@ const {
     heroBanner,
     heroImage,
     localAlt,
+    localBackgroundImage,
     localCroppedHeroImage,
     localHeroImage,
     secondaryTitle,
@@ -124,6 +126,10 @@ const {
                             <HeroBanner
                                 backgroundImage={backgroundImage}
                                 image={heroImage}
+                                localAlt={localAlt}
+                                localBackgroundImage={localBackgroundImage}
+                                localCroppedHeroImage={localCroppedHeroImage}
+                                localHeroImage={localHeroImage}
                                 secondaryTitle={secondaryTitle}
                                 subtitle={subtitle}
                                 title={title}
