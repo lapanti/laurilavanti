@@ -1,0 +1,12 @@
+---
+import { allMdxPosts } from '../../../../lib/mdxPosts'
+
+export function getStaticPaths() {
+    return allMdxPosts.filter((p) => p.lang === 'sv').map((p) => ({ params: { id: String(p.id) } }))
+}
+
+return Astro.redirect(
+    `/sv/blog/${Astro.params.id}/${allMdxPosts.find((p) => p.lang === 'sv' && String(p.id) === Astro.params.id)!.slug}/`,
+    301
+)
+---
