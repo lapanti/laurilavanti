@@ -1,5 +1,11 @@
 export type Lang = 'en' | 'fi' | 'sv'
 
+export const skipLinks: Record<Lang, { main: string; footer: string }> = {
+    en: { footer: 'Skip to footer &#x27A1;', main: 'Skip to main content &#x27A1;' },
+    fi: { footer: 'Siirry alatunnisteeseen &#x27A1;', main: 'Siirry pääsisältöön &#x27A1;' },
+    sv: { footer: 'Hoppa till sidfoten &#x27A1;', main: 'Hoppa till huvudinnehållet &#x27A1;' },
+}
+
 export interface NavLink {
     href: string
     label: string
