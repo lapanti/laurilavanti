@@ -28,3 +28,26 @@ test.describe('404 Not Found Page', () => {
         await test.expect(page).toHaveScreenshot()
     })
 })
+
+test.describe('404 wrong-slug blog redirect', () => {
+    test('redirects fi blog post with wrong slug to canonical URL', async ({ page }) => {
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goToWrongBlogSlug('fi', 10, 'wrong-slug')
+
+        await test.expect(page).toHaveURL('/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/')
+    })
+
+    test('redirects sv blog post with wrong slug to canonical URL', async ({ page }) => {
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goToWrongBlogSlug('sv', 10, 'wrong-slug')
+
+        await test.expect(page).toHaveURL('/sv/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/')
+    })
+
+    test('does not redirect a fully unknown URL', async ({ page }) => {
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goTo()
+
+        await test.expect(page).toHaveURL('/this-page-does-not-exist/')
+    })
+})

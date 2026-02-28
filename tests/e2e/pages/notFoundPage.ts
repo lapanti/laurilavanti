@@ -19,6 +19,10 @@ export class NotFoundPage extends AnyPage {
         await expect(this.title).toBeVisible()
     }
 
+    async goToWrongBlogSlug(lang: string, id: number, wrongSlug: string) {
+        await this.page.goto(`/${lang}/blog/${id}/${wrongSlug}/`)
+    }
+
     async checkContent() {
         await expect(this.title).toBeVisible()
     }
