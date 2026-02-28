@@ -1,13 +1,16 @@
 ---
+import type { Lang } from '../../../content/nav'
+
 import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
 
 interface Props {
     href: string
     label: string
+    switchToLang?: Lang
     title: string
 }
 
-const { href, label, title } = Astro.props
+const { href, label, switchToLang, title } = Astro.props
 const { pathname } = Astro.url
 ---
 
@@ -58,4 +61,11 @@ const { pathname } = Astro.url
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a aria-current={pathname.startsWith(href) ? 'page' : 'false'} aria-label={title} href={href}>{label} </a>
+<a
+    aria-current={pathname.startsWith(href) ? 'page' : 'false'}
+    aria-label={title}
+    data-switch-to-lang={switchToLang}
+    href={href}
+>
+    {label}
+</a>

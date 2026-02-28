@@ -45,6 +45,15 @@ const { links } = Astro.props
         <MainNavigationLink />
     </div>
     <div>
-        {links.map((link) => <NavigationLink href={link.href} label={link.label} title={link.title} />)}
+        {
+            links.map((link) => (
+                <NavigationLink
+                    href={link.href}
+                    label={link.label}
+                    switchToLang={link.switchToLang}
+                    title={link.title}
+                />
+            ))
+        }
     </div>
 </div>

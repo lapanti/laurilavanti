@@ -91,6 +91,16 @@ const { createdAt, description, lang, localOgImage, localOgImageAlt, slug, title
             </main>
             <Footer lang={lang} />
         </div>
+        <script
+            is:inline
+            set:html={`
+            document.querySelectorAll('a[data-switch-to-lang]').forEach(function(a) {
+                var lang = a.getAttribute('data-switch-to-lang')
+                if (!lang) return
+                a.href = window.location.pathname.replace(/^\\/(fi|sv|en)\\//, '/' + lang + '/')
+            })
+        `}
+        />
         <!-- 100% privacy-first analytics -->
         <script src="https://scripts.simpleanalyticscdn.com/latest.js" type="text/partytown"></script>
     </body>
