@@ -6,13 +6,19 @@ This is the repository containing the code for my homepage https://laurilavanti.
 
 ## Technologies
 
-The site is built with Astro, TypeScript, and modern web standards. Actual content is hosted on Contentful and the site is hosted on Cloudflare Pages. Quality is checked with Vitest, ESLint, Prettier, Playwright, GitHub Actions, and SonarCloud.
+The site is built with Astro, TypeScript, MDX, and modern web standards. All content is stored as local MDX files in the repository. The site is hosted on Cloudflare Pages. Quality is checked with Vitest, ESLint, Prettier, Playwright, GitHub Actions, and SonarCloud.
+
+## Architecture
+
+- **Content**: Blog posts and pages are written in MDX (`src/pages/`), organised by locale (`fi/`, `sv/`, `en/`).
+- **Images**: Local images live in `src/images/` and are resolved at build time via `import.meta.glob`. Hero images for blog posts are referenced by filename in MDX frontmatter (`localHeroImage`, `localCroppedHeroImage`).
+- **Layouts**: Three specialised layouts — `FrontPageLayout.astro`, `PageLayout.astro`, and `PostLayout.astro` — are referenced directly in MDX `layout:` frontmatter.
+- **Tags**: Defined locally in `src/content/tags.ts` with Finnish, Swedish, and English names.
+- **i18n**: Three locales (fi/sv/en). Language-switching links use a client-side prefix-swap script. Blog posts use `/{lang}/blog/{id}/{slug}/` URLs; bare `/{lang}/blog/{id}/` paths redirect 301 to the canonical slug URL.
 
 ## Development
 
-To develop, first you need a `.env.development`-file with the keys `CONTENTFUL_SPACE_ID` and `CONTENTFUL_DELIVERY_TOKEN`. If you want to use preview (draft content), you also need to set `CONTENTFUL_PREVIEW_TOKEN`.
-
-After that, you can run the following commands:
+No environment variables are required — all content is local. You can run the following commands right away:
 
 - `npm run dev` - Start the development server
 - `npm run build` - Build the site for production
