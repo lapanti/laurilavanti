@@ -23,6 +23,8 @@ interface Props {
     updatedDate?: string
 }
 
+// Support both MDX layout usage (props under frontmatter) and direct .astro component usage
+const props: Props = (Astro.props.frontmatter as Props | undefined) ?? (Astro.props as Props)
 const {
     description,
     id,
@@ -35,7 +37,7 @@ const {
     tags,
     title,
     updatedDate,
-} = Astro.props
+} = props
 
 const allTags = buildTagCollection(lang)
 

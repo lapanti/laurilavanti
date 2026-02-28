@@ -19,6 +19,8 @@ interface Props {
     type?: JsonLdType
 }
 
+// Support both MDX layout usage (props under frontmatter) and direct .astro component usage
+const props: Props = (Astro.props.frontmatter as Props | undefined) ?? (Astro.props as Props)
 const {
     description,
     lang,
@@ -31,7 +33,7 @@ const {
     subtitle,
     title,
     type,
-} = Astro.props
+} = props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
     eager: true,
