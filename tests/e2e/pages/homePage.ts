@@ -9,13 +9,13 @@ export class HomePage extends AnyPage {
     readonly secondaryTitle: Locator
 
     constructor(page: Page) {
-        super(page)
+        super(page, 'fi')
         this.mainTitle = page.getByRole('heading', { level: 1 })
         this.secondaryTitle = page.getByRole('heading', { level: 2 }).first()
     }
 
     async goHome() {
-        await this.page.goto('/')
+        await this.page.goto('/fi/')
 
         // Wait to ensure we are at the correct page
         await expect(this.mainTitle).toBeVisible()

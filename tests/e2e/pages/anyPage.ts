@@ -6,6 +6,7 @@ export class AnyPage {
     readonly page: Page
     readonly isMobile: boolean
     readonly navButton: Locator
+    readonly navLinkHome: Locator
     readonly navLinkAboutMe: Locator
     readonly navLinkBlog: Locator
     readonly navLinkContactInfo: Locator
@@ -19,7 +20,7 @@ export class AnyPage {
     readonly footerMastodonLink: Locator
     readonly footerTikTokLink: Locator
 
-    constructor(page: Page) {
+    constructor(page: Page, lang: 'en' | 'fi' | 'sv' = 'fi') {
         this.page = page
         this.isMobile = (page.viewportSize()?.width ?? 0) < 1200
         /*
@@ -29,6 +30,7 @@ export class AnyPage {
          */
         const navIdx = this.isMobile ? 0 : 1
         this.navButton = page.locator('header input[type="checkbox"]')
+        this.navLinkHome = page.locator(`header a[href="/${lang}/"]`).nth(navIdx)
         this.navLinkAboutMe = page.locator('a[href="/fi/about/"]').nth(navIdx)
         this.navLinkBlog = page.locator('a[href="/fi/blog/"]').nth(navIdx)
         this.navLinkContactInfo = page.locator('a[href="/fi/contact/"]').nth(navIdx)
@@ -41,6 +43,18 @@ export class AnyPage {
         this.footerLinkedInLink = page.locator('footer a[href*="linkedin.com"]')
         this.footerMastodonLink = page.locator('footer a[href*="mastodon"]')
         this.footerTikTokLink = page.locator('footer a[href*="tiktok.com"]')
+    }
+
+    async checkNavLinkHomeAriaCurrent() {
+        if (this.isMobile) {
+            await this.openMainNavigation()
+        }
+
+        await expect(this.navLinkHome).toHaveAttribute('aria-current', 'page')
+
+        if (this.isMobile) {
+            await this.closeMainNavigation()
+        }
     }
 
     async openMainNavigation() {

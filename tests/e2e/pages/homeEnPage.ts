@@ -9,7 +9,7 @@ export class HomeEnPage extends AnyPage {
     readonly secondaryTitle: Locator
 
     constructor(page: Page) {
-        super(page)
+        super(page, 'en')
         this.mainTitle = page.getByRole('heading', { level: 1 })
         this.secondaryTitle = page.getByRole('heading', { level: 2 }).first()
     }

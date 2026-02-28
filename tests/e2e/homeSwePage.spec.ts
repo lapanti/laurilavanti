@@ -27,4 +27,11 @@ test.describe('Home Page på svenska', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should mark home nav link as current page', async ({ page }) => {
+        const homePage = new HomeSwePage(page)
+        await homePage.goTo()
+
+        await homePage.checkNavLinkHomeAriaCurrent()
+    })
 })

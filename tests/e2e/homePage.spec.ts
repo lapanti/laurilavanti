@@ -27,4 +27,11 @@ test.describe('Home Page', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should mark home nav link as current page', async ({ page }) => {
+        const homePage = new HomePage(page)
+        await homePage.goHome()
+
+        await homePage.checkNavLinkHomeAriaCurrent()
+    })
 })

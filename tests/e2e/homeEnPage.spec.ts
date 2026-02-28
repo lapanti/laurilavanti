@@ -27,4 +27,11 @@ test.describe('Home Page in English', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should mark home nav link as current page', async ({ page }) => {
+        const homePage = new HomeEnPage(page)
+        await homePage.goTo()
+
+        await homePage.checkNavLinkHomeAriaCurrent()
+    })
 })
