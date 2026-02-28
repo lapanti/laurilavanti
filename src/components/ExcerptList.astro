@@ -28,6 +28,7 @@ interface NormalisedPost {
 }
 
 const merged: NormalisedPost[] = allMdxPosts
+    .filter((p) => p.lang === lang)
     .filter((p) => !currentSlug || p.slug !== currentSlug)
     .filter((p) => !tag || p.tags.includes(tag))
     .map((p) => ({
