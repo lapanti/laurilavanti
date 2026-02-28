@@ -1,16 +1,17 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import type { NavLink } from '../../content/nav'
+import type { Lang, NavLink } from '../../content/nav'
 
 import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
 interface Props {
+    lang?: Lang
     links: NavLink[]
 }
 
-const { links } = Astro.props
+const { lang, links } = Astro.props
 ---
 
 <style
@@ -159,7 +160,7 @@ const { links } = Astro.props
 </style>
 <div class="container">
     <div>
-        <MainNavigationLink />
+        <MainNavigationLink lang={lang} />
     </div>
     <div>
         <input aria-label="Avaa valikko. Sulje valikko kun valittu." name="" type="checkbox" />

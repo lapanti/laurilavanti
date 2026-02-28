@@ -1,15 +1,16 @@
 ---
-import type { NavLink } from '../../content/nav'
+import type { Lang, NavLink } from '../../content/nav'
 
 import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
 interface Props {
+    lang?: Lang
     links: NavLink[]
 }
 
-const { links } = Astro.props
+const { lang, links } = Astro.props
 ---
 
 <style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE, sizes25: sizes[2.5] }}>
@@ -42,7 +43,7 @@ const { links } = Astro.props
 </style>
 <div class="container">
     <div>
-        <MainNavigationLink />
+        <MainNavigationLink lang={lang} />
     </div>
     <div>
         {
