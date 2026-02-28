@@ -1,11 +1,11 @@
 ---
-import type { ImageMetadata } from 'astro'
+import type { ImageMetadata, MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
 import HeroBanner from '../components/HeroBanner.astro'
 import BaseLayout from './BaseLayout.astro'
 
-interface Props {
+type Props = MDXLayoutProps<{
     description?: string
     lang?: 'en' | 'fi' | 'sv'
     localAlt?: string
@@ -17,10 +17,9 @@ interface Props {
     subtitle?: string
     title: string
     type?: JsonLdType
-}
+}>
 
-// Support both MDX layout usage (props under frontmatter) and direct .astro component usage
-const props: Props = (Astro.props.frontmatter as Props | undefined) ?? (Astro.props as Props)
+const { frontmatter } = Astro.props
 const {
     description,
     lang,
@@ -33,7 +32,7 @@ const {
     subtitle,
     title,
     type,
-} = props
+} = frontmatter
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
     eager: true,
