@@ -27,11 +27,11 @@ const { lang, links } = Astro.props
         align-items: center;
         display: flex;
         gap: var(--sizes25);
-        width: 50%;
         justify-content: flex-start;
     }
 
     .container > div ~ div {
+        flex-grow: 1;
         justify-content: flex-end;
     }
 
