@@ -2,7 +2,8 @@
 import type { MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
-import Layout from './Layout.astro'
+import FrontPageLayout from './FrontPageLayout.astro'
+import PageLayout from './PageLayout.astro'
 
 type Props = MDXLayoutProps<{
     description?: string
@@ -22,19 +23,35 @@ type Props = MDXLayoutProps<{
 const { frontmatter } = Astro.props
 ---
 
-<Layout
-    description={frontmatter.description}
-    heroBanner={frontmatter.heroBanner}
-    lang={frontmatter.lang}
-    localAlt={frontmatter.localAlt}
-    localBackgroundImage={frontmatter.localBackgroundImage}
-    localCroppedHeroImage={frontmatter.localCroppedHeroImage}
-    localHeroImage={frontmatter.localHeroImage}
-    secondaryTitle={frontmatter.secondaryTitle}
-    slug={frontmatter.slug}
-    subtitle={frontmatter.subtitle}
-    title={frontmatter.title}
-    type={frontmatter.type}
->
-    <slot />
-</Layout>
+{
+    frontmatter.heroBanner ? (
+        <FrontPageLayout
+            description={frontmatter.description}
+            lang={frontmatter.lang}
+            localAlt={frontmatter.localAlt}
+            localBackgroundImage={frontmatter.localBackgroundImage}
+            localCroppedHeroImage={frontmatter.localCroppedHeroImage}
+            localHeroImage={frontmatter.localHeroImage}
+            secondaryTitle={frontmatter.secondaryTitle}
+            slug={frontmatter.slug}
+            subtitle={frontmatter.subtitle}
+            title={frontmatter.title}
+            type={frontmatter.type}
+        >
+            <slot />
+        </FrontPageLayout>
+    ) : (
+        <PageLayout
+            description={frontmatter.description}
+            lang={frontmatter.lang}
+            localAlt={frontmatter.localAlt}
+            localCroppedHeroImage={frontmatter.localCroppedHeroImage}
+            localHeroImage={frontmatter.localHeroImage}
+            slug={frontmatter.slug}
+            title={frontmatter.title}
+            type={frontmatter.type}
+        >
+            <slot />
+        </PageLayout>
+    )
+}

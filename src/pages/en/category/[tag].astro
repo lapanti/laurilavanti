@@ -3,7 +3,7 @@ import type { LocalTag } from '../../../content/tags'
 
 import ExcerptList from '../../../components/ExcerptList.astro'
 import { buildTagCollection, tags } from '../../../content/tags'
-import Layout from '../../../layouts/Layout.astro'
+import PageLayout from '../../../layouts/PageLayout.astro'
 
 export function getStaticPaths() {
     return tags.map((t) => ({ params: { tag: t.id }, props: { tag: t } }))
@@ -17,6 +17,6 @@ const { tag } = Astro.props
 const allTags = buildTagCollection('en')
 ---
 
-<Layout allTags={allTags} lang="en" slug={`en/category/${tag.id}`} title={tag.names.en}>
+<PageLayout allTags={allTags} lang="en" slug={`en/category/${tag.id}`} title={tag.names.en}>
     <ExcerptList allTags={allTags} lang="en" tag={tag.id} />
-</Layout>
+</PageLayout>

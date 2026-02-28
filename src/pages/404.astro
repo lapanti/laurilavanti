@@ -1,11 +1,11 @@
 ---
 import ExcerptList from '../components/ExcerptList.astro'
 import { buildTagCollection } from '../content/tags'
-import Layout from '../layouts/Layout.astro'
+import PageLayout from '../layouts/PageLayout.astro'
 
 const allTags = buildTagCollection('fi')
 ---
 
-<Layout allTags={allTags} title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
+<PageLayout allTags={allTags} title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
     <ExcerptList allTags={allTags} limit={8} />
-</Layout>
+</PageLayout>

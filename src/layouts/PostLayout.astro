@@ -1,0 +1,98 @@
+---
+import type { ImageMetadata } from 'astro'
+
+import ExcerptList from '../components/ExcerptList.astro'
+import H2 from '../components/H2.astro'
+import SocialShare from '../components/SocialShare.astro'
+import TitleBanner from '../components/TitleBanner.astro'
+import { buildTagCollection } from '../content/tags'
+import { BLOGPOSTING } from '../lib/jsonld'
+import BaseLayout from './BaseLayout.astro'
+
+interface Props {
+    description: string
+    id: number
+    lang: 'en' | 'fi' | 'sv'
+    localAlt: string
+    localCroppedHeroImage: string
+    localHeroImage: string
+    publishDate: string
+    slug: string
+    tags: string[]
+    title: string
+    updatedDate?: string
+}
+
+const {
+    description,
+    id,
+    lang,
+    localAlt,
+    localCroppedHeroImage,
+    localHeroImage,
+    publishDate,
+    slug,
+    tags,
+    title,
+    updatedDate,
+} = Astro.props
+
+const allTags = buildTagCollection(lang)
+
+const tagObjects = tags.map((tagId) => ({
+    sys: { id: tagId, linkType: 'Tag' as const, type: 'Link' as const },
+}))
+
+const canonicalSlug = `${lang}/blog/${id}/${slug}`
+const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
+
+const i18n = {
+    en: {
+        otherPosts: 'Other posts',
+        shareAriaLabel: (t: string) => `Share links for post ${t}`,
+    },
+    fi: {
+        otherPosts: 'Muita kirjoituksia',
+        shareAriaLabel: (t: string) => `Kirjoituksen ${t} sosiaalisen median jakolinkit`,
+    },
+    sv: {
+        otherPosts: 'Andra inlägg',
+        shareAriaLabel: (t: string) => `Delningslänkar för inlägget ${t}`,
+    },
+}
+
+const t = i18n[lang]
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
+    eager: true,
+    import: 'default',
+})
+const localOgImage =
+    allLocalImages[`../images/${localCroppedHeroImage}`] ?? allLocalImages[`../images/${localHeroImage}`]
+---
+
+<BaseLayout
+    createdAt={publishDate}
+    description={description}
+    lang={lang}
+    localOgImage={localOgImage}
+    localOgImageAlt={localAlt}
+    slug={canonicalSlug}
+    title={title}
+    type={BLOGPOSTING}
+    updatedAt={updatedDate ?? publishDate}
+>
+    <TitleBanner
+        allTags={allTags}
+        createdAt={publishDate}
+        localAlt={localAlt}
+        localCroppedHeroImage={localCroppedHeroImage}
+        localHeroImage={localHeroImage}
+        tags={tagObjects}
+        title={title}
+    />
+    <slot />
+    <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
+    <H2>{t.otherPosts}</H2>
+    <ExcerptList allTags={allTags} currentSlug={slug} lang={lang} limit={4} relatedTags={tagObjects} />
+</BaseLayout>

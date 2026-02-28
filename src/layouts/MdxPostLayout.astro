@@ -1,12 +1,7 @@
 ---
 import type { MDXLayoutProps } from 'astro'
 
-import ExcerptList from '../components/ExcerptList.astro'
-import H2 from '../components/H2.astro'
-import SocialShare from '../components/SocialShare.astro'
-import { buildTagCollection } from '../content/tags'
-import { BLOGPOSTING } from '../lib/jsonld'
-import Layout from './Layout.astro'
+import PostLayout from './PostLayout.astro'
 
 type Props = MDXLayoutProps<{
     description: string
@@ -23,63 +18,20 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const {
-    description,
-    id,
-    lang,
-    localAlt,
-    localCroppedHeroImage,
-    localHeroImage,
-    publishDate,
-    slug,
-    tags,
-    title,
-    updatedDate,
-} = frontmatter
-
-const allTags = buildTagCollection(lang)
-
-const tagObjects = tags.map((tagId) => ({
-    sys: { id: tagId, linkType: 'Tag' as const, type: 'Link' as const },
-}))
-
-const canonicalSlug = `${lang}/blog/${id}/${slug}`
-const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
-
-const i18n = {
-    en: {
-        otherPosts: 'Other posts',
-        shareAriaLabel: (t: string) => `Share links for post ${t}`,
-    },
-    fi: {
-        otherPosts: 'Muita kirjoituksia',
-        shareAriaLabel: (t: string) => `Kirjoituksen ${t} sosiaalisen median jakolinkit`,
-    },
-    sv: {
-        otherPosts: 'Andra inlägg',
-        shareAriaLabel: (t: string) => `Delningslänkar för inlägget ${t}`,
-    },
-}
-
-const t = i18n[lang]
 ---
 
-<Layout
-    allTags={allTags}
-    createdAt={publishDate}
-    description={description}
-    lang={lang}
-    localAlt={localAlt}
-    localCroppedHeroImage={localCroppedHeroImage}
-    localHeroImage={localHeroImage}
-    slug={canonicalSlug}
-    tags={tagObjects}
-    title={title}
-    type={BLOGPOSTING}
-    updatedAt={updatedDate ?? publishDate}
+<PostLayout
+    description={frontmatter.description}
+    id={frontmatter.id}
+    lang={frontmatter.lang}
+    localAlt={frontmatter.localAlt}
+    localCroppedHeroImage={frontmatter.localCroppedHeroImage}
+    localHeroImage={frontmatter.localHeroImage}
+    publishDate={frontmatter.publishDate}
+    slug={frontmatter.slug}
+    tags={frontmatter.tags}
+    title={frontmatter.title}
+    updatedDate={frontmatter.updatedDate}
 >
     <slot />
-    <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
-    <H2>{t.otherPosts}</H2>
-    <ExcerptList allTags={allTags} currentSlug={slug} lang={lang} limit={4} relatedTags={tagObjects} />
-</Layout>
+</PostLayout>

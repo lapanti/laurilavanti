@@ -1,0 +1,71 @@
+---
+import type { ImageMetadata } from 'astro'
+import type { JsonLdType } from '../lib/jsonld'
+import type { TagCollection, TagLink } from '../types/local'
+
+import TitleBanner from '../components/TitleBanner.astro'
+import BaseLayout from './BaseLayout.astro'
+
+interface Props {
+    allTags?: TagCollection
+    createdAt?: string
+    description?: string
+    lang?: 'en' | 'fi' | 'sv'
+    localAlt?: string
+    localCroppedHeroImage?: string
+    localHeroImage?: string
+    slug?: string
+    tags?: { sys: TagLink }[]
+    title: string
+    type?: JsonLdType
+    updatedAt?: string
+}
+
+const {
+    allTags,
+    createdAt,
+    description,
+    lang,
+    localAlt,
+    localCroppedHeroImage,
+    localHeroImage,
+    slug,
+    tags,
+    title,
+    type,
+    updatedAt,
+} = Astro.props
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
+    eager: true,
+    import: 'default',
+})
+const localOgImage = localCroppedHeroImage
+    ? allLocalImages[`../images/${localCroppedHeroImage}`]
+    : localHeroImage
+      ? allLocalImages[`../images/${localHeroImage}`]
+      : undefined
+---
+
+<BaseLayout
+    createdAt={createdAt}
+    description={description}
+    lang={lang}
+    localOgImage={localOgImage}
+    localOgImageAlt={localAlt}
+    slug={slug}
+    title={title}
+    type={type}
+    updatedAt={updatedAt}
+>
+    <TitleBanner
+        allTags={allTags}
+        createdAt={createdAt}
+        localAlt={localAlt}
+        localCroppedHeroImage={localCroppedHeroImage}
+        localHeroImage={localHeroImage}
+        tags={tags}
+        title={title}
+    />
+    <slot />
+</BaseLayout>

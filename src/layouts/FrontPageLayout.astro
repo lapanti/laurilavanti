@@ -1,0 +1,66 @@
+---
+import type { ImageMetadata } from 'astro'
+import type { JsonLdType } from '../lib/jsonld'
+
+import HeroBanner from '../components/HeroBanner.astro'
+import BaseLayout from './BaseLayout.astro'
+
+interface Props {
+    description?: string
+    lang?: 'en' | 'fi' | 'sv'
+    localAlt?: string
+    localBackgroundImage?: string
+    localCroppedHeroImage?: string
+    localHeroImage?: string
+    secondaryTitle?: string
+    slug?: string
+    subtitle?: string
+    title: string
+    type?: JsonLdType
+}
+
+const {
+    description,
+    lang,
+    localAlt,
+    localBackgroundImage,
+    localCroppedHeroImage,
+    localHeroImage,
+    secondaryTitle,
+    slug,
+    subtitle,
+    title,
+    type,
+} = Astro.props
+
+const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
+    eager: true,
+    import: 'default',
+})
+const localOgImage = localCroppedHeroImage
+    ? allLocalImages[`../images/${localCroppedHeroImage}`]
+    : localHeroImage
+      ? allLocalImages[`../images/${localHeroImage}`]
+      : undefined
+---
+
+<BaseLayout
+    description={description}
+    lang={lang}
+    localOgImage={localOgImage}
+    localOgImageAlt={localAlt}
+    slug={slug}
+    title={title}
+    type={type}
+>
+    <HeroBanner
+        localAlt={localAlt}
+        localBackgroundImage={localBackgroundImage}
+        localCroppedHeroImage={localCroppedHeroImage}
+        localHeroImage={localHeroImage}
+        secondaryTitle={secondaryTitle}
+        subtitle={subtitle}
+        title={title}
+    />
+    <slot />
+</BaseLayout>
