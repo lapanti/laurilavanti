@@ -21,9 +21,8 @@ describe('<Title />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(Title, {
             props: {
-                allTags: { items: [{ name: 'Tekoäly', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
                 createdAt,
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tekoaly'],
                 title,
             },
         })
@@ -44,9 +43,8 @@ describe('<Title />', () => {
     it('should render meta data', async () => {
         const result = await renderAstroComponent(Title, {
             props: {
-                allTags: { items: [{ name: 'Tekoäly', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
                 createdAt,
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tekoaly'],
                 title,
             },
         })

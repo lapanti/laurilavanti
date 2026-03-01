@@ -1,10 +1,7 @@
 ---
 import ExcerptList from '../components/ExcerptList.astro'
-import { buildTagCollection } from '../content/tags'
 import PageLayout from '../layouts/PageLayout.astro'
 import { allMdxPosts } from '../lib/mdxPosts'
-
-const allTags = buildTagCollection('fi')
 
 // Minimal lookup table: "lang/id" → canonical URL, serialised into the page for the redirect script
 const postIndexJson = JSON.stringify(Object.fromEntries(allMdxPosts.map((p) => [p.lang + '/' + p.id, p.url])))
@@ -27,6 +24,6 @@ const postIndexJson = JSON.stringify(Object.fromEntries(allMdxPosts.map((p) => [
 `}
 />
 
-<PageLayout allTags={allTags} title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
-    <ExcerptList allTags={allTags} limit={8} />
+<PageLayout title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
+    <ExcerptList limit={8} />
 </PageLayout>

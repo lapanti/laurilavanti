@@ -9,15 +9,3 @@ export interface CvRow {
     startYear: number
     title?: string
 }
-
-export interface TagItem {
-    id: string
-    name: string
-}
-
-export interface TagCollection {
-    items: TagItem[]
-    limit: number
-    skip: number
-    total: number
-}

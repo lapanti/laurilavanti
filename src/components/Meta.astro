@@ -1,10 +1,8 @@
 ---
-import type { TagCollection } from '../types/local'
-
+import { getTagName } from '../content/tags'
 import { colors, sizes, typographics } from '../lib/styles'
 
 interface Props {
-    allTags: TagCollection
     ariaLabel: string
     bigDateTime?: boolean
     date: string
@@ -12,7 +10,7 @@ interface Props {
     tags: string[]
 }
 
-const { allTags, ariaLabel, bigDateTime, date, lang = 'fi', tags } = Astro.props
+const { ariaLabel, bigDateTime, date, lang = 'fi', tags } = Astro.props
 
 const tagBasePaths = { en: '/en/category', fi: '/fi/category', sv: '/sv/category' }
 
@@ -21,8 +19,8 @@ const [year, month, day] = dateOnly.split('-')
 const dateToDisplay = `${day}.${month}.${year}`
 
 const tagsToRender = tags
-    .map((tagId) => allTags.items.find((aTag) => aTag.id === tagId))
-    .filter((tag) => tag !== undefined)
+    .map((tagId) => ({ id: tagId, name: getTagName(tagId, lang) }))
+    .filter((tag) => tag.name !== undefined)
 ---
 
 <style

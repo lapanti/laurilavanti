@@ -1,5 +1,3 @@
-import type { TagCollection } from '../types/local'
-
 export interface LocalTag {
     id: string
     names: { en: string; fi: string; sv: string }
@@ -100,14 +98,6 @@ export const tags: LocalTag[] = [
     },
 ]
 
-export function buildTagCollection(lang: 'en' | 'fi' | 'sv' = 'fi'): TagCollection {
-    return {
-        items: tags.map((t) => ({
-            id: t.id,
-            name: t.names[lang],
-        })),
-        limit: tags.length,
-        skip: 0,
-        total: tags.length,
-    }
+export function getTagName(id: string, lang: 'en' | 'fi' | 'sv' = 'fi'): string | undefined {
+    return tags.find((t) => t.id === id)?.names[lang]
 }

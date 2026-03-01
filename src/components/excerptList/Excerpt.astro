@@ -1,13 +1,10 @@
 ---
-import type { TagCollection } from '../../types/local'
-
 import { sizes } from '../../lib/styles'
 import Meta from '../Meta.astro'
 import Banner from './excerpt/Banner.astro'
 import Description from './excerpt/Description.astro'
 
 interface Props {
-    allTags: TagCollection
     alt?: string
     date?: string
     excerpt?: string
@@ -18,7 +15,7 @@ interface Props {
     title: string
 }
 
-const { allTags, alt, date, excerpt, image, lang = 'fi', slug, tags, title } = Astro.props
+const { alt, date, excerpt, image, lang = 'fi', slug, tags, title } = Astro.props
 
 const metaAriaLabels = {
     en: (t: string) => `Meta information for post "${t}"`,
@@ -35,11 +32,7 @@ const metaAriaLabels = {
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
         <Banner alt={alt} image={image} slug={slug} title={title} />
-        {
-            date && tags && (
-                <Meta allTags={allTags} ariaLabel={metaAriaLabels[lang](title)} date={date} lang={lang} tags={tags} />
-            )
-        }
+        {date && tags && <Meta ariaLabel={metaAriaLabels[lang](title)} date={date} lang={lang} tags={tags} />}
         <Description excerpt={excerpt} />
     </article>
 </li>

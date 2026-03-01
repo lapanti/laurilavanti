@@ -1,12 +1,9 @@
 ---
-import type { TagCollection } from '../types/local'
-
 import { allMdxPosts } from '../lib/mdxPosts'
 import { sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt.astro'
 
 interface Props {
-    allTags: TagCollection
     currentSlug?: string
     lang?: 'en' | 'fi' | 'sv'
     limit?: number
@@ -14,7 +11,7 @@ interface Props {
     tag?: string
 }
 
-const { allTags, currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
+const { currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
 
 interface NormalisedPost {
     alt?: string
@@ -94,7 +91,6 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
     {
         nodes.map((node) => (
             <Excerpt
-                allTags={allTags}
                 alt={node.alt}
                 date={node.date}
                 excerpt={node.excerpt}

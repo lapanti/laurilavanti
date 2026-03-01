@@ -10,9 +10,8 @@ describe('<TitleBanner />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(TitleBanner, {
             props: {
-                allTags: { items: [{ name: 'Tekoäly', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
                 createdAt,
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tekoaly'],
                 title,
             },
         })

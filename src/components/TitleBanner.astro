@@ -1,21 +1,19 @@
 ---
-import type { TagCollection } from '../types/local'
-
 import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import Image from './titleBanner/Image.astro'
 import Title from './titleBanner/Title.astro'
 
 interface Props {
-    allTags?: TagCollection
     alt?: string
     createdAt?: string
     croppedHeroImage?: string
     heroImage?: string
+    lang?: 'en' | 'fi' | 'sv'
     tags?: string[]
     title: string
 }
 
-const { allTags, alt, createdAt, croppedHeroImage, heroImage, tags, title } = Astro.props
+const { alt, createdAt, croppedHeroImage, heroImage, lang, tags, title } = Astro.props
 ---
 
 <style
@@ -52,7 +50,7 @@ const { allTags, alt, createdAt, croppedHeroImage, heroImage, tags, title } = As
 </style>
 <div class="container">
     <div class="content">
-        <Title allTags={allTags} createdAt={createdAt} tags={tags} title={title} />
+        <Title createdAt={createdAt} lang={lang} tags={tags} title={title} />
         <Image alt={alt} croppedHeroImage={croppedHeroImage} heroImage={heroImage} />
     </div>
 </div>

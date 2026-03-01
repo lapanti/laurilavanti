@@ -5,7 +5,6 @@ import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
-import { buildTagCollection } from '../content/tags'
 import { BLOGPOSTING } from '../lib/jsonld'
 import BaseLayout from './BaseLayout.astro'
 
@@ -26,8 +25,6 @@ type Props = MDXLayoutProps<{
 const { frontmatter } = Astro.props
 const { alt, croppedHeroImage, description, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } =
     frontmatter
-
-const allTags = buildTagCollection(lang)
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -68,16 +65,16 @@ const ogImage = allLocalImages[`../images/${croppedHeroImage}`] ?? allLocalImage
     updatedAt={updatedDate ?? publishDate}
 >
     <TitleBanner
-        allTags={allTags}
         alt={alt}
         createdAt={publishDate}
         croppedHeroImage={croppedHeroImage}
         heroImage={heroImage}
+        lang={lang}
         tags={tags}
         title={title}
     />
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
     <H2>{t.otherPosts}</H2>
-    <ExcerptList allTags={allTags} currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
+    <ExcerptList currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
 </BaseLayout>

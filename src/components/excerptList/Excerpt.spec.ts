@@ -8,7 +8,6 @@ describe('<Excerpt />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 title: 'Test Article',
             },
         })
@@ -19,7 +18,6 @@ describe('<Excerpt />', () => {
     it('should render list item', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 title: 'Test Article',
             },
         })
@@ -30,7 +28,6 @@ describe('<Excerpt />', () => {
     it('should render article with aria-label', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 title: 'My Test Article',
             },
         })
@@ -42,7 +39,6 @@ describe('<Excerpt />', () => {
     it('should have correct schema.org itemtype', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 title: 'Test Article',
             },
         })
@@ -54,7 +50,6 @@ describe('<Excerpt />', () => {
     it('should have itemscope attribute', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 title: 'Test Article',
             },
         })
@@ -66,7 +61,6 @@ describe('<Excerpt />', () => {
     it('should render Banner component', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 slug: 'test-article',
                 title: 'Test Article',
             },
@@ -80,7 +74,6 @@ describe('<Excerpt />', () => {
         const excerpt = 'Test excerpt'
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: [],
                 excerpt,
                 slug: 'test-article',
                 title: 'Test Article',
@@ -93,7 +86,6 @@ describe('<Excerpt />', () => {
     it('should render Meta when date and tags are provided', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 slug: 'test-article',
                 tags: ['tag-1'],
@@ -107,7 +99,6 @@ describe('<Excerpt />', () => {
     it('should not render Meta when date is missing', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 slug: 'test-article',
                 tags: ['tag-1'],
                 title: 'Test Article',
@@ -120,7 +111,6 @@ describe('<Excerpt />', () => {
     it('should not render Meta when tags are missing', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 slug: 'test-article',
                 title: 'Test Article',
@@ -133,7 +123,6 @@ describe('<Excerpt />', () => {
     it('should render with all props', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 excerpt: 'Test excerpt',
                 slug: 'test-article',
@@ -148,7 +137,6 @@ describe('<Excerpt />', () => {
     it('should render Meta with English aria-label when lang is en', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 lang: 'en',
                 slug: 'test-article',
@@ -163,7 +151,6 @@ describe('<Excerpt />', () => {
     it('should render Meta with Swedish aria-label when lang is sv', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 lang: 'sv',
                 slug: 'test-article',

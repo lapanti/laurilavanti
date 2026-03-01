@@ -2,7 +2,7 @@
 import type { LocalTag } from '../../../content/tags'
 
 import ExcerptList from '../../../components/ExcerptList.astro'
-import { buildTagCollection, tags } from '../../../content/tags'
+import { tags } from '../../../content/tags'
 import PageLayout from '../../../layouts/PageLayout.astro'
 
 export function getStaticPaths() {
@@ -14,9 +14,8 @@ interface Props {
 }
 
 const { tag } = Astro.props
-const allTags = buildTagCollection('sv')
 ---
 
-<PageLayout allTags={allTags} lang="sv" slug={`sv/category/${tag.id}`} title={tag.names.sv}>
-    <ExcerptList allTags={allTags} lang="sv" tag={tag.id} />
+<PageLayout lang="sv" slug={`sv/category/${tag.id}`} title={tag.names.sv}>
+    <ExcerptList lang="sv" tag={tag.id} />
 </PageLayout>
