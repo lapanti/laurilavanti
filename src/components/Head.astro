@@ -1,11 +1,13 @@
 ---
 import type { ImageMetadata } from 'astro'
+import type { Lang } from '../content/nav'
 
 import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '../lib/jsonld'
 
 interface Props {
     createdAt?: string
     description?: string
+    lang?: Lang
     localOgImage?: ImageMetadata
     localOgImageAlt?: string
     slug?: string
@@ -16,6 +18,7 @@ interface Props {
 
 const {
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
+    lang = 'fi',
     title,
     type,
     slug,
@@ -24,6 +27,27 @@ const {
     createdAt,
     updatedAt,
 } = Astro.props
+
+const ogLocale: Record<Lang, string> = {
+    en: 'en_GB',
+    fi: 'fi_FI',
+    sv: 'sv_SE',
+}
+
+const otherLangs = (['fi', 'sv', 'en'] as Lang[]).filter((l) => l !== lang)
+
+const isArticle = type === BLOGPOSTING
+
+/*
+ * Derive hreflang URLs by swapping the locale prefix in the canonical slug.
+ * slug is like "fi/blog/1/some-post" or "fi" — replace the leading locale segment.
+ */
+const hreflangLinks = Astro.site
+    ? ([...otherLangs, lang] as Lang[]).map((l) => ({
+          href: new URL(slug ? slug.replace(/^(fi|sv|en)/, l) + '/' : `${l}/`, Astro.site).toString(),
+          hreflang: l,
+      }))
+    : []
 
 const canonical = slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null
 
@@ -91,15 +115,15 @@ const keywords = [
 <meta content={keywords} name="keywords" />
 <meta content={title} property="og:title" />
 <meta content={name} name="author" />
-<meta content="fi_FI" property="og:locale" />
+<meta content={ogLocale[lang]} property="og:locale" />
 <meta content={description} name="description" />
 <meta content={description} property="og:description" />
 <meta content={name} property="og:site_name" />
 <meta content={title} property="twitter:title" />
-<meta content={name} property="article:author" />
-<meta content={createdAt} property="article:published_time" />
-<meta content="website" property="og:type" />
+<meta content={isArticle ? 'article' : 'website'} property="og:type" />
 <meta content={description} name="twitter:description" />
+{isArticle && <meta content={name} property="article:author" />}
+{isArticle && <meta content={createdAt} property="article:published_time" />}
 <meta content="@laurilavanti@mastodontti.fi" name="fediverse:creator" />
 {
     canonical && (
@@ -109,6 +133,7 @@ const keywords = [
         </>
     )
 }
+{hreflangLinks.map(({ hreflang, href }) => <link href={href} hreflang={hreflang} rel="alternate" />)}
 {
     localOgImageUrl ? (
         <>
