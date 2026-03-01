@@ -86,33 +86,27 @@ describe('<CurriculumVitae />', () => {
             props: {
                 degrees: [
                     {
-                        fields: {
-                            degree: 'Bachelor',
-                            endYear: 2020,
-                            school: 'University A',
-                            startYear: 2016,
-                        },
+                        degree: 'Bachelor',
+                        endYear: 2020,
+                        school: 'University A',
+                        startYear: 2016,
                     },
                 ],
                 degreesTitle: 'Education',
                 fiduciaries: [
                     {
-                        fields: {
-                            company: 'Board A',
-                            startYear: 2021,
-                            title: 'Chair',
-                        },
+                        company: 'Board A',
+                        startYear: 2021,
+                        title: 'Chair',
                     },
                 ],
                 fiduciariesTitle: 'Fiduciaries',
                 jobExperiences: [
                     {
-                        fields: {
-                            company: 'Tech Corp',
-                            endYear: 2023,
-                            startYear: 2020,
-                            title: 'Engineer',
-                        },
+                        company: 'Tech Corp',
+                        endYear: 2023,
+                        startYear: 2020,
+                        title: 'Engineer',
                     },
                 ],
                 jobExperiencesTitle: 'Experience',

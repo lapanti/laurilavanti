@@ -35,6 +35,6 @@ const { title, items } = Astro.props
 <H2>{title}</H2>
 <div>
     <UL>
-        {items?.filter((f) => f !== undefined).map(({ fields }) => <Row {...fields} />)}
+        {items?.filter((f) => f !== undefined).map((row) => <Row {...row} />)}
     </UL>
 </div>
