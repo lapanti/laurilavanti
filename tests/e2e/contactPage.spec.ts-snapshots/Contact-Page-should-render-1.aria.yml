@@ -1,47 +1,41 @@
 - main:
   - article:
     - heading "Ota yhteyttä" [level=1]
-    - img "Lauri Lavanti nojaamassa pylvääseen. Päällään hänellä on musta bleiseri ja sinivalkoinen kukkakuvioinen kauluspaita. Bleiserin taskussa on monivärinen taskuliina. Taustalla taulu."
+    - img "Lauri Lavanti nojaa pylvääseen, taustalla muotokuva, katsoo kameraan, hymyillen. Hänellä on päällään valkoinen kauluspaita sinisillä kukkakuvioilla ja tumma pikkutakki. Kuvan otti Juha Jantunen."
     - heading "Yhteystiedot" [level=2]
-    - paragraph: /\d+ \d+ \d+/
+    - paragraph: "/Puhelin: \\d+ \\d+ \\d+/"
     - paragraph:
-      - link "Email lauri@laurilavanti.fi (linkki aukeaa uudessa välilehdessä)":
-        - /url: mailto:lauri@laurilavanti.fi
-        - text: ""
+      - text: "Sähköposti:"
+      - link "lauri.lavanti@gmail.com":
+        - /url: mailto:lauri.lavanti@gmail.com
     - heading "Sosiaalinen media" [level=2]
-    - paragraph:
-      - text: "Bluesky:"
-      - link "Bluesky @laurilavanti.fi (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://bsky.app/profile/laurilavanti.fi
-        - text: ""
-    - paragraph:
-      - text: "Facebook:"
-      - link "Facebook laurilavanti (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://www.facebook.com/laurilavanti
-        - text: ""
-    - paragraph:
-      - text: "Instagram:"
-      - link "Instagram @laurilavanti (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://www.instagram.com/laurilavanti/
-        - text: ""
-    - paragraph:
-      - text: "LinkedIn:"
-      - link "LinkedIn laurilavanti (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://www.linkedin.com/in/laurilavanti
-        - text: ""
-    - paragraph:
-      - text: "Mastodon:"
-      - link "Mastodon @laurilavanti@mastodontti.fi (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://mastodontti.fi/@laurilavanti
-        - text: ""
-    - paragraph:
-      - text: "Threads:"
-      - link "Threads @laurilavanti (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://www.threads.com/@laurilavanti
-        - text: ""
-    - paragraph:
-      - text: "Tiktok:"
-      - link "TikTok @laurilavanti (linkki aukeaa uudessa välilehdessä)":
-        - /url: https://www.tiktok.com/@laurilavanti
-        - text: ""
+    - list:
+      - listitem:
+        - text: "» Bluesky:"
+        - link "@laurilavanti.fi":
+          - /url: https://bsky.app/profile/laurilavanti.fi
+      - listitem:
+        - text: "» Facebook:"
+        - link "laurilavanti":
+          - /url: https://www.facebook.com/laurilavanti
+      - listitem:
+        - text: "» Instagram:"
+        - link "@laurilavanti":
+          - /url: https://www.instagram.com/laurilavanti/
+      - listitem:
+        - text: "» LinkedIn:"
+        - link "laurilavanti":
+          - /url: https://www.linkedin.com/in/laurilavanti
+      - listitem:
+        - text: "» Mastodon:"
+        - link "@laurilavanti@mastodontti.fi":
+          - /url: https://mastodontti.fi/@laurilavanti
+      - listitem:
+        - text: "» Threads:"
+        - link "@laurilavanti":
+          - /url: https://www.threads.com/@laurilavanti
+      - listitem:
+        - text: "» TikTok:"
+        - link "@laurilavanti":
+          - /url: https://www.tiktok.com/@laurilavanti
     - paragraph
