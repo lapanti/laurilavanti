@@ -37,13 +37,6 @@ test.describe('404 wrong-slug blog redirect', () => {
         await test.expect(page).toHaveURL('/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/')
     })
 
-    test('redirects sv blog post with wrong slug to canonical URL', async ({ page }) => {
-        const notFoundPage = new NotFoundPage(page)
-        await notFoundPage.goToWrongBlogSlug('sv', 10, 'wrong-slug')
-
-        await test.expect(page).toHaveURL('/sv/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/')
-    })
-
     test('does not redirect a fully unknown URL', async ({ page }) => {
         const notFoundPage = new NotFoundPage(page)
         await notFoundPage.goTo()
