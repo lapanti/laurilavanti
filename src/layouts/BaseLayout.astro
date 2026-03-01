@@ -19,15 +19,15 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: 'en' | 'fi' | 'sv'
-    localOgImage?: ImageMetadata
-    localOgImageAlt?: string
+    ogImage?: ImageMetadata
+    ogImageAlt?: string
     slug?: string
     title: string
     type?: JsonLdType
     updatedAt?: string
 }
 
-const { createdAt, description, lang, localOgImage, localOgImageAlt, slug, title, type, updatedAt } = Astro.props
+const { createdAt, description, lang, ogImage, ogImageAlt, slug, title, type, updatedAt } = Astro.props
 ---
 
 <html lang={lang ?? 'fi'}>
@@ -37,8 +37,8 @@ const { createdAt, description, lang, localOgImage, localOgImageAlt, slug, title
             createdAt={createdAt}
             description={description}
             lang={lang}
-            localOgImage={localOgImage}
-            localOgImageAlt={localOgImageAlt}
+            ogImage={ogImage}
+            ogImageAlt={ogImageAlt}
             slug={slug}
             title={title}
             type={type}

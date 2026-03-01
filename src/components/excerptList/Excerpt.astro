@@ -8,17 +8,17 @@ import Description from './excerpt/Description.astro'
 
 interface Props {
     allTags: TagCollection
+    alt?: string
     date?: string
     excerpt?: string
+    image?: string
     lang?: 'en' | 'fi' | 'sv'
-    localAlt?: string
-    localImage?: string
     slug?: string
     tags?: string[]
     title: string
 }
 
-const { allTags, date, excerpt, lang = 'fi', localAlt, localImage, slug, tags, title } = Astro.props
+const { allTags, alt, date, excerpt, image, lang = 'fi', slug, tags, title } = Astro.props
 
 const metaAriaLabels = {
     en: (t: string) => `Meta information for post "${t}"`,
@@ -34,7 +34,7 @@ const metaAriaLabels = {
 </style>
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
-        <Banner localAlt={localAlt} localImage={localImage} slug={slug} title={title} />
+        <Banner alt={alt} image={image} slug={slug} title={title} />
         {
             date && tags && (
                 <Meta allTags={allTags} ariaLabel={metaAriaLabels[lang](title)} date={date} lang={lang} tags={tags} />

@@ -23,12 +23,12 @@ describe('allMdxPosts frontmatter validation', () => {
         expect(post.slug, 'slug must be a non-empty string').toBeTypeOf('string')
         expect(post.slug.trim().length, 'slug must not be blank').toBeGreaterThan(0)
         expect(Array.isArray(post.tags), 'tags must be an array').toBe(true)
-        expect(post.localHeroImage, 'localHeroImage must be a non-empty string').toBeTypeOf('string')
-        expect(post.localHeroImage.trim().length, 'localHeroImage must not be blank').toBeGreaterThan(0)
-        expect(post.localCroppedHeroImage, 'localCroppedHeroImage must be a non-empty string').toBeTypeOf('string')
-        expect(post.localCroppedHeroImage.trim().length, 'localCroppedHeroImage must not be blank').toBeGreaterThan(0)
-        expect(post.localAlt, 'localAlt must be a non-empty string').toBeTypeOf('string')
-        expect(post.localAlt.trim().length, 'localAlt must not be blank').toBeGreaterThan(0)
+        expect(post.heroImage, 'heroImage must be a non-empty string').toBeTypeOf('string')
+        expect(post.heroImage.trim().length, 'heroImage must not be blank').toBeGreaterThan(0)
+        expect(post.croppedHeroImage, 'croppedHeroImage must be a non-empty string').toBeTypeOf('string')
+        expect(post.croppedHeroImage.trim().length, 'croppedHeroImage must not be blank').toBeGreaterThan(0)
+        expect(post.alt, 'alt must be a non-empty string').toBeTypeOf('string')
+        expect(post.alt.trim().length, 'alt must not be blank').toBeGreaterThan(0)
     })
 
     it('updatedDate, when present, must be YYYY-MM-DD', () => {

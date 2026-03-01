@@ -4,17 +4,16 @@ import Images from './heroBanner/Images.astro'
 import Titles from './heroBanner/Titles.astro'
 
 interface Props {
-    localAlt?: string
-    localBackgroundImage?: string
-    localCroppedHeroImage?: string
-    localHeroImage?: string
+    alt?: string
+    backgroundImage?: string
+    croppedHeroImage?: string
+    heroImage?: string
     secondaryTitle?: string
     subtitle?: string
     title: string
 }
 
-const { localAlt, localBackgroundImage, localCroppedHeroImage, localHeroImage, secondaryTitle, subtitle, title } =
-    Astro.props
+const { alt, backgroundImage, croppedHeroImage, heroImage, secondaryTitle, subtitle, title } = Astro.props
 ---
 
 <style
@@ -42,10 +41,5 @@ const { localAlt, localBackgroundImage, localCroppedHeroImage, localHeroImage, s
 </style>
 <div>
     <Titles secondaryTitle={secondaryTitle} subtitle={subtitle} title={title} />
-    <Images
-        localAlt={localAlt}
-        localBackgroundImage={localBackgroundImage}
-        localCroppedHeroImage={localCroppedHeroImage}
-        localHeroImage={localHeroImage}
-    />
+    <Images alt={alt} backgroundImage={backgroundImage} croppedHeroImage={croppedHeroImage} heroImage={heroImage} />
 </div>

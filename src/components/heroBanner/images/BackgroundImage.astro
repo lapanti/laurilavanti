@@ -6,16 +6,16 @@ import { Image, Source } from '@unpic/astro' // eslint-disable-line import/no-un
 import { colors } from '../../../lib/styles'
 
 interface Props {
-    localImage?: string
+    image?: string
 }
 
-const { localImage } = Astro.props
+const { image } = Astro.props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../../../images/**/*.{jpg,png}', {
     eager: true,
     import: 'default',
 })
-const resolvedLocalImage = localImage ? allLocalImages[`../../../images/${localImage}`] : null
+const resolvedLocalImage = image ? allLocalImages[`../../../images/${image}`] : null
 ---
 
 <style define:vars={{ colorsEvening70: colors.evening70 }}>

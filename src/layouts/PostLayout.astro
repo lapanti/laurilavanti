@@ -13,9 +13,9 @@ type Props = MDXLayoutProps<{
     description: string
     id: number
     lang: 'en' | 'fi' | 'sv'
-    localAlt: string
-    localCroppedHeroImage: string
-    localHeroImage: string
+    alt: string
+    croppedHeroImage: string
+    heroImage: string
     publishDate: string
     slug: string
     tags: string[]
@@ -24,19 +24,8 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const {
-    description,
-    id,
-    lang,
-    localAlt,
-    localCroppedHeroImage,
-    localHeroImage,
-    publishDate,
-    slug,
-    tags,
-    title,
-    updatedDate,
-} = frontmatter
+const { alt, croppedHeroImage, description, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } =
+    frontmatter
 
 const allTags = buildTagCollection(lang)
 
@@ -64,16 +53,15 @@ const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,
     eager: true,
     import: 'default',
 })
-const localOgImage =
-    allLocalImages[`../images/${localCroppedHeroImage}`] ?? allLocalImages[`../images/${localHeroImage}`]
+const ogImage = allLocalImages[`../images/${croppedHeroImage}`] ?? allLocalImages[`../images/${heroImage}`]
 ---
 
 <BaseLayout
     createdAt={publishDate}
     description={description}
     lang={lang}
-    localOgImage={localOgImage}
-    localOgImageAlt={localAlt}
+    ogImage={ogImage}
+    ogImageAlt={alt}
     slug={canonicalSlug}
     title={title}
     type={BLOGPOSTING}
@@ -81,10 +69,10 @@ const localOgImage =
 >
     <TitleBanner
         allTags={allTags}
+        alt={alt}
         createdAt={publishDate}
-        localAlt={localAlt}
-        localCroppedHeroImage={localCroppedHeroImage}
-        localHeroImage={localHeroImage}
+        croppedHeroImage={croppedHeroImage}
+        heroImage={heroImage}
         tags={tags}
         title={title}
     />

@@ -7,15 +7,15 @@ import Title from './titleBanner/Title.astro'
 
 interface Props {
     allTags?: TagCollection
+    alt?: string
     createdAt?: string
-    localAlt?: string
-    localCroppedHeroImage?: string
-    localHeroImage?: string
+    croppedHeroImage?: string
+    heroImage?: string
     tags?: string[]
     title: string
 }
 
-const { allTags, createdAt, localAlt, localCroppedHeroImage, localHeroImage, tags, title } = Astro.props
+const { allTags, alt, createdAt, croppedHeroImage, heroImage, tags, title } = Astro.props
 ---
 
 <style
@@ -53,6 +53,6 @@ const { allTags, createdAt, localAlt, localCroppedHeroImage, localHeroImage, tag
 <div class="container">
     <div class="content">
         <Title allTags={allTags} createdAt={createdAt} tags={tags} title={title} />
-        <Image localAlt={localAlt} localCroppedHeroImage={localCroppedHeroImage} localHeroImage={localHeroImage} />
+        <Image alt={alt} croppedHeroImage={croppedHeroImage} heroImage={heroImage} />
     </div>
 </div>

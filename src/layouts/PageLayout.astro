@@ -11,9 +11,9 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: 'en' | 'fi' | 'sv'
-    localAlt?: string
-    localCroppedHeroImage?: string
-    localHeroImage?: string
+    alt?: string
+    croppedHeroImage?: string
+    heroImage?: string
     slug?: string
     tags?: string[]
     title: string
@@ -24,29 +24,17 @@ interface Props {
 // Support both MDX layout usage (props under frontmatter) and direct .astro component usage
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props: Props = ((Astro.props as any).frontmatter as Props | undefined) ?? (Astro.props as Props)
-const {
-    allTags,
-    createdAt,
-    description,
-    lang,
-    localAlt,
-    localCroppedHeroImage,
-    localHeroImage,
-    slug,
-    tags,
-    title,
-    type,
-    updatedAt,
-} = props
+const { allTags, alt, createdAt, croppedHeroImage, description, heroImage, lang, slug, tags, title, type, updatedAt } =
+    props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
     eager: true,
     import: 'default',
 })
-const localOgImage = localCroppedHeroImage
-    ? allLocalImages[`../images/${localCroppedHeroImage}`]
-    : localHeroImage
-      ? allLocalImages[`../images/${localHeroImage}`]
+const ogImage = croppedHeroImage
+    ? allLocalImages[`../images/${croppedHeroImage}`]
+    : heroImage
+      ? allLocalImages[`../images/${heroImage}`]
       : undefined
 ---
 
@@ -54,8 +42,8 @@ const localOgImage = localCroppedHeroImage
     createdAt={createdAt}
     description={description}
     lang={lang}
-    localOgImage={localOgImage}
-    localOgImageAlt={localAlt}
+    ogImage={ogImage}
+    ogImageAlt={alt}
     slug={slug}
     title={title}
     type={type}
@@ -63,10 +51,10 @@ const localOgImage = localCroppedHeroImage
 >
     <TitleBanner
         allTags={allTags}
+        alt={alt}
         createdAt={createdAt}
-        localAlt={localAlt}
-        localCroppedHeroImage={localCroppedHeroImage}
-        localHeroImage={localHeroImage}
+        croppedHeroImage={croppedHeroImage}
+        heroImage={heroImage}
         tags={tags}
         title={title}
     />

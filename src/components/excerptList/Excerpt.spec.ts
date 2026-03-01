@@ -93,10 +93,10 @@ describe('<Excerpt />', () => {
     it('should render Meta when date and tags are provided', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 slug: 'test-article',
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })
@@ -107,9 +107,9 @@ describe('<Excerpt />', () => {
     it('should not render Meta when date is missing', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 slug: 'test-article',
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })
@@ -120,7 +120,7 @@ describe('<Excerpt />', () => {
     it('should not render Meta when tags are missing', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 slug: 'test-article',
                 title: 'Test Article',
@@ -133,11 +133,11 @@ describe('<Excerpt />', () => {
     it('should render with all props', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 excerpt: 'Test excerpt',
                 slug: 'test-article',
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })
@@ -148,11 +148,11 @@ describe('<Excerpt />', () => {
     it('should render Meta with English aria-label when lang is en', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 lang: 'en',
                 slug: 'test-article',
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })
@@ -163,11 +163,11 @@ describe('<Excerpt />', () => {
     it('should render Meta with Swedish aria-label when lang is sv', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                allTags: { items: [{ name: 'kissa', sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }] },
+                allTags: { items: [{ id: 'tag-1', name: 'kissa' }], limit: 1, skip: 0, total: 1 },
                 date: '2024-01-01',
                 lang: 'sv',
                 slug: 'test-article',
-                tags: [{ sys: { id: 'tag-1', linkType: 'Tag', type: 'Link' } }],
+                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })

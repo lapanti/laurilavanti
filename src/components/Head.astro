@@ -8,8 +8,8 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: Lang
-    localOgImage?: ImageMetadata
-    localOgImageAlt?: string
+    ogImage?: ImageMetadata
+    ogImageAlt?: string
     slug?: string
     title: string
     type?: JsonLdType
@@ -22,8 +22,8 @@ const {
     title,
     type,
     slug,
-    localOgImage,
-    localOgImageAlt,
+    ogImage,
+    ogImageAlt,
     createdAt,
     updatedAt,
 } = Astro.props
@@ -51,7 +51,7 @@ const hreflangLinks = Astro.site
 
 const canonical = slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null
 
-const localOgImageUrl = localOgImage && Astro.site ? new URL(localOgImage.src, Astro.site).toString() : null
+const ogImageUrl = ogImage && Astro.site ? new URL(ogImage.src, Astro.site).toString() : null
 
 const name = 'Lauri Lavanti'
 
@@ -73,7 +73,7 @@ const jsonLd = JSON.stringify({
     description,
     headline: title,
     url: canonical,
-    ...(localOgImageUrl ? { image: localOgImageUrl } : {}),
+    ...(ogImageUrl ? { image: ogImageUrl } : {}),
     ...(type === BLOGPOSTING
         ? {
               dateModified: updatedAt ?? createdAt,
@@ -135,12 +135,12 @@ const keywords = [
 }
 {hreflangLinks.map(({ hreflang, href }) => <link href={href} hreflang={hreflang} rel="alternate" />)}
 {
-    localOgImageUrl ? (
+    ogImageUrl ? (
         <>
-            <meta content={localOgImageUrl} property="og:image" />
-            <meta content={localOgImageAlt} property="og:image:alt" />
-            <meta content={`${localOgImage!.height}`} property="og:image:height" />
-            <meta content={`${localOgImage!.width}`} property="og:image:width" />
+            <meta content={ogImageUrl} property="og:image" />
+            <meta content={ogImageAlt} property="og:image:alt" />
+            <meta content={`${ogImage!.height}`} property="og:image:height" />
+            <meta content={`${ogImage!.width}`} property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />
         </>
     ) : (

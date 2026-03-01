@@ -6,18 +6,18 @@ import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-un
 import { sizes, typographics } from '../../lib/styles'
 
 interface Props {
+    alt?: string
     caption: string
-    localAlt?: string
-    localImage?: string
+    image?: string
 }
 
-const { caption, localImage, localAlt } = Astro.props
+const { alt, caption, image } = Astro.props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../../images/**/*.{jpg,JPG,jpeg,png}', {
     eager: true,
     import: 'default',
 })
-const resolvedLocal = localImage ? allLocalImages[`../../images/${localImage}`] : null
+const resolvedLocal = image ? allLocalImages[`../../images/${image}`] : null
 ---
 
 <style
@@ -54,7 +54,7 @@ const resolvedLocal = localImage ? allLocalImages[`../../images/${localImage}`] 
             <picture>
                 <Source layout="constrained" src={resolvedLocal} type="image/avif" />
                 <Source layout="constrained" src={resolvedLocal} type="image/webp" />
-                <Image alt={localAlt ?? ''} layout="constrained" src={resolvedLocal} />
+                <Image alt={alt ?? ''} layout="constrained" src={resolvedLocal} />
             </picture>
             <figcaption>{caption}</figcaption>
         </figure>

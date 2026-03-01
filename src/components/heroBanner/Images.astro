@@ -8,17 +8,17 @@ import { sizes } from '../../lib/styles'
 import BackgroundImage from './images/BackgroundImage.astro'
 
 interface Props {
-    localAlt?: string
-    localBackgroundImage?: string
-    localCroppedHeroImage?: string
-    localHeroImage?: string
+    alt?: string
+    backgroundImage?: string
+    croppedHeroImage?: string
+    heroImage?: string
 }
 
-const { localAlt, localBackgroundImage, localCroppedHeroImage, localHeroImage } = Astro.props
+const { alt, backgroundImage, croppedHeroImage, heroImage } = Astro.props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.{jpg,png}', { eager: true, import: 'default' })
-const resolvedHero = localHeroImage ? allLocalImages[`../../images/${localHeroImage}`] : null
-const resolvedCropped = localCroppedHeroImage ? allLocalImages[`../../images/${localCroppedHeroImage}`] : null
+const resolvedHero = heroImage ? allLocalImages[`../../images/${heroImage}`] : null
+const resolvedCropped = croppedHeroImage ? allLocalImages[`../../images/${croppedHeroImage}`] : null
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes2: sizes[2], sizes5Negative: `-${sizes[5]}` }}>
@@ -50,14 +50,14 @@ const resolvedCropped = localCroppedHeroImage ? allLocalImages[`../../images/${l
     }
 </style>
 <div class="container">
-    <BackgroundImage localImage={localBackgroundImage} />
+    <BackgroundImage image={backgroundImage} />
     {
         resolvedHero && resolvedCropped && (
             <picture>
                 <Source height={562} src={resolvedCropped} type="image/avif" width={560} />
                 <Source height={562} src={resolvedCropped} type="image/webp" width={560} />
                 <Image
-                    alt={localAlt ?? ''}
+                    alt={alt ?? ''}
                     background="transparent"
                     class="image"
                     height={562}

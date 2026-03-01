@@ -17,11 +17,11 @@ interface Props {
 const { allTags, currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
 
 interface NormalisedPost {
+    alt?: string
     date: string
     excerpt?: string
+    image?: string
     lang: 'en' | 'fi' | 'sv'
-    localAlt?: string
-    localImage?: string
     slug: string
     tags: string[]
     title: string
@@ -32,11 +32,11 @@ const merged: NormalisedPost[] = allMdxPosts
     .filter((p) => !currentSlug || p.slug !== currentSlug)
     .filter((p) => !tag || p.tags.includes(tag))
     .map((p) => ({
+        alt: p.alt,
         date: p.publishDate,
         excerpt: p.description,
+        image: p.croppedHeroImage,
         lang: p.lang,
-        localAlt: p.localAlt,
-        localImage: p.localCroppedHeroImage,
         slug: p.url.replace(/^\//, '').replace(/\/$/, ''),
         tags: p.tags,
         title: p.title,
@@ -95,11 +95,11 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
         nodes.map((node) => (
             <Excerpt
                 allTags={allTags}
+                alt={node.alt}
                 date={node.date}
                 excerpt={node.excerpt}
+                image={node.image}
                 lang={lang}
-                localAlt={node.localAlt}
-                localImage={node.localImage}
                 slug={node.slug}
                 tags={node.tags}
                 title={node.title}

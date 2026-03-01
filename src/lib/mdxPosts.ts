@@ -2,9 +2,9 @@ export interface MdxPost {
     description: string
     id: number
     lang: 'en' | 'fi' | 'sv'
-    localAlt: string
-    localCroppedHeroImage: string
-    localHeroImage: string
+    alt: string
+    croppedHeroImage: string
+    heroImage: string
     publishDate: string
     slug: string
     tags: string[]

@@ -8,19 +8,19 @@ import { sizes } from '../../../lib/styles'
 import H2 from '../../H2.astro'
 
 interface Props {
-    localAlt?: string
-    localImage?: string
+    alt?: string
+    image?: string
     slug?: string
     title: string
 }
 
-const { localAlt, localImage, slug, title } = Astro.props
+const { alt, image, slug, title } = Astro.props
 
 const allLocalImages = import.meta.glob<ImageMetadata>('../../../images/**/*.{jpg,JPG,jpeg,png}', {
     eager: true,
     import: 'default',
 })
-const resolvedLocal = localImage ? allLocalImages[`../../../images/${localImage}`] : null
+const resolvedLocal = image ? allLocalImages[`../../../images/${image}`] : null
 ---
 
 <style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
@@ -60,7 +60,7 @@ const resolvedLocal = localImage ? allLocalImages[`../../../images/${localImage}
                 <Source layout="constrained" src={resolvedLocal} type="image/avif" />
                 <Source layout="constrained" src={resolvedLocal} type="image/webp" />
                 <Image
-                    alt={localAlt ?? ''}
+                    alt={alt ?? ''}
                     class="excerpt-image"
                     height={315}
                     layout="constrained"

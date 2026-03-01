@@ -8,10 +8,10 @@ import BaseLayout from './BaseLayout.astro'
 type Props = MDXLayoutProps<{
     description?: string
     lang?: 'en' | 'fi' | 'sv'
-    localAlt?: string
-    localBackgroundImage?: string
-    localCroppedHeroImage?: string
-    localHeroImage?: string
+    alt?: string
+    backgroundImage?: string
+    croppedHeroImage?: string
+    heroImage?: string
     secondaryTitle?: string
     slug?: string
     subtitle?: string
@@ -21,12 +21,12 @@ type Props = MDXLayoutProps<{
 
 const { frontmatter } = Astro.props
 const {
+    alt,
+    backgroundImage,
+    croppedHeroImage,
     description,
+    heroImage,
     lang,
-    localAlt,
-    localBackgroundImage,
-    localCroppedHeroImage,
-    localHeroImage,
     secondaryTitle,
     slug,
     subtitle,
@@ -38,27 +38,27 @@ const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,
     eager: true,
     import: 'default',
 })
-const localOgImage = localCroppedHeroImage
-    ? allLocalImages[`../images/${localCroppedHeroImage}`]
-    : localHeroImage
-      ? allLocalImages[`../images/${localHeroImage}`]
+const ogImage = croppedHeroImage
+    ? allLocalImages[`../images/${croppedHeroImage}`]
+    : heroImage
+      ? allLocalImages[`../images/${heroImage}`]
       : undefined
 ---
 
 <BaseLayout
     description={description}
     lang={lang}
-    localOgImage={localOgImage}
-    localOgImageAlt={localAlt}
+    ogImage={ogImage}
+    ogImageAlt={alt}
     slug={slug}
     title={title}
     type={type}
 >
     <HeroBanner
-        localAlt={localAlt}
-        localBackgroundImage={localBackgroundImage}
-        localCroppedHeroImage={localCroppedHeroImage}
-        localHeroImage={localHeroImage}
+        alt={alt}
+        backgroundImage={backgroundImage}
+        croppedHeroImage={croppedHeroImage}
+        heroImage={heroImage}
         secondaryTitle={secondaryTitle}
         subtitle={subtitle}
         title={title}
