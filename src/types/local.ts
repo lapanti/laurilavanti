@@ -10,25 +10,6 @@ export interface CvRow {
     title?: string
 }
 
-export interface CurriculumVitae {
-    fields: {
-        degrees: CvRow[]
-        degreesTitle: string
-        fiduciaries: CvRow[]
-        fiduciariesTitle: string
-        jobExperiences: CvRow[]
-        jobExperiencesTitle: string
-    }
-}
-
-export interface SummaryBox {
-    fields: {
-        ariaLabel?: string
-        summaryRows: string[]
-        title: string
-    }
-}
-
 export interface TagLink {
     id: string
     linkType: 'Tag'
