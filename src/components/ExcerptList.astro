@@ -1,5 +1,5 @@
 ---
-import type { TagCollection, TagLink } from '../types/local'
+import type { TagCollection } from '../types/local'
 
 import { allMdxPosts } from '../lib/mdxPosts'
 import { sizes } from '../lib/styles'
@@ -10,7 +10,7 @@ interface Props {
     currentSlug?: string
     lang?: 'en' | 'fi' | 'sv'
     limit?: number
-    relatedTags?: { sys: TagLink }[]
+    relatedTags?: string[]
     tag?: string
 }
 
@@ -23,7 +23,7 @@ interface NormalisedPost {
     localAlt?: string
     localImage?: string
     slug: string
-    tags: { sys: TagLink }[]
+    tags: string[]
     title: string
 }
 
@@ -38,7 +38,7 @@ const merged: NormalisedPost[] = allMdxPosts
         localAlt: p.localAlt,
         localImage: p.localCroppedHeroImage,
         slug: p.url.replace(/^\//, '').replace(/\/$/, ''),
-        tags: p.tags.map((id) => ({ sys: { id, linkType: 'Tag' as const, type: 'Link' as const } })),
+        tags: p.tags,
         title: p.title,
     }))
 
@@ -50,9 +50,7 @@ const tagSorted = relatedTags
                   [
                       curr,
                       relatedTags.reduce(
-                          (pointsAcc, currentRelatedTag) =>
-                              pointsAcc +
-                              (curr.tags.map((someTag) => someTag.sys.id).includes(currentRelatedTag.sys.id) ? 1 : 0),
+                          (pointsAcc, currentRelatedTag) => pointsAcc + (curr.tags.includes(currentRelatedTag) ? 1 : 0),
                           0
                       ),
                   ],

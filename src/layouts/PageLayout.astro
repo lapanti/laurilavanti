@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
-import type { TagCollection, TagLink } from '../types/local'
+import type { TagCollection } from '../types/local'
 
 import TitleBanner from '../components/TitleBanner.astro'
 import BaseLayout from './BaseLayout.astro'
@@ -15,7 +15,7 @@ interface Props {
     localCroppedHeroImage?: string
     localHeroImage?: string
     slug?: string
-    tags?: { sys: TagLink }[]
+    tags?: string[]
     title: string
     type?: JsonLdType
     updatedAt?: string

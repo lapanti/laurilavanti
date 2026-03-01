@@ -40,10 +40,6 @@ const {
 
 const allTags = buildTagCollection(lang)
 
-const tagObjects = tags.map((tagId) => ({
-    sys: { id: tagId, linkType: 'Tag' as const, type: 'Link' as const },
-}))
-
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
 
@@ -89,11 +85,11 @@ const localOgImage =
         localAlt={localAlt}
         localCroppedHeroImage={localCroppedHeroImage}
         localHeroImage={localHeroImage}
-        tags={tagObjects}
+        tags={tags}
         title={title}
     />
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
     <H2>{t.otherPosts}</H2>
-    <ExcerptList allTags={allTags} currentSlug={slug} lang={lang} limit={4} relatedTags={tagObjects} />
+    <ExcerptList allTags={allTags} currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
 </BaseLayout>

@@ -1,5 +1,5 @@
 ---
-import type { TagCollection, TagLink } from '../types/local'
+import type { TagCollection } from '../types/local'
 
 import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import Image from './titleBanner/Image.astro'
@@ -11,7 +11,7 @@ interface Props {
     localAlt?: string
     localCroppedHeroImage?: string
     localHeroImage?: string
-    tags?: { sys: TagLink }[]
+    tags?: string[]
     title: string
 }
 

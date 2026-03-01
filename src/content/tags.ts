@@ -103,15 +103,8 @@ export const tags: LocalTag[] = [
 export function buildTagCollection(lang: 'en' | 'fi' | 'sv' = 'fi'): TagCollection {
     return {
         items: tags.map((t) => ({
+            id: t.id,
             name: t.names[lang],
-            sys: {
-                createdAt: '',
-                id: t.id,
-                type: 'Tag',
-                updatedAt: '',
-                version: 0,
-                visibility: 'public',
-            },
         })),
         limit: tags.length,
         skip: 0,

@@ -10,22 +10,9 @@ export interface CvRow {
     title?: string
 }
 
-export interface TagLink {
-    id: string
-    linkType: 'Tag'
-    type: 'Link'
-}
-
 export interface TagItem {
+    id: string
     name: string
-    sys: {
-        createdAt: string
-        id: string
-        type: 'Tag'
-        updatedAt: string
-        version: number
-        visibility: 'public'
-    }
 }
 
 export interface TagCollection {

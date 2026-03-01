@@ -1,5 +1,5 @@
 ---
-import type { TagCollection, TagLink } from '../../types/local'
+import type { TagCollection } from '../../types/local'
 
 import { sizes } from '../../lib/styles'
 import Meta from '../Meta.astro'
@@ -14,7 +14,7 @@ interface Props {
     localAlt?: string
     localImage?: string
     slug?: string
-    tags?: { sys: TagLink }[]
+    tags?: string[]
     title: string
 }
 

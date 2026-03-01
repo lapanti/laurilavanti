@@ -1,5 +1,5 @@
 ---
-import type { TagCollection, TagLink } from '../types/local'
+import type { TagCollection } from '../types/local'
 
 import { colors, sizes, typographics } from '../lib/styles'
 
@@ -9,7 +9,7 @@ interface Props {
     bigDateTime?: boolean
     date: string
     lang?: 'en' | 'fi' | 'sv'
-    tags: { sys: TagLink }[]
+    tags: string[]
 }
 
 const { allTags, ariaLabel, bigDateTime, date, lang = 'fi', tags } = Astro.props
@@ -21,7 +21,7 @@ const [year, month, day] = dateOnly.split('-')
 const dateToDisplay = `${day}.${month}.${year}`
 
 const tagsToRender = tags
-    .map((tag) => allTags.items.find((aTag) => aTag.sys.id === tag.sys.id))
+    .map((tagId) => allTags.items.find((aTag) => aTag.id === tagId))
     .filter((tag) => tag !== undefined)
 ---
 
@@ -74,7 +74,7 @@ const tagsToRender = tags
             <ul>
                 {tagsToRender.map((tag) => (
                     <li>
-                        <a href={`${tagBasePaths[lang]}/${tag.sys.id}/`}>#{tag.name}</a>
+                        <a href={`${tagBasePaths[lang]}/${tag.id}/`}>#{tag.name}</a>
                     </li>
                 ))}
             </ul>
