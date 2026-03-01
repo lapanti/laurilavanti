@@ -27,7 +27,18 @@ describe('<DesktopMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
+        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/fi/')
+    })
+
+    it('should render the main link for sv lang', async () => {
+        const result = await renderAstroComponent(DesktopMenu, {
+            props: {
+                lang: 'sv',
+                links,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/sv/')
     })
 
     it('should render all given links', async () => {

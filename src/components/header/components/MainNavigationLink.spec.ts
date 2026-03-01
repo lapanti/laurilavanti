@@ -22,12 +22,12 @@ describe('<MainNavigationLink />', () => {
     it('should have correct href attribute', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {})
 
-        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/')
+        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/fi/')
     })
 
     it('should have aria-current as false when not in home page', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {
-            request: new Request('https://laurilavanti.fi/minusta'),
+            request: new Request('https://laurilavanti.fi/fi/about/'),
         })
 
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('aria-current', 'false')
@@ -35,9 +35,25 @@ describe('<MainNavigationLink />', () => {
 
     it('should have aria-current as page when in home page', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {
-            request: new Request('https://laurilavanti.fi/'),
+            request: new Request('https://laurilavanti.fi/fi/'),
         })
 
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('aria-current', 'page')
+    })
+
+    it('should have correct href for sv lang', async () => {
+        const result = await renderAstroComponent(MainNavigationLink, {
+            props: { lang: 'sv' },
+        })
+
+        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/sv/')
+    })
+
+    it('should have correct href for en lang', async () => {
+        const result = await renderAstroComponent(MainNavigationLink, {
+            props: { lang: 'en' },
+        })
+
+        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/en/')
     })
 })
