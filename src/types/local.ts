@@ -19,6 +19,5 @@ export interface TagCollection {
     items: TagItem[]
     limit: number
     skip: number
-    sys: { type: 'Array' }
     total: number
 }

@@ -108,7 +108,6 @@ export function buildTagCollection(lang: 'en' | 'fi' | 'sv' = 'fi'): TagCollecti
         })),
         limit: tags.length,
         skip: 0,
-        sys: { type: 'Array' },
         total: tags.length,
     }
 }
