@@ -23,4 +23,4 @@ export const allMdxPosts: (MdxPost & { url: string })[] = Object.entries(rawGlob
 
         return { ...mod.frontmatter, url }
     })
-    .sort((a, b) => new Date(b.publishDate).valueOf() - new Date(a.publishDate).valueOf())
+    .sort((a, b) => b.id - a.id)
