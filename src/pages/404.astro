@@ -3,6 +3,17 @@ import ExcerptList from '../components/ExcerptList.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import { allMdxPosts } from '../lib/mdxPosts'
 
+const pathname = Astro.url.pathname
+const langMatch = pathname.match(/^\/(en|sv)\//)
+const lang = langMatch ? (langMatch[1] as 'en' | 'sv') : 'fi'
+
+const i18n = {
+    en: { title: 'The page you were looking for was unfortunately not found — could it be one of these?' },
+    fi: { title: 'Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?' },
+    sv: { title: 'Sidan du letade efter hittades tyvärr inte — kan det vara någon av dessa?' },
+}
+const t = i18n[lang]
+
 // Minimal lookup table: "lang/id" → canonical URL, serialised into the page for the redirect script
 const postIndexJson = JSON.stringify(Object.fromEntries(allMdxPosts.map((p) => [p.lang + '/' + p.id, p.url])))
 ---
@@ -24,6 +35,6 @@ const postIndexJson = JSON.stringify(Object.fromEntries(allMdxPosts.map((p) => [
 `}
 />
 
-<PageLayout title="Etsimääsi sivua ei valitettavasti löytynyt, olisiko se joku seuraavista?">
-    <ExcerptList limit={8} />
+<PageLayout lang={lang} title={t.title}>
+    <ExcerptList lang={lang} limit={8} />
 </PageLayout>
