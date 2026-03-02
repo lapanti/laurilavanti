@@ -10,6 +10,7 @@ const { heavy } = Astro.props
 
 <style
     define:vars={{
+        bodyFontFamily: typographics.body.fontFamily,
         bodyFontSize: typographics.body.fontSize,
         bodyFontWeight: typographics.body.fontWeight,
         bodyLineHeight: typographics.body.lineHeight,
@@ -19,7 +20,7 @@ const { heavy } = Astro.props
     }}
 >
     li {
-        font-family: var(--ibmPlexSans);
+        font-family: var(--bodyFontFamily);
         font-weight: var(--bodyFontWeight);
         font-size: var(--bodyFontSize);
         line-height: var(--bodyLineHeight);

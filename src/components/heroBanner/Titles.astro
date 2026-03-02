@@ -22,6 +22,7 @@ const { title, subtitle, secondaryTitle } = Astro.props
         h2FontSize: typographics.h2.fontSize,
         h2FontWeight: typographics.h2.fontWeight,
         h2LineHeight: typographics.h2.lineHeight,
+        ingressFontFamily: typographics.ingress.fontFamily,
         ingressFontSize: typographics.ingress.fontSize,
         ingressFontWeight: typographics.ingress.fontWeight,
         ingressLineHeight: typographics.ingress.lineHeight,
@@ -56,7 +57,7 @@ const { title, subtitle, secondaryTitle } = Astro.props
     }
 
     p {
-        font-family: var(--ibmPlexSans);
+        font-family: var(--ingressFontFamily);
         font-weight: var(--ingressFontWeight);
         font-size: var(--ingressFontSize);
         line-height: var(--ingressLineHeight);

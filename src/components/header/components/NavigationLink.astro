@@ -16,6 +16,7 @@ const { pathname } = Astro.url
 
 <style
     define:vars={{
+        bodyFontFamily: typographics.body.fontFamily,
         bodyFontSize: fontSizes[1.5].fontSize,
         bodyFontWeight: typographics.body.fontWeight,
         bodyLineHeight: fontSizes[1.5].lineHeight,
@@ -24,7 +25,7 @@ const { pathname } = Astro.url
     }}
 >
     a {
-        font-family: var(--ibmPlexSans);
+        font-family: var(--bodyFontFamily);
         font-weight: var(--bodyFontWeight);
         font-size: var(--bodyFontSize);
         line-height: var(--bodyLineHeight);

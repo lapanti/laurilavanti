@@ -10,6 +10,7 @@ const { itemProp } = Astro.props
 
 <style
     define:vars={{
+        h3FontFamily: typographics.h3.fontFamily,
         h3FontSize: typographics.h3.fontSize,
         h3FontWeight: typographics.h3.fontWeight,
         h3LineHeight: typographics.h3.lineHeight,
@@ -17,7 +18,7 @@ const { itemProp } = Astro.props
     }}
 >
     h3 {
-        font-family: var(--ibmPlexSans);
+        font-family: var(--h3FontFamily);
         font-weight: var(--h3FontWeight);
         font-size: var(--h3FontSize);
         line-height: var(--h3LineHeight);
