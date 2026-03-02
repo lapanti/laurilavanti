@@ -109,5 +109,16 @@ export default defineConfig({
         }),
     },
 
-    integrations: [mdx(), icon({ include: { 'fa7-brands': ['*'] } }), sitemap(), partytown()],
+    integrations: [
+        mdx(),
+        icon({ include: { 'fa7-brands': ['*'] } }),
+        sitemap({
+            filter: (page) =>
+                // Exclude bare /{lang}/blog/{id}/ redirect pages
+                !/\/(en|fi|sv)\/blog\/\d+\/$/.test(page) &&
+                // Exclude old /kategoria/ redirect pages
+                !/\/kategoria\//.test(page),
+        }),
+        partytown(),
+    ],
 })
