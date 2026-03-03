@@ -3,7 +3,6 @@ export interface MdxPost {
     id: number
     lang: 'en' | 'fi' | 'sv'
     alt: string
-    croppedHeroImage: string
     heroImage: string
     publishDate: string
     slug: string

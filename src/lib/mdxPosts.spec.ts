@@ -25,8 +25,6 @@ describe('allMdxPosts frontmatter validation', () => {
         expect(Array.isArray(post.tags), 'tags must be an array').toBe(true)
         expect(post.heroImage, 'heroImage must be a non-empty string').toBeTypeOf('string')
         expect(post.heroImage.trim().length, 'heroImage must not be blank').toBeGreaterThan(0)
-        expect(post.croppedHeroImage, 'croppedHeroImage must be a non-empty string').toBeTypeOf('string')
-        expect(post.croppedHeroImage.trim().length, 'croppedHeroImage must not be blank').toBeGreaterThan(0)
         expect(post.alt, 'alt must be a non-empty string').toBeTypeOf('string')
         expect(post.alt.trim().length, 'alt must not be blank').toBeGreaterThan(0)
     })
