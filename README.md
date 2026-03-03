@@ -2,7 +2,7 @@
 
 # Homepage of Lauri Lavanti
 
-This is the repository containing the code for my homepage https://laurilavanti.fi, which I use mainly for my political hobby. At the same time this repository works as a proof-of-concept for different technical things (such as maintaining a 100% test coverage and a high pagespeed score) as well as a place for me to test the latest and greatest technologies frontend development has to offer.
+This is the repository containing the code for my homepage https://laurilavanti.fi, which I use mainly for politics. At the same time this repository works as a proof-of-concept for different technical things (such as maintaining a 100% test coverage and a high pagespeed score) as well as a place for me to test the latest and greatest technologies frontend development has to offer.
 
 ## Technologies
 
