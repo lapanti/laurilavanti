@@ -37,7 +37,7 @@ const tagSorted = relatedTags
           )
           .toSorted((a, b) => {
               if (a[1] === b[1]) {
-                  return new Date(b[0].publishDate).valueOf() - new Date(a[0].publishDate).valueOf()
+                  return b[0].id - a[0].id
               }
 
               return a[1] < b[1] ? 1 : -1
