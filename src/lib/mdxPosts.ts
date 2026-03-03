@@ -1,4 +1,4 @@
-export interface MdxPost {
+interface MdxPost {
     description: string
     id: number
     lang: 'en' | 'fi' | 'sv'

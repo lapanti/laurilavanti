@@ -1,6 +1,6 @@
 import type { Lang } from './nav'
 
-export interface FooterLink {
+interface FooterLink {
     icon: string
     title: string
     url: string
