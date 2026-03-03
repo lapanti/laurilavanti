@@ -1,6 +1,7 @@
 ---
-import type { ImageMetadata } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
+
+import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
 
 import TitleBanner from '../components/TitleBanner.astro'
 import BaseLayout from './BaseLayout.astro'
@@ -10,7 +11,6 @@ interface Props {
     description?: string
     lang?: 'en' | 'fi' | 'sv'
     alt?: string
-    croppedHeroImage?: string
     heroImage?: string
     slug?: string
     tags?: string[]
@@ -22,17 +22,11 @@ interface Props {
 // Support both MDX layout usage (props under frontmatter) and direct .astro component usage
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props: Props = ((Astro.props as any).frontmatter as Props | undefined) ?? (Astro.props as Props)
-const { alt, createdAt, croppedHeroImage, description, heroImage, lang, slug, tags, title, type, updatedAt } = props
+const { alt, createdAt, description, heroImage, lang, slug, tags, title, type, updatedAt } = props
 
-const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
-    eager: true,
-    import: 'default',
-})
-const ogImage = croppedHeroImage
-    ? allLocalImages[`../images/${croppedHeroImage}`]
-    : heroImage
-      ? allLocalImages[`../images/${heroImage}`]
-      : undefined
+const ogImage = heroImage
+    ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
+    : undefined
 ---
 
 <BaseLayout
@@ -46,14 +40,6 @@ const ogImage = croppedHeroImage
     type={type}
     updatedAt={updatedAt}
 >
-    <TitleBanner
-        alt={alt}
-        createdAt={createdAt}
-        croppedHeroImage={croppedHeroImage}
-        heroImage={heroImage}
-        lang={lang}
-        tags={tags}
-        title={title}
-    />
+    <TitleBanner alt={alt} createdAt={createdAt} heroImage={heroImage} lang={lang} tags={tags} title={title} />
     <slot />
 </BaseLayout>

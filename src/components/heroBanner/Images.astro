@@ -1,8 +1,6 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import type { ImageMetadata } from 'astro'
-
-import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { CldImage } from 'astro-cloudinary' // eslint-disable-line import/named
 
 import { sizes } from '../../lib/styles'
 import BackgroundImage from './images/BackgroundImage.astro'
@@ -10,15 +8,10 @@ import BackgroundImage from './images/BackgroundImage.astro'
 interface Props {
     alt?: string
     backgroundImage?: string
-    croppedHeroImage?: string
     heroImage?: string
 }
 
-const { alt, backgroundImage, croppedHeroImage, heroImage } = Astro.props
-
-const allLocalImages = import.meta.glob<ImageMetadata>('../../images/*.{jpg,png}', { eager: true, import: 'default' })
-const resolvedHero = heroImage ? allLocalImages[`../../images/${heroImage}`] : null
-const resolvedCropped = croppedHeroImage ? allLocalImages[`../../images/${croppedHeroImage}`] : null
+const { alt, backgroundImage, heroImage } = Astro.props
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes2: sizes[2], sizes5Negative: `-${sizes[5]}` }}>
@@ -52,21 +45,17 @@ const resolvedCropped = croppedHeroImage ? allLocalImages[`../../images/${croppe
 <div class="container">
     <BackgroundImage image={backgroundImage} />
     {
-        resolvedHero && resolvedCropped && (
-            <picture>
-                <Source height={562} src={resolvedCropped} type="image/avif" width={560} />
-                <Source height={562} src={resolvedCropped} type="image/webp" width={560} />
-                <Image
-                    alt={alt ?? ''}
-                    background="transparent"
-                    class="image"
-                    height={562}
-                    layout="constrained"
-                    priority
-                    src={resolvedHero}
-                    width={560}
-                />
-            </picture>
+        heroImage && (
+            <CldImage
+                alt={alt ?? ''}
+                class="image"
+                crop={{ aspectRatio: '1:1', gravity: 'auto', source: true, type: 'fill' }}
+                fetchpriority="high"
+                height={562}
+                layout="constrained"
+                src={heroImage}
+                width={560}
+            />
         )
     }
 </div>

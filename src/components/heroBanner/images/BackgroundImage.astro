@@ -1,7 +1,5 @@
 ---
-import type { ImageMetadata } from 'astro'
-
-import { Image, Source } from '@unpic/astro' // eslint-disable-line import/no-unresolved
+import { CldImage } from 'astro-cloudinary' // eslint-disable-line import/named
 
 import { colors } from '../../../lib/styles'
 
@@ -10,12 +8,6 @@ interface Props {
 }
 
 const { image } = Astro.props
-
-const allLocalImages = import.meta.glob<ImageMetadata>('../../../images/**/*.{jpg,png}', {
-    eager: true,
-    import: 'default',
-})
-const resolvedLocalImage = image ? allLocalImages[`../../../images/${image}`] : null
 ---
 
 <style define:vars={{ colorsEvening70: colors.evening70 }}>
@@ -45,13 +37,17 @@ const resolvedLocalImage = image ? allLocalImages[`../../../images/${image}`] : 
 </style>
 <>
     {
-        resolvedLocalImage && (
+        image && (
             <div>
-                <picture>
-                    <Source height={660} layout="fullWidth" src={resolvedLocalImage} type="image/avif" />
-                    <Source height={660} layout="fullWidth" src={resolvedLocalImage} type="image/webp" />
-                    <Image alt="" height={660} layout="fullWidth" priority src={resolvedLocalImage} />
-                </picture>
+                <CldImage
+                    alt=""
+                    crop={{ source: true, type: 'fill' }}
+                    fetchpriority="high"
+                    height={660}
+                    layout="fullWidth"
+                    src={image}
+                    width={1920}
+                />
             </div>
         )
     }

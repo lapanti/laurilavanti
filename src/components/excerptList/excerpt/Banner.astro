@@ -1,8 +1,6 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import type { ImageMetadata } from 'astro'
-
-import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { CldImage } from 'astro-cloudinary' // eslint-disable-line import/named
 
 import { sizes } from '../../../lib/styles'
 import H2 from '../../H2.astro'
@@ -15,12 +13,6 @@ interface Props {
 }
 
 const { alt, image, slug, title } = Astro.props
-
-const allLocalImages = import.meta.glob<ImageMetadata>('../../../images/**/*.{jpg,JPG,jpeg,png}', {
-    eager: true,
-    import: 'default',
-})
-const resolvedLocal = image ? allLocalImages[`../../../images/${image}`] : null
 ---
 
 <style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
@@ -55,19 +47,16 @@ const resolvedLocal = image ? allLocalImages[`../../../images/${image}`] : null
 </style>
 <a href={`/${slug}/`} rel="permalink">
     {
-        resolvedLocal && (
-            <picture>
-                <Source layout="constrained" src={resolvedLocal} type="image/avif" />
-                <Source layout="constrained" src={resolvedLocal} type="image/webp" />
-                <Image
-                    alt={alt ?? ''}
-                    class="excerpt-image"
-                    height={315}
-                    layout="constrained"
-                    src={resolvedLocal}
-                    width={560}
-                />
-            </picture>
+        image && (
+            <CldImage
+                alt={alt ?? ''}
+                class="excerpt-image"
+                crop={{ aspectRatio: '16:9', gravity: 'auto', source: true, type: 'fill' }}
+                height={315}
+                layout="constrained"
+                src={image}
+                width={560}
+            />
         )
     }
     <div>

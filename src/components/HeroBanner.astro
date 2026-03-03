@@ -6,14 +6,13 @@ import Titles from './heroBanner/Titles.astro'
 interface Props {
     alt?: string
     backgroundImage?: string
-    croppedHeroImage?: string
     heroImage?: string
     secondaryTitle?: string
     subtitle?: string
     title: string
 }
 
-const { alt, backgroundImage, croppedHeroImage, heroImage, secondaryTitle, subtitle, title } = Astro.props
+const { alt, backgroundImage, heroImage, secondaryTitle, subtitle, title } = Astro.props
 ---
 
 <style
@@ -41,5 +40,5 @@ const { alt, backgroundImage, croppedHeroImage, heroImage, secondaryTitle, subti
 </style>
 <div>
     <Titles secondaryTitle={secondaryTitle} subtitle={subtitle} title={title} />
-    <Images alt={alt} backgroundImage={backgroundImage} croppedHeroImage={croppedHeroImage} heroImage={heroImage} />
+    <Images alt={alt} backgroundImage={backgroundImage} heroImage={heroImage} />
 </div>

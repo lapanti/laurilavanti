@@ -1,7 +1,5 @@
 ---
-import type { ImageMetadata } from 'astro'
-
-import { Image, Source } from '@unpic/astro' /* eslint-disable-line import/no-unresolved */
+import { CldImage } from 'astro-cloudinary' // eslint-disable-line import/named
 
 import { sizes, typographics } from '../../lib/styles'
 
@@ -12,12 +10,6 @@ interface Props {
 }
 
 const { alt, caption, image } = Astro.props
-
-const allLocalImages = import.meta.glob<ImageMetadata>('../../images/**/*.{jpg,JPG,jpeg,png}', {
-    eager: true,
-    import: 'default',
-})
-const resolvedLocal = image ? allLocalImages[`../../images/${image}`] : null
 ---
 
 <style
@@ -49,13 +41,9 @@ const resolvedLocal = image ? allLocalImages[`../../images/${image}`] : null
     }
 </style>
 {
-    resolvedLocal && (
+    image && (
         <figure aria-label={caption}>
-            <picture>
-                <Source layout="constrained" src={resolvedLocal} type="image/avif" />
-                <Source layout="constrained" src={resolvedLocal} type="image/webp" />
-                <Image alt={alt ?? ''} layout="constrained" src={resolvedLocal} />
-            </picture>
+            <CldImage alt={alt ?? ''} crop={{ source: true, type: 'limit' }} layout="constrained" src={image} />
             <figcaption>{caption}</figcaption>
         </figure>
     )

@@ -1,5 +1,7 @@
 ---
-import type { ImageMetadata, MDXLayoutProps } from 'astro'
+import type { MDXLayoutProps } from 'astro'
+
+import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
 
 import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
@@ -13,7 +15,6 @@ type Props = MDXLayoutProps<{
     id: number
     lang: 'en' | 'fi' | 'sv'
     alt: string
-    croppedHeroImage: string
     heroImage: string
     publishDate: string
     slug: string
@@ -23,8 +24,7 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const { alt, croppedHeroImage, description, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } =
-    frontmatter
+const { alt, description, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } = frontmatter
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -46,11 +46,9 @@ const i18n = {
 
 const t = i18n[lang]
 
-const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
-    eager: true,
-    import: 'default',
-})
-const ogImage = allLocalImages[`../images/${croppedHeroImage}`] ?? allLocalImages[`../images/${heroImage}`]
+const ogImage = heroImage
+    ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
+    : undefined
 ---
 
 <BaseLayout
@@ -64,15 +62,7 @@ const ogImage = allLocalImages[`../images/${croppedHeroImage}`] ?? allLocalImage
     type={BLOGPOSTING}
     updatedAt={updatedDate ?? publishDate}
 >
-    <TitleBanner
-        alt={alt}
-        createdAt={publishDate}
-        croppedHeroImage={croppedHeroImage}
-        heroImage={heroImage}
-        lang={lang}
-        tags={tags}
-        title={title}
-    />
+    <TitleBanner alt={alt} createdAt={publishDate} heroImage={heroImage} lang={lang} tags={tags} title={title} />
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
     <H2>{t.otherPosts}</H2>

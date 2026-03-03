@@ -1,5 +1,4 @@
 ---
-import type { ImageMetadata } from 'astro'
 import type { Lang } from '../content/nav'
 
 import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '../lib/jsonld'
@@ -8,7 +7,7 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: Lang
-    ogImage?: ImageMetadata
+    ogImage?: string
     ogImageAlt?: string
     slug?: string
     title: string
@@ -51,7 +50,7 @@ const hreflangLinks = Astro.site
 
 const canonical = slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null
 
-const ogImageUrl = ogImage && Astro.site ? new URL(ogImage.src, Astro.site).toString() : null
+const ogImageUrl = ogImage ?? null
 
 const name = 'Lauri Lavanti'
 
@@ -139,8 +138,8 @@ const keywords = [
         <>
             <meta content={ogImageUrl} property="og:image" />
             <meta content={ogImageAlt} property="og:image:alt" />
-            <meta content={`${ogImage!.height}`} property="og:image:height" />
-            <meta content={`${ogImage!.width}`} property="og:image:width" />
+            <meta content="630" property="og:image:height" />
+            <meta content="1200" property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />
         </>
     ) : (

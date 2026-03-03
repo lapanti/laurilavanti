@@ -1,6 +1,8 @@
 ---
-import type { ImageMetadata, MDXLayoutProps } from 'astro'
+import type { MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
+
+import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
 
 import HeroBanner from '../components/HeroBanner.astro'
 import BaseLayout from './BaseLayout.astro'
@@ -10,7 +12,6 @@ type Props = MDXLayoutProps<{
     lang?: 'en' | 'fi' | 'sv'
     alt?: string
     backgroundImage?: string
-    croppedHeroImage?: string
     heroImage?: string
     secondaryTitle?: string
     slug?: string
@@ -20,29 +21,11 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const {
-    alt,
-    backgroundImage,
-    croppedHeroImage,
-    description,
-    heroImage,
-    lang,
-    secondaryTitle,
-    slug,
-    subtitle,
-    title,
-    type,
-} = frontmatter
+const { alt, backgroundImage, description, heroImage, lang, secondaryTitle, slug, subtitle, title, type } = frontmatter
 
-const allLocalImages = import.meta.glob<ImageMetadata>('../images/**/*.{jpg,JPG,jpeg,png}', {
-    eager: true,
-    import: 'default',
-})
-const ogImage = croppedHeroImage
-    ? allLocalImages[`../images/${croppedHeroImage}`]
-    : heroImage
-      ? allLocalImages[`../images/${heroImage}`]
-      : undefined
+const ogImage = heroImage
+    ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
+    : undefined
 ---
 
 <BaseLayout
@@ -57,7 +40,6 @@ const ogImage = croppedHeroImage
     <HeroBanner
         alt={alt}
         backgroundImage={backgroundImage}
-        croppedHeroImage={croppedHeroImage}
         heroImage={heroImage}
         secondaryTitle={secondaryTitle}
         subtitle={subtitle}

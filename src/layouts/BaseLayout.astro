@@ -1,5 +1,4 @@
 ---
-import type { ImageMetadata } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
 import Footer from '../components/Footer.astro'
@@ -19,7 +18,7 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: 'en' | 'fi' | 'sv'
-    ogImage?: ImageMetadata
+    ogImage?: string
     ogImageAlt?: string
     slug?: string
     title: string
