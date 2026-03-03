@@ -2,7 +2,6 @@
 import { defineConfig } from 'astro/config' // eslint-disable-line import/no-unresolved
 
 import icon from 'astro-icon' // eslint-disable-line import/no-unresolved
-import { imageService } from '@unpic/astro/service' // eslint-disable-line import/no-unresolved
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
@@ -101,12 +100,6 @@ export default defineConfig({
         routing: {
             prefixDefaultLocale: true,
         },
-    },
-
-    image: {
-        service: imageService({
-            placeholder: 'blurhash',
-        }),
     },
 
     integrations: [
