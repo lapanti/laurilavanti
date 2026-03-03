@@ -51,8 +51,8 @@ const { alt, image, slug, title } = Astro.props
             <CldImage
                 alt={alt ?? ''}
                 class="excerpt-image"
-                crop={{ aspectRatio: '16:9', gravity: 'face', source: true, type: 'fill' }}
-                height={315}
+                crop={{ aspectRatio: '1.91:1', gravity: 'face', source: true, type: 'fill' }}
+                height={293}
                 layout="constrained"
                 src={image}
                 width={560}
