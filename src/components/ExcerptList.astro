@@ -13,35 +13,16 @@ interface Props {
 
 const { currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
 
-interface NormalisedPost {
-    alt?: string
-    date: string
-    excerpt?: string
-    image?: string
-    lang: 'en' | 'fi' | 'sv'
-    slug: string
-    tags: string[]
-    title: string
-}
-
-const merged: NormalisedPost[] = allMdxPosts
+const filtered = allMdxPosts
     .filter((p) => p.lang === lang)
     .filter((p) => !currentSlug || p.slug !== currentSlug)
     .filter((p) => !tag || p.tags.includes(tag))
-    .map((p) => ({
-        alt: p.alt,
-        date: p.publishDate,
-        excerpt: p.description,
-        image: p.heroImage,
-        lang: p.lang,
-        slug: p.url.replace(/^\//, '').replace(/\/$/, ''),
-        tags: p.tags,
-        title: p.title,
-    }))
+
+type MdxPostWithUrl = (typeof filtered)[number]
 
 const tagSorted = relatedTags
-    ? merged
-          .reduce<[NormalisedPost, number][]>(
+    ? filtered
+          .reduce<[MdxPostWithUrl, number][]>(
               (acc, curr) => [
                   ...acc,
                   [
@@ -56,13 +37,13 @@ const tagSorted = relatedTags
           )
           .toSorted((a, b) => {
               if (a[1] === b[1]) {
-                  return new Date(b[0].date).valueOf() - new Date(a[0].date).valueOf()
+                  return new Date(b[0].publishDate).valueOf() - new Date(a[0].publishDate).valueOf()
               }
 
               return a[1] < b[1] ? 1 : -1
           })
           .map((postWithPoints) => postWithPoints[0])
-    : merged
+    : filtered
 
 const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
 ---
@@ -92,11 +73,11 @@ const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
         nodes.map((node) => (
             <Excerpt
                 alt={node.alt}
-                date={node.date}
-                excerpt={node.excerpt}
-                image={node.image}
+                date={node.publishDate}
+                excerpt={node.description}
+                image={node.heroImage}
                 lang={lang}
-                slug={node.slug}
+                slug={node.url.replace(/^\//, '').replace(/\/$/, '')}
                 tags={node.tags}
                 title={node.title}
             />
