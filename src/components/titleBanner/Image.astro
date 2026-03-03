@@ -37,7 +37,7 @@ const { alt, heroImage } = Astro.props
         heroImage && (
             <CldImage
                 alt={alt ?? ''}
-                crop={{ gravity: 'auto', source: true, type: 'fill' }}
+                crop={{ gravity: 'face', source: true, type: 'fill' }}
                 fetchpriority="high"
                 layout="fullWidth"
                 src={heroImage}

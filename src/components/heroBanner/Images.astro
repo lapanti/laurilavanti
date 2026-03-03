@@ -49,7 +49,7 @@ const { alt, backgroundImage, heroImage } = Astro.props
             <CldImage
                 alt={alt ?? ''}
                 class="image"
-                crop={{ aspectRatio: '1:1', gravity: 'auto', source: true, type: 'fill' }}
+                crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                 fetchpriority="high"
                 height={562}
                 layout="constrained"
