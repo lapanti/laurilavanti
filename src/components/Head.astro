@@ -137,7 +137,7 @@ const keywords = [
     ogImageUrl ? (
         <>
             <meta content={ogImageUrl} property="og:image" />
-            <meta content={ogImageAlt} property="og:image:alt" />
+            {ogImageAlt && <meta content={ogImageAlt} property="og:image:alt" />}
             <meta content="630" property="og:image:height" />
             <meta content="1200" property="og:image:width" />
             <meta content="summary_large_image" name="twitter:card" />

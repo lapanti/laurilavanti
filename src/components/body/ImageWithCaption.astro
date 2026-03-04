@@ -43,7 +43,14 @@ const { alt, caption, image } = Astro.props
 {
     image && (
         <figure aria-label={caption}>
-            <CldImage alt={alt ?? ''} crop={{ source: true, type: 'limit' }} layout="constrained" src={image} />
+            <CldImage
+                alt={alt ?? ''}
+                crop={{ source: true, type: 'limit' }}
+                height={600}
+                layout="constrained"
+                src={image}
+                width={800}
+            />
             <figcaption>{caption}</figcaption>
         </figure>
     )
