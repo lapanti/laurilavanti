@@ -1,6 +1,6 @@
 import type { ContainerRenderOptions } from 'astro/container'
 
-import { experimental_AstroContainer as AstroContainer } from 'astro/container' // eslint-disable-line import/no-unresolved
+import { experimental_AstroContainer as AstroContainer } from 'astro/container'
 
 type AstroComponentFactory = Parameters<AstroContainer['renderToString']>[0]
 
