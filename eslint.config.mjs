@@ -28,6 +28,13 @@ export default defineConfig([
     },
     importPlugin.flatConfigs.recommended,
     importPlugin.flatConfigs.typescript,
+    {
+        settings: {
+            'import/resolver': {
+                typescript: true,
+            },
+        },
+    },
     tseslint.configs.recommended,
     configs.recommended,
     configs['jsx-a11y-strict'],
