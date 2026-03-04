@@ -17,7 +17,7 @@ const { alt, heroImage } = Astro.props
     }
 
     .image-container :global(img) {
-        aspect-ratio: 1.3333333333;
+        aspect-ratio: 1;
         object-fit: cover;
         width: 100%;
     }
@@ -26,10 +26,6 @@ const { alt, heroImage } = Astro.props
         .image-container {
             width: 50%;
         }
-
-        .image-container :global(img) {
-            aspect-ratio: 1;
-        }
     }
 </style>
 <div class="image-container">
@@ -37,7 +33,7 @@ const { alt, heroImage } = Astro.props
         heroImage && (
             <CldImage
                 alt={alt ?? ''}
-                crop={{ gravity: 'face', source: true, type: 'fill' }}
+                crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                 fetchpriority="high"
                 layout="fullWidth"
                 src={heroImage}
