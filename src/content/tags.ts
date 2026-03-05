@@ -13,6 +13,10 @@ export const tags: LocalTag[] = [
         names: { en: 'Regional elections 2025', fi: 'Aluevaalit 2025', sv: 'Regionval 2025' },
     },
     {
+        id: 'digitaalinen-itsenaisyys',
+        names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
+    },
+    {
         id: 'digitalisaatio',
         names: { en: 'Digitalisation', fi: 'Digitalisaatio', sv: 'Digitalisering' },
     },
