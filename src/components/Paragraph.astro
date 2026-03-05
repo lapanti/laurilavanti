@@ -1,5 +1,4 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
 import { sizes } from '../lib/styles'
 
 interface Props {
@@ -21,11 +20,6 @@ const { inGrid = true, itemProp, smallMarginTop, noMargins } = Astro.props
     p {
         margin-bottom: var(--marginBottom);
         margin-top: var(--marginTop);
-    }
-
-    li > p {
-        margin-bottom: 0;
-        margin-top: 0;
     }
 </style>
 <p itemprop={itemProp} style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }}>
