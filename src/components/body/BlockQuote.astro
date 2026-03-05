@@ -14,11 +14,6 @@ import { colors, sizes, typographics } from '../../lib/styles'
     }}
 >
     blockquote {
-        font-family: var(--blockQuoteFontFamily) !important;
-        font-style: var(--blockQuoteFontStyle) !important;
-        font-size: var(--blockQuoteFontSize) !important;
-        font-weight: var(--blockQuoteFontWeight) !important;
-        line-height: var(--blockQuoteLineHeight) !important;
         border-left-color: var(--colorsSand);
         border-left-style: solid;
         border-left-width: var(--sizes05);
@@ -26,6 +21,14 @@ import { colors, sizes, typographics } from '../../lib/styles'
         padding-bottom: var(--sizes05);
         padding-left: var(--sizes05);
         padding-top: var(--sizes05);
+    }
+
+    blockquote :global(p) {
+        font-family: var(--blockQuoteFontFamily);
+        font-style: var(--blockQuoteFontStyle);
+        font-size: var(--blockQuoteFontSize);
+        font-weight: var(--blockQuoteFontWeight);
+        line-height: var(--blockQuoteLineHeight);
     }
 </style>
 <blockquote>
