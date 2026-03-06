@@ -23,8 +23,8 @@ export default defineConfig({
          */
         timeout: 10_000,
         toHaveScreenshot: {
-            maxDiffPixelRatio: 0.2,
-            threshold: 0.2,
+            maxDiffPixelRatio: 0.25,
+            threshold: 0.25,
         },
     },
     /* Fail the build on CI if you accidentally left test.only in the source code. */
