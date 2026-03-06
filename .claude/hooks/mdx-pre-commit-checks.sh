@@ -1,6 +1,6 @@
 #!/bin/bash
 # Blocks git commit when MDX files are staged and prompts Claude to run
-# /seo-check and /lavanti-writing-style checks before committing.
+# /seo-check, /lavanti-writing-style, and /campaign-persona-check before committing.
 
 INPUT=$(cat)
 COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty')
