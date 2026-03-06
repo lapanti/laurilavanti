@@ -23,7 +23,7 @@ cat <<EOF
   "hookSpecificOutput": {
     "hookEventName": "PreToolUse",
     "permissionDecision": "deny",
-    "permissionDecisionReason": "MDX files are staged: ${FILE_LIST}— before committing: (1) run /seo-check on each file, (2) check writing style with /lavanti-writing-style, (3) check campaign persona alignment with /campaign-persona-check. Retry the commit once all three checks are done."
+    "permissionDecisionReason": "MDX files are staged: ${FILE_LIST}— before committing: (1) run /seo-check on each file, (2) run /aeo-check on each file, (3) check writing style with /lavanti-writing-style, (4) check campaign persona alignment with /campaign-persona-check. Retry the commit once all four checks are done."
   }
 }
 EOF
