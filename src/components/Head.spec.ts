@@ -151,4 +151,53 @@ describe('<Head />', () => {
         expect(jsonLd.dateModified).toBe('2024-06-01')
         expect(jsonLd.datePublished).toBe('2024-06-01')
     })
+
+    it('should set Person JSON-LD when type is Person', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'fi',
+                title: 'Lauri Lavanti',
+                type: 'Person',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('Person')
+        expect(jsonLd.name).toBe('Lauri Lavanti')
+        expect(jsonLd.jobTitle).toBe('Kansanedustajaehdokas')
+        expect(jsonLd.sameAs).toHaveLength(7)
+        expect(jsonLd.memberOf['@type']).toBe('PoliticalParty')
+        expect(jsonLd.memberOf.name).toBe('Vihreä liitto')
+        expect(jsonLd.memberOf.url).toBe('https://www.vihreat.fi')
+        expect(jsonLd.knowsAbout).toHaveLength(5)
+    })
+
+    it('should localise Person jobTitle for English', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'en',
+                title: 'Lauri Lavanti',
+                type: 'Person',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.jobTitle).toBe('Parliamentary candidate')
+    })
+
+    it('should localise Person jobTitle for Swedish', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'sv',
+                title: 'Lauri Lavanti',
+                type: 'Person',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.jobTitle).toBe('Riksdagskandidat')
+    })
 })
