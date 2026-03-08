@@ -14,13 +14,13 @@ interface Props {
 const { alt, backgroundImage, heroImage } = Astro.props
 ---
 
-<style define:vars={{ sizes1: sizes[1], sizes1Negative: `-${sizes[1]}`, sizes5Negative: `-${sizes[5]}` }}>
+<style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes5Negative: `-${sizes[5]}` }}>
     .container {
         display: flex;
         flex: 1;
         overflow: hidden;
         position: relative;
-        margin-top: var(--sizes1);
+        margin-top: 0;
     }
 
     .image {
