@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, WEBPAGE, WEBSITE } from '../lib/jsonld'
+import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, PERSON, WEBPAGE, WEBSITE } from '../lib/jsonld'
 
 interface Props {
     createdAt?: string
@@ -62,6 +62,20 @@ const mastodon = 'https://mastodontti.fi/@laurilavanti'
 const threads = 'https://www.threads.com/@laurilavanti'
 const tikTok = 'https://www.tiktok.com/@laurilavanti'
 
+const personJobTitle: Record<Lang, string> = {
+    en: 'Parliamentary candidate',
+    fi: 'Kansanedustajaehdokas',
+    sv: 'Riksdagskandidat',
+}
+
+const personDescription: Record<Lang, string> = {
+    en: 'Green parliamentary candidate in the Uusimaa constituency in 2027. Focused on economics, entrepreneurship, and digital independence.',
+    fi: 'Vihreiden kansanedustajaehdokas Uudenmaan vaalipiirissä 2027. Keskittyy talouteen, yrittäjyyteen ja digitaaliseen riippumattomuuteen.',
+    sv: 'Grönas riksdagskandidat i Nylands valkrets 2027. Fokuserar på ekonomi, företagande och digital självständighet.',
+}
+
+const sameAs = [bluesky, facebook, instagram, linkedIn, mastodon, threads, tikTok]
+
 const jsonLd = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': type && JSON_LD_TYPES.includes(type) ? type : WEBSITE,
@@ -86,7 +100,27 @@ const jsonLd = JSON.stringify({
     ...(type === WEBSITE
         ? {
               name,
-              sameAs: [bluesky, facebook, instagram, linkedIn, mastodon, threads, tikTok],
+              sameAs,
+          }
+        : {}),
+    ...(type === PERSON
+        ? {
+              description: personDescription[lang],
+              jobTitle: personJobTitle[lang],
+              knowsAbout: [
+                  'Talouspolitiikka',
+                  'Yrittäjyys',
+                  'Innovaatiopolitiikka',
+                  'Digitaalinen riippumattomuus',
+                  'Vihreä siirtymä',
+              ],
+              memberOf: {
+                  '@type': 'PoliticalParty',
+                  name: 'Vihreä liitto',
+                  url: 'https://www.vihreat.fi',
+              },
+              name,
+              sameAs,
           }
         : {}),
 })
