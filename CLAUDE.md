@@ -82,3 +82,20 @@ Defined locally in `src/content/tags.ts` as `LocalTag[]` with `id` and `names: {
 ## No environment variables needed
 
 All content is local. No `.env` file required for development.
+
+## Issue workflow
+
+When asked to work on a GitHub issue, follow these steps in order:
+
+1. **Assign the issue** — `gh issue edit {number} --add-assignee @me`
+2. **Create a branch** — `git checkout -b {short-kebab-description}` (no issue number prefix needed)
+3. **Implement the changes** in small, focused commits:
+   - Run `npm run lint` before each commit and fix any errors
+   - Run `npm run check` to verify TypeScript types
+   - Commit with `git commit -m "type(scope): description"` (conventional commits)
+4. **Verify all checks pass** locally before pushing:
+   - `npm run lint`
+   - `npm run check`
+   - `npm run test`
+   - `npm run build`
+5. **Push and open a PR** — `git push -u origin HEAD` then `gh pr create` with a clear title and body referencing the issue (`Closes #N`)
