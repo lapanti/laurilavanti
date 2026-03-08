@@ -98,4 +98,7 @@ When asked to work on a GitHub issue, follow these steps in order:
    - `npm run check`
    - `npm run test`
    - `npm run build`
+   - `npm run test:e2e`
+   - If the change affects DOM structure or visuals, update snapshots first:
+     `npm run test:e2e -- --update-snapshots`
 5. **Push and open a PR** — `git push -u origin HEAD` then `gh pr create` with a clear title and body referencing the issue (`Closes #N`)
