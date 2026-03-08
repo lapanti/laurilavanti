@@ -88,7 +88,7 @@ All content is local. No `.env` file required for development.
 When asked to work on a GitHub issue, follow these steps in order:
 
 1. **Assign the issue** — `gh issue edit {number} --add-assignee @me`
-2. **Create a branch** — `git checkout -b {short-kebab-description}` (no issue number prefix needed)
+2. **Create a branch** — `git checkout -b type/{short-kebab-description}` (no issue number prefix needed, include type of branch e.g. fix or feat)
 3. **Implement the changes** in small, focused commits:
    - Run `npm run lint` before each commit and fix any errors
    - Run `npm run check` to verify TypeScript types
