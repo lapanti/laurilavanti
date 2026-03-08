@@ -61,8 +61,8 @@ export const tags: LocalTag[] = [
         names: { en: 'Co-op elections', fi: 'Osuuskauppavaalit', sv: 'Kooperativval' },
     },
     {
-        id: 'perustuva',
-        names: { en: 'Basic welfare', fi: 'Perustuva', sv: 'Grundläggande' },
+        id: 'perusturva',
+        names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grundläggande' },
     },
     {
         id: 'sivistys',
