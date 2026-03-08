@@ -13,6 +13,7 @@
 **ALWAYS**
 - Explain your plan before writing code
 - Commit changes in small minimal commits, using conventional commits format
+- Sign commits with gpg. If the key is locked, ask user to open it
 
 
 ## Available Agents
