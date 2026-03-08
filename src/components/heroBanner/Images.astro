@@ -14,7 +14,7 @@ interface Props {
 const { alt, backgroundImage, heroImage } = Astro.props
 ---
 
-<style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes5Negative: `-${sizes[5]}` }}>
+<style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes14Negative: `-${sizes[14]}` }}>
     .container {
         display: flex;
         flex: 1;
@@ -37,7 +37,7 @@ const { alt, backgroundImage, heroImage } = Astro.props
         .image {
             bottom: 0;
             position: absolute;
-            right: var(--sizes5Negative);
+            right: var(--sizes14Negative);
             margin-top: auto;
         }
     }
