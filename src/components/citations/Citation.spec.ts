@@ -18,13 +18,13 @@ describe('<Citation />', () => {
         expect(result.querySelector('blockquote p')?.textContent).toBe(baseProps.citation)
     })
 
-    it('should render the name', async () => {
+    it('should render the name in a cite element', async () => {
         const result = await renderAstroComponent(Citation, { props: baseProps })
 
-        expect(result.querySelector('blockquote footer')?.textContent).toContain(baseProps.name)
+        expect(result.querySelector('blockquote footer cite')?.textContent).toBe(baseProps.name)
     })
 
-    it('should render the title', async () => {
+    it('should render the title on a separate row', async () => {
         const result = await renderAstroComponent(Citation, { props: baseProps })
 
         expect(result.querySelector('blockquote footer span')?.textContent).toBe(baseProps.title)
