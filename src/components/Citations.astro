@@ -1,0 +1,45 @@
+---
+import type { Citation as CitationType } from '../content/citations'
+import type { Lang } from '../content/nav'
+
+import { sizes } from '../lib/styles'
+import Citation from './citations/Citation.astro'
+
+interface Props {
+    citations: CitationType[]
+    lang: Lang
+}
+
+const { citations, lang } = Astro.props
+---
+
+<style
+    define:vars={{
+        sizes3: sizes[3],
+    }}
+>
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes3);
+        grid-column-start: 3;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<ul>
+    {
+        citations.map((c) => (
+            <li>
+                <Citation
+                    alt={c.locales[lang].alt}
+                    citation={c.citation}
+                    image={c.image}
+                    name={c.name}
+                    title={c.locales[lang].title}
+                />
+            </li>
+        ))
+    }
+</ul>
