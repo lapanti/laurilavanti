@@ -1,4 +1,104 @@
 # Agents.md
+## Project overview
+
+Personal homepage of Lauri Lavanti (https://laurilavanti.fi). Built with Astro + TypeScript + MDX. All content is local — no CMS or external content API. Hosted on Cloudflare Pages.
+
+## Commands
+
+```bash
+npm run dev          # dev server
+npm run build        # production build
+npm run preview      # preview build locally
+npm run test         # Vitest unit tests
+npm run test:e2e     # Playwright e2e tests
+npm run lint         # ESLint + Prettier check
+npm run check        # Astro TypeScript type check
+```
+## Key architecture decisions
+
+### Content
+
+- All content lives as MDX files in `src/pages/` under locale subdirectories (`fi/`, `sv/`, `en/`).
+- Blog posts: `src/pages/{lang}/blog/{id}/{slug}/index.mdx`
+- Other pages: `src/pages/{lang}/{page}/index.mdx`
+- Home pages: `src/pages/{lang}/index.mdx`
+
+### Layouts (MDX layout: frontmatter)
+
+| Layout | Used by | Props pattern |
+|---|---|---|
+| `FrontPageLayout.astro` | `{lang}/index.mdx` | `MDXLayoutProps<Frontmatter>` only |
+| `PostLayout.astro` | All blog post MDX | `MDXLayoutProps<Frontmatter>` only |
+| `PageLayout.astro` | About/contact/blog-index MDX + `.astro` files (404, category pages) | Dual-mode: `(Astro.props.frontmatter as Props \| undefined) ?? Astro.props` |
+| `BaseLayout.astro` | Used by all three layouts above | Direct `.astro` props |
+
+### Images
+
+- Hosted in Cloudinary.
+- Referenced in MDX frontmatter with their filenames without the file extension.
+- Background images use `alt=""` (decorative). Hero/portrait images need descriptive `alt`.
+
+### Tags
+
+Defined locally in `src/content/tags.ts` as `LocalTag[]` with `id` and `names: { fi, sv, en }`.
+`buildTagCollection(lang)` builds a `TagCollection`-compatible object for components that expect it.
+
+### MDX posts helper
+
+`src/lib/mdxPosts.ts` — uses `import.meta.glob` (eager) to collect all blog post frontmatter at build time. Exports `allMdxPosts` sorted newest-first.
+
+### i18n / language switching
+
+- Three locales: `fi`, `sv`, `en`.
+- Nav links with `switchToLang` in `src/content/nav.ts` get `data-switch-to-lang` attribute.
+- An inline script in `BaseLayout.astro` rewrites those link hrefs by replacing the locale prefix in `window.location.pathname` on page load.
+
+### Blog post URL redirects
+
+- `/{lang}/blog/{id}/` → 301 to canonical slug URL via `src/pages/{lang}/blog/[id]/index.astro` (one per locale).
+- `/{lang}/blog/{id}/{wrong-slug}/` → client-side redirect on 404 page via `window.__postIndex` lookup table.
+
+### ExcerptList
+
+`src/components/ExcerptList.astro` — merges MDX posts (from `allMdxPosts`) with any Contentful entries. Filters by `lang`, `tag`, and `currentSlug`. Accepts `limit` prop.
+
+## Code style conventions
+
+- **ESLint + Prettier** — always run `npm run lint` before committing.
+- **Import order**: managed by `simple-import-sort`. Run `npx eslint --fix` when order is wrong.
+- **`<script>` blocks in `.astro`**: Prettier parses them as plain JS — no TypeScript syntax. Use `is:inline` + `set:html` with template literal strings for scripts that need TS-incompatible syntax.
+- **Blank line before `return`** required by `@stylistic/padding-line-between-statements`.
+- **Attribute order in Astro components**: enforced by `astro/sort-attributes`.
+
+## Testing
+
+- **Unit tests**: Vitest in `src/` (`.spec.ts` files alongside source).
+- **E2E tests**: Playwright in `tests/e2e/`. Uses Page Object Model — base class `AnyPage`, extended per page. `isMobile` flag selects nth(0) vs nth(1) nav elements.
+- **Snapshots**: aria snapshots and screenshot snapshots — update with `--update-snapshots` flag when UI changes intentionally.
+
+## No environment variables needed
+
+All content is local. No `.env` file required for development.
+
+## Issue workflow
+
+When asked to work on a GitHub issue, follow these steps in order:
+
+1. **Assign the issue** — `gh issue edit {number} --add-assignee @me`
+2. **Create a branch** — `git checkout -b type/{short-kebab-description}` (no issue number prefix needed, include type of branch e.g. fix or feat)
+3. **Implement the changes** in small, focused commits:
+   - Run `npm run lint` before each commit and fix any errors
+   - Run `npm run check` to verify TypeScript types
+   - Commit with `git commit -m "type(scope): description"` (conventional commits)
+4. **Verify all checks pass** locally before pushing:
+   - `npm run lint`
+   - `npm run check`
+   - `npm run test`
+   - `npm run build`
+   - `npm run test:e2e`
+   - If the change affects DOM structure or visuals, update snapshots first:
+     `npm run test:e2e -- --update-snapshots`
+5. **Push and open a PR** — `git push -u origin HEAD` then `gh pr create` with a clear title and body referencing the issue (`Closes #N`)
 
 ## Judgment Boundaries
 **NEVER**
@@ -14,71 +114,3 @@
 - Explain your plan before writing code
 - Commit changes in small minimal commits, using conventional commits format
 - Sign commits with gpg. If the key is locked, ask user to open it
-
-
-## Available Agents
-
-### 1. **Code Analyzer**
-**Purpose**: Analyze code structure, dependencies, and patterns
-**Capabilities**:
-- Static code analysis
-- Dependency mapping
-- Architecture visualization
-- Test coverage analysis
-
-### 2. **Test Runner**
-**Purpose**: Execute and manage test suites
-**Capabilities**:
-- Unit test execution (Vitest)
-- E2E test execution (Playwright)
-- Test result analysis
-- Coverage reporting
-
-### 3. **Refactor Agent**
-**Purpose**: Safe code refactoring and optimization
-**Capabilities**:
-- Type-safe refactoring
-- Component extraction
-- Dependency updates
-- Performance optimization
-
-### 4. **Documentation Agent**
-**Purpose**: Generate and maintain documentation
-**Capabilities**:
-- API documentation
-- Component documentation
-- Architecture diagrams
-- README generation
-
-### 5. **Build Agent**
-**Purpose**: Manage build processes and deployments
-**Capabilities**:
-- Build optimization
-- Deployment pipelines
-- CI/CD integration
-- Asset optimization
-
-## Workflow Integration
-
-```mermaid
-graph TD
-    A[User Request] --> B{Agent Router}
-    B --> C[Code Analyzer]
-    B --> D[Test Runner]
-    B --> E[Refactor Agent]
-    B --> F[Documentation Agent]
-    B --> G[Build Agent]
-    C --> H[Analysis Report]
-    D --> I[Test Results]
-    E --> J[Refactored Code]
-    F --> K[Documentation]
-    G --> L[Build Artifacts]
-```
-
-## Usage Patterns
-
-1. **Analysis First**: Always start with Code Analyzer
-2. **Test-Driven**: Run tests before and after changes
-3. **Incremental**: Small, verifiable changes
-4. **Documented**: Generate docs for all changes
-5. **Reviewed**: Human review before merge
