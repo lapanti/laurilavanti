@@ -33,23 +33,23 @@ export const citations: Citation[] = [
     },
     {
         citation:
-            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
-        image: 'Juho-Makkonen',
+            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
+        image: 'Allu-Pyhalammi',
         locales: {
             en: {
-                alt: 'Photo of Juho Makkonen. He is wearing a light blue shirt.',
-                title: 'CEO, Sharetribe Oy',
+                alt: 'Photo of Allu Pyhälammi. He is wearing a dark blazer and a large scarf.',
+                title: 'Deputy Chair of the Greens',
             },
             fi: {
-                alt: 'Kuva Juho Makkosesta. Hänellä on päällään vaaleansininen paita.',
-                title: 'Toimitusjohtaja, Sharetribe Oy',
+                alt: 'Kuva Allu Pyhälammista. Hänellä on päällään tumma pikkutakki ja iso kaulahuivi.',
+                title: 'Vihreiden varapuheenjohtaja',
             },
             sv: {
-                alt: 'Foto på Juho Makkonen. Han bär en ljusblå skjorta.',
-                title: 'VD, Sharetribe Oy',
+                alt: 'Foto på Allu Pyhälammi. Han bär en mörk kavaj och en stor halsduk.',
+                title: 'Grönas vice ordförande',
             },
         },
-        name: 'Juho Makkonen',
+        name: 'Allu Pyhälammi',
     },
     {
         citation:
@@ -73,23 +73,23 @@ export const citations: Citation[] = [
     },
     {
         citation:
-            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
-        image: 'Allu-Pyhalammi',
+            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
+        image: 'Juho-Makkonen',
         locales: {
             en: {
-                alt: 'Photo of Allu Pyhälammi. He is wearing a dark blazer and a large scarf.',
-                title: 'Deputy Chair of the Greens',
+                alt: 'Photo of Juho Makkonen. He is wearing a light blue shirt.',
+                title: 'CEO, Sharetribe Oy',
             },
             fi: {
-                alt: 'Kuva Allu Pyhälammista. Hänellä on päällään tumma pikkutakki ja iso kaulahuivi.',
-                title: 'Vihreiden varapuheenjohtaja',
+                alt: 'Kuva Juho Makkosesta. Hänellä on päällään vaaleansininen paita.',
+                title: 'Toimitusjohtaja, Sharetribe Oy',
             },
             sv: {
-                alt: 'Foto på Allu Pyhälammi. Han bär en mörk kavaj och en stor halsduk.',
-                title: 'Grönas vice ordförande',
+                alt: 'Foto på Juho Makkonen. Han bär en ljusblå skjorta.',
+                title: 'VD, Sharetribe Oy',
             },
         },
-        name: 'Allu Pyhälammi',
+        name: 'Juho Makkonen',
     },
     {
         citation: '',
