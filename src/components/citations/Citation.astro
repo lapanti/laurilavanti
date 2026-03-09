@@ -1,0 +1,103 @@
+---
+import { CldImage } from 'astro-cloudinary'
+
+import { colors, fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
+
+interface Props {
+    alt: string
+    citation: string
+    image: string
+    name: string
+    title: string
+}
+
+const { alt, citation, image, name, title } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsSand: colors.sand,
+        fontFamiliesMono: fontFamilies.mono,
+        fontFamiliesSans: fontFamilies.sans,
+        fontSizes1: fontSizes[1].fontSize,
+        fontSizes125: fontSizes[1.25].fontSize,
+        fontWeightsMedium: fontWeights.medium,
+        fontWeightsRegular: fontWeights.regular,
+        lineHeight1: fontSizes[1].lineHeight,
+        lineHeight125: fontSizes[1.25].lineHeight,
+        sizes05: sizes[0.5],
+        sizes1: sizes[1],
+        sizes14: sizes[14],
+    }}
+>
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes1);
+    }
+
+    .portrait {
+        border-radius: 50%;
+        overflow: hidden;
+        width: var(--sizes14);
+    }
+
+    .portrait :global(img) {
+        aspect-ratio: 1;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    blockquote {
+        border-left-color: var(--colorsSand);
+        border-left-style: solid;
+        border-left-width: var(--sizes05);
+        margin: 0;
+        padding-left: var(--sizes1);
+    }
+
+    p {
+        font-family: var(--fontFamiliesMono);
+        font-size: var(--fontSizes125);
+        font-style: italic;
+        font-weight: var(--fontWeightsRegular);
+        line-height: var(--lineHeight125);
+        margin: 0;
+    }
+
+    footer {
+        font-family: var(--fontFamiliesSans);
+        font-size: var(--fontSizes1);
+        font-weight: var(--fontWeightsMedium);
+        line-height: var(--lineHeight1);
+        margin-top: var(--sizes05);
+    }
+</style>
+<article>
+    {
+        image && (
+            <div class="portrait">
+                <CldImage
+                    alt={alt}
+                    crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
+                    src={image}
+                    unstyled
+                    width={224}
+                />
+            </div>
+        )
+    }
+    <blockquote>
+        <p>{citation}</p>
+        <footer>
+            {name}
+            {
+                title && (
+                    <>
+                        , <span>{title}</span>
+                    </>
+                )
+            }
+        </footer>
+    </blockquote>
+</article>
