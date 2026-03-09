@@ -38,7 +38,13 @@ const { alt, citation, image, name, title } = Astro.props
     .portrait {
         border-radius: 50%;
         overflow: hidden;
-        width: var(--sizes28);
+        width: 100%;
+    }
+
+    @media (min-width: 1200px) {
+        .portrait {
+            width: var(--sizes28);
+        }
     }
 
     .portrait :global(img) {
