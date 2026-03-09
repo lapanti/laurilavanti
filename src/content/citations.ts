@@ -31,4 +31,121 @@ export const citations: Citation[] = [
         },
         name: 'Aki Koikkalainen',
     },
+    {
+        citation:
+            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
+        image: 'Juho-Makkonen',
+        locales: {
+            en: {
+                alt: 'Photo of Juho Makkonen. He is wearing a light blue shirt.',
+                title: 'CEO, Sharetribe Oy',
+            },
+            fi: {
+                alt: 'Kuva Juho Makkosesta. Hänellä on päällään vaaleansininen paita.',
+                title: 'Toimitusjohtaja, Sharetribe Oy',
+            },
+            sv: {
+                alt: 'Foto på Juho Makkonen. Han bär en ljusblå skjorta.',
+                title: 'VD, Sharetribe Oy',
+            },
+        },
+        name: 'Juho Makkonen',
+    },
+    {
+        citation:
+            'Eduskunnassa on iso vaje teknologian ja tietopolitiikan asiantuntijoista. Lauri paikkaisi tätä vajetta isosti!',
+        image: 'Atte-Harjanne',
+        locales: {
+            en: {
+                alt: 'Photo of Atte Harjanne. He is wearing a white dress shirt and a dark blazer.',
+                title: 'Member of Parliament',
+            },
+            fi: {
+                alt: 'Kuva Atte Harjanteesta. Hänellä on päällään valkoinen kauluspaita ja tumma pikkutakki.',
+                title: 'Kansanedustaja',
+            },
+            sv: {
+                alt: 'Foto på Atte Harjanne. Han bär en vit skjorta och en mörk kavaj.',
+                title: 'Riksdagsledamot',
+            },
+        },
+        name: 'Atte Harjanne',
+    },
+    {
+        citation:
+            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
+        image: 'Allu-Pyhalammi',
+        locales: {
+            en: {
+                alt: 'Photo of Allu Pyhälammi. He is wearing a dark blazer and a large scarf.',
+                title: 'Deputy Chair of the Greens',
+            },
+            fi: {
+                alt: 'Kuva Allu Pyhälammista. Hänellä on päällään tumma pikkutakki ja iso kaulahuivi.',
+                title: 'Vihreiden varapuheenjohtaja',
+            },
+            sv: {
+                alt: 'Foto på Allu Pyhälammi. Han bär en mörk kavaj och en stor halsduk.',
+                title: 'Grönas vice ordförande',
+            },
+        },
+        name: 'Allu Pyhälammi',
+    },
+    {
+        citation: '',
+        image: 'Mari-Holopainen',
+        locales: {
+            en: {
+                alt: 'Photo of Mari Holopainen. She is wearing a light-coloured jacket.',
+                title: 'Member of Parliament',
+            },
+            fi: {
+                alt: 'Kuva Mari Holopaisesta. Päällään hänellä on vaalea takki.',
+                title: 'Kansanedustaja',
+            },
+            sv: {
+                alt: 'Foto på Mari Holopainen. Hon bär en ljus jacka.',
+                title: 'Riksdagsledamot',
+            },
+        },
+        name: 'Mari Holopainen',
+    },
+    {
+        citation: '',
+        image: 'Otso-Kivekas',
+        locales: {
+            en: {
+                alt: 'Photo of Otso Kivekäs. He is wearing a t-shirt reading Helsinki and a blazer, and a hat.',
+                title: 'CEO, city councillor',
+            },
+            fi: {
+                alt: 'Kuva Otso Kivekkäästä. Päällään hänellä on t-paita, jossa lukee Helsinki, sekä pikkutakki. Päässä hattu.',
+                title: 'Toimitusjohtaja, kaupunginvaltuutettu',
+            },
+            sv: {
+                alt: 'Foto på Otso Kivekäs. Han bär en t-shirt med texten Helsinki och en kavaj, samt en hatt.',
+                title: 'VD, stadsfullmäktigeledamot',
+            },
+        },
+        name: 'Otso Kivekäs',
+    },
+    {
+        citation: '',
+        image: 'Sofia-Virta',
+        locales: {
+            en: {
+                alt: 'Photo of Sofia Virta. She is wearing a blue shirt and a leather jacket.',
+                title: 'Member of Parliament',
+            },
+            fi: {
+                alt: 'Kuva Sofia Virrasta. Päällään hänellä on sininen paita ja nahkatakki.',
+                title: 'Kansanedustaja',
+            },
+            sv: {
+                alt: 'Foto på Sofia Virta. Hon bär en blå skjorta och en skinnjacka.',
+                title: 'Riksdagsledamot',
+            },
+        },
+        name: 'Sofia Virta',
+    },
 ]
