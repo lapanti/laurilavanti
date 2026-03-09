@@ -66,11 +66,21 @@ const { alt, citation, image, name, title } = Astro.props
     }
 
     footer {
+        display: flex;
+        flex-direction: column;
         font-family: var(--fontFamiliesSans);
         font-size: var(--fontSizes1);
-        font-weight: var(--fontWeightsMedium);
         line-height: var(--lineHeight1);
         margin-top: var(--sizes05);
+    }
+
+    footer cite {
+        font-style: normal;
+        font-weight: var(--fontWeightsMedium);
+    }
+
+    footer span {
+        font-weight: var(--fontWeightsRegular);
     }
 </style>
 <article>
@@ -90,14 +100,8 @@ const { alt, citation, image, name, title } = Astro.props
     <blockquote>
         {citation && <p>{citation}</p>}
         <footer>
-            {name}
-            {
-                title && (
-                    <>
-                        , <span>{title}</span>
-                    </>
-                )
-            }
+            <cite>{name}</cite>
+            {title && <span>{title}</span>}
         </footer>
     </blockquote>
 </article>
