@@ -1,7 +1,7 @@
 ---
 import { CldImage } from 'astro-cloudinary'
 
-import { colors, fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
+import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 
 interface Props {
     alt: string
@@ -16,7 +16,6 @@ const { alt, citation, image, name, title } = Astro.props
 
 <style
     define:vars={{
-        colorsSand: colors.sand,
         fontFamiliesMono: fontFamilies.mono,
         fontFamiliesSans: fontFamilies.sans,
         fontSizes1: fontSizes[1].fontSize,
@@ -49,9 +48,6 @@ const { alt, citation, image, name, title } = Astro.props
     }
 
     blockquote {
-        border-left-color: var(--colorsSand);
-        border-left-style: solid;
-        border-left-width: var(--sizes05);
         margin: 0;
         padding-left: var(--sizes1);
     }
