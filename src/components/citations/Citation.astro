@@ -27,7 +27,7 @@ const { alt, citation, image, name, title } = Astro.props
         lineHeight125: fontSizes[1.25].lineHeight,
         sizes05: sizes[0.5],
         sizes1: sizes[1],
-        sizes14: sizes[14],
+        sizes28: sizes[28],
     }}
 >
     article {
@@ -39,7 +39,7 @@ const { alt, citation, image, name, title } = Astro.props
     .portrait {
         border-radius: 50%;
         overflow: hidden;
-        width: var(--sizes14);
+        width: var(--sizes28);
     }
 
     .portrait :global(img) {
@@ -82,7 +82,7 @@ const { alt, citation, image, name, title } = Astro.props
                     crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                     src={image}
                     unstyled
-                    width={224}
+                    width={448}
                 />
             </div>
         )
