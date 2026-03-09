@@ -18,6 +18,7 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: 'en' | 'fi' | 'sv'
+    noindex?: boolean
     ogImage?: string
     ogImageAlt?: string
     slug?: string
@@ -26,7 +27,7 @@ interface Props {
     updatedAt?: string
 }
 
-const { createdAt, description, lang, ogImage, ogImageAlt, slug, title, type, updatedAt } = Astro.props
+const { createdAt, description, lang, noindex, ogImage, ogImageAlt, slug, title, type, updatedAt } = Astro.props
 ---
 
 <html lang={lang ?? 'fi'}>
@@ -36,6 +37,7 @@ const { createdAt, description, lang, ogImage, ogImageAlt, slug, title, type, up
             createdAt={createdAt}
             description={description}
             lang={lang}
+            noindex={noindex}
             ogImage={ogImage}
             ogImageAlt={ogImageAlt}
             slug={slug}

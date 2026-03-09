@@ -200,4 +200,40 @@ describe('<Head />', () => {
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
         expect(jsonLd.jobTitle).toBe('Riksdagskandidat')
     })
+
+    it('should emit noindex robots meta tag when noindex is true', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                noindex: true,
+                title: 'Hidden Page',
+            },
+        })
+
+        const robotsMeta = result.querySelector('meta[name="robots"]')
+        expect(robotsMeta).not.toBeNull()
+        expect(robotsMeta).toHaveAttribute('content', 'noindex, nofollow')
+    })
+
+    it('should not emit robots meta tag when noindex is false', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'Visible Page',
+            },
+        })
+
+        expect(result.querySelector('meta[name="robots"]')).toBeNull()
+    })
+
+    it('should not emit canonical or hreflang links when noindex is true', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                noindex: true,
+                slug: 'fi/citations',
+                title: 'Hidden Page',
+            },
+        })
+
+        expect(result.querySelector('link[rel="canonical"]')).toBeNull()
+        expect(result.querySelector('link[rel="alternate"]')).toBeNull()
+    })
 })

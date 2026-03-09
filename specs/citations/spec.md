@@ -10,17 +10,21 @@ A citations page presents endorsements from named individuals who vouch for Laur
 ### Architecture
 - **Data file (single, shared across locales):** `src/content/citations.ts`
   ```ts
+  export interface CitationLocale {
+      alt: string    // descriptive alt text for the portrait, localised
+      title: string  // role or title of the person, localised
+  }
+
   export interface Citation {
-      image: string        // Cloudinary filename without extension
-      alt: string          // descriptive alt text for the portrait
-      name: string         // full name of the person
-      title: string        // role or title of the person (in Finnish)
-      citation: string     // free-text endorsement in Finnish
+      image: string                            // Cloudinary filename without extension
+      locales: Record<'fi' | 'sv' | 'en', CitationLocale>
+      name: string                             // full name of the person (same across locales)
+      citation: string                         // free-text endorsement in Finnish
   }
 
   export const citations: Citation[]
   ```
-  No locale-specific variants — one file, one array, Finnish only.
+  No locale-specific data files — one file, one array. `citation` and `name` are Finnish/shared; `alt` and `title` are locale-keyed inside `locales`.
 
 - **Page files (one per locale, same component, same data):**
   - `src/pages/fi/citations/index.mdx`
@@ -58,8 +62,9 @@ A citations page presents endorsements from named individuals who vouch for Laur
 - **Dependencies:** Citations page MDX ← `src/content/citations.ts`. `Citations.astro` ← `Citation.astro` ← `astro-cloudinary`. Nav entry ← `src/content/nav.ts`.
 
 ### Anti-Patterns
-- Do not create locale-specific citation data files — citation text is intentionally Finnish-only; one `citations.ts` file serves all locales
-- Do not translate `citation` or `title` fields per locale — the content is Finnish regardless of which locale page the visitor is on
+- Do not create locale-specific citation data files — one `citations.ts` file serves all locales; locale variants live inside the `locales` field
+- Do not translate the `citation` field — the endorsement text is always Finnish regardless of locale
+- Do not make `name` locale-specific — the person's name is the same across all locales
 - Do not use `alt=""` on portrait images — these are identified individuals, not decorative images; alt must name the person
 - Do not embed citation data directly in MDX files — keep it in `src/content/citations.ts` so all three locale pages stay in sync automatically
 - Do not add `switchToLang` nav links for this page — the path segment `citations` is the same in all locales, so the existing locale-prefix-swap script handles language switching correctly
@@ -71,8 +76,8 @@ A citations page presents endorsements from named individuals who vouch for Laur
 ## Contract
 
 ### Definition of Done
-- [ ] `src/content/citations.ts` exports `Citation[]` with all required fields typed
-- [ ] Every `Citation` entry has a non-empty `alt` describing the person in the image
+- [ ] `src/content/citations.ts` exports `Citation[]` with all required fields typed (including `locales` with `alt` and `title` per locale)
+- [ ] Every `Citation` entry has a non-empty `alt` in each locale describing the person in the image
 - [ ] `image` values are Cloudinary filenames without extension
 - [ ] Pages exist at `src/pages/fi/citations/index.mdx`, `src/pages/sv/citations/index.mdx`, `src/pages/en/citations/index.mdx`
 - [ ] All three pages import from the same `citations.ts` — no data duplication

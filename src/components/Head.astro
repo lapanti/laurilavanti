@@ -7,6 +7,7 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: Lang
+    noindex?: boolean
     ogImage?: string
     ogImageAlt?: string
     slug?: string
@@ -18,6 +19,7 @@ interface Props {
 const {
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
     lang = 'fi',
+    noindex,
     title,
     type,
     slug,
@@ -41,14 +43,15 @@ const isArticle = type === BLOGPOSTING
  * Derive hreflang URLs by swapping the locale prefix in the canonical slug.
  * slug is like "fi/blog/1/some-post" or "fi" — replace the leading locale segment.
  */
-const hreflangLinks = Astro.site
-    ? ([...otherLangs, lang] as Lang[]).map((l) => ({
-          href: new URL(slug ? slug.replace(/^(fi|sv|en)/, l) + '/' : `${l}/`, Astro.site).toString(),
-          hreflang: l,
-      }))
-    : []
+const hreflangLinks =
+    !noindex && Astro.site
+        ? ([...otherLangs, lang] as Lang[]).map((l) => ({
+              href: new URL(slug ? slug.replace(/^(fi|sv|en)/, l) + '/' : `${l}/`, Astro.site).toString(),
+              hreflang: l,
+          }))
+        : []
 
-const canonical = slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null
+const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null)
 
 const ogImageUrl = ogImage ?? null
 
@@ -144,6 +147,7 @@ const keywords = [
 ---
 
 <meta charset="utf-8" />
+{noindex && <meta content="noindex, nofollow" name="robots" />}
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
 <meta content={keywords} name="keywords" />
 <meta content={title} property="og:title" />
