@@ -7,11 +7,12 @@ import TitleBanner from '../components/TitleBanner.astro'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
+    alt?: string
     createdAt?: string
     description?: string
-    lang?: 'en' | 'fi' | 'sv'
-    alt?: string
     heroImage?: string
+    lang?: 'en' | 'fi' | 'sv'
+    noindex?: boolean
     slug?: string
     tags?: string[]
     title: string
@@ -22,7 +23,7 @@ interface Props {
 // Support both MDX layout usage (props under frontmatter) and direct .astro component usage
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props: Props = ((Astro.props as any).frontmatter as Props | undefined) ?? (Astro.props as Props)
-const { alt, createdAt, description, heroImage, lang, slug, tags, title, type, updatedAt } = props
+const { alt, createdAt, description, heroImage, lang, noindex, slug, tags, title, type, updatedAt } = props
 
 const ogImage = heroImage
     ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
@@ -33,6 +34,7 @@ const ogImage = heroImage
     createdAt={createdAt}
     description={description}
     lang={lang}
+    noindex={noindex}
     ogImage={ogImage}
     ogImageAlt={alt}
     slug={slug}

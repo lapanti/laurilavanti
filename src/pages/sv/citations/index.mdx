@@ -1,0 +1,28 @@
+---
+layout: '../../../layouts/PageLayout.astro'
+lang: sv
+title: 'Rekommendationer'
+description: 'Så här talar andra om Lauri — rekommendationer och uppmuntran till väljarna.'
+slug: 'sv/citations'
+type: 'WebPage'
+noindex: true
+heroImage: Lauri-Lavanti-hands-in-pockets-in-hallway
+alt: 'Lauri Lavanti stående i en korridor med händerna i fickorna, blicken mot kameran. Iklädd mörk kostym och vit skjorta.'
+---
+
+import Citations from '../../../components/Citations.astro'
+import SummaryBox from '../../../components/SummaryBox.astro'
+import { citations } from '../../../content/citations'
+
+<SummaryBox
+    ariaLabel="Rekommendationer i korthet"
+    summaryRows={[
+        'Lauri har bred erfarenhet från både teknikbranschen och kommunalpolitiken.',
+        'Lauri är kommunfullmäktigeledamot i Kyrkslätt och ordförande för Gröna fullmäktigegruppen.',
+        'Lauri är känd för konstruktivt samarbete över partigränserna.',
+        'Rekommendationerna på den här sidan kommer från verkliga personer som känner Lauri.',
+    ]}
+    title="Varför rekommendera Lauri?"
+/>
+
+<Citations citations={citations} lang="sv" />
