@@ -13,6 +13,7 @@ Feature-specific specs (blueprint, contracts, scenarios) live at `specs/{feature
 - [`specs/tags/spec.md`](./specs/tags/spec.md) — tag taxonomy, category page generation, silent failure on unknown ids
 - [`specs/rss/spec.md`](./specs/rss/spec.md) — RSS feed endpoints, item structure, locale filtering
 - [`specs/design-system/spec.md`](./specs/design-system/spec.md) — design tokens, define:vars pattern, spacing/colour/typography constants
+- [`specs/citations/spec.md`](./specs/citations/spec.md) — citations page, Citation data type, single Finnish-only data file shared across locales
 
 ---
 
