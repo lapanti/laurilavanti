@@ -5,13 +5,13 @@ import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 
 interface Props {
     alt: string
-    citation: string
+    recommendation: string
     image: string
     name: string
     title: string
 }
 
-const { alt, citation, image, name, title } = Astro.props
+const { alt, recommendation, image, name, title } = Astro.props
 ---
 
 <style
@@ -93,7 +93,7 @@ const { alt, citation, image, name, title } = Astro.props
         )
     }
     <blockquote>
-        {citation && <p>{citation}</p>}
+        {recommendation && <p>{recommendation}</p>}
         <footer>
             <cite>{name}</cite>
             {title && <span>{title}</span>}

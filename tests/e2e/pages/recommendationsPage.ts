@@ -4,8 +4,8 @@ import { expect } from '@playwright/test'
 
 import { AnyPage } from './anyPage'
 
-export class CitationsPage extends AnyPage {
-    readonly citationsList: Locator
+export class RecommendationsPage extends AnyPage {
+    readonly recommendationsList: Locator
     readonly pageTitle: Locator
     readonly summaryBox: Locator
 
@@ -13,11 +13,11 @@ export class CitationsPage extends AnyPage {
         super(page)
         this.pageTitle = page.getByRole('heading', { level: 1 })
         this.summaryBox = page.getByRole('complementary')
-        this.citationsList = page.locator('main ul').last()
+        this.recommendationsList = page.locator('main ul').last()
     }
 
     async goTo() {
-        await this.page.goto('/fi/citations/')
+        await this.page.goto('/fi/recommendations/')
 
         // Wait to ensure we are at the correct page
         await expect(this.pageTitle).toBeVisible()
@@ -25,6 +25,6 @@ export class CitationsPage extends AnyPage {
 
     async checkContent() {
         await expect(this.summaryBox).toBeVisible()
-        await expect(this.citationsList).toBeVisible()
+        await expect(this.recommendationsList).toBeVisible()
     }
 }

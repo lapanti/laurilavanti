@@ -228,7 +228,7 @@ describe('<Head />', () => {
         const result = await renderAstroComponent(Head, {
             props: {
                 noindex: true,
-                slug: 'fi/citations',
+                slug: 'fi/recommendations',
                 title: 'Hidden Page',
             },
         })
