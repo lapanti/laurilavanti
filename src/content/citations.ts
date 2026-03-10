@@ -95,15 +95,15 @@ export const citations: Citation[] = [
         image: 'Juho-Makkonen',
         locales: {
             en: {
-                alt: 'Photo of Juho Makkonen. He is wearing a light blue shirt.',
+                alt: 'Photo of Juho Makkonen. He is wearing a tan sweater.',
                 title: 'CEO, Sharetribe Oy',
             },
             fi: {
-                alt: 'Kuva Juho Makkosesta. Hänellä on päällään vaaleansininen paita.',
+                alt: 'Kuva Juho Makkosesta. Hänellä on päällään beige neule.',
                 title: 'Toimitusjohtaja, Sharetribe Oy',
             },
             sv: {
-                alt: 'Foto på Juho Makkonen. Han bär en ljusblå skjorta.',
+                alt: 'Foto på Juho Makkonen. Han bär en beige tröja.',
                 title: 'VD, Sharetribe Oy',
             },
         },
