@@ -1,19 +1,17 @@
-export interface CitationLocale {
+export interface RecommendationLocale {
     alt: string
     title: string
 }
 
-export interface Citation {
+export interface Recommendation {
     image: string
-    locales: Record<'en' | 'fi' | 'sv', CitationLocale>
+    locales: Record<'en' | 'fi' | 'sv', RecommendationLocale>
     name: string
-    citation: string
+    recommendation: string
 }
 
-export const citations: Citation[] = [
+export const recommendations: Recommendation[] = [
     {
-        citation:
-            'Eduskunnassa on iso vaje teknologian ja tietopolitiikan asiantuntijoista. Lauri paikkaisi tätä vajetta isosti!',
         image: 'Atte-Harjanne',
         locales: {
             en: {
@@ -30,9 +28,10 @@ export const citations: Citation[] = [
             },
         },
         name: 'Atte Harjanne',
+        recommendation:
+            'Eduskunnassa on iso vaje teknologian ja tietopolitiikan asiantuntijoista. Lauri paikkaisi tätä vajetta isosti!',
     },
     {
-        citation: '',
         image: 'Mari-Holopainen',
         locales: {
             en: {
@@ -49,9 +48,9 @@ export const citations: Citation[] = [
             },
         },
         name: 'Mari Holopainen',
+        recommendation: '',
     },
     {
-        citation: '',
         image: 'Otso-Kivekas',
         locales: {
             en: {
@@ -68,10 +67,9 @@ export const citations: Citation[] = [
             },
         },
         name: 'Otso Kivekäs',
+        recommendation: '',
     },
     {
-        citation:
-            'Jos kuitenkin äänestät vihreitä, anna äänesi Laurille. Älystä ja osaamisesta on hyötyä ihan joka puolueessa!',
         image: 'aki-koikkalainen',
         locales: {
             en: {
@@ -88,10 +86,10 @@ export const citations: Citation[] = [
             },
         },
         name: 'Aki Koikkalainen',
+        recommendation:
+            'Jos kuitenkin äänestät vihreitä, anna äänesi Laurille. Älystä ja osaamisesta on hyötyä ihan joka puolueessa!',
     },
     {
-        citation:
-            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
         image: 'Juho-Makkonen',
         locales: {
             en: {
@@ -108,10 +106,10 @@ export const citations: Citation[] = [
             },
         },
         name: 'Juho Makkonen',
+        recommendation:
+            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
     },
     {
-        citation:
-            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
         image: 'Allu-Pyhalammi',
         locales: {
             en: {
@@ -128,9 +126,10 @@ export const citations: Citation[] = [
             },
         },
         name: 'Allu Pyhälammi',
+        recommendation:
+            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
     },
     {
-        citation: '',
         image: 'Sofia-Virta',
         locales: {
             en: {
@@ -147,5 +146,6 @@ export const citations: Citation[] = [
             },
         },
         name: 'Sofia Virta',
+        recommendation: '',
     },
 ]

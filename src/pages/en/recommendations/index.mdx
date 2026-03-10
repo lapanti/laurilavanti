@@ -3,16 +3,16 @@ layout: '../../../layouts/PageLayout.astro'
 lang: en
 title: 'Endorsements'
 description: 'What others say about Lauri — endorsements and encouragements for voters.'
-slug: 'en/citations'
+slug: 'en/recommendations'
 type: 'WebPage'
 noindex: true
 heroImage: Lauri-Lavanti-hands-in-pockets-in-hallway
 alt: 'Lauri Lavanti standing in a hallway with his hands in his pockets, looking at the camera. Wearing a dark suit and a white dress shirt.'
 ---
 
-import Citations from '../../../components/Citations.astro'
+import Recommendations from '../../../components/Recommendations.astro'
 import SummaryBox from '../../../components/SummaryBox.astro'
-import { citations } from '../../../content/citations'
+import { recommendations } from '../../../content/recommendations'
 
 <SummaryBox
     ariaLabel="About the endorsements"
@@ -26,4 +26,4 @@ import { citations } from '../../../content/citations'
     title="About the endorsements"
 />
 
-<Citations citations={citations} lang="en" />
+<Recommendations recommendations={recommendations} lang="en" />

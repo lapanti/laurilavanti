@@ -3,16 +3,16 @@ layout: '../../../layouts/PageLayout.astro'
 lang: fi
 title: 'Suositukset'
 description: 'Näin muut puhuvat Laurista — suosituksia ja kannustuksia äänestäjille.'
-slug: 'fi/citations'
+slug: 'fi/recommendations'
 type: 'WebPage'
 noindex: true
 heroImage: Lauri-Lavanti-hands-in-pockets-in-hallway
 alt: 'Lauri Lavanti seisomassa käytävällä kädet taskuissa, katse kameraan. Päällä tumma puku ja valkoinen kauluspaita.'
 ---
 
-import Citations from '../../../components/Citations.astro'
+import Recommendations from '../../../components/Recommendations.astro'
 import SummaryBox from '../../../components/SummaryBox.astro'
-import { citations } from '../../../content/citations'
+import { recommendations } from '../../../content/recommendations'
 
 <SummaryBox
     ariaLabel="Suosituksista lyhyesti"
@@ -26,4 +26,4 @@ import { citations } from '../../../content/citations'
     title="Suosituksista lyhyesti"
 />
 
-<Citations citations={citations} lang="fi" />
+<Recommendations recommendations={recommendations} lang="fi" />

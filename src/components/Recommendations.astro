@@ -1,16 +1,16 @@
 ---
-import type { Citation as CitationType } from '../content/citations'
 import type { Lang } from '../content/nav'
+import type { Recommendation as RecommendationType } from '../content/recommendations'
 
 import { sizes } from '../lib/styles'
-import Citation from './citations/Citation.astro'
+import Recommendation from './recommendations/Recommendation.astro'
 
 interface Props {
-    citations: CitationType[]
+    recommendations: RecommendationType[]
     lang: Lang
 }
 
-const { citations, lang } = Astro.props
+const { recommendations, lang } = Astro.props
 ---
 
 <style
@@ -40,13 +40,13 @@ const { citations, lang } = Astro.props
 </style>
 <ul>
     {
-        citations.map((c) => (
+        recommendations.map((c) => (
             <li>
-                <Citation
+                <Recommendation
                     alt={c.locales[lang].alt}
-                    citation={c.citation}
                     image={c.image}
                     name={c.name}
+                    recommendation={c.recommendation}
                     title={c.locales[lang].title}
                 />
             </li>
