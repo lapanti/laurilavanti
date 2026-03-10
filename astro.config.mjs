@@ -1,7 +1,7 @@
 // @ts-check
-import { defineConfig } from 'astro/config' // eslint-disable-line import/no-unresolved
+import { defineConfig } from 'astro/config'
 
-import icon from 'astro-icon' // eslint-disable-line import/no-unresolved
+import icon from 'astro-icon'
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
@@ -114,7 +114,9 @@ export default defineConfig({
                 // Exclude bare /{lang}/blog/{id}/ redirect pages
                 !/\/(en|fi|sv)\/blog\/\d+\/$/.test(page) &&
                 // Exclude old /kategoria/ redirect pages
-                !/\/kategoria\//.test(page),
+                !/\/kategoria\//.test(page) &&
+                // Exclude recommendations pages for now
+                !/\/(en|fi|sv)\/recommendations\//.test(page),
         }),
         partytown(),
     ],
