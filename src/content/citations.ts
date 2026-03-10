@@ -13,46 +13,6 @@ export interface Citation {
 export const citations: Citation[] = [
     {
         citation:
-            'Jos kuitenkin äänestät vihreitä, anna äänesi Laurille. Älystä ja osaamisesta on hyötyä ihan joka puolueessa!',
-        image: 'aki-koikkalainen',
-        locales: {
-            en: {
-                alt: 'Photo of Aki Koikkalainen. Wearing a white dress shirt and a dark blazer.',
-                title: 'CEO',
-            },
-            fi: {
-                alt: 'Kuva Aki Koikkalaisesta. Päällä valkoinen kauluspaita ja tumma pikkutakki.',
-                title: 'Toimitusjohtaja',
-            },
-            sv: {
-                alt: 'Foto på Aki Koikkalainen. Iklädd en vit skjorta och en mörk kavaj.',
-                title: 'Verkställande direktör',
-            },
-        },
-        name: 'Aki Koikkalainen',
-    },
-    {
-        citation:
-            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
-        image: 'Allu-Pyhalammi',
-        locales: {
-            en: {
-                alt: 'Photo of Allu Pyhälammi. He is wearing a dark blazer and a large scarf.',
-                title: 'Deputy Chair of the Greens',
-            },
-            fi: {
-                alt: 'Kuva Allu Pyhälammista. Hänellä on päällään tumma pikkutakki ja iso kaulahuivi.',
-                title: 'Vihreiden varapuheenjohtaja',
-            },
-            sv: {
-                alt: 'Foto på Allu Pyhälammi. Han bär en mörk kavaj och en stor halsduk.',
-                title: 'Grönas vice ordförande',
-            },
-        },
-        name: 'Allu Pyhälammi',
-    },
-    {
-        citation:
             'Eduskunnassa on iso vaje teknologian ja tietopolitiikan asiantuntijoista. Lauri paikkaisi tätä vajetta isosti!',
         image: 'Atte-Harjanne',
         locales: {
@@ -70,26 +30,6 @@ export const citations: Citation[] = [
             },
         },
         name: 'Atte Harjanne',
-    },
-    {
-        citation:
-            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
-        image: 'Juho-Makkonen',
-        locales: {
-            en: {
-                alt: 'Photo of Juho Makkonen. He is wearing a light blue shirt.',
-                title: 'CEO, Sharetribe Oy',
-            },
-            fi: {
-                alt: 'Kuva Juho Makkosesta. Hänellä on päällään vaaleansininen paita.',
-                title: 'Toimitusjohtaja, Sharetribe Oy',
-            },
-            sv: {
-                alt: 'Foto på Juho Makkonen. Han bär en ljusblå skjorta.',
-                title: 'VD, Sharetribe Oy',
-            },
-        },
-        name: 'Juho Makkonen',
     },
     {
         citation: '',
@@ -128,6 +68,66 @@ export const citations: Citation[] = [
             },
         },
         name: 'Otso Kivekäs',
+    },
+    {
+        citation:
+            'Jos kuitenkin äänestät vihreitä, anna äänesi Laurille. Älystä ja osaamisesta on hyötyä ihan joka puolueessa!',
+        image: 'aki-koikkalainen',
+        locales: {
+            en: {
+                alt: 'Photo of Aki Koikkalainen. Wearing a white dress shirt and a dark blazer.',
+                title: 'CEO',
+            },
+            fi: {
+                alt: 'Kuva Aki Koikkalaisesta. Päällä valkoinen kauluspaita ja tumma pikkutakki.',
+                title: 'Toimitusjohtaja',
+            },
+            sv: {
+                alt: 'Foto på Aki Koikkalainen. Iklädd en vit skjorta och en mörk kavaj.',
+                title: 'Verkställande direktör',
+            },
+        },
+        name: 'Aki Koikkalainen',
+    },
+    {
+        citation:
+            'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
+        image: 'Juho-Makkonen',
+        locales: {
+            en: {
+                alt: 'Photo of Juho Makkonen. He is wearing a light blue shirt.',
+                title: 'CEO, Sharetribe Oy',
+            },
+            fi: {
+                alt: 'Kuva Juho Makkosesta. Hänellä on päällään vaaleansininen paita.',
+                title: 'Toimitusjohtaja, Sharetribe Oy',
+            },
+            sv: {
+                alt: 'Foto på Juho Makkonen. Han bär en ljusblå skjorta.',
+                title: 'VD, Sharetribe Oy',
+            },
+        },
+        name: 'Juho Makkonen',
+    },
+    {
+        citation:
+            'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
+        image: 'Allu-Pyhalammi',
+        locales: {
+            en: {
+                alt: 'Photo of Allu Pyhälammi. He is wearing a dark blazer and a large scarf.',
+                title: 'Deputy Chair of the Greens',
+            },
+            fi: {
+                alt: 'Kuva Allu Pyhälammista. Hänellä on päällään tumma pikkutakki ja iso kaulahuivi.',
+                title: 'Vihreiden varapuheenjohtaja',
+            },
+            sv: {
+                alt: 'Foto på Allu Pyhälammi. Han bär en mörk kavaj och en stor halsduk.',
+                title: 'Grönas vice ordförande',
+            },
+        },
+        name: 'Allu Pyhälammi',
     },
     {
         citation: '',
