@@ -26,7 +26,6 @@ const { alt, citation, image, name, title } = Astro.props
         lineHeight125: fontSizes[1.25].lineHeight,
         sizes05: sizes[0.5],
         sizes1: sizes[1],
-        sizes28: sizes[28],
     }}
 >
     article {
@@ -39,12 +38,6 @@ const { alt, citation, image, name, title } = Astro.props
         border-radius: 50%;
         overflow: hidden;
         width: 100%;
-    }
-
-    @media (min-width: 1200px) {
-        .portrait {
-            width: var(--sizes28);
-        }
     }
 
     .portrait :global(img) {

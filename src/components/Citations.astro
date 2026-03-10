@@ -16,12 +16,13 @@ const { citations, lang } = Astro.props
 <style
     define:vars={{
         sizes2: sizes[2],
-        sizes3: sizes[3],
+        sizes4: sizes[4],
+        sizes8: sizes[8],
     }}
 >
     ul {
         display: grid;
-        gap: var(--sizes3);
+        gap: var(--sizes4);
         grid-column-start: 3;
         grid-template-columns: 1fr;
         list-style: none;
@@ -32,7 +33,7 @@ const { citations, lang } = Astro.props
 
     @media (min-width: 1200px) {
         ul {
-            gap: var(--sizes2);
+            gap: var(--sizes8);
             grid-template-columns: repeat(2, 1fr);
         }
     }
