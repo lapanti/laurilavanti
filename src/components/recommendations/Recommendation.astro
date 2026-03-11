@@ -19,11 +19,9 @@ const { alt, recommendation, image, name, title } = Astro.props
         fontFamiliesMono: fontFamilies.mono,
         fontFamiliesSans: fontFamilies.sans,
         fontSizes1: fontSizes[1].fontSize,
-        fontSizes1125: fontSizes[1.125].fontSize,
         fontWeightsMedium: fontWeights.medium,
         fontWeightsRegular: fontWeights.regular,
         lineHeight1: fontSizes[1].lineHeight,
-        lineHeight125: fontSizes[1.25].lineHeight,
         sizes05: sizes[0.5],
         sizes1: sizes[1],
     }}
@@ -53,10 +51,10 @@ const { alt, recommendation, image, name, title } = Astro.props
 
     p {
         font-family: var(--fontFamiliesMono);
-        font-size: var(--fontSizes1125);
+        font-size: var(--fontSizes1);
         font-style: italic;
         font-weight: var(--fontWeightsRegular);
-        line-height: var(--lineHeight125);
+        line-height: var(--lineHeight1);
         margin: 0;
     }
 
