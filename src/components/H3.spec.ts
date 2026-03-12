@@ -1,7 +1,7 @@
 import { getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
-import { renderAstroComponent } from '../../../tests/helpers'
+import { renderAstroComponent } from '../../tests/helpers'
 import H3 from './H3.astro'
 
 describe('<H3 />', () => {
