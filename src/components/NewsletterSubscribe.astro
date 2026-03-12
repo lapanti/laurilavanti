@@ -1,0 +1,495 @@
+---
+import { colors, sizes } from '../lib/styles'
+import ExternalLink from './ExternalLink.astro'
+import H2 from './H2.astro'
+import Paragraph from './Paragraph.astro'
+
+interface Props {
+    lang: 'fi' | 'en'
+}
+
+const { lang } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        colorsWhite: colors.white,
+        sizes0875: sizes[0.875],
+        sizes1: sizes[1],
+        sizes125: sizes[1.25],
+    }}
+>
+    /* LOADER */
+    .ml-form-embedSubmitLoad {
+        display: inline-block;
+        width: var(--sizes125);
+        height: var(--sizes125);
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    .ml-form-embedSubmitLoad:after {
+        content: ' ';
+        display: block;
+        width: 11px;
+        height: 11px;
+        margin: 1px;
+        border-radius: 50%;
+        border: 4px solid var(--colorsWhite);
+        border-color: var(--colorsWhite) var(--colorsWhite) var(--colorsWhite) transparent;
+        animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+    }
+    @keyframes ml-form-embedSubmitLoad {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    #mlb2-38347721.ml-form-embedContainer,
+    #mlb2-38366393.ml-form-embedContainer {
+        box-sizing: border-box;
+        grid-column-start: 3;
+        margin: 0 auto;
+    }
+    #mlb2-38347721.ml-form-embedContainer span,
+    #mlb2-38347721.ml-form-embedContainer button,
+    #mlb2-38366393.ml-form-embedContainer span,
+    #mlb2-38366393.ml-form-embedContainer button {
+        text-transform: none !important;
+        letter-spacing: normal !important;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper {
+        background-color: var(--colorsWhite);
+        box-sizing: border-box;
+        display: inline-block !important;
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper.embedForm,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+        width: 100%;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-align-center,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-align-center {
+        text-align: center;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+        padding: var(--sizes125) var(--sizes125) 0 var(--sizes125);
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
+        padding-bottom: 0;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+        text-align: left;
+        margin: 0 0 var(--sizes125) 0;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+        margin: 0;
+        width: 100%;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent {
+        margin: 0 0 var(--sizes125) 0;
+        width: 100%;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+        margin: 0;
+        padding: 0 0 var(--sizes125) 0;
+        width: 100%;
+        height: auto;
+        float: left;
+    }
+    #mlb2-38347721.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input::-webkit-input-placeholder,
+    #mlb2-38366393.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input::-webkit-input-placeholder {
+        color: var(--colorsMoss);
+    }
+
+    #mlb2-38347721.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input::-moz-placeholder,
+    #mlb2-38366393.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input::-moz-placeholder {
+        color: var(--colorsMoss);
+    }
+
+    #mlb2-38347721.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input:-ms-input-placeholder,
+    #mlb2-38366393.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input:-ms-input-placeholder {
+        color: var(--colorsMoss);
+    }
+
+    #mlb2-38347721.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input:-moz-placeholder,
+    #mlb2-38366393.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-horizontalRow
+        input:-moz-placeholder {
+        color: var(--colorsMoss);
+    }
+
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+        height: auto;
+        width: 100%;
+        float: left;
+    }
+    .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal {
+        width: 70%;
+        float: left;
+    }
+    .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal {
+        width: 30%;
+        float: left;
+    }
+    .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields {
+        box-sizing: border-box;
+        float: left;
+        padding-right: 10px;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+        background-color: var(--colorsWhite);
+        color: var(--colorsBlack);
+        border-color: var(--colorsEvening);
+        border-style: solid;
+        border-width: 1px;
+        font-family: 'Trebuchet MS', Helvetica, sans-serif;
+        font-size: var(--sizes1);
+        line-height: var(--sizes125);
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 10px 10px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: initial;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+        background-color: var(--colorsEvening) !important;
+        border-color: var(--colorsEvening);
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: none;
+        color: var(--colorsWhite) !important;
+        cursor: pointer;
+        font-family: 'Trebuchet MS', Helvetica, sans-serif;
+        font-size: var(--sizes1) !important;
+        font-weight: 700;
+        line-height: var(--sizes125);
+        margin: 0 !important;
+        padding: 10px !important;
+        width: 100%;
+        height: auto;
+    }
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
+        background-color: var(--colorsSky) !important;
+        border-color: var(--colorsSky) !important;
+    }
+    @media only screen and (max-width: 1200px) {
+        .ml-form-formContent.horozintalForm {
+            float: left !important;
+        }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow {
+            height: auto !important;
+            width: 100% !important;
+            float: left !important;
+        }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal {
+            width: 100% !important;
+        }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div {
+            padding-right: 0px !important;
+            padding-bottom: 10px;
+        }
+        .ml-form-formContent.horozintalForm .ml-button-horizontal {
+            width: 100% !important;
+        }
+    }
+    .ml-mobileButton-horizontal {
+        display: none;
+    }
+
+    #mlb2-38347721 .ml-mobileButton-horizontal button,
+    #mlb2-38366393 .ml-mobileButton-horizontal button {
+        background-color: var(--colorsEvening) !important;
+        border-color: var(--colorsEvening) !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        box-shadow: none !important;
+        color: var(--colorsWhite) !important;
+        cursor: pointer;
+        font-family: 'Trebuchet MS', Helvetica, sans-serif !important;
+        font-size: var(--sizes0875) !important;
+        font-weight: 700 !important;
+        line-height: var(--sizes125) !important;
+        padding: 10px !important;
+        width: 100% !important;
+    }
+
+    @media only screen and (max-width: 400px) {
+        #mlb2-38347721.ml-form-embedContainer
+            .ml-form-embedWrapper
+            .ml-form-embedBody
+            .ml-form-formContent.horozintalForm,
+        #mlb2-38366393.ml-form-embedContainer
+            .ml-form-embedWrapper
+            .ml-form-embedBody
+            .ml-form-formContent.horozintalForm {
+            padding: 0 0 10px 0 !important;
+        }
+        .ml-form-formContent.horozintalForm .ml-button-horizontal {
+            display: none !important;
+        }
+        .ml-mobileButton-horizontal {
+            display: inline-block !important;
+            margin-bottom: var(--sizes125);
+            width: 100%;
+        }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div {
+            padding-bottom: 0px !important;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields {
+            margin-bottom: 10px !important;
+            width: 100% !important;
+        }
+    }
+
+    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions,
+    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions {
+        text-align: left;
+        float: left;
+        width: 100%;
+    }
+    #mlb2-38347721.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-embedPermissions
+        .ml-form-embedPermissionsContent,
+    #mlb2-38366393.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-embedPermissions
+        .ml-form-embedPermissionsContent {
+        margin: 0 0 var(--sizes1) 0;
+        text-align: left;
+    }
+    #mlb2-38347721.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-embedPermissions
+        .ml-form-embedPermissionsContent.horizontal,
+    #mlb2-38366393.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-embedPermissions
+        .ml-form-embedPermissionsContent.horizontal {
+        margin: 0 0 var(--sizes1) 0;
+    }
+</style>
+
+<div
+    class:list={[
+        `ml-form-embedContainer ml-subscribe-form`,
+        { 'ml-subscribe-form-38347721': lang === 'fi', 'ml-subscribe-form-38366393': lang === 'en' },
+    ]}
+    id={lang === 'fi' ? 'mlb2-38347721' : lang === 'en' ? 'mlb2-38366393' : ''}
+>
+    <div class="ml-form-align-center">
+        <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
+                <div class="ml-form-embedContent" style=" ">
+                    <H2>{lang === 'fi' && 'Uutiskirje'}{lang === 'en' && 'Newsletter'}</H2>
+                    <Paragraph
+                        >{
+                            lang === 'fi' &&
+                                'Tilaa Laurin ajatuksia pureksittuna ja rauhassa luettavaksi suoraan sähköpostiisi'
+                        }
+                        {
+                            lang === 'en' &&
+                                "Subscribe to receive Lauri's thoughts—digested and ready to read at your leisure—delivered straight to your inbox."
+                        }</Paragraph
+                    >
+                </div>
+
+                <form
+                    action={lang === 'fi'
+                        ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181706420545128273/subscribe'
+                        : lang === 'en'
+                          ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181740004170532163/subscribe'
+                          : ''}
+                    class="ml-block-form"
+                    data-code=""
+                    method="post"
+                    target="_blank"
+                >
+                    <div class="ml-form-formContent horozintalForm">
+                        <div class="ml-form-horizontalRow">
+                            <div class="ml-input-horizontal">
+                                <div class="horizontal-fields" style="width: 100%;">
+                                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                        <!-- input -->
+                                        <input
+                                            autocomplete="email"
+                                            class="form-control"
+                                            data-inputmask=""
+                                            name="fields[email]"
+                                            placeholder={lang === 'fi' ? 'Sähköposti' : lang === 'en' ? 'Email' : ''}
+                                            type="email"
+                                        />
+                                        <!-- /input -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ml-button-horizontal primary">
+                                <button class="primary" type="submit"
+                                    >{lang === 'fi' && 'Tilaa'}{lang === 'en' && 'Subscribe'}</button
+                                >
+
+                                <button class="loading" disabled="disabled" style="display: none;" type="button">
+                                    <div class="ml-form-embedSubmitLoad"></div>
+                                    <span class="sr-only">Loading...</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy policy -->
+                    <div class="ml-form-embedPermissions" style="">
+                        <div class="ml-form-embedPermissionsContent horizontal privacy-policy">
+                            <Paragraph>
+                                {
+                                    lang === 'fi' && (
+                                        <>
+                                            Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue{' '}
+                                            <span>
+                                                <ExternalLink href="/fi/privacy-policy/">
+                                                    tietosuojaselosteemme
+                                                </ExternalLink>
+                                            </span>
+                                            .
+                                        </>
+                                    )
+                                }
+                                {
+                                    lang === 'en' && (
+                                        <>
+                                            You can unsubscribe at any time. For more information, read our{' '}
+                                            <ExternalLink href="/en/privacy-policy/">privacy policy</ExternalLink>
+                                        </>
+                                    )
+                                }
+                            </Paragraph>
+                        </div>
+                    </div>
+                    <!-- /Privacy policy -->
+
+                    <input name="ml-submit" type="hidden" value="1" />
+
+                    <div class="ml-mobileButton-horizontal">
+                        <button class="primary" type="submit"
+                            >{lang === 'fi' && 'Tilaa'}{lang === 'en' && 'Subscribe'}</button
+                        >
+                        <button class="loading" disabled="disabled" style="display: none;" type="button">
+                            <div class="ml-form-embedSubmitLoad"></div>
+                            <span class="sr-only">{lang === 'fi' && 'Lataa...'}{lang === 'en' && 'Loading...'}</span>
+                        </button>
+                    </div>
+                    <input name="anticsrf" type="hidden" value="true" />
+                </form>
+            </div>
+
+            <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                    <H2>{lang === 'fi' && 'Kiitos!'}{lang === 'en' && 'Thank you!'}</H2>
+                    <Paragraph
+                        >{lang === 'fi' && 'Uutiskirje tilattu onnistuneesti'}{
+                            lang === 'en' && 'You have successfully subscribed'
+                        }</Paragraph
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script
+    is:inline
+    set:html={lang === 'fi'
+        ? `
+    function ml_webform_success_38347721() {
+        const $ = ml_jQuery || jQuery
+        $('.ml-subscribe-form-38347721 .row-success').show()
+        $('.ml-subscribe-form-38347721 .row-form').hide()
+    }
+    `
+        : lang === 'en'
+          ? `
+    function ml_webform_success_38366393() {
+        const $ = ml_jQuery || jQuery
+        $('.ml-subscribe-form-38366393 .row-success').show()
+        $('.ml-subscribe-form-38366393 .row-form').hide()
+    }
+    `
+          : ''}
+/>
+
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"
+></script>
+<script
+    is:html={lang === 'fi'
+        ? `fetch('https://assets.mailerlite.com/jsonp/2182645/forms/181706420545128273/takel')`
+        : lang === 'en'
+          ? `fetch('https://assets.mailerlite.com/jsonp/2182645/forms/181740004170532163/takel')`
+          : ''}
+    is:inline></script>
