@@ -52,6 +52,16 @@ describe('<NewsletterSubscribe lang="fi" />', () => {
 
         expect(link).toBeDefined()
     })
+
+    it('should link to the correct locale privacy policy', async () => {
+        const result = await renderAstroComponent(NewsletterSubscribe, {
+            props: { lang: 'fi' },
+        })
+
+        const link = getByText(result, 'tietosuojaselosteemme')
+
+        expect(link.getAttribute('href')).toBe('/fi/privacy-policy/')
+    })
 })
 
 describe('<NewsletterSubscribe lang="en" />', () => {
@@ -101,6 +111,16 @@ describe('<NewsletterSubscribe lang="en" />', () => {
         const link = getAllByRole(result, 'link', { name: /privacy policy/ })[0]
 
         expect(link).toBeDefined()
+    })
+
+    it('should link to the correct locale privacy policy', async () => {
+        const result = await renderAstroComponent(NewsletterSubscribe, {
+            props: { lang: 'en' },
+        })
+
+        const link = getByText(result, 'privacy policy')
+
+        expect(link.getAttribute('href')).toBe('/en/privacy-policy/')
     })
 })
 
