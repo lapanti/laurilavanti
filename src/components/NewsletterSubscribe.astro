@@ -1,19 +1,41 @@
 ---
+import { newsletterContent } from '../content/newsletter'
 import { colors, sizes } from '../lib/styles'
 import ExternalLink from './ExternalLink.astro'
 import H2 from './H2.astro'
 import Paragraph from './Paragraph.astro'
 
 interface Props {
-    lang: 'fi' | 'en'
+    lang: 'en' | 'fi' | 'sv'
 }
 
 const { lang } = Astro.props
+
+const content = newsletterContent[lang]
+
+const formId = lang === 'sv' ? 'mlb2-38379286' : lang === 'en' ? 'mlb2-38366393' : 'mlb2-38347721'
+const formAction =
+    lang === 'sv'
+        ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181754147902588391/subscribe'
+        : lang === 'en'
+          ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181740004170532163/subscribe'
+          : 'https://assets.mailerlite.com/jsonp/2182645/forms/181706420545128273/subscribe'
+const takelUrl =
+    lang === 'sv'
+        ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181754147902588391/takel'
+        : lang === 'en'
+          ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181740004170532163/takel'
+          : 'https://assets.mailerlite.com/jsonp/2182645/forms/181706420545128273/takel'
+const subscribeClass = `ml-subscribe-form-${formId.replace('mlb2-', '')}`
+const privacyHref = `/${lang}/privacy-policy/`
 ---
 
 <style
     define:vars={{
+        colorsBlack: colors.black,
         colorsEvening: colors.evening,
+        colorsEvening70: colors.evening70,
+        colorsMoss: colors.moss,
         colorsWhite: colors.white,
         sizes0875: sizes[0.875],
         sizes1: sizes[1],
@@ -57,21 +79,17 @@ const { lang } = Astro.props
             transform: rotate(360deg);
         }
     }
-    #mlb2-38347721.ml-form-embedContainer,
-    #mlb2-38366393.ml-form-embedContainer {
+    .ml-form-embedContainer {
         box-sizing: border-box;
         grid-column-start: 3;
         margin: 0 auto;
     }
-    #mlb2-38347721.ml-form-embedContainer span,
-    #mlb2-38347721.ml-form-embedContainer button,
-    #mlb2-38366393.ml-form-embedContainer span,
-    #mlb2-38366393.ml-form-embedContainer button {
+    .ml-form-embedContainer span,
+    .ml-form-embedContainer button {
         text-transform: none !important;
         letter-spacing: normal !important;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper {
+    .ml-form-embedContainer .ml-form-embedWrapper {
         background-color: var(--colorsWhite);
         box-sizing: border-box;
         display: inline-block !important;
@@ -79,103 +97,43 @@ const { lang } = Astro.props
         padding: 0;
         position: relative;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper.embedForm,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+    .ml-form-embedContainer .ml-form-embedWrapper.embedForm {
         width: 100%;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-align-center,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-align-center {
+    .ml-form-embedContainer .ml-form-align-center {
         text-align: center;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
         padding: var(--sizes125) var(--sizes125) 0 var(--sizes125);
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
         padding-bottom: 0;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
         text-align: left;
         margin: 0 0 var(--sizes125) 0;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
         margin: 0;
         width: 100%;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent {
         margin: 0 0 var(--sizes125) 0;
         width: 100%;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
         margin: 0;
         padding: 0 0 var(--sizes125) 0;
         width: 100%;
         height: auto;
         float: left;
     }
-    #mlb2-38347721.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input::-webkit-input-placeholder,
-    #mlb2-38366393.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input::-webkit-input-placeholder {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::placeholder {
         color: var(--colorsMoss);
     }
-
-    #mlb2-38347721.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input::-moz-placeholder,
-    #mlb2-38366393.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input::-moz-placeholder {
-        color: var(--colorsMoss);
-    }
-
-    #mlb2-38347721.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input:-ms-input-placeholder,
-    #mlb2-38366393.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input:-ms-input-placeholder {
-        color: var(--colorsMoss);
-    }
-
-    #mlb2-38347721.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input:-moz-placeholder,
-    #mlb2-38366393.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-horizontalRow
-        input:-moz-placeholder {
-        color: var(--colorsMoss);
-    }
-
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
         height: auto;
         width: 100%;
         float: left;
@@ -193,8 +151,7 @@ const { lang } = Astro.props
         float: left;
         padding-right: 10px;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
         background-color: var(--colorsWhite);
         color: var(--colorsBlack);
         border-color: var(--colorsEvening);
@@ -210,8 +167,7 @@ const { lang } = Astro.props
         box-sizing: border-box;
         overflow-y: initial;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
         background-color: var(--colorsEvening) !important;
         border-color: var(--colorsEvening);
         border-style: solid;
@@ -228,10 +184,9 @@ const { lang } = Astro.props
         width: 100%;
         height: auto;
     }
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
-        background-color: var(--colorsSky) !important;
-        border-color: var(--colorsSky) !important;
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
+        background-color: var(--colorsEvening70) !important;
+        border-color: var(--colorsEvening70) !important;
     }
     @media only screen and (max-width: 1200px) {
         .ml-form-formContent.horozintalForm {
@@ -257,8 +212,7 @@ const { lang } = Astro.props
         display: none;
     }
 
-    #mlb2-38347721 .ml-mobileButton-horizontal button,
-    #mlb2-38366393 .ml-mobileButton-horizontal button {
+    .ml-mobileButton-horizontal button {
         background-color: var(--colorsEvening) !important;
         border-color: var(--colorsEvening) !important;
         border-style: solid !important;
@@ -275,14 +229,7 @@ const { lang } = Astro.props
     }
 
     @media only screen and (max-width: 400px) {
-        #mlb2-38347721.ml-form-embedContainer
-            .ml-form-embedWrapper
-            .ml-form-embedBody
-            .ml-form-formContent.horozintalForm,
-        #mlb2-38366393.ml-form-embedContainer
-            .ml-form-embedWrapper
-            .ml-form-embedBody
-            .ml-form-formContent.horozintalForm {
+        .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
             padding: 0 0 10px 0 !important;
         }
         .ml-form-formContent.horozintalForm .ml-button-horizontal {
@@ -304,18 +251,12 @@ const { lang } = Astro.props
         }
     }
 
-    #mlb2-38347721.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions,
-    #mlb2-38366393.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions {
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions {
         text-align: left;
         float: left;
         width: 100%;
     }
-    #mlb2-38347721.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-embedPermissions
-        .ml-form-embedPermissionsContent,
-    #mlb2-38366393.ml-form-embedContainer
+    .ml-form-embedContainer
         .ml-form-embedWrapper
         .ml-form-embedBody
         .ml-form-embedPermissions
@@ -323,12 +264,7 @@ const { lang } = Astro.props
         margin: 0 0 var(--sizes1) 0;
         text-align: left;
     }
-    #mlb2-38347721.ml-form-embedContainer
-        .ml-form-embedWrapper
-        .ml-form-embedBody
-        .ml-form-embedPermissions
-        .ml-form-embedPermissionsContent.horizontal,
-    #mlb2-38366393.ml-form-embedContainer
+    .ml-form-embedContainer
         .ml-form-embedWrapper
         .ml-form-embedBody
         .ml-form-embedPermissions
@@ -337,41 +273,16 @@ const { lang } = Astro.props
     }
 </style>
 
-<div
-    class:list={[
-        `ml-form-embedContainer ml-subscribe-form`,
-        { 'ml-subscribe-form-38347721': lang === 'fi', 'ml-subscribe-form-38366393': lang === 'en' },
-    ]}
-    id={lang === 'fi' ? 'mlb2-38347721' : lang === 'en' ? 'mlb2-38366393' : ''}
->
+<div class:list={[`ml-form-embedContainer ml-subscribe-form`, subscribeClass]} id={formId}>
     <div class="ml-form-align-center">
         <div class="ml-form-embedWrapper embedForm">
             <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
                 <div class="ml-form-embedContent" style=" ">
-                    <H2>{lang === 'fi' && 'Uutiskirje'}{lang === 'en' && 'Newsletter'}</H2>
-                    <Paragraph
-                        >{
-                            lang === 'fi' &&
-                                'Tilaa Laurin ajatuksia pureksittuna ja rauhassa luettavaksi suoraan sähköpostiisi'
-                        }
-                        {
-                            lang === 'en' &&
-                                "Subscribe to receive Lauri's thoughts—digested and ready to read at your leisure—delivered straight to your inbox."
-                        }</Paragraph
-                    >
+                    <H2>{content.heading}</H2>
+                    <Paragraph>{content.description}</Paragraph>
                 </div>
 
-                <form
-                    action={lang === 'fi'
-                        ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181706420545128273/subscribe'
-                        : lang === 'en'
-                          ? 'https://assets.mailerlite.com/jsonp/2182645/forms/181740004170532163/subscribe'
-                          : ''}
-                    class="ml-block-form"
-                    data-code=""
-                    method="post"
-                    target="_blank"
-                >
+                <form action={formAction} class="ml-block-form" data-code="" method="post" target="_blank">
                     <div class="ml-form-formContent horozintalForm">
                         <div class="ml-form-horizontalRow">
                             <div class="ml-input-horizontal">
@@ -383,7 +294,7 @@ const { lang } = Astro.props
                                             class="form-control"
                                             data-inputmask=""
                                             name="fields[email]"
-                                            placeholder={lang === 'fi' ? 'Sähköposti' : lang === 'en' ? 'Email' : ''}
+                                            placeholder={content.emailPlaceholder}
                                             type="email"
                                         />
                                         <!-- /input -->
@@ -392,13 +303,11 @@ const { lang } = Astro.props
                             </div>
 
                             <div class="ml-button-horizontal primary">
-                                <button class="primary" type="submit"
-                                    >{lang === 'fi' && 'Tilaa'}{lang === 'en' && 'Subscribe'}</button
-                                >
+                                <button class="primary" type="submit">{content.submitButton}</button>
 
                                 <button class="loading" disabled="disabled" style="display: none;" type="button">
                                     <div class="ml-form-embedSubmitLoad"></div>
-                                    <span class="sr-only">Loading...</span>
+                                    <span class="sr-only">{content.loadingLabel}</span>
                                 </button>
                             </div>
                         </div>
@@ -408,27 +317,9 @@ const { lang } = Astro.props
                     <div class="ml-form-embedPermissions" style="">
                         <div class="ml-form-embedPermissionsContent horizontal privacy-policy">
                             <Paragraph>
-                                {
-                                    lang === 'fi' && (
-                                        <>
-                                            Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue{' '}
-                                            <span>
-                                                <ExternalLink href="/fi/privacy-policy/">
-                                                    tietosuojaselosteemme
-                                                </ExternalLink>
-                                            </span>
-                                            .
-                                        </>
-                                    )
-                                }
-                                {
-                                    lang === 'en' && (
-                                        <>
-                                            You can unsubscribe at any time. For more information, read our{' '}
-                                            <ExternalLink href="/en/privacy-policy/">privacy policy</ExternalLink>
-                                        </>
-                                    )
-                                }
+                                {content.privacyText}
+                                <ExternalLink href={privacyHref}>{content.privacyLinkText}</ExternalLink>
+                                {content.privacyTextAfter}
                             </Paragraph>
                         </div>
                     </div>
@@ -437,12 +328,10 @@ const { lang } = Astro.props
                     <input name="ml-submit" type="hidden" value="1" />
 
                     <div class="ml-mobileButton-horizontal">
-                        <button class="primary" type="submit"
-                            >{lang === 'fi' && 'Tilaa'}{lang === 'en' && 'Subscribe'}</button
-                        >
+                        <button class="primary" type="submit">{content.submitButton}</button>
                         <button class="loading" disabled="disabled" style="display: none;" type="button">
                             <div class="ml-form-embedSubmitLoad"></div>
-                            <span class="sr-only">{lang === 'fi' && 'Lataa...'}{lang === 'en' && 'Loading...'}</span>
+                            <span class="sr-only">{content.loadingLabel}</span>
                         </button>
                     </div>
                     <input name="anticsrf" type="hidden" value="true" />
@@ -451,12 +340,8 @@ const { lang } = Astro.props
 
             <div class="ml-form-successBody row-success" style="display: none">
                 <div class="ml-form-successContent">
-                    <H2>{lang === 'fi' && 'Kiitos!'}{lang === 'en' && 'Thank you!'}</H2>
-                    <Paragraph
-                        >{lang === 'fi' && 'Uutiskirje tilattu onnistuneesti'}{
-                            lang === 'en' && 'You have successfully subscribed'
-                        }</Paragraph
-                    >
+                    <H2>{content.successHeading}</H2>
+                    <Paragraph>{content.successMessage}</Paragraph>
                 </div>
             </div>
         </div>
@@ -465,31 +350,15 @@ const { lang } = Astro.props
 
 <script
     is:inline
-    set:html={lang === 'fi'
-        ? `
-    function ml_webform_success_38347721() {
-        const $ = ml_jQuery || jQuery
-        $('.ml-subscribe-form-38347721 .row-success').show()
-        $('.ml-subscribe-form-38347721 .row-form').hide()
-    }
-    `
-        : lang === 'en'
-          ? `
-    function ml_webform_success_38366393() {
-        const $ = ml_jQuery || jQuery
-        $('.ml-subscribe-form-38366393 .row-success').show()
-        $('.ml-subscribe-form-38366393 .row-form').hide()
-    }
-    `
-          : ''}
+    set:html={`
+function ml_webform_success_${formId.replace('mlb2-', '')}() {
+    var $ = ml_jQuery || jQuery
+    $('.${subscribeClass} .row-success').show()
+    $('.${subscribeClass} .row-form').hide()
+}
+`}
 />
 
 <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"
 ></script>
-<script
-    is:html={lang === 'fi'
-        ? `fetch('https://assets.mailerlite.com/jsonp/2182645/forms/181706420545128273/takel')`
-        : lang === 'en'
-          ? `fetch('https://assets.mailerlite.com/jsonp/2182645/forms/181740004170532163/takel')`
-          : ''}
-    is:inline></script>
+<script is:inline set:html={`fetch('${takelUrl}')`} />
