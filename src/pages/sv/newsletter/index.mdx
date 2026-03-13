@@ -1,7 +1,7 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: sv
-title: 'Nyhetsbrev'
+title: 'Prenumerera på nyhetsbrevet'
 description: 'Prenumerera på Lauris nyhetsbrev och få hans tankar direkt till din inkorg.'
 slug: 'sv/newsletter'
 type: 'WebPage'
@@ -9,6 +9,16 @@ heroImage: Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla
 alt: 'Lauri Lavanti står med händerna längs sidorna, ett avslappnat leende och blicken mot kameran. Han har på sig en vit skjorta med blå blomstermönster och en mörk kavaj. Bilden togs av Erkki Laine.'
 ---
 
+import H2 from '../../../components/H2.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { h2: H2, p: Paragraph }
+
+AI, digitalisering och sociala medier förändrar samhället snabbare än lagstiftarna hinner reagera. Nyheterna rusar förbi, och få har tid att stanna upp och fundera på vad förändringen egentligen betyder i vardagen, arbetslivet eller demokratin.
+
+I nyhetsbrevet går jag igenom dessa frågor i lugn och ro. Jag erbjuder inga enkla svar och hyllar inte teknologin — men skrämmer inte heller. Jag försöker förklara vad som faktiskt händer och varför det kan vara viktigt just för dig.
+
+Jag skriver vanligtvis en eller ett par gånger i månaden. Kort, koncist, utan skräppost.
 
 <NewsletterSubscribe lang="sv" />

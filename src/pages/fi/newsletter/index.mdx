@@ -1,7 +1,7 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: fi
-title: 'Uutiskirje'
+title: 'Tilaa uutiskirje'
 description: 'Tilaa Laurin uutiskirje ja saat hänen ajatuksensa suoraan sähköpostiisi.'
 slug: 'fi/newsletter'
 type: 'WebPage'
@@ -9,6 +9,16 @@ heroImage: Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla
 alt: 'Lauri Lavanti seisoo kädet sivuilla rento hymy kasvoillaan ja katsoo kameraan. Hänellä on päällään valkoinen kauluspaita sinisillä kukkakuvioilla ja tumma pikkutakki. Kuvan otti Erkki Laine.'
 ---
 
+import H2 from '../../../components/H2.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { h2: H2, p: Paragraph }
+
+Tekoäly, digitalisaatio ja sosiaalinen media muuttavat yhteiskuntaa nopeammin kuin lainsäätäjät ehtivät reagoida. Uutiset ryntäilevät ohi, ja harvalla on aikaa pysähtyä miettimään, mitä muutos oikeasti tarkoittaa arjessa, työssä tai demokratiassa.
+
+Uutiskirjeessä käyn läpi näitä kysymyksiä rauhassa. En tarjoa helppoja vastauksia enkä hypetä teknologiaa — mutta en myöskään pelottele. Yritän selittää, mitä oikeasti tapahtuu ja miksi se saattaa olla juuri sinulle tärkeää.
+
+Lyhyesti, ytimekkäästi, ilman roskapostia.
 
 <NewsletterSubscribe lang="fi" />

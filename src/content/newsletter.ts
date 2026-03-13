@@ -1,4 +1,4 @@
-export interface NewsletterLocale {
+interface NewsletterLocale {
     description: string
     emailPlaceholder: string
     heading: string
