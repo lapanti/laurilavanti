@@ -1,7 +1,7 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: en
-title: 'Newsletter'
+title: 'Subscribe to the newsletter'
 description: "Subscribe to Lauri's newsletter and get his thoughts delivered straight to your inbox."
 slug: 'en/newsletter'
 type: 'WebPage'
@@ -9,6 +9,16 @@ heroImage: Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla
 alt: 'Lauri Lavanti standing with arms at his sides, a relaxed smile and looking at the camera. He is wearing a white shirt with blue flower patterns and a dark jacket. Photo was taken by Erkki Laine.'
 ---
 
+import H2 from '../../../components/H2.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { h2: H2, p: Paragraph }
+
+AI, digitalisation and social media are changing society faster than legislators can respond. News rushes past, and few people have time to stop and think about what the change actually means for everyday life, work or democracy.
+
+In the newsletter I go through these questions calmly. I don't offer easy answers and I don't hype technology — but I don't scaremonger either. I try to explain what is actually happening and why it might matter to you.
+
+I typically write once or twice a month. Concisely, to the point, no spam.
 
 <NewsletterSubscribe lang="en" />
