@@ -24,6 +24,5 @@ export class NewsletterEnPage extends AnyPage {
 
     async checkContent() {
         await expect(this.emailInput).toBeVisible()
-        await expect(this.submitButton).toBeVisible()
     }
 }

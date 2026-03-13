@@ -327,9 +327,9 @@ const privacyHref = `/${lang}/privacy-policy/`
 
                     <input name="ml-submit" type="hidden" value="1" />
 
-                    <div class="ml-mobileButton-horizontal">
-                        <button class="primary" type="submit">{content.submitButton}</button>
-                        <button class="loading" disabled="disabled" style="display: none;" type="button">
+                    <div aria-hidden="true" class="ml-mobileButton-horizontal">
+                        <button class="primary" tabindex="-1" type="submit">{content.submitButton}</button>
+                        <button class="loading" disabled="disabled" style="display: none;" tabindex="-1" type="button">
                             <div class="ml-form-embedSubmitLoad"></div>
                             <span class="sr-only">{content.loadingLabel}</span>
                         </button>

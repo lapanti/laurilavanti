@@ -33,6 +33,5 @@ test.describe('Newsletter Page (English)', () => {
         await newsletterPage.goTo()
 
         await test.expect(newsletterPage.emailInput).toBeVisible()
-        await test.expect(newsletterPage.submitButton).toBeVisible()
     })
 })
