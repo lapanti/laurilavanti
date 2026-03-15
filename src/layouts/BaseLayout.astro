@@ -18,6 +18,7 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: 'en' | 'fi' | 'sv'
+    langAlternates?: Record<'en' | 'fi' | 'sv', string>
     noindex?: boolean
     ogImage?: string
     ogImageAlt?: string
@@ -27,7 +28,8 @@ interface Props {
     updatedAt?: string
 }
 
-const { createdAt, description, lang, noindex, ogImage, ogImageAlt, slug, title, type, updatedAt } = Astro.props
+const { createdAt, description, lang, langAlternates, noindex, ogImage, ogImageAlt, slug, title, type, updatedAt } =
+    Astro.props
 ---
 
 <html lang={lang ?? 'fi'}>
@@ -37,6 +39,7 @@ const { createdAt, description, lang, noindex, ogImage, ogImageAlt, slug, title,
             createdAt={createdAt}
             description={description}
             lang={lang}
+            langAlternates={langAlternates}
             noindex={noindex}
             ogImage={ogImage}
             ogImageAlt={ogImageAlt}
@@ -93,12 +96,15 @@ const { createdAt, description, lang, noindex, ogImage, ogImageAlt, slug, title,
             </main>
             <Footer lang={lang} />
         </div>
+        <script is:inline set:html={'window.__langAlternates=' + JSON.stringify(langAlternates ?? null) + ';'} />
         <script
             is:inline
             set:html={`
             document.querySelectorAll('a[data-switch-to-lang]').forEach(function(a) {
                 var lang = a.getAttribute('data-switch-to-lang')
                 if (!lang) return
+                var alt = window.__langAlternates
+                if (alt && alt[lang]) { a.href = alt[lang]; return }
                 a.href = window.location.pathname.replace(/^\\/(fi|sv|en)\\//, '/' + lang + '/')
             })
         `}

@@ -8,6 +8,7 @@ import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { BLOGPOSTING } from '../lib/jsonld'
+import { getPostAlternates } from '../lib/mdxPosts'
 import BaseLayout from './BaseLayout.astro'
 
 type Props = MDXLayoutProps<{
@@ -28,6 +29,7 @@ const { alt, description, heroImage, id, lang, publishDate, slug, tags, title, u
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
+const langAlternates = getPostAlternates(id)
 
 const i18n = {
     en: {
@@ -55,6 +57,7 @@ const ogImage = heroImage
     createdAt={publishDate}
     description={description}
     lang={lang}
+    langAlternates={langAlternates}
     ogImage={ogImage}
     ogImageAlt={alt}
     slug={canonicalSlug}
