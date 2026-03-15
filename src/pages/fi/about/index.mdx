@@ -10,13 +10,13 @@ alt: 'Lauri Lavanti istumassa tuolilla ikkunan edessä, katse kameraan, hymyille
 ---
 
 import CurriculumVitae from '../../../components/CurriculumVitae.astro'
-import ExternalLink from '../../../components/ExternalLink.astro'
+import SmartLink from '../../../components/SmartLink.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
 import SummaryBox from '../../../components/SummaryBox.astro'
 import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/fi-cv'
 
-export const components = { a: ExternalLink, h2: H2, p: Paragraph }
+export const components = { a: SmartLink, h2: H2, p: Paragraph }
 
 <SummaryBox
     ariaLabel="Faktoja Laurista"
