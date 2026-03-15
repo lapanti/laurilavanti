@@ -23,3 +23,11 @@ export const allMdxPosts: (MdxPost & { url: string })[] = Object.entries(rawGlob
         return { ...mod.frontmatter, url }
     })
     .sort((a, b) => b.id - a.id)
+
+export function getPostAlternates(id: number): Record<MdxPost['lang'], string> {
+    const result = {} as Record<MdxPost['lang'], string>
+    for (const post of allMdxPosts.filter((p) => p.id === id)) {
+        result[post.lang] = post.url
+    }
+    return result
+}

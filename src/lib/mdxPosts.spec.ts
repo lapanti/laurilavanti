@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { allMdxPosts } from './mdxPosts'
+import { allMdxPosts, getPostAlternates } from './mdxPosts'
 
 const VALID_LANGS = ['en', 'fi', 'sv'] as const
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
@@ -56,5 +56,24 @@ describe('allMdxPosts frontmatter validation', () => {
             const slugs = allMdxPosts.filter((p) => p.lang === lang).map((p) => p.slug)
             expect(new Set(slugs).size, `duplicate slugs found for lang=${lang}`).toBe(slugs.length)
         }
+    })
+})
+
+describe('getPostAlternates', () => {
+    it('returns a URL for each locale for a known post id', () => {
+        const alternates = getPostAlternates(10)
+        expect(Object.keys(alternates).sort()).toEqual(['en', 'fi', 'sv'])
+    })
+
+    it('returns the correct locale-prefixed URLs', () => {
+        const alternates = getPostAlternates(10)
+        expect(alternates.fi).toBe('/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/')
+        expect(alternates.sv).toBe('/sv/blog/10/sote-ar-valfardssallets-hordsten/')
+        expect(alternates.en).toBe('/en/blog/10/sote-is-the-cornerstone-of-the-welfare-society/')
+    })
+
+    it('returns an empty object for an unknown post id', () => {
+        const alternates = getPostAlternates(999999)
+        expect(Object.keys(alternates)).toHaveLength(0)
     })
 })
