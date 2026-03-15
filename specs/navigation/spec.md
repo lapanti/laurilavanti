@@ -24,19 +24,23 @@ The header navigation provides the primary wayfinding for all three locales. It 
   - `NavigationLink`: `pathname.startsWith(href)` (prefix match for section links)
 - **Language-switch script** (in `BaseLayout.astro`):
   ```js
+  // window.__langAlternates is injected by BaseLayout when langAlternates prop is set (blog posts only)
   document.querySelectorAll('a[data-switch-to-lang]').forEach(function(a) {
       var lang = a.getAttribute('data-switch-to-lang')
       if (!lang) return
+      var alt = window.__langAlternates
+      if (alt && alt[lang]) { a.href = alt[lang]; return }
       a.href = window.location.pathname.replace(/^\/(fi|sv|en)\//, '/' + lang + '/')
   })
   ```
-  This runs on every page load and only does a prefix swap. It does **not** resolve translated slugs.
+  On blog post pages, `PostLayout` computes `langAlternates` via `getPostAlternates(id)` and passes it to `BaseLayout`, which serialises it as `window.__langAlternates`. The script uses this map to resolve the correct translated slug. On all other pages the map is absent and the script falls back to a plain prefix swap.
+- **`getPostAlternates`** (`src/lib/mdxPosts.ts`): Build-time helper that filters `allMdxPosts` by `id` and returns a `Record<Lang, string>` mapping each locale to its canonical post URL.
 - **Skip links:** `SkipLinks.astro` renders two visually hidden links (`#main`, `#footer`) that become visible on focus — keyboard accessibility requirement.
 - **Dependencies:** All layouts → `BaseLayout` → `Header`. Nav data is used nowhere else.
 
 ### Anti-Patterns
 - Do not add nav links directly in `.astro` files — always update `src/content/nav.ts`, or the language-switch script won't know about them
-- Do not make the language-switch script smarter (e.g. resolve translated slugs) — pages must have equivalent paths across locales, or the link will 404
+- Do not extend the prefix-swap script with arbitrary per-page logic — use the `langAlternates` prop on `BaseLayout` instead (only `PostLayout` sets this)
 - Do not use JS to toggle the mobile menu — the hamburger is intentionally CSS-only (`input[type=checkbox]`) for performance and simplicity
 - Do not use `aria-current="true"` — the correct value is `"page"` for navigation links
 - Do not render only one menu variant and hide it — both must be in the DOM for the `isMobile` test selector pattern to work
@@ -72,10 +76,15 @@ The header navigation provides the primary wayfinding for all three locales. It 
 - When: They click the hamburger checkbox
 - Then: The `.links` container height expands to `100dvh - headerSize`; nav links become visible (`opacity: 100%`); no JavaScript is involved
 
-**Scenario: Language switch rewrites link**
-- Given: A visitor is on `/fi/blog/10/some-post/`
+**Scenario: Language switch on a blog post resolves translated slug**
+- Given: A visitor is on `/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/`
 - When: The page loads and the inline script runs
-- Then: The SV language-switch link's `href` is rewritten to `/sv/blog/10/some-post/`; if that page doesn't exist, it will 404 (correct behaviour — the script only swaps the prefix)
+- Then: The SV language-switch link's `href` is set to `/sv/blog/10/sote-ar-valfardssallets-hordsten/` (from `window.__langAlternates`); the EN link is set to `/en/blog/10/sote-is-the-cornerstone-of-the-welfare-society/`
+
+**Scenario: Language switch on a non-post page uses prefix swap**
+- Given: A visitor is on `/fi/about/`
+- When: The page loads and the inline script runs
+- Then: `window.__langAlternates` is `null`; the SV link's `href` is rewritten by prefix swap to `/sv/about/`
 
 **Scenario: Skip link is keyboard accessible**
 - Given: A visitor navigates by keyboard on any page

@@ -31,11 +31,15 @@ Every page emits structured metadata for search engines and social platforms: JS
   - `slug` present → `new URL(slug + '/', Astro.site)`
   - `slug` absent → no canonical tag
 
-- **hreflang generation:** Swaps the leading locale segment of `slug` for each language:
+- **hreflang generation:** When `langAlternates` is provided (blog posts), uses the pre-computed per-locale URLs directly. Otherwise swaps the leading locale segment of `slug` for each language:
   ```ts
+  // With langAlternates (PostLayout sets this for blog posts):
+  new URL(langAlternates[l], Astro.site)
+  // Fallback for non-post pages:
   slug.replace(/^(fi|sv|en)/, l) + '/'
   ```
   All three locales always get an `alternate` link, including the current page's own locale (x-default is not emitted separately).
+- **`langAlternates` prop:** Optional `Record<Lang, string>` passed from `PostLayout` via `BaseLayout`. Contains the canonical path for each locale (e.g. `/sv/blog/10/sote-ar-valfardssallets-hordsten/`). When absent, the regex-swap fallback is used.
 
 - **og:image:** Passed in as a pre-computed URL string from the layout. Layouts use `getCldImageUrl` from `astro-cloudinary/helpers` to generate a 1200×630 fill crop. `Head.astro` does not call Cloudinary — it only emits the URL it receives.
 
@@ -79,9 +83,9 @@ Every page emits structured metadata for search engines and social platforms: JS
 ### Scenarios
 
 **Scenario: Blog post page metadata**
-- Given: A post with `heroImage`, `publishDate: '2024-01-01'`, `updatedDate: '2024-06-01'`, `lang: 'fi'`
+- Given: A post with `heroImage`, `publishDate: '2024-01-01'`, `updatedDate: '2024-06-01'`, `lang: 'fi'`, `id: 10`
 - When: The page is built
-- Then: JSON-LD type is `BlogPosting`; `datePublished` is `2024-01-01`; `dateModified` is `2024-06-01`; `og:type` is `article`; `og:image` is a 1200×630 Cloudinary fill URL; Twitter card is `summary_large_image`; three hreflang links swap `fi` → `sv`/`en`/`fi`
+- Then: JSON-LD type is `BlogPosting`; `datePublished` is `2024-01-01`; `dateModified` is `2024-06-01`; `og:type` is `article`; `og:image` is a 1200×630 Cloudinary fill URL; Twitter card is `summary_large_image`; three hreflang links point to the correct translated slugs from `langAlternates` (not a prefix swap)
 
 **Scenario: Home page (Person type) metadata**
 - Given: `src/pages/fi/index.mdx` with `type: 'Person'`, `slug: 'fi'`
