@@ -1,0 +1,26 @@
+---
+import ExternalLink from './ExternalLink.astro'
+import Link from './Link.astro'
+
+interface Props {
+    ariaLabel?: string
+    href: string
+    rel?: string
+}
+
+const { ariaLabel, href, rel } = Astro.props
+
+const isInternal = href.startsWith('/')
+---
+
+{
+    isInternal ? (
+        <Link href={href} rel={rel}>
+            <slot />
+        </Link>
+    ) : (
+        <ExternalLink ariaLabel={ariaLabel} href={href} rel={rel}>
+            <slot />
+        </ExternalLink>
+    )
+}
