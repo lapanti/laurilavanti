@@ -7,6 +7,7 @@ interface Props {
     createdAt?: string
     description?: string
     lang?: Lang
+    langAlternates?: Record<Lang, string>
     noindex?: boolean
     ogImage?: string
     ogImageAlt?: string
@@ -19,6 +20,7 @@ interface Props {
 const {
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
     lang = 'fi',
+    langAlternates,
     noindex,
     title,
     type,
@@ -35,23 +37,26 @@ const ogLocale: Record<Lang, string> = {
     sv: 'sv_SE',
 }
 
-const otherLangs = (['fi', 'sv', 'en'] as Lang[]).filter((l) => l !== lang)
-
 const isArticle = type === BLOGPOSTING
 
 /*
- * Derive hreflang URLs by swapping the locale prefix in the canonical slug.
- * slug is like "fi/blog/1/some-post" or "fi" — replace the leading locale segment.
+ * Derive hreflang URLs. When langAlternates is provided (blog posts), use the
+ * pre-computed per-locale URLs directly. Otherwise fall back to swapping the
+ * locale prefix in the canonical slug (works for all other page types).
  */
+const siteUrl = Astro.site?.toString()
+
 const hreflangLinks =
-    !noindex && Astro.site
-        ? ([...otherLangs, lang] as Lang[]).map((l) => ({
-              href: new URL(slug ? slug.replace(/^(fi|sv|en)/, l) + '/' : `${l}/`, Astro.site).toString(),
+    !noindex && siteUrl
+        ? (['fi', 'sv', 'en'] as Lang[]).map((l) => ({
+              href: langAlternates?.[l]
+                  ? new URL(langAlternates[l], siteUrl).toString()
+                  : new URL(slug ? slug.replace(/^(fi|sv|en)/, l) + '/' : `${l}/`, siteUrl).toString(),
               hreflang: l,
           }))
         : []
 
-const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, Astro.site) : null)
+const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, siteUrl) : null)
 
 const ogImageUrl = ogImage ?? null
 

@@ -236,4 +236,23 @@ describe('<Head />', () => {
         expect(result.querySelector('link[rel="canonical"]')).toBeNull()
         expect(result.querySelector('link[rel="alternate"]')).toBeNull()
     })
+
+    it('should accept langAlternates prop without error', async () => {
+        const langAlternates = {
+            en: '/en/blog/10/sote-is-the-cornerstone-of-the-welfare-society/',
+            fi: '/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/',
+            sv: '/sv/blog/10/sote-ar-valfardssallets-hordsten/',
+        }
+
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'fi',
+                langAlternates,
+                noindex: true,
+                title: 'Sote',
+            },
+        })
+
+        expect(result).toBeDefined()
+    })
 })
