@@ -35,15 +35,15 @@ test.describe('Language swap links', () => {
         test.expect(await langSwapPage.getLangLinkHref(langSwapPage.langLinkEn)).toBe('/en/blog/')
     })
 
-    test('swap from a fi blog post keeps the id segment', async ({ page }) => {
+    test('swap from a fi blog post resolves translated slugs', async ({ page }) => {
         const langSwapPage = new LangSwapPage(page)
         await langSwapPage.goTo('/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/')
 
         test.expect(await langSwapPage.getLangLinkHref(langSwapPage.langLinkSv)).toBe(
-            '/sv/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/'
+            '/sv/blog/10/sote-ar-valfardssallets-hordsten/'
         )
         test.expect(await langSwapPage.getLangLinkHref(langSwapPage.langLinkEn)).toBe(
-            '/en/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/'
+            '/en/blog/10/sote-is-the-cornerstone-of-the-welfare-society/'
         )
     })
 
