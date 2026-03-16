@@ -14,7 +14,7 @@ interface NewsletterLocale {
 export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
     en: {
         description:
-            "Subscribe to receive Lauri's thoughts—digested and ready to read at your leisure—delivered straight to your inbox.",
+            'Subscribe to receive digested explanations and analysis of the latest technologies and their impact on society. Straight to your inbox.',
         emailPlaceholder: 'Email',
         heading: 'Newsletter',
         loadingLabel: 'Loading...',
@@ -25,7 +25,8 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
         successMessage: 'You have successfully subscribed',
     },
     fi: {
-        description: 'Tilaa Laurin ajatuksia pureksittuna ja rauhassa luettavaksi suoraan sähköpostiisi.',
+        description:
+            'Tilaa ja saat pureskeltuja selityksiä ja analyysejä tuoreimmista teknologioista ja niiden vaikutuksista yhteiskuntaan. Suoraan sähköpostiisi.',
         emailPlaceholder: 'Sähköposti',
         heading: 'Uutiskirje',
         loadingLabel: 'Lataa...',
@@ -38,7 +39,7 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
     },
     sv: {
         description:
-            'Prenumerera för att få Lauris tankar—sammanfattade och redo att läsa när det passar dig—direkt till din inkorg.',
+            'Prenumerera och få genomarbetade förklaringar och analyser av de senaste teknologierna och deras påverkan på samhället. Direkt till din inkorg.',
         emailPlaceholder: 'E-post',
         heading: 'Nyhetsbrev',
         loadingLabel: 'Laddar...',
