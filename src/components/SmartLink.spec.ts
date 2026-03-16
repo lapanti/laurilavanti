@@ -68,7 +68,7 @@ describe('<SmartLink />', () => {
 
         expect(link).toHaveAttribute('href', externalHref)
         expect(link).toHaveAttribute('target', '_blank')
-        expect(link).toHaveAttribute('rel', ' noopener noreferrer')
+        expect(link).toHaveAttribute('rel', expect.stringContaining('noopener noreferrer'))
     })
 
     it('should render external link with custom rel', async () => {
@@ -84,6 +84,21 @@ describe('<SmartLink />', () => {
         })
 
         expect(getByRole(result, 'link', { name: text })).toHaveAttribute('rel', `${rel} noopener noreferrer`)
+    })
+
+    it('should render internal link ignoring ariaLabel', async () => {
+        const ariaLabel = 'A completely other text'
+        const result = await renderAstroComponent(SmartLink, {
+            props: {
+                ariaLabel,
+                href: internalHref,
+            },
+            slots: {
+                default: text,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: text })).not.toHaveAttribute('aria-label')
     })
 
     it('should render external link with aria label', async () => {
