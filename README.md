@@ -42,3 +42,38 @@ Everything is automated using GitHub Actions:
 8. **E2E Tests**: Runs Playwright tests against the deployed site
 
 The pipeline runs on every push to main branch and on pull requests.
+
+## Repository Structure
+
+The ASDLC scaffolding for this repository is organized as follows:
+
+| Path | Purpose |
+|------|---------|
+| `AGENTS.md` | Agent constitution — mission, toolchain, judgment boundaries, context map |
+| `.asdlc/` | **Shareable base layer** — templates, personas, and workflow definitions |
+| `.asdlc/templates/` | Skeleton files for Specs, PBIs, and ADRs |
+| `.asdlc/personas/` | Session-scoped agent role definitions (`@Builder`, `@Critic`, `@Architect`, `@SpecWriter`) |
+| `.asdlc/workflows/` | Standard ASDLC process workflows |
+| `.agents/specs/` | Living Specs — permanent source of truth per feature |
+| `.agents/pbis/` | Active PBIs — transient execution units (closed after merge) |
+| `.agents/adrs/` | Architecture Decision Records |
+
+The `.asdlc/` directory is the **shareable base**: it can be copied into any project to bootstrap ASDLC adoption. Each project then creates its own `AGENTS.md` and populates `.agents/` with project-specific artifacts.
+
+## Personas
+
+Agents are invoked with session-scoped personas loaded from `.asdlc/personas/`. Do not load all personas simultaneously.
+
+| Persona | When to use |
+|---------|-------------|
+| `@Architect` | Planning a new feature, authoring an ADR, decomposing work into PBIs |
+| `@SpecWriter` | Authoring or updating a Spec document |
+| `@Builder` | Executing a PBI — writing or refactoring content |
+| `@Critic` | Adversarial review of a Builder's output before PR |
+
+## Key Practices
+
+- **Spec before PBI**: No PBI should be created without an `Active` Spec backing it.
+- **Micro-commits**: Every commit must be independently meaningful and reversible.
+- **Adversarial review**: Run `.asdlc/workflows/adversarial-review.md` before opening a PR.
+- **Minimal AGENTS.md**: If a rule can be enforced by tooling, it must not live in `AGENTS.md`.

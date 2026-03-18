@@ -1,0 +1,70 @@
+# PBI: [SHORT TITLE]
+
+> **Pattern**: [The PBI](https://asdlc.io/patterns/the-pbi) — Transient execution unit. Close after merge.
+> **Status**: `Open` | `In Progress` | `Done` | `Cancelled`
+> **Created**: YYYY-MM-DD
+> **Spec**: [Link to the relevant Spec](.agents/specs/[spec-file].md)
+
+---
+
+## Directive
+
+<!-- What to do, with explicit scope boundaries.
+     This is a constrained instruction, NOT a user story.
+     Be specific about what to change and what NOT to touch. -->
+
+Implement [specific change] in [specific location/file(s)].
+
+**In scope for this PBI:**
+- [Specific deliverable 1]
+- [Specific deliverable 2]
+
+**Explicitly out of scope:**
+- [Thing that might seem natural to add but is NOT part of this PBI]
+
+---
+
+## Context
+
+<!-- Pointers to permanent context. Do NOT copy content here — link to it.
+     The Spec is the source of truth; this PBI is the execution unit. -->
+
+- **Spec**: [Feature Spec](.agents/specs/[spec-file].md) — Read the Intent and Contract sections
+- **Relevant ADR(s)**: [ADR title](.agents/adrs/[adr-file].md) — [what decision is relevant]
+- **Related files**: `[path/to/relevant/file]` — [why it is relevant]
+
+---
+
+## Verification
+
+<!-- Direct pointer to success criteria defined in the Spec's Contract section.
+     The agent knows exactly what "done" looks like. -->
+
+This PBI is complete when the following scenarios from the Spec Contract pass:
+
+- [ ] `Scenario: [Scenario name from spec]`
+- [ ] `Scenario: [Another scenario name]`
+- [ ] All existing tests continue to pass
+- [ ] No new linter errors introduced
+
+---
+
+## Refinement Rule
+
+<!-- What the agent should do when reality diverges from the Spec.
+     Choose one: -->
+
+> If implementation reveals a conflict with the Spec, **stop and flag for human review**
+> before proceeding. Do NOT silently deviate from the Spec.
+
+<!-- Alternative options (uncomment the appropriate one):
+> If a minor clarification is needed, update the Spec inline and continue.
+> If a blocking ambiguity is discovered, open a question in the Spec's Open Questions section and stop.
+-->
+
+---
+
+## Notes
+
+<!-- Optional: implementation hints, known gotchas, or context that helps
+     but doesn't belong in the Spec. Remove if empty. -->

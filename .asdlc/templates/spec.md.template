@@ -1,0 +1,109 @@
+# Spec: [FEATURE NAME]
+
+> **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
+> **Status**: `Draft` | `Active` | `Deprecated`
+> **Last updated**: YYYY-MM-DD
+
+---
+
+## Intent
+
+<!-- What is this feature and why does it exist?
+     1–3 paragraphs. Focus on the problem being solved, not the implementation.
+     This is what agents read to understand *what* to build and *why*. -->
+
+[Describe the feature's purpose, the user need it addresses, and the core business logic.]
+
+---
+
+## Scope
+
+<!-- What is explicitly IN and OUT of scope for this spec.
+     This prevents agents from hallucinating adjacent features. -->
+
+### In scope
+- [Specific capability 1]
+- [Specific capability 2]
+
+### Out of scope
+- [Adjacent thing that might seem related but is NOT part of this spec]
+- [Future work that is intentionally deferred]
+
+---
+
+## Contract
+
+<!-- The executable specification. Use Gherkin (Given/When/Then) for testable scenarios.
+     These are the verification criteria — PBIs will reference these directly.
+     See: https://asdlc.io/concepts/gherkin -->
+
+```gherkin
+Feature: [Feature Name]
+
+  Scenario: [Happy path scenario name]
+    Given [initial state]
+    When [action]
+    Then [expected outcome]
+
+  Scenario: [Edge case scenario name]
+    Given [edge condition]
+    When [action]
+    Then [expected outcome]
+
+  Scenario: [Error scenario name]
+    Given [error condition]
+    When [action]
+    Then [error is handled gracefully]
+```
+
+---
+
+## Data Model
+
+<!-- Describe the key data structures, types, or schema involved.
+     Use TypeScript interfaces, JSON Schema, or plain prose as appropriate. -->
+
+```typescript
+// Example — replace with actual types
+interface [FeatureEntity] {
+  id: string;
+  // ...
+}
+```
+
+---
+
+## Dependencies
+
+<!-- Other specs this feature depends on. Use relative links. -->
+
+- [Related Spec](./[related-spec].md) — [why it is a dependency]
+
+---
+
+## Anti-patterns
+
+<!-- Specific implementation mistakes to avoid for THIS feature.
+     Only list what is non-obvious or has been encountered before. -->
+
+- **Do not** [specific anti-pattern] — [brief reason]
+
+---
+
+## Open Questions
+
+<!-- Unresolved decisions that block or affect implementation.
+     Remove entries once resolved (or move to ADRs if they were architectural). -->
+
+- [ ] [Open question that must be resolved before implementation]
+
+---
+
+## Changelog
+
+<!-- Brief log of significant changes to this spec.
+     Agents use this to detect if their context is stale. -->
+
+| Date | Change |
+|------|--------|
+| YYYY-MM-DD | Initial draft |

@@ -1,0 +1,70 @@
+# ADR-[NNN]: [SHORT DECISION TITLE]
+
+> **Pattern**: [The ADR](https://asdlc.io/patterns/the-adr) — Immutable record of an architectural decision.
+> **Status**: `Proposed` | `Accepted` | `Deprecated` | `Superseded by ADR-[NNN]`
+> **Date**: YYYY-MM-DD
+> **Deciders**: [Names or roles of people involved in this decision]
+
+---
+
+## Context
+
+<!-- What is the situation that forces this decision?
+     Describe the forces at play: technical, organizational, constraints.
+     Be factual — this is the "why now" section. -->
+
+[Describe the architectural challenge, constraint, or trade-off that required a decision.]
+
+---
+
+## Decision
+
+<!-- What was decided? State it clearly and directly.
+     One paragraph. Present tense. "We will..." or "We use..." -->
+
+We will [decision].
+
+---
+
+## Rationale
+
+<!-- Why was this decision made over the alternatives?
+     List the key reasons. Reference data, benchmarks, or prior art if available. -->
+
+- [Reason 1 — the most important factor]
+- [Reason 2]
+- [Reason 3]
+
+---
+
+## Alternatives Considered
+
+<!-- What other options were evaluated and why were they rejected?
+     This prevents re-litigating the same decision in the future. -->
+
+| Alternative | Reason rejected |
+|-------------|-----------------|
+| [Option A] | [Why not chosen] |
+| [Option B] | [Why not chosen] |
+
+---
+
+## Consequences
+
+<!-- What becomes easier and harder as a result of this decision?
+     Be honest about the trade-offs. Agents use this to understand constraints. -->
+
+**Positive:**
+- [What this decision enables or improves]
+
+**Negative / Trade-offs:**
+- [What becomes harder, more constrained, or requires ongoing attention]
+
+---
+
+## Compliance
+
+<!-- How should agents and developers behave as a result of this decision?
+     Optional — only include if the ADR has direct behavioral implications. -->
+
+- [Specific behavior expected in implementation]
