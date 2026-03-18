@@ -1,0 +1,102 @@
+# AGENTS.md
+
+> **ASDLC**: This file is the Agent Constitution for this project.
+> It follows the [AGENTS.md Specification](https://asdlc.io/practices/agents-md-spec).
+> Keep it minimal and precise — unnecessary content actively harms agent performance.
+> If a constraint can be enforced by a linter or tool, it must NOT live here.
+
+---
+
+## Mission
+
+<!-- 2–4 sentences describing the project's purpose and the core constraints that
+     cannot be inferred from the repo structure or toolchain.
+     Focus on domain context that changes how agents reason about this codebase. -->
+
+> **Project:** [PROJECT NAME] — [one-line description].
+> **Core constraint:** [The most important non-obvious constraint, e.g. "offline-first", "GDPR-bound", "financial-grade audit trail required"].
+
+---
+
+## Toolchain
+
+<!-- List only non-standard invocations. Do NOT describe what the tools enforce — that lives in their config files. -->
+
+| Intent | Command | Notes |
+|--------|---------|-------|
+| **Build** | `[build command]` | |
+| **Test** | `[test command]` | |
+| **Lint** | `[lint command]` | [config file] is the authority |
+| **Type check** | `[typecheck command]` | |
+| **Dev server** | `[dev command]` | |
+
+---
+
+## Judgment Boundaries
+
+<!-- Only rules that CANNOT be enforced by a linter, type-checker, or hook.
+     Use the three-tier system. Keep each rule to one line. -->
+
+### NEVER — Hard limits (no exceptions)
+- Never commit secrets, tokens, or `.env` files
+- Never add external dependencies without explicit discussion
+- Never guess on ambiguous specs — stop and ask
+<!-- Add project-specific NEVER rules here -->
+
+### ASK — Human-in-the-loop triggers
+- Ask before running any destructive operation (data migrations, bulk deletes)
+- Ask before changing a public API contract
+<!-- Add project-specific ASK rules here -->
+
+### PREFER — Architectural defaults
+- Prefer composition over inheritance
+- Prefer explicit over implicit
+<!-- Add project-specific PREFER rules here -->
+
+---
+
+## Personas
+
+<!-- Session-scoped personas are defined in .asdlc/personas/. Load them when needed. -->
+
+Invoke via skill file (do not load all at once):
+
+| Persona | File | Purpose |
+|---------|------|---------|
+| `@Builder` | `.asdlc/personas/builder.md` | Feature implementation |
+| `@Critic` | `.asdlc/personas/critic.md` | Adversarial code review |
+| `@Architect` | `.asdlc/personas/architect.md` | Design & planning |
+| `@SpecWriter` | `.asdlc/personas/spec-writer.md` | Spec authoring |
+
+---
+
+## Context Map
+
+<!-- A navigational index that enables agents to locate knowledge without
+     managing massive context windows. Use YAML. List responsibilities, not files.
+     See: https://asdlc.io/practices/context-mapping -->
+
+```yaml
+project:
+  # Specs (living source of truth per feature):
+  specs: .agents/specs/
+  # Transient execution units:
+  pbis: .agents/pbis/
+  # Architecture decisions:
+  adrs: .agents/adrs/
+  # ASDLC base scaffolding (templates, personas, workflows):
+  asdlc_base: .asdlc/
+
+# Add project-specific entries below:
+# src:
+#   components: src/components/  # UI components — [framework] based
+#   api: src/api/                # API routes — [description]
+#   domain: src/domain/          # Core business logic — [description]
+```
+
+---
+
+<!-- PROJECT-SPECIFIC SECTIONS BELOW THIS LINE -->
+<!-- Add additional sections here as the project evolves.
+     Every section added is a signal of structural friction.
+     Consider whether the underlying issue can be fixed instead. -->
