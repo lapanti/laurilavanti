@@ -3,17 +3,17 @@
 Personal homepage of Lauri Lavanti (https://laurilavanti.fi).
 Built with **Astro + TypeScript + MDX**. All content is local — no CMS or external content API. Hosted on **Cloudflare Pages**.
 
-Feature-specific specs (blueprint, contracts, scenarios) live at `specs/{feature}/spec.md`. Current specs:
-- [`specs/posts/spec.md`](./specs/posts/spec.md) — blog posts
-- [`specs/pages/spec.md`](./specs/pages/spec.md) — pages (home, about, contact, blog index, category, 404)
-- [`specs/navigation/spec.md`](./specs/navigation/spec.md) — header nav, mobile/desktop split, language-switch script, skip links
-- [`specs/seo/spec.md`](./specs/seo/spec.md) — JSON-LD, Open Graph, hreflang, canonical URLs, Twitter cards
-- [`specs/images/spec.md`](./specs/images/spec.md) — Cloudinary integration, CldImage vs getCldImageUrl, alt text rules
-- [`specs/cv/spec.md`](./specs/cv/spec.md) — curriculum vitae data files, CvRow type, component hierarchy
-- [`specs/tags/spec.md`](./specs/tags/spec.md) — tag taxonomy, category page generation, silent failure on unknown ids
-- [`specs/rss/spec.md`](./specs/rss/spec.md) — RSS feed endpoints, item structure, locale filtering
-- [`specs/design-system/spec.md`](./specs/design-system/spec.md) — design tokens, define:vars pattern, spacing/colour/typography constants
-- [`specs/recommendations/spec.md`](./specs/recommendations/spec.md) — recommendations page, Recommendation data type, single Finnish-only data file shared across locales
+Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/{feature}/spec.md`. Current specs:
+- [`.agents/specs/posts/spec.md`](./.agents/specs/posts/spec.md) — blog posts
+- [`.agents/specs/pages/spec.md`](./.agents/specs/pages/spec.md) — pages (home, about, contact, blog index, category, 404)
+- [`.agents/specs/navigation/spec.md`](./.agents/specs/navigation/spec.md) — header nav, mobile/desktop split, language-switch script, skip links
+- [`.agents/specs/seo/spec.md`](./.agents/specs/seo/spec.md) — JSON-LD, Open Graph, hreflang, canonical URLs, Twitter cards
+- [`.agents/specs/images/spec.md`](./.agents/specs/images/spec.md) — Cloudinary integration, CldImage vs getCldImageUrl, alt text rules
+- [`.agents/specs/cv/spec.md`](./.agents/specs/cv/spec.md) — curriculum vitae data files, CvRow type, component hierarchy
+- [`.agents/specs/tags/spec.md`](./.agents/specs/tags/spec.md) — tag taxonomy, category page generation, silent failure on unknown ids
+- [`.agents/specs/rss/spec.md`](./.agents/specs/rss/spec.md) — RSS feed endpoints, item structure, locale filtering
+- [`.agents/specs/design-system/spec.md`](./.agents/specs/design-system/spec.md) — design tokens, define:vars pattern, spacing/colour/typography constants
+- [`.agents/specs/recommendations/spec.md`](./.agents/specs/recommendations/spec.md) — recommendations page, Recommendation data type, single Finnish-only data file shared across locales
 
 ---
 
@@ -188,23 +188,3 @@ const dataJson = JSON.stringify(someData)
   npm run test:e2e -- --update-snapshots
   ```
 
----
-
-## Hard constraints
-
-**NEVER**
-- Commit secrets, tokens, or `.env` files.
-- Add external dependencies without discussing it first.
-- Use `_` to ignore errors.
-- Use TypeScript syntax inside `<script>` blocks in `.astro` files.
-
-**ALWAYS**
-- Run `npm run lint` before committing; fix all errors.
-- Run `npm run check` to verify TypeScript types before committing.
-- Sign commits with GPG. If the key is locked, ask the user to unlock it before committing.
-- Use conventional commits: `type(scope): description`.
-- Update snapshots before committing if DOM or visuals changed.
-
-**ASK BEFORE**
-- Adding external dependencies.
-- Any action that affects shared state (push, PR, issue comments, etc.).
