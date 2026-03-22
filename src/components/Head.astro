@@ -196,7 +196,7 @@ const keywords = [
 <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 <link href="/favicon.ico" rel="shortcut icon" />
 <link href="/app.webmanifest" rel="manifest" />
-<title>{title === 'Lauri Lavanti' ? title : `${title} | Lauri Lavanti`}</title>
+<title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 <link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect" />
 <link crossorigin="" href="https://res.cloudinary.com" rel="preconnect" />
