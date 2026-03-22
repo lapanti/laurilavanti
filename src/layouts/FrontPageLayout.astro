@@ -13,6 +13,7 @@ type Props = MDXLayoutProps<{
     alt?: string
     backgroundImage?: string
     heroImage?: string
+    heroTitle?: string
     secondaryTitle?: string
     slug?: string
     subtitle?: string
@@ -21,7 +22,8 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const { alt, backgroundImage, description, heroImage, lang, secondaryTitle, slug, subtitle, title, type } = frontmatter
+const { alt, backgroundImage, description, heroImage, heroTitle, lang, secondaryTitle, slug, subtitle, title, type } =
+    frontmatter
 
 const ogImage = heroImage
     ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
@@ -43,7 +45,7 @@ const ogImage = heroImage
         heroImage={heroImage}
         secondaryTitle={secondaryTitle}
         subtitle={subtitle}
-        title={title}
+        title={heroTitle ?? title}
     />
     <slot />
 </BaseLayout>
