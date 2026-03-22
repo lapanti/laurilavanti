@@ -38,7 +38,7 @@ Core constraint: all-content-local; hosted on Cloudflare Pages (static output on
 
 ### ASK — Human-in-the-loop triggers
 - Ask before adding external dependencies
-- Ask before any action that affects shared state (push, PR, issue comments, etc.)
+- Ask before issue comments or any other shared-state action not covered by the issue workflow below
 
 ### PREFER — Architectural defaults
 - Prefer local MDX content over external data sources
@@ -90,12 +90,19 @@ GitHub issues serve as PBIs. When asked to work on an issue:
 
 1. **Assign the issue** — `gh issue edit {number} --add-assignee @me`
 2. **Create a branch** — `git checkout -b type/{short-kebab-description}` (no issue number prefix; include type e.g. `fix` or `feat`)
-3. **Implement** in small, focused commits:
-   - Run `npm run lint` before each commit and fix any errors
+3. **First commit** — after the first commit on the branch:
+   - Run `npm run lint` before committing and fix any errors
    - Run `npm run check` to verify TypeScript types
    - Commit with conventional format: `type(scope): description`
-4. **Verify all checks pass** before pushing:
-   - `npm run lint && npm run check && npm run test && npm run build && npm run test:e2e`
+   - Push — `git push -u origin HEAD`
+   - Open a **draft PR** — `gh pr create --draft` referencing the issue (`Closes #N`)
+4. **Subsequent commits** — for every further commit:
+   - Run `npm run lint` before committing and fix any errors
+   - Run `npm run check` to verify TypeScript types
+   - Commit with conventional format: `type(scope): description`
+   - Push — `git push`
+5. **Finalise** — after the last commit and push:
+   - Run full check suite: `npm run lint && npm run check && npm run test && npm run build && npm run test:e2e`
    - If DOM structure or visuals changed, update snapshots first: `npm run test:e2e -- --update-snapshots`
-5. **Push and open a PR** — `git push -u origin HEAD` then `gh pr create` referencing the issue (`Closes #N`)
+   - Mark PR ready for review and update description if needed: `gh pr ready` / `gh pr edit`
 6. **Sign all commits with GPG** — if the key is locked, ask the user to unlock it before committing
