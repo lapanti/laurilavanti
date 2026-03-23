@@ -224,6 +224,7 @@ export default defineConfig({
         '/kuntavaalit-ja-aluevaalit-2025/': '/fi/blog/20/kuntavaalit-ja-aluevaalit-2025/',
         '/municipal-elections-and-county-elections-2025/':
             '/en/blog/20/municipal-and-regional-elections-2025/',
+        '/kommunalvalet-och-valfardsomradesvalet-2025/': '/sv/blog/20/kommun-och-valfardsvalet-2025/',
     },
     trailingSlash: 'always',
     output: 'static',
