@@ -11,7 +11,7 @@ describe('<TitleBanner />', () => {
         const result = await renderAstroComponent(TitleBanner, {
             props: {
                 createdAt,
-                tags: ['tekoaly'],
+                tags: ['artificial-intelligence'],
                 title,
             },
         })
