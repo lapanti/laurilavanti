@@ -118,3 +118,8 @@ Every page emits structured metadata for search engines and social platforms: JS
 - Given: A `BlogPosting` page with `faq: [{q: '...', a: '...'}]` (only one entry)
 - When: The page is built
 - Then: Only the primary `BlogPosting` JSON-LD block is emitted; no FAQPage block appears.
+
+**Scenario: Person page with FAQPage schema and visible FAQ section**
+- Given: A page with `type: 'Person'` and `faq` with 2+ entries (e.g. home or about page)
+- When: The page is built
+- Then: Two `<script type="application/ld+json">` blocks are emitted — the first with `@type: Person`, the second with `@type: FAQPage`. A visible `<FaqSection>` (localised `<h2>` heading + `<dl>`/`<dt>`/`<dd>` pairs) is also rendered at the bottom of the article, above the footer. The `faq` prop flows from MDX frontmatter → `FrontPageLayout` or `PageLayout` → `BaseLayout` → `Head` (JSON-LD) and `FaqSection` (HTML). Blog posts with `faq` frontmatter do NOT get a visible `FaqSection` (the `type !== BlogPosting` guard in `BaseLayout` prevents it) — their FAQ content is already present as H2 sections in the article body.
