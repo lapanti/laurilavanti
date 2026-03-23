@@ -8,12 +8,13 @@ import HeroBanner from '../components/HeroBanner.astro'
 import BaseLayout from './BaseLayout.astro'
 
 type Props = MDXLayoutProps<{
-    description?: string
-    lang?: 'en' | 'fi' | 'sv'
     alt?: string
     backgroundImage?: string
+    description?: string
+    faq?: Array<{ a: string; q: string }>
     heroImage?: string
     heroTitle?: string
+    lang?: 'en' | 'fi' | 'sv'
     secondaryTitle?: string
     slug?: string
     subtitle?: string
@@ -22,8 +23,20 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const { alt, backgroundImage, description, heroImage, heroTitle, lang, secondaryTitle, slug, subtitle, title, type } =
-    frontmatter
+const {
+    alt,
+    backgroundImage,
+    description,
+    faq,
+    heroImage,
+    heroTitle,
+    lang,
+    secondaryTitle,
+    slug,
+    subtitle,
+    title,
+    type,
+} = frontmatter
 
 const ogImage = heroImage
     ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
@@ -32,6 +45,7 @@ const ogImage = heroImage
 
 <BaseLayout
     description={description}
+    faq={faq}
     lang={lang}
     ogImage={ogImage}
     ogImageAlt={alt}

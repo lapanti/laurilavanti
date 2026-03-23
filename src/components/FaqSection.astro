@@ -1,0 +1,75 @@
+---
+import { sizes, typographics } from '../lib/styles'
+
+interface Props {
+    items: Array<{ q: string; a: string }>
+    lang?: 'en' | 'fi' | 'sv'
+}
+
+const { items, lang } = Astro.props
+
+const titles = { en: 'Frequently Asked Questions', fi: 'Usein kysytyt kysymykset', sv: 'Vanliga frågor' }
+const title = titles[lang ?? 'fi']
+---
+
+<style
+    define:vars={{
+        ddFontFamily: typographics.body.fontFamily,
+        ddFontSize: typographics.body.fontSize,
+        ddFontWeight: typographics.body.fontWeight,
+        ddLineHeight: typographics.body.lineHeight,
+        dtFontFamily: typographics.h3.fontFamily,
+        dtFontSize: typographics.h3.fontSize,
+        dtFontWeight: typographics.h3.fontWeight,
+        dtLineHeight: typographics.h3.lineHeight,
+        h2FontFamily: typographics.h2.fontFamily,
+        h2FontSize: typographics.h2.fontSize,
+        h2FontWeight: typographics.h2.fontWeight,
+        h2LineHeight: typographics.h2.lineHeight,
+        sizes1: sizes[1],
+        sizes2: sizes[2],
+    }}
+>
+    section {
+        grid-column-start: 3;
+        margin-top: var(--sizes2);
+    }
+
+    h2 {
+        font-family: var(--h2FontFamily);
+        font-size: var(--h2FontSize);
+        font-weight: var(--h2FontWeight);
+        line-height: var(--h2LineHeight);
+        margin-top: 0;
+    }
+
+    dt {
+        font-family: var(--dtFontFamily);
+        font-size: var(--dtFontSize);
+        font-weight: var(--dtFontWeight);
+        line-height: var(--dtLineHeight);
+        margin-top: var(--sizes1);
+    }
+
+    dd {
+        font-family: var(--ddFontFamily);
+        font-size: var(--ddFontSize);
+        font-weight: var(--ddFontWeight);
+        line-height: var(--ddLineHeight);
+        margin-inline-start: 0;
+        margin-top: var(--sizes1);
+    }
+</style>
+<section aria-labelledby="faq-heading">
+    <h2 id="faq-heading">{title}</h2>
+    <dl>
+        {
+            items.map(({ q, a }) => (
+                <>
+                    <dt>{q}</dt>
+                    <dd>{a}</dd>
+                </>
+            ))
+        }
+    </dl>
+</section>
