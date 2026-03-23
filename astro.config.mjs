@@ -150,6 +150,10 @@ export default defineConfig({
         '/sv/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/':
             '/sv/blog/51/digital-sjalvstandighet-ar-en-nodvandighet/',
         '/en/blog/16/uusi-vuosi-tuttu-talvikunnossapito/': '/en/blog/16/new-year-familiar-winter-maintenance/',
+        // Issue #1078 — top-level election campaign page redirects
+        '/kuntavaalit-ja-aluevaalit-2025/': '/fi/blog/20/kuntavaalit-ja-aluevaalit-2025/',
+        '/municipal-elections-and-county-elections-2025/':
+            '/en/blog/20/municipal-and-regional-elections-2025/',
     },
     trailingSlash: 'always',
     output: 'static',
