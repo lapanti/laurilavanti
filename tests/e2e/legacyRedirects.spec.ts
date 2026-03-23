@@ -26,10 +26,7 @@ const blogiTagRedirects: Array<[string, string]> = [
 ]
 
 const kategoriaTagRedirects: Array<[string, string]> = [
-    ['/kategoria/opetus/', '/fi/category/opetus/'],
-    ['/kategoria/varhaiskasvatus/', '/fi/category/varhaiskasvatus/'],
-    ['/kategoria/kirkkonummi/', '/fi/category/kirkkonummi/'],
-    ['/kategoria/sosiaalinen-media/', '/fi/category/sosiaalinen-media/'],
+    // Legacy ID before tag was renamed to sosiaalinen-media
     ['/kategoria/sosiaalinenMedia/', '/fi/category/sosiaalinen-media/'],
 ]
 
