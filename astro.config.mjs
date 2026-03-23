@@ -127,6 +127,29 @@ export default defineConfig({
             '/fi/blog/49/sivistyksen-talo-lyyra-avaa-uusia-mahdollisuuksia-ja-nayttaa-suuntaa/',
         '/blogi/lansirata-paatos-nosti-esiin-ongelmia-kirkkonummen-pitkajanteisessa-strategisessa-kehittamisessa/':
             '/fi/blog/50/lansirata-paatos-nosti-esiin-ongelmia-kirkkonummen-pitkajanteisessa-strategisessa-kehittamisessa/',
+        // Issue #1077 — wrong-locale slug redirects (Google-indexed 404s)
+        '/en/blog/17/luontomme-on-valttimme-vuodesta-toiseen/':
+            '/en/blog/17/our-nature-is-our-trump-card-year-after-year/',
+        '/fi/blog/25/congratulations-finland/': '/fi/blog/25/onnea-suomi/',
+        '/sv/blog/15/kunnan-pitaa-suunnitella-pitkajanteisesti/':
+            '/sv/blog/15/kommunen-maste-planera-langsiktigt/',
+        '/sv/blog/14/puheilla-muovaamme-todellisuutta/': '/sv/blog/14/med-ord-formar-vi-verkligheten/',
+        '/en/blog/52/kirkkonummi-on-tanaan-tasa-arvoisempi-kuin-eilen/':
+            '/en/blog/52/kirkkonummi-is-more-equal-today-than-yesterday/',
+        '/sv/blog/52/kirkkonummi-on-tanaan-tasa-arvoisempi-kuin-eilen/':
+            '/sv/blog/52/kyrsklatt-ar-mer-jamlikt-idag-an-det-var-igar/',
+        '/sv/blog/18/osuuskauppavaalit-koskettavat-meita-kaikkia/': '/sv/blog/18/vbo-valen-beror-oss-alla/',
+        '/en/blog/46/aanestin-lansiradan-puolesta/': '/en/blog/46/i-voted-for-the-western-rail-link/',
+        '/sv/blog/46/aanestin-lansiradan-puolesta/': '/sv/blog/46/jag-rostade-for-vasternabanan/',
+        '/sv/blog/48/passien-biometristen-tunnisteiden-kayttoa-ei-pida-laajentaa/':
+            '/sv/blog/48/anvandningen-av-biometriska-identifierare-i-pass-far-inte-utvidgas/',
+        '/en/blog/48/passien-biometristen-tunnisteiden-kayttoa-ei-pida-laajentaa/':
+            '/en/blog/48/the-use-of-biometric-identifiers-in-passports-must-not-be-expanded/',
+        '/sv/blog/49/sivistyksen-talo-lyyra-avaa-uusia-mahdollisuuksia-ja-nayttaa-suuntaa/':
+            '/sv/blog/49/lyyra-bildningens-hus-oppnar-nya-mojligheter-och-visar-vagen/',
+        '/sv/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/':
+            '/sv/blog/51/digital-sjalvstandighet-ar-en-nodvandighet/',
+        '/en/blog/16/uusi-vuosi-tuttu-talvikunnossapito/': '/en/blog/16/new-year-familiar-winter-maintenance/',
     },
     trailingSlash: 'always',
     output: 'static',
