@@ -104,5 +104,6 @@ GitHub issues serve as PBIs. When asked to work on an issue:
 5. **Finalise** — after the last commit and push:
    - Run full check suite: `npm run lint && npm run check && npm run test && npm run build && npm run test:e2e`
    - If DOM structure or visuals changed, update snapshots first: `npm run test:e2e -- --update-snapshots`
-   - Mark PR ready for review and update description if needed: `gh pr ready` / `gh pr edit`
+   - **Always** mark PR ready: `gh pr ready` — do this even if you think you may have already done it
+   - Update PR description if needed: `gh pr edit`
 6. **Sign all commits with GPG** — if the key is locked, ask the user to unlock it before committing
