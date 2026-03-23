@@ -90,6 +90,82 @@ describe('<Head />', () => {
         expect(jsonLd.dateModified).toBe('2024-01-02')
     })
 
+    it('should emit a secondary FAQPage JSON-LD script when faq has 2 or more entries', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                faq: [
+                    { a: 'Answer one.', q: 'Question one?' },
+                    { a: 'Answer two.', q: 'Question two?' },
+                ],
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        expect(scripts).toHaveLength(2)
+
+        const faqScript = Array.from(scripts).find((s) => {
+            const parsed = JSON.parse(s.textContent || '{}')
+
+            return parsed['@type'] === 'FAQPage'
+        })
+        expect(faqScript).toBeDefined()
+
+        const faqJsonLd = JSON.parse(faqScript?.textContent || '{}')
+        expect(faqJsonLd['@context']).toBe('https://schema.org')
+        expect(faqJsonLd['@type']).toBe('FAQPage')
+        expect(faqJsonLd.mainEntity).toHaveLength(2)
+        expect(faqJsonLd.mainEntity[0]['@type']).toBe('Question')
+        expect(faqJsonLd.mainEntity[0].name).toBe('Question one?')
+        expect(faqJsonLd.mainEntity[0].acceptedAnswer['@type']).toBe('Answer')
+        expect(faqJsonLd.mainEntity[0].acceptedAnswer.text).toBe('Answer one.')
+    })
+
+    it('should not emit a FAQPage JSON-LD script when faq has fewer than 2 entries', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                faq: [{ a: 'Answer one.', q: 'Question one?' }],
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        expect(scripts).toHaveLength(1)
+
+        const faqScript = Array.from(scripts).find((s) => {
+            const parsed = JSON.parse(s.textContent || '{}')
+
+            return parsed['@type'] === 'FAQPage'
+        })
+        expect(faqScript).toBeUndefined()
+    })
+
+    it('should keep BlogPosting as primary JSON-LD type when faq is present', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2025-01-01',
+                faq: [
+                    { a: 'Answer one.', q: 'Question one?' },
+                    { a: 'Answer two.', q: 'Question two?' },
+                ],
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        const jsonLdItems = Array.from(scripts).map((s) => JSON.parse(s.textContent || '{}'))
+
+        const primarySchema = jsonLdItems.find((j) => j['@type'] === 'BlogPosting')
+        expect(primarySchema).toBeDefined()
+        expect(primarySchema?.datePublished).toBe('2025-01-01')
+
+        const faqSchema = jsonLdItems.find((j) => j['@type'] === 'FAQPage')
+        expect(faqSchema).toBeDefined()
+    })
+
     it('should set author meta tag', async () => {
         const result = await renderAstroComponent(Head, {
             props: {

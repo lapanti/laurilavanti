@@ -17,6 +17,7 @@ import {
 interface Props {
     createdAt?: string
     description?: string
+    faq?: Array<{ a: string; q: string }>
     lang?: 'en' | 'fi' | 'sv'
     langAlternates?: Record<'en' | 'fi' | 'sv', string>
     noindex?: boolean
@@ -28,8 +29,20 @@ interface Props {
     updatedAt?: string
 }
 
-const { createdAt, description, lang, langAlternates, noindex, ogImage, ogImageAlt, slug, title, type, updatedAt } =
-    Astro.props
+const {
+    createdAt,
+    description,
+    faq,
+    lang,
+    langAlternates,
+    noindex,
+    ogImage,
+    ogImageAlt,
+    slug,
+    title,
+    type,
+    updatedAt,
+} = Astro.props
 ---
 
 <html lang={lang ?? 'fi'}>
@@ -38,6 +51,7 @@ const { createdAt, description, lang, langAlternates, noindex, ogImage, ogImageA
         <Head
             createdAt={createdAt}
             description={description}
+            faq={faq}
             lang={lang}
             langAlternates={langAlternates}
             noindex={noindex}
