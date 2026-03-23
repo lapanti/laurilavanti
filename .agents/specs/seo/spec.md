@@ -24,6 +24,8 @@ Every page emits structured metadata for search engines and social platforms: JS
   | `Person` | `jobTitle` (locale-specific), `description` (locale-specific), `knowsAbout[]`, `memberOf` (PoliticalParty), `sameAs` |
   | `WebPage` | no extras (base fields only) |
 
+- **Supplemental FAQPage schema:** When a `BlogPosting` page includes a `faq` prop with 2 or more `{q, a}` entries, a second `<script type="application/ld+json">` block is emitted with `@type: FAQPage`. This block coexists alongside the primary `BlogPosting` schema — it does not replace it. The `FAQPAGE` constant is exported from `src/lib/jsonld.ts` but is **not** added to `JSON_LD_TYPES` (which lists only primary page types). The `faq` prop flows from MDX frontmatter → `PostLayout` → `BaseLayout` → `Head`.
+
 - **All schemas always include:** `@context`, `@type`, `author`, `description`, `headline`, `url`, and `image` (if `ogImage` provided)
 
 - **Canonical URL derivation:**
@@ -55,7 +57,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 
 ### Anti-Patterns
 - Do not call `getCldImageUrl` inside `Head.astro` — it must receive a pre-computed URL string; image URL generation is the layout's responsibility
-- Do not add a new JSON-LD type without: (1) adding the constant to `src/lib/jsonld.ts`, (2) adding it to `JSON_LD_TYPES`, (3) defining which extra fields it emits in `Head.astro`
+- Do not add a new **primary** JSON-LD type (set via the `type` prop on `Head`) without: (1) adding the constant to `src/lib/jsonld.ts`, (2) adding it to `JSON_LD_TYPES`, (3) defining which extra fields it emits in `Head.astro`. Supplemental/secondary schema types (e.g. `FAQPage`) that coexist alongside the primary type are exported as constants from `jsonld.ts` but must **not** be added to `JSON_LD_TYPES` — they are emitted as separate `<script>` blocks via dedicated props, not via the `type` prop
 - Do not hardcode social profile URLs in `Head.astro` outside the defined constants — keep them in the named variables so they're easy to update
 - Do not set `slug` to a value that includes a trailing slash — the canonical URL builder appends one
 - Do not emit `x-default` hreflang separately — the current locale is included in the three hreflang links already
@@ -106,3 +108,13 @@ Every page emits structured metadata for search engines and social platforms: JS
 - Given: A page with `title: 'Minusta'`
 - When: The `<title>` tag is rendered
 - Then: It reads `Minusta | Lauri Lavanti`; if `title` is `'Lauri Lavanti'`, it reads just `Lauri Lavanti`
+
+**Scenario: Blog post with FAQPage schema**
+- Given: A `BlogPosting` page with `faq: [{q: '...', a: '...'}, {q: '...', a: '...'}]`
+- When: The page is built
+- Then: Two `<script type="application/ld+json">` blocks are emitted — the first with `@type: BlogPosting`, the second with `@type: FAQPage`. The FAQPage block has `mainEntity` with one `Question` per entry, each with an `acceptedAnswer`.
+
+**Scenario: FAQPage not emitted with fewer than 2 entries**
+- Given: A `BlogPosting` page with `faq: [{q: '...', a: '...'}]` (only one entry)
+- When: The page is built
+- Then: Only the primary `BlogPosting` JSON-LD block is emitted; no FAQPage block appears.
