@@ -5,27 +5,27 @@ export interface LocalTag {
 
 export const tags: LocalTag[] = [
     {
-        id: 'aluevaalit2022',
+        id: 'regional-elections-2022',
         names: { en: 'Regional elections 2022', fi: 'Aluevaalit 2022', sv: 'Regionval 2022' },
     },
     {
-        id: 'aluevaalit2025',
+        id: 'regional-elections-2025',
         names: { en: 'Regional elections 2025', fi: 'Aluevaalit 2025', sv: 'Regionval 2025' },
     },
     {
-        id: 'digitaalinen-itsenaisyys',
+        id: 'digital-independence',
         names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
     },
     {
-        id: 'digitalisaatio',
+        id: 'digitalisation',
         names: { en: 'Digitalisation', fi: 'Digitalisaatio', sv: 'Digitalisering' },
     },
     {
-        id: 'infra',
+        id: 'infrastructure',
         names: { en: 'Infrastructure', fi: 'Infra', sv: 'Infrastruktur' },
     },
     {
-        id: 'kaavoitus',
+        id: 'urban-planning',
         names: { en: 'Urban planning', fi: 'Kaavoitus', sv: 'Planläggning' },
     },
     {
@@ -33,71 +33,71 @@ export const tags: LocalTag[] = [
         names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
     },
     {
-        id: 'kuntavaalit2025',
+        id: 'municipal-elections-2025',
         names: { en: 'Municipal elections 2025', fi: 'Kuntavaalit 2025', sv: 'Kommunalval 2025' },
     },
     {
-        id: 'lansirata',
+        id: 'west-railway',
         names: { en: 'Western railway', fi: 'Länsirata', sv: 'Västbanan' },
     },
     {
-        id: 'lansi-uusimaa',
+        id: 'western-uusimaa',
         names: { en: 'Western Uusimaa', fi: 'Länsi-Uusimaa', sv: 'Västra Nyland' },
     },
     {
-        id: 'liikenne',
+        id: 'transportation',
         names: { en: 'Transport', fi: 'Liikenne', sv: 'Trafik' },
     },
     {
-        id: 'maahanmuutto',
+        id: 'immigration',
         names: { en: 'Immigration', fi: 'Maahanmuutto', sv: 'Immigration' },
     },
     {
-        id: 'opetus',
+        id: 'education',
         names: { en: 'Education', fi: 'Opetus', sv: 'Utbildning' },
     },
     {
-        id: 'osuuskauppavaalit',
+        id: 'coop-elections',
         names: { en: 'Co-op elections', fi: 'Osuuskauppavaalit', sv: 'Kooperativval' },
     },
     {
-        id: 'perusturva',
+        id: 'basic-welfare',
         names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grundläggande' },
     },
     {
-        id: 'sivistys',
+        id: 'culture-and-education',
         names: { en: 'Culture & education', fi: 'Sivistys', sv: 'Bildning' },
     },
     {
-        id: 'sosiaalinen-media',
+        id: 'social-media',
         names: { en: 'Social media', fi: 'Sosiaalinen media', sv: 'Sociala medier' },
     },
     {
-        id: 'soteuudistus',
+        id: 'health-and-social-reform',
         names: { en: 'Social & health reform', fi: 'Sote-uudistus', sv: 'Vård- och servicereform' },
     },
     {
-        id: 'tasa-arvo-ja-yhdenvertaisuus',
+        id: 'equality-and-non-discrimination',
         names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhdenvertaisuus', sv: 'Jämlikhet' },
     },
     {
-        id: 'teknologia',
+        id: 'technology',
         names: { en: 'Technology', fi: 'Teknologia', sv: 'Teknologi' },
     },
     {
-        id: 'tekoaly',
+        id: 'artificial-intelligence',
         names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
     },
     {
-        id: 'valtuustoaloite',
+        id: 'council-motion',
         names: { en: 'Council motion', fi: 'Valtuustoaloite', sv: 'Fullmäktigeinitiativ' },
     },
     {
-        id: 'varhaiskasvatus',
+        id: 'early-childhood-education',
         names: { en: 'Early childhood education', fi: 'Varhaiskasvatus', sv: 'Småbarnspedagogik' },
     },
     {
-        id: 'yksityisyydensuoja',
+        id: 'privacy',
         names: { en: 'Privacy', fi: 'Yksityisyydensuoja', sv: 'Integritetsskydd' },
     },
 ]

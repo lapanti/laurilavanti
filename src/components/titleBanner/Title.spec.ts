@@ -22,7 +22,7 @@ describe('<Title />', () => {
         const result = await renderAstroComponent(Title, {
             props: {
                 createdAt,
-                tags: ['tekoaly'],
+                tags: ['artificial-intelligence'],
                 title,
             },
         })
@@ -44,7 +44,7 @@ describe('<Title />', () => {
         const result = await renderAstroComponent(Title, {
             props: {
                 createdAt,
-                tags: ['tekoaly'],
+                tags: ['artificial-intelligence'],
                 title,
             },
         })
