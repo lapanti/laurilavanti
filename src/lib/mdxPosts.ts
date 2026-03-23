@@ -1,5 +1,6 @@
 interface MdxPost {
     description: string
+    faq?: Array<{ a: string; q: string }>
     id: number
     lang: 'en' | 'fi' | 'sv'
     alt: string

@@ -1,11 +1,12 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { BLOGPOSTING, JSON_LD_TYPES, type JsonLdType, PERSON, WEBPAGE, WEBSITE } from '../lib/jsonld'
+import { BLOGPOSTING, FAQPAGE, JSON_LD_TYPES, type JsonLdType, PERSON, WEBPAGE, WEBSITE } from '../lib/jsonld'
 
 interface Props {
     createdAt?: string
     description?: string
+    faq?: Array<{ a: string; q: string }>
     lang?: Lang
     langAlternates?: Record<Lang, string>
     noindex?: boolean
@@ -19,6 +20,7 @@ interface Props {
 
 const {
     description = 'Lauri Lavanti on informaatioverkostojen diplomi-insinööri, Lead Developer ja Kirkkonummelainen kunnanvaltuutettu, joka keskittyy digitalisaatioon ja yksityisyyden suojaan nopeasti muuttuvassa maailmassa.',
+    faq,
     lang = 'fi',
     langAlternates,
     noindex,
@@ -133,6 +135,22 @@ const jsonLd = JSON.stringify({
         : {}),
 })
 
+const faqJsonLd =
+    faq && faq.length >= 2
+        ? JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': FAQPAGE,
+              mainEntity: faq.map(({ q, a }) => ({
+                  '@type': 'Question',
+                  acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: a,
+                  },
+                  name: q,
+              })),
+          })
+        : null
+
 const keywords = [
     'Kirkkonummi',
     'Länsi-Uusimaa',
@@ -198,6 +216,7 @@ const keywords = [
 <link href="/app.webmanifest" rel="manifest" />
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
+{faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
 <link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect" />
 <link crossorigin="" href="https://res.cloudinary.com" rel="preconnect" />
 <link href="https://res.cloudinary.com" rel="dns-prefetch" />

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { BLOGPOSTING, JSON_LD_TYPES, PERSON, WEBPAGE, WEBSITE } from './jsonld'
+import { BLOGPOSTING, FAQPAGE, JSON_LD_TYPES, PERSON, WEBPAGE, WEBSITE } from './jsonld'
 
 describe('jsonld', () => {
     it('should export correct JSON-LD types', () => {
@@ -12,5 +12,13 @@ describe('jsonld', () => {
 
     it('should include all JSON-LD types in JSON_LD_TYPES', () => {
         expect(JSON_LD_TYPES).toEqual([BLOGPOSTING, PERSON, WEBPAGE, WEBSITE])
+    })
+
+    it('should export FAQPAGE constant', () => {
+        expect(FAQPAGE).toBe('FAQPage')
+    })
+
+    it('should not include FAQPAGE in JSON_LD_TYPES', () => {
+        expect(JSON_LD_TYPES).not.toContain(FAQPAGE)
     })
 })
