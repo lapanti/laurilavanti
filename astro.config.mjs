@@ -12,6 +12,7 @@ import partytown from '@astrojs/partytown'
 export default defineConfig({
     site: 'https://laurilavanti.fi/',
     redirects: {
+        '/kategoria/sosiaalinenMedia/': '/fi/category/sosiaalinen-media/',
         '/': '/fi/',
         '/blogi/': '/fi/blog/',
         '/ota-yhteytta/': '/fi/contact/',
