@@ -1,6 +1,7 @@
 import type { ContainerRenderOptions } from 'astro/container'
 
 import { experimental_AstroContainer as AstroContainer } from 'astro/container'
+import { Window } from 'happy-dom'
 
 type AstroComponentFactory = Parameters<AstroContainer['renderToString']>[0]
 
@@ -23,7 +24,8 @@ export const renderAstroComponent = async <T extends AstroComponentFactory>(
     const container = await AstroContainer.create({ astroConfig: { site: 'https://example.com' } })
     const result = await container.renderToString(Component, options)
 
-    const div = document.createElement('div')
+    const happyDomWindow = new Window()
+    const div = happyDomWindow.document.createElement('div')
     div.innerHTML = result
-    return div
+    return div as unknown as HTMLDivElement
 }

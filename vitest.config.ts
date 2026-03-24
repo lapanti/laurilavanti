@@ -6,7 +6,7 @@ import { configDefaults } from 'vitest/config'
 export default getViteConfig(
     {
         test: {
-            environment: 'happy-dom',
+            environment: 'node',
             exclude: [...configDefaults.exclude, 'tests/e2e/**'],
             resolveSnapshotPath: (testPath, snapshotExtension) => {
                 const finalTestPath = testPath.replace('src', `tests${path.sep}__snapshots__`)
