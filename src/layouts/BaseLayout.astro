@@ -1,4 +1,5 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
 import type { JsonLdType } from '../lib/jsonld'
 
 import FaqSection from '../components/FaqSection.astro'
@@ -14,6 +15,7 @@ import {
     gridTemplateColumnsArticle,
     gridTemplateRowsLayout,
     gridTemplateRowsLayoutMobile,
+    sizes,
 } from '../lib/styles'
 
 interface Props {
@@ -74,6 +76,8 @@ const {
                 gridTemplateColumnsArticle,
                 gridTemplateRowsLayout,
                 gridTemplateRowsLayoutMobile,
+                paddingBlockEnd: sizes[2],
+                paddingBlockStart: sizes[1],
             }}
         >
             body > div {
@@ -89,12 +93,25 @@ const {
 
             main {
                 background-color: var(--colorsWhite);
+                display: grid;
                 grid-area: var(--gridAreasMain);
+                grid-auto-rows: auto;
+                grid-template-columns: var(--gridTemplateColumnsArticle);
             }
 
             main > article {
                 display: grid;
+                grid-column: 1 / -1;
                 grid-template-columns: var(--gridTemplateColumnsArticle);
+                padding-block: var(--paddingBlockStart) var(--paddingBlockEnd);
+            }
+
+            main > article > *:first-child {
+                margin-block-start: 0;
+            }
+
+            main > article > *:last-child {
+                margin-block-end: 0;
             }
 
             @media (min-width: 1200px) {
@@ -106,6 +123,7 @@ const {
         <div>
             <Header lang={lang} />
             <main id="main">
+                <slot name="banner" />
                 <article>
                     <slot />
                     {faq && faq.length >= 2 && type !== BLOGPOSTING && <FaqSection items={faq} lang={lang} />}

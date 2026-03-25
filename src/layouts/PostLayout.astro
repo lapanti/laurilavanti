@@ -67,7 +67,15 @@ const ogImage = heroImage
     type={BLOGPOSTING}
     updatedAt={updatedDate ?? publishDate}
 >
-    <TitleBanner alt={alt} createdAt={publishDate} heroImage={heroImage} lang={lang} tags={tags} title={title} />
+    <TitleBanner
+        alt={alt}
+        createdAt={publishDate}
+        heroImage={heroImage}
+        lang={lang}
+        slot="banner"
+        tags={tags}
+        title={title}
+    />
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
     <H2>{t.otherPosts}</H2>
