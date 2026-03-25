@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { footerAriaLabel, footerLinks } from '../content/footer'
+import { footerAriaLabel, footerLinks, footerLogoAlt } from '../content/footer'
 import { colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../lib/styles'
 import InstagramLink from './footer/InstagramLink.astro'
 import Link from './footer/Link.astro'
@@ -73,7 +73,7 @@ const getAriaLabel = footerAriaLabel[lang]
     <div class="container">
         <div>
             <img
-                alt="Vihreiden logo ja teksti"
+                alt={footerLogoAlt[lang]}
                 height="45"
                 loading="lazy"
                 src="/images/greensLogo3Languages.min.svg"
