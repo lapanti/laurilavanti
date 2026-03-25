@@ -44,6 +44,14 @@ const ogImage = heroImage
     type={type}
     updatedAt={updatedAt}
 >
-    <TitleBanner alt={alt} createdAt={createdAt} heroImage={heroImage} lang={lang} tags={tags} title={title} />
+    <TitleBanner
+        alt={alt}
+        createdAt={createdAt}
+        heroImage={heroImage}
+        lang={lang}
+        slot="banner"
+        tags={tags}
+        title={title}
+    />
     <slot />
 </BaseLayout>
