@@ -70,6 +70,7 @@ const {
     <body>
         <style
             define:vars={{
+                articleRowGap: sizes[1],
                 colorsWhite: colors.white,
                 gridAreasMain: gridAreas.main,
                 gridTemplateColumns,
@@ -104,6 +105,7 @@ const {
                 grid-column: 1 / -1;
                 grid-template-columns: var(--gridTemplateColumnsArticle);
                 padding-block: var(--paddingBlockStart) var(--paddingBlockEnd);
+                row-gap: var(--articleRowGap);
             }
 
             main > article > *:first-child {

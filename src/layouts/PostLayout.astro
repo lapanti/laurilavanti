@@ -9,6 +9,7 @@ import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { BLOGPOSTING } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
+import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
 type Props = MDXLayoutProps<{
@@ -54,6 +55,21 @@ const ogImage = heroImage
     : undefined
 ---
 
+<style
+    define:vars={{
+        articleRowGap: sizes[1],
+        gridTemplateColumnsArticle,
+        otherPostsMarginBlockStart: sizes[2],
+    }}
+>
+    .other-posts {
+        display: grid;
+        grid-column: 1 / -1;
+        grid-template-columns: var(--gridTemplateColumnsArticle);
+        margin-block-start: var(--otherPostsMarginBlockStart);
+        row-gap: var(--articleRowGap);
+    }
+</style>
 <BaseLayout
     createdAt={publishDate}
     description={description}
@@ -78,6 +94,8 @@ const ogImage = heroImage
     />
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
-    <H2>{t.otherPosts}</H2>
-    <ExcerptList currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
+    <section class="other-posts">
+        <H2>{t.otherPosts}</H2>
+        <ExcerptList currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
+    </section>
 </BaseLayout>
