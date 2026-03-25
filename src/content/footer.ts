@@ -21,3 +21,9 @@ export const footerAriaLabel: Record<Lang, (title: string) => string> = {
     fi: (title) => `Lauri Lavanti palvelussa ${title} (linkki aukeaa uudessa välilehdessä)`,
     sv: (title) => `Lauri Lavanti på ${title} (öppnas i ny flik)`,
 }
+
+export const footerLogoAlt: Record<Lang, string> = {
+    en: 'The Greens logo and text',
+    fi: 'Vihreiden logo ja teksti',
+    sv: 'De Gröna logotyp och text',
+}
