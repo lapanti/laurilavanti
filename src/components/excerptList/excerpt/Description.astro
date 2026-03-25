@@ -1,4 +1,6 @@
 ---
+/* eslint-disable astro/no-unused-css-selector */
+import { sizes } from '../../../lib/styles'
 import Paragraph from '../../Paragraph.astro'
 
 interface Props {
@@ -8,6 +10,11 @@ interface Props {
 const { excerpt } = Astro.props
 ---
 
-<Paragraph inGrid={false} itemProp="description" smallMarginTop>
+<style define:vars={{ sizes025: sizes[0.25] }}>
+    p {
+        margin-top: var(--sizes025);
+    }
+</style>
+<Paragraph inGrid={false} itemProp="description">
     {excerpt}
 </Paragraph>

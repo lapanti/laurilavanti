@@ -1,25 +1,15 @@
 ---
-import { sizes } from '../lib/styles'
-
 interface Props {
     inGrid?: boolean
     itemProp?: string
-    noMargins?: boolean
-    smallMarginTop?: boolean
 }
 
-const { inGrid = true, itemProp, smallMarginTop, noMargins } = Astro.props
+const { inGrid = true, itemProp } = Astro.props
 ---
 
-<style
-    define:vars={{
-        marginBottom: noMargins ? 0 : sizes[1],
-        marginTop: noMargins ? 0 : smallMarginTop ? sizes[0.25] : sizes[1],
-    }}
->
+<style>
     p {
-        margin-bottom: var(--marginBottom);
-        margin-top: var(--marginTop);
+        margin-block: 0;
     }
 </style>
 <p itemprop={itemProp} style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }}>

@@ -1,5 +1,5 @@
 ---
-import { sizes, typographics } from '../lib/styles'
+import { typographics } from '../lib/styles'
 
 interface Props {
     itemProp?: string
@@ -14,7 +14,6 @@ const { itemProp } = Astro.props
         h2FontSize: typographics.h2.fontSize,
         h2FontWeight: typographics.h2.fontWeight,
         h2LineHeight: typographics.h2.lineHeight,
-        sizes1: sizes[1],
     }}
 >
     h2 {
@@ -23,7 +22,7 @@ const { itemProp } = Astro.props
         font-size: var(--h2FontSize);
         line-height: var(--h2LineHeight);
         grid-column-start: 3;
-        margin-top: var(--sizes1);
+        margin-block: 0;
     }
 </style>
 <h2 itemprop={itemProp}>
