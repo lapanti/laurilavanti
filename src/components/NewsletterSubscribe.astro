@@ -288,10 +288,12 @@ const privacyHref = `/${lang}/privacy-policy/`
                                 <div class="horizontal-fields" style="width: 100%;">
                                     <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                                         <!-- input -->
+                                        <label class="sr-only" for="newsletter-email">{content.emailPlaceholder}</label>
                                         <input
                                             autocomplete="email"
                                             class="form-control"
                                             data-inputmask=""
+                                            id="newsletter-email"
                                             name="fields[email]"
                                             placeholder={content.emailPlaceholder}
                                             type="email"
