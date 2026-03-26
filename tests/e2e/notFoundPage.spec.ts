@@ -27,6 +27,13 @@ test.describe('404 Not Found Page', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goTo()
+
+        await notFoundPage.checkNoHorizontalScroll()
+    })
 })
 
 test.describe('404 wrong-slug blog redirect', () => {

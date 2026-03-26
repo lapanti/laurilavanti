@@ -34,4 +34,11 @@ test.describe('Newsletter Page (Swedish)', () => {
 
         await test.expect(newsletterPage.emailInput).toBeVisible()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const newsletterPage = new NewsletterSwePage(page)
+        await newsletterPage.goTo()
+
+        await newsletterPage.checkNoHorizontalScroll()
+    })
 })
