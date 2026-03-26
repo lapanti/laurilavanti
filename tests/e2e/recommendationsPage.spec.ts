@@ -27,4 +27,11 @@ test.describe('Recommendations Page', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const recommendationsPage = new RecommendationsPage(page)
+        await recommendationsPage.goTo()
+
+        await recommendationsPage.checkNoHorizontalScroll()
+    })
 })

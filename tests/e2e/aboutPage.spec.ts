@@ -27,4 +27,11 @@ test.describe('About Page', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const aboutPage = new AboutPage(page)
+        await aboutPage.goTo()
+
+        await aboutPage.checkNoHorizontalScroll()
+    })
 })

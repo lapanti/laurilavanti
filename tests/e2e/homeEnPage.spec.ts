@@ -34,4 +34,11 @@ test.describe('Home Page in English', () => {
 
         await homePage.checkNavLinkHomeAriaCurrent()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const homePage = new HomeEnPage(page)
+        await homePage.goTo()
+
+        await homePage.checkNoHorizontalScroll()
+    })
 })

@@ -27,4 +27,11 @@ test.describe('Tag/Category Page på svenska', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const tagPage = new TagSwePage(page)
+        await tagPage.goTo()
+
+        await tagPage.checkNoHorizontalScroll()
+    })
 })

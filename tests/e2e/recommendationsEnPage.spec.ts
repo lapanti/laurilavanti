@@ -27,4 +27,11 @@ test.describe('Recommendations Page in english', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const recommendationsPage = new RecommendationsEnPage(page)
+        await recommendationsPage.goTo()
+
+        await recommendationsPage.checkNoHorizontalScroll()
+    })
 })

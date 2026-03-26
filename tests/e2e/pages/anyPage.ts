@@ -111,4 +111,11 @@ export class AnyPage {
         await expect(this.footerMastodonLink).toBeVisible()
         await expect(this.footerTikTokLink).toBeVisible()
     }
+
+    async checkNoHorizontalScroll() {
+        if (!this.isMobile) return
+        const scrollWidth = await this.page.evaluate(() => document.documentElement.scrollWidth)
+        const clientWidth = await this.page.evaluate(() => document.documentElement.clientWidth)
+        expect(scrollWidth).toBeLessThanOrEqual(clientWidth)
+    }
 }

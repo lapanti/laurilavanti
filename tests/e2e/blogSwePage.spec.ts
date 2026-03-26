@@ -27,4 +27,11 @@ test.describe('Blog Page på svenska', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
+
+    test('should not have horizontal scroll on mobile', async ({ page }) => {
+        const blogPage = new BlogSwePage(page)
+        await blogPage.goTo()
+
+        await blogPage.checkNoHorizontalScroll()
+    })
 })
