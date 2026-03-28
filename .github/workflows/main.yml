@@ -73,6 +73,17 @@ jobs:
       - name: knip code
         run: npm run knip
 
+  check-long-words:
+    runs-on: ubuntu-latest
+    name: Word length check
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+      - name: Check MDX files for words that would cause horizontal scroll
+        run: node scripts/check-long-words.mjs $(find src/pages -name '*.mdx')
+
   unit-test:
     runs-on: ubuntu-latest
     name: Unit tests
