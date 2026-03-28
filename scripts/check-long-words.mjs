@@ -76,9 +76,10 @@ function stripMarkdown(text) {
             // soft hyphen entity → Unicode soft hyphen
             .replace(/&shy;/g, '\u00AD')
             // other common entities
-            .replace(/&amp;/g, '&')
             .replace(/&lt;/g, '<')
             .replace(/&gt;/g, '>')
+            // check ampersand last to avoid double unescaping
+            .replace(/&amp;/g, '&')
     )
 }
 
@@ -89,9 +90,7 @@ function stripMarkdown(text) {
  * of the word (e.g. "municipality's").
  */
 function wordSegments(text) {
-    return text
-        .split(/[\s\u00AD\u2013\u2014\-,.:;!?()\[\]{}|/"«»„""]+/)
-        .filter((s) => s.length > 0)
+    return text.split(/[\s\u00AD\u2013\u2014\-,.:;!?()\[\]{}|/"«»„""]+/).filter((s) => s.length > 0)
 }
 
 const files = process.argv.slice(2)
@@ -142,9 +141,7 @@ for (const file of files) {
         const plain = stripMarkdown(h1Text)
         for (const seg of wordSegments(plain)) {
             if (seg.length > H1_THRESHOLD) {
-                console.error(
-                    `${file}:${h1Line}: H1 word "${seg}" is ${seg.length} chars (max ${H1_THRESHOLD})`,
-                )
+                console.error(`${file}:${h1Line}: H1 word "${seg}" is ${seg.length} chars (max ${H1_THRESHOLD})`)
                 hasError = true
             }
         }
@@ -180,9 +177,7 @@ for (const file of files) {
         const plain = stripMarkdown(text)
         for (const seg of wordSegments(plain)) {
             if (seg.length > threshold) {
-                console.error(
-                    `${file}:${lineNum}: ${tag} word "${seg}" is ${seg.length} chars (max ${threshold})`,
-                )
+                console.error(`${file}:${lineNum}: ${tag} word "${seg}" is ${seg.length} chars (max ${threshold})`)
                 hasError = true
             }
         }
@@ -190,8 +185,6 @@ for (const file of files) {
 }
 
 if (hasError) {
-    console.error(
-        '\nAdd a soft hyphen (­ or \\u00AD) or a regular hyphen inside long words to fix the above.',
-    )
+    console.error('\nAdd a soft hyphen (­ or \\u00AD) or a regular hyphen inside long words to fix the above.')
     process.exit(1)
 }
