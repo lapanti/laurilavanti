@@ -1,3 +1,4 @@
 {
-    "*/**/*.{js,jsx,ts,tsx,astro}": ["npm run lint"]
+    "*/**/*.{js,jsx,ts,tsx,astro}": ["npm run lint"],
+    "*/**/*.mdx": ["node scripts/check-long-words.mjs"]
 }
