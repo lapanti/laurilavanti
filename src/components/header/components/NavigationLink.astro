@@ -25,10 +25,13 @@ const { pathname } = Astro.url
     }}
 >
     a {
+        align-items: center;
+        display: flex;
         font-family: var(--bodyFontFamily);
         font-weight: var(--bodyFontWeight);
         font-size: var(--bodyFontSize);
         line-height: var(--bodyLineHeight);
+        min-height: 2.75rem;
         color: var(--colorsPeach);
         position: relative;
         overflow: hidden;
@@ -64,7 +67,7 @@ const { pathname } = Astro.url
 </style>
 <a
     aria-current={pathname.startsWith(href) ? 'page' : 'false'}
-    aria-label={title}
+    aria-label={title !== label ? (title.includes(label) ? title : `${label} – ${title}`) : undefined}
     data-switch-to-lang={switchToLang}
     href={href}
 >
