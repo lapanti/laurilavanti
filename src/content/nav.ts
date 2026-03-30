@@ -24,7 +24,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
     fi: [
         { href: '/fi/about/', label: 'Minusta', title: 'Minusta' },
         { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
-        { href: '/fi/contact/', label: 'Ota yhteyttä', title: 'Yhteystiedot' },
+        { href: '/fi/contact/', label: 'Ota yhteyttä', title: 'Ota yhteyttä' },
         { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
         { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
