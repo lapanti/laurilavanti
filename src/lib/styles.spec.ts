@@ -82,6 +82,7 @@ describe('styles', () => {
                 black: 'rgb(0, 0, 0)',
                 bluesky: '#0060df',
                 darkGreenText: 'rgb(0, 104, 69)',
+                darkMoss: 'rgb(72, 75, 0)',
                 evening: 'rgb(0, 98, 114)',
                 evening70: 'rgba(0, 98, 114, 0.7)',
                 facebook: '#4267B2',
