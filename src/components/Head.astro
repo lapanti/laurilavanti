@@ -58,6 +58,8 @@ const hreflangLinks =
           }))
         : []
 
+const xDefaultHref = hreflangLinks.find((l) => l.hreflang === 'fi')?.href ?? null
+
 const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, siteUrl) : null)
 
 const ogImageUrl = ogImage ?? null
@@ -194,6 +196,7 @@ const keywords = [
     )
 }
 {hreflangLinks.map(({ hreflang, href }) => <link href={href} hreflang={hreflang} rel="alternate" />)}
+{xDefaultHref && <link href={xDefaultHref} hreflang="x-default" rel="alternate" />}
 {
     ogImageUrl ? (
         <>
