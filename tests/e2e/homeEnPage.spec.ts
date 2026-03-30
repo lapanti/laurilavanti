@@ -1,6 +1,7 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
 import { test } from '@playwright/test'
 
+import { checkSiteImprove } from './helpers/siteimprove'
 import { HomeEnPage } from './pages/homeEnPage'
 
 test.describe('Home Page in English', () => {
@@ -19,6 +20,13 @@ test.describe('Home Page in English', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
+    })
+
+    test('should pass siteimprove check', async ({ page }) => {
+        const homePage = new HomeEnPage(page)
+        await homePage.goTo()
+
+        await checkSiteImprove(page)
     })
 
     test('should match screenshot', async ({ page }) => {

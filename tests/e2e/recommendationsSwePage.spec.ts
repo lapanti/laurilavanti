@@ -1,6 +1,7 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
 import test from '@playwright/test'
 
+import { checkSiteImprove } from './helpers/siteimprove'
 import { RecommendationsSwePage } from './pages/recommendationsSwePage'
 
 test.describe('Recommendations Page in swedish', () => {
@@ -19,6 +20,13 @@ test.describe('Recommendations Page in swedish', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
+    })
+
+    test('should pass siteimprove check', async ({ page }) => {
+        const recommendationsPage = new RecommendationsSwePage(page)
+        await recommendationsPage.goTo()
+
+        await checkSiteImprove(page)
     })
 
     test('should match screenshot', async ({ page }) => {

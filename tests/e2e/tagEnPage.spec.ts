@@ -1,6 +1,7 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
 import test from '@playwright/test'
 
+import { checkSiteImprove } from './helpers/siteimprove'
 import { TagEnPage } from './pages/tagEnPage'
 
 test.describe('Tag/Category Page in English', () => {
@@ -19,6 +20,13 @@ test.describe('Tag/Category Page in English', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
+    })
+
+    test('should pass siteimprove check', async ({ page }) => {
+        const tagPage = new TagEnPage(page)
+        await tagPage.goTo()
+
+        await checkSiteImprove(page)
     })
 
     test('should match screenshot', async ({ page }) => {

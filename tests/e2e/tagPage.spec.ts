@@ -1,6 +1,7 @@
 import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
 import test from '@playwright/test'
 
+import { checkSiteImprove } from './helpers/siteimprove'
 import { TagPage } from './pages/tagPage'
 
 test.describe('Tag Page', () => {
@@ -19,6 +20,13 @@ test.describe('Tag Page', () => {
 
         const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
+    })
+
+    test('should pass siteimprove check', async ({ page }) => {
+        const tagPage = new TagPage(page)
+        await tagPage.goTo()
+
+        await checkSiteImprove(page)
     })
 
     test('should match screenshot', async ({ page }) => {
