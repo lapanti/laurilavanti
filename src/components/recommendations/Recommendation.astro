@@ -52,7 +52,6 @@ const { alt, recommendation, image, name, title } = Astro.props
     p {
         font-family: var(--fontFamiliesMono);
         font-size: var(--fontSizes1);
-        font-style: italic;
         font-weight: var(--fontWeightsRegular);
         line-height: var(--lineHeight1);
         margin: 0;
@@ -91,7 +90,13 @@ const { alt, recommendation, image, name, title } = Astro.props
         )
     }
     <blockquote>
-        {recommendation && <p>{recommendation}</p>}
+        {
+            recommendation && (
+                <p>
+                    <em>{recommendation}</em>
+                </p>
+            )
+        }
         <footer>
             <cite>{name}</cite>
             {title && <span>{title}</span>}
