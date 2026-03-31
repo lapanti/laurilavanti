@@ -1,3 +1,4 @@
+import { getByRole, queryByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../../tests/helpers'
@@ -15,25 +16,25 @@ describe('<Recommendation />', () => {
     it('should render recommendation text', async () => {
         const result = await renderAstroComponent(Recommendation, { props: baseProps })
 
-        expect(result.querySelector('blockquote p')?.textContent).toBe(baseProps.recommendation)
+        expect(getByRole(result, 'emphasis').textContent).toBe(baseProps.recommendation)
     })
 
     it('should render the name in a cite element', async () => {
         const result = await renderAstroComponent(Recommendation, { props: baseProps })
 
-        expect(result.querySelector('blockquote footer cite')?.textContent).toBe(baseProps.name)
+        expect(getByRole(result, 'contentinfo')?.textContent).toContain(baseProps.name)
     })
 
     it('should render the title on a separate row', async () => {
         const result = await renderAstroComponent(Recommendation, { props: baseProps })
 
-        expect(result.querySelector('blockquote footer span')?.textContent).toBe(baseProps.title)
+        expect(getByRole(result, 'contentinfo').textContent).toContain(baseProps.title)
     })
 
     it('should render the portrait image with correct alt', async () => {
         const result = await renderAstroComponent(Recommendation, { props: baseProps })
 
-        const img = result.querySelector('img')
+        const img = getByRole(result, 'img', { name: baseProps.alt })
         expect(img).not.toBeNull()
         expect(img?.getAttribute('alt')).toBe(baseProps.alt)
     })
@@ -43,6 +44,6 @@ describe('<Recommendation />', () => {
             props: { ...baseProps, image: '' },
         })
 
-        expect(result.querySelector('.portrait')).toBeNull()
+        expect(queryByRole(result, 'img')).toBeNull()
     })
 })
