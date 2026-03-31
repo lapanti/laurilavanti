@@ -14,7 +14,6 @@ const { ariaLabel, title, url } = Astro.props
 <style
     define:vars={{
         sizes0: sizes[0],
-        sizes175: sizes[1.75],
         sizes225: sizes[2.25],
     }}
 >
@@ -32,15 +31,8 @@ const { ariaLabel, title, url } = Astro.props
     }
 
     li svg {
-        height: var(--sizes175);
-        width: var(--sizes175);
-    }
-
-    @media (min-width: 1200px) {
-        li svg {
-            height: var(--sizes225);
-            width: var(--sizes225);
-        }
+        height: var(--sizes225);
+        width: var(--sizes225);
     }
 </style>
 <li>
