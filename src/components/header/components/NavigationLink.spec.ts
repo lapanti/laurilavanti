@@ -45,7 +45,7 @@ describe('<NavigationLink />', () => {
         expect(getByRole(result, 'link', { name: title })).toHaveAttribute('href', href)
     })
 
-    it('should set aria-label attribute', async () => {
+    it('should not set aria-label when label equals title', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
                 href,
@@ -54,7 +54,19 @@ describe('<NavigationLink />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-label', title)
+        expect(getByRole(result, 'link', { name: title })).not.toHaveAttribute('aria-label')
+    })
+
+    it('should set combined aria-label when label differs from title', async () => {
+        const result = await renderAstroComponent(NavigationLink, {
+            props: {
+                href,
+                label: 'EN',
+                title: 'In English',
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: 'EN – In English' })).toHaveAttribute('aria-label', 'EN – In English')
     })
 
     it('should have aria-current as false when not in correct page', async () => {
