@@ -6,7 +6,7 @@ import MobileMenu from './MobileMenu.astro'
 
 describe('<MobileMenu />', () => {
     const links = [
-        { href: '/fi/about/', label: 'Laurista', title: 'Minusta' },
+        { href: '/fi/about/', label: 'Laurista', title: 'Laurista' },
         { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
     ]
 
@@ -58,7 +58,7 @@ describe('<MobileMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Minusta' })).toHaveAttribute('href', '/fi/about/')
+        expect(getByRole(result, 'link', { name: 'Laurista' })).toHaveAttribute('href', '/fi/about/')
         expect(getByRole(result, 'link', { name: 'Blogi' })).toHaveAttribute('href', '/fi/blog/')
     })
 })

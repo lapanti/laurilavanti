@@ -105,9 +105,9 @@ Every page emits structured metadata for search engines and social platforms: JS
 - Then: JSON-LD `@type` falls back to `WebSite`; no type-specific extra fields are added
 
 **Scenario: Title formatting**
-- Given: A page with `title: 'Minusta'`
+- Given: A page with `title: 'Laurista'`
 - When: The `<title>` tag is rendered
-- Then: It reads `Minusta | Lauri Lavanti`; if `title` is `'Lauri Lavanti'`, it reads just `Lauri Lavanti`
+- Then: It reads `Laurista | Lauri Lavanti`; if `title` is `'Lauri Lavanti'`, it reads just `Lauri Lavanti`
 
 **Scenario: Blog post with FAQPage schema**
 - Given: A `BlogPosting` page with `faq: [{q: '...', a: '...'}, {q: '...', a: '...'}]`
