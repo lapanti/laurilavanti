@@ -59,10 +59,11 @@ const l = labels[locale]
         colorsLinkedin: colors.linkedin,
         colorsThreads: colors.threads,
         sizes05: sizes[0.5],
-        sizes1: sizes[1],
+        sizes15: sizes[1.5],
     }}
 >
     aside {
+        align-items: center;
         display: flex;
         flex-direction: row;
         grid-column-start: 3;
@@ -76,13 +77,14 @@ const l = labels[locale]
         align-items: center;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         margin-right: var(--sizes05);
     }
 
     svg {
         display: inline-block;
-        height: var(--sizes1);
-        width: var(--sizes1);
+        height: var(--sizes15);
+        width: var(--sizes15);
         stroke: currentColor;
         fill: currentColor;
     }
