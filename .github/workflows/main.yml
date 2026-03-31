@@ -147,13 +147,14 @@ jobs:
     outputs:
       pages-deployment-alias-url: ${{ steps.deploy.outputs.pages-deployment-alias-url }}
 
-  test-e2e:
+  test-e2e-screenshots:
     runs-on: ubuntu-latest
     needs: [deploy]
     if: github.ref != 'refs/heads/main'
-    name: E2E tests
+    name: E2E screenshots
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-screenshots
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -165,25 +166,119 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npm run test:e2e:setup
-      - name: Run Playwright tests
-        env: 
+      - name: Run screenshot tests
+        env:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
-        run: npm run test:e2e
-        timeout-minutes: 30
+        run: npm run test:e2e:screenshots
+        timeout-minutes: 15
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: playwright-report-screenshots
+          path: playwright-report-screenshots/
           retention-days: 30
 
-  test-e2e-production:
+  test-e2e-axe:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref != 'refs/heads/main'
+    name: E2E axe
+    env:
+      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-axe
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:setup
+      - name: Run axe accessibility tests
+        env:
+          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+        run: npm run test:e2e:axe
+        timeout-minutes: 10
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report-axe
+          path: playwright-report-axe/
+          retention-days: 30
+
+  test-e2e-siteimprove:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref != 'refs/heads/main'
+    name: E2E siteimprove
+    env:
+      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-siteimprove
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:setup
+      - name: Run SiteImprove tests
+        env:
+          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+        run: npm run test:e2e:siteimprove
+        timeout-minutes: 15
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report-siteimprove
+          path: playwright-report-siteimprove/
+          retention-days: 30
+
+  test-e2e-other:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref != 'refs/heads/main'
+    name: E2E other
+    env:
+      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-other
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:setup
+      - name: Run other tests
+        env:
+          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+        run: npm run test:e2e:other
+        timeout-minutes: 10
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report-other
+          path: playwright-report-other/
+          retention-days: 30
+
+  test-e2e-production-screenshots:
     runs-on: ubuntu-latest
     needs: [deploy]
     if: github.ref == 'refs/heads/main'
-    name: E2E test production
+    name: E2E production screenshots
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-prod-screenshots
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -195,16 +290,109 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npm run test:e2e:setup
-      - name: Run Playwright tests against production
+      - name: Run screenshot tests against production
         env:
           E2E_URL: https://laurilavanti.fi
-        run: npm run test:e2e
-        timeout-minutes: 30
+        run: npm run test:e2e:screenshots
+        timeout-minutes: 15
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: playwright-report-prod-screenshots
+          path: playwright-report-prod-screenshots/
+          retention-days: 30
+
+  test-e2e-production-axe:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref == 'refs/heads/main'
+    name: E2E production axe
+    env:
+      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-prod-axe
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:setup
+      - name: Run axe accessibility tests against production
+        env:
+          E2E_URL: https://laurilavanti.fi
+        run: npm run test:e2e:axe
+        timeout-minutes: 10
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report-prod-axe
+          path: playwright-report-prod-axe/
+          retention-days: 30
+
+  test-e2e-production-siteimprove:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref == 'refs/heads/main'
+    name: E2E production siteimprove
+    env:
+      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-prod-siteimprove
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:setup
+      - name: Run SiteImprove tests against production
+        env:
+          E2E_URL: https://laurilavanti.fi
+        run: npm run test:e2e:siteimprove
+        timeout-minutes: 15
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report-prod-siteimprove
+          path: playwright-report-prod-siteimprove/
+          retention-days: 30
+
+  test-e2e-production-other:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    if: github.ref == 'refs/heads/main'
+    name: E2E production other
+    env:
+      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      PLAYWRIGHT_HTML_REPORT: playwright-report-prod-other
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:setup
+      - name: Run other tests against production
+        env:
+          E2E_URL: https://laurilavanti.fi
+        run: npm run test:e2e:other
+        timeout-minutes: 10
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report-prod-other
+          path: playwright-report-prod-other/
           retention-days: 30
 
   lighthouse:
