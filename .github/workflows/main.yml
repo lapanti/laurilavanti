@@ -152,6 +152,8 @@ jobs:
     needs: [deploy]
     if: github.ref != 'refs/heads/main'
     name: E2E screenshots
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-screenshots
@@ -183,6 +185,8 @@ jobs:
     needs: [deploy]
     if: github.ref != 'refs/heads/main'
     name: E2E axe
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-axe
@@ -214,6 +218,8 @@ jobs:
     needs: [deploy]
     if: github.ref != 'refs/heads/main'
     name: E2E siteimprove
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-siteimprove
@@ -245,6 +251,8 @@ jobs:
     needs: [deploy]
     if: github.ref != 'refs/heads/main'
     name: E2E other
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-other
@@ -276,6 +284,8 @@ jobs:
     needs: [deploy]
     if: github.ref == 'refs/heads/main'
     name: E2E production screenshots
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-screenshots
@@ -307,6 +317,8 @@ jobs:
     needs: [deploy]
     if: github.ref == 'refs/heads/main'
     name: E2E production axe
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-axe
@@ -338,6 +350,8 @@ jobs:
     needs: [deploy]
     if: github.ref == 'refs/heads/main'
     name: E2E production siteimprove
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-siteimprove
@@ -369,6 +383,8 @@ jobs:
     needs: [deploy]
     if: github.ref == 'refs/heads/main'
     name: E2E production other
+    permissions:
+      contents: read
     env:
       PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-other
