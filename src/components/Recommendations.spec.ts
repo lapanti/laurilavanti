@@ -1,5 +1,6 @@
 import type { Recommendation } from '../content/recommendations'
 
+import { getAllByRole, queryAllByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
@@ -34,8 +35,7 @@ describe('<Recommendations />', () => {
             props: { lang: 'fi', recommendations: testRecommendations },
         })
 
-        const items = result.querySelectorAll('li')
-        expect(items).toHaveLength(testRecommendations.length)
+        expect(getAllByRole(result, 'listitem')).toHaveLength(testRecommendations.length)
     })
 
     it('should use Finnish locale alt text when lang is fi', async () => {
@@ -43,8 +43,7 @@ describe('<Recommendations />', () => {
             props: { lang: 'fi', recommendations: testRecommendations },
         })
 
-        const images = result.querySelectorAll('img')
-        expect(images[0]?.getAttribute('alt')).toBe('Kuva Person Onesta.')
+        expect(getAllByRole(result, 'img')[0]?.getAttribute('alt')).toBe('Kuva Person Onesta.')
     })
 
     it('should use English locale alt text when lang is en', async () => {
@@ -52,8 +51,7 @@ describe('<Recommendations />', () => {
             props: { lang: 'en', recommendations: testRecommendations },
         })
 
-        const images = result.querySelectorAll('img')
-        expect(images[0]?.getAttribute('alt')).toBe('Photo of Person One.')
+        expect(getAllByRole(result, 'img')[0]?.getAttribute('alt')).toBe('Photo of Person One.')
     })
 
     it('should use Swedish locale alt text when lang is sv', async () => {
@@ -61,8 +59,7 @@ describe('<Recommendations />', () => {
             props: { lang: 'sv', recommendations: testRecommendations },
         })
 
-        const images = result.querySelectorAll('img')
-        expect(images[0]?.getAttribute('alt')).toBe('Foto av Person One.')
+        expect(getAllByRole(result, 'img')[0]?.getAttribute('alt')).toBe('Foto av Person One.')
     })
 
     it('should render Finnish recommendation text regardless of locale', async () => {
@@ -70,8 +67,7 @@ describe('<Recommendations />', () => {
             props: { lang: 'en', recommendations: testRecommendations },
         })
 
-        const blockquotes = result.querySelectorAll('blockquote p')
-        expect(blockquotes[0]?.textContent).toBe('Finnish recommendation text.')
+        expect(getAllByRole(result, 'emphasis')[0]?.textContent).toBe('Finnish recommendation text.')
     })
 
     it('should render empty list when recommendations array is empty', async () => {
@@ -79,6 +75,6 @@ describe('<Recommendations />', () => {
             props: { lang: 'fi', recommendations: [] },
         })
 
-        expect(result.querySelectorAll('li')).toHaveLength(0)
+        expect(queryAllByRole(result, 'listitem')).toHaveLength(0)
     })
 })

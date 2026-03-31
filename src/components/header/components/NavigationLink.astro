@@ -67,7 +67,7 @@ const { pathname } = Astro.url
 </style>
 <a
     aria-current={pathname.startsWith(href) ? 'page' : 'false'}
-    aria-label={title !== label ? (title.includes(label) ? title : `${label} – ${title}`) : undefined}
+    aria-label={title}
     data-switch-to-lang={switchToLang}
     href={href}
 >
