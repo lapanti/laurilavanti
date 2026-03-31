@@ -70,6 +70,7 @@ const { pathname } = Astro.url
     aria-label={title !== label ? (title.includes(label) ? title : `${label} – ${title}`) : undefined}
     data-switch-to-lang={switchToLang}
     href={href}
+    style={{ minHeight: '2.75rem', minWidth: '2.75rem' }}
 >
     {label}
 </a>
