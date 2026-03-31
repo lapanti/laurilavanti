@@ -109,6 +109,7 @@ const l = labels[locale]
         aria-label={l.facebook(title)}
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
+        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.facebookTitle}
     >
         <Icon class="facebook" name="fa7-brands:facebook" />
@@ -117,6 +118,7 @@ const l = labels[locale]
         aria-label={l.threads(title)}
         href={`https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
+        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.threadsTitle}
     >
         <Icon class="threads" name="fa7-brands:threads" />
@@ -125,6 +127,7 @@ const l = labels[locale]
         aria-label={l.bluesky(title)}
         href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
+        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.blueskyTitle}
     >
         <Icon class="bluesky" name="fa7-brands:bluesky" />
@@ -133,6 +136,7 @@ const l = labels[locale]
         aria-label={l.linkedin(title)}
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
+        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.linkedinTitle}
     >
         <Icon class="linkedin" name="fa7-brands:linkedin" />

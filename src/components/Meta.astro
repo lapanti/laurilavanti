@@ -72,7 +72,18 @@ const tagsToRender = tags
             <ul>
                 {tagsToRender.map((tag) => (
                     <li>
-                        <a href={`${tagBasePaths[lang]}/${tag.id}/`}>#{tag.name}</a>
+                        <a
+                            href={`${tagBasePaths[lang]}/${tag.id}/`}
+                            style={{
+                                alignItems: 'center',
+                                display: 'inline-flex',
+                                height: '2.75rem',
+                                justifyContent: 'center',
+                                minWidth: '2.75rem',
+                            }}
+                        >
+                            #{tag.name}
+                        </a>
                     </li>
                 ))}
             </ul>
