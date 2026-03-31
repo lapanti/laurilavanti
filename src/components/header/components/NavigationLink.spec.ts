@@ -7,7 +7,7 @@ import NavigationLink from './NavigationLink.astro'
 describe('<NavigationLink />', () => {
     const href = '/fi/about/'
     const label = 'Laurista'
-    const title = 'Minusta'
+    const title = 'Laurista'
 
     it('should render', async () => {
         const result = await renderAstroComponent(NavigationLink, {

@@ -15,21 +15,21 @@ export interface NavLink {
 
 export const navLinks: Record<Lang, NavLink[]> = {
     en: [
-        { href: '/en/about/', label: 'About me', title: 'About me' },
+        { href: '/en/about/', label: 'About Lauri', title: 'About Lauri' },
         { href: '/en/blog/', label: 'Blog', title: 'Blog' },
         { href: '/en/contact/', label: 'Contact', title: 'Contact info' },
         { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
         { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
     ],
     fi: [
-        { href: '/fi/about/', label: 'Minusta', title: 'Minusta' },
+        { href: '/fi/about/', label: 'Laurista', title: 'Laurista' },
         { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
         { href: '/fi/contact/', label: 'Ota yhteyttä', title: 'Ota yhteyttä' },
         { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
         { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
     sv: [
-        { href: '/sv/about/', label: 'Om mig', title: 'Om mig' },
+        { href: '/sv/about/', label: 'Om Lauri', title: 'Om Lauri' },
         { href: '/sv/blog/', label: 'Blogg', title: 'Blogg' },
         { href: '/sv/contact/', label: 'Kontakt', title: 'Kontaktuppgifter' },
         { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
