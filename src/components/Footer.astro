@@ -37,18 +37,20 @@ const getAriaLabel = footerAriaLabel[lang]
         display: flex;
         flex-direction: column;
         gap: var(--sizes15);
+        padding-block: var(--sizes15);
+        width: 100%;
     }
 
     .container > div,
     .container > ul {
         align-items: center;
         display: flex;
-        flex: 1;
         flex-direction: row;
         justify-content: center;
     }
 
     .container > ul {
+        flex: 1;
         flex-wrap: wrap;
         gap: var(--sizes15);
     }
