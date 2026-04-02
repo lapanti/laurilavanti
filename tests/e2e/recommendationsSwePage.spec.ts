@@ -10,6 +10,11 @@ test.describe('Recommendations Page in swedish', () => {
         await recommendationsPage.goTo()
 
         await recommendationsPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const recommendationsPage = new RecommendationsSwePage(page)
+        await recommendationsPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

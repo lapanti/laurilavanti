@@ -10,6 +10,11 @@ test.describe('About Page in english', () => {
         await aboutPage.goTo()
 
         await aboutPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const aboutPage = new AboutEnPage(page)
+        await aboutPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

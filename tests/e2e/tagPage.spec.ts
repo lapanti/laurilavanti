@@ -10,6 +10,11 @@ test.describe('Tag Page', () => {
         await tagPage.goTo()
 
         await tagPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const tagPage = new TagPage(page)
+        await tagPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

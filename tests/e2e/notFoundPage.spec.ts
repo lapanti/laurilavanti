@@ -10,6 +10,11 @@ test.describe('404 Not Found Page', () => {
         await notFoundPage.goTo()
 
         await notFoundPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const notFoundPage = new NotFoundPage(page)
+        await notFoundPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
