@@ -10,6 +10,11 @@ test.describe('Newsletter Page', () => {
         await newsletterPage.goTo()
 
         await newsletterPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const newsletterPage = new NewsletterPage(page)
+        await newsletterPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

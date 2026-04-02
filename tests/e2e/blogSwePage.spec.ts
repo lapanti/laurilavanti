@@ -10,6 +10,11 @@ test.describe('Blog Page på svenska', () => {
         await blogPage.goTo()
 
         await blogPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const blogPage = new BlogSwePage(page)
+        await blogPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

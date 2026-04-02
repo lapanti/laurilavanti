@@ -2,6 +2,7 @@ import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-n
 import { test } from '@playwright/test'
 
 import { checkSiteImprove } from './helpers/siteimprove'
+import { HomeEnPage } from './pages/homeEnPage'
 import { HomePage } from './pages/homePage'
 
 test.describe('Home Page', () => {
@@ -10,6 +11,11 @@ test.describe('Home Page', () => {
         await homePage.goHome()
 
         await homePage.checkTitles()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const homePage = new HomeEnPage(page)
+        await homePage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

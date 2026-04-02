@@ -10,6 +10,11 @@ test.describe('Blog Post Page', () => {
         await blogPostPage.goTo()
 
         await blogPostPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const blogPostPage = new BlogPostPage(page)
+        await blogPostPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

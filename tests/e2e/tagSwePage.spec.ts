@@ -10,6 +10,11 @@ test.describe('Tag/Category Page på svenska', () => {
         await tagPage.goTo()
 
         await tagPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const tagPage = new TagSwePage(page)
+        await tagPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

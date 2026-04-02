@@ -10,6 +10,11 @@ test.describe('About Page på svenska', () => {
         await aboutPage.goTo()
 
         await aboutPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const aboutPage = new AboutSwePage(page)
+        await aboutPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })

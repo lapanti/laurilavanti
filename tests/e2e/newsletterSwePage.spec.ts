@@ -10,6 +10,11 @@ test.describe('Newsletter Page (Swedish)', () => {
         await newsletterPage.goTo()
 
         await newsletterPage.checkContent()
+    })
+
+    test('should match aria snapshot', async ({ page }) => {
+        const newsletterPage = new NewsletterSwePage(page)
+        await newsletterPage.goTo()
 
         await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
