@@ -98,7 +98,6 @@ GitHub issues serve as PBIs. When asked to work on an issue:
    - Commit with conventional format: `type(scope): description`
    - Push — `git push`
 5. **Finalise** — after the last commit and push:
-   - Run a full build to catch any remaining issues: `npm run build`
    - **Always** mark PR ready: `gh pr ready` — do this even if you think you may have already done it
    - Update PR description if needed: `gh pr edit`
    - Wait for the PR checks to complete in CI; if the e2e check fails, inspect the Playwright report, identify what broke, and fix it in a follow-up commit
