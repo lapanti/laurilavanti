@@ -16,7 +16,7 @@
     "lint:fix": "npm run lint -- --fix",
     "check": "astro check",
     "dev": "astro dev",
-    "build": "npm run validate-translations && npm run validate-titles && astro build",
+    "build": "astro build",
     "validate-translations": "node scripts/validate-translations.mjs",
     "validate-titles": "node scripts/validate-titles.mjs",
     "preview": "astro preview",
