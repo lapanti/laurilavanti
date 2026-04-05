@@ -1,5 +1,1 @@
 lint-staged
-
-if git diff --cached --name-only | grep -q '\.mdx$'; then
-    node scripts/validate-translations.mjs
-fi

@@ -23,7 +23,7 @@ Core constraint: all-content-local; hosted on Cloudflare Pages (static output on
 | **Preview** | `npm run preview` | Preview production build locally |
 | **Test (unit)** | `npm run test` | Vitest |
 | **Test (E2E)** | `npm run test:e2e` | Playwright — builds + previews automatically |
-| **Lint** | `npm run lint` | ESLint + Prettier — run before every commit |
+| **Lint** | `npm run lint` | ESLint + Prettier |
 | **Type check** | `npm run check` | Astro TypeScript check |
 
 ---
@@ -91,18 +91,14 @@ GitHub issues serve as PBIs. When asked to work on an issue:
 1. **Assign the issue** — `gh issue edit {number} --add-assignee @me`
 2. **Create a branch** — `git checkout -b type/{short-kebab-description}` (no issue number prefix; include type e.g. `fix` or `feat`)
 3. **First commit** — after the first commit on the branch:
-   - Run `npm run lint` before committing and fix any errors
-   - Run `npm run check` to verify TypeScript types
-   - Commit with conventional format: `type(scope): description`
+   - Commit with conventional format: `type(scope): description` — the pre-commit hook runs lint, content validation, and related unit tests automatically
    - Push — `git push -u origin HEAD`
    - Open a **draft PR** — `gh pr create --draft` referencing the issue (`Closes #N`)
 4. **Subsequent commits** — for every further commit:
-   - Run `npm run lint` before committing and fix any errors
-   - Run `npm run check` to verify TypeScript types
    - Commit with conventional format: `type(scope): description`
    - Push — `git push`
 5. **Finalise** — after the last commit and push:
-   - Run local checks: `npm run lint && npm run check && npm run test && npm run build`
+   - Run a full build to catch any remaining issues: `npm run build`
    - **Always** mark PR ready: `gh pr ready` — do this even if you think you may have already done it
    - Update PR description if needed: `gh pr edit`
    - Wait for the PR checks to complete in CI; if the e2e check fails, inspect the Playwright report, identify what broke, and fix it in a follow-up commit
