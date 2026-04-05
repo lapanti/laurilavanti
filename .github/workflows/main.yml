@@ -84,6 +84,28 @@ jobs:
       - name: Check MDX files for words that would cause horizontal scroll
         run: node scripts/check-long-words.mjs $(find src/pages -name '*.mdx')
 
+  validate-translations:
+    runs-on: ubuntu-latest
+    name: Validate translations
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+      - name: Check all posts have translations in all languages
+        run: node scripts/validate-translations.mjs
+
+  validate-titles:
+    runs-on: ubuntu-latest
+    name: Validate titles
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+      - name: Check all page titles meet SEO length requirements
+        run: node scripts/validate-titles.mjs
+
   unit-test:
     runs-on: ubuntu-latest
     name: Unit tests
