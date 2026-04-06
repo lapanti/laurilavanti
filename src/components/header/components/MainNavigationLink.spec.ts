@@ -41,6 +41,14 @@ describe('<MainNavigationLink />', () => {
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('aria-current', 'page')
     })
 
+    it('should have aria-current as page when at root (/)', async () => {
+        const result = await renderAstroComponent(MainNavigationLink, {
+            request: new Request('https://laurilavanti.fi/'),
+        })
+
+        expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('aria-current', 'page')
+    })
+
     it('should have correct href for sv lang', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {
             props: { lang: 'sv' },
