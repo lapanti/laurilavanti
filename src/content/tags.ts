@@ -146,7 +146,7 @@ export const tags: LocalTag[] = [
         id: 'digital-independence',
         names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
         pageTitle: {
-            en: 'Digital independence and sovereignty in Finland',
+            en: 'Digital inde\u00ADpendence and sovereignty in Finland',
             fi: 'Digitaalinen itsenäisyys Suomessa',
             sv: 'Digital själv\u00ADständighet i Finland',
         },
@@ -192,9 +192,9 @@ export const tags: LocalTag[] = [
         id: 'digitalisation',
         names: { en: 'Digitalisation', fi: 'Digitalisaatio', sv: 'Digitalisering' },
         pageTitle: {
-            en: 'Digitalisation – IT and information policy',
-            fi: 'Digitalisaatio – IT ja tieto\u00ADpolitiikka',
-            sv: 'Digitalisering – IT och informations\u00ADpolitik',
+            en: 'Digita\u00ADlisation – IT and information policy',
+            fi: 'Digitali\u00ADsaatio – IT ja tieto\u00ADpolitiikka',
+            sv: 'Digitali\u00ADsering – IT och informations\u00ADpolitik',
         },
     },
     {
@@ -515,7 +515,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Transport', fi: 'Liikenne', sv: 'Trafik' },
         pageTitle: {
             en: 'Transport – public transit and sustainable mobility',
-            fi: 'Liikenne – joukkoliikenne ja kestävä liikkuminen',
+            fi: 'Liikenne – joukko\u00ADliikenne ja kestävä liikkuminen',
             sv: 'Trafik – kollektiv\u00ADtrafik och hållbar rörlighet',
         },
     },
@@ -882,8 +882,8 @@ export const tags: LocalTag[] = [
         id: 'equality-and-non-discrimination',
         names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhdenvertaisuus', sv: 'Jämlikhet' },
         pageTitle: {
-            en: 'About equality and non-discrimination',
-            fi: 'Tasa-arvosta ja yhden\u00ADvertaisuudesta',
+            en: 'About equality and non-discri\u00ADmination',
+            fi: 'Tasa-arvosta ja yhden\u00ADvertaisuudes\u00ADta',
             sv: 'Om jämlikhet och icke-diskri\u00ADminering',
         },
     },
@@ -1113,7 +1113,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Privacy', fi: 'Yksityisyydensuoja', sv: 'Integritetsskydd' },
         pageTitle: {
             en: 'Privacy protection in the digital world',
-            fi: 'Yksi\u00ADtyisyyden\u00ADsuoja digitaalisessa maailmassa',
+            fi: 'Yksi\u00ADtyisyyden\u00ADsuoja digitaali\u00ADsessa maailmassa',
             sv: 'Integritets\u00ADskydd i den digitala världen',
         },
     },
