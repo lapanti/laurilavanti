@@ -2,8 +2,10 @@
 import type { LocalTag } from '../../../content/tags'
 
 import ExcerptList from '../../../components/ExcerptList.astro'
+import Paragraph from '../../../components/Paragraph.astro'
 import { tags } from '../../../content/tags'
 import PageLayout from '../../../layouts/PageLayout.astro'
+import { COLLECTIONPAGE } from '../../../lib/jsonld'
 
 export function getStaticPaths() {
     return tags.map((t) => ({ params: { tag: t.id }, props: { tag: t } }))
@@ -14,8 +16,24 @@ interface Props {
 }
 
 const { tag } = Astro.props
+
+const heroImageFallback = 'Lauri-Lavanti-next-to-a-table'
+const heroImageAltFallback =
+    'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.'
+
+const faq = tag.faq?.sv
 ---
 
-<PageLayout lang="sv" slug={`sv/category/${tag.id}`} title={tag.names.sv}>
+<PageLayout
+    alt={tag.heroImageAlt?.sv ?? heroImageAltFallback}
+    description={tag.descriptions.sv}
+    faq={faq}
+    heroImage={tag.heroImage ?? heroImageFallback}
+    lang="sv"
+    slug={`sv/category/${tag.id}`}
+    title={tag.pageTitle.sv}
+    type={COLLECTIONPAGE}
+>
+    <Paragraph>{tag.descriptions.sv}</Paragraph>
     <ExcerptList lang="sv" tag={tag.id} />
 </PageLayout>

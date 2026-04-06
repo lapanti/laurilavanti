@@ -9,8 +9,17 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 - **Single source of truth:** `src/content/tags.ts`
   ```ts
   interface LocalTag {
-      id: string                             // URL-safe, kebab-case, never changes
-      names: { en: string; fi: string; sv: string }  // display name per locale
+      id: string                                          // URL-safe, kebab-case, never changes
+      names: { en: string; fi: string; sv: string }      // short display name (tag chips, links)
+      pageTitle: { en: string; fi: string; sv: string }  // 34–44 raw chars; full <title> after suffix = 50–60 chars
+      descriptions: { en: string; fi: string; sv: string } // intro paragraph text for category pages
+      heroImage?: string                                  // Cloudinary image id; fallback: 'Lauri-Lavanti-next-to-a-table'
+      heroImageAlt?: { en: string; fi: string; sv: string } // required when heroImage is set
+      faq?: {                                             // per-locale; only renders when locale array has 2+ entries
+          en?: Array<{ q: string; a: string }>
+          fi?: Array<{ q: string; a: string }>
+          sv?: Array<{ q: string; a: string }>
+      }
   }
   export const tags: LocalTag[]
   export function getTagName(id: string, lang?: Lang): string | undefined
@@ -22,6 +31,8 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 - **`buildTagCollection(lang)`** (referenced in `ExcerptList` context): builds a `TagCollection`-compatible object. Comes from `tags.ts` via the pattern documented in `ARCHITECTURE.md`.
 
 - **Category pages:** `src/pages/{lang}/category/[tag].astro` — `getStaticPaths` maps `tags` → `{ params: { tag: t.id }, props: { tag: t } }`. Only ids in `tags.ts` get a page generated.
+
+- **Category page enrichment:** Each category page passes `type={COLLECTIONPAGE}`, `description` (from `tag.descriptions[lang]`), `heroImage` (tag override or `'Lauri-Lavanti-next-to-a-table'`), `alt`, and `faq` (locale-specific array) to `PageLayout`. An intro `<Paragraph>` is rendered before `<ExcerptList>`. FAQPage JSON-LD and a visible `<FaqSection>` are emitted when the locale's `faq` array has 2+ entries.
 
 - **Filtering in `ExcerptList`:** filters `allMdxPosts` by `post.tags.includes(tagId)` — strict string equality. No fuzzy matching.
 
@@ -35,6 +46,9 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 - Do not add locale-specific tags — all tags must have `fi`, `sv`, and `en` names; partial entries break the category page for the locales with missing names
 - Do not add tags in components, layouts, or MDX content — `tags.ts` is the only place
 - Do not sort or reorder `tags` array for display — components that need sorted display should sort locally
+- Do not use `names` as the page `<title>` — `names` is for display only (tag chips, links); use `pageTitle` for category page SEO titles
+- Do not add a `pageTitle` shorter than 34 raw chars or longer than 44 raw chars — the final rendered title (with ` | Lauri Lavanti` suffix) must be 50–60 chars
+- Do not add `heroImage` without also setting `heroImageAlt` — alt text is required for accessibility
 
 ---
 
@@ -42,7 +56,8 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 
 ### Definition of Done
 - [ ] New tag has a unique `id` in kebab-case that does not conflict with existing ids
-- [ ] All three locale names (`fi`, `sv`, `en`) are provided
+- [ ] All three locale names (`fi`, `sv`, `en`) are provided in `names`, `pageTitle`, and `descriptions`
+- [ ] `pageTitle` raw length is 34–44 chars per locale (final title with suffix = 50–60 chars)
 - [ ] Posts referencing the new tag `id` appear in `ExcerptList` when filtered by that tag
 - [ ] `/{lang}/category/{id}` resolves to a generated page for all three locales
 - [ ] `npm run build` passes (new category pages are generated)
@@ -55,9 +70,9 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 ### Scenarios
 
 **Scenario: New tag added**
-- Given: A new tag `{ id: 'energia', names: { fi: 'Energia', sv: 'Energi', en: 'Energy' } }` is added to `tags.ts`
+- Given: A new tag with all required fields (`id`, `names`, `pageTitle`, `descriptions`) is added to `tags.ts`
 - When: The site is built
-- Then: `/fi/category/energia`, `/sv/category/energia`, and `/en/category/energia` are generated; posts with `tags: [energia]` appear in those pages
+- Then: `/fi/category/{id}`, `/sv/category/{id}`, and `/en/category/{id}` are generated with intro text and `CollectionPage` JSON-LD; posts with the tag appear in those pages
 
 **Scenario: Post references unknown tag id**
 - Given: A post has `tags: [olematon-tagi]` and that id is not in `tags.ts`
@@ -73,3 +88,13 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 - Given: `getTagName('kirkkonummi', 'fi')` and `getTagName('nonexistent', 'fi')`
 - When: Called at runtime
 - Then: First returns `'Kirkkonummi'`; second returns `undefined`
+
+**Scenario: Category page with FAQ (2+ entries)**
+- Given: A tag has `faq.fi` with 2+ entries
+- When: `/fi/category/{id}` is rendered
+- Then: Two `<script type="application/ld+json">` blocks are emitted — one `CollectionPage`, one `FAQPage`. A visible `<FaqSection>` appears below the `<ExcerptList>`.
+
+**Scenario: Category page FAQ in only one locale**
+- Given: A tag has `faq.fi` with 2+ entries but no `faq.sv`
+- When: `/sv/category/{id}` is rendered
+- Then: No `FAQPage` JSON-LD and no `<FaqSection>` for the Swedish page; the Finnish page still gets both.

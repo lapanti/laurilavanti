@@ -9,10 +9,11 @@ Every page emits structured metadata for search engines and social platforms: JS
 - **Entry point:** `src/components/Head.astro` — consumes props from `BaseLayout`, generates all `<head>` content
 - **JSON-LD types:** defined in `src/lib/jsonld.ts` as typed constants:
   ```ts
-  BLOGPOSTING = 'BlogPosting'
-  PERSON      = 'Person'
-  WEBPAGE     = 'WebPage'
-  WEBSITE     = 'WebSite'
+  BLOGPOSTING    = 'BlogPosting'
+  COLLECTIONPAGE = 'CollectionPage'
+  PERSON         = 'Person'
+  WEBPAGE        = 'WebPage'
+  WEBSITE        = 'WebSite'
   ```
   If `type` is missing or not in `JSON_LD_TYPES`, the schema falls back to `WebSite`.
 - **Schema fields by type:**
@@ -20,6 +21,7 @@ Every page emits structured metadata for search engines and social platforms: JS
   | Type | Extra fields |
   |---|---|
   | `BlogPosting` | `datePublished`, `dateModified`, `mainEntityOfPage` |
+  | `CollectionPage` | no extras (base fields only) |
   | `WebSite` | `name`, `sameAs` (all social profiles) |
   | `Person` | `jobTitle` (locale-specific), `description` (locale-specific), `knowsAbout[]`, `memberOf` (PoliticalParty), `sameAs` |
   | `WebPage` | no extras (base fields only) |
@@ -130,3 +132,8 @@ Every page emits structured metadata for search engines and social platforms: JS
 - Given: A page with `type: 'Person'` and `faq` with 2+ entries (e.g. home or about page)
 - When: The page is built
 - Then: Two `<script type="application/ld+json">` blocks are emitted — the first with `@type: Person`, the second with `@type: FAQPage`. A visible `<FaqSection>` (localised `<h2>` heading + `<dl>`/`<dt>`/`<dd>` pairs) is also rendered at the bottom of the article, above the footer. The `faq` prop flows from MDX frontmatter → `FrontPageLayout` or `PageLayout` → `BaseLayout` → `Head` (JSON-LD) and `FaqSection` (HTML). Blog posts with `faq` frontmatter do NOT get a visible `FaqSection` (the `type !== BlogPosting` guard in `BaseLayout` prevents it) — their FAQ content is already present as H2 sections in the article body.
+
+**Scenario: Category page (CollectionPage type) metadata**
+- Given: A tag category page with `type: 'CollectionPage'`, `heroImage`, `description`, `faq` (2+ entries for the locale)
+- When: The page is built
+- Then: JSON-LD `@type` is `CollectionPage`; base fields (`author`, `description`, `headline`, `url`, `image`) are emitted; `og:type` is `website`; Twitter card is `summary_large_image`; a second JSON-LD block with `@type: FAQPage` is emitted; a visible `<FaqSection>` is rendered in the page body below `<ExcerptList>`.
