@@ -1,0 +1,62 @@
+---
+import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
+
+import FrontPageExcerptList from '../components/FrontPageExcerptList.astro'
+import HeroBanner from '../components/HeroBanner.astro'
+import NewsletterSubscribe from '../components/NewsletterSubscribe.astro'
+import Paragraph from '../components/Paragraph.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const title = 'Lauri Lavanti – kunnanvaltuutettu, IT ja talous | Vihreät'
+const heroImage = 'Lauri-Lavanti-nojaamassa-kasiin'
+const ogImage = getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
+const alt =
+    'Lauri Lavanti nojaamassa käsiinsä ja katsoo kameraan hymyssä suin. Päällä hänellä on valkoinen kauluspaita ja tumma pikkutakki. Kuvan ottanut Erkki Laine.'
+
+const faq = [
+    {
+        a: 'Lauri Lavanti kuuluu Vihreisiin (Vihreä liitto) ja toimii Kirkkonummen kunnanvaltuutettuna sekä Vihreän valtuustoryhmän puheenjohtajana.',
+        q: 'Mihin puolueeseen Lauri Lavanti kuuluu?',
+    },
+    {
+        a: 'Lauri Lavannin tärkein politiikka-alue on digitalisaatio ja sen vaikutukset talouteen, yksityisyyteen ja kilpailukykyyn. Hän yhdistää teknisen asiantuntemuksen talousajatteluun.',
+        q: 'Mikä on Lauri Lavannin tärkein politiikka-alue?',
+    },
+    {
+        a: 'Lauri Lavanti työskentelee johtavana ohjelmistokehittäjänä pankissa ja on koulutukseltaan diplomi-insinööri Aalto-yliopistosta. Hän on erikoistunut digitalisaatioon, yksityisyyden suojaan ja tekoälyn vastuulliseen käyttöönottoon.',
+        q: 'Mitä Lauri Lavanti tekee työkseen?',
+    },
+    {
+        a: 'Lauri Lavanti tuo politiikkaan käytännön IT-asiantuntemuksen ja tarkastelee päätöksentekoa sekä teknisinä että yhteiskunnallisina kokonaisuuksina. Hänen tavoitteenaan on, että julkishallinto pysyy teknologisen kehityksen tahdissa.',
+        q: 'Miten Lauri Lavanti yhdistää teknologian ja politiikan?',
+    },
+]
+---
+
+<BaseLayout
+    description="Johtava ohjelmistokehittäjä, diplomi-insinööri ja poliitikko"
+    faq={faq}
+    lang="fi"
+    ogImage={ogImage}
+    ogImageAlt={alt}
+    slug="fi"
+    title={title}
+    type="Person"
+>
+    <HeroBanner
+        alt={alt}
+        backgroundImage="Kirkkonummen-keskusta"
+        heroImage={heroImage}
+        secondaryTitle="Arjesta digitalisaation keskellä"
+        slot="banner"
+        title="Lauri Lavanti"
+    />
+    <Paragraph>
+        Olen Lauri Lavanti – Kirkkonummen kunnanvaltuutettu Vihreistä, johtava ohjelmistokehittäjä ja diplomi-insinööri.
+        Yhdistän IT-osaamisen, talousajattelun ja paikallispoliittisen kokemuksen, koska digiajan hyvä kunta tarvitsee
+        kaikkia kolmea. Löydät ajatuksiani täältä blogeista – tai tilaat uutiskirjeen, jos haluat ne suoraan
+        sähköpostiisi.
+    </Paragraph>
+    <NewsletterSubscribe lang="fi" />
+    <FrontPageExcerptList limit={8} />
+</BaseLayout>
