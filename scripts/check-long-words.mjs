@@ -93,10 +93,59 @@ function wordSegments(text) {
     return text.split(/[\s\u00AD\u2013\u2014\-,.:;!?()\[\]{}|/"«»„""]+/).filter((s) => s.length > 0)
 }
 
+/**
+ * Parse all pageTitle locale string values from tags.ts.
+ * Returns an array of { value, line } objects for error reporting.
+ */
+function extractPageTitles(tsContent) {
+    const lines = tsContent.split('\n')
+    const results = []
+    let inPageTitle = false
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i]
+        if (/pageTitle\s*:\s*\{/.test(line)) {
+            inPageTitle = true
+            continue
+        }
+        if (inPageTitle && /^\s*\},?$/.test(line)) {
+            inPageTitle = false
+            continue
+        }
+        if (inPageTitle) {
+            const m = line.match(/(?:en|fi|sv)\s*:\s*(?:'([^']*)'|"([^"]*)")/)
+            if (m) {
+                // Unescape \uXXXX sequences so soft hyphens (\u00AD) act as break points
+                const raw = (m[1] ?? m[2]).replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) =>
+                    String.fromCodePoint(parseInt(hex, 16))
+                )
+                results.push({ value: raw, line: i + 1 })
+            }
+        }
+    }
+    return results
+}
+
 const files = process.argv.slice(2)
+const mdxFiles = files.filter((f) => f.endsWith('.mdx'))
+const tagFiles = files.filter((f) => f.endsWith('tags.ts'))
 let hasError = false
 
-for (const file of files) {
+for (const file of tagFiles) {
+    const content = readFileSync(file, 'utf8')
+    for (const { value, line } of extractPageTitles(content)) {
+        const plain = stripMarkdown(value)
+        for (const seg of wordSegments(plain)) {
+            if (seg.length > H1_THRESHOLD) {
+                console.error(
+                    `${file}:${line}: pageTitle segment "${seg}" is ${seg.length} chars (max ${H1_THRESHOLD})`
+                )
+                hasError = true
+            }
+        }
+    }
+}
+
+for (const file of mdxFiles) {
     const content = readFileSync(file, 'utf8')
     const lines = content.split('\n')
 
