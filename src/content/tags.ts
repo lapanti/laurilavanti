@@ -606,9 +606,9 @@ export const tags: LocalTag[] = [
         id: 'education',
         names: { en: 'Education', fi: 'Opetus', sv: 'Utbildning' },
         pageTitle: {
-            en: 'Education and education policy in the municipality',
-            fi: 'Opetus ja koulutus\u00ADpolitiikka kunnassa',
-            sv: 'Utbildning och utbildnings\u00ADpolitik i kommunen',
+            en: 'About education and education policy',
+            fi: 'Opetuksesta ja koulutus\u00ADpolitiikasta',
+            sv: 'Om utbildning och utbildnings\u00ADpolitik',
         },
     },
     {
@@ -698,9 +698,9 @@ export const tags: LocalTag[] = [
         id: 'basic-welfare',
         names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grundläggande' },
         pageTitle: {
-            en: 'Basic welfare and social security in the municipality',
-            fi: 'Perusturva ja sosiaaliturva kunnassa',
-            sv: 'Grund\u00ADläggande trygghet och social\u00ADskydd',
+            en: 'About basic welfare and social security',
+            fi: 'Perusturvasta ja sosiaali\u00ADturvasta arjessa',
+            sv: 'Om grund\u00ADläggande trygghet och social\u00ADskydd',
         },
     },
     {
@@ -744,9 +744,9 @@ export const tags: LocalTag[] = [
         id: 'culture-and-education',
         names: { en: 'Culture & education', fi: 'Sivistys', sv: 'Bildning' },
         pageTitle: {
-            en: 'Culture and civic education in the municipality',
-            fi: 'Sivistys ja kulttuuri kunnassa',
-            sv: 'Bildning och kultur i kommunen',
+            en: 'Culture, civic education and leisure',
+            fi: 'Sivistyksestä ja kulttuuri\u00ADpalveluista',
+            sv: 'Bildning, kultur och fritids\u00ADtjänster',
         },
     },
     {
@@ -882,9 +882,9 @@ export const tags: LocalTag[] = [
         id: 'equality-and-non-discrimination',
         names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhdenvertaisuus', sv: 'Jämlikhet' },
         pageTitle: {
-            en: 'Equality and non-discrimination in the municipality',
-            fi: 'Tasa-arvo ja yhden\u00ADvertaisuus kunnassa',
-            sv: 'Jämlikhet och icke-diskri\u00ADminering i kommunen',
+            en: 'About equality and non-discrimination',
+            fi: 'Tasa-arvosta ja yhden\u00ADvertaisuudesta',
+            sv: 'Om jämlikhet och icke-diskri\u00ADminering',
         },
     },
     {
