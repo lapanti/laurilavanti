@@ -147,7 +147,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
         pageTitle: {
             en: 'Digital inde\u00ADpendence and sovereignty in Finland',
-            fi: 'Digitaalinen itsenäisyys Suomessa',
+            fi: 'Digitaa\u00ADlinen itsenäisyys Suomessa',
             sv: 'Digital själv\u00ADständighet i Finland',
         },
     },
@@ -194,7 +194,7 @@ export const tags: LocalTag[] = [
         pageTitle: {
             en: 'Digita\u00ADlisation – IT and information policy',
             fi: 'Digitali\u00ADsaatio – IT ja tieto\u00ADpolitiikka',
-            sv: 'Digitali\u00ADsering – IT och informations\u00ADpolitik',
+            sv: 'Digita\u00ADlisering – IT och infor\u00ADmations\u00ADpolitik',
         },
     },
     {
@@ -239,7 +239,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Infrastructure', fi: 'Infra', sv: 'Infrastruktur' },
         pageTitle: {
             en: 'Infra\u00ADstructure – construc\u00ADtion and engineering',
-            fi: 'Infra\u00ADstruktuuri – rakentaminen ja kunnallis\u00ADtekniikka',
+            fi: 'Infra\u00ADstruktuuri – rakenta\u00ADminen ja kunnallis\u00ADtekniikka',
             sv: 'Infra\u00ADstruktur – byggande och kommunal\u00ADteknik',
         },
     },
@@ -330,7 +330,7 @@ export const tags: LocalTag[] = [
         id: 'kirkkonummi',
         names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
         pageTitle: {
-            en: 'Kirkkonummi – municipality and politics',
+            en: 'Kirkkonummi – munici\u00ADpality and politics',
             fi: 'Kirkkonummi – kunta, politiikka, arki',
             sv: 'Kyrkslätt – kommunal\u00ADpolitik och vardag',
         },
@@ -424,7 +424,7 @@ export const tags: LocalTag[] = [
         pageTitle: {
             en: 'Western railway – rail link to northern Kirkkonummi',
             fi: 'Länsirata – Pohjois-Kirkko\u00ADnummen rata\u00ADyhteys',
-            sv: 'Västbanan – järnvägs\u00ADförbindelsen till norra Kyrkslätt',
+            sv: 'Västbanan – järnvägs\u00ADförbin\u00ADdelsen till norra Kyrkslätt',
         },
     },
     {
@@ -607,7 +607,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Education', fi: 'Opetus', sv: 'Utbildning' },
         pageTitle: {
             en: 'About education and education policy',
-            fi: 'Opetuksesta ja koulutus\u00ADpolitiikasta',
+            fi: 'Opetuksesta ja koulutus\u00ADpolitii\u00ADkasta',
             sv: 'Om utbildning och utbildnings\u00ADpolitik',
         },
     },
@@ -654,7 +654,7 @@ export const tags: LocalTag[] = [
         pageTitle: {
             en: 'Co-op elections – S Group democracy',
             fi: 'Osuus\u00ADkauppa\u00ADvaalit – S-ryhmän demokratia',
-            sv: 'Kooperativval – S-gruppens demokrati',
+            sv: 'Koopera\u00ADtivval – S-gruppens demokrati',
         },
     },
     {
@@ -699,7 +699,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grundläggande' },
         pageTitle: {
             en: 'About basic welfare and social security',
-            fi: 'Perusturvasta ja sosiaali\u00ADturvasta arjessa',
+            fi: 'Perus\u00ADturvasta ja sosiaali\u00ADturvasta arjessa',
             sv: 'Om grund\u00ADläggande trygghet och social\u00ADskydd',
         },
     },
@@ -745,7 +745,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Culture & education', fi: 'Sivistys', sv: 'Bildning' },
         pageTitle: {
             en: 'Culture, civic education and leisure',
-            fi: 'Sivistyksestä ja kulttuuri\u00ADpalveluista',
+            fi: 'Sivistyk\u00ADsestä ja kulttuuri\u00ADpalveluista',
             sv: 'Bildning, kultur och fritids\u00ADtjänster',
         },
     },
@@ -791,7 +791,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Social media', fi: 'Sosiaalinen media', sv: 'Sociala medier' },
         pageTitle: {
             en: 'Social media in politics and communica\u00ADtion',
-            fi: 'Sosiaalinen media politiikassa ja viestinnässä',
+            fi: 'Sosiaalinen media politii\u00ADkassa ja viestin\u00ADnässä',
             sv: 'Sociala medier i politik och kommunika\u00ADtion',
         },
     },
@@ -883,7 +883,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhdenvertaisuus', sv: 'Jämlikhet' },
         pageTitle: {
             en: 'About equality and non-discri\u00ADmination',
-            fi: 'Tasa-arvosta ja yhden\u00ADvertaisuudes\u00ADta',
+            fi: 'Tasa-arvosta ja yhden\u00ADvertai\u00ADsuudesta',
             sv: 'Om jämlikhet och icke-diskri\u00ADminering',
         },
     },
@@ -929,7 +929,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Technology', fi: 'Teknologia', sv: 'Teknologi' },
         pageTitle: {
             en: 'Technology in society and politics',
-            fi: 'Teknologia yhteis\u00ADkunnassa ja politiikassa',
+            fi: 'Teknologia yhteis\u00ADkunnassa ja politii\u00ADkassa',
             sv: 'Teknologi i samhälle och politik',
         },
     },
@@ -974,8 +974,8 @@ export const tags: LocalTag[] = [
         id: 'artificial-intelligence',
         names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
         pageTitle: {
-            en: 'Artificial intelligence – policy and ethics',
-            fi: 'Tekoäly – politiikka ja vastuullinen käyttö',
+            en: 'Artificial intelli\u00ADgence – policy and ethics',
+            fi: 'Tekoäly – politiikka ja vastuu\u00ADllinen käyttö',
             sv: 'Artificiell intelligens – politik och etik',
         },
     },
