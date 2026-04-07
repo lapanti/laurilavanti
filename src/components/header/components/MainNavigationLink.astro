@@ -58,6 +58,4 @@ const href = `/${lang}/`
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a aria-current={pathname === href || (pathname === '/' && lang === 'fi') ? 'page' : 'false'} href={href}
-    >Lauri Lavanti</a
->
+<a aria-current={pathname === href ? 'page' : 'false'} href={href}>Lauri Lavanti</a>
