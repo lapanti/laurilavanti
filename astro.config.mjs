@@ -127,6 +127,7 @@ export default defineConfig({
         '/fi/category/yksityisyydensuoja/': '/fi/category/privacy/',
         '/en/category/yksityisyydensuoja/': '/en/category/privacy/',
         '/sv/category/yksityisyydensuoja/': '/sv/category/privacy/',
+        '/': '/fi/',
         '/blogi/': '/fi/blog/',
         '/ota-yhteytta/': '/fi/contact/',
         '/minusta/': '/fi/about/',
