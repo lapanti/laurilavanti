@@ -6,8 +6,6 @@ import icon from 'astro-icon'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 
-import partytown from '@astrojs/partytown'
-
 // https://astro.build/config
 export default defineConfig({
     site: 'https://laurilavanti.fi/',
@@ -262,6 +260,5 @@ export default defineConfig({
                 // Exclude recommendations pages for now
                 !/\/(en|fi|sv)\/recommendations\//.test(page),
         }),
-        partytown(),
     ],
 })
