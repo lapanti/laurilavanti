@@ -142,9 +142,7 @@ const {
                 if (!lang) return
                 var alt = window.__langAlternates
                 if (alt && alt[lang]) { a.href = alt[lang]; return }
-                var pathname = window.location.pathname
-                var swapped = pathname.replace(/^\\/(fi|sv|en)\\//, '/' + lang + '/')
-                a.href = swapped !== pathname ? swapped : '/' + lang + '/'
+                a.href = window.location.pathname.replace(/^\\/(fi|sv|en)\\//, '/' + lang + '/')
             })
         `}
         />

@@ -21,13 +21,6 @@ export class HomePage extends AnyPage {
         await expect(this.mainTitle).toBeVisible()
     }
 
-    async goToRoot() {
-        await this.page.goto('/')
-
-        // Wait to ensure we are at the correct page
-        await expect(this.mainTitle).toBeVisible()
-    }
-
     async checkTitles() {
         await expect(this.mainTitle).toBeVisible()
 
