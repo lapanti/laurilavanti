@@ -55,7 +55,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Regional elections 2022', fi: 'Aluevaalit 2022', sv: 'Regionval 2022' },
         pageTitle: {
             en: 'Regional elections 2022 – Western Uusimaa welfare area',
-            fi: 'Aluevaalit 2022 – Länsi-Uudenmaan hyvinvointi\u00ADalue',
+            fi: 'Aluevaalit 2022 – Länsi-Uudenmaan hyvin\u00ADvointi\u00ADalue',
             sv: 'Regionval 2022 – välfärds\u00ADområdet Västra Nyland',
         },
     },
@@ -146,8 +146,8 @@ export const tags: LocalTag[] = [
         id: 'digital-independence',
         names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
         pageTitle: {
-            en: 'Digital inde\u00ADpendence and sovereignty in Finland',
-            fi: 'Digitaa\u00ADlinen itsenäisyys Suomessa',
+            en: 'Digital inde\u00ADpendence and sovere\u00ADignty in Finland',
+            fi: 'Digitaa\u00ADlinen itse\u00ADnäisyys Suomessa',
             sv: 'Digital själv\u00ADständighet i Finland',
         },
     },
@@ -192,7 +192,7 @@ export const tags: LocalTag[] = [
         id: 'digitalisation',
         names: { en: 'Digitalisation', fi: 'Digitalisaatio', sv: 'Digitalisering' },
         pageTitle: {
-            en: 'Digita\u00ADlisation – IT and information policy',
+            en: 'Digita\u00ADlisation – IT and infor\u00ADmation policy',
             fi: 'Digitali\u00ADsaatio – IT ja tieto\u00ADpolitiikka',
             sv: 'Digita\u00ADlisering – IT och infor\u00ADmations\u00ADpolitik',
         },
@@ -238,7 +238,7 @@ export const tags: LocalTag[] = [
         id: 'infrastructure',
         names: { en: 'Infrastructure', fi: 'Infra', sv: 'Infrastruktur' },
         pageTitle: {
-            en: 'Infra\u00ADstructure – construc\u00ADtion and engineering',
+            en: 'Infra\u00ADstructure – construc\u00ADtion and engi\u00ADneering',
             fi: 'Infra\u00ADstruktuuri – rakenta\u00ADminen ja kunnallis\u00ADtekniikka',
             sv: 'Infra\u00ADstruktur – byggande och kommunal\u00ADteknik',
         },
@@ -286,12 +286,12 @@ export const tags: LocalTag[] = [
         pageTitle: {
             en: 'Urban planning and land use policy',
             fi: 'Kaavoitus ja maan\u00ADkäyttö\u00ADpolitiikka',
-            sv: 'Plan\u00ADläggning och mark\u00ADanvändnings\u00ADpolitik',
+            sv: 'Plan\u00ADläggning och mark\u00ADanvänd\u00ADnings\u00ADpolitik',
         },
     },
     {
         descriptions: {
-            en: 'Posts about Kirkkonummi municipal politics, decision-making, and everyday life. Lauri Lavanti as a councillor.',
+            en: 'Posts about Kirkko\u00ADnummi municipal politics, decision-making, and everyday life. Lauri Lavanti as a councillor.',
             fi: 'Kirjoituksia Kirkkonummen kuntapolitiikasta, päätöksenteosta ja arjesta. Lauri Lavanti kunnanvaltuutettuna.',
             sv: 'Texter om Kyrkslätts kommunalpolitik, beslutsfattande och vardag. Lauri Lavanti som kommunfullmäktigeledamot.',
         },
@@ -330,8 +330,8 @@ export const tags: LocalTag[] = [
         id: 'kirkkonummi',
         names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
         pageTitle: {
-            en: 'Kirkkonummi – munici\u00ADpality and politics',
-            fi: 'Kirkkonummi – kunta, politiikka, arki',
+            en: 'Kirkko\u00ADnummi – munici\u00ADpality and politics',
+            fi: 'Kirkko\u00ADnummi – kunta, politiikka, arki',
             sv: 'Kyrkslätt – kommunal\u00ADpolitik och vardag',
         },
     },
@@ -374,11 +374,11 @@ export const tags: LocalTag[] = [
             ],
         },
         id: 'municipal-elections-2025',
-        names: { en: 'Municipal elections 2025', fi: 'Kuntavaalit 2025', sv: 'Kommunalval 2025' },
+        names: { en: 'Municipal elections 2025', fi: 'Kuntavaalit 2025', sv: 'Kommu\u00ADnalval 2025' },
         pageTitle: {
-            en: 'Municipal elections 2025 – Kirkkonummi',
+            en: 'Municipal elections 2025 – Kirkko\u00ADnummi',
             fi: 'Kunta\u00ADvaalit 2025 – Kirkko\u00ADnummen kunta',
-            sv: 'Kommunalval 2025 – Kyrkslätt',
+            sv: 'Kommu\u00ADnalval 2025 – Kyrkslätt',
         },
     },
     {
@@ -390,11 +390,11 @@ export const tags: LocalTag[] = [
         faq: {
             en: [
                 {
-                    a: 'The Western railway is a planned direct rail connection from Helsinki to northern Kirkkonummi, significantly shortening travel times and reducing car dependency in the region.',
+                    a: 'The Western railway is a planned direct rail connection from Helsinki to northern Kirkko\u00ADnummi, significantly shortening travel times and reducing car dependency in the region.',
                     q: 'What is the Western railway?',
                 },
                 {
-                    a: 'The Western railway would improve accessibility for northern Kirkkonummi, attract new residents, and support sustainable urban development while reducing traffic congestion.',
+                    a: 'The Western railway would improve accessibility for northern Kirkko\u00ADnummi, attract new residents, and support sustainable urban development while reducing traffic congestion.',
                     q: 'Why is the Western railway important for Kirkkonummi?',
                 },
             ],
@@ -422,7 +422,7 @@ export const tags: LocalTag[] = [
         id: 'west-railway',
         names: { en: 'Western railway', fi: 'Länsirata', sv: 'Västbanan' },
         pageTitle: {
-            en: 'Western railway – rail link to northern Kirkkonummi',
+            en: 'Western railway – rail link to northern Kirkko\u00ADnummi',
             fi: 'Länsirata – Pohjois-Kirkko\u00ADnummen rata\u00ADyhteys',
             sv: 'Västbanan – järnvägs\u00ADförbin\u00ADdelsen till norra Kyrkslätt',
         },
@@ -469,13 +469,13 @@ export const tags: LocalTag[] = [
         names: { en: 'Western Uusimaa', fi: 'Länsi-Uusimaa', sv: 'Västra Nyland' },
         pageTitle: {
             en: 'Western Uusimaa – welfare area and regional politics',
-            fi: 'Länsi-Uusimaa – hyvinvointi\u00ADalue\u00ADpolitiikkaa',
+            fi: 'Länsi-Uusimaa – hyvin\u00ADvointi\u00ADalue\u00ADpolitiik\u00ADkaa',
             sv: 'Västra Nyland – välfärds\u00ADområde och regional\u00ADpolitik',
         },
     },
     {
         descriptions: {
-            en: 'Posts about transport, public transit, and sustainable mobility.',
+            en: 'Posts about transport, public transit, and sustain\u00ADable mobility.',
             fi: 'Kirjoituksia liikenteestä, joukkoliikenteestä ja kestävästä liikkumisesta.',
             sv: 'Texter om trafik, kollektivtrafik och hållbar rörlighet.',
         },
@@ -514,8 +514,8 @@ export const tags: LocalTag[] = [
         id: 'transportation',
         names: { en: 'Transport', fi: 'Liikenne', sv: 'Trafik' },
         pageTitle: {
-            en: 'Transport – public transit and sustainable mobility',
-            fi: 'Liikenne – joukko\u00ADliikenne ja kestävä liikkuminen',
+            en: 'Transport – public transit and sustain\u00ADable mobility',
+            fi: 'Liikenne – joukko\u00ADliikenne ja kestävä liikku\u00ADminen',
             sv: 'Trafik – kollektiv\u00ADtrafik och hållbar rörlighet',
         },
     },
@@ -560,9 +560,9 @@ export const tags: LocalTag[] = [
         id: 'immigration',
         names: { en: 'Immigration', fi: 'Maahanmuutto', sv: 'Immigration' },
         pageTitle: {
-            en: 'Immigration – facts and policy',
+            en: 'Immi\u00ADgration – facts and policy',
             fi: 'Maahan\u00ADmuutto – faktat ja politiikka',
-            sv: 'Immigration – fakta och politik',
+            sv: 'Immi\u00ADgration – fakta och politik',
         },
     },
     {
@@ -607,8 +607,8 @@ export const tags: LocalTag[] = [
         names: { en: 'Education', fi: 'Opetus', sv: 'Utbildning' },
         pageTitle: {
             en: 'About education and education policy',
-            fi: 'Opetuksesta ja koulutus\u00ADpolitii\u00ADkasta',
-            sv: 'Om utbildning och utbildnings\u00ADpolitik',
+            fi: 'Opetuk\u00ADsesta ja koulutus\u00ADpolitii\u00ADkasta',
+            sv: 'Om utbildning och utbild\u00ADnings\u00ADpolitik',
         },
     },
     {
@@ -745,7 +745,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Culture & education', fi: 'Sivistys', sv: 'Bildning' },
         pageTitle: {
             en: 'Culture, civic education and leisure',
-            fi: 'Sivistyk\u00ADsestä ja kulttuuri\u00ADpalveluista',
+            fi: 'Sivistyk\u00ADsestä ja kulttuuri\u00ADpalvelu\u00ADista',
             sv: 'Bildning, kultur och fritids\u00ADtjänster',
         },
     },
@@ -768,7 +768,7 @@ export const tags: LocalTag[] = [
             ],
             fi: [
                 {
-                    a: 'Sosiaalinen media mahdollistaa suoran viestinnän poliitikkojen ja kansalaisten välillä, mutta myös vahvistaa disinformaatiota, kuplautumista ja polarisaatiota. Molempien puolien ymmärtäminen on tärkeää.',
+                    a: 'Sosiaa\u00ADlinen media mahdollistaa suoran viestinnän poliitikkojen ja kansalaisten välillä, mutta myös vahvistaa disinformaatiota, kuplautumista ja polarisaatiota. Molempien puolien ymmärtäminen on tärkeää.',
                     q: 'Miten sosiaalinen media vaikuttaa poliittiseen viestintään?',
                 },
                 {
@@ -788,10 +788,10 @@ export const tags: LocalTag[] = [
             ],
         },
         id: 'social-media',
-        names: { en: 'Social media', fi: 'Sosiaalinen media', sv: 'Sociala medier' },
+        names: { en: 'Social media', fi: 'Sosiaa\u00ADlinen media', sv: 'Sociala medier' },
         pageTitle: {
             en: 'Social media in politics and communica\u00ADtion',
-            fi: 'Sosiaalinen media politii\u00ADkassa ja viestin\u00ADnässä',
+            fi: 'Sosiaa\u00ADlinen media politii\u00ADkassa ja viestin\u00ADnässä',
             sv: 'Sociala medier i politik och kommunika\u00ADtion',
         },
     },
@@ -837,7 +837,7 @@ export const tags: LocalTag[] = [
         names: { en: 'Social & health reform', fi: 'Sote-uudistus', sv: 'Vård- och servicereform' },
         pageTitle: {
             en: 'Social and health reform – welfare areas',
-            fi: 'Sote-uudistus – hyvinvointi\u00ADalueet',
+            fi: 'Sote-uudistus – hyvin\u00ADvointi\u00ADalueet',
             sv: 'Vård- och service\u00ADreform – välfärds\u00ADområden',
         },
     },
@@ -976,14 +976,14 @@ export const tags: LocalTag[] = [
         pageTitle: {
             en: 'Artificial intelli\u00ADgence – policy and ethics',
             fi: 'Tekoäly – politiikka ja vastuu\u00ADllinen käyttö',
-            sv: 'Artificiell intelligens – politik och etik',
+            sv: 'Artifi\u00ADciell intel\u00ADligens – politik och etik',
         },
     },
     {
         descriptions: {
             en: 'Council motions and posts about the work and decisions of Kirkkonummi municipal council.',
             fi: 'Valtuustoaloitteita ja kirjoituksia Kirkkonummen valtuuston toiminnasta ja päätöksistä.',
-            sv: 'Fullmäktigeinitiativ och texter om Kyrkslätts fullmäktiges verksamhet och beslut.',
+            sv: 'Fullmäktigeinitiativ och texter om Kyrkslätts fullmäk\u00ADtiges verksamhet och beslut.',
         },
         faq: {
             en: [
@@ -1020,9 +1020,9 @@ export const tags: LocalTag[] = [
         id: 'council-motion',
         names: { en: 'Council motion', fi: 'Valtuustoaloite', sv: 'Fullmäktigeinitiativ' },
         pageTitle: {
-            en: 'Council motion – Kirkkonummi municipal council',
+            en: 'Council motion – Kirkko\u00ADnummi municipal council',
             fi: 'Valtuusto\u00ADaloite – Kirkko\u00ADnummen valtuusto',
-            sv: 'Full\u00ADmäktige\u00ADinitiativ – Kyrkslätts fullmäktige',
+            sv: 'Full\u00ADmäktige\u00ADinitiativ – Kyrkslätts fullmäk\u00ADtige',
         },
     },
     {
@@ -1114,7 +1114,7 @@ export const tags: LocalTag[] = [
         pageTitle: {
             en: 'Privacy protection in the digital world',
             fi: 'Yksi\u00ADtyisyyden\u00ADsuoja digitaali\u00ADsessa maailmassa',
-            sv: 'Integritets\u00ADskydd i den digitala världen',
+            sv: 'Integri\u00ADtets\u00ADskydd i den digitala världen',
         },
     },
 ]

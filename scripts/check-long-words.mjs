@@ -23,7 +23,7 @@
  *
  * threshold = floor(availablePx / (fontSizeRem × baseFontPx × charWidthEm))
  *
- * H1  Krana Fat 1000, 3.75 rem, 0.52 em/char (condensed display):  floor(344 / 31.20) = 11
+ * H1  Krana Fat 1000, 3.75 rem, 0.535 em/char (condensed display): floor(344 / 32.16) = 10
  * H2  Krana Fat 1000, 2.25 rem, 0.45 em/char:                      floor(342 / 16.20) = 21
  * H3  IBM Plex Sans 500, 1.5 rem, 0.56 em/char (humanist sans):    floor(342 / 13.44) = 25
  * BQ  IBM Plex Mono 400, 1.5 rem, 0.60 em/char (monospace spec):   floor(326 / 14.40) = 22
@@ -51,7 +51,7 @@ const H1_AVAIL_PX = VIEWPORT_PX - 2 * 0.5 * BASE_FONT_PX // 344
 // Blockquote: content column − 0.5rem border − 0.5rem padding-left
 const BQ_AVAIL_PX = CONTENT_COL_PX - 2 * 0.5 * BASE_FONT_PX // 326
 
-const H1_THRESHOLD = Math.floor(H1_AVAIL_PX / (3.75 * BASE_FONT_PX * 0.52)) // 11
+const H1_THRESHOLD = Math.floor(H1_AVAIL_PX / (3.75 * BASE_FONT_PX * 0.535)) // 10
 const H2_THRESHOLD = Math.floor(CONTENT_COL_PX / (2.25 * BASE_FONT_PX * 0.45)) // 21
 const H3_THRESHOLD = Math.floor(CONTENT_COL_PX / (1.5 * BASE_FONT_PX * 0.56)) // 25
 const BQ_THRESHOLD = Math.floor(BQ_AVAIL_PX / (1.5 * BASE_FONT_PX * 0.6)) // 22
