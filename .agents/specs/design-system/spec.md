@@ -88,8 +88,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
 - [ ] New token is added to `styles.ts` with a typed `as const` assertion
 - [ ] New token is consumed via `define:vars` in the component, not as a hardcoded value
 - [ ] If a new colour is added for a social platform, it is named after the platform (e.g. `bluesky`, `mastodon`)
-- [ ] `npm run check` passes (TypeScript validates all token usages)
-- [ ] `npm run lint` passes
+- [ ] Lint and type-check are enforced by pre-commit hooks and CI
 
 ### Regression Guardrails
 - `HEADER_SIZE = sizes[3.75]` is used for both the `<header>` height and the mobile menu top offset — changing this value changes both simultaneously; test both on mobile and desktop

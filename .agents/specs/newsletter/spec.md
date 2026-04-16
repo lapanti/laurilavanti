@@ -92,7 +92,7 @@ A newsletter subscription form powered by MailerLite is embedded on home pages a
 - [ ] Newsletter link present in all three locale contact pages
 - [ ] Unit tests pass: `npm run test`
 - [ ] E2E tests pass: `npm run test:e2e`
-- [ ] `npm run lint && npm run check && npm run build` pass
+- [ ] `npm run build` passes (lint and type-check are enforced by pre-commit hooks and CI)
 - [ ] Accessibility scan passes for landing pages (no axe violations)
 
 ### Regression Guardrails

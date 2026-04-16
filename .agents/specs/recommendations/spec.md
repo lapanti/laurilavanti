@@ -86,7 +86,7 @@ A recommendations page presents endorsements from named individuals who vouch fo
 - [ ] No canonical link or hreflang links are emitted while `noindex` is active
 - [ ] Page title and description are localised in each locale's MDX frontmatter
 - [ ] `/{lang}/recommendations/` renders correctly in all three locales
-- [ ] `npm run lint && npm run check && npm run build` pass
+- [ ] `npm run build` passes (lint and type-check are enforced by pre-commit hooks and CI)
 - [ ] Accessibility scan passes (no axe violations — especially alt text and heading structure)
 - [ ] E2E tests added and passing
 

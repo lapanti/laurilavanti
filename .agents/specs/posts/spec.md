@@ -39,6 +39,12 @@ heroImage: cloudinary-filename-no-extension       # required
 alt: 'Descriptive alt text'                       # required, non-empty for hero images
 ```
 
+### Multi-author byline
+- Italic byline at end of MDX content: `_Kirjoittajat: Name1 ja Name2._` (fi) / `_Authors: Name1 and Name2._` (en) / `_Skribenter: Name1 och Name2._` (sv)
+- List ALL authors including Lauri, alphabetical by last name
+- If publication credits follow, separate with a horizontal rule (`---`) between co-author line and publication credits
+- No horizontal rule before the co-author line itself
+
 ### Anti-Patterns
 - Do not create a post without a matching entry in all three locales eventually — stubs are acceptable but the `id` must be reserved across locales
 - Do not add a tag id in post frontmatter that is not defined in `src/content/tags.ts` — it silently breaks tag filtering
@@ -59,7 +65,7 @@ alt: 'Descriptive alt text'                       # required, non-empty for hero
 - [ ] `/{lang}/blog/{id}/` redirects 301 to the canonical slug URL
 - [ ] E2E tests pass: `npm run test:e2e`
 - [ ] Accessibility scan passes (no axe violations)
-- [ ] `npm run lint && npm run check && npm run build` all pass
+- [ ] `npm run build` passes (lint and type-check are enforced by pre-commit hooks and CI)
 
 ### Regression Guardrails
 - `allMdxPosts` must always be sorted newest-first by `id` — never sort by `publishDate` alone
