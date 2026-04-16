@@ -55,7 +55,7 @@ backgroundImage: cloudinary-filename-no-extension
 - [ ] Active nav link has `aria-current="page"`
 - [ ] E2E tests pass for the page: `npm run test:e2e`
 - [ ] Accessibility scan passes (no axe violations)
-- [ ] `npm run lint && npm run check && npm run build` all pass
+- [ ] `npm run build` passes (lint and type-check are enforced by pre-commit hooks and CI)
 - [ ] If DOM structure changed: snapshots updated before commit (`npm run test:e2e -- --update-snapshots`)
 
 ### Regression Guardrails

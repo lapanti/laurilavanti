@@ -161,7 +161,7 @@ const dataJson = JSON.stringify(someData)
 
 | Rule | Detail |
 |---|---|
-| Linter | ESLint + Prettier — always run `npm run lint` before committing |
+| Linter | ESLint + Prettier — enforced by lint-staged on commit and CI |
 | Import order | `simple-import-sort` — fix with `npx eslint --fix` |
 | Blank line before `return` | Required by `@stylistic/padding-line-between-statements` |
 | Attribute order | `astro/sort-attributes` — attributes must be alphabetically sorted |
