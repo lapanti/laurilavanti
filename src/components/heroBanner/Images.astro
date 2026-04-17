@@ -9,9 +9,10 @@ interface Props {
     alt?: string
     backgroundImage?: string
     heroImage?: string
+    mobileHeroImage?: string
 }
 
-const { alt, backgroundImage, heroImage } = Astro.props
+const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes14Negative: `-${sizes[14]}` }}>
@@ -27,6 +28,14 @@ const { alt, backgroundImage, heroImage } = Astro.props
         margin-left: var(--sizes1Negative);
     }
 
+    .image-mobile {
+        display: block;
+    }
+
+    .image-desktop {
+        display: none;
+    }
+
     @media (min-width: 1200px) {
         .container {
             overflow: visible;
@@ -40,12 +49,43 @@ const { alt, backgroundImage, heroImage } = Astro.props
             right: var(--sizes14Negative);
             margin-top: auto;
         }
+
+        .image-mobile {
+            display: none;
+        }
+
+        .image-desktop {
+            display: block;
+        }
     }
 </style>
 <div class="container">
     <BackgroundImage image={backgroundImage} />
     {
-        heroImage && (
+        heroImage && mobileHeroImage ? (
+            <>
+                <CldImage
+                    alt={alt ?? ''}
+                    class="image image-mobile"
+                    crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
+                    fetchpriority="high"
+                    height={562}
+                    layout="constrained"
+                    src={mobileHeroImage}
+                    width={560}
+                />
+                <CldImage
+                    alt={alt ?? ''}
+                    class="image image-desktop"
+                    crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
+                    fetchpriority="high"
+                    height={562}
+                    layout="constrained"
+                    src={heroImage}
+                    width={560}
+                />
+            </>
+        ) : heroImage ? (
             <CldImage
                 alt={alt ?? ''}
                 class="image"
@@ -56,6 +96,6 @@ const { alt, backgroundImage, heroImage } = Astro.props
                 src={heroImage}
                 width={560}
             />
-        )
+        ) : null
     }
 </div>
