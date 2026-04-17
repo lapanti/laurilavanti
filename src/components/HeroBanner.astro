@@ -7,12 +7,13 @@ interface Props {
     alt?: string
     backgroundImage?: string
     heroImage?: string
+    mobileHeroImage?: string
     secondaryTitle?: string
     subtitle?: string
     title: string
 }
 
-const { alt, backgroundImage, heroImage, secondaryTitle, subtitle, title } = Astro.props
+const { alt, backgroundImage, heroImage, mobileHeroImage, secondaryTitle, subtitle, title } = Astro.props
 ---
 
 <style
@@ -40,5 +41,5 @@ const { alt, backgroundImage, heroImage, secondaryTitle, subtitle, title } = Ast
 </style>
 <div>
     <Titles secondaryTitle={secondaryTitle} subtitle={subtitle} title={title} />
-    <Images alt={alt} backgroundImage={backgroundImage} heroImage={heroImage} />
+    <Images alt={alt} backgroundImage={backgroundImage} heroImage={heroImage} mobileHeroImage={mobileHeroImage} />
 </div>

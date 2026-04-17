@@ -15,6 +15,7 @@ type Props = MDXLayoutProps<{
     heroImage?: string
     heroTitle?: string
     lang?: 'en' | 'fi' | 'sv'
+    mobileHeroImage?: string
     secondaryTitle?: string
     slug?: string
     subtitle?: string
@@ -31,6 +32,7 @@ const {
     heroImage,
     heroTitle,
     lang,
+    mobileHeroImage,
     secondaryTitle,
     slug,
     subtitle,
@@ -57,6 +59,7 @@ const ogImage = heroImage
         alt={alt}
         backgroundImage={backgroundImage}
         heroImage={heroImage}
+        mobileHeroImage={mobileHeroImage}
         secondaryTitle={secondaryTitle}
         slot="banner"
         subtitle={subtitle}
