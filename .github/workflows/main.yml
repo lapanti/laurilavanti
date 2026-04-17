@@ -110,6 +110,19 @@ jobs:
       - name: Check all page titles meet SEO length requirements
         run: node scripts/validate-titles.mjs
 
+  validate-slugs:
+    runs-on: ubuntu-latest
+    name: Validate slugs
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+      - name: Check all slugs are free of soft hyphens
+        run: node scripts/validate-slugs.mjs
+
   unit-test:
     runs-on: ubuntu-latest
     name: Unit tests
