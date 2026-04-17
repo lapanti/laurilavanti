@@ -213,6 +213,10 @@ export default defineConfig({
             '/sv/blog/48/anvandningen-av-biometriska-identifierare-i-pass-far-inte-utvidgas/',
         '/en/blog/48/passien-biometristen-tunnisteiden-kayttoa-ei-pida-laajentaa/':
             '/en/blog/48/the-use-of-biometric-identifiers-in-passports-must-not-be-expanded/',
+        '/en/blog/56/lahteela-yhteinen-helmi-kirkkonummen-rannikolla/':
+            '/en/blog/56/lahteela-a-gem-on-kirkkonummis-coast/',
+        '/sv/blog/56/lahteela-yhteinen-helmi-kirkkonummen-rannikolla/':
+            '/sv/blog/56/lahteela-en-gemma-vid-kyrkslaendets-kust/',
         '/sv/blog/49/sivistyksen-talo-lyyra-avaa-uusia-mahdollisuuksia-ja-nayttaa-suuntaa/':
             '/sv/blog/49/lyyra-bildningens-hus-oppnar-nya-mojligheter-och-visar-vagen/',
         '/sv/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/':
