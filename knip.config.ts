@@ -1,7 +1,7 @@
 import type { KnipConfig } from 'knip'
 
 const config: KnipConfig = {
-ignoreDependencies: ['@iconify-json/fa7-brands', '@vitest/coverage-v8', 'eslint-plugin-jsx-a11y'],
+ignoreDependencies: ['@iconify-json/fa7-brands', 'eslint-plugin-jsx-a11y'],
 }
 
 export default config
