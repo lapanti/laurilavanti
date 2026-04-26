@@ -1,4 +1,4 @@
-export interface RecommendationLocale {
+interface RecommendationLocale {
     alt: string
     title: string
 }
