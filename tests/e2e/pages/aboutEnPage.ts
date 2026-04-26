@@ -7,11 +7,13 @@ import { AnyPage } from './anyPage'
 export class AboutEnPage extends AnyPage {
     readonly aboutMeEnTitle: Locator
     readonly summaryBox: Locator
+    readonly summaryToggle: Locator
 
     constructor(page: Page) {
         super(page)
         this.aboutMeEnTitle = page.getByRole('heading', { level: 1 })
         this.summaryBox = page.getByRole('complementary')
+        this.summaryToggle = page.getByRole('button', { name: 'More' })
     }
 
     async goTo() {
@@ -23,5 +25,12 @@ export class AboutEnPage extends AnyPage {
 
     async checkContent() {
         await expect(this.summaryBox).toBeVisible()
+    }
+
+    async checkSummaryCollapse() {
+        await expect(this.summaryToggle).toBeVisible()
+        await expect(this.summaryToggle).toHaveAttribute('aria-expanded', 'false')
+        await this.summaryToggle.click()
+        await expect(this.summaryToggle).toHaveAttribute('aria-expanded', 'true')
     }
 }

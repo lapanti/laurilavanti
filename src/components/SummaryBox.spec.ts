@@ -13,6 +13,7 @@ describe('SummaryBox', () => {
         const result = await renderAstroComponent(SummaryBox, {
             props: {
                 ariaLabel,
+                lang: 'fi',
                 summaryRows,
                 title,
             },
@@ -25,6 +26,7 @@ describe('SummaryBox', () => {
         const result = await renderAstroComponent(SummaryBox, {
             props: {
                 ariaLabel,
+                lang: 'fi',
                 summaryRows,
                 title,
             },
@@ -38,6 +40,7 @@ describe('SummaryBox', () => {
         const result = await renderAstroComponent(SummaryBox, {
             props: {
                 ariaLabel,
+                lang: 'fi',
                 summaryRows,
                 title,
             },
@@ -52,6 +55,7 @@ describe('SummaryBox', () => {
         const result = await renderAstroComponent(SummaryBox, {
             props: {
                 ariaLabel,
+                lang: 'fi',
                 summaryRows,
                 title,
             },

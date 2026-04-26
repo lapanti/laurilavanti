@@ -47,4 +47,11 @@ test.describe('About Page på svenska', () => {
 
         await aboutPage.checkNoHorizontalScroll()
     })
+
+    test('should expand and collapse summary', async ({ page }) => {
+        const aboutPage = new AboutSwePage(page)
+        await aboutPage.goTo()
+
+        await aboutPage.checkSummaryCollapse()
+    })
 })

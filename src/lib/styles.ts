@@ -23,6 +23,7 @@ export const sizes = {
     [4.5]: '4.5rem' as const, // 72px
     [5]: '5rem' as const, // 80px
     [6]: '6rem' as const, // 96px
+    [6.25]: '6.25rem' as const, // 100px — SummaryBox collapsed height (3 list rows)
     [7]: '7rem' as const, // 112px
     [8]: '8rem' as const, // 128px
     [9]: '9rem' as const, // 144px
