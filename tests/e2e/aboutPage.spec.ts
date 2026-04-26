@@ -47,4 +47,11 @@ test.describe('About Page', () => {
 
         await aboutPage.checkNoHorizontalScroll()
     })
+
+    test('should expand and collapse summary', async ({ page }) => {
+        const aboutPage = new AboutPage(page)
+        await aboutPage.goTo()
+
+        await aboutPage.checkSummaryCollapse()
+    })
 })

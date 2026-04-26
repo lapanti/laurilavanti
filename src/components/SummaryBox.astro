@@ -1,19 +1,39 @@
 ---
-import { colors, sizes } from '../lib/styles'
+/* eslint-disable astro/no-unused-css-selector */
+import type { Lang } from '../content/nav'
+
+import { summaryBoxContent } from '../content/summaryBox'
+import { colors, sizes, typographics } from '../lib/styles'
 import H2 from './H2.astro'
 import LI from './LI.astro'
 import UL from './UL.astro'
 
 interface Props {
     ariaLabel?: string
+    lang: Lang
     summaryRows: string[]
     title: string
 }
 
-const { ariaLabel, summaryRows, title } = Astro.props
+const { ariaLabel, lang, summaryRows, title } = Astro.props
+const content = summaryBoxContent[lang]
+const isCollapsible = summaryRows.length > 3
+const expandLabelJson = JSON.stringify(content.expandLabel)
+const collapseLabelJson = JSON.stringify(content.collapseLabel)
 ---
 
-<style define:vars={{ colorsGray: colors.gray, sizes1: sizes[1] }}>
+<style
+    define:vars={{
+        bodyFontFamily: typographics.body.fontFamily,
+        bodyFontSize: typographics.body.fontSize,
+        bodyFontWeight: typographics.body.fontWeight,
+        colorsEvening: colors.evening,
+        colorsGray: colors.gray,
+        sizes1: sizes[1],
+        sizes3: sizes[3],
+        sizes625: sizes[6.25],
+    }}
+>
     aside {
         background-color: var(--colorsGray);
         grid-column-start: 3;
@@ -21,10 +41,94 @@ const { ariaLabel, summaryRows, title } = Astro.props
         padding: var(--sizes1);
         padding-top: 0;
     }
+
+    .summary-list-wrapper {
+        overflow: hidden;
+        position: relative;
+        transition: max-height 0.3s ease;
+    }
+
+    [data-expanded='false'] .summary-list-wrapper {
+        max-height: var(--sizes625);
+    }
+
+    [data-expanded='true'] .summary-list-wrapper {
+        /* 100rem: layout trick to allow full content height; not a design token */
+        max-height: 100rem;
+    }
+
+    .summary-gradient {
+        background: linear-gradient(to bottom, transparent, var(--colorsGray));
+        bottom: 0;
+        height: var(--sizes3);
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    [data-expanded='true'] .summary-gradient {
+        opacity: 0;
+    }
+
+    .summary-toggle {
+        background: none;
+        border: none;
+        color: var(--colorsEvening);
+        cursor: pointer;
+        font-family: var(--bodyFontFamily);
+        font-size: var(--bodyFontSize);
+        font-weight: var(--bodyFontWeight);
+        margin-top: var(--sizes1);
+        padding: 0;
+        text-decoration: underline;
+    }
 </style>
 <aside aria-label={ariaLabel}>
     <H2>{title}</H2>
-    <UL>
-        {summaryRows.map((row) => <LI>{row}</LI>)}
-    </UL>
+    {
+        isCollapsible ? (
+            <div class="summary-collapsible" data-expanded="false">
+                <div class="summary-list-wrapper">
+                    <div aria-hidden="true" class="summary-gradient" />
+                    <UL>
+                        {summaryRows.map((row) => (
+                            <LI>{row}</LI>
+                        ))}
+                    </UL>
+                </div>
+                <button aria-expanded="false" class="summary-toggle" type="button">
+                    {content.expandLabel}
+                </button>
+            </div>
+        ) : (
+            <UL>
+                {summaryRows.map((row) => (
+                    <LI>{row}</LI>
+                ))}
+            </UL>
+        )
+    }
 </aside>
+{
+    isCollapsible && (
+        <script
+            is:inline
+            set:html={`(function(){
+    var expandLabel = ${expandLabelJson}
+    var collapseLabel = ${collapseLabelJson}
+    document.querySelectorAll('.summary-toggle').forEach(function(btn){
+        btn.addEventListener('click',function(){
+            var wrapper = btn.closest('.summary-collapsible')
+            if(!wrapper) return
+            var next = wrapper.getAttribute('data-expanded')==='true' ? 'false' : 'true'
+            wrapper.setAttribute('data-expanded', next)
+            btn.setAttribute('aria-expanded', next)
+            btn.textContent = next==='true' ? collapseLabel : expandLabel
+        })
+    })
+})()`}
+        />
+    )
+}
