@@ -91,12 +91,12 @@ const collapseLabelJson = JSON.stringify(content.collapseLabel)
         isCollapsible ? (
             <div class="summary-collapsible" data-expanded="false">
                 <div class="summary-list-wrapper">
-                    <div aria-hidden="true" class="summary-gradient" />
                     <UL>
                         {summaryRows.map((row) => (
                             <LI>{row}</LI>
                         ))}
                     </UL>
+                    <div aria-hidden="true" class="summary-gradient" />
                 </div>
                 <button aria-expanded="false" class="summary-toggle" type="button">
                     {content.expandLabel}
