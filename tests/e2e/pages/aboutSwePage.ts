@@ -13,7 +13,7 @@ export class AboutSwePage extends AnyPage {
         super(page)
         this.aboutMeSweTitle = page.getByRole('heading', { level: 1 })
         this.summaryBox = page.getByRole('complementary')
-        this.summaryToggle = page.getByRole('button', { name: 'Mer' })
+        this.summaryToggle = page.locator('.summary-toggle')
     }
 
     async goTo() {
