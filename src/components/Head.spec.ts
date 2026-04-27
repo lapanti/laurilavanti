@@ -241,7 +241,7 @@ describe('<Head />', () => {
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
         expect(jsonLd['@type']).toBe('Person')
         expect(jsonLd.name).toBe('Lauri Lavanti')
-        expect(jsonLd.jobTitle).toBe('Kansanedustajaehdokas')
+        expect(jsonLd.jobTitle).toBe('Kunnanvaltuutettu ja johtava ohjelmistokehittäjä')
         expect(jsonLd.sameAs).toHaveLength(7)
         expect(jsonLd.memberOf['@type']).toBe('PoliticalParty')
         expect(jsonLd.memberOf.name).toBe('Vihreä liitto')
@@ -260,7 +260,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('Parliamentary candidate')
+        expect(jsonLd.jobTitle).toBe('Municipal councillor & Lead Developer')
     })
 
     it('should localise Person jobTitle for Swedish', async () => {
@@ -274,7 +274,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('Riksdagskandidat')
+        expect(jsonLd.jobTitle).toBe('Kommunfullmäktigeledamot och ledande mjukvarutvecklare')
     })
 
     it('should emit noindex robots meta tag when noindex is true', async () => {
