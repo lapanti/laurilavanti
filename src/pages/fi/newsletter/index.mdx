@@ -1,12 +1,17 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: fi
-title: 'Tilaa uutiskirje – poli­tiikka ja IT'
-description: 'Suoraan sähköpostiisi: yksi aihe, yksi näkökulma, ilman hypeä. Tilaa Laurin uutiskirje teknologiasta ja demokratiasta.'
+title: 'Uutiskirje – tekoäly ja yhteis­kunta'
+description: 'Tilaa Lauri Lavannin uutiskirje: asiantuntija-analyysiä tekoälystä, digitaalisesta itsenäisyydestä ja teknologian yhteiskunnallisista vaikutuksista.'
 slug: 'fi/newsletter'
 type: 'WebPage'
 heroImage: Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla
 alt: 'Lauri Lavanti seisoo kädet sivuilla rento hymy kasvoillaan ja katsoo kameraan. Hänellä on päällään valkoinen kauluspaita sinisillä kukkakuvioilla ja tumma pikkutakki. Kuvan otti Erkki Laine.'
+faq:
+    - q: 'Mistä Lauri Lavannin uutiskirje kertoo?'
+      a: 'Uutiskirje käsittelee yhtä aihetta kerrallaan: tekoälyä, digitaalista itsenäisyyttä, yksityisyyden suojaa ja teknologian yhteiskunnallisia vaikutuksia. Näkökulma on asiantunteva mutta ymmärrettävä.'
+    - q: 'Kuinka usein uutiskirje ilmestyy?'
+      a: 'Uutiskirje ilmestyy noin kerran kahdessa viikossa. Jokainen numero käsittelee yhtä aihetta perusteellisesti.'
 ---
 
 import H2 from '../../../components/H2.astro'
@@ -15,10 +20,14 @@ import Paragraph from '../../../components/Paragraph.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
-Teknologia muuttaa yhteiskuntaa nopeammin kuin kukaan ehtii seurata. Tekoäly, algoritmit, disinformaatio — joka viikolla tulee jotain uutta, ja harvalla on aikaa perehtyä siihen, mitä se kaikki oikeasti tarkoittaa.
+Kirjoitan uutiskirjeessä tekoälystä, digitaalisesta itsenäisyydestä, yksityisyyden suojasta ja teknologian vaikutuksista yhteiskuntaan. Johtavana ohjelmistokehittäjänä ja diplomi-insinöörinä tarkastelen aiheita sekä teknisestä että yhteiskunnallisesta näkökulmasta — ilman hypetystä ja pelottelua.
 
-Uutiskirjeessäni käsittelen yhden aiheen kerrallaan ja avaan sen auki: mitä tapahtuu, mitä se merkitsee, ja mitä siitä pitäisi ajatella. En hypetä enkä pelottele, vaan puran ajatuksiani ja tilannetta auki ymmärrettävässä muodossa.
+## Viimeaikaisia aiheita
 
-Suoraan sähköpostiisi, ilman algoritmeja.
+- Tekoäly ja ohjelmistokehitys — käsityöstä teollisuudeksi
+- Ikärajat someen — miten muualla on tehty, miten pitäisi tehdä, ja pitäisikö ollenkaan?
+- Tekoälyn väistämättömyys — olemmeko aktiivisia toimijoita vai muutosten kohde
+
+Suoraan postilaatikkoosi, ei algoritmeja välissä.
 
 <NewsletterSubscribe lang="fi" />
