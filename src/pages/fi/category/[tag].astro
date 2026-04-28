@@ -22,9 +22,8 @@ const heroImageAltFallback =
     'Lauri Lavanti istumassa jakkaralla ja nojaa korkeaan pöytään. Päällään hänellä on musta bleiseri ja sinivalkoinen kukkakuvioinen kauluspaita. Bleiserin taskussa on monivärinen taskuliina. Taustalla portaikko.'
 
 const faq = tag.faq?.fi
-const descFi = tag.descriptions.fi
-const metaDescription = Array.isArray(descFi) ? descFi[0] : descFi
-const bodyParagraphs = Array.isArray(descFi) ? descFi : [descFi]
+const metaDescription = tag.metaDescription.fi
+const bodyParagraphs = tag.descriptions.fi
 ---
 
 <PageLayout

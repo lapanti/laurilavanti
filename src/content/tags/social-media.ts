@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const socialMediaTag: LocalTag = {
     descriptions: {
-        en: 'Posts about social media and its impact on politics and communication.',
-        fi: 'Kirjoituksia sosiaalisesta mediasta, sen vaikutuksesta politiikkaan ja viestintään.',
-        sv: 'Texter om sociala medier och deras påverkan på politik och kommunikation.',
+        en: ['Posts about social media and its impact on politics and communication.'],
+        fi: ['Kirjoituksia sosiaalisesta mediasta, sen vaikutuksesta politiikkaan ja viestintään.'],
+        sv: ['Texter om sociala medier och deras påverkan på politik och kommunikation.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const socialMediaTag: LocalTag = {
         ],
     },
     id: 'social-media',
+    metaDescription: {
+        en: 'Posts about social media and its impact on politics and communication.',
+        fi: 'Kirjoituksia sosiaalisesta mediasta, sen vaikutuksesta politiikkaan ja viestintään.',
+        sv: 'Texter om sociala medier och deras påverkan på politik och kommunikation.',
+    },
     names: { en: 'Social media', fi: 'Sosiaa\u00ADlinen media', sv: 'Sociala medier' },
     pageTitle: {
         en: 'Social media in politics and communica\u00ADtion',
-        fi: 'Sosiaa\u00ADlinen media politii\u00ADkassa ja viestin\u00ADnässä',
+        fi: 'Sosiaalinen media ja poliittinen työ',
         sv: 'Sociala medier i politik och kommunika\u00ADtion',
     },
 }

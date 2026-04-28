@@ -2,9 +2,15 @@ import type { LocalTag } from './types'
 
 export const kirkkonummiTag: LocalTag = {
     descriptions: {
-        en: 'Posts about Kirkko\u00ADnummi municipal politics, decision-making, and everyday life. Lauri Lavanti as a councillor.',
-        fi: 'Kirjoituksia Kirkkonummen kuntapolitiikasta, päätöksenteosta ja arjesta. Lauri Lavanti kunnanvaltuutettuna.',
-        sv: 'Texter om Kyrkslätts kommunalpolitik, beslutsfattande och vardag. Lauri Lavanti som kommunfullmäktigeledamot.',
+        en: [
+            'Posts about Kirkko\u00ADnummi municipal politics, decision-making, and everyday life. Lauri Lavanti as a councillor.',
+        ],
+        fi: [
+            'Kirjoituksia Kirkkonummen kuntapolitiikasta, päätöksenteosta ja arjesta. Lauri Lavanti kunnanvaltuutettuna.',
+        ],
+        sv: [
+            'Texter om Kyrkslätts kommunalpolitik, beslutsfattande och vardag. Lauri Lavanti som kommunfullmäktigeledamot.',
+        ],
     },
     faq: {
         en: [
@@ -39,6 +45,11 @@ export const kirkkonummiTag: LocalTag = {
         ],
     },
     id: 'kirkkonummi',
+    metaDescription: {
+        en: 'Posts about Kirkkonummi municipal politics, decision-making, and everyday life. Lauri Lavanti as a councillor.',
+        fi: 'Kirjoituksia Kirkkonummen kuntapolitiikasta, päätöksenteosta ja arjesta. Lauri Lavanti kunnanvaltuutettuna.',
+        sv: 'Texter om Kyrkslätts kommunalpolitik, beslutsfattande och vardag. Lauri Lavanti som kommunfullmäktigeledamot.',
+    },
     names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
     pageTitle: {
         en: 'Kirkko\u00ADnummi – munici\u00ADpality and politics',

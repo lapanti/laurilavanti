@@ -75,6 +75,11 @@ export const digitalisationTag: LocalTag = {
         ],
     },
     id: 'digitalisation',
+    metaDescription: {
+        en: 'Digitalisation is both an opportunity and a risk. Finland must lead with quality, not just speed — getting it wrong at scale is expensive and hard to reverse.',
+        fi: 'Digitalisaatio on sekä mahdollisuus että riski. Suomen on johdettava laadulla, ei pelkästään nopeudella — epäonnistuminen mittakaavassa on kallista.',
+        sv: 'Digitalisering är både en möjlighet och en risk. Finland måste leda med kvalitet, inte bara hastighet — att misslyckas i stor skala är dyrt.',
+    },
     names: { en: 'Digitalisation', fi: 'Digitalisaatio', sv: 'Digitalisering' },
     pageTitle: {
         en: 'Digita\u00ADlisation – IT and infor\u00ADmation policy',

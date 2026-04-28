@@ -75,10 +75,15 @@ export const digitalIndependenceTag: LocalTag = {
         ],
     },
     id: 'digital-independence',
+    metaDescription: {
+        en: "Finland and Europe must control their own digital infrastructure. I authored the citizens' initiative calling for reduced dependency on foreign cloud providers.",
+        fi: 'Suomen ja Euroopan on hallittava omaa digitaalista infrastruktuuriaan — olen Digitaalinen itsenäisyys -kansalaisaloitteen alullepanija.',
+        sv: 'Finland och Europa måste kontrollera sin digitala infrastruktur — jag är huvudinitiativtagare till medborgarinitiativet om digital självständighet.',
+    },
     names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
     pageTitle: {
-        en: 'Digital inde\u00ADpendence and sovere\u00ADignty in Finland',
-        fi: 'Digitaa\u00ADlinen itse\u00ADnäisyys Suomessa',
-        sv: 'Digital själv\u00ADständighet i Finland',
+        en: 'Digital independence and sovereignty',
+        fi: 'Suomen digitaalinen itsemääräämisoikeus',
+        sv: 'Digital suveränitet och självständighet',
     },
 }

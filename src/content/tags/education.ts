@@ -87,6 +87,11 @@ export const educationTag: LocalTag = {
         ],
     },
     id: 'education',
+    metaDescription: {
+        en: 'Education is an investment, not a spending item. Cuts that look like savings today accumulate into skills deficits and lost competitiveness for years to come.',
+        fi: 'Koulutus on investointi, ei menoerä. Tämänpäiväiset säästöt kertyvät osaamispuutteiksi ja heikentyneeksi kilpailukyvyksi vuosiksi eteenpäin.',
+        sv: 'Utbildning är en investering, inte en utgiftspost. Nedskärningar idag ackumuleras till kompetensbrist och förlorad konkurrenskraft under lång tid framöver.',
+    },
     names: { en: 'Education', fi: 'Opetus', sv: 'Utbildning' },
     pageTitle: {
         en: 'About education and education policy',

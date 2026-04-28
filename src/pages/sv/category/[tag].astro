@@ -22,9 +22,8 @@ const heroImageAltFallback =
     'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.'
 
 const faq = tag.faq?.sv
-const descSv = tag.descriptions.sv
-const metaDescription = Array.isArray(descSv) ? descSv[0] : descSv
-const bodyParagraphs = Array.isArray(descSv) ? descSv : [descSv]
+const metaDescription = tag.metaDescription.sv
+const bodyParagraphs = tag.descriptions.sv
 ---
 
 <PageLayout

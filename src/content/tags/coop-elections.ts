@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const coopElectionsTag: LocalTag = {
     descriptions: {
-        en: 'Posts about co-op elections and S Group member democracy.',
-        fi: 'Kirjoituksia osuuskauppavaaleista ja S-ryhmän jäsendemokratiasta.',
-        sv: 'Texter om kooperativvalet och S-gruppens medlemsdemokrati.',
+        en: ['Posts about co-op elections and S Group member democracy.'],
+        fi: ['Kirjoituksia osuuskauppavaaleista ja S-ryhmän jäsendemokratiasta.'],
+        sv: ['Texter om kooperativvalet och S-gruppens medlemsdemokrati.'],
     },
     faq: {
         en: [
@@ -39,6 +39,11 @@ export const coopElectionsTag: LocalTag = {
         ],
     },
     id: 'coop-elections',
+    metaDescription: {
+        en: 'Posts about co-op elections and S Group member democracy.',
+        fi: 'Kirjoituksia osuuskauppavaaleista ja S-ryhmän jäsendemokratiasta.',
+        sv: 'Texter om kooperativvalet och S-gruppens medlemsdemokrati.',
+    },
     names: { en: 'Co-op elections', fi: 'Osuuskauppavaalit', sv: 'Kooperativval' },
     pageTitle: {
         en: 'Co-op elections – S Group democracy',

@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const basicWelfareTag: LocalTag = {
     descriptions: {
-        en: 'Posts about basic welfare, social benefits, and social services.',
-        fi: 'Kirjoituksia perusturvasta, sosiaalietuuksista ja sosiaalipalveluista.',
-        sv: 'Texter om grundläggande trygghet, sociala förmåner och socialtjänster.',
+        en: ['Posts about basic welfare, social benefits, and social services.'],
+        fi: ['Kirjoituksia perusturvasta, sosiaalietuuksista ja sosiaalipalveluista.'],
+        sv: ['Texter om grundläggande trygghet, sociala förmåner och socialtjänster.'],
     },
     faq: {
         en: [
@@ -39,6 +39,11 @@ export const basicWelfareTag: LocalTag = {
         ],
     },
     id: 'basic-welfare',
+    metaDescription: {
+        en: 'Posts about basic welfare, social benefits, and social services.',
+        fi: 'Kirjoituksia perusturvasta, sosiaalietuuksista ja sosiaalipalveluista.',
+        sv: 'Texter om grundläggande trygghet, sociala förmåner och socialtjänster.',
+    },
     names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grundläggande' },
     pageTitle: {
         en: 'About basic welfare and social security',
