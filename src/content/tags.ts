@@ -1,5 +1,5 @@
 export interface LocalTag {
-    descriptions: { en: string; fi: string; sv: string }
+    descriptions: { en: string | string[]; fi: string | string[]; sv: string | string[] }
     faq?: {
         en?: Array<{ a: string; q: string }>
         fi?: Array<{ a: string; q: string }>
