@@ -22,11 +22,14 @@ const heroImageAltFallback =
     'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.'
 
 const faq = tag.faq?.sv
+const descSv = tag.descriptions.sv
+const metaDescription = Array.isArray(descSv) ? descSv[0] : descSv
+const bodyParagraphs = Array.isArray(descSv) ? descSv : [descSv]
 ---
 
 <PageLayout
     alt={tag.heroImageAlt?.sv ?? heroImageAltFallback}
-    description={tag.descriptions.sv}
+    description={metaDescription}
     faq={faq}
     heroImage={tag.heroImage ?? heroImageFallback}
     lang="sv"
@@ -34,6 +37,6 @@ const faq = tag.faq?.sv
     title={tag.pageTitle.sv}
     type={COLLECTIONPAGE}
 >
-    <Paragraph>{tag.descriptions.sv}</Paragraph>
+    {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
     <ExcerptList lang="sv" tag={tag.id} />
 </PageLayout>

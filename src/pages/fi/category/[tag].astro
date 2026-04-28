@@ -22,11 +22,14 @@ const heroImageAltFallback =
     'Lauri Lavanti istumassa jakkaralla ja nojaa korkeaan pöytään. Päällään hänellä on musta bleiseri ja sinivalkoinen kukkakuvioinen kauluspaita. Bleiserin taskussa on monivärinen taskuliina. Taustalla portaikko.'
 
 const faq = tag.faq?.fi
+const descFi = tag.descriptions.fi
+const metaDescription = Array.isArray(descFi) ? descFi[0] : descFi
+const bodyParagraphs = Array.isArray(descFi) ? descFi : [descFi]
 ---
 
 <PageLayout
     alt={tag.heroImageAlt?.fi ?? heroImageAltFallback}
-    description={tag.descriptions.fi}
+    description={metaDescription}
     faq={faq}
     heroImage={tag.heroImage ?? heroImageFallback}
     lang="fi"
@@ -34,6 +37,6 @@ const faq = tag.faq?.fi
     title={tag.pageTitle.fi}
     type={COLLECTIONPAGE}
 >
-    <Paragraph>{tag.descriptions.fi}</Paragraph>
+    {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
     <ExcerptList lang="fi" tag={tag.id} />
 </PageLayout>

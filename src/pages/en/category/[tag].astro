@@ -22,11 +22,14 @@ const heroImageAltFallback =
     'Lauri Lavanti sitting on a stool leaning against a tall table. He is wearing a black blazer and a blue-and-white floral shirt. In the blazer pocket is a multicoloured pocket square. A staircase in the background.'
 
 const faq = tag.faq?.en
+const descEn = tag.descriptions.en
+const metaDescription = Array.isArray(descEn) ? descEn[0] : descEn
+const bodyParagraphs = Array.isArray(descEn) ? descEn : [descEn]
 ---
 
 <PageLayout
     alt={tag.heroImageAlt?.en ?? heroImageAltFallback}
-    description={tag.descriptions.en}
+    description={metaDescription}
     faq={faq}
     heroImage={tag.heroImage ?? heroImageFallback}
     lang="en"
@@ -34,6 +37,6 @@ const faq = tag.faq?.en
     title={tag.pageTitle.en}
     type={COLLECTIONPAGE}
 >
-    <Paragraph>{tag.descriptions.en}</Paragraph>
+    {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
     <ExcerptList lang="en" tag={tag.id} />
 </PageLayout>
