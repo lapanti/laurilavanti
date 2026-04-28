@@ -22,9 +22,8 @@ const heroImageAltFallback =
     'Lauri Lavanti sitting on a stool leaning against a tall table. He is wearing a black blazer and a blue-and-white floral shirt. In the blazer pocket is a multicoloured pocket square. A staircase in the background.'
 
 const faq = tag.faq?.en
-const descEn = tag.descriptions.en
-const metaDescription = Array.isArray(descEn) ? descEn[0] : descEn
-const bodyParagraphs = Array.isArray(descEn) ? descEn : [descEn]
+const metaDescription = tag.metaDescription.en
+const bodyParagraphs = tag.descriptions.en
 ---
 
 <PageLayout

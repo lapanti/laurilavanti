@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const westernUusimaaTag: LocalTag = {
     descriptions: {
-        en: 'Posts about the Western Uusimaa welfare area and social and health policy.',
-        fi: 'Kirjoituksia Länsi-Uudenmaan hyvinvointialueesta ja sosiaali- ja terveyspolitiikasta.',
-        sv: 'Texter om välfärdsområdet Västra Nyland och social- och hälsovårdspolitik.',
+        en: ['Posts about the Western Uusimaa welfare area and social and health policy.'],
+        fi: ['Kirjoituksia Länsi-Uudenmaan hyvinvointialueesta ja sosiaali- ja terveyspolitiikasta.'],
+        sv: ['Texter om välfärdsområdet Västra Nyland och social- och hälsovårdspolitik.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const westernUusimaaTag: LocalTag = {
         ],
     },
     id: 'western-uusimaa',
+    metaDescription: {
+        en: 'Posts about the Western Uusimaa welfare area and social and health policy.',
+        fi: 'Kirjoituksia Länsi-Uudenmaan hyvinvointialueesta ja sosiaali- ja terveyspolitiikasta.',
+        sv: 'Texter om välfärdsområdet Västra Nyland och social- och hälsovårdspolitik.',
+    },
     names: { en: 'Western Uusimaa', fi: 'Länsi-Uusimaa', sv: 'Västra Nyland' },
     pageTitle: {
-        en: 'Western Uusimaa – welfare area and regional politics',
+        en: 'Western Uusimaa and regional welfare',
         fi: 'Länsi-Uusimaa – hyvin\u00ADvointi\u00ADalue\u00ADpolitiik\u00ADkaa',
-        sv: 'Västra Nyland – välfärds\u00ADområde och regional\u00ADpolitik',
+        sv: 'Västra Nyland – välfärd och regionpolitik',
     },
 }

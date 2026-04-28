@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const transportationTag: LocalTag = {
     descriptions: {
-        en: 'Posts about transport, public transit, and sustain\u00ADable mobility.',
-        fi: 'Kirjoituksia liikenteestä, joukkoliikenteestä ja kestävästä liikkumisesta.',
-        sv: 'Texter om trafik, kollektivtrafik och hållbar rörlighet.',
+        en: ['Posts about transport, public transit, and sustain\u00ADable mobility.'],
+        fi: ['Kirjoituksia liikenteestä, joukkoliikenteestä ja kestävästä liikkumisesta.'],
+        sv: ['Texter om trafik, kollektivtrafik och hållbar rörlighet.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const transportationTag: LocalTag = {
         ],
     },
     id: 'transportation',
+    metaDescription: {
+        en: 'Posts about transport, public transit, and sustainable mobility.',
+        fi: 'Kirjoituksia liikenteestä, joukkoliikenteestä ja kestävästä liikkumisesta.',
+        sv: 'Texter om trafik, kollektivtrafik och hållbar rörlighet.',
+    },
     names: { en: 'Transport', fi: 'Liikenne', sv: 'Trafik' },
     pageTitle: {
-        en: 'Transport – public transit and sustain\u00ADable mobility',
-        fi: 'Liikenne – joukko\u00ADliikenne ja kestävä liikku\u00ADminen',
-        sv: 'Trafik – kollektiv\u00ADtrafik och hållbar rörlighet',
+        en: 'Transport and sustainable mobility',
+        fi: 'Joukkoliikenne ja kestävä liikkuminen',
+        sv: 'Kollektivtrafik och hållbar rörlighet',
     },
 }

@@ -87,6 +87,11 @@ export const equalityAndNonDiscriminationTag: LocalTag = {
         ],
     },
     id: 'equality-and-non-discrimination',
+    metaDescription: {
+        en: 'Equality is practical governance, not ideology. Every resident deserves equal service quality regardless of background, gender, ethnicity, or disability.',
+        fi: 'Yhdenvertaisuus on käytännöllistä hallintoa, ei ideologiaa. Jokaisella asukkaalla on oikeus yhtä laadukkaaseen palveluun taustastaan riippumatta.',
+        sv: 'Jämlikhet är praktisk förvaltning, inte ideologi. Varje invånare förtjänar likvärdig servicekvalitet oavsett bakgrund, kön, etnicitet eller läggning.',
+    },
     names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhdenvertaisuus', sv: 'Jämlikhet' },
     pageTitle: {
         en: 'About equality and non-discri\u00ADmination',

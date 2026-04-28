@@ -1,5 +1,5 @@
 export interface LocalTag {
-    descriptions: { en: string | string[]; fi: string | string[]; sv: string | string[] }
+    descriptions: { en: string[]; fi: string[]; sv: string[] }
     faq?: {
         en?: Array<{ a: string; q: string }>
         fi?: Array<{ a: string; q: string }>
@@ -8,6 +8,7 @@ export interface LocalTag {
     heroImage?: string
     heroImageAlt?: { en: string; fi: string; sv: string }
     id: string
+    metaDescription: { en: string; fi: string; sv: string }
     names: { en: string; fi: string; sv: string }
     pageTitle: { en: string; fi: string; sv: string }
 }

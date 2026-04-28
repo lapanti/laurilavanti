@@ -75,6 +75,11 @@ export const artificialIntelligenceTag: LocalTag = {
         ],
     },
     id: 'artificial-intelligence',
+    metaDescription: {
+        en: 'I use AI tools professionally as a lead developer — I argue from hands-on experience, not theory. Finland must engage with AI actively and critically.',
+        fi: 'Olen käyttänyt tekoälytyökaluja ammatillisesti lead developer -roolissa — argumentoin käytännön kokemuksesta. Suomen on tartuttava tekoälyyn aktiivisesti.',
+        sv: 'Jag arbetar med AI-verktyg professionellt som lead developer — jag argumenterar utifrån praktisk erfarenhet. Finland måste engagera sig med AI aktivt.',
+    },
     names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
     pageTitle: {
         en: 'Artificial intelli\u00ADgence – policy and ethics',

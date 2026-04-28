@@ -75,6 +75,11 @@ export const privacyTag: LocalTag = {
         ],
     },
     id: 'privacy',
+    metaDescription: {
+        en: 'Privacy is a democratic prerequisite — not a brake on innovation or security. Without protected private space, free thought and action become impossible.',
+        fi: 'Yksityisyydensuoja on demokratian edellytys — ei jarru innovaatiolle tai turvallisuudelle. Ilman suojattua yksityistä tilaa vapaa ajattelu vaikeutuu.',
+        sv: 'Integritetsskydd är en demokratisk förutsättning — inte en broms för innovation eller säkerhet. Utan ett skyddat privat utrymme försvåras fritt tänkande.',
+    },
     names: { en: 'Privacy', fi: 'Yksityisyydensuoja', sv: 'Integritetsskydd' },
     pageTitle: {
         en: 'Privacy protection in the digital world',

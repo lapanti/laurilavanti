@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const immigrationTag: LocalTag = {
     descriptions: {
-        en: 'Posts about immigration, integration, and immigration policy.',
-        fi: 'Kirjoituksia maahanmuutosta, kotoutumisesta ja maahanmuuttopolitiikasta.',
-        sv: 'Texter om immigration, integration och invandrarpolitik.',
+        en: ['Posts about immigration, integration, and immigration policy.'],
+        fi: ['Kirjoituksia maahanmuutosta, kotoutumisesta ja maahanmuuttopolitiikasta.'],
+        sv: ['Texter om immigration, integration och invandrarpolitik.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const immigrationTag: LocalTag = {
         ],
     },
     id: 'immigration',
+    metaDescription: {
+        en: 'Posts about immigration, integration, and immigration policy.',
+        fi: 'Kirjoituksia maahanmuutosta, kotoutumisesta ja maahanmuuttopolitiikasta.',
+        sv: 'Texter om immigration, integration och invandrarpolitik.',
+    },
     names: { en: 'Immigration', fi: 'Maahanmuutto', sv: 'Immigration' },
     pageTitle: {
-        en: 'Immi\u00ADgration – facts and policy',
+        en: 'Immigration and integration policy',
         fi: 'Maahan\u00ADmuutto – faktat ja politiikka',
-        sv: 'Immi\u00ADgration – fakta och politik',
+        sv: 'Immigration och integrationspolitik',
     },
 }

@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const urbanPlanningTag: LocalTag = {
     descriptions: {
-        en: 'Posts about urban planning, land use, and city development.',
-        fi: 'Kirjoituksia kaavoituksesta, maankäytöstä ja kaupunkikehityksestä.',
-        sv: 'Texter om planläggning, markanvändning och stadsutveckling.',
+        en: ['Posts about urban planning, land use, and city development.'],
+        fi: ['Kirjoituksia kaavoituksesta, maankäytöstä ja kaupunkikehityksestä.'],
+        sv: ['Texter om planläggning, markanvändning och stadsutveckling.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const urbanPlanningTag: LocalTag = {
         ],
     },
     id: 'urban-planning',
+    metaDescription: {
+        en: 'Posts about urban planning, land use, and city development.',
+        fi: 'Kirjoituksia kaavoituksesta, maankäytöstä ja kaupunkikehityksestä.',
+        sv: 'Texter om planläggning, markanvändning och stadsutveckling.',
+    },
     names: { en: 'Urban planning', fi: 'Kaavoitus', sv: 'Planläggning' },
     pageTitle: {
         en: 'Urban planning and land use policy',
-        fi: 'Kaavoitus ja maan\u00ADkäyttö\u00ADpolitiikka',
+        fi: 'Kaavoitus ja maankäytön suunnittelu',
         sv: 'Plan\u00ADläggning och mark\u00ADanvänd\u00ADnings\u00ADpolitik',
     },
 }

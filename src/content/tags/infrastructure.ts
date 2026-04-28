@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const infrastructureTag: LocalTag = {
     descriptions: {
-        en: 'Posts about infrastructure, construction, and municipal engineering.',
-        fi: 'Kirjoituksia infrastruktuurista, rakentamisesta ja kunnallistekniikasta.',
-        sv: 'Texter om infrastruktur, byggande och kommunalteknik.',
+        en: ['Posts about infrastructure, construction, and municipal engineering.'],
+        fi: ['Kirjoituksia infrastruktuurista, rakentamisesta ja kunnallistekniikasta.'],
+        sv: ['Texter om infrastruktur, byggande och kommunalteknik.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const infrastructureTag: LocalTag = {
         ],
     },
     id: 'infrastructure',
+    metaDescription: {
+        en: 'Posts about infrastructure, construction, and municipal engineering.',
+        fi: 'Kirjoituksia infrastruktuurista, rakentamisesta ja kunnallistekniikasta.',
+        sv: 'Texter om infrastruktur, byggande och kommunalteknik.',
+    },
     names: { en: 'Infrastructure', fi: 'Infra', sv: 'Infrastruktur' },
     pageTitle: {
-        en: 'Infra\u00ADstructure – construc\u00ADtion and engi\u00ADneering',
-        fi: 'Infra\u00ADstruktuuri – rakenta\u00ADminen ja kunnallis\u00ADtekniikka',
+        en: 'Infrastructure – building and engineering',
+        fi: 'Infrastruktuuri ja kunnallistekniikka',
         sv: 'Infra\u00ADstruktur – byggande och kommunal\u00ADteknik',
     },
 }

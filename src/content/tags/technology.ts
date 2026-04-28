@@ -75,10 +75,15 @@ export const technologyTag: LocalTag = {
         ],
     },
     id: 'technology',
+    metaDescription: {
+        en: 'Finland has a strong tradition of technological competence. Maintaining that edge requires people with practical expertise at the table where policy is made.',
+        fi: 'Suomella on vahva teknologiaosaamisen perinne. Sen ylläpitäminen edellyttää käytännön asiantuntemusta poliittisten päätösten pöydässä.',
+        sv: 'Finland har en stark tradition av teknologisk kompetens. Att upprätthålla den fördelen kräver praktisk expertis vid bordet där politiska beslut fattas.',
+    },
     names: { en: 'Technology', fi: 'Teknologia', sv: 'Teknologi' },
     pageTitle: {
         en: 'Technology in society and politics',
         fi: 'Teknologia yhteis\u00ADkunnassa ja politii\u00ADkassa',
-        sv: 'Teknologi i samhälle och politik',
+        sv: 'Teknologi i samhälle och politiken',
     },
 }

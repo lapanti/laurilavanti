@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const natureTag: LocalTag = {
     descriptions: {
-        en: 'Posts about nature, the environment, and outdoor recreation in Kirkkonummi and the surrounding region.',
-        fi: 'Kirjoituksia luonnosta, ympäristöstä ja ulkoilusta Kirkkonummella ja lähialueilla.',
-        sv: 'Texter om natur, miljö och friluftsliv i Kyrkslätt och omgivande region.',
+        en: ['Posts about nature, the environment, and outdoor recreation in Kirkkonummi and the surrounding region.'],
+        fi: ['Kirjoituksia luonnosta, ympäristöstä ja ulkoilusta Kirkkonummella ja lähialueilla.'],
+        sv: ['Texter om natur, miljö och friluftsliv i Kyrkslätt och omgivande region.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const natureTag: LocalTag = {
         ],
     },
     id: 'nature',
+    metaDescription: {
+        en: 'Posts about nature, the environment, and outdoor recreation in Kirkkonummi and the surrounding region.',
+        fi: 'Kirjoituksia luonnosta, ympäristöstä ja ulkoilusta Kirkkonummella ja lähialueilla.',
+        sv: 'Texter om natur, miljö och friluftsliv i Kyrkslätt och omgivande region.',
+    },
     names: { en: 'Nature', fi: 'Luonto', sv: 'Natur' },
     pageTitle: {
         en: 'Nature and the envir\u00ADon\u00ADment in Kirkko\u00ADnummi',
         fi: 'Luonto ja ympä\u00ADristö Kirkko\u00ADnummella',
-        sv: 'Natur och miljö i Kyrkslätt',
+        sv: 'Natur, miljö och klimat i Kyrkslätt',
     },
 }

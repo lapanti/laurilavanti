@@ -2,9 +2,9 @@ import type { LocalTag } from './types'
 
 export const westRailwayTag: LocalTag = {
     descriptions: {
-        en: 'Posts about the Western railway and its importance for public transport in the region.',
-        fi: 'Kirjoituksia Länsiradasta ja sen merkityksestä seudun joukkoliikenteelle.',
-        sv: 'Texter om Västbanan och dess betydelse för regionens kollektivtrafik.',
+        en: ['Posts about the Western railway and its importance for public transport in the region.'],
+        fi: ['Kirjoituksia Länsiradasta ja sen merkityksestä seudun joukkoliikenteelle.'],
+        sv: ['Texter om Västbanan och dess betydelse för regionens kollektivtrafik.'],
     },
     faq: {
         en: [
@@ -39,10 +39,15 @@ export const westRailwayTag: LocalTag = {
         ],
     },
     id: 'west-railway',
+    metaDescription: {
+        en: 'Posts about the Western railway and its importance for public transport in the region.',
+        fi: 'Kirjoituksia Länsiradasta ja sen merkityksestä seudun joukkoliikenteelle.',
+        sv: 'Texter om Västbanan och dess betydelse för regionens kollektivtrafik.',
+    },
     names: { en: 'Western railway', fi: 'Länsirata', sv: 'Västbanan' },
     pageTitle: {
-        en: 'Western railway – rail link to northern Kirkko\u00ADnummi',
+        en: 'Western railway – Kirkkonummi line',
         fi: 'Länsirata – Pohjois-Kirkko\u00ADnummen rata\u00ADyhteys',
-        sv: 'Västbanan – järnvägs\u00ADförbin\u00ADdelsen till norra Kyrkslätt',
+        sv: 'Västbanan – järnvägen till Kyrkslätt',
     },
 }
