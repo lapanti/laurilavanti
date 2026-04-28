@@ -110,12 +110,12 @@ export const tags: LocalTag[] = [
             en: [
                 'Finland and Europe must control their own digital infrastructure. I am the lead author of the digital independence citizens’ initiative, which calls on Finland to reduce its dependency on a small number of foreign cloud providers.',
                 'Finnish public administration is heavily dependent on US hyperscalers — Amazon, Microsoft, and Google. The geopolitical risk of that dependency has grown substantially since 2022. Finnish and European alternatives exist: UpCloud is a concrete example of a high-performance sovereign cloud provider that public sector organisations can choose today. I advocate for breaking up public IT procurement and preferring open source and European providers.',
-                'Digital independence is also about data portability and avoiding vendor lock-in. Public data generated with public money should be portable and stored under European legal jurisdiction — not subject to the US CLOUD Act.',
+                'Digital independence is also about data portability and avoiding vendor lock-in. Public data generated with public money should be portable and stored under European legal jurisdiction — not subject to foreign powers.',
             ],
             fi: [
-                'Suomen ja Euroopan on hallittava omaa digitaalista infrastruktuuriaan. Olen digitaalisen itsenäisyyden kansalaisaloitteen päävetäjä, jolla vaaditaan Suomea vähentämään riippuvuuttaan muutamista ulkomaisista pilvipalveluntarjoajista.',
+                'Suomen ja Euroopan on hallittava omaa digitaalista infrastruktuuriaan. Olen Digitaalinen itsenäisyys -kansalaisaloitteen alullepanija, jolla vaaditaan Suomea vähentämään riippuvuuttaan muutamista ulkomaisista pilvipalveluntarjoajista.',
                 'Suomen julkishallinto on voimakkaasti riippuvainen yhdysvaltalaisista hyperscalereista — Amazonista, Microsoftista ja Googlesta. Tämän riippuvuuden geopoliittinen riski on kasvanut merkittävästi vuoden 2022 jälkeen. Suomalaisia ja eurooppalaisia vaihtoehtoja on olemassa: UpCloud on konkreettinen esimerkki suorituskykyisestä kotimaisesta pilvipalvelusta, jonka julkinen sektori voi valita jo tänään. Ajan julkisten IT-hankintojen pilkkomista ja avoimen lähdekoodin sekä eurooppalaisten toimittajien suosimista.',
-                'Digitaalinen itsenäisyys tarkoittaa myös datan siirrettävyyttä ja toimittajariippuvuuden välttämistä. Julkisella rahalla tuotetun julkisen datan tulee olla siirrettävää ja tallennettuna eurooppalaisessa oikeudenkäyttöalueessa — ei US CLOUD Act -lain piirissä.',
+                'Digitaalinen itsenäisyys tarkoittaa myös datan siirrettävyyttä ja toimittajariippuvuuden välttämistä. Julkisella rahalla tuotetun julkisen datan tulee olla siirrettävää ja tallennettuna eurooppalaisessa oikeudenkäyttöalueessa — ei ulkomaisten voimien vallassa.',
             ],
             sv: [
                 'Finland och Europa måste kontrollera sin egen digitala infrastruktur. Jag är huvudinitiativtagare till medborgarinitiativet om digital självständighet, som kräver att Finland minskar sitt beroende av ett fåtal utländska molntjänstleverantörer.',
@@ -134,7 +134,7 @@ export const tags: LocalTag[] = [
                     q: 'How can Finland strengthen its digital independence?',
                 },
                 {
-                    a: 'UpCloud is a Finnish cloud provider that offers high-performance infrastructure comparable to the US hyperscalers. It is proof that a sovereign, European-jurisdiction cloud option exists and is production-ready for public sector use.',
+                    a: 'UpCloud is a Finnish cloud provider that offers high-performance infrastructure comparable to the US hyperscalers. It is proof that sovereign, European-jurisdiction cloud options exist and are production-ready for public sector use.',
                     q: 'What is UpCloud and why does it matter?',
                 },
                 {
@@ -152,7 +152,7 @@ export const tags: LocalTag[] = [
                     q: 'Miten Suomi voi vahvistaa digitaalista itsenäisyyttään?',
                 },
                 {
-                    a: 'UpCloud on suomalainen pilvipalveluntarjoaja, joka tarjoaa suorituskykyistä infrastruktuuria verrattavissa yhdysvaltalaisiin hyperscalereihin. Se on konkreettinen todiste siitä, että eurooppalaiseen oikeudenkäyttöalueeseen kuuluva, tuotantovalmis pilvipalveluvaihtoehto on olemassa julkiselle sektorille.',
+                    a: 'UpCloud on suomalainen pilvipalveluntarjoaja, joka tarjoaa suorituskykyistä infrastruktuuria verrattavissa yhdysvaltalaisiin hyperscalereihin. Se on konkreettinen todiste siitä, että eurooppalaisia, euroopassa sijaitsevia, tuotantovalmiita pilvipalveluvaihtoehtoja on olemassa julkiselle sektorille.',
                     q: 'Mikä on UpCloud ja miksi se on tärkeä?',
                 },
                 {
@@ -1146,8 +1146,8 @@ export const tags: LocalTag[] = [
             ],
             fi: [
                 'Olen käyttänyt tekoälytyökaluja ammatillisesti lead developer -roolissa — argumentoin käytännön kokemuksesta, en teoriasta. Tekoäly on aikamme merkittävin tuottavuusmuutos, ja Suomen on tartuttava siihen aktiivisesti ja kriittisesti.',
-                'Tekoäly vahvistaa sekä kykyä että harhoja. Julkisen sektorin sovelluksissa — etuuspäätöksissä, luvankäsittelyssä, ennakoivassa poliisitoiminnassa — panokset ovat liian suuret, jotta järjestelmiä voitaisiin ottaa käyttöön ilman läpinäkyvyyttä ja inhimillistä valvontaa. Ajan selitettäviä algoritmeja merkityksellisiin päätöksiin, avoimen lähdekoodin malleja silloin kun mahdollista, ja pakollista ihmisvalvontaa yksilöiden oikeuksiin vaikuttavissa päätöksissä.',
-                'Mitä voimakkaammaksi tekoäly kehittyy, sitä tärkeämmiksi yksityisyydensuoja tulee. Tekoälyjärjestelmät ovat tietonälkäisiä; ilman vahvoja tietosuojasääntöjä niistä tulee valvontainfrastruktuuria. EU:n tekoälysäädös on askel oikeaan suuntaan, mutta toimeenpanon on oltava sisällöllistä — ei pelkkää laatikoiden ruksimista.',
+                'Tekoäly vahvistaa sekä kykyjä että vahinkoja. Julkisen sektorin sovelluksissa — etuuspäätöksissä, luvankäsittelyssä, ennakoivassa poliisitoiminnassa — panokset ovat liian suuret, jotta järjestelmiä voitaisiin ottaa käyttöön ilman läpinäkyvyyttä ja inhimillistä valvontaa. Ajan selitettäviä algoritmeja merkityksellisiin päätöksiin, avoimen lähdekoodin malleja silloin kun mahdollista, ja pakollista ihmisvalvontaa yksilöiden oikeuksiin vaikuttavissa päätöksissä.',
+                'Mitä voimakkaammaksi tekoäly kehittyy, sitä tärkeämmiksi yksityisyydensuoja tulee. Tekoälyjärjestelmät ovat tiedonnälkäisiä; ilman vahvoja tietosuojasääntöjä niistä tulee valvontainfrastruktuuria. EU:n tekoälysäädös on askel oikeaan suuntaan, mutta toimeenpanon on oltava sisällöllistä — ei pelkkää laatikoiden ruksimista.',
             ],
             sv: [
                 'Jag arbetar med AI-verktyg professionellt som lead developer — jag argumenterar utifrån praktisk erfarenhet, inte teori. AI är vår tids mest betydande produktivitetstransformation, och Finland måste engagera sig med det aktivt och kritiskt.',
@@ -1315,17 +1315,17 @@ export const tags: LocalTag[] = [
         descriptions: {
             en: [
                 'Privacy is a democratic prerequisite — not a brake on innovation or security. Without protected private space, free thinking and independent action become impossible.',
-                'I oppose the expansion of biometric mass registries, such as DNA databases without clear necessity and proportionality. I also oppose the EU Chat Control proposal: mandatory client-side scanning would effectively break end-to-end encryption and turn every device into a surveillance tool. The GDPR is a floor, not a ceiling — public services should exceed its requirements, not just meet them.',
+                'I oppose the expanded use of biometric databases, such as the one made of our fingerprints and facial images, without clear necessity and proportionality. I also oppose the EU Chat Control proposal: mandatory client-side scanning would effectively break end-to-end encryption and turn every device into a surveillance tool. The GDPR is a floor, not a ceiling — public services should exceed its requirements, not just meet them.',
                 'Privacy-respecting digital services are not only possible — they build greater citizen trust and adoption. As a software developer, I have built systems where privacy is designed in from the start, not bolted on afterwards. That experience shapes how I think about digital public services.',
             ],
             fi: [
                 'Yksityisyydensuoja on demokratian edellytys — ei jarru innovaatiolle tai turvallisuudelle. Ilman suojattua yksityistä tilaa vapaa ajattelu ja itsenäinen toiminta vaikeutuvat.',
-                'Vastustan biometristen massarekisterien laajentamista, kuten DNA-rekistereitä ilman selkeää tarvetta ja oikeasuhtaisuutta. Vastustan myös EU:n Chat Control -ehdotusta: pakollinen viestien skannaus asiakkaan laitteella rikkoisi käytännössä päästä päähän -salauksen ja muuttaisi jokaisen laitteen valvontatyökaluksi. GDPR on lattia, ei katto — julkisten palvelujen tulee ylittää sen vaatimukset, ei vain täyttää ne.',
+                'Vastustan biometristen massarekisterien käytön laajentamista, kuten passirekisterin, ilman selkeää tarvetta ja oikeasuhtaisuutta. Vastustan myös EU:n Chat Control -ehdotusta: pakollinen viestien skannaus asiakkaan laitteella rikkoisi käytännössä päästä päähän -salauksen ja muuttaisi jokaisen laitteen valvontatyökaluksi. GDPR on lattia, ei katto — julkisten palvelujen tulee ylittää sen vaatimukset, ei vain täyttää ne.',
                 'Yksityisyyden kunnioittavat digitaaliset palvelut ovat paitsi mahdollisia, myös luottamusta rakentavia. Ohjelmistokehittäjänä olen rakentanut järjestelmiä, joissa yksityisyys on suunniteltu sisään alusta alkaen. Tämä kokemus muovaa tapaani ajatella digitaalisia julkisia palveluja.',
             ],
             sv: [
                 'Integritetsskydd är en demokratisk förutsättning — inte en broms för innovation eller säkerhet. Utan ett skyddat privat utrymme försvåras fritt tänkande och självständigt handlande.',
-                'Jag motsätter mig utbyggnaden av biometriska massregister, till exempel DNA-databaser utan tydlig nödvändighet och proportionalitet. Jag motsätter mig också EU:s Chat Control-förslag: obligatorisk klientsidig skanning skulle i praktiken bryta end-to-end-kryptering och förvandla varje enhet till ett övervakningsverktyg. GDPR är ett golv, inte ett tak — offentliga tjänster bör överträffa dess krav, inte bara uppfylla dem.',
+                'Jag motsätter mig utbyggnaden av biometriska massregister utan tydlig nödvändighet och proportionalitet. Jag motsätter mig också EU:s Chat Control-förslag: obligatorisk klientsidig skanning skulle i praktiken bryta end-to-end-kryptering och förvandla varje enhet till ett övervakningsverktyg. GDPR är ett golv, inte ett tak — offentliga tjänster bör överträffa dess krav, inte bara uppfylla dem.',
                 'Integritetsvänliga digitala tjänster är inte bara möjliga — de bygger också större medborgarförtroende. Som mjukvaruutvecklare har jag byggt system där integriteten är inbyggd från grunden, inte påklistrad i efterhand. Den erfarenheten formar hur jag tänker kring digitala offentliga tjänster.',
             ],
         },
@@ -1344,7 +1344,7 @@ export const tags: LocalTag[] = [
                     q: 'What is your position on the EU Chat Control proposal?',
                 },
                 {
-                    a: 'Expanding biometric registries — such as DNA databases beyond narrow criminal justice use — is disproportionate and irreversible. Once biometric data is collected at scale, the chilling effect on free society is permanent. The burden of proof for necessity must be high.',
+                    a: 'Expanding biometric registries — such as the passport registry beyond narrow criminal justice use — is disproportionate and irreversible. Once biometric data is collected at scale, the chilling effect on free society is permanent. The burden of proof for necessity must be high.',
                     q: 'Why oppose expanding biometric registries?',
                 },
             ],
@@ -1362,7 +1362,7 @@ export const tags: LocalTag[] = [
                     q: 'Mitä Lauri Lavannin kanta on EU:n Chat Control -ehdotukseen?',
                 },
                 {
-                    a: 'Biometristen rekisterien laajentaminen — kuten DNA-tietokannat rikosoikeudellisen käytön ulkopuolelle — on suhteeton ja peruuttamaton toimenpide. Kun biometrisiä tietoja kerätään laajamittaisesti, seurausvaikutus vapaaseen yhteiskuntaan on pysyvä. Vaatimustaso välttämättömyyden osoittamiselle tulee olla korkea.',
+                    a: 'Biometristen rekisterien laajentaminen — kuten passirekisterin rikosoikeudellisen käytön ulkopuolelle — on suhteeton ja peruuttamaton toimenpide. Kun biometrisiä tietoja kerätään laajamittaisesti, seurausvaikutus vapaaseen yhteiskuntaan on pysyvä. Vaatimustaso välttämättömyyden osoittamiselle tulee olla korkea.',
                     q: 'Miksi vastustat biometristen rekisterien laajentamista?',
                 },
             ],
@@ -1380,7 +1380,7 @@ export const tags: LocalTag[] = [
                     q: 'Vad är din ståndpunkt om EU:s Chat Control-förslag?',
                 },
                 {
-                    a: 'Att utvidga biometriska register — till exempel DNA-databaser utanför snäv brottsutredning — är oproportionerligt och oåterkalleligt. När biometriska uppgifter samlas in i stor skala är den avskräckande effekten på ett fritt samhälle permanent. Beviskravet för nödvändighet måste vara högt.',
+                    a: 'Att utvidga biometriska register — till exempel pass-databaser utanför snäv brottsutredning — är oproportionerligt och oåterkalleligt. När biometriska uppgifter samlas in i stor skala är den avskräckande effekten på ett fritt samhälle permanent. Beviskravet för nödvändighet måste vara högt.',
                     q: 'Varför motsätter du dig utvidgning av biometriska register?',
                 },
             ],
