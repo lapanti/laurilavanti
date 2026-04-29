@@ -1,0 +1,35 @@
+---
+layout: '../../../layouts/PageLayout.astro'
+lang: sv
+title: 'Ämnen – AI, integritet och utbildning'
+description: 'Vad jag skriver och tänker om: AI, digital självständighet, integritet, utbildning och ekonomi. Läs mina ställningstaganden ämne för ämne.'
+slug: 'sv/topics'
+type: 'WebPage'
+heroImage: Lauri-Lavanti-next-to-a-table
+alt: 'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.'
+---
+
+import Paragraph from '../../../components/Paragraph.astro'
+import TopicsList from '../../../components/TopicsList.astro'
+
+export const components = { p: Paragraph }
+
+Det här är de ämnen jag har mest att säga om — och de som mina texter, ställningstaganden och inlägg bygger på. Varje rubrik tar dig direkt till min ståndpunkt och alla relaterade texter.
+
+<TopicsList
+    lang="sv"
+    ids={[
+        'artificial-intelligence',
+        'technology',
+        'digital-independence',
+        'digitalisation',
+        'privacy',
+        'equality-and-non-discrimination',
+        'social-media',
+        'education',
+        'culture-and-education',
+        'early-childhood-education',
+        'health-and-social-reform',
+        'basic-welfare',
+    ]}
+/>

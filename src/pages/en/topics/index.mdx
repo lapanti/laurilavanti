@@ -1,0 +1,35 @@
+---
+layout: '../../../layouts/PageLayout.astro'
+lang: en
+title: 'Topics – AI, privacy, education, economics'
+description: "What I write and think about: AI, digital independence, privacy, education and economic policy. Read my positions topic by topic."
+slug: 'en/topics'
+type: 'WebPage'
+heroImage: Lauri-Lavanti-next-to-a-table
+alt: 'Lauri Lavanti sitting on a stool leaning against a tall table. He is wearing a black blazer and a blue-and-white floral shirt. In the blazer pocket is a multicoloured pocket square. A staircase in the background.'
+---
+
+import Paragraph from '../../../components/Paragraph.astro'
+import TopicsList from '../../../components/TopicsList.astro'
+
+export const components = { p: Paragraph }
+
+These are the topics I have most to say about — and the ones my writing, positions, and public statements are built around. Each heading takes you straight to my stance and every related piece of writing.
+
+<TopicsList
+    lang="en"
+    ids={[
+        'artificial-intelligence',
+        'technology',
+        'digital-independence',
+        'digitalisation',
+        'privacy',
+        'equality-and-non-discrimination',
+        'social-media',
+        'education',
+        'culture-and-education',
+        'early-childhood-education',
+        'health-and-social-reform',
+        'basic-welfare',
+    ]}
+/>
