@@ -1,0 +1,35 @@
+---
+layout: '../../../layouts/PageLayout.astro'
+lang: fi
+title: 'Aiheet – tekoäly, yksi­tyisyys ja koulutus'
+description: 'Mistä kirjoitan ja mitä ajattelen: tekoäly, digitaalinen itsenäisyys, yksityisyys, koulutus ja talous. Lue kantani aihealueittain.'
+slug: 'fi/topics'
+type: 'WebPage'
+heroImage: Lauri-Lavanti-next-to-a-table
+alt: 'Lauri Lavanti istumassa jakkaralla ja nojaa korkeaan pöytään. Päällään hänellä on musta bleiseri ja sinivalkoinen kukkakuvioinen kauluspaita. Bleiserin taskussa on monivärinen taskuliina. Taustalla portaikko.'
+---
+
+import Paragraph from '../../../components/Paragraph.astro'
+import TopicsList from '../../../components/TopicsList.astro'
+
+export const components = { p: Paragraph }
+
+Nämä ovat aiheet, joissa minulla on eniten sanottavaa — ja joihin kirjoitukseni, kannanottoni ja puheenvuoroni pohjautuvat. Jokainen otsikko vie suoraan kantaani ja kaikkiin aiheeseen liittyviin kirjoituksiin.
+
+<TopicsList
+    lang="fi"
+    ids={[
+        'artificial-intelligence',
+        'technology',
+        'digital-independence',
+        'digitalisation',
+        'privacy',
+        'equality-and-non-discrimination',
+        'social-media',
+        'education',
+        'culture-and-education',
+        'early-childhood-education',
+        'health-and-social-reform',
+        'basic-welfare',
+    ]}
+/>
