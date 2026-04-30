@@ -2,11 +2,12 @@
 import { colors, sizes } from '../lib/styles'
 
 interface Props {
+    heading?: boolean
     href: string
     rel?: string
 }
 
-const { href, rel } = Astro.props
+const { heading, href, rel } = Astro.props
 ---
 
 <style define:vars={{ colorsDarkMoss: colors.darkMoss, sizes0125: sizes[0.125] }}>
@@ -15,7 +16,11 @@ const { href, rel } = Astro.props
         text-decoration: underline;
         text-decoration-thickness: var(--sizes0125);
     }
+    a.heading {
+        display: block;
+        min-block-size: 2.75rem;
+    }
 </style>
-<a href={href} rel={`${rel ? rel : ''}`}>
+<a class:list={[{ heading }]} href={href} rel={`${rel ? rel : ''}`}>
     <slot />
 </a>

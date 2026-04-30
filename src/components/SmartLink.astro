@@ -4,18 +4,19 @@ import Link from './Link.astro'
 
 interface Props {
     ariaLabel?: string
+    heading?: boolean
     href: string
     rel?: string
 }
 
-const { ariaLabel, href, rel } = Astro.props
+const { ariaLabel, heading, href, rel } = Astro.props
 
 const isInternal = href.startsWith('/')
 ---
 
 {
     isInternal ? (
-        <Link href={href} rel={rel}>
+        <Link heading={heading} href={href} rel={rel}>
             <slot />
         </Link>
     ) : (
