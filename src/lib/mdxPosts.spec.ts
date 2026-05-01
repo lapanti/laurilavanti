@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { allMdxPosts, getPostAlternates } from './mdxPosts'
+import { allMdxPosts, getExcerptPosts, getPostAlternates } from './mdxPosts'
 
 const VALID_LANGS = ['en', 'fi', 'sv'] as const
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
@@ -75,5 +75,89 @@ describe('getPostAlternates', () => {
     it('returns an empty object for an unknown post id', () => {
         const alternates = getPostAlternates(999999)
         expect(Object.keys(alternates)).toHaveLength(0)
+    })
+})
+
+describe('getExcerptPosts', () => {
+    it('returns only posts for the given lang', () => {
+        const results = getExcerptPosts({ lang: 'fi' })
+
+        expect(results.every((p) => p.lang === 'fi')).toBe(true)
+    })
+
+    it('returns all lang-filtered posts when no other options are given', () => {
+        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+
+        const results = getExcerptPosts({ lang: 'fi' })
+
+        expect(results).toHaveLength(fiPosts.length)
+    })
+
+    it('excludes the post whose slug matches currentSlug', () => {
+        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+        const target = fiPosts[0]
+
+        const results = getExcerptPosts({ currentSlug: target.slug, lang: 'fi' })
+
+        expect(results.find((p) => p.slug === target.slug)).toBeUndefined()
+        expect(results).toHaveLength(fiPosts.length - 1)
+    })
+
+    it('returns only posts tagged with the given tag', () => {
+        const TAG = 'kirkkonummi'
+
+        const results = getExcerptPosts({ lang: 'fi', tag: TAG })
+
+        expect(results.every((p) => p.tags.includes(TAG))).toBe(true)
+    })
+
+    it('returns fewer posts when a tag filter is applied', () => {
+        const allFi = getExcerptPosts({ lang: 'fi' })
+        const tagged = getExcerptPosts({ lang: 'fi', tag: 'kirkkonummi' })
+
+        expect(tagged.length).toBeGreaterThan(0)
+        expect(tagged.length).toBeLessThan(allFi.length)
+    })
+
+    it('slices to the given limit', () => {
+        const results = getExcerptPosts({ lang: 'fi', limit: 3 })
+
+        expect(results).toHaveLength(3)
+    })
+
+    it('returns all posts when limit is not given', () => {
+        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+
+        const results = getExcerptPosts({ lang: 'fi' })
+
+        expect(results).toHaveLength(fiPosts.length)
+    })
+
+    it('default ordering is newest-first by id', () => {
+        const results = getExcerptPosts({ lang: 'fi' })
+
+        for (let i = 1; i < results.length; i++) {
+            expect(results[i - 1].id).toBeGreaterThanOrEqual(results[i].id)
+        }
+    })
+
+    it('relatedTags places the highest-scoring post first', () => {
+        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+        /*
+         * Newest fi post (highest id) scores highest when its own tags are relatedTags;
+         * it also wins the id-desc tiebreaker if any post ties its score.
+         */
+        const referencePost = fiPosts[0]
+
+        const results = getExcerptPosts({ lang: 'fi', relatedTags: referencePost.tags })
+
+        expect(results[0].slug).toBe(referencePost.slug)
+    })
+
+    it('empty relatedTags preserves newest-first ordering', () => {
+        const withoutRelated = getExcerptPosts({ lang: 'fi' })
+        const withEmptyRelated = getExcerptPosts({ lang: 'fi', relatedTags: [] })
+
+        expect(withEmptyRelated.map((p) => p.id)).toEqual(withoutRelated.map((p) => p.id))
     })
 })
