@@ -1,5 +1,5 @@
 ---
-import { allMdxPosts } from '../lib/mdxPosts'
+import { getExcerptPosts } from '../lib/mdxPosts'
 import { sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt.astro'
 
@@ -13,39 +13,7 @@ interface Props {
 
 const { currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
 
-const filtered = allMdxPosts
-    .filter((p) => p.lang === lang)
-    .filter((p) => !currentSlug || p.slug !== currentSlug)
-    .filter((p) => !tag || p.tags.includes(tag))
-
-type MdxPostWithUrl = (typeof filtered)[number]
-
-const tagSorted = relatedTags
-    ? filtered
-          .reduce<[MdxPostWithUrl, number][]>(
-              (acc, curr) => [
-                  ...acc,
-                  [
-                      curr,
-                      relatedTags.reduce(
-                          (pointsAcc, currentRelatedTag) => pointsAcc + (curr.tags.includes(currentRelatedTag) ? 1 : 0),
-                          0
-                      ),
-                  ],
-              ],
-              []
-          )
-          .toSorted((a, b) => {
-              if (a[1] === b[1]) {
-                  return b[0].id - a[0].id
-              }
-
-              return a[1] < b[1] ? 1 : -1
-          })
-          .map((postWithPoints) => postWithPoints[0])
-    : filtered
-
-const nodes = limit ? tagSorted.slice(0, limit) : tagSorted
+const nodes = getExcerptPosts({ currentSlug, lang, limit, relatedTags, tag })
 ---
 
 <style
