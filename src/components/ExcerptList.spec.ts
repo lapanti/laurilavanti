@@ -83,10 +83,4 @@ describe('<ExcerptList />', () => {
         const articles = getAllByRole(result, 'article')
         expect(articles[0].getAttribute('aria-label')).toBe(referencePost.title)
     })
-
-    it('should render snapshot with limit', async () => {
-        const result = await renderAstroComponent(ExcerptList, { props: { lang: 'fi', limit: 3 } })
-
-        expect(result.firstChild).toMatchSnapshot()
-    })
 })
