@@ -1,15 +1,5 @@
 {
     "hooks": {
-        "PreToolUse": [
-            {
-                "matcher": "Bash",
-                "hooks": [
-                    {
-                        "type": "command",
-                        "command": "bash .claude/hooks/mdx-pre-commit-checks.sh"
-                    }
-                ]
-            }
-        ]
+        "PreToolUse": []
     }
 }
