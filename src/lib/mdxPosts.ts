@@ -1,4 +1,4 @@
-export interface MdxPost {
+interface MdxPost {
     alt: string
     description: string
     faq?: Array<{ a: string; q: string }>
@@ -12,7 +12,7 @@ export interface MdxPost {
     updatedDate?: string
 }
 
-export type MdxPostWithUrl = MdxPost & { url: string }
+type MdxPostWithUrl = MdxPost & { url: string }
 
 type GlobResult = { frontmatter: MdxPost }
 
