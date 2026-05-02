@@ -1,0 +1,15 @@
+---
+layout: '../../../../../layouts/PostLayout.astro'
+id: 99
+slug: 'h1-in-body-post'
+lang: 'en'
+title: 'A post with an H1 in the body'
+description: 'Testing that seo.sh catches H1 headings in the body content.'
+publishDate: '2026-04-22'
+---
+
+# This H1 should be caught by the check
+
+## Normal H2 heading
+
+Body content here.
