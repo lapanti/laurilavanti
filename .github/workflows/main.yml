@@ -84,9 +84,9 @@ jobs:
       - name: Check MDX files for words that would cause horizontal scroll
         run: node scripts/check-long-words.mjs $(find src/pages -name '*.mdx')
 
-  validate-translations:
+  validate-content:
     runs-on: ubuntu-latest
-    name: Validate translations
+    name: Validate content
     permissions:
       contents: read
     steps:
@@ -94,34 +94,30 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
-      - name: Check all posts have translations in all languages
-        run: node scripts/validate-translations.mjs
-
-  validate-titles:
-    runs-on: ubuntu-latest
-    name: Validate titles
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: ".nvmrc"
-      - name: Check all page titles meet SEO length requirements
-        run: node scripts/validate-titles.mjs
-
-  validate-slugs:
-    runs-on: ubuntu-latest
-    name: Validate slugs
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: ".nvmrc"
-      - name: Check all slugs are free of soft hyphens
-        run: node scripts/validate-slugs.mjs
+      - name: Run SEO checks on all MDX files
+        run: |
+          find src/pages -name '*.mdx' | while read -r f; do
+            bash scripts/checks/seo.sh "$f"
+          done
+      - name: Run AEO checks on all MDX files
+        run: |
+          find src/pages -name '*.mdx' | while read -r f; do
+            bash scripts/checks/aeo.sh "$f"
+          done
+      - name: Run content checks on all MDX files
+        run: |
+          find src/pages -name '*.mdx' | while read -r f; do
+            bash scripts/checks/content.sh "$f"
+          done
+      - name: Run Finnish style checks on fi/ MDX files
+        run: |
+          find src/pages/fi -name '*.mdx' | while read -r f; do
+            bash scripts/checks/style-fi.sh "$f"
+          done
+      - name: Run passage length and freshness checks
+        run: node --experimental-strip-types scripts/checks/mdx-deep.ts $(find src/pages -name '*.mdx')
+      - name: Run cross-file checks (translation triplet + title uniqueness)
+        run: node scripts/checks/cross-file.mjs
 
   unit-test:
     runs-on: ubuntu-latest
