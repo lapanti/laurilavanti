@@ -8,6 +8,33 @@ Perform a comprehensive SEO audit on the MDX file(s) at `$ARGUMENTS`.
 If no argument is given, check the file most recently mentioned or opened in the conversation.
 If `$ARGUMENTS` is a directory or glob, use Glob to find all matching `.mdx` files and audit each one.
 
+> **Pre-commit automation note:** The following checks from this skill are now
+> enforced automatically at pre-commit via `scripts/mdx-validate.sh` and
+> `scripts/checks/mdx-deep.mjs`. Focus your skill audit on the **judgment-call
+> checks** listed at the bottom.
+>
+> *Automated (no need to re-report if pre-commit passed):*
+> - Required frontmatter fields (title, description, lang, slug, publishDate, layout)
+> - `lang` field matches path locale
+> - Slug format: lowercase, no underscores, no soft hyphens, no 4-digit years
+> - Slug matches containing folder name
+> - No H1 in body
+> - Title length (50–60 chars incl. " | Lauri Lavanti" suffix)
+> - Description length (120–160 chars for blog posts)
+> - Heading hierarchy (no H3 without preceding H2)
+> - Hero `alt` text present, ≥3 words, not a filename
+> - Internal link count (3–5 for blog posts)
+> - Tag validity (all IDs exist in src/content/tags.ts)
+> - Passage length ≤150 words
+> - Freshness (publishDate ≥90 days → updatedDate required)
+>
+> *Judgment-call checks — still run these:*
+> - Title and description uniqueness and CTR quality
+> - OG image and JSON-LD richness
+> - Content quality, intent satisfaction, E-E-A-T signals
+> - External link quality and authority
+> - Body word count (thin/bloated content signal)
+
 ---
 
 ## Data to collect before running checks
