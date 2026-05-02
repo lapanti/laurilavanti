@@ -10,6 +10,26 @@ If `$ARGUMENTS` is a directory or glob, use Glob to find all matching `.mdx` fil
 
 AEO (Answer Engine Optimization) ensures content is extracted and cited by AI answer engines (ChatGPT, Perplexity, Google AI Overviews, Gemini, etc.), not just ranked in traditional search. It complements the /seo-check skill — run both.
 
+> **Pre-commit automation note:** The following checks from this skill are now
+> enforced automatically at pre-commit via `scripts/mdx-validate.sh`.
+> Focus your skill audit on **judgment-call checks**.
+>
+> *Automated:*
+> - Conversational heading: at least one H2/H3 starts with a question word
+> - Vague quantifiers: "affordable", "quickly", "recently" flagged (targeted list)
+> - Passage length ≤150 words (see seo-check automation)
+> - Freshness metadata: updatedDate required if >90 days old
+>
+> *Judgment-call checks — still run these:*
+> - Answer-first structure (opening 100 words)
+> - Passage self-containment and cross-reference avoidance
+> - Data specificity and source attribution
+> - E-E-A-T signals (author credentials, expertise)
+> - FAQ structure opportunities
+> - List vs. prose balance
+> - Conversational query coverage and follow-up anticipation
+> - Multilingual quality consistency
+
 ---
 
 ## Data to collect before running checks

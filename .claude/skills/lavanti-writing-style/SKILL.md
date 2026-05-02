@@ -3,6 +3,12 @@ name: lavanti-writing-style
 description: Apply Lauri Lavanti's personal writing style when generating Finnish-language text. Use this skill whenever the user asks Claude to write, draft, or edit text on their behalf in Finnish — including blog posts, social media updates, opinion pieces, statements, speeches, or any other written content where the user wants their own voice. Trigger whenever the user says things like "kirjoita minulle", "kirjoita puolestani", "muokkaa tätä minun tyyliini", "postaus", "blogi", or when they provide a topic and ask for text. Also trigger for any Finnish-language writing task where maintaining a consistent personal voice matters.
 ---
 
+> **Pre-commit automation note:** Finnish-language blog posts committed to
+> this repo are automatically checked for hallintokieli (bureaucratic Finnish)
+> phrases via `scripts/checks/style-fi.sh`. See the jargon list in that file
+> — it is intentionally narrow. This skill handles all judgment-call style
+> guidance that cannot be expressed as regex.
+
 # Lauri Lavanti — Kirjoitustyyliopas
 
 Tämä ohje kuvaa Lauri Lavannin kirjoitustyylin piirteet, jotta voit kirjoittaa tekstejä, jotka kuulostavat aidosti häneltä. Lue nämä ohjeet huolellisesti ennen kuin tuotat mitään tekstiä.
