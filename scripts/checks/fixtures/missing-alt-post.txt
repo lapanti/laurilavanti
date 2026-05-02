@@ -1,0 +1,23 @@
+---
+layout: '../../../../../layouts/PostLayout.astro'
+id: 99
+slug: 'missing-alt-fixture'
+lang: 'en'
+title: 'Missing Alt Text Fixture for Pre-Commit Testing'
+description: 'This fixture post has a heroImage set but no alt text, and a body image with an empty alt. Both should trigger content.sh errors during pre-commit validation.'
+publishDate: '2026-04-22'
+updatedDate: '2026-04-22'
+heroImage: koodia-tietokoneella
+tags:
+  - artificial-intelligence
+---
+
+## Why does alt text matter?
+
+Alt text is required for accessibility and og:image:alt.
+
+![](missing-alt-body-image.jpg)
+
+[Link one](/en/blog/1/)
+[Link two](/en/blog/2/)
+[Link three](/en/blog/3/)
