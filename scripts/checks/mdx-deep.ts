@@ -1,5 +1,5 @@
 /**
- * mdx-deep.mjs
+ * mdx-deep.ts
  *
  * Node-only MDX checks: passage length and content freshness.
  * These two checks require either date arithmetic or multi-paragraph
@@ -19,7 +19,7 @@ export const PASSAGE_WORD_MAX = 150
 // ── pure parsing helpers ──────────────────────────────────────────────────────
 
 /** Split MDX content into frontmatter (inner) string and body string. */
-export function splitMdx(content) {
+export function splitMdx(content: string): { body: string; frontmatter: string } {
     const lines = content.split('\n')
     let fmEnd = -1
     let dashes = 0
@@ -32,15 +32,15 @@ export function splitMdx(content) {
             }
         }
     }
-    if (fmEnd === -1) return { frontmatter: '', body: content }
+    if (fmEnd === -1) return { body: content, frontmatter: '' }
     return {
-        frontmatter: lines.slice(1, fmEnd).join('\n'),
         body: lines.slice(fmEnd + 1).join('\n'),
+        frontmatter: lines.slice(1, fmEnd).join('\n'),
     }
 }
 
 /** Extract a scalar frontmatter field (single-quoted, double-quoted, or bare). */
-export function fmField(frontmatter, field) {
+export function fmField(frontmatter: string, field: string): string | null {
     const re = new RegExp(`^${field}:\\s*(?:'([^']*)'|"([^"]*)"|([^\\n'""][^\\n]*))`, 'm')
     const m = frontmatter.match(re)
     if (!m) return null
@@ -48,31 +48,30 @@ export function fmField(frontmatter, field) {
 }
 
 /** Count words in a plain-text string. */
-export function wordCount(text) {
+export function wordCount(text: string): number {
     return text.trim().split(/\s+/).filter(Boolean).length
 }
 
 /** Strip MDX/markdown markup, leaving prose text for word-count purposes. */
-export function stripMarkup(text) {
-    return (
-        text
-            .replace(/```[\s\S]*?```/g, '')
-            .replace(/`[^`]+`/g, '')
-            .replace(/^import\s+.*/gm, '')
-            .replace(/^export\s+.*/gm, '')
-            .replace(/^<[^>]+>.*$/gm, '')
-            .replace(/!\[([^\]]*)\]\([^)]*\)/g, '')
-            .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-            .replace(/^#{1,6}\s+/gm, '')
-            .replace(/\*\*([^*]+)\*\*/g, '$1')
-            .replace(/\*([^*]+)\*/g, '$1')
-            .replace(/^>\s+/gm, '')
-    )
+export function stripMarkup(text: string): string {
+    return text
+        .replace(/```[\s\S]*?```/g, '')
+        .replace(/`[^`]+`/g, '')
+        .replace(/^import\s+.*/gm, '')
+        .replace(/^export\s+.*/gm, '')
+        .replace(/^<[^>]+>.*$/gm, '')
+        .replace(/!\[([^\]]*)\]\([^)]*\)/g, '')
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+        .replace(/^#{1,6}\s+/gm, '')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\*([^*]+)\*/g, '$1')
+        .replace(/^>\s+/gm, '')
 }
 
 /** Split body into meaningful prose paragraphs for passage-length checks. */
-export function proseParagraphs(body) {
+export function proseParagraphs(body: string): string[] {
     const withoutCode = body.replace(/```[\s\S]*?```/g, '')
+
     return withoutCode
         .split(/\n{2,}/)
         .map((p) => p.trim())
@@ -87,18 +86,16 @@ export function proseParagraphs(body) {
 
 // ── core check function ───────────────────────────────────────────────────────
 
-/**
- * Run passage-length and freshness checks on a single parsed MDX file.
- * Returns an array of error message strings (empty = no errors).
- *
- * @param {object} params
- * @param {string} params.frontmatter  Inner YAML string (between the two ---)
- * @param {string} params.body         Content after the closing ---
- * @param {boolean} params.isBlogPost  True when layout is PostLayout
- * @param {Date} params.today          Reference date for freshness check
- */
-export function checkFile({ body, frontmatter, isBlogPost, today }) {
-    const errors = []
+interface CheckFileParams {
+    body: string
+    frontmatter: string
+    isBlogPost: boolean
+    today: Date
+}
+
+/** Run passage-length and freshness checks. Returns error strings (empty = pass). */
+export function checkFile({ body, frontmatter, isBlogPost, today }: CheckFileParams): string[] {
+    const errors: string[] = []
 
     // passage length (all pages)
     for (const para of proseParagraphs(body)) {
@@ -132,25 +129,29 @@ export function checkFile({ body, frontmatter, isBlogPost, today }) {
 
 // ── main (only runs when executed directly) ───────────────────────────────────
 
+function printErrors(rel: string, errors: string[]): void {
+    for (const msg of errors) {
+        process.stderr.write(`\x1b[31mERROR\x1b[0m [${rel}] ${msg}\n`)
+    }
+}
+
 const isMain = process.argv[1] === fileURLToPath(import.meta.url)
 if (isMain) {
     const today = new Date()
     const files = process.argv.slice(2)
+    const repoRoot = new URL('../..', import.meta.url).pathname
     let hasError = false
 
     for (const file of files) {
         if (!file.endsWith('.mdx')) continue
         const content = readFileSync(file, 'utf8')
-        const repoRoot = new URL('../..', import.meta.url).pathname
         const rel = file.replace(repoRoot, '')
-        const { frontmatter, body } = splitMdx(content)
+        const { body, frontmatter } = splitMdx(content)
         const isBlogPost = /PostLayout/.test(content)
         const errors = checkFile({ body, frontmatter, isBlogPost, today })
         if (errors.length > 0) {
             hasError = true
-            for (const msg of errors) {
-                process.stderr.write(`\x1b[31mERROR\x1b[0m [${rel}] ${msg}\n`)
-            }
+            printErrors(rel, errors)
         }
     }
 

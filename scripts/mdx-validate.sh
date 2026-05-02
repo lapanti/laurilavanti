@@ -23,7 +23,7 @@ for f in "${files[@]}"; do
 done
 
 # ── Node: passage length + freshness (single startup) ────────────────────────
-node "$SCRIPT_DIR/checks/mdx-deep.mjs" "${files[@]}" || failed=1
+node --experimental-strip-types "$SCRIPT_DIR/checks/mdx-deep.ts" "${files[@]}" || failed=1
 
 # ── Node: cross-file checks (full tree walk) ──────────────────────────────────
 node "$SCRIPT_DIR/checks/cross-file.mjs" || failed=1
