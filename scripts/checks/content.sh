@@ -35,18 +35,13 @@ if [[ -n "$title_val" ]]; then
 fi
 
 # ── description length ───────────────────────────────────────────────────────
-# Blog posts: 120–160. Other pages: 50–200.
+# All pages: 120–160 characters.
 desc_val="$(fm_field "$file" description)"
 if [[ -n "$desc_val" ]]; then
     desc_len="$(printf '%s' "$desc_val" | wc -m)"
-    if is_blog_post; then
-        dmin=120; dmax=160
-    else
-        dmin=50; dmax=200
-    fi
-    if [[ "$desc_len" -lt "$dmin" || "$desc_len" -gt "$dmax" ]]; then
+    if [[ "$desc_len" -lt 120 || "$desc_len" -gt 160 ]]; then
         preview="${desc_val:0:80}"
-        error "$file" "description length ${desc_len} (expected ${dmin}–${dmax}): \"${preview}\""
+        error "$file" "description length ${desc_len} (expected 120–160): \"${preview}\""
         failed=1
     fi
 fi
@@ -107,10 +102,6 @@ while IFS= read -r line; do
         fi
     fi
 done < <(fm_body "$file" | grep -oP '!\[[^\]]*\]\([^)]*\)' || true)
-
-if ! is_blog_post; then
-    exit "$failed"
-fi
 
 # ── internal link count (blog posts only) ────────────────────────────────────
 # Counts [text](/path) links pointing to internal pages.

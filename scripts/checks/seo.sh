@@ -60,10 +60,14 @@ if [[ -n "$slug_val" ]]; then
         error "$file" "slug contains a soft hyphen (U+00AD): '${slug_val}'"
         failed=1
     fi
-    # No 4-digit years
-    if echo "$slug_val" | grep -qP '(19|20)\d{2}'; then
-        error "$file" "slug contains a 4-digit year (makes content appear stale): '${slug_val}'"
-        failed=1
+    # No 4-digit years — except posts 20 and 47 where the year is part of the proper name
+    # (election cycle posts and year-in-review posts with established URLs must not be renamed)
+    blog_id="$(echo "$file" | grep -oP '/blog/\K\d+' || true)"
+    if [[ "$blog_id" != "20" && "$blog_id" != "47" ]]; then
+        if echo "$slug_val" | grep -qP '(19|20)\d{2}'; then
+            error "$file" "slug contains a 4-digit year (makes content appear stale): '${slug_val}'"
+            failed=1
+        fi
     fi
 fi
 
