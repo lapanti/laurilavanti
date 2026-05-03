@@ -13,12 +13,16 @@ failed=0
 
 # ── at least one conversational heading ──────────────────────────────────────
 # AI engines generate summaries 60% more often when a heading is a question.
-# Covers EN, FI, and SV question-opening words.
+# Covers EN, FI, and SV question-opening words, Finnish -ko/-kö verb forms,
+# and any heading ending with a question mark.
 question_words_en="How|What|Why|When|Who|Can|Is|Are|Does|Should|Which|Will|Has|Have"
 question_words_fi="Miten|Mitä|Miksi|Milloin|Kuka|Voiko|Onko|Pitäisikö|Mikä|Mikäli|Kuinka|Ketkä|Missä"
 question_words_sv="Hur|Vad|Varför|När|Vem|Kan|Är|Ska|Vilken|Vilket|Vilka|Bör|Har"
 
-if ! fm_body "$file" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b"; then
+if ! fm_body "$file" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
+   && ! fm_body "$file" | grep -qP "^#{2,3} \S.*\?$" \
+   && ! fm_body "$file" | grep -qP "^#{2,3} \w+ko\b" \
+   && ! fm_body "$file" | grep -qP "^#{2,3} \w+kö\b"; then
     error "$file" "no conversational (question-format) H2/H3 heading found — at least one required for AEO"
     failed=1
 fi
