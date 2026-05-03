@@ -11,11 +11,6 @@ source "$SCRIPT_DIR/../lib/bash-helpers.sh"
 file="$1"
 failed=0
 
-# Only run these checks on blog posts (PostLayout) — skip indexes and regular pages.
-if ! grep -qP "PostLayout" "$file"; then
-    exit 0
-fi
-
 # ── at least one conversational heading ──────────────────────────────────────
 # AI engines generate summaries 60% more often when a heading is a question.
 # Covers EN, FI, and SV question-opening words.
