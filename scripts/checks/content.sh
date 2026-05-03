@@ -103,47 +103,49 @@ while IFS= read -r line; do
     fi
 done < <(fm_body "$file" | grep -oP '!\[[^\]]*\]\([^)]*\)' || true)
 
-# ── internal link count (blog posts only) ────────────────────────────────────
-# Counts [text](/path) links pointing to internal pages.
-link_count="$(fm_body "$file" | grep -oP '\[[^\]]*\]\(/[^)]*\)' | wc -l || true)"
-if [[ "$link_count" -lt 3 ]]; then
-    error "$file" "internal links: ${link_count} (minimum 3) — add links to related content"
-    failed=1
-elif [[ "$link_count" -gt 10 ]]; then
-    error "$file" "internal links: ${link_count} (maximum 10) — excessive link density"
-    failed=1
-fi
+if is_blog_post; then
+    # ── internal link count ───────────────────────────────────────────────────
+    # Counts [text](/path) links pointing to internal pages.
+    link_count="$(fm_body "$file" | grep -oP '\[[^\]]*\]\(/[^)]*\)' | wc -l || true)"
+    if [[ "$link_count" -lt 3 ]]; then
+        error "$file" "internal links: ${link_count} (minimum 3) — add links to related content"
+        failed=1
+    elif [[ "$link_count" -gt 10 ]]; then
+        error "$file" "internal links: ${link_count} (maximum 10) — excessive link density"
+        failed=1
+    fi
 
-# ── tag validity (blog posts only) ───────────────────────────────────────────
-# Extract tags from frontmatter and verify each exists in src/content/tags/.
-REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
-TAGS_DIR="$REPO_ROOT/src/content/tags"
+    # ── tag validity ──────────────────────────────────────────────────────────
+    # Extract tags from frontmatter and verify each exists in src/content/tags/.
+    REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+    TAGS_DIR="$REPO_ROOT/src/content/tags"
 
-# Build set of valid tag IDs from *.ts files (excluding types.ts)
-declare -A valid_tags
-while IFS= read -r tag_id; do
-    valid_tags["$tag_id"]=1
-done < <(grep -rh "id:" "$TAGS_DIR" --include="*.ts" --exclude="types.ts" | grep -oP "(?<=id:\s')[^']+|(?<=id:\s\")[^\"]+")
+    # Build set of valid tag IDs from *.ts files (excluding types.ts)
+    declare -A valid_tags
+    while IFS= read -r tag_id; do
+        valid_tags["$tag_id"]=1
+    done < <(grep -rh "id:" "$TAGS_DIR" --include="*.ts" --exclude="types.ts" | grep -oP "(?<=id:\s')[^']+|(?<=id:\s\")[^\"]+")
 
-# Extract tags from frontmatter tags: YAML list
-post_tags="$(awk '
-    /^---$/ { c++; if (c == 2) exit; next }
-    c == 1 && /^tags:/ { in_tags = 1; next }
-    c == 1 && in_tags && /^  - / { gsub(/^  - /, ""); print }
-    c == 1 && in_tags && !/^  - / { in_tags = 0 }
-' "$file")"
+    # Extract tags from frontmatter tags: YAML list
+    post_tags="$(awk '
+        /^---$/ { c++; if (c == 2) exit; next }
+        c == 1 && /^tags:/ { in_tags = 1; next }
+        c == 1 && in_tags && /^  - / { gsub(/^  - /, ""); print }
+        c == 1 && in_tags && !/^  - / { in_tags = 0 }
+    ' "$file")"
 
-if [[ -z "$post_tags" ]]; then
-    error "$file" "tags array is empty — add at least one tag"
-    failed=1
-else
-    while IFS= read -r tag; do
-        tag="$(echo "$tag" | xargs)"  # trim whitespace
-        if [[ -z "${valid_tags[$tag]+x}" ]]; then
-            error "$file" "unknown tag: '${tag}' — not found in src/content/tags"
-            failed=1
-        fi
-    done <<< "$post_tags"
+    if [[ -z "$post_tags" ]]; then
+        error "$file" "tags array is empty — add at least one tag"
+        failed=1
+    else
+        while IFS= read -r tag; do
+            tag="$(echo "$tag" | xargs)"  # trim whitespace
+            if [[ -z "${valid_tags[$tag]+x}" ]]; then
+                error "$file" "unknown tag: '${tag}' — not found in src/content/tags"
+                failed=1
+            fi
+        done <<< "$post_tags"
+    fi
 fi
 
 exit "$failed"
