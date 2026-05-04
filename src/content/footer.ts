@@ -11,7 +11,7 @@ export const footerLinks: FooterLink[] = [
     { icon: 'facebook', title: 'Facebook', url: 'https://www.facebook.com/laurilavanti' },
     { icon: 'instagram', title: 'Instagram', url: 'https://www.instagram.com/laurilavanti/' },
     { icon: 'linkedin', title: 'LinkedIn', url: 'https://www.linkedin.com/in/laurilavanti/' },
-    { icon: 'mastodon', title: 'Mastodon', url: 'https://mastodontti.fi/@laurilavanti' },
+    { icon: 'mastodon', title: 'Mastodon', url: 'https://mastodon.social/@laurilavanti' },
     { icon: 'threads', title: 'Threads', url: 'https://www.threads.com/@laurilavanti' },
     { icon: 'tiktok', title: 'TikTok', url: 'https://www.tiktok.com/@laurilavanti' },
 ]

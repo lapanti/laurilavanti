@@ -7,7 +7,7 @@ import ExternalLink from './ExternalLink.astro'
 // filepath: /home/lapanti/code/laurilavanti/src/components/ExternalLink.spec.ts
 
 describe('<ExternalLink />', () => {
-    const href = 'https://mastodontti.fi/@laurilavanti'
+    const href = 'https://mastodon.social/@laurilavanti'
     const text = 'Mastodontti'
 
     it('should render', async () => {
