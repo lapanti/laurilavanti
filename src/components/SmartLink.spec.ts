@@ -8,7 +8,7 @@ import SmartLink from './SmartLink.astro'
 
 describe('<SmartLink />', () => {
     const internalHref = '/fi/blog/47/vuosi-2026-on-tekoalyn/'
-    const externalHref = 'https://mastodontti.fi/@laurilavanti'
+    const externalHref = 'https://mastodon.social/@laurilavanti'
     const text = 'Vuosi 2026 on tekoälyn'
 
     it('should render', async () => {
