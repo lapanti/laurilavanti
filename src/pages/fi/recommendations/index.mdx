@@ -10,9 +10,13 @@ heroImage: Lauri-Lavanti-hands-in-pockets-in-hallway
 alt: 'Lauri Lavanti seisomassa käytävällä kädet taskuissa, katse kameraan. Päällä tumma puku ja valkoinen kauluspaita.'
 ---
 
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
 import Recommendations from '../../../components/Recommendations.astro'
 import SummaryBox from '../../../components/SummaryBox.astro'
 import { recommendations } from '../../../content/recommendations'
+
+export const components = { h2: H2, p: Paragraph }
 
 <SummaryBox
     ariaLabel="Miksi valita Lauri?"
