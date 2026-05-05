@@ -2,12 +2,10 @@
 /* eslint-disable astro/no-unused-css-selector */
 import type { JsonLdType } from '../lib/jsonld'
 
-import FaqSection from '../components/FaqSection.astro'
 import Footer from '../components/Footer.astro'
 import GlobalStyle from '../components/GlobalStyle.astro'
 import Head from '../components/Head.astro'
 import Header from '../components/Header.astro'
-import { BLOGPOSTING } from '../lib/jsonld'
 import {
     colors,
     gridAreas,
@@ -128,7 +126,6 @@ const {
                 <slot name="banner" />
                 <article>
                     <slot />
-                    {faq && faq.length >= 2 && type !== BLOGPOSTING && <FaqSection items={faq} lang={lang} />}
                 </article>
             </main>
             <Footer lang={lang} />
