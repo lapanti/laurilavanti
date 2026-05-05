@@ -32,7 +32,7 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 
 - **Category pages:** `src/pages/{lang}/category/[tag].astro` — `getStaticPaths` maps `tags` → `{ params: { tag: t.id }, props: { tag: t } }`. Only ids in `tags.ts` get a page generated.
 
-- **Category page enrichment:** Each category page passes `type={COLLECTIONPAGE}`, `description` (from `tag.descriptions[lang]`), `heroImage` (tag override or `'Lauri-Lavanti-next-to-a-table'`), `alt`, and `faq` (locale-specific array) to `PageLayout`. An intro `<Paragraph>` is rendered before `<ExcerptList>`. FAQPage JSON-LD and a visible `<FaqSection>` are emitted when the locale's `faq` array has 2+ entries.
+- **Category page enrichment:** Each category page passes `type={COLLECTIONPAGE}`, `description` (from `tag.descriptions[lang]`), `heroImage` (tag override or `'Lauri-Lavanti-next-to-a-table'`), `alt`, and `faq` (locale-specific array) to `PageLayout`. An intro `<Paragraph>` is rendered before `<ExcerptList>`. FAQPage JSON-LD is emitted when the locale's `faq` array has 2+ entries.
 
 - **Filtering in `ExcerptList`:** filters `allMdxPosts` by `post.tags.includes(tagId)` — strict string equality. No fuzzy matching.
 
@@ -97,4 +97,4 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 **Scenario: Category page FAQ in only one locale**
 - Given: A tag has `faq.fi` with 2+ entries but no `faq.sv`
 - When: `/sv/category/{id}` is rendered
-- Then: No `FAQPage` JSON-LD and no `<FaqSection>` for the Swedish page; the Finnish page still gets both.
+- Then: No `FAQPage` JSON-LD for the Swedish page; the Finnish page still gets both.
