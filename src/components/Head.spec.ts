@@ -246,7 +246,7 @@ describe('<Head />', () => {
         expect(jsonLd.memberOf['@type']).toBe('PoliticalParty')
         expect(jsonLd.memberOf.name).toBe('Vihreä liitto')
         expect(jsonLd.memberOf.url).toBe('https://www.vihreat.fi')
-        expect(jsonLd.knowsAbout).toHaveLength(5)
+        expect(jsonLd.knowsAbout).toHaveLength(9)
     })
 
     it('should localise Person jobTitle for English', async () => {

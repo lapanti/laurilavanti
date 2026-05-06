@@ -82,8 +82,8 @@ const personJobTitle: Record<Lang, string> = {
 
 const personDescription: Record<Lang, string> = {
     en: 'Municipal councillor in Kirkkonummi (Greens) and lead software developer. Focused on economics, entrepreneurship, digital independence, and responsible AI policy.',
-    fi: 'Kirkkonummen kunnanvaltuutettu (Vihreät) ja johtava ohjelmistokehittäjä. Keskittyy talouteen, yrittäjyyteen, digitaaliseen riippumattomuuteen ja vastuulliseen tekoälypolitiikkaan.',
-    sv: 'Kommunfullmäktigeledamot i Kyrkslätt (De Gröna) och ledande mjukvarutvecklare. Fokuserar på ekonomi, företagande, digital självständighet och ansvarsfull AI-politik.',
+    fi: 'Kirkkonummen kunnanvaltuutettu (Vihreät) ja johtava ohjelmistokehittäjä. Keskittyy talouteen, yrittäjyyteen, digitaaliseen itsenäisyyteen ja vastuulliseen tekoälypolitiikkaan. Seuraa eduskuntavaaleja.',
+    sv: 'Kommunfullmäktigeledamot i Kyrkslätt (De Gröna) och ledande mjukvarutvecklare. Fokuserar på ekonomi, företagande, digital självständighet och ansvarsfull AI-politik. Följer riksdagsvalen.',
 }
 
 const sameAs = [bluesky, facebook, instagram, linkedIn, mastodon, threads, tikTok]
@@ -123,8 +123,12 @@ const jsonLd = JSON.stringify({
                   'Talouspolitiikka',
                   'Yrittäjyys',
                   'Innovaatiopolitiikka',
+                  'Digitaalinen itsenäisyys',
                   'Digitaalinen riippumattomuus',
+                  'Tekoäly',
+                  'Vastuullinen tekoäly',
                   'Vihreä siirtymä',
+                  'Eduskuntavaalit',
               ],
               memberOf: {
                   '@type': 'PoliticalParty',
@@ -163,15 +167,18 @@ const keywords = [
     'Lavanti',
     'poliitikko',
     'kunnanvaltuutettu',
+    'eduskuntavaalit',
     'digitalisaatio',
     'tekoäly',
     'teknologia',
     'tietopolitiikka',
+    'digitaalinen itsenäisyys',
     'digitaalinen riippumattomuus',
     'yksityisyydensuoja',
     'vastuullinen tekoäly',
     'yrittäjyys',
     'talous',
+    'innovaatiopolitiikka',
 ].join(', ')
 ---
 
