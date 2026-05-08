@@ -5,15 +5,17 @@ import Excerpt from './excerptList/Excerpt.astro'
 
 interface Props {
     currentSlug?: string
+    excludeIds?: number[]
     lang?: 'en' | 'fi' | 'sv'
     limit?: number
+    onlyIds?: number[]
     relatedTags?: string[]
     tag?: string
 }
 
-const { currentSlug, lang = 'fi', limit, relatedTags, tag } = Astro.props
+const { currentSlug, excludeIds, lang = 'fi', limit, onlyIds, relatedTags, tag } = Astro.props
 
-const nodes = getExcerptPosts({ currentSlug, lang, limit, relatedTags, tag })
+const nodes = getExcerptPosts({ currentSlug, excludeIds, lang, limit, onlyIds, relatedTags, tag })
 ---
 
 <style

@@ -37,8 +37,10 @@ export const getPostAlternates = (id: number): Record<MdxPost['lang'], string> =
 
 interface ExcerptQuery {
     currentSlug?: string
+    excludeIds?: number[]
     lang: 'en' | 'fi' | 'sv'
     limit?: number
+    onlyIds?: number[]
     relatedTags?: string[]
     tag?: string
 }
@@ -52,11 +54,21 @@ const sortByRelatedTags = (posts: MdxPostWithUrl[], relatedTags: string[]): MdxP
         .toSorted(([a, aPoints], [b, bPoints]) => (aPoints === bPoints ? b.id - a.id : bPoints - aPoints))
         .map(([p]) => p)
 
-export const getExcerptPosts = ({ currentSlug, lang, limit, relatedTags, tag }: ExcerptQuery): MdxPostWithUrl[] => {
+export const getExcerptPosts = ({
+    currentSlug,
+    excludeIds,
+    lang,
+    limit,
+    onlyIds,
+    relatedTags,
+    tag,
+}: ExcerptQuery): MdxPostWithUrl[] => {
     const filtered = allMdxPosts
         .filter((p) => p.lang === lang)
         .filter((p) => !currentSlug || p.slug !== currentSlug)
         .filter((p) => !tag || p.tags.includes(tag))
+        .filter((p) => !onlyIds || onlyIds.includes(p.id))
+        .filter((p) => !excludeIds || !excludeIds.includes(p.id))
 
     const sorted = relatedTags ? sortByRelatedTags(filtered, relatedTags) : filtered
 
