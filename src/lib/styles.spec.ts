@@ -95,6 +95,7 @@ describe('styles', () => {
                 peach: 'rgb(248, 207, 169)',
                 regionalPurple: '#865C97',
                 sand: 'rgb(214, 210, 196)',
+                sky: '#bbdde6',
                 threads: 'rgb(0, 0, 0)',
                 transparent: 'transparent',
                 white: 'rgb(255, 255, 255)',

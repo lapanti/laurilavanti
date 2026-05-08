@@ -78,6 +78,7 @@ export const colors = {
     peach: 'rgb(248, 207, 169)' as const,
     regionalPurple: '#865C97' as const,
     sand: 'rgb(214, 210, 196)' as const,
+    sky: '#bbdde6' as const,
     threads: 'rgb(0, 0, 0)' as const,
     transparent: 'transparent' as const,
     white: 'rgb(255, 255, 255)' as const,

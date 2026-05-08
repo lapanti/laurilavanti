@@ -11,18 +11,20 @@ const { href, label } = Astro.props
 
 <style
     define:vars={{
-        colorsDarkMoss: colors.darkMoss,
-        colorsSand: colors.sand,
+        colorsBlack: colors.black,
+        colorsEvening: colors.evening,
+        colorsSky: colors.sky,
+        colorsWhite: colors.white,
         fontFamilyMono: fontFamilies.mono,
         fontWeightMedium: fontWeights.medium,
     }}
 >
     a {
         align-items: center;
-        background-color: var(--colorsSand);
-        border: 1px solid var(--colorsDarkMoss);
+        background-color: var(--colorsSky);
+        border: 1px solid var(--colorsEvening);
         border-radius: 0.375rem;
-        color: var(--colorsDarkMoss);
+        color: var(--colorsBlack);
         display: inline-flex;
         font-family: var(--fontFamilyMono);
         font-size: 0.75rem;
@@ -34,8 +36,8 @@ const { href, label } = Astro.props
     }
 
     a:hover {
-        background-color: var(--colorsDarkMoss);
-        color: var(--colorsSand);
+        background-color: var(--colorsEvening);
+        color: var(--colorsWhite);
     }
 </style>
 <a href={href}>{label}</a>
