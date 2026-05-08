@@ -1,0 +1,41 @@
+---
+import { colors, fontFamilies, fontWeights } from '../lib/styles'
+
+interface Props {
+    href: string
+    label: string
+}
+
+const { href, label } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsDarkMoss: colors.darkMoss,
+        colorsSand: colors.sand,
+        fontFamilyMono: fontFamilies.mono,
+        fontWeightMedium: fontWeights.medium,
+    }}
+>
+    a {
+        align-items: center;
+        background-color: var(--colorsSand);
+        border: 1px solid var(--colorsDarkMoss);
+        border-radius: 0.375rem;
+        color: var(--colorsDarkMoss);
+        display: inline-flex;
+        font-family: var(--fontFamilyMono);
+        font-size: 0.75rem;
+        font-weight: var(--fontWeightMedium);
+        height: 1.5rem;
+        line-height: 1;
+        padding: 0 0.5rem;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: var(--colorsDarkMoss);
+        color: var(--colorsSand);
+    }
+</style>
+<a href={href}>{label}</a>

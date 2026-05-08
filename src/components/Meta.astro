@@ -1,6 +1,7 @@
 ---
 import { getTagName } from '../content/tags'
-import { colors, sizes, typographics } from '../lib/styles'
+import { sizes, typographics } from '../lib/styles'
+import TagPill from './TagPill.astro'
 
 interface Props {
     ariaLabel: string
@@ -20,20 +21,12 @@ const dateToDisplay = `${day}.${month}.${year}`
 
 const tagsToRender = tags
     .map((tagId) => ({ id: tagId, name: getTagName(tagId, lang) }))
-    .filter((tag) => tag.name !== undefined)
+    .filter((tag): tag is { id: string; name: string } => tag.name !== undefined)
 ---
 
 <style
     define:vars={{
-        colorsDarkMoss: colors.darkMoss,
-        definitionFontFamily: typographics.definition.fontFamily,
-        definitionFontSize: typographics.definition.fontSize,
-        definitionFontWeight: typographics.definition.fontWeight,
-        definitionLineHeight: typographics.definition.lineHeight,
-        definitionTextTransform: typographics.definition.textTransform,
-        sizes0: sizes[0],
         sizes05: sizes[0.5],
-        sizes1: sizes[1],
     }}
 >
     aside {
@@ -42,27 +35,16 @@ const tagsToRender = tags
     }
 
     ul {
+        align-items: center;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        gap: var(--sizes05);
         margin-top: var(--sizes05);
     }
 
     li {
-        margin-right: var(--sizes1);
-    }
-
-    li:last-child {
-        margin-right: var(--sizes0);
-    }
-
-    a {
-        color: var(--colorsDarkMoss);
-        font-size: var(--definitionFontSize);
-        line-height: var(--definitionLineHeight);
-        font-family: var(--definitionFontFamily);
-        font-weight: var(--definitionFontWeight);
-        text-transform: var(--definitionTextTransform);
+        list-style: none;
     }
 </style>
 <aside aria-label={ariaLabel}>
@@ -72,18 +54,7 @@ const tagsToRender = tags
             <ul>
                 {tagsToRender.map((tag) => (
                     <li>
-                        <a
-                            href={`${tagBasePaths[lang]}/${tag.id}/`}
-                            style={{
-                                alignItems: 'center',
-                                display: 'inline-flex',
-                                height: '2.75rem',
-                                justifyContent: 'center',
-                                minWidth: '2.75rem',
-                            }}
-                        >
-                            #{tag.name}
-                        </a>
+                        <TagPill href={`${tagBasePaths[lang]}/${tag.id}/`} label={tag.name} />
                     </li>
                 ))}
             </ul>
