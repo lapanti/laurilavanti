@@ -97,6 +97,7 @@ const jsonLd = JSON.stringify({
     },
     description,
     headline: title,
+    license: 'https://creativecommons.org/licenses/by-sa/4.0/',
     url: canonical,
     ...(ogImageUrl ? { image: ogImageUrl } : {}),
     ...(type === BLOGPOSTING
@@ -235,3 +236,4 @@ const keywords = [
 <link crossorigin="" href="https://res.cloudinary.com" rel="preconnect" />
 <link href="https://res.cloudinary.com" rel="dns-prefetch" />
 <link href="/sitemap-index.xml" rel="sitemap" />
+<link href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license" />
