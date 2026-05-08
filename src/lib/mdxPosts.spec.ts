@@ -160,4 +160,32 @@ describe('getExcerptPosts', () => {
 
         expect(withEmptyRelated.map((p) => p.id)).toEqual(withoutRelated.map((p) => p.id))
     })
+
+    it('onlyIds returns just the posts whose id is in the list', () => {
+        const results = getExcerptPosts({ lang: 'fi', onlyIds: [1, 2, 3] })
+
+        expect(results.map((p) => p.id).toSorted((a, b) => a - b)).toEqual([1, 2, 3])
+    })
+
+    it('onlyIds with an empty array returns no posts', () => {
+        const results = getExcerptPosts({ lang: 'fi', onlyIds: [] })
+
+        expect(results).toHaveLength(0)
+    })
+
+    it('excludeIds removes the listed posts from the results', () => {
+        const allFi = getExcerptPosts({ lang: 'fi' })
+        const excluded = [allFi[0].id, allFi[1].id]
+
+        const results = getExcerptPosts({ excludeIds: excluded, lang: 'fi' })
+
+        expect(results.some((p) => excluded.includes(p.id))).toBe(false)
+        expect(results).toHaveLength(allFi.length - excluded.length)
+    })
+
+    it('onlyIds and excludeIds compose: excludeIds wins over onlyIds for overlap', () => {
+        const results = getExcerptPosts({ excludeIds: [2], lang: 'fi', onlyIds: [1, 2, 3] })
+
+        expect(results.map((p) => p.id).toSorted((a, b) => a - b)).toEqual([1, 3])
+    })
 })
