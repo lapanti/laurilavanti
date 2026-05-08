@@ -6,12 +6,15 @@ import { cultureAndEducationTag } from './tags/culture-and-education'
 import { digitalIndependenceTag } from './tags/digital-independence'
 import { digitalisationTag } from './tags/digitalisation'
 import { earlyChildhoodEducationTag } from './tags/early-childhood-education'
+import { economyTag } from './tags/economy'
 import { educationTag } from './tags/education'
 import { equalityAndNonDiscriminationTag } from './tags/equality-and-non-discrimination'
+import { freedomTag } from './tags/freedom'
 import { healthAndSocialReformTag } from './tags/health-and-social-reform'
 import { immigrationTag } from './tags/immigration'
 import { infrastructureTag } from './tags/infrastructure'
 import { kirkkonummiTag } from './tags/kirkkonummi'
+import { learningTag } from './tags/learning'
 import { municipalElections2025Tag } from './tags/municipal-elections-2025'
 import { natureTag } from './tags/nature'
 import { privacyTag } from './tags/privacy'
@@ -29,6 +32,10 @@ export type { LocalTag } from './tags/types'
 export const tags = [
     regionalElections2022Tag,
     regionalElections2025Tag,
+    artificialIntelligenceTag,
+    economyTag,
+    learningTag,
+    freedomTag,
     digitalIndependenceTag,
     digitalisationTag,
     infrastructureTag,
@@ -47,7 +54,6 @@ export const tags = [
     healthAndSocialReformTag,
     equalityAndNonDiscriminationTag,
     technologyTag,
-    artificialIntelligenceTag,
     councilMotionTag,
     earlyChildhoodEducationTag,
     privacyTag,
