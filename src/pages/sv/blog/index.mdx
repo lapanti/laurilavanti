@@ -1,26 +1,38 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: sv
-title: 'Blogg­inlägg – IT, ekonomi och politik'
-description: 'Lauri Lavanti skriver om IT, ekonomi och kommunalpolitik. Läs tankar om vardagsbeslut och kommunalpolitik från Kyrkslätt.'
+title: 'Inlägg om AI och digital själv­ständighet'
+description: 'Lauri Lavanti skriver om hur AI förändrar allt — ekonomin, bildningen och friheten. Deras syntes är digital självständighet.'
 slug: 'sv/blog'
 type: 'WebPage'
 heroImage: 'Lauri-Lavanti-next-to-a-table'
 alt: 'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.'
 ---
 
-import FrontPageExcerptList from '../../../components/FrontPageExcerptList.astro'
+import ExcerptList from '../../../components/ExcerptList.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
+import TopicsList from '../../../components/TopicsList.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
-I denna blogg skriver jag om hur teknologi, särskilt artificiell intelligens, förändrar vårt samhälle – arbete, utbildning, demokrati och till och med människans plats i världen. I mina texter behandlar jag till exempel varför AI inte bara effektiviserar arbete utan tvingar oss att reformera hela vårt socialskydd, varför digital suveränitet är en nödvändighet för ett säkert och frihetsbevarande samhälle, och hur vi kan säkerställa att alla, inte bara några få, gynnas av den teknologiska framstegen.
+AI förändrar allt — arbetet, ekonomin och hur staten betjänar oss. Jag skriver om hur det landar på tre saker som måste fungera: ekonomin, bildningen och friheten. Deras syntes är digital självständighet: ett samhälle som använder tekniken på sina egna villkor.
 
 ## Vad innebär det att leva i AI:s era?
 
-Jag tror att teknologin ska tjäna människan, inte tvärtom. Därför betonar jag i mina texter hållbara, människocentrerade lösningar – oavsett om det handlar om arbetslivets förändring, utbildningsreform eller skyddandet av den demokratiska dialogen. Mitt mål är att väcka tankar, erbjuda nya perspektiv och inspirera till diskussion om vilken framtid vi vill bygga tillsammans.
+Jag har över ett årtiondes praktisk erfarenhet av att bygga säker programvara och banktjänster. Med den bakgrunden skriver jag om varför AI inte bara effektiviserar arbetet utan tvingar oss att tänka om hela det sociala skyddsnätet, varför digital självständighet är en förutsättning för ett fritt samhälle, och hur vi kan se till att teknikens vinster når alla — inte bara ett fåtal.
 
-Utforska mina tankar i artiklarna nedan.
+## Efter ämne
 
-<FrontPageExcerptList lang="sv" />
+<TopicsList
+    lang="sv"
+    ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence']}
+/>
+
+## Utvalda
+
+<ExcerptList lang="sv" onlyIds={[47, 48, 51, 54]} />
+
+## Alla inlägg
+
+<ExcerptList lang="sv" excludeIds={[47, 48, 51, 54]} />
