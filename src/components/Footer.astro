@@ -13,6 +13,14 @@ interface Props {
 
 const { lang = 'fi' } = Astro.props
 const getAriaLabel = footerAriaLabel[lang]
+
+const year = new Date().getFullYear()
+
+const licenseText: Record<Lang, string> = {
+    en: `© ${year} Lauri Lavanti. Content licensed under`,
+    fi: `© ${year} Lauri Lavanti. Sisältö lisensoitu`,
+    sv: `© ${year} Lauri Lavanti. Innehåll licensierat under`,
+}
 ---
 
 <style
@@ -53,6 +61,17 @@ const getAriaLabel = footerAriaLabel[lang]
         flex: 1;
         flex-wrap: wrap;
         gap: var(--sizes15);
+    }
+
+    .license {
+        font-size: 0.75rem;
+        opacity: 0.7;
+        text-align: center;
+        width: 100%;
+    }
+
+    .license a {
+        color: inherit;
     }
 
     @media (min-width: 1200px) {
@@ -96,5 +115,10 @@ const getAriaLabel = footerAriaLabel[lang]
                 )
             }
         </ul>
+        <p class="license">
+            {licenseText[lang]}
+            {' '}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>.
+        </p>
     </div>
 </footer>
