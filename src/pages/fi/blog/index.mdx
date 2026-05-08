@@ -1,27 +1,38 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: fi
-title: 'Kirjoi­tukset – IT, talous ja politiikka'
-description: 'Lauri Lavanti kirjoittaa IT:stä, taloudesta ja kunnallispolitiikasta. Lue ajatuksia arjen päätöksistä ja kunnanvaltuutetun näkökulmasta.'
+title: 'Kirjoi­tuksia tekoälyn aika­kaudelta'
+description: 'Lauri Lavannin kirjoituksia: tekoäly muuttaa kaiken — talouden, sivistyksen ja vapauden. Niiden synteesi on digitaalinen itsenäisyys.'
 slug: 'fi/blog'
 type: 'WebPage'
 heroImage: Lauri-Lavanti-next-to-a-table
 alt: 'Lauri Lavanti istumassa jakkaralla ja nojaa korkeaan pöytään. Päällään hänellä on musta bleiseri ja sinivalkoinen kukkakuvioinen kauluspaita. Bleiserin taskussa on monivärinen taskuliina. Taustalla portaikko.'
 ---
 
-import FrontPageExcerptList from '../../../components/FrontPageExcerptList.astro'
+import ExcerptList from '../../../components/ExcerptList.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
+import TopicsList from '../../../components/TopicsList.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
-Tässä blogissa kirjoitan, miten teknologia, erityisesti tekoäly, muuttaa yhteiskuntaamme – työtä, koulutusta, demokratiaa ja jopa ihmisen paikkaa maailmassa. Kirjoituksissani käsittelen esimerkiksi sitä, miksi tekoäly ei pelkästään tehosta työtä vaan pakottaa meidät uudistamaan koko sosiaaliturvamme, miksi digitaalinen itsenäisyys on välttämättömyys turvallisen ja vapauden säilyttävän yhteiskunnan kannalta, ja miten voimme varmistaa, että teknologian edistysaskelista hyötyvät kaikki, ei vain harvat.
+Tekoäly muuttaa kaiken — työn, talouden ja sen, miten valtio palvelee meitä. Kirjoitan siitä, miten se vaikuttaa kolmeen asiaan, joiden on toimittava: talouteen, sivistykseen ja vapauteen. Niiden synteesi on digitaalinen itsenäisyys: yhteiskunta, joka käyttää teknologiaa omilla ehdoillaan.
 
 ## Mitä tarkoittaa elää tekoälyn aikakaudella?
 
-Uskon, että teknologian tulee palvella ihmistä, ei päinvastoin. Siksi kirjoituksissani korostan kestäviä, ihmislähtöisiä ratkaisuja – olipa kyse sitten työn murroksesta, koulutuksen uudistamisesta tai demokraattisen keskustelun turvaamisesta. Tavoitteenani on herättää ajatuksia, tarjota uusia näkökulmia ja innostaa keskusteluun siitä, millaisen tulevaisuuden haluamme rakentaa yhdessä.
+Käytännön kokemukseni on yli vuosikymmenen ajalta turvallisten ohjelmistojen ja pankkijärjestelmien rakentajana. Sitä taustaa vasten kirjoitan siitä, miksi tekoäly ei vain tehosta työtä vaan pakottaa miettimään uudelleen koko sosiaaliturvan, miksi digitaalinen itsenäisyys on välttämättömyys vapaan yhteiskunnan kannalta, ja miten varmistetaan, että teknologian hyödyt tulevat kaikille — ei vain harvoille.
 
-Tutustu ajatuksiini alla olevista kirjoituksista.
+## Aiheittain
 
+<TopicsList
+    lang="fi"
+    ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence']}
+/>
 
-<FrontPageExcerptList lang="fi" />
+## Nostot
+
+<ExcerptList lang="fi" onlyIds={[47, 48, 51, 54]} />
+
+## Kaikki kirjoitukset
+
+<ExcerptList lang="fi" excludeIds={[47, 48, 51, 54]} />
