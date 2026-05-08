@@ -50,15 +50,23 @@ const licenseText: Record<Lang, string> = {
         width: 100%;
     }
 
-    .container > div,
-    .container > ul {
+    .top {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes15);
+        width: 100%;
+    }
+
+    .top > div,
+    .top > ul {
         align-items: center;
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    .container > ul {
+    .top > ul {
         flex: 1;
         flex-wrap: wrap;
         gap: var(--sizes15);
@@ -77,45 +85,55 @@ const licenseText: Record<Lang, string> = {
 
     @media (min-width: 1200px) {
         .container {
-            flex-direction: row;
             padding-left: var(--contentPadding);
             padding-right: var(--contentPadding);
             width: var(--contentSize);
         }
 
-        .container > div {
+        .top {
+            flex-direction: row;
+        }
+
+        .top > div {
             justify-content: flex-start;
         }
 
-        .container > ul {
+        .top > ul {
             justify-content: flex-end;
         }
     }
 </style>
 <footer id="footer">
     <div class="container">
-        <div>
-            <img
-                alt={footerLogoAlt[lang]}
-                height="45"
-                loading="lazy"
-                src="/images/greensLogo3Languages.min.svg"
-                width="144"
-            />
-        </div>
-        <ul>
-            {
-                footerLinks.map((link) =>
-                    link.icon === 'instagram' ? (
-                        <InstagramLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
-                    ) : link.icon === 'tiktok' ? (
-                        <TikTokLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
-                    ) : (
-                        <Link ariaLabel={getAriaLabel(link.title)} icon={link.icon} title={link.title} url={link.url} />
+        <div class="top">
+            <div>
+                <img
+                    alt={footerLogoAlt[lang]}
+                    height="45"
+                    loading="lazy"
+                    src="/images/greensLogo3Languages.min.svg"
+                    width="144"
+                />
+            </div>
+            <ul>
+                {
+                    footerLinks.map((link) =>
+                        link.icon === 'instagram' ? (
+                            <InstagramLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
+                        ) : link.icon === 'tiktok' ? (
+                            <TikTokLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
+                        ) : (
+                            <Link
+                                ariaLabel={getAriaLabel(link.title)}
+                                icon={link.icon}
+                                title={link.title}
+                                url={link.url}
+                            />
+                        )
                     )
-                )
-            }
-        </ul>
+                }
+            </ul>
+        </div>
         <p class="license">
             {licenseText[lang]}
             {' '}
