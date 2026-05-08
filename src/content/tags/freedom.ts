@@ -8,8 +8,8 @@ export const freedomTag: LocalTag = {
             'Securing freedom in the AI era means being honest about the trade-offs. Mass surveillance, biometric expansion and chat scanning are not neutral tools waiting to be used wisely. They reshape the relationship between citizens and the state. The job of parliament is to set limits before the tools are built — not to debate them after the fact.',
         ],
         fi: [
-            'Vapaus tekoälyn aikana ei ole abstraktio. Se on kysymys siitä, pysyykö datasi, viestintäsi ja arkesi sinun, kun suuri osa niitä ympäröivästä infrastruktuurista on jonkun toisen omistuksessa. Yksityisyydensuoja on perustapaus — mutta laajempi kysymys on, säilyvätkö perusoikeudet teknologiassa, joka skaalaa valvontaa kaikille, koko ajan, lähes ilmaiseksi.',
-            'Olen rakentanut urallani ohjelmistoja ympäristöissä, joissa datan säännöt otetaan vakavasti — pankkialalla, turvallisuusjärjestelmissä, säännellyissä järjestelmissä. Se kokemus tekee yhden asian selväksi: yksityisyys ja perusoikeudet eivät suojaa itse itseään. Niitä suojaavat lait, hankintapäätökset ja ihmiset eduskunnassa, jotka osaavat lukea teknisen esityksen ja kertoa, tekeekö se mitä lupaa.',
+            'Vapaus tekoälyn aikana ei ole abstraktio. Se on kysymys siitä, pysyykö datasi, viestintäsi ja arkesi sinun ominasi, kun suuri osa niitä ympäröivästä infrastruktuurista on jonkun toisen omistuksessa. Yksityisyydensuoja on perusoikeus — mutta laajempi kysymys on, säilyvätkö perusoikeudet teknologiassa, joka skaalaa valvontaa kaikille, koko ajan, lähes ilmaiseksi.',
+            'Olen rakentanut urallani ohjelmistoja ympäristöissä, joissa datan säännöt otetaan vakavasti — pankki- ja muilla säännellyillä aloilla. Se kokemus tekee yhden asian selväksi: yksityisyys ja perusoikeudet eivät suojaa itse itseään. Niitä suojaavat lait, hankintapäätökset ja ihmiset eduskunnassa, jotka osaavat lukea teknisen esityksen ja kertoa, tekeekö se mitä lupaa.',
             'Vapauden varmaksi tekeminen tekoälyn aikana edellyttää rehellisyyttä kompromisseista. Massavalvonta, biometriikan laajentaminen ja viestien automaattinen seulonta eivät ole neutraaleja työkaluja, joita vain odotetaan käytettävän viisaasti. Ne muotoilevat uudelleen kansalaisen ja valtion suhteen. Eduskunnan tehtävä on asettaa rajat ennen kuin työkalut on rakennettu — ei keskustella niistä jälkikäteen.',
         ],
         sv: [
@@ -65,7 +65,7 @@ export const freedomTag: LocalTag = {
     id: 'freedom',
     metaDescription: {
         en: 'Freedom in the AI era is whether your data and communications remain yours when infrastructure scales surveillance to everyone, all the time.',
-        fi: 'Vapaus tekoälyn aikana on kysymys siitä, pysyykö data ja viestintä sinun, kun ympäröivä infrastruktuuri skaalaa valvontaa kaikille koko ajan.',
+        fi: 'Vapaus tekoälyn aikana on kysymys siitä, pysyykö data ja viestintä sinun omanasi, kun ympäröivä infrastruktuuri skaalaa valvontaa kaikille koko ajan.',
         sv: 'Frihet i AI-eran är frågan om dina data och din kommunikation förblir dina när infrastrukturen skalar övervakning till alla, hela tiden.',
     },
     names: { en: 'Freedom', fi: 'Vapaus', sv: 'Frihet' },
