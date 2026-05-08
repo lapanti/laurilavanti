@@ -8,9 +8,9 @@ export const learningTag: LocalTag = {
             'Seamless learning means the path stays open — between schools, between jobs, between life stages. AI makes that path more important, not less. The country that gets this right keeps its civilisation intact through the transition. The one that gets it wrong loses competence and trust at the same time.',
         ],
         fi: [
-            'Suomen vahvuus on aina ollut sen ihmisissä ja heidän osaamisessaan. Tekoälyn aikana sivistyksen on pysyttävä saumattomana — varhaiskasvatuksesta työelämään asti — niin ettei kukaan jää murroksen jalkoihin. Muuten tekoälyn tuottavuushyödyt kasaantuvat pienelle ryhmälle ja muut katsovat sivusta, miten työ muuttuu ilman välineitä pysyä mukana.',
+            'Suomen vahvuus on aina ollut sen ihmisissä ja heidän osaamisessaan. Tekoälyn aikana sivistyksen on pysyttävä saumattomana — varhaiskasvatuksesta työelämään asti — niin että jokainen voi kehittää potentiaaliaan täysimääräisesti. Silloin tekoälyn tuottavuushyödyt kertautuvat koko yhteiskunnalle, eivät vain niille joilla on jo valmiiksi hyvät lähtökohdat.',
             'Koulutus ei ole kuluerä, jota leikataan ensimmäisenä kun budjetti tiukkenee. Se on koko tekoälyaikaisen talouden infrastruktuuri. Säästöt opetuksesta, kirjastoista, ammatillisesta koulutuksesta ja aikuisopiskelusta maksetaan takaisin kymmenkertaisina, kun työmarkkinat muuttuvat nopeammin kuin ihmiset ehtivät kouluttautua uudelleen.',
-            'Saumaton sivistys tarkoittaa, että polku pysyy auki — koulujen välillä, töiden välillä, elämänvaiheiden välillä. Tekoäly tekee tästä polusta tärkeämmän, ei vähemmän tärkeän. Maa, joka onnistuu tässä, säilyttää sivistyksensä murroksen yli. Maa, joka epäonnistuu, menettää osaamisen ja luottamuksen yhtä aikaa.',
+            'Saumaton sivistys tarkoittaa, että polku pysyy auki — koulujen välillä, töiden välillä, elämänvaiheiden välillä. Tekoäly tekee tästä polusta tärkeämmän, ei vähemmän tärkeän. Maa, joka pitää polun auki kaikille, saa käyttöönsä koko kansansa potentiaalin. Se on vahvempi pohja kuin mikään muu kilpailuetu.',
         ],
         sv: [
             'Finlands styrka har alltid varit dess människor och deras kunnande. I AI-eran måste bildningen förbli sömlös — från småbarnspedagogiken till arbetslivet — så att ingen lämnas efter i en omställning som redan pågår. Annars samlas AI:s produktivitetsvinster hos en liten grupp medan resten ser sitt arbete förändras utan verktyg att hänga med.',
@@ -35,7 +35,7 @@ export const learningTag: LocalTag = {
         ],
         fi: [
             {
-                a: 'Tekoäly muuttaa sitä, mitkä taidot ovat arvokkaita ja kuinka nopeasti niitä on päivitettävä. Jos koulutus ja jatkuva oppiminen eivät pysy mukana, työmarkkinat jakautuvat: yhdet käyttävät tekoälyä työkaluna, toisilta se vie työn ilman, että tarjolla on tietä eteenpäin. Tämä jako on poliittinen valinta, ei väistämätön kohtalo.',
+                a: 'Tekoäly muuttaa sitä, mitkä taidot ovat arvokkaita ja kuinka nopeasti niitä on päivitettävä. Jos koulutus ja jatkuva oppiminen pysyvät mukana, tekoälystä tulee väline, jolla jokainen voi kasvattaa omaa potentiaaliaan. Yhteiskunta, jossa kaikki pystyvät käyttämään tekoälyä, on tuottavampi, vakaampi ja reilumpi kuin sellainen, jossa se jää harvojen etuoikeudeksi.',
                 q: 'Miksi tekoäly tekee koulutuksesta kiireellisen?',
             },
             {
