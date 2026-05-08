@@ -1,26 +1,38 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: en
-title: 'Blog – Technology, Economics and Politics'
-description: 'I write about technology, economics, and local politics in Kirkkonummi. Read my thoughts on everyday decisions and municipal governance.'
+title: 'Posts on AI, the economy and freedom'
+description: 'Lauri Lavanti writes about how AI is changing everything — the economy, learning and freedom. Their synthesis is digital independence.'
 slug: 'en/blog'
 type: 'WebPage'
 heroImage: 'Lauri-Lavanti-next-to-a-table'
 alt: 'Lauri Lavanti sitting on a stool leaning against a tall table. He is wearing a black blazer and a blue-and-white floral shirt. In the blazer pocket is a multicoloured pocket square. A staircase in the background.'
 ---
 
-import FrontPageExcerptList from '../../../components/FrontPageExcerptList.astro'
+import ExcerptList from '../../../components/ExcerptList.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
+import TopicsList from '../../../components/TopicsList.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
-In this blog, I explore how technology, especially artificial intelligence, is transforming our society—work, education, democracy, and even humanity’s place in the world. In my writings, I address topics such as why AI does not merely enhance productivity but forces us to rethink our entire social security system, why digital sovereignty is essential for a secure and freedom-preserving society, and how we can ensure that the benefits of technological progress are accessible to all, not just a privileged few.
+AI is changing everything — work, the economy, and how the state serves us. I write about how it lands on three things that have to keep working: the economy, learning, and freedom. Their synthesis is digital independence: a society that uses technology on its own terms.
 
 ## What does it mean to live in the age of AI?
 
-I believe that technology should serve humanity, not the other way around. Therefore, in my writings, I emphasize sustainable, human-centered solutions—whether the focus is on the transformation of work, the reform of education, or the safeguarding of democratic dialogue. My goal is to provoke thought, offer new perspectives, and inspire conversation about the kind of future we want to build together.
+I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink the whole social safety net, why digital independence is a precondition for a free society, and how to ensure that the benefits of technology reach everyone — not only a few.
 
-Explore my thoughts in the articles below.
+## By topic
 
-<FrontPageExcerptList lang="en" />
+<TopicsList
+    lang="en"
+    ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence']}
+/>
+
+## Featured
+
+<ExcerptList lang="en" onlyIds={[47, 48, 51, 54]} />
+
+## All posts
+
+<ExcerptList lang="en" excludeIds={[47, 48, 51, 54]} />
