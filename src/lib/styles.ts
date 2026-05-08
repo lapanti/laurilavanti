@@ -52,7 +52,7 @@ export const gridAreas = {
     main: 'main' as const,
 } as const
 
-export const gridTemplateRowsLayout = `1fr ${sizes[6]}` as const
+export const gridTemplateRowsLayout = `1fr auto` as const
 export const gridTemplateRowsLayoutMobile = `1fr auto` as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle =
