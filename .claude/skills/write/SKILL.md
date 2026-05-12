@@ -33,7 +33,7 @@ Five narrative beats — every post advances at least one:
 5. **Arvopohja** — principle as constraint, not slogan ("oikeusvaltion minimi")
 
 Mechanics:
-- Open with 1st person + concrete scene, not abstraction
+- Open with 1st person prose: name the decision/situation, date, parties, and your stance in one or two flowing sentences. Not isolated one-liners (reads like social media). Not scene-setting fragments (date/location as standalone). Example: "Kirkkonummen kunnanvaltuusto päätti 11.5.2026 liittymisestä Västra-yhteistyöhön Siuntion, Inkoon, Raaseporin ja Hangon kanssa. Tein esityksen sopimuksen hylkäämisestä, mutta hävisimme äänestyksen."
 - Declarative: "On", "vaatii", "ei riitä" — not "ehkä voitaisiin"
 - Source practitioners, not parties (Siilasmaa, Suleyman, Martela — name + role)
 - Reframe, don't attack — acknowledge concern, invert frame
