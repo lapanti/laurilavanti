@@ -64,12 +64,12 @@ All agents and workflows shall follow these rules for every change:
 
 Invoke on-demand (do not load all at once):
 
-| Persona | File | Purpose |
-|---------|------|---------|
-| `@Builder` | `.asdlc/personas/builder.md` | Feature implementation |
-| `@Critic` | `.asdlc/personas/critic.md` | Adversarial code review |
-| `@Architect` | `.asdlc/personas/architect.md` | Design & planning |
-| `@SpecWriter` | `.asdlc/personas/spec-writer.md` | Spec authoring |
+| Persona | File | Skill | Purpose |
+|---------|------|-------|---------|
+| `@Builder` | `.asdlc/personas/builder.md` | `/implement` | Feature implementation |
+| `@Critic` | `.asdlc/personas/critic.md` | `/review-spec`, `/review-implementation` | Adversarial review |
+| `@Architect` | `.asdlc/personas/architect.md` | `/create-issue` | Design & planning |
+| `@SpecWriter` | `.asdlc/personas/spec-writer.md` | `/write-spec` | Spec authoring |
 
 ---
 
@@ -92,6 +92,17 @@ src:
   lib: src/lib/                 # Build-time helpers (mdxPosts.ts, etc.)
   content: src/content/         # Tags, nav, and other content definitions
   pages: src/pages/             # MDX content and Astro route files (locale-structured)
+
+skills:
+  # Content work:
+  write: /write                             # Write/edit Finnish blog posts
+  review_content: /review-content           # SEO+AEO+style+persona review before commit
+  # Feature work (in order):
+  create_issue: /create-issue               # Plan PBI as GitHub issue
+  write_spec: /write-spec                   # Author Spec document
+  review_spec: /review-spec                 # Critic review of Spec vs issue
+  implement: /implement                     # Build against Spec
+  review_implementation: /review-implementation  # Adversarial review before PR ready
 ```
 
 ---
@@ -100,7 +111,13 @@ src:
 
 ## Issue workflow
 
-GitHub issues serve as PBIs. When asked to work on an issue:
+GitHub issues serve as PBIs. Preferred path uses skills — invoke manually or let each skill suggest the next step:
+
+```
+/create-issue → /write-spec → /review-spec → /implement → /review-implementation
+```
+
+Manual steps:
 
 1. **Assign the issue** — `gh issue edit {number} --add-assignee @me`
 2. **Create a branch** — `git checkout -b type/{short-kebab-description}` (no issue number prefix; include type e.g. `fix` or `feat`)
@@ -112,6 +129,7 @@ GitHub issues serve as PBIs. When asked to work on an issue:
    - Commit with conventional format: `type(scope): description`
    - Push — `git push`
 5. **Finalise** — after the last commit and push:
+   - Run `/review-implementation {number}` — adversarial review before marking ready
    - **Always** mark PR ready: `gh pr ready` — do this even if you think you may have already done it
    - Update PR description if needed: `gh pr edit`
    - Wait for the PR checks to complete in CI; if the e2e check fails, inspect the Playwright report, identify what broke, and fix it in a follow-up commit
