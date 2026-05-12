@@ -1,6 +1,6 @@
 #!/bin/bash
 # Blocks git commit when MDX files are staged and prompts Claude to run
-# /seo-check, /lavanti-writing-style, and /campaign-persona-check before committing.
+# /review-content before committing.
 
 INPUT=$(cat)
 COMMAND=$(echo "$INPUT" | jq -r '.tool_input.command // empty')
@@ -23,7 +23,7 @@ cat <<EOF
   "hookSpecificOutput": {
     "hookEventName": "PreToolUse",
     "permissionDecision": "deny",
-    "permissionDecisionReason": "MDX files are staged: ${FILE_LIST}— before committing: (1) run /seo-check on each file, (2) run /aeo-check on each file, (3) check writing style with /lavanti-writing-style, (4) check campaign persona alignment with /campaign-persona-check. Retry the commit once all four checks are done."
+    "permissionDecisionReason": "MDX files are staged: ${FILE_LIST}— run /review-content on each file before committing. Retry once done."
   }
 }
 EOF
