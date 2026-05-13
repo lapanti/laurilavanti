@@ -150,13 +150,19 @@ for (const file of mdxFiles) {
     const lines = content.split('\n')
 
     // --- frontmatter → H1 ---
-    // Use heroTitle if present (FrontPageLayout renders heroTitle as the visible H1,
-    // while title is only used for the HTML <title> tag). Fall back to title otherwise.
+    // Priority: h1 > heroTitle > title
+    // h1: explicit H1 field for PostLayout/PageLayout pages
+    // heroTitle: overrides title for FrontPageLayout pages
+    // title: fallback
+    // Collect all three, then resolve priority after the loop.
     let inFrontmatter = false
     let frontmatterDone = false
     let frontmatterLineCount = 0
     let h1Text = null
     let h1Line = 0
+    let h1Field = null, h1FieldLine = 0
+    let heroTitleField = null, heroTitleLine = 0
+    let titleField = null, titleFieldLine = 0
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i]
@@ -171,19 +177,21 @@ for (const file of mdxFiles) {
             break
         }
         if (inFrontmatter) {
+            const h1FieldM = line.match(/^h1:\s*['"]?(.*?)['"]?\s*$/)
+            if (h1FieldM) { h1Field = h1FieldM[1]; h1FieldLine = i + 1; continue }
             const heroM = line.match(/^heroTitle:\s*['"]?(.*?)['"]?\s*$/)
-            if (heroM) {
-                // heroTitle overrides title for visible H1
-                h1Text = heroM[1]
-                h1Line = i + 1
-                continue
-            }
+            if (heroM) { heroTitleField = heroM[1]; heroTitleLine = i + 1; continue }
             const titleM = line.match(/^title:\s*['"]?(.*?)['"]?\s*$/)
-            if (titleM && h1Text === null) {
-                h1Text = titleM[1]
-                h1Line = i + 1
-            }
+            if (titleM) { titleField = titleM[1]; titleFieldLine = i + 1 }
         }
+    }
+
+    if (h1Field !== null) {
+        h1Text = h1Field; h1Line = h1FieldLine
+    } else if (heroTitleField !== null) {
+        h1Text = heroTitleField; h1Line = heroTitleLine
+    } else if (titleField !== null) {
+        h1Text = titleField; h1Line = titleFieldLine
     }
 
     if (h1Text !== null) {

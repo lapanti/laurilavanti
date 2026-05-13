@@ -21,13 +21,14 @@ type Props = MDXLayoutProps<{
     heroImage: string
     publishDate: string
     slug: string
+    h1: string
     tags: string[]
     title: string
     updatedDate?: string
 }>
 
 const { frontmatter } = Astro.props
-const { alt, description, faq, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } = frontmatter
+const { alt, description, faq, h1, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } = frontmatter
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -90,7 +91,7 @@ const ogImage = heroImage
         lang={lang}
         slot="banner"
         tags={tags}
-        title={title}
+        title={h1}
     />
     <slot />
     <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
