@@ -12,8 +12,8 @@ type Props = MDXLayoutProps<{
     backgroundImage?: string
     description?: string
     faq?: Array<{ a: string; q: string }>
+    h1: string
     heroImage?: string
-    heroTitle?: string
     lang?: 'en' | 'fi' | 'sv'
     mobileHeroImage?: string
     secondaryTitle?: string
@@ -29,8 +29,8 @@ const {
     backgroundImage,
     description,
     faq,
+    h1,
     heroImage,
-    heroTitle,
     lang,
     mobileHeroImage,
     secondaryTitle,
@@ -63,7 +63,7 @@ const ogImage = heroImage
         secondaryTitle={secondaryTitle}
         slot="banner"
         subtitle={subtitle}
-        title={heroTitle ?? title}
+        title={h1}
     />
     <slot />
 </BaseLayout>

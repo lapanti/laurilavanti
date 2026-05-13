@@ -150,19 +150,12 @@ for (const file of mdxFiles) {
     const lines = content.split('\n')
 
     // --- frontmatter → H1 ---
-    // Priority: h1 > heroTitle > title
-    // h1: explicit H1 field for PostLayout/PageLayout pages
-    // heroTitle: overrides title for FrontPageLayout pages
-    // title: fallback
-    // Collect all three, then resolve priority after the loop.
+    // All pages (PostLayout, PageLayout, FrontPageLayout) require h1: field.
     let inFrontmatter = false
     let frontmatterDone = false
     let frontmatterLineCount = 0
     let h1Text = null
     let h1Line = 0
-    let h1Field = null, h1FieldLine = 0
-    let heroTitleField = null, heroTitleLine = 0
-    let titleField = null, titleFieldLine = 0
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i]
@@ -177,21 +170,13 @@ for (const file of mdxFiles) {
             break
         }
         if (inFrontmatter) {
-            const h1FieldM = line.match(/^h1:\s*['"]?(.*?)['"]?\s*$/)
-            if (h1FieldM) { h1Field = h1FieldM[1]; h1FieldLine = i + 1; continue }
-            const heroM = line.match(/^heroTitle:\s*['"]?(.*?)['"]?\s*$/)
-            if (heroM) { heroTitleField = heroM[1]; heroTitleLine = i + 1; continue }
-            const titleM = line.match(/^title:\s*['"]?(.*?)['"]?\s*$/)
-            if (titleM) { titleField = titleM[1]; titleFieldLine = i + 1 }
+            const h1M = line.match(/^h1:\s*['"]?(.*?)['"]?\s*$/)
+            if (h1M) {
+                h1Text = h1M[1]
+                h1Line = i + 1
+                break
+            }
         }
-    }
-
-    if (h1Field !== null) {
-        h1Text = h1Field; h1Line = h1FieldLine
-    } else if (heroTitleField !== null) {
-        h1Text = heroTitleField; h1Line = heroTitleLine
-    } else if (titleField !== null) {
-        h1Text = titleField; h1Line = titleFieldLine
     }
 
     if (h1Text !== null) {
