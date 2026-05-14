@@ -6,7 +6,7 @@
  *
  * Checks:
  *   - Translation triplet completeness (every blog id exists in fi, sv, en)
- *   - Title uniqueness per locale (duplicate <title> tags hurt SEO)
+ *   - pageTitle uniqueness per locale (duplicate <title> tags hurt SEO)
  */
 
 import { readFileSync, readdirSync } from 'node:fs'
@@ -70,7 +70,7 @@ for (const lang of LANGS) titlesByLang[lang] = new Map()
 for (const file of collectMdx(pagesRoot)) {
     const content = readFileSync(file, 'utf8')
     const lang = fmField(content, 'lang')
-    const title = fmField(content, 'title')
+    const title = fmField(content, 'pageTitle')
     if (!lang || !title) continue
     if (!titlesByLang[lang]) continue
     const map = titlesByLang[lang]

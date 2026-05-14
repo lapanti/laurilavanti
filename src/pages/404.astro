@@ -35,6 +35,6 @@ const postIndexJson = JSON.stringify(Object.fromEntries(allMdxPosts.map((p) => [
 `}
 />
 
-<PageLayout h1={t.title} lang={lang} title={t.title}>
+<PageLayout lang={lang} pageTitle={t.title} title={t.title}>
     <ExcerptList lang={lang} limit={8} />
 </PageLayout>

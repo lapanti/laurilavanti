@@ -19,16 +19,17 @@ type Props = MDXLayoutProps<{
     lang: 'en' | 'fi' | 'sv'
     alt: string
     heroImage: string
+    pageTitle: string
     publishDate: string
     slug: string
-    h1: string
     tags: string[]
     title: string
     updatedDate?: string
 }>
 
 const { frontmatter } = Astro.props
-const { alt, description, faq, h1, heroImage, id, lang, publishDate, slug, tags, title, updatedDate } = frontmatter
+const { alt, description, faq, heroImage, id, lang, pageTitle, publishDate, slug, tags, title, updatedDate } =
+    frontmatter
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -80,7 +81,7 @@ const ogImage = heroImage
     ogImage={ogImage}
     ogImageAlt={alt}
     slug={canonicalSlug}
-    title={title}
+    title={pageTitle}
     type={BLOGPOSTING}
     updatedAt={updatedDate ?? publishDate}
 >
@@ -91,10 +92,10 @@ const ogImage = heroImage
         lang={lang}
         slot="banner"
         tags={tags}
-        title={h1}
+        title={title}
     />
     <slot />
-    <SocialShare ariaLabel={t.shareAriaLabel(title)} locale={lang} shareUrl={shareUrl} title={title} />
+    <SocialShare ariaLabel={t.shareAriaLabel(pageTitle)} locale={lang} shareUrl={shareUrl} title={pageTitle} />
     <section class="other-posts">
         <H2>{t.otherPosts}</H2>
         <ExcerptList currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
