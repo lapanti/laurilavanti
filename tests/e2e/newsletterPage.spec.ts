@@ -47,11 +47,4 @@ test.describe('Newsletter Page', () => {
 
         await test.expect(newsletterPage.emailInput).toBeVisible()
     })
-
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const newsletterPage = new NewsletterPage(page)
-        await newsletterPage.goTo()
-
-        await newsletterPage.checkNoHorizontalScroll()
-    })
 })

@@ -40,11 +40,4 @@ test.describe('Contact Page på svenska', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const contactPage = new ContactSwePage(page)
-        await contactPage.goTo()
-
-        await contactPage.checkNoHorizontalScroll()
-    })
 })

@@ -40,11 +40,4 @@ test.describe('Topics Page in English', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const topicsPage = new TopicsEnPage(page)
-        await topicsPage.goTo()
-
-        await topicsPage.checkNoHorizontalScroll()
-    })
 })

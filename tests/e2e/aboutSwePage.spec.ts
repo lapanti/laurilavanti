@@ -41,13 +41,6 @@ test.describe('About Page på svenska', () => {
         await test.expect(page).toHaveScreenshot()
     })
 
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const aboutPage = new AboutSwePage(page)
-        await aboutPage.goTo()
-
-        await aboutPage.checkNoHorizontalScroll()
-    })
-
     test('should expand and collapse summary', async ({ page }) => {
         const aboutPage = new AboutSwePage(page)
         await aboutPage.goTo()

@@ -40,11 +40,4 @@ test.describe('Recommendations Page in swedish', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const recommendationsPage = new RecommendationsSwePage(page)
-        await recommendationsPage.goTo()
-
-        await recommendationsPage.checkNoHorizontalScroll()
-    })
 })

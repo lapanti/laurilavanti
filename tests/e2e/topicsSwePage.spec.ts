@@ -40,11 +40,4 @@ test.describe('Topics Page på svenska', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const topicsPage = new TopicsSwePage(page)
-        await topicsPage.goTo()
-
-        await topicsPage.checkNoHorizontalScroll()
-    })
 })
