@@ -2,10 +2,10 @@ interface MdxPost {
     alt: string
     description: string
     faq?: Array<{ a: string; q: string }>
-    h1: string
     heroImage: string
     id: number
     lang: 'en' | 'fi' | 'sv'
+    pageTitle: string
     publishDate: string
     slug: string
     tags: string[]

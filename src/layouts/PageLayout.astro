@@ -11,10 +11,10 @@ interface Props {
     createdAt?: string
     description?: string
     faq?: Array<{ a: string; q: string }>
-    h1: string
     heroImage?: string
     lang?: 'en' | 'fi' | 'sv'
     noindex?: boolean
+    pageTitle: string
     slug?: string
     tags?: string[]
     title: string
@@ -25,7 +25,8 @@ interface Props {
 // Support both MDX layout usage (props under frontmatter) and direct .astro component usage
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props: Props = ((Astro.props as any).frontmatter as Props | undefined) ?? (Astro.props as Props)
-const { alt, createdAt, description, faq, h1, heroImage, lang, noindex, slug, tags, title, type, updatedAt } = props
+const { alt, createdAt, description, faq, heroImage, lang, noindex, pageTitle, slug, tags, title, type, updatedAt } =
+    props
 
 const ogImage = heroImage
     ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
@@ -41,7 +42,7 @@ const ogImage = heroImage
     ogImage={ogImage}
     ogImageAlt={alt}
     slug={slug}
-    title={title}
+    title={pageTitle}
     type={type}
     updatedAt={updatedAt}
 >
@@ -52,7 +53,7 @@ const ogImage = heroImage
         lang={lang}
         slot="banner"
         tags={tags}
-        title={h1}
+        title={title}
     />
     <slot />
 </BaseLayout>
