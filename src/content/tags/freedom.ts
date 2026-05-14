@@ -70,8 +70,8 @@ export const freedomTag: LocalTag = {
     },
     names: { en: 'Freedom', fi: 'Vapaus', sv: 'Frihet' },
     pageTitle: {
-        en: 'Free­dom held secure in the age of AI',
-        fi: 'Vapaus var­maksi teko­älyn aika­kaudella',
+        en: 'Freedom held secure in the age of AI',
+        fi: 'Vapaus varmaksi tekoälyn aikakaudella',
         sv: 'Frihet som tryggas i AI-erans Finland',
     },
 }

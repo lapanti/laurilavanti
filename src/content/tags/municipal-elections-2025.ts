@@ -46,8 +46,8 @@ export const municipalElections2025Tag: LocalTag = {
     },
     names: { en: 'Municipal elections 2025', fi: 'Kuntavaalit 2025', sv: 'Kommu\u00ADnalval 2025' },
     pageTitle: {
-        en: 'Municipal elections 2025 – Kirkko\u00ADnummi',
-        fi: 'Kunta\u00ADvaalit 2025 – Kirkko\u00ADnummen kunta',
+        en: 'Municipal elections 2025 – Kirkkonummi',
+        fi: 'Kuntavaalit 2025 – Kirkkonummen kunta',
         sv: 'Kommunalval 2025 – Kyrkslätt kommun',
     },
 }
