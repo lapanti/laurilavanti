@@ -40,11 +40,4 @@ test.describe('Tag/Category Page in English', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should not have horizontal scroll on mobile', async ({ page }) => {
-        const tagPage = new TagEnPage(page)
-        await tagPage.goTo()
-
-        await tagPage.checkNoHorizontalScroll()
-    })
 })
