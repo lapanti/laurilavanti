@@ -14,11 +14,11 @@ failed=0
 
 is_blog_post() { grep -qP "PostLayout" "$file"; }
 
-# ── title length ─────────────────────────────────────────────────────────────
-# Final display title = raw title + " | Lauri Lavanti" (17 chars) unless the
-# title already starts with "Lauri Lavanti". Soft hyphens (U+00AD) are stripped
-# before counting. Valid range: 50–60 characters.
-title_val="$(fm_field "$file" title)"
+# ── pageTitle length ─────────────────────────────────────────────────────────
+# Final <title> tag = raw pageTitle + " | Lauri Lavanti" (17 chars) unless the
+# pageTitle already starts with "Lauri Lavanti". Soft hyphens (U+00AD) are
+# stripped before counting. Valid range: 50–60 characters.
+title_val="$(fm_field "$file" pageTitle)"
 if [[ -n "$title_val" ]]; then
     # Strip soft hyphens via LC_ALL=C.UTF-8 printf + sed
     stripped="$(printf '%s' "$title_val" | sed 's/\xc2\xad//g')"
@@ -29,7 +29,7 @@ if [[ -n "$title_val" ]]; then
     fi
     title_len="$(printf '%s' "$final_title" | wc -m)"
     if [[ "$title_len" -lt 50 || "$title_len" -gt 60 ]]; then
-        error "$file" "title length ${title_len} (expected 50–60): \"${final_title}\""
+        error "$file" "pageTitle length ${title_len} (expected 50–60): \"${final_title}\""
         failed=1
     fi
 fi

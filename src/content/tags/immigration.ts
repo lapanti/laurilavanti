@@ -47,7 +47,7 @@ export const immigrationTag: LocalTag = {
     names: { en: 'Immigration', fi: 'Maahanmuutto', sv: 'Immigration' },
     pageTitle: {
         en: 'Immigration and integration policy',
-        fi: 'Maahan\u00ADmuutto – faktat ja politiikka',
+        fi: 'Maahanmuutto – faktat ja politiikka',
         sv: 'Immigration och integrationspolitik',
     },
 }

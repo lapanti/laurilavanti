@@ -12,7 +12,7 @@ file="$1"
 failed=0
 
 # ── required frontmatter fields ─────────────────────────────────────────────
-for field in title description lang slug layout; do
+for field in pageTitle title description lang slug layout; do
     if ! grep -qP "^${field}:" "$file"; then
         error "$file" "missing required frontmatter field: ${field}"
         failed=1

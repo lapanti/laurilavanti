@@ -82,8 +82,8 @@ export const digitalisationTag: LocalTag = {
     },
     names: { en: 'Digitalisation', fi: 'Digitalisaatio', sv: 'Digitalisering' },
     pageTitle: {
-        en: 'Digita\u00ADlisation – IT and infor\u00ADmation policy',
-        fi: 'Digitali\u00ADsaatio – IT ja tieto\u00ADpolitiikka',
-        sv: 'Digita\u00ADlisering – IT och infor\u00ADmations\u00ADpolitik',
+        en: 'Digitalisation – IT and information policy',
+        fi: 'Digitalisaatio – IT ja tietopolitiikka',
+        sv: 'Digitalisering – IT och informationspolitik',
     },
 }

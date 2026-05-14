@@ -47,7 +47,7 @@ export const earlyChildhoodEducationTag: LocalTag = {
     names: { en: 'Early childhood education', fi: 'Varhaiskasvatus', sv: 'Småbarnspedagogik' },
     pageTitle: {
         en: 'Early childhood education and care',
-        fi: 'Varhais\u00ADkasvatus – lasten oppiminen ja hoito',
-        sv: 'Små\u00ADbarns\u00ADpedagogik – lärande och omsorg',
+        fi: 'Varhaiskasvatus – lasten oppiminen ja hoito',
+        sv: 'Småbarnspedagogik – lärande och omsorg',
     },
 }

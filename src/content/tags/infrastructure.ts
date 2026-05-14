@@ -48,6 +48,6 @@ export const infrastructureTag: LocalTag = {
     pageTitle: {
         en: 'Infrastructure – building and engineering',
         fi: 'Infrastruktuuri ja kunnallistekniikka',
-        sv: 'Infra\u00ADstruktur – byggande och kommunal\u00ADteknik',
+        sv: 'Infrastruktur – byggande och kommunalteknik',
     },
 }

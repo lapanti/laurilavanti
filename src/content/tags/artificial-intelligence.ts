@@ -82,8 +82,8 @@ export const artificialIntelligenceTag: LocalTag = {
     },
     names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
     pageTitle: {
-        en: 'Artificial intelli\u00ADgence – policy and ethics',
-        fi: 'Tekoäly – politiikka ja vastuu\u00ADllinen käyttö',
-        sv: 'Artifi\u00ADciell intel\u00ADligens – politik och etik',
+        en: 'Artificial intelligence – policy and ethics',
+        fi: 'Tekoäly – politiikka ja vastuullinen käyttö',
+        sv: 'Artificiell intelligens – politik och etik',
     },
 }

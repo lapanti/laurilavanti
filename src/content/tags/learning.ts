@@ -70,8 +70,8 @@ export const learningTag: LocalTag = {
     },
     names: { en: 'Learning', fi: 'Sivistys', sv: 'Lärande' },
     pageTitle: {
-        en: 'Seam­less lear­ning in the age of AI',
-        fi: 'Sivistys sauma­ttomaksi teko­älyn aikana',
-        sv: 'Sömlös bild­ning i AI-erans Finland',
+        en: 'Seamless learning in the age of AI',
+        fi: 'Sivistys saumattomaksi tekoälyn aikana',
+        sv: 'Sömlös bildning i AI-erans Finland',
     },
 }
