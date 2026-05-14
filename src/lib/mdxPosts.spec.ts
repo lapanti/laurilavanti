@@ -36,11 +36,12 @@ describe('allMdxPosts frontmatter validation', () => {
         }
     })
 
-    it('should be sorted newest-first by publishDate', () => {
+    it('should be sorted by id descending', () => {
         for (let i = 1; i < allMdxPosts.length; i++) {
-            const prev = new Date(allMdxPosts[i - 1].publishDate).valueOf()
-            const curr = new Date(allMdxPosts[i].publishDate).valueOf()
-            expect(prev, `post ${i - 1} should not be older than post ${i}`).toBeGreaterThanOrEqual(curr)
+            expect(
+                allMdxPosts[i - 1].id,
+                `post at index ${i - 1} (id=${allMdxPosts[i - 1].id}) should have id >= post at index ${i} (id=${allMdxPosts[i].id})`
+            ).toBeGreaterThanOrEqual(allMdxPosts[i].id)
         }
     })
 
