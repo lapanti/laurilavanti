@@ -47,7 +47,7 @@ export const cultureAndEducationTag: LocalTag = {
     names: { en: 'Culture & education', fi: 'Sivistys', sv: 'Bildning' },
     pageTitle: {
         en: 'Culture, civic education and leisure',
-        fi: 'Sivistyksestä ja kulttuuripalveluista',
-        sv: 'Bildning, kultur och fritidstjänster',
+        fi: 'Sivistyk\u00ADsestä ja kulttuuri\u00ADpalveluista',
+        sv: 'Bildning, kultur och fritids\u00ADtjänster',
     },
 }

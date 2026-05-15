@@ -94,8 +94,8 @@ export const equalityAndNonDiscriminationTag: LocalTag = {
     },
     names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhdenvertaisuus', sv: 'Jämlikhet' },
     pageTitle: {
-        en: 'About equality and non-discrimination',
-        fi: 'Tasa-arvosta ja yhdenvertaisuudesta',
-        sv: 'Om jämlikhet och icke-diskriminering',
+        en: 'About equality and non-discrimi\u00ADnation',
+        fi: 'Tasa-arvosta ja yhden\u00ADvertaisuu\u00ADdesta',
+        sv: 'Om jämlikhet och icke-diskri\u00ADminering',
     },
 }

@@ -71,7 +71,7 @@ export const economyTag: LocalTag = {
     names: { en: 'Economy', fi: 'Talous', sv: 'Ekonomi' },
     pageTitle: {
         en: 'Keeping the economy working with AI',
-        fi: 'Talous toimivaksi tekoälyn aikakaudella',
+        fi: 'Talous toimivaksi tekoälyn aika\u00ADkaudella',
         sv: 'Ekonomi som fungerar i AI-erans Finland',
     },
 }

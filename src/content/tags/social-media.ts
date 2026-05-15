@@ -46,8 +46,8 @@ export const socialMediaTag: LocalTag = {
     },
     names: { en: 'Social media', fi: 'Sosiaa\u00ADlinen media', sv: 'Sociala medier' },
     pageTitle: {
-        en: 'Social media in politics and communication',
+        en: 'Social media in politics and communi\u00ADcation',
         fi: 'Sosiaalinen media ja poliittinen työ',
-        sv: 'Sociala medier i politik och kommunikation',
+        sv: 'Sociala medier i politik och kommuni\u00ADkation',
     },
 }

@@ -83,7 +83,7 @@ export const privacyTag: LocalTag = {
     names: { en: 'Privacy', fi: 'Yksityisyydensuoja', sv: 'Integritetsskydd' },
     pageTitle: {
         en: 'Privacy protection in the digital world',
-        fi: 'Yksityisyydensuoja digitaalisessa maailmassa',
-        sv: 'Integritetsskydd i den digitala världen',
+        fi: 'Yksityisyy\u00ADden\u00ADsuoja digitaali\u00ADsessa maailmassa',
+        sv: 'Integritets\u00ADskydd i den digitala världen',
     },
 }
