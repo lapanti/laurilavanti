@@ -95,7 +95,7 @@ export const educationTag: LocalTag = {
     names: { en: 'Education', fi: 'Opetus', sv: 'Utbildning' },
     pageTitle: {
         en: 'About education and education policy',
-        fi: 'Opetuksesta ja koulutuspolitiikasta',
-        sv: 'Om utbildning och utbildningspolitik',
+        fi: 'Opetuksesta ja koulutus\u00ADpolitiikasta',
+        sv: 'Om utbildning och utbildnings\u00ADpolitik',
     },
 }

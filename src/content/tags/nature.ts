@@ -46,8 +46,8 @@ export const natureTag: LocalTag = {
     },
     names: { en: 'Nature', fi: 'Luonto', sv: 'Natur' },
     pageTitle: {
-        en: 'Nature and the environment in Kirkkonummi',
-        fi: 'Luonto ja ympäristö Kirkkonummella',
+        en: 'Nature and the environment in Kirkko\u00ADnummi',
+        fi: 'Luonto ja ympäristö Kirkko\u00ADnummella',
         sv: 'Natur, miljö och klimat i Kyrkslätt',
     },
 }

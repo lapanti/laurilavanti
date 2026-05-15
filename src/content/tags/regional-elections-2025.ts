@@ -47,7 +47,7 @@ export const regionalElections2025Tag: LocalTag = {
     names: { en: 'Regional elections 2025', fi: 'Aluevaalit 2025', sv: 'Regionval 2025' },
     pageTitle: {
         en: 'Regional elections 2025 – welfare area vote',
-        fi: 'Aluevaalit 2025 – hyvinvointialuevaalit',
-        sv: 'Regionval 2025 – val till välfärdsområdet',
+        fi: 'Aluevaalit 2025 – hyvinvointi\u00ADalue\u00ADvaalit',
+        sv: 'Regionval 2025 – val till väl\u00ADfärds\u00ADområdet',
     },
 }

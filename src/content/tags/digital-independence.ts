@@ -82,8 +82,8 @@ export const digitalIndependenceTag: LocalTag = {
     },
     names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
     pageTitle: {
-        en: 'Digital independence and sovereignty',
-        fi: 'Suomen digitaalinen itsemääräämisoikeus',
-        sv: 'Digital suveränitet och självständighet',
+        en: 'Digital inde\u00ADpendence and sovereignty',
+        fi: 'Suomen digitaalinen itse\u00ADmääräämis\u00ADoikeus',
+        sv: 'Digital suveränitet och själv\u00ADständighet',
     },
 }

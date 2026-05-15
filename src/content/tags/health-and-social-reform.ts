@@ -51,7 +51,7 @@ export const healthAndSocialReformTag: LocalTag = {
     names: { en: 'Social & health reform', fi: 'Sote-uudistus', sv: 'Vård- och servicereform' },
     pageTitle: {
         en: 'Social and health reform – welfare areas',
-        fi: 'Sote-uudistus – hyvinvointialueiden',
-        sv: 'Vård- och servicereform – välfärdsområden',
+        fi: 'Sote-uudistus – hyvinvointi\u00ADalueiden',
+        sv: 'Vård- och service\u00ADreform – väl\u00ADfärds\u00ADområder',
     },
 }

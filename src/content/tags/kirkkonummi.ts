@@ -52,8 +52,8 @@ export const kirkkonummiTag: LocalTag = {
     },
     names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
     pageTitle: {
-        en: 'Kirkkonummi – municipality and politics',
-        fi: 'Kirkkonummi – kunta, politiikka, arki',
+        en: 'Kirkko\u00ADnummi – munici\u00ADpality and politics',
+        fi: 'Kirkko\u00ADnummi – kunta, politiikka, arki',
         sv: 'Kyrkslätt – kommunal\u00ADpolitik och vardag',
     },
 }
