@@ -8,3 +8,5 @@ export const WEBSITE = 'WebSite' as const
 export const JSON_LD_TYPES = [BLOGPOSTING, COLLECTIONPAGE, PERSON, WEBPAGE, WEBSITE] as const
 
 export type JsonLdType = (typeof JSON_LD_TYPES)[number]
+
+export type BreadcrumbItem = { name: string; url: string }
