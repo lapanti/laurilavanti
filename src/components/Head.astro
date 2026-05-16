@@ -1,9 +1,10 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { BLOGPOSTING, FAQPAGE, JSON_LD_TYPES, type JsonLdType, PERSON, WEBPAGE, WEBSITE } from '../lib/jsonld'
+import { BLOGPOSTING, type BreadcrumbItem, FAQPAGE, JSON_LD_TYPES, type JsonLdType, PERSON, WEBPAGE, WEBSITE } from '../lib/jsonld'
 
 interface Props {
+    breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
     faq?: Array<{ a: string; q: string }>
@@ -19,6 +20,7 @@ interface Props {
 }
 
 const {
+    breadcrumbs,
     description = 'Lauri Lavanti on diplomi-insinööri, johtava ohjelmistokehittäjä ja Kirkkonummen kunnanvaltuutettu (Vihreät). Hän keskittyy digitalisaatioon, yksityisyyden suojaan, tekoälyn vastuulliseen käyttöönottoon ja talouteen.',
     faq,
     lang = 'fi',
@@ -158,6 +160,20 @@ const faqJsonLd =
           })
         : null
 
+const breadcrumbJsonLd =
+    breadcrumbs && breadcrumbs.length >= 2
+        ? JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: breadcrumbs.map(({ name, url }: BreadcrumbItem, i: number) => ({
+                  '@type': 'ListItem',
+                  item: url,
+                  name,
+                  position: i + 1,
+              })),
+          })
+        : null
+
 const keywords = [
     'Kirkkonummi',
     'Länsi-Uusimaa',
@@ -232,6 +248,7 @@ const keywords = [
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 {faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
+{breadcrumbJsonLd && <script is:inline set:html={breadcrumbJsonLd} type="application/ld+json" />}
 <link crossorigin="" href="https://static.cloudflareinsights.com" rel="preconnect" />
 <link crossorigin="" href="https://res.cloudinary.com" rel="preconnect" />
 <link href="https://res.cloudinary.com" rel="dns-prefetch" />
