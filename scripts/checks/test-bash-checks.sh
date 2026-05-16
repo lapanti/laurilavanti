@@ -41,8 +41,10 @@ run 'errors on lang/path mismatch (sv in /en/)'   0  "$SEO"  "$FIXTURES/lang-mis
 printf '\n── aeo.sh ────────────────────────────────────────\n'
 run 'errors on no question heading'  1  "$AEO"  "$FIXTURES/no-question-heading-post.txt"
 run 'errors on vague quantifiers'    1  "$AEO"  "$FIXTURES/vague-quantifiers-post.txt"
-# valid-en-post.txt has a conversational heading and no vague quantifiers
+# valid-en-post.txt has 3 conversational headings and no vague quantifiers
 run 'passes for valid en post'       0  "$AEO"  "$FIXTURES/valid-en-post.txt"
+run 'AI post with <3 question H2s fails'    1  "$AEO"  "$FIXTURES/ai-few-questions-post.txt"
+run 'AI post with 3+ question H2s passes'   0  "$AEO"  "$FIXTURES/ai-three-questions-post.txt"
 
 printf '\n── content.sh ────────────────────────────────────\n'
 run 'errors on missing alt text'     1  "$CONTENT"  "$FIXTURES/missing-alt-post.txt"
