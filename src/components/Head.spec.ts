@@ -313,6 +313,122 @@ describe('<Head />', () => {
         expect(result.querySelector('link[rel="alternate"]')).toBeNull()
     })
 
+    it('should emit BreadcrumbList JSON-LD for a blog post (3 items)', async () => {
+        const breadcrumbs = [
+            { name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' },
+            { name: 'Blogi', url: 'https://laurilavanti.fi/fi/blog/' },
+            { name: 'Testijulkaisu', url: 'https://laurilavanti.fi/fi/blog/1/testijulkaisu/' },
+        ]
+
+        const result = await renderAstroComponent(Head, {
+            props: {
+                breadcrumbs,
+                title: 'Testijulkaisu',
+                type: 'BlogPosting',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        const jsonLdItems = Array.from(scripts).map((s) => JSON.parse(s.textContent || '{}'))
+
+        const breadcrumbSchema = jsonLdItems.find((j) => j['@type'] === 'BreadcrumbList')
+        expect(breadcrumbSchema).toBeDefined()
+        expect(breadcrumbSchema?.['@context']).toBe('https://schema.org')
+        expect(breadcrumbSchema?.itemListElement).toHaveLength(3)
+        expect(breadcrumbSchema?.itemListElement[0]).toEqual({
+            '@type': 'ListItem',
+            item: 'https://laurilavanti.fi/fi/',
+            name: 'Etusivu',
+            position: 1,
+        })
+        expect(breadcrumbSchema?.itemListElement[1]).toEqual({
+            '@type': 'ListItem',
+            item: 'https://laurilavanti.fi/fi/blog/',
+            name: 'Blogi',
+            position: 2,
+        })
+        expect(breadcrumbSchema?.itemListElement[2]).toEqual({
+            '@type': 'ListItem',
+            item: 'https://laurilavanti.fi/fi/blog/1/testijulkaisu/',
+            name: 'Testijulkaisu',
+            position: 3,
+        })
+    })
+
+    it('should emit BreadcrumbList JSON-LD for a tag page (2 items)', async () => {
+        const breadcrumbs = [
+            { name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' },
+            { name: 'Kategoria', url: 'https://laurilavanti.fi/fi/category/tekoaly/' },
+        ]
+
+        const result = await renderAstroComponent(Head, {
+            props: {
+                breadcrumbs,
+                title: 'Tekoäly',
+                type: 'CollectionPage',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        const jsonLdItems = Array.from(scripts).map((s) => JSON.parse(s.textContent || '{}'))
+
+        const breadcrumbSchema = jsonLdItems.find((j) => j['@type'] === 'BreadcrumbList')
+        expect(breadcrumbSchema).toBeDefined()
+        expect(breadcrumbSchema?.itemListElement).toHaveLength(2)
+        expect(breadcrumbSchema?.itemListElement[0].position).toBe(1)
+        expect(breadcrumbSchema?.itemListElement[1].position).toBe(2)
+    })
+
+    it('should not emit BreadcrumbList when breadcrumbs prop is absent', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'No breadcrumbs',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        const jsonLdItems = Array.from(scripts).map((s) => JSON.parse(s.textContent || '{}'))
+        const breadcrumbSchema = jsonLdItems.find((j) => j['@type'] === 'BreadcrumbList')
+        expect(breadcrumbSchema).toBeUndefined()
+    })
+
+    it('should not emit BreadcrumbList when breadcrumbs has fewer than 2 items', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                breadcrumbs: [{ name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' }],
+                title: 'Single breadcrumb',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        const jsonLdItems = Array.from(scripts).map((s) => JSON.parse(s.textContent || '{}'))
+        const breadcrumbSchema = jsonLdItems.find((j) => j['@type'] === 'BreadcrumbList')
+        expect(breadcrumbSchema).toBeUndefined()
+    })
+
+    it('should localise BreadcrumbList labels correctly for English', async () => {
+        const breadcrumbs = [
+            { name: 'Home', url: 'https://laurilavanti.fi/en/' },
+            { name: 'Blog', url: 'https://laurilavanti.fi/en/blog/' },
+            { name: 'Test post', url: 'https://laurilavanti.fi/en/blog/1/test-post/' },
+        ]
+
+        const result = await renderAstroComponent(Head, {
+            props: {
+                breadcrumbs,
+                lang: 'en',
+                title: 'Test post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const scripts = result.querySelectorAll('script[type="application/ld+json"]')
+        const jsonLdItems = Array.from(scripts).map((s) => JSON.parse(s.textContent || '{}'))
+        const breadcrumbSchema = jsonLdItems.find((j) => j['@type'] === 'BreadcrumbList')
+        expect(breadcrumbSchema?.itemListElement[0].name).toBe('Home')
+        expect(breadcrumbSchema?.itemListElement[1].name).toBe('Blog')
+    })
+
     it('should accept langAlternates prop without error', async () => {
         const langAlternates = {
             en: '/en/blog/10/sote-is-the-cornerstone-of-the-welfare-society/',
