@@ -19,6 +19,7 @@ AEO (Answer Engine Optimization) ensures content is extracted and cited by AI an
 > - Vague quantifiers: "affordable", "quickly", "recently" flagged (targeted list)
 > - Passage length ≤150 words (see seo-check automation)
 > - Freshness metadata: updatedDate required if >90 days old
+> - AI-tagged posts: ≥3 question-form H2/H3s required (elevated pillar rule)
 >
 > *Judgment-call checks — still run these:*
 > - Answer-first structure (opening 100 words)
