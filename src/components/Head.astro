@@ -71,6 +71,10 @@ const hreflangLinks =
 
 const xDefaultHref = hreflangLinks.find((l) => l.hreflang === 'fi')?.href ?? null
 
+const ogLocaleAlternates = !noindex
+    ? (['fi', 'sv', 'en'] as Lang[]).filter((l) => l !== lang).map((l) => ogLocale[l])
+    : []
+
 const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, siteUrl) : null)
 
 const ogImageUrl = ogImage ?? null
@@ -215,6 +219,7 @@ const keywords = [
 <meta content={title} property="og:title" />
 <meta content={name} name="author" />
 <meta content={ogLocale[lang]} property="og:locale" />
+{ogLocaleAlternates.map((loc) => <meta content={loc} property="og:locale:alternate" />)}
 <meta content={description} name="description" />
 <meta content={description} property="og:description" />
 <meta content={name} property="og:site_name" />
