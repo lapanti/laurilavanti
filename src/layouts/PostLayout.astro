@@ -7,7 +7,7 @@ import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
-import { BLOGPOSTING } from '../lib/jsonld'
+import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
@@ -55,6 +55,15 @@ const t = i18n[lang]
 const ogImage = heroImage
     ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
     : undefined
+
+const siteOrigin = 'https://laurilavanti.fi'
+const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }
+const blogLabel: Record<string, string> = { en: 'Blog', fi: 'Blogi', sv: 'Blogg' }
+const breadcrumbs: BreadcrumbItem[] = [
+    { name: homeLabel[lang], url: `${siteOrigin}/${lang}/` },
+    { name: blogLabel[lang], url: `${siteOrigin}/${lang}/blog/` },
+    { name: pageTitle, url: `${siteOrigin}/${canonicalSlug}/` },
+]
 ---
 
 <style
@@ -73,6 +82,7 @@ const ogImage = heroImage
     }
 </style>
 <BaseLayout
+    breadcrumbs={breadcrumbs}
     createdAt={publishDate}
     description={description}
     faq={faq}
