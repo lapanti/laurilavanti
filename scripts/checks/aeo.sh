@@ -47,7 +47,8 @@ fi
 # ── AI pillar posts: ≥3 question-form H2s ────────────────────────────────────
 # Posts tagged artificial-intelligence are pillar content; one question heading
 # is not enough to surface in conversational AI queries.
-if awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence"; then
+if awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence" \
+   && grep -qP "PostLayout" "$file"; then
     q_count=0
     while IFS= read -r line; do
         if echo "$line" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
