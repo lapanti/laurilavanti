@@ -313,6 +313,51 @@ describe('<Head />', () => {
         expect(result.querySelector('link[rel="alternate"]')).toBeNull()
     })
 
+    it('should emit two og:locale:alternate tags for fi page (en_GB, sv_SE)', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'fi',
+                title: 'Blogi',
+            },
+        })
+
+        const alts = Array.from(result.querySelectorAll('meta[property="og:locale:alternate"]'))
+        expect(alts).toHaveLength(2)
+        const contents = alts.map((el) => el.getAttribute('content'))
+        expect(contents).toContain('en_GB')
+        expect(contents).toContain('sv_SE')
+        expect(contents).not.toContain('fi_FI')
+    })
+
+    it('should emit two og:locale:alternate tags for en page (fi_FI, sv_SE)', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'en',
+                title: 'Blog',
+            },
+        })
+
+        const alts = Array.from(result.querySelectorAll('meta[property="og:locale:alternate"]'))
+        expect(alts).toHaveLength(2)
+        const contents = alts.map((el) => el.getAttribute('content'))
+        expect(contents).toContain('fi_FI')
+        expect(contents).toContain('sv_SE')
+        expect(contents).not.toContain('en_GB')
+    })
+
+    it('should not emit og:locale:alternate tags when noindex is true', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'fi',
+                noindex: true,
+                title: 'Hidden Page',
+            },
+        })
+
+        const alts = result.querySelectorAll('meta[property="og:locale:alternate"]')
+        expect(alts).toHaveLength(0)
+    })
+
     it('should emit BreadcrumbList JSON-LD for a blog post (3 items)', async () => {
         const breadcrumbs = [
             { name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' },
