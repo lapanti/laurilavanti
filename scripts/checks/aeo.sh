@@ -44,4 +44,23 @@ if [[ -n "$hits" ]]; then
     failed=1
 fi
 
+# ── AI pillar posts: ≥3 question-form H2s ────────────────────────────────────
+# Posts tagged artificial-intelligence are pillar content; one question heading
+# is not enough to surface in conversational AI queries.
+if awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence"; then
+    q_count=0
+    while IFS= read -r line; do
+        if echo "$line" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
+           || echo "$line" | grep -qP "^#{2,3} \S.*\?$" \
+           || echo "$line" | grep -qP "^#{2,3} \w+ko\b" \
+           || echo "$line" | grep -qP "^#{2,3} \w+kö\b"; then
+            q_count=$((q_count + 1))
+        fi
+    done < <(fm_body "$file")
+    if [[ "$q_count" -lt 3 ]]; then
+        error "$file" "artificial-intelligence posts require ≥3 question-form H2/H3s; found $q_count"
+        failed=1
+    fi
+fi
+
 exit "$failed"
