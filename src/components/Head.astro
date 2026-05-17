@@ -228,6 +228,7 @@ const keywords = [
 <meta content={description} name="twitter:description" />
 {isArticle && <meta content={name} property="article:author" />}
 {isArticle && <meta content={createdAt} property="article:published_time" />}
+{isArticle && updatedAt && <meta content={updatedAt} property="article:modified_time" />}
 <meta content="@laurilavanti@mastodon.social" name="fediverse:creator" />
 {
     canonical && (
