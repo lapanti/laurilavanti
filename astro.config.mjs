@@ -1,10 +1,69 @@
 // @ts-check
+import { readFileSync, readdirSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import { defineConfig } from 'astro/config'
 
 import icon from 'astro-icon'
 
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+const PUBLISH = /^publishDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
+const UPDATED = /^updatedDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
+
+/** @param {string} dir @returns {string[]} */
+const tryReaddir = (dir) => {
+    try {
+        return readdirSync(dir)
+    } catch {
+        return []
+    }
+}
+
+/** @param {string} mdxPath @returns {string | undefined} */
+const readSlugDate = (mdxPath) => {
+    let content
+    try {
+        content = readFileSync(mdxPath, 'utf-8')
+    } catch {
+        return undefined
+    }
+    return UPDATED.exec(content)?.[1] ?? PUBLISH.exec(content)?.[1]
+}
+
+/**
+ * @param {string} blogDir
+ * @param {string} lang
+ * @returns {Array<{date: string, path: string}>}
+ */
+const collectLangDates = (blogDir, lang) => {
+    const entries = []
+    for (const id of tryReaddir(blogDir)) {
+        for (const slug of tryReaddir(join(blogDir, id))) {
+            const date = readSlugDate(join(blogDir, id, slug, 'index.mdx'))
+            if (date) entries.push({ date, path: `/${lang}/blog/${id}/${slug}/` })
+        }
+    }
+    return entries
+}
+
+/** @returns {Map<string, string>} URL path → YYYY-MM-DD */
+const buildPostDateMap = () => {
+    const map = new Map()
+    for (const lang of ['fi', 'sv', 'en']) {
+        const blogDir = join(__dirname, 'src', 'pages', lang, 'blog')
+        for (const { path, date } of collectLangDates(blogDir, lang)) {
+            map.set(path, date)
+        }
+    }
+    return map
+}
+
+const postDateMap = buildPostDateMap()
 
 // https://astro.build/config
 export default defineConfig({
@@ -199,8 +258,7 @@ export default defineConfig({
         '/en/blog/17/luontomme-on-valttimme-vuodesta-toiseen/':
             '/en/blog/17/our-nature-is-our-trump-card-year-after-year/',
         '/fi/blog/25/congratulations-finland/': '/fi/blog/25/onnea-suomi/',
-        '/sv/blog/15/kunnan-pitaa-suunnitella-pitkajanteisesti/':
-            '/sv/blog/15/kommunen-maste-planera-langsiktigt/',
+        '/sv/blog/15/kunnan-pitaa-suunnitella-pitkajanteisesti/': '/sv/blog/15/kommunen-maste-planera-langsiktigt/',
         '/sv/blog/14/puheilla-muovaamme-todellisuutta/': '/sv/blog/14/med-ord-formar-vi-verkligheten/',
         '/en/blog/52/kirkkonummi-on-tanaan-tasa-arvoisempi-kuin-eilen/':
             '/en/blog/52/kirkkonummi-is-more-equal-today-than-yesterday/',
@@ -224,8 +282,7 @@ export default defineConfig({
         '/en/blog/16/uusi-vuosi-tuttu-talvikunnossapito/': '/en/blog/16/new-year-familiar-winter-maintenance/',
         // Issue #1078 — top-level election campaign page redirects
         '/kuntavaalit-ja-aluevaalit-2025/': '/fi/blog/20/kuntavaalit-ja-aluevaalit-2025/',
-        '/municipal-elections-and-county-elections-2025/':
-            '/en/blog/20/municipal-and-regional-elections-2025/',
+        '/municipal-elections-and-county-elections-2025/': '/en/blog/20/municipal-and-regional-elections-2025/',
         '/kommunalvalet-och-valfardsomradesvalet-2025/': '/sv/blog/20/kommun-och-valfardsvalet-2025/',
     },
     trailingSlash: 'always',
@@ -264,6 +321,11 @@ export default defineConfig({
                 !/\/kategoria\//.test(page) &&
                 // Exclude recommendations pages for now
                 !/\/(en|fi|sv)\/recommendations\//.test(page),
+            serialize: (item) => {
+                const path = new URL(item.url).pathname
+                const date = postDateMap.get(path)
+                return date ? { ...item, lastmod: date } : item
+            },
         }),
     ],
 })
