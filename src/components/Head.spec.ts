@@ -228,6 +228,46 @@ describe('<Head />', () => {
         expect(jsonLd.datePublished).toBe('2024-06-01')
     })
 
+    it('should emit article:modified_time meta when BlogPosting has updatedAt', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Blog post',
+                type: 'BlogPosting',
+                updatedAt: '2024-06-01',
+            },
+        })
+
+        const meta = result.querySelector('meta[property="article:modified_time"]')
+        expect(meta).toBeDefined()
+        expect(meta?.getAttribute('content')).toBe('2024-06-01')
+    })
+
+    it('should not emit article:modified_time meta when BlogPosting has no updatedAt', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Blog post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const meta = result.querySelector('meta[property="article:modified_time"]')
+        expect(meta).toBeNull()
+    })
+
+    it('should not emit article:modified_time meta for non-article pages', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'Some page',
+                updatedAt: '2024-06-01',
+            },
+        })
+
+        const meta = result.querySelector('meta[property="article:modified_time"]')
+        expect(meta).toBeNull()
+    })
+
     it('should set Person JSON-LD when type is Person', async () => {
         const result = await renderAstroComponent(Head, {
             props: {
