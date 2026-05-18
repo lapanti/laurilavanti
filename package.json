@@ -21,6 +21,7 @@
     "validate-titles": "node scripts/validate-titles.mjs",
     "validate-translations": "node scripts/validate-translations.mjs",
     "validate-slugs": "node scripts/validate-slugs.mjs",
+    "audit:redirects": "node --experimental-strip-types scripts/checks/redirects.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
