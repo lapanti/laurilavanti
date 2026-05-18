@@ -3,7 +3,7 @@
 > **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
 > **Status**: `Active`
 > **Last updated**: 2026-05-18
-> **Issue**: [#1213](https://github.com/Lauri-Lavanti/laurilavanti/issues/1213)
+> **Issue**: [#1213](https://github.com/lapanti/laurilavanti/issues/1213)
 
 ---
 
@@ -11,7 +11,7 @@
 
 The `redirects` map in `astro.config.mjs` has accreted 213 entries since the site was first migrated to the locale-prefixed URL scheme. Some legacy entries now form chains (`A → B`, `B → C` — search engines should be sent straight to `C`) and others have dead-end targets (the destination no longer corresponds to a page that exists). Chains waste crawl budget; dead-ends produce indexed 404s. Neither is visible from inside Astro's build, so they accumulate silently.
 
-This feature introduces a build-time audit script that detects both pathologies, prunes the existing redirect map to a clean baseline, and gates further drift via pre-commit + CI. After this lands, the project has an enforceable invariant: every redirect collapses in one hop to a page that actually exists.
+This feature introduces a pre-commit/CLI audit script that detects both pathologies, prunes the existing redirect map to a clean baseline, and gates further drift via pre-commit + CI. After this lands, the project has an enforceable invariant: every redirect collapses in one hop to a page that actually exists.
 
 It also extracts the redirects literal out of `astro.config.mjs` into `src/lib/redirects.ts` so the audit script (and any future tooling) can import it cleanly.
 
@@ -21,7 +21,7 @@ It also extracts the redirects literal out of `astro.config.mjs` into `src/lib/r
 
 ### In scope
 - Extracting `redirects` into its own module `src/lib/redirects.ts` (behaviour-preserving refactor).
-- New script `scripts/checks/redirects.mjs` that reports redirect chains and dead-end targets.
+- New script `scripts/checks/redirects.mjs` that reports redirect chains and dead-end targets. (Issue specifies `.ts`; decision to use `.mjs` taken to match existing `scripts/checks/*.mjs` pattern and avoid a transpile step — runs via Node 24 `--experimental-strip-types`.)
 - npm script `audit:redirects`.
 - Manual prune of the current redirect map: collapse all detected chains, remove all detected dead-ends.
 - Pre-commit gating via lint-staged on `src/lib/redirects.ts`, `src/content/tags/**`, `src/pages/**/*.mdx`.
@@ -157,7 +157,7 @@ Valid-route set construction:
 2. **Category pages** — `tags[].id` × `['en','fi','sv']` → `/{lang}/category/{tag.id}/`.
 3. **Static pages** — explicit list: `/`, `/{lang}/`, `/{lang}/{about,contact,blog,newsletter,privacy-policy,recommendations,topics}/`, `/{lang}/topics/{tag.id}/`.
 
-Chain detection: DFS from each redirect source through the redirect graph, cycle-guard via `Set`, terminal = first key not in the redirect map (or cycle marker).
+Chain detection: for each redirect source, follow hops transitively until reaching a terminal not in the redirect map (or a cycle). Terminal differs from the immediate destination → chain.
 
 Dead-end detection: terminal not present in the union of (1)+(2)+(3).
 
@@ -172,13 +172,17 @@ Dead-end detection: terminal not present in the union of (1)+(2)+(3).
 ## Anti-patterns
 
 - **Do not** count other redirect SOURCES as valid terminals when checking dead-ends — that would mask broken chains by labelling them clean. Chain detection handles chains; dead-end detection only consults real routes.
-- **Do not** auto-edit redirects from the audit script. Audit reports; humans confirm; humans commit. Per-entry approval is required for prune commits (C4 chains, C5 dead-ends).
+- **Do not** auto-edit redirects from the audit script. Audit reports; humans confirm; humans commit. Per-entry approval is required for each prune commit.
 - **Do not** use `import.meta.glob` in the audit script — that helper is Vite-only and silently returns `{}` outside Astro. Use `fs.readdirSync` (precedent: `scripts/checks/cross-file.mjs`).
-- **Do not** land CI gating (C6) before the prune commits (C4, C5). The new step will fail on the next push and block the PR. Hard ordering: refactor → script → slug rename → chains → dead-ends → gating.
+- **Do not** enable CI/pre-commit gating before the redirect map is pruned to a clean baseline. The new step will fail immediately and block the PR. Required order: refactor → script → prune (chains then dead-ends) → gating.
 - **Do not** narrow `redirects` to `as const` — Astro's redirect type accepts richer object forms and over-narrowing pessimises future entries; keep `Record<string, string>`.
 - **Do not** remove a redirect just because the source URL "looks old". Removal requires audit evidence of dead-end (terminal unreachable). Static-output Astro generates an HTML stub per redirect source; deletion breaks external links.
 
 ---
+
+## Notes
+
+- **Runtime redirect mechanism**: `output: 'static'` means Astro compiles each redirect source into an HTML stub with `<meta http-equiv="refresh">`, not an HTTP 301. The issue's verification criterion "return 301" is technically inaccurate for this site. The audit script verifies the redirect *map* is clean; actual HTTP status depends on Cloudflare's handling of the generated stubs.
 
 ## Open Questions
 
@@ -188,6 +192,7 @@ None.
 
 ## Changelog
 
-| Date       | Change        |
-|------------|---------------|
-| 2026-05-18 | Initial draft |
+| Date       | Change                                   |
+|------------|------------------------------------------|
+| 2026-05-18 | Initial draft                            |
+| 2026-05-18 | Activated; fixed repo link, terminology, anti-patterns, added Notes section |
