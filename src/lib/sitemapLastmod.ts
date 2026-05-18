@@ -3,8 +3,7 @@ import { join } from 'node:path'
 
 const UPDATED_DATE = /^updatedDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
 
-export const extractUpdatedDate = (mdxContent: string): string | undefined =>
-    UPDATED_DATE.exec(mdxContent)?.[1]
+export const extractUpdatedDate = (mdxContent: string): string | undefined => UPDATED_DATE.exec(mdxContent)?.[1]
 
 const walkMdx = (dir: string): string[] => {
     const out: string[] = []
@@ -22,6 +21,7 @@ const walkMdx = (dir: string): string[] => {
 
 const mdxPathToUrl = (pagesDir: string, mdxPath: string): string => {
     const rel = mdxPath.slice(pagesDir.length).replace(/\\/g, '/')
+
     return rel.replace(/\/index\.mdx$/, '/')
 }
 
@@ -51,7 +51,7 @@ export const buildPageDateMap = ({ pagesDir, tags }: BuildPageDateMapInput): Map
 
     if (missing.length > 0) {
         throw new Error(
-            `sitemapLastmod: missing required updatedDate frontmatter in:\n${missing.map((p) => `  - ${p}`).join('\n')}`,
+            `sitemapLastmod: missing required updatedDate frontmatter in:\n${missing.map((p) => `  - ${p}`).join('\n')}`
         )
     }
 
