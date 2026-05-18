@@ -152,7 +152,7 @@ for (const source of Object.keys(redirects)) {
 const total = Object.keys(redirects).length
 
 if (chains.length > 0) {
-    console.log(`\nChains (${chains.length}):`)
+    err(`\nChains (${chains.length}):`)
     for (const { from, via, terminal, isCycle } of chains) {
         const hops = [from, ...via, terminal].join('  →  ')
         const label = isCycle ? '[CYCLE]' : '[collapse → terminal]'
@@ -161,13 +161,14 @@ if (chains.length > 0) {
 }
 
 if (deadEnds.length > 0) {
-    console.log(`\nDead-ends (${deadEnds.length}):`)
+    err(`\nDead-ends (${deadEnds.length}):`)
     for (const { from, terminal } of deadEnds) {
         err(`Dead-end: ${from}  →  ${terminal}  [no matching route]`)
     }
 }
 
-const clean = total - chains.length - deadEnds.length
+const issueSet = new Set([...chains.map((c) => c.from), ...deadEnds.map((d) => d.from)])
+const clean = total - issueSet.size
 console.log(
     `\nRedirect audit — ${total} entries\nSummary: ${total} total, ${chains.length} chains, ${deadEnds.length} dead-ends, ${clean} clean.`
 )
