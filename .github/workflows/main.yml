@@ -118,6 +118,8 @@ jobs:
         run: node --experimental-strip-types scripts/checks/mdx-deep.ts $(find src/pages -name '*.mdx')
       - name: Run cross-file checks (translation triplet + title uniqueness)
         run: node scripts/checks/cross-file.mjs
+      - name: Run redirect audit (chains + dead-ends)
+        run: node --experimental-strip-types scripts/checks/redirects.mjs
 
   unit-test:
     runs-on: ubuntu-latest
