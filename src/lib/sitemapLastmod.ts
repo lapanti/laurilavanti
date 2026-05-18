@@ -1,51 +1,65 @@
-import { readdirSync, readFileSync } from 'node:fs'
+import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 
-const PUBLISH_DATE = /^publishDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
 const UPDATED_DATE = /^updatedDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
 
-export const extractPostDate = (mdxContent: string): string | undefined => {
-    const updated = UPDATED_DATE.exec(mdxContent)?.[1]
-    if (updated) return updated
-    return PUBLISH_DATE.exec(mdxContent)?.[1]
-}
+export const extractUpdatedDate = (mdxContent: string): string | undefined =>
+    UPDATED_DATE.exec(mdxContent)?.[1]
 
-const tryReaddir = (dir: string): string[] => {
-    try {
-        return readdirSync(dir)
-    } catch {
-        return []
-    }
-}
-
-const readSlugDate = (mdxPath: string): string | undefined => {
-    let content: string
-    try {
-        content = readFileSync(mdxPath, 'utf-8')
-    } catch {
-        return undefined
-    }
-    return extractPostDate(content)
-}
-
-const collectLangDates = (blogDir: string, lang: string): Array<{ date: string; path: string }> => {
-    const entries: Array<{ date: string; path: string }> = []
-    for (const id of tryReaddir(blogDir)) {
-        for (const slug of tryReaddir(join(blogDir, id))) {
-            const date = readSlugDate(join(blogDir, id, slug, 'index.mdx'))
-            if (date) entries.push({ date, path: `/${lang}/blog/${id}/${slug}/` })
+const walkMdx = (dir: string): string[] => {
+    const out: string[] = []
+    for (const entry of readdirSync(dir)) {
+        const full = join(dir, entry)
+        const stat = statSync(full)
+        if (stat.isDirectory()) {
+            out.push(...walkMdx(full))
+        } else if (entry.endsWith('.mdx')) {
+            out.push(full)
         }
     }
-    return entries
+    return out
 }
 
-export const buildPostDateMap = (pagesDir: string): Map<string, string> => {
+const mdxPathToUrl = (pagesDir: string, mdxPath: string): string => {
+    const rel = mdxPath.slice(pagesDir.length).replace(/\\/g, '/')
+    return rel.replace(/\/index\.mdx$/, '/')
+}
+
+interface TagWithDate {
+    id: string
+    updatedDate: string
+}
+
+interface BuildPageDateMapInput {
+    pagesDir: string
+    tags: readonly TagWithDate[]
+}
+
+export const buildPageDateMap = ({ pagesDir, tags }: BuildPageDateMapInput): Map<string, string> => {
     const map = new Map<string, string>()
-    for (const lang of ['fi', 'sv', 'en']) {
-        const blogDir = join(pagesDir, lang, 'blog')
-        for (const { path, date } of collectLangDates(blogDir, lang)) {
-            map.set(path, date)
+    const missing: string[] = []
+
+    for (const mdxPath of walkMdx(pagesDir)) {
+        const content = readFileSync(mdxPath, 'utf-8')
+        const date = extractUpdatedDate(content)
+        if (!date) {
+            missing.push(mdxPath)
+            continue
+        }
+        map.set(mdxPathToUrl(pagesDir, mdxPath), date)
+    }
+
+    if (missing.length > 0) {
+        throw new Error(
+            `sitemapLastmod: missing required updatedDate frontmatter in:\n${missing.map((p) => `  - ${p}`).join('\n')}`,
+        )
+    }
+
+    for (const lang of ['fi', 'sv', 'en'] as const) {
+        for (const tag of tags) {
+            map.set(`/${lang}/category/${tag.id}/`, tag.updatedDate)
         }
     }
+
     return map
 }
