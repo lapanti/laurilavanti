@@ -24,7 +24,7 @@ type Props = MDXLayoutProps<{
     slug: string
     tags: string[]
     title: string
-    updatedDate?: string
+    updatedDate: string
 }>
 
 const { frontmatter } = Astro.props
@@ -93,7 +93,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     slug={canonicalSlug}
     title={pageTitle}
     type={BLOGPOSTING}
-    updatedAt={updatedDate ?? publishDate}
+    updatedAt={updatedDate}
 >
     <TitleBanner
         alt={alt}

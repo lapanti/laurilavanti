@@ -29,9 +29,9 @@ describe('allMdxPosts frontmatter validation', () => {
         expect(post.alt.trim().length, 'alt must not be blank').toBeGreaterThan(0)
     })
 
-    it('updatedDate, when present, must be YYYY-MM-DD', () => {
-        const postsWithUpdatedDate = allMdxPosts.filter((p) => p.updatedDate !== undefined)
-        for (const post of postsWithUpdatedDate) {
+    it('every post must declare updatedDate and it must be YYYY-MM-DD', () => {
+        for (const post of allMdxPosts) {
+            expect(post.updatedDate, `${post.url} must declare updatedDate`).toBeDefined()
             expect(post.updatedDate, `${post.url} updatedDate must be YYYY-MM-DD`).toMatch(ISO_DATE)
         }
     })
