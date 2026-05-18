@@ -54,4 +54,5 @@ export const healthAndSocialReformTag: LocalTag = {
         fi: 'Sote-uudistus – hyvinvointi\u00ADalueiden',
         sv: 'Vård- och service\u00ADreform – väl\u00ADfärds\u00ADområder',
     },
+    updatedDate: '2026-05-15',
 }

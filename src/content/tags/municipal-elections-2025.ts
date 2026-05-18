@@ -50,4 +50,5 @@ export const municipalElections2025Tag: LocalTag = {
         fi: 'Kuntavaalit 2025 – Kirkko\u00ADnummen kunta',
         sv: 'Kommunal\u00ADval 2025 – Kyrkslätt kommun',
     },
+    updatedDate: '2026-05-15',
 }

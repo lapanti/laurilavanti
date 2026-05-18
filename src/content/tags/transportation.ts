@@ -50,4 +50,5 @@ export const transportationTag: LocalTag = {
         fi: 'Joukko\u00ADliikenne ja kestävä liikkuminen',
         sv: 'Kollektiv\u00ADtrafik och hållbar rörlighet',
     },
+    updatedDate: '2026-05-15',
 }

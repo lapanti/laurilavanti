@@ -11,4 +11,5 @@ export interface LocalTag {
     metaDescription: { en: string; fi: string; sv: string }
     names: { en: string; fi: string; sv: string }
     pageTitle: { en: string; fi: string; sv: string }
+    updatedDate: string
 }

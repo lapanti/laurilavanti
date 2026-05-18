@@ -86,4 +86,5 @@ export const digitalIndependenceTag: LocalTag = {
         fi: 'Suomen digitaalinen itse\u00ADmääräämis\u00ADoikeus',
         sv: 'Digital suveränitet och själv\u00ADständighet',
     },
+    updatedDate: '2026-05-15',
 }

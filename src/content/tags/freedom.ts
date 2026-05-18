@@ -74,4 +74,5 @@ export const freedomTag: LocalTag = {
         fi: 'Vapaus varmaksi tekoälyn aika\u00ADkaudella',
         sv: 'Frihet som tryggas i AI-erans Finland',
     },
+    updatedDate: '2026-05-15',
 }

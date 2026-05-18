@@ -86,4 +86,5 @@ export const digitalisationTag: LocalTag = {
         fi: 'Digitali\u00ADsaatio – IT ja tieto\u00ADpolitiikka',
         sv: 'Digitali\u00ADsering – IT och in\u00ADformations\u00ADpolitik',
     },
+    updatedDate: '2026-05-15',
 }

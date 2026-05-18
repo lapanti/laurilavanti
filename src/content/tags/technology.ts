@@ -86,4 +86,5 @@ export const technologyTag: LocalTag = {
         fi: 'Teknologia yhteis\u00ADkunnassa ja politiikassa',
         sv: 'Teknologi i samhälle och politiken',
     },
+    updatedDate: '2026-05-15',
 }

@@ -86,4 +86,5 @@ export const artificialIntelligenceTag: LocalTag = {
         fi: 'Tekoäly – politiikka ja vastuullinen käyttö',
         sv: 'Artificiell intelligens – politik och etik',
     },
+    updatedDate: '2026-05-15',
 }

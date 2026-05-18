@@ -56,4 +56,5 @@ export const kirkkonummiTag: LocalTag = {
         fi: 'Kirkko\u00ADnummi – kunta, politiikka, arki',
         sv: 'Kyrkslätt – kommunal\u00ADpolitik och vardag',
     },
+    updatedDate: '2026-05-15',
 }
