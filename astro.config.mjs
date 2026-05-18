@@ -1,5 +1,4 @@
 // @ts-check
-import { readFileSync, readdirSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -10,60 +9,15 @@ import icon from 'astro-icon'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 
+import { tags } from './src/content/tags'
+import { buildPageDateMap } from './src/lib/sitemapLastmod'
+
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const PUBLISH = /^publishDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
-const UPDATED = /^updatedDate:\s*['"]?(\d{4}-\d{2}-\d{2})['"]?/m
-
-/** @param {string} dir @returns {string[]} */
-const tryReaddir = (dir) => {
-    try {
-        return readdirSync(dir)
-    } catch {
-        return []
-    }
-}
-
-/** @param {string} mdxPath @returns {string | undefined} */
-const readSlugDate = (mdxPath) => {
-    let content
-    try {
-        content = readFileSync(mdxPath, 'utf-8')
-    } catch {
-        return undefined
-    }
-    return UPDATED.exec(content)?.[1] ?? PUBLISH.exec(content)?.[1]
-}
-
-/**
- * @param {string} blogDir
- * @param {string} lang
- * @returns {Array<{date: string, path: string}>}
- */
-const collectLangDates = (blogDir, lang) => {
-    const entries = []
-    for (const id of tryReaddir(blogDir)) {
-        for (const slug of tryReaddir(join(blogDir, id))) {
-            const date = readSlugDate(join(blogDir, id, slug, 'index.mdx'))
-            if (date) entries.push({ date, path: `/${lang}/blog/${id}/${slug}/` })
-        }
-    }
-    return entries
-}
-
-/** @returns {Map<string, string>} URL path → YYYY-MM-DD */
-const buildPostDateMap = () => {
-    const map = new Map()
-    for (const lang of ['fi', 'sv', 'en']) {
-        const blogDir = join(__dirname, 'src', 'pages', lang, 'blog')
-        for (const { path, date } of collectLangDates(blogDir, lang)) {
-            map.set(path, date)
-        }
-    }
-    return map
-}
-
-const postDateMap = buildPostDateMap()
+const pageDateMap = buildPageDateMap({
+    pagesDir: join(__dirname, 'src', 'pages'),
+    tags,
+})
 
 // https://astro.build/config
 export default defineConfig({
@@ -322,8 +276,8 @@ export default defineConfig({
                 // Exclude recommendations pages for now
                 !/\/(en|fi|sv)\/recommendations\//.test(page),
             serialize: (item) => {
-                const path = new URL(item.url).pathname
-                const date = postDateMap.get(path)
+                const path = decodeURIComponent(new URL(item.url).pathname)
+                const date = pageDateMap.get(path)
                 return date ? { ...item, lastmod: date } : item
             },
         }),
