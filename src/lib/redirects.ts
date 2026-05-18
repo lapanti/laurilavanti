@@ -3,7 +3,7 @@ export const redirects: Record<string, string> = {
     '/about-me/': '/en/about/',
     '/blogi/': '/fi/blog/',
     '/blogi/aanestin-lansiradan-puolesta/': '/fi/blog/46/aanestin-lansiradan-puolesta/',
-    '/blogi/aluevaalit/': '/fi/category/aluevaalit/',
+
     '/blogi/aluevaalit2022/': '/fi/category/regional-elections-2022/',
     '/blogi/aluevaalit2025/': '/fi/category/regional-elections-2025/',
     '/blogi/digitalisaatio/': '/fi/category/digitalisation/',
@@ -26,7 +26,7 @@ export const redirects: Record<string, string> = {
     '/blogi/kuka-paattaa-mista-puhumma/': '/fi/blog/43/kuka-paattaa-mista-puhumme/',
     '/blogi/kunnan-pitaa-suunnitella-pitkajanteisesti/': '/fi/blog/15/kunnan-pitaa-suunnitella-pitkajanteisesti/',
     '/blogi/kuntavaaleissa-ratkaistaan-arjen-asioita/': '/fi/blog/33/kuntavaaleissa-ratkaistaan-arjen-asioita/',
-    '/blogi/kuntavaalit/': '/fi/category/kuntavaalit/',
+
     '/blogi/kuntavaalit-ja-aluevaalit-2025/': '/fi/blog/20/kuntavaalit-ja-aluevaalit-2025/',
     '/blogi/kuntavaalit2025/': '/fi/category/municipal-elections-2025/',
     '/blogi/kylma-riihi-kirkkonummelle/': '/fi/blog/38/kylma-riihi-kirkkonummelle/',
