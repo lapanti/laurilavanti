@@ -24,6 +24,7 @@ The change is narrowly scoped to `BlogPosting` type only and only when `ogImageU
 - Add `primaryImageOfPage: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 }` to the `BlogPosting` spread
 - Only when `ogImageUrl` is present — no change when image is absent
 - Update `Head.spec.ts` with assertions for `ImageObject` shape
+- Update `seo/spec.md` Architecture table to note `BlogPosting.image` is an `ImageObject`; all other types retain a bare URL string
 
 ### Out of scope
 - Changing image generation or Cloudinary URLs
@@ -40,23 +41,23 @@ Feature: BlogPosting ImageObject in JSON-LD
 
   Scenario: BlogPosting with image emits ImageObject for both image and primaryImageOfPage
     Given Head is rendered with type "BlogPosting"
-    And ogImage is a valid URL string
-    And createdAt is set
+    And ogImage is "https://res.cloudinary.com/example/image/upload/v1/test.jpg"
+    And createdAt is "2024-01-01"
     When the primary JSON-LD script tag is parsed
     Then jsonLd["@type"] equals "BlogPosting"
     And jsonLd.image["@type"] equals "ImageObject"
-    And jsonLd.image.url equals the ogImage URL
+    And jsonLd.image.url equals "https://res.cloudinary.com/example/image/upload/v1/test.jpg"
     And jsonLd.image.width equals 1200
     And jsonLd.image.height equals 630
     And jsonLd.primaryImageOfPage["@type"] equals "ImageObject"
-    And jsonLd.primaryImageOfPage.url equals the ogImage URL
+    And jsonLd.primaryImageOfPage.url equals "https://res.cloudinary.com/example/image/upload/v1/test.jpg"
     And jsonLd.primaryImageOfPage.width equals 1200
     And jsonLd.primaryImageOfPage.height equals 630
 
   Scenario: BlogPosting without image emits neither image nor primaryImageOfPage
     Given Head is rendered with type "BlogPosting"
     And ogImage is undefined
-    And createdAt is set
+    And createdAt is "2024-01-01"
     When the primary JSON-LD script tag is parsed
     Then jsonLd["@type"] equals "BlogPosting"
     And jsonLd.image is undefined
@@ -64,10 +65,10 @@ Feature: BlogPosting ImageObject in JSON-LD
 
   Scenario: Non-BlogPosting type with image emits bare string image, no primaryImageOfPage
     Given Head is rendered with type "WebSite"
-    And ogImage is a valid URL string
+    And ogImage is "https://res.cloudinary.com/example/image/upload/v1/test.jpg"
     When the primary JSON-LD script tag is parsed
     Then jsonLd["@type"] equals "WebSite"
-    And jsonLd.image equals the ogImage URL string
+    And jsonLd.image equals "https://res.cloudinary.com/example/image/upload/v1/test.jpg"
     And typeof jsonLd.image equals "string"
     And jsonLd.primaryImageOfPage is undefined
 
@@ -80,7 +81,7 @@ Feature: BlogPosting ImageObject in JSON-LD
 
   Scenario: BlogPosting ImageObject does not affect other BlogPosting fields
     Given Head is rendered with type "BlogPosting"
-    And ogImage is a valid URL string
+    And ogImage is "https://res.cloudinary.com/example/image/upload/v1/test.jpg"
     And createdAt is "2024-03-01"
     And updatedAt is "2024-06-01"
     When the primary JSON-LD script tag is parsed
@@ -104,35 +105,11 @@ interface ImageObject {
 
 The `ImageObject` shape is identical for both `image` and `primaryImageOfPage`. Dimensions are compile-time constants, not derived at runtime.
 
-**Spread ordering in `Head.astro`** (last-write-wins):
-
-```typescript
-// Outer spread — bare string for non-BlogPosting types (keep as-is)
-...(ogImageUrl ? { image: ogImageUrl } : {}),
-// BlogPosting spread — overwrites image with ImageObject, adds primaryImageOfPage
-...(type === BLOGPOSTING
-    ? {
-          ...(ogImageUrl
-              ? {
-                    image: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
-                    primaryImageOfPage: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
-                }
-              : {}),
-          dateModified: updatedAt ?? createdAt,
-          datePublished: createdAt,
-          mainEntityOfPage: { '@id': canonical, '@type': WEBPAGE },
-      }
-    : {}),
-```
-
-For `BlogPosting` + `ogImageUrl`: inner spread overwrites `image` (bare string → `ImageObject`) and adds `primaryImageOfPage`.
-For non-`BlogPosting`: inner spread absent; outer bare-string `image` survives.
-
 ---
 
 ## Dependencies
 
-- [seo/spec.md](./spec.md) — parent SEO spec; defines the BlogPosting schema structure and states `image` is included when `ogImage` is provided
+- [seo/spec.md](./spec.md) — parent SEO spec; defines the BlogPosting schema structure and states `image` is included when `ogImage` is provided. **Must be updated** to note that `BlogPosting.image` is an `ImageObject` while all other types retain a bare URL string.
 - [images/spec.md](../images/spec.md) — confirms 1200×630 as the og:image dimension standard and that `Head.astro` must not call Cloudinary
 
 ---
@@ -158,3 +135,4 @@ For non-`BlogPosting`: inner spread absent; outer bare-string `image` survives.
 | Date | Change |
 |------|--------|
 | 2026-05-18 | Initial draft |
+| 2026-05-18 | Critic fixes: concrete URL literals in scenarios, remove implementation spread from Data Model, add seo/spec.md update to scope |
