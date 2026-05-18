@@ -74,4 +74,5 @@ export const economyTag: LocalTag = {
         fi: 'Talous toimivaksi tekoälyn aika\u00ADkaudella',
         sv: 'Ekonomi som fungerar i AI-erans Finland',
     },
+    updatedDate: '2026-05-15',
 }

@@ -50,4 +50,5 @@ export const cultureAndEducationTag: LocalTag = {
         fi: 'Sivistyk\u00ADsestä ja kulttuuri\u00ADpalveluista',
         sv: 'Bildning, kultur och fritids\u00ADtjänster',
     },
+    updatedDate: '2026-05-15',
 }

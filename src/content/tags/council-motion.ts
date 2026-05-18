@@ -50,4 +50,5 @@ export const councilMotionTag: LocalTag = {
         fi: 'Valtuusto\u00ADaloite – Kirkko\u00ADnummen valtuusto',
         sv: 'Full\u00ADmäktige\u00ADinitiativ – kommun\u00ADfull\u00ADmäktige',
     },
+    updatedDate: '2026-05-15',
 }

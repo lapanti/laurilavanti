@@ -86,4 +86,5 @@ export const privacyTag: LocalTag = {
         fi: 'Yksityisyy\u00ADden\u00ADsuoja digitaali\u00ADsessa maailmassa',
         sv: 'Integritets\u00ADskydd i den digitala världen',
     },
+    updatedDate: '2026-05-15',
 }

@@ -50,4 +50,5 @@ export const coopElectionsTag: LocalTag = {
         fi: 'Osuus\u00ADkauppa\u00ADvaalit – S-ryhmän demokratia',
         sv: 'Ko\u00ADoperativ\u00ADval – S-gruppens demokrati',
     },
+    updatedDate: '2026-05-15',
 }

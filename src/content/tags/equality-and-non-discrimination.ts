@@ -98,4 +98,5 @@ export const equalityAndNonDiscriminationTag: LocalTag = {
         fi: 'Tasa-arvosta ja yhden\u00ADvertaisuu\u00ADdesta',
         sv: 'Om jämlikhet och icke-diskri\u00ADminering',
     },
+    updatedDate: '2026-05-15',
 }

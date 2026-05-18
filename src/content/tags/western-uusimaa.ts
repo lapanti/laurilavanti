@@ -50,4 +50,5 @@ export const westernUusimaaTag: LocalTag = {
         fi: 'Länsi-Uusimaa – hyvinvointi\u00ADalue\u00ADpolitiikkaa',
         sv: 'Västra Nyland – välfärd och region\u00ADpolitik',
     },
+    updatedDate: '2026-05-15',
 }

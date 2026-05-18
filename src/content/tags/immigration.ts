@@ -50,4 +50,5 @@ export const immigrationTag: LocalTag = {
         fi: 'Maahan\u00ADmuutto – faktat ja politiikka',
         sv: 'Immigration och integrations\u00ADpolitik',
     },
+    updatedDate: '2026-05-15',
 }

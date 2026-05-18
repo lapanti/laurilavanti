@@ -50,4 +50,5 @@ export const westRailwayTag: LocalTag = {
         fi: 'Länsirata – Pohjois-Kirkko\u00ADnummen ratayhteys',
         sv: 'Västbanan – järnvägen till Kyrkslätt',
     },
+    updatedDate: '2026-05-15',
 }

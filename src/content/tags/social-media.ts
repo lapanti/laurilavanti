@@ -50,4 +50,5 @@ export const socialMediaTag: LocalTag = {
         fi: 'Sosiaalinen media ja poliittinen työ',
         sv: 'Sociala medier i politik och kommuni\u00ADkation',
     },
+    updatedDate: '2026-05-15',
 }

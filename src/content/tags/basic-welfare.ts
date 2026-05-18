@@ -50,4 +50,5 @@ export const basicWelfareTag: LocalTag = {
         fi: 'Perus\u00ADturvasta ja sosiaali\u00ADturvasta arjessa',
         sv: 'Om grund\u00ADläggande trygghet och socialskydd',
     },
+    updatedDate: '2026-05-15',
 }

@@ -74,4 +74,5 @@ export const learningTag: LocalTag = {
         fi: 'Sivistys saumat\u00ADtomaksi tekoälyn aikana',
         sv: 'Sömlös bildning i AI-erans Finland',
     },
+    updatedDate: '2026-05-15',
 }
