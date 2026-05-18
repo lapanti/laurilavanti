@@ -532,4 +532,94 @@ describe('<Head />', () => {
 
         expect(result).toBeDefined()
     })
+
+    it('should emit ImageObject for image and primaryImageOfPage in BlogPosting JSON-LD when ogImage is set', async () => {
+        const ogImage = 'https://res.cloudinary.com/example/image/upload/v1/test.jpg'
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                ogImage,
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('BlogPosting')
+        expect(jsonLd.image['@type']).toBe('ImageObject')
+        expect(jsonLd.image.url).toBe(ogImage)
+        expect(jsonLd.image.width).toBe(1200)
+        expect(jsonLd.image.height).toBe(630)
+        expect(jsonLd.primaryImageOfPage['@type']).toBe('ImageObject')
+        expect(jsonLd.primaryImageOfPage.url).toBe(ogImage)
+        expect(jsonLd.primaryImageOfPage.width).toBe(1200)
+        expect(jsonLd.primaryImageOfPage.height).toBe(630)
+    })
+
+    it('should not emit image or primaryImageOfPage in BlogPosting JSON-LD when ogImage is absent', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('BlogPosting')
+        expect(jsonLd.image).toBeUndefined()
+        expect(jsonLd.primaryImageOfPage).toBeUndefined()
+    })
+
+    it('should emit bare string image and no primaryImageOfPage for non-BlogPosting type with ogImage', async () => {
+        const ogImage = 'https://res.cloudinary.com/example/image/upload/v1/test.jpg'
+        const result = await renderAstroComponent(Head, {
+            props: {
+                ogImage,
+                title: 'Home',
+                type: 'WebSite',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('WebSite')
+        expect(jsonLd.image).toBe(ogImage)
+        expect(typeof jsonLd.image).toBe('string')
+        expect(jsonLd.primaryImageOfPage).toBeUndefined()
+    })
+
+    it('should not emit image for non-BlogPosting type when ogImage is absent', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'Home',
+                type: 'WebSite',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('WebSite')
+        expect(jsonLd.image).toBeUndefined()
+    })
+
+    it('should not affect datePublished, dateModified, or mainEntityOfPage when BlogPosting has ogImage', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-03-01',
+                ogImage: 'https://res.cloudinary.com/example/image/upload/v1/test.jpg',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+                updatedAt: '2024-06-01',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.datePublished).toBe('2024-03-01')
+        expect(jsonLd.dateModified).toBe('2024-06-01')
+        expect(jsonLd.mainEntityOfPage['@type']).toBe('WebPage')
+    })
 })
