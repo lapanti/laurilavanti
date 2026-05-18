@@ -1,56 +1,64 @@
+import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 
-import { buildPostDateMap, extractPostDate } from './sitemapLastmod'
+import { tags } from '../content/tags'
+import { buildPageDateMap, extractUpdatedDate } from './sitemapLastmod'
 
 const PAGES_DIR = join(fileURLToPath(import.meta.url), '..', '..', 'pages')
 
-describe('extractPostDate', () => {
+describe('extractUpdatedDate', () => {
     it('returns updatedDate when present', () => {
         const content = `---\npublishDate: '2024-01-01'\nupdatedDate: '2024-06-15'\n---`
-        expect(extractPostDate(content)).toBe('2024-06-15')
+        expect(extractUpdatedDate(content)).toBe('2024-06-15')
     })
 
-    it('falls back to publishDate when updatedDate absent', () => {
+    it('returns undefined when updatedDate absent', () => {
         const content = `---\npublishDate: '2024-01-01'\n---`
-        expect(extractPostDate(content)).toBe('2024-01-01')
-    })
-
-    it('returns undefined when neither date present', () => {
-        const content = `---\ntitle: 'No dates'\n---`
-        expect(extractPostDate(content)).toBeUndefined()
+        expect(extractUpdatedDate(content)).toBeUndefined()
     })
 
     it('handles dates without quotes', () => {
-        const content = `---\npublishDate: 2024-03-20\n---`
-        expect(extractPostDate(content)).toBe('2024-03-20')
+        const content = `---\nupdatedDate: 2024-03-20\n---`
+        expect(extractUpdatedDate(content)).toBe('2024-03-20')
     })
 })
 
-describe('buildPostDateMap', () => {
-    it('returns at least one entry', () => {
-        const map = buildPostDateMap(PAGES_DIR)
-        expect(map.size).toBeGreaterThan(0)
+describe('buildPageDateMap', () => {
+    const map = buildPageDateMap({ pagesDir: PAGES_DIR, tags })
+
+    it('maps a sample of known MDX pages', () => {
+        expect(map.get('/fi/about/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(map.get('/en/blog/1/home-care-allowance-supplement/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(map.get('/sv/newsletter/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
     })
 
-    it('keys are post URL paths matching /{lang}/blog/{id}/{slug}/', () => {
-        const map = buildPostDateMap(PAGES_DIR)
-        for (const key of map.keys()) {
-            expect(key).toMatch(/^\/(fi|sv|en)\/blog\/\d+\/[^/]+\/$/)
-        }
-    })
-
-    it('values are YYYY-MM-DD dates', () => {
-        const map = buildPostDateMap(PAGES_DIR)
+    it('every map value is a YYYY-MM-DD date', () => {
         for (const value of map.values()) {
             expect(value).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         }
     })
 
-    it('returns updatedDate over publishDate for posts that have both', () => {
-        const map = buildPostDateMap(PAGES_DIR)
-        // At least one post should have an updatedDate — confirm a value exists
-        expect(map.size).toBeGreaterThan(0)
+    it('maps every tag under all three locale category URLs', () => {
+        for (const tag of tags) {
+            for (const lang of ['fi', 'sv', 'en']) {
+                const url = `/${lang}/category/${tag.id}/`
+                expect(map.get(url)).toBe(tag.updatedDate)
+            }
+        }
+    })
+
+    it('throws when an MDX page lacks updatedDate', () => {
+        const tmp = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-'))
+        try {
+            const nested = join(tmp, 'fi', 'broken')
+            mkdirSync(nested, { recursive: true })
+            writeFileSync(join(nested, 'index.mdx'), `---\ntitle: 'No date'\n---\n`)
+            expect(() => buildPageDateMap({ pagesDir: tmp, tags: [] })).toThrow(/missing required updatedDate/)
+        } finally {
+            rmSync(tmp, { force: true, recursive: true })
+        }
     })
 })
