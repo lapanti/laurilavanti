@@ -10,7 +10,7 @@ interface MdxPost {
     slug: string
     tags: string[]
     title: string
-    updatedDate?: string
+    updatedDate: string
 }
 
 type MdxPostWithUrl = MdxPost & { url: string }
