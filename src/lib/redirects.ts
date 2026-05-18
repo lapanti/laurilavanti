@@ -23,7 +23,7 @@ export const redirects: Record<string, string> = {
     '/blogi/kotihoidon-tuen-kuntalisa/': '/fi/blog/1/kotihoidon-tuen-kuntalisa/',
     '/blogi/koulutus-on-kunnan-tarkein-tehtava/': '/fi/blog/37/koulutus-on-kunnan-tarkein-tehtava/',
     '/blogi/koulutusko-erityissuojelussa/': '/fi/blog/27/koulutusko-erityissuojelussa/',
-    '/blogi/kuka-paattaa-mista-puhumma/': '/fi/blog/43/kuka-paattaa-mista-puhumma/',
+    '/blogi/kuka-paattaa-mista-puhumma/': '/fi/blog/43/kuka-paattaa-mista-puhumme/',
     '/blogi/kunnan-pitaa-suunnitella-pitkajanteisesti/': '/fi/blog/15/kunnan-pitaa-suunnitella-pitkajanteisesti/',
     '/blogi/kuntavaaleissa-ratkaistaan-arjen-asioita/': '/fi/blog/33/kuntavaaleissa-ratkaistaan-arjen-asioita/',
     '/blogi/kuntavaalit/': '/fi/category/kuntavaalit/',
@@ -116,6 +116,8 @@ export const redirects: Record<string, string> = {
     '/en/category/varhaiskasvatus/': '/en/category/early-childhood-education/',
     '/en/category/yksityisyydensuoja/': '/en/category/privacy/',
     '/fi/blog/25/congratulations-finland/': '/fi/blog/25/onnea-suomi/',
+    // id 43 fi slug typo fix (puhumma → puhumme)
+    '/fi/blog/43/kuka-paattaa-mista-puhumma/': '/fi/blog/43/kuka-paattaa-mista-puhumme/',
     // Issue #1058 — Finnish category URL fixes
     '/fi/category/aluevaalit2022/': '/fi/category/regional-elections-2022/',
     '/fi/category/aluevaalit2025/': '/fi/category/regional-elections-2025/',
