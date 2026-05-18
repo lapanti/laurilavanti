@@ -20,7 +20,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 
   | Type | Extra fields |
   |---|---|
-  | `BlogPosting` | `datePublished`, `dateModified`, `mainEntityOfPage` |
+  | `BlogPosting` | `datePublished`, `dateModified`, `mainEntityOfPage`, `image` (ImageObject), `primaryImageOfPage` (ImageObject) |
   | `CollectionPage` | no extras (base fields only) |
   | `WebSite` | `name`, `sameAs` (all social profiles) |
   | `Person` | `jobTitle` (locale-specific), `description` (locale-specific), `knowsAbout[]`, `memberOf` (PoliticalParty), `sameAs` |
@@ -28,7 +28,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 
 - **Supplemental FAQPage schema:** When a `BlogPosting` page includes a `faq` prop with 2 or more `{q, a}` entries, a second `<script type="application/ld+json">` block is emitted with `@type: FAQPage`. This block coexists alongside the primary `BlogPosting` schema — it does not replace it. The `FAQPAGE` constant is exported from `src/lib/jsonld.ts` but is **not** added to `JSON_LD_TYPES` (which lists only primary page types). The `faq` prop flows from MDX frontmatter → `PostLayout` → `BaseLayout` → `Head`.
 
-- **All schemas always include:** `@context`, `@type`, `author`, `description`, `headline`, `url`, and `image` (if `ogImage` provided)
+- **All schemas always include:** `@context`, `@type`, `author`, `description`, `headline`, `url`, and `image` (if `ogImage` provided). For `BlogPosting`, `image` is an `ImageObject` `{ '@type': 'ImageObject', url, width: 1200, height: 630 }` and `primaryImageOfPage` (same shape) is also emitted. All other types emit `image` as a bare URL string. See [imageobject.md](./imageobject.md).
 
 - **Canonical URL derivation:**
   - `slug === 'index'` → `Astro.site` (site root)
