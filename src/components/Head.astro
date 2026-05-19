@@ -119,8 +119,8 @@ const jsonLd = JSON.stringify({
         ? {
               ...(ogImageUrl
                   ? {
-                        image: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
-                        primaryImageOfPage: { '@type': 'ImageObject', url: ogImageUrl, width: 1200, height: 630 },
+                        image: { '@type': 'ImageObject', height: 630, url: ogImageUrl, width: 1200 },
+                        primaryImageOfPage: { '@type': 'ImageObject', height: 630, url: ogImageUrl, width: 1200 },
                     }
                   : {}),
               dateModified: updatedAt ?? createdAt,
