@@ -51,7 +51,7 @@ export default defineConfig({
 
     integrations: [
         mdx(),
-        icon({ include: { 'fa7-brands': ['*'] } }),
+        icon({ include: { 'fa7-brands': ['*'], 'fa7-solid': ['rss'] } }),
         sitemap({
             filter: (page) =>
                 // Exclude bare /{lang}/blog/{id}/ redirect pages
