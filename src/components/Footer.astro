@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { footerAriaLabel, footerLinks, footerLogoAlt } from '../content/footer'
+import { footerAriaLabel, footerLinks, footerLogoAlt, footerRssAriaLabel } from '../content/footer'
 import { colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../lib/styles'
 import InstagramLink from './footer/InstagramLink.astro'
 import Link from './footer/Link.astro'
@@ -131,6 +131,12 @@ const licenseText: Record<Lang, string> = {
                         )
                     )
                 }
+                <Link
+                    ariaLabel={footerRssAriaLabel[lang]}
+                    icon="fa7-solid:rss"
+                    title="RSS"
+                    url={`/${lang}/rss.xml`}
+                />
             </ul>
         </div>
         <p class="license">
