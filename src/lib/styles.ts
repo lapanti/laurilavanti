@@ -77,6 +77,7 @@ export const colors = {
     moss: 'rgb(90, 94, 0)' as const,
     peach: 'rgb(248, 207, 169)' as const,
     regionalPurple: '#865C97' as const,
+    rss: '#f26522' as const,
     sand: 'rgb(214, 210, 196)' as const,
     sky: '#bbdde6' as const,
     threads: 'rgb(0, 0, 0)' as const,
