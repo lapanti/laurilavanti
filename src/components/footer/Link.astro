@@ -14,26 +14,26 @@ interface Props {
 const { ariaLabel, icon, title, url } = Astro.props
 
 const iconToHoverColor = (icon?: string): string | undefined => {
-    if (icon === 'bluesky') {
+    if (icon === 'fa7-brands:bluesky') {
         return colors.bluesky
     }
-    if (icon === 'facebook') {
+    if (icon === 'fa7-brands:facebook') {
         return colors.facebook
     }
-    if (icon === 'instagram') {
-        return colors.instagramGradient
-    }
-    if (icon === 'linkedin') {
+    if (icon === 'fa7-brands:linkedin') {
         return colors.linkedin
     }
-    if (icon === 'mastodon') {
+    if (icon === 'fa7-brands:mastodon') {
         return colors.mastodon
     }
-    if (icon === 'threads') {
+    if (icon === 'fa7-brands:threads') {
         return colors.threads
     }
-    if (icon === 'tiktok') {
+    if (icon === 'fa7-brands:tiktok') {
         return undefined
+    }
+    if (icon === 'fa7-solid:rss') {
+        return colors.rss
     }
 }
 
@@ -76,6 +76,6 @@ const hoverColor = iconToHoverColor(icon)
 </style>
 <li>
     <a aria-label={ariaLabel} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
-        {icon && <Icon name={`fa7-brands:${icon}`} />}
+        {icon && <Icon name={icon} />}
     </a>
 </li>

@@ -9,7 +9,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Follow us on GitHub (avautuu uudessa välilehdessä)',
-                icon: 'bluesky',
+                icon: 'fa7-brands:bluesky',
                 title: 'Follow us on GitHub',
                 url: 'https://github.com/example',
             },
@@ -22,7 +22,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Follow us on GitHub (avautuu uudessa välilehdessä)',
-                icon: 'facebook',
+                icon: 'fa7-brands:facebook',
                 title: 'Follow us on GitHub',
                 url: 'https://github.com/example',
             },
@@ -35,7 +35,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'My GitHub (avautuu uudessa välilehdessä)',
-                icon: 'threads',
+                icon: 'fa7-brands:threads',
                 title: 'My GitHub',
                 url: 'https://github.com/myprofile',
             },
@@ -49,7 +49,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel,
-                icon: 'linkedin',
+                icon: 'fa7-brands:linkedin',
                 title: 'Follow on LinkedIn',
                 url: 'https://linkedin.com/example',
             },
@@ -62,7 +62,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Visit my Mastodon profile (avautuu uudessa välilehdessä)',
-                icon: 'mastodon',
+                icon: 'fa7-brands:mastodon',
                 title: 'Visit my Mastodon profile',
                 url: 'https://mastodon.social/example',
             },
@@ -75,7 +75,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Bluesky (avautuu uudessa välilehdessä)',
-                icon: 'bluesky',
+                icon: 'fa7-brands:bluesky',
                 title: 'Bluesky',
                 url: 'https://bsky.app/example',
             },
@@ -88,7 +88,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Instagram (avautuu uudessa välilehdessä)',
-                icon: 'instagram',
+                icon: 'fa7-brands:instagram',
                 title: 'Instagram',
                 url: 'https://instagram.com/example',
             },
@@ -101,7 +101,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Instagram (avautuu uudessa välilehdessä)',
-                icon: 'instagram',
+                icon: 'fa7-brands:instagram',
                 title: 'Instagram',
                 url: 'https://instagram.com/example',
             },
@@ -127,7 +127,7 @@ describe('<Link />', () => {
         const result = await renderAstroComponent(Link, {
             props: {
                 ariaLabel: 'Facebook (avautuu uudessa välilehdessä)',
-                icon: 'facebook',
+                icon: 'fa7-brands:facebook',
                 title: 'Facebook',
                 url: 'https://facebook.com/example',
             },
@@ -136,19 +136,25 @@ describe('<Link />', () => {
         expect(result.querySelector('svg')).toBeDefined()
     })
 
-    it.each([['bluesky'], ['facebook'], ['instagram'], ['linkedin'], ['mastodon'], ['threads'], ['tiktok']])(
-        'should support icon for %s',
-        async (icon) => {
-            const result = await renderAstroComponent(Link, {
-                props: {
-                    ariaLabel: `Follow on ${icon} (avautuu uudessa välilehdessä)`,
-                    icon,
-                    title: `Follow on ${icon}`,
-                    url: `https://${icon}.com/example`,
-                },
-            })
+    it.each([
+        ['fa7-brands:bluesky'],
+        ['fa7-brands:facebook'],
+        ['fa7-brands:instagram'],
+        ['fa7-brands:linkedin'],
+        ['fa7-brands:mastodon'],
+        ['fa7-brands:threads'],
+        ['fa7-brands:tiktok'],
+        ['fa7-solid:rss'],
+    ])('should support icon for %s', async (icon) => {
+        const result = await renderAstroComponent(Link, {
+            props: {
+                ariaLabel: `Follow on ${icon} (avautuu uudessa välilehdessä)`,
+                icon,
+                title: `Follow on ${icon}`,
+                url: `https://example.com/${icon}`,
+            },
+        })
 
-            expect(getByRole(result, 'link')).toBeDefined()
-        }
-    )
+        expect(getByRole(result, 'link')).toBeDefined()
+    })
 })
