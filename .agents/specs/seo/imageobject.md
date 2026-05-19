@@ -97,9 +97,9 @@ Feature: BlogPosting ImageObject in JSON-LD
 ```typescript
 interface ImageObject {
   '@type': 'ImageObject'
+  height: 630       // hard-coded — og:image is always 630px tall
   url: string       // ogImageUrl value, unchanged
   width: 1200       // hard-coded — og:image is always 1200px wide
-  height: 630       // hard-coded — og:image is always 630px tall
 }
 ```
 
