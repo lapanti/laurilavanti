@@ -20,7 +20,7 @@ export const FRESHNESS_STALE_UPDATE_DAYS = 180
 
 export interface StalePost {
     slug: string
-    lang: string
+    lang: 'en' | 'fi' | 'sv'
     publishDate: string
     updatedDate: string | null
     reason: 'no-updated-date' | 'updated-date-stale'
@@ -36,7 +36,7 @@ export function checkFreshness(file: string, today: Date): StalePost | null {
     const publishDateStr = fmField(frontmatter, 'publishDate')
     const updatedDateStr = fmField(frontmatter, 'updatedDate')
     const slug = fmField(frontmatter, 'slug') ?? file
-    const lang = fmField(frontmatter, 'lang') ?? '?'
+    const lang = (fmField(frontmatter, 'lang') ?? 'fi') as 'en' | 'fi' | 'sv'
 
     if (!publishDateStr) return null
 
