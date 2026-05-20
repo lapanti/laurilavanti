@@ -134,3 +134,9 @@ Manual steps:
    - Update PR description if needed: `gh pr edit`
    - Wait for the PR checks to complete in CI; if the e2e check fails, inspect the Playwright report, identify what broke, and fix it in a follow-up commit
 6. **Sign all commits with GPG** — if the key is locked, ask the user to unlock it before committing
+
+---
+
+## Content Freshness Policy
+
+Posts are considered stale under two rules: **Case A** — `publishDate` is more than 90 days ago and the post has no `updatedDate` (this is also a hard CI error enforced by `scripts/checks/mdx-deep.ts`); **Case B** — `updatedDate` is more than 180 days ago. Run `npm run check:freshness` to audit locally. A weekly GitHub Actions workflow (`freshness.yml`) runs the same audit and opens or updates a single tracking issue ("Freshness audit: stale posts") listing posts that need a refresh.
