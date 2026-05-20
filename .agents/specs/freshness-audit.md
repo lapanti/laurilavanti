@@ -2,7 +2,7 @@
 
 > **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
 > **Status**: `Draft`
-> **Last updated**: 2026-05-19
+> **Last updated**: 2026-05-20
 
 ---
 
@@ -52,7 +52,8 @@ Feature: Freshness audit script
     And the exit code is 1
 
   Scenario: Post with updatedDate older than 180 days is flagged
-    Given an MDX blog post with updatedDate 200 days ago
+    Given an MDX blog post with any publishDate
+    And updatedDate 200 days ago
     When I run `npm run check:freshness`
     Then the post slug appears in stdout output
     And the exit code is 1
@@ -64,8 +65,8 @@ Feature: Freshness audit script
     Then the post does not appear in stdout output
 
   Scenario: No stale posts exist
+    Given no posts match either staleness condition
     When I run `npm run check:freshness`
-    And no posts match either staleness condition
     Then stdout contains a "no stale posts" message
     And the exit code is 0
 
@@ -79,14 +80,14 @@ Feature: Weekly GitHub Actions tracking issue
   Scenario: Stale posts found on weekly run
     Given the freshness workflow runs on schedule
     And `npm run check:freshness` exits 1
-    Then a GitHub issue is opened or updated with title "Freshness audit: stale posts [YYYY-WW]"
-    And the issue body lists all stale posts
+    Then a GitHub issue with title "Freshness audit: stale posts" is created if it does not exist
+    Or the existing open issue with that title is updated with the current stale post list
 
   Scenario: No stale posts on weekly run
     Given the freshness workflow runs on schedule
     And `npm run check:freshness` exits 0
-    Then no issue is opened
-    And any existing tracking issue is closed (if open)
+    Then no new issue is opened
+    And any existing open issue titled "Freshness audit: stale posts" is closed with a comment
 
 Feature: Policy documentation
 
@@ -107,7 +108,7 @@ interface StalePost {
     publishDate: string       // ISO date, e.g. '2021-02-04'
     updatedDate: string | null
     reason: 'no-updated-date' | 'updated-date-stale'
-    ageDays: number           // days since publishDate (Case A) or updatedDate (Case B)
+    ageDays: number           // days since publishDate for Case A; days since updatedDate for Case B
 }
 ```
 
@@ -145,3 +146,4 @@ export const FRESHNESS_STALE_UPDATE_DAYS = 180  // Case B threshold
 | Date | Change |
 |------|--------|
 | 2026-05-19 | Initial draft |
+| 2026-05-20 | Fix Gherkin ordering; clarify Case B Given; resolve GH issue strategy (single persistent issue); clarify ageDays semantics |
