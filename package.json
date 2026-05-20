@@ -22,6 +22,7 @@
     "validate-translations": "node scripts/validate-translations.mjs",
     "validate-slugs": "node scripts/validate-slugs.mjs",
     "audit:redirects": "node --experimental-strip-types scripts/checks/redirects.mjs",
+    "check:freshness": "node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages -name '*.mdx')",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
