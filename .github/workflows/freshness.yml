@@ -21,14 +21,20 @@ jobs:
       - name: Run freshness audit
         id: audit
         run: |
-          OUTPUT=$(node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages -name '*.mdx') 2>&1) || true
+          set +e
+          OUTPUT=$(node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages -name '*.mdx') 2>&1)
+          EXIT_CODE=$?
+          set -e
           echo "output<<EOF" >> "$GITHUB_OUTPUT"
           echo "$OUTPUT" >> "$GITHUB_OUTPUT"
           echo "EOF" >> "$GITHUB_OUTPUT"
-          if echo "$OUTPUT" | grep -q "^No stale posts found"; then
+          if [ "$EXIT_CODE" -eq 0 ]; then
             echo "stale=false" >> "$GITHUB_OUTPUT"
-          else
+          elif [ "$EXIT_CODE" -eq 1 ]; then
             echo "stale=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Script exited with unexpected code $EXIT_CODE — aborting."
+            exit "$EXIT_CODE"
           fi
 
       - name: Find existing tracking issue
