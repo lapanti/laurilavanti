@@ -8,6 +8,7 @@ import { digitalisationTag } from './tags/digitalisation'
 import { earlyChildhoodEducationTag } from './tags/early-childhood-education'
 import { economyTag } from './tags/economy'
 import { educationTag } from './tags/education'
+import { greenPartyTag } from './tags/green-party'
 import { equalityAndNonDiscriminationTag } from './tags/equality-and-non-discrimination'
 import { freedomTag } from './tags/freedom'
 import { healthAndSocialReformTag } from './tags/health-and-social-reform'
@@ -16,6 +17,7 @@ import { infrastructureTag } from './tags/infrastructure'
 import { kirkkonummiTag } from './tags/kirkkonummi'
 import { learningTag } from './tags/learning'
 import { municipalElections2025Tag } from './tags/municipal-elections-2025'
+import { nationalPoliticsTag } from './tags/national-politics'
 import { natureTag } from './tags/nature'
 import { privacyTag } from './tags/privacy'
 import { regionalElections2022Tag } from './tags/regional-elections-2022'
@@ -58,6 +60,8 @@ export const tags = [
     earlyChildhoodEducationTag,
     privacyTag,
     natureTag,
+    greenPartyTag,
+    nationalPoliticsTag,
 ]
 
 export function getTagName(id: string, lang: 'en' | 'fi' | 'sv' = 'fi'): string | undefined {
