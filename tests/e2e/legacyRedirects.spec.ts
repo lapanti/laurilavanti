@@ -14,13 +14,11 @@ const blogiTagRedirects: Array<[string, string]> = [
     ['/blogi/yksityisyydensuoja/', '/fi/category/privacy/'],
     ['/blogi/kirkkonummi/', '/fi/category/kirkkonummi/'],
     ['/blogi/digitalisaatio/', '/fi/category/digitalisation/'],
-    ['/blogi/kuntavaalit/', '/fi/category/kuntavaalit/'],
     ['/blogi/lansi-uusimaa/', '/fi/category/western-uusimaa/'],
     ['/blogi/tekoaly/', '/fi/category/artificial-intelligence/'],
     ['/blogi/liikenne/', '/fi/category/transportation/'],
     ['/blogi/aluevaalit2025/', '/fi/category/regional-elections-2025/'],
     ['/blogi/osuuskauppavaalit/', '/fi/category/coop-elections/'],
-    ['/blogi/aluevaalit/', '/fi/category/aluevaalit/'],
     ['/blogi/aluevaalit2022/', '/fi/category/regional-elections-2022/'],
     ['/blogi/soteuudistus/', '/fi/category/health-and-social-reform/'],
 ]
