@@ -1,6 +1,7 @@
 export interface CvRow {
     company?: string
     degree?: string
+    description?: string[]
     duty?: string
     endYear?: number
     location?: string

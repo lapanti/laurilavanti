@@ -5,6 +5,7 @@ interface Props {
     duty?: string
     title?: string
     degree?: string
+    description?: string[]
     organization?: string
     company?: string
     school?: string
@@ -13,7 +14,7 @@ interface Props {
     endYear?: number
 }
 
-const { duty, title, degree, organization, company, school, location, startYear, endYear } = Astro.props
+const { duty, title, degree, description, organization, company, school, location, startYear, endYear } = Astro.props
 
 const years = startYear === endYear ? `${startYear}` : `${startYear}–${endYear ?? ''}`
 ---
@@ -26,4 +27,9 @@ const years = startYear === endYear ? `${startYear}` : `${startYear}–${endYear
         {organization || company || school || ''}{location ? ` (${location}) ` : ' '}
         {years}
     </i>
+    {description && (
+        <ul>
+            {description.map((item) => <li>{item}</li>)}
+        </ul>
+    )}
 </LI>
