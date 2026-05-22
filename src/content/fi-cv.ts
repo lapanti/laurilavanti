@@ -1,20 +1,19 @@
 export const fiduciariesTitle = 'Luottamustoimet'
 export const fiduciaries = [
     {
-        description: [
-            'Vihreiden valtuustoryhmän puheenjohtaja — vastuussa ryhmän kantojen koordinoinnista ja työn johtamisesta valtuustossa.',
-            'Yhdyskuntakehityslautakunnan jäsen — osallistun kunnan maankäytön ja kaavoituksen päätöksiin.',
-        ],
+        description: ['Valtuustossa päätämme kunnan strategian, talousarvion sekä suuremmat yksittäiset päätökset.'],
         duty: 'Kunnanvaltuutettu',
         organization: 'Kirkkonummen kunta',
         startYear: 2025,
     },
     {
+        description: ['Vastuussa ryhmän kantojen koordinoinnista ja työn johtamisesta valtuustossa.'],
         duty: 'Vihreän valtuustoryhmän puheenjohtaja',
         organization: 'Kirkkonummen kunta',
         startYear: 2025,
     },
     {
+        description: ['Kuntakehityslautakunta päättää kunnan maankäytöstä ja kaavoituksesta.'],
         duty: 'Kuntakehityslautakunnan jäsen',
         organization: 'Kirkkonummen kunta',
         startYear: 2025,
@@ -149,7 +148,7 @@ export const jobExperiences = [
         ],
         endYear: 2019,
         location: 'Helsinki',
-        startYear: 2018,
+        startYear: 2019,
         title: 'Software developer',
     },
     {
@@ -160,9 +159,9 @@ export const jobExperiences = [
             'Tein kehittäjärekrytointia sekä Solinorille että asiakasorganisaatiolle — haastattelin kandidaatteja ja muotoilin palkkauskriteereejä.',
             'Osallistuin Solinorin yritystason toimintatapojen kehittämiseen.',
         ],
-        endYear: 2018,
+        endYear: 2019,
         location: 'Helsinki',
-        startYear: 2015,
+        startYear: 2018,
         title: 'Software developer',
     },
     {

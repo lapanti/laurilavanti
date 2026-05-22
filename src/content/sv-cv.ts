@@ -1,20 +1,19 @@
 export const fiduciariesTitle = 'Förtroendeuppdrag'
 export const fiduciaries = [
     {
-        description: [
-            'Ordförande för Gröna fullmäktigegruppen — ansvarig för att samordna gruppens ställningstaganden och leda dess arbete i fullmäktige.',
-            'Ledamot i kommunutvecklingsnämnden — deltar i kommunens beslut om markanvändning och planläggning.',
-        ],
+        description: ['I fullmäktige beslutar vi om kommunstrategin, budgeten och större enskilda beslut.'],
         duty: 'Kommunfullmäktigeledamot',
         organization: 'Kyrkslätt kommun',
         startYear: 2025,
     },
     {
+        description: ['Ansvarig för att samordna gruppens ställningstaganden och leda dess arbete i fullmäktige.'],
         duty: 'Ordförande för Gröna fullmäktigegruppen',
         organization: 'Kyrkslätt kommun',
         startYear: 2025,
     },
     {
+        description: ['Kommunutvecklingsnämnden beslutar om markanvändning och planläggning i kommunen.'],
         duty: 'Ledamot i kommunutvecklingsnämnden',
         organization: 'Kyrkslätt kommun',
         startYear: 2025,
@@ -149,7 +148,7 @@ export const jobExperiences = [
         ],
         endYear: 2019,
         location: 'Helsingfors',
-        startYear: 2018,
+        startYear: 2019,
         title: 'Software developer',
     },
     {
@@ -160,7 +159,7 @@ export const jobExperiences = [
             'Genomförde utvecklarrekrytering för både Solinor och kundorganisationen — intervjuade kandidater och formade anställningskriterier.',
             'Bidrog till Solinors företagsövergripande förbättringar av arbetssätten.',
         ],
-        endYear: 2018,
+        endYear: 2019,
         location: 'Helsingfors',
         startYear: 2015,
         title: 'Software developer',
