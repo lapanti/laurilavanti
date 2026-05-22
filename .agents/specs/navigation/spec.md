@@ -16,7 +16,7 @@ The header navigation provides the primary wayfinding for all three locales. It 
       title: string       // aria-label for the link
   }
   ```
-- **Component tree:** `BaseLayout` → `Header` → `SkipLinks` + `MobileMenu` + `DesktopMenu` → `MainNavigationLink` + `NavigationLink`
+- **Component tree:** `BaseLayout` → `src/components/Header.astro` → `src/components/header/SkipLinks.astro` + `src/components/header/MobileMenu.astro` + `src/components/header/DesktopMenu.astro` → `MainNavigationLink` + `NavigationLink`
 - **Responsive split:** MobileMenu is visible below 1200px; DesktopMenu is visible at 1200px+. Both are always in the DOM — CSS `display:none` hides the inactive one. This is why e2e selectors use `.nth(0)` (mobile) vs `.nth(1)` (desktop).
 - **Mobile menu toggle:** A CSS-only hamburger — `<input type="checkbox">` drives the open/closed state via sibling selectors. No JS.
 - **Active link state:** `aria-current="page"` is set at build time:
