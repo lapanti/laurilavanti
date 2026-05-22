@@ -1,0 +1,17 @@
+---
+interface Props {
+    company?: string
+    endYear?: number
+    location?: string
+    organization?: string
+    school?: string
+    startYear: number
+}
+
+const { company, endYear, location, organization, school, startYear } = Astro.props
+
+const entity = organization || company || school || ''
+const years = startYear === endYear ? `${startYear}` : `${startYear}–${endYear ?? ''}`
+---
+
+<i>{entity}{location ? ` (${location}) ` : ' '}{years}</i>
