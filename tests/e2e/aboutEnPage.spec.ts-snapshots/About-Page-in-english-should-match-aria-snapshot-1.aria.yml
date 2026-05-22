@@ -56,31 +56,111 @@
       - text: .
     - heading "Civic roles" [level=2]
     - list:
-      - listitem: /» Municipal councillor Kirkkonummi municipality \d+–/
-      - listitem: /» Chair of the Green council group Kirkkonummi municipality \d+–/
-      - listitem: /» Member of the municipal development committee Kirkkonummi municipality \d+–/
-      - listitem: /» Chair Greens of Kirkkonummi \d+/
+      - listitem:
+        - text: /» Municipal councillor Kirkkonummi municipality \d+–/
+        - list:
+          - listitem: » In the council, we decide on the municipality strategy, budget and larger individual decisions.
+      - listitem:
+        - text: /» Chair of the Green council group Kirkkonummi municipality \d+–/
+        - list:
+          - listitem: » Responsible for coordinating the group's positions and leading its work in the council.
+      - listitem:
+        - text: /» Member of the municipal development committee Kirkkonummi municipality \d+–/
+        - list:
+          - listitem: » The municipal development committee decides on land use and zoning in the municipality.
+      - listitem:
+        - text: /» Chair Greens of Kirkkonummi \d+/
+        - list:
+          - listitem: /» Led Kirkkonummi Greens through the \d+ municipal elections — consolidating the party's position as the third-largest party in Kirkkonummi with significant new membership\./
+          - listitem: » Built and managed the full candidate slate; worked directly with the campaign manager on strategy and execution.
+          - listitem: » Improved organisation and ways of working to be less dependant on specific people.
       - listitem: /» Deputy member of the premises services committee Kirkkonummi municipality \d+–\d+/
       - listitem: /» Deputy member of the board Greens of Kirkkonummi \d+–\d+/
       - listitem: /» Deputy member of the board of Western Uusimaa Rescue Services Western Uusimaa Wellbeing Services County \d+–\d+/
       - listitem: /» Deputy member of the Finnish-language education committee Kirkkonummi municipality \d+–\d+/
       - listitem: /» Member of the basic welfare section Kirkkonummi municipality \d+–\d+/
-      - listitem: /» Municipal election captain Information Networks Guild Athene \d+/
-      - listitem: /» Chair of the board Aalto Predators \d+–\d+/
-      - listitem: /» Board member Aalto Predators \d+/
-      - listitem: /» Chair of the youth council board Kirkkonummi municipality \d+/
+      - listitem:
+        - text: /» Municipal election captain Information Networks Guild Athene \d+/
+        - list:
+          - listitem: » First board member at Athene responsible for international students — the role itself was new because the study programme had only just opened to Master's-level international students.
+          - listitem: » Built the guild's internal practices for supporting international students.
+          - listitem: » Coordinated across guilds to align how Aalto's technical study programmes serve international students, not just within Athene.
+      - listitem:
+        - text: /» Chair of the board Aalto Predators \d+–\d+/
+        - list:
+          - listitem: » Took the team from the second to last of the series to university champions during my tenure.
+          - listitem: » Started live-streaming our matches — the stream trended on Reddit and earned one of our commentators an interview on a US morning radio show.
+          - listitem: » Built up recruitment alongside competitive results.
+      - listitem:
+        - text: /» Board member Aalto Predators \d+/
+        - list:
+          - listitem: » Built the team's external communications from scratch — match reports, social media, and the website.
+          - listitem: » Handled board administration and record-keeping as secretary.
+      - listitem:
+        - text: /» Chair of the youth council board Kirkkonummi municipality \d+/
+        - list:
+          - listitem: » Led the board's decision-making, including opening Kirkkonummi's first (and Finland's third) legal graffiti wall.
     - heading "Work experience" [level=2]
     - list:
-      - listitem: /» Lead developer OP \(Helsinki\) \d+–/
-      - listitem: /» Team Lead Verkkokauppa\.com \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Verkkokauppa\.com \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Gofore \(Helsinki\) \d+–\d+/
-      - listitem: /» Software engineer Zalando \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Futurice \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Pulmaton Solutions Oy \(Helsinki\) \d+/
-      - listitem: /» Seasonal trainee Nokia Solutions & Networks \(Espoo\) \d+/
+      - listitem:
+        - text: /» Lead developer OP \(Helsinki\) \d+–/
+        - list:
+          - listitem: "» Own the technical roadmap for the team's services: architecture, key tooling choices, and the trade-offs between time-to-market and long-term maintainability."
+          - listitem: » Lead the team's process for technical decision-making and ways of working — including how we evaluate new technologies (AI/ML tooling, observability, security posture) before adopting them.
+          - listitem: » Drive long-term capability and vision work to keep the team viable as demands shift.
+      - listitem:
+        - text: /» Team Lead Verkkokauppa\.com \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Owned the team's technical direction and architectural decisions.
+          - listitem: » Drove ways-of-working improvements across the wider IT organisation, not only the immediate team.
+          - listitem: "» Led developer recruitment for the team: interviewing, hiring, and onboarding new developers into the webstore codebase and processes."
+      - listitem:
+        - text: /» Software developer Verkkokauppa\.com \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Led the team's process for improving and synchronising the codebase across teams.
+          - listitem: » Acted as the main interface between the developer team and product ownership — translating business intent into delivery decisions and pushing back where engineering trade-offs mattered.
+          - listitem: » Co-owned developer recruitment and onboarding alongside delivery work.
+      - listitem:
+        - text: /» Software developer Gofore \(Helsinki\) \d+/
+        - list:
+          - listitem: » After Gofore bought Solinor, I continued on the same project for a while. Afterwards I switched to a similar project in another industry.
+          - listitem: » Owned frontend technical decisions for the PaaS, balancing customer constraints against long-term maintainability of the platform.
+          - listitem: » Conducted developer recruitment for the customer organisation — interviewing candidates and shaping hiring criteria.
+      - listitem:
+        - text: /» Software developer Solinor \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Consultant on a large Platform-as-a-Service project; for most of the engagement, I was the technical lead on the frontend side, in close collaboration with the backend team and the customer's product owners.
+          - listitem: » Owned frontend technical decisions for the PaaS, balancing customer constraints against long-term maintainability of the platform.
+          - listitem: » Conducted developer recruitment for both Solinor and the customer organisation — interviewing candidates and shaping hiring criteria.
+          - listitem: » Contributed to Solinor's company-wide ways-of-working improvements.
+      - listitem:
+        - text: /» Software engineer Zalando \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Designed and built a graph visualisation and management tool from scratch using React, TypeScript, D3 and PIXI.js — used by domain experts to maintain the fashion ontology powering Zalando's catalogue.
+          - listitem: » Worked in a mixed-skillset agile team and led frontend hiring.
+      - listitem:
+        - text: /» Software developer Futurice \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: "» Final project: tech lead on a two-site project bridging two of the company's branches, with end-to-end responsibility for the technical aspects of the delivery."
+          - listitem: » Active in customer relations throughout — most projects required translating between the customer's intent and the team's delivery.
+      - listitem:
+        - text: /» Software developer Pulmaton Solutions Oy \(Helsinki\) \d+/
+        - list:
+          - listitem: » Software developer on the company's main product — a cloud-hosted financial reporting tool with a Java backend and HTML/JavaScript/CSS frontend.
+      - listitem:
+        - text: /» Seasonal trainee Nokia Solutions & Networks \(Espoo\) \d+/
+        - list:
+          - listitem: » Trainee developer building an internal ticket-management system for product owners in a Scrum-based process — implemented in Python.
     - heading "Education" [level=2]
     - list:
-      - listitem: /» Master of Science \(Tech\.\) in Information Networks Aalto University \(Espoo\) \d+–\d+/
-      - listitem: /» Vocational qualification in data processing Omnia vocational college \(Kirkkonummi\) \d+–\d+/
+      - listitem:
+        - text: /» Master of Science \(Tech\.\) in Information Networks Aalto University \(Espoo\) \d+–\d+/
+        - list:
+          - listitem: "» Extended major in ICT in Business — chosen over a traditional minor to spend more credits on the intersection of technology, business, and decision-making. The programme gave me the toolkit I have used in every role since: rapidly understanding complex systems, mapping how they interact with their environment, and acting as a translation layer between technology and business."
+          - listitem: "» Master's thesis: case study on designing and developing an ontology editor for fashion domain experts — done at Zalando, where I built the tool."
+      - listitem:
+        - text: /» Vocational qualification in data processing Omnia vocational college \(Kirkkonummi\) \d+–\d+/
+        - list:
+          - listitem: » Completed as part of a triple qualification alongside full high school studies and a matriculation examination. Completing three qualifications simultaneously was a deliberate choice — I wanted technical depth alongside the academic path.
+          - listitem: » The vocational track covered information networks and technologies.
       - listitem: /» Finnish matriculation examination Masala upper secondary school \(Kirkkonummi\) \d+–\d+/

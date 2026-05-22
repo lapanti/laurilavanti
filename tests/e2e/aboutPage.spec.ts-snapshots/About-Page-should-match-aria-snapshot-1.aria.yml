@@ -53,31 +53,111 @@
       - text: .
     - heading "Luottamustoimet" [level=2]
     - list:
-      - listitem: /» Kunnanvaltuutettu Kirkkonummen kunta \d+–/
-      - listitem: /» Vihreän valtuustoryhmän puheenjohtaja Kirkkonummen kunta \d+–/
-      - listitem: /» Kuntakehityslautakunnan jäsen Kirkkonummen kunta \d+–/
-      - listitem: /» Puheenjohtaja Kirkkonummen Vihreät \d+/
+      - listitem:
+        - text: /» Kunnanvaltuutettu Kirkkonummen kunta \d+–/
+        - list:
+          - listitem: » Valtuustossa päätämme kunnan strategian, talousarvion sekä suuremmat yksittäiset päätökset.
+      - listitem:
+        - text: /» Vihreän valtuustoryhmän puheenjohtaja Kirkkonummen kunta \d+–/
+        - list:
+          - listitem: » Vastuussa ryhmän kantojen koordinoinnista ja työn johtamisesta valtuustossa.
+      - listitem:
+        - text: /» Kuntakehityslautakunnan jäsen Kirkkonummen kunta \d+–/
+        - list:
+          - listitem: » Kuntakehityslautakunta päättää kunnan maankäytöstä ja kaavoituksesta.
+      - listitem:
+        - text: /» Puheenjohtaja Kirkkonummen Vihreät \d+/
+        - list:
+          - listitem: /» Johdin Kirkkonummen Vihreät läpi vuoden \d+ kuntavaalien — vakiinnuttaen aseman Kirkkonummena kolmanneksi suurimpana puolueena ja saaden merkittävästi uusia jäseniä\./
+          - listitem: » Rakensin ja johdin ehdokaslistaa; tein tiivistä yhteistyötä vaalipäällikön kanssa strategiassa ja toteutuksessa.
+          - listitem: » Kehitin organisaatiota ja toimintatapoja vähemmän riippuvaiseksi yksittäisistä ihmisistä.
       - listitem: /» Toimitilapalvelujen lautakunnan varajäsen Kirkkonummen kunta \d+–\d+/
       - listitem: /» Hallituksen varajäsen Kirkkonummen Vihreät \d+–\d+/
       - listitem: /» Länsi-Uudenmaan pelastuslaitos -liikelaitoksen johtokunnan varajäsen Länsi-Uudenmaan hyvinvointialue \d+–\d+/
       - listitem: /» Suomenkielisen kasvatus- ja koulutuslautakunnan varajäsen Kirkkonummen kunta \d+–\d+/
       - listitem: /» Perusturvajaoston jäsen Kirkkonummen kunta \d+–\d+/
-      - listitem: /» KV-kapteeni Informaatioverkostojen kilta Athene \d+/
-      - listitem: /» Hallituksen puheenjohtaja Aalto Predators \d+–\d+/
-      - listitem: /» Hallituksen jäsen Aalto Predators \d+/
-      - listitem: /» Nuorisovaltuuston hallituksen puheenjohtaja Kirkkonummen kunta \d+/
+      - listitem:
+        - text: /» KV-kapteeni Informaatioverkostojen kilta Athene \d+/
+        - list:
+          - listitem: » Ensimmäinen Athenen hallituksen jäsen, joka vastasi kansainvälisistä opiskelijoista — rooli oli uusi, koska koulutusohjelmamme oli juuri avautunut maisteritason kansainvälisille opiskelijoille.
+          - listitem: » Rakensin killan sisäisiä käytäntöjä kansainvälisten opiskelijoiden tukemiseksi.
+          - listitem: » Koordinoin killtojen välillä Aallon teknisten koulutusohjelmien kansainvälisten palveluiden yhdenmukaistamiseksi, ei pelkästään Athenen sisällä.
+      - listitem:
+        - text: /» Hallituksen puheenjohtaja Aalto Predators \d+–\d+/
+        - list:
+          - listitem: » Johdatin joukkueen sarjan toisiksi viimeiseltä paikalta yliopiston mestaruuteen kauteni aikana.
+          - listitem: » Aloitin otteluiden suoratoiston — lähetys trendasi Redditissä ja johti yhden selostajamme haastatteluun yhdysvaltalaisessa aamuradio-ohjelmassa.
+          - listitem: » Kehitin rekrytointia kilpailullisten tulosten ohella.
+      - listitem:
+        - text: /» Hallituksen jäsen Aalto Predators \d+/
+        - list:
+          - listitem: » Rakensin joukkueen ulkoisen viestinnän tyhjästä — otteluraportit, sosiaalinen media ja nettisivut.
+          - listitem: » Hoidin hallinnon ja pöytäkirjat sihteerinä.
+      - listitem:
+        - text: /» Nuorisovaltuuston hallituksen puheenjohtaja Kirkkonummen kunta \d+/
+        - list:
+          - listitem: » Johdin hallituksen päätöksentekoa, mukaan lukien Kirkkonummen ensimmäisen (ja Suomen kolmannen) laillisen graffitiseinän avaaminen.
     - heading "Työkokemus" [level=2]
     - list:
-      - listitem: /» Lead developer OP \(Helsinki\) \d+–/
-      - listitem: /» Team Lead Verkkokauppa\.com \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Verkkokauppa\.com \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Gofore \(Helsinki\) \d+–\d+/
-      - listitem: /» Software engineer Zalando \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Futurice \(Helsinki\) \d+–\d+/
-      - listitem: /» Software developer Pulmaton Solutions Oy \(Helsinki\) \d+/
-      - listitem: /» Seasonal trainee Nokia Solutions & Networks \(Espoo\) \d+/
+      - listitem:
+        - text: /» Lead developer OP \(Helsinki\) \d+–/
+        - list:
+          - listitem: "» Vastaan tiimin palveluiden teknisestä suunnasta: arkkitehtuurista, keskeisistä teknologiavalinnoista ja markkinoilletulonopeuden sekä pitkän aikavälin ylläpidettävyyden välisistä kompromisseista."
+          - listitem: » Johdan tiimin teknistä päätöksentekoprosessia ja toimintatapoja — mukaan lukien uusien teknologioiden (tekoäly/ML-työkalut, observability, tietoturva) arviointia ennen käyttöönottoa.
+          - listitem: » Rakennan tiimin pitkän aikavälin osaamista ja visiota, jotta tiimi pysyy elinvoimaisena vaatimusten muuttuessa.
+      - listitem:
+        - text: /» Team Lead Verkkokauppa\.com \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Vastasin tiimin teknisestä suunnasta ja arkkitehtuuripäätöksistä.
+          - listitem: » Vein toimintatapojen kehittämistä eteenpäin koko IT-organisaatiossa, en pelkästään omassa tiimissäni.
+          - listitem: "» Johdin tiimin kehittäjärekrytointia: haastattelut, palkkaukset ja uusien kehittäjien perehdytys koodikantaan ja prosesseihin."
+      - listitem:
+        - text: /» Software developer Verkkokauppa\.com \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Johdin tiimin prosessia koodipohjan parantamiseksi ja synkronoimiseksi tiimien välillä.
+          - listitem: » Toimin päärajapintana kehittäjätiimin ja tuotonomistajuuden välillä — muunsin liiketoiminnan tavoitteet toimituspäätöksiksi ja haastoin tilanteita, joissa insinöörikompromissit olivat merkityksellisiä.
+          - listitem: » Vastasin yhdessä muiden kanssa kehittäjärekrytoinnista ja perehdytyksestä kehitystyön ohella.
+      - listitem:
+        - text: /» Software developer Gofore \(Helsinki\) \d+/
+        - list:
+          - listitem: » Goforen ostettua Solinorin jatkoin jonkin aikaa samassa projektissa. Myöhemmin siirryin vastaavaan tehtävään eri teollisuudenalalle.
+          - listitem: » Vastasin PaaS:n frontend-teknologiapäätöksistä, tasapainottaen asiakkaan rajoituksia alustan pitkän aikavälin ylläpidettävyyden kanssa.
+          - listitem: » Tein kehittäjärekrytointia asiakasorganisaatiolle — haastattelin kandidaatteja ja muotoilin palkkauskriteereejä.
+      - listitem:
+        - text: /» Software developer Solinor \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Konsulttina suuressa Platform-as-a-Service -projektissa; suurimman osan toimeksiantoa toimin frontend-puolen teknologiavastaavana tiiviissä yhteistyössä backend-tiimin ja asiakkaan tuoteomistajien kanssa.
+          - listitem: » Vastasin PaaS:n frontend-teknologiapäätöksistä, tasapainottaen asiakkaan rajoituksia alustan pitkän aikavälin ylläpidettävyyden kanssa.
+          - listitem: » Tein kehittäjärekrytointia sekä Solinorille että asiakasorganisaatiolle — haastattelin kandidaatteja ja muotoilin palkkauskriteereejä.
+          - listitem: » Osallistuin Solinorin yritystason toimintatapojen kehittämiseen.
+      - listitem:
+        - text: /» Software engineer Zalando \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: » Suunnittelin ja rakensin tyhjästä graafin visualisointi- ja hallintatyökalun React, TypeScript, D3 ja PIXI.js -teknologioilla — asiantuntijat käyttävät sitä Zalandon katalogia ohjaavan muotiontologian ylläpitoon.
+          - listitem: » Toimin monialaisen ketterän tiimin jäsenenä ja johdin frontend-rekrytointia.
+      - listitem:
+        - text: /» Software developer Futurice \(Helsinki\) \d+–\d+/
+        - list:
+          - listitem: "» Viimeinen projekti: teknologiavastaavana projektissa, joka yhdisti kaksi yrityksen toimipistettä, kokonaisvastuu toimituksen teknisistä näkökulmista."
+          - listitem: » Aktiivinen asiakassuhteissa koko ajan — useimmissa projekteissa tarvittiin asiakkaan tavoitteiden ja tiimin toimituksen välistä tulkkausta.
+      - listitem:
+        - text: /» Software developer Pulmaton Solutions Oy \(Helsinki\) \d+/
+        - list:
+          - listitem: » Ohjelmistokehittäjä yrityksen päätuotteessa — pilvipalveluna toteutetussa talousraportointityökalussa, Java-taustajärjestelmällä ja HTML/JavaScript/CSS-käyttöliittymällä.
+      - listitem:
+        - text: /» Seasonal trainee Nokia Solutions & Networks \(Espoo\) \d+/
+        - list:
+          - listitem: » Harjoittelija rakentamassa sisäistä tikettijärjestelmää tuoteomistajien Scrum-prosessin tueksi — toteutettu Pythonilla.
     - heading "Koulutus" [level=2]
     - list:
-      - listitem: /» Diplomi-insinööri \(informaatioverkostot\) Aalto-yliopisto \(Espoo\) \d+–\d+/
-      - listitem: /» Datanomi Omnia ammattiopisto \(Kirkkonummi\) \d+–\d+/
+      - listitem:
+        - text: /» Diplomi-insinööri \(informaatioverkostot\) Aalto-yliopisto \(Espoo\) \d+–\d+/
+        - list:
+          - listitem: "» Laaja pääaine ICT in business — valittu perinteisen sivuaineen sijaan saadakseni enemmän opintopisteitä teknologian, liiketoiminnan ja päätöksenteon risteyskohtaan. Ohjelma antoi minulle työkalupakin, jota olen käyttänyt jokaisessa roolissa sen jälkeen: monimutkaisten järjestelmien nopea ymmärtäminen, niiden vaikutuksien hahmottaminen ja teknologian sekä liiketoiminnan välinen tulkkaus."
+          - listitem: "» Diplomityö: tapaustutkimus ontologiaeditorin suunnittelusta ja toteutuksesta muotialan asiantuntijoille — tehty Zalandolla, jossa rakensin tutkittavan työkalun."
+      - listitem:
+        - text: /» Datanomi Omnia ammattiopisto \(Kirkkonummi\) \d+–\d+/
+        - list:
+          - listitem: » Suoritettu osana niin kutsuttua kolmoistutkintoa — täysimittainen lukio, ammatillinen perustutkinto ja ylioppilastutkinto samanaikaisesti. Kolmen tutkinnon samanaikainen suorittaminen oli tietoinen valinta — halusin teknistä syvyyttä akateemisen reitin rinnalle.
+          - listitem: » Ammatillinen osuus kattoi tietoverkot ja -teknologiat.
       - listitem: /» Ylioppilas Masalan lukio \(Kirkkonummi\) \d+–\d+/
