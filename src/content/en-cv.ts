@@ -2,26 +2,27 @@ export const fiduciariesTitle = 'Civic roles'
 export const fiduciaries = [
     {
         description: [
-            'Chair of the Greens council group — responsible for coordinating the group\'s positions and leading its work in the council chamber.',
-            'Member of the board of city development — involved in planning and land-use decisions for the municipality.',
+            'In the council, we decide on the municipality strategy, budget and larger individual decisions.',
         ],
         duty: 'Municipal councillor',
         organization: 'Kirkkonummi municipality',
         startYear: 2025,
     },
     {
+        description: ["Responsible for coordinating the group's positions and leading its work in the council."],
         duty: 'Chair of the Green council group',
         organization: 'Kirkkonummi municipality',
         startYear: 2025,
     },
     {
+        description: ['The municipal development committee decides on land use and zoning in the municipality.'],
         duty: 'Member of the municipal development committee',
         organization: 'Kirkkonummi municipality',
         startYear: 2025,
     },
     {
         description: [
-            'Led Kirkkonummi Greens through the 2025 municipal elections — consolidating the party\'s position as the third-largest party in Kirkkonummi with significant new membership.',
+            "Led Kirkkonummi Greens through the 2025 municipal elections — consolidating the party's position as the third-largest party in Kirkkonummi with significant new membership.",
             'Built and managed the full candidate slate; worked directly with the campaign manager on strategy and execution.',
             'Improved organisation and ways of working to be less dependant on specific people.',
         ],
@@ -62,9 +63,9 @@ export const fiduciaries = [
     },
     {
         description: [
-            'First board member at Athene responsible for international students — the role itself was new because the study programme had only just opened to Master\'s-level international students.',
-            'Built the guild\'s internal practices for supporting international students.',
-            'Coordinated across guilds to align how Aalto\'s technical study programmes serve international students, not just within Athene.',
+            "First board member at Athene responsible for international students — the role itself was new because the study programme had only just opened to Master's-level international students.",
+            "Built the guild's internal practices for supporting international students.",
+            "Coordinated across guilds to align how Aalto's technical study programmes serve international students, not just within Athene.",
         ],
         duty: 'Municipal election captain',
         endYear: 2015,
@@ -84,7 +85,7 @@ export const fiduciaries = [
     },
     {
         description: [
-            'Built the team\'s external communications from scratch — match reports, social media, and the website.',
+            "Built the team's external communications from scratch — match reports, social media, and the website.",
             'Handled board administration and record-keeping as secretary.',
         ],
         duty: 'Board member',
@@ -94,7 +95,7 @@ export const fiduciaries = [
     },
     {
         description: [
-            'Led the board\'s decision-making, including opening Kirkkonummi\'s first (and Finland\'s third) legal graffiti wall.',
+            "Led the board's decision-making, including opening Kirkkonummi's first (and Finland's third) legal graffiti wall.",
         ],
         duty: 'Chair of the youth council board',
         endYear: 2010,
@@ -108,8 +109,8 @@ export const jobExperiences = [
     {
         company: 'OP',
         description: [
-            'Own the technical roadmap for the team\'s services: architecture, key tooling choices, and the trade-offs between time-to-market and long-term maintainability.',
-            'Lead the team\'s process for technical decision-making and ways of working — including how we evaluate new technologies (AI/ML tooling, observability, security posture) before adopting them.',
+            "Own the technical roadmap for the team's services: architecture, key tooling choices, and the trade-offs between time-to-market and long-term maintainability.",
+            "Lead the team's process for technical decision-making and ways of working — including how we evaluate new technologies (AI/ML tooling, observability, security posture) before adopting them.",
             'Drive long-term capability and vision work to keep the team viable as demands shift.',
         ],
         location: 'Helsinki',
@@ -119,7 +120,7 @@ export const jobExperiences = [
     {
         company: 'Verkkokauppa.com',
         description: [
-            'Owned the team\'s technical direction and architectural decisions.',
+            "Owned the team's technical direction and architectural decisions.",
             'Drove ways-of-working improvements across the wider IT organisation, not only the immediate team.',
             'Led developer recruitment for the team: interviewing, hiring, and onboarding new developers into the webstore codebase and processes.',
         ],
@@ -131,7 +132,7 @@ export const jobExperiences = [
     {
         company: 'Verkkokauppa.com',
         description: [
-            'Led the team\'s process for improving and synchronising the codebase across teams.',
+            "Led the team's process for improving and synchronising the codebase across teams.",
             'Acted as the main interface between the developer team and product ownership — translating business intent into delivery decisions and pushing back where engineering trade-offs mattered.',
             'Co-owned developer recruitment and onboarding alongside delivery work.',
         ],
@@ -149,18 +150,18 @@ export const jobExperiences = [
         ],
         endYear: 2019,
         location: 'Helsinki',
-        startYear: 2018,
+        startYear: 2019,
         title: 'Software developer',
     },
     {
         company: 'Solinor',
         description: [
-            'Consultant on a large Platform-as-a-Service project; for most of the engagement, I was the technical lead on the frontend side, in close collaboration with the backend team and the customer\'s product owners.',
+            "Consultant on a large Platform-as-a-Service project; for most of the engagement, I was the technical lead on the frontend side, in close collaboration with the backend team and the customer's product owners.",
             'Owned frontend technical decisions for the PaaS, balancing customer constraints against long-term maintainability of the platform.',
             'Conducted developer recruitment for both Solinor and the customer organisation — interviewing candidates and shaping hiring criteria.',
-            'Contributed to Solinor\'s company-wide ways-of-working improvements.',
+            "Contributed to Solinor's company-wide ways-of-working improvements.",
         ],
-        endYear: 2018,
+        endYear: 2019,
         location: 'Helsinki',
         startYear: 2015,
         title: 'Software developer',
@@ -168,7 +169,7 @@ export const jobExperiences = [
     {
         company: 'Zalando',
         description: [
-            'Designed and built a graph visualisation and management tool from scratch using React, TypeScript, D3 and PIXI.js — used by domain experts to maintain the fashion ontology powering Zalando\'s catalogue.',
+            "Designed and built a graph visualisation and management tool from scratch using React, TypeScript, D3 and PIXI.js — used by domain experts to maintain the fashion ontology powering Zalando's catalogue.",
             'Worked in a mixed-skillset agile team and led frontend hiring.',
         ],
         endYear: 2018,
@@ -179,8 +180,8 @@ export const jobExperiences = [
     {
         company: 'Futurice',
         description: [
-            'Final project: tech lead on a two-site project bridging two of the company\'s branches, with end-to-end responsibility for the technical aspects of the delivery.',
-            'Active in customer relations throughout — most projects required translating between the customer\'s intent and the team\'s delivery.',
+            "Final project: tech lead on a two-site project bridging two of the company's branches, with end-to-end responsibility for the technical aspects of the delivery.",
+            "Active in customer relations throughout — most projects required translating between the customer's intent and the team's delivery.",
         ],
         endYear: 2017,
         location: 'Helsinki',
@@ -190,7 +191,7 @@ export const jobExperiences = [
     {
         company: 'Pulmaton Solutions Oy',
         description: [
-            'Software developer on the company\'s main product — a cloud-hosted financial reporting tool with a Java backend and HTML/JavaScript/CSS frontend.',
+            "Software developer on the company's main product — a cloud-hosted financial reporting tool with a Java backend and HTML/JavaScript/CSS frontend.",
         ],
         endYear: 2014,
         location: 'Helsinki',
@@ -215,7 +216,7 @@ export const degrees = [
         degree: 'Master of Science (Tech.) in Information Networks',
         description: [
             'Extended major in ICT in Business — chosen over a traditional minor to spend more credits on the intersection of technology, business, and decision-making. The programme gave me the toolkit I have used in every role since: rapidly understanding complex systems, mapping how they interact with their environment, and acting as a translation layer between technology and business.',
-            'Master\'s thesis: case study on designing and developing an ontology editor for fashion domain experts — done at Zalando, where I built the tool.',
+            "Master's thesis: case study on designing and developing an ontology editor for fashion domain experts — done at Zalando, where I built the tool.",
         ],
         endYear: 2018,
         location: 'Espoo',

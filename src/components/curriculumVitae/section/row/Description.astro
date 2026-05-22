@@ -1,5 +1,4 @@
 ---
-import { sizes } from '../../../../lib/styles'
 import LI from '../../../LI.astro'
 import UL from '../../../UL.astro'
 
@@ -10,6 +9,6 @@ interface Props {
 const { items } = Astro.props
 ---
 
-<UL style={`margin-top: 0.25rem; padding-left: ${sizes[2]}`}>
+<UL style={`margin-top: 0.25rem`}>
     {items.map((item) => <LI>{item}</LI>)}
 </UL>
