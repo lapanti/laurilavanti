@@ -45,9 +45,11 @@ const { alt, caption, image } = Astro.props
         <figure aria-label={caption}>
             <CldImage
                 alt={alt ?? ''}
+                breakpoints={[400, 800, 1200]}
                 crop={{ source: true, type: 'limit' }}
                 height={600}
                 layout="constrained"
+                sizes="(max-width: 640px) 100vw, 800px"
                 src={image}
                 width={800}
             />
