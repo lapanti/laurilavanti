@@ -48,7 +48,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 - **og:image:** Passed in as a pre-computed URL string from the layout. Layouts use `getCldImageUrl` from `astro-cloudinary/helpers` to generate a 1200×630 fill crop. `Head.astro` does not call Cloudinary — it only emits the URL it receives.
 
 - **Title format:** `title === 'Lauri Lavanti' ? title : `${title} | Lauri Lavanti``
-- **Title length:** The final rendered `<title>` must be 50–60 characters inclusive. Measured after stripping soft-hyphen characters (`\u00AD`) and applying the suffix rule. Enforced at build time by `scripts/validate-titles.mjs`.
+- **Title length:** The final rendered `<title>` must be 50–60 characters inclusive. Measured after stripping soft-hyphen characters (`\u00AD`) and applying the suffix rule. Enforced at build time by `scripts/check-overflow.mjs` via `npm run validate-page-titles`.
 
 - **og:type:** `'article'` for `BlogPosting`, `'website'` for everything else
 
@@ -79,7 +79,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 - [ ] `og:type` is `article` for posts, `website` for all other pages
 - [ ] Twitter card is `summary_large_image` when image present, `summary` otherwise
 - [ ] `npm run test` passes (jsonld.spec.ts validates type constants)
-- [ ] Every page `<title>` is 50–60 characters (soft hyphens stripped, suffix applied); confirmed by `npm run validate-titles`
+- [ ] Every page `<title>` is 50–60 characters (soft hyphens stripped, suffix applied); confirmed by `npm run validate-page-titles`
 
 ### Regression Guardrails
 - `JSON_LD_TYPES` must stay in sync with the constants exported from `jsonld.ts` — the spec test enforces this
@@ -120,7 +120,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 
 **Scenario: Title length enforcement**
 - Given: An MDX file whose rendered title is outside 50–60 chars
-- When: `npm run validate-titles` or `npm run build` is run
+- When: `npm run validate-page-titles` or `npm run build` is run
 - Then: Script exits 1 and prints `ERROR: title length N (expected 50–60): "…" — src/pages/…/index.mdx`
 
 **Scenario: FAQPage not emitted with fewer than 2 entries**

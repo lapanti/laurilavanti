@@ -18,7 +18,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "validate-page-titles": "node scripts/check-overflow.mjs $(find src/pages -name '*.mdx') src/content/tags/*.ts",
-    "validate-titles": "node scripts/validate-titles.mjs",
     "validate-translations": "node scripts/validate-translations.mjs",
     "validate-slugs": "node scripts/validate-slugs.mjs",
     "audit:redirects": "node --experimental-strip-types scripts/checks/redirects.mjs",

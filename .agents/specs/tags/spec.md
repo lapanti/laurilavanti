@@ -9,13 +9,15 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 - **Single source of truth:** `src/content/tags.ts`
   ```ts
   interface LocalTag {
-      id: string                                          // URL-safe, kebab-case, never changes
-      names: { en: string; fi: string; sv: string }      // short display name (tag chips, links)
-      pageTitle: { en: string; fi: string; sv: string }  // 34–44 raw chars; full <title> after suffix = 50–60 chars
-      descriptions: { en: string; fi: string; sv: string } // intro paragraph text for category pages
-      heroImage?: string                                  // Cloudinary image id; fallback: 'Lauri-Lavanti-next-to-a-table'
+      id: string                                            // URL-safe, kebab-case, never changes
+      names: { en: string; fi: string; sv: string }        // short display name (tag chips, links)
+      pageTitle: { en: string; fi: string; sv: string }    // 34–44 raw chars; full <title> after suffix = 50–60 chars
+      descriptions: { en: string[]; fi: string[]; sv: string[] } // array of intro paragraphs for category pages
+      metaDescription: { en: string; fi: string; sv: string }    // meta description for SEO (single string)
+      updatedDate: string                                   // required; used by sitemap lastmod
+      heroImage?: string                                    // Cloudinary image id; fallback: 'Lauri-Lavanti-next-to-a-table'
       heroImageAlt?: { en: string; fi: string; sv: string } // required when heroImage is set
-      faq?: {                                             // per-locale; only renders when locale array has 2+ entries
+      faq?: {                                               // per-locale; only renders when locale array has 2+ entries
           en?: Array<{ q: string; a: string }>
           fi?: Array<{ q: string; a: string }>
           sv?: Array<{ q: string; a: string }>
@@ -24,7 +26,7 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
   export const tags: LocalTag[]
   export function getTagName(id: string, lang?: Lang): string | undefined
   ```
-  Currently 24 tags.
+  Currently 30 tags.
 
 - **Post frontmatter reference:** `tags: [id1, id2]` — array of tag `id` strings. No validation at build time — an unknown id silently produces no category page match.
 
@@ -32,7 +34,7 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
 
 - **Category pages:** `src/pages/{lang}/category/[tag].astro` — `getStaticPaths` maps `tags` → `{ params: { tag: t.id }, props: { tag: t } }`. Only ids in `tags.ts` get a page generated.
 
-- **Category page enrichment:** Each category page passes `type={COLLECTIONPAGE}`, `description` (from `tag.descriptions[lang]`), `heroImage` (tag override or `'Lauri-Lavanti-next-to-a-table'`), `alt`, and `faq` (locale-specific array) to `PageLayout`. An intro `<Paragraph>` is rendered before `<ExcerptList>`. FAQPage JSON-LD is emitted when the locale's `faq` array has 2+ entries.
+- **Category page enrichment:** Each category page passes `type={COLLECTIONPAGE}`, `description` (from `tag.metaDescription[lang]`), `heroImage` (tag override or `'Lauri-Lavanti-next-to-a-table'`), `alt`, and `faq` (locale-specific array) to `PageLayout`. Each string in `tag.descriptions[lang]` is rendered as a separate `<Paragraph>` before `<ExcerptList>`. FAQPage JSON-LD is emitted when the locale's `faq` array has 2+ entries.
 
 - **Filtering in `ExcerptList`:** filters `allMdxPosts` by `post.tags.includes(tagId)` — strict string equality. No fuzzy matching.
 

@@ -14,6 +14,8 @@ Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/
 - [`.agents/specs/rss/spec.md`](./.agents/specs/rss/spec.md) — RSS feed endpoints, item structure, locale filtering
 - [`.agents/specs/design-system/spec.md`](./.agents/specs/design-system/spec.md) — design tokens, define:vars pattern, spacing/colour/typography constants
 - [`.agents/specs/recommendations/spec.md`](./.agents/specs/recommendations/spec.md) — recommendations page, Recommendation data type, single Finnish-only data file shared across locales
+- [`.agents/specs/newsletter/spec.md`](./.agents/specs/newsletter/spec.md) — newsletter landing pages, NewsletterSubscribe component, content data file
+- [`.agents/specs/cv-descriptions/spec.md`](./.agents/specs/cv-descriptions/spec.md) — CV description fields (string arrays per locale) for CurriculumVitae component
 
 ---
 
@@ -42,7 +44,7 @@ All content lives as MDX files under `src/pages/` in locale subdirectories.
 src/pages/
   fi/
     index.mdx                        # home page
-    {page}/index.mdx                 # about, contact, blog index, ...
+    {page}/index.mdx                 # about, contact, blog index, newsletter, recommendations, privacy-policy, topics, ...
     blog/{id}/{slug}/index.mdx       # blog posts
   sv/  (same structure)
   en/  (same structure)
