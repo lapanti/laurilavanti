@@ -1,0 +1,41 @@
+---
+import { colors, fontWeights, sizes } from '../../../../lib/styles'
+
+interface Props {
+    items: string[]
+}
+
+const { items } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        fontWeightRegular: fontWeights.regular,
+        sizes2: sizes[2],
+        sizes125: sizes[1.25],
+    }}
+>
+    ul {
+        list-style: none;
+        margin-top: 0.25rem;
+        padding-left: var(--sizes2);
+        position: relative;
+    }
+
+    li {
+        font-weight: var(--fontWeightRegular);
+        margin-left: var(--sizes125);
+    }
+
+    li:before {
+        color: var(--colorsEvening);
+        content: '–';
+        left: 0;
+        position: absolute;
+    }
+</style>
+
+<ul>
+    {items.map((item) => <li>{item}</li>)}
+</ul>

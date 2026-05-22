@@ -1,0 +1,11 @@
+---
+interface Props {
+    degree?: string
+    duty?: string
+    title?: string
+}
+
+const { degree, duty, title } = Astro.props
+---
+
+<span>{duty || title || degree || ''}</span>
