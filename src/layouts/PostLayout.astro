@@ -9,7 +9,6 @@ import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
-import { personJobTitle, personName } from '../content/person'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
@@ -34,38 +33,6 @@ type Props = MDXLayoutProps<{
 const { frontmatter } = Astro.props
 const { alt, authors, description, faq, heroImage, id, lang, pageTitle, publishDate, slug, tags, title, updatedDate } =
     frontmatter
-
-type ResolvedAuthor = { name: string; role?: string }
-
-const typedLang = lang as 'en' | 'fi' | 'sv'
-
-const rawAuthors = authors ?? (['lauri'] as AuthorEntry[])
-const anyCoAuthorHasRole = rawAuthors.some((e: AuthorEntry) => e !== 'lauri' && !!e.role)
-
-const resolvedAuthors: ResolvedAuthor[] = rawAuthors.map((entry: AuthorEntry) => {
-    if (entry === 'lauri') {
-        return { name: personName, role: anyCoAuthorHasRole ? personJobTitle[typedLang] : undefined }
-    }
-    return { name: entry.name, role: entry.role }
-})
-
-const bylinePrefix: Record<'en' | 'fi' | 'sv', string> = { en: 'Authors', fi: 'Tekijät', sv: 'Författare' }
-const andConjunction: Record<'en' | 'fi' | 'sv', string> = { en: 'and', fi: 'ja', sv: 'och' }
-
-const joinNames = (parts: string[]): string => {
-    if (parts.length === 1) return parts[0]
-    if (parts.length === 2) return `${parts[0]} ${andConjunction[typedLang]} ${parts[1]}`
-    return `${parts.slice(0, -1).join(', ')}, ${andConjunction[typedLang]} ${parts[parts.length - 1]}`
-}
-
-const showByline = resolvedAuthors.length > 1
-
-const bylineText = (() => {
-    if (!showByline) return ''
-    const parts = resolvedAuthors.map((a: ResolvedAuthor) => (a.role ? `${a.name} (${a.role})` : a.name))
-
-    return `${bylinePrefix[typedLang]}: ${joinNames(parts)}.`
-})()
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -142,7 +109,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         title={title}
     />
     <slot />
-    {showByline && <Byline text={bylineText} />}
+    <Byline authors={authors ?? ['lauri']} lang={lang} />
     <SocialShare ariaLabel={t.shareAriaLabel(pageTitle)} locale={lang} shareUrl={shareUrl} title={pageTitle} />
     <section class="other-posts">
         <H2>{t.otherPosts}</H2>
