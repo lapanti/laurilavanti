@@ -1,15 +1,15 @@
 ---
 import type { MDXLayoutProps } from 'astro'
+import type { AuthorEntry } from '../content/person'
 
 import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
 
-import type { AuthorEntry } from '../content/person'
-import { personJobTitle, personName } from '../content/person'
 import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
+import { personJobTitle, personName } from '../content/person'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
@@ -68,13 +68,16 @@ const bylineText = (() => {
     const { place, role } = resolvedAuthors[0]
     if (allSameRoleAndPlace && (role || place)) {
         const suffix = [role, place].filter(Boolean).join(', ')
+
         return `${bylinePrefix[typedLang]}: ${names}, ${suffix}.`
     }
     if (allSameRoleAndPlace) return `${bylinePrefix[typedLang]}: ${names}.`
     const parts = resolvedAuthors.map((a: ResolvedAuthor) => {
         const suffix = [a.role, a.place].filter(Boolean).join(', ')
+
         return suffix ? `${a.name} (${suffix})` : a.name
     })
+
     return `${bylinePrefix[typedLang]}: ${formatBylineNames(parts)}.`
 })()
 
