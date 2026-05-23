@@ -101,7 +101,7 @@ Feature: Canonical Person JSON-LD entity
     And that meta content attribute is 'Lauri Lavanti'
 
   Scenario: Co-authored post references multiple Persons
-    Given a BlogPosting with authors: [{ name: 'Miisa Jeremejew', role: 'Kunnanvaltuutettu (Vihreät)', place: 'Kirkkonummi' }, 'lauri']
+    Given a BlogPosting with authors: [{ name: 'Miisa Jeremejew', role: 'municipal councillor' }, 'lauri']
     When the page is rendered
     Then BlogPosting.author is an array with two entries
     And the first entry is { '@type': 'Person', name: 'Miisa Jeremejew' }
@@ -338,3 +338,4 @@ type ResolvedAuthor =
 | 2026-05-23 | Initial draft |
 | 2026-05-23 | Fix Critic findings: name-order rule (array order), article:author content spec, migration scenarios for all 5 posts, Wikipedia link scenario, WebSite regression scenario, sv knowsAbout scenario, byline Oxford-comma + name-only rules |
 | 2026-05-23 | Drop shared-suffix byline format; drop place field; Lauri sentinel = name-only; per-author role in parentheses only |
+| 2026-05-23 | Fix stale Given example (remove place); clarify fi/sv posts also had inline bylines requiring removal |
