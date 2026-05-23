@@ -1,6 +1,6 @@
-import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
-
 import type { Lang } from './nav'
+
+import { getCldImageUrl } from 'astro-cloudinary/helpers'
 
 export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
 

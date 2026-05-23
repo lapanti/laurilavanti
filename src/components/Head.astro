@@ -1,6 +1,28 @@
 ---
 import type { Lang } from '../content/nav'
+import type { AuthorEntry } from '../content/person'
 
+import {
+    PERSON_ID,
+    personAffiliation,
+    personAlumniOf,
+    personBirthDate,
+    personBirthPlace,
+    personDescription,
+    personFamilyName,
+    personGivenName,
+    personHasOccupation,
+    personImage,
+    personJobTitle,
+    personKnowsAbout,
+    personKnowsLanguage,
+    personMemberOf,
+    personName,
+    personNationality,
+    personSameAs,
+    personUrl,
+    personWorksFor,
+} from '../content/person'
 import {
     BLOGPOSTING,
     type BreadcrumbItem,
@@ -8,11 +30,13 @@ import {
     JSON_LD_TYPES,
     type JsonLdType,
     PERSON,
+    PROFILEPAGE,
     WEBPAGE,
     WEBSITE,
 } from '../lib/jsonld'
 
 interface Props {
+    authors?: AuthorEntry[]
     breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
@@ -29,10 +53,11 @@ interface Props {
 }
 
 const {
+    authors,
     breadcrumbs,
     description = 'Lauri Lavanti on diplomi-insinööri, johtava ohjelmistokehittäjä ja Kirkkonummen kunnanvaltuutettu (Vihreät). Hän keskittyy digitalisaatioon, yksityisyyden suojaan, tekoälyn vastuulliseen käyttöönottoon ja talouteen.',
     faq,
-    lang = 'fi',
+    lang: rawLang = 'fi',
     langAlternates,
     noindex,
     title,
@@ -43,6 +68,8 @@ const {
     createdAt,
     updatedAt,
 } = Astro.props
+
+const lang: Lang = rawLang
 
 const ogLocale: Record<Lang, string> = {
     en: 'en_GB',
@@ -79,89 +106,95 @@ const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`$
 
 const ogImageUrl = ogImage ?? null
 
-const name = 'Lauri Lavanti'
+const resolvedAuthors = (authors ?? (['lauri'] as AuthorEntry[])).map((entry: AuthorEntry) => {
+    if (entry === 'lauri') {
+        return { '@id': PERSON_ID, '@type': 'Person' as const }
+    }
+    return {
+        '@type': 'Person' as const,
+        name: entry.name,
+        ...(entry.url ? { url: entry.url } : {}),
+        ...(entry.sameAs ? { sameAs: entry.sameAs } : {}),
+    }
+})
 
-const bluesky = 'https://bsky.app/profile/laurilavanti.fi'
-const facebook = 'https://www.facebook.com/laurilavanti'
-const instagram = 'https://www.instagram.com/laurilavanti/'
-const linkedIn = 'https://www.linkedin.com/in/lapanti'
-const mastodon = 'https://mastodon.social/@laurilavanti'
-const threads = 'https://www.threads.com/@laurilavanti'
-const tikTok = 'https://www.tiktok.com/@laurilavanti'
+const articleAuthorNames = (authors ?? (['lauri'] as AuthorEntry[])).map((entry: AuthorEntry) =>
+    entry === 'lauri' ? personName : entry.name
+)
 
-const personJobTitle: Record<Lang, string> = {
-    en: 'Municipal councillor & Lead Developer',
-    fi: 'Kunnanvaltuutettu ja johtava ohjelmistokehittäjä',
-    sv: 'Kommunfullmäktigeledamot och ledande mjukvarutvecklare',
+const canonicalPersonObject = {
+    '@id': PERSON_ID,
+    '@type': 'Person',
+    affiliation: personAffiliation,
+    alumniOf: personAlumniOf,
+    birthDate: personBirthDate,
+    birthPlace: personBirthPlace,
+    description: personDescription[lang],
+    familyName: personFamilyName,
+    givenName: personGivenName,
+    hasOccupation: personHasOccupation[lang],
+    image: personImage,
+    jobTitle: personJobTitle[lang],
+    knowsAbout: personKnowsAbout[lang],
+    knowsLanguage: personKnowsLanguage,
+    memberOf: personMemberOf,
+    name: personName,
+    nationality: personNationality,
+    sameAs: personSameAs,
+    url: personUrl,
+    worksFor: personWorksFor,
 }
 
-const personDescription: Record<Lang, string> = {
-    en: 'Municipal councillor in Kirkkonummi (Greens) and lead software developer. Focused on economics, entrepreneurship, digital independence, and responsible AI policy.',
-    fi: 'Kirkkonummen kunnanvaltuutettu (Vihreät) ja johtava ohjelmistokehittäjä. Keskittyy talouteen, yrittäjyyteen, digitaaliseen itsenäisyyteen ja vastuulliseen tekoälypolitiikkaan. Seuraa eduskuntavaaleja.',
-    sv: 'Kommunfullmäktigeledamot i Kyrkslätt (De Gröna) och ledande mjukvarutvecklare. Fokuserar på ekonomi, företagande, digital självständighet och ansvarsfull AI-politik. Följer riksdagsvalen.',
-}
-
-const sameAs = [bluesky, facebook, instagram, linkedIn, mastodon, threads, tikTok]
-
-const jsonLd = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': type && JSON_LD_TYPES.includes(type) ? type : WEBSITE,
-    author: {
-        '@type': 'Person',
-        name,
-    },
-    description,
-    headline: title,
-    license: 'https://creativecommons.org/licenses/by-sa/4.0/',
-    url: canonical,
-    ...(ogImageUrl ? { image: ogImageUrl } : {}),
-    ...(type === BLOGPOSTING
+const jsonLd = JSON.stringify(
+    type === PROFILEPAGE
         ? {
-              ...(ogImageUrl
+              '@context': 'https://schema.org',
+              '@type': PROFILEPAGE,
+              ...(updatedAt ? { dateModified: updatedAt } : {}),
+              description,
+              mainEntity: canonicalPersonObject,
+              name: title,
+              url: canonical,
+          }
+        : {
+              '@context': 'https://schema.org',
+              '@type': type && JSON_LD_TYPES.includes(type) ? type : WEBSITE,
+              author: isArticle ? resolvedAuthors : { '@type': 'Person', name: personName },
+              description,
+              headline: title,
+              license: 'https://creativecommons.org/licenses/by-sa/4.0/',
+              url: canonical,
+              ...(ogImageUrl ? { image: ogImageUrl } : {}),
+              ...(type === BLOGPOSTING
                   ? {
-                        image: { '@type': 'ImageObject', height: 630, url: ogImageUrl, width: 1200 },
-                        primaryImageOfPage: { '@type': 'ImageObject', height: 630, url: ogImageUrl, width: 1200 },
+                        ...(ogImageUrl
+                            ? {
+                                  image: { '@type': 'ImageObject', height: 630, url: ogImageUrl, width: 1200 },
+                                  primaryImageOfPage: {
+                                      '@type': 'ImageObject',
+                                      height: 630,
+                                      url: ogImageUrl,
+                                      width: 1200,
+                                  },
+                              }
+                            : {}),
+                        dateModified: updatedAt ?? createdAt,
+                        datePublished: createdAt,
+                        mainEntityOfPage: {
+                            '@id': canonical,
+                            '@type': WEBPAGE,
+                        },
                     }
                   : {}),
-              dateModified: updatedAt ?? createdAt,
-              datePublished: createdAt,
-              mainEntityOfPage: {
-                  '@id': canonical,
-                  '@type': WEBPAGE,
-              },
+              ...(type === WEBSITE
+                  ? {
+                        name: personName,
+                        sameAs: personSameAs,
+                    }
+                  : {}),
+              ...(type === PERSON ? { ...canonicalPersonObject } : {}),
           }
-        : {}),
-    ...(type === WEBSITE
-        ? {
-              name,
-              sameAs,
-          }
-        : {}),
-    ...(type === PERSON
-        ? {
-              description: personDescription[lang],
-              jobTitle: personJobTitle[lang],
-              knowsAbout: [
-                  'Talouspolitiikka',
-                  'Yrittäjyys',
-                  'Innovaatiopolitiikka',
-                  'Digitaalinen itsenäisyys',
-                  'Digitaalinen riippumattomuus',
-                  'Tekoäly',
-                  'Vastuullinen tekoäly',
-                  'Vihreä siirtymä',
-                  'Eduskuntavaalit',
-              ],
-              memberOf: {
-                  '@type': 'PoliticalParty',
-                  name: 'Vihreä liitto',
-                  url: 'https://www.vihreat.fi',
-              },
-              name,
-              sameAs,
-          }
-        : {}),
-})
+)
 
 const faqJsonLd =
     faq && faq.length >= 2
@@ -198,16 +231,16 @@ const breadcrumbJsonLd =
 {noindex && <meta content="noindex, nofollow" name="robots" />}
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
 <meta content={title} property="og:title" />
-<meta content={name} name="author" />
+<meta content={personName} name="author" />
 <meta content={ogLocale[lang]} property="og:locale" />
 {ogLocaleAlternates.map((loc) => <meta content={loc} property="og:locale:alternate" />)}
 <meta content={description} name="description" />
 <meta content={description} property="og:description" />
-<meta content={name} property="og:site_name" />
+<meta content={personName} property="og:site_name" />
 <meta content={title} property="twitter:title" />
 <meta content={isArticle ? 'article' : 'website'} property="og:type" />
 <meta content={description} name="twitter:description" />
-{isArticle && <meta content={name} property="article:author" />}
+{isArticle && articleAuthorNames.map((n: string) => <meta content={n} property="article:author" />)}
 {isArticle && <meta content={createdAt} property="article:published_time" />}
 {isArticle && updatedAt && <meta content={updatedAt} property="article:modified_time" />}
 <meta content="@laurilavanti@mastodon.social" name="fediverse:creator" />
