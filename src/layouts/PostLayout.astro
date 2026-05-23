@@ -9,7 +9,7 @@ import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
-import { personName } from '../content/person'
+import { personJobTitle, personName } from '../content/person'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
@@ -39,9 +39,15 @@ type ResolvedAuthor = { name: string; role?: string }
 
 const typedLang = lang as 'en' | 'fi' | 'sv'
 
-const resolvedAuthors: ResolvedAuthor[] = (authors ?? ['lauri']).map((entry: AuthorEntry) =>
-    entry === 'lauri' ? { name: personName } : { name: entry.name, role: entry.role }
-)
+const rawAuthors = authors ?? (['lauri'] as AuthorEntry[])
+const anyCoAuthorHasRole = rawAuthors.some((e: AuthorEntry) => e !== 'lauri' && !!e.role)
+
+const resolvedAuthors: ResolvedAuthor[] = rawAuthors.map((entry: AuthorEntry) => {
+    if (entry === 'lauri') {
+        return { name: personName, role: anyCoAuthorHasRole ? personJobTitle[typedLang] : undefined }
+    }
+    return { name: entry.name, role: entry.role }
+})
 
 const bylinePrefix: Record<'en' | 'fi' | 'sv', string> = { en: 'Authors', fi: 'Tekijät', sv: 'Författare' }
 const andConjunction: Record<'en' | 'fi' | 'sv', string> = { en: 'and', fi: 'ja', sv: 'och' }
