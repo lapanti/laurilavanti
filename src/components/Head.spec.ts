@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
+import { PERSON_ID } from '../content/person'
 import Head from './Head.astro'
 
 describe('<Head />', () => {
@@ -88,6 +89,86 @@ describe('<Head />', () => {
         expect(jsonLd['@type']).toBe('BlogPosting')
         expect(jsonLd.datePublished).toBe('2024-01-01')
         expect(jsonLd.dateModified).toBe('2024-01-02')
+    })
+
+    it('should emit author as array with @id reference for BlogPosting (default sole author)', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('BlogPosting')
+        expect(Array.isArray(jsonLd.author)).toBe(true)
+        expect(jsonLd.author).toHaveLength(1)
+        expect(jsonLd.author[0]['@id']).toBe(PERSON_ID)
+        expect(jsonLd.author[0]['@type']).toBe('Person')
+        expect(jsonLd.author[0].name).toBeUndefined()
+    })
+
+    it('should emit author array with co-author inline Person for BlogPosting', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                authors: [
+                    {
+                        name: 'Co-author',
+                        sameAs: ['https://example.com/co-author'],
+                        url: 'https://example.com/co-author',
+                    },
+                    'lauri',
+                ],
+                createdAt: '2024-01-01',
+                title: 'Co-authored Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('BlogPosting')
+        expect(Array.isArray(jsonLd.author)).toBe(true)
+        expect(jsonLd.author).toHaveLength(2)
+        expect(jsonLd.author[0]['@type']).toBe('Person')
+        expect(jsonLd.author[0].name).toBe('Co-author')
+        expect(jsonLd.author[0].url).toBe('https://example.com/co-author')
+        expect(jsonLd.author[0]['@id']).toBeUndefined()
+        expect(jsonLd.author[1]['@id']).toBe(PERSON_ID)
+        expect(jsonLd.author[1].name).toBeUndefined()
+    })
+
+    it('should emit one article:author meta for sole-author BlogPosting', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const metas = Array.from(result.querySelectorAll('meta[property="article:author"]'))
+        expect(metas).toHaveLength(1)
+        expect(metas[0].getAttribute('content')).toBe('Lauri Lavanti')
+    })
+
+    it('should emit multiple article:author metas for co-authored BlogPosting', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                authors: [{ name: 'Co-author' }, 'lauri'],
+                createdAt: '2024-01-01',
+                title: 'Co-authored Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const metas = Array.from(result.querySelectorAll('meta[property="article:author"]'))
+        expect(metas).toHaveLength(2)
+        const contents = metas.map((m) => m.getAttribute('content'))
+        expect(contents).toContain('Co-author')
+        expect(contents).toContain('Lauri Lavanti')
     })
 
     it('should emit a secondary FAQPage JSON-LD script when faq has 2 or more entries', async () => {
@@ -280,13 +361,30 @@ describe('<Head />', () => {
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
         expect(jsonLd['@type']).toBe('Person')
+        expect(jsonLd['@id']).toBe(PERSON_ID)
         expect(jsonLd.name).toBe('Lauri Lavanti')
+        expect(jsonLd.givenName).toBe('Lauri')
+        expect(jsonLd.familyName).toBe('Lavanti')
+        expect(jsonLd.url).toBe('https://laurilavanti.fi/fi/')
+        expect(jsonLd.birthDate).toBe('1991-10-01')
+        expect(jsonLd.birthPlace).toEqual({ '@type': 'Place', name: 'Jyväskylä' })
+        expect(jsonLd.nationality).toEqual({ '@type': 'Country', name: 'FI' })
         expect(jsonLd.jobTitle).toBe('Kunnanvaltuutettu ja johtava ohjelmistokehittäjä')
-        expect(jsonLd.sameAs).toHaveLength(7)
+        expect(jsonLd.sameAs).toHaveLength(9)
+        expect(jsonLd.sameAs).toContain('https://fi.wikipedia.org/wiki/Lauri_Lavanti')
+        expect(jsonLd.sameAs).toContain('https://www.wikidata.org/wiki/Q139711658')
+        expect(jsonLd.sameAs).not.toContain('https://digitaalinenitsenaisyys.fi/')
         expect(jsonLd.memberOf['@type']).toBe('PoliticalParty')
         expect(jsonLd.memberOf.name).toBe('Vihreä liitto')
         expect(jsonLd.memberOf.url).toBe('https://www.vihreat.fi')
         expect(jsonLd.knowsAbout).toHaveLength(9)
+        expect(jsonLd.knowsAbout).toContain('Talouspolitiikka')
+        expect(jsonLd.worksFor).toEqual({ '@type': 'Organization', name: 'OP', url: 'https://www.op.fi/' })
+        expect(jsonLd.alumniOf).toHaveLength(3)
+        expect(jsonLd.hasOccupation).toHaveLength(2)
+        expect(jsonLd.knowsLanguage).toEqual(['fi', 'en', 'sv'])
+        expect(jsonLd.affiliation).toHaveLength(1)
+        expect(jsonLd.affiliation[0].url).toBe('https://digitaalinenitsenaisyys.fi/')
     })
 
     it('should localise Person jobTitle for English', async () => {
@@ -301,6 +399,8 @@ describe('<Head />', () => {
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
         expect(jsonLd.jobTitle).toBe('Municipal councillor & Lead Developer')
+        expect(jsonLd.knowsAbout).toContain('Economic policy')
+        expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
 
     it('should localise Person jobTitle for Swedish', async () => {
@@ -315,6 +415,47 @@ describe('<Head />', () => {
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
         expect(jsonLd.jobTitle).toBe('Kommunfullmäktigeledamot och ledande mjukvarutvecklare')
+        expect(jsonLd.knowsAbout).toContain('Ekonomisk politik')
+        expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
+    })
+
+    it('should emit ProfilePage JSON-LD with mainEntity Person when type is ProfilePage', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'fi',
+                title: 'Lauri Lavanti',
+                type: 'ProfilePage',
+                updatedAt: '2025-01-01',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('ProfilePage')
+        expect(jsonLd.dateModified).toBe('2025-01-01')
+        expect(jsonLd.mainEntity).toBeDefined()
+        expect(jsonLd.mainEntity['@type']).toBe('Person')
+        expect(jsonLd.mainEntity['@id']).toBe(PERSON_ID)
+        expect(jsonLd.mainEntity.name).toBe('Lauri Lavanti')
+        expect(jsonLd.mainEntity.sameAs).toHaveLength(9)
+        expect(jsonLd.mainEntity.affiliation).toHaveLength(1)
+    })
+
+    it('should not emit author, headline, or license on ProfilePage JSON-LD', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang: 'fi',
+                title: 'Lauri Lavanti',
+                type: 'ProfilePage',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd['@type']).toBe('ProfilePage')
+        expect(jsonLd.author).toBeUndefined()
+        expect(jsonLd.headline).toBeUndefined()
+        expect(jsonLd.license).toBeUndefined()
     })
 
     it('should emit noindex robots meta tag when noindex is true', async () => {
