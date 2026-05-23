@@ -1,9 +1,15 @@
 ---
+import type { AuthorEntry } from '../content/person'
+
+import { buildBylineText } from '../lib/byline'
+
 interface Props {
-    text: string
+    authors: AuthorEntry[]
+    lang: 'en' | 'fi' | 'sv'
 }
 
-const { text } = Astro.props
+const { authors, lang } = Astro.props
+const text = buildBylineText(authors, lang)
 ---
 
 <style>
@@ -12,4 +18,10 @@ const { text } = Astro.props
         margin-block: 0;
     }
 </style>
-<p><em>{text}</em></p>
+{
+    text && (
+        <p>
+            <em>{text}</em>
+        </p>
+    )
+}
