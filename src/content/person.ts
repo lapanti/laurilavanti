@@ -156,5 +156,4 @@ export type AuthorEntry =
           url?: string
           sameAs?: string[]
           role?: string
-          place?: string
       }

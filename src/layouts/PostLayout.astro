@@ -9,7 +9,7 @@ import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
-import { personJobTitle, personName } from '../content/person'
+import { personName } from '../content/person'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
@@ -35,50 +35,30 @@ const { frontmatter } = Astro.props
 const { alt, authors, description, faq, heroImage, id, lang, pageTitle, publishDate, slug, tags, title, updatedDate } =
     frontmatter
 
-type ResolvedAuthor = { name: string; place?: string; role?: string }
+type ResolvedAuthor = { name: string; role?: string }
 
 const typedLang = lang as 'en' | 'fi' | 'sv'
 
 const resolvedAuthors: ResolvedAuthor[] = (authors ?? ['lauri']).map((entry: AuthorEntry) =>
-    entry === 'lauri'
-        ? { name: personName, place: 'Kirkkonummi', role: personJobTitle[typedLang] }
-        : { name: entry.name, place: entry.place, role: entry.role }
+    entry === 'lauri' ? { name: personName } : { name: entry.name, role: entry.role }
 )
 
 const bylinePrefix: Record<'en' | 'fi' | 'sv', string> = { en: 'Authors', fi: 'Tekijät', sv: 'Författare' }
 const andConjunction: Record<'en' | 'fi' | 'sv', string> = { en: 'and', fi: 'ja', sv: 'och' }
 
-const formatBylineNames = (names: string[]): string => {
-    if (names.length === 1) return names[0]
-    if (names.length === 2) return `${names[0]} ${andConjunction[typedLang]} ${names[1]}`
-    return `${names.slice(0, -1).join(', ')}, ${andConjunction[typedLang]} ${names[names.length - 1]}`
+const joinNames = (parts: string[]): string => {
+    if (parts.length === 1) return parts[0]
+    if (parts.length === 2) return `${parts[0]} ${andConjunction[typedLang]} ${parts[1]}`
+    return `${parts.slice(0, -1).join(', ')}, ${andConjunction[typedLang]} ${parts[parts.length - 1]}`
 }
-
-const allSameRoleAndPlace =
-    resolvedAuthors.length > 1 &&
-    resolvedAuthors.every(
-        (a: ResolvedAuthor) => a.role === resolvedAuthors[0].role && a.place === resolvedAuthors[0].place
-    )
 
 const showByline = resolvedAuthors.length > 1
 
 const bylineText = (() => {
     if (!showByline) return ''
-    const names = formatBylineNames(resolvedAuthors.map((a: ResolvedAuthor) => a.name))
-    const { place, role } = resolvedAuthors[0]
-    if (allSameRoleAndPlace && (role || place)) {
-        const suffix = [role, place].filter(Boolean).join(', ')
+    const parts = resolvedAuthors.map((a: ResolvedAuthor) => (a.role ? `${a.name} (${a.role})` : a.name))
 
-        return `${bylinePrefix[typedLang]}: ${names}, ${suffix}.`
-    }
-    if (allSameRoleAndPlace) return `${bylinePrefix[typedLang]}: ${names}.`
-    const parts = resolvedAuthors.map((a: ResolvedAuthor) => {
-        const suffix = [a.role, a.place].filter(Boolean).join(', ')
-
-        return suffix ? `${a.name} (${suffix})` : a.name
-    })
-
-    return `${bylinePrefix[typedLang]}: ${formatBylineNames(parts)}.`
+    return `${bylinePrefix[typedLang]}: ${joinNames(parts)}.`
 })()
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
