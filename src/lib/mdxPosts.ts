@@ -1,5 +1,8 @@
+import type { AuthorEntry } from '../content/person'
+
 interface MdxPost {
     alt: string
+    authors?: AuthorEntry[]
     description: string
     faq?: Array<{ a: string; q: string }>
     heroImage: string
