@@ -1,5 +1,6 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
+import type { AuthorEntry } from '../content/person'
 import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
 
 import Footer from '../components/Footer.astro'
@@ -17,6 +18,7 @@ import {
 } from '../lib/styles'
 
 interface Props {
+    authors?: AuthorEntry[]
     breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
@@ -33,6 +35,7 @@ interface Props {
 }
 
 const {
+    authors,
     breadcrumbs,
     createdAt,
     description,
@@ -53,6 +56,7 @@ const {
     <head>
         <GlobalStyle />
         <Head
+            authors={authors}
             breadcrumbs={breadcrumbs}
             createdAt={createdAt}
             description={description}

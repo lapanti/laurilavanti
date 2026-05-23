@@ -3,6 +3,9 @@ import type { MDXLayoutProps } from 'astro'
 
 import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
 
+import type { AuthorEntry } from '../content/person'
+import { personJobTitle, personName } from '../content/person'
+import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
@@ -13,6 +16,7 @@ import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
 type Props = MDXLayoutProps<{
+    authors?: AuthorEntry[]
     description: string
     faq?: Array<{ a: string; q: string }>
     id: number
@@ -28,8 +32,51 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const { alt, description, faq, heroImage, id, lang, pageTitle, publishDate, slug, tags, title, updatedDate } =
+const { alt, authors, description, faq, heroImage, id, lang, pageTitle, publishDate, slug, tags, title, updatedDate } =
     frontmatter
+
+type ResolvedAuthor = { name: string; place?: string; role?: string }
+
+const typedLang = lang as 'en' | 'fi' | 'sv'
+
+const resolvedAuthors: ResolvedAuthor[] = (authors ?? ['lauri']).map((entry: AuthorEntry) =>
+    entry === 'lauri'
+        ? { name: personName, place: 'Kirkkonummi', role: personJobTitle[typedLang] }
+        : { name: entry.name, place: entry.place, role: entry.role }
+)
+
+const bylinePrefix: Record<'en' | 'fi' | 'sv', string> = { en: 'Authors', fi: 'Tekijät', sv: 'Författare' }
+const andConjunction: Record<'en' | 'fi' | 'sv', string> = { en: 'and', fi: 'ja', sv: 'och' }
+
+const formatBylineNames = (names: string[]): string => {
+    if (names.length === 1) return names[0]
+    if (names.length === 2) return `${names[0]} ${andConjunction[typedLang]} ${names[1]}`
+    return `${names.slice(0, -1).join(', ')}, ${andConjunction[typedLang]} ${names[names.length - 1]}`
+}
+
+const allSameRoleAndPlace =
+    resolvedAuthors.length > 1 &&
+    resolvedAuthors.every(
+        (a: ResolvedAuthor) => a.role === resolvedAuthors[0].role && a.place === resolvedAuthors[0].place
+    )
+
+const showByline = resolvedAuthors.length > 1
+
+const bylineText = (() => {
+    if (!showByline) return ''
+    const names = formatBylineNames(resolvedAuthors.map((a: ResolvedAuthor) => a.name))
+    const { place, role } = resolvedAuthors[0]
+    if (allSameRoleAndPlace && (role || place)) {
+        const suffix = [role, place].filter(Boolean).join(', ')
+        return `${bylinePrefix[typedLang]}: ${names}, ${suffix}.`
+    }
+    if (allSameRoleAndPlace) return `${bylinePrefix[typedLang]}: ${names}.`
+    const parts = resolvedAuthors.map((a: ResolvedAuthor) => {
+        const suffix = [a.role, a.place].filter(Boolean).join(', ')
+        return suffix ? `${a.name} (${suffix})` : a.name
+    })
+    return `${bylinePrefix[typedLang]}: ${formatBylineNames(parts)}.`
+})()
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -82,6 +129,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     }
 </style>
 <BaseLayout
+    authors={authors}
     breadcrumbs={breadcrumbs}
     createdAt={publishDate}
     description={description}
@@ -105,6 +153,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         title={title}
     />
     <slot />
+    {showByline && <Byline text={bylineText} />}
     <SocialShare ariaLabel={t.shareAriaLabel(pageTitle)} locale={lang} shareUrl={shareUrl} title={pageTitle} />
     <section class="other-posts">
         <H2>{t.otherPosts}</H2>

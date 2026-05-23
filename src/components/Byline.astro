@@ -1,0 +1,15 @@
+---
+interface Props {
+    text: string
+}
+
+const { text } = Astro.props
+---
+
+<style>
+    p {
+        grid-column-start: 3;
+        margin-block: 0;
+    }
+</style>
+<p><em>{text}</em></p>
