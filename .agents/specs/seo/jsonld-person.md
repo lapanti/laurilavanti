@@ -98,14 +98,17 @@ Feature: Canonical Person JSON-LD entity
     Then BlogPosting.author is an array with one entry
     And that entry is { '@type': 'Person', '@id': 'https://laurilavanti.fi/fi/about/#person' }
     And there is exactly one <meta property="article:author"> in the HTML
+    And that meta content attribute is 'Lauri Lavanti'
 
   Scenario: Co-authored post references multiple Persons
-    Given a BlogPosting with authors: ['lauri', { name: 'Miisa Jeremejew', role: 'Kunnanvaltuutettu (Vihreät)', place: 'Kirkkonummi' }]
+    Given a BlogPosting with authors: [{ name: 'Miisa Jeremejew', role: 'Kunnanvaltuutettu (Vihreät)', place: 'Kirkkonummi' }, 'lauri']
     When the page is rendered
     Then BlogPosting.author is an array with two entries
-    And the first entry is { '@type': 'Person', '@id': 'https://laurilavanti.fi/fi/about/#person' }
-    And the second entry is { '@type': 'Person', name: 'Miisa Jeremejew' }
+    And the first entry is { '@type': 'Person', name: 'Miisa Jeremejew' }
+    And the second entry is { '@type': 'Person', '@id': 'https://laurilavanti.fi/fi/about/#person' }
     And there are exactly two <meta property="article:author"> tags in the HTML
+    And the first meta content is 'Miisa Jeremejew'
+    And the second meta content is 'Lauri Lavanti'
 
   # ── Co-author byline rendering ───────────────────────────────────────────────
 
@@ -116,13 +119,14 @@ Feature: Canonical Person JSON-LD entity
 
   Scenario: Shared-role byline for co-authors with identical role and place
     Given a BlogPosting in lang 'en' with authors:
-      | name              | role                                     | place       |
-      | lauri             | Municipal councillor (Greens)            | Kirkkonummi |
+      | entry             | role                                     | place       |
       | Miisa Jeremejew   | Municipal councillor (Greens)            | Kirkkonummi |
+      | 'lauri' (string)  | Municipal councillor (Greens)            | Kirkkonummi |
     When the page is rendered
     Then the byline after the post content is:
-      _Authors: Lauri Lavanti and Miisa Jeremejew, Municipal councillor (Greens), Kirkkonummi._
+      _Authors: Miisa Jeremejew and Lauri Lavanti, Municipal councillor (Greens), Kirkkonummi._
     And the byline is rendered as an italic paragraph
+    And render order follows frontmatter array order (first entry → first name)
 
   Scenario: Shared-role byline localises prefix in Finnish
     Given a BlogPosting in lang 'fi' with two co-authors sharing the same role and place
@@ -149,10 +153,10 @@ Feature: Canonical Person JSON-LD entity
     Then that author appears in the byline as name only (no parenthetical)
 
   Scenario: Lauri's defaults apply when his entry omits role/place
-    Given a BlogPosting in lang 'en' with authors: ['lauri', { name: 'Co-author', role: 'Some role', place: 'Some place' }]
-    And Lauri's entry has no explicit role or place
+    Given a BlogPosting in lang 'en' with authors: [{ name: 'Co-author', role: 'Some role', place: 'Some place' }, 'lauri']
+    And Lauri's entry (the string sentinel 'lauri') has no explicit role or place
     When the page is rendered
-    Then Lauri's name appears with his default jobTitle[lang] and 'Kirkkonummi' as role/place in the per-author format
+    Then Lauri's name appears with his default jobTitle['en'] and 'Kirkkonummi' as role/place in the per-author format
 
   # ── knowsAbout localisation ──────────────────────────────────────────────────
 
@@ -167,20 +171,71 @@ Feature: Canonical Person JSON-LD entity
     When the Person (or mainEntity) is emitted
     Then Person.knowsAbout contains Finnish-language topic strings
 
+  Scenario: knowsAbout uses Swedish for sv locale
+    Given an About page or BlogPosting in lang 'sv'
+    When the Person (or mainEntity) is emitted
+    Then Person.knowsAbout contains Swedish-language topic strings
+    And does NOT contain Finnish-only strings (e.g. 'Talouspolitiikka')
+
+  # ── Wikipedia link on About pages ────────────────────────────────────────────
+
+  Scenario: Wikipedia link visible on all About pages
+    Given any About page (fi/en/sv) after migration
+    When the page is rendered
+    Then the page body contains a visible hyperlink to 'https://fi.wikipedia.org/wiki/Lauri_Lavanti'
+
+  # ── WebSite / default type regression ────────────────────────────────────────
+
+  Scenario: WebSite type pages unaffected by refactor
+    Given a page rendered with no explicit type (defaults to WebSite)
+    When the page is rendered
+    Then the JSON-LD contains @type: 'WebSite'
+    And the JSON-LD contains name: 'Lauri Lavanti'
+    And the JSON-LD contains sameAs with all 9 URLs (7 social + Wikipedia + Wikidata)
+
   # ── Co-authored posts migration ──────────────────────────────────────────────
 
-  Scenario: Migrated co-authored post has no inline byline in content
-    Given post 56 (Lähteelä) in any locale after migration
-    When the MDX content is read
-    Then there is no line matching the pattern _Authors:…_ in the MDX body
-    And there is no line matching the pattern _Tekijät:…_ in the MDX body
-    And there is no line matching the pattern _Författare:…_ in the MDX body
-    And publication-info lines (_Published in…_ / _Julkaistu…_ / _Publicerad…_) remain unchanged
+  Scenario: All 5 co-authored posts have authors frontmatter in all 3 locales
+    Given posts 22, 27, 41, 48, 56 in all three locales (fi/en/sv) after migration
+    When each MDX frontmatter is read
+    Then each post has an authors field listing the correct co-authors:
+      | post | authors (in array order)                                      |
+      | 22   | Johanna Fleming, Lauri Lavanti, Paula Oittinen                |
+      | 27   | Johanna Fleming, Lauri Lavanti, Paula Oittinen                |
+      | 41   | Ronja Karkinen, Lauri Lavanti                                 |
+      | 48   | Atte Harjanne, Lauri Lavanti                                  |
+      | 56   | Miisa Jeremejew, Lauri Lavanti                                |
 
-  Scenario: Migrated post renders auto-byline identically to former manual byline
+  Scenario: Migrated en posts have no inline Authors line in MDX body
+    Given posts 22, 27, 41, 48, 56 in lang 'en' after migration
+    When the MDX content is read
+    Then none contains a line matching _Authors:…_ in the body
+    And publication-info lines (_Published in…_) remain unchanged
+
+  Scenario: Migrated fi/sv posts had no inline Authors line to begin with
+    Given posts 22, 27, 41, 48, 56 in lang 'fi' or 'sv' after migration
+    When the MDX content is read
+    Then none contains a line matching _Tekijät:…_ or _Författare:…_ in the body
+
+  Scenario: Migrated post 56 renders auto-byline identically to former manual en byline
     Given post 56 (Lähteelä) in lang 'en' after migration
+    And authors frontmatter: [{ name: 'Miisa Jeremejew', role: 'municipal councillors (Greens)', place: 'Kirkkonummi' }, 'lauri']
     When the page is rendered
     Then the byline reads: _Authors: Miisa Jeremejew and Lauri Lavanti, municipal councillors (Greens), Kirkkonummi._
+    And is rendered as an italic paragraph after the post body
+
+  Scenario: Migrated post 41 renders name-only byline (no role/place in original)
+    Given post 41 (public transport) in lang 'en' after migration
+    And authors frontmatter: [{ name: 'Ronja Karkinen' }, 'lauri']
+    When the page is rendered
+    Then the byline reads: _Authors: Ronja Karkinen and Lauri Lavanti._
+    And is rendered as an italic paragraph after the post body
+
+  Scenario: Migrated post 22 renders three-author name-only byline
+    Given post 22 in lang 'en' after migration
+    And authors frontmatter: [{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }]
+    When the page is rendered
+    Then the byline reads: _Authors: Johanna Fleming, Lauri Lavanti, and Paula Oittinen._
     And is rendered as an italic paragraph after the post body
 ```
 
@@ -217,16 +272,28 @@ type ResolvedAuthor =
   | { '@type': 'Person'; '@id': string }                   // Lauri → id ref
   | { '@type': 'Person'; name: string; url?: string; sameAs?: string[] }  // co-author
 
-// Byline rendering decision:
-// If all authors (after defaults applied) share identical role AND place
-//   → "Authors: A and B, role, place."  (Lähteelä style)
-// If any role OR place differs
-//   → "Authors: A (role_a, place_a) and B (role_b, place_b)."
-// If an author has no role/place → name only in list
-// Lauri's defaults (when his entry omits role/place):
-//   role = personJobTitle[lang], place = 'Kirkkonummi'
-// Byline prefix per lang: 'en' → 'Authors:', 'fi' → 'Tekijät:', 'sv' → 'Författare:'
-// Byline is italic (<em>), ends with period, rendered as a paragraph
+// Byline rendering rules:
+// - Render order = frontmatter array order (first entry → first name).
+// - String sentinel 'lauri' resolves to name 'Lauri Lavanti';
+//   its default role = personJobTitle[lang], default place = 'Kirkkonummi'
+//   (only used when the entry itself has no explicit role/place).
+// - Shared-suffix format (Lähteelä style):
+//     "Authors: A and B, role, place."
+//   Used when ALL resolved authors have identical role AND place strings (exact equality, incl. case/whitespace).
+// - Per-author format:
+//     "Authors: A (role_a, place_a) and B (role_b, place_b)."
+//   Used when any role OR place differs.
+// - Name-only: if an author has no role and no place → appears as name only, no parenthetical.
+//   If ALL authors are name-only → byline ends after the name list with no suffix:
+//     "Authors: A, B, and C."
+// - Three-author Oxford comma: "A, B, and C." (not "A and B and C")
+// - Byline prefix per lang: 'en' → 'Authors:', 'fi' → 'Tekijät:', 'sv' → 'Författare:'
+// - Byline is an italic paragraph (<p><em>…</em></p>), ends with period.
+
+// <meta property="article:author"> content:
+// - For 'lauri' sentinel → content = 'Lauri Lavanti'
+// - For inline co-author object → content = the entry's name field
+// - Emit one tag per author, in frontmatter array order.
 
 // Person image: Cloudinary URL
 // src: 'Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla'
@@ -274,3 +341,4 @@ type ResolvedAuthor =
 | Date | Change |
 |------|--------|
 | 2026-05-23 | Initial draft |
+| 2026-05-23 | Fix Critic findings: name-order rule (array order), article:author content spec, migration scenarios for all 5 posts, Wikipedia link scenario, WebSite regression scenario, sv knowsAbout scenario, byline Oxford-comma + name-only rules |
