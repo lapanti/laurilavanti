@@ -117,46 +117,45 @@ Feature: Canonical Person JSON-LD entity
     When the page is rendered
     Then no author byline element appears after the post content
 
-  Scenario: Shared-role byline for co-authors with identical role and place
+  Scenario: Per-author byline with role — role in parentheses after name
     Given a BlogPosting in lang 'en' with authors:
-      | entry             | role                                     | place       |
-      | Miisa Jeremejew   | Municipal councillor (Greens)            | Kirkkonummi |
-      | 'lauri' (string)  | Municipal councillor (Greens)            | Kirkkonummi |
+      | entry           | role                  |
+      | Miisa Jeremejew | municipal councillor  |
+      | 'lauri'         | municipal councillor  |
     When the page is rendered
     Then the byline after the post content is:
-      _Authors: Miisa Jeremejew and Lauri Lavanti, Municipal councillor (Greens), Kirkkonummi._
+      _Authors: Miisa Jeremejew (municipal councillor) and Lauri Lavanti (municipal councillor)._
     And the byline is rendered as an italic paragraph
     And render order follows frontmatter array order (first entry → first name)
 
-  Scenario: Shared-role byline localises prefix in Finnish
-    Given a BlogPosting in lang 'fi' with two co-authors sharing the same role and place
+  Scenario: Byline localises prefix in Finnish
+    Given a BlogPosting in lang 'fi' with two co-authors
     When the page is rendered
     Then the byline begins with "Tekijät:"
 
-  Scenario: Shared-role byline localises prefix in Swedish
-    Given a BlogPosting in lang 'sv' with two co-authors sharing the same role and place
+  Scenario: Byline localises prefix in Swedish
+    Given a BlogPosting in lang 'sv' with two co-authors
     When the page is rendered
     Then the byline begins with "Författare:"
 
-  Scenario: Per-author byline when roles differ
+  Scenario: Per-author byline when author has role
     Given a BlogPosting in lang 'en' with authors:
-      | name              | role                    | place       |
-      | lauri             | Lead developer          | Helsinki    |
-      | Atte Harjanne     | Member of Parliament    | Helsinki    |
+      | name          | role                  |
+      | Atte Harjanne | member of parliament  |
+      | lauri         | (no role)             |
     When the page is rendered
-    Then the byline uses per-author format:
-      _Authors: Lauri Lavanti (Lead developer, Helsinki) and Atte Harjanne (Member of Parliament, Helsinki)._
+    Then the byline is:
+      _Authors: Atte Harjanne (member of parliament) and Lauri Lavanti._
 
-  Scenario: Author with no role/place shows name only in byline
-    Given a BlogPosting with a co-author entry that has no role or place
+  Scenario: Author with no role shows name only in byline
+    Given a BlogPosting with a co-author entry that has no role field
     When the page is rendered
     Then that author appears in the byline as name only (no parenthetical)
 
-  Scenario: Lauri's defaults apply when his entry omits role/place
-    Given a BlogPosting in lang 'en' with authors: [{ name: 'Co-author', role: 'Some role', place: 'Some place' }, 'lauri']
-    And Lauri's entry (the string sentinel 'lauri') has no explicit role or place
+  Scenario: Lauri sentinel resolves to name only — no defaults injected
+    Given a BlogPosting with authors: ['lauri', { name: 'Co-author', role: 'Some role' }]
     When the page is rendered
-    Then Lauri's name appears with his default jobTitle['en'] and 'Kirkkonummi' as role/place in the per-author format
+    Then Lauri appears as 'Lauri Lavanti' with no role parenthetical
 
   # ── knowsAbout localisation ──────────────────────────────────────────────────
 
@@ -217,15 +216,22 @@ Feature: Canonical Person JSON-LD entity
     When the MDX content is read
     Then none contains a line matching _Tekijät:…_ or _Författare:…_ in the body
 
-  Scenario: Migrated post 56 renders auto-byline identically to former manual en byline
-    Given post 56 (Lähteelä) in lang 'en' after migration
-    And authors frontmatter: [{ name: 'Miisa Jeremejew', role: 'municipal councillors (Greens)', place: 'Kirkkonummi' }, 'lauri']
+  Scenario: Migrated post 56 (Lähteelä) renders per-author byline with role
+    Given post 56 in lang 'en' after migration
+    And authors frontmatter: [{ name: 'Miisa Jeremejew', role: 'municipal councillor' }, { name: 'Lauri Lavanti', role: 'municipal councillor' }]
     When the page is rendered
-    Then the byline reads: _Authors: Miisa Jeremejew and Lauri Lavanti, municipal councillors (Greens), Kirkkonummi._
+    Then the byline reads: _Authors: Miisa Jeremejew (municipal councillor) and Lauri Lavanti (municipal councillor)._
     And is rendered as an italic paragraph after the post body
 
-  Scenario: Migrated post 41 renders name-only byline (no role/place in original)
-    Given post 41 (public transport) in lang 'en' after migration
+  Scenario: Migrated post 48 (biometrics) renders per-author byline — Harjanne with role, Lauri name-only
+    Given post 48 in lang 'en' after migration
+    And authors frontmatter: [{ name: 'Atte Harjanne', role: 'member of parliament' }, 'lauri']
+    When the page is rendered
+    Then the byline reads: _Authors: Atte Harjanne (member of parliament) and Lauri Lavanti._
+    And is rendered as an italic paragraph after the post body
+
+  Scenario: Migrated post 41 renders name-only byline (Ronja has no role, Lauri is sentinel)
+    Given post 41 in lang 'en' after migration
     And authors frontmatter: [{ name: 'Ronja Karkinen' }, 'lauri']
     When the page is rendered
     Then the byline reads: _Authors: Ronja Karkinen and Lauri Lavanti._
@@ -256,8 +262,7 @@ export type AuthorEntry =
       name: string
       url?: string
       sameAs?: string[]
-      role?: string   // localized role/title string; omit for name-only byline
-      place?: string  // city/region; omit for name-only byline
+      role?: string   // localized role/title string (e.g. 'kunnanvaltuutettu'); omit for name-only byline
     }
 
 // Added to MdxPost in src/lib/mdxPosts.ts
@@ -274,19 +279,9 @@ type ResolvedAuthor =
 
 // Byline rendering rules:
 // - Render order = frontmatter array order (first entry → first name).
-// - String sentinel 'lauri' resolves to name 'Lauri Lavanti';
-//   its default role = personJobTitle[lang], default place = 'Kirkkonummi'
-//   (only used when the entry itself has no explicit role/place).
-// - Shared-suffix format (Lähteelä style):
-//     "Authors: A and B, role, place."
-//   Used when ALL resolved authors have identical role AND place strings (exact equality, incl. case/whitespace).
-// - Per-author format:
-//     "Authors: A (role_a, place_a) and B (role_b, place_b)."
-//   Used when any role OR place differs.
-// - Name-only: if an author has no role and no place → appears as name only, no parenthetical.
-//   If ALL authors are name-only → byline ends after the name list with no suffix:
-//     "Authors: A, B, and C."
-// - Three-author Oxford comma: "A, B, and C." (not "A and B and C")
+// - String sentinel 'lauri' resolves to name 'Lauri Lavanti' with NO role (name-only by default).
+// - Per-author format: each author rendered as "Name (role)" if role present, "Name" if absent.
+//   Joining: two authors → "A and B"; three+ → Oxford comma "A, B, and C".
 // - Byline prefix per lang: 'en' → 'Authors:', 'fi' → 'Tekijät:', 'sv' → 'Författare:'
 // - Byline is an italic paragraph (<p><em>…</em></p>), ends with period.
 
@@ -342,3 +337,4 @@ type ResolvedAuthor =
 |------|--------|
 | 2026-05-23 | Initial draft |
 | 2026-05-23 | Fix Critic findings: name-order rule (array order), article:author content spec, migration scenarios for all 5 posts, Wikipedia link scenario, WebSite regression scenario, sv knowsAbout scenario, byline Oxford-comma + name-only rules |
+| 2026-05-23 | Drop shared-suffix byline format; drop place field; Lauri sentinel = name-only; per-author role in parentheses only |
