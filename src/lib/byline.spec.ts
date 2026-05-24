@@ -36,27 +36,25 @@ describe('buildBylineText', () => {
 
     describe('two authors — co-author has role', () => {
         it('injects personJobTitle for lauri sentinel when co-author has role (en)', () => {
-            expect(
-                buildBylineText([{ name: 'Atte Harjanne', role: 'member of parliament' }, 'lauri'], 'en')
-            ).toBe(`Authors: Atte Harjanne (member of parliament) and ${personName} (${personJobTitle['en']}).`)
+            expect(buildBylineText([{ name: 'Atte Harjanne', role: 'member of parliament' }, 'lauri'], 'en')).toBe(
+                `Authors: Atte Harjanne (member of parliament) and ${personName} (${personJobTitle['en']}).`
+            )
         })
 
         it('injects personJobTitle for lauri sentinel when co-author has role (fi)', () => {
-            expect(
-                buildBylineText([{ name: 'Atte Harjanne', role: 'kansanedustaja' }, 'lauri'], 'fi')
-            ).toBe(`Tekijät: Atte Harjanne (kansanedustaja) ja ${personName} (${personJobTitle['fi']}).`)
+            expect(buildBylineText([{ name: 'Atte Harjanne', role: 'kansanedustaja' }, 'lauri'], 'fi')).toBe(
+                `Tekijät: Atte Harjanne (kansanedustaja) ja ${personName} (${personJobTitle['fi']}).`
+            )
         })
 
         it('injects personJobTitle for lauri sentinel when co-author has role (sv)', () => {
-            expect(
-                buildBylineText([{ name: 'Atte Harjanne', role: 'riksdagsledamot' }, 'lauri'], 'sv')
-            ).toBe(`Författare: Atte Harjanne (riksdagsledamot) och ${personName} (${personJobTitle['sv']}).`)
+            expect(buildBylineText([{ name: 'Atte Harjanne', role: 'riksdagsledamot' }, 'lauri'], 'sv')).toBe(
+                `Författare: Atte Harjanne (riksdagsledamot) och ${personName} (${personJobTitle['sv']}).`
+            )
         })
 
         it('renders co-author role in parentheses next to name', () => {
-            expect(
-                buildBylineText([{ name: 'Miisa Jeremejew', role: 'municipal councillor' }, 'lauri'], 'en')
-            ).toBe(
+            expect(buildBylineText([{ name: 'Miisa Jeremejew', role: 'municipal councillor' }, 'lauri'], 'en')).toBe(
                 `Authors: Miisa Jeremejew (municipal councillor) and ${personName} (${personJobTitle['en']}).`
             )
         })
@@ -64,21 +62,21 @@ describe('buildBylineText', () => {
 
     describe('three authors — no roles', () => {
         it('uses Oxford comma', () => {
-            expect(
-                buildBylineText([{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }], 'en')
-            ).toBe(`Authors: Johanna Fleming, ${personName}, and Paula Oittinen.`)
+            expect(buildBylineText([{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }], 'en')).toBe(
+                `Authors: Johanna Fleming, ${personName}, and Paula Oittinen.`
+            )
         })
 
         it('uses correct conjunction in Finnish', () => {
-            expect(
-                buildBylineText([{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }], 'fi')
-            ).toBe(`Tekijät: Johanna Fleming, ${personName}, ja Paula Oittinen.`)
+            expect(buildBylineText([{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }], 'fi')).toBe(
+                `Tekijät: Johanna Fleming, ${personName}, ja Paula Oittinen.`
+            )
         })
 
         it('uses correct conjunction in Swedish', () => {
-            expect(
-                buildBylineText([{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }], 'sv')
-            ).toBe(`Författare: Johanna Fleming, ${personName}, och Paula Oittinen.`)
+            expect(buildBylineText([{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen' }], 'sv')).toBe(
+                `Författare: Johanna Fleming, ${personName}, och Paula Oittinen.`
+            )
         })
     })
 
@@ -101,9 +99,7 @@ describe('buildBylineText', () => {
                     [{ name: 'Johanna Fleming' }, 'lauri', { name: 'Paula Oittinen', role: 'teacher' }],
                     'en'
                 )
-            ).toBe(
-                `Authors: Johanna Fleming, ${personName} (${personJobTitle['en']}), and Paula Oittinen (teacher).`
-            )
+            ).toBe(`Authors: Johanna Fleming, ${personName} (${personJobTitle['en']}), and Paula Oittinen (teacher).`)
         })
     })
 })
