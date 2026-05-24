@@ -93,7 +93,7 @@ export default defineConfig([
             'import/namespace': ['error'],
             'import/newline-after-import': ['error'],
             'import/no-duplicates': ['error'],
-            'import/no-unresolved': ['error'],
+            'import/no-unresolved': ['error', { ignore: ['^astro:'] }],
             'linebreak-style': ['error', 'unix'],
             'max-depth': ['error', 3],
             'no-duplicate-imports': ['off'],
