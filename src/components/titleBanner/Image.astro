@@ -1,5 +1,7 @@
 ---
-import { CldImage } from 'astro-cloudinary'
+import { Image } from 'astro:assets'
+
+import { getImage } from '../../lib/images'
 
 interface Props {
     alt?: string
@@ -7,6 +9,7 @@ interface Props {
 }
 
 const { alt, heroImage } = Astro.props
+const img = heroImage ? await getImage(heroImage, '1x1') : undefined
 ---
 
 <style>
@@ -30,14 +33,14 @@ const { alt, heroImage } = Astro.props
 </style>
 <div class="image-container">
     {
-        heroImage && (
-            <CldImage
+        img && (
+            <Image
                 alt={alt ?? ''}
-                crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                 fetchpriority="high"
-                layout="fullWidth"
-                src={heroImage}
-                unstyled
+                sizes="(max-width: 1199px) 100vw, 50vw"
+                src={img}
+                style="width:100%;height:auto;"
+                widths={[560, 1120, 1680]}
             />
         )
     }

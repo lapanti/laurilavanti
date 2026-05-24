@@ -1,7 +1,8 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import { CldImage } from 'astro-cloudinary'
+import { Image } from 'astro:assets'
 
+import { getImage } from '../../lib/images'
 import { sizes } from '../../lib/styles'
 import BackgroundImage from './images/BackgroundImage.astro'
 
@@ -13,6 +14,9 @@ interface Props {
 }
 
 const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
+
+const heroImg = heroImage ? await getImage(heroImage, '1x1') : undefined
+const mobileImg = mobileHeroImage ? await getImage(mobileHeroImage, '1x1') : undefined
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes14Negative: `-${sizes[14]}` }}>
@@ -62,39 +66,33 @@ const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
 <div class="container">
     <BackgroundImage image={backgroundImage} />
     {
-        heroImage && mobileHeroImage ? (
+        heroImg && mobileImg ? (
             <>
-                <CldImage
+                <Image
                     alt={alt ?? ''}
                     class="image image-mobile"
-                    crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                     fetchpriority="high"
-                    height={562}
-                    layout="constrained"
-                    src={mobileHeroImage}
-                    width={560}
+                    sizes="(max-width: 1199px) 100vw, 560px"
+                    src={mobileImg}
+                    widths={[560, 1120, 1680]}
                 />
-                <CldImage
+                <Image
                     alt={alt ?? ''}
                     class="image image-desktop"
-                    crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                     fetchpriority="high"
-                    height={562}
-                    layout="constrained"
-                    src={heroImage}
-                    width={560}
+                    sizes="560px"
+                    src={heroImg}
+                    widths={[560, 1120, 1680]}
                 />
             </>
-        ) : heroImage ? (
-            <CldImage
+        ) : heroImg ? (
+            <Image
                 alt={alt ?? ''}
                 class="image"
-                crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
                 fetchpriority="high"
-                height={562}
-                layout="constrained"
-                src={heroImage}
-                width={560}
+                sizes="(max-width: 1199px) 100vw, 560px"
+                src={heroImg}
+                widths={[560, 1120, 1680]}
             />
         ) : null
     }
