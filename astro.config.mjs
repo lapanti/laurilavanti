@@ -46,7 +46,7 @@ export default defineConfig({
     },
 
     image: {
-        service: { entrypoint: '@astrojs/sharp' },
+        service: { entrypoint: 'astro/assets/services/sharp' },
     },
 
     integrations: [
