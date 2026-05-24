@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Build
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -125,7 +124,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Unit tests
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -192,7 +190,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-snapshots
     steps:
       - uses: actions/checkout@v6
@@ -225,7 +222,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-screenshots
     steps:
       - uses: actions/checkout@v6
@@ -258,7 +254,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-axe
     steps:
       - uses: actions/checkout@v6
@@ -291,7 +286,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-siteimprove
     steps:
       - uses: actions/checkout@v6
@@ -324,7 +318,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-other
     steps:
       - uses: actions/checkout@v6
@@ -357,7 +350,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-horizontal-scroll
     steps:
       - uses: actions/checkout@v6
@@ -390,7 +382,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-snapshots
     steps:
       - uses: actions/checkout@v6
@@ -423,7 +414,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-screenshots
     steps:
       - uses: actions/checkout@v6
@@ -456,7 +446,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-axe
     steps:
       - uses: actions/checkout@v6
@@ -489,7 +478,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-siteimprove
     steps:
       - uses: actions/checkout@v6
@@ -522,7 +510,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-other
     steps:
       - uses: actions/checkout@v6
@@ -555,7 +542,6 @@ jobs:
     permissions:
       contents: read
     env:
-      PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.PUBLIC_CLOUDINARY_CLOUD_NAME }}
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-horizontal-scroll
     steps:
       - uses: actions/checkout@v6
