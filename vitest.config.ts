@@ -5,6 +5,20 @@ import { configDefaults } from 'vitest/config'
 
 export default getViteConfig(
     {
+        plugins: [
+            {
+                name: 'stub-virtual-image-service',
+                enforce: 'pre' as const,
+                resolveId(id) {
+                    if (id === 'virtual:image-service') return id
+                },
+                load(id) {
+                    if (id === 'virtual:image-service') {
+                        return `export default { transform(options) { return options; }, getURL(options) { const s = options.src; return typeof s === 'string' ? s : (s && s.src) ? s.src : String(s); }, parseURL(url) { return { src: url }; }, validateOptions(options) { return options; }, getSrcSet() { return []; }, getHTMLAttributes(options) { const { src, width, height, format, quality, densities, widths, formats, layout, priority, fit, position, background, ...rest } = options; return { ...rest, width, height, loading: rest.loading ?? 'lazy', decoding: rest.decoding ?? 'async' }; } }`
+                    }
+                },
+            },
+        ],
         test: {
             environment: 'node',
             exclude: [...configDefaults.exclude, 'tests/e2e/**'],
