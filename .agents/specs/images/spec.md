@@ -1,86 +1,111 @@
-# Feature: Images (Cloudinary)
+# Feature: Images (local Sharp)
 
 ## Blueprint
 
 ### Context
-All images are hosted on Cloudinary — there are no local image files in the repository. Images are referenced by filename (without extension) in MDX frontmatter or component props, and `astro-cloudinary` resolves, transforms, and optimises them at build time.
+All images are stored locally in `src/images/`. Originals live in `src/images/originals/`; pre-cropped variants per aspect ratio live in `src/images/processed/{slug}/`. Astro Sharp handles format conversion (WebP/AVIF) and responsive `srcset` (1x/2x/3x) at build time. No external image CDN.
 
 ### Architecture
 
-**Two usage modes:**
+**Image resolution:** `src/lib/images.ts` exports `getImage(slug, variant): Promise<ImageMetadata>`. Uses `import.meta.glob` over `src/images/processed/**/*.jpg`. Called with `await` in Astro component frontmatter.
 
-1. **`<CldImage>` component** — renders an `<img>` with Cloudinary transformations. Used everywhere that an image appears in the page body.
-2. **`getCldImageUrl()` helper** — generates a Cloudinary URL string without rendering markup. Used only in layouts to produce `ogImage` strings passed to `Head.astro`.
+**Crop variants per slug:**
 
-**Image usage sites and their transformations:**
-
-| Component | Transformation | Dimensions | Notes |
+| Variant key | Aspect ratio | Source size | Used by |
 |---|---|---|---|
-| `BackgroundImage.astro` | `fill`, `source:true` | 1920×660 | Decorative — `alt=""`. Desktop-only (hidden < 1200px). Dark overlay via CSS `::after`. |
-| `titleBanner/Image.astro` | `fill`, `aspectRatio: '1:1'`, `gravity: face` | full-width | Hero portrait — requires descriptive `alt`. Square crop centred on face. |
-| `excerptList/excerpt/Banner.astro` | `fill`, `aspectRatio: '191:100'`, `gravity: face` | 560×293 | Post card thumbnail — `alt` from frontmatter. Face-centred landscape crop. |
-| `body/ImageWithCaption.astro` | `limit`, `source:true` | 800×600 | Inline post image with `<figcaption>`. `aria-label` from `caption` prop. |
-| `FrontPageLayout` (og:image) | `fill`, `source:true` | 1200×630 | URL only via `getCldImageUrl`. Not rendered in DOM. |
-| `PostLayout` (og:image) | `fill`, `source:true` | 1200×630 | URL only via `getCldImageUrl`. Not rendered in DOM. |
+| `1x1` | 1:1 | up to 1680×1680 | Hero portraits, recommendation portraits |
+| `191x100` | 191:100 | up to 1680×881 | Excerpt card thumbnails |
+| `background` | 1920:660 | 1920×660 | Decorative full-bleed background |
+| `og` | 1200:630 | 1200×630 | Open Graph / og:image (all layouts + person JSON-LD) |
+| `body` | 4:3 | up to 2400×1800 | Inline post images |
 
-**Frontmatter fields:**
-- `heroImage` — Cloudinary filename without extension (e.g. `Lauri-Lavanti-nojaamassa-kasiin`)
-- `backgroundImage` — same convention, used only in `FrontPageLayout`
-- `alt` — descriptive alt text for hero images; must not be empty for non-decorative images
+Not every slug needs every variant — blog posts need `1x1`, `191x100`, `og`, `body`. Index pages also need `background`.
+
+**Image usage sites:**
+
+| Component | Variant | `widths` / `sizes` | Notes |
+|---|---|---|---|
+| `BackgroundImage.astro` | `background` | `[960,1920]` / `100vw` | Decorative — `alt=""`. Desktop-only (hidden < 1200px). |
+| `titleBanner/Image.astro` | `1x1` | `[560,1120,1680]` / `(max-width:1199px) 100vw, 50vw` | Hero portrait — descriptive `alt` required. |
+| `heroBanner/Images.astro` | `1x1` (hero + mobile) | `[560,1120,1680]` / responsive | Same for both hero + mobile variants. |
+| `excerptList/excerpt/Banner.astro` | `191x100` | `[560,1120]` / `560px` | Post card thumbnail. |
+| `body/ImageWithCaption.astro` | `body` | `[400,800,1200]` / `(max-width:640px) 100vw, 800px` | Inline image with `<figcaption>`. `aria-label` from `caption` prop. |
+| `recommendations/Recommendation.astro` | `1x1` | `[448,896]` / `448px` | Circular portrait via CSS `border-radius:50%`. |
+| Layouts (og:image) | `og` | — | `(await getImage(heroImage, 'og')).src` — URL string passed to `Head.astro`. |
+| `person.ts` (JSON-LD) | `og` | — | `getPersonImageUrl()` async function — called with `await` in `Head.astro`. |
+
+**Frontmatter fields (unchanged from prior convention):**
+- `heroImage` — image slug without extension (e.g. `Lauri-Lavanti-nojaamassa-kasiin`)
+- `backgroundImage` — same convention, index pages only
+- `mobileHeroImage` — same convention, index pages only
+- `alt` — descriptive alt text; required for non-decorative images
 
 **Alt text rules:**
-- Background images (purely decorative, behind a colour overlay): `alt=""`
-- Hero/portrait images: must have descriptive `alt` text passed from frontmatter
-- Excerpt thumbnails: use `alt` from post frontmatter (falls back to `""` if absent)
+- Background images (decorative, behind a colour overlay): `alt=""`
+- Hero/portrait images: descriptive `alt` from frontmatter — must not be empty
+- Excerpt thumbnails: `alt` from post frontmatter (falls back to `""` if absent)
 - Inline body images (`ImageWithCaption`): `alt` prop + visible `figcaption`
 
-**`fetchpriority="high"`** is set on above-the-fold images (`BackgroundImage`, `titleBanner/Image`) to trigger LCP optimisation.
+**`fetchpriority="high"`** on above-the-fold images (`BackgroundImage`, `heroBanner/Images`, `titleBanner/Image`).
 
-**Dependencies:** All image components → `astro-cloudinary`. Layouts → `astro-cloudinary/helpers`. No local image files exist.
+**Adding a new image:**
+1. Drop original JPEG into `src/images/originals/{slug}.jpg`
+2. Run `npx tsx scripts/process-image.mts src/images/originals/{slug}.jpg`
+3. Review all crop variants in browser at `http://localhost:4322`
+4. Press Enter to approve (or enter `x% y%` focal point to re-crop)
+5. Commit originals + processed crops
+
+**Dependencies:** `src/lib/images.ts` (glob resolver), `smartcrop-sharp` (dev dep, used only in processing scripts), Astro `<Image>` from `astro:assets`.
 
 ### Anti-Patterns
-- Do not include file extensions in `heroImage` / `backgroundImage` frontmatter — Cloudinary infers format automatically
-- Do not use `getCldImageUrl` inside `Head.astro` — that's the layout's job; `Head` only receives a pre-computed URL string
+- Do not include file extensions in `heroImage` / `backgroundImage` / `mobileHeroImage` frontmatter
+- Do not use `getImage` inside `Head.astro` directly — layouts compute `ogImage` as a URL string; `Head` only receives the pre-computed string
 - Do not set `alt=""` on hero or portrait images — they are not decorative
-- Do not set a non-empty `alt` on `BackgroundImage` — it is a decorative overlay image
-- Do not use local `<img>` tags with static paths — there are no local image files to reference
-- Do not change crop aspect ratios without also updating the `height`/`width` props to match — mismatched dimensions cause incorrect Cloudinary transformations
+- Do not set a non-empty `alt` on `BackgroundImage` — it is decorative
+- Do not reference `src/images/processed/` paths directly in components — always go through `getImage()`
+- Do not add Cloudinary or other external image CDN imports — images are local only
 
 ---
 
 ## Contract
 
 ### Definition of Done
-- [ ] `heroImage` frontmatter field is a valid Cloudinary filename (no extension, no leading slash)
+- [ ] `heroImage` frontmatter field is a slug that has a matching directory under `src/images/processed/`
 - [ ] `alt` is descriptive and non-empty for all hero/portrait images
 - [ ] Background images have `alt=""`
-- [ ] og:image is generated via `getCldImageUrl` at 1200×630 in layouts, not in `Head.astro`
+- [ ] `og` variant exists for every slug used as `heroImage`
+- [ ] `ogImage` URL string computed in layouts via `(await getImage(heroImage, 'og')).src`, not in `Head.astro`
 - [ ] Above-the-fold images have `fetchpriority="high"`
 - [ ] Accessibility scan passes (no alt-text violations)
 
 ### Regression Guardrails
-- The `getCldImageUrl` import uses `astro-cloudinary/helpers` with an ESLint exception (`// eslint-disable-line import/namespace`) — do not change this import path or the linter exception will fail
-- `BackgroundImage` is only shown at ≥ 1200px — do not remove the media query or it will appear on mobile
-- The excerpt Banner crop is `191:100` (≈ 560×293) — changing this breaks the visual consistency of the post list
+- `BackgroundImage` is only shown at ≥ 1200px — do not remove the media query
+- The excerpt Banner variant is `191x100` — changing this breaks visual consistency of the post list
+- `getPersonImageUrl()` is async — always call with `await` in Astro frontmatter
 
 ### Scenarios
 
 **Scenario: Blog post hero image**
 - Given: A post has `heroImage: Kirkkonummen-juna--ja-bussiasema` and `alt: 'Kirkkonummen asema'`
 - When: The post page renders
-- Then: `<CldImage>` resolves the Cloudinary asset, applies `fill` crop at 1:1 centred on face, renders with the provided alt text; the og:image URL is a 1200×630 fill crop of the same asset
+- Then: `getImage('Kirkkonummen-juna--ja-bussiasema', '1x1')` resolves to `ImageMetadata`; Astro `<Image>` renders a responsive `<img>` with `srcset` in WebP/AVIF; the og:image URL resolves the `og` variant
 
 **Scenario: Front page background image**
 - Given: `src/pages/fi/index.mdx` has `backgroundImage: 'Kirkkonummen-keskusta'`
 - When: The page renders on a desktop viewport (≥ 1200px)
-- Then: The background image is visible behind a `rgba(0, 98, 114, 0.7)` overlay; `alt=""` is set; it is not visible on mobile
+- Then: Background image is visible behind a `rgba(0,98,114,0.7)` overlay; `alt=""` is set; hidden on mobile
 
 **Scenario: Image with caption in post body**
 - Given: An MDX post uses `<ImageWithCaption image="kuva-nimesta" caption="Kuvateksti" alt="Kuvaus" />`
 - When: The post renders
-- Then: A `<figure>` with `aria-label="Kuvateksti"` contains the Cloudinary image and a visible `<figcaption>Kuvateksti</figcaption>`
+- Then: A `<figure>` with `aria-label="Kuvateksti"` contains the image and a visible `<figcaption>Kuvateksti</figcaption>`
 
 **Scenario: Missing heroImage**
 - Given: A component receives `heroImage={undefined}`
 - When: It renders
-- Then: No `<CldImage>` is rendered (conditional `{heroImage && <CldImage ... />}`); no broken image tag appears
+- Then: No image is rendered (conditional `heroImage ? await getImage(...) : undefined`); no broken image tag appears
+
+**Scenario: Unknown slug**
+- Given: `getImage('nonexistent-slug', '1x1')` is called
+- When: It runs
+- Then: Throws `Error: Processed image not found: /src/images/processed/nonexistent-slug/1x1.jpg` — build fails with a clear message

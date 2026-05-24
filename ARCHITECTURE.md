@@ -8,7 +8,7 @@ Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/
 - [`.agents/specs/pages/spec.md`](./.agents/specs/pages/spec.md) — pages (home, about, contact, blog index, category, 404)
 - [`.agents/specs/navigation/spec.md`](./.agents/specs/navigation/spec.md) — header nav, mobile/desktop split, language-switch script, skip links
 - [`.agents/specs/seo/spec.md`](./.agents/specs/seo/spec.md) — JSON-LD, Open Graph, hreflang, canonical URLs, Twitter cards
-- [`.agents/specs/images/spec.md`](./.agents/specs/images/spec.md) — Cloudinary integration, CldImage vs getCldImageUrl, alt text rules
+- [`.agents/specs/images/spec.md`](./.agents/specs/images/spec.md) — local image workflow, crop variants, smartcrop-sharp, alt text rules
 - [`.agents/specs/cv/spec.md`](./.agents/specs/cv/spec.md) — curriculum vitae data files, CvRow type, component hierarchy
 - [`.agents/specs/tags/spec.md`](./.agents/specs/tags/spec.md) — tag taxonomy, category page generation, silent failure on unknown ids
 - [`.agents/specs/rss/spec.md`](./.agents/specs/rss/spec.md) — RSS feed endpoints, item structure, locale filtering
@@ -27,7 +27,7 @@ Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/
 | Content | MDX files (local, no CMS) |
 | Language | TypeScript |
 | Styling | CSS (scoped in components) |
-| Images | Cloudinary (via `astro-cloudinary`) |
+| Images | Local files in `src/images/` (Sharp via `@astrojs/sharp`) |
 | Icons | `astro-icon` + `@iconify-json/fa7-brands` |
 | Hosting | Cloudflare Pages |
 | Unit tests | Vitest + happy-dom |
@@ -71,16 +71,29 @@ Every MDX file declares a `layout:` in its frontmatter. There are three layouts 
 
 ## Images
 
-All images are hosted on **Cloudinary** — there are no local image files in the repository.
+All images are stored locally in the repository under `src/images/`.
 
-- MDX frontmatter references images by their Cloudinary filename (no extension), e.g.:
+```
+src/images/
+  originals/      # Source originals (JPEG, committed)
+  processed/
+    {slug}/
+      1x1.jpg         # 1:1 crop at max pixels — hero portraits, recommendation portraits
+      191x100.jpg     # 191:100 crop — excerpt card thumbnails
+      background.jpg  # 1920:660 crop — decorative full-bleed background
+      og.jpg          # 1200×630 — Open Graph / og:image
+      body.jpg        # 4:3 crop — inline post images
+```
+
+- MDX frontmatter references images by slug (no extension, no path), e.g.:
   ```yaml
   heroImage: Lauri-Lavanti-nojaamassa-kasiin
   backgroundImage: Kirkkonummen-keskusta
   ```
-- `astro-cloudinary` resolves and optimises these at build time.
-- Background/decorative images: `alt=""`.
-- Hero/portrait images: require descriptive `alt` text.
+- `src/lib/images.ts` resolves slug + variant → `ImageMetadata` via `import.meta.glob`.
+- Astro `<Image>` (Sharp) handles format conversion (WebP/AVIF) and responsive `srcset` (1x/2x/3x) at build time.
+- **Add a new image:** run `npx tsx scripts/process-image.mts src/images/originals/{slug}.jpg`, review crops in browser, press Enter to approve and commit.
+- Background/decorative images: `alt=""`. Hero/portrait images: require descriptive `alt` text.
 
 ---
 
