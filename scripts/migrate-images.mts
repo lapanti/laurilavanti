@@ -125,6 +125,13 @@ async function downloadOriginal(slug: string): Promise<string> {
     return destPath
 }
 
+async function normaliseOrientation(originalPath: string): Promise<void> {
+    const meta = await sharp(originalPath).metadata()
+    if (!meta.orientation || meta.orientation === 1) return
+    const rotated = await sharp(originalPath).rotate().jpeg({ quality: 95 }).toBuffer()
+    await fs.writeFile(originalPath, rotated)
+}
+
 async function cropVariant(
     originalPath: string,
     variant: Variant,
@@ -221,6 +228,7 @@ async function processSlug(slug: string, rl: readline.Interface): Promise<void> 
     }
 
     const originalPath = await downloadOriginal(slug)
+    await normaliseOrientation(originalPath)
     await fs.mkdir(outDir, { recursive: true })
 
     const isPortrait = /lauri/i.test(slug)
