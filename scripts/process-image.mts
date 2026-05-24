@@ -41,6 +41,21 @@ const VARIANTS: Variant[] = [
 ]
 
 // ---------------------------------------------------------------------------
+// EXIF orientation normalisation
+// ---------------------------------------------------------------------------
+
+// Rewrites the file with EXIF orientation applied to pixels and the
+// orientation tag stripped. smartcrop reads raw pixels and ignores EXIF,
+// so without this step originals shot in portrait on a phone get cropped
+// against their unrotated landscape sensor data.
+async function normaliseOrientation(originalPath: string): Promise<void> {
+    const meta = await sharp(originalPath).metadata()
+    if (!meta.orientation || meta.orientation === 1) return
+    const rotated = await sharp(originalPath).rotate().jpeg({ quality: 95 }).toBuffer()
+    await fs.writeFile(originalPath, rotated)
+}
+
+// ---------------------------------------------------------------------------
 // Crop a single variant
 // ---------------------------------------------------------------------------
 
@@ -155,6 +170,7 @@ async function main() {
     await fs.mkdir(outDir, { recursive: true })
 
     console.log(`\nProcessing: ${slug}`)
+    await normaliseOrientation(resolved)
 
     let focalPoint: { x: number; y: number } | undefined
 
