@@ -10,12 +10,13 @@ import UL from './UL.astro'
 
 interface Props {
     ariaLabel?: string
+    id?: string
     lang: Lang
     summaryRows: string[]
     title: string
 }
 
-const { ariaLabel, lang, summaryRows, title } = Astro.props
+const { ariaLabel, id, lang, summaryRows, title } = Astro.props
 const content = summaryBoxContent[lang]
 const isCollapsible = summaryRows.length > 3
 const expandLabelJson = JSON.stringify(content.expandLabel)
@@ -85,7 +86,7 @@ const collapseLabelJson = JSON.stringify(content.collapseLabel)
         text-decoration: underline;
     }
 </style>
-<aside aria-label={ariaLabel}>
+<aside aria-label={ariaLabel} id={id}>
     <H2>{title}</H2>
     {
         isCollapsible ? (
