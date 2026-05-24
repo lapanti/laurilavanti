@@ -3,6 +3,7 @@ import type { Lang } from '../content/nav'
 import type { AuthorEntry } from '../content/person'
 
 import {
+    getPersonImageUrl,
     PERSON_ID,
     personAffiliation,
     personAlumniOf,
@@ -12,7 +13,6 @@ import {
     personFamilyName,
     personGivenName,
     personHasOccupation,
-    personImage,
     personJobTitle,
     personKnowsAbout,
     personKnowsLanguage,
@@ -133,7 +133,7 @@ const canonicalPersonObject = {
     familyName: personFamilyName,
     givenName: personGivenName,
     hasOccupation: personHasOccupation[lang],
-    image: personImage,
+    image: await getPersonImageUrl(),
     jobTitle: personJobTitle[lang],
     knowsAbout: personKnowsAbout[lang],
     knowsLanguage: personKnowsLanguage,

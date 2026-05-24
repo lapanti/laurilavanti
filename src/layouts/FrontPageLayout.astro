@@ -2,9 +2,8 @@
 import type { MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
-import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
-
 import HeroBanner from '../components/HeroBanner.astro'
+import { getImage } from '../lib/images'
 import BaseLayout from './BaseLayout.astro'
 
 type Props = MDXLayoutProps<{
@@ -40,9 +39,7 @@ const {
     type,
 } = frontmatter
 
-const ogImage = heroImage
-    ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
-    : undefined
+const ogImage = heroImage ? (await getImage(heroImage, 'og')).src : undefined
 ---
 
 <BaseLayout

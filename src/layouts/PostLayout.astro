@@ -2,13 +2,12 @@
 import type { MDXLayoutProps } from 'astro'
 import type { AuthorEntry } from '../content/person'
 
-import { getCldImageUrl } from 'astro-cloudinary/helpers' // eslint-disable-line import/namespace
-
 import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
 import H2 from '../components/H2.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
+import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
@@ -55,9 +54,7 @@ const i18n = {
 
 const t = i18n[lang]
 
-const ogImage = heroImage
-    ? getCldImageUrl({ crop: { source: true, type: 'fill' }, height: 630, src: heroImage, width: 1200 })
-    : undefined
+const ogImage = heroImage ? (await getImage(heroImage, 'og')).src : undefined
 
 const siteOrigin = 'https://laurilavanti.fi'
 const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }

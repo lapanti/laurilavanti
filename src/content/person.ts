@@ -1,7 +1,5 @@
 import type { Lang } from './nav'
 
-import { getCldImageUrl } from 'astro-cloudinary/helpers'
-
 export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
 
 export const personName = 'Lauri Lavanti'
@@ -12,12 +10,11 @@ export const personBirthPlace = { '@type': 'Place', name: 'Jyväskylä' }
 export const personNationality = { '@type': 'Country', name: 'FI' }
 export const personUrl = 'https://laurilavanti.fi/fi/'
 
-export const personImage = getCldImageUrl({
-    crop: { gravity: 'north', source: true, type: 'fill' },
-    height: 1200,
-    src: 'Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla',
-    width: 1200,
-})
+export async function getPersonImageUrl(): Promise<string> {
+    const { getImage } = await import('../lib/images')
+
+    return (await getImage('Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla', 'og')).src
+}
 
 export const personSameAs = [
     'https://bsky.app/profile/laurilavanti.fi',
