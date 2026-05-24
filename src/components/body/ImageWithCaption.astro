@@ -1,6 +1,7 @@
 ---
-import { CldImage } from 'astro-cloudinary'
+import { Image } from 'astro:assets'
 
+import { getImage } from '../../lib/images'
 import { sizes, typographics } from '../../lib/styles'
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 }
 
 const { alt, caption, image } = Astro.props
+const img = image ? await getImage(image, 'body') : undefined
 ---
 
 <style
@@ -41,17 +43,14 @@ const { alt, caption, image } = Astro.props
     }
 </style>
 {
-    image && (
+    img && (
         <figure aria-label={caption}>
-            <CldImage
+            <Image
                 alt={alt ?? ''}
-                breakpoints={[400, 800, 1200]}
-                crop={{ source: true, type: 'limit' }}
-                height={600}
-                layout="constrained"
                 sizes="(max-width: 640px) 100vw, 800px"
-                src={image}
-                width={800}
+                src={img}
+                style="width:100%;height:auto;"
+                widths={[400, 800, 1200]}
             />
             <figcaption>{caption}</figcaption>
         </figure>

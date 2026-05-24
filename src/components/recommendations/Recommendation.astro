@@ -1,6 +1,7 @@
 ---
-import { CldImage } from 'astro-cloudinary'
+import { Image } from 'astro:assets'
 
+import { getImage } from '../../lib/images'
 import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 
 interface Props {
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const { alt, recommendation, image, name, title } = Astro.props
+const img = image ? await getImage(image, '1x1') : undefined
 ---
 
 <style
@@ -77,14 +79,14 @@ const { alt, recommendation, image, name, title } = Astro.props
 </style>
 <article>
     {
-        image && (
+        img && (
             <div class="portrait">
-                <CldImage
+                <Image
                     alt={alt}
-                    crop={{ aspectRatio: '1:1', gravity: 'face', source: true, type: 'fill' }}
-                    src={image}
-                    unstyled
-                    width={448}
+                    sizes="(max-width: 600px) 100vw, 448px"
+                    src={img}
+                    style="width:100%;height:auto;"
+                    widths={[448, 896]}
                 />
             </div>
         )
