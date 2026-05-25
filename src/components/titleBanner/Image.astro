@@ -13,6 +13,7 @@ const img = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : un
 <style>
     .image-container {
         display: flex;
+        max-height: min(100vw, 35rem);
         overflow: hidden;
         position: relative;
     }
