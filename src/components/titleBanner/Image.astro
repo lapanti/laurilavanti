@@ -19,9 +19,10 @@ const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefin
 
     .image-container :global(img) {
         aspect-ratio: 864 / 660;
+        height: auto;
         max-height: min(100vw, 35rem);
         object-fit: cover;
-        width: auto;
+        width: 100%;
     }
 
     @media (min-width: 1200px) {
@@ -30,8 +31,10 @@ const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefin
         }
 
         .image-container :global(img) {
+            aspect-ratio: auto;
+            height: 100%;
             max-height: none;
-            width: 100%;
+            width: auto;
         }
     }
 </style>
