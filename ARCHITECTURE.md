@@ -8,7 +8,7 @@ Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/
 - [`.agents/specs/pages/spec.md`](./.agents/specs/pages/spec.md) — pages (home, about, contact, blog index, category, 404)
 - [`.agents/specs/navigation/spec.md`](./.agents/specs/navigation/spec.md) — header nav, mobile/desktop split, language-switch script, skip links
 - [`.agents/specs/seo/spec.md`](./.agents/specs/seo/spec.md) — JSON-LD, Open Graph, hreflang, canonical URLs, Twitter cards
-- [`.agents/specs/images/spec.md`](./.agents/specs/images/spec.md) — local image workflow, crop variants, smartcrop-sharp, alt text rules
+- [`.agents/specs/images/spec.md`](./.agents/specs/images/spec.md) — Cloudflare Images URL builder, crop variants, alt text rules
 - [`.agents/specs/cv/spec.md`](./.agents/specs/cv/spec.md) — curriculum vitae data files, CvRow type, component hierarchy
 - [`.agents/specs/tags/spec.md`](./.agents/specs/tags/spec.md) — tag taxonomy, category page generation, silent failure on unknown ids
 - [`.agents/specs/rss/spec.md`](./.agents/specs/rss/spec.md) — RSS feed endpoints, item structure, locale filtering
@@ -27,7 +27,7 @@ Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/
 | Content | MDX files (local, no CMS) |
 | Language | TypeScript |
 | Styling | CSS (scoped in components) |
-| Images | Local files in `src/images/` (Sharp via `@astrojs/sharp`) |
+| Images | Cloudflare Images (flexible resizing via CF rewrite rule, `src/lib/images.ts`) |
 | Icons | `astro-icon` + `@iconify-json/fa7-brands` |
 | Hosting | Cloudflare Pages |
 | Unit tests | Vitest + happy-dom |
@@ -71,29 +71,18 @@ Every MDX file declares a `layout:` in its frontmatter. There are three layouts 
 
 ## Images
 
-All images are stored locally in the repository under `src/images/`.
-
-```
-src/images/
-  originals/      # Source originals (JPEG, committed)
-  processed/
-    {slug}/
-      1x1.jpg         # 1:1 crop at max pixels — hero portraits, recommendation portraits
-      191x100.jpg     # 191:100 crop — excerpt card thumbnails
-      background.jpg  # 1920:660 crop — decorative full-bleed background
-      og.jpg          # 1200×630 — Open Graph / og:image
-      body.jpg        # 4:3 crop — inline post images
-```
+Images are stored in **Cloudflare Images**, served via a rewrite rule: `images/* → cdn-cgi/imagedelivery/iOe5UJ6bvcdboiEsn9unNQ/${1}`. No image files are committed to the repo.
 
 - MDX frontmatter references images by slug (no extension, no path), e.g.:
   ```yaml
   heroImage: Lauri-Lavanti-nojaamassa-kasiin
   backgroundImage: Kirkkonummen-keskusta
   ```
-- `src/lib/images.ts` resolves slug + variant → `ImageMetadata` via `import.meta.glob`.
-- Astro `<Image>` (Sharp) handles format conversion (WebP/AVIF) and responsive `srcset` (1x/2x/3x) at build time.
-- **Add a new image:** run `npx tsx scripts/process-image.mts src/images/originals/{slug}.jpg`, review crops in browser, press Enter to approve and commit.
+- `src/lib/images.ts` builds CF Images flexible-resizing URLs: `getImage(slug, variant)` and `getImageSrcset(slug, variant, widths[])`.
+- Cropping, format conversion, and responsive sizing are handled by CF at request time — no build-time processing.
+- **Add a new image:** drop original into `src/images/originals/{slug}.jpg` (gitignored, kept locally), then run `CF_ACCOUNT_ID=xxx CF_API_TOKEN=xxx npx tsx scripts/upload-to-cf-images.mts`.
 - Background/decorative images: `alt=""`. Hero/portrait images: require descriptive `alt` text.
+- **Critical:** use `fit=crop`, not `fit=scale-crop` — `scale-crop` is invalid and causes CF to return the unresized original.
 
 ---
 
