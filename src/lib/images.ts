@@ -18,6 +18,7 @@ const VARIANTS: Record<string, VariantDef> = {
     '191x100': { fit: 'crop', gravity: 'auto', h: 881, w: 1680 },
     background: { fit: 'crop', gravity: 'auto', h: 660, w: 1920 },
     body: { fit: 'crop', gravity: 'auto', h: 1800, w: 2400 },
+    hero: { fit: 'crop', gravity: 'face', h: 1320, w: 1728 },
     og: { fit: 'crop', gravity: 'face', h: 630, w: 1200 },
 }
 
