@@ -27,6 +27,7 @@ const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefin
 
     @media (min-width: 1200px) {
         .image-container {
+            height: 100%;
             width: 50%;
         }
 
@@ -34,7 +35,8 @@ const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefin
             aspect-ratio: auto;
             height: 100%;
             max-height: none;
-            width: auto;
+            object-fit: cover;
+            width: 100%;
         }
     }
 </style>
