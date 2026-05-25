@@ -1,4 +1,5 @@
 import type { Lang } from './nav'
+import { getImage } from '../lib/images'
 
 export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
 
@@ -10,10 +11,8 @@ export const personBirthPlace = { '@type': 'Place', name: 'Jyväskylä' }
 export const personNationality = { '@type': 'Country', name: 'FI' }
 export const personUrl = 'https://laurilavanti.fi/fi/'
 
-export async function getPersonImageUrl(): Promise<string> {
-    const { getImage } = await import('../lib/images')
-
-    return (await getImage('Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla', 'og')).src
+export function getPersonImageUrl(): Promise<string> {
+    return Promise.resolve(getImage('Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla', 'og').src)
 }
 
 export const personSameAs = [

@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-
-import { getImage } from '../../../lib/images'
+import { getImageSrcset } from '../../../lib/images'
 import { colors } from '../../../lib/styles'
 
 interface Props {
@@ -9,7 +7,7 @@ interface Props {
 }
 
 const { image } = Astro.props
-const img = image ? await getImage(image, 'background') : undefined
+const img = image ? getImageSrcset(image, 'background', [960, 1920]) : undefined
 ---
 
 <style define:vars={{ colorsEvening70: colors.evening70 }}>
@@ -41,13 +39,15 @@ const img = image ? await getImage(image, 'background') : undefined
     {
         img && (
             <div>
-                <Image
+                <img
                     alt=""
                     fetchpriority="high"
                     sizes="100vw"
-                    src={img}
+                    src={img.src}
+                    srcset={img.srcset}
+                    width={img.width}
+                    height={img.height}
                     style="width:100%;height:100%;object-fit:cover;"
-                    widths={[960, 1920]}
                 />
             </div>
         )

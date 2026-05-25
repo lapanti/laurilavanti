@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-
-import { getImage } from '../../lib/images'
+import { getImageSrcset } from '../../lib/images'
 import { sizes, typographics } from '../../lib/styles'
 
 interface Props {
@@ -11,7 +9,7 @@ interface Props {
 }
 
 const { alt, caption, image } = Astro.props
-const img = image ? await getImage(image, 'body') : undefined
+const img = image ? getImageSrcset(image, 'body', [400, 800, 1200]) : undefined
 ---
 
 <style
@@ -45,12 +43,14 @@ const img = image ? await getImage(image, 'body') : undefined
 {
     img && (
         <figure aria-label={caption}>
-            <Image
+            <img
                 alt={alt ?? ''}
                 sizes="(max-width: 640px) 100vw, 800px"
-                src={img}
+                src={img.src}
+                srcset={img.srcset}
+                width={img.width}
+                height={img.height}
                 style="width:100%;height:auto;"
-                widths={[400, 800, 1200]}
             />
             <figcaption>{caption}</figcaption>
         </figure>

@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-
-import { getImage } from '../../lib/images'
+import { getImageSrcset } from '../../lib/images'
 import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
 
 interface Props {
@@ -13,7 +11,7 @@ interface Props {
 }
 
 const { alt, recommendation, image, name, title } = Astro.props
-const img = image ? await getImage(image, '1x1') : undefined
+const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
 ---
 
 <style
@@ -81,12 +79,14 @@ const img = image ? await getImage(image, '1x1') : undefined
     {
         img && (
             <div class="portrait">
-                <Image
+                <img
                     alt={alt}
                     sizes="(max-width: 600px) 100vw, 448px"
-                    src={img}
+                    src={img.src}
+                    srcset={img.srcset}
+                    width={img.width}
+                    height={img.height}
                     style="width:100%;height:auto;"
-                    widths={[448, 896]}
                 />
             </div>
         )

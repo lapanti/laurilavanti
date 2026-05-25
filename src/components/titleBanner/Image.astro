@@ -1,7 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-
-import { getImage } from '../../lib/images'
+import { getImageSrcset } from '../../lib/images'
 
 interface Props {
     alt?: string
@@ -9,7 +7,7 @@ interface Props {
 }
 
 const { alt, heroImage } = Astro.props
-const img = heroImage ? await getImage(heroImage, '1x1') : undefined
+const img = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : undefined
 ---
 
 <style>
@@ -34,13 +32,15 @@ const img = heroImage ? await getImage(heroImage, '1x1') : undefined
 <div class="image-container">
     {
         img && (
-            <Image
+            <img
                 alt={alt ?? ''}
                 fetchpriority="high"
                 sizes="(max-width: 1199px) 100vw, 50vw"
-                src={img}
+                src={img.src}
+                srcset={img.srcset}
+                width={img.width}
+                height={img.height}
                 style="width:100%;height:auto;"
-                widths={[560, 1120, 1680]}
             />
         )
     }
