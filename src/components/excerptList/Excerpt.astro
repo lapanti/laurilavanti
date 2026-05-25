@@ -1,5 +1,4 @@
 ---
-import { sizes } from '../../lib/styles'
 import Meta from '../Meta.astro'
 import Banner from './excerpt/Banner.astro'
 import Description from './excerpt/Description.astro'
@@ -24,9 +23,9 @@ const metaAriaLabels = {
 }
 ---
 
-<style define:vars={{ sizes35: sizes[35] }}>
+<style>
     li {
-        max-width: var(--sizes35);
+        width: 100%;
     }
 </style>
 <li>
