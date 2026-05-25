@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build
-    env:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -123,7 +122,6 @@ jobs:
   unit-test:
     runs-on: ubuntu-latest
     name: Unit tests
-    env:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
