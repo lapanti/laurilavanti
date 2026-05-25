@@ -42,6 +42,7 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560,
             overflow: visible;
             width: 50%;
             margin-top: 0;
+            height: 100%;
         }
 
         .image {
@@ -49,6 +50,8 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560,
             position: absolute;
             right: var(--sizes14Negative);
             margin-top: auto;
+            max-height: 100%;
+            width: auto;
         }
 
         .image-mobile {
