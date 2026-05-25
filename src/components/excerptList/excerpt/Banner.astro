@@ -27,9 +27,8 @@ const img = image ? getImageSrcset(image, '191x100', [560, 1120]) : undefined
     }
 
     .excerpt-image {
-        max-height: 315px;
+        aspect-ratio: 191 / 100;
         max-width: 560px;
-        height: 100%;
         object-fit: cover;
         width: 100%;
     }
