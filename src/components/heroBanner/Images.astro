@@ -12,7 +12,7 @@ interface Props {
 
 const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
 
-const heroImg = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : undefined
+const heroImg = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefined
 const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 1120, 1680]) : undefined
 ---
 
@@ -85,7 +85,7 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560,
                     class="image image-desktop"
                     fetchpriority="high"
                     height={heroImg.height}
-                    sizes="560px"
+                    sizes="50vw"
                     src={heroImg.src}
                     srcset={heroImg.srcset}
                     width={heroImg.width}
