@@ -1,43 +1,47 @@
-# Feature: Images (local Sharp)
+# Feature: Images (Cloudflare Images)
 
 ## Blueprint
 
 ### Context
-All images are stored locally in `src/images/`. Originals live in `src/images/originals/`; pre-cropped variants per aspect ratio live in `src/images/processed/{slug}/`. Astro Sharp handles format conversion (WebP/AVIF) and responsive `srcset` (1x/2x/3x) at build time. No external image CDN.
+Images are stored in Cloudflare Images, uploaded via `scripts/upload-to-cf-images.mts` using the image slug as the CF image ID. Served through a Cloudflare rewrite rule: `images/* → cdn-cgi/imagedelivery/iOe5UJ6bvcdboiEsn9unNQ/${1}`. Flexible resizing parameters (`w`, `h`, `fit`, `gravity`) are appended to the URL path after the slug. No local image processing or external image CDN library.
 
 ### Architecture
 
-**Image resolution:** `src/lib/images.ts` exports `getImage(slug, variant): Promise<ImageMetadata>`. Uses `import.meta.glob` over `src/images/processed/**/*.jpg`. Called with `await` in Astro component frontmatter.
+**Image resolution:** `src/lib/images.ts` exports two functions:
+- `getImage(slug, variant): CFImageResult` — returns `{ src, width, height }` for a single size
+- `getImageSrcset(slug, variant, widths[]): { src, srcset, width, height }` — returns responsive srcset entries
 
-**Crop variants per slug:**
+URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gravity}`
 
-| Variant key | Aspect ratio | Source size | Used by |
-|---|---|---|---|
-| `1x1` | 1:1 | up to 1680×1680 | Hero portraits, recommendation portraits |
-| `191x100` | 191:100 | up to 1680×881 | Excerpt card thumbnails |
-| `background` | 1920:660 | 1920×660 | Decorative full-bleed background |
-| `og` | 1200:630 | 1200×630 | Open Graph / og:image (all layouts + person JSON-LD) |
-| `body` | 4:3 | up to 2400×1800 | Inline post images |
+**Valid `fit` values:** `crop`, `cover`, `contain`, `pad`, `scale-down` — note: `scale-crop` is NOT valid and will cause CF to return the unresized original.
 
-Not every slug needs every variant — blog posts need `1x1`, `191x100`, `og`, `body`. Index pages also need `background`.
+**Variants defined in `src/lib/images.ts`:**
+
+| Variant key | Dimensions | Fit | Gravity | Used by |
+|---|---|---|---|---|
+| `1x1` | 1680×1680 | crop | face | Excerpt thumbnails, recommendation portraits |
+| `hero` | 1728×1320 | crop | face | TitleBanner profile images (about/topics/contact/newsletter/blog) |
+| `background` | 1920×660 | crop | auto | Decorative full-bleed background |
+| `body` | 2400×1800 | crop | auto | Inline post images |
+| `og` | 1200×630 | crop | face | Open Graph / og:image (all layouts + person JSON-LD) |
 
 **Image usage sites:**
 
 | Component | Variant | `widths` / `sizes` | Notes |
 |---|---|---|---|
-| `BackgroundImage.astro` | `background` | `[960,1920]` / `100vw` | Decorative — `alt=""`. Desktop-only (hidden < 1200px). |
-| `titleBanner/Image.astro` | `1x1` | `[560,1120,1680]` / `(max-width:1199px) 100vw, 50vw` | Hero portrait — descriptive `alt` required. |
-| `heroBanner/Images.astro` | `1x1` (hero + mobile) | `[560,1120,1680]` / responsive | Same for both hero + mobile variants. |
-| `excerptList/excerpt/Banner.astro` | `191x100` | `[560,1120]` / `560px` | Post card thumbnail. |
+| `heroBanner/images/BackgroundImage.astro` | `background` | `[960,1920]` / `100vw` | Decorative — `alt=""`. Desktop-only (hidden < 1200px). |
+| `titleBanner/Image.astro` | `hero` | `[864,1728]` / `(max-width:1199px) 100vw, 50vw` | Fills `50vw × 45rem` box via `object-fit: cover`. |
+| `heroBanner/Images.astro` | `1x1` (hero + mobile) | `[560,1120,1680]` / `50vw` (desktop), `100vw` (mobile) | Transparent cutout — must stay 1:1 to preserve full figure. |
+| `excerptList/excerpt/Banner.astro` | `1x1` | `[560,1120]` / `(max-width:1199px) 100vw, 33vw` | Square thumbnail; 3-column grid on desktop. |
 | `body/ImageWithCaption.astro` | `body` | `[400,800,1200]` / `(max-width:640px) 100vw, 800px` | Inline image with `<figcaption>`. `aria-label` from `caption` prop. |
 | `recommendations/Recommendation.astro` | `1x1` | `[448,896]` / `448px` | Circular portrait via CSS `border-radius:50%`. |
-| Layouts (og:image) | `og` | — | `(await getImage(heroImage, 'og')).src` — URL string passed to `Head.astro`. |
-| `person.ts` (JSON-LD) | `og` | — | `getPersonImageUrl()` async function — called with `await` in `Head.astro`. |
+| Layouts (og:image) | `og` | — | `getImage(heroImage, 'og').src` — URL string passed to `Head.astro`. |
+| `person.ts` (JSON-LD) | `og` | — | `getPersonImageUrl()` sync function called in `Head.astro`. |
 
 **Frontmatter fields (unchanged from prior convention):**
-- `heroImage` — image slug without extension (e.g. `Lauri-Lavanti-nojaamassa-kasiin`)
+- `heroImage` — image slug (e.g. `Lauri-Lavanti-nojaamassa-kasiin`)
 - `backgroundImage` — same convention, index pages only
-- `mobileHeroImage` — same convention, index pages only
+- `mobileHeroImage` — same convention, frontpage only
 - `alt` — descriptive alt text; required for non-decorative images
 
 **Alt text rules:**
@@ -49,46 +53,46 @@ Not every slug needs every variant — blog posts need `1x1`, `191x100`, `og`, `
 **`fetchpriority="high"`** on above-the-fold images (`BackgroundImage`, `heroBanner/Images`, `titleBanner/Image`).
 
 **Adding a new image:**
-1. Drop original JPEG into `src/images/originals/{slug}.jpg`
-2. Run `npx tsx scripts/process-image.mts src/images/originals/{slug}.jpg`
-3. Review all crop variants in browser at `http://localhost:4322`
-4. Press Enter to approve (or enter `x% y%` focal point to re-crop)
-5. Commit originals + processed crops
+1. Drop original JPEG/PNG into `src/images/originals/{slug}.jpg`
+2. Run `CF_ACCOUNT_ID=xxx CF_API_TOKEN=xxx npx tsx scripts/upload-to-cf-images.mts`
+3. Reference slug in MDX frontmatter — CF handles all resizing at request time
 
-**Dependencies:** `src/lib/images.ts` (glob resolver), `smartcrop-sharp` (dev dep, used only in processing scripts), Astro `<Image>` from `astro:assets`.
+**Dependencies:** `src/lib/images.ts` (URL builder only — no image processing libraries).
 
 ### Anti-Patterns
 - Do not include file extensions in `heroImage` / `backgroundImage` / `mobileHeroImage` frontmatter
-- Do not use `getImage` inside `Head.astro` directly — layouts compute `ogImage` as a URL string; `Head` only receives the pre-computed string
+- Do not use `fit=scale-crop` — it is not a valid CF Images parameter; use `fit=crop`
+- Do not import `astro-cloudinary` or `CldImage` — removed from this project
 - Do not set `alt=""` on hero or portrait images — they are not decorative
 - Do not set a non-empty `alt` on `BackgroundImage` — it is decorative
-- Do not reference `src/images/processed/` paths directly in components — always go through `getImage()`
-- Do not add Cloudinary or other external image CDN imports — images are local only
+- Do not use Astro `<Image>` from `astro:assets` for CF Images — use plain `<img>` with `getImageSrcset()`
+- Do not use `gravity=face` with `fit` other than `crop` — face detection only works with crop
 
 ---
 
 ## Contract
 
 ### Definition of Done
-- [ ] `heroImage` frontmatter field is a slug that has a matching directory under `src/images/processed/`
+- [ ] `heroImage` frontmatter field is a slug that has been uploaded to CF Images
 - [ ] `alt` is descriptive and non-empty for all hero/portrait images
 - [ ] Background images have `alt=""`
-- [ ] `og` variant exists for every slug used as `heroImage`
-- [ ] `ogImage` URL string computed in layouts via `(await getImage(heroImage, 'og')).src`, not in `Head.astro`
+- [ ] `og` variant URL resolves correctly for every slug used as `heroImage`
+- [ ] `ogImage` URL string computed in layouts via `getImage(heroImage, 'og').src`, not in `Head.astro`
 - [ ] Above-the-fold images have `fetchpriority="high"`
 - [ ] Accessibility scan passes (no alt-text violations)
 
 ### Regression Guardrails
 - `BackgroundImage` is only shown at ≥ 1200px — do not remove the media query
-- The excerpt Banner variant is `191x100` — changing this breaks visual consistency of the post list
-- `getPersonImageUrl()` is async — always call with `await` in Astro frontmatter
+- Excerpt thumbnails use `1x1` variant with `aspect-ratio: 1` CSS — changing variant breaks visual consistency
+- Frontpage `heroBanner` hero image must stay `1x1` — it is a transparent cutout, not a cropped photo
+- `TitleBanner` uses `hero` variant (1728×1320) to match the actual `50vw × 45rem` display area
 
 ### Scenarios
 
 **Scenario: Blog post hero image**
 - Given: A post has `heroImage: Kirkkonummen-juna--ja-bussiasema` and `alt: 'Kirkkonummen asema'`
 - When: The post page renders
-- Then: `getImage('Kirkkonummen-juna--ja-bussiasema', '1x1')` resolves to `ImageMetadata`; Astro `<Image>` renders a responsive `<img>` with `srcset` in WebP/AVIF; the og:image URL resolves the `og` variant
+- Then: `getImageSrcset('Kirkkonummen-juna--ja-bussiasema', '1x1', [...])` returns a valid CF Images URL with `fit=crop,gravity=face`; the og:image URL resolves the `og` variant
 
 **Scenario: Front page background image**
 - Given: `src/pages/fi/index.mdx` has `backgroundImage: 'Kirkkonummen-keskusta'`
@@ -103,9 +107,9 @@ Not every slug needs every variant — blog posts need `1x1`, `191x100`, `og`, `
 **Scenario: Missing heroImage**
 - Given: A component receives `heroImage={undefined}`
 - When: It renders
-- Then: No image is rendered (conditional `heroImage ? await getImage(...) : undefined`); no broken image tag appears
+- Then: No image is rendered (conditional `heroImage ? getImageSrcset(...) : undefined`); no broken image tag appears
 
-**Scenario: Unknown slug**
-- Given: `getImage('nonexistent-slug', '1x1')` is called
+**Scenario: Unknown variant**
+- Given: `getImage('some-slug', 'nonexistent-variant')` is called
 - When: It runs
-- Then: Throws `Error: Processed image not found: /src/images/processed/nonexistent-slug/1x1.jpg` — build fails with a clear message
+- Then: Throws `Error: Unknown image variant: nonexistent-variant` — build fails with a clear message
