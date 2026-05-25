@@ -28,7 +28,7 @@ const props: Props = ((Astro.props as any).frontmatter as Props | undefined) ?? 
 const { alt, createdAt, description, faq, heroImage, lang, noindex, pageTitle, slug, tags, title, type, updatedAt } =
     props
 
-const ogImage = heroImage ? (await getImage(heroImage, 'og')).src : undefined
+const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 
 const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }
 const categoryLabel: Record<string, string> = { en: 'Category', fi: 'Kategoria', sv: 'Kategori' }

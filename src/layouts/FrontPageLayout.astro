@@ -39,7 +39,7 @@ const {
     type,
 } = frontmatter
 
-const ogImage = heroImage ? (await getImage(heroImage, 'og')).src : undefined
+const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 ---
 
 <BaseLayout

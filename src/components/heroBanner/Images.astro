@@ -1,8 +1,6 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
-import { Image } from 'astro:assets'
-
-import { getImage } from '../../lib/images'
+import { getImageSrcset } from '../../lib/images'
 import { sizes } from '../../lib/styles'
 import BackgroundImage from './images/BackgroundImage.astro'
 
@@ -15,8 +13,8 @@ interface Props {
 
 const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
 
-const heroImg = heroImage ? await getImage(heroImage, '1x1') : undefined
-const mobileImg = mobileHeroImage ? await getImage(mobileHeroImage, '1x1') : undefined
+const heroImg = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : undefined
+const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 1120, 1680]) : undefined
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes14Negative: `-${sizes[14]}` }}>
@@ -68,31 +66,37 @@ const mobileImg = mobileHeroImage ? await getImage(mobileHeroImage, '1x1') : und
     {
         heroImg && mobileImg ? (
             <>
-                <Image
+                <img
                     alt={alt ?? ''}
                     class="image image-mobile"
                     fetchpriority="high"
                     sizes="(max-width: 1199px) 100vw, 560px"
-                    src={mobileImg}
-                    widths={[560, 1120, 1680]}
+                    src={mobileImg.src}
+                    srcset={mobileImg.srcset}
+                    width={mobileImg.width}
+                    height={mobileImg.height}
                 />
-                <Image
+                <img
                     alt={alt ?? ''}
                     class="image image-desktop"
                     fetchpriority="high"
                     sizes="560px"
-                    src={heroImg}
-                    widths={[560, 1120, 1680]}
+                    src={heroImg.src}
+                    srcset={heroImg.srcset}
+                    width={heroImg.width}
+                    height={heroImg.height}
                 />
             </>
         ) : heroImg ? (
-            <Image
+            <img
                 alt={alt ?? ''}
                 class="image"
                 fetchpriority="high"
                 sizes="(max-width: 1199px) 100vw, 560px"
-                src={heroImg}
-                widths={[560, 1120, 1680]}
+                src={heroImg.src}
+                srcset={heroImg.srcset}
+                width={heroImg.width}
+                height={heroImg.height}
             />
         ) : null
     }

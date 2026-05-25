@@ -54,7 +54,7 @@ const i18n = {
 
 const t = i18n[lang]
 
-const ogImage = heroImage ? (await getImage(heroImage, 'og')).src : undefined
+const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 
 const siteOrigin = 'https://laurilavanti.fi'
 const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }
