@@ -13,20 +13,25 @@ const img = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : un
 <style>
     .image-container {
         display: flex;
-        max-height: min(100vw, 35rem);
         overflow: hidden;
         position: relative;
     }
 
     .image-container :global(img) {
         aspect-ratio: 1;
+        max-height: min(100vw, 35rem);
         object-fit: cover;
-        width: 100%;
+        width: auto;
     }
 
     @media (min-width: 1200px) {
         .image-container {
             width: 50%;
+        }
+
+        .image-container :global(img) {
+            max-height: none;
+            width: 100%;
         }
     }
 </style>
