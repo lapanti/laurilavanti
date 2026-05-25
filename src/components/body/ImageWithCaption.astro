@@ -45,12 +45,12 @@ const img = image ? getImageSrcset(image, 'body', [400, 800, 1200]) : undefined
         <figure aria-label={caption}>
             <img
                 alt={alt ?? ''}
+                height={img.height}
                 sizes="(max-width: 640px) 100vw, 800px"
                 src={img.src}
                 srcset={img.srcset}
-                width={img.width}
-                height={img.height}
                 style="width:100%;height:auto;"
+                width={img.width}
             />
             <figcaption>{caption}</figcaption>
         </figure>

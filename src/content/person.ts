@@ -1,4 +1,5 @@
 import type { Lang } from './nav'
+
 import { getImage } from '../lib/images'
 
 export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
