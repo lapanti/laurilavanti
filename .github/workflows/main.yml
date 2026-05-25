@@ -12,8 +12,8 @@ jobs:
     name: Build
     env:
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -22,7 +22,7 @@ jobs:
         run: npm ci
       - name: build it
         run: npm run build
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         with:
           name: build-folder
           path: dist
@@ -31,8 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -46,8 +46,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Check
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -61,8 +61,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Knip
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -76,8 +76,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Overflow check
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
       - name: Check titles for horizontal overflow on Galaxy S24 viewport
@@ -89,8 +89,8 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
       - name: Run SEO checks on all MDX files
@@ -125,8 +125,8 @@ jobs:
     name: Unit tests
     env:
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -135,7 +135,7 @@ jobs:
         run: npm ci
       - name: Run unit tests
         run: npm run test:coverage
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         with:
           name: coverage-folder
           path: coverage
@@ -145,10 +145,10 @@ jobs:
     needs: [unit-test]
     name: SonarCloud analysis
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: actions/download-artifact@v8
+      - uses: actions/download-artifact@v4
         with:
           name: coverage-folder
           path: coverage
@@ -166,8 +166,8 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/download-artifact@v8
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: build-folder
           path: dist
@@ -192,8 +192,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-snapshots
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -207,7 +207,7 @@ jobs:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: npm run test:e2e:snapshots
         timeout-minutes: 15
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-snapshots
@@ -224,8 +224,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-screenshots
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -239,7 +239,7 @@ jobs:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: npm run test:e2e:screenshots
         timeout-minutes: 15
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-screenshots
@@ -256,8 +256,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-axe
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -271,7 +271,7 @@ jobs:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: npm run test:e2e:axe
         timeout-minutes: 10
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-axe
@@ -288,8 +288,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-siteimprove
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -303,7 +303,7 @@ jobs:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: npm run test:e2e:siteimprove
         timeout-minutes: 15
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-siteimprove
@@ -320,8 +320,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-other
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -335,7 +335,7 @@ jobs:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: npm run test:e2e:other
         timeout-minutes: 10
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-other
@@ -352,8 +352,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-horizontal-scroll
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -367,7 +367,7 @@ jobs:
           E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
         run: npm run test:e2e:horizontal-scroll
         timeout-minutes: 10
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-horizontal-scroll
@@ -384,8 +384,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-snapshots
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -399,7 +399,7 @@ jobs:
           E2E_URL: https://laurilavanti.fi
         run: npm run test:e2e:snapshots
         timeout-minutes: 15
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-prod-snapshots
@@ -416,8 +416,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-screenshots
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -431,7 +431,7 @@ jobs:
           E2E_URL: https://laurilavanti.fi
         run: npm run test:e2e:screenshots
         timeout-minutes: 15
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-prod-screenshots
@@ -448,8 +448,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-axe
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -463,7 +463,7 @@ jobs:
           E2E_URL: https://laurilavanti.fi
         run: npm run test:e2e:axe
         timeout-minutes: 10
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-prod-axe
@@ -480,8 +480,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-siteimprove
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -495,7 +495,7 @@ jobs:
           E2E_URL: https://laurilavanti.fi
         run: npm run test:e2e:siteimprove
         timeout-minutes: 15
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-prod-siteimprove
@@ -512,8 +512,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-other
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -527,7 +527,7 @@ jobs:
           E2E_URL: https://laurilavanti.fi
         run: npm run test:e2e:other
         timeout-minutes: 10
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-prod-other
@@ -544,8 +544,8 @@ jobs:
     env:
       PLAYWRIGHT_HTML_REPORT: playwright-report-prod-horizontal-scroll
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: "npm"
@@ -559,7 +559,7 @@ jobs:
           E2E_URL: https://laurilavanti.fi
         run: npm run test:e2e:horizontal-scroll
         timeout-minutes: 10
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report-prod-horizontal-scroll
@@ -575,7 +575,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - name: Run Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
