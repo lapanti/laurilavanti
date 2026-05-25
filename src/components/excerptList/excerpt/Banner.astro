@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { alt, image, slug, title } = Astro.props
-const img = image ? getImageSrcset(image, '191x100', [560, 1120]) : undefined
+const img = image ? getImageSrcset(image, '1x1', [560, 1120]) : undefined
 ---
 
 <style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
@@ -27,7 +27,7 @@ const img = image ? getImageSrcset(image, '191x100', [560, 1120]) : undefined
     }
 
     .excerpt-image {
-        aspect-ratio: 191 / 100;
+        aspect-ratio: 1;
         height: auto;
         max-width: 560px;
         object-fit: cover;
