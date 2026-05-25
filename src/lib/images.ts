@@ -15,7 +15,6 @@ interface VariantDef {
 
 const VARIANTS: Record<string, VariantDef> = {
     '1x1': { fit: 'crop', gravity: 'face', h: 1680, w: 1680 },
-    '191x100': { fit: 'crop', gravity: 'auto', h: 881, w: 1680 },
     background: { fit: 'crop', gravity: 'auto', h: 660, w: 1920 },
     body: { fit: 'crop', gravity: 'auto', h: 1800, w: 2400 },
     hero: { fit: 'crop', gravity: 'face', h: 1320, w: 1728 },
