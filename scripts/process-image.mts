@@ -51,7 +51,7 @@ const VARIANTS: Variant[] = [
 async function normaliseOrientation(originalPath: string): Promise<void> {
     const meta = await sharp(originalPath).metadata()
     if (!meta.orientation || meta.orientation === 1) return
-    const rotated = await sharp(originalPath).rotate().jpeg({ quality: 95 }).toBuffer()
+    const rotated = await sharp(originalPath).rotate().jpeg({ quality: 85, mozjpeg: true }).toBuffer()
     await fs.writeFile(originalPath, rotated)
 }
 
@@ -101,7 +101,7 @@ async function cropVariant(
 
     return sharp(originalPath)
         .extract({ left: cropX, top: cropY, width: cropW, height: cropH })
-        .jpeg({ quality: 95 })
+        .jpeg({ quality: 85, mozjpeg: true })
         .toBuffer()
 }
 
