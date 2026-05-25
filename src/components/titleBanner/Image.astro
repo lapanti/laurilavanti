@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { alt, heroImage } = Astro.props
-const img = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : undefined
+const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefined
 ---
 
 <style>
@@ -18,7 +18,7 @@ const img = heroImage ? getImageSrcset(heroImage, '1x1', [560, 1120, 1680]) : un
     }
 
     .image-container :global(img) {
-        aspect-ratio: 1;
+        aspect-ratio: 864 / 660;
         max-height: min(100vw, 35rem);
         object-fit: cover;
         width: auto;
