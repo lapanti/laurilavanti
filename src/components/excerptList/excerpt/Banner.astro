@@ -51,11 +51,11 @@ const img = image ? getImageSrcset(image, '191x100', [560, 1120]) : undefined
             <img
                 alt={alt ?? ''}
                 class="excerpt-image"
+                height={img.height}
                 sizes="(max-width: 600px) 100vw, 560px"
                 src={img.src}
                 srcset={img.srcset}
                 width={img.width}
-                height={img.height}
             />
         )
     }

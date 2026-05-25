@@ -42,12 +42,12 @@ const img = image ? getImageSrcset(image, 'background', [960, 1920]) : undefined
                 <img
                     alt=""
                     fetchpriority="high"
+                    height={img.height}
                     sizes="100vw"
                     src={img.src}
                     srcset={img.srcset}
-                    width={img.width}
-                    height={img.height}
                     style="width:100%;height:100%;object-fit:cover;"
+                    width={img.width}
                 />
             </div>
         )
