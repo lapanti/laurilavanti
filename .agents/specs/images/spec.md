@@ -11,7 +11,9 @@ Images are stored in Cloudflare Images, uploaded via `scripts/upload-to-cf-image
 - `getImage(slug, variant): CFImageResult` — returns `{ src, width, height }` for a single size
 - `getImageSrcset(slug, variant, widths[]): { src, srcset, width, height }` — returns responsive srcset entries
 
-URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gravity}`
+URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gravity},format=auto`
+
+`format=auto` is always appended — CF Images returns WebP or AVIF for browsers that support it, falling back to JPEG. Never omit it.
 
 **Valid `fit` values:** `crop`, `cover`, `contain`, `pad`, `scale-down` — note: `scale-crop` is NOT valid and will cause CF to return the unresized original.
 
@@ -29,12 +31,12 @@ URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity
 
 | Component | Variant | `widths` / `sizes` | Notes |
 |---|---|---|---|
-| `heroBanner/images/BackgroundImage.astro` | `background` | `[960,1920]` / `100vw` | Decorative — `alt=""`. Desktop-only (hidden < 1200px). |
+| `heroBanner/images/BackgroundImage.astro` | `background` | `[960,1920]` / `100vw` | Decorative — `alt=""`. Desktop-only (hidden < 1200px). No `fetchpriority`. |
 | `titleBanner/Image.astro` | `hero` | `[864,1728]` / `(max-width:1199px) 100vw, 50vw` | Fills `50vw × 45rem` box via `object-fit: cover`. |
-| `heroBanner/Images.astro` | `1x1` (hero + mobile) | `[560,1120,1680]` / `50vw` (desktop), `100vw` (mobile) | Transparent cutout — must stay 1:1 to preserve full figure. |
-| `excerptList/excerpt/Banner.astro` | `1x1` | `[560,1120]` / `(max-width:1199px) 100vw, 33vw` | Square thumbnail; 3-column grid on desktop. |
-| `body/ImageWithCaption.astro` | `body` | `[400,800,1200]` / `(max-width:640px) 100vw, 800px` | Inline image with `<figcaption>`. `aria-label` from `caption` prop. |
-| `recommendations/Recommendation.astro` | `1x1` | `[448,896]` / `448px` | Circular portrait via CSS `border-radius:50%`. |
+| `heroBanner/Images.astro` | `1x1` (hero + mobile) | `[560,720,1120,1680]` / `(max-width:1199px) 100vw, min(50vw, 600px)` (desktop) | Transparent cutout — must stay 1:1 to preserve full figure. |
+| `excerptList/excerpt/Banner.astro` | `1x1` | `[560,750,1120]` / `(max-width:1199px) 100vw, min(33vw, 380px)` | Square thumbnail; 3-column grid on desktop. `loading="lazy"`. |
+| `body/ImageWithCaption.astro` | `body` | `[400,800,1200]` / `(max-width:640px) 100vw, 800px` | Inline image with `<figcaption>`. `aria-label` from `caption` prop. `loading="lazy"`. |
+| `recommendations/Recommendation.astro` | `1x1` | `[448,896]` / `448px` | Circular portrait via CSS `border-radius:50%`. `loading="lazy"`. |
 | Layouts (og:image) | `og` | — | `getImage(heroImage, 'og').src` — URL string passed to `Head.astro`. |
 | `person.ts` (JSON-LD) | `og` | — | `getPersonImageUrl()` sync function called in `Head.astro`. |
 
@@ -50,7 +52,9 @@ URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity
 - Excerpt thumbnails: `alt` from post frontmatter (falls back to `""` if absent)
 - Inline body images (`ImageWithCaption`): `alt` prop + visible `figcaption`
 
-**`fetchpriority="high"`** on above-the-fold images (`BackgroundImage`, `heroBanner/Images`, `titleBanner/Image`).
+**`fetchpriority="high"`** on above-the-fold images that are visible immediately (`heroBanner/Images`, `titleBanner/Image`). Not on `BackgroundImage` — it is `display:none` on mobile, so a high-priority fetch wastes bandwidth.
+
+**`loading="lazy"`** on all below-the-fold images: excerpt thumbnails, inline body images, recommendation portraits.
 
 **Adding a new image:**
 1. Drop original JPEG/PNG into `src/images/originals/{slug}.jpg`
@@ -67,6 +71,10 @@ URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity
 - Do not set a non-empty `alt` on `BackgroundImage` — it is decorative
 - Do not use Astro `<Image>` from `astro:assets` for CF Images — use plain `<img>` with `getImageSrcset()`
 - Do not use `gravity=face` with `fit` other than `crop` — face detection only works with crop
+- Do not omit `format=auto` from CF Images URLs — without it browsers always receive JPEG
+- Do not set `fetchpriority="high"` on `BackgroundImage` — it is `display:none` on mobile
+- Do not add `loading="lazy"` to above-the-fold images (`heroBanner/Images`, `titleBanner/Image`)
+- When choosing srcset widths, avoid large gaps: a gap from Xw to 2Xw means high-DPR mobile picks 2Xw for a slot that only needs ~1.75Xw. Add an intermediate entry.
 
 ---
 
