@@ -46,6 +46,7 @@ const img = image ? getImageSrcset(image, 'body', [400, 800, 1200]) : undefined
             <img
                 alt={alt ?? ''}
                 height={img.height}
+                loading="lazy"
                 sizes="(max-width: 640px) 100vw, 800px"
                 src={img.src}
                 srcset={img.srcset}
