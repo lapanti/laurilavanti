@@ -26,7 +26,7 @@ export function getImage(slug: string, variant: string): CFImageResult {
     if (!v) throw new Error(`Unknown image variant: ${variant}`)
     return {
         height: v.h,
-        src: `${BASE}/${encodeURIComponent(slug)}/w=${v.w},h=${v.h},fit=${v.fit},gravity=${v.gravity}`,
+        src: `${BASE}/${encodeURIComponent(slug)}/w=${v.w},h=${v.h},fit=${v.fit},gravity=${v.gravity},format=auto`,
         width: v.w,
     }
 }
@@ -42,7 +42,7 @@ export function getImageSrcset(
     const entries = widths.map((w) => {
         const h = Math.round(w * ratio)
 
-        return `${BASE}/${encodeURIComponent(slug)}/w=${w},h=${h},fit=${v.fit},gravity=${v.gravity} ${w}w`
+        return `${BASE}/${encodeURIComponent(slug)}/w=${w},h=${h},fit=${v.fit},gravity=${v.gravity},format=auto ${w}w`
     })
 
     return {

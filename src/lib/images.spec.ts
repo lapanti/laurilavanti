@@ -9,21 +9,21 @@ const BASE = 'https://laurilavanti.fi/images'
 describe('getImage', () => {
     it('returns correct URL for 1x1 variant', () => {
         const result = getImage('test-slug', '1x1')
-        expect(result.src).toBe(`${BASE}/test-slug/w=1680,h=1680,fit=crop,gravity=face`)
+        expect(result.src).toBe(`${BASE}/test-slug/w=1680,h=1680,fit=crop,gravity=face,format=auto`)
         expect(result.width).toBe(1680)
         expect(result.height).toBe(1680)
     })
 
     it('returns correct URL for og variant', () => {
         const result = getImage('test-slug', 'og')
-        expect(result.src).toBe(`${BASE}/test-slug/w=1200,h=630,fit=crop,gravity=face`)
+        expect(result.src).toBe(`${BASE}/test-slug/w=1200,h=630,fit=crop,gravity=face,format=auto`)
         expect(result.width).toBe(1200)
         expect(result.height).toBe(630)
     })
 
     it('returns correct URL for hero variant', () => {
         const result = getImage('test-slug', 'hero')
-        expect(result.src).toBe(`${BASE}/test-slug/w=1728,h=1320,fit=crop,gravity=face`)
+        expect(result.src).toBe(`${BASE}/test-slug/w=1728,h=1320,fit=crop,gravity=face,format=auto`)
         expect(result.width).toBe(1728)
         expect(result.height).toBe(1320)
     })
@@ -42,11 +42,11 @@ describe('getImageSrcset', () => {
     it('returns correct srcset for 1x1 variant', () => {
         const result = getImageSrcset('test-slug', '1x1', [560, 1120, 1680])
         expect(result.srcset).toBe(
-            `${BASE}/test-slug/w=560,h=560,fit=crop,gravity=face 560w, ${BASE}/test-slug/w=1120,h=1120,fit=crop,gravity=face 1120w, ${BASE}/test-slug/w=1680,h=1680,fit=crop,gravity=face 1680w`
+            `${BASE}/test-slug/w=560,h=560,fit=crop,gravity=face,format=auto 560w, ${BASE}/test-slug/w=1120,h=1120,fit=crop,gravity=face,format=auto 1120w, ${BASE}/test-slug/w=1680,h=1680,fit=crop,gravity=face,format=auto 1680w`
         )
         expect(result.width).toBe(1680)
         expect(result.height).toBe(1680)
-        expect(result.src).toBe(`${BASE}/test-slug/w=1680,h=1680,fit=crop,gravity=face`)
+        expect(result.src).toBe(`${BASE}/test-slug/w=1680,h=1680,fit=crop,gravity=face,format=auto`)
     })
 
     it('computes correct heights for non-square variants', () => {
