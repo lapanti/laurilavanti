@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { alt, image, slug, title } = Astro.props
-const img = image ? getImageSrcset(image, '1x1', [560, 1120]) : undefined
+const img = image ? getImageSrcset(image, '1x1', [560, 750, 1120]) : undefined
 ---
 
 <style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
@@ -52,7 +52,8 @@ const img = image ? getImageSrcset(image, '1x1', [560, 1120]) : undefined
                 alt={alt ?? ''}
                 class="excerpt-image"
                 height={img.height}
-                sizes="(max-width: 1199px) 100vw, 33vw"
+                loading="lazy"
+                sizes="(max-width: 1199px) 100vw, min(33vw, 380px)"
                 src={img.src}
                 srcset={img.srcset}
                 width={img.width}
