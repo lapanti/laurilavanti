@@ -39,4 +39,24 @@ describe('sv/rss.xml', () => {
             expect(text, `unexpected non-sv post: ${post.url}`).not.toContain(post.url)
         }
     })
+
+    it('contains content:encoded for posts', async () => {
+        const text = await GET(makeContext()).then((r) => r.text())
+        expect(text).toContain('content:encoded')
+    })
+
+    it('contains enclosure for posts', async () => {
+        const text = await GET(makeContext()).then((r) => r.text())
+        expect(text).toContain('<enclosure')
+    })
+
+    it('contains media:content for posts', async () => {
+        const text = await GET(makeContext()).then((r) => r.text())
+        expect(text).toContain('<media:content')
+    })
+
+    it('contains Swedish byline text', async () => {
+        const text = await GET(makeContext()).then((r) => r.text())
+        expect(text).toContain('publicerades först på Lauri Lavantis blogg')
+    })
 })
