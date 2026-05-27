@@ -13,7 +13,7 @@ interface Props {
 const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
 
 const heroImg = heroImage ? getImageSrcset(heroImage, '1x1', [560, 720, 1120, 1680]) : undefined
-const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 1120, 1680]) : undefined
+const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 750, 1120, 1680]) : undefined
 ---
 
 <style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes14Negative: `-${sizes[14]}` }}>
