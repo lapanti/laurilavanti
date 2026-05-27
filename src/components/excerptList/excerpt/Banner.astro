@@ -12,7 +12,7 @@ interface Props {
 }
 
 const { alt, image, slug, title } = Astro.props
-const img = image ? getImageSrcset(image, '1x1', [560, 750, 1120]) : undefined
+const img = image ? getImageSrcset(image, '1x1', [400, 560, 750, 1120]) : undefined
 ---
 
 <style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
