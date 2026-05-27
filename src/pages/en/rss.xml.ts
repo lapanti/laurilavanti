@@ -2,20 +2,38 @@ import type { APIContext } from 'astro'
 
 import rss from '@astrojs/rss'
 
-import { allMdxPosts } from '../../lib/mdxPosts'
+import { getImage } from '../../lib/images'
+import { allMdxPosts, mdxContentByPath } from '../../lib/mdxPosts'
 
 export async function GET(context: APIContext) {
     const posts = allMdxPosts.filter((p) => p.lang === 'en')
 
+    const items = await Promise.all(
+        posts.map(async (post) => {
+            const absoluteUrl = new URL(post.url, context.site!).href
+            const html = (await mdxContentByPath[`../pages${post.url}index.mdx`]?.()) ?? ''
+            const content =
+                html +
+                `<p>The post <a href="${absoluteUrl}">${post.title}</a> was first published on Lauri Lavanti's blog.</p>`
+            const img = getImage(post.heroImage, 'og')
+
+            return {
+                content,
+                customData: `<media:content url="${img.src}" medium="image" width="${img.width}" height="${img.height}"/>`,
+                description: post.description,
+                enclosure: { length: 0, type: 'image/jpeg', url: img.src },
+                link: post.url,
+                pubDate: new Date(post.publishDate),
+                title: post.title,
+            }
+        })
+    )
+
     return rss({
         description: 'Blog posts by Lauri Lavanti',
-        items: posts.map((post) => ({
-            description: post.description,
-            link: post.url,
-            pubDate: new Date(post.publishDate),
-            title: post.title,
-        })),
+        items,
         site: context.site!,
         title: 'Lauri Lavanti – blog',
+        xmlns: { media: 'http://search.yahoo.com/mrss/' },
     })
 }
