@@ -1,3 +1,8 @@
+import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import { unified } from 'unified'
+
 import type { AuthorEntry } from '../content/person'
 
 interface MdxPost {
@@ -30,6 +35,30 @@ export const allMdxPosts: MdxPostWithUrl[] = Object.entries(rawGlob)
         return { ...mod.frontmatter, url }
     })
     .sort((a, b) => b.id - a.id)
+
+const rawMdxGlob = import.meta.glob<string>('../pages/*/blog/*/*/index.mdx', {
+    eager: true,
+    query: '?raw',
+    import: 'default',
+})
+
+const processor = unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeStringify)
+
+const stripFrontmatter = (raw: string): string =>
+    raw
+        .replace(/^---[\s\S]*?---\n?/, '')
+        .replace(/^(import\s+.+|export\s+const\s+components\s*=.+)$/gm, '')
+
+export const mdxContentByPath: Record<string, () => Promise<string>> = Object.fromEntries(
+    Object.entries(rawMdxGlob).map(([filePath, raw]) => [
+        filePath,
+        async () => {
+            const body = stripFrontmatter(raw)
+            const result = await processor.process(body)
+            return String(result)
+        },
+    ])
+)
 
 export const getPostAlternates = (id: number): Record<MdxPost['lang'], string> => {
     const result = {} as Record<MdxPost['lang'], string>
