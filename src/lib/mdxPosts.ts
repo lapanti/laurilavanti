@@ -10,7 +10,7 @@ interface MdxPost {
     alt: string
     authors?: AuthorEntry[]
     description: string
-    externalPublication?: ExternalPublication
+    externalPublications?: ExternalPublication[]
     faq?: Array<{ a: string; q: string }>
     heroImage: string
     id: number

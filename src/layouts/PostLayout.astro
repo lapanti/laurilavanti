@@ -17,7 +17,7 @@ import BaseLayout from './BaseLayout.astro'
 type Props = MDXLayoutProps<{
     authors?: AuthorEntry[]
     description: string
-    externalPublication?: ExternalPublication
+    externalPublications?: ExternalPublication[]
     faq?: Array<{ a: string; q: string }>
     id: number
     lang: 'en' | 'fi' | 'sv'
@@ -36,7 +36,7 @@ const {
     alt,
     authors,
     description,
-    externalPublication,
+    externalPublications,
     faq,
     heroImage,
     id,
@@ -122,7 +122,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         title={title}
     />
     <slot />
-    <Byline authors={authors ?? ['lauri']} externalPublication={externalPublication} lang={lang} />
+    <Byline authors={authors ?? ['lauri']} externalPublications={externalPublications} lang={lang} />
     <SocialShare ariaLabel={t.shareAriaLabel(pageTitle)} locale={lang} shareUrl={shareUrl} title={pageTitle} />
     <section class="other-posts">
         <H2>{t.otherPosts}</H2>
