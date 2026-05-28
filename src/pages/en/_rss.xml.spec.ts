@@ -60,6 +60,6 @@ describe('en/rss.xml', () => {
 
     it('contains English byline text', async () => {
         const text = await GET(makeContext()).then((r) => r.text())
-        expect(text).toContain('was first published on Lauri Lavanti')
+        expect(text).toContain('Permanent link to the blog post')
     })
 })

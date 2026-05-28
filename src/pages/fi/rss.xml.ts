@@ -14,7 +14,7 @@ export async function GET(context: APIContext) {
             const html = (await mdxContentByPath[`../pages${post.url}index.mdx`]?.()) ?? ''
             const content =
                 html +
-                `<p>Kirjoitus <a href="${absoluteUrl}">${post.title}</a> on julkaistu ensimmäisen kerran Lauri Lavantin blogissa.</p>`
+                `<p><a href="${absoluteUrl}">Pysyvä linkki blogikirjoitukseen</a></p>`
             const img = getImage(post.heroImage, 'og')
 
             return {
