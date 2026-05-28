@@ -21,6 +21,4 @@ const { heading, href, rel } = Astro.props
         min-block-size: 2.75rem;
     }
 </style>
-<a class:list={[{ heading }]} href={href} rel={`${rel ? rel : ''}`}>
-    <slot />
-</a>
+<a class:list={[{ heading }]} href={href} rel={`${rel ? rel : ''}`}><slot /></a>

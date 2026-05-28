@@ -86,6 +86,19 @@ describe('<Byline />', () => {
             expect(getByRole(result, 'link', { name: 'Kauppalehti' })).toHaveAttribute('href', url)
         })
 
+        it('renders no space before the comma after the publication name', async () => {
+            const result = await renderAstroComponent(Byline, {
+                props: {
+                    authors: ['lauri'],
+                    externalPublications: [{ date: '2025-03-15', name: 'Verde', url: 'https://verdelehti.fi/' }],
+                    lang: 'fi',
+                },
+            })
+
+            expect(result.querySelector('em')?.textContent).toMatch(/Verde,/)
+            expect(result.querySelector('em')?.textContent).not.toMatch(/Verde ,/)
+        })
+
         it('renders no link when url is absent', async () => {
             const result = await renderAstroComponent(Byline, {
                 props: {
