@@ -12,9 +12,7 @@ export async function GET(context: APIContext) {
         posts.map(async (post) => {
             const absoluteUrl = new URL(post.url, context.site!).href
             const html = (await mdxContentByPath[`../pages${post.url}index.mdx`]?.()) ?? ''
-            const content =
-                html +
-                `<p><a href="${absoluteUrl}">Pysyvä linkki blogikirjoitukseen</a></p>`
+            const content = html + `<p><a href="${absoluteUrl}">Pysyvä linkki blogikirjoitukseen</a></p>`
             const img = getImage(post.heroImage, 'og')
 
             return {
