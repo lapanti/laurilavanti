@@ -6,11 +6,11 @@ import { buildBylineText, formatPublicationDate } from '../lib/byline'
 
 interface Props {
     authors: AuthorEntry[]
-    externalPublication?: ExternalPublication
+    externalPublications?: ExternalPublication[]
     lang: 'en' | 'fi' | 'sv'
 }
 
-const { authors, externalPublication, lang } = Astro.props
+const { authors, externalPublications, lang } = Astro.props
 const text = buildBylineText(authors, lang)
 
 const publicationPrefix: Record<string, string> = {
@@ -34,17 +34,12 @@ const publicationPrefix: Record<string, string> = {
     )
 }
 {
-    externalPublication && (
+    externalPublications?.map((pub: ExternalPublication) => (
         <p>
             <em>
-                {publicationPrefix[lang]}:{' '}
-                {externalPublication.url ? (
-                    <a href={externalPublication.url}>{externalPublication.name}</a>
-                ) : (
-                    externalPublication.name
-                )}
-                , {formatPublicationDate(externalPublication.date, lang)}.
+                {publicationPrefix[lang]}: {pub.url ? <a href={pub.url}>{pub.name}</a> : pub.name},{' '}
+                {formatPublicationDate(pub.date, lang)}.
             </em>
         </p>
-    )
+    ))
 }
