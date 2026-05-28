@@ -1,4 +1,5 @@
 import type { AuthorEntry } from '../content/person'
+import type { ExternalPublication } from './byline'
 
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
@@ -9,6 +10,7 @@ interface MdxPost {
     alt: string
     authors?: AuthorEntry[]
     description: string
+    externalPublication?: ExternalPublication
     faq?: Array<{ a: string; q: string }>
     heroImage: string
     id: number
