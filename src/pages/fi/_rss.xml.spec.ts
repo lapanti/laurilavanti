@@ -67,6 +67,6 @@ describe('fi/rss.xml', () => {
 
     it('contains Finnish byline text', async () => {
         const text = await GET(makeContext()).then((r) => r.text())
-        expect(text).toContain('on julkaistu ensimmäisen kerran Lauri Lavantin blogissa')
+        expect(text).toContain('Pysyvä linkki blogikirjoitukseen')
     })
 })
