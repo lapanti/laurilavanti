@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { personJobTitle, personName } from '../content/person'
-import { buildBylineText } from './byline'
+import { buildBylineText, buildPublicationBylineText, formatPublicationDate } from './byline'
 
 describe('buildBylineText', () => {
     describe('solo author', () => {
@@ -101,5 +101,48 @@ describe('buildBylineText', () => {
                 )
             ).toBe(`Authors: Johanna Fleming, ${personName} (${personJobTitle['en']}), and Paula Oittinen (teacher).`)
         })
+    })
+})
+
+describe('formatPublicationDate', () => {
+    it('formats date in Finnish locale', () => {
+        expect(formatPublicationDate('2025-03-15', 'fi')).toBe('15. maaliskuuta 2025')
+    })
+
+    it('formats date in English locale', () => {
+        expect(formatPublicationDate('2025-03-15', 'en')).toBe('15 March 2025')
+    })
+
+    it('formats date in Swedish locale', () => {
+        expect(formatPublicationDate('2025-03-15', 'sv')).toBe('15 mars 2025')
+    })
+})
+
+describe('buildPublicationBylineText', () => {
+    it('renders Finnish prefix, name, and date', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'fi')).toBe(
+            'Julkaistu myös: Kauppalehti, 15. maaliskuuta 2025.'
+        )
+    })
+
+    it('renders English prefix, name, and date', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'en')).toBe(
+            'Also published in: Kauppalehti, 15 March 2025.'
+        )
+    })
+
+    it('renders Swedish prefix, name, and date', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'sv')).toBe(
+            'Publicerat även i: Kauppalehti, 15 mars 2025.'
+        )
+    })
+
+    it('output is identical whether url is present or absent', () => {
+        const withUrl = buildPublicationBylineText(
+            { date: '2024-06-01', name: 'Helsingin Sanomat', url: 'https://hs.fi/article' },
+            'fi'
+        )
+        const withoutUrl = buildPublicationBylineText({ date: '2024-06-01', name: 'Helsingin Sanomat' }, 'fi')
+        expect(withUrl).toBe(withoutUrl)
     })
 })

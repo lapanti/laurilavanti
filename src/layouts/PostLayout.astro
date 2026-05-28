@@ -1,6 +1,7 @@
 ---
 import type { MDXLayoutProps } from 'astro'
 import type { AuthorEntry } from '../content/person'
+import type { ExternalPublication } from '../lib/byline'
 
 import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
@@ -16,6 +17,7 @@ import BaseLayout from './BaseLayout.astro'
 type Props = MDXLayoutProps<{
     authors?: AuthorEntry[]
     description: string
+    externalPublication?: ExternalPublication
     faq?: Array<{ a: string; q: string }>
     id: number
     lang: 'en' | 'fi' | 'sv'
@@ -30,8 +32,22 @@ type Props = MDXLayoutProps<{
 }>
 
 const { frontmatter } = Astro.props
-const { alt, authors, description, faq, heroImage, id, lang, pageTitle, publishDate, slug, tags, title, updatedDate } =
-    frontmatter
+const {
+    alt,
+    authors,
+    description,
+    externalPublication,
+    faq,
+    heroImage,
+    id,
+    lang,
+    pageTitle,
+    publishDate,
+    slug,
+    tags,
+    title,
+    updatedDate,
+} = frontmatter
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
@@ -106,7 +122,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         title={title}
     />
     <slot />
-    <Byline authors={authors ?? ['lauri']} lang={lang} />
+    <Byline authors={authors ?? ['lauri']} externalPublication={externalPublication} lang={lang} />
     <SocialShare ariaLabel={t.shareAriaLabel(pageTitle)} locale={lang} shareUrl={shareUrl} title={pageTitle} />
     <section class="other-posts">
         <H2>{t.otherPosts}</H2>

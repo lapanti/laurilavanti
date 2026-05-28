@@ -1,15 +1,23 @@
 ---
 import type { AuthorEntry } from '../content/person'
+import type { ExternalPublication } from '../lib/byline'
 
-import { buildBylineText } from '../lib/byline'
+import { buildBylineText, formatPublicationDate } from '../lib/byline'
 
 interface Props {
     authors: AuthorEntry[]
+    externalPublication?: ExternalPublication
     lang: 'en' | 'fi' | 'sv'
 }
 
-const { authors, lang } = Astro.props
+const { authors, externalPublication, lang } = Astro.props
 const text = buildBylineText(authors, lang)
+
+const publicationPrefix: Record<string, string> = {
+    en: 'Also published in',
+    fi: 'Julkaistu myös',
+    sv: 'Publicerat även i',
+}
 ---
 
 <style>
@@ -22,6 +30,21 @@ const text = buildBylineText(authors, lang)
     text && (
         <p>
             <em>{text}</em>
+        </p>
+    )
+}
+{
+    externalPublication && (
+        <p>
+            <em>
+                {publicationPrefix[lang]}:{' '}
+                {externalPublication.url ? (
+                    <a href={externalPublication.url}>{externalPublication.name}</a>
+                ) : (
+                    externalPublication.name
+                )}
+                , {formatPublicationDate(externalPublication.date, lang)}.
+            </em>
         </p>
     )
 }
