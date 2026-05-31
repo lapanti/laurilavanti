@@ -21,6 +21,7 @@ export default getViteConfig(
         ],
         test: {
             coverage: {
+                include: ['src/lib/**'],
                 thresholds: {
                     functions: 80,
                     lines: 80,
