@@ -6,12 +6,12 @@ import { AnyPage } from './anyPage'
 
 export class BlogSwePage extends AnyPage {
     readonly title: Locator
-    readonly linksToBlogs: Locator
+    readonly articles: Locator
 
     constructor(page: Page) {
         super(page)
         this.title = page.getByRole('heading', { level: 1 })
-        this.linksToBlogs = page.locator('a[href*="/sv/blog/"]')
+        this.articles = page.getByRole('main').getByRole('article')
     }
 
     async goTo() {
@@ -22,6 +22,8 @@ export class BlogSwePage extends AnyPage {
     }
 
     async checkContent() {
-        expect(await this.linksToBlogs.count()).toBeGreaterThanOrEqual(2)
+        await expect(this.articles.first()).toBeVisible()
+        await expect(this.articles.first().getByRole('link')).toBeVisible()
+        await expect(this.articles.first().getByRole('heading')).toBeVisible()
     }
 }

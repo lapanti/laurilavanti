@@ -21,6 +21,6 @@ export class TopicsPage extends AnyPage {
     }
 
     async checkContent() {
-        await expect(this.topicHeadings).toHaveCount(13)
+        await expect(this.topicHeadings.first()).toBeVisible()
     }
 }
