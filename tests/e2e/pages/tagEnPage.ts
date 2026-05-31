@@ -13,7 +13,7 @@ export class TagEnPage extends AnyPage {
         super(page)
         this.url = url
         this.title = page.getByRole('heading', { level: 1 })
-        this.articles = page.getByRole('article')
+        this.articles = page.locator('article[aria-label]')
     }
 
     async goTo() {
@@ -25,7 +25,7 @@ export class TagEnPage extends AnyPage {
 
     async checkContent() {
         await expect(this.articles.first()).toBeVisible()
-        await expect(this.articles.first().getByRole('link')).toBeVisible()
-        await expect(this.articles.first().getByRole('heading')).toBeVisible()
+        await expect(this.articles.first().getByRole('link').first()).toBeVisible()
+        await expect(this.articles.first().getByRole('heading').first()).toBeVisible()
     }
 }
