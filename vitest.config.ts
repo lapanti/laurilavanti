@@ -20,6 +20,12 @@ export default getViteConfig(
             },
         ],
         test: {
+            coverage: {
+                thresholds: {
+                    functions: 80,
+                    lines: 80,
+                },
+            },
             environment: 'node',
             exclude: [...configDefaults.exclude, 'tests/e2e/**'],
             resolveSnapshotPath: (testPath, snapshotExtension) => {
