@@ -7,14 +7,12 @@ import { AnyPage } from './anyPage'
 export class TagEnPage extends AnyPage {
     readonly url: string
     readonly title: Locator
-    readonly minNumberOfArticles: number
     readonly articles: Locator
 
-    constructor(page: Page, url = '/en/category/kirkkonummi/', minNumberOfArticles = 1) {
+    constructor(page: Page, url = '/en/category/kirkkonummi/') {
         super(page)
         this.url = url
         this.title = page.getByRole('heading', { level: 1 })
-        this.minNumberOfArticles = minNumberOfArticles
         this.articles = page.getByRole('article')
     }
 
@@ -26,6 +24,8 @@ export class TagEnPage extends AnyPage {
     }
 
     async checkContent() {
-        expect(await this.articles.count()).toBeGreaterThanOrEqual(this.minNumberOfArticles)
+        await expect(this.articles.first()).toBeVisible()
+        await expect(this.articles.first().getByRole('link')).toBeVisible()
+        await expect(this.articles.first().getByRole('heading')).toBeVisible()
     }
 }

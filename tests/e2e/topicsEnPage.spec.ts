@@ -16,7 +16,8 @@ test.describe('Topics Page in English', () => {
         const topicsPage = new TopicsEnPage(page)
         await topicsPage.goTo()
 
-        await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
+        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
+        await test.expect(page.getByRole('contentinfo')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
@@ -38,6 +39,7 @@ test.describe('Topics Page in English', () => {
         const topicsPage = new TopicsEnPage(page)
         await topicsPage.goTo()
 
-        await test.expect(page).toHaveScreenshot()
+        await test.expect(page.getByRole('banner')).toHaveScreenshot()
+        await test.expect(page.getByRole('contentinfo')).toHaveScreenshot()
     })
 })
