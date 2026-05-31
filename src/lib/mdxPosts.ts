@@ -23,20 +23,11 @@ interface MdxPost {
     updatedDate: string
 }
 
-type MdxPostWithUrl = MdxPost & { url: string }
+type MdxPostWithUrl = MdxPost & { readingTime: number; url: string; wordCount: number }
 
 type GlobResult = { frontmatter: MdxPost }
 
 const rawGlob = import.meta.glob<GlobResult>('../pages/*/blog/*/*/index.mdx', { eager: true })
-
-export const allMdxPosts: MdxPostWithUrl[] = Object.entries(rawGlob)
-    .map(([filePath, mod]) => {
-        /* '../pages/fi/blog/1/kotihoidon-tuen-kuntalisa/index.mdx' → '/fi/blog/1/kotihoidon-tuen-kuntalisa/' */
-        const url = filePath.replace('../pages', '').replace('index.mdx', '')
-
-        return { ...mod.frontmatter, url }
-    })
-    .sort((a, b) => b.id - a.id)
 
 const rawMdxGlob = import.meta.glob<string>('../pages/*/blog/*/*/index.mdx', {
     eager: true,
@@ -44,10 +35,27 @@ const rawMdxGlob = import.meta.glob<string>('../pages/*/blog/*/*/index.mdx', {
     query: '?raw',
 })
 
-const processor = unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeStringify)
-
 const stripFrontmatter = (raw: string): string =>
     raw.replace(/^---[\s\S]*?---\n?/, '').replace(/^(import\s+.+|export\s+const\s+components\s*=.+)$/gm, '')
+
+const wordCountByPath: Record<string, number> = Object.fromEntries(
+    Object.entries(rawMdxGlob).map(([filePath, raw]) => [
+        filePath,
+        stripFrontmatter(raw).trim().split(/\s+/).filter(Boolean).length,
+    ])
+)
+
+export const allMdxPosts: MdxPostWithUrl[] = Object.entries(rawGlob)
+    .map(([filePath, mod]) => {
+        const url = filePath.replace('../pages', '').replace('index.mdx', '')
+        const wordCount = wordCountByPath[filePath] ?? 0
+        const readingTime = Math.ceil(wordCount / 200)
+
+        return { ...mod.frontmatter, readingTime, url, wordCount }
+    })
+    .sort((a, b) => b.id - a.id)
+
+const processor = unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeStringify)
 
 export const mdxContentByPath: Record<string, () => Promise<string>> = Object.fromEntries(
     Object.entries(rawMdxGlob).map(([filePath, raw]) => [
