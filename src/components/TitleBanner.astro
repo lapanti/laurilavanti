@@ -8,11 +8,13 @@ interface Props {
     createdAt?: string
     heroImage?: string
     lang?: 'en' | 'fi' | 'sv'
+    readingTime?: number
     tags?: string[]
     title: string
+    updatedDate?: string
 }
 
-const { alt, createdAt, heroImage, lang, tags, title } = Astro.props
+const { alt, createdAt, heroImage, lang, readingTime, tags, title, updatedDate } = Astro.props
 ---
 
 <style
@@ -49,7 +51,7 @@ const { alt, createdAt, heroImage, lang, tags, title } = Astro.props
 </style>
 <div class="container">
     <div class="content">
-        <Title createdAt={createdAt} lang={lang} tags={tags} title={title} />
+        <Title createdAt={createdAt} lang={lang} readingTime={readingTime} tags={tags} title={title} updatedDate={updatedDate} />
         <Image alt={alt} heroImage={heroImage} />
     </div>
 </div>
