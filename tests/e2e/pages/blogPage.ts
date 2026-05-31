@@ -11,7 +11,7 @@ export class BlogPage extends AnyPage {
     constructor(page: Page) {
         super(page)
         this.title = page.getByRole('heading', { level: 1 })
-        this.articles = page.getByRole('main').getByRole('article')
+        this.articles = page.locator('article[aria-label]')
     }
 
     async goTo() {
@@ -23,7 +23,7 @@ export class BlogPage extends AnyPage {
 
     async checkContent() {
         await expect(this.articles.first()).toBeVisible()
-        await expect(this.articles.first().getByRole('link')).toBeVisible()
-        await expect(this.articles.first().getByRole('heading')).toBeVisible()
+        await expect(this.articles.first().getByRole('link').first()).toBeVisible()
+        await expect(this.articles.first().getByRole('heading').first()).toBeVisible()
     }
 }
