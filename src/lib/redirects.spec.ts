@@ -38,10 +38,7 @@ describe('redirects structural integrity', () => {
     it('no chain redirects (a redirect target must not be another redirect source)', () => {
         const keySet = new Set(keys)
         for (const [key, value] of entries) {
-            expect(
-                keySet.has(value),
-                `chain detected: "${key}" → "${value}" (target is also a source key)`
-            ).toBe(false)
+            expect(keySet.has(value), `chain detected: "${key}" → "${value}" (target is also a source key)`).toBe(false)
         }
     })
 
