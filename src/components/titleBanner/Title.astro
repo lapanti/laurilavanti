@@ -6,11 +6,13 @@ import H1 from './title/H1.astro'
 interface Props {
     createdAt?: string
     lang?: 'en' | 'fi' | 'sv'
+    readingTime?: number
     tags?: string[]
     title: string
+    updatedDate?: string
 }
 
-const { createdAt, lang, tags, title } = Astro.props
+const { createdAt, lang, readingTime, tags, title, updatedDate } = Astro.props
 ---
 
 <style
@@ -54,7 +56,9 @@ const { createdAt, lang, tags, title } = Astro.props
                 bigDateTime
                 date={createdAt}
                 lang={lang}
+                readingTime={readingTime}
                 tags={tags}
+                updatedDate={updatedDate}
             />
         )
     }

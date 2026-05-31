@@ -8,16 +8,25 @@ interface Props {
     bigDateTime?: boolean
     date: string
     lang?: 'en' | 'fi' | 'sv'
+    readingTime?: number
     tags: string[]
+    updatedDate?: string
 }
 
-const { ariaLabel, bigDateTime, date, lang = 'fi', tags } = Astro.props
+const { ariaLabel, bigDateTime, date, lang = 'fi', readingTime, tags, updatedDate } = Astro.props
 
 const tagBasePaths = { en: '/en/category', fi: '/fi/category', sv: '/sv/category' }
 
 const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')
 const dateToDisplay = `${day}.${month}.${year}`
+
+const readingTimeLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'min read', fi: 'min', sv: 'min' }
+const updatedLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'Updated', fi: 'Päivitetty', sv: 'Uppdaterad' }
+
+const showUpdated = updatedDate && updatedDate !== dateOnly
+const [updYear, updMonth, updDay] = showUpdated ? updatedDate.split('-') : []
+const updatedDateToDisplay = showUpdated ? `${updDay}.${updMonth}.${updYear}` : ''
 
 const tagsToRender = tags
     .map((tagId) => ({ id: tagId, name: getTagName(tagId, lang) }))
@@ -49,6 +58,8 @@ const tagsToRender = tags
 </style>
 <aside aria-label={ariaLabel}>
     <time datetime={dateOnly} style={{ ...(bigDateTime ? typographics.ingress : {}) }}>{dateToDisplay}</time>
+    {readingTime && readingTime > 0 && <span>{readingTime} {readingTimeLabel[lang]}</span>}
+    {showUpdated && <time datetime={updatedDate}>{updatedLabel[lang]}: {updatedDateToDisplay}</time>}
     {
         tags.length > 0 && (
             <ul>
