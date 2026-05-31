@@ -29,9 +29,11 @@ interface Props {
     ogImage?: string
     ogImageAlt?: string
     slug?: string
+    tags?: string[]
     title: string
     type?: JsonLdType
     updatedAt?: string
+    wordCount?: number
 }
 
 const {
@@ -46,9 +48,11 @@ const {
     ogImage,
     ogImageAlt,
     slug,
+    tags,
     title,
     type,
     updatedAt,
+    wordCount,
 } = Astro.props
 ---
 
@@ -67,9 +71,11 @@ const {
             ogImage={ogImage}
             ogImageAlt={ogImageAlt}
             slug={slug}
+            tags={tags}
             title={title}
             type={type}
             updatedAt={updatedAt}
+            wordCount={wordCount}
         />
     </head>
     <body>
