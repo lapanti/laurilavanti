@@ -763,4 +763,82 @@ describe('<Head />', () => {
         expect(jsonLd.dateModified).toBe('2024-06-01')
         expect(jsonLd.mainEntityOfPage['@type']).toBe('WebPage')
     })
+
+    it('should emit inLanguage on BlogPosting and mainEntityOfPage JSON-LD', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                lang: 'fi',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.inLanguage).toBe('fi')
+        expect(jsonLd.mainEntityOfPage.inLanguage).toBe('fi')
+    })
+
+    it('should emit wordCount in BlogPosting JSON-LD when provided', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+                wordCount: 850,
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.wordCount).toBe(850)
+    })
+
+    it('should not emit wordCount in BlogPosting JSON-LD when absent', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
+        const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
+        expect(jsonLd.wordCount).toBeUndefined()
+    })
+
+    it('should emit article:section and article:tag meta tags for BlogPosting with tags', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                createdAt: '2024-01-01',
+                tags: ['kirkkonummi', 'lansirata', 'kuntavaalit2025'],
+                title: 'Test Blog Post',
+                type: 'BlogPosting',
+            },
+        })
+
+        const section = result.querySelector('meta[property="article:section"]')
+        expect(section?.getAttribute('content')).toBe('kirkkonummi')
+
+        const tagMetas = Array.from(result.querySelectorAll('meta[property="article:tag"]'))
+        expect(tagMetas).toHaveLength(3)
+        const contents = tagMetas.map((m) => m.getAttribute('content'))
+        expect(contents).toContain('kirkkonummi')
+        expect(contents).toContain('lansirata')
+        expect(contents).toContain('kuntavaalit2025')
+    })
+
+    it('should not emit article:section or article:tag for non-article pages', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                tags: ['kirkkonummi'],
+                title: 'Some Page',
+            },
+        })
+
+        expect(result.querySelector('meta[property="article:section"]')).toBeNull()
+        expect(result.querySelector('meta[property="article:tag"]')).toBeNull()
+    })
 })

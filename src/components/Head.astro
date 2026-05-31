@@ -47,9 +47,11 @@ interface Props {
     ogImage?: string
     ogImageAlt?: string
     slug?: string
+    tags?: string[]
     title: string
     type?: JsonLdType
     updatedAt?: string
+    wordCount?: number
 }
 
 const {
@@ -60,6 +62,7 @@ const {
     lang: rawLang = 'fi',
     langAlternates,
     noindex,
+    tags,
     title,
     type,
     slug,
@@ -67,6 +70,7 @@ const {
     ogImageAlt,
     createdAt,
     updatedAt,
+    wordCount,
 } = Astro.props
 
 const lang: Lang = rawLang
@@ -180,10 +184,13 @@ const jsonLd = JSON.stringify(
                             : {}),
                         dateModified: updatedAt ?? createdAt,
                         datePublished: createdAt,
+                        inLanguage: lang,
                         mainEntityOfPage: {
                             '@id': canonical,
                             '@type': WEBPAGE,
+                            inLanguage: lang,
                         },
+                        ...(wordCount ? { wordCount } : {}),
                     }
                   : {}),
               ...(type === WEBSITE
@@ -243,6 +250,8 @@ const breadcrumbJsonLd =
 {isArticle && articleAuthorNames.map((n: string) => <meta content={n} property="article:author" />)}
 {isArticle && <meta content={createdAt} property="article:published_time" />}
 {isArticle && updatedAt && <meta content={updatedAt} property="article:modified_time" />}
+{isArticle && tags && tags.length > 0 && <meta content={tags[0]} property="article:section" />}
+{isArticle && tags && tags.map((tag: string) => <meta content={tag} property="article:tag" />)}
 <meta content="@laurilavanti@mastodon.social" name="fediverse:creator" />
 {
     canonical && (

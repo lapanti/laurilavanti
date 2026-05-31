@@ -10,7 +10,7 @@ import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
-import { getPostAlternates } from '../lib/mdxPosts'
+import { allMdxPosts, getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
@@ -52,6 +52,9 @@ const {
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
 const langAlternates = getPostAlternates(id)
+const postMeta = allMdxPosts.find((p) => p.url === `/${canonicalSlug}/`)
+const readingTime = postMeta?.readingTime ?? 0
+const wordCount = postMeta?.wordCount ?? 0
 
 const i18n = {
     en: {
@@ -108,18 +111,22 @@ const breadcrumbs: BreadcrumbItem[] = [
     ogImage={ogImage}
     ogImageAlt={alt}
     slug={canonicalSlug}
+    tags={tags}
     title={pageTitle}
     type={BLOGPOSTING}
     updatedAt={updatedDate}
+    wordCount={wordCount}
 >
     <TitleBanner
         alt={alt}
         createdAt={publishDate}
         heroImage={heroImage}
         lang={lang}
+        readingTime={readingTime}
         slot="banner"
         tags={tags}
         title={title}
+        updatedDate={updatedDate}
     />
     <slot />
     <Byline authors={authors ?? ['lauri']} externalPublications={externalPublications} lang={lang} />
