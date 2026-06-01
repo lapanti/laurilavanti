@@ -16,8 +16,7 @@ test.describe('Topics Page på svenska', () => {
         const topicsPage = new TopicsSwePage(page)
         await topicsPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
-        await test.expect(page.getByRole('contentinfo')).toMatchAriaSnapshot()
+        await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
@@ -39,7 +38,6 @@ test.describe('Topics Page på svenska', () => {
         const topicsPage = new TopicsSwePage(page)
         await topicsPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toHaveScreenshot()
-        await test.expect(page.getByRole('contentinfo')).toHaveScreenshot()
+        await test.expect(page.getByRole('main')).toHaveScreenshot()
     })
 })

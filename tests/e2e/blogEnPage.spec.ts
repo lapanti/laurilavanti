@@ -16,8 +16,7 @@ test.describe('Blog Page in English', () => {
         const blogPage = new BlogEnPage(page)
         await blogPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
-        await test.expect(page.getByRole('contentinfo')).toMatchAriaSnapshot()
+        await test.expect(page.getByRole('main')).toMatchAriaSnapshot()
     })
 
     test('should pass accessibility test', async ({ page }) => {
@@ -39,7 +38,6 @@ test.describe('Blog Page in English', () => {
         const blogPage = new BlogEnPage(page)
         await blogPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toHaveScreenshot()
-        await test.expect(page.getByRole('contentinfo')).toHaveScreenshot()
+        await test.expect(page.locator('main > div').first()).toHaveScreenshot()
     })
 })
