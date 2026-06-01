@@ -58,8 +58,20 @@ const tagsToRender = tags
 </style>
 <aside aria-label={ariaLabel}>
     <time datetime={dateOnly} style={{ ...(bigDateTime ? typographics.ingress : {}) }}>{dateToDisplay}</time>
-    {readingTime && readingTime > 0 && <span>{readingTime} {readingTimeLabel[lang]}</span>}
-    {showUpdated && <time datetime={updatedDate}>{updatedLabel[lang]}: {updatedDateToDisplay}</time>}
+    {
+        readingTime && readingTime > 0 && (
+            <span>
+                {readingTime} {readingTimeLabel[lang]}
+            </span>
+        )
+    }
+    {
+        showUpdated && (
+            <time datetime={updatedDate}>
+                {updatedLabel[lang]}: {updatedDateToDisplay}
+            </time>
+        )
+    }
     {
         tags.length > 0 && (
             <ul>
