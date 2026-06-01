@@ -9,7 +9,7 @@ export class TagEnPage extends AnyPage {
     readonly title: Locator
     readonly articles: Locator
 
-    constructor(page: Page, url = '/en/category/kirkkonummi/') {
+    constructor(page: Page, url = '/en/category/municipal-elections-2025/') {
         super(page)
         this.url = url
         this.title = page.getByRole('heading', { level: 1 })
