@@ -19,7 +19,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: .astro
           key: astro-${{ runner.os }}-${{ hashFiles('astro.config.*', 'src/**', 'public/**') }}
@@ -203,7 +203,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -241,7 +241,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -279,7 +279,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -317,7 +317,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -355,7 +355,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -393,7 +393,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -431,7 +431,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -469,7 +469,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -507,7 +507,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -545,7 +545,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -583,7 +583,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
@@ -621,7 +621,7 @@ jobs:
           cache-dependency-path: "package-lock.json"
       - name: Install dependencies
         run: npm ci
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
