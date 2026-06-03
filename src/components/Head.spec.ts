@@ -377,7 +377,7 @@ describe('<Head />', () => {
         expect(jsonLd.memberOf['@type']).toBe('PoliticalParty')
         expect(jsonLd.memberOf.name).toBe('Vihreä liitto')
         expect(jsonLd.memberOf.url).toBe('https://www.vihreat.fi')
-        expect(jsonLd.knowsAbout).toHaveLength(9)
+        expect(jsonLd.knowsAbout).toHaveLength(14)
         expect(jsonLd.knowsAbout).toContain('Talouspolitiikka')
         expect(jsonLd.worksFor).toEqual({ '@type': 'Organization', name: 'OP', url: 'https://www.op.fi/' })
         expect(jsonLd.alumniOf).toHaveLength(3)
@@ -398,7 +398,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('Municipal councillor & Lead Developer')
+        expect(jsonLd.jobTitle).toBe('Municipal councillor & lead developer')
         expect(jsonLd.knowsAbout).toContain('Economic policy')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
@@ -414,7 +414,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('Kommunfullmäktigeledamot och ledande mjukvarutvecklare')
+        expect(jsonLd.jobTitle).toBe('Kommunfullmäktigeledamot och ledande mjukvaruutvecklare')
         expect(jsonLd.knowsAbout).toContain('Ekonomisk politik')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
