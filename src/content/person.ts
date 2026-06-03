@@ -29,50 +29,65 @@ export const personSameAs = [
 ]
 
 export const personJobTitle: Record<Lang, string> = {
-    en: 'Municipal councillor & Lead Developer',
+    en: 'Municipal councillor & lead developer',
     fi: 'Kunnanvaltuutettu ja johtava ohjelmistokehittäjä',
-    sv: 'Kommunfullmäktigeledamot och ledande mjukvarutvecklare',
+    sv: 'Kommunfullmäktigeledamot och ledande mjukvaruutvecklare',
 }
 
 export const personDescription: Record<Lang, string> = {
-    en: 'Municipal councillor in Kirkkonummi (Greens) and lead software developer. Focused on economics, entrepreneurship, digital independence, and responsible AI policy.',
-    fi: 'Kirkkonummen kunnanvaltuutettu (Vihreät) ja johtava ohjelmistokehittäjä. Keskittyy talouteen, yrittäjyyteen, digitaaliseen itsenäisyyteen ja vastuulliseen tekoälypolitiikkaan. Seuraa eduskuntavaaleja.',
-    sv: 'Kommunfullmäktigeledamot i Kyrkslätt (De Gröna) och ledande mjukvarutvecklare. Fokuserar på ekonomi, företagande, digital självständighet och ansvarsfull AI-politik. Följer riksdagsvalen.',
+    en: 'Kirkkonummi municipal councillor (Greens) and lead developer (MSc, Aalto). He works to build a digitally independent Finland where the economy, education, and rights work together in the age of AI.',
+    fi: 'Kirkkonummen kunnanvaltuutettu ja johtava ohjelmistokehittäjä (DI, Aalto). Hänen tavoitteenaan on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.',
+    sv: 'Fullmäktigeledamot i Kyrkslätt (De Gröna) och ledande mjukvaruutvecklare (DI, Aalto-universitetet). Hans mål är ett digitalt självständigt Finland där ekonomi, bildning och frihet fungerar tillsammans i AI-tidsåldern.',
 }
 
 export const personKnowsAbout: Record<Lang, string[]> = {
     en: [
         'Economic policy',
         'Entrepreneurship',
-        'Innovation policy',
         'Digital independence',
-        'Digital sovereignty',
         'Artificial intelligence',
         'Responsible AI',
-        'Green transition',
         'Parliamentary elections',
+        'Market economy',
+        'Education',
+        'Fundamental rights',
+        'Privacy',
+        'Finnish-language AI models',
+        'Public procurement portability',
+        'Foundation-owned companies',
+        'Public administration',
     ],
     fi: [
         'Talouspolitiikka',
         'Yrittäjyys',
-        'Innovaatiopolitiikka',
         'Digitaalinen itsenäisyys',
-        'Digitaalinen riippumattomuus',
         'Tekoäly',
         'Vastuullinen tekoäly',
-        'Vihreä siirtymä',
         'Eduskuntavaalit',
+        'Markkinatalous',
+        'Sivistys',
+        'Perusoikeudet',
+        'Yksityisyys',
+        'Suomenkieliset tekoälymallit',
+        'Julkishankintojen siirrettävyys',
+        'Säätiö-omisteiset yhtiöt',
+        'Julkishallinto',
     ],
     sv: [
         'Ekonomisk politik',
         'Företagande',
-        'Innovationspolitik',
         'Digital självständighet',
-        'Digitalt oberoende',
         'Artificiell intelligens',
         'Ansvarsfull AI',
-        'Grön omställning',
         'Riksdagsval',
+        'Marknadsekonomi',
+        'Bildning',
+        'Grundläggande rättigheter',
+        'Integritet',
+        'Finskspråkiga AI-modeller',
+        'Överförbarhet av offentliga upphandlingar',
+        'Stiftelseägda bolag',
+        'Offentlig förvaltning',
     ],
 }
 
@@ -140,7 +155,7 @@ export const personHasOccupation: Record<Lang, object[]> = {
         },
         {
             '@type': 'Occupation',
-            name: 'Ledande mjukvarutvecklare',
+            name: 'Ledande mjukvaruutvecklare',
             skills: 'Artificiell intelligens, programvaruarkitektur, digital självständighet, säker mjukvaruutveckling',
         },
     ],
