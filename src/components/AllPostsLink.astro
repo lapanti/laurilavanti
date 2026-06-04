@@ -1,0 +1,64 @@
+---
+import type { Lang } from '../content/nav'
+
+import { colors, fontFamilies, fontWeights, sizes } from '../lib/styles'
+
+interface Props {
+    lang: Lang
+}
+
+const { lang } = Astro.props
+
+const labels: Record<Lang, string> = {
+    fi: 'Kaikki kirjoitukset →',
+    en: 'All posts →',
+    sv: 'Alla inlägg →',
+}
+
+const hrefs: Record<Lang, string> = {
+    fi: '/fi/blog/all/',
+    en: '/en/blog/all/',
+    sv: '/sv/blog/all/',
+}
+---
+
+<style
+    define:vars={{
+        colorsEvening: colors.evening,
+        colorsEvening70: colors.evening70,
+        colorsWhite: colors.white,
+        fontFamiliesSans: fontFamilies.sans,
+        fontWeightMedium: fontWeights.medium,
+        sizes1: sizes[1],
+        sizes2: sizes[2],
+    }}
+>
+    .cta-wrapper {
+        display: flex;
+        grid-column-start: 3;
+        justify-content: center;
+        margin-top: var(--sizes2);
+    }
+
+    a {
+        align-items: center;
+        background-color: var(--colorsEvening);
+        border: 1px solid var(--colorsEvening);
+        color: var(--colorsWhite);
+        display: inline-flex;
+        font-family: var(--fontFamiliesSans);
+        font-size: var(--sizes1);
+        font-weight: var(--fontWeightMedium);
+        min-block-size: 2.75rem;
+        padding: 0.5rem 1.5rem;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background-color: var(--colorsEvening70);
+        border-color: var(--colorsEvening70);
+    }
+</style>
+<div class="cta-wrapper">
+    <a href={hrefs[lang]}>{labels[lang]}</a>
+</div>
