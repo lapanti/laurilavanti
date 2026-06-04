@@ -8,7 +8,7 @@ export const artificialIntelligenceTag: LocalTag = {
             'The more powerful AI becomes, the more important privacy protections are. AI systems are data-hungry; without strong data protection rules, they become surveillance infrastructure. The EU AI Act is a step in the right direction, but implementation must be substantive — not checkbox compliance.',
         ],
         fi: [
-            'Olen käyttänyt tekoälytyökaluja ammatillisesti lead developer -roolissa — argumentoin käytännön kokemuksesta, en teoriasta. Tekoäly on aikamme merkittävin tuottavuusmuutos, ja Suomen on tartuttava siihen aktiivisesti ja kriittisesti.',
+            'Olen käyttänyt tekoälytyökaluja ammatillisesti johtavan ohjelmistokehittäjän roolissa — argumentoin käytännön kokemuksesta, en teoriasta. Tekoäly on aikamme merkittävin tuottavuusmuutos, ja Suomen on tartuttava siihen aktiivisesti ja kriittisesti.',
             'Tekoäly vahvistaa sekä kykyjä että vahinkoja. Julkisen sektorin sovelluksissa — etuuspäätöksissä, luvankäsittelyssä, ennakoivassa poliisitoiminnassa — panokset ovat liian suuret, jotta järjestelmiä voitaisiin ottaa käyttöön ilman läpinäkyvyyttä ja inhimillistä valvontaa. Ajan selitettäviä algoritmeja merkityksellisiin päätöksiin, avoimen lähdekoodin malleja silloin kun mahdollista, ja pakollista ihmisvalvontaa yksilöiden oikeuksiin vaikuttavissa päätöksissä.',
             'Mitä voimakkaammaksi tekoäly kehittyy, sitä tärkeämmiksi yksityisyydensuoja tulee. Tekoälyjärjestelmät ovat tiedonnälkäisiä; ilman vahvoja tietosuojasääntöjä niistä tulee valvontainfrastruktuuria. EU:n tekoälysäädös on askel oikeaan suuntaan, mutta toimeenpanon on oltava sisällöllistä — ei pelkkää laatikoiden ruksimista.',
         ],
@@ -77,7 +77,7 @@ export const artificialIntelligenceTag: LocalTag = {
     id: 'artificial-intelligence',
     metaDescription: {
         en: 'I use AI tools professionally as a lead developer — I argue from hands-on experience, not theory. Finland must engage with AI actively and critically.',
-        fi: 'Olen käyttänyt tekoälytyökaluja ammatillisesti lead developer -roolissa — argumentoin käytännön kokemuksesta. Suomen on tartuttava tekoälyyn aktiivisesti.',
+        fi: 'Olen käyttänyt tekoälytyökaluja johtavan ohjelmistokehittäjän roolissa — argumentoin käytännön kokemuksesta. Suomen on tartuttava tekoälyyn aktiivisesti.',
         sv: 'Jag arbetar med AI-verktyg professionellt som lead developer — jag argumenterar utifrån praktisk erfarenhet. Finland måste engagera sig med AI aktivt.',
     },
     names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
