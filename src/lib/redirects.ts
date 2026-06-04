@@ -82,10 +82,6 @@ export const redirects: Record<string, string> = {
     '/blogi/yhdessa-olemme-vahvempia/': '/fi/blog/32/yhdessa-olemme-vahvempia/',
     '/blogi/yksi-askel-eteen-kaksi-taakse/': '/fi/blog/22/yksi-askel-eteen-kaksi-taakse/',
     '/blogi/yksityisyydensuoja/': '/fi/category/privacy/',
-    // Issue #1288 — topics merged into blog
-    '/en/topics/': '/en/blog/',
-    '/fi/topics/': '/fi/blog/',
-    '/sv/topics/': '/sv/blog/',
     // Issue #1077 — wrong-locale slug redirects (Google-indexed 404s)
     '/en/blog/16/uusi-vuosi-tuttu-talvikunnossapito/': '/en/blog/16/new-year-familiar-winter-maintenance/',
     '/en/blog/17/luontomme-on-valttimme-vuodesta-toiseen/': '/en/blog/17/our-nature-is-our-trump-card-year-after-year/',
@@ -119,6 +115,8 @@ export const redirects: Record<string, string> = {
     '/en/category/valtuustoaloite/': '/en/category/council-motion/',
     '/en/category/varhaiskasvatus/': '/en/category/early-childhood-education/',
     '/en/category/yksityisyydensuoja/': '/en/category/privacy/',
+    // Issue #1288 — topics merged into blog
+    '/en/topics/': '/en/blog/',
     '/fi/blog/25/congratulations-finland/': '/fi/blog/25/onnea-suomi/',
     // id 43 fi slug typo fix (puhumma → puhumme)
     '/fi/blog/43/kuka-paattaa-mista-puhumma/': '/fi/blog/43/kuka-paattaa-mista-puhumme/',
@@ -146,6 +144,8 @@ export const redirects: Record<string, string> = {
     '/fi/category/valtuustoaloite/': '/fi/category/council-motion/',
     '/fi/category/varhaiskasvatus/': '/fi/category/early-childhood-education/',
     '/fi/category/yksityisyydensuoja/': '/fi/category/privacy/',
+    // Issue #1288 — topics merged into blog
+    '/fi/topics/': '/fi/blog/',
     '/kategoria/aluevaalit2022/': '/fi/category/regional-elections-2022/',
     '/kategoria/aluevaalit2025/': '/fi/category/regional-elections-2025/',
     '/kategoria/digitaalinen-itsenaisyys/': '/fi/category/digital-independence/',
@@ -217,4 +217,6 @@ export const redirects: Record<string, string> = {
     '/sv/category/valtuustoaloite/': '/sv/category/council-motion/',
     '/sv/category/varhaiskasvatus/': '/sv/category/early-childhood-education/',
     '/sv/category/yksityisyydensuoja/': '/sv/category/privacy/',
+    // Issue #1288 — topics merged into blog
+    '/sv/topics/': '/sv/blog/',
 }
