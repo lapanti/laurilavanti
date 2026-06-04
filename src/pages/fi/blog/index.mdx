@@ -14,7 +14,7 @@ alt: 'Lauri Lavanti istumassa jakkaralla ja nojaa korkeaan pöytään. Päällä
 import AllPostsLink from '../../../components/AllPostsLink.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
-import TopicWithExcerpts from '../../../components/TopicWithExcerpts.astro'
+import TopicsWithExcerpts from '../../../components/TopicsWithExcerpts.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
@@ -24,11 +24,6 @@ Tekoäly muuttaa kaiken — työn, talouden ja sen, miten valtio palvelee meitä
 
 Käytännön kokemukseni on yli vuosikymmenen ajalta turvallisten ohjelmistojen ja pankkijärjestelmien rakentajana. Sitä taustaa vasten kirjoitan siitä, miksi tekoäly ei vain tehosta työtä vaan pakottaa miettimään uudelleen koko sosiaaliturvan, miksi digitaalinen itsenäisyys on välttämättömyys vapaan yhteiskunnan kannalta, ja miten varmistetaan, että teknologian hyödyt tulevat kaikille — ei vain harvoille.
 
-<TopicWithExcerpts lang="fi" id="artificial-intelligence" />
-<TopicWithExcerpts lang="fi" id="economy" />
-<TopicWithExcerpts lang="fi" id="learning" />
-<TopicWithExcerpts lang="fi" id="freedom" />
-<TopicWithExcerpts lang="fi" id="digital-independence" />
-<TopicWithExcerpts lang="fi" id="kirkkonummi" />
+<TopicsWithExcerpts lang="fi" ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence', 'kirkkonummi']} />
 
 <AllPostsLink lang="fi" />

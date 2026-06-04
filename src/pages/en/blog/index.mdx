@@ -14,7 +14,7 @@ alt: 'Lauri Lavanti sitting on a stool leaning against a tall table. He is weari
 import AllPostsLink from '../../../components/AllPostsLink.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
-import TopicWithExcerpts from '../../../components/TopicWithExcerpts.astro'
+import TopicsWithExcerpts from '../../../components/TopicsWithExcerpts.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
@@ -24,11 +24,6 @@ AI is changing everything — work, the economy, and how the state serves us. I 
 
 I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink the whole social safety net, why digital independence is a precondition for a free society, and how to ensure that the benefits of technology reach everyone — not only a few.
 
-<TopicWithExcerpts lang="en" id="artificial-intelligence" />
-<TopicWithExcerpts lang="en" id="economy" />
-<TopicWithExcerpts lang="en" id="learning" />
-<TopicWithExcerpts lang="en" id="freedom" />
-<TopicWithExcerpts lang="en" id="digital-independence" />
-<TopicWithExcerpts lang="en" id="kirkkonummi" />
+<TopicsWithExcerpts lang="en" ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence', 'kirkkonummi']} />
 
 <AllPostsLink lang="en" />

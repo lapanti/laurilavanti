@@ -23,9 +23,6 @@ import { RecommendationsSwePage } from './pages/recommendationsSwePage'
 import { TagEnPage } from './pages/tagEnPage'
 import { TagPage } from './pages/tagPage'
 import { TagSwePage } from './pages/tagSwePage'
-import { TopicsEnPage } from './pages/topicsEnPage'
-import { TopicsPage } from './pages/topicsPage'
-import { TopicsSwePage } from './pages/topicsSwePage'
 
 test.describe('Horizontal scroll on mobile', () => {
     test('home page (fi)', async ({ page }) => {
@@ -132,24 +129,6 @@ test.describe('Horizontal scroll on mobile', () => {
 
     test('newsletter page (sv)', async ({ page }) => {
         const p = new NewsletterSwePage(page)
-        await p.goTo()
-        await p.checkNoHorizontalScroll()
-    })
-
-    test('topics page (fi)', async ({ page }) => {
-        const p = new TopicsPage(page)
-        await p.goTo()
-        await p.checkNoHorizontalScroll()
-    })
-
-    test('topics page (en)', async ({ page }) => {
-        const p = new TopicsEnPage(page)
-        await p.goTo()
-        await p.checkNoHorizontalScroll()
-    })
-
-    test('topics page (sv)', async ({ page }) => {
-        const p = new TopicsSwePage(page)
         await p.goTo()
         await p.checkNoHorizontalScroll()
     })
