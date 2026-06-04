@@ -82,6 +82,10 @@ export const redirects: Record<string, string> = {
     '/blogi/yhdessa-olemme-vahvempia/': '/fi/blog/32/yhdessa-olemme-vahvempia/',
     '/blogi/yksi-askel-eteen-kaksi-taakse/': '/fi/blog/22/yksi-askel-eteen-kaksi-taakse/',
     '/blogi/yksityisyydensuoja/': '/fi/category/privacy/',
+    // Issue #1288 — topics merged into blog
+    '/en/topics/': '/en/blog/',
+    '/fi/topics/': '/fi/blog/',
+    '/sv/topics/': '/sv/blog/',
     // Issue #1077 — wrong-locale slug redirects (Google-indexed 404s)
     '/en/blog/16/uusi-vuosi-tuttu-talvikunnossapito/': '/en/blog/16/new-year-familiar-winter-maintenance/',
     '/en/blog/17/luontomme-on-valttimme-vuodesta-toiseen/': '/en/blog/17/our-nature-is-our-trump-card-year-after-year/',
