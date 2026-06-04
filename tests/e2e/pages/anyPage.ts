@@ -12,7 +12,6 @@ export class AnyPage {
     readonly navLinkContactInfo: Locator
     readonly navLinkAboutMeSwe: Locator
     readonly navLinkAboutMeEn: Locator
-    readonly navLinkTopics: Locator
     readonly navLinkNewsletter: Locator
     readonly footerFacebookLink: Locator
     readonly footerBlueskyLink: Locator
@@ -38,7 +37,6 @@ export class AnyPage {
         this.navLinkContactInfo = page.locator('a[href="/fi/contact/"]').nth(navIdx)
         this.navLinkAboutMeSwe = page.locator('a[href="/sv/"]').nth(navIdx)
         this.navLinkAboutMeEn = page.locator('a[href="/en/"]').nth(navIdx)
-        this.navLinkTopics = page.locator('a[href="/fi/topics/"]').nth(navIdx)
         this.navLinkNewsletter = page.locator('a[href="/fi/newsletter/"]').nth(navIdx)
         this.footerFacebookLink = page.locator('footer a[href*="facebook.com"]')
         this.footerBlueskyLink = page.locator('footer a[href*="bsky.app"]')
@@ -69,7 +67,6 @@ export class AnyPage {
 
     async checkMainNavigationLinks() {
         await expect(this.navLinkAboutMe).toBeVisible()
-        await expect(this.navLinkTopics).toBeVisible()
         await expect(this.navLinkBlog).toBeVisible()
         await expect(this.navLinkContactInfo).toBeVisible()
         await expect(this.navLinkNewsletter).toBeVisible()

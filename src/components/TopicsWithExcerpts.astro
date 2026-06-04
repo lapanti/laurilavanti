@@ -1,0 +1,111 @@
+---
+import type { Lang } from '../content/nav'
+
+import { tags } from '../content/tags'
+import { getExcerptPosts } from '../lib/mdxPosts'
+import { colors, fontFamilies, fontWeights, sizes } from '../lib/styles'
+import Excerpt from './excerptList/Excerpt.astro'
+import H2 from './H2.astro'
+import Link from './Link.astro'
+import Paragraph from './Paragraph.astro'
+import SmartLink from './SmartLink.astro'
+
+interface Props {
+    ids: string[]
+    lang: Lang
+}
+
+const { ids, lang } = Astro.props
+
+const POSTS_PER_TOPIC = 3
+
+const seenIds = new Set<number>()
+
+const sections = ids
+    .map((id) => {
+        const tag = tags.find((t) => t.id === id)
+        if (!tag) return null
+
+        const posts = getExcerptPosts({ excludeIds: [...seenIds], lang, limit: POSTS_PER_TOPIC, tag: tag.id })
+        posts.forEach((p) => seenIds.add(p.id))
+
+        return { posts, tag }
+    })
+    .filter((s): s is NonNullable<typeof s> => s !== null)
+
+const seeAllLabels: Record<Lang, (name: string) => string> = {
+    en: (name) => `All posts about ${name} →`,
+    fi: (name) => `Kaikki kirjoitukset aiheesta ${name} →`,
+    sv: (name) => `Alla inlägg om ${name} →`,
+}
+---
+
+<style
+    define:vars={{
+        colorsDarkMoss: colors.darkMoss,
+        fontFamiliesSans: fontFamilies.sans,
+        fontWeightMedium: fontWeights.medium,
+        sizes1125: sizes[1.125],
+        sizes175: sizes[1.75],
+        sizes1: sizes[1],
+        sizes2point5: sizes[2.5],
+        sizes3point5: sizes[3.5],
+        sizes4: sizes[4],
+    }}
+>
+    .see-all {
+        font-family: var(--fontFamiliesSans);
+        font-size: var(--sizes1125);
+        font-weight: var(--fontWeightMedium);
+        grid-column-start: 3;
+        line-height: var(--sizes175);
+        margin-top: var(--sizes1);
+    }
+
+    ul {
+        column-gap: var(--sizes4);
+        display: grid;
+        grid-column-start: 3;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        margin-top: var(--sizes1);
+        row-gap: var(--sizes3point5);
+    }
+
+    @media (min-width: 1200px) {
+        ul {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: var(--sizes2point5);
+        }
+    }
+</style>
+
+{
+    sections.map(({ tag, posts }) => (
+        <>
+            <H2>
+                <SmartLink heading href={`/${lang}/category/${tag.id}/`}>
+                    {tag.names[lang]}
+                </SmartLink>
+            </H2>
+            <Paragraph>{tag.metaDescription[lang]}</Paragraph>
+            <ul>
+                {posts.map((node) => (
+                    <Excerpt
+                        alt={node.alt}
+                        date={node.publishDate}
+                        excerpt={node.description}
+                        image={node.heroImage}
+                        lang={lang}
+                        slug={node.url.replace(/^\//, '').replace(/\/$/, '')}
+                        tags={node.tags}
+                        title={node.title}
+                    />
+                ))}
+            </ul>
+            <div class="see-all">
+                <Link heading href={`/${lang}/category/${tag.id}/`}>{seeAllLabels[lang](tag.names[lang])}</Link>
+            </div>
+        </>
+    ))
+}

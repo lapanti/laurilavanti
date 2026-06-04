@@ -69,3 +69,19 @@ test.describe('Legacy /kategoria/{tag}/ redirects', () => {
         })
     }
 })
+
+// Issue #1288 — topics merged into blog
+const topicsRedirects: Array<[string, string]> = [
+    ['/en/topics/', '/en/blog/'],
+    ['/fi/topics/', '/fi/blog/'],
+    ['/sv/topics/', '/sv/blog/'],
+]
+
+test.describe('/[lang]/topics/ redirects', () => {
+    for (const [from, to] of topicsRedirects) {
+        test(`redirects ${from} → ${to}`, async ({ page }) => {
+            await page.goto(from)
+            await test.expect(page).toHaveURL(to)
+        })
+    }
+})
