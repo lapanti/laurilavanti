@@ -8,7 +8,6 @@ import Excerpt from './excerptList/Excerpt.astro'
 import H2 from './H2.astro'
 import Link from './Link.astro'
 import Paragraph from './Paragraph.astro'
-import SmartLink from './SmartLink.astro'
 
 interface Props {
     ids: string[]
@@ -82,11 +81,7 @@ const seeAllLabels: Record<Lang, (name: string) => string> = {
 {
     sections.map(({ tag, posts }) => (
         <>
-            <H2>
-                <SmartLink heading href={`/${lang}/category/${tag.id}/`}>
-                    {tag.names[lang]}
-                </SmartLink>
-            </H2>
+            <H2>{tag.names[lang]}</H2>
             {tag.descriptions[lang].map((para) => (
                 <Paragraph>{para}</Paragraph>
             ))}
