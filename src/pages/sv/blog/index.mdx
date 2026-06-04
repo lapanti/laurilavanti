@@ -1,20 +1,20 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: sv
-pageTitle: 'Inlägg om AI och digital självständighet'
-title: 'Inlägg om AI och digital själv­ständighet'
-description: 'Lauri Lavanti skriver om hur AI förändrar allt — ekonomin, bildningen och friheten. Deras syntes är digital självständighet.'
+pageTitle: 'Inlägg – AI, ekonomi och digital frihet'
+title: 'Inlägg'
+description: 'Lauri Lavanti skriver efter ämne: AI, ekonomi, lärande, frihet, digital självständighet och Kyrkslätt. Läs inlägg per ämnesområde.'
 slug: 'sv/blog'
-updatedDate: '2026-05-15'
+updatedDate: '2026-06-04'
 type: 'WebPage'
 heroImage: 'Lauri-Lavanti-next-to-a-table'
 alt: 'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.'
 ---
 
-import ExcerptList from '../../../components/ExcerptList.astro'
+import AllPostsLink from '../../../components/AllPostsLink.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
-import TopicsTagList from '../../../components/TopicsTagList.astro'
+import TopicWithExcerpts from '../../../components/TopicWithExcerpts.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
@@ -24,17 +24,11 @@ AI förändrar allt — arbetet, ekonomin och hur staten betjänar oss. Jag skri
 
 Jag har över ett årtiondes praktisk erfarenhet av att bygga säker programvara och banktjänster. Med den bakgrunden skriver jag om varför AI inte bara effektiviserar arbetet utan tvingar oss att tänka om hela det sociala skyddsnätet, varför digital självständighet är en förutsättning för ett fritt samhälle, och hur vi kan se till att teknikens vinster når alla — inte bara ett fåtal.
 
-## Efter ämne
+<TopicWithExcerpts lang="sv" id="artificial-intelligence" />
+<TopicWithExcerpts lang="sv" id="economy" />
+<TopicWithExcerpts lang="sv" id="learning" />
+<TopicWithExcerpts lang="sv" id="freedom" />
+<TopicWithExcerpts lang="sv" id="digital-independence" />
+<TopicWithExcerpts lang="sv" id="kirkkonummi" />
 
-<TopicsTagList
-    lang="sv"
-    ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence', 'kirkkonummi']}
-/>
-
-## Utvalda
-
-<ExcerptList lang="sv" onlyIds={[60, 57, 54, 51]} />
-
-## Alla inlägg
-
-<ExcerptList lang="sv" excludeIds={[60, 57, 54, 51]} />
+<AllPostsLink lang="sv" />

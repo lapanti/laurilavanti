@@ -1,20 +1,20 @@
 ---
 layout: '../../../layouts/PageLayout.astro'
 lang: en
-pageTitle: 'Posts on AI, the economy and freedom'
-title: 'Posts on AI, the economy and freedom'
-description: 'Lauri Lavanti writes about how AI is changing everything — the economy, learning and freedom. Their synthesis is digital independence.'
+pageTitle: 'Writing – AI, economy, and freedom'
+title: 'Writing'
+description: 'Lauri Lavanti writes by topic: AI, economy, learning, freedom, digital independence, and Kirkkonummi. Browse posts by subject area.'
 slug: 'en/blog'
-updatedDate: '2026-05-15'
+updatedDate: '2026-06-04'
 type: 'WebPage'
 heroImage: 'Lauri-Lavanti-next-to-a-table'
 alt: 'Lauri Lavanti sitting on a stool leaning against a tall table. He is wearing a black blazer and a blue-and-white floral shirt. In the blazer pocket is a multicoloured pocket square. A staircase in the background.'
 ---
 
-import ExcerptList from '../../../components/ExcerptList.astro'
+import AllPostsLink from '../../../components/AllPostsLink.astro'
 import H2 from '../../../components/H2.astro'
 import Paragraph from '../../../components/Paragraph.astro'
-import TopicsTagList from '../../../components/TopicsTagList.astro'
+import TopicWithExcerpts from '../../../components/TopicWithExcerpts.astro'
 
 export const components = { h2: H2, p: Paragraph }
 
@@ -24,17 +24,11 @@ AI is changing everything — work, the economy, and how the state serves us. I 
 
 I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink the whole social safety net, why digital independence is a precondition for a free society, and how to ensure that the benefits of technology reach everyone — not only a few.
 
-## By topic
+<TopicWithExcerpts lang="en" id="artificial-intelligence" />
+<TopicWithExcerpts lang="en" id="economy" />
+<TopicWithExcerpts lang="en" id="learning" />
+<TopicWithExcerpts lang="en" id="freedom" />
+<TopicWithExcerpts lang="en" id="digital-independence" />
+<TopicWithExcerpts lang="en" id="kirkkonummi" />
 
-<TopicsTagList
-    lang="en"
-    ids={['artificial-intelligence', 'economy', 'learning', 'freedom', 'digital-independence', 'kirkkonummi']}
-/>
-
-## Featured
-
-<ExcerptList lang="en" onlyIds={[60, 57, 54, 51]} />
-
-## All posts
-
-<ExcerptList lang="en" excludeIds={[60, 57, 54, 51]} />
+<AllPostsLink lang="en" />
