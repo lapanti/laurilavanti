@@ -3,7 +3,7 @@ import type { Lang } from '../content/nav'
 
 import { tags } from '../content/tags'
 import { getExcerptPosts } from '../lib/mdxPosts'
-import { colors, fontFamilies, fontWeights, sizes } from '../lib/styles'
+import { fontFamilies, fontWeights, sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt.astro'
 import H2 from './H2.astro'
 import Link from './Link.astro'
@@ -42,15 +42,14 @@ const seeAllLabels: Record<Lang, (name: string) => string> = {
 
 <style
     define:vars={{
-        colorsDarkMoss: colors.darkMoss,
         fontFamiliesSans: fontFamilies.sans,
         fontWeightMedium: fontWeights.medium,
-        sizes1125: sizes[1.125],
-        sizes175: sizes[1.75],
         sizes1: sizes[1],
         sizes2point5: sizes[2.5],
         sizes3point5: sizes[3.5],
         sizes4: sizes[4],
+        sizes175: sizes[1.75],
+        sizes1125: sizes[1.125],
     }}
 >
     .see-all {
@@ -88,7 +87,9 @@ const seeAllLabels: Record<Lang, (name: string) => string> = {
                     {tag.names[lang]}
                 </SmartLink>
             </H2>
-            <Paragraph>{tag.metaDescription[lang]}</Paragraph>
+            {tag.descriptions[lang].map((para) => (
+                <Paragraph>{para}</Paragraph>
+            ))}
             <ul>
                 {posts.map((node) => (
                     <Excerpt
@@ -104,7 +105,9 @@ const seeAllLabels: Record<Lang, (name: string) => string> = {
                 ))}
             </ul>
             <div class="see-all">
-                <Link heading href={`/${lang}/category/${tag.id}/`}>{seeAllLabels[lang](tag.names[lang])}</Link>
+                <Link heading href={`/${lang}/category/${tag.id}/`}>
+                    {seeAllLabels[lang](tag.names[lang])}
+                </Link>
             </div>
         </>
     ))
