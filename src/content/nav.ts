@@ -16,8 +16,7 @@ export interface NavLink {
 export const navLinks: Record<Lang, NavLink[]> = {
     en: [
         { href: '/en/about/', label: 'About Lauri', title: 'About Lauri' },
-        { href: '/en/topics/', label: 'Topics', title: 'Topics' },
-        { href: '/en/blog/', label: 'Blog', title: 'Blog' },
+        { href: '/en/blog/', label: 'Writing', title: 'Writing' },
         { href: '/en/contact/', label: 'Contact', title: 'Contact info' },
         { href: '/en/newsletter/', label: 'Newsletter', title: 'Newsletter' },
         { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
@@ -25,8 +24,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
     ],
     fi: [
         { href: '/fi/about/', label: 'Laurista', title: 'Laurista' },
-        { href: '/fi/topics/', label: 'Aiheet', title: 'Aiheet' },
-        { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
+        { href: '/fi/blog/', label: 'Kirjoitukset', title: 'Kirjoitukset' },
         { href: '/fi/contact/', label: 'Ota yhteyttä', title: 'Ota yhteyttä' },
         { href: '/fi/newsletter/', label: 'Uutiskirje', title: 'Uutiskirje' },
         { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
@@ -34,8 +32,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
     ],
     sv: [
         { href: '/sv/about/', label: 'Om Lauri', title: 'Om Lauri' },
-        { href: '/sv/topics/', label: 'Ämnen', title: 'Ämnen' },
-        { href: '/sv/blog/', label: 'Blogg', title: 'Blogg' },
+        { href: '/sv/blog/', label: 'Inlägg', title: 'Inlägg' },
         { href: '/sv/contact/', label: 'Kontakt', title: 'Kontaktuppgifter' },
         { href: '/sv/newsletter/', label: 'Nyhetsbrev', title: 'Nyhetsbrev' },
         { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
