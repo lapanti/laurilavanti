@@ -283,6 +283,13 @@ const breadcrumbJsonLd =
 <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
 <link href="/favicon.ico" rel="shortcut icon" />
 <link href="/app.webmanifest" rel="manifest" />
+<link
+    as="font"
+    crossorigin=""
+    href="/fonts/ibm-plex-sans-v23-latin_latin-ext-regular.woff2"
+    rel="preload"
+    type="font/woff2"
+/>
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 {faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
