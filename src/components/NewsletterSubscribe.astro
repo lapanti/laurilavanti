@@ -70,14 +70,18 @@ const privacyHref = `/${lang}/privacy-policy/`
         border-radius: 50%;
         border: 4px solid var(--colorsWhite);
         border-color: var(--colorsWhite) var(--colorsWhite) var(--colorsWhite) transparent;
-        animation: ml-form-embedSubmitLoad 1.2s linear infinite;
     }
-    @keyframes ml-form-embedSubmitLoad {
-        0% {
-            transform: rotate(0deg);
+    @media (prefers-reduced-motion: no-preference) {
+        .ml-form-embedSubmitLoad:after {
+            animation: ml-form-embedSubmitLoad 1.2s linear infinite;
         }
-        100% {
-            transform: rotate(360deg);
+        @keyframes ml-form-embedSubmitLoad {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     }
     .ml-form-embedContainer {
