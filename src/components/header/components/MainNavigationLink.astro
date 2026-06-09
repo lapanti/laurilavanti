@@ -42,15 +42,25 @@ const href = `/${lang}/`
         left: 0;
         width: 100%;
         height: var(--sizes01875);
-        transition: transform 200ms ease-in-out;
         opacity: 1;
         transform: translate3d(-100%, 0, 0);
         background-color: var(--colorsPeach);
     }
 
+    @media (prefers-reduced-motion: no-preference) {
+        a::after {
+            transition: transform 200ms ease-in-out;
+        }
+    }
+
     a:hover::after,
     a:focus::after {
         transform: translate3d(0, 0, 0);
+    }
+
+    a:focus-visible {
+        outline: var(--sizes01875) solid var(--colorsPeach);
+        outline-offset: 2px;
     }
 
     a[aria-current='page']:hover::after,
