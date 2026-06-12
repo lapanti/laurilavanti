@@ -4,6 +4,11 @@ import { getImage } from '../lib/images'
 
 export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
 
+export const personBlueskyHandle = 'laurilavanti.fi'
+export const personThreadsHandle = 'laurilavanti'
+export const personMastodonInstance = 'mastodon.social'
+export const personMastodonHandle = `laurilavanti@${personMastodonInstance}`
+
 export const personName = 'Lauri Lavanti'
 export const personGivenName = 'Lauri'
 export const personFamilyName = 'Lavanti'
