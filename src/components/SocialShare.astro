@@ -2,6 +2,7 @@
 /* eslint-disable astro/no-unused-css-selector */
 import { Icon } from 'astro-icon/components'
 
+import { personBlueskyHandle, personThreadsHandle } from '../content/person'
 import { colors, sizes } from '../lib/styles'
 
 interface Props {
@@ -22,6 +23,7 @@ const labels = {
         linkedin: (t: string) => `Share post "${t}" on LinkedIn`,
         linkedinTitle: 'Share on LinkedIn',
         share: 'Share:',
+        shareText: (t: string, u: string, h: string) => `Read "${t}" that was written by @${h}\n\n${u}`,
         threads: (t: string) => `Share post "${t}" on Threads`,
         threadsTitle: 'Share on Threads',
     },
@@ -33,6 +35,7 @@ const labels = {
         linkedin: (t: string) => `Jaa kirjoitus "${t}" LinkedInissä`,
         linkedinTitle: 'Jaa LinkedInissä',
         share: 'Jaa:',
+        shareText: (t: string, u: string, h: string) => `Lue "${t}", jonka @${h} kirjoitti\n\n${u}`,
         threads: (t: string) => `Jaa kirjoitus "${t}" Threadsissä`,
         threadsTitle: 'Jaa Threadsissä',
     },
@@ -44,12 +47,16 @@ const labels = {
         linkedin: (t: string) => `Dela inlägget "${t}" på LinkedIn`,
         linkedinTitle: 'Dela på LinkedIn',
         share: 'Dela:',
+        shareText: (t: string, u: string, h: string) => `Läs inlägget "${t}" som skrevs av @${h}\n\n${u}`,
         threads: (t: string) => `Dela inlägget "${t}" på Threads`,
         threadsTitle: 'Dela på Threads',
     },
 }
 
 const l = labels[locale]
+
+const blueskyText = l.shareText(title, shareUrl, personBlueskyHandle)
+const threadsText = l.shareText(title, shareUrl, personThreadsHandle)
 ---
 
 <style
@@ -109,7 +116,7 @@ const l = labels[locale]
     <span class="share">{l.share}</span>
     <a
         aria-label={l.bluesky(title)}
-        href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
+        href={`https://bsky.app/intent/compose?text=${encodeURIComponent(blueskyText)}`}
         rel="noopener noreferrer"
         style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.blueskyTitle}
@@ -118,7 +125,7 @@ const l = labels[locale]
     </a>
     <a
         aria-label={l.threads(title)}
-        href={`https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
+        href={`https://threads.com/intent/post?text=${encodeURIComponent(threadsText)}`}
         rel="noopener noreferrer"
         style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.threadsTitle}

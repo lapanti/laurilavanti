@@ -2,6 +2,7 @@ import { getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
+import { personBlueskyHandle, personThreadsHandle } from '../content/person'
 import SocialShare from './SocialShare.astro'
 
 // filepath: /home/lapanti/code/laurilavanti/src/components/SocialShare.spec.ts
@@ -115,7 +116,7 @@ describe('<SocialShare />', () => {
 
         expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Threadsissä` })).toHaveAttribute(
             'href',
-            `https://threads.com/intent/post?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
+            `https://threads.com/intent/post?text=${encodeURIComponent(`Lue "${title}", jonka @${personThreadsHandle} kirjoitti\n\n${shareUrl}`)}`
         )
     })
 
@@ -172,7 +173,7 @@ describe('<SocialShare />', () => {
 
         expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Blueskyssa` })).toHaveAttribute(
             'href',
-            `https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`
+            `https://bsky.app/intent/compose?text=${encodeURIComponent(`Lue "${title}", jonka @${personBlueskyHandle} kirjoitti\n\n${shareUrl}`)}`
         )
     })
 
@@ -293,6 +294,22 @@ describe('<SocialShare />', () => {
             expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Threads` })).toBeDefined()
         })
 
+        it('should render correct url for threads link with English share text', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Threads` })).toHaveAttribute(
+                'href',
+                `https://threads.com/intent/post?text=${encodeURIComponent(`Read "${enTitle}" that was written by @${personThreadsHandle}\n\n${enShareUrl}`)}`
+            )
+        })
+
         it('should render bluesky link with English label', async () => {
             const result = await renderAstroComponent(SocialShare, {
                 props: {
@@ -304,6 +321,22 @@ describe('<SocialShare />', () => {
             })
 
             expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Bluesky` })).toBeDefined()
+        })
+
+        it('should render correct url for bluesky link with English share text', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Bluesky` })).toHaveAttribute(
+                'href',
+                `https://bsky.app/intent/compose?text=${encodeURIComponent(`Read "${enTitle}" that was written by @${personBlueskyHandle}\n\n${enShareUrl}`)}`
+            )
         })
 
         it('should render linkedin link with English label', async () => {
@@ -351,6 +384,22 @@ describe('<SocialShare />', () => {
             expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Threads` })).toBeDefined()
         })
 
+        it('should render correct url for threads link with Swedish share text', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Threads` })).toHaveAttribute(
+                'href',
+                `https://threads.com/intent/post?text=${encodeURIComponent(`Läs inlägget "${svTitle}" som skrevs av @${personThreadsHandle}\n\n${svShareUrl}`)}`
+            )
+        })
+
         it('should render bluesky link with Swedish label', async () => {
             const result = await renderAstroComponent(SocialShare, {
                 props: {
@@ -362,6 +411,22 @@ describe('<SocialShare />', () => {
             })
 
             expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Bluesky` })).toBeDefined()
+        })
+
+        it('should render correct url for bluesky link with Swedish share text', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Bluesky` })).toHaveAttribute(
+                'href',
+                `https://bsky.app/intent/compose?text=${encodeURIComponent(`Läs inlägget "${svTitle}" som skrevs av @${personBlueskyHandle}\n\n${svShareUrl}`)}`
+            )
         })
 
         it('should render linkedin link with Swedish label', async () => {
