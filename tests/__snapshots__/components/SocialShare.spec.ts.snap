@@ -4,23 +4,62 @@ exports[`<SocialShare /> > should render 1`] = `
 <aside
   aria-label="Kirjoituksen "Vuosi 2026 on tekoälyn" jakaminen sosiaalisessa mediassa"
   data-astro-cid-luj3ckct=""
-  style="--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+  style="--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
 >
    
   <span
     class="share"
     data-astro-cid-luj3ckct=""
-    style="--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
   >
     Jaa:
   </span>
+   
+  <a
+    aria-label="Jaa kirjoitus "Vuosi 2026 on tekoälyn" Mastodonissa"
+    data-astro-cid-luj3ckct=""
+    data-instance-prompt="Anna Mastodon-instanssisi (esim. mastodon.social):"
+    data-share-text="Lue "Vuosi 2026 on tekoälyn", jonka @laurilavanti@mastodon.social kirjoitti
+
+https://laurilavanti.fi/blogi/vuosi-2026-on-tekoalyn"
+    href="https://mastodon.social/share?text=Lue%20%22Vuosi%202026%20on%20teko%C3%A4lyn%22%2C%20jonka%20%40laurilavanti%40mastodon.social%20kirjoitti%0A%0Ahttps%3A%2F%2Flaurilavanti.fi%2Fblogi%2Fvuosi-2026-on-tekoalyn"
+    id="mastodon-share"
+    rel="noopener noreferrer"
+    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    title="Jaa Mastodonissa"
+  >
+     
+    <svg
+      class="mastodon"
+      data-astro-cid-luj3ckct="true"
+      data-icon="fa7-brands:mastodon"
+      height="1em"
+      width="1em"
+    >
+         
+      <symbol
+        id="ai:fa7-brands:mastodon"
+        viewBox="0 0 640 640"
+      >
+        <path
+          d="M529 243.1c0-97.2-63.7-125.7-63.7-125.7c-62.5-28.7-228.6-28.4-290.5 0c0 0-63.7 28.5-63.7 125.7c0 115.7-6.6 259.4 105.6 289.1c40.5 10.7 75.3 13 103.3 11.4c50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54c-.6-4.6-.9-9.3-.9-13.9c85.6 20.9 158.7 9.1 178.7 6.7c56.1-6.7 105-41.3 111.2-72.9c9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V254.1c0-49.7-64-51.6-64 6.9v62.5H297V261c0-58.5-64-56.6-64-6.9v114.2h-46.7c0-122.1-5.2-147.9 18.4-175c25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5l11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1c23.7 27.3 18.4 53 18.4 175"
+          fill="currentColor"
+        />
+      </symbol>
+      <use
+        href="#ai:fa7-brands:mastodon"
+      />
+        
+    </svg>
+     
+  </a>
    
   <a
     aria-label="Jaa kirjoitus "Vuosi 2026 on tekoälyn" Blueskyssa"
     data-astro-cid-luj3ckct=""
     href="https://bsky.app/intent/compose?text=Lue%20%22Vuosi%202026%20on%20teko%C3%A4lyn%22%2C%20jonka%20%40laurilavanti.fi%20kirjoitti%0A%0Ahttps%3A%2F%2Flaurilavanti.fi%2Fblogi%2Fvuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
     title="Jaa Blueskyssa"
   >
      
@@ -54,7 +93,7 @@ exports[`<SocialShare /> > should render 1`] = `
     data-astro-cid-luj3ckct=""
     href="https://threads.com/intent/post?text=Lue%20%22Vuosi%202026%20on%20teko%C3%A4lyn%22%2C%20jonka%20%40laurilavanti%20kirjoitti%0A%0Ahttps%3A%2F%2Flaurilavanti.fi%2Fblogi%2Fvuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
     title="Jaa Threadsissä"
   >
      
@@ -88,7 +127,7 @@ exports[`<SocialShare /> > should render 1`] = `
     data-astro-cid-luj3ckct=""
     href="https://www.linkedin.com/sharing/share-offsite/?url=https://laurilavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
     title="Jaa LinkedInissä"
   >
      
@@ -122,7 +161,7 @@ exports[`<SocialShare /> > should render 1`] = `
     data-astro-cid-luj3ckct=""
     href="https://www.facebook.com/sharer/sharer.php?u=https://laurilavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsThreads: rgb(0, 0, 0);--sizes05: 0.5rem;--sizes15: 1.5rem;"
     title="Jaa Facebookissa"
   >
      

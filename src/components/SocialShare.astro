@@ -2,7 +2,12 @@
 /* eslint-disable astro/no-unused-css-selector */
 import { Icon } from 'astro-icon/components'
 
-import { personBlueskyHandle, personThreadsHandle } from '../content/person'
+import {
+    personBlueskyHandle,
+    personMastodonHandle,
+    personMastodonInstance,
+    personThreadsHandle,
+} from '../content/person'
 import { colors, sizes } from '../lib/styles'
 
 interface Props {
@@ -22,6 +27,9 @@ const labels = {
         facebookTitle: 'Share on Facebook',
         linkedin: (t: string) => `Share post "${t}" on LinkedIn`,
         linkedinTitle: 'Share on LinkedIn',
+        mastodon: (t: string) => `Share post "${t}" on Mastodon`,
+        mastodonInstancePrompt: 'Enter your Mastodon instance (e.g. mastodon.social):',
+        mastodonTitle: 'Share on Mastodon',
         share: 'Share:',
         shareText: (t: string, u: string, h: string) => `Read "${t}" that was written by @${h}\n\n${u}`,
         threads: (t: string) => `Share post "${t}" on Threads`,
@@ -34,6 +42,9 @@ const labels = {
         facebookTitle: 'Jaa Facebookissa',
         linkedin: (t: string) => `Jaa kirjoitus "${t}" LinkedInissä`,
         linkedinTitle: 'Jaa LinkedInissä',
+        mastodon: (t: string) => `Jaa kirjoitus "${t}" Mastodonissa`,
+        mastodonInstancePrompt: 'Anna Mastodon-instanssisi (esim. mastodon.social):',
+        mastodonTitle: 'Jaa Mastodonissa',
         share: 'Jaa:',
         shareText: (t: string, u: string, h: string) => `Lue "${t}", jonka @${h} kirjoitti\n\n${u}`,
         threads: (t: string) => `Jaa kirjoitus "${t}" Threadsissä`,
@@ -46,6 +57,9 @@ const labels = {
         facebookTitle: 'Dela på Facebook',
         linkedin: (t: string) => `Dela inlägget "${t}" på LinkedIn`,
         linkedinTitle: 'Dela på LinkedIn',
+        mastodon: (t: string) => `Dela inlägget "${t}" på Mastodon`,
+        mastodonInstancePrompt: 'Ange din Mastodon-instans (t.ex. mastodon.social):',
+        mastodonTitle: 'Dela på Mastodon',
         share: 'Dela:',
         shareText: (t: string, u: string, h: string) => `Läs inlägget "${t}" som skrevs av @${h}\n\n${u}`,
         threads: (t: string) => `Dela inlägget "${t}" på Threads`,
@@ -57,6 +71,8 @@ const l = labels[locale]
 
 const blueskyText = l.shareText(title, shareUrl, personBlueskyHandle)
 const threadsText = l.shareText(title, shareUrl, personThreadsHandle)
+const mastodonText = l.shareText(title, shareUrl, personMastodonHandle)
+const mastodonFallbackHref = `https://${personMastodonInstance}/share?text=${encodeURIComponent(mastodonText)}`
 ---
 
 <style
@@ -64,6 +80,7 @@ const threadsText = l.shareText(title, shareUrl, personThreadsHandle)
         colorsBluesky: colors.bluesky,
         colorsFacebook: colors.facebook,
         colorsLinkedin: colors.linkedin,
+        colorsMastodon: colors.mastodon,
         colorsThreads: colors.threads,
         sizes05: sizes[0.5],
         sizes15: sizes[1.5],
@@ -111,9 +128,25 @@ const threadsText = l.shareText(title, shareUrl, personThreadsHandle)
     .linkedin {
         color: var(--colorsLinkedin);
     }
+
+    .mastodon {
+        color: var(--colorsMastodon);
+    }
 </style>
 <aside aria-label={ariaLabel}>
     <span class="share">{l.share}</span>
+    <a
+        aria-label={l.mastodon(title)}
+        data-instance-prompt={l.mastodonInstancePrompt}
+        data-share-text={mastodonText}
+        href={mastodonFallbackHref}
+        id="mastodon-share"
+        rel="noopener noreferrer"
+        style={{ height: '2.75rem', minWidth: '2.75rem' }}
+        title={l.mastodonTitle}
+    >
+        <Icon class="mastodon" name="fa7-brands:mastodon" />
+    </a>
     <a
         aria-label={l.bluesky(title)}
         href={`https://bsky.app/intent/compose?text=${encodeURIComponent(blueskyText)}`}
@@ -151,3 +184,24 @@ const threadsText = l.shareText(title, shareUrl, personThreadsHandle)
         <Icon class="facebook" name="fa7-brands:facebook" />
     </a>
 </aside>
+<script
+    is:inline
+    set:html={`(function(){
+    var link = document.getElementById('mastodon-share');
+    if (!link) return;
+    var baseText = link.getAttribute('data-share-text') || '';
+    var promptLabel = link.getAttribute('data-instance-prompt') || 'Mastodon instance:';
+    link.addEventListener('click', function(event){
+        event.preventDefault();
+        var instance = localStorage.getItem('mastodonInstance');
+        if (!instance) {
+            var raw = window.prompt(promptLabel, 'mastodon.social');
+            if (!raw) return;
+            instance = raw.trim().replace(/^https?:\\/\\//, '').replace(/\\/$/, '').replace(/^@/, '');
+            if (!/^[a-z0-9.-]+\\.[a-z]{2,}$/i.test(instance)) return;
+            localStorage.setItem('mastodonInstance', instance);
+        }
+        window.location.href = 'https://' + instance + '/share?text=' + encodeURIComponent(baseText);
+    });
+})();`}
+/>

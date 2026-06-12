@@ -2,7 +2,12 @@ import { getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
-import { personBlueskyHandle, personThreadsHandle } from '../content/person'
+import {
+    personBlueskyHandle,
+    personMastodonHandle,
+    personMastodonInstance,
+    personThreadsHandle,
+} from '../content/person'
 import SocialShare from './SocialShare.astro'
 
 // filepath: /home/lapanti/code/laurilavanti/src/components/SocialShare.spec.ts
@@ -207,6 +212,63 @@ describe('<SocialShare />', () => {
         )
     })
 
+    it('should render mastodon link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Mastodonissa` })).toBeDefined()
+    })
+
+    it('should render correct url for mastodon link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Mastodonissa` })).toHaveAttribute(
+            'href',
+            `https://${personMastodonInstance}/share?text=${encodeURIComponent(`Lue "${title}", jonka @${personMastodonHandle} kirjoitti\n\n${shareUrl}`)}`
+        )
+    })
+
+    it('should render correct rel for mastodon link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Mastodonissa` })).toHaveAttribute(
+            'rel',
+            'noopener noreferrer'
+        )
+    })
+
+    it('should render correct title for mastodon link', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(getByRole(result, 'link', { name: `Jaa kirjoitus "${title}" Mastodonissa` })).toHaveAttribute(
+            'title',
+            'Jaa Mastodonissa'
+        )
+    })
+
     it('should render linkedin link', async () => {
         const result = await renderAstroComponent(SocialShare, {
             props: {
@@ -351,6 +413,35 @@ describe('<SocialShare />', () => {
 
             expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on LinkedIn` })).toBeDefined()
         })
+
+        it('should render mastodon link with English label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Mastodon` })).toBeDefined()
+        })
+
+        it('should render correct url for mastodon link with English share text', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Share post "${enTitle}" on Mastodon` })).toHaveAttribute(
+                'href',
+                `https://${personMastodonInstance}/share?text=${encodeURIComponent(`Read "${enTitle}" that was written by @${personMastodonHandle}\n\n${enShareUrl}`)}`
+            )
+        })
     })
 
     describe('when locale is sv', () => {
@@ -440,6 +531,35 @@ describe('<SocialShare />', () => {
             })
 
             expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på LinkedIn` })).toBeDefined()
+        })
+
+        it('should render mastodon link with Swedish label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Mastodon` })).toBeDefined()
+        })
+
+        it('should render correct url for mastodon link with Swedish share text', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(getByRole(result, 'link', { name: `Dela inlägget "${svTitle}" på Mastodon` })).toHaveAttribute(
+                'href',
+                `https://${personMastodonInstance}/share?text=${encodeURIComponent(`Läs inlägget "${svTitle}" som skrevs av @${personMastodonHandle}\n\n${svShareUrl}`)}`
+            )
         })
     })
 })
