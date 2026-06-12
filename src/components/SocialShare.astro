@@ -108,13 +108,13 @@ const l = labels[locale]
 <aside aria-label={ariaLabel}>
     <span class="share">{l.share}</span>
     <a
-        aria-label={l.facebook(title)}
-        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`}
+        aria-label={l.bluesky(title)}
+        href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
         style={{ height: '2.75rem', minWidth: '2.75rem' }}
-        title={l.facebookTitle}
+        title={l.blueskyTitle}
     >
-        <Icon class="facebook" name="fa7-brands:facebook" />
+        <Icon class="bluesky" name="fa7-brands:bluesky" />
     </a>
     <a
         aria-label={l.threads(title)}
@@ -126,15 +126,6 @@ const l = labels[locale]
         <Icon class="threads" name="fa7-brands:threads" />
     </a>
     <a
-        aria-label={l.bluesky(title)}
-        href={`https://bsky.app/intent/compose?text=${encodeURI(title)}%20${encodeURI(shareUrl)}`}
-        rel="noopener noreferrer"
-        style={{ height: '2.75rem', minWidth: '2.75rem' }}
-        title={l.blueskyTitle}
-    >
-        <Icon class="bluesky" name="fa7-brands:bluesky" />
-    </a>
-    <a
         aria-label={l.linkedin(title)}
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
@@ -142,5 +133,14 @@ const l = labels[locale]
         title={l.linkedinTitle}
     >
         <Icon class="linkedin" name="fa7-brands:linkedin" />
+    </a>
+    <a
+        aria-label={l.facebook(title)}
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`}
+        rel="noopener noreferrer"
+        style={{ height: '2.75rem', minWidth: '2.75rem' }}
+        title={l.facebookTitle}
+    >
+        <Icon class="facebook" name="fa7-brands:facebook" />
     </a>
 </aside>
