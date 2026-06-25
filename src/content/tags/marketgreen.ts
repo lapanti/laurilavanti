@@ -62,7 +62,7 @@ export const markkinavihreaTag: LocalTag = {
             },
         ],
     },
-    id: 'markkinavihrea',
+    id: 'marketgreen',
     metaDescription: {
         en: 'Marketgreen — market economy with priced externalities, fair competition, and tax shifted from work to harm. Greens as Finland’s market-liberal party.',
         fi: 'Markkinavihreä — markkinatalous, jossa ulkoisvaikutukset hinnoiteltu, kilpailu reilua ja verotus haittoihin. Vihreät markkinaliberaalina puolueena.',
