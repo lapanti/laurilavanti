@@ -16,6 +16,7 @@ import { immigrationTag } from './tags/immigration'
 import { infrastructureTag } from './tags/infrastructure'
 import { kirkkonummiTag } from './tags/kirkkonummi'
 import { learningTag } from './tags/learning'
+import { markkinavihreaTag } from './tags/markkinavihrea'
 import { municipalElections2025Tag } from './tags/municipal-elections-2025'
 import { nationalPoliticsTag } from './tags/national-politics'
 import { natureTag } from './tags/nature'
@@ -36,6 +37,7 @@ export const tags = [
     regionalElections2025Tag,
     artificialIntelligenceTag,
     economyTag,
+    markkinavihreaTag,
     learningTag,
     freedomTag,
     digitalIndependenceTag,
