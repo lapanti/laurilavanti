@@ -1,6 +1,6 @@
 import type { LocalTag } from './types'
 
-export const markkinavihreaTag: LocalTag = {
+export const marketgreenTag: LocalTag = {
     descriptions: {
         en: [
             'Marketgreen politics is the position that the market economy is the most effective known way to allocate resources — but only when externalities are priced, competition is fair, and the polluter pays for the cost of pollution. Tax should shift from work to harm, not grow the public sector for its own sake. Finland needs a credible market-liberal Green voice in parliament so that climate, rights, and competitiveness are decided together rather than traded against each other.',
