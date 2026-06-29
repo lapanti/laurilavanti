@@ -369,7 +369,7 @@ describe('<Head />', () => {
         expect(jsonLd.birthDate).toBe('1991-10-01')
         expect(jsonLd.birthPlace).toEqual({ '@type': 'Place', name: 'Jyväskylä' })
         expect(jsonLd.nationality).toEqual({ '@type': 'Country', name: 'FI' })
-        expect(jsonLd.jobTitle).toBe('Kunnanvaltuutettu ja johtava ohjelmistokehittäjä')
+        expect(jsonLd.jobTitle).toBe('kunnanvaltuutettu ja johtava ohjelmistokehittäjä')
         expect(jsonLd.sameAs).toHaveLength(9)
         expect(jsonLd.sameAs).toContain('https://fi.wikipedia.org/wiki/Lauri_Lavanti')
         expect(jsonLd.sameAs).toContain('https://www.wikidata.org/wiki/Q139711658')
@@ -399,7 +399,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('Municipal councillor & lead developer')
+        expect(jsonLd.jobTitle).toBe('municipal councillor & lead developer')
         expect(jsonLd.knowsAbout).toContain('Economic policy')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
@@ -415,7 +415,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('Kommunfullmäktigeledamot och ledande mjukvaruutvecklare')
+        expect(jsonLd.jobTitle).toBe('kommunfullmäktigeledamot och ledande mjukvaruutvecklare')
         expect(jsonLd.knowsAbout).toContain('Ekonomisk politik')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
