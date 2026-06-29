@@ -34,9 +34,9 @@ export const personSameAs = [
 ]
 
 export const personJobTitle: Record<Lang, string> = {
-    en: 'Municipal councillor & lead developer',
-    fi: 'Kunnanvaltuutettu ja johtava ohjelmistokehittäjä',
-    sv: 'Kommunfullmäktigeledamot och ledande mjukvaruutvecklare',
+    en: 'municipal councillor & lead developer',
+    fi: 'kunnanvaltuutettu ja johtava ohjelmistokehittäjä',
+    sv: 'kommunfullmäktigeledamot och ledande mjukvaruutvecklare',
 }
 
 export const personDescription: Record<Lang, string> = {
