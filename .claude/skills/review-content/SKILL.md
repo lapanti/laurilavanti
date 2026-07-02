@@ -57,7 +57,7 @@ Flag:
 - Map to segment (A/C/D/E) — is that the right primary target?
 - Any segment blockers triggered? (see write skill for blocker lists)
 - Any Tier 3 assumptions (IT/privacy as a voting issue stated as fact)?
-- Does post connect to AI/digitaalinen itsenäisyys — or is exception flagged?
+- Does post connect to AI/digitaalinen itsenäisyys? If not, does it include one of the pillar tags (`artificial-intelligence`, `digital-independence`, `economy`, `culture-and-education`, `freedom`)? Flag if neither.
 
 ---
 

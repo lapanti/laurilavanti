@@ -61,3 +61,12 @@ Hard don'ts: attack individuals/parties by name; AI utopia/dystopia ("mullistaa"
 - En-dashes (`–`): max two per piece; em-dashes (`—`) avoid
 - No structural colons as separators (EU:ssa OK)
 - Finnish only
+
+## Tag requirement
+
+Must include at least one pillar tag:
+- `artificial-intelligence`
+- `digital-independence`
+- `economy`
+- `culture-and-education`
+- `freedom`
