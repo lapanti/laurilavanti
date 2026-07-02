@@ -146,6 +146,24 @@ if is_blog_post; then
             fi
         done <<< "$post_tags"
     fi
+
+    # ── pillar tag requirement (posts #43+) ──────────────────────────────────
+    # Every post with id >= 43 must carry at least one pillar tag.
+    pillar_tags=("artificial-intelligence" "digital-independence" "economy" "culture-and-education" "freedom")
+    post_id="$(fm_field "$file" id)"
+    if [[ -n "$post_id" && "$post_id" -ge 43 ]] 2>/dev/null; then
+        has_pillar=0
+        while IFS= read -r tag; do
+            tag="$(echo "$tag" | xargs)"
+            for pt in "${pillar_tags[@]}"; do
+                if [[ "$tag" == "$pt" ]]; then has_pillar=1; break 2; fi
+            done
+        done <<< "$post_tags"
+        if [[ "$has_pillar" -eq 0 ]]; then
+            error "$file" "missing pillar tag (post #${post_id} ≥ 43) — add one of: artificial-intelligence, digital-independence, economy, culture-and-education, freedom"
+            failed=1
+        fi
+    fi
 fi
 
 exit "$failed"
