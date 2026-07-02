@@ -130,8 +130,8 @@ if is_blog_post; then
     post_tags="$(awk '
         /^---$/ { c++; if (c == 2) exit; next }
         c == 1 && /^tags:/ { in_tags = 1; next }
-        c == 1 && in_tags && /^  - / { gsub(/^  - /, ""); print }
-        c == 1 && in_tags && !/^  - / { in_tags = 0 }
+        c == 1 && in_tags && /^  - / { gsub(/^  - /, ""); print; next }
+        c == 1 && in_tags { in_tags = 0 }
     ' "$file")"
 
     if [[ -z "$post_tags" ]]; then
