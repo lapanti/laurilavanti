@@ -12,64 +12,6 @@ export interface Recommendation {
 
 export const recommendations: Recommendation[] = [
     {
-        image: 'Atte-Harjanne',
-        locales: {
-            en: {
-                alt: 'Photo of Atte Harjanne. He is wearing a white dress shirt and a dark blazer.',
-                title: 'Member of Parliament',
-            },
-            fi: {
-                alt: 'Kuva Atte Harjanteesta. Hänellä on päällään valkoinen kauluspaita ja tumma pikkutakki.',
-                title: 'Kansanedustaja',
-            },
-            sv: {
-                alt: 'Foto på Atte Harjanne. Han bär en vit skjorta och en mörk kavaj.',
-                title: 'Riksdagsledamot',
-            },
-        },
-        name: 'Atte Harjanne',
-        recommendation:
-            'Eduskunnassa on iso vaje teknologian ja tietopolitiikan asiantuntijoista. Lauri paikkaisi tätä vajetta isosti!',
-    },
-    {
-        image: 'Mari-Holopainen',
-        locales: {
-            en: {
-                alt: 'Photo of Mari Holopainen. She is wearing a light-coloured jacket.',
-                title: 'Member of Parliament',
-            },
-            fi: {
-                alt: 'Kuva Mari Holopaisesta. Päällään hänellä on vaalea takki.',
-                title: 'Kansanedustaja',
-            },
-            sv: {
-                alt: 'Foto på Mari Holopainen. Hon bär en ljus jacka.',
-                title: 'Riksdagsledamot',
-            },
-        },
-        name: 'Mari Holopainen',
-        recommendation: '',
-    },
-    {
-        image: 'Otso-Kivekas',
-        locales: {
-            en: {
-                alt: 'Photo of Otso Kivekäs. He is wearing a t-shirt reading Helsinki and a blazer, and a hat.',
-                title: 'CEO, city councillor',
-            },
-            fi: {
-                alt: 'Kuva Otso Kivekkäästä. Päällään hänellä on t-paita, jossa lukee Helsinki, sekä pikkutakki. Päässä hattu.',
-                title: 'Toimitusjohtaja, kaupunginvaltuutettu',
-            },
-            sv: {
-                alt: 'Foto på Otso Kivekäs. Han bär en t-shirt med texten Helsinki och en kavaj, samt en hatt.',
-                title: 'VD, stadsfullmäktigeledamot',
-            },
-        },
-        name: 'Otso Kivekäs',
-        recommendation: '',
-    },
-    {
         image: 'aki-koikkalainen',
         locales: {
             en: {
@@ -110,6 +52,26 @@ export const recommendations: Recommendation[] = [
             'Laurissa vankka osaaminen teknologiasta ja taloudesta yhdistyy vahvaan visioon siitä, miten yhteiskunnasta rakennetaan oikeudenmukaisempi ja parempi paikka kaikille, samalla ympäristöstä huolehtien.',
     },
     {
+        image: 'Atte-Harjanne',
+        locales: {
+            en: {
+                alt: 'Photo of Atte Harjanne. He is wearing a white dress shirt and a dark blazer.',
+                title: 'Member of Parliament',
+            },
+            fi: {
+                alt: 'Kuva Atte Harjanteesta. Hänellä on päällään valkoinen kauluspaita ja tumma pikkutakki.',
+                title: 'Kansanedustaja',
+            },
+            sv: {
+                alt: 'Foto på Atte Harjanne. Han bär en vit skjorta och en mörk kavaj.',
+                title: 'Riksdagsledamot',
+            },
+        },
+        name: 'Atte Harjanne',
+        recommendation:
+            'Eduskunnassa on iso vaje teknologian ja tietopolitiikan asiantuntijoista. Lauri paikkaisi tätä vajetta isosti!',
+    },
+    {
         image: 'Allu-Pyhalammi',
         locales: {
             en: {
@@ -130,22 +92,83 @@ export const recommendations: Recommendation[] = [
             'Lauri on hyvin nopeasti osoittanut suurta omistautumista ja aktiivisuutta maailman muuttamiselle ja Vihreän politiikan teolle! Häneltä hoituu niin järjestön pyörittäminen, poliittisten teemojen syväosaaminen, vahva ja kestävä sosiaalisen median näkyvyys ja hienot verkostotaidot. Hän on mm. kunnostautunut Suomen digitaalista itsenäisyyttä ajavana moottorina, jolla on aina ihmisen hyvinvointi ja järkevät talousratkaisut toimintansa keskiössä.',
     },
     {
-        image: 'Sofia-Virta',
+        image: 'Juhana-Karhula',
         locales: {
             en: {
-                alt: 'Photo of Sofia Virta. She is wearing a blue shirt and a leather jacket.',
-                title: 'Member of Parliament',
+                alt: 'Photo of Juhana Karhula performing in a wrestling ring, wearing a black tank top and a long fur-trimmed coat under green stage lights. Photo: FCF Wrestling / Akseli Vaheristo.',
+                title: 'Agile specialist - Legend of Finnish pro wrestling',
             },
             fi: {
-                alt: 'Kuva Sofia Virrasta. Päällään hänellä on sininen paita ja nahkatakki.',
-                title: 'Kansanedustaja',
+                alt: 'Kuva Juhana Karhulasta painimatolla. Hänellä on päällään musta trikoopaita ja pitkä turkisreunainen takki, taustalla vihreät lavavalot. Kuva: FCF Wrestling / Akseli Vaheristo.',
+                title: 'Ketteryyden ammattilainen - Suomalaisen showpainin legenda',
             },
             sv: {
-                alt: 'Foto på Sofia Virta. Hon bär en blå skjorta och en skinnjacka.',
-                title: 'Riksdagsledamot',
+                alt: 'Foto på Juhana Karhula i en brottningsring, iklädd ett svart linne och en lång pälskantad kappa under grönt scenljus. Foto: FCF Wrestling / Akseli Vaheristo.',
+                title: 'Smidighetsproffs - Finländsk proffsbrottningslegend',
             },
         },
-        name: 'Sofia Virta',
-        recommendation: '',
+        name: 'Juhana Karhula',
+        recommendation:
+            'Lauri on ennen kaikkea hyvä ihminen joka välittää ihmisistä, ympäristöstä ja Suomesta. Teknologisella asiantuntijuudellaan ja empatiakyvyllään Lauri pystyy taistelemaan teknologiajättien aiheuttamia haittavaikutuksia vastaan aidosti ihmislähtöisestä asemasta. Suomi olisi yksinkertaisesti parempi paikka olla ja asua jos Lauri olisi edustamassa sen kansaa.',
+    },
+    {
+        image: 'Lauri-Nevanpera',
+        locales: {
+            en: {
+                alt: 'Photo of Lauri Nevanperä. He has long hair tied back, a beard, and glasses, and is wearing a black jacket over a mauve t-shirt.',
+                title: 'Tampere City Councillor, Lead AI Engineer',
+            },
+            fi: {
+                alt: 'Kuva Lauri Nevanperästä. Hänellä on pitkät kammatut hiukset, parta ja silmälasit, päällään musta takki ja vaaleanpunertava t-paita.',
+                title: 'Tampereen kaupunginvaltuutettu, johtava tekoälyinsinööri',
+            },
+            sv: {
+                alt: 'Foto på Lauri Nevanperä. Han har långt hår i tofs, skägg och glasögon, och bär en svart jacka över en gammelrosa t-shirt.',
+                title: 'Fullmäktigeledamot i Tammerfors, ledande AI-ingenjör',
+            },
+        },
+        name: 'Lauri Nevanperä',
+        recommendation:
+            'Tietojärjestelmät ovat yhä enemmän yhteiskunnan perusinfraa. Tekoälymurroksessa ja nykyisessä geopoliittisessa tilanteessa tarvitaan osaajia, jotka ymmärtävät järjestelmien mahdollisuudet ja uhat. Lauri on myös valtavan aikaansaava kaveri.',
+    },
+    {
+        image: 'Kalle-Euro',
+        locales: {
+            en: {
+                alt: 'Photo of Kalle Euro. He is wearing glasses, a grey sweater, and a dark jacket.',
+                title: 'Executive Director',
+            },
+            fi: {
+                alt: 'Kuva Kalle Eurosta. Hänellä on silmälasit, harmaa neule ja tumma takki.',
+                title: 'Toiminnanjohtaja',
+            },
+            sv: {
+                alt: 'Foto på Kalle Euro. Han bär glasögon, en grå tröja och en mörk jacka.',
+                title: 'Operativ Chef',
+            },
+        },
+        name: 'Kalle Euro',
+        recommendation:
+            'Laurin kanssa voi puhua yhtä sujuvasti tekoälyn yhteiskunnallisista vaikutuksista kuin siitä, miten markkinatalous pidetään reiluna kaikille. Tällaista yhdistelmää – uteliaisuutta, asiantuntemusta ja oikeudentajua – tarvitaan eduskunnassa.',
+    },
+    {
+        image: 'Mari-Holopainen',
+        locales: {
+            en: {
+                alt: 'Photo of Mari Holopainen. She is wearing a light-coloured jacket.',
+                title: 'Member of Parliament, M.Sc. (Econ.)',
+            },
+            fi: {
+                alt: 'Kuva Mari Holopaisesta. Päällään hänellä on vaalea takki.',
+                title: 'Kansanedustaja, kauppatieteiden maisteri',
+            },
+            sv: {
+                alt: 'Foto på Mari Holopainen. Hon bär en ljus jacka.',
+                title: 'Riksdagsledamot, ekonomie magister',
+            },
+        },
+        name: 'Mari Holopainen',
+        recommendation:
+            'Eduskuntaan tarvitaan enemmän ihmisiä, jotka ymmärtävät sekä taloudesta että teknologiasta. Yhtenä Digitaalinen itsenäisyys -kansalaisaloitteen perustajista Lauri tunnistaa, miten Suomen tulisi toimia yhteiskuntaa monin tavoin muokkaavan teknologisen murroksen edessä. Laurilla on vahva analyyttinen ote, kyky hahmottaa laajoja kokonaisuuksia ja taito tehdä monimutkaisistakin asioista ymmärrettäviä. Hän on myös poikkeuksellisen sinnikäs ja työtä pelkäämätön.',
     },
 ]
