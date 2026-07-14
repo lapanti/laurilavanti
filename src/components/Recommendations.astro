@@ -37,7 +37,7 @@ const { recommendations, lang } = Astro.props
         }
     }
 </style>
-<ul>
+<ul class="recommendations-list">
     {
         recommendations.map((c) => (
             <li>
@@ -52,3 +52,22 @@ const { recommendations, lang } = Astro.props
         ))
     }
 </ul>
+<script
+    is:inline
+    set:html={`(function(){
+    if (navigator.webdriver) return;
+    var lists = document.querySelectorAll('.recommendations-list');
+    for (var i = 0; i < lists.length; i++) {
+        var items = Array.prototype.slice.call(lists[i].children);
+        for (var j = items.length - 1; j > 0; j--) {
+            var k = Math.floor(Math.random() * (j + 1));
+            var tmp = items[j];
+            items[j] = items[k];
+            items[k] = tmp;
+        }
+        for (var m = 0; m < items.length; m++) {
+            lists[i].appendChild(items[m]);
+        }
+    }
+})();`}
+/>
