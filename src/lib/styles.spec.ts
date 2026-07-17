@@ -109,17 +109,17 @@ describe('styles', () => {
     describe('fontSizes', () => {
         it('should stay the same', () => {
             expect(fontSizes).toEqual({
-                [1]: { fontSize: '1rem', lineHeight: '1.5rem' },
-                [1.5]: { fontSize: sizes[1.5], lineHeight: '2rem' },
-                [1.25]: { fontSize: sizes[1.25], lineHeight: '1.75rem' },
-                [1.75]: { fontSize: sizes[1.75], lineHeight: '2.25rem' },
-                [1.125]: { fontSize: sizes[1.125], lineHeight: '1.75rem' },
-                [1.875]: { fontSize: sizes[1.875], lineHeight: '2.25rem' },
-                [2.25]: { fontSize: sizes[2.25], lineHeight: '2.5rem' },
-                [3]: { fontSize: sizes[3], lineHeight: '1' },
-                [3.75]: { fontSize: sizes[3.75], lineHeight: '1' },
-                [5]: { fontSize: sizes[5], lineHeight: '1' },
-                [6]: { fontSize: sizes[6], lineHeight: '1' },
+                [1]: { fontSize: '1rem', lineHeight: '1.2' },
+                [1.5]: { fontSize: sizes[1.5], lineHeight: '1.2' },
+                [1.25]: { fontSize: sizes[1.25], lineHeight: '1.2' },
+                [1.75]: { fontSize: sizes[1.75], lineHeight: '1.2' },
+                [1.125]: { fontSize: sizes[1.125], lineHeight: '1.2' },
+                [1.875]: { fontSize: sizes[1.875], lineHeight: '1.2' },
+                [2.25]: { fontSize: sizes[2.25], lineHeight: '1.2' },
+                [3]: { fontSize: sizes[3], lineHeight: '1.2' },
+                [3.75]: { fontSize: sizes[3.75], lineHeight: '1.2' },
+                [5]: { fontSize: sizes[5], lineHeight: '1.2' },
+                [6]: { fontSize: sizes[6], lineHeight: '1.2' },
             })
         })
     })
@@ -127,7 +127,7 @@ describe('styles', () => {
     describe('fontFamilies', () => {
         it('should stay the same', () => {
             expect(fontFamilies).toEqual({
-                heading: `"Krana Fat", Trebuchet MS`,
+                heading: `"Big Shoulders Display", Trebuchet MS`,
                 mono: `"IBM Plex Mono", Lucida Sans Typewriter`,
                 sans: `"IBM Plex Sans", Trebuchet MS`,
             })
@@ -137,7 +137,7 @@ describe('styles', () => {
     describe('fontWeights', () => {
         it('should stay the same', () => {
             expect(fontWeights).toEqual({
-                black: 1000,
+                black: 900,
                 light: 300,
                 medium: 500,
                 regular: 400,
@@ -155,14 +155,14 @@ describe('styles', () => {
                     fontStyle: 'italic',
                     fontWeight: fontWeights.regular,
                 },
-                body: { ...fontSizes[1.125], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
+                body: { ...fontSizes[1.25], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
                 definition: {
                     ...fontSizes[1],
                     fontFamily: fontFamilies.mono,
                     fontWeight: fontWeights.medium,
                     textTransform: 'uppercase',
                 },
-                h1: { ...fontSizes[3.75], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
+                h1: { ...fontSizes[3], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
                 h2: { ...fontSizes[2.25], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
                 h3: { ...fontSizes[1.5], fontFamily: fontFamilies.sans, fontWeight: fontWeights.medium },
                 ingress: { ...fontSizes[1.875], fontFamily: fontFamilies.sans, fontWeight: fontWeights.light },
