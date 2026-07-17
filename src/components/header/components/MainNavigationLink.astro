@@ -17,12 +17,13 @@ const href = `/${lang}/`
     define:vars={{
         colorsWhite: colors.white,
         sizes01875: sizes[0.1875],
+        sizes5: sizes[5],
     }}
 >
     a {
         align-items: center;
         display: flex;
-        min-height: 2.75rem;
+        min-height: var(--sizes5);
         position: relative;
         overflow: hidden;
     }
