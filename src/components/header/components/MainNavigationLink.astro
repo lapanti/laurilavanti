@@ -1,7 +1,8 @@
 ---
 import type { Lang } from '../../../content/nav'
 
-import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
+import { colors, sizes } from '../../../lib/styles'
+import NameLogo from '../../NameLogo.astro'
 
 interface Props {
     lang?: Lang
@@ -14,23 +15,14 @@ const href = `/${lang}/`
 
 <style
     define:vars={{
-        colorsPeach: colors.peach,
-        h1FontFamily: typographics.h1.fontFamily,
-        h1FontSize: fontSizes[1.75].fontSize,
-        h1FontWeight: typographics.h1.fontWeight,
-        h1LineHeight: fontSizes[1.75].lineHeight,
+        colorsWhite: colors.white,
         sizes01875: sizes[0.1875],
     }}
 >
     a {
         align-items: center;
         display: flex;
-        font-family: var(--h1FontFamily);
-        font-weight: var(--h1FontWeight);
-        font-size: var(--h1FontSize);
-        line-height: var(--h1LineHeight);
         min-height: 2.75rem;
-        color: var(--colorsPeach);
         position: relative;
         overflow: hidden;
     }
@@ -44,7 +36,7 @@ const href = `/${lang}/`
         height: var(--sizes01875);
         opacity: 1;
         transform: translate3d(-100%, 0, 0);
-        background-color: var(--colorsPeach);
+        background-color: var(--colorsWhite);
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -59,7 +51,7 @@ const href = `/${lang}/`
     }
 
     a:focus-visible {
-        outline: var(--sizes01875) solid var(--colorsPeach);
+        outline: var(--sizes01875) solid var(--colorsWhite);
         outline-offset: 2px;
     }
 
@@ -68,4 +60,6 @@ const href = `/${lang}/`
         transform: translate3d(-100%, 0, 0);
     }
 </style>
-<a aria-current={pathname === href ? 'page' : 'false'} href={href}>Lauri Lavanti</a>
+<a aria-current={pathname === href ? 'page' : 'false'} href={href}>
+    <NameLogo size="small" />
+</a>
