@@ -41,10 +41,11 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   ```
 
   **Colours (`colors`):**
-  - Brand: `evening` (teal `rgb(0,98,114)`), `peach` (`rgb(248,207,169)`), `sand`, `moss`
-  - UI: `white`, `black`, `gray`, `transparent`, `darkGreenText`
+  - Brand: `forestGreen` (dark green `rgb(22,62,53)` — the active dark-block background color), `white` (primary text on dark blocks), `sky` (`#bbdde6` — accent)
+  - UI: `black`, `gray`, `transparent`, `darkGreenText`
+  - Other named colours (not part of the current brand identity, but still defined and in use for specific cases): `peach`, `sand`, `moss`, `evening` (teal `rgb(0,98,114)` — retained in the token file but no longer consumed by any component; kept for possible future use, not dead code to be removed on sight)
   - Social platform brand colours: `bluesky`, `facebook`, `linkedin`, `mastodon`, `threads`, `instagramGradient`, `regionalPurple`
-  - Overlay: `evening70` (70% opacity teal)
+  - Overlay: `forestGreen70` (70% opacity dark green), `evening70` (70% opacity teal, unused alongside `evening`)
 
   **Typography (`typographics`)** — pre-composed font stacks:
   ```ts
@@ -59,11 +60,16 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   fontSizes[1.5]  = { fontSize: '1.5rem', lineHeight: '...' }
   fontSizes[1.75] = { fontSize: '1.75rem', lineHeight: '...' }
   ```
+  Line-height is a **unitless multiplier**, `'1.2'`, across every entry in the scale — not an absolute rem value. Unitless line-height scales proportionally with its paired font-size rather than locking in a fixed value, which is the correct default at any scale, not just for display-sized text.
+
+  **`fontWeights.black` = `900`** — the heaviest weight of the current heading font (Big Shoulders Display), which is also the standard CSS `font-weight: 900` ("black"). Shared by `typographics.h1`, `typographics.h2`, and the name-logo pattern below.
+
+  **Name-logo pattern** — the "Lauri Lavanti" wordmark is a reusable shape, not a one-off style: Big Shoulders Display Black, white text, `rotate(-10deg) skew(-10deg)` applied once to the whole two-line block (not per line), with "Lauri" and "Lavanti" always forced onto their own lines. It appears at two sizes — small (nav header, `fontSizes[1.75]`) and large (homepage hero h1, `typographics.h1`) — both implemented by the single `src/components/NameLogo.astro` component, parameterized by a `size` prop. Any new place this wordmark is needed should reuse `NameLogo`, not re-implement the transform/line-break.
 
 - **Usage pattern in components:**
   ```astro
-  <style define:vars={{ colorsEvening: colors.evening, sizes1: sizes[1] }}>
-      div { background: var(--colorsEvening); padding: var(--sizes1); }
+  <style define:vars={{ colorsForestGreen: colors.forestGreen, sizes1: sizes[1] }}>
+      div { background: var(--colorsForestGreen); padding: var(--sizes1); }
   </style>
   ```
   The variable name in `define:vars` becomes the CSS custom property name. Convention: `camelCase(exportName) + key`.
