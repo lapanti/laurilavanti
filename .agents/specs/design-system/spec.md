@@ -17,7 +17,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   sizes[1]    = '1rem'     // 16px
   sizes[1.5]  = '1.5rem'   // 24px
   sizes[2.5]  = '2.5rem'   // 40px
-  sizes[3.75] = '3.75rem'  // 60px — header height
+  sizes[5]    = '5rem'     // 80px — header height
   sizes[75]   = '75rem'    // 1200px — max content width
   // ... and more
   ```
@@ -26,7 +26,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
 
   **Named layout constants:**
   ```ts
-  HEADER_SIZE     = sizes[3.75]   // 60px
+  HEADER_SIZE     = sizes[5]      // 80px — sized to fit the two-line NameLogo wordmark (measured ~72px tall transformed) with margin
   CONTENT_SIZE    = sizes[75]     // 1200px
   CONTENT_PADDING = sizes[0.5]    // 8px
   ```
@@ -60,7 +60,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   fontSizes[1.5]  = { fontSize: '1.5rem', lineHeight: '...' }
   fontSizes[1.75] = { fontSize: '1.75rem', lineHeight: '...' }
   ```
-  Line-height is a **unitless multiplier**, `'1.2'`, across every entry in the scale — not an absolute rem value. Unitless line-height scales proportionally with its paired font-size rather than locking in a fixed value, which is the correct default at any scale, not just for display-sized text.
+  Line-height is a **unitless multiplier**, not an absolute rem value — it scales proportionally with its paired font-size rather than locking in a fixed value. Most entries use `'1.2'`. **Exception:** the three sizes that render as literal `<p>` elements site-wide (`fontSizes[1]`, `fontSizes[1.25]` — body — and `fontSizes[1.875]` — ingress) use `'1.5'` instead, because WCAG 1.4.8 (enforced by this repo's `siteimprove`/`sia-r73` e2e check) requires paragraph line-spacing of at least 1.5×. If a new size is added and will be consumed by a `<p>`-rendering component, it needs `'1.5'`, not `'1.2'`.
 
   **`fontWeights.black` = `900`** — the heaviest weight of the current heading font (Big Shoulders Display), which is also the standard CSS `font-weight: 900` ("black"). Shared by `typographics.h1`, `typographics.h2`, and the name-logo pattern below.
 
@@ -97,7 +97,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
 - [ ] Lint and type-check are enforced by pre-commit hooks and CI
 
 ### Regression Guardrails
-- `HEADER_SIZE = sizes[3.75]` is used for both the `<header>` height and the mobile menu top offset — changing this value changes both simultaneously; test both on mobile and desktop
+- `HEADER_SIZE = sizes[5]` is used for both the `<header>` height and the mobile menu top offset — changing this value changes both simultaneously; test both on mobile and desktop
 - `gridTemplateColumnsArticle` uses `CONTENT_SIZE` and `CONTENT_PADDING` inline — changing any of those three values changes the article column layout for every page
 - Social platform colour tokens (`colors.bluesky`, `colors.facebook`, etc.) are consumed by Footer and SocialShare — changing a colour value changes every appearance of that platform's branding
 

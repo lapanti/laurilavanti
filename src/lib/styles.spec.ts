@@ -61,7 +61,7 @@ describe('styles', () => {
 
     describe('hEADER_SIZE', () => {
         it('should stay the same', () => {
-            expect(HEADER_SIZE).toEqual(sizes[3.75])
+            expect(HEADER_SIZE).toEqual(sizes[5])
         })
     })
 
@@ -109,12 +109,12 @@ describe('styles', () => {
     describe('fontSizes', () => {
         it('should stay the same', () => {
             expect(fontSizes).toEqual({
-                [1]: { fontSize: '1rem', lineHeight: '1.2' },
+                [1]: { fontSize: '1rem', lineHeight: '1.5' },
                 [1.5]: { fontSize: sizes[1.5], lineHeight: '1.2' },
-                [1.25]: { fontSize: sizes[1.25], lineHeight: '1.2' },
+                [1.25]: { fontSize: sizes[1.25], lineHeight: '1.5' },
                 [1.75]: { fontSize: sizes[1.75], lineHeight: '1.2' },
                 [1.125]: { fontSize: sizes[1.125], lineHeight: '1.2' },
-                [1.875]: { fontSize: sizes[1.875], lineHeight: '1.2' },
+                [1.875]: { fontSize: sizes[1.875], lineHeight: '1.5' },
                 [2.25]: { fontSize: sizes[2.25], lineHeight: '1.2' },
                 [3]: { fontSize: sizes[3], lineHeight: '1.2' },
                 [3.75]: { fontSize: sizes[3.75], lineHeight: '1.2' },
