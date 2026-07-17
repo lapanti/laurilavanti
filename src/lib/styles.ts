@@ -40,7 +40,7 @@ export const zIndices = {
     [100]: 100 as const,
 } as const
 
-export const HEADER_SIZE = sizes[3.75]
+export const HEADER_SIZE = sizes[5]
 export const CONTENT_SIZE = sizes[75]
 export const CONTENT_PADDING = sizes[0.5]
 
@@ -91,12 +91,12 @@ export const colors = {
 /** Fonts begin */
 
 export const fontSizes = {
-    [1]: { fontSize: '1rem', lineHeight: '1.2' } as const,
+    [1]: { fontSize: '1rem', lineHeight: '1.5' } as const,
     [1.5]: { fontSize: sizes[1.5], lineHeight: '1.2' } as const,
-    [1.25]: { fontSize: sizes[1.25], lineHeight: '1.2' } as const,
+    [1.25]: { fontSize: sizes[1.25], lineHeight: '1.5' } as const,
     [1.75]: { fontSize: sizes[1.75], lineHeight: '1.2' } as const,
     [1.125]: { fontSize: sizes[1.125], lineHeight: '1.2' } as const,
-    [1.875]: { fontSize: sizes[1.875], lineHeight: '1.2' } as const,
+    [1.875]: { fontSize: sizes[1.875], lineHeight: '1.5' } as const,
     [2.25]: { fontSize: sizes[2.25], lineHeight: '1.2' } as const,
     [3]: { fontSize: sizes[3], lineHeight: '1.2' } as const,
     [3.75]: { fontSize: sizes[3.75], lineHeight: '1.2' } as const,
