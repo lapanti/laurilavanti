@@ -87,6 +87,8 @@ describe('styles', () => {
                 evening: 'rgb(0, 98, 114)',
                 evening70: 'rgba(0, 98, 114, 0.7)',
                 facebook: '#4267B2',
+                forestGreen: 'rgb(22, 62, 53)',
+                forestGreen70: 'rgba(22, 62, 53, 0.7)',
                 gray: 'rgb(235, 235, 236)',
                 instagramGradient: 'url(#instagram-gradient)',
                 linkedin: '#0E76A8',
