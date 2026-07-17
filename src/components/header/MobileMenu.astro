@@ -16,8 +16,8 @@ const { lang, links } = Astro.props
 
 <style
     define:vars={{
-        colorsEvening: colors.evening,
-        colorsPeach: colors.peach,
+        colorsForestGreen: colors.forestGreen,
+        colorsWhite: colors.white,
         contentPadding: CONTENT_PADDING,
         contentSize: CONTENT_SIZE,
         headerSize: HEADER_SIZE,
@@ -81,7 +81,7 @@ const { lang, links } = Astro.props
         height: var(--sizes025);
         width: 100%;
         border-radius: 10px;
-        background: var(--colorsPeach);
+        background: var(--colorsWhite);
         transition: transform 0.25s ease-in-out;
     }
 
@@ -106,7 +106,7 @@ const { lang, links } = Astro.props
             rgba(255, 255, 255, 0) 50%,
             rgba(255, 255, 255, 0) 100%
         );
-        background-color: var(--colorsEvening);
+        background-color: var(--colorsForestGreen);
         display: flex;
         flex-direction: column;
         gap: var(--sizes25);

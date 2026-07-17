@@ -12,7 +12,7 @@ const { href, label } = Astro.props
 <style
     define:vars={{
         colorsBlack: colors.black,
-        colorsEvening: colors.evening,
+        colorsForestGreen: colors.forestGreen,
         colorsSky: colors.sky,
         colorsWhite: colors.white,
         fontFamilyMono: fontFamilies.mono,
@@ -30,7 +30,7 @@ const { href, label } = Astro.props
     span {
         align-items: center;
         background-color: var(--colorsSky);
-        border: 1px solid var(--colorsEvening);
+        border: 1px solid var(--colorsForestGreen);
         border-radius: 0.375rem;
         color: var(--colorsBlack);
         display: inline-flex;
@@ -43,7 +43,7 @@ const { href, label } = Astro.props
     }
 
     a:hover span {
-        background-color: var(--colorsEvening);
+        background-color: var(--colorsForestGreen);
         color: var(--colorsWhite);
     }
 </style>

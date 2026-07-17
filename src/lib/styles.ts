@@ -40,7 +40,7 @@ export const zIndices = {
     [100]: 100 as const,
 } as const
 
-export const HEADER_SIZE = sizes[3.75]
+export const HEADER_SIZE = sizes[5]
 export const CONTENT_SIZE = sizes[75]
 export const CONTENT_PADDING = sizes[0.5]
 
@@ -70,6 +70,8 @@ export const colors = {
     evening: 'rgb(0, 98, 114)' as const,
     evening70: 'rgba(0, 98, 114, 0.7)' as const,
     facebook: '#4267B2' as const,
+    forestGreen: 'rgb(22, 62, 53)' as const,
+    forestGreen70: 'rgba(22, 62, 53, 0.7)' as const,
     gray: 'rgb(235, 235, 236)' as const,
     instagramGradient: 'url(#instagram-gradient)' as const,
     linkedin: '#0E76A8' as const,
@@ -89,27 +91,27 @@ export const colors = {
 /** Fonts begin */
 
 export const fontSizes = {
-    [1]: { fontSize: '1rem', lineHeight: '1.5rem' } as const,
-    [1.5]: { fontSize: sizes[1.5], lineHeight: '2rem' } as const,
-    [1.25]: { fontSize: sizes[1.25], lineHeight: '1.75rem' } as const,
-    [1.75]: { fontSize: sizes[1.75], lineHeight: '2.25rem' } as const,
-    [1.125]: { fontSize: sizes[1.125], lineHeight: '1.75rem' } as const,
-    [1.875]: { fontSize: sizes[1.875], lineHeight: '2.25rem' } as const,
-    [2.25]: { fontSize: sizes[2.25], lineHeight: '2.5rem' } as const,
-    [3]: { fontSize: sizes[3], lineHeight: '1' } as const,
-    [3.75]: { fontSize: sizes[3.75], lineHeight: '1' } as const,
-    [5]: { fontSize: sizes[5], lineHeight: '1' } as const,
-    [6]: { fontSize: sizes[6], lineHeight: '1' } as const,
+    [1]: { fontSize: '1rem', lineHeight: '1.5' } as const,
+    [1.5]: { fontSize: sizes[1.5], lineHeight: '1.2' } as const,
+    [1.25]: { fontSize: sizes[1.25], lineHeight: '1.5' } as const,
+    [1.75]: { fontSize: sizes[1.75], lineHeight: '1.2' } as const,
+    [1.125]: { fontSize: sizes[1.125], lineHeight: '1.2' } as const,
+    [1.875]: { fontSize: sizes[1.875], lineHeight: '1.5' } as const,
+    [2.25]: { fontSize: sizes[2.25], lineHeight: '1.2' } as const,
+    [3]: { fontSize: sizes[3], lineHeight: '1.2' } as const,
+    [3.75]: { fontSize: sizes[3.75], lineHeight: '1.2' } as const,
+    [5]: { fontSize: sizes[5], lineHeight: '1.2' } as const,
+    [6]: { fontSize: sizes[6], lineHeight: '1.2' } as const,
 } as const
 
 export const fontFamilies = {
-    heading: `"Krana Fat", Trebuchet MS` as const,
+    heading: `"Big Shoulders Display", Trebuchet MS` as const,
     mono: `"IBM Plex Mono", Lucida Sans Typewriter` as const,
     sans: `"IBM Plex Sans", Trebuchet MS` as const,
 } as const
 
 export const fontWeights = {
-    black: 1000,
+    black: 900,
     light: 300,
     medium: 500,
     regular: 400,
@@ -123,14 +125,14 @@ export const typographics = {
         fontStyle: 'italic',
         fontWeight: fontWeights.regular,
     },
-    body: { ...fontSizes[1.125], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
+    body: { ...fontSizes[1.25], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
     definition: {
         ...fontSizes[1],
         fontFamily: fontFamilies.mono,
         fontWeight: fontWeights.medium,
         textTransform: 'uppercase',
     },
-    h1: { ...fontSizes[3.75], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
+    h1: { ...fontSizes[3], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
     h2: { ...fontSizes[2.25], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
     h3: { ...fontSizes[1.5], fontFamily: fontFamilies.sans, fontWeight: fontWeights.medium },
     ingress: { ...fontSizes[1.875], fontFamily: fontFamilies.sans, fontWeight: fontWeights.light },

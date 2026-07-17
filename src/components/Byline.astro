@@ -3,6 +3,7 @@ import type { AuthorEntry } from '../content/person'
 import type { ExternalPublication } from '../lib/byline'
 
 import { buildBylineText, formatPublicationDate } from '../lib/byline'
+import { typographics } from '../lib/styles'
 import SmartLink from './SmartLink.astro'
 
 interface Props {
@@ -21,8 +22,19 @@ const publicationPrefix: Record<string, string> = {
 }
 ---
 
-<style>
+<style
+    define:vars={{
+        bodyFontFamily: typographics.body.fontFamily,
+        bodyFontSize: typographics.body.fontSize,
+        bodyFontWeight: typographics.body.fontWeight,
+        bodyLineHeight: typographics.body.lineHeight,
+    }}
+>
     p {
+        font-family: var(--bodyFontFamily);
+        font-size: var(--bodyFontSize);
+        font-weight: var(--bodyFontWeight);
+        line-height: var(--bodyLineHeight);
         grid-column-start: 3;
         margin-block: 0;
     }

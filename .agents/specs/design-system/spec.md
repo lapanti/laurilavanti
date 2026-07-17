@@ -17,7 +17,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   sizes[1]    = '1rem'     // 16px
   sizes[1.5]  = '1.5rem'   // 24px
   sizes[2.5]  = '2.5rem'   // 40px
-  sizes[3.75] = '3.75rem'  // 60px — header height
+  sizes[5]    = '5rem'     // 80px — header height
   sizes[75]   = '75rem'    // 1200px — max content width
   // ... and more
   ```
@@ -26,7 +26,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
 
   **Named layout constants:**
   ```ts
-  HEADER_SIZE     = sizes[3.75]   // 60px
+  HEADER_SIZE     = sizes[5]      // 80px — sized to fit the two-line NameLogo wordmark (measured ~72px tall transformed) with margin
   CONTENT_SIZE    = sizes[75]     // 1200px
   CONTENT_PADDING = sizes[0.5]    // 8px
   ```
@@ -41,10 +41,11 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   ```
 
   **Colours (`colors`):**
-  - Brand: `evening` (teal `rgb(0,98,114)`), `peach` (`rgb(248,207,169)`), `sand`, `moss`
-  - UI: `white`, `black`, `gray`, `transparent`, `darkGreenText`
+  - Brand: `forestGreen` (dark green `rgb(22,62,53)` — the active dark-block background color), `white` (primary text on dark blocks), `sky` (`#bbdde6` — accent)
+  - UI: `black`, `gray`, `transparent`, `darkGreenText`
+  - Other named colours (not part of the current brand identity, but still defined and in use for specific cases): `peach`, `sand`, `moss`, `evening` (teal `rgb(0,98,114)` — retained in the token file but no longer consumed by any component; kept for possible future use, not dead code to be removed on sight)
   - Social platform brand colours: `bluesky`, `facebook`, `linkedin`, `mastodon`, `threads`, `instagramGradient`, `regionalPurple`
-  - Overlay: `evening70` (70% opacity teal)
+  - Overlay: `forestGreen70` (70% opacity dark green), `evening70` (70% opacity teal, unused alongside `evening`)
 
   **Typography (`typographics`)** — pre-composed font stacks:
   ```ts
@@ -59,11 +60,16 @@ All visual design tokens — spacing, colours, typography, and layout grid const
   fontSizes[1.5]  = { fontSize: '1.5rem', lineHeight: '...' }
   fontSizes[1.75] = { fontSize: '1.75rem', lineHeight: '...' }
   ```
+  Line-height is a **unitless multiplier**, not an absolute rem value — it scales proportionally with its paired font-size rather than locking in a fixed value. Most entries use `'1.2'`. **Exception:** the three sizes that render as literal `<p>` elements site-wide (`fontSizes[1]`, `fontSizes[1.25]` — body — and `fontSizes[1.875]` — ingress) use `'1.5'` instead, because WCAG 1.4.8 (enforced by this repo's `siteimprove`/`sia-r73` e2e check) requires paragraph line-spacing of at least 1.5×. If a new size is added and will be consumed by a `<p>`-rendering component, it needs `'1.5'`, not `'1.2'`.
+
+  **`fontWeights.black` = `900`** — the heaviest weight of the current heading font (Big Shoulders Display), which is also the standard CSS `font-weight: 900` ("black"). Shared by `typographics.h1`, `typographics.h2`, and the name-logo pattern below.
+
+  **Name-logo pattern** — the "Lauri Lavanti" wordmark is a reusable shape, not a one-off style: Big Shoulders Display Black, white text, uppercase, `rotate(-10deg) skew(-10deg)` applied once to the whole two-line block (not per line), with "Lauri" and "Lavanti" always forced onto their own lines. Uppercase is CSS `text-transform` only — the underlying text stays "Lauri"/"Lavanti" so the accessible name is unaffected. It appears at two sizes — small (nav header, `fontSizes[1.5]`, 24px) and large (homepage hero h1, `typographics.h1`, 48px) — both implemented by the single `src/components/NameLogo.astro` component, parameterized by a `size` prop. Any new place this wordmark is needed should reuse `NameLogo`, not re-implement the transform/line-break.
 
 - **Usage pattern in components:**
   ```astro
-  <style define:vars={{ colorsEvening: colors.evening, sizes1: sizes[1] }}>
-      div { background: var(--colorsEvening); padding: var(--sizes1); }
+  <style define:vars={{ colorsForestGreen: colors.forestGreen, sizes1: sizes[1] }}>
+      div { background: var(--colorsForestGreen); padding: var(--sizes1); }
   </style>
   ```
   The variable name in `define:vars` becomes the CSS custom property name. Convention: `camelCase(exportName) + key`.
@@ -91,7 +97,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
 - [ ] Lint and type-check are enforced by pre-commit hooks and CI
 
 ### Regression Guardrails
-- `HEADER_SIZE = sizes[3.75]` is used for both the `<header>` height and the mobile menu top offset — changing this value changes both simultaneously; test both on mobile and desktop
+- `HEADER_SIZE = sizes[5]` is used for both the `<header>` height and the mobile menu top offset — changing this value changes both simultaneously; test both on mobile and desktop
 - `gridTemplateColumnsArticle` uses `CONTENT_SIZE` and `CONTENT_PADDING` inline — changing any of those three values changes the article column layout for every page
 - Social platform colour tokens (`colors.bluesky`, `colors.facebook`, etc.) are consumed by Footer and SocialShare — changing a colour value changes every appearance of that platform's branding
 

@@ -276,7 +276,7 @@ const breadcrumbJsonLd =
         <meta content="summary" name="twitter:card" />
     )
 }
-<meta content="#006275" name="theme_color" />
+<meta content="#163E35" name="theme_color" />
 <meta content="Lauri Lavanti" name="apple-mobile-web-app-title" />
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
 <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
@@ -290,6 +290,7 @@ const breadcrumbJsonLd =
     rel="preload"
     type="font/woff2"
 />
+<link as="font" crossorigin="" href="/fonts/BigShoulders-Black.ttf" rel="preload" type="font/ttf" />
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 {faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
