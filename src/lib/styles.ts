@@ -70,6 +70,8 @@ export const colors = {
     evening: 'rgb(0, 98, 114)' as const,
     evening70: 'rgba(0, 98, 114, 0.7)' as const,
     facebook: '#4267B2' as const,
+    forestGreen: 'rgb(22, 62, 53)' as const,
+    forestGreen70: 'rgba(22, 62, 53, 0.7)' as const,
     gray: 'rgb(235, 235, 236)' as const,
     instagramGradient: 'url(#instagram-gradient)' as const,
     linkedin: '#0E76A8' as const,

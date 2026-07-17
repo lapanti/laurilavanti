@@ -10,7 +10,7 @@ const { image } = Astro.props
 const img = image ? getImageSrcset(image, 'background', [960, 1920]) : undefined
 ---
 
-<style define:vars={{ colorsEvening70: colors.evening70 }}>
+<style define:vars={{ colorsForestGreen70: colors.forestGreen70 }}>
     div {
         display: none;
     }
@@ -25,7 +25,7 @@ const img = image ? getImageSrcset(image, 'background', [960, 1920]) : undefined
         }
 
         div:after {
-            background-image: linear-gradient(var(--colorsEvening70), var(--colorsEvening70));
+            background-image: linear-gradient(var(--colorsForestGreen70), var(--colorsForestGreen70));
             bottom: 0;
             content: '';
             height: 100%;
