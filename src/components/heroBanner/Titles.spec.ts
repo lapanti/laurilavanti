@@ -21,14 +21,14 @@ describe('<Titles />', () => {
         expect(result.firstChild).toMatchSnapshot()
     })
 
-    it('should render title', async () => {
+    it('should render the name logo as h1', async () => {
         const result = await renderAstroComponent(Titles, {
             props: {
                 title,
             },
         })
 
-        expect(getByRole(result, 'heading', { level: 1, name: title })).toBeDefined()
+        expect(getByRole(result, 'heading', { level: 1, name: 'Lauri Lavanti' })).toBeDefined()
     })
 
     it('should render subtitle', async () => {

@@ -1,0 +1,28 @@
+---
+import { colors, fontSizes, typographics } from '../lib/styles'
+
+interface Props {
+    size?: 'large' | 'small'
+}
+
+const { size = 'large' } = Astro.props
+const { fontFamily, fontWeight } = typographics.h1
+const { fontSize, lineHeight } = size === 'large' ? typographics.h1 : fontSizes[1.5]
+---
+
+<style define:vars={{ colorsWhite: colors.white, fontFamily, fontSize, fontWeight, lineHeight }}>
+    .name-logo {
+        display: flex;
+        flex-direction: column;
+        transform: rotate(-10deg) skew(-10deg);
+    }
+    .name-logo span {
+        color: var(--colorsWhite);
+        font-family: var(--fontFamily);
+        font-weight: var(--fontWeight);
+        font-size: var(--fontSize);
+        line-height: var(--lineHeight);
+        text-transform: uppercase;
+    }
+</style>
+<span class="name-logo"><span>Lauri</span> <span>Lavanti</span></span>

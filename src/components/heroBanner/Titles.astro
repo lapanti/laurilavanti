@@ -1,5 +1,6 @@
 ---
 import { colors, sizes, typographics } from '../../lib/styles'
+import NameLogo from '../NameLogo.astro'
 
 interface Props {
     title: string
@@ -7,17 +8,12 @@ interface Props {
     secondaryTitle?: string
 }
 
-const { title, subtitle, secondaryTitle } = Astro.props
+const { subtitle, secondaryTitle } = Astro.props
 ---
 
 <style
     define:vars={{
-        colorsPeach: colors.peach,
         colorsWhite: colors.white,
-        h1FontFamily: typographics.h1.fontFamily,
-        h1FontSize: typographics.h1.fontSize,
-        h1FontWeight: typographics.h1.fontWeight,
-        h1LineHeight: typographics.h1.lineHeight,
         h2FontFamily: typographics.h2.fontFamily,
         h2FontSize: typographics.h2.fontSize,
         h2FontWeight: typographics.h2.fontWeight,
@@ -39,14 +35,6 @@ const { title, subtitle, secondaryTitle } = Astro.props
         gap: var(--sizes15);
         margin-top: var(--sizes3);
         padding: var(--sizes0875);
-    }
-
-    h1 {
-        font-family: var(--h1FontFamily);
-        font-weight: var(--h1FontWeight);
-        font-size: var(--h1FontSize);
-        line-height: var(--h1LineHeight);
-        color: var(--colorsPeach);
     }
 
     h2 {
@@ -74,7 +62,7 @@ const { title, subtitle, secondaryTitle } = Astro.props
     }
 </style>
 <div>
-    <h1>{title}</h1>
+    <h1><NameLogo /></h1>
     {subtitle && <p>{subtitle}</p>}
     {secondaryTitle && <h2>{secondaryTitle}</h2>}
 </div>

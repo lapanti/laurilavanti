@@ -64,7 +64,7 @@ All visual design tokens — spacing, colours, typography, and layout grid const
 
   **`fontWeights.black` = `900`** — the heaviest weight of the current heading font (Big Shoulders Display), which is also the standard CSS `font-weight: 900` ("black"). Shared by `typographics.h1`, `typographics.h2`, and the name-logo pattern below.
 
-  **Name-logo pattern** — the "Lauri Lavanti" wordmark is a reusable shape, not a one-off style: Big Shoulders Display Black, white text, `rotate(-10deg) skew(-10deg)` applied once to the whole two-line block (not per line), with "Lauri" and "Lavanti" always forced onto their own lines. It appears at two sizes — small (nav header, `fontSizes[1.75]`) and large (homepage hero h1, `typographics.h1`) — both implemented by the single `src/components/NameLogo.astro` component, parameterized by a `size` prop. Any new place this wordmark is needed should reuse `NameLogo`, not re-implement the transform/line-break.
+  **Name-logo pattern** — the "Lauri Lavanti" wordmark is a reusable shape, not a one-off style: Big Shoulders Display Black, white text, uppercase, `rotate(-10deg) skew(-10deg)` applied once to the whole two-line block (not per line), with "Lauri" and "Lavanti" always forced onto their own lines. Uppercase is CSS `text-transform` only — the underlying text stays "Lauri"/"Lavanti" so the accessible name is unaffected. It appears at two sizes — small (nav header, `fontSizes[1.5]`, 24px) and large (homepage hero h1, `typographics.h1`, 48px) — both implemented by the single `src/components/NameLogo.astro` component, parameterized by a `size` prop. Any new place this wordmark is needed should reuse `NameLogo`, not re-implement the transform/line-break.
 
 - **Usage pattern in components:**
   ```astro
