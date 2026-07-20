@@ -26,11 +26,11 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
     },
     fi: {
         description:
-            'Tilaa ja saat pureskeltuja selityksiä ja analyysejä tuoreimmista teknologioista ja niiden vaikutuksista yhteiskuntaan. Suoraan sähköpostiisi.',
+            'Tilaamalla uutiskirjeeni saat sähköpostiisi analyysejä tuoreimmista kehityskuluista tekoälyn ja teknologian saralla sekä arvioita niiden vaikutuksista yhteiskuntaan.',
         emailPlaceholder: 'Sähköposti',
-        heading: 'Uutiskirje',
+        heading: 'Tilaa uutiskirje',
         loadingLabel: 'Lataa...',
-        privacyLinkText: 'tietosuojaselosteemme',
+        privacyLinkText: 'tietosuojaseloste',
         privacyText: 'Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue ',
         privacyTextAfter: '.',
         submitButton: 'Tilaa',
