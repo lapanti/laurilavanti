@@ -8,9 +8,9 @@ export const artificialIntelligenceTag: LocalTag = {
             'The more powerful AI becomes, the more important privacy protections are. AI systems are data-hungry; without strong data protection rules, they become surveillance infrastructure. The EU AI Act is a step in the right direction, but implementation must be substantive — not checkbox compliance.',
         ],
         fi: [
-            'Olen käyttänyt tekoälytyökaluja ammatillisesti johtavan ohjelmistokehittäjän roolissa sekä rakentanut koko tiimini tavat toimia sen kanssa — argumentoin käytännön kokemuksesta, en teoriasta. Tekoäly on aikamme merkittävin tuottavuusmuutos, ja Suomen on tartuttava siihen aktiivisesti ja kriittisesti.',
-            'Tekoäly vahvistaa sekä kykyjä että vahinkoja. Julkisen sektorin sovelluksissa — etuuspäätöksissä, luvankäsittelyssä, ennakoivassa poliisitoiminnassa — panokset ovat liian suuret, jotta järjestelmiä voitaisiin ottaa käyttöön ilman läpinäkyvyyttä ja inhimillistä valvontaa. Haluan tarkistettavissa olevia algoritmeja merkityksellisiin päätöksiin, avoimen lähdekoodin malleja silloin kun mahdollista, ja pakollista ihmisvalvontaa yksilöiden oikeuksiin vaikuttavissa päätöksissä.',
-            'Mitä voimakkaammaksi tekoäly kehittyy, sitä tärkeämmäksi yksityisyydensuoja tulee. Tekoälyjärjestelmät ovat tiedonnälkäisiä; ilman vahvoja tietosuojasääntöjä niistä tulee valvontainfrastruktuuria. EU:n tekoälysäädös on askel oikeaan suuntaan, mutta toimeenpanon on oltava sisällöllistä — ei pelkkää laatikoiden ruksimista.',
+            'Käytän ja kehitän tekoälytyökaluja työssäni päivittäin. Tekoäly on aikamme merkittävin teknologinen murros, ja Suomen on tartuttava siihen aktiivisesti, jotta saamme siitä hyötyjä emmekä pelkkiä haittoja.',
+            'Tekoäly vahvistaa sekä kykyjä että vahinkoja. Julkisen sektorin sovelluksissa — etuuspäätöksissä, lupien käsittelyssä, ennakoivassa poliisitoiminnassa — panokset ovat liian suuria, jotta järjestelmiä voitaisiin ottaa käyttöön ilman läpinäkyvyyttä ja valvontaa. Haluan tarkistettavissa olevia algoritmeja merkityksellisiin päätöksiin, avoimia tekoälymalleja silloin kun mahdollista, ja pakollista ihmisvalvontaa yksilöiden oikeuksiin vaikuttavissa päätöksissä.',
+            'Mitä voimakkaammaksi tekoäly kehittyy, sitä tärkeämmäksi yksityisyyden suoja tulee. Tekoälyjärjestelmät ovat tiedonnälkäisiä; ilman vahvoja tietosuojasääntöjä niistä tulee valvontainfrastruktuuria. EU:n tekoälysäädös on askel oikeaan suuntaan, mutta toimeenpanon on oltava tosiasiallista — ei pelkkä muodollisuus.',
         ],
         sv: [
             'Jag arbetar med AI-verktyg professionellt som lead developer — och jag har byggt upp hela mitt teams sätt att arbeta med dem. Jag argumenterar utifrån praktisk erfarenhet, inte teori. AI är vår tids mest betydande produktivitetstransformation, och Finland måste engagera sig med det aktivt och kritiskt.',
@@ -39,19 +39,19 @@ export const artificialIntelligenceTag: LocalTag = {
         ],
         fi: [
             {
-                a: 'Tekoäly on sekä uhka että mahdollisuus. Se tehostaa työtä ja päätöksentekoa, mutta voi vahvistaa ennakkoluuloja ja vaarantaa yksityisyyttä. Vastuullinen sääntely on avainasemassa.',
+                a: 'Tekoäly on sekä uhka että mahdollisuus. Se tehostaa muun muassa työtä ja päätöksentekoa, mutta se voi vahvistaa ennakkoluuloja ja vaarantaa yksityisyyttä. Vastuullinen sääntely ja seuranta ovat avainasemassa.',
                 q: 'Onko tekoäly uhka vai mahdollisuus?',
             },
             {
-                a: 'Suomi voi hyötyä tekoälystä julkishallinnon tehostamisessa, terveydenhuollossa ja vihreässä siirtymässä. Edellytyksenä on panostus osaamiseen ja eettisiin periaatteisiin.',
+                a: 'Suomi voi hyötyä tekoälystä palvelutuotannossa ja -viennissä, julkishallinnon tehostamisessa, terveydenhuollossa sekä vihreässä siirtymässä. Edellytyksenä on panostus osaamiseen sekä kestävät käyttöperiaatteet.',
                 q: 'Miten Suomi voi hyötyä tekoälystä?',
             },
             {
-                a: 'Asteittain, läpinäkyvyysvaatimuksin ja inhimillisin valvontamenetelmin merkityksellisiin päätöksiin. Yksilöiden oikeuksiin vaikuttavien algoritmien — etuuksien, lupien, poliisitoiminnan — on oltava selitettäviä, auditoitavia ja inhimilliseen valvontaan alistettuja. Avoimen lähdekoodin malleja tulisi suosia silloin kun se on mahdollista.',
+                a: 'Asteittain, huolehtien joka askeleella läpinäkyvyydestä, luottamuksesta ja huolellisesta tiedottamisesta. Yksilöiden oikeuksiin, kuten etuuksiin ja lupiin, vaikuttavien algoritmien ja tekoälyn on oltava selitettäviä, auditoitavia ja valvottuja. Avoimia tekoälymalleja tulisi suosia silloin kun se on mahdollista.',
                 q: 'Miten tekoäly tulisi ottaa käyttöön julkisella sektorilla?',
             },
             {
-                a: 'Ei — ja tämä aukko on osa syytä sille, miksi käytännön asiantuntemus politiikassa on tärkeää. Teknologiaa sääntelevät lait kirjoittaa ihmisiä, jotka usein eivät ole koskaan käyttäneet sääntelemiään järjestelmiä. Suomi tarvitsee lisää päätöksentekijöitä, jotka ymmärtävät tekoälyn sisältäpäin.',
+                a: 'Ei ole — ja tämä puute on iso osasyy sille, miksi olen ehdolla eduskuntaan. Teknologiaa säänteleviä lakeja on nyt kirjoittamassa ihmisiä, jotka eivät ole koskaan käyttäneet saati kehittäneet järjestelmiä, joita he ovat säätelemässä. Suomi tarvitsee lisää päätöksentekijöitä, jotka todella ymmärtävät tekoälyä ja teknologiaa, jotta pystymme olemaan tulevan kehityksen voittajia.',
                 q: 'Onko Suomessa riittävästi tekoälyosaamista päätöksenteossa?',
             },
         ],
@@ -77,13 +77,13 @@ export const artificialIntelligenceTag: LocalTag = {
     id: 'artificial-intelligence',
     metaDescription: {
         en: 'I use AI tools professionally as a lead developer — I argue from hands-on experience, not theory. Finland must engage with AI actively and critically.',
-        fi: 'Olen käyttänyt tekoälytyökaluja johtavan ohjelmistokehittäjän roolissa — argumentoin käytännön kokemuksesta. Suomen on tartuttava tekoälyyn aktiivisesti.',
+        fi: 'Käytän ja rakennan tekoälytyökaluja työkseni. On kriittistä, että Suomi tarttuu tekoälyn tuomiin mahdollisuuksiin, halliten samalla siihen liittyviä riskejä.',
         sv: 'Jag arbetar med AI-verktyg professionellt som lead developer — jag argumenterar utifrån praktisk erfarenhet. Finland måste engagera sig med AI aktivt.',
     },
     names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
     pageTitle: {
         en: 'Artificial intelligence – policy and ethics',
-        fi: 'Tekoäly – politiikka ja vastuullinen käyttö',
+        fi: 'Tekoäly – hyödyistä, haitoista, politiikasta',
         sv: 'Artificiell intelligens – politik och etik',
     },
     updatedDate: '2026-05-15',
