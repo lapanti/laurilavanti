@@ -1,7 +1,9 @@
 export const fiduciariesTitle = 'Luottamustoimet'
 export const fiduciaries = [
     {
-        description: ['Valtuustossa päätämme kunnan strategian, talousarvion sekä suuremmat yksittäiset päätökset.'],
+        description: [
+            'Valtuustossa päätämme kunnan strategian, talousarvion eli budjetin sekä päätämme kriittisistä ja suuremmista asioista, kuten koulurakennuksista.',
+        ],
         duty: 'Kunnanvaltuutettu',
         organization: 'Kirkkonummen kunta',
         startYear: 2025,
@@ -13,14 +15,16 @@ export const fiduciaries = [
         startYear: 2025,
     },
     {
-        description: ['Kuntakehityslautakunta päättää kunnan maankäytöstä ja kaavoituksesta.'],
+        description: [
+            'Kuntakehityslautakunta päättää kunnan maankäytöstä ja kaavoituksesta sekä tieinfran ylläpidosta.',
+        ],
         duty: 'Kuntakehityslautakunnan jäsen',
         organization: 'Kirkkonummen kunta',
         startYear: 2025,
     },
     {
         description: [
-            'Johdin Kirkkonummen Vihreät läpi vuoden 2025 kuntavaalien — vakiinnuttaen aseman Kirkkonummena kolmanneksi suurimpana puolueena ja saaden merkittävästi uusia jäseniä.',
+            'Johdin Kirkkonummen Vihreät läpi vuoden 2025 kuntavaalien — vakiinnuttaen asemamme Kirkkonummen kolmanneksi suurimpana puolueena ja saaden merkittävästi uusia jäseniä.',
             'Rakensin ja johdin ehdokaslistaa; tein tiivistä yhteistyötä vaalipäällikön kanssa strategiassa ja toteutuksessa.',
             'Kehitin organisaatiota ja toimintatapoja vähemmän riippuvaiseksi yksittäisistä ihmisistä.',
         ],
@@ -63,12 +67,19 @@ export const fiduciaries = [
         description: [
             'Ensimmäinen Athenen hallituksen jäsen, joka vastasi kansainvälisistä opiskelijoista — rooli oli uusi, koska koulutusohjelmamme oli juuri avautunut maisteritason kansainvälisille opiskelijoille.',
             'Rakensin killan sisäisiä käytäntöjä kansainvälisten opiskelijoiden tukemiseksi.',
-            'Koordinoin killtojen välillä Aallon teknisten koulutusohjelmien kansainvälisten palveluiden yhdenmukaistamiseksi, ei pelkästään Athenen sisällä.',
+            'Koordinoin työtä kansainvälisten palveluiden yhdenmukaistamiseksi Aallon teknisten koulutusohjelmien kiltojen välillä.',
         ],
         duty: 'KV-kapteeni',
         endYear: 2015,
         organization: 'Informaatioverkostojen kilta Athene',
         startYear: 2015,
+    },
+    {
+        description: ['Rakensin joukkuehenkeä, toimintatapojamme sekä johdin esimerkillä.'],
+        duty: 'Kapteeni',
+        endYear: 2015,
+        organization: 'Aalto Predators',
+        startYear: 2013,
     },
     {
         description: [
@@ -83,17 +94,17 @@ export const fiduciaries = [
     },
     {
         description: [
-            'Rakensin joukkueen ulkoisen viestinnän tyhjästä — otteluraportit, sosiaalinen media ja nettisivut.',
+            'Rakensin joukkueen ulkoisen viestinnän tyhjästä — otteluraportit, sosiaalisen median sekä nettisivut.',
             'Hoidin hallinnon ja pöytäkirjat sihteerinä.',
         ],
-        duty: 'Hallituksen jäsen',
+        duty: 'Hallituksen jäsen, sihteeri ja viestintävastaava',
         endYear: 2013,
         organization: 'Aalto Predators',
         startYear: 2013,
     },
     {
         description: [
-            'Johdin hallituksen päätöksentekoa, mukaan lukien Kirkkonummen ensimmäisen (ja Suomen kolmannen) laillisen graffitiseinän avaaminen.',
+            'Johdin hallituksen päätöksentekoa, mukaan lukien Kirkkonummen ensimmäisen (ja Suomen kolmannen) laillisen graffitiseinän avaamisen.',
         ],
         duty: 'Nuorisovaltuuston hallituksen puheenjohtaja',
         endYear: 2010,
@@ -110,6 +121,7 @@ export const jobExperiences = [
             'Vastaan tiimin palveluiden teknisestä suunnasta: arkkitehtuurista, keskeisistä teknologiavalinnoista ja markkinoilletulonopeuden sekä pitkän aikavälin ylläpidettävyyden välisistä kompromisseista.',
             'Johdan tiimin teknistä päätöksentekoprosessia ja toimintatapoja — mukaan lukien uusien teknologioiden (tekoäly/ML-työkalut, observability, tietoturva) arviointia ennen käyttöönottoa.',
             'Rakennan tiimin pitkän aikavälin osaamista ja visiota, jotta tiimi pysyy elinvoimaisena vaatimusten muuttuessa.',
+            'Kehitän tiimin päivittäisessä käytössä olevia tekoälytyökaluja.',
         ],
         location: 'Helsinki',
         startYear: 2024,
@@ -120,7 +132,7 @@ export const jobExperiences = [
         description: [
             'Vastasin tiimin teknisestä suunnasta ja arkkitehtuuripäätöksistä.',
             'Vein toimintatapojen kehittämistä eteenpäin koko IT-organisaatiossa, en pelkästään omassa tiimissäni.',
-            'Johdin tiimin kehittäjärekrytointia: haastattelut, palkkaukset ja uusien kehittäjien perehdytys koodikantaan ja prosesseihin.',
+            'Johdin tiimin kehittäjärekrytointia: haastatteluja, palkkauspäätöksiä ja uusien kehittäjien perehdytystä koodikantaan ja prosesseihin.',
         ],
         endYear: 2024,
         location: 'Helsinki',
@@ -131,8 +143,8 @@ export const jobExperiences = [
         company: 'Verkkokauppa.com',
         description: [
             'Johdin tiimin prosessia koodipohjan parantamiseksi ja synkronoimiseksi tiimien välillä.',
-            'Toimin päärajapintana kehittäjätiimin ja tuotonomistajuuden välillä — muunsin liiketoiminnan tavoitteet toimituspäätöksiksi ja haastoin tilanteita, joissa insinöörikompromissit olivat merkityksellisiä.',
-            'Vastasin yhdessä muiden kanssa kehittäjärekrytoinnista ja perehdytyksestä kehitystyön ohella.',
+            'Toimin kehittäjätiimin ja tuoteomistajan välissä — autoin muodostamaan liiketoiminnan tavoitteista kehityskelpoisia aihioita ja haastoin tavoitteita silloin, kun tekniset edellytykset sitä vaativat.',
+            'Vastasin yhdessä muiden kanssa kehittäjärekrytoinnista. Huolehdin uusien tiimin jäsenten perehdyttämisestä järjestelmiimme.',
         ],
         endYear: 2022,
         location: 'Helsinki',
@@ -143,8 +155,8 @@ export const jobExperiences = [
         company: 'Gofore',
         description: [
             'Goforen ostettua Solinorin jatkoin jonkin aikaa samassa projektissa. Myöhemmin siirryin vastaavaan tehtävään eri teollisuudenalalle.',
-            'Vastasin PaaS:n frontend-teknologiapäätöksistä, tasapainottaen asiakkaan rajoituksia alustan pitkän aikavälin ylläpidettävyyden kanssa.',
-            'Tein kehittäjärekrytointia asiakasorganisaatiolle — haastattelin kandidaatteja ja muotoilin palkkauskriteereejä.',
+            'Vastasin PaaS:n frontend-teknologiapäätöksistä, tasapainottaen liiketoiminnan tavoitteita alustan pitkän aikavälin ylläpidettävyyden kanssa.',
+            'Tein kehittäjärekrytointia asiakasorganisaatiolle — haastattelin kandidaatteja ja perehdytin uusia tiimiläisiä.',
         ],
         endYear: 2019,
         location: 'Helsinki',
@@ -154,9 +166,9 @@ export const jobExperiences = [
     {
         company: 'Solinor',
         description: [
-            'Konsulttina suuressa Platform-as-a-Service -projektissa; suurimman osan toimeksiantoa toimin frontend-puolen teknologiavastaavana tiiviissä yhteistyössä backend-tiimin ja asiakkaan tuoteomistajien kanssa.',
-            'Vastasin PaaS:n frontend-teknologiapäätöksistä, tasapainottaen asiakkaan rajoituksia alustan pitkän aikavälin ylläpidettävyyden kanssa.',
-            'Tein kehittäjärekrytointia sekä Solinorille että asiakasorganisaatiolle — haastattelin kandidaatteja ja muotoilin palkkauskriteereejä.',
+            'Konsulttina suuressa Platform-as-a-Service -projektissa; suurimman osan toimeksiantoa toimin frontend-puolen teknologiavastaavana tiiviissä yhteistyössä backend-tiimin ja asiakkaan tuoteomistajien sekä arkkitehtien kanssa.',
+            'Vastasin PaaS:n frontend-teknologiapäätöksistä, tasapainottaen liiketoiminnan tavoitteita alustan pitkän aikavälin ylläpidettävyyden kanssa.',
+            'Tein kehittäjärekrytointia sekä Solinorille että asiakasorganisaatiolle — haastattelin kandidaatteja ja perehdytin uusia tiimiläisiä.',
             'Osallistuin Solinorin yritystason toimintatapojen kehittämiseen.',
         ],
         endYear: 2019,
@@ -167,7 +179,8 @@ export const jobExperiences = [
     {
         company: 'Zalando',
         description: [
-            'Suunnittelin ja rakensin tyhjästä graafin visualisointi- ja hallintatyökalun React, TypeScript, D3 ja PIXI.js -teknologioilla — asiantuntijat käyttävät sitä Zalandon katalogia ohjaavan muotiontologian ylläpitoon.',
+            'Frontend-kehittäjänä Zalandon muotialan asiantuntijoiden sisäisten työkalujen rakentamisessa. Tein työkalusta myös diplomityöni — ontologiaeditori muotialan asiantuntijoille.',
+            'Suunnittelin ja rakensin tyhjästä visualisointi- ja hallintatyökalun tietograafille React, TypeScript, D3 ja PIXI.js -teknologioilla — asiantuntijat käyttävät sitä Zalandon katalogia ohjaavan muotiontologian ylläpitoon.',
             'Toimin monialaisen ketterän tiimin jäsenenä ja johdin frontend-rekrytointia.',
         ],
         endYear: 2018,
@@ -178,8 +191,9 @@ export const jobExperiences = [
     {
         company: 'Futurice',
         description: [
-            'Viimeinen projekti: teknologiavastaavana projektissa, joka yhdisti kaksi yrityksen toimipistettä, kokonaisvastuu toimituksen teknisistä näkökulmista.',
-            'Aktiivinen asiakassuhteissa koko ajan — useimmissa projekteissa tarvittiin asiakkaan tavoitteiden ja tiimin toimituksen välistä tulkkausta.',
+            'Ohjelmistokehittäjänä useissa asiakasprojekteissa — Android-kuluttajasovelluksesta B2B-alustoihin — monialaisissa ketterissä tiimeissä.',
+            'Viimeinen projekti: tech lead projektissa, jota tehtiin jaetulla tiimillä Helsingin ja Tukholman toimistojen välillä. Matkustin itse toimistojen väliä usein, tavaten aina myös asiakkaita Tukholman päässä.',
+            'Kaikissa projekteissa aktiivinen asiakkaiden liiketoimintojen edustajien suuntaan, jotta saimme yhteensovitettua tekniset realiteetit ja asiakkaiden tavoitteet.',
         ],
         endYear: 2017,
         location: 'Helsinki',
@@ -213,8 +227,11 @@ export const degrees = [
     {
         degree: 'Diplomi-insinööri (informaatioverkostot)',
         description: [
-            'Laaja pääaine ICT in business — valittu perinteisen sivuaineen sijaan saadakseni enemmän opintopisteitä teknologian, liiketoiminnan ja päätöksenteon risteyskohtaan. Ohjelma antoi minulle työkalupakin, jota olen käyttänyt jokaisessa roolissa sen jälkeen: monimutkaisten järjestelmien nopea ymmärtäminen, niiden vaikutuksien hahmottaminen ja teknologian sekä liiketoiminnan välinen tulkkaus.',
-            'Diplomityö: tapaustutkimus ontologiaeditorin suunnittelusta ja toteutuksesta muotialan asiantuntijoille — tehty Zalandolla, jossa rakensin tutkittavan työkalun.',
+            'Laaja pääaine ICT in business — valittu perinteisen sivuaineen sijaan saadakseni enemmän syvyyttä teknologian, liiketoiminnan ja päätöksenteon risteyskohtaan. Ohjelma antoi minulle työkalupakin, jota olen käyttänyt jokaisessa roolissani sen jälkeen: monimutkaisten järjestelmien nopea ymmärtäminen, niiden vaikutuksien hahmottaminen ja teknologian sekä liiketoiminnan välinen tulkkaus.',
+            'Diplomityö: tapaustutkimus ontologiaeditorin suunnittelusta ja toteutuksesta muotialan asiantuntijoille — tehty Zalandolla, jossa rakensin työkalun.',
+            'Kandidaattivaiheen pääaine käyttökokemus ja käytettävyys, joka opetti katsomaan järjestelmiä ja vaatimuksia käyttäjän silmin järjestelmän teknisyydestä riippumatta.',
+            'Kandidaattivaiheen sivuaine tietoverkkojen sovellukset, joka antoi matalan tason tietotekniikan perusteet, joita olen hyödyntänyt jokaisessa pankki-, vähittäiskauppa- ja alustaroolissani.',
+            'Kandidaatintyö: droonien (tuolloin vielä "nelikoptereiden") käyttö varastonhallinnassa.',
         ],
         endYear: 2018,
         location: 'Espoo',
@@ -224,8 +241,9 @@ export const degrees = [
     {
         degree: 'Datanomi',
         description: [
-            'Suoritettu osana niin kutsuttua kolmoistutkintoa — täysimittainen lukio, ammatillinen perustutkinto ja ylioppilastutkinto samanaikaisesti. Kolmen tutkinnon samanaikainen suorittaminen oli tietoinen valinta — halusin teknistä syvyyttä akateemisen reitin rinnalle.',
-            'Ammatillinen osuus kattoi tietoverkot ja -teknologiat.',
+            'Datanomi, informaatioverkostot ja -teknologiat, suoritettu osana niin kutsuttua kolmoistutkintoa — täysimittainen lukio, ammatillinen perustutkinto ja ylioppilastutkinto samanaikaisesti.',
+            'Lukiossa painotus matematiikassa ja yhteiskuntaopissa. Ammatillinen osuus kattoi tietoverkot ja -teknologiat.',
+            'Halusin saada valmiin ammatin sekä teknistä syvyyttä ylioppilastutkinnon tarjoamien mahdollisuuksien lisäksi.',
         ],
         endYear: 2011,
         location: 'Kirkkonummi',
