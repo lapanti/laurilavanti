@@ -1,4 +1,4 @@
-import { getAllByRole, getByRole, getByPlaceholderText, getByText } from '@testing-library/dom'
+import { getAllByRole, getByPlaceholderText, getByRole, getByText } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
