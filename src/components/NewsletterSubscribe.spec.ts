@@ -80,7 +80,7 @@ describe('<NewsletterSubscribe lang="en" />', () => {
 
         const [heading] = getAllByRole(result, 'heading', { level: 2 })
 
-        expect(heading).toHaveTextContent('Newsletter')
+        expect(heading).toHaveTextContent('Subscribe to the newsletter')
     })
 
     it('should render the email input', async () => {
@@ -140,7 +140,7 @@ describe('<NewsletterSubscribe lang="sv" />', () => {
 
         const [heading] = getAllByRole(result, 'heading', { level: 2 })
 
-        expect(heading).toHaveTextContent('Nyhetsbrev')
+        expect(heading).toHaveTextContent('Prenumerera på nyhetsbrevet')
     })
 
     it('should render the email input', async () => {
