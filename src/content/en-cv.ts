@@ -2,7 +2,7 @@ export const fiduciariesTitle = 'Civic roles'
 export const fiduciaries = [
     {
         description: [
-            'In the council, we decide on the municipality strategy, budget and larger individual decisions.',
+            'In the council, we decide on the municipality strategy, the budget, and critical, larger matters, such as school buildings.',
         ],
         duty: 'Municipal councillor',
         organization: 'Kirkkonummi municipality',
@@ -15,7 +15,9 @@ export const fiduciaries = [
         startYear: 2025,
     },
     {
-        description: ['The municipal development committee decides on land use and zoning in the municipality.'],
+        description: [
+            'The municipal development committee decides on land use and zoning in the municipality, as well as the upkeep of road infrastructure.',
+        ],
         duty: 'Member of the municipal development committee',
         organization: 'Kirkkonummi municipality',
         startYear: 2025,
@@ -67,10 +69,17 @@ export const fiduciaries = [
             "Built the guild's internal practices for supporting international students.",
             "Coordinated across guilds to align how Aalto's technical study programmes serve international students, not just within Athene.",
         ],
-        duty: 'Municipal election captain',
+        duty: 'International affairs captain',
         endYear: 2015,
         organization: 'Information Networks Guild Athene',
         startYear: 2015,
+    },
+    {
+        description: ['Built team spirit and our ways of working, and led by example.'],
+        duty: 'Team captain',
+        endYear: 2015,
+        organization: 'Aalto Predators',
+        startYear: 2013,
     },
     {
         description: [
@@ -88,7 +97,7 @@ export const fiduciaries = [
             "Built the team's external communications from scratch — match reports, social media, and the website.",
             'Handled board administration and record-keeping as secretary.',
         ],
-        duty: 'Board member',
+        duty: 'Board member, secretary, and communications lead',
         endYear: 2013,
         organization: 'Aalto Predators',
         startYear: 2013,
@@ -112,6 +121,7 @@ export const jobExperiences = [
             "Own the technical roadmap for the team's services: architecture, key tooling choices, and the trade-offs between time-to-market and long-term maintainability.",
             "Lead the team's process for technical decision-making and ways of working — including how we evaluate new technologies (AI/ML tooling, observability, security posture) before adopting them.",
             'Drive long-term capability and vision work to keep the team viable as demands shift.',
+            'Build the AI tools the team uses day-to-day.',
         ],
         location: 'Helsinki',
         startYear: 2024,
@@ -133,8 +143,8 @@ export const jobExperiences = [
         company: 'Verkkokauppa.com',
         description: [
             "Led the team's process for improving and synchronising the codebase across teams.",
-            'Acted as the main interface between the developer team and product ownership — translating business intent into delivery decisions and pushing back where engineering trade-offs mattered.',
-            'Co-owned developer recruitment and onboarding alongside delivery work.',
+            'Worked between the developer team and the product owner — helped shape business goals into workable initiatives and pushed back on goals when technical constraints required it.',
+            'Co-owned developer recruitment. Handled onboarding new team members into our systems.',
         ],
         endYear: 2022,
         location: 'Helsinki',
@@ -145,8 +155,8 @@ export const jobExperiences = [
         company: 'Gofore',
         description: [
             'After Gofore bought Solinor, I continued on the same project for a while. Afterwards I switched to a similar project in another industry.',
-            'Owned frontend technical decisions for the PaaS, balancing customer constraints against long-term maintainability of the platform.',
-            'Conducted developer recruitment for the customer organisation — interviewing candidates and shaping hiring criteria.',
+            'Owned frontend technical decisions for the PaaS, balancing business goals against long-term maintainability of the platform.',
+            'Conducted developer recruitment for the customer organisation — interviewing candidates and onboarding new team members.',
         ],
         endYear: 2019,
         location: 'Helsinki',
@@ -156,9 +166,9 @@ export const jobExperiences = [
     {
         company: 'Solinor',
         description: [
-            "Consultant on a large Platform-as-a-Service project; for most of the engagement, I was the technical lead on the frontend side, in close collaboration with the backend team and the customer's product owners.",
-            'Owned frontend technical decisions for the PaaS, balancing customer constraints against long-term maintainability of the platform.',
-            'Conducted developer recruitment for both Solinor and the customer organisation — interviewing candidates and shaping hiring criteria.',
+            "Consultant on a large Platform-as-a-Service project; for most of the engagement, I was the technical lead on the frontend side, in close collaboration with the backend team and the customer's product owners and architects.",
+            'Owned frontend technical decisions for the PaaS, balancing business goals against long-term maintainability of the platform.',
+            'Conducted developer recruitment for both Solinor and the customer organisation — interviewing candidates and onboarding new team members.',
             "Contributed to Solinor's company-wide ways-of-working improvements.",
         ],
         endYear: 2019,
@@ -169,7 +179,8 @@ export const jobExperiences = [
     {
         company: 'Zalando',
         description: [
-            "Designed and built a graph visualisation and management tool from scratch using React, TypeScript, D3 and PIXI.js — used by domain experts to maintain the fashion ontology powering Zalando's catalogue.",
+            "Frontend developer building internal tools for Zalando's fashion domain experts — this tool also became the subject of my master's thesis, an ontology editor for fashion domain experts.",
+            "Designed and built a visualisation and management tool for the knowledge graph from scratch using React, TypeScript, D3 and PIXI.js — used by domain experts to maintain the fashion ontology powering Zalando's catalogue.",
             'Worked in a mixed-skillset agile team and led frontend hiring.',
         ],
         endYear: 2018,
@@ -180,8 +191,9 @@ export const jobExperiences = [
     {
         company: 'Futurice',
         description: [
-            "Final project: tech lead on a two-site project bridging two of the company's branches, with end-to-end responsibility for the technical aspects of the delivery.",
-            "Active in customer relations throughout — most projects required translating between the customer's intent and the team's delivery.",
+            'Software developer on several client projects — from an Android consumer app to B2B platforms — in mixed-skillset agile teams.',
+            'Final project: tech lead on a project delivered by a team split across the Helsinki and Stockholm offices. I travelled between the offices often myself, always meeting clients on the Stockholm side too.',
+            "Active with clients' business representatives throughout every project, to reconcile technical realities with client goals.",
         ],
         endYear: 2017,
         location: 'Helsinki',
@@ -215,8 +227,11 @@ export const degrees = [
     {
         degree: 'Master of Science (Tech.) in Information Networks',
         description: [
-            'Extended major in ICT in Business — chosen over a traditional minor to spend more credits on the intersection of technology, business, and decision-making. The programme gave me the toolkit I have used in every role since: rapidly understanding complex systems, mapping how they interact with their environment, and acting as a translation layer between technology and business.',
+            'Extended major in ICT in Business — chosen over a traditional minor to gain more depth at the intersection of technology, business, and decision-making. The programme gave me the toolkit I have used in every role since: rapidly understanding complex systems, mapping how they interact with their environment, and acting as a translation layer between technology and business.',
             "Master's thesis: case study on designing and developing an ontology editor for fashion domain experts — done at Zalando, where I built the tool.",
+            "Bachelor's major in User Experience and Usability, which taught me to look at systems and requirements through the user's eyes, regardless of a system's technical nature.",
+            "Bachelor's minor in Applications of Information Networks, which gave me low-level IT fundamentals I've used in every banking, retail, and platform role since.",
+            'Bachelor\'s thesis: using drones (still called "quadcopters" at the time) for warehouse inventory management.',
         ],
         endYear: 2018,
         location: 'Espoo',
@@ -226,8 +241,9 @@ export const degrees = [
     {
         degree: 'Vocational qualification in data processing',
         description: [
-            'Completed as part of a triple qualification alongside full high school studies and a matriculation examination. Completing three qualifications simultaneously was a deliberate choice — I wanted technical depth alongside the academic path.',
-            'The vocational track covered information networks and technologies.',
+            'Vocational qualification in data processing — information networks and technologies — completed as part of a so-called triple qualification: full high school studies, a vocational qualification, and a matriculation examination, all at the same time.',
+            'In high school, I focused on mathematics and social studies. The vocational track covered information networks and technologies.',
+            'I wanted a completed vocation as well as technical depth, alongside what the matriculation examination offers.',
         ],
         endYear: 2011,
         location: 'Kirkkonummi',
