@@ -39,7 +39,7 @@ export const economyTag: LocalTag = {
                 q: 'Miksi tekoäly on talouspoliittinen kysymys?',
             },
             {
-                a: 'Hankintasääntöjä, jotka eivät suosi tiettyjä yrityksiä, vaan pitvätä markkinat avoimina ja reiluina kaikille. Koulutuspolitiikkaa, jonka avulla työntekijät voivat siirtyä rooleista toisiin, kun työmarkkinat muuttuvat. Tämä ei ole eksoottista — näin toimii jokainen maa, joka haluaa pärjätä teknologiamurroksessa.',
+                a: 'Hankintasääntöjä, jotka eivät suosi tiettyjä yrityksiä, vaan pitävät markkinat avoimina ja reiluina kaikille. Koulutuspolitiikkaa, jonka avulla työntekijät voivat siirtyä rooleista toisiin, kun työmarkkinat muuttuvat. Tämä ei ole eksoottista — näin toimii jokainen maa, joka haluaa pärjätä teknologiamurroksessa.',
                 q: 'Mitä konkreettisesti tarkoittaa talouden pitäminen toimivana tekoälyn aikana?',
             },
             {
