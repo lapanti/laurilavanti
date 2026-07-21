@@ -8,9 +8,9 @@ export const economyTag: LocalTag = {
             'A working economy in the AI era is not a slogan. It is substance: skills that survive the transition, businesses that can build on Finnish and European infrastructure, and a state that procures technology on its own terms.',
         ],
         fi: [
-            'Suomen talouden on toimittava tekoälyn aikakaudella. Se tarkoittaa uusia yrityksiä, uusia työpaikkoja ja julkisia palveluita, jotka oikeasti käyttävät teknologiaa eivätkä osta sitä mustana laatikkona. Ilman teknologiaosaamista eduskunnassa päätökset tekoälyhankinnoista, datainfrastruktuurista ja työelämästä tekevät ihmiset, jotka eivät tiedä mitä ovat ostamassa.',
+            'Suomen talouden on toimittava tekoälyn aikakaudella. Se tarkoittaa uusia yrityksiä, uusia työpaikkoja ja julkisia palveluita, jotka oikeasti käyttävät teknologiaa eivätkä vain osta sitä ulkopuolelta. Ilman teknologiaosaamista eduskunnassa päätökset tekoälyhankinnoista, datainfrastruktuurista ja työelämästä tekevät ihmiset, jotka eivät tiedä mitä ovat ostamassa.',
             'Kirjoitan taloudesta sen kautta, mitä olen tehnyt yli vuosikymmenen ajan: rakentanut ohjelmistoja ja ohjelmistotiimejä eri teollisuudenaloilla. Tekoäly muuttaa työn, kilpailukyvyn ja julkisten palveluiden perustan. Suomi voi olla tässä edelläkävijä, mutta vain jos julkinen panostus suunnataan kotimaiseen osaamiseen siten, että ymmärretään mitä ollaan tekemässä.',
-            'Toimiva talous tekoälyn aikana ei ole iskulause. Se on konkretiaa: osaamista, joka kestää murroksen yli, yrityksiä, jotka voivat rakentaa suomalaisen ja eurooppalaisen infrastruktuurin päälle, ja valtio, joka hankkii teknologiaa omilla ehdoillaan.',
+            'Toimiva talous tekoälyn aikana ei ole pelkkä slogan. Se on konkretiaa: osaamista, joka kestää murroksen yli, yrityksiä, jotka voivat rakentaa suomalaisen ja eurooppalaisen infrastruktuurin päälle, ja valtio, joka hankkii teknologiaa omilla ehdoillaan.',
         ],
         sv: [
             'Finlands ekonomi måste fungera under AI-omställningen. Det betyder nya företag, nya jobb och offentliga tjänster som faktiskt använder tekniken — inte köper den som en svart låda. Utan teknisk kompetens i riksdagen fattas beslut om AI-upphandling, datainfrastruktur och arbetslivet av människor som inte vet vad de köper.',
@@ -35,15 +35,15 @@ export const economyTag: LocalTag = {
         ],
         fi: [
             {
-                a: 'Tekoäly muuttaa työn tekemistä, sitä millä yritykset kilpailevat ja mitä julkiset palvelut voivat tarjota. Ilman osaamista eduskunnassa Suomi maksaa ylihintaa ulkomaisesta teknologiasta samalla kun kotimainen osaaminen kutistuu. Talouspoliittinen kysymys ei ole, panostaako tekoälyyn, vaan miten sen tekee niin ettei maa lukitu jonkun toisen alustaan.',
+                a: 'Tekoäly muuttaa työn tekemistä, sitä millä yritykset kilpailevat ja mitä julkiset palvelut voivat tarjota. Ilman osaamista eduskunnassa Suomi maksaa ylihintaa ulkomaisesta teknologiasta samalla kun kotimainen osaaminen kutistuu. Talouspoliittinen kysymys ei ole, panostaako tekoälyyn, vaan miten se tehdään niin, että siitä saadaan pitkäkestoista hyötyä.',
                 q: 'Miksi tekoäly on talouspoliittinen kysymys?',
             },
             {
-                a: 'Hankintasääntöjä, jotka oikeasti arvioivat teknologiaa eivätkä vain leimaa suurimman toimittajan tarjousta hyväksytyksi. Panostuksia kotimaiseen ja eurooppalaiseen pilvi- ja tekoälykapasiteettiin. Osaamispolitiikkaa, jonka avulla työntekijät voivat siirtyä rooleista toisiin, kun työmarkkinat muuttuvat. Tämä ei ole eksoottista — näin toimii jokainen maa, joka haluaa pärjätä teknologiamurroksessa.',
+                a: 'Hankintasääntöjä, jotka eivät suosi tiettyjä yrityksiä, vaan pitvätä markkinat avoimina ja reiluina kaikille. Koulutuspolitiikkaa, jonka avulla työntekijät voivat siirtyä rooleista toisiin, kun työmarkkinat muuttuvat. Tämä ei ole eksoottista — näin toimii jokainen maa, joka haluaa pärjätä teknologiamurroksessa.',
                 q: 'Mitä konkreettisesti tarkoittaa talouden pitäminen toimivana tekoälyn aikana?',
             },
             {
-                a: 'Julkista rahaa ei ole järkevää valuttaa ulkomaille muutaman yhdysvaltalaisen hyperscalerin kapasiteettiin, kun kotimaisia ja eurooppalaisia vaihtoehtoja on. Se on yhtä aikaa kilpailukyky- ja turvallisuuskysymys. Hankintauudistus on vipu — ja säännöt kirjoitetaan eduskunnassa.',
+                a: 'Julkisen rahan tulee ennen kaikkea edistää avoimia ja reiluja markkinoita, jotta saadaan paras lopputulos pienimmällä kustannuksella, siitä hyötyy niin veronmaksaja kuin suomalaiset yrityksetkin. Hankintalaki on vipu, jonka säännöt kirjoitetaan eduskunnassa.',
                 q: 'Miten tämä liittyy julkisiin hankintoihin?',
             },
         ],
@@ -65,7 +65,7 @@ export const economyTag: LocalTag = {
     id: 'economy',
     metaDescription: {
         en: 'Keeping Finland’s economy working through the AI shift — new firms, new jobs and public services that use technology with judgement, not as a black box.',
-        fi: 'Suomen talous toimivaksi tekoälyn aikakaudella — uusia yrityksiä, uusia työpaikkoja ja julkisia palveluita, jotka käyttävät teknologiaa harkiten.',
+        fi: 'Suomen talous tulee saada toimivaksi tekoälyn aikakaudella — uusia yrityksiä, työpaikkoja ja maailmanluokan julkisia palveluita.',
         sv: 'Finlands ekonomi måste fungera under AI-omställningen — nya företag, nya jobb och offentliga tjänster som använder teknik med omdöme.',
     },
     names: { en: 'Economy', fi: 'Talous', sv: 'Ekonomi' },
