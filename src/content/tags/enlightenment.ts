@@ -8,9 +8,9 @@ export const enlightenmentTag: LocalTag = {
             'Seamless enlightenment means the path stays open — between schools, between jobs, between life stages. AI makes that path vastly more important. The country that keeps the path open for everyone gets the full potential of its people. That is a stronger foundation than any other competitive advantage.',
         ],
         fi: [
-            'Suomen vahvuus on aina ollut sen ihmisissä ja heidän osaamisessaan. Tekoälyn aikana sivistyksen on pysyttävä saumattomana — varhaiskasvatuksesta työelämään asti — niin että jokainen voi kehittää potentiaaliaan täysimääräisesti. Silloin tekoälyn tuottavuushyödyt kertautuvat koko yhteiskunnalle, eivät vain niille joilla on jo valmiiksi hyvät lähtökohdat.',
-            'Koulutus ei ole kuluerä, jota leikataan ensimmäisenä kun budjetti tiukkenee. Se on koko tekoälyn jälkeisen ajan talouden keskeinen infrastruktuuri. Säästöt opetuksesta, kirjastoista, ammatillisesta koulutuksesta ja aikuisopiskelusta maksetaan takaisin kymmenkertaisina, kun työmarkkinat muuttuvat nopeammin kuin ihmiset ehtivät oppia uusia asioita.',
-            'Saumaton sivistys tarkoittaa, että polku pysyy auki — koulujen välillä, töiden välillä, elämänvaiheiden välillä. Tekoäly tekee tästä polusta valtavan paljon tärkeämmän. Maa, joka pitää polun auki kaikille, saa käyttöönsä koko kansansa potentiaalin. Se on vahvempi pohja kuin mikään muu kilpailuetu.',
+            'Suomen vahvuus on aina ollut sen ihmisissä ja heidän osaamisessaan. Tekoälyn aikana sivistyksen on pysyttävä saumattomana — varhaiskasvatuksesta työelämään ja aina eläkepäiville asti — niin että jokainen voi kehittää potentiaaliaan täysimääräisesti. Silloin tekoälyn tuottavuushyödyt kertautuvat koko yhteiskunnalle, eikä ketään jätetä jälkeen.',
+            'Koulutus ei ole kuluerä, jota leikataan ensimmäisenä kun budjetti tiukkenee. Se on koko tekoälyn jälkeisen ajan keskeistä infrastruktuuria. Säästöt opetuksesta, kirjastoista, ammatillisesta koulutuksesta ja opiskelusta maksetaan takaisin kymmenkertaisina, kun työmarkkinat muuttuvat nopeammin kuin ihmiset ehtivät oppia uusia asioita.',
+            'Saumaton sivistys tarkoittaa, että oppiminen ja sivistys eivät lopu koskaan, vaan se on mahdollista elämäntilanteesta riippumatta. Tekoäly tekee tästä polusta valtavan paljon tärkeämmän. Maa, joka pitää polun auki kaikille, saa käyttöönsä koko kansansa potentiaalin. Se on vahvempi pohja kuin mikään muu kilpailuetu.',
         ],
         sv: [
             'Finlands styrka har alltid varit dess människor och deras kunnande. I AI-eran måste bildningen förbli sömlös — från småbarnspedagogiken till arbetslivet — så att ingen lämnas efter i en omställning som redan pågår. Annars samlas AI:s produktivitetsvinster hos en liten grupp medan resten ser sitt arbete förändras utan verktyg att hänga med.',
@@ -35,16 +35,16 @@ export const enlightenmentTag: LocalTag = {
         ],
         fi: [
             {
-                a: 'Tekoäly muuttaa sitä, mitkä taidot ovat arvokkaita ja kuinka nopeasti niitä on päivitettävä. Jos koulutus ja jatkuva oppiminen pysyvät mukana, tekoälystä tulee väline, jolla jokainen voi kasvattaa omaa potentiaaliaan. Yhteiskunta, jossa kaikki pystyvät käyttämään tekoälyä, on tuottavampi, vakaampi ja reilumpi kuin sellainen, jossa se jää harvojen etuoikeudeksi.',
-                q: 'Miksi tekoäly tekee koulutuksesta kiireellisen?',
+                a: 'Tekoäly muuttaa sitä, mitkä taidot ovat arvokkaita ja kuinka nopeasti niitä on päivitettävä. Jos koulutus ja jatkuva oppiminen pysyvät mukana, tekoälystä voi tulla väline, jolla jokainen voi kasvattaa omaa potentiaaliaan. Yhteiskunta, jossa kaikki pystyvät käyttämään tekoälyä on tuottavampi, vakaampi ja reilumpi kuin sellainen, jossa se jää harvojen etuoikeudeksi.',
+                q: 'Miksi tekoäly tekee koulutuksesta entistä tärkeämpää?',
             },
             {
-                a: 'Se tarkoittaa jatkuvuutta: lapsi, joka aloittaa päiväkodin yhdessä kunnassa ja päättää ammatillisen koulutuksen toisessa, ei saa pudota välistä. Se tarkoittaa aikuiskoulutusta, joka oikeasti on työssäkäyvien saatavilla. Se tarkoittaa kirjastoja, maksutonta koulutusta ja julkista yleisradiotoimintaa kohdeltuna sinä yhteiskunnan infrastruktuurina kuin ne ovat.',
+                a: 'Se tarkoittaa jatkuvuutta: oppimisen ja sivistymisen pitää jatkua ensimmäisestä päivästä päiväkodissa aina viimeiseen eläkepäivään asti. Se tarkoittaa kouluttautumista, joka oikeasti on työssäkäyvien saatavilla. Se tarkoittaa kirjastoja, maksutonta koulutusta ja julkista yleisradiotoimintaa kohdeltuna sinä yhteiskunnan kriittisenä infrastruktuurina kuin ne ovat.',
                 q: 'Mitä saumaton sivistys käytännössä tarkoittaa?',
             },
             {
-                a: 'Koulutuksen ja kulttuurin leikkaukset kasaantuvat. Luokka, joka menettää tukiopettajansa tänä vuonna, kantaa tappion seuraavat kymmenen vuotta. Säästö näkyy heti; hinta näkyy myöhemmin matalampana osaamisena, matalampana työllisyytenä ja suurempina korjaavina kuluina. Se on huonoa kirjanpitoa, ei vain huonoa politiikkaa.',
-                q: 'Miksi vastustaa koulutus- ja kulttuurileikkauksia?',
+                a: 'Koulutus ja kulttuuri ovat investointeja Suomen tulevaisuuteen. Koulutettu väestö työllistyy paremmin, tuottaa paremmin ja voi paremmin. Kulttuuri on osa tätä yhtälöä ja myös keskeinen osa siitä, mikä tekee Suomesta Suomen. Näistä säästäminen on useimmiten lyhytnäköistä toimintaa, joka säästää lyhyellä aikavälillä, mutta maksaa pitkällä aikavälillä.',
+                q: 'Miksi vastustan leikkauksia koulutuksesta ja kulttuurista?',
             },
         ],
         sv: [
@@ -65,7 +65,7 @@ export const enlightenmentTag: LocalTag = {
     id: 'enlightenment',
     metaDescription: {
         en: "In the AI era enlightenment must stay seamless from early childhood to working life — so AI productivity gains don't leave most people behind.",
-        fi: 'Tekoälyn aikana sivistyksen on pysyttävä saumattomana varhaiskasvatuksesta työelämään — ettei tuottavuushyöty kasaannu pienelle ryhmälle.',
+        fi: 'Tekoälyn aikakaudella sivistyksen on pysyttävä saumattomana varhaiskasvatuksesta työelämään — että kukaan ei jää jälkeen.',
         sv: 'I AI-eran måste bildningen förbli sömlös från småbarnspedagogiken till arbetslivet — så att produktivitetsvinsterna inte samlas hos ett fåtal.',
     },
     names: { en: 'Enlightenment', fi: 'Sivistys', sv: 'Lärande' },
