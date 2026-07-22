@@ -1,11 +1,11 @@
 import type { LocalTag } from './types'
 
-export const learningTag: LocalTag = {
+export const enlightenmentTag: LocalTag = {
     descriptions: {
         en: [
-            "Finland's strength has always been its people and their skills. In the AI era, learning has to stay seamless — from early childhood education through working life — so that no one is left behind by a transition that is already underway. Without that, the productivity gains of AI accumulate to a small group while the rest watch their work change without the tools to keep up.",
-            'Education is not a cost item to be trimmed when the budget tightens. It is the central infrastructure of the whole post-AI economy. Cuts to teaching, to libraries, to vocational training and to adult learning are paid back tenfold when the labour market shifts faster than people can learn new things.',
-            'Seamless learning means the path stays open — between schools, between jobs, between life stages. AI makes that path vastly more important. The country that keeps the path open for everyone gets the full potential of its people. That is a stronger foundation than any other competitive advantage.',
+            "Finland's strength has always been its people and their skills. In the AI era, enlightenment has to stay seamless — from early childhood education through working life — so that no one is left behind by a transition that is already underway. Without that, the productivity gains of AI accumulate to a small group while the rest watch their work change without the tools to keep up.",
+            'Education is not a cost item to be trimmed when the budget tightens. It is the central infrastructure of the whole post-AI economy. Cuts to teaching, to libraries, to vocational training and to adult education are paid back tenfold when the labour market shifts faster than people can learn new things.',
+            'Seamless enlightenment means the path stays open — between schools, between jobs, between life stages. AI makes that path vastly more important. The country that keeps the path open for everyone gets the full potential of its people. That is a stronger foundation than any other competitive advantage.',
         ],
         fi: [
             'Suomen vahvuus on aina ollut sen ihmisissä ja heidän osaamisessaan. Tekoälyn aikana sivistyksen on pysyttävä saumattomana — varhaiskasvatuksesta työelämään asti — niin että jokainen voi kehittää potentiaaliaan täysimääräisesti. Silloin tekoälyn tuottavuushyödyt kertautuvat koko yhteiskunnalle, eivät vain niille joilla on jo valmiiksi hyvät lähtökohdat.',
@@ -25,8 +25,8 @@ export const learningTag: LocalTag = {
                 q: 'Why does AI make education a priority right now?',
             },
             {
-                a: 'It means continuity: a child who starts daycare in one municipality and finishes vocational training in another should not fall through gaps. It means adult learning that is actually accessible to people in work. It means libraries, free education and public broadcasting treated as the civic infrastructure they are.',
-                q: 'What does "seamless learning" mean concretely?',
+                a: 'It means continuity: a child who starts daycare in one municipality and finishes vocational training in another should not fall through gaps. It means adult education that is actually accessible to people in work. It means libraries, free education and public broadcasting treated as the civic infrastructure they are.',
+                q: 'What does "seamless enlightenment" mean concretely?',
             },
             {
                 a: 'Education and culture cuts compound. A class that loses its support teacher this year carries that loss forward for a decade. The savings are visible immediately; the costs show up later, in lower competence, lower employment, and higher remedial spending. That is bad accounting, not just bad politics.',
@@ -62,15 +62,15 @@ export const learningTag: LocalTag = {
             },
         ],
     },
-    id: 'learning',
+    id: 'enlightenment',
     metaDescription: {
-        en: "In the AI era learning must stay seamless from early childhood to working life — so AI productivity gains don't leave most people behind.",
+        en: "In the AI era enlightenment must stay seamless from early childhood to working life — so AI productivity gains don't leave most people behind.",
         fi: 'Tekoälyn aikana sivistyksen on pysyttävä saumattomana varhaiskasvatuksesta työelämään — ettei tuottavuushyöty kasaannu pienelle ryhmälle.',
         sv: 'I AI-eran måste bildningen förbli sömlös från småbarnspedagogiken till arbetslivet — så att produktivitetsvinsterna inte samlas hos ett fåtal.',
     },
-    names: { en: 'Learning', fi: 'Sivistys', sv: 'Lärande' },
+    names: { en: 'Enlightenment', fi: 'Sivistys', sv: 'Lärande' },
     pageTitle: {
-        en: 'Seamless learning in the age of AI',
+        en: 'Seamless enlight\u00ADenment in the age of AI',
         fi: 'Sivistys saumat\u00ADtomaksi tekoälyn aikana',
         sv: 'Sömlös bildning i AI-erans Finland',
     },

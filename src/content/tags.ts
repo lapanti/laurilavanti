@@ -8,6 +8,7 @@ import { digitalisationTag } from './tags/digitalisation'
 import { earlyChildhoodEducationTag } from './tags/early-childhood-education'
 import { economyTag } from './tags/economy'
 import { educationTag } from './tags/education'
+import { enlightenmentTag } from './tags/enlightenment'
 import { equalityAndNonDiscriminationTag } from './tags/equality-and-non-discrimination'
 import { freedomTag } from './tags/freedom'
 import { greenPartyTag } from './tags/green-party'
@@ -15,7 +16,6 @@ import { healthAndSocialReformTag } from './tags/health-and-social-reform'
 import { immigrationTag } from './tags/immigration'
 import { infrastructureTag } from './tags/infrastructure'
 import { kirkkonummiTag } from './tags/kirkkonummi'
-import { learningTag } from './tags/learning'
 import { marketgreenTag } from './tags/marketgreen'
 import { municipalElections2025Tag } from './tags/municipal-elections-2025'
 import { nationalPoliticsTag } from './tags/national-politics'
@@ -38,7 +38,7 @@ export const tags = [
     artificialIntelligenceTag,
     economyTag,
     marketgreenTag,
-    learningTag,
+    enlightenmentTag,
     freedomTag,
     digitalIndependenceTag,
     digitalisationTag,
