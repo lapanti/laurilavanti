@@ -8,9 +8,9 @@ export const kirkkonummiTag: LocalTag = {
             'Kirkkonummi is a bilingual, coastal municipality growing fast at the edge of the Helsinki region. It has real assets — shoreline, nature, a mixed community — and real pressures: a revenue base that struggles to keep up with demand, and a rail corridor that matters enormously for how the whole region develops. Local politics here is not small politics.',
         ],
         fi: [
-            'Olen Kirkkonummen kunnanvaltuutettu. Se tarkoittaa, että olen päättämässä kunnan budjetista, kaavoituksesta, palvelusopimuksista ja infrastruktuurista — päätöksistä, jotka vaikuttavat suoraan siihen, millaista täällä on elää. Suurin osa näistä päätöksistä tehdään ilman suurempaa julkista huomiota, ja juuri silloin on merkitystä sillä, kuka on paikalla ja mitä he ymmärtävät.',
-            'Paikallisesti ajamani asiat ovat samat kuin kansallisesti: digitaaliset palvelut, jotka oikeasti toimivat asukkaiden kannalta eivätkä vain täytä hankintalaatikkoja, kaavoitus, joka hyödyntää Kirkkonummen maastoa sen sijaan että taistelee sitä vastaan, ja joukkoliikenne, joka yhdistää kunnan eikä jätä kokonaisia asuinalueita autoistumisen varaan.',
-            'Kirkkonummi on kaksikielinen, rannikolla sijaitseva kunta, joka kasvaa nopeasti Helsingin seudun reunalla. Sillä on todellisia vahvuuksia — rantaviiva, luonto, monimuotoinen yhteisö — ja todellisia paineita: tulopohja, jolla on vaikeuksia pysyä tarpeiden perässä, ja ratakäytävä, jolla on suuri merkitys koko seudun kehitykselle. Paikallispolitiikka täällä ei ole pientä politiikkaa.',
+            'Olen Kirkkonummen kunnanvaltuutettu. Se tarkoittaa, että olen päättämässä kunnan budjetista, kaavoituksesta, palvelusopimuksista ja infrastruktuurista — päätöksistä, jotka vaikuttavat suoraan siihen, millaista täällä on elää. Suurin osa näistä päätöksistä tehdään ilman suurempaa julkista huomiota, ja erityisesti silloin on merkityksellistä, kuka on päättämässä.',
+            'Paikallisesti ajamani asiat ovat samoja kuin kansallisesti: digitaalisia palveluita, jotka oikeasti toimivat asukkaiden hyväksi, kaavoitus, joka hyödyntää Kirkkonummen maastoa sen sijaan että taistelee sitä vastaan, ja joukkoliikenne, joka mahdollistaa kunnan kestävän kasvun.',
+            'Kirkkonummi on kaksikielinen, rannikolla sijaitseva kunta, joka kasvaa nopeasti Helsingin seudun reunalla. Sillä on paljon vahvuuksia — rantaviiva, luonto, monimuotoinen yhteisö — ja todellisia paineita: tulopohja, jolla on vaikeuksia pysyä tarpeiden perässä, ja alueelle kriittinen junarata. Paikallispolitiikka täällä ei ole pientä politiikkaa.',
         ],
         sv: [
             'Jag är kommunfullmäktigeledamot i Kyrkslätt. Det innebär att jag är med och beslutar om kommunens budget, planläggning, serviceavtal och infrastruktur — beslut som direkt formar hur det är att leva här. De flesta av dessa beslut fattas utan större offentlig uppmärksamhet, och det är precis då det spelar roll vem som är i rummet och vad de förstår.',
@@ -35,7 +35,7 @@ export const kirkkonummiTag: LocalTag = {
                 q: 'Mitä asioita Lauri Lavanti ajaa Kirkkonummella?',
             },
             {
-                a: 'Voit ottaa yhteyttä kunnanvaltuutettuihin, osallistua kunnan tilaisuuksiin ja seurata valtuuston kokouksia. Lauri Lavantiin voi ottaa yhteyttä suoraan.',
+                a: 'Voit ottaa yhteyttä kunnanvaltuutettuihin, osallistua kunnan tilaisuuksiin ja seurata valtuuston kokouksia. Lauri Lavantiin voi ottaa yhteyttä suoraan, yhteystiedot löydät sivuilta.',
                 q: 'Miten voin vaikuttaa Kirkkonummen päätöksentekoon?',
             },
         ],
@@ -53,13 +53,13 @@ export const kirkkonummiTag: LocalTag = {
     id: 'kirkkonummi',
     metaDescription: {
         en: 'Posts about Kirkkonummi municipal politics, decision-making, and everyday life. Lauri Lavanti as a councillor.',
-        fi: 'Kirjoituksia Kirkkonummen kuntapolitiikasta, päätöksenteosta ja arjesta. Lauri Lavanti kunnanvaltuutettuna.',
+        fi: 'Kirkkonummi on yksi Suomen hienoimmista kunnista. Upea luonto, mutta lyhyt matka Helsinkiin. Minulla on myös kunnia toimia kunnassa valtuutettuna.',
         sv: 'Texter om Kyrkslätts kommunalpolitik, beslutsfattande och vardag. Lauri Lavanti som kommunfullmäktigeledamot.',
     },
     names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
     pageTitle: {
         en: 'Kirkko\u00ADnummi – munici\u00ADpality and politics',
-        fi: 'Kirkko\u00ADnummi – kunta, politiikka, arki',
+        fi: 'Kirkko\u00ADnummi – luontoa Porkkalasta Nuuksioon',
         sv: 'Kyrkslätt – kommunal\u00ADpolitik och vardag',
     },
     updatedDate: '2026-05-15',
