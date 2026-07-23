@@ -8,9 +8,9 @@ export const freedomTag: LocalTag = {
             'Securing freedom in the AI era means being honest about the trade-offs. Mass surveillance, expanding the use of biometric identifiers, and chat scanning are not neutral tools waiting to be used wisely. They reshape the relationship between citizens and the state. The job of parliament is to set limits before the tools are built — not to debate them after the fact.',
         ],
         fi: [
-            'Vapaus tekoälyn aikana ei ole abstraktio. Se on kysymys siitä, pysyykö datasi, viestintäsi ja arkesi sinun ominasi, kun suuri osa niitä ympäröivästä infrastruktuurista on jonkun toisen omistuksessa. Yksityisyydensuoja on perusoikeus — mutta laajempi kysymys on, säilyvätkö perusoikeudet teknologiassa, joka skaalaa valvontaa kaikille lähes ilmaiseksi.',
-            'Olen rakentanut urallani ohjelmistoja ympäristöissä, joissa datan säännöt otetaan vakavasti — pankki- ja muilla säännellyillä aloilla. Se kokemus tekee yhden asian selväksi: yksityisyys ja perusoikeudet eivät suojaa itse itseään. Niitä suojaavat lait, hankintapäätökset ja ihmiset eduskunnassa, jotka osaavat lukea teknisen esityksen ja kertoa, tekeekö se mitä lupaa.',
-            'Vapauden varmaksi tekeminen tekoälyn aikana edellyttää rehellisyyttä kompromisseista. Massavalvonta, biometristen tunnisteiden käytön laajentaminen ja viestien automaattinen seulonta eivät ole neutraaleja työkaluja, joita vain odotetaan käytettävän viisaasti. Ne muotoilevat uudelleen kansalaisen ja valtion suhteen. Eduskunnan tehtävä on asettaa rajat ennen kuin työkalut on rakennettu — ei keskustella niistä jälkikäteen.',
+            'Vapaus on yksi tekoälyn aikakauden tärkeimmistä kysymyksistä. Se on kysymys siitä pysyykö datasi, viestintäsi ja arkesi sinun ominasi, kun suurin osa infrastruktuurista, jossa ne ovat, on jonkun toisen omistuksessa. Yksityisyydensuoja on perusoikeus — mutta laajempi kysymys on, säilyvätkö perusoikeudet teknologiassa, joka tekee massojen valvomisen lähes ilmaiseksi.',
+            'Olen rakentanut urallani ohjelmistoja ympäristöissä, joissa datan säännöt otetaan vakavasti — säännellyillä aloilla kuten finanssialalla — sekä ympäristöissä, joissa data on liiketoimintaa. Se kokemus on tehnyt yhden asian selväksi: yksityisyys ja perusoikeudet eivät suojaa itse itseään. Niitä suojaavat lait, asetukset ja yksilöt, jotka suhtautuvat asiaan intohimoisesti.',
+            'Vapauden varmaksi tekeminen tekoälyn aikana edellyttää punnittuja myönnytyksiä sekä tiukkoja rajoja. Massavalvonta, biometristen tunnisteiden käytön laajentaminen tai viestien automaattinen seulonta eivät ole työkaluja, joita tulee ottaa käyttöön kevyesti, jos laisinkaan. Jokaiselle yksityisyyttä murentavalle askeleella pitää olla aukottomat perustelut ja selkeää näyttöä hyödyistä, muuten punnintaa sen järkevyydestä ei voi, eikä kannata, tehdä.',
         ],
         sv: [
             'Frihet i AI-eran är inget abstrakt. Det är frågan om dina data, din kommunikation och din vardag förblir dina när merparten av infrastrukturen runt dem ägs av någon annan. Integritetsskyddet är grundfallet — men den bredare frågan är om medborgerliga rättigheter överlever en teknik som skalar övervakning till alla, nästan gratis.',
@@ -35,15 +35,15 @@ export const freedomTag: LocalTag = {
         ],
         fi: [
             {
-                a: 'Yksityisyys on edellytys muille vapauksille — sananvapaudelle, yhdistymisvapaudelle, poliittiselle erimielisyydelle, jopa vapaudelle muuttaa mielensä. Kun kaikki tämä kirjautuu ja on haettavissa, henkilö joka ei sanonut mitään koska ei tiennyt kuka kuuntelee, on tarkin mittari sille, kuinka vapaa yhteiskunta oikeasti on.',
-                q: 'Miksi käsittelet yksityisyyttä vapauskysymyksenä?',
+                a: 'Yksityisyys on edellytys kaikille muille vapauksille — sananvapaudelle, yhdistymisen vapaudelle, vapaudelle poliittisille mielipiteille, jopa vapaudelle muuttaa mielensä. Sellaista yhteiskuntaa ei ole olemassakaan, jossa on vapauksia, mutta ei yksityisyyttä.',
+                q: 'Miksi käsittelet yksityisyyttä kysymyksenä vapaudesta?',
             },
             {
-                a: 'Useimmat valvontaesitykset — chat control, biometriikan laajennus, datan massasäilytys — myydään turvallisuustoimina, jotka kohdistuvat pieneen joukkoon. Teknologia ei toimi niin. Kun kapasiteetti on rakennettu, se skaalautuu kaikkiin, ja poliittinen paine sen käyttämiseen kasvaa. Siksi rajat on kirjoitettava lakiin ennen kuin järjestelmä rakennetaan.',
+                a: 'Useimmat valvontaesitykset — chat control, biometriikan laajennus, datan massasäilytys — kaupataan turvallisuutta lisäävinä toimina, jotka kohdistuvat vain rikollisiin. Teknologia ei kuitenkaan toimi niin. Kun kyvykkyys on kerran rakennettu, se skaalautuu helposti kehen tahansa, ja poliittinen paine niiden käyttämiseksi muualla kasvaa. On myös aika vähän näyttöä siitä, että tekniset keinot oikeasti rajoittaisivat rikollisten toimiin.',
                 q: 'Eivätkö nämä valvontatyökalut ole vain rikollisten kiinnisaamiseen?',
             },
             {
-                a: 'Lukemalla tekniset esitykset siltä mitä ne oikeasti tekevät, ei tiedotteen tasolla. Äänestämällä biometrisen tunnistamisen ja datan massasäilytyksen laajennuksia vastaan, kun aitoa välttämättömyys- ja suhteellisuusarviointia ei ole. Vaatimalla eurooppalaisella oikeudenkäyttöalueella sijaitsevaa infrastruktuuria, jotta data pysyy lainsäädännön piirissä, joka oikeasti rajoittaa valtiota. Käsittelemällä digitaalisia oikeuksia perusoikeuksina — koska ne ovat sitä.',
+                a: 'Selvittämällä mitä erilaiset uudet tekniset ratkaisut oikeasti toimivat. Säätämällä sellaista lainsäädäntöä, joka estää perusteettoman biometrisen tunnistamisen ja datan massasäilytyksen. Vaatimalla EU/ETA-alueella sijaitsevaa infrastruktuuria, jotta data pysyy eurooppalaisen lainsäädännön piirissä. Käsittelemällä digitaalisia oikeuksia perusoikeuksina — koska ne ovat sitä.',
                 q: 'Mitä eduskunta voi tehdä asialle?',
             },
         ],
@@ -65,7 +65,7 @@ export const freedomTag: LocalTag = {
     id: 'freedom',
     metaDescription: {
         en: 'Freedom in the AI era is whether your data and communications remain yours when infrastructure scales surveillance to everyone, all the time.',
-        fi: 'Vapaus tekoälyn aikana on kysymys siitä, pysyykö data ja viestintä sinun omanasi, kun ympäröivä infrastruktuuri skaalaa valvontaa kaikille koko ajan.',
+        fi: 'Vapaus on tekoälyn aikakaudella tärkeämpää kuin koskaan. Kun datojen yhdistely ja valvonta onnistuu nappia painamalla, pitää perusoikeuksia vahvistaa.',
         sv: 'Frihet i AI-eran är frågan om dina data och din kommunikation förblir dina när infrastrukturen skalar övervakning till alla, hela tiden.',
     },
     names: { en: 'Freedom', fi: 'Vapaus', sv: 'Frihet' },
