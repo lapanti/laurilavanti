@@ -8,9 +8,9 @@ export const digitalIndependenceTag: LocalTag = {
             'Digital independence is also about data portability and avoiding vendor lock-in. Public data generated with public money should be portable and stored in a way that foreign states cannot misuse it.',
         ],
         fi: [
-            'Suomen ja Euroopan on hallittava omaa digitaalista infrastruktuuriaan. Olen Digitaalinen itsenäisyys -kansalaisaloitteen alullepanija. Aloitteella vaadimme Suomea vähentämään riippuvuuttaan muutamista ulkomaisista digipalveluiden tarjoajista ja vahvistamaan digitaalista suvereniteettia.',
-            'Suomen julkishallinto on voimakkaasti riippuvainen esimerkiksi yhdysvaltalaisista hyperscalereista — Amazonista, Microsoftista ja Googlesta. Tämän riippuvuuden geopoliittinen riski on kasvanut merkittävästi vuoden 2022 jälkeen. Suomalaisia ja eurooppalaisia vaihtoehtoja on olemassa: UpCloud on konkreettinen esimerkki suorituskykyisestä kotimaisesta pilvipalvelusta, jonka julkinen sektori voi valita jo tänään. Ajan julkisten IT-hankintojen pilkkomista ja avoimen lähdekoodin suosimista sekä kriisivalmiuden — digitaalisen huoltovarmuuden — huomioimista.',
-            'Digitaalinen itsenäisyys tarkoittaa myös datan siirrettävyyttä ja toimittajariippuvuuden välttämistä. Julkisella rahalla tuotetun julkisen datan tulee olla siirrettävää ja tallennettuna siten, että ulkomaiset valtiot eivät pysty sitä käyttämään väärin.',
+            'Suomen ja Euroopan on hallittava omaa digitaalista infrastruktuuriaan. Siksi perustin Digitaalinen itsenäisyys -kansalaisaloitteen, joka keräsi eduskuntakäsittelyyn vaadittavat 50 000 allekirjoitusta heinäkuussa 2026. Aloitteessa vaadimme Suomea vähentämään riippuvuuttaan ulkomaisista digipalveluiden tarjoajista ja vahvistamaan digitaalista suvereniteettia.',
+            'Suomen julkishallinto on voimakkaasti riippuvainen esimerkiksi yhdysvaltalaisista suurista pilvipalvelujen tarjoajista, niin kutsutuista hyperscalereistä — Amazonista, Microsoftista ja Googlesta. Vuoden 2022 jälkeen on tullut valitettavan selkeäksi, että valtapeli geopolitiikassa on tullut jäädäkseen, myös digitaaliseen toimintaympäristöön. Suomalaisia ja eurooppalaisia vaihtoehtoja on olemassa: UpCloud on konkreettinen esimerkki suorituskykyisestä kotimaisesta pilvipalvelusta, jota julkinen sektori voi käyttää. Edistän julkisten IT-hankintojen pilkkomista ja avoimen lähdekoodin suosimista sekä kriisivalmiuden — digitaalisen huoltovarmuuden — huomioimista hankinnoissa.',
+            'Digitaalinen itsenäisyys tarkoittaa myös datan siirrettävyyttä ja riippuvuuden yksittäisistä toimittajista välttämistä. Julkisella rahalla tuotetun julkisen datan tulee olla siirrettävää ja tallennettuna siten, että sitä eivät ulkopuoliset tahot voi väärinkäyttää.',
         ],
         sv: [
             'Finland och Europa måste kontrollera sin egen digitala infrastruktur. Jag är huvudinitiativtagare till medborgarinitiativet om digital självständighet. Med det kräver vi att Finland minskar sitt beroende av ett fåtal utländska leverantörer av digitala tjänster.',
@@ -43,23 +43,23 @@ export const digitalIndependenceTag: LocalTag = {
         ],
         fi: [
             {
-                a: 'Digitaalinen itsenäisyys tarkoittaa sitä, että yksilöt, organisaatiot ja valtiot hallitsevat omaa dataansa ja digitaalisia infrastruktuurejaan sen sijaan, että ne olisivat riippuvaisia ulkomaisista teknologiajäteistä.',
+                a: 'Digitaalinen itsenäisyys tarkoittaa sitä, että Suomi hallitsee omaa dataansa ja digitaalista infrastruktuuriaan sen sijaan, että olisimme riippuvaisia ulkomaisista teknologiajäteistä. Se ei tarkoita, etteikö näiden palveluita voisi käyttää, vaan että niille on vaihtoehtoja. Se tarkoittaa sitä, että voimme halutessamme vaihtaa toiseen palveluntarjoajaan.',
                 q: 'Mitä digitaalinen itsenäisyys tarkoittaa?',
             },
             {
-                a: 'Suomi voi vahvistaa digitaalista itsenäisyyttään panostamalla avoimeen lähdekoodiin, eurooppalaisiin pilvipalveluihin ja omaan digitaaliseen osaamiseen.',
+                a: 'Suomi voi vahvistaa digitaalista itsenäisyyttään panostamalla avoimeen lähdekoodiin, eurooppalaisiin digitaalisiin palveluihin ja omaan osaamiseen. Tämä tarkoittaa toimenpiteitä kunnista valtakunnan tasolle asti.',
                 q: 'Miten Suomi voi vahvistaa digitaalista itsenäisyyttään?',
             },
             {
-                a: 'UpCloud on suomalainen pilvipalveluntarjoaja, joka tarjoaa suorituskykyistä infrastruktuuria verrattavissa yhdysvaltalaisiin hyperscalereihin. Se on konkreettinen todiste siitä, että eurooppalaisia, euroopassa sijaitsevia, tuotantovalmiita pilvipalveluvaihtoehtoja on olemassa julkiselle sektorille.',
+                a: 'UpCloud on suomalainen pilvipalveluntarjoaja, joka tarjoaa suorituskykyistä infrastruktuuria eurooppalaisella omistuksella. Se on konkreettinen esimerkki siitä, että eurooppalaisia, euroopassa sijaitsevia, tuotantovalmiita vaihtoehtoja on olemassa julkiselle sektorille.',
                 q: 'Mikä on UpCloud ja miksi se on tärkeä?',
             },
             {
-                a: 'Kyllä. Suomen kriittinen infrastruktuuri on riippuvainen ulkomaisista pilvipalveluntarjoajista, jotka toimivat ulkomaiseen lakiin perustuen. Vuodesta 2022 lähtien on käynyt selväksi, että poliittinen riski on todellinen — Yhdysvallat ei ole enää kaikissa tilanteissa ennakoitava kumppani. Tämän riippuvuuden vähentäminen on turvallisuuskysymys, ei pelkkä hankintapreferenssi. Se on samalla digitaalisen huoltovarmuuden ydinkysymys.',
+                a: 'Kyllä. Suomen kriittinen infrastruktuuri on riippuvaista ulkomaisista digitaalisten palveluiden, kuten pilvipalvelujen, tarjoajista. Vuodesta 2022 lähtien on käynyt selväksi, että riski on todellinen — Yhdysvallat ei ole enää kaikissa tilanteissa ennakoitava kumppani. Tämän riippuvuuden vähentäminen on nyt keskeistä Suomen turvallisuuden vahvistamiseksi. Se on samalla digitaalisen huoltovarmuuden ydinkysymys.',
                 q: 'Liittyykö digitaalinen itsenäisyys turvallisuuteen?',
             },
             {
-                a: 'Digitaalinen suvereniteetti tarkoittaa valtion kykyä hallita omaa digitaalista infrastruktuuriaan ilman riippuvuutta ulkomaisista toimijoista. Digitaalinen huoltovarmuus tarkoittaa kykyä ylläpitää kriittisiä digitaalisia palveluita myös häiriötilanteissa. Molemmat ovat digitaalisen itsenäisyyden keskeisiä ulottuvuuksia.',
+                a: 'Digitaalinen suvereniteetti tarkoittaa valtion kykyä hallita omaa digitaalista infrastruktuuriaan ilman kohtuutonta riippuvuutta ulkomaisista toimijoista. Digitaalinen huoltovarmuus tarkoittaa kykyä ylläpitää kriittisiä digitaalisia palveluita myös häiriötilanteissa. Molemmat ovat digitaalisen itsenäisyyden keskeisiä ulottuvuuksia.',
                 q: 'Mitä tarkoittavat digitaalinen suvereniteetti ja digitaalinen huoltovarmuus?',
             },
         ],
@@ -89,13 +89,13 @@ export const digitalIndependenceTag: LocalTag = {
     id: 'digital-independence',
     metaDescription: {
         en: "Finland and Europe must control their own digital infrastructure — I authored the citizens' initiative for digital sovereignty and resilience.",
-        fi: 'Suomen digitaalinen suvereniteetti ja huoltovarmuus alkavat omasta infrastruktuurista — olen Digitaalinen itsenäisyys -kansalaisaloitteen alullepanija.',
+        fi: 'Suomen digitaalinen suvereniteetti ja huoltovarmuus alkavat omasta infrastruktuurista — siksi perustin Digitaalinen itsenäisyys -kansalaisaloitteen.',
         sv: 'Finlands digitala suveränitet och försörjningstrygghet — jag är huvudinitiativtagare till medborgarinitiativet om digital självständighet.',
     },
     names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
     pageTitle: {
         en: 'Digital sovereignty and inde\u00ADpendence',
-        fi: 'Suomen digitaalinen itse\u00ADmääräämis\u00ADoikeus',
+        fi: 'Digitaalinen itsenäisyys sekä huolto\u00ADvarmuus',
         sv: 'Digital suveränitet och själv\u00ADständighet',
     },
     updatedDate: '2026-07-06',
