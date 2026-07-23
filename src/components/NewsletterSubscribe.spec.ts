@@ -1,4 +1,4 @@
-import { getAllByRole, getByPlaceholderText, getByText } from '@testing-library/dom'
+import { getAllByRole, getByPlaceholderText, getByRole, getByText } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
@@ -20,7 +20,7 @@ describe('<NewsletterSubscribe lang="fi" />', () => {
 
         const [heading] = getAllByRole(result, 'heading', { level: 2 })
 
-        expect(heading).toHaveTextContent('Uutiskirje')
+        expect(heading).toHaveTextContent('Tilaa uutiskirje')
     })
 
     it('should render the email input', async () => {
@@ -58,7 +58,7 @@ describe('<NewsletterSubscribe lang="fi" />', () => {
             props: { lang: 'fi' },
         })
 
-        const link = getByText(result, 'tietosuojaselosteemme')
+        const link = getByRole(result, 'link', { name: /tietosuojaseloste/ })
 
         expect(link.getAttribute('href')).toBe('/fi/privacy-policy/')
     })
@@ -80,7 +80,7 @@ describe('<NewsletterSubscribe lang="en" />', () => {
 
         const [heading] = getAllByRole(result, 'heading', { level: 2 })
 
-        expect(heading).toHaveTextContent('Newsletter')
+        expect(heading).toHaveTextContent('Subscribe to the newsletter')
     })
 
     it('should render the email input', async () => {
@@ -140,7 +140,7 @@ describe('<NewsletterSubscribe lang="sv" />', () => {
 
         const [heading] = getAllByRole(result, 'heading', { level: 2 })
 
-        expect(heading).toHaveTextContent('Nyhetsbrev')
+        expect(heading).toHaveTextContent('Prenumerera på nyhetsbrevet')
     })
 
     it('should render the email input', async () => {

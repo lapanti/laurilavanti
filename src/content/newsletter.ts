@@ -14,9 +14,9 @@ interface NewsletterLocale {
 export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
     en: {
         description:
-            'Subscribe to receive digested explanations and analysis of the latest technologies and their impact on society. Straight to your inbox.',
+            'Subscribe to my newsletter and get analysis on the latest developments in AI and technology, and their impact on society, straight to your inbox.',
         emailPlaceholder: 'Email',
-        heading: 'Newsletter',
+        heading: 'Subscribe to the newsletter',
         loadingLabel: 'Loading...',
         privacyLinkText: 'privacy policy',
         privacyText: 'You can unsubscribe at any time. For more information, read our ',
@@ -26,11 +26,11 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
     },
     fi: {
         description:
-            'Tilaa ja saat pureskeltuja selityksiä ja analyysejä tuoreimmista teknologioista ja niiden vaikutuksista yhteiskuntaan. Suoraan sähköpostiisi.',
+            'Tilaamalla uutiskirjeeni saat sähköpostiisi analyysejä tuoreimmista kehityskuluista tekoälyn ja teknologian saralla sekä arvioita niiden vaikutuksista yhteiskuntaan.',
         emailPlaceholder: 'Sähköposti',
-        heading: 'Uutiskirje',
+        heading: 'Tilaa uutiskirje',
         loadingLabel: 'Lataa...',
-        privacyLinkText: 'tietosuojaselosteemme',
+        privacyLinkText: 'tietosuojaseloste',
         privacyText: 'Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue ',
         privacyTextAfter: '.',
         submitButton: 'Tilaa',
@@ -39,9 +39,9 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
     },
     sv: {
         description:
-            'Prenumerera och få genomarbetade förklaringar och analyser av de senaste teknologierna och deras påverkan på samhället. Direkt till din inkorg.',
+            'Prenumerera på mitt nyhetsbrev och få analyser av den senaste utvecklingen inom AI och teknik, samt dess påverkan på samhället, direkt till din inkorg.',
         emailPlaceholder: 'E-post',
-        heading: 'Nyhetsbrev',
+        heading: 'Prenumerera på nyhetsbrevet',
         loadingLabel: 'Laddar...',
         privacyLinkText: 'integritetspolicy',
         privacyText: 'Du kan avsluta prenumerationen när som helst. För mer information, läs vår ',

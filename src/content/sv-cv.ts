@@ -1,7 +1,9 @@
 export const fiduciariesTitle = 'Förtroendeuppdrag'
 export const fiduciaries = [
     {
-        description: ['I fullmäktige beslutar vi om kommunstrategin, budgeten och större enskilda beslut.'],
+        description: [
+            'I fullmäktige beslutar vi om kommunstrategin, budgeten samt kritiska och större frågor, såsom skolbyggnader.',
+        ],
         duty: 'Kommunfullmäktigeledamot',
         organization: 'Kyrkslätt kommun',
         startYear: 2025,
@@ -13,7 +15,9 @@ export const fiduciaries = [
         startYear: 2025,
     },
     {
-        description: ['Kommunutvecklingsnämnden beslutar om markanvändning och planläggning i kommunen.'],
+        description: [
+            'Kommunutvecklingsnämnden beslutar om markanvändning och planläggning i kommunen, samt om underhållet av väginfrastrukturen.',
+        ],
         duty: 'Ledamot i kommunutvecklingsnämnden',
         organization: 'Kyrkslätt kommun',
         startYear: 2025,
@@ -65,10 +69,17 @@ export const fiduciaries = [
             'Byggde upp gillet interna rutiner för att stödja internationella studenter.',
             'Samordnade mellan gillen för att anpassa hur Aaltos tekniska studieprogram betjänar internationella studenter, inte bara inom Athene.',
         ],
-        duty: 'Kapten för kommunalvalet',
+        duty: 'Kapten för internationella frågor',
         endYear: 2015,
         organization: 'Gillet Athene för informationsnätverk',
         startYear: 2015,
+    },
+    {
+        description: ['Byggde laganda och våra arbetssätt, och ledde genom att föregå med gott exempel.'],
+        duty: 'Lagkapten',
+        endYear: 2015,
+        organization: 'Aalto Predators',
+        startYear: 2013,
     },
     {
         description: [
@@ -86,7 +97,7 @@ export const fiduciaries = [
             'Byggde lagets externa kommunikation från grunden — matchrapporter, sociala medier och webbplats.',
             'Skötte styrelseadministration och protokollföring som sekreterare.',
         ],
-        duty: 'Styrelseledamot',
+        duty: 'Styrelseledamot, sekreterare och kommunikationsansvarig',
         endYear: 2013,
         organization: 'Aalto Predators',
         startYear: 2013,
@@ -110,6 +121,7 @@ export const jobExperiences = [
             'Ansvarar för den tekniska färdplanen för teamets tjänster: arkitektur, viktiga teknikval och avvägningar mellan time-to-market och långsiktig underhållbarhet.',
             'Leder teamets process för tekniskt beslutsfattande och arbetssätt — inklusive hur vi utvärderar ny teknik (AI/ML-verktyg, observability, säkerhetsläge) innan vi tar den i bruk.',
             'Driver långsiktigt kompetens- och visionsarbete för att hålla teamet livskraftigt när kraven förändras.',
+            'Bygger de AI-verktyg som teamet använder dagligen.',
         ],
         location: 'Helsingfors',
         startYear: 2024,
@@ -131,8 +143,8 @@ export const jobExperiences = [
         company: 'Verkkokauppa.com',
         description: [
             'Ledde teamets process för att förbättra och synkronisera kodbasen mellan team.',
-            'Fungerade som huvudgränssnitt mellan utvecklarteamet och produktägarskapet — översatte affärsmål till leveransbeslut och ifrågasatte situationer där tekniska avvägningar spelade roll.',
-            'Delade ansvar för utvecklarrekrytering och introduktion parallellt med leveransarbetet.',
+            'Arbetade mellan utvecklarteamet och produktägaren — hjälpte till att forma affärsmål till genomförbara initiativ och ifrågasatte mål när tekniska förutsättningar krävde det.',
+            'Delade ansvar för utvecklarrekrytering. Skötte introduktionen av nya teammedlemmar i våra system.',
         ],
         endYear: 2022,
         location: 'Helsingfors',
@@ -143,8 +155,8 @@ export const jobExperiences = [
         company: 'Gofore',
         description: [
             'Efter att Gofore köpte Solinor fortsatte jag ett tag på samma projekt. Därefter bytte jag till ett liknande projekt inom en annan bransch.',
-            'Ansvarade för frontend-teknikbeslut för PaaS:en, med balans mellan kundkrav och plattformens långsiktiga underhållbarhet.',
-            'Genomförde utvecklarrekrytering för kundorganisationen — intervjuade kandidater och formade anställningskriterier.',
+            'Ansvarade för frontend-teknikbeslut för PaaS:en, med balans mellan affärsmål och plattformens långsiktiga underhållbarhet.',
+            'Genomförde utvecklarrekrytering för kundorganisationen — intervjuade kandidater och introducerade nya teammedlemmar.',
         ],
         endYear: 2019,
         location: 'Helsingfors',
@@ -154,9 +166,9 @@ export const jobExperiences = [
     {
         company: 'Solinor',
         description: [
-            'Konsult i ett stort Platform-as-a-Service-projekt; under större delen av uppdraget var jag teknisk ledare på frontendsidan i nära samarbete med backendteamet och kundens produktägare.',
-            'Ansvarade för frontend-teknikbeslut för PaaS:en, med balans mellan kundkrav och plattformens långsiktiga underhållbarhet.',
-            'Genomförde utvecklarrekrytering för både Solinor och kundorganisationen — intervjuade kandidater och formade anställningskriterier.',
+            'Konsult i ett stort Platform-as-a-Service-projekt; under större delen av uppdraget var jag teknisk ledare på frontendsidan i nära samarbete med backendteamet och kundens produktägare samt arkitekter.',
+            'Ansvarade för frontend-teknikbeslut för PaaS:en, med balans mellan affärsmål och plattformens långsiktiga underhållbarhet.',
+            'Genomförde utvecklarrekrytering för både Solinor och kundorganisationen — intervjuade kandidater och introducerade nya teammedlemmar.',
             'Bidrog till Solinors företagsövergripande förbättringar av arbetssätten.',
         ],
         endYear: 2019,
@@ -167,7 +179,8 @@ export const jobExperiences = [
     {
         company: 'Zalando',
         description: [
-            'Designade och byggde ett grafvisualiseringsverktyg från grunden med React, TypeScript, D3 och PIXI.js — används av domänexperter för att underhålla den modeontologi som driver Zalandos katalog.',
+            'Frontend-utvecklare som byggde interna verktyg för Zalandos modedomänexperter — det här verktyget blev också ämnet för mitt diplomarbete, en ontologiredigerare för modedomänexperter.',
+            'Designade och byggde ett visualiserings- och hanteringsverktyg för kunskapsgrafen från grunden med React, TypeScript, D3 och PIXI.js — används av domänexperter för att underhålla den modeontologi som driver Zalandos katalog.',
             'Arbetade i ett tvärfunktionellt agilt team och ledde frontend-rekryteringen.',
         ],
         endYear: 2018,
@@ -178,8 +191,9 @@ export const jobExperiences = [
     {
         company: 'Futurice',
         description: [
-            'Sista projektet: teknisk ledare i ett projekt som förenade två av företagets kontor, med helhetsansvar för leveransens tekniska aspekter.',
-            'Aktiv i kundrelationer genomgående — de flesta projekt krävde tolkning mellan kundens avsikter och teamets leverans.',
+            'Mjukvaruutvecklare i flera kundprojekt — från en Android-konsumentapp till B2B-plattformar — i tvärfunktionella agila team.',
+            'Sista projektet: teknisk ledare i ett projekt som levererades av ett team uppdelat mellan kontoren i Helsingfors och Stockholm. Jag reste själv ofta mellan kontoren och träffade alltid även kunder på Stockholmssidan.',
+            'Aktiv gentemot kundernas affärsrepresentanter genomgående i alla projekt, för att förena tekniska realiteter med kundernas mål.',
         ],
         endYear: 2017,
         location: 'Helsingfors',
@@ -213,8 +227,11 @@ export const degrees = [
     {
         degree: 'Diplomingenjör (informationsnätverk)',
         description: [
-            'Utvidgat huvudämne i ICT in Business — valt framför ett traditionellt biämne för att lägga fler studiepoäng på skärningspunkten mellan teknik, affärsliv och beslutsfattande. Programmet gav mig den verktygslåda jag har använt i varje roll sedan dess: snabb förståelse för komplexa system, kartläggning av hur de interagerar med sin omgivning och förmåga att fungera som översättningslager mellan teknik och affärsverksamhet.',
+            'Utvidgat huvudämne i ICT in Business — valt framför ett traditionellt biämne för att få mer djup i skärningspunkten mellan teknik, affärsliv och beslutsfattande. Programmet gav mig den verktygslåda jag har använt i varje roll sedan dess: snabb förståelse för komplexa system, kartläggning av hur de interagerar med sin omgivning och förmåga att fungera som översättningslager mellan teknik och affärsverksamhet.',
             'Masteruppsats: fallstudie om design och utveckling av ett ontologiredigeringsverktyg för modedomänexperter — gjord på Zalando, där jag byggde verktyget.',
+            'Kandidatens huvudämne användarupplevelse och användbarhet, som lärde mig att se system och krav genom användarens ögon, oavsett hur tekniskt systemet är.',
+            'Kandidatens biämne tillämpningar av datanät, som gav mig grundläggande kunskaper på låg nivå inom IT som jag har använt i varje roll inom bank, detaljhandel och plattformar sedan dess.',
+            'Kandidatarbete: användning av drönare (då fortfarande kallade "quadcoptrar") för lagerhantering.',
         ],
         endYear: 2018,
         location: 'Esbo',
@@ -224,8 +241,9 @@ export const degrees = [
     {
         degree: 'Datanomi',
         description: [
-            'Avlagd som en del av en trippelexamen — fullständigt gymnasium, yrkesexamen och studentexamen samtidigt. Att avlägga tre examina samtidigt var ett medvetet val — jag ville ha tekniskt djup vid sidan av den akademiska vägen.',
-            'Den yrkesmässiga delen täckte datanät och -teknologier.',
+            'Datanomi, informationsnätverk och -teknologier, avlagd som en del av en så kallad trippelexamen — fullständigt gymnasium, yrkesexamen och studentexamen samtidigt.',
+            'I gymnasiet låg tyngdpunkten på matematik och samhällskunskap. Den yrkesmässiga delen täckte datanät och -teknologier.',
+            'Jag ville få en färdig yrkesexamen samt tekniskt djup, utöver det studentexamen erbjuder.',
         ],
         endYear: 2011,
         location: 'Kyrkslätt',
