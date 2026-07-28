@@ -15,7 +15,7 @@ export const privacyTag: LocalTag = {
         sv: [
             'Integritetsskydd är en demokratisk förutsättning — inte en broms för innovation eller säkerhet. Utan ett skyddat privat utrymme försvåras fritt tänkande och självständigt handlande.',
             'Jag motsätter mig utbyggnaden av biometriska massregister utan tydlig nödvändighet och proportionalitet. Jag motsätter mig också EU:s Chat Control-förslag: obligatorisk klientsidig skanning skulle i praktiken bryta end-to-end-kryptering och förvandla varje enhet till ett övervakningsverktyg. GDPR är ett golv, inte ett tak — offentliga tjänster bör överträffa dess krav, inte bara uppfylla dem.',
-            'Integritetsvänliga digitala tjänster är inte bara möjliga — de bygger också större medborgarförtroende. Som mjukvaruutvecklare har jag byggt system där integriteten är inbyggd från grunden, inte påklistrad i efterhand. Den erfarenheten formar hur jag tänker kring digitala offentliga tjänster.',
+            'Integritetsvänliga digitala tjänster är inte bara möjliga — de bygger också större medborgarförtroende. Som programutvecklare har jag byggt system där integriteten är inbyggd från grunden, inte påklistrad i efterhand. Den erfarenheten formar hur jag tänker kring digitala offentliga tjänster.',
         ],
     },
     faq: {
@@ -86,5 +86,5 @@ export const privacyTag: LocalTag = {
         fi: 'Yksityisyy\u00ADden\u00ADsuoja digitaali\u00ADsessa maailmassa',
         sv: 'Integritets\u00ADskydd i den digitala världen',
     },
-    updatedDate: '2026-05-15',
+    updatedDate: '2026-07-28',
 }

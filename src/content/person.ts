@@ -36,13 +36,13 @@ export const personSameAs = [
 export const personJobTitle: Record<Lang, string> = {
     en: 'municipal councillor & lead developer',
     fi: 'kunnanvaltuutettu ja johtava ohjelmistokehittäjä',
-    sv: 'kommunfullmäktigeledamot och ledande mjukvaruutvecklare',
+    sv: 'kommunfullmäktigeledamot och ledande programutvecklare',
 }
 
 export const personDescription: Record<Lang, string> = {
     en: 'Kirkkonummi municipal councillor (Greens) and lead developer (MSc, Aalto). He works to build a digitally independent Finland where the economy, education, and rights work together in the age of AI.',
     fi: 'Kirkkonummen kunnanvaltuutettu ja johtava ohjelmistokehittäjä (DI, Aalto). Hänen tavoitteenaan on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.',
-    sv: 'Lauri Lavanti är fullmäktigeledamot i Kyrkslätt (De Gröna) och ledande mjukvaruutvecklare (DI, Aalto-universitetet). Hans mål är ett digitalt självständigt Finland där ekonomi, bildning och frihet fungerar tillsammans i AI-tidsåldern.',
+    sv: 'Lauri Lavanti är fullmäktigeledamot i Kyrkslätt (De Gröna) och ledande programutvecklare (DI, Aalto-universitetet). Hans mål är ett digitalt självständigt Finland där ekonomi, bildning och frihet fungerar tillsammans i AI-tidsåldern.',
 }
 
 export const personKnowsAbout: Record<Lang, string[]> = {
@@ -163,7 +163,7 @@ export const personHasOccupation: Record<Lang, object[]> = {
         },
         {
             '@type': 'Occupation',
-            name: 'Ledande mjukvaruutvecklare',
+            name: 'Ledande programutvecklare',
             skills: 'Artificiell intelligens, programvaruarkitektur, digital självständighet, säker mjukvaruutveckling',
         },
     ],

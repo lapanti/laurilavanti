@@ -14,7 +14,7 @@ The current About page was written by a comms expert — the prose quality and o
 
 The change is primarily structural: reorder existing H2 sections from Tech → Education → Politics → Leisure into Tech → Politics → Civic → Education → Leisure, add one new theme sentence above the first H2, add a new "Civic & community" section (currently missing), and reorder `SummaryBox` bullet rows to lead with the narrative theme. All existing comms-expert prose is preserved verbatim.
 
-The final copy must use canonical terminology. Key constraints: use **johtava ohjelmistokehittäjä** (FI) / **lead developer** (EN) / **ledande mjukvaruutvecklare** (SV); party is **Vihreät** / **Greens** / **De Gröna**.
+The final copy must use canonical terminology. Key constraints: use **johtava ohjelmistokehittäjä** (FI) / **lead developer** (EN) / **ledande programutvecklare** (SV); party is **Vihreät** / **Greens** / **De Gröna**.
 
 ---
 
@@ -77,7 +77,7 @@ Feature: About page bio with narrative frame
     When inspected for terminology
     Then FI new prose uses "johtava ohjelmistokehittäjä" not "ohjelmistokehittäjä" alone
     And EN new prose uses "lead developer" not "lead software developer"
-    And SV new prose uses "ledande mjukvaruutvecklare"
+    And SV new prose uses "ledande programutvecklare"
     And new prose uses "digitaalinen itsenäisyys" not "digitaalinen riippumattomuus"
 
   Scenario: All locales build without error
@@ -110,7 +110,7 @@ Canonical terms:
 
 | Field | FI | EN | SV |
 |-------|----|----|-----|
-| Job title | johtava ohjelmistokehittäjä | lead developer | ledande mjukvaruutvecklare |
+| Job title | johtava ohjelmistokehittäjä | lead developer | ledande programutvecklare |
 | Party | Vihreät | Greens | De Gröna |
 | Role | Kirkkonummen kunnanvaltuutettu, Vihreän valtuustoryhmän pj. | Kirkkonummi councillor, Green group chair | fullmäktigeledamot i Kyrkslätt, ordförande för De Grönas fullmäktigegrupp |
 | Education | DI (Aalto-yliopisto) | MSc (Aalto University) | DI (Aalto-universitetet) |
