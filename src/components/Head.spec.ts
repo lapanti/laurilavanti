@@ -415,7 +415,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('kommunfullmäktigeledamot och ledande mjukvaruutvecklare')
+        expect(jsonLd.jobTitle).toBe('kommunfullmäktigeledamot och ledande programutvecklare')
         expect(jsonLd.knowsAbout).toContain('Ekonomisk politik')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
