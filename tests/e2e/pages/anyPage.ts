@@ -119,6 +119,10 @@ export class AnyPage {
         if (!this.isMobile) return
         const scrollWidth = await this.page.evaluate(() => document.documentElement.scrollWidth)
         const clientWidth = await this.page.evaluate(() => document.documentElement.clientWidth)
-        expect(scrollWidth).toBeLessThanOrEqual(clientWidth)
+        /*
+         * Some Chromium builds reserve a 1px scrollbar gutter on scrollable pages instead of
+         * overlaying it, which pads scrollWidth by 1px with no visible layout change.
+         */
+        expect(scrollWidth).toBeLessThanOrEqual(clientWidth + 1)
     }
 }
