@@ -35,20 +35,18 @@ const img = image ? getImageSrcset(image, 'background', [960, 1920]) : undefined
         }
     }
 </style>
-<>
-    {
-        img && (
-            <div>
-                <img
-                    alt=""
-                    height={img.height}
-                    sizes="100vw"
-                    src={img.src}
-                    srcset={img.srcset}
-                    style="width:100%;height:100%;object-fit:cover;"
-                    width={img.width}
-                />
-            </div>
-        )
-    }
-</>
+{
+    img && (
+        <div>
+            <img
+                alt=""
+                height={img.height}
+                sizes="100vw"
+                src={img.src}
+                srcset={img.srcset}
+                style="width:100%;height:100%;object-fit:cover;"
+                width={img.width}
+            />
+        </div>
+    )
+}
