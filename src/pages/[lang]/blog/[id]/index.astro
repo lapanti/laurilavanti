@@ -1,0 +1,13 @@
+---
+import { getAllPosts } from '../../../../lib/posts'
+
+export async function getStaticPaths() {
+    const posts = await getAllPosts()
+
+    return posts.map((p) => ({ params: { id: String(p.id), lang: p.lang }, props: { slug: p.slug } }))
+}
+
+const props = Astro.props as { slug: string }
+
+return Astro.redirect(`/${Astro.params.lang}/blog/${Astro.params.id}/${props.slug}/`, 301)
+---

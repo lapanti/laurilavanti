@@ -1,7 +1,7 @@
 import type { APIRoute } from 'astro'
 
 import { getTagName, tags } from '../content/tags'
-import { allMdxPosts } from '../lib/mdxPosts'
+import { getAllPosts, type Post } from '../lib/posts'
 
 const AI_TAG = 'artificial-intelligence'
 
@@ -11,8 +11,8 @@ const PILLAR_LINKS = [
     { label: 'Laurista', url: '/fi/about' },
 ]
 
-export const getLlmsTxt = (site: URL): string => {
-    const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+export const buildLlmsTxt = (posts: Post[], site: URL): string => {
+    const fiPosts = posts.filter((p) => p.lang === 'fi')
 
     const tagIds = [
         AI_TAG,
@@ -24,17 +24,17 @@ export const getLlmsTxt = (site: URL): string => {
 
     const tagSections = tagIds
         .map((id) => {
-            const posts = fiPosts.filter((p) => p.tags.includes(id))
-            if (posts.length === 0) return ''
+            const taggedPosts = fiPosts.filter((p) => p.tags.includes(id))
+            if (taggedPosts.length === 0) return ''
             const name = getTagName(id, 'fi') ?? id
-            const links = posts.map((p) => `- [${p.title}](${new URL(p.url, site).href})`).join('\n')
+            const links = taggedPosts.map((p) => `- [${p.title}](${new URL(p.url, site).href})`).join('\n')
 
             return `## ${name}\n\n${links}`
         })
         .filter(Boolean)
         .join('\n\n')
 
-    const nonFiPosts = allMdxPosts.filter((p) => p.lang !== 'fi')
+    const nonFiPosts = posts.filter((p) => p.lang !== 'fi')
     const multilingualLinks = nonFiPosts.map((p) => `- [${p.title}](${new URL(p.url, site).href})`).join('\n')
 
     const pillarLinks = PILLAR_LINKS.map((l) => `- [${l.label}](${new URL(l.url, site).href})`).join('\n')
@@ -56,6 +56,6 @@ ${multilingualLinks}
 `
 }
 
-export const GET: APIRoute = ({ site }) => {
-    return new Response(getLlmsTxt(site!))
+export const GET: APIRoute = async ({ site }) => {
+    return new Response(buildLlmsTxt(await getAllPosts(), site!))
 }

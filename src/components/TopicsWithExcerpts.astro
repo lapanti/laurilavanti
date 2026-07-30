@@ -1,8 +1,9 @@
 ---
 import type { Lang } from '../content/nav'
+import type { LocalTag } from '../content/tags/types'
 
 import { tags } from '../content/tags'
-import { getExcerptPosts } from '../lib/mdxPosts'
+import { getExcerptPosts, type Post } from '../lib/posts'
 import { fontFamilies, fontWeights, sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt.astro'
 import H2 from './H2.astro'
@@ -20,17 +21,16 @@ const POSTS_PER_TOPIC = 3
 
 const seenIds = new Set<number>()
 
-const sections = ids
-    .map((id) => {
-        const tag = tags.find((t) => t.id === id)
-        if (!tag) return null
+const sections: Array<{ posts: Post[]; tag: LocalTag }> = []
+for (const id of ids) {
+    const tag = tags.find((t) => t.id === id)
+    if (!tag) continue
 
-        const posts = getExcerptPosts({ excludeIds: [...seenIds], lang, limit: POSTS_PER_TOPIC, tag: tag.id })
-        posts.forEach((p) => seenIds.add(p.id))
+    const posts = await getExcerptPosts({ excludeIds: [...seenIds], lang, limit: POSTS_PER_TOPIC, tag: tag.id })
+    posts.forEach((p) => seenIds.add(p.id))
 
-        return { posts, tag }
-    })
-    .filter((s): s is NonNullable<typeof s> => s !== null)
+    sections.push({ posts, tag })
+}
 
 const seeAllLabels: Record<Lang, (name: string) => string> = {
     en: (name) => `All posts about ${name} →`,

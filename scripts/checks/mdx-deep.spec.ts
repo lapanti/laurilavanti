@@ -15,24 +15,6 @@ import {
 
 const TODAY = new Date('2026-05-02')
 
-function postFm(overrides: Record<string, string> = {}) {
-    const defaults: Record<string, string> = {
-        description:
-            'Tekoäly tekee kahdessa minuutissa sen, mihin kehittäjältä meni kaksi viikkoa. Koodin hinta romahtaa — mutta mistä kehittäjille sitten maksetaan tulevaisuudessa?',
-        lang: 'fi',
-        layout: '../../../../../layouts/PostLayout.astro',
-        publishDate: '2026-04-22',
-        slug: 'tekoaly-muuttaa-kehittajan-palkan',
-        title: 'Tekoäly muuttaa kehittäjän palkan',
-        updatedDate: '2026-04-22',
-    }
-    const fields = { ...defaults, ...overrides }
-
-    return Object.entries(fields)
-        .map(([k, v]) => `${k}: '${v}'`)
-        .join('\n')
-}
-
 const VALID_BODY_LINES = [
     '',
     '## Miksi tekoäly muuttaa kaiken?',
@@ -136,13 +118,12 @@ describe('stripMarkup', () => {
 // ── checkFile: passage length ─────────────────────────────────────────────────
 
 describe('checkFile — passage length', () => {
-    const fm = postFm()
     const base = { isBlogPost: false, today: TODAY }
 
     it(`errors when a prose paragraph exceeds ${PASSAGE_WORD_MAX} words`, () => {
         const longPara = Array.from({ length: PASSAGE_WORD_MAX + 10 }, (_, i) => `word${i}`).join(' ')
         const body = `\n## Heading\n\n${longPara}\n`
-        const errors = checkFile({ body, frontmatter: fm, ...base })
+        const errors = checkFile({ body, ...base })
 
         expect(errors.some((e) => e.includes('prose passage too long'))).toBe(true)
     })
@@ -150,7 +131,7 @@ describe('checkFile — passage length', () => {
     it('passes when paragraphs are within the limit', () => {
         const shortPara = Array.from({ length: 50 }, (_, i) => `word${i}`).join(' ')
         const body = `\n## Heading\n\n${shortPara}\n`
-        const errors = checkFile({ body, frontmatter: fm, ...base })
+        const errors = checkFile({ body, ...base })
 
         expect(errors.some((e) => e.includes('prose passage too long'))).toBe(false)
     })
@@ -158,7 +139,7 @@ describe('checkFile — passage length', () => {
     it('runs passage check for non-blog pages too', () => {
         const longPara = Array.from({ length: PASSAGE_WORD_MAX + 5 }, (_, i) => `word${i}`).join(' ')
         const body = `\n${longPara}\n`
-        const errors = checkFile({ body, frontmatter: fm, isBlogPost: false, today: TODAY })
+        const errors = checkFile({ body, isBlogPost: false, today: TODAY })
 
         expect(errors.some((e) => e.includes('prose passage too long'))).toBe(true)
     })
@@ -170,29 +151,31 @@ describe('checkFile — freshness', () => {
     const base = { body: validBody(), isBlogPost: true }
 
     it(`errors when publishDate is >${FRESHNESS_DAYS} days ago and updatedDate is absent`, () => {
-        const fm = postFm({ publishDate: '2025-11-01' }).replace(/updatedDate: '[^']*'\n?/, '')
-        const errors = checkFile({ frontmatter: fm, ...base, today: TODAY })
+        const errors = checkFile({ ...base, publishDate: '2025-11-01', today: TODAY, updatedDate: null })
 
         expect(errors.some((e) => e.includes('no updatedDate'))).toBe(true)
     })
 
     it('passes when post is fresh (under 90 days)', () => {
-        const fm = postFm({ publishDate: '2026-04-01' }).replace(/updatedDate: '[^']*'\n?/, '')
-        const errors = checkFile({ frontmatter: fm, ...base, today: TODAY })
+        const errors = checkFile({ ...base, publishDate: '2026-04-01', today: TODAY, updatedDate: null })
 
         expect(errors.some((e) => e.includes('no updatedDate'))).toBe(false)
     })
 
     it('passes when updatedDate is present even if post is old', () => {
-        const fm = postFm({ publishDate: '2025-11-01', updatedDate: '2026-04-01' })
-        const errors = checkFile({ frontmatter: fm, ...base, today: TODAY })
+        const errors = checkFile({ ...base, publishDate: '2025-11-01', today: TODAY, updatedDate: '2026-04-01' })
 
         expect(errors.some((e) => e.includes('no updatedDate'))).toBe(false)
     })
 
     it('does not run freshness check for non-blog pages', () => {
-        const fm = postFm({ publishDate: '2025-01-01' }).replace(/updatedDate: '[^']*'\n?/, '')
-        const errors = checkFile({ frontmatter: fm, ...base, isBlogPost: false, today: TODAY })
+        const errors = checkFile({
+            ...base,
+            isBlogPost: false,
+            publishDate: '2025-01-01',
+            today: TODAY,
+            updatedDate: null,
+        })
 
         expect(errors.some((e) => e.includes('no updatedDate'))).toBe(false)
     })

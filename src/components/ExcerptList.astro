@@ -1,5 +1,5 @@
 ---
-import { getExcerptPosts } from '../lib/mdxPosts'
+import { getExcerptPosts } from '../lib/posts'
 import { sizes } from '../lib/styles'
 import Excerpt from './excerptList/Excerpt.astro'
 
@@ -15,7 +15,7 @@ interface Props {
 
 const { currentSlug, excludeIds, lang = 'fi', limit, onlyIds, relatedTags, tag } = Astro.props
 
-const nodes = getExcerptPosts({ currentSlug, excludeIds, lang, limit, onlyIds, relatedTags, tag })
+const nodes = await getExcerptPosts({ currentSlug, excludeIds, lang, limit, onlyIds, relatedTags, tag })
 ---
 
 <style

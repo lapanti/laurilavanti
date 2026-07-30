@@ -10,7 +10,7 @@
  * Exit 0 = clean. Exit 1 = chains or dead-ends found.
  */
 
-import { readdirSync } from 'node:fs'
+import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -18,8 +18,16 @@ import { redirects } from '../../src/lib/redirects.ts'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const root = join(__dirname, '..', '..')
-const pagesRoot = join(root, 'src', 'pages')
+const postsRoot = join(root, 'src', 'content', 'posts')
 const LANGS = ['en', 'fi', 'sv']
+
+/** Extract a scalar frontmatter field (single-quoted, double-quoted, or bare). */
+function fmField(content, field) {
+    const re = new RegExp(`^${field}:\\s*(?:'([^']*)'|"([^"]*)"|([^\\n'""][^\\n]*))`, 'm')
+    const m = content.match(re)
+    if (!m) return null
+    return (m[1] ?? m[2] ?? m[3] ?? '').trim()
+}
 
 // Derive tag IDs from filesystem (src/content/tags/*.ts, excluding types.ts)
 const tagIds = readdirSync(join(root, 'src', 'content', 'tags'))
@@ -54,28 +62,23 @@ for (const tagId of tagIds) {
     }
 }
 
-// Blog pages: /{lang}/blog/{id}/{slug}/ — bare /{lang}/blog/{id}/ excluded
-for (const lang of LANGS) {
-    const blogDir = join(pagesRoot, lang, 'blog')
-    let idDirs
-    try {
-        idDirs = readdirSync(blogDir, { withFileTypes: true }).filter(
-            (e) => e.isDirectory() && /^\d+$/.test(e.name)
-        )
-    } catch {
-        continue
-    }
-    for (const idDir of idDirs) {
-        const idPath = join(blogDir, idDir.name)
-        let slugDirs
+// Blog pages: /{lang}/blog/{id}/{slug}/ — bare /{lang}/blog/{id}/ excluded.
+// Posts live at src/content/posts/{id}/{lang}.mdx; slug comes from that file's
+// own frontmatter (no longer derivable from the directory name).
+const postIdDirs = readdirSync(postsRoot, { withFileTypes: true }).filter(
+    (e) => e.isDirectory() && /^\d+$/.test(e.name)
+)
+for (const idDir of postIdDirs) {
+    for (const lang of LANGS) {
+        const langPath = join(postsRoot, idDir.name, `${lang}.mdx`)
+        let content
         try {
-            slugDirs = readdirSync(idPath, { withFileTypes: true }).filter((e) => e.isDirectory())
+            content = readFileSync(langPath, 'utf-8')
         } catch {
             continue
         }
-        for (const slugDir of slugDirs) {
-            validRoutes.add(`/${lang}/blog/${idDir.name}/${slugDir.name}/`)
-        }
+        const slug = fmField(content, 'slug')
+        if (slug) validRoutes.add(`/${lang}/blog/${idDir.name}/${slug}/`)
     }
 }
 

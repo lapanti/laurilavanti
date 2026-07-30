@@ -1,0 +1,49 @@
+---
+import type { Lang } from '../../../content/nav'
+import type { LocalTag } from '../../../content/tags'
+
+import ExcerptList from '../../../components/ExcerptList.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+import { tags } from '../../../content/tags'
+import PageLayout from '../../../layouts/PageLayout.astro'
+import { COLLECTIONPAGE } from '../../../lib/jsonld'
+
+export function getStaticPaths() {
+    const langs: Lang[] = ['fi', 'sv', 'en']
+
+    return langs.flatMap((lang) => tags.map((tag) => ({ params: { lang, tag: tag.id }, props: { tag } })))
+}
+
+interface Props {
+    tag: LocalTag
+}
+
+const { tag } = Astro.props
+const { lang } = Astro.params as { lang: Lang }
+
+const heroImageFallback = 'Lauri-Lavanti-next-to-a-table'
+const heroImageAltFallback: Record<Lang, string> = {
+    en: 'Lauri Lavanti sitting on a stool leaning against a tall table. He is wearing a black blazer and a blue-and-white floral shirt. In the blazer pocket is a multicoloured pocket square. A staircase in the background.',
+    fi: 'Lauri Lavanti istumassa jakkaralla ja nojaa korkeaan pöytään. Päällään hänellä on musta bleiseri ja sinivalkoinen kukkakuvioinen kauluspaita. Bleiserin taskussa on monivärinen taskuliina. Taustalla portaikko.',
+    sv: 'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.',
+}
+
+const faq = tag.faq?.[lang]
+const metaDescription = tag.metaDescription[lang]
+const bodyParagraphs = tag.descriptions[lang]
+---
+
+<PageLayout
+    alt={tag.heroImageAlt?.[lang] ?? heroImageAltFallback[lang]}
+    description={metaDescription}
+    faq={faq}
+    heroImage={tag.heroImage ?? heroImageFallback}
+    lang={lang}
+    pageTitle={tag.pageTitle[lang]}
+    slug={`${lang}/category/${tag.id}`}
+    title={tag.pageTitle[lang]}
+    type={COLLECTIONPAGE}
+>
+    {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
+    <ExcerptList lang={lang} tag={tag.id} />
+</PageLayout>

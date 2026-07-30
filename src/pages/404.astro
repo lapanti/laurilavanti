@@ -1,7 +1,7 @@
 ---
 import ExcerptList from '../components/ExcerptList.astro'
 import PageLayout from '../layouts/PageLayout.astro'
-import { allMdxPosts } from '../lib/mdxPosts'
+import { getAllPosts } from '../lib/posts'
 
 const pathname = Astro.url.pathname
 const langMatch = pathname.match(/^\/(en|sv)\//)
@@ -15,7 +15,8 @@ const i18n = {
 const t = i18n[lang]
 
 // Minimal lookup table: "lang/id" → canonical URL, serialised into the page for the redirect script
-const postIndexJson = JSON.stringify(Object.fromEntries(allMdxPosts.map((p) => [p.lang + '/' + p.id, p.url])))
+const allPosts = await getAllPosts()
+const postIndexJson = JSON.stringify(Object.fromEntries(allPosts.map((p) => [p.lang + '/' + p.id, p.url])))
 ---
 
 <script is:inline set:html={'window.__postIndex=' + postIndexJson + ';'} />

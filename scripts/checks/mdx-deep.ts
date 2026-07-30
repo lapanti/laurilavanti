@@ -11,6 +11,7 @@
  */
 
 import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 export const FRESHNESS_DAYS = 90
@@ -88,13 +89,16 @@ export function proseParagraphs(body: string): string[] {
 
 interface CheckFileParams {
     body: string
-    frontmatter: string
     isBlogPost: boolean
+    publishDate?: string | null
     today: Date
+    updatedDate?: string | null
 }
 
-/** Run passage-length and freshness checks. Returns error strings (empty = pass). */
-export function checkFile({ body, frontmatter, isBlogPost, today }: CheckFileParams): string[] {
+/** Run passage-length and freshness checks. Returns error strings (empty = pass).
+ *  For blog posts, publishDate/updatedDate live in the post's sibling meta.json
+ *  (not this file's own frontmatter) — callers resolve and pass them in directly. */
+export function checkFile({ body, isBlogPost, publishDate, today, updatedDate }: CheckFileParams): string[] {
     const errors: string[] = []
 
     // passage length (all pages)
@@ -109,18 +113,13 @@ export function checkFile({ body, frontmatter, isBlogPost, today }: CheckFilePar
         }
     }
 
-    if (isBlogPost) {
-        // freshness
-        const publishDateStr = fmField(frontmatter, 'publishDate')
-        const updatedDateStr = fmField(frontmatter, 'updatedDate')
-        if (publishDateStr) {
-            const ageMs = today.getTime() - new Date(publishDateStr).getTime()
-            const ageDays = ageMs / (1000 * 60 * 60 * 24)
-            if (ageDays >= FRESHNESS_DAYS && !updatedDateStr) {
-                errors.push(
-                    `publishDate is ${Math.floor(ageDays)} days ago with no updatedDate — AI engines treat stale content; add updatedDate or refresh the post`
-                )
-            }
+    if (isBlogPost && publishDate) {
+        const ageMs = today.getTime() - new Date(publishDate).getTime()
+        const ageDays = ageMs / (1000 * 60 * 60 * 24)
+        if (ageDays >= FRESHNESS_DAYS && !updatedDate) {
+            errors.push(
+                `publishDate is ${Math.floor(ageDays)} days ago with no updatedDate — AI engines treat stale content; add updatedDate or refresh the post`
+            )
         }
     }
 
@@ -146,9 +145,18 @@ if (isMain) {
         if (!file.endsWith('.mdx')) continue
         const content = readFileSync(file, 'utf8')
         const rel = file.replace(repoRoot, '')
-        const { body, frontmatter } = splitMdx(content)
-        const isBlogPost = /PostLayout/.test(content)
-        const errors = checkFile({ body, frontmatter, isBlogPost, today })
+        const { body } = splitMdx(content)
+        const isBlogPost = /[/\\]content[/\\]posts[/\\]\d+[/\\](fi|sv|en)\.mdx$/.test(file)
+
+        let publishDate: string | null = null
+        let updatedDate: string | null = null
+        if (isBlogPost) {
+            const meta = JSON.parse(readFileSync(join(dirname(file), 'meta.json'), 'utf8'))
+            publishDate = meta.publishDate ?? null
+            updatedDate = meta.updatedDate ?? null
+        }
+
+        const errors = checkFile({ body, isBlogPost, publishDate, today, updatedDate })
         if (errors.length > 0) {
             hasError = true
             printErrors(rel, errors)

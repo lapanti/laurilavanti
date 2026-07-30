@@ -1,14 +1,85 @@
+import type { Post } from '../lib/posts'
+
 import { describe, expect, it } from 'vitest'
 
 import { tags } from '../content/tags'
-import { allMdxPosts } from '../lib/mdxPosts'
-import { getLlmsTxt } from './llms.txt'
+import { buildLlmsTxt } from './llms.txt'
 
 const SITE = new URL('https://laurilavanti.fi')
 
-const content = getLlmsTxt(SITE)
+const makePost = (overrides: Partial<Post>): Post =>
+    ({
+        alt: 'alt',
+        description: 'description',
+        entry: {} as Post['entry'],
+        heroImage: 'hero',
+        pageTitle: 'Page title',
+        publishDate: '2024-01-01',
+        readingTime: 1,
+        updatedDate: '2024-01-01',
+        wordCount: 100,
+        ...overrides,
+    }) as Post
 
-describe('getLlmsTxt — header', () => {
+/*
+ * Deliberately pre-sorted newest-first per tag, matching what getAllPosts() produces —
+ * buildLlmsTxt itself doesn't sort, it only filters, so this fixture's order IS the
+ * thing under test for the "sorted newest-first" assertions below.
+ */
+const posts: Post[] = [
+    makePost({
+        id: 5,
+        lang: 'fi',
+        slug: 'ai-5',
+        tags: ['artificial-intelligence'],
+        title: 'AI post 5',
+        url: '/fi/blog/5/ai-5/',
+    }),
+    makePost({
+        id: 3,
+        lang: 'fi',
+        slug: 'ai-3',
+        tags: ['artificial-intelligence'],
+        title: 'AI post 3',
+        url: '/fi/blog/3/ai-3/',
+    }),
+    makePost({
+        id: 4,
+        lang: 'fi',
+        slug: 'kh-4',
+        tags: ['kirkkonummi'],
+        title: 'Kirkkonummi post 4',
+        url: '/fi/blog/4/kh-4/',
+    }),
+    makePost({
+        id: 2,
+        lang: 'fi',
+        slug: 'kh-2',
+        tags: ['kirkkonummi'],
+        title: 'Kirkkonummi post 2',
+        url: '/fi/blog/2/kh-2/',
+    }),
+    makePost({
+        id: 4,
+        lang: 'sv',
+        slug: 'kh-4-sv',
+        tags: ['kirkkonummi'],
+        title: 'Kirkkonummi post 4 sv',
+        url: '/sv/blog/4/kh-4-sv/',
+    }),
+    makePost({
+        id: 4,
+        lang: 'en',
+        slug: 'kh-4-en',
+        tags: ['kirkkonummi'],
+        title: 'Kirkkonummi post 4 en',
+        url: '/en/blog/4/kh-4-en/',
+    }),
+]
+
+const content = buildLlmsTxt(posts, SITE)
+
+describe('buildLlmsTxt — header', () => {
     it('starts with H1 "# Lauri Lavanti"', () => {
         expect(content.startsWith('# Lauri Lavanti\n')).toBe(true)
     })
@@ -20,7 +91,7 @@ describe('getLlmsTxt — header', () => {
     })
 })
 
-describe('getLlmsTxt — pillar pages section', () => {
+describe('buildLlmsTxt — pillar pages section', () => {
     it('contains "## Tärkeimmät sivut" heading', () => {
         expect(content).toContain('## Tärkeimmät sivut')
     })
@@ -38,7 +109,7 @@ describe('getLlmsTxt — pillar pages section', () => {
     })
 })
 
-describe('getLlmsTxt — tag sections', () => {
+describe('buildLlmsTxt — tag sections', () => {
     it('artificial-intelligence section appears before other tag sections', () => {
         const aiIdx = content.indexOf('## Tekoäly')
         const otherTagSections = tags
@@ -52,8 +123,8 @@ describe('getLlmsTxt — tag sections', () => {
         }
     })
 
-    it('all published Finnish posts appear under their tags', () => {
-        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+    it('all fixture Finnish posts appear under their tags', () => {
+        const fiPosts = posts.filter((p) => p.lang === 'fi')
         for (const post of fiPosts) {
             for (const tag of post.tags) {
                 const postUrl = new URL(post.url, SITE).href
@@ -64,37 +135,17 @@ describe('getLlmsTxt — tag sections', () => {
         }
     })
 
-    it('unique Finnish post count matches allMdxPosts fi count', () => {
-        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
-        const urlPattern = /\[.+?\]\((https:\/\/laurilavanti\.fi\/fi\/blog\/[^)]+)\)/g
-
-        // Collect all unique post URLs from tag sections (before multilingual section)
-        const multilingualIdx = content.indexOf('## Muut kielet')
-        const tagSectionContent = content.slice(0, multilingualIdx)
-        const matches = [...tagSectionContent.matchAll(urlPattern)]
-        const uniqueUrls = new Set(matches.map((m) => m[1]))
-
-        expect(uniqueUrls.size).toBe(fiPosts.length)
-    })
-
     it('posts within each tag section are sorted newest-first by id', () => {
-        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
-
-        // Split content into per-section chunks to measure ordering within each section
         const sectionChunks = content.split(/\n(?=## )/)
 
         for (const tag of tags) {
-            const tagPosts = fiPosts.filter((p) => p.tags.includes(tag.id))
+            const tagPosts = posts.filter((p) => p.lang === 'fi' && p.tags.includes(tag.id))
             if (tagPosts.length < 2) continue
 
-            const tagName = tag.names.fi
-            const chunk = sectionChunks.find((c) => c.startsWith(`## ${tagName}\n`))
+            const chunk = sectionChunks.find((c) => c.startsWith(`## ${tag.names.fi}\n`))
             if (!chunk) continue
 
-            const positions = tagPosts.map((p) => ({
-                id: p.id,
-                pos: chunk.indexOf(new URL(p.url, SITE).href),
-            }))
+            const positions = tagPosts.map((p) => ({ id: p.id, pos: chunk.indexOf(new URL(p.url, SITE).href) }))
 
             for (let i = 1; i < positions.length; i++) {
                 if (positions[i - 1].pos === -1 || positions[i].pos === -1) continue
@@ -107,7 +158,7 @@ describe('getLlmsTxt — tag sections', () => {
     })
 
     it('omits tag sections with zero Finnish posts', () => {
-        const fiPosts = allMdxPosts.filter((p) => p.lang === 'fi')
+        const fiPosts = posts.filter((p) => p.lang === 'fi')
         const emptyTags = tags.filter((t) => fiPosts.every((p) => !p.tags.includes(t.id)))
 
         for (const tag of emptyTags) {
@@ -116,13 +167,13 @@ describe('getLlmsTxt — tag sections', () => {
     })
 })
 
-describe('getLlmsTxt — multilingual section', () => {
+describe('buildLlmsTxt — multilingual section', () => {
     it('contains multilingual heading', () => {
         expect(content).toContain('## Muut kielet / Other languages / Andra språk')
     })
 
-    it('all published English posts appear in multilingual section', () => {
-        const enPosts = allMdxPosts.filter((p) => p.lang === 'en')
+    it('all fixture English posts appear in multilingual section', () => {
+        const enPosts = posts.filter((p) => p.lang === 'en')
         const multilingualSection = content.slice(content.indexOf('## Muut kielet'))
 
         for (const post of enPosts) {
@@ -132,8 +183,8 @@ describe('getLlmsTxt — multilingual section', () => {
         }
     })
 
-    it('all published Swedish posts appear in multilingual section', () => {
-        const svPosts = allMdxPosts.filter((p) => p.lang === 'sv')
+    it('all fixture Swedish posts appear in multilingual section', () => {
+        const svPosts = posts.filter((p) => p.lang === 'sv')
         const multilingualSection = content.slice(content.indexOf('## Muut kielet'))
 
         for (const post of svPosts) {

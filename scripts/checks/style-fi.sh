@@ -12,13 +12,18 @@ source "$SCRIPT_DIR/../lib/bash-helpers.sh"
 file="$1"
 failed=0
 
+is_post=0
+if [[ "$file" =~ content/posts/[0-9]+/fi\.mdx$ ]]; then
+    is_post=1
+fi
+
 # Caller already limits to /fi/ paths, but guard anyway.
-if [[ ! "$file" =~ /fi/ ]]; then
+if [[ "$is_post" -eq 0 ]] && [[ ! "$file" =~ /fi/ ]]; then
     exit 0
 fi
 
 # Only run on blog posts.
-if ! grep -qP "PostLayout" "$file"; then
+if [[ "$is_post" -eq 0 ]] && ! grep -qP "PostLayout" "$file"; then
     exit 0
 fi
 
