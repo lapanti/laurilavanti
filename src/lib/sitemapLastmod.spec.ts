@@ -62,4 +62,61 @@ describe('buildPageDateMap', () => {
             rmSync(tmp, { force: true, recursive: true })
         }
     })
+
+    it('emits one URL per present language file for a post', () => {
+        const pagesDir = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-pages-'))
+        const postsDir = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-posts-'))
+        try {
+            const postDir = join(postsDir, '99')
+            mkdirSync(postDir, { recursive: true })
+            writeFileSync(join(postDir, 'meta.json'), JSON.stringify({ updatedDate: '2026-01-05' }))
+            writeFileSync(join(postDir, 'fi.mdx'), `---\nslug: 'esimerkki'\n---\n`)
+            writeFileSync(join(postDir, 'en.mdx'), `---\nslug: 'example'\n---\n`)
+
+            const map = buildPageDateMap({ pagesDir, postsDir, tags: [] })
+
+            expect(map.get('/fi/blog/99/esimerkki/')).toBe('2026-01-05')
+            expect(map.get('/en/blog/99/example/')).toBe('2026-01-05')
+            expect(map.has('/sv/blog/99/')).toBe(false)
+        } finally {
+            rmSync(pagesDir, { force: true, recursive: true })
+            rmSync(postsDir, { force: true, recursive: true })
+        }
+    })
+
+    it('throws when a post lacks updatedDate in meta.json', () => {
+        const pagesDir = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-pages-'))
+        const postsDir = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-posts-'))
+        try {
+            const postDir = join(postsDir, '99')
+            mkdirSync(postDir, { recursive: true })
+            writeFileSync(join(postDir, 'meta.json'), JSON.stringify({}))
+            writeFileSync(join(postDir, 'fi.mdx'), `---\nslug: 'esimerkki'\n---\n`)
+
+            expect(() => buildPageDateMap({ pagesDir, postsDir, tags: [] })).toThrow(
+                /missing required updatedDate\/slug/
+            )
+        } finally {
+            rmSync(pagesDir, { force: true, recursive: true })
+            rmSync(postsDir, { force: true, recursive: true })
+        }
+    })
+
+    it('throws when a post language file lacks slug', () => {
+        const pagesDir = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-pages-'))
+        const postsDir = mkdtempSync(join(tmpdir(), 'sitemap-lastmod-posts-'))
+        try {
+            const postDir = join(postsDir, '99')
+            mkdirSync(postDir, { recursive: true })
+            writeFileSync(join(postDir, 'meta.json'), JSON.stringify({ updatedDate: '2026-01-05' }))
+            writeFileSync(join(postDir, 'fi.mdx'), `---\ntitle: 'No slug'\n---\n`)
+
+            expect(() => buildPageDateMap({ pagesDir, postsDir, tags: [] })).toThrow(
+                /missing required updatedDate\/slug/
+            )
+        } finally {
+            rmSync(pagesDir, { force: true, recursive: true })
+            rmSync(postsDir, { force: true, recursive: true })
+        }
+    })
 })
