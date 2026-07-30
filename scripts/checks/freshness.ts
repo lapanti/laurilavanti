@@ -12,6 +12,7 @@
  */
 
 import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { fmField, splitMdx } from './mdx-deep.ts'
 
@@ -28,13 +29,14 @@ export interface StalePost {
 }
 
 export function checkFreshness(file: string, today: Date): StalePost | null {
-    const content = readFileSync(file, 'utf8')
-    const isBlogPost = /PostLayout/.test(content)
+    const isBlogPost = /[/\\]content[/\\]posts[/\\]\d+[/\\](fi|sv|en)\.mdx$/.test(file)
     if (!isBlogPost) return null
 
+    const content = readFileSync(file, 'utf8')
     const { frontmatter } = splitMdx(content)
-    const publishDateStr = fmField(frontmatter, 'publishDate')
-    const updatedDateStr = fmField(frontmatter, 'updatedDate')
+    const meta = JSON.parse(readFileSync(join(dirname(file), 'meta.json'), 'utf8'))
+    const publishDateStr: string | null = meta.publishDate ?? null
+    const updatedDateStr: string | null = meta.updatedDate ?? null
     const slug = fmField(frontmatter, 'slug') ?? file
     const lang = (fmField(frontmatter, 'lang') ?? 'fi') as 'en' | 'fi' | 'sv'
 

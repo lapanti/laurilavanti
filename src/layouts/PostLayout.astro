@@ -1,7 +1,5 @@
 ---
-import type { MDXLayoutProps } from 'astro'
-import type { AuthorEntry } from '../content/person'
-import type { ExternalPublication } from '../lib/byline'
+import type { Post } from '../lib/posts'
 
 import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
@@ -10,28 +8,15 @@ import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
-import { allMdxPosts, getPostAlternates } from '../lib/mdxPosts'
 import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
-type Props = MDXLayoutProps<{
-    authors?: AuthorEntry[]
-    description: string
-    externalPublications?: ExternalPublication[]
-    faq?: Array<{ a: string; q: string }>
-    id: number
-    lang: 'en' | 'fi' | 'sv'
-    alt: string
-    heroImage: string
-    pageTitle: string
-    publishDate: string
-    slug: string
-    tags: string[]
-    title: string
-    updatedDate: string
-}>
+interface Props {
+    langAlternates: Record<'en' | 'fi' | 'sv', string>
+    post: Post
+}
 
-const { frontmatter } = Astro.props
+const { langAlternates, post } = Astro.props
 const {
     alt,
     authors,
@@ -43,18 +28,16 @@ const {
     lang,
     pageTitle,
     publishDate,
+    readingTime,
     slug,
     tags,
     title,
     updatedDate,
-} = frontmatter
+    wordCount,
+} = post
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
 const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
-const langAlternates = getPostAlternates(id)
-const postMeta = allMdxPosts.find((p) => p.url === `/${canonicalSlug}/`)
-const readingTime = postMeta?.readingTime ?? 0
-const wordCount = postMeta?.wordCount ?? 0
 
 const i18n = {
     en: {

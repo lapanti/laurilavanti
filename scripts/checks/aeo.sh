@@ -11,6 +11,15 @@ source "$SCRIPT_DIR/../lib/bash-helpers.sh"
 file="$1"
 failed=0
 
+# A post file is src/content/posts/{id}/{fi,sv,en}.mdx — meta.json lives alongside
+# it and holds tags (used by the AI-pillar-post check below).
+is_post=0
+meta_file=""
+if [[ "$file" =~ content/posts/([0-9]+)/(fi|sv|en)\.mdx$ ]]; then
+    is_post=1
+    meta_file="$(dirname "$file")/meta.json"
+fi
+
 # ── at least one conversational heading ──────────────────────────────────────
 # AI engines generate summaries 60% more often when a heading is a question.
 # Covers EN, FI, and SV question-opening words, Finnish -ko/-kö verb forms,
@@ -47,8 +56,12 @@ fi
 # ── AI pillar posts: ≥3 question-form H2s ────────────────────────────────────
 # Posts tagged artificial-intelligence are pillar content; one question heading
 # is not enough to surface in conversational AI queries.
-if awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence" \
-   && grep -qP "PostLayout" "$file"; then
+if [[ "$is_post" -eq 1 ]]; then
+    has_ai_tag="$(node "$SCRIPT_DIR/../lib/read-json-field.mjs" "$meta_file" tags | grep -qx "artificial-intelligence" && echo 1 || echo 0)"
+else
+    has_ai_tag="$(awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence" && grep -qP "PostLayout" "$file" && echo 1 || echo 0)"
+fi
+if [[ "$has_ai_tag" -eq 1 ]]; then
     q_count=0
     while IFS= read -r line; do
         if echo "$line" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \

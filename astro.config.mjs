@@ -17,6 +17,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 const pageDateMap = buildPageDateMap({
     pagesDir: join(__dirname, 'src', 'pages'),
+    postsDir: join(__dirname, 'src', 'content', 'posts'),
     tags,
 })
 

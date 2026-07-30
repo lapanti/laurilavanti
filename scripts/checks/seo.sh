@@ -11,27 +11,49 @@ source "$SCRIPT_DIR/../lib/bash-helpers.sh"
 file="$1"
 failed=0
 
+# A post file is src/content/posts/{id}/{fi,sv,en}.mdx — meta.json lives alongside it.
+is_post=0
+post_id=""
+post_lang=""
+if [[ "$file" =~ content/posts/([0-9]+)/(fi|sv|en)\.mdx$ ]]; then
+    is_post=1
+    post_id="${BASH_REMATCH[1]}"
+    post_lang="${BASH_REMATCH[2]}"
+    meta_file="$(dirname "$file")/meta.json"
+fi
+
 # ── required frontmatter fields ─────────────────────────────────────────────
-for field in pageTitle title description lang slug layout; do
+if [[ "$is_post" -eq 1 ]]; then
+    required_fields=(pageTitle title description lang slug)
+else
+    required_fields=(pageTitle title description lang slug layout)
+fi
+for field in "${required_fields[@]}"; do
     if ! grep -qP "^${field}:" "$file"; then
         error "$file" "missing required frontmatter field: ${field}"
         failed=1
     fi
 done
 
-# publishDate required for blog posts (PostLayout)
-if grep -qP '^layout:' "$file"; then
-    if grep -qP "PostLayout" "$file"; then
-        if ! grep -qP '^publishDate:' "$file"; then
-            error "$file" "missing required frontmatter field: publishDate (required for blog posts)"
-            failed=1
-        fi
+# publishDate required for blog posts
+if [[ "$is_post" -eq 1 ]]; then
+    publish_date="$(node "$SCRIPT_DIR/../lib/read-json-field.mjs" "$meta_file" publishDate)"
+    if [[ -z "$publish_date" ]]; then
+        error "$file" "missing required field in meta.json: publishDate (required for blog posts)"
+        failed=1
+    fi
+elif grep -qP '^layout:' "$file" && grep -qP "PostLayout" "$file"; then
+    if ! grep -qP '^publishDate:' "$file"; then
+        error "$file" "missing required frontmatter field: publishDate (required for blog posts)"
+        failed=1
     fi
 fi
 
 # ── lang must match path locale ──────────────────────────────────────────────
 lang_val="$(fm_field "$file" lang)"
-if [[ "$file" =~ /fi/ ]]; then   path_locale=fi
+if [[ "$is_post" -eq 1 ]]; then
+    path_locale="$post_lang"
+elif [[ "$file" =~ /fi/ ]]; then   path_locale=fi
 elif [[ "$file" =~ /sv/ ]]; then path_locale=sv
 elif [[ "$file" =~ /en/ ]]; then path_locale=en
 else path_locale=""
@@ -62,7 +84,11 @@ if [[ -n "$slug_val" ]]; then
     fi
     # No 4-digit years — except posts 20 and 47 where the year is part of the proper name
     # (election cycle posts and year-in-review posts with established URLs must not be renamed)
-    blog_id="$(echo "$file" | grep -oP '/blog/\K\d+' || true)"
+    if [[ "$is_post" -eq 1 ]]; then
+        blog_id="$post_id"
+    else
+        blog_id="$(echo "$file" | grep -oP '/blog/\K\d+' || true)"
+    fi
     if [[ "$blog_id" != "20" && "$blog_id" != "47" ]]; then
         if echo "$slug_val" | grep -qP '(19|20)\d{2}'; then
             error "$file" "slug contains a 4-digit year (makes content appear stale): '${slug_val}'"
@@ -71,8 +97,10 @@ if [[ -n "$slug_val" ]]; then
     fi
 fi
 
-# ── slug must equal folder name for blog posts ───────────────────────────────
-if echo "$file" | grep -qP '/blog/\d+/'; then
+# ── slug must equal folder name for legacy page-routed blog posts ───────────
+# Not applicable to content-collection posts: the folder is the numeric id, not
+# the slug. Slug uniqueness per locale is enforced instead by cross-file.mjs.
+if [[ "$is_post" -eq 0 ]] && echo "$file" | grep -qP '/blog/\d+/'; then
     folder_name="$(basename "$(dirname "$file")")"
     if [[ -n "$slug_val" && "$folder_name" != "$slug_val" ]]; then
         error "$file" "slug '${slug_val}' does not match folder name '${folder_name}'"

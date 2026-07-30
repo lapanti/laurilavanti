@@ -1,0 +1,23 @@
+---
+import { render } from 'astro:content'
+
+import PostLayout from '../../../../../layouts/PostLayout.astro'
+import { getAllPosts, getPostAlternates } from '../../../../../lib/posts'
+
+export async function getStaticPaths() {
+    const posts = await getAllPosts()
+
+    return posts.map((post) => ({
+        params: { id: String(post.id), lang: post.lang, slug: post.slug },
+        props: { post },
+    }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post.entry)
+const langAlternates = await getPostAlternates(post.id)
+---
+
+<PostLayout langAlternates={langAlternates} post={post}>
+    <Content />
+</PostLayout>

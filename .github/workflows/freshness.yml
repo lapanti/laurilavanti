@@ -22,7 +22,7 @@ jobs:
         id: audit
         run: |
           set +e
-          OUTPUT=$(node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages -name '*.mdx') 2>&1)
+          OUTPUT=$(node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages src/content/posts -name '*.mdx') 2>&1)
           EXIT_CODE=$?
           set -e
           echo "output<<EOF" >> "$GITHUB_OUTPUT"

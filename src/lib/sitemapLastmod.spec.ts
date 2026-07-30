@@ -8,6 +8,7 @@ import { tags } from '../content/tags'
 import { buildPageDateMap, extractUpdatedDate } from './sitemapLastmod'
 
 const PAGES_DIR = join(fileURLToPath(import.meta.url), '..', '..', 'pages')
+const POSTS_DIR = join(fileURLToPath(import.meta.url), '..', '..', 'content', 'posts')
 
 describe('extractUpdatedDate', () => {
     it('returns updatedDate when present', () => {
@@ -27,9 +28,9 @@ describe('extractUpdatedDate', () => {
 })
 
 describe('buildPageDateMap', () => {
-    const map = buildPageDateMap({ pagesDir: PAGES_DIR, tags })
+    const map = buildPageDateMap({ pagesDir: PAGES_DIR, postsDir: POSTS_DIR, tags })
 
-    it('maps a sample of known MDX pages', () => {
+    it('maps a sample of known MDX pages and posts', () => {
         expect(map.get('/fi/about/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         expect(map.get('/en/blog/1/home-care-allowance-supplement/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         expect(map.get('/sv/newsletter/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)

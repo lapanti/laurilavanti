@@ -18,7 +18,7 @@ for f in "${files[@]}"; do
     "$SCRIPT_DIR/checks/aeo.sh"     "$f" || failed=1
     "$SCRIPT_DIR/checks/content.sh" "$f" || failed=1
     case "$f" in
-        */fi/*) "$SCRIPT_DIR/checks/style-fi.sh" "$f" || failed=1 ;;
+        */fi/*|*/fi.mdx) "$SCRIPT_DIR/checks/style-fi.sh" "$f" || failed=1 ;;
     esac
 done
 

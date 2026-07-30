@@ -1,0 +1,64 @@
+import type { APIContext } from 'astro'
+import type { Lang } from '../../content/nav'
+
+import rss from '@astrojs/rss'
+
+import { getImage } from '../../lib/images'
+import { getAllPosts, getPostHtml } from '../../lib/posts'
+
+const i18n: Record<Lang, { description: string; permalinkLabel: string; title: string }> = {
+    en: {
+        description: 'Blog posts by Lauri Lavanti',
+        permalinkLabel: 'Permanent link to the blog post',
+        title: 'Lauri Lavanti – blog',
+    },
+    fi: {
+        description: 'Lauri Lavantin blogikirjoitukset',
+        permalinkLabel: 'Pysyvä linkki blogikirjoitukseen',
+        title: 'Lauri Lavanti – blogi',
+    },
+    sv: {
+        description: 'Lauri Lavantis blogginlägg',
+        permalinkLabel: 'Permanent länk till blogginlägget',
+        title: 'Lauri Lavanti – blogg',
+    },
+}
+
+export function getStaticPaths() {
+    const langs: Lang[] = ['fi', 'sv', 'en']
+
+    return langs.map((lang) => ({ params: { lang } }))
+}
+
+export async function GET(context: APIContext) {
+    const lang = context.params.lang as Lang
+    const t = i18n[lang]
+    const posts = (await getAllPosts()).filter((p) => p.lang === lang)
+
+    const items = await Promise.all(
+        posts.map(async (post) => {
+            const absoluteUrl = new URL(post.url, context.site!).href
+            const html = await getPostHtml(post)
+            const content = html + `<p><a href="${absoluteUrl}">${t.permalinkLabel}</a></p>`
+            const img = getImage(post.heroImage, 'og')
+
+            return {
+                content,
+                customData: `<media:content url="${img.src}" medium="image" width="${img.width}" height="${img.height}"/>`,
+                description: post.description,
+                enclosure: { length: 0, type: 'image/jpeg', url: img.src },
+                link: post.url,
+                pubDate: new Date(post.publishDate),
+                title: post.title,
+            }
+        })
+    )
+
+    return rss({
+        description: t.description,
+        items,
+        site: context.site!,
+        title: t.title,
+        xmlns: { media: 'http://search.yahoo.com/mrss/' },
+    })
+}

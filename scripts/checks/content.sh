@@ -12,7 +12,21 @@ source "$SCRIPT_DIR/../lib/bash-helpers.sh"
 file="$1"
 failed=0
 
-is_blog_post() { grep -qP "PostLayout" "$file"; }
+# A post file is src/content/posts/{id}/{fi,sv,en}.mdx — meta.json lives alongside
+# it and holds heroImage/tags/id (alt/pageTitle/description stay in this file).
+is_post=0
+meta_file=""
+if [[ "$file" =~ content/posts/([0-9]+)/(fi|sv|en)\.mdx$ ]]; then
+    is_post=1
+    meta_file="$(dirname "$file")/meta.json"
+fi
+
+is_blog_post() {
+    [[ "$is_post" -eq 1 ]] && return 0
+    grep -qP "PostLayout" "$file"
+}
+
+meta_field() { node "$SCRIPT_DIR/../lib/read-json-field.mjs" "$meta_file" "$1"; }
 
 # ── pageTitle length ─────────────────────────────────────────────────────────
 # Final <title> tag = raw pageTitle + " | Lauri Lavanti" (17 chars) unless the
@@ -64,7 +78,11 @@ if [[ -n "$h_state" ]]; then
 fi
 
 # ── hero image alt text ──────────────────────────────────────────────────────
-hero_image="$(fm_field "$file" heroImage)"
+if [[ "$is_post" -eq 1 ]]; then
+    hero_image="$(meta_field heroImage)"
+else
+    hero_image="$(fm_field "$file" heroImage)"
+fi
 hero_alt="$(fm_field "$file" alt)"
 if [[ -n "$hero_image" ]]; then
     if [[ -z "$hero_alt" ]]; then
@@ -116,7 +134,7 @@ if is_blog_post; then
     fi
 
     # ── tag validity ──────────────────────────────────────────────────────────
-    # Extract tags from frontmatter and verify each exists in src/content/tags/.
+    # Extract tags and verify each exists in src/content/tags/.
     REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
     TAGS_DIR="$REPO_ROOT/src/content/tags"
 
@@ -126,13 +144,17 @@ if is_blog_post; then
         valid_tags["$tag_id"]=1
     done < <(grep -rh "id:" "$TAGS_DIR" --include="*.ts" --exclude="types.ts" | grep -oP "(?<=id:\s')[^']+|(?<=id:\s\")[^\"]+")
 
-    # Extract tags from frontmatter tags: YAML list
-    post_tags="$(awk '
-        /^---$/ { c++; if (c == 2) exit; next }
-        c == 1 && /^tags:/ { in_tags = 1; next }
-        c == 1 && in_tags && /^  - / { gsub(/^  - /, ""); print; next }
-        c == 1 && in_tags { in_tags = 0 }
-    ' "$file")"
+    if [[ "$is_post" -eq 1 ]]; then
+        post_tags="$(meta_field tags)"
+    else
+        # Extract tags from frontmatter tags: YAML list
+        post_tags="$(awk '
+            /^---$/ { c++; if (c == 2) exit; next }
+            c == 1 && /^tags:/ { in_tags = 1; next }
+            c == 1 && in_tags && /^  - / { gsub(/^  - /, ""); print; next }
+            c == 1 && in_tags { in_tags = 0 }
+        ' "$file")"
+    fi
 
     if [[ -z "$post_tags" ]]; then
         error "$file" "tags array is empty — add at least one tag"
@@ -150,7 +172,11 @@ if is_blog_post; then
     # ── pillar tag requirement (posts #43+) ──────────────────────────────────
     # Every post with id >= 43 must carry at least one pillar tag.
     pillar_tags=("artificial-intelligence" "digital-independence" "economy" "culture-and-education" "freedom")
-    post_id="$(fm_field "$file" id)"
+    if [[ "$is_post" -eq 1 ]]; then
+        post_id="$(meta_field id)"
+    else
+        post_id="$(fm_field "$file" id)"
+    fi
     if [[ -n "$post_id" && "$post_id" -ge 43 ]] 2>/dev/null; then
         has_pillar=0
         while IFS= read -r tag; do
