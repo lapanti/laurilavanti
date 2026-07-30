@@ -4,7 +4,7 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 
-const stripImportsExports = (raw: string): string =>
+export const stripImportsExports = (raw: string): string =>
     raw.replace(/^(import\s+.+|export\s+const\s+components\s*=.+)$/gm, '')
 
 export type Post = CollectionEntry<'posts'>['data'] & {
@@ -16,6 +16,12 @@ export type Post = CollectionEntry<'posts'>['data'] & {
 
 let cache: Promise<Post[]> | undefined
 
+/*
+ * v8 ignore start -- requires getCollection(), which needs Astro's content-layer
+ * data store populated by a prior astro build/dev/sync in-process; a plain vitest
+ * run doesn't trigger that (known upstream limitation, withastro/astro#7051,
+ * #12836), so this is exercised by `npm run build` and the e2e suite instead.
+ */
 async function loadAllPosts(): Promise<Post[]> {
     const entries = await getCollection('posts')
 
@@ -36,6 +42,7 @@ async function loadAllPosts(): Promise<Post[]> {
 }
 
 export const getAllPosts = (): Promise<Post[]> => (cache ??= loadAllPosts())
+/* v8 ignore stop */
 
 export const buildAlternatesMap = (posts: Post[], id: number): Record<Post['lang'], string> => {
     const result = {} as Record<Post['lang'], string>
@@ -45,6 +52,7 @@ export const buildAlternatesMap = (posts: Post[], id: number): Record<Post['lang
     return result
 }
 
+/* v8 ignore next 2 -- thin getAllPosts() wrapper, see the ignore note above */
 export const getPostAlternates = async (id: number): Promise<Record<Post['lang'], string>> =>
     buildAlternatesMap(await getAllPosts(), id)
 
@@ -86,8 +94,13 @@ const processor = unified().use(remarkParse).use(remarkRehype, { allowDangerousH
  *  path (astro:content's render()), since RSS never rendered actual Astro components
  *  even under the old page-routed setup; this preserves that same behavior.
  */
+/*
+ * v8 ignore start -- post.entry.body requires a real CollectionEntry from
+ * getCollection(), see the ignore note on loadAllPosts above
+ */
 export const getPostHtml = async (post: Post): Promise<string> => {
     const body = stripImportsExports(post.entry.body ?? '')
 
     return String(await processor.process(body))
 }
+/* v8 ignore stop */

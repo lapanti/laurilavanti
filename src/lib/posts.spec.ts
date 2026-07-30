@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildAlternatesMap, filterExcerptPosts, type Post, sortByRelatedTags } from './posts'
+import { buildAlternatesMap, filterExcerptPosts, type Post, sortByRelatedTags, stripImportsExports } from './posts'
 
 /**
  * getCollection() cannot be exercised here: Astro's Content Layer data store is only
@@ -29,6 +29,20 @@ const makePost = (overrides: Partial<Post>): Post =>
         wordCount: 100,
         ...overrides,
     }) as Post
+
+describe('stripImportsExports', () => {
+    it('removes import lines', () => {
+        expect(stripImportsExports("import H2 from '../../../components/H2.astro'\nbody text")).toBe('\nbody text')
+    })
+
+    it('removes the components export line', () => {
+        expect(stripImportsExports('export const components = { h2: H2 }\nbody text')).toBe('\nbody text')
+    })
+
+    it('leaves body prose untouched', () => {
+        expect(stripImportsExports('Just a paragraph with no imports.')).toBe('Just a paragraph with no imports.')
+    })
+})
 
 describe('filterExcerptPosts', () => {
     const posts = [
