@@ -1,95 +1,182 @@
-# Feature: Blog Posts
+# Spec: Blog Posts
 
-## Blueprint
+> **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
+> **Status**: `Active`
+> **Last updated**: 2026-07-30
 
-### Context
-Blog posts are the primary content type on the site — political commentary, municipal news, and personal views. They must be stable (URLs never break), discoverable (by tag and language), and accessible (WCAG-compliant, keyboard navigable).
+---
 
-### Architecture
-- **File location:** `src/pages/{lang}/blog/{id}/{slug}/index.mdx` — one file per locale per post
-- **Layout:** `PostLayout.astro` via `layout:` frontmatter. Props arrive as `MDXLayoutProps<Frontmatter>` — never called directly from `.astro` files
-- **Post index:** `src/lib/mdxPosts.ts` — `import.meta.glob` (eager) collects all post frontmatter at build time. Exports `allMdxPosts` sorted by `id` descending (newest-first)
-- **Post list component:** `src/components/ExcerptList.astro` — filters `allMdxPosts` by `lang`, optional `tag`, and `currentSlug`
-- **Tags:** defined in `src/content/tags.ts`. Posts reference tag `id` strings in their `tags[]` frontmatter array. Never invent new tag ids in post frontmatter — only use ids that exist in `tags.ts`
-- **Images:** `heroImage` frontmatter field holds a Cloudinary filename (no extension). `astro-cloudinary` resolves it. Background/decorative images use `alt=""`. Hero images require descriptive `alt`
-- **Dependencies:** `ExcerptList` → `allMdxPosts`; redirect pages → `allMdxPosts`; RSS feed → `allMdxPosts`
+## Intent
 
-### URL & redirect contracts
-| URL pattern | Behaviour |
-|---|---|
-| `/{lang}/blog/{id}/{slug}/` | Canonical post URL — serves the MDX page |
-| `/{lang}/blog/{id}/` | HTTP 301 → canonical slug URL, via `src/pages/{lang}/blog/[id]/index.astro` |
-| `/{lang}/blog/{id}/{wrong-slug}/` | 404 page performs client-side redirect to correct canonical URL via `window.__postIndex` |
+Blog posts are the primary content type on the site — political commentary, municipal news, and personal views. They must be stable (URLs never break), discoverable (by tag and language), and accessible (WCAG-compliant, keyboard navigable). Every post must exist in all three languages (fi, sv, en) — this guarantee is non-negotiable and must never weaken.
 
-The `id` is permanent and numeric. The `slug` may change; always redirect from old slugs rather than keeping stale files.
+Until now, each post was 3 fully hand-written page-routed MDX files (`src/pages/{lang}/blog/{id}/{slug}/index.mdx`), and every other post-related route (bare-id redirect, RSS, category) was likewise hand-duplicated 3x per locale. This produced 195+ near-identical files for 65 posts, no runtime validation of frontmatter shape, and — critically — no guarantee that fields which happen to be identical across a post's three translations today (`publishDate`, `updatedDate`, `tags`, `heroImage`, `authors`, `externalPublications`) actually stay in sync; nothing caught it if they silently drifted.
 
-### Frontmatter schema
-```yaml
-layout: '../../../../layouts/PostLayout.astro'   # required, path relative to file
-id: 42                                            # required, unique integer, never reuse
-slug: 'my-post-slug'                              # required, URL-safe, kebab-case
-lang: 'fi'                                        # required: fi | sv | en
-title: 'Post title'                               # required
-description: 'Short description'                  # required, used in meta tags
-publishDate: '2025-01-01'                         # required, ISO 8601
-updatedDate: '2025-06-01'                         # optional, ISO 8601
-tags:                                             # required, at least one
-  - kirkkonummi
-heroImage: cloudinary-filename-no-extension       # required
-alt: 'Descriptive alt text'                       # required, non-empty for hero images
-```
+This spec covers migrating posts to an Astro Content Collection: one dynamic route per route type, generated from collection data, with the shared-across-locales fields extracted into one physical `meta.json` per post id (making drift on those fields structurally impossible) while per-language fields (`title`, `description`, `slug`, `alt`, `faq`, body) stay one file per language. See `/home/lapanti/.claude/plans/the-current-site-has-whimsical-iverson.md` for the full design rationale and rejected alternatives (per-file duplication kept as-is; two separate Astro collections joined in code; a YAML shared-metadata file).
 
-### Multi-author byline
-- Italic byline at end of MDX content: `_Kirjoittajat: Name1 ja Name2._` (fi) / `_Authors: Name1 and Name2._` (en) / `_Skribenter: Name1 och Name2._` (sv)
-- List ALL authors including Lauri, alphabetical by last name
-- If publication credits follow, separate with a horizontal rule (`---`) between co-author line and publication credits
-- No horizontal rule before the co-author line itself
+---
 
-### Anti-Patterns
-- Do not create a post without a matching entry in all three locales eventually — stubs are acceptable but the `id` must be reserved across locales
-- Do not add a tag id in post frontmatter that is not defined in `src/content/tags.ts` — it silently breaks tag filtering
-- Do not use TypeScript syntax in `<script>` blocks in `.astro` layout files — Prettier parses them as plain JS and will fail
-- Do not import `allMdxPosts` at runtime in client-side code — it is a build-time-only export
-- Do not give two posts the same `id`, even across locales — the redirect pages use `id` as the lookup key
+## Scope
+
+### In scope
+- `src/content.config.ts` + custom loader (`src/content/lib/postsLoader.ts`) defining one `posts` collection merging per-id `meta.json` with per-language MDX frontmatter
+- New file layout for all 65 posts: `src/content/posts/{id}/{meta.json,fi.mdx,sv.mdx,en.mdx}`
+- Dynamic routes replacing 12 duplicated per-locale files: `src/pages/[lang]/blog/[id]/[slug]/index.astro`, `src/pages/[lang]/blog/[id]/index.astro` (redirect), `src/pages/[lang]/rss.xml.ts`, `src/pages/[lang]/category/[tag].astro`
+- `PostLayout.astro` moving from `MDXLayoutProps` (implicit MDX-layout convention) to explicit props
+- `src/lib/mdxPosts.ts` replaced by `src/lib/posts.ts` (async, collection-backed)
+- `src/pages/404.astro`'s wrong-slug redirect (`window.__postIndex`) updated for the async loader
+- One-off migration script converting all 65 posts, verifying shared fields are byte-identical across each fi/sv/en triplet before collapsing them into `meta.json`
+- Check-script updates (`cross-file.mjs`, `mdx-deep.ts`, `seo.sh`, `content.sh`, `aeo.sh`, `style-fi.sh`, `redirects.mjs`) and a new `scripts/lib/read-json-field.mjs` helper so bash checks can read `meta.json` fields
+- `src/lib/sitemapLastmod.ts` dedicated branch for the new layout
+- `.lintstagedrc.mjs`, `.github/workflows/main.yml`, `package.json` glob/find updates for the new file location
+
+### Out of scope
+- `about/`, `contact/`, `newsletter/`, `privacy-policy/`, `recommendations/`, front-page `index.mdx` — stay as manually duplicated per-locale files (unique long-form content, low duplication cost)
+- `en-cv.ts`/`fi-cv.ts`/`sv-cv.ts` — unchanged
+- `blog/index.mdx`, `blog/all/index.mdx` — stay as thin per-locale MDX wrapper pages
+- The language switcher's non-post fallback behaviour, the hreflang mechanism in `Head.astro` itself, and the `astro.config.mjs` `i18n` block — this migration must keep feeding them correct data, not change how they work
+- Any change to tag definitions (`src/content/tags.ts`) or the multi-author byline convention below — both carry over unchanged
 
 ---
 
 ## Contract
 
-### Definition of Done
-- [ ] Post MDX file exists at `src/pages/{lang}/blog/{id}/{slug}/index.mdx` with all required frontmatter fields
-- [ ] `id` is unique across all locales and not previously used
-- [ ] All tag ids in `tags[]` exist in `src/content/tags.ts`
-- [ ] `heroImage` resolves to an existing Cloudinary asset; `alt` is descriptive
-- [ ] Post appears in `ExcerptList` on the blog index page for the correct locale
-- [ ] `/{lang}/blog/{id}/` redirects 301 to the canonical slug URL
-- [ ] E2E tests pass: `npm run test:e2e`
-- [ ] Accessibility scan passes (no axe violations)
-- [ ] `npm run build` passes (lint and type-check are enforced by pre-commit hooks and CI)
+```gherkin
+Feature: Blog post content-collection routing
 
-### Regression Guardrails
-- `allMdxPosts` must always be sorted newest-first by `id` — never sort by `publishDate` alone
-- The redirect in `src/pages/{lang}/blog/[id]/index.astro` must cover every post `id` for that locale — adding a post without a corresponding redirect page for each locale breaks bare-id URLs
-- Tag filtering in `ExcerptList` uses strict string equality against tag `id` — do not change tag ids in `tags.ts` without updating all post frontmatter that references them
+  Scenario: New post is added
+    Given meta.json and fi.mdx/sv.mdx/en.mdx are created at src/content/posts/66/ with valid data
+    When the site is built
+    Then the post appears at /fi/blog/66/{slug}/, /sv/blog/66/{slug}/, /en/blog/66/{slug}/
+    And it appears in ExcerptList on each locale's /{lang}/blog/ page
+    And /{lang}/blog/66/ redirects 301 to the canonical slug URL for each locale
 
-### Scenarios
+  Scenario: Post slug is changed
+    Given a post at /{lang}/blog/{id}/{old-slug}/ has its slug updated in its {lang}.mdx frontmatter to {new-slug}
+    When the site is built
+    Then /{lang}/blog/{id}/{new-slug}/ serves the post
+    And /{lang}/blog/{id}/ still redirects to the new slug
+    And /{lang}/blog/{id}/{old-slug}/ hits the 404 page, which client-side redirects to the new canonical URL via window.__postIndex
 
-**Scenario: New post is added**
-- Given: An MDX file is created at `src/pages/fi/blog/51/my-new-post/index.mdx` with valid frontmatter
-- When: The site is built
-- Then: The post appears at `/fi/blog/51/my-new-post/`, appears in `ExcerptList` on `/fi/blog/`, and `/fi/blog/51/` redirects 301 to `/fi/blog/51/my-new-post/`
+  Scenario: Post filtered by tag
+    Given a post's meta.json has tags: ["kirkkonummi"]
+    When a visitor navigates to /{lang}/category/kirkkonummi
+    Then the post excerpt appears in the list for that locale; posts without that tag do not appear
 
-**Scenario: Post slug is changed**
-- Given: A post at `/{lang}/blog/{id}/{old-slug}/` has its slug updated in frontmatter to `{new-slug}`
-- When: The site is built
-- Then: `/{lang}/blog/{id}/{new-slug}/` serves the post; `/{lang}/blog/{id}/` still redirects to the new slug; `/{lang}/blog/{id}/{old-slug}/` hits the 404 page, which client-side redirects to the new canonical URL
+  Scenario: Translation-completeness guarantee is preserved
+    Given a post id has fi.mdx and en.mdx but no sv.mdx under src/content/posts/{id}/
+    When cross-file.mjs runs (pre-commit or CI)
+    Then it fails, naming the missing locale — exactly as it does today for the old layout
 
-**Scenario: Post filtered by tag**
-- Given: A post has `tags: [kirkkonummi]` in frontmatter
-- When: A visitor navigates to `/{lang}/category/kirkkonummi`
-- Then: The post excerpt appears in the list; posts without that tag do not appear
+  Scenario: Shared metadata cannot drift
+    Given a post's tags/publishDate/updatedDate/heroImage/authors/externalPublications live only in meta.json
+    When any of fi.mdx/sv.mdx/en.mdx is edited
+    Then the shared fields are unaffected, because they are not duplicated into per-language files at all
 
-**Scenario: Post with missing tag id**
-- Given: A post frontmatter has `tags: [nonexistent-tag]`
-- When: The site is built
-- Then: The tag filter silently returns zero results for that tag — no build error, but the post is invisible under that category (anti-pattern: always use defined tag ids)
+  Scenario: meta.json-only edit still triggers validation
+    Given only src/content/posts/{id}/meta.json is staged for commit (no .mdx change)
+    When pre-commit runs
+    Then lint-staged still re-runs mdx-validate.sh against that id's three language files
+
+  Scenario: Freshness check still fires
+    Given a post's meta.json has publishDate more than 90 days ago and no updatedDate
+    When mdx-deep.ts runs
+    Then the commit is rejected with the same freshness error as today
+
+  Scenario: Sitemap build does not regress
+    Given the migration has moved all posts to the new layout
+    When the site is built
+    Then sitemapLastmod does not throw, and every post's lastmod date matches meta.json's updatedDate
+
+  Scenario: Post with missing tag id
+    Given a post's meta.json has tags: ["nonexistent-tag"]
+    When the site is built
+    Then the tag filter silently returns zero results for that tag — no build error, but the post is invisible under that category (anti-pattern: always use tag ids defined in src/content/tags.ts)
+```
+
+---
+
+## Data Model
+
+```typescript
+// src/content.config.ts schema — the full validated shape of a collection entry.
+// Sourced by merging src/content/posts/{id}/meta.json (shared) with
+// src/content/posts/{id}/{lang}.mdx frontmatter (per-language) in the custom loader.
+interface PostEntry {
+  // shared, lives only in meta.json — one physical copy per post id
+  id: number
+  publishDate: string // ISO 8601
+  updatedDate: string // ISO 8601
+  tags: string[] // at least one; must exist in src/content/tags.ts
+  heroImage: string // Cloudinary filename, no extension
+  authors?: AuthorEntry[] // src/content/person.ts
+  externalPublications?: ExternalPublication[] // src/lib/byline.ts
+
+  // per-language, lives only in {lang}.mdx frontmatter
+  lang: 'fi' | 'sv' | 'en'
+  slug: string // URL-safe, kebab-case, unique per locale
+  pageTitle: string
+  title: string
+  description: string
+  alt: string // descriptive, non-empty for hero images
+  faq?: Array<{ q: string; a: string }>
+}
+
+// src/lib/posts.ts — enriched shape used by routes/components
+interface Post extends PostEntry {
+  url: string // `/${lang}/blog/${id}/${slug}/`
+  wordCount: number
+  readingTime: number
+}
+```
+
+File layout:
+```
+src/content/posts/{id}/
+  meta.json   # PostEntry's shared fields
+  fi.mdx      # PostEntry's per-language fields + body
+  sv.mdx
+  en.mdx
+```
+
+The `id` is permanent and numeric — never reuse, never duplicate across posts. The `slug` may change; always redirect from old slugs rather than keeping stale files.
+
+---
+
+## Dependencies
+
+- [Tags](../tags/spec.md) — posts reference tag `id` strings in `meta.json`'s `tags[]`; never invent new tag ids in post data
+- [SEO](../seo/spec.md) — hreflang generation consumes `langAlternates`, which this migration must keep computing correctly (mechanism itself is out of scope)
+- [RSS](../rss/spec.md) — RSS route is being collapsed to `src/pages/[lang]/rss.xml.ts` as part of this migration; content/dates must not regress
+- [Images](../images/spec.md) — `heroImage` resolution via `astro-cloudinary` is unaffected by this migration; only the frontmatter field's file location changes
+
+---
+
+## Anti-patterns
+
+- **Do not** leave posts split across both the old (`src/pages/{lang}/blog/{id}/{slug}/`) and new (`src/content/posts/{id}/`) layout on `main` — a half-migrated tree double-counts posts in `cross-file.mjs`, the sitemap, and `redirects.mjs`
+- **Do not** detect "is this a blog post" by content-sniffing (`/PostLayout/.test(content)`) in any check script going forward — use the path (`src/content/posts/*/{fi,sv,en}.mdx`); content-sniffing breaks once `layout:` is removed from frontmatter
+- **Do not** assume `heroImage`/`tags`/`publishDate`/etc. can be read from the file being checked in `content.sh`/`seo.sh`/`mdx-deep.ts` — they now live in the sibling `meta.json`; but `alt`/`description`/`slug` etc. stay in the language file being checked (mixed-source, not a blanket switch)
+- **Do not** blind-strip every `import` line during migration — post id 64 (all three locales) uses `<ImageWithCaption>` directly in the MDX body outside the `export const components` remap object; strip only imports that appear solely inside that remap
+- **Do not** add a tag id in `meta.json` that is not defined in `src/content/tags.ts` — it silently breaks tag filtering
+- **Do not** give two posts the same `id`, even across locales — the redirect route and `getPostAlternates` use `id` as the lookup key
+- **Do not** use TypeScript syntax in `<script>` blocks in `.astro` layout files — Prettier parses them as plain JS and will fail
+- **Do not** import from `src/lib/posts.ts` in client-side code — `getCollection()` is a build-time-only API
+- **Do not** point `src/lib/sitemapLastmod.ts` at the new layout without its dedicated URL-construction branch — `updatedDate` no longer lives in any `.mdx` file, so the existing per-file `updatedDate` requirement would hard-throw the build for every post
+
+---
+
+## Open Questions
+
+- [ ] Exact Astro `Loader` API surface (`parseFrontmatter`, `store.set()`, `LoaderContext`) for the custom loader merging `meta.json` + per-language MDX — verify in the migration spike, not assumed from docs
+- [ ] Whether `<Content components={mdxComponents} />` actually overrides per-post custom component remaps the way file-local `export const components` did on page-routed MDX — verify in the spike; if it doesn't, the per-post remap consolidation approach needs rethinking
+- [ ] Whether `getCollection()` resolves inside Vitest as-is, or needs an `astro sync` step added to `pretest`/CI
+- [ ] Whether `mdx-deep.ts`'s existing `fmField` regex extraction works unchanged against `meta.json`'s raw text, or needs a small dedicated JSON-aware reader
+
+---
+
+## Changelog
+
+| Date | Change |
+|------|--------|
+| 2026-07-30 | Rewrote for Content Collection migration (issue #1341) — supersedes the file-based-routing architecture, frontmatter schema, and URL/redirect contract description from the original version of this spec |
