@@ -10,9 +10,9 @@
 
 Blog posts are the primary content type on the site — political commentary, municipal news, and personal views. They must be stable (URLs never break), discoverable (by tag and language), and accessible (WCAG-compliant, keyboard navigable). Every post must exist in all three languages (fi, sv, en) — this guarantee is non-negotiable and must never weaken.
 
-Until now, each post was 3 fully hand-written page-routed MDX files (`src/pages/{lang}/blog/{id}/{slug}/index.mdx`), and every other post-related route (bare-id redirect, RSS, category) was likewise hand-duplicated 3x per locale. This produced 195+ near-identical files for 65 posts, no runtime validation of frontmatter shape, and — critically — no guarantee that fields which happen to be identical across a post's three translations today (`publishDate`, `updatedDate`, `tags`, `heroImage`, `authors`, `externalPublications`) actually stay in sync; nothing caught it if they silently drifted.
+Until now, each post was 3 fully hand-written page-routed MDX files, and every other post-related route (bare-id redirect, RSS, category) was likewise hand-duplicated 3x per locale. This produced 195+ near-identical files for 65 posts, no runtime validation of frontmatter shape, and — critically — no guarantee that fields which happen to be identical across a post's three translations today (dates, tags, hero image, authors, external publications) actually stay in sync; nothing caught it if they silently drifted.
 
-This spec covers migrating posts to an Astro Content Collection: one dynamic route per route type, generated from collection data, with the shared-across-locales fields extracted into one physical `meta.json` per post id (making drift on those fields structurally impossible) while per-language fields (`title`, `description`, `slug`, `alt`, `faq`, body) stay one file per language. See `/home/lapanti/.claude/plans/the-current-site-has-whimsical-iverson.md` for the full design rationale and rejected alternatives (per-file duplication kept as-is; two separate Astro collections joined in code; a YAML shared-metadata file).
+This spec covers collapsing that duplication to one dynamic route per route type, generated from a single data source, while eliminating the drift risk structurally rather than merely detecting it, and without weakening the guarantee that every post exists in all three languages. See `/home/lapanti/.claude/plans/the-current-site-has-whimsical-iverson.md` for the full design rationale and rejected alternatives.
 
 ---
 
@@ -68,10 +68,17 @@ Feature: Blog post content-collection routing
     When cross-file.mjs runs (pre-commit or CI)
     Then it fails, naming the missing locale — exactly as it does today for the old layout
 
-  Scenario: Shared metadata cannot drift
-    Given a post's tags/publishDate/updatedDate/heroImage/authors/externalPublications live only in meta.json
-    When any of fi.mdx/sv.mdx/en.mdx is edited
-    Then the shared fields are unaffected, because they are not duplicated into per-language files at all
+  Scenario: hreflang and language switcher resolve correctly
+    Given a post exists in all three locales under the new layout
+    When the page is built
+    Then its hreflang alternate links point at the correct three canonical URLs (one per locale)
+    And the language switcher's data-switch-to-lang links resolve to those same three URLs, even though each locale's slug differs
+
+  Scenario: RSS feed reflects posts correctly
+    Given posts exist for a locale under the new layout
+    When /{lang}/rss.xml is requested
+    Then it lists those posts, each with the correct title, description, and pubDate sourced from that post's data
+    And a post's rendered body content is included, matching its {lang}.mdx source
 
   Scenario: meta.json-only edit still triggers validation
     Given only src/content/posts/{id}/meta.json is staged for commit (no .mdx change)
@@ -141,6 +148,8 @@ src/content/posts/{id}/
 
 The `id` is permanent and numeric — never reuse, never duplicate across posts. The `slug` may change; always redirect from old slugs rather than keeping stale files.
 
+Because `meta.json`'s fields have exactly one physical copy per post id, cross-locale drift on `publishDate`/`updatedDate`/`tags`/`heroImage`/`authors`/`externalPublications` is impossible by construction — there is no second copy to fall out of sync. This is a property of the layout, not a runtime check to test.
+
 ---
 
 ## Dependencies
@@ -180,3 +189,4 @@ The `id` is permanent and numeric — never reuse, never duplicate across posts.
 | Date | Change |
 |------|--------|
 | 2026-07-30 | Rewrote for Content Collection migration (issue #1341) — supersedes the file-based-routing architecture, frontmatter schema, and URL/redirect contract description from the original version of this spec |
+| 2026-07-30 | Addressed /review-spec findings: added hreflang and RSS Contract scenarios, replaced the non-testable drift scenario with a Data Model note, trimmed Intent to problem/why only |
