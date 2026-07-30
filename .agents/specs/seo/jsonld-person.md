@@ -23,7 +23,7 @@ The goal is maximum E-E-A-T entity reconciliation: LLMs and answer engines shoul
 - `PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'` — stable entity identifier; `id="person"` anchor added to FI About page to make fragment resolvable
 - `src/lib/jsonld.ts` — add `PROFILEPAGE = 'ProfilePage'` constant
 - `src/components/Head.astro` — consume `person.ts`; emit `ProfilePage > mainEntity Person` branch; emit `BlogPosting.author` as Person id-reference array; emit `<meta property="article:author">` once per author
-- `src/lib/mdxPosts.ts` — add optional `authors` field to `MdxPost` interface
+- `src/content.config.ts` — `authors` field (optional) on the posts collection schema, shared per post id via `meta.json` (with `role` resolved per locale — see the posts spec's Data Model)
 - `src/layouts/PostLayout.astro` — auto-rendered co-author byline after `<slot />` when `authors.length > 1`
 - About-page frontmatter: `type: 'Person'` → `'ProfilePage'` in fi/en/sv
 - Visible Wikipedia link sentence on all three About pages
@@ -268,9 +268,10 @@ export type AuthorEntry =
       role?: string   // localized role/title string (e.g. 'kunnanvaltuutettu'); omit for name-only byline
     }
 
-// Added to MdxPost in src/lib/mdxPosts.ts
+// Added to the posts collection schema in src/content.config.ts (shared per post id
+// via meta.json — role is the one sub-field resolved per locale, see posts spec).
 // When absent, implementation defaults to ['lauri']
-interface MdxPost {
+interface Post {
   // … existing fields …
   authors?: AuthorEntry[]
 }

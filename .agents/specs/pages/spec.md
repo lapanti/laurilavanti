@@ -12,10 +12,10 @@ Static informational pages (home, about, contact, blog index, tag/category pages
 - **Dynamic/programmatic pages (404, category/tag pages):** use `PageLayout.astro` directly from `.astro` files. Props passed directly (not via `frontmatter` wrapper). PageLayout handles both modes: `(Astro.props.frontmatter as Props | undefined) ?? Astro.props`
 - **Base layout:** `BaseLayout.astro` is used by all three layouts above and handles `<head>`, nav, footer, and language-switching script
 - **Navigation:** defined in `src/content/nav.ts`. Links with `switchToLang` get `data-switch-to-lang` attribute; `BaseLayout.astro` inline script rewrites those hrefs on page load by replacing the locale prefix in `window.location.pathname`
-- **Blog index page:** renders `<FrontPageExcerptList>` which feeds into `ExcerptList` → `allMdxPosts`
-- **Category/tag pages:** `src/pages/{lang}/category/[tag].astro` — `getStaticPaths` from `tags.ts`, renders `ExcerptList` filtered by tag
-- **404 page:** `src/pages/404.astro` — contains `window.__postIndex` lookup table for client-side wrong-slug redirect
-- **Dependencies:** all pages depend on `BaseLayout.astro`; blog index and category pages depend on `allMdxPosts`; nav language switch depends on locale prefix conventions
+- **Blog index page:** renders `<FrontPageExcerptList>` which feeds into `ExcerptList` → `getExcerptPosts()` (`src/lib/posts.ts`)
+- **Category/tag pages:** single dynamic route `src/pages/[lang]/category/[tag].astro` — `getStaticPaths` returns the cross product of `tags.ts` × locales, renders `ExcerptList` filtered by tag
+- **404 page:** `src/pages/404.astro` — contains `window.__postIndex` lookup table (built from `await getAllPosts()`) for client-side wrong-slug redirect
+- **Dependencies:** all pages depend on `BaseLayout.astro`; blog index and category pages depend on `src/lib/posts.ts`; nav language switch depends on locale prefix conventions
 
 ### Frontmatter schema (MDX pages)
 ```yaml
@@ -39,9 +39,9 @@ backgroundImage: cloudinary-filename-no-extension
 ### Anti-Patterns
 - Do not use `FrontPageLayout` or `PostLayout` for anything other than their designated page types — layout prop modes are incompatible
 - Do not add nav links directly in `.astro` files — always update `src/content/nav.ts` so the language-switch script can manage them
-- Do not hardcode locale strings in category or 404 pages — derive from `tags.ts` or `allMdxPosts` so all locales stay in sync
+- Do not hardcode locale strings in category or 404 pages — derive from `tags.ts` or `src/lib/posts.ts` so all locales stay in sync
 - Do not use TypeScript syntax inside `<script>` blocks in `.astro` files — Prettier parses them as plain JS
-- Do not add a new locale without creating the full set of pages (`index.mdx`, `about`, `contact`, `blog` index, `[id]/index.astro` redirect, `category/[tag].astro`)
+- Do not add a new locale without creating the per-locale MDX pages (`index.mdx`, `about`, `contact`, `blog` index) and adding the locale to the `langs`/`LANGS` arrays in the already-unified `[lang]/blog/[id]/index.astro`, `[lang]/rss.xml.ts`, and `[lang]/category/[tag].astro` routes
 
 ---
 
@@ -89,4 +89,4 @@ backgroundImage: cloudinary-filename-no-extension
 **Scenario: New locale added**
 - Given: A new locale `de` is to be added
 - When: Implementation begins
-- Then: Files required before the locale is usable: `src/pages/de/index.mdx`, `src/pages/de/about/index.mdx`, `src/pages/de/contact/index.mdx`, `src/pages/de/blog/index.mdx`, `src/pages/de/blog/[id]/index.astro`, `src/pages/de/category/[tag].astro`; nav entries added to `src/content/nav.ts`; `lang` type union in `src/lib/mdxPosts.ts` extended to include `'de'`
+- Then: Per-locale page files still required: `src/pages/de/index.mdx`, `src/pages/de/about/index.mdx`, `src/pages/de/contact/index.mdx`, `src/pages/de/blog/index.mdx`; blog post routes (`src/pages/[lang]/blog/[id]/[slug]/index.astro`, `[lang]/blog/[id]/index.astro`, `[lang]/rss.xml.ts`, `[lang]/category/[tag].astro`) are already locale-agnostic dynamic routes — `de` just needs adding to their `langs`/`LANGS` arrays and to the `lang` enum in `src/content.config.ts`'s posts schema; nav entries added to `src/content/nav.ts`; `defaultLocale`/`locales` updated in `astro.config.mjs`

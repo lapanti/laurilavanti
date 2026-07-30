@@ -34,7 +34,7 @@ The header navigation provides the primary wayfinding for all three locales. It 
   })
   ```
   On blog post pages, `PostLayout` computes `langAlternates` via `getPostAlternates(id)` and passes it to `BaseLayout`, which serialises it as `window.__langAlternates`. The script uses this map to resolve the correct translated slug. On all other pages the map is absent and the script falls back to a plain prefix swap.
-- **`getPostAlternates`** (`src/lib/mdxPosts.ts`): Build-time helper that filters `allMdxPosts` by `id` and returns a `Record<Lang, string>` mapping each locale to its canonical post URL.
+- **`getPostAlternates`** (`src/lib/posts.ts`): Build-time helper that filters posts by `id` and returns a `Record<Lang, string>` mapping each locale to its canonical post URL.
 - **Skip links:** `SkipLinks.astro` renders two visually hidden links (`#main`, `#footer`) that become visible on focus — keyboard accessibility requirement.
 - **Dependencies:** All layouts → `BaseLayout` → `Header`. Nav data is used nowhere else.
 

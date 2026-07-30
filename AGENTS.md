@@ -89,7 +89,7 @@ project:
 src:
   components: src/components/   # Astro UI components
   layouts: src/layouts/         # Page layouts (BaseLayout, PostLayout, PageLayout, FrontPageLayout)
-  lib: src/lib/                 # Build-time helpers (mdxPosts.ts, etc.)
+  lib: src/lib/                 # Build-time helpers (posts.ts, etc.)
   content: src/content/         # Tags, nav, and other content definitions
   pages: src/pages/             # MDX content and Astro route files (locale-structured)
 

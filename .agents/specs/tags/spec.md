@@ -28,15 +28,15 @@ Tags are the content taxonomy used to categorise blog posts and generate categor
   ```
   Currently 30 tags.
 
-- **Post frontmatter reference:** `tags: [id1, id2]` — array of tag `id` strings. No validation at build time — an unknown id silently produces no category page match.
+- **Post reference:** `tags: [id1, id2]` — array of tag `id` strings, shared per post id in `meta.json` (not per-language frontmatter). The posts collection schema (`src/content.config.ts`) validates it's a non-empty string array, but not that each id exists in `tags.ts` — an unknown id passes schema validation but silently produces no category page match (caught instead by `scripts/checks/content.sh`'s tag-validity check).
 
 - **`buildTagCollection(lang)`** (referenced in `ExcerptList` context): builds a `TagCollection`-compatible object. Comes from `tags.ts` via the pattern documented in `ARCHITECTURE.md`.
 
-- **Category pages:** `src/pages/{lang}/category/[tag].astro` — `getStaticPaths` maps `tags` → `{ params: { tag: t.id }, props: { tag: t } }`. Only ids in `tags.ts` get a page generated.
+- **Category pages:** single dynamic route `src/pages/[lang]/category/[tag].astro` — `getStaticPaths` maps the cross product of locales × `tags` → `{ params: { lang, tag: t.id }, props: { tag: t } }`. Only ids in `tags.ts` get a page generated.
 
 - **Category page enrichment:** Each category page passes `type={COLLECTIONPAGE}`, `description` (from `tag.metaDescription[lang]`), `heroImage` (tag override or `'Lauri-Lavanti-next-to-a-table'`), `alt`, and `faq` (locale-specific array) to `PageLayout`. Each string in `tag.descriptions[lang]` is rendered as a separate `<Paragraph>` before `<ExcerptList>`. FAQPage JSON-LD is emitted when the locale's `faq` array has 2+ entries.
 
-- **Filtering in `ExcerptList`:** filters `allMdxPosts` by `post.tags.includes(tagId)` — strict string equality. No fuzzy matching.
+- **Filtering in `ExcerptList`:** delegates to `getExcerptPosts({ tag })` (`src/lib/posts.ts`), which filters by `post.tags.includes(tagId)` — strict string equality. No fuzzy matching.
 
 - **`getTagName(id, lang)`:** returns the display name for a given id and locale. Returns `undefined` for unknown ids.
 

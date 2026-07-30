@@ -95,15 +95,11 @@ Defined in `src/content/tags.ts` as `LocalTag[]` with `id` and `names: { fi, sv,
 
 ---
 
-## MDX posts helper
+## Blog posts content collection
 
-`src/lib/mdxPosts.ts` collects all blog post frontmatter at build time:
+Posts live at `src/content/posts/{id}/{meta.json,fi.mdx,sv.mdx,en.mdx}` — a single Astro Content Collection defined in `src/content.config.ts`, backed by a custom loader (`src/content/lib/postsLoader.ts`) that merges each post's shared `meta.json` (id, dates, tags, heroImage, authors) with its per-language MDX frontmatter (slug, title, description, alt, faq, externalPublications) before schema validation.
 
-```ts
-import.meta.glob<GlobResult>('../pages/*/blog/*/*/index.mdx', { eager: true })
-```
-
-Exports `allMdxPosts` sorted newest-first. Use this whenever you need to list or filter posts at build time.
+`src/lib/posts.ts` wraps `getCollection('posts')` and exports `getAllPosts()` sorted newest-first, plus `getExcerptPosts()`, `getPostAlternates()`, and `getPostHtml()`. Use these whenever you need to list, filter, or link posts at build time. `getCollection()` cannot be exercised directly in Vitest (no prior `astro build`/`sync` in-process), so the filtering/sorting logic is kept in pure, fixture-tested functions (`filterExcerptPosts`, `sortByRelatedTags`, `buildAlternatesMap`) separate from the thin `astro:content`-touching wrappers.
 
 ---
 
@@ -119,7 +115,7 @@ Exports `allMdxPosts` sorted newest-first. Use this whenever you need to list or
 
 | From | To | Mechanism |
 |---|---|---|
-| `/{lang}/blog/{id}/` | `/{lang}/blog/{id}/{slug}/` | HTTP 301 via `src/pages/{lang}/blog/[id]/index.astro` (one file per locale) |
+| `/{lang}/blog/{id}/` | `/{lang}/blog/{id}/{slug}/` | HTTP 301 via `src/pages/[lang]/blog/[id]/index.astro` (single dynamic route for all locales) |
 | `/{lang}/blog/{id}/{wrong-slug}/` | correct canonical URL | Client-side JS on 404 page using `window.__postIndex` lookup table |
 
 ---
@@ -128,7 +124,7 @@ Exports `allMdxPosts` sorted newest-first. Use this whenever you need to list or
 
 `src/components/ExcerptList.astro` — renders a list of post excerpts.
 
-- Merges MDX posts (from `allMdxPosts`) with any Contentful entries (legacy/future).
+- Merges MDX posts (from `getExcerptPosts()`, `src/lib/posts.ts`) with any Contentful entries (legacy/future).
 - Filters by `lang`, `tag`, and `currentSlug`.
 - Accepts optional `limit` prop.
 - Data flow: layout → `FrontPageExcerptList` → `ExcerptList` → `Excerpt` → `Meta`.

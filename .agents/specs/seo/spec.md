@@ -164,14 +164,14 @@ Every page emits structured metadata for search engines and social platforms: JS
 
 #### Definition of Done
 - [ ] Every URL in `dist/sitemap-0.xml` carries a `<lastmod>` element (count of `<lastmod>` equals count of `<url>`)
-- [ ] Every MDX page under `src/pages/` declares `updatedDate` in frontmatter (build fails otherwise)
+- [ ] Every MDX page under `src/pages/` declares `updatedDate` in frontmatter, and every post under `src/content/posts/` has `updatedDate` in its `meta.json` (build fails otherwise)
 - [ ] Every tag in `src/content/tags/` declares `updatedDate` (TS error otherwise)
 - [ ] `PostLayout` emits `dateModified` directly from `updatedDate` — no fallback
 - [ ] `npm run test` passes; `npm run check` is clean; `npm run build` succeeds
 
 #### Regression Guardrails
 - `LocalTag.updatedDate` is required, not optional — TypeScript prevents new tags from shipping without it
-- `MdxPost.updatedDate` is required — TypeScript surfaces missing-date pages at type-check time
+- `updatedDate` is a required field on the posts collection schema (`src/content.config.ts`) — Astro's content-layer sync surfaces missing-date posts at build/check time
 - Adding a fourth locale requires updating both the helper's category-URL emission and the existing hreflang regex
 - New MDX pages without `updatedDate` fail the build at config-load time, not at deploy time
 
