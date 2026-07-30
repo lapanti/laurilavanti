@@ -25,15 +25,15 @@ The file is generated automatically from frontmatter — no manual curation per 
 - Pillar pages section: `/fi/` (home), `/fi/topics`, `/fi/about`
 - All published Finnish posts grouped by tag, sorted newest-first within each tag
 - `artificial-intelligence` tag section rendered first; remaining tags in alphabetical order by tag id
-- Multilingual section ("Muut kielet / Other languages / Andra språk"): links to `/en/` and `/sv/` equivalents of each post (Swedish and English posts from `allMdxPosts`)
-- Build-time generation via `allMdxPosts` from `src/lib/mdxPosts.ts` and `tags` from `src/content/tags.ts`
+- Multilingual section ("Muut kielet / Other languages / Andra språk"): links to `/en/` and `/sv/` equivalents of each post (Swedish and English posts from the posts collection)
+- Build-time generation via `getAllPosts()` from `src/lib/posts.ts` and `tags` from `src/content/tags.ts`
 - Response `Content-Type: text/plain` (Astro default for `.txt.ts`)
 
 ### Out of scope
 - `/llms-full.txt` expanded variant (full post body content)
 - Manual per-post curation or overrides
 - Dynamic/SSR generation (static only)
-- Posts in draft/unpublished state (excluded by existing `allMdxPosts` filter)
+- Posts in draft/unpublished state (excluded by existing `getAllPosts()` filter)
 
 ---
 
@@ -81,8 +81,8 @@ Feature: llms.txt AI crawler entry-point map
     Then for each published Finnish post, its URL appears under every tag it belongs to
     And no post URL appears under a tag it does not belong to
 
-  Scenario: Post count matches mdxPosts inventory
-    Given the total number of published Finnish posts in allMdxPosts
+  Scenario: Post count matches the posts collection inventory
+    Given the total number of published Finnish posts returned by getAllPosts()
     When all unique post URLs in /llms.txt tag sections are counted
     Then the count equals the number of published Finnish posts
 
@@ -110,8 +110,8 @@ Feature: llms.txt AI crawler entry-point map
 ## Data Model
 
 ```typescript
-// Reused from src/lib/mdxPosts.ts — no new types required
-// MdxPostWithUrl { id, lang, title, description, slug, tags, url, publishDate, ... }
+// Reused from src/lib/posts.ts — no new types required
+// Post { id, lang, title, description, slug, tags, url, publishDate, ... }
 
 // Section structure (internal, not exported)
 interface LlmsTxtSection {
@@ -127,7 +127,7 @@ interface LlmsTxtSection {
 
 ## Dependencies
 
-- [`src/lib/mdxPosts.ts`](../../src/lib/mdxPosts.ts) — `allMdxPosts` array (source of all published posts)
+- [`src/lib/posts.ts`](../../src/lib/posts.ts) — `getAllPosts()` (source of all published posts)
 - [`src/content/tags.ts`](../../src/content/tags.ts) — `tags` array, `getTagName` (tag metadata and Finnish names)
 - [`src/pages/robots.txt.ts`](../../src/pages/robots.txt.ts) — reference pattern for static API route shape
 
@@ -136,7 +136,7 @@ interface LlmsTxtSection {
 ## Anti-patterns
 
 - **Do not** use `getStaticPaths` — this is a single static file route, not a dynamic route; use `export const GET: APIRoute` directly (same as `robots.txt.ts`)
-- **Do not** filter `allMdxPosts` by anything beyond `lang === 'fi'` for Finnish sections — `allMdxPosts` already excludes drafts
+- **Do not** filter the posts array by anything beyond `lang === 'fi'` for Finnish sections — `getAllPosts()` already excludes drafts
 - **Do not** hardcode tag names — always call `getTagName(id, 'fi')` so names stay in sync with `src/content/tags.ts`
 - **Do not** deduplicate posts across tags — a post should appear under every tag it belongs to (this is intentional per llmstxt.org link-list format)
 - **Do not** emit a tag section if `tagPosts.length === 0` — empty sections add noise for AI crawlers
@@ -149,3 +149,4 @@ interface LlmsTxtSection {
 |------|--------|
 | 2026-05-16 | Initial draft — status set to Active, pillar heading and blockquote text confirmed |
 | 2026-05-16 | Fix minor review findings: pinned Content-Type assertion, removed duplicate H1 check, moved empty-tag rule to Contract only, clarified LlmsTxtSection.heading type, pinned Finnish pillar labels, removed double separator |
+| 2026-07-30 | Updated for the posts content-collection migration: `allMdxPosts`/`src/lib/mdxPosts.ts` references replaced with `getAllPosts()`/`src/lib/posts.ts`; the exported function is now `buildLlmsTxt(posts, site)` (pure) with `GET` awaiting `getAllPosts()` |

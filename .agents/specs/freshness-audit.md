@@ -123,13 +123,13 @@ export const FRESHNESS_STALE_UPDATE_DAYS = 180  // Case B threshold
 ## Dependencies
 
 - `scripts/checks/mdx-deep.ts` — reuse `splitMdx()` and `fmField()` helpers; do not duplicate parsing logic
-- `src/lib/mdxPosts.ts` — **not** used at runtime (build-time Astro glob); script reads MDX files directly via `fs` like `mdx-deep.ts` does
+- `src/lib/posts.ts` — **not** used at runtime (`getCollection()` requires Astro's content-layer runtime); script reads each post's per-language `.mdx` frontmatter and sibling `meta.json` (for `publishDate`/`updatedDate`) directly via `fs`, like `mdx-deep.ts` does
 
 ---
 
 ## Anti-patterns
 
-- **Do not** import from `src/lib/mdxPosts.ts` in the script — it uses `import.meta.glob` which is Astro/Vite-only and will fail in Node
+- **Do not** import from `src/lib/posts.ts` in the script — `getCollection()` is Astro/Vite-only and will fail in a plain Node process (see `withastro/astro#7051`)
 - **Do not** add `check:freshness` to the existing `validate-content` CI job — that job blocks merges; freshness is informational and runs separately (weekly workflow)
 - **Do not** create one GitHub issue per stale post — one tracking issue with a list, updated weekly
 
