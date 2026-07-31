@@ -50,7 +50,6 @@ function resolveMeta(meta: Record<string, unknown>, lang: Lang): Record<string, 
  */
 export function postsLoader(): Loader {
     const inner = glob({ base: './src/content/posts', pattern: '*/{fi,sv,en}.mdx' })
-    const metaCache = new Map<string, Record<string, unknown>>()
 
     return {
         load: async (context: LoaderContext) => {
@@ -60,10 +59,13 @@ export function postsLoader(): Loader {
                 const { filePath, data } = options
                 if (!filePath) return originalParseData(options)
 
-                const dir = dirname(filePath)
-                const meta: Record<string, unknown> =
-                    metaCache.get(dir) ?? JSON.parse(readFileSync(join(dir, 'meta.json'), 'utf-8'))
-                metaCache.set(dir, meta)
+                /*
+                 * Re-read per file (3 tiny reads per post) rather than caching: keeps the
+                 * loader stateless so an `astro dev` edit to meta.json is never served stale.
+                 */
+                const meta: Record<string, unknown> = JSON.parse(
+                    readFileSync(join(dirname(filePath), 'meta.json'), 'utf-8')
+                )
 
                 const lang = (data as { lang?: Lang }).lang
                 if (!lang) throw new Error(`Post at ${filePath} is missing required "lang" frontmatter`)
