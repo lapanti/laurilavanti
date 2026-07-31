@@ -12,6 +12,8 @@ const authorEntry = z.union([
     }),
 ])
 
+const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'must be an ISO date (YYYY-MM-DD)')
+
 const externalPublication = z.object({
     date: z.string(),
     name: z.string(),
@@ -30,11 +32,11 @@ const posts = defineCollection({
         id: z.number().int().positive(),
         lang: z.enum(['fi', 'sv', 'en']),
         pageTitle: z.string(),
-        publishDate: z.string(),
+        publishDate: isoDate,
         slug: z.string(),
         tags: z.array(z.string()).min(1),
         title: z.string(),
-        updatedDate: z.string(),
+        updatedDate: isoDate,
     }),
 })
 
