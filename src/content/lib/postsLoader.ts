@@ -7,6 +7,19 @@ import { dirname, join } from 'node:path'
 type Lang = 'en' | 'fi' | 'sv'
 type Localized<T> = T | Partial<Record<Lang, T>>
 
+const LANGS: readonly Lang[] = ['en', 'fi', 'sv']
+
+/**
+ * A non-empty object whose keys are all locale codes — i.e. a {fi,sv,en} map rather
+ *  than a plain object value. Guards resolveLocalized against mistaking an arbitrary
+ *  object for a locale map.
+ */
+const isLocalizedRecord = (value: object): value is Partial<Record<Lang, unknown>> => {
+    const keys = Object.keys(value)
+
+    return keys.length > 0 && keys.every((k) => (LANGS as readonly string[]).includes(k))
+}
+
 /**
  * authors[].role is the one shared-field sub-value that legitimately differs per
  *  locale (a co-author's translated job title). meta.json may express it as a plain
@@ -18,7 +31,7 @@ type Localized<T> = T | Partial<Record<Lang, T>>
  */
 function resolveLocalized<T>(value: Localized<T> | undefined, lang: Lang): T | undefined {
     if (value === undefined || value === null) return undefined
-    if (typeof value === 'object' && !Array.isArray(value)) {
+    if (typeof value === 'object' && !Array.isArray(value) && isLocalizedRecord(value)) {
         return (value as Partial<Record<Lang, T>>)[lang]
     }
     return value as T
