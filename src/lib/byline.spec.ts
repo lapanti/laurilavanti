@@ -145,4 +145,22 @@ describe('buildPublicationBylineText', () => {
         const withoutUrl = buildPublicationBylineText({ date: '2024-06-01', name: 'Helsingin Sanomat' }, 'fi')
         expect(withUrl).toBe(withoutUrl)
     })
+
+    it('appends a language suffix when the publication lang differs from the page lang', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', lang: 'sv', name: 'HBL' }, 'fi')).toBe(
+            'Julkaistu myös: HBL, 15. maaliskuuta 2025 (på svenska).'
+        )
+    })
+
+    it('omits the suffix when the publication lang matches the page lang', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', lang: 'fi', name: 'Kauppalehti' }, 'fi')).toBe(
+            'Julkaistu myös: Kauppalehti, 15. maaliskuuta 2025.'
+        )
+    })
+
+    it('omits the suffix when the publication has no lang', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'en')).toBe(
+            'Also published in: Kauppalehti, 15 March 2025.'
+        )
+    })
 })
