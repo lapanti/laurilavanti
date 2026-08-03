@@ -55,6 +55,8 @@ export default defineConfig({
         icon({ include: { 'fa7-brands': ['*'], 'fa7-solid': ['rss'] } }),
         sitemap({
             filter: (page) =>
+                // Exclude root — client-side language-detection dispatcher, no real content (noindex)
+                new URL(page).pathname !== '/' &&
                 // Exclude bare /{lang}/blog/{id}/ redirect pages
                 !/\/(en|fi|sv)\/blog\/\d+\/$/.test(page) &&
                 // Exclude old /kategoria/ redirect pages
