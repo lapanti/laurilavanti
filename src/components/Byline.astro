@@ -36,7 +36,8 @@ const publicationPrefix: Record<string, string> = {
 }
 {
     externalPublications?.map((pub: ExternalPublication) => {
-        const suffix = pub.lang && pub.lang !== lang ? ` (${languageName[pub.lang]})` : ''
+        const pubLang = pub.lang ?? 'fi'
+        const suffix = pubLang !== lang ? ` (${languageName[pubLang]})` : ''
 
         return (
             <p>

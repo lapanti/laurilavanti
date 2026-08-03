@@ -158,7 +158,19 @@ describe('<Byline />', () => {
             expect(result.querySelector('em')?.textContent).not.toContain('(')
         })
 
-        it('renders no suffix when the publication has no lang', async () => {
+        it('defaults an unset lang to fi, so no suffix appears on the fi page', async () => {
+            const result = await renderAstroComponent(Byline, {
+                props: {
+                    authors: ['lauri'],
+                    externalPublications: [{ date: '2025-03-15', name: 'Kauppalehti' }],
+                    lang: 'fi',
+                },
+            })
+
+            expect(result.querySelector('em')?.textContent).not.toContain('(')
+        })
+
+        it('defaults an unset lang to fi, so the suffix appears on non-fi pages', async () => {
             const result = await renderAstroComponent(Byline, {
                 props: {
                     authors: ['lauri'],
@@ -167,7 +179,7 @@ describe('<Byline />', () => {
                 },
             })
 
-            expect(result.querySelector('em')?.textContent).not.toContain('(')
+            expect(result.querySelector('em')?.textContent).toContain('(suomeksi)')
         })
     })
 })

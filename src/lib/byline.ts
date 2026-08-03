@@ -29,7 +29,8 @@ export const formatPublicationDate = (date: string, lang: Lang): string =>
     new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
 export const buildPublicationBylineText = (pub: ExternalPublication, lang: Lang): string => {
-    const suffix = pub.lang && pub.lang !== lang ? ` (${languageName[pub.lang]})` : ''
+    const pubLang = pub.lang ?? 'fi'
+    const suffix = pubLang !== lang ? ` (${languageName[pubLang]})` : ''
 
     return `${publicationPrefix[lang]}: ${pub.name}, ${formatPublicationDate(pub.date, lang)}${suffix}.`
 }
