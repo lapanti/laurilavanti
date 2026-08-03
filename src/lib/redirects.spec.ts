@@ -46,8 +46,11 @@ describe('redirects structural integrity', () => {
         expect(keys.length).toBe(new Set(keys).size)
     })
 
+    it('root is not a static redirect (handled by src/pages/index.astro)', () => {
+        expect(redirects['/']).toBeUndefined()
+    })
+
     it.each([
-        ['/', '/fi/'],
         ['/blogi/', '/fi/blog/'],
         ['/about-me/', '/en/about/'],
         ['/minusta/', '/fi/about/'],

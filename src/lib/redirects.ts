@@ -1,5 +1,4 @@
 export const redirects: Record<string, string> = {
-    '/': '/fi/',
     '/about-me/': '/en/about/',
     '/blogi/': '/fi/blog/',
     '/blogi/aanestin-lansiradan-puolesta/': '/fi/blog/46/aanestin-lansiradan-puolesta/',
