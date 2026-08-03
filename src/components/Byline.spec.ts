@@ -133,5 +133,41 @@ describe('<Byline />', () => {
 
             expect(result.querySelector('p')).toBeNull()
         })
+
+        it('renders a language suffix when the publication lang differs from the page lang', async () => {
+            const result = await renderAstroComponent(Byline, {
+                props: {
+                    authors: ['lauri'],
+                    externalPublications: [{ date: '2025-03-15', lang: 'sv', name: 'HBL' }],
+                    lang: 'fi',
+                },
+            })
+
+            expect(result.querySelector('em')?.textContent).toContain('(på svenska)')
+        })
+
+        it('renders no suffix when the publication lang matches the page lang', async () => {
+            const result = await renderAstroComponent(Byline, {
+                props: {
+                    authors: ['lauri'],
+                    externalPublications: [{ date: '2025-03-15', lang: 'fi', name: 'Kauppalehti' }],
+                    lang: 'fi',
+                },
+            })
+
+            expect(result.querySelector('em')?.textContent).not.toContain('(')
+        })
+
+        it('renders no suffix when the publication has no lang', async () => {
+            const result = await renderAstroComponent(Byline, {
+                props: {
+                    authors: ['lauri'],
+                    externalPublications: [{ date: '2025-03-15', name: 'Kauppalehti' }],
+                    lang: 'en',
+                },
+            })
+
+            expect(result.querySelector('em')?.textContent).not.toContain('(')
+        })
     })
 })

@@ -9,6 +9,7 @@ export interface ExternalPublication {
     name: string
     date: string // YYYY-MM-DD
     url?: string
+    lang?: Lang
 }
 
 const bylinePrefix: Record<Lang, string> = { en: 'Authors', fi: 'Tekijät', sv: 'Författare' }
@@ -22,11 +23,16 @@ const publicationPrefix: Record<Lang, string> = {
 
 const localeMap: Record<Lang, string> = { en: 'en-GB', fi: 'fi-FI', sv: 'sv-SE' }
 
+export const languageName: Record<Lang, string> = { en: 'in English', fi: 'suomeksi', sv: 'på svenska' }
+
 export const formatPublicationDate = (date: string, lang: Lang): string =>
     new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
-export const buildPublicationBylineText = (pub: ExternalPublication, lang: Lang): string =>
-    `${publicationPrefix[lang]}: ${pub.name}, ${formatPublicationDate(pub.date, lang)}.`
+export const buildPublicationBylineText = (pub: ExternalPublication, lang: Lang): string => {
+    const suffix = pub.lang && pub.lang !== lang ? ` (${languageName[pub.lang]})` : ''
+
+    return `${publicationPrefix[lang]}: ${pub.name}, ${formatPublicationDate(pub.date, lang)}${suffix}.`
+}
 
 const joinParts = (parts: string[], lang: Lang): string => {
     if (parts.length === 1) return parts[0]

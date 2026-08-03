@@ -24,10 +24,11 @@ const isLocalizedRecord = (value: object): value is Partial<Record<Lang, unknown
  * authors[].role is the one shared-field sub-value that legitimately differs per
  *  locale (a co-author's translated job title). meta.json may express it as a plain
  *  string (identical everywhere) or as a {fi,sv,en} object; this resolves it down to
- *  a plain string for one language. externalPublications is NOT handled here — its
- *  presence, order, and content vary too much per locale (some locales have no press
- *  mentions at all for a given post) to treat as a shared field, so it lives entirely
- *  in each per-language file's own frontmatter instead, same as title/description/faq.
+ *  a plain string for one language. externalPublications is a different, orthogonal
+ *  concern: entries live in meta.json too (one physical copy, shown on every locale),
+ *  but instead of being translated per reader they carry an optional `lang` marking
+ *  which language the linked article itself was published in — used only to render a
+ *  "(på svenska)"-style suffix when it doesn't match the page being viewed.
  */
 function resolveLocalized<T>(value: Localized<T> | undefined, lang: Lang): T | undefined {
     if (value === undefined || value === null) return undefined

@@ -2,7 +2,7 @@
 import type { AuthorEntry } from '../content/person'
 import type { ExternalPublication } from '../lib/byline'
 
-import { buildBylineText, formatPublicationDate } from '../lib/byline'
+import { buildBylineText, formatPublicationDate, languageName } from '../lib/byline'
 import SmartLink from './SmartLink.astro'
 
 interface Props {
@@ -35,10 +35,14 @@ const publicationPrefix: Record<string, string> = {
     )
 }
 {
-    /* prettier-ignore */
-    externalPublications?.map((pub: ExternalPublication) => (
-        <p>
-            <em>{`${publicationPrefix[lang]}: `}{pub.url ? <SmartLink href={pub.url}>{pub.name}</SmartLink> : pub.name}{`, ${formatPublicationDate(pub.date, lang)}.`}</em>
-        </p>
-    ))
+    externalPublications?.map((pub: ExternalPublication) => {
+        const suffix = pub.lang && pub.lang !== lang ? ` (${languageName[pub.lang]})` : ''
+
+        return (
+            <p>
+                {/* prettier-ignore */}
+                <em>{`${publicationPrefix[lang]}: `}{pub.url ? <SmartLink href={pub.url}>{pub.name}</SmartLink> : pub.name}{`, ${formatPublicationDate(pub.date, lang)}${suffix}.`}</em>
+            </p>
+        )
+    })
 }
