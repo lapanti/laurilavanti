@@ -1,0 +1,37 @@
+---
+import Head from '../components/Head.astro'
+---
+
+<html lang="fi">
+    <head>
+        <Head noindex title="Lauri Lavanti" />
+        <noscript>
+            <meta content="0; url=/fi/" http-equiv="refresh" />
+        </noscript>
+        <script
+            is:inline
+            set:html={`
+            (function () {
+                var supported = ['fi', 'sv', 'en']
+                var langs = (navigator.languages && navigator.languages.length)
+                    ? navigator.languages
+                    : [navigator.language || 'fi']
+                var target = 'fi'
+                for (var i = 0; i < langs.length; i++) {
+                    var primary = String(langs[i]).toLowerCase().split('-')[0]
+                    if (supported.indexOf(primary) !== -1) {
+                        target = primary
+                        break
+                    }
+                }
+                window.location.replace('/' + target + '/')
+            })()
+        `}
+        />
+    </head>
+    <body>
+        <noscript>
+            <p><a href="/fi/">Suomeksi</a> · <a href="/sv/">På svenska</a> · <a href="/en/">In English</a></p>
+        </noscript>
+    </body>
+</html>
