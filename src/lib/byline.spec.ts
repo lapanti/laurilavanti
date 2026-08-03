@@ -126,13 +126,13 @@ describe('buildPublicationBylineText', () => {
     })
 
     it('renders English prefix, name, and date', () => {
-        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'en')).toBe(
+        expect(buildPublicationBylineText({ date: '2025-03-15', lang: 'en', name: 'Kauppalehti' }, 'en')).toBe(
             'Also published in: Kauppalehti, 15 March 2025.'
         )
     })
 
     it('renders Swedish prefix, name, and date', () => {
-        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'sv')).toBe(
+        expect(buildPublicationBylineText({ date: '2025-03-15', lang: 'sv', name: 'Kauppalehti' }, 'sv')).toBe(
             'Publicerat även i: Kauppalehti, 15 mars 2025.'
         )
     })
@@ -158,9 +158,15 @@ describe('buildPublicationBylineText', () => {
         )
     })
 
-    it('omits the suffix when the publication has no lang', () => {
+    it('defaults an unset lang to fi, omitting the suffix on the fi page', () => {
+        expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'fi')).toBe(
+            'Julkaistu myös: Kauppalehti, 15. maaliskuuta 2025.'
+        )
+    })
+
+    it('defaults an unset lang to fi, adding the suffix on non-fi pages', () => {
         expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'en')).toBe(
-            'Also published in: Kauppalehti, 15 March 2025.'
+            'Also published in: Kauppalehti, 15 March 2025 (suomeksi).'
         )
     })
 })

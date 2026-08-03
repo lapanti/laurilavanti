@@ -117,7 +117,11 @@ interface PostEntry {
   tags: string[] // at least one; must exist in src/content/tags.ts
   heroImage: string // Cloudinary filename, no extension
   authors?: AuthorEntry[] // src/content/person.ts
-  externalPublications?: ExternalPublication[] // src/lib/byline.ts
+  externalPublications?: ExternalPublication[] // src/lib/byline.ts — each entry may carry an
+    // optional `lang`, the language the linked article itself is written in (not translated
+    // per reader; defaults to 'fi' when omitted, since most press mentions are Finnish-language).
+    // Shown on every locale, with a "(på svenska)"-style suffix when it doesn't match the page
+    // being viewed
 
   // per-language, lives only in {lang}.mdx frontmatter
   lang: 'fi' | 'sv' | 'en'

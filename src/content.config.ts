@@ -16,7 +16,7 @@ const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'must be an ISO date (YY
 
 const externalPublication = z.object({
     date: z.string(),
-    lang: z.enum(['fi', 'sv', 'en']).optional(),
+    lang: z.enum(['fi', 'sv', 'en']).default('fi'),
     name: z.string(),
     url: z.string().optional(),
 })
