@@ -4,7 +4,7 @@ import { getImage, getImageSrcset } from './images'
 
 vi.unmock('./images')
 
-const BASE = 'https://laurilavanti.fi/images'
+const BASE = 'https://lavanti.fi/images'
 
 describe('getImage', () => {
     it('returns correct URL for 1x1 variant', () => {

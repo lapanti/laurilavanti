@@ -23,7 +23,7 @@ const pageDateMap = buildPageDateMap({
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://laurilavanti.fi/',
+    site: 'https://lavanti.fi/',
     redirects,
     trailingSlash: 'always',
     output: 'static',

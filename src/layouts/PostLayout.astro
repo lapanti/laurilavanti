@@ -37,7 +37,7 @@ const {
 } = post
 
 const canonicalSlug = `${lang}/blog/${id}/${slug}`
-const shareUrl = `https://laurilavanti.fi/${canonicalSlug}/`
+const shareUrl = `https://lavanti.fi/${canonicalSlug}/`
 
 const i18n = {
     en: {
@@ -58,7 +58,7 @@ const t = i18n[lang]
 
 const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 
-const siteOrigin = 'https://laurilavanti.fi'
+const siteOrigin = 'https://lavanti.fi'
 const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }
 const blogLabel: Record<string, string> = { en: 'Blog', fi: 'Blogi', sv: 'Blogg' }
 const breadcrumbs: BreadcrumbItem[] = [

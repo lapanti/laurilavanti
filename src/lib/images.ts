@@ -1,4 +1,4 @@
-const BASE = 'https://laurilavanti.fi/images'
+const BASE = 'https://lavanti.fi/images'
 
 interface CFImageResult {
     height: number

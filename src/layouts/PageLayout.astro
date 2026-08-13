@@ -35,8 +35,8 @@ const categoryLabel: Record<string, string> = { en: 'Category', fi: 'Kategoria',
 const breadcrumbs: BreadcrumbItem[] | undefined =
     type === COLLECTIONPAGE && lang && slug
         ? [
-              { name: homeLabel[lang], url: `https://laurilavanti.fi/${lang}/` },
-              { name: categoryLabel[lang], url: `https://laurilavanti.fi/${slug}/` },
+              { name: homeLabel[lang], url: `https://lavanti.fi/${lang}/` },
+              { name: categoryLabel[lang], url: `https://lavanti.fi/${slug}/` },
           ]
         : undefined
 ---

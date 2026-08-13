@@ -2,7 +2,7 @@ import type { Lang } from './nav'
 
 import { getImage } from '../lib/images'
 
-export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
+export const PERSON_ID = 'https://lavanti.fi/fi/about/#person'
 
 export const personBlueskyHandle = 'laurilavanti.fi'
 export const personThreadsHandle = 'laurilavanti'
@@ -15,7 +15,7 @@ export const personFamilyName = 'Lavanti'
 export const personBirthDate = '1991-10-01'
 export const personBirthPlace = { '@type': 'Place', name: 'Jyväskylä' }
 export const personNationality = { '@type': 'Country', name: 'FI' }
-export const personUrl = 'https://laurilavanti.fi/fi/'
+export const personUrl = 'https://lavanti.fi/fi/'
 
 export function getPersonImageUrl(): Promise<string> {
     return Promise.resolve(getImage('Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla', 'og').src)
