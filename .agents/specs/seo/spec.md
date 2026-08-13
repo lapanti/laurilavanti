@@ -96,7 +96,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 **Scenario: Home page (Person type) metadata**
 - Given: `src/pages/fi/index.mdx` with `type: 'Person'`, `slug: 'fi'`
 - When: The page is built
-- Then: JSON-LD type is `Person`; `jobTitle` is the Finnish value `'Kansanedustajaehdokas'`; `memberOf` is `Vihreä liitto`; canonical URL is `https://laurilavanti.fi/fi/`; hreflang for `sv` points to `https://laurilavanti.fi/sv/`
+- Then: JSON-LD type is `Person`; `jobTitle` is the Finnish value `'Kansanedustajaehdokas'`; `memberOf` is `Vihreä liitto`; canonical URL is `https://lavanti.fi/fi/`; hreflang for `sv` points to `https://lavanti.fi/sv/`
 
 **Scenario: Page without slug**
 - Given: A page rendered without a `slug` prop

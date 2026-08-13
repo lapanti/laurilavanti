@@ -11,7 +11,7 @@ Images are stored in Cloudflare Images, uploaded via `scripts/upload-to-cf-image
 - `getImage(slug, variant): CFImageResult` — returns `{ src, width, height }` for a single size
 - `getImageSrcset(slug, variant, widths[]): { src, srcset, width, height }` — returns responsive srcset entries
 
-URL format: `https://laurilavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gravity},format=auto`
+URL format: `https://lavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gravity},format=auto`
 
 `format=auto` is always appended — CF Images returns WebP or AVIF for browsers that support it, falling back to JPEG. Never omit it.
 

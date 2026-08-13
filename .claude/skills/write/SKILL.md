@@ -2,7 +2,7 @@
 name: write
 description: >-
   Apply Lauri Lavanti's blog writing voice when drafting or editing
-  Finnish-language blog posts for laurilavanti.fi. Trigger when user says
+  Finnish-language blog posts for lavanti.fi. Trigger when user says
   "kirjoita", "muokkaa", "write a blog post", or any Finnish-language
   writing task for the site. NOT for social media content.
 argument-hint: [topic or file-path]
