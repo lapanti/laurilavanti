@@ -27,7 +27,7 @@ describe('<MainNavigationLink />', () => {
 
     it('should have aria-current as false when not in home page', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {
-            request: new Request('https://laurilavanti.fi/fi/about/'),
+            request: new Request('https://lavanti.fi/fi/about/'),
         })
 
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('aria-current', 'false')
@@ -35,7 +35,7 @@ describe('<MainNavigationLink />', () => {
 
     it('should have aria-current as page when in home page', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {
-            request: new Request('https://laurilavanti.fi/fi/'),
+            request: new Request('https://lavanti.fi/fi/'),
         })
 
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('aria-current', 'page')
