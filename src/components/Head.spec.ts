@@ -542,9 +542,9 @@ describe('<Head />', () => {
 
     it('should emit BreadcrumbList JSON-LD for a blog post (3 items)', async () => {
         const breadcrumbs = [
-            { name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' },
-            { name: 'Blogi', url: 'https://laurilavanti.fi/fi/blog/' },
-            { name: 'Testijulkaisu', url: 'https://laurilavanti.fi/fi/blog/1/testijulkaisu/' },
+            { name: 'Etusivu', url: 'https://lavanti.fi/fi/' },
+            { name: 'Blogi', url: 'https://lavanti.fi/fi/blog/' },
+            { name: 'Testijulkaisu', url: 'https://lavanti.fi/fi/blog/1/testijulkaisu/' },
         ]
 
         const result = await renderAstroComponent(Head, {
@@ -564,19 +564,19 @@ describe('<Head />', () => {
         expect(breadcrumbSchema?.itemListElement).toHaveLength(3)
         expect(breadcrumbSchema?.itemListElement[0]).toEqual({
             '@type': 'ListItem',
-            item: 'https://laurilavanti.fi/fi/',
+            item: 'https://lavanti.fi/fi/',
             name: 'Etusivu',
             position: 1,
         })
         expect(breadcrumbSchema?.itemListElement[1]).toEqual({
             '@type': 'ListItem',
-            item: 'https://laurilavanti.fi/fi/blog/',
+            item: 'https://lavanti.fi/fi/blog/',
             name: 'Blogi',
             position: 2,
         })
         expect(breadcrumbSchema?.itemListElement[2]).toEqual({
             '@type': 'ListItem',
-            item: 'https://laurilavanti.fi/fi/blog/1/testijulkaisu/',
+            item: 'https://lavanti.fi/fi/blog/1/testijulkaisu/',
             name: 'Testijulkaisu',
             position: 3,
         })
@@ -584,8 +584,8 @@ describe('<Head />', () => {
 
     it('should emit BreadcrumbList JSON-LD for a tag page (2 items)', async () => {
         const breadcrumbs = [
-            { name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' },
-            { name: 'Kategoria', url: 'https://laurilavanti.fi/fi/category/tekoaly/' },
+            { name: 'Etusivu', url: 'https://lavanti.fi/fi/' },
+            { name: 'Kategoria', url: 'https://lavanti.fi/fi/category/tekoaly/' },
         ]
 
         const result = await renderAstroComponent(Head, {
@@ -622,7 +622,7 @@ describe('<Head />', () => {
     it('should not emit BreadcrumbList when breadcrumbs has fewer than 2 items', async () => {
         const result = await renderAstroComponent(Head, {
             props: {
-                breadcrumbs: [{ name: 'Etusivu', url: 'https://laurilavanti.fi/fi/' }],
+                breadcrumbs: [{ name: 'Etusivu', url: 'https://lavanti.fi/fi/' }],
                 title: 'Single breadcrumb',
             },
         })
@@ -635,9 +635,9 @@ describe('<Head />', () => {
 
     it('should localise BreadcrumbList labels correctly for English', async () => {
         const breadcrumbs = [
-            { name: 'Home', url: 'https://laurilavanti.fi/en/' },
-            { name: 'Blog', url: 'https://laurilavanti.fi/en/blog/' },
-            { name: 'Test post', url: 'https://laurilavanti.fi/en/blog/1/test-post/' },
+            { name: 'Home', url: 'https://lavanti.fi/en/' },
+            { name: 'Blog', url: 'https://lavanti.fi/en/blog/' },
+            { name: 'Test post', url: 'https://lavanti.fi/en/blog/1/test-post/' },
         ]
 
         const result = await renderAstroComponent(Head, {
