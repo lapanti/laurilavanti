@@ -9,7 +9,7 @@
 
 ## Mission
 
-Personal homepage of Lauri Lavanti (https://laurilavanti.fi). Built with Astro + TypeScript + MDX — all content is local MDX files, no CMS or external content API.
+Personal homepage of Lauri Lavanti (https://lavanti.fi). Built with Astro + TypeScript + MDX — all content is local MDX files, no CMS or external content API.
 Core constraint: all-content-local; hosted on Cloudflare Pages (static output only, no SSR).
 
 ---

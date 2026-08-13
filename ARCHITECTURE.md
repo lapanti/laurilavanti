@@ -1,6 +1,6 @@
 # Architecture
 
-Personal homepage of Lauri Lavanti (https://laurilavanti.fi).
+Personal homepage of Lauri Lavanti (https://lavanti.fi).
 Built with **Astro + TypeScript + MDX**. All content is local — no CMS or external content API. Hosted on **Cloudflare Pages**.
 
 Feature-specific specs (blueprint, contracts, scenarios) live at `.agents/specs/{feature}/spec.md`. Current specs:

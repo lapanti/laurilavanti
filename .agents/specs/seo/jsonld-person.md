@@ -8,7 +8,7 @@
 
 ## Intent
 
-Search engines, LLMs, and answer engines (Google AI Overviews, ChatGPT, Perplexity, Gemini) rely on schema.org structured data to identify and attach authority to real-world entities. Currently laurilavanti.fi emits a `Person` schema on About pages, but it lacks a stable `@id`, misses key authority signals (Wikipedia, Wikidata, employer, education, localized expertise), and every `BlogPosting.author` is a bare name stub with no entity link. This prevents LLMs from confidently resolving "Lauri Lavanti" as the same entity across pages and external knowledge sources.
+Search engines, LLMs, and answer engines (Google AI Overviews, ChatGPT, Perplexity, Gemini) rely on schema.org structured data to identify and attach authority to real-world entities. Currently lavanti.fi emits a `Person` schema on About pages, but it lacks a stable `@id`, misses key authority signals (Wikipedia, Wikidata, employer, education, localized expertise), and every `BlogPosting.author` is a bare name stub with no entity link. This prevents LLMs from confidently resolving "Lauri Lavanti" as the same entity across pages and external knowledge sources.
 
 This spec defines: a canonical `Person` entity with a stable `@id`, a `ProfilePage` wrapper for About pages (2025/2026 best practice per Google Search Central), entity-by-id references on all `BlogPosting` author fields, and optional co-author support with auto-rendered bylines.
 
@@ -20,7 +20,7 @@ The goal is maximum E-E-A-T entity reconciliation: LLMs and answer engines shoul
 
 ### In scope
 - `src/content/person.ts` — new file, single source of truth for all canonical Person data
-- `PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'` — stable entity identifier; `id="person"` anchor added to FI About page to make fragment resolvable
+- `PERSON_ID = 'https://lavanti.fi/fi/about/#person'` — stable entity identifier; `id="person"` anchor added to FI About page to make fragment resolvable
 - `src/lib/jsonld.ts` — add `PROFILEPAGE = 'ProfilePage'` constant
 - `src/components/Head.astro` — consume `person.ts`; emit `ProfilePage > mainEntity Person` branch; emit `BlogPosting.author` as Person id-reference array; emit `<meta property="article:author">` once per author
 - `src/content.config.ts` — `authors` field (optional) on the posts collection schema, shared per post id via `meta.json` (with `role` resolved per locale — see the posts spec's Data Model)
@@ -52,7 +52,7 @@ Feature: Canonical Person JSON-LD entity
 
   Scenario: person.ts exports canonical Person data
     Given src/content/person.ts exists
-    Then it exports PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
+    Then it exports PERSON_ID = 'https://lavanti.fi/fi/about/#person'
     And it exports personGivenName = 'Lauri', personFamilyName = 'Lavanti'
     And it exports personBirthDate = '1991-10-01'
     And it exports personBirthPlace as a Place with name 'Jyväskylä'
@@ -74,7 +74,7 @@ Feature: Canonical Person JSON-LD entity
     When the page is rendered
     Then the JSON-LD contains @type: 'ProfilePage'
     And the JSON-LD contains mainEntity with @type: 'Person'
-    And mainEntity['@id'] = 'https://laurilavanti.fi/fi/about/#person'
+    And mainEntity['@id'] = 'https://lavanti.fi/fi/about/#person'
     And mainEntity contains name, givenName, familyName, birthDate, birthPlace, nationality
     And mainEntity contains worksFor, alumniOf (3 entries), memberOf, affiliation
     And mainEntity contains knowsAbout localised to the page's lang
@@ -96,7 +96,7 @@ Feature: Canonical Person JSON-LD entity
     Given a BlogPosting with no authors frontmatter field
     When the page is rendered
     Then BlogPosting.author is an array with one entry
-    And that entry is { '@type': 'Person', '@id': 'https://laurilavanti.fi/fi/about/#person' }
+    And that entry is { '@type': 'Person', '@id': 'https://lavanti.fi/fi/about/#person' }
     And there is exactly one <meta property="article:author"> in the HTML
     And that meta content attribute is 'Lauri Lavanti'
 
@@ -105,7 +105,7 @@ Feature: Canonical Person JSON-LD entity
     When the page is rendered
     Then BlogPosting.author is an array with two entries
     And the first entry is { '@type': 'Person', name: 'Miisa Jeremejew' }
-    And the second entry is { '@type': 'Person', '@id': 'https://laurilavanti.fi/fi/about/#person' }
+    And the second entry is { '@type': 'Person', '@id': 'https://lavanti.fi/fi/about/#person' }
     And there are exactly two <meta property="article:author"> tags in the HTML
     And the first meta content is 'Miisa Jeremejew'
     And the second meta content is 'Lauri Lavanti'
@@ -255,7 +255,7 @@ Feature: Canonical Person JSON-LD entity
 ```typescript
 // src/content/person.ts
 
-export const PERSON_ID = 'https://laurilavanti.fi/fi/about/#person'
+export const PERSON_ID = 'https://lavanti.fi/fi/about/#person'
 
 // Co-author entry in post frontmatter
 // String shorthand 'lauri' resolves to the canonical PERSON_ID reference
@@ -303,7 +303,7 @@ type ResolvedAuthor =
 // width: 1200, height: 1200
 
 // sameAs array (complete):
-// 1. https://bsky.app/profile/laurilavanti.fi
+// 1. https://bsky.app/profile/lauri.lavanti.fi
 // 2. https://www.facebook.com/laurilavanti
 // 3. https://www.instagram.com/laurilavanti/
 // 4. https://www.linkedin.com/in/lapanti
@@ -318,7 +318,7 @@ type ResolvedAuthor =
 
 ## Dependencies
 
-- [seo/spec.md](./spec.md) — overarching SEO strategy for laurilavanti.fi; this spec extends it with entity/E-E-A-T concerns
+- [seo/spec.md](./spec.md) — overarching SEO strategy for lavanti.fi; this spec extends it with entity/E-E-A-T concerns
 
 ---
 

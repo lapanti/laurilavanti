@@ -83,7 +83,7 @@ Each locale has a dedicated RSS feed for blog post subscribers. Feeds are genera
 **Scenario: Feed item link format**
 - Given: A post has `url: '/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/'`
 - When: The RSS item is generated
-- Then: The `<link>` element is `https://laurilavanti.fi/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/` (full URL using `context.site`)
+- Then: The `<link>` element is `https://lavanti.fi/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/` (full URL using `context.site`)
 
 **Scenario: New locale added**
 - Given: A new locale `de` is added to the site with German blog posts
