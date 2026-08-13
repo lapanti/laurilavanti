@@ -441,7 +441,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run screenshot tests against production
         env:
-          E2E_URL: https://laurilavanti.fi
+          E2E_URL: https://lavanti.fi
         run: npm run test:e2e:snapshots
         timeout-minutes: 15
       - uses: actions/upload-artifact@v7
@@ -479,7 +479,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run screenshot tests against production
         env:
-          E2E_URL: https://laurilavanti.fi
+          E2E_URL: https://lavanti.fi
         run: npm run test:e2e:screenshots
         timeout-minutes: 15
       - uses: actions/upload-artifact@v7
@@ -517,7 +517,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run axe accessibility tests against production
         env:
-          E2E_URL: https://laurilavanti.fi
+          E2E_URL: https://lavanti.fi
         run: npm run test:e2e:axe
         timeout-minutes: 10
       - uses: actions/upload-artifact@v7
@@ -555,7 +555,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run SiteImprove tests against production
         env:
-          E2E_URL: https://laurilavanti.fi
+          E2E_URL: https://lavanti.fi
         run: npm run test:e2e:siteimprove
         timeout-minutes: 15
       - uses: actions/upload-artifact@v7
@@ -593,7 +593,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run other tests against production
         env:
-          E2E_URL: https://laurilavanti.fi
+          E2E_URL: https://lavanti.fi
         run: npm run test:e2e:other
         timeout-minutes: 10
       - uses: actions/upload-artifact@v7
@@ -631,7 +631,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run horizontal scroll tests against production
         env:
-          E2E_URL: https://laurilavanti.fi
+          E2E_URL: https://lavanti.fi
         run: npm run test:e2e:horizontal-scroll
         timeout-minutes: 10
       - uses: actions/upload-artifact@v7
