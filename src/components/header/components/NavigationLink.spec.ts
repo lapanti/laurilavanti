@@ -76,7 +76,7 @@ describe('<NavigationLink />', () => {
                 label,
                 title,
             },
-            request: new Request('https://laurilavanti.fi/'),
+            request: new Request('https://lavanti.fi/'),
         })
 
         expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-current', 'false')
@@ -89,7 +89,7 @@ describe('<NavigationLink />', () => {
                 label,
                 title,
             },
-            request: new Request(`https://laurilavanti.fi${href}`),
+            request: new Request(`https://lavanti.fi${href}`),
         })
 
         expect(getByRole(result, 'link', { name: title })).toHaveAttribute('aria-current', 'page')

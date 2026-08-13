@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import { getRobotsTxt } from './robots.txt'
 
-const SITE = new URL('https://laurilavanti.fi')
+const SITE = new URL('https://lavanti.fi')
 
 describe('getRobotsTxt', () => {
     it('allows GPTBot', () => {

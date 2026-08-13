@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest'
 import { tags } from '../content/tags'
 import { buildLlmsTxt } from './llms.txt'
 
-const SITE = new URL('https://laurilavanti.fi')
+const SITE = new URL('https://lavanti.fi')
 
 const makePost = (overrides: Partial<Post>): Post =>
     ({
@@ -97,15 +97,15 @@ describe('buildLlmsTxt — pillar pages section', () => {
     })
 
     it('links Etusivu to /fi/', () => {
-        expect(content).toContain('[Etusivu](https://laurilavanti.fi/fi/)')
+        expect(content).toContain('[Etusivu](https://lavanti.fi/fi/)')
     })
 
     it('links Aiheet to /fi/topics', () => {
-        expect(content).toContain('[Aiheet](https://laurilavanti.fi/fi/topics)')
+        expect(content).toContain('[Aiheet](https://lavanti.fi/fi/topics)')
     })
 
     it('links Laurista to /fi/about', () => {
-        expect(content).toContain('[Laurista](https://laurilavanti.fi/fi/about)')
+        expect(content).toContain('[Laurista](https://lavanti.fi/fi/about)')
     })
 })
 

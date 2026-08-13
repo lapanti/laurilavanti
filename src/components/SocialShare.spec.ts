@@ -13,7 +13,7 @@ import SocialShare from './SocialShare.astro'
 // filepath: /home/lapanti/code/laurilavanti/src/components/SocialShare.spec.ts
 
 describe('<SocialShare />', () => {
-    const shareUrl = 'https://laurilavanti.fi/blogi/vuosi-2026-on-tekoalyn'
+    const shareUrl = 'https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn'
     const title = 'Vuosi 2026 on tekoälyn'
     const ariaLabel = 'Kirjoituksen "Vuosi 2026 on tekoälyn" jakaminen sosiaalisessa mediassa'
 
@@ -328,7 +328,7 @@ describe('<SocialShare />', () => {
     describe('when locale is en', () => {
         const enAriaLabel = 'Sharing post "Test post" on social media'
         const enTitle = 'Test post'
-        const enShareUrl = 'https://laurilavanti.fi/en/blog/test'
+        const enShareUrl = 'https://lavanti.fi/en/blog/test'
 
         it('should render facebook link with English label', async () => {
             const result = await renderAstroComponent(SocialShare, {
@@ -447,7 +447,7 @@ describe('<SocialShare />', () => {
     describe('when locale is sv', () => {
         const svAriaLabel = 'Dela inlägget "Testinlägg" på sociala medier'
         const svTitle = 'Testinlägg'
-        const svShareUrl = 'https://laurilavanti.fi/sv/blog/test'
+        const svShareUrl = 'https://lavanti.fi/sv/blog/test'
 
         it('should render facebook link with Swedish label', async () => {
             const result = await renderAstroComponent(SocialShare, {
