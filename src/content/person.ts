@@ -4,7 +4,7 @@ import { getImage } from '../lib/images'
 
 export const PERSON_ID = 'https://lavanti.fi/fi/about/#person'
 
-export const personBlueskyHandle = 'laurilavanti.fi'
+export const personBlueskyHandle = 'lauri.lavanti.fi'
 export const personThreadsHandle = 'laurilavanti'
 export const personMastodonInstance = 'mastodon.social'
 export const personMastodonHandle = `laurilavanti@${personMastodonInstance}`
@@ -22,7 +22,7 @@ export function getPersonImageUrl(): Promise<string> {
 }
 
 export const personSameAs = [
-    'https://bsky.app/profile/laurilavanti.fi',
+    'https://bsky.app/profile/lauri.lavanti.fi',
     'https://www.facebook.com/laurilavanti',
     'https://www.instagram.com/laurilavanti/',
     'https://www.linkedin.com/in/lapanti',
