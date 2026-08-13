@@ -8,7 +8,7 @@ interface FooterLink {
 
 export const footerLinks: FooterLink[] = [
     { icon: 'fa7-brands:mastodon', title: 'Mastodon', url: 'https://mastodon.social/@laurilavanti' },
-    { icon: 'fa7-brands:bluesky', title: 'Bluesky', url: 'https://bsky.app/profile/laurilavanti.fi' },
+    { icon: 'fa7-brands:bluesky', title: 'Bluesky', url: 'https://bsky.app/profile/lauri.lavanti.fi' },
     { icon: 'fa7-brands:threads', title: 'Threads', url: 'https://www.threads.com/@laurilavanti' },
     { icon: 'fa7-brands:linkedin', title: 'LinkedIn', url: 'https://www.linkedin.com/in/laurilavanti/' },
     { icon: 'instagram', title: 'Instagram', url: 'https://www.instagram.com/laurilavanti/' },
