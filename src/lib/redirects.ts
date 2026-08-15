@@ -1,4 +1,8 @@
 export const redirects: Record<string, string> = {
+    // Print flyer vanity redirects — "5+1" campaign (blog post 66)
+    '/5+1/': '/fi/blog/66/digitaalinen-itsenaisyys-arjen-valinnat/',
+    '/5+1sv/': '/sv/blog/66/digital-sjalvstandighet-vardagens-val/',
+
     '/about-me/': '/en/about/',
     '/blogi/': '/fi/blog/',
     '/blogi/aanestin-lansiradan-puolesta/': '/fi/blog/46/aanestin-lansiradan-puolesta/',
