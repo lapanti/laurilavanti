@@ -136,8 +136,8 @@ const restingWord = slogan?.words.at(-1)
 </div>
 
 <script>
-    /** Let the reader take in the finished slogan before anything moves. */
-    const START_MS = 1400
+    /** Beat of empty, blinking caret before the first word appears. */
+    const START_MS = 900
     const TYPE_MS = 70
     const DELETE_MS = 40
     const HOLD_MS = 1200
@@ -161,13 +161,11 @@ const restingWord = slogan?.words.at(-1)
     }
 
     async function run(target: HTMLElement, words: string[]) {
-        // Hold the server-rendered resting slogan first, so the page can be read
-        // before anything starts moving.
-        await sleep(START_MS)
-
+        // Clear the server-rendered resting word straight away, then hold on an
+        // empty blinking caret so the reader can settle before the first word.
         delete target.dataset.done
         target.textContent = ''
-        await sleep(CLEARED_MS)
+        await sleep(START_MS)
 
         for (const word of words.slice(0, -1)) {
             await type(target, word)
