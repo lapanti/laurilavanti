@@ -1,14 +1,18 @@
 ---
+import type { Slogan } from '../../content/slogan'
+
 import { colors, sizes, typographics } from '../../lib/styles'
 import NameLogo from '../NameLogo.astro'
 
 interface Props {
     title: string
-    subtitle?: string
     secondaryTitle?: string
+    slogan?: Slogan
 }
 
-const { subtitle, secondaryTitle } = Astro.props
+const { secondaryTitle, slogan } = Astro.props
+
+const restingWord = slogan?.words.at(-1)
 ---
 
 <style
@@ -51,6 +55,50 @@ const { subtitle, secondaryTitle } = Astro.props
         line-height: var(--ingressLineHeight);
     }
 
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    /* Own line, reserved height: the growing word never reflows the prefix
+       above it nor the candidacy line below it. */
+    .typed {
+        display: block;
+        min-height: 1lh;
+    }
+
+    .typed::after {
+        content: '▌';
+        /* Keep the caret from adding width the resting word would jump over. */
+        margin-left: -0.1em;
+    }
+
+    .typed[data-done]::after {
+        content: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .typed::after {
+            animation: caret-blink 1s step-end infinite;
+        }
+
+        @keyframes caret-blink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    }
+
     @media (min-width: 1200px) {
         div {
             align-items: flex-start;
@@ -63,6 +111,85 @@ const { subtitle, secondaryTitle } = Astro.props
 </style>
 <div>
     <h1><NameLogo /></h1>
-    {subtitle && <p>{subtitle}</p>}
-    {secondaryTitle && <h2>{secondaryTitle}</h2>}
+    {
+        slogan ? (
+            <Fragment>
+                <h2>
+                    {/* The accessible name stays fixed at the full resting slogan, so
+                        screen readers and aria snapshots never see the animation. */}
+                    <span class="sr-only">{`${slogan.prefix} ${restingWord}`}</span>
+                    <span aria-hidden="true">
+                        {slogan.prefix}
+                        {/* Starts "done" — no caret — so the resting state is correct
+                            whenever the animation never runs. The script clears it. */}
+                        <span class="typed" data-done data-typed-words={JSON.stringify(slogan.words)}>
+                            {restingWord}
+                        </span>
+                    </span>
+                </h2>
+                <p>{slogan.candidacy}</p>
+            </Fragment>
+        ) : (
+            secondaryTitle && <h2>{secondaryTitle}</h2>
+        )
+    }
 </div>
+
+<script>
+    /** Let the reader take in the finished slogan before anything moves. */
+    const START_MS = 1400
+    const TYPE_MS = 70
+    const DELETE_MS = 40
+    const HOLD_MS = 1200
+    const CLEARED_MS = 200
+
+    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+    async function type(target: HTMLElement, word: string) {
+        for (let i = 1; i <= word.length; i += 1) {
+            target.textContent = word.slice(0, i)
+            await sleep(TYPE_MS)
+        }
+    }
+
+    async function erase(target: HTMLElement) {
+        const word = target.textContent ?? ''
+        for (let i = word.length - 1; i >= 0; i -= 1) {
+            target.textContent = word.slice(0, i)
+            await sleep(DELETE_MS)
+        }
+    }
+
+    async function run(target: HTMLElement, words: string[]) {
+        // Hold the server-rendered resting slogan first, so the page can be read
+        // before anything starts moving.
+        await sleep(START_MS)
+
+        delete target.dataset.done
+        target.textContent = ''
+        await sleep(CLEARED_MS)
+
+        for (const word of words.slice(0, -1)) {
+            await type(target, word)
+            await sleep(HOLD_MS)
+            await erase(target)
+            await sleep(CLEARED_MS)
+        }
+
+        await type(target, words[words.length - 1])
+        // Rest on the final word: no loop, no caret.
+        target.dataset.done = ''
+    }
+
+    // Leave the server-rendered resting word in place when motion is unwanted, and
+    // when driven by Playwright so screenshots stay deterministic.
+    if (!navigator.webdriver && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        for (const target of document.querySelectorAll<HTMLElement>('.typed')) {
+            const words = JSON.parse(target.dataset.typedWords ?? '[]') as string[]
+
+            if (words.length > 1) {
+                void run(target, words)
+            }
+        }
+    }
+</script>

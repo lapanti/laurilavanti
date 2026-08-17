@@ -1,4 +1,6 @@
 ---
+import type { Slogan } from '../content/slogan'
+
 import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import Images from './heroBanner/Images.astro'
 import Titles from './heroBanner/Titles.astro'
@@ -9,11 +11,11 @@ interface Props {
     heroImage?: string
     mobileHeroImage?: string
     secondaryTitle?: string
-    subtitle?: string
+    slogan?: Slogan
     title: string
 }
 
-const { alt, backgroundImage, heroImage, mobileHeroImage, secondaryTitle, subtitle, title } = Astro.props
+const { alt, backgroundImage, heroImage, mobileHeroImage, secondaryTitle, slogan, title } = Astro.props
 ---
 
 <style
@@ -40,6 +42,6 @@ const { alt, backgroundImage, heroImage, mobileHeroImage, secondaryTitle, subtit
     }
 </style>
 <div>
-    <Titles secondaryTitle={secondaryTitle} subtitle={subtitle} title={title} />
+    <Titles secondaryTitle={secondaryTitle} slogan={slogan} title={title} />
     <Images alt={alt} backgroundImage={backgroundImage} heroImage={heroImage} mobileHeroImage={mobileHeroImage} />
 </div>

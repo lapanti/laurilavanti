@@ -3,6 +3,7 @@ import type { MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
 import HeroBanner from '../components/HeroBanner.astro'
+import { sloganContent } from '../content/slogan'
 import { getImage } from '../lib/images'
 import BaseLayout from './BaseLayout.astro'
 
@@ -17,9 +18,10 @@ type Props = MDXLayoutProps<{
     pageTitle: string
     secondaryTitle?: string
     slug?: string
-    subtitle?: string
     title: string
     type?: JsonLdType
+    /** Renders the campaign slogan with its typewriter animation instead of `secondaryTitle`. */
+    typedSlogan?: boolean
 }>
 
 const { frontmatter } = Astro.props
@@ -34,12 +36,13 @@ const {
     pageTitle,
     secondaryTitle,
     slug,
-    subtitle,
     title,
     type,
+    typedSlogan,
 } = frontmatter
 
 const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
+const slogan = typedSlogan ? sloganContent[lang ?? 'fi'] : undefined
 ---
 
 <BaseLayout
@@ -58,8 +61,8 @@ const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
         heroImage={heroImage}
         mobileHeroImage={mobileHeroImage}
         secondaryTitle={secondaryTitle}
+        slogan={slogan}
         slot="banner"
-        subtitle={subtitle}
         title={title}
     />
     <slot />
