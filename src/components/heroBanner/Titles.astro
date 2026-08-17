@@ -136,58 +136,5 @@ const restingWord = slogan?.words.at(-1)
 </div>
 
 <script>
-    /** Beat of empty, blinking caret before the first word appears. */
-    const START_MS = 900
-    const TYPE_MS = 70
-    const DELETE_MS = 40
-    const HOLD_MS = 1200
-    const CLEARED_MS = 200
-
-    const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-
-    async function type(target: HTMLElement, word: string) {
-        for (let i = 1; i <= word.length; i += 1) {
-            target.textContent = word.slice(0, i)
-            await sleep(TYPE_MS)
-        }
-    }
-
-    async function erase(target: HTMLElement) {
-        const word = target.textContent ?? ''
-        for (let i = word.length - 1; i >= 0; i -= 1) {
-            target.textContent = word.slice(0, i)
-            await sleep(DELETE_MS)
-        }
-    }
-
-    async function run(target: HTMLElement, words: string[]) {
-        // Clear the server-rendered resting word straight away, then hold on an
-        // empty blinking caret so the reader can settle before the first word.
-        delete target.dataset.done
-        target.textContent = ''
-        await sleep(START_MS)
-
-        for (const word of words.slice(0, -1)) {
-            await type(target, word)
-            await sleep(HOLD_MS)
-            await erase(target)
-            await sleep(CLEARED_MS)
-        }
-
-        await type(target, words[words.length - 1])
-        // Rest on the final word: no loop, no caret.
-        target.dataset.done = ''
-    }
-
-    // Leave the server-rendered resting word in place when motion is unwanted, and
-    // when driven by Playwright so screenshots stay deterministic.
-    if (!navigator.webdriver && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        for (const target of document.querySelectorAll<HTMLElement>('.typed')) {
-            const words = JSON.parse(target.dataset.typedWords ?? '[]') as string[]
-
-            if (words.length > 1) {
-                void run(target, words)
-            }
-        }
-    }
+    import '../../lib/typewriterClient'
 </script>

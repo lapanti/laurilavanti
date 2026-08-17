@@ -121,6 +121,17 @@ export default defineConfig([
         },
     },
     {
+        /*
+         * <script> blocks in .astro files are linted as virtual files. The import
+         * resolver cannot follow relative paths out of them, so it reports every such
+         * import as unresolved; Astro's build and `astro check` do resolve them.
+         */
+        files: ['**/*.astro/*.ts', '**/*.astro/*.js'],
+        rules: {
+            'import/no-unresolved': ['off'],
+        },
+    },
+    {
         files: ['**/*.js'],
         rules: {
             '@typescript-eslint/explicit-module-boundary-types': ['off'],
