@@ -86,7 +86,7 @@ describe('buildLlmsTxt — header', () => {
 
     it('contains the Finnish blockquote', () => {
         expect(content).toContain(
-            '> Lauri Lavanti on kirkkonummelainen poliitikko ja lead developer, joka kirjoittaa teknologiasta, kunnallispolitiikasta ja yhteiskunnasta.'
+            '> Lauri Lavanti on Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä, kirkkonummelainen kunnanvaltuutettu ja johtava ohjelmistokehittäjä, joka kirjoittaa teknologiasta, taloudesta ja yhteiskunnasta.'
         )
     })
 })

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
-import { PERSON_ID } from '../content/person'
+import { PERSON_ID, personJobTitle } from '../content/person'
 import Head from './Head.astro'
 
 describe('<Head />', () => {
@@ -371,7 +371,7 @@ describe('<Head />', () => {
         expect(jsonLd.birthDate).toBe('1991-10-01')
         expect(jsonLd.birthPlace).toEqual({ '@type': 'Place', name: 'Jyväskylä' })
         expect(jsonLd.nationality).toEqual({ '@type': 'Country', name: 'FI' })
-        expect(jsonLd.jobTitle).toBe('kunnanvaltuutettu ja johtava ohjelmistokehittäjä')
+        expect(jsonLd.jobTitle).toBe(personJobTitle.fi)
         expect(jsonLd.sameAs).toHaveLength(9)
         expect(jsonLd.sameAs).toContain('https://fi.wikipedia.org/wiki/Lauri_Lavanti')
         expect(jsonLd.sameAs).toContain('https://www.wikidata.org/wiki/Q139711658')
@@ -384,7 +384,9 @@ describe('<Head />', () => {
         expect(jsonLd.knowsAbout).toContain('Markkinavihreä')
         expect(jsonLd.worksFor).toEqual({ '@type': 'Organization', name: 'OP', url: 'https://www.op.fi/' })
         expect(jsonLd.alumniOf).toHaveLength(3)
-        expect(jsonLd.hasOccupation).toHaveLength(2)
+        expect(jsonLd.hasOccupation).toHaveLength(3)
+        expect(jsonLd.hasOccupation[0].name).toBe('Eduskuntavaaliehdokas')
+        expect(jsonLd.hasOccupation[0].occupationLocation.name).toBe('Uudenmaan vaalipiiri')
         expect(jsonLd.knowsLanguage).toEqual(['fi', 'en', 'sv'])
         expect(jsonLd.affiliation).toHaveLength(1)
         expect(jsonLd.affiliation[0].url).toBe('https://digitaalinenitsenaisyys.fi/')
@@ -401,7 +403,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('municipal councillor & lead developer')
+        expect(jsonLd.jobTitle).toBe(personJobTitle.en)
         expect(jsonLd.knowsAbout).toContain('Economic policy')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })
@@ -417,7 +419,7 @@ describe('<Head />', () => {
 
         const jsonLdScript = result.querySelector('script[type="application/ld+json"]')
         const jsonLd = JSON.parse(jsonLdScript?.textContent || '{}')
-        expect(jsonLd.jobTitle).toBe('kommunfullmäktigeledamot och ledande programutvecklare')
+        expect(jsonLd.jobTitle).toBe(personJobTitle.sv)
         expect(jsonLd.knowsAbout).toContain('Ekonomisk politik')
         expect(jsonLd.knowsAbout).not.toContain('Talouspolitiikka')
     })

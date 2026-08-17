@@ -42,7 +42,7 @@ export const buildLlmsTxt = (posts: Post[], site: URL): string => {
     return `\
 # Lauri Lavanti
 
-> Lauri Lavanti on kirkkonummelainen poliitikko ja lead developer, joka kirjoittaa teknologiasta, kunnallispolitiikasta ja yhteiskunnasta.
+> Lauri Lavanti on Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä, kirkkonummelainen kunnanvaltuutettu ja johtava ohjelmistokehittäjä, joka kirjoittaa teknologiasta, taloudesta ja yhteiskunnasta.
 
 ## Tärkeimmät sivut
 

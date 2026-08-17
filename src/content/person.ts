@@ -36,15 +36,15 @@ export const personSameAs = [
 ]
 
 export const personJobTitle: Record<Lang, string> = {
-    en: 'municipal councillor & lead developer',
-    fi: 'kunnanvaltuutettu ja johtava ohjelmistokehittäjä',
-    sv: 'kommunfullmäktigeledamot och ledande programutvecklare',
+    en: 'parliamentary candidate, municipal councillor & lead developer, MSc',
+    fi: 'eduskuntavaaliehdokas, kunnanvaltuutettu ja johtava ohjelmistokehittäjä ja DI',
+    sv: 'riksdagskandidat, kommunfullmäktigeledamot och ledande programutvecklare, DI',
 }
 
 export const personDescription: Record<Lang, string> = {
-    en: 'Kirkkonummi municipal councillor (Greens) and lead developer (MSc, Aalto). He works to build a digitally independent Finland where the economy, education, and rights work together in the age of AI.',
-    fi: 'Kirkkonummen kunnanvaltuutettu ja johtava ohjelmistokehittäjä (DI, Aalto). Hänen tavoitteenaan on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.',
-    sv: 'Lauri Lavanti är fullmäktigeledamot i Kyrkslätt (De Gröna) och ledande programutvecklare (DI, Aalto-universitetet). Hans mål är ett digitalt självständigt Finland där ekonomi, bildning och frihet fungerar tillsammans i AI-tidsåldern.',
+    en: "Lauri Lavanti is the Greens' parliamentary candidate in Uusimaa for the 2027 elections, a Kirkkonummi municipal councillor and lead developer (MSc, Aalto). He works to build a digitally independent Finland where the economy, education, and rights work together in the age of AI.",
+    fi: 'Lauri Lavanti on Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä eduskuntavaaleissa 2027, Kirkkonummen kunnanvaltuutettu ja johtava ohjelmistokehittäjä (DI, Aalto). Hänen tavoitteenaan on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.',
+    sv: 'Lauri Lavanti är De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027, fullmäktigeledamot i Kyrkslätt och ledande programutvecklare (DI, Aalto-universitetet). Hans mål är ett digitalt självständigt Finland där ekonomi, bildning och frihet fungerar tillsammans i AI-tidsåldern.',
 }
 
 export const personKnowsAbout: Record<Lang, string[]> = {
@@ -133,6 +133,12 @@ export const personHasOccupation: Record<Lang, object[]> = {
     en: [
         {
             '@type': 'Occupation',
+            name: 'Parliamentary candidate',
+            occupationLocation: { '@type': 'AdministrativeArea', name: 'Uusimaa electoral district' },
+            skills: 'AI policy, digital independence, economic policy, privacy, fundamental rights',
+        },
+        {
+            '@type': 'Occupation',
             name: 'Municipal councillor',
             occupationLocation: { '@type': 'City', name: 'Kirkkonummi' },
             skills: 'Digital policy, AI governance, economic policy, entrepreneurship, local government',
@@ -146,6 +152,12 @@ export const personHasOccupation: Record<Lang, object[]> = {
     fi: [
         {
             '@type': 'Occupation',
+            name: 'Eduskuntavaaliehdokas',
+            occupationLocation: { '@type': 'AdministrativeArea', name: 'Uudenmaan vaalipiiri' },
+            skills: 'Tekoälypolitiikka, digitaalinen itsenäisyys, talouspolitiikka, yksityisyys, perusoikeudet',
+        },
+        {
+            '@type': 'Occupation',
             name: 'Kunnanvaltuutettu',
             occupationLocation: { '@type': 'City', name: 'Kirkkonummi' },
             skills: 'Digitaalinen politiikka, tekoälyhallinto, talouspolitiikka, yrittäjyys, julkishallinto',
@@ -157,6 +169,12 @@ export const personHasOccupation: Record<Lang, object[]> = {
         },
     ],
     sv: [
+        {
+            '@type': 'Occupation',
+            name: 'Riksdagskandidat',
+            occupationLocation: { '@type': 'AdministrativeArea', name: 'Nylands valkrets' },
+            skills: 'AI-politik, digital självständighet, ekonomisk politik, integritet, grundläggande rättigheter',
+        },
         {
             '@type': 'Occupation',
             name: 'Kommunfullmäktigeledamot',
