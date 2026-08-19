@@ -12,6 +12,7 @@ import sitemap from '@astrojs/sitemap'
 import { tags } from './src/content/tags'
 import { buildPageDateMap } from './src/lib/sitemapLastmod'
 import { redirects } from './src/lib/redirects'
+import { redirectsFile } from './src/lib/redirectsIntegration'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
@@ -69,5 +70,9 @@ export default defineConfig({
                 return date ? { ...item, lastmod: date } : item
             },
         }),
+        // Emit dist/_redirects so Cloudflare Pages serves the redirect map and
+        // bare-id → slug redirects as true 301s (the meta-refresh stubs remain
+        // as an `astro preview` fallback).
+        redirectsFile(),
     ],
 })
