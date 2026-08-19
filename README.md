@@ -14,7 +14,7 @@ The site is built with Astro, TypeScript, MDX, and modern web standards. All con
 - **Images**: Local images live in `src/images/` and are resolved at build time via `import.meta.glob`. Hero images for blog posts are referenced by filename in MDX frontmatter (`localHeroImage`, `localCroppedHeroImage`).
 - **Layouts**: Three specialised layouts — `FrontPageLayout.astro`, `PageLayout.astro`, and `PostLayout.astro` — are referenced directly in MDX `layout:` frontmatter.
 - **Tags**: Defined locally in `src/content/tags.ts` with Finnish, Swedish, and English names.
-- **i18n**: Three locales (fi/sv/en). Language-switching links use a client-side prefix-swap script. Blog posts use `/{lang}/blog/{id}/{slug}/` URLs; bare `/{lang}/blog/{id}/` paths redirect 301 to the canonical slug URL.
+- **i18n**: Three locales (fi/sv/en). Language-switching links use a client-side prefix-swap script. Blog posts use `/{lang}/blog/{id}/{slug}/` URLs; bare `/{lang}/blog/{id}/` paths redirect to the canonical slug URL (true HTTP 301 in production via the generated Cloudflare Pages `_redirects` file — see `src/lib/redirectsIntegration.ts`).
 
 ## Development
 
