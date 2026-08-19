@@ -115,8 +115,15 @@ Posts live at `src/content/posts/{id}/{meta.json,fi.mdx,sv.mdx,en.mdx}` — a si
 
 | From | To | Mechanism |
 |---|---|---|
-| `/{lang}/blog/{id}/` | `/{lang}/blog/{id}/{slug}/` | HTTP 301 via `src/pages/[lang]/blog/[id]/index.astro` (single dynamic route for all locales) |
+| `/{lang}/blog/{id}/` | `/{lang}/blog/{id}/{slug}/` | True HTTP 301 in production via the generated Cloudflare Pages `_redirects` file (`src/lib/redirectsIntegration.ts`). Under `output: 'static'`, `src/pages/[lang]/blog/[id]/index.astro` also emits a meta-refresh stub that serves as the `astro preview` fallback. |
 | `/{lang}/blog/{id}/{wrong-slug}/` | correct canonical URL | Client-side JS on 404 page using `window.__postIndex` lookup table |
+
+**Redirect mechanism**: The static redirect map (`src/lib/redirects.ts`) and the bare-id
+redirects above are both compiled by Astro into meta-refresh HTML stubs (HTTP 200) under
+`output: 'static'`. The `redirects-file` integration (`src/lib/redirectsIntegration.ts`) writes
+a `dist/_redirects` file covering the same paths, so Cloudflare Pages serves them as true 301s —
+Pages always follows a `_redirects` rule even when a static asset exists at the same path, so the
+stubs are bypassed in production and remain only as a local `astro preview` fallback.
 
 ---
 

@@ -182,7 +182,7 @@ Dead-end detection: terminal not present in the union of (1)+(2)+(3).
 
 ## Notes
 
-- **Runtime redirect mechanism**: `output: 'static'` means Astro compiles each redirect source into an HTML stub with `<meta http-equiv="refresh">`, not an HTTP 301. The issue's verification criterion "return 301" is technically inaccurate for this site. The audit script verifies the redirect *map* is clean; actual HTTP status depends on Cloudflare's handling of the generated stubs.
+- **Runtime redirect mechanism**: `output: 'static'` means Astro compiles each redirect source into an HTML stub with `<meta http-equiv="refresh">`, not an HTTP 301. To recover true 301s, the `redirects-file` Astro integration (`src/lib/redirectsIntegration.ts`) emits `dist/_redirects` from the redirect map plus the bare-id → slug pairs; Cloudflare Pages serves those paths as genuine HTTP 301s in production (Pages always follows a `_redirects` rule even when a static asset exists at the same path, so the meta-refresh stubs are bypassed and remain only as an `astro preview` fallback). The audit script still verifies the redirect *map* is clean. Note: `astro preview` does not honour `_redirects`, so a true-301 check requires `npx wrangler pages dev dist`.
 
 ## Open Questions
 
