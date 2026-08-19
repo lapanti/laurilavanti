@@ -1,0 +1,65 @@
+import type { AstroIntegration } from 'astro'
+
+import { writeFile } from 'node:fs/promises'
+
+import { redirects } from './redirects'
+
+/*
+ * Canonical blog-post path: /{lang}/blog/{id}/{slug}/ — the slug segment is what
+ * distinguishes it from the bare /{lang}/blog/{id}/ redirect source.
+ */
+const CANONICAL_POST_PATTERN = /^\/(en|fi|sv)\/blog\/(\d+)\/[^/]+\/$/
+
+const normalise = (pathname: string): string => {
+    const withLeading = pathname.startsWith('/') ? pathname : `/${pathname}`
+
+    return withLeading.endsWith('/') ? withLeading : `${withLeading}/`
+}
+
+/**
+ * Build the Cloudflare Pages `_redirects` lines (`<from> <to> 301`) from the
+ * static redirect map plus bare-id → slug pairs derived from the built pages.
+ *
+ * Pure and deterministic (sorted, de-duplicated) so it can be unit-tested
+ * without running a full Astro build.
+ */
+export const buildRedirectLines = (map: Record<string, string>, pagePathnames: readonly string[]): string[] => {
+    const lines = new Set<string>()
+
+    for (const [from, to] of Object.entries(map)) {
+        lines.add(`${from} ${to} 301`)
+    }
+
+    for (const pathname of pagePathnames) {
+        const path = normalise(pathname)
+        const match = CANONICAL_POST_PATTERN.exec(path)
+        if (!match) continue
+        const [, lang, id] = match
+        lines.add(`/${lang}/blog/${id}/ ${path} 301`)
+    }
+
+    return [...lines].sort()
+}
+
+/**
+ * Astro integration that writes `dist/_redirects` after the static build.
+ *
+ * Under `output: 'static'` Astro compiles every redirect into a client-side
+ * meta-refresh HTML stub (HTTP 200), not an HTTP 301. This layers a Cloudflare
+ * Pages `_redirects` file on top so the same paths return a true 301 in
+ * production — Pages always follows a `_redirects` rule even when a static asset
+ * exists at that path, so the stubs remain only as an `astro preview` fallback.
+ */
+export const redirectsFile = (): AstroIntegration => ({
+    hooks: {
+        'astro:build:done': async ({ pages, dir, logger }) => {
+            const lines = buildRedirectLines(
+                redirects,
+                pages.map((page) => page.pathname)
+            )
+            await writeFile(new URL('_redirects', dir), `${lines.join('\n')}\n`, 'utf-8')
+            logger.info(`wrote _redirects (${lines.length} rules)`)
+        },
+    },
+    name: 'redirects-file',
+})
