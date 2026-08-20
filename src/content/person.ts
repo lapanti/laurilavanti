@@ -16,6 +16,8 @@ export const personBirthDate = '1991-10-01'
 export const personBirthPlace = { '@type': 'Place', name: 'Jyväskylä' }
 export const personNationality = { '@type': 'Country', name: 'FI' }
 export const personUrl = 'https://lavanti.fi/fi/'
+export const personEmail = 'lauri@lavanti.fi'
+export const personTelephone = '+358407617605'
 
 export function getPersonImageUrl(): Promise<string> {
     return Promise.resolve(getImage('Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla', 'og').src)
