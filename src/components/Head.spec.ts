@@ -366,6 +366,8 @@ describe('<Head />', () => {
         expect(jsonLd.givenName).toBe('Lauri')
         expect(jsonLd.familyName).toBe('Lavanti')
         expect(jsonLd.url).toBe('https://lavanti.fi/fi/')
+        expect(jsonLd.email).toBe('lauri@lavanti.fi')
+        expect(jsonLd.telephone).toBe('+358407617605')
         expect(jsonLd.birthDate).toBe('1991-10-01')
         expect(jsonLd.birthPlace).toEqual({ '@type': 'Place', name: 'Jyväskylä' })
         expect(jsonLd.nationality).toEqual({ '@type': 'Country', name: 'FI' })

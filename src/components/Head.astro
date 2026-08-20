@@ -10,6 +10,7 @@ import {
     personBirthDate,
     personBirthPlace,
     personDescription,
+    personEmail,
     personFamilyName,
     personGivenName,
     personHasOccupation,
@@ -20,6 +21,7 @@ import {
     personName,
     personNationality,
     personSameAs,
+    personTelephone,
     personUrl,
     personWorksFor,
 } from '../content/person'
@@ -134,6 +136,7 @@ const canonicalPersonObject = {
     birthDate: personBirthDate,
     birthPlace: personBirthPlace,
     description: personDescription[lang],
+    email: personEmail,
     familyName: personFamilyName,
     givenName: personGivenName,
     hasOccupation: personHasOccupation[lang],
@@ -145,6 +148,7 @@ const canonicalPersonObject = {
     name: personName,
     nationality: personNationality,
     sameAs: personSameAs,
+    telephone: personTelephone,
     url: personUrl,
     worksFor: personWorksFor,
 }
