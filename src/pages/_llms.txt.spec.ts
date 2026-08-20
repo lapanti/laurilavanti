@@ -107,6 +107,10 @@ describe('buildLlmsTxt — pillar pages section', () => {
     it('links Laurista to /fi/about', () => {
         expect(content).toContain('[Laurista](https://lavanti.fi/fi/about)')
     })
+
+    it('links Suositukset to /fi/recommendations', () => {
+        expect(content).toContain('[Suositukset](https://lavanti.fi/fi/recommendations)')
+    })
 })
 
 describe('buildLlmsTxt — tag sections', () => {

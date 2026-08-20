@@ -61,9 +61,7 @@ export default defineConfig({
                 // Exclude bare /{lang}/blog/{id}/ redirect pages
                 !/\/(en|fi|sv)\/blog\/\d+\/$/.test(page) &&
                 // Exclude old /kategoria/ redirect pages
-                !/\/kategoria\//.test(page) &&
-                // Exclude recommendations pages for now
-                !/\/(en|fi|sv)\/recommendations\//.test(page),
+                !/\/kategoria\//.test(page),
             serialize: (item) => {
                 const path = decodeURIComponent(new URL(item.url).pathname)
                 const date = pageDateMap.get(path)
