@@ -1,4 +1,4 @@
-import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import/no-named-as-default */
+import AxeBuilder from '@axe-core/playwright' /* eslint-disable-line import-x/no-named-as-default */
 import test from '@playwright/test'
 
 import { checkSiteImprove } from './helpers/siteimprove'
