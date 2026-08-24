@@ -4,8 +4,64 @@ import process from 'node:process'
 import { pathToFileURL } from 'node:url'
 
 import { Window } from 'happy-dom'
+import remarkParse from 'remark-parse'
+import { unified } from 'unified'
 
 const DEFAULT_SITE_ORIGIN = 'https://lavanti.fi'
+const PRIMARY_SCHEMA_FIELDS = {
+    BlogPosting: {
+        optional: ['image', 'keywords', 'primaryImageOfPage', 'wordCount'],
+        required: [
+            'author',
+            'dateModified',
+            'datePublished',
+            'description',
+            'headline',
+            'inLanguage',
+            'license',
+            'mainEntityOfPage',
+            'url',
+        ],
+    },
+    CollectionPage: {
+        optional: ['image'],
+        required: ['description', 'inLanguage', 'name', 'url'],
+    },
+    Person: {
+        optional: [
+            'affiliation',
+            'alumniOf',
+            'birthDate',
+            'birthPlace',
+            'email',
+            'familyName',
+            'givenName',
+            'hasOccupation',
+            'image',
+            'knowsAbout',
+            'knowsLanguage',
+            'memberOf',
+            'nationality',
+            'telephone',
+            'worksFor',
+        ],
+        required: ['@id', 'description', 'jobTitle', 'name', 'sameAs', 'url'],
+    },
+    ProfilePage: {
+        optional: ['dateModified', 'image'],
+        required: ['description', 'inLanguage', 'mainEntity', 'name', 'url'],
+    },
+    WebPage: {
+        optional: ['dateModified', 'image'],
+        required: ['description', 'inLanguage', 'name', 'url'],
+    },
+    WebSite: {
+        optional: ['image'],
+        required: ['description', 'inLanguage', 'name', 'sameAs', 'url'],
+    },
+}
+const SUPPLEMENTAL_SCHEMA_TYPES = new Set(['BreadcrumbList', 'FAQPage'])
+const URL_FIELDS = new Set(['@id', 'item', 'license', 'url'])
 
 const decodePathname = (pathname) => {
     try {
@@ -16,6 +72,7 @@ const decodePathname = (pathname) => {
 }
 
 const finding = (code, file, message) => ({ code, file, message })
+const normalizeText = (value) => value.replace(/\s+/g, ' ').trim()
 
 const listFiles = async (directory) => {
     const entries = await readdir(directory, { withFileTypes: true })
@@ -45,6 +102,42 @@ const localPath = (value, siteOrigin) => {
     } catch {
         return null
     }
+}
+
+const inspectRoute = (state, route) => {
+    const cached = state.routeSnapshots.get(route.pathname)
+    if (cached) return cached
+
+    const window = new Window()
+    window.document.write(route.html)
+    const document = window.document
+    const snapshot = {
+        alternates: [...document.querySelectorAll('link[rel="alternate"][hreflang]')].map((link) => ({
+            href: link.getAttribute('href')?.trim() ?? '',
+            hreflang: link.getAttribute('hreflang')?.trim() ?? '',
+        })),
+        canonicalHrefs: [...document.querySelectorAll('link[rel="canonical"]')].map(
+            (link) => link.getAttribute('href')?.trim() ?? ''
+        ),
+        jsonLdScripts: [...document.querySelectorAll('script[type="application/ld+json"]')].map(
+            (script) => script.textContent ?? ''
+        ),
+        links: [...document.querySelectorAll('a[href]')].map((anchor) => anchor.getAttribute('href')?.trim() ?? ''),
+        ogUrls: [...document.querySelectorAll('meta[property="og:url"]')].map(
+            (meta) => meta.getAttribute('content')?.trim() ?? ''
+        ),
+        robots: [...document.querySelectorAll('meta[name="robots"]')].map(
+            (meta) => meta.getAttribute('content')?.trim() ?? ''
+        ),
+        themeColors: [...document.querySelectorAll('meta[name="theme-color"]')].map(
+            (meta) => meta.getAttribute('content')?.trim() ?? ''
+        ),
+        visibleText: normalizeText(document.body?.textContent ?? ''),
+    }
+
+    window.close()
+    state.routeSnapshots.set(route.pathname, snapshot)
+    return snapshot
 }
 
 export const parseRedirects = (content) => {
@@ -114,6 +207,7 @@ export const loadDistState = async ({ distDir, siteOrigin = DEFAULT_SITE_ORIGIN 
         htmlRoutes,
         redirectRules: parsedRedirects.rules,
         redirectSources,
+        routeSnapshots: new Map(),
         siteOrigin,
     }
 }
@@ -184,11 +278,9 @@ export const auditRedirectRules = (state) => {
 
 const auditRouteLinks = (state, route) => {
     const findings = []
-    const window = new Window()
-    window.document.write(route.html)
+    const snapshot = inspectRoute(state, route)
 
-    for (const anchor of window.document.querySelectorAll('a[href]')) {
-        const href = anchor.getAttribute('href')?.trim()
+    for (const href of snapshot.links) {
         if (!href || href.startsWith('#')) continue
 
         let url
@@ -220,16 +312,326 @@ const auditRouteLinks = (state, route) => {
         findings.push(finding('link-target-missing', route.file, `href targets missing output ${pathname}`))
     }
 
-    window.close()
     return findings
 }
 
 export const auditInternalLinks = (state) =>
     [...state.canonicalRoutes].map((pathname) => auditRouteLinks(state, state.htmlRoutes.get(pathname))).flat()
 
+const parseJsonLd = (snapshot, route) => {
+    const findings = []
+    const schemas = []
+
+    for (const [index, script] of snapshot.jsonLdScripts.entries()) {
+        try {
+            const schema = JSON.parse(script)
+            if (!schema || typeof schema !== 'object' || Array.isArray(schema)) {
+                findings.push(finding('jsonld-shape', route.file, `JSON-LD script ${index + 1} must contain an object`))
+            } else {
+                schemas.push(schema)
+            }
+        } catch (error) {
+            findings.push(
+                finding('jsonld-parse', route.file, `JSON-LD script ${index + 1} is invalid: ${error.message}`)
+            )
+        }
+    }
+
+    return { findings, schemas }
+}
+
+const auditJsonLdValues = (route, schema, path = '$', parentKey = '') => {
+    const findings = []
+
+    if (schema === null) {
+        return [finding('jsonld-null', route.file, `${path} must not be null`)]
+    }
+    if (typeof schema === 'string') {
+        if (!schema.trim()) findings.push(finding('jsonld-empty', route.file, `${path} must not be empty`))
+        if (URL_FIELDS.has(parentKey) || ['image', 'sameAs'].includes(parentKey)) {
+            try {
+                const url = new URL(schema)
+                if (!['http:', 'https:'].includes(url.protocol)) throw new Error('unsupported protocol')
+            } catch {
+                findings.push(finding('jsonld-url', route.file, `${path} must be an absolute HTTP(S) URL`))
+            }
+        }
+        return findings
+    }
+    if (Array.isArray(schema)) {
+        return schema.flatMap((value, index) => auditJsonLdValues(route, value, `${path}[${index}]`, parentKey))
+    }
+    if (typeof schema !== 'object') return findings
+
+    for (const [key, value] of Object.entries(schema)) {
+        findings.push(...auditJsonLdValues(route, value, `${path}.${key}`, key))
+    }
+    return findings
+}
+
+const auditPrimarySchema = (route, schemas) => {
+    const findings = []
+    const primarySchemas = schemas.filter((schema) => !SUPPLEMENTAL_SCHEMA_TYPES.has(schema['@type']))
+
+    if (primarySchemas.length !== 1) {
+        findings.push(
+            finding(
+                'jsonld-primary-count',
+                route.file,
+                `expected one primary JSON-LD object, found ${primarySchemas.length}`
+            )
+        )
+        return findings
+    }
+
+    const primary = primarySchemas[0]
+    const fields = PRIMARY_SCHEMA_FIELDS[primary['@type']]
+    if (!fields) {
+        findings.push(
+            finding('jsonld-primary-type', route.file, `unsupported primary type ${String(primary['@type'])}`)
+        )
+        return findings
+    }
+
+    const allowed = new Set(['@context', '@type', ...fields.required, ...fields.optional])
+    for (const key of Object.keys(primary)) {
+        if (!allowed.has(key)) {
+            findings.push(
+                finding(
+                    'jsonld-field-forbidden',
+                    route.file,
+                    `${primary['@type']} must not emit top-level field ${key}`
+                )
+            )
+        }
+    }
+    for (const key of fields.required) {
+        if (!(key in primary) || primary[key] === null || primary[key] === '') {
+            findings.push(finding('jsonld-field-required', route.file, `${primary['@type']} requires field ${key}`))
+        }
+    }
+
+    return findings
+}
+
+const auditFaqVisibility = (route, snapshot, schemas) => {
+    const findings = []
+
+    for (const faq of schemas.filter((schema) => schema['@type'] === 'FAQPage')) {
+        if (!Array.isArray(faq.mainEntity) || faq.mainEntity.length < 2) {
+            findings.push(finding('faq-shape', route.file, 'FAQPage must contain at least two questions'))
+            continue
+        }
+        for (const [index, question] of faq.mainEntity.entries()) {
+            const name = normalizeText(typeof question?.name === 'string' ? question.name : '')
+            const answer = normalizeText(
+                typeof question?.acceptedAnswer?.text === 'string' ? question.acceptedAnswer.text : ''
+            )
+            if (!name || !answer) {
+                findings.push(
+                    finding('faq-shape', route.file, `FAQ question ${index + 1} needs visible name and answer`)
+                )
+                continue
+            }
+            if (!snapshot.visibleText.includes(name)) {
+                findings.push(finding('faq-question-hidden', route.file, `FAQ question is not visible: ${name}`))
+            }
+            if (!snapshot.visibleText.includes(answer)) {
+                findings.push(finding('faq-answer-hidden', route.file, `FAQ answer is not visible for: ${name}`))
+            }
+        }
+    }
+
+    return findings
+}
+
+const isNoindex = (snapshot) =>
+    snapshot.robots.some((value) =>
+        value
+            .toLowerCase()
+            .split(',')
+            .map((directive) => directive.trim())
+            .includes('noindex')
+    )
+
+const auditPageMetadata = (state, route) => {
+    const findings = []
+    const snapshot = inspectRoute(state, route)
+    const noindex = isNoindex(snapshot)
+
+    if (noindex) {
+        if (snapshot.robots.length !== 1 || snapshot.robots[0].toLowerCase() !== 'noindex') {
+            findings.push(
+                finding('noindex-directive', route.file, 'hidden pages must emit exactly one robots noindex directive')
+            )
+        }
+        for (const [code, values] of [
+            ['noindex-canonical', snapshot.canonicalHrefs],
+            ['noindex-hreflang', snapshot.alternates],
+            ['noindex-jsonld', snapshot.jsonLdScripts],
+            ['noindex-og-url', snapshot.ogUrls],
+        ]) {
+            if (values.length > 0) findings.push(finding(code, route.file, 'hidden page emits discovery metadata'))
+        }
+        return findings
+    }
+
+    const expectedCanonical = new URL(route.pathname, state.siteOrigin).href
+    if (snapshot.canonicalHrefs.length !== 1 || snapshot.canonicalHrefs[0] !== expectedCanonical) {
+        findings.push(finding('canonical', route.file, `expected one canonical URL ${expectedCanonical}`))
+    }
+    if (snapshot.ogUrls.length !== 1 || snapshot.ogUrls[0] !== expectedCanonical) {
+        findings.push(finding('og-url', route.file, `expected one og:url ${expectedCanonical}`))
+    }
+
+    const alternates = new Map()
+    for (const alternate of snapshot.alternates) {
+        if (alternates.has(alternate.hreflang)) {
+            findings.push(finding('hreflang-duplicate', route.file, `duplicate hreflang ${alternate.hreflang}`))
+        }
+        alternates.set(alternate.hreflang, alternate.href)
+        const pathname = localPath(alternate.href, state.siteOrigin)
+        if (pathname === null || !state.canonicalRoutes.has(pathname)) {
+            findings.push(finding('hreflang-target', route.file, `hreflang target is not canonical: ${alternate.href}`))
+        }
+    }
+    for (const language of ['en', 'fi', 'sv', 'x-default']) {
+        if (!alternates.has(language)) {
+            findings.push(finding('hreflang-missing', route.file, `missing hreflang ${language}`))
+        }
+    }
+    if (alternates.get('x-default') !== alternates.get('fi')) {
+        findings.push(finding('hreflang-default', route.file, 'x-default must match the Finnish alternate'))
+    }
+
+    if (snapshot.themeColors.length !== 1 || !snapshot.themeColors[0]) {
+        findings.push(finding('theme-color', route.file, 'indexable page needs one non-empty theme-color meta tag'))
+    }
+
+    const parsed = parseJsonLd(snapshot, route)
+    findings.push(...parsed.findings)
+    findings.push(...parsed.schemas.flatMap((schema) => auditJsonLdValues(route, schema)))
+    findings.push(...auditPrimarySchema(route, parsed.schemas))
+    findings.push(...auditFaqVisibility(route, snapshot, parsed.schemas))
+    return findings
+}
+
+export const auditPageMetadataOutput = (state) =>
+    [...state.canonicalRoutes].map((pathname) => auditPageMetadata(state, state.htmlRoutes.get(pathname))).flat()
+
+const parseXml = (content) => {
+    const window = new Window()
+    const document = new window.DOMParser().parseFromString(content, 'application/xml')
+    window.close()
+    return document
+}
+
+const readOutputFile = async (state, pathname) => {
+    try {
+        return await readFile(resolve(state.distDir, pathname.replace(/^\//, '')), 'utf8')
+    } catch {
+        return null
+    }
+}
+
+const markdownLinks = (content) => {
+    const tree = unified().use(remarkParse).parse(content)
+    const links = []
+    const visit = (node) => {
+        if (node.type === 'link' && typeof node.url === 'string') links.push(node.url)
+        if (Array.isArray(node.children)) node.children.forEach(visit)
+    }
+    visit(tree)
+    return links
+}
+
+export const auditCrawlerResources = async (state) => {
+    const findings = []
+    const robots = await readOutputFile(state, '/robots.txt')
+    const sitemapIndex = await readOutputFile(state, '/sitemap-index.xml')
+    const llms = await readOutputFile(state, '/llms.txt')
+
+    if (robots === null) {
+        findings.push(finding('robots-missing', 'robots.txt', 'built output does not contain robots.txt'))
+    } else {
+        const sitemapDirective = robots.match(/^Sitemap:\s*(\S+)\s*$/im)?.[1]
+        const expected = new URL('/sitemap-index.xml', state.siteOrigin).href
+        if (sitemapDirective !== expected) {
+            findings.push(finding('robots-sitemap', 'robots.txt', `expected sitemap directive ${expected}`))
+        }
+    }
+
+    const sitemapPaths = new Set()
+    if (sitemapIndex === null) {
+        findings.push(
+            finding('sitemap-index-missing', 'sitemap-index.xml', 'built output does not contain sitemap index')
+        )
+    } else {
+        const indexDocument = parseXml(sitemapIndex)
+        for (const loc of indexDocument.getElementsByTagName('loc')) {
+            const sitemapPath = localPath(loc.textContent ?? '', state.siteOrigin)
+            if (sitemapPath === null || !state.assetPaths.has(sitemapPath)) {
+                findings.push(finding('sitemap-file', 'sitemap-index.xml', `missing sitemap ${loc.textContent}`))
+                continue
+            }
+            const sitemap = await readOutputFile(state, sitemapPath)
+            if (sitemap === null) continue
+            const sitemapDocument = parseXml(sitemap)
+            for (const entry of sitemapDocument.getElementsByTagName('url')) {
+                const locs = entry.getElementsByTagName('loc')
+                const lastmods = entry.getElementsByTagName('lastmod')
+                const href = locs.length === 1 ? normalizeText(locs[0].textContent ?? '') : ''
+                const pathname = localPath(href, state.siteOrigin)
+                if (pathname === null || !state.canonicalRoutes.has(pathname)) {
+                    findings.push(finding('sitemap-route', sitemapPath, `non-canonical sitemap URL ${href}`))
+                } else {
+                    sitemapPaths.add(pathname)
+                    const snapshot = inspectRoute(state, state.htmlRoutes.get(pathname))
+                    if (isNoindex(snapshot)) {
+                        findings.push(
+                            finding('sitemap-noindex', sitemapPath, `noindex route appears in sitemap: ${pathname}`)
+                        )
+                    }
+                }
+                if (lastmods.length !== 1 || !normalizeText(lastmods[0].textContent ?? '')) {
+                    findings.push(finding('sitemap-lastmod', sitemapPath, `missing lastmod for ${href}`))
+                }
+            }
+        }
+    }
+
+    if (llms === null) {
+        findings.push(finding('llms-missing', 'llms.txt', 'built output does not contain llms.txt'))
+    } else {
+        const paths = []
+        for (const href of markdownLinks(llms)) {
+            const pathname = localPath(href, state.siteOrigin)
+            paths.push(pathname)
+            if (pathname === null || !state.canonicalRoutes.has(pathname)) {
+                findings.push(finding('llms-url', 'llms.txt', `URL is not a generated canonical route: ${href}`))
+            } else if (state.redirectSources.has(pathname)) {
+                findings.push(finding('llms-redirect', 'llms.txt', `URL is a redirect source: ${href}`))
+            } else if (isNoindex(inspectRoute(state, state.htmlRoutes.get(pathname)))) {
+                findings.push(finding('llms-noindex', 'llms.txt', `URL is noindex: ${href}`))
+            }
+        }
+        for (const pillar of ['/fi/', '/fi/about/', '/fi/blog/']) {
+            if (!paths.includes(pillar))
+                findings.push(finding('llms-pillar', 'llms.txt', `missing pillar URL ${pillar}`))
+        }
+    }
+
+    return findings
+}
+
 export const auditDist = async (options) => {
     const state = await loadDistState(options)
-    return [...auditRedirectRules(state), ...auditInternalLinks(state)]
+    return [
+        ...auditRedirectRules(state),
+        ...auditInternalLinks(state),
+        ...auditPageMetadataOutput(state),
+        ...(await auditCrawlerResources(state)),
+    ]
 }
 
 const isMain = process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url
