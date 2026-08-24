@@ -276,6 +276,42 @@ export const auditRedirectRules = (state) => {
     return findings
 }
 
+export const auditFinnishAliases = (state) => {
+    const findings = []
+    const rules = new Map()
+
+    for (const rule of state.redirectRules) {
+        const source = localPath(rule.source, state.siteOrigin)
+        const destination = localPath(rule.destination, state.siteOrigin)
+        if (source !== null && destination !== null && !rules.has(source)) {
+            rules.set(source, { destination, status: rule.status })
+        }
+    }
+
+    for (const pathname of state.canonicalRoutes) {
+        if (pathname === '/fi/' || !pathname.startsWith('/fi/') || !pathname.endsWith('/')) continue
+
+        const aliasWithSlash = pathname.slice('/fi'.length)
+        const expectedAliases = [aliasWithSlash.slice(0, -1), aliasWithSlash]
+        for (const source of expectedAliases) {
+            const rule = rules.get(source)
+            if (!rule) {
+                findings.push(finding('finnish-alias-missing', '_redirects', `${source} must redirect to ${pathname}`))
+            } else if (rule.destination !== pathname || rule.status !== 301) {
+                findings.push(
+                    finding(
+                        'finnish-alias-target',
+                        '_redirects',
+                        `${source} must redirect directly to ${pathname} with status 301`
+                    )
+                )
+            }
+        }
+    }
+
+    return findings
+}
+
 const auditRouteLinks = (state, route) => {
     const findings = []
     const snapshot = inspectRoute(state, route)
@@ -628,6 +664,7 @@ export const auditDist = async (options) => {
     const state = await loadDistState(options)
     return [
         ...auditRedirectRules(state),
+        ...auditFinnishAliases(state),
         ...auditInternalLinks(state),
         ...auditPageMetadataOutput(state),
         ...(await auditCrawlerResources(state)),

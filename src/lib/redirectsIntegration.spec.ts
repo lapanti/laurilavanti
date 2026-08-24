@@ -31,7 +31,30 @@ describe('buildRedirectLines', () => {
     it('ignores non-post pages and the bare-id source pages themselves', () => {
         const lines = buildRedirectLines({}, ['/fi/', '/fi/blog/', '/fi/blog/51/', '/fi/category/technology/'])
 
-        expect(lines).toEqual([])
+        expect(lines).toEqual([
+            '/blog /fi/blog/ 301',
+            '/blog/ /fi/blog/ 301',
+            '/category/technology /fi/category/technology/ 301',
+            '/category/technology/ /fi/category/technology/ 301',
+        ])
+    })
+
+    it('derives slashless and trailing-slash aliases from canonical Finnish pages', () => {
+        const lines = buildRedirectLines({}, ['/fi/', '/fi/about/', '/en/about/', '/sv/about/'])
+
+        expect(lines).toEqual(['/about /fi/about/ 301', '/about/ /fi/about/ 301'])
+    })
+
+    it('does not derive aliases from redirect stubs or non-page output', () => {
+        const lines = buildRedirectLines({ '/fi/topics/': '/fi/blog/' }, ['/fi/topics/', '/fi/rss.xml', '/fi/blog/51/'])
+
+        expect(lines).toEqual(['/fi/topics/ /fi/blog/ 301'])
+    })
+
+    it('rejects a generated alias that conflicts with a manual redirect', () => {
+        expect(() => buildRedirectLines({ '/about/': '/en/about/' }, ['/fi/about/'])).toThrow(
+            'conflicting redirect source "/about/"'
+        )
     })
 
     it('de-duplicates repeated pages and returns lines sorted deterministically', () => {

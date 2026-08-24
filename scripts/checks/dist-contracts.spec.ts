@@ -5,6 +5,7 @@ import { afterEach, describe, expect, it } from 'vitest'
 
 import {
     auditCrawlerResources,
+    auditFinnishAliases,
     auditInternalLinks,
     auditPageMetadataOutput,
     auditRedirectRules,
@@ -144,6 +145,31 @@ describe('route contracts', () => {
                 'redirect-conflict',
             ])
         )
+    })
+})
+
+describe('Finnish alias contracts', () => {
+    it('accepts both locale-less forms for every canonical Finnish page except root', async () => {
+        const distDir = await createDist({
+            _redirects: '/about /fi/about/ 301\n/about/ /fi/about/ 301\n',
+            'fi/about/index.html': '<p>About</p>',
+            'fi/index.html': '<p>Home</p>',
+        })
+        const state = await loadDistState({ distDir })
+
+        expect(auditFinnishAliases(state)).toEqual([])
+    })
+
+    it('reports missing and misdirected aliases', async () => {
+        const distDir = await createDist({
+            _redirects: '/about /fi/ 301\n',
+            'fi/about/index.html': '<p>About</p>',
+            'fi/index.html': '<p>Home</p>',
+        })
+        const state = await loadDistState({ distDir })
+        const codes = auditFinnishAliases(state).map(({ code }) => code)
+
+        expect(codes).toEqual(expect.arrayContaining(['finnish-alias-missing', 'finnish-alias-target']))
     })
 })
 

@@ -9,6 +9,9 @@ import { redirects } from './redirects'
  * distinguishes it from the bare /{lang}/blog/{id}/ redirect source.
  */
 const CANONICAL_POST_PATTERN = /^\/(en|fi|sv)\/blog\/(\d+)\/[^/]+\/$/
+const BARE_POST_PATTERN = /^\/(en|fi|sv)\/blog\/\d+\/$/
+const FINNISH_PAGE_PATTERN = /^\/fi\/(.+)\/$/
+const FILE_ROUTE_PATTERN = /\/[^/]+\.[^/]+\/$/
 
 const normalise = (pathname: string): string => {
     const withLeading = pathname.startsWith('/') ? pathname : `/${pathname}`
@@ -24,21 +27,46 @@ const normalise = (pathname: string): string => {
  * without running a full Astro build.
  */
 export const buildRedirectLines = (map: Record<string, string>, pagePathnames: readonly string[]): string[] => {
-    const lines = new Set<string>()
+    const rules = new Map<string, string>()
+    const addRule = (source: string, destination: string) => {
+        const existing = rules.get(source)
+        if (existing && existing !== destination) {
+            throw new Error(`conflicting redirect source "${source}": "${existing}" and "${destination}"`)
+        }
+        rules.set(source, destination)
+    }
 
     for (const [from, to] of Object.entries(map)) {
-        lines.add(`${from} ${to} 301`)
+        addRule(from, to)
     }
+
+    const redirectSources = new Set(Object.keys(map).map(normalise))
 
     for (const pathname of pagePathnames) {
         const path = normalise(pathname)
         const match = CANONICAL_POST_PATTERN.exec(path)
-        if (!match) continue
-        const [, lang, id] = match
-        lines.add(`/${lang}/blog/${id}/ ${path} 301`)
+        if (match) {
+            const [, lang, id] = match
+            addRule(`/${lang}/blog/${id}/`, path)
+        }
+
+        const finnishPage = FINNISH_PAGE_PATTERN.exec(path)
+        if (
+            !finnishPage ||
+            path === '/fi/' ||
+            redirectSources.has(path) ||
+            BARE_POST_PATTERN.test(path) ||
+            FILE_ROUTE_PATTERN.test(path)
+        ) {
+            continue
+        }
+
+        const alias = `/${finnishPage[1]}`
+        addRule(alias, path)
+        addRule(`${alias}/`, path)
     }
 
-    return [...lines].sort()
+    return [...rules].map(([source, destination]) => `${source} ${destination} 301`).sort()
 }
 
 /**
