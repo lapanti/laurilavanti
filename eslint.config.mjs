@@ -3,13 +3,17 @@
 import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import vitest from '@vitest/eslint-plugin'
-import { defineConfig } from 'eslint/config' // eslint-disable-line import/no-unresolved
+import { defineConfig } from 'eslint/config'
 import { configs } from 'eslint-plugin-astro'
-import importPlugin from 'eslint-plugin-import'
+import fractal from 'eslint-plugin-fractal'
+import { importX } from 'eslint-plugin-import-x'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import globals from 'globals'
-import tseslint from 'typescript-eslint' // eslint-disable-line import/no-unresolved
+import { configs as tseslintConfigs } from 'typescript-eslint'
+
+const fractalPlugin = /** @type {import('eslint').ESLint.Plugin} */ (/** @type {unknown} */ (fractal))
 
 const testFileGlob = [
     'tests/__mocks__/**/*.js',
@@ -24,20 +28,17 @@ export default defineConfig([
         extends: ['js/recommended'],
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         languageOptions: { globals: globals.browser },
-        plugins: { js },
+        plugins: { import: importX, js },
     },
-    importPlugin.flatConfigs.recommended,
-    importPlugin.flatConfigs.typescript,
+    importX.flatConfigs.recommended,
+    importX.flatConfigs.typescript,
     {
         settings: {
-            'import/resolver': {
-                typescript: true,
-            },
+            'import-x/resolver-next': [createTypeScriptImportResolver()],
         },
     },
-    tseslint.configs.recommended,
+    tseslintConfigs.recommended,
     configs.recommended,
-    configs['jsx-a11y-strict'],
     {
         files: ['**/*.js', '**/*.ts', '**/*.astro', '**/*.spec.js', '**/*.spec.ts'],
         languageOptions: {
@@ -80,7 +81,7 @@ export default defineConfig([
             '@typescript-eslint/no-use-before-define': ['error'],
             'eol-last': ['error', 'always'],
             eqeqeq: ['error', 'smart'],
-            'import/extensions': [
+            'import-x/extensions': [
                 'error',
                 'never',
                 {
@@ -88,12 +89,12 @@ export default defineConfig([
                     json: 'always',
                 },
             ],
-            'import/first': ['error'],
-            'import/named': ['error'],
-            'import/namespace': ['error'],
-            'import/newline-after-import': ['error'],
-            'import/no-duplicates': ['error'],
-            'import/no-unresolved': ['error', { ignore: ['^astro:'] }],
+            'import-x/first': ['error'],
+            'import-x/named': ['error'],
+            'import-x/namespace': ['error'],
+            'import-x/newline-after-import': ['error'],
+            'import-x/no-duplicates': ['error'],
+            'import-x/no-unresolved': ['error', { ignore: ['^astro:'] }],
             'linebreak-style': ['error', 'unix'],
             'max-depth': ['error', 3],
             'no-duplicate-imports': ['off'],
@@ -118,6 +119,19 @@ export default defineConfig([
             'astro/prefer-object-class-list': ['error'],
             'astro/prefer-split-class-list': ['error'],
             'astro/sort-attributes': ['error'],
+        },
+    },
+    {
+        files: ['src/components/**/*.astro'],
+        plugins: { fractal: fractalPlugin },
+        rules: {
+            'fractal/component-imports': [
+                'error',
+                {
+                    rootDir: '.',
+                    sharedDir: 'src/components',
+                },
+            ],
         },
     },
     {

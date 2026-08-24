@@ -11,7 +11,10 @@ const siblingMdxFiles = (metaFiles) =>
     })
 
 export default {
-    '*/**/*.{js,jsx,ts,tsx,astro}': ['eslint'],
+    '*/**/*.{js,jsx,ts,tsx,astro}': (files) => [
+        `eslint ${files.map((f) => `"${f}"`).join(' ')}`,
+        `vitest related --run ${files.map((f) => `"${f}"`).join(' ')}`,
+    ],
     '*/**/*.mdx': (files) => [
         `scripts/mdx-validate.sh ${files.map((f) => `"${f}"`).join(' ')}`,
         `node scripts/check-overflow.mjs ${files.map((f) => `"${f}"`).join(' ')}`,
@@ -31,6 +34,4 @@ export default {
         'node --experimental-strip-types scripts/checks/redirects.mjs',
     ],
     'src/lib/redirects.ts': () => 'node --experimental-strip-types scripts/checks/redirects.mjs',
-    '*/**/*.{js,jsx,ts,tsx,astro}': (files) =>
-        `vitest related --run ${files.map((f) => `"${f}"`).join(' ')}`,
 }
