@@ -287,12 +287,12 @@ The initial implementation uses this exact tuple. Renovate may advance patch or 
 
 ```typescript
 interface SupportedVersionSet {
-  node: "24.19.0";
-  npm: "12.0.2";
-  nodeTypes: "24.13.3";
-  astroMajor: 7;
-  typescriptRange: ">=6.0.0 <6.1.0";
-  eslintMajor: 10;
+    node: '24.19.0'
+    npm: '12.0.2'
+    nodeTypes: '24.13.3'
+    astroMajor: 7
+    typescriptRange: '>=6.0.0 <6.1.0'
+    eslintMajor: 10
 }
 ```
 
@@ -302,8 +302,8 @@ The Node value is exact in `.nvmrc` and engine metadata. The npm value is exact 
 
 ```typescript
 interface VisibleFaqEntry {
-  question: string;
-  answer: string;
+    question: string
+    answer: string
 }
 ```
 
@@ -313,14 +313,14 @@ A candidate question is an H2 whose normalized visible text ends with `?`. Its a
 
 All types include `@context` and `@type`. Fields not listed for that type are forbidden.
 
-| Primary type     | Required fields                                                                                                          | Optional fields                                         |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
-| `BlogPosting`    | `headline`, `description`, `url`, `author`, `datePublished`, `dateModified`, `inLanguage`, `mainEntityOfPage`, `license` | `image`, `primaryImageOfPage`, `keywords`, `wordCount`  |
-| `ProfilePage`    | `name`, `description`, `url`, `inLanguage`, `mainEntity`                                                                 | `dateModified`, `image`                                 |
-| `Person`         | `@id`, `name`, `url`, `jobTitle`, `description`, `sameAs`                                                                | `email`, `telephone`, `image`, `knowsAbout`, `memberOf` |
-| `CollectionPage` | `name`, `description`, `url`, `inLanguage`                                                                               | `image`                                                 |
-| `WebPage`        | `name`, `description`, `url`, `inLanguage`                                                                               | `image`, `dateModified`                                 |
-| `WebSite`        | `name`, `description`, `url`, `inLanguage`, `sameAs`                                                                     | `image`                                                 |
+| Primary type     | Required fields                                                                                                          | Optional fields                                                                                                                                                                                       |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `BlogPosting`    | `headline`, `description`, `url`, `author`, `datePublished`, `dateModified`, `inLanguage`, `mainEntityOfPage`, `license` | `image`, `primaryImageOfPage`, `keywords`, `wordCount`                                                                                                                                                |
+| `ProfilePage`    | `name`, `description`, `url`, `inLanguage`, `mainEntity`                                                                 | `dateModified`, `image`                                                                                                                                                                               |
+| `Person`         | `@id`, `name`, `url`, `jobTitle`, `description`, `sameAs`                                                                | `affiliation`, `alumniOf`, `birthDate`, `birthPlace`, `email`, `familyName`, `givenName`, `hasOccupation`, `image`, `knowsAbout`, `knowsLanguage`, `memberOf`, `nationality`, `telephone`, `worksFor` |
+| `CollectionPage` | `name`, `description`, `url`, `inLanguage`                                                                               | `image`                                                                                                                                                                                               |
+| `WebPage`        | `name`, `description`, `url`, `inLanguage`                                                                               | `image`, `dateModified`                                                                                                                                                                               |
+| `WebSite`        | `name`, `description`, `url`, `inLanguage`, `sameAs`                                                                     | `image`                                                                                                                                                                                               |
 
 `BlogPosting.image` and `BlogPosting.primaryImageOfPage` use the ImageObject contract. `ProfilePage.mainEntity` is the canonical Person entity. `BlogPosting.author` contains canonical Person references. `FAQPage` is supplemental and never a primary type.
 
@@ -328,10 +328,10 @@ All types include `@context` and `@type`. Fields not listed for that type are fo
 
 ```typescript
 interface RedirectRule {
-  source: string;
-  destination: string;
-  status: 301;
-  origin: "manual" | "generated-post-id" | "generated-finnish-alias";
+    source: string
+    destination: string
+    status: 301
+    origin: 'manual' | 'generated-post-id' | 'generated-finnish-alias'
 }
 ```
 
@@ -343,14 +343,14 @@ Query preservation is a deployed-platform contract, not only a source assertion.
 
 ```typescript
 interface BuiltRoute {
-  pathname: string;
-  file: string;
-  redirectSource: boolean;
-  indexable: boolean;
-  canonical?: string;
-  alternates: Partial<Record<"fi" | "sv" | "en" | "x-default", string>>;
-  jsonLd: unknown[];
-  visibleText: string;
+    pathname: string
+    file: string
+    redirectSource: boolean
+    indexable: boolean
+    canonical?: string
+    alternates: Partial<Record<'fi' | 'sv' | 'en' | 'x-default', string>>
+    jsonLd: unknown[]
+    visibleText: string
 }
 ```
 
@@ -360,11 +360,11 @@ Route discovery comes from `dist`, not a source-maintained route allowlist. Redi
 
 ```typescript
 interface CandidateArtifact {
-  name: string;
-  sha256: string;
-  previewUrl: string;
-  runId: string;
-  runAttempt: string;
+    name: string
+    sha256: string
+    previewUrl: string
+    runId: string
+    runAttempt: string
 }
 ```
 
@@ -422,3 +422,4 @@ Where an older dependency describes frontmatter-driven FAQ schema, `noindex, nof
 | ---------- | -------------------------------------------------------------------------------------------- |
 | 2026-08-24 | Initial draft for issue #1362                                                                |
 | 2026-08-24 | Clarified deployed query preservation, E2E URL shape, and navigation activation after review |
+| 2026-08-24 | Preserved the canonical Person field set defined by the dependent Person Spec                |
