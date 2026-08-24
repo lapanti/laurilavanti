@@ -28,7 +28,7 @@ export default defineConfig([
         extends: ['js/recommended'],
         files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
         languageOptions: { globals: globals.browser },
-        plugins: { import: importX, js },
+        plugins: { js },
     },
     importX.flatConfigs.recommended,
     importX.flatConfigs.typescript,
