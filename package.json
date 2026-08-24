@@ -28,6 +28,7 @@
     "lint": "eslint src tests",
     "lint:fix": "npm run lint -- --fix",
     "check": "astro check",
+    "check:dist": "node scripts/checks/dist-contracts.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "validate-page-titles": "node scripts/check-overflow.mjs $(find src/pages -name '*.mdx') $(find src/content/posts -name '*.mdx') src/content/tags/*.ts",
