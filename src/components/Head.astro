@@ -25,17 +25,8 @@ import {
     personUrl,
     personWorksFor,
 } from '../content/person'
-import {
-    BLOGPOSTING,
-    type BreadcrumbItem,
-    FAQPAGE,
-    JSON_LD_TYPES,
-    type JsonLdType,
-    PERSON,
-    PROFILEPAGE,
-    WEBPAGE,
-    WEBSITE,
-} from '../lib/jsonld'
+import { BLOGPOSTING, type BreadcrumbItem, FAQPAGE, type JsonLdType } from '../lib/jsonld'
+import { buildPrimaryJsonLd } from '../lib/jsonldBuilders'
 
 interface Props {
     authors?: AuthorEntry[]
@@ -90,7 +81,7 @@ const isArticle = type === BLOGPOSTING
  * pre-computed per-locale URLs directly. Otherwise fall back to swapping the
  * locale prefix in the canonical slug (works for all other page types).
  */
-const siteUrl = Astro.site?.toString()
+const siteUrl = Astro.site?.toString() ?? 'https://lavanti.fi/'
 
 const hreflangLinks =
     !noindex && siteUrl
@@ -108,7 +99,13 @@ const ogLocaleAlternates = !noindex
     ? (['fi', 'sv', 'en'] as Lang[]).filter((l) => l !== lang).map((l) => ogLocale[l])
     : []
 
-const canonical = !noindex && (slug === 'index' ? Astro.site : slug ? new URL(`${slug}/`, siteUrl) : null)
+const canonical = !noindex
+    ? slug === 'index'
+        ? Astro.site?.toString()
+        : slug
+          ? new URL(`${slug}/`, siteUrl).toString()
+          : undefined
+    : undefined
 
 const ogImageUrl = ogImage ?? null
 
@@ -154,57 +151,20 @@ const canonicalPersonObject = {
 }
 
 const jsonLd = JSON.stringify(
-    type === PROFILEPAGE
-        ? {
-              '@context': 'https://schema.org',
-              '@type': PROFILEPAGE,
-              ...(updatedAt ? { dateModified: updatedAt } : {}),
-              description,
-              mainEntity: canonicalPersonObject,
-              name: title,
-              url: canonical,
-          }
-        : {
-              '@context': 'https://schema.org',
-              '@type': type && JSON_LD_TYPES.includes(type) ? type : WEBSITE,
-              author: isArticle ? resolvedAuthors : { '@type': 'Person', name: personName },
-              description,
-              headline: title,
-              license: 'https://creativecommons.org/licenses/by-sa/4.0/',
-              url: canonical,
-              ...(ogImageUrl ? { image: ogImageUrl } : {}),
-              ...(type === BLOGPOSTING
-                  ? {
-                        ...(ogImageUrl
-                            ? {
-                                  image: { '@type': 'ImageObject', height: 630, url: ogImageUrl, width: 1200 },
-                                  primaryImageOfPage: {
-                                      '@type': 'ImageObject',
-                                      height: 630,
-                                      url: ogImageUrl,
-                                      width: 1200,
-                                  },
-                              }
-                            : {}),
-                        dateModified: updatedAt ?? createdAt,
-                        datePublished: createdAt,
-                        inLanguage: lang,
-                        mainEntityOfPage: {
-                            '@id': canonical,
-                            '@type': WEBPAGE,
-                            inLanguage: lang,
-                        },
-                        ...(wordCount ? { wordCount } : {}),
-                    }
-                  : {}),
-              ...(type === WEBSITE
-                  ? {
-                        name: personName,
-                        sameAs: personSameAs,
-                    }
-                  : {}),
-              ...(type === PERSON ? { ...canonicalPersonObject } : {}),
-          }
+    buildPrimaryJsonLd({
+        authors: resolvedAuthors,
+        canonical,
+        createdAt,
+        description,
+        lang,
+        ogImage: ogImageUrl ?? undefined,
+        person: canonicalPersonObject,
+        tags,
+        title,
+        type,
+        updatedAt,
+        wordCount,
+    })
 )
 
 const faqJsonLd =
@@ -239,7 +199,7 @@ const breadcrumbJsonLd =
 ---
 
 <meta charset="utf-8" />
-{noindex && <meta content="noindex, nofollow" name="robots" />}
+{noindex && <meta content="noindex" name="robots" />}
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
 <meta content={title} property="og:title" />
 <meta content={personName} name="author" />
@@ -280,7 +240,7 @@ const breadcrumbJsonLd =
         <meta content="summary" name="twitter:card" />
     )
 }
-<meta content="#006275" name="theme_color" />
+<meta content="#006275" name="theme-color" />
 <meta content="Lauri Lavanti" name="apple-mobile-web-app-title" />
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
 <link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
@@ -295,9 +255,9 @@ const breadcrumbJsonLd =
     type="font/woff2"
 />
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
-<script is:inline set:html={jsonLd} type="application/ld+json" />
-{faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
-{breadcrumbJsonLd && <script is:inline set:html={breadcrumbJsonLd} type="application/ld+json" />}
+{!noindex && <script is:inline set:html={jsonLd} type="application/ld+json" />}
+{!noindex && faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
+{!noindex && breadcrumbJsonLd && <script is:inline set:html={breadcrumbJsonLd} type="application/ld+json" />}
 
 <link href="/sitemap-index.xml" rel="sitemap" />
 <link href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license" />

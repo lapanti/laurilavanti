@@ -471,7 +471,7 @@ describe('<Head />', () => {
 
         const robotsMeta = result.querySelector('meta[name="robots"]')
         expect(robotsMeta).not.toBeNull()
-        expect(robotsMeta).toHaveAttribute('content', 'noindex, nofollow')
+        expect(robotsMeta).toHaveAttribute('content', 'noindex')
     })
 
     it('should not emit robots meta tag when noindex is false', async () => {
@@ -495,6 +495,8 @@ describe('<Head />', () => {
 
         expect(result.querySelector('link[rel="canonical"]')).toBeNull()
         expect(result.querySelector('link[rel="alternate"]')).toBeNull()
+        expect(result.querySelector('meta[property="og:url"]')).toBeNull()
+        expect(result.querySelector('script[type="application/ld+json"]')).toBeNull()
     })
 
     it('should emit two og:locale:alternate tags for fi page (en_GB, sv_SE)', async () => {
@@ -754,6 +756,7 @@ describe('<Head />', () => {
             props: {
                 createdAt: '2024-03-01',
                 ogImage: 'https://res.cloudinary.com/example/image/upload/v1/test.jpg',
+                slug: 'fi/blog/1/test-blog-post',
                 title: 'Test Blog Post',
                 type: 'BlogPosting',
                 updatedAt: '2024-06-01',
@@ -772,6 +775,7 @@ describe('<Head />', () => {
             props: {
                 createdAt: '2024-01-01',
                 lang: 'fi',
+                slug: 'fi/blog/1/test-blog-post',
                 title: 'Test Blog Post',
                 type: 'BlogPosting',
             },
