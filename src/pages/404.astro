@@ -36,6 +36,6 @@ const postIndexJson = JSON.stringify(Object.fromEntries(allPosts.map((p) => [p.l
 `}
 />
 
-<PageLayout lang={lang} pageTitle={t.title} title={t.title}>
+<PageLayout lang={lang} noindex pageTitle={t.title} title={t.title}>
     <ExcerptList lang={lang} limit={8} />
 </PageLayout>
