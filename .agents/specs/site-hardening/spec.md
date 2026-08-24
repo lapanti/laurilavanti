@@ -136,6 +136,7 @@ Feature: Generated site hardening
     Given /fi/about/ is a generated canonical Finnish page
     When a visitor requests /about?source=test
     Then Cloudflare returns a 301 redirect to /fi/about/?source=test
+    And candidate-preview E2E asserts the status and Location header
 
   Scenario: Locale-less aliases follow generated Finnish routes
     Given any generated canonical route matching /fi/{path}/ other than /fi/
@@ -200,7 +201,7 @@ Feature: Generated site hardening
     When the visitor presses Escape
     Then the menu closes
     And focus returns to the disclosure button
-    When the visitor activates a navigation link
+    When the visitor activates a navigation link by pointer or keyboard
     Then the menu closes before navigation
 
   Scenario: Navigation has no visual regression
@@ -210,7 +211,7 @@ Feature: Generated site hardening
     And horizontal-overflow checks remain clean
 
   Scenario: Remote Playwright uses the deployed candidate
-    Given E2E_URL points to a Cloudflare preview
+    Given E2E_URL is an absolute HTTPS base URL for a Cloudflare preview
     When Playwright starts
     Then no local build or preview web server starts
     And every browser suite uses E2E_URL
@@ -336,6 +337,8 @@ interface RedirectRule {
 
 Generated Finnish aliases are created from canonical built routes matching `/fi/{path}/`, excluding `/fi/`. Each destination has both slashless and trailing-slash sources. A generated alias must not silently override a manual rule or generated asset; a destination conflict is a contract failure. Cloudflare preserves incoming query strings.
 
+Query preservation is a deployed-platform contract, not only a source assertion. Candidate-preview E2E must request an alias with a query string and inspect the direct `301` response before following it.
+
 ### Built route contract
 
 ```typescript
@@ -367,6 +370,8 @@ interface CandidateArtifact {
 
 Preview and production deployments consume the same named artifact and verify the same SHA-256 manifest.
 
+`E2E_URL` is normalized as an absolute HTTPS base URL ending in `/`. Test route paths are resolved relative to that base URL.
+
 ---
 
 ## Dependencies
@@ -381,6 +386,7 @@ Preview and production deployments consume the same named artifact and verify th
 - [Pages](../pages/spec.md) — static page frontmatter and layout behavior
 - [Tags](../tags/spec.md) — generated category routes and localized tag data
 - [Recommendations](../recommendations/spec.md) — noindex page behavior
+- [Cloudflare Pages redirects](https://developers.cloudflare.com/pages/configuration/redirects/) — `_redirects` rule syntax, ordering, status codes, and limits
 
 Where an older dependency describes frontmatter-driven FAQ schema, `noindex, nofollow`, omission of explicit `x-default`, checkbox-only disclosure, manual route enumeration, or production-first browser testing, this Spec takes precedence until that dependency is reconciled in the same feature.
 
@@ -412,6 +418,7 @@ Where an older dependency describes frontmatter-driven FAQ schema, `noindex, nof
 
 ## Changelog
 
-| Date       | Change                        |
-| ---------- | ----------------------------- |
-| 2026-08-24 | Initial draft for issue #1362 |
+| Date       | Change                                                                                       |
+| ---------- | -------------------------------------------------------------------------------------------- |
+| 2026-08-24 | Initial draft for issue #1362                                                                |
+| 2026-08-24 | Clarified deployed query preservation, E2E URL shape, and navigation activation after review |
