@@ -1,13 +1,16 @@
 ---
-import { colors } from '../lib/styles'
+import { colors, typographics } from '../lib/styles'
+import Eyebrow from './Eyebrow.astro'
 
 interface Props {
+    eyebrow?: string
     ground?: 'sand' | 'offWhite' | 'gray' | 'oat' | 'white'
+    heading?: string
     id?: string
     labelledBy?: string
 }
 
-const { ground = 'sand', id, labelledBy } = Astro.props
+const { eyebrow, ground = 'sand', heading, id, labelledBy } = Astro.props
 const groundColor = {
     gray: colors.gray,
     oat: colors.oat,
@@ -17,15 +20,42 @@ const groundColor = {
 }[ground]
 ---
 
-<style define:vars={{ groundColor }}>
+<style
+    define:vars={{
+        colorsDeepForest: colors.forestGreen,
+        displayFontFamily: typographics.display.fontFamily,
+        displayFontWeight: typographics.display.fontWeight,
+        groundColor,
+    }}
+>
     .plate {
         background: var(--groundColor);
+    }
+
+    h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 48px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: -0.015em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: 58px;
+        }
     }
 </style>
 
 <section aria-labelledby={labelledBy} class="plate section" id={id}>
     <div class="sheet">
         <div class="inner">
+            {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+            {heading && <h2>{heading}</h2>}
             <slot />
         </div>
     </div>

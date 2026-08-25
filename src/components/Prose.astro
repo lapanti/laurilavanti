@@ -4,6 +4,8 @@ import { colors, typographics } from '../lib/styles'
 
 <style
     define:vars={{
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
         colorsTextPrimary: colors.textPrimary,
         textFontFamily: typographics.text.fontFamily,
         textFontSize: typographics.text.fontSize,
@@ -19,6 +21,15 @@ import { colors, typographics } from '../lib/styles'
         line-height: var(--textLineHeight);
         max-width: 672px;
         padding-top: 24px;
+    }
+
+    :global(.prose a) {
+        color: var(--colorsDarkGreen);
+        text-underline-offset: 3px;
+    }
+
+    :global(.prose a:hover) {
+        color: var(--colorsDeepForest);
     }
 
     /* Block flow rather than a grid: Paragraph carries an inline grid-column-start
