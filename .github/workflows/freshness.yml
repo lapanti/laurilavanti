@@ -19,21 +19,25 @@ jobs:
       - name: Run freshness audit
         id: audit
         run: |
+          mapfile -d '' files < <(find src/pages src/content/posts -name '*.mdx' -print0)
           set +e
-          OUTPUT=$(node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages src/content/posts -name '*.mdx') 2>&1)
+          OUTPUT=$(node --experimental-strip-types scripts/checks/freshness.ts "${files[@]}" 2>&1)
           EXIT_CODE=$?
           set -e
-          echo "output<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$OUTPUT" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
           if [ "$EXIT_CODE" -eq 0 ]; then
-            echo "stale=false" >> "$GITHUB_OUTPUT"
+            STALE=false
           elif [ "$EXIT_CODE" -eq 1 ]; then
-            echo "stale=true" >> "$GITHUB_OUTPUT"
+            STALE=true
           else
             echo "Script exited with unexpected code $EXIT_CODE — aborting."
             exit "$EXIT_CODE"
           fi
+          {
+            echo "output<<EOF"
+            echo "$OUTPUT"
+            echo "EOF"
+            echo "stale=$STALE"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Find existing tracking issue
         id: find-issue
