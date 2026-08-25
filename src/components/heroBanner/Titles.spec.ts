@@ -7,7 +7,7 @@ import Titles from './Titles.astro'
 describe('<Titles />', () => {
     const description = 'Description sentence shown under the headline.'
     const slogan = {
-        candidacy: 'Candidacy line',
+        candidacy: ['Candidacy line'],
         prefix: 'Because technology should serve',
         words: ['one', 'two', 'three', 'four'] as [string, string, string, string],
     }
@@ -59,7 +59,25 @@ describe('<Titles />', () => {
             },
         })
 
-        expect(getByText(result, slogan.candidacy)).toBeDefined()
+        expect(getByText(result, slogan.candidacy[0])).toBeDefined()
+    })
+
+    it('should render multi-line candidacy with a line break between lines', async () => {
+        const result = await renderAstroComponent(Titles, {
+            props: {
+                description,
+                lang: 'en',
+                slogan: { ...slogan, candidacy: ['First line', 'Second line'] },
+            },
+        })
+
+        const kicker = result.querySelector('.hero-kicker')
+
+        const br = kicker?.querySelector('br')
+
+        expect(br).not.toBeNull()
+        expect(kicker?.textContent).toContain('First line')
+        expect(kicker?.textContent).toContain('Second line')
     })
 
     it('should render the description as the foot paragraph', async () => {

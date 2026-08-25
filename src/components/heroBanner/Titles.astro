@@ -124,7 +124,16 @@ const restingWord = slogan.words.at(-1)
     }
 </style>
 <div class="hero-right">
-    <p class="hero-kicker">{slogan.candidacy}</p>
+    <p class="hero-kicker">
+        {
+            slogan.candidacy.map((line, i) => (
+                <>
+                    {i > 0 && <br />}
+                    {line}
+                </>
+            ))
+        }
+    </p>
     <h1>
         {slogan.prefix}
         <em>{restingWord}</em>

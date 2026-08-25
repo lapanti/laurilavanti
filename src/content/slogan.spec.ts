@@ -9,9 +9,12 @@ describe('slogan data', () => {
         expect(sloganContent[locale]).toBeDefined()
     })
 
-    it.each(LOCALES)('%s — prefix and candidacy line are non-empty', (locale) => {
+    it.each(LOCALES)('%s — prefix and candidacy lines are non-empty', (locale) => {
         expect(sloganContent[locale].prefix.trim()).toBeTruthy()
-        expect(sloganContent[locale].candidacy.trim()).toBeTruthy()
+        expect(sloganContent[locale].candidacy.length).toBeGreaterThan(0)
+        for (const line of sloganContent[locale].candidacy) {
+            expect(line.trim()).toBeTruthy()
+        }
     })
 
     it.each(LOCALES)('%s — has four non-empty typed words', (locale) => {

@@ -6,7 +6,7 @@ import HeroBanner from './HeroBanner.astro'
 
 describe('<HeroBanner />', () => {
     const slogan = {
-        candidacy: 'Candidacy line',
+        candidacy: ['Candidacy line'],
         prefix: 'Because technology should serve',
         words: ['one', 'two', 'three', 'four'] as [string, string, string, string],
     }
