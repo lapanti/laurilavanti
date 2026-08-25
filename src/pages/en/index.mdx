@@ -5,11 +5,8 @@ pageTitle: 'Lauri Lavanti – parliamentary candidate 2027 | Greens'
 title: 'Lauri Lavanti'
 description: "The Greens' parliamentary candidate in the Uusimaa district and a lead developer. Working towards a digitally independent Finland in the age of AI."
 slug: 'en'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'Person'
-heroBanner: true
-typedSlogan: true
-backgroundImage: Kirkkonummen-keskusta
 heroImage: Lauri-Lavanti-nojaamassa-kasiin
 mobileHeroImage: Lauri-Lavanti-nojaamassa-kasiin-sinisella-taustalla
 alt: 'Lauri Lavanti resting his hands against each other and looking at the camera with a smile. He is wearing a white dress shirt and a dark blazer. Photo by Erkki Laine.'
@@ -32,26 +29,95 @@ faq:
 
 import AllPostsLink from '../../components/AllPostsLink.astro'
 import FrontPageExcerptList from '../../components/FrontPageExcerptList.astro'
-import H2 from '../../components/H2.astro'
+import Faq from '../../components/frontPage/Faq.astro'
+import IntroPlate from '../../components/frontPage/IntroPlate.astro'
+import NewsletterPlate from '../../components/frontPage/NewsletterPlate.astro'
+import Pillar from '../../components/frontPage/Pillar.astro'
+import Synthesis from '../../components/frontPage/Synthesis.astro'
+import WhoBio from '../../components/frontPage/WhoBio.astro'
+import WritingsPlate from '../../components/frontPage/WritingsPlate.astro'
 import NewsletterSubscribe from '../../components/NewsletterSubscribe.astro'
-import Paragraph from '../../components/Paragraph.astro'
+import Stripe from '../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe />
 
-## Why am I running for parliament?
+<IntroPlate eyebrow="Parliamentary election 2027" heading="Why am I running for parliament?">
+    <p>Politics is at its best when we look after our shared affairs together. I am running because I want to make sure that Finland thrives in the age of AI on its own terms, and that no one is left behind. What matters most to me is openness and honesty, and the belief that people are fundamentally good – we must be able to discuss shared matters with anyone, even when we disagree.</p>
+</IntroPlate>
 
-Politics is at its best when we look after our shared affairs together. I am running because I want to make sure that Finland thrives in the age of AI on its own terms, and that no one is left behind. What matters most to me is openness and honesty, and the belief that people are fundamentally good – we must be able to discuss shared matters with anyone, even when we disagree.
+<IntroPlate eyebrow="Driving theme" ground="white" heading="AI" id="driver">
+    <p>Finland has built high technology for decades, from Vaisala to icebreakers, Nokia, Linux, and Supercell. AI challenges us to write a new chapter in this story, and it is changing work, the economy, and public services faster than legislation can keep up. The question is whether that change happens on our terms or someone else's.</p>
+</IntroPlate>
 
-Finland has built high technology for decades, from Vaisala to icebreakers, Nokia, Linux, and Supercell. AI challenges us to write a new chapter in this story, and it is changing work, the economy, and public services faster than legislation can keep up. The question is whether that change happens on our terms or someone else's.
+<Pillar
+    eyebrow="Pillar one"
+    heading="Why does vendor dependency cost taxpayers?"
+    tone="oat"
+    vocab={['Competitiveness', 'Procurement', 'Portability', 'Open source']}
+    reads={[
+        { href: '/en/blog/65/finland-can-turn-electrification-into-a-competitive-edge/', label: 'Finland Can Turn Electrification Into a Competitive Edge' },
+        { href: '/en/blog/62/greens-the-true-defenders-of-the-market-economy/', label: 'Greens – The True Defenders of the Market Economy' },
+    ]}
+>
+    <p class="answer" slot="answer">I'm demanding that public AI and digital procurement be built open and portable, so vendor dependency doesn't drain tax money year after year.</p>
+    <p class="detail" slot="detail">My example is eVaka, the open-source early childhood education system developed jointly by Espoo, Tampere, Oulu, and Turku. More than ten municipalities already benefit from it, and because the costs are shared, it saves money every year.</p>
+</Pillar>
 
-I have built secure software and banking services for over a decade and studied technology at Aalto University. When decisions are made about code, procurement, or data security, I know what is being discussed – and I want to make sure the solutions serve everyone's everyday life. I also understand where the limits on technology must be set, so that the rule of law endures.
+<Pillar
+    eyebrow="Pillar two"
+    heading="Education and equality"
+    tone="peach"
+    vocab={['Skills', 'Equality', 'Libraries', 'Lifelong learning']}
+    reads={[
+        { href: '/en/blog/60/ai-helps-secure-municipal-services-but-it-isnt-free/', label: 'AI helps secure municipal services, but it is not free' },
+        { href: "/en/blog/37/education-is-the-municipalitys-most-important-task/", label: "Education is the municipality's most important task" },
+    ]}
+>
+    <p class="answer" slot="answer">Skills need to stay current throughout life and be equally available to everyone, from vocational training to higher education.</p>
+    <p class="detail" slot="detail">I'm deeply concerned about the funding cuts to both vocational and university education — diverse expertise is the foundation of Finland's competitiveness. Libraries are one of the few places that offer free access to knowledge without harvesting user data — in the age of AI, that makes them essential guardians of equality.</p>
+</Pillar>
 
-Some of these limits are particularly valuable, because they protect everyone's privacy and fundamental rights. Privacy protection is not a brake on development, but a prerequisite for democracy.
+<Pillar
+    eyebrow="Pillar three"
+    heading="Freedom and fundamental rights"
+    tone="aqua"
+    vocab={['Privacy', 'Fundamental rights', 'Rule of law', 'Mass surveillance']}
+    reads={[
+        { href: '/en/blog/54/chat-control-parliament-was-right/', label: 'Chat control: parliament was right' },
+        { href: '/en/blog/59/council-initiative-strengthening-kirkkonummis-digital-resilience/', label: 'Council initiative: digital resilience' },
+    ]}
+>
+    <p class="answer" slot="answer">Privacy protection is not a brake on development, but a prerequisite for democracy.</p>
+    <p class="detail" slot="detail">AI makes mass surveillance technically easier, which is exactly why legislation has to hold the line on fundamental rights. Without strong privacy protection, democracy cannot function, and AI must never be used to weaken it.</p>
+</Pillar>
 
-I am Lauri Lavanti, the Greens' parliamentary candidate in Uusimaa, a municipal councilor from Kirkkonummi, Chair of the Green Council Group, father of four, lead developer, and Master of Science in Technology. On these pages, you will find my thoughts on the future and what lies ahead for us.
+<Synthesis eyebrow="Synthesis" heading="Digital independence">
+    <p>AI is changing everything — work, the economy, and how the state serves us. I write about how it lands on three things that have to keep working: the economy, learning, and freedom. Their synthesis is digital independence: a society that uses technology on its own terms.</p>
+</Synthesis>
 
-<NewsletterSubscribe lang="en" />
+<WhoBio
+    credentials={[
+        'Master of Science (Tech.), Aalto University',
+        'Lead developer, over 10 years',
+        'Municipal councillor in Kirkkonummi, chair of the Green council group',
+        'Father of four',
+    ]}
+    eyebrow="Who"
+    heading="Who is Lauri Lavanti?"
+    photographer="Photo: Juha Jantunen"
+    portraitAlt="Lauri Lavanti sitting on a stool in front of a window, looking at the camera, smiling. He is wearing a white shirt with blue flower patterns and a dark jacket."
+    portraitImage="Lauri-Lavanti-sitting-in-front-of-a-window"
+>
+    <p class="bio">I have built secure software and banking services for over a decade and studied technology at Aalto University. When decisions are made about code, procurement, or data security, I know what is being discussed – and I want to make sure the solutions serve everyone's everyday life. I also understand where the limits on technology must be set, so that the rule of law endures.</p>
+</WhoBio>
 
-<FrontPageExcerptList lang="en" limit={8} />
+<Faq eyebrow="Direct answers" faq={frontmatter.faq} heading="Frequently asked questions" />
 
-<AllPostsLink lang="en" />
+<WritingsPlate allPostsHref="/en/blog/all/" allPostsLabel="All posts" eyebrow="Latest" heading="Writing">
+    <FrontPageExcerptList lang="en" limit={9} />
+    <AllPostsLink lang="en" />
+</WritingsPlate>
+
+<NewsletterPlate>
+    <NewsletterSubscribe lang="en" />
+</NewsletterPlate>
