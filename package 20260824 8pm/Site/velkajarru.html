@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velkajarru ja vihreä talouspolitiikka | Lauri Lavanti</title>
+<meta name="description" content="Velkajarrusopimuksesta irtautuminen ei muuta sopeutuksen määrää — se muuttaa sen sisällön. Miksi vihreää talouspolitiikkaa tehdään pöydässä, ei sen ulkopuolella.">
+<link rel="canonical" href="https://lavanti.fi/fi/kirjoitukset/velkajarru/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — inherited verbatim from Site/home.html
+   (Figma "Lavanti.fi" 2057:40819 / 2057:40433)
+   ============================================================ */
+:root{
+  /* brand */
+  --dark-green:#163E35;
+  --green-mid:#006845;
+  --green:#009639;
+  --light-aqua:#BFE1DE;
+  --light-blue:#59B9F1;
+  --blue:#317CE6;
+
+  /* surfaces */
+  --hiekka-light:#E9E4D4;
+  --hiekka:#D6D2C4;
+  --white-50:#F5F5F5;
+  --light-gray:#EBEBEC;
+  --white:#FFFFFF;
+
+  /* accent families */
+  --kaura:#E4D77E;      --kaura-700:#625E37;    --kaura-900:#2A2A18;
+  --taivas:#BFE1DE;     --taivas-700:#466661;   --taivas-900:#12312C;
+
+  /* text */
+  --text-1:#1B211C;
+  --text-2:#4A4E45;
+  --eyebrow-neutral:#5B5952;
+  --on-kaura-700:#3E5C4E;
+  --on-kaura-body:#20463C;
+  --footer-muted:#A9CFCB;
+
+  /* type */
+  --display:"Big Shoulders Display","Haettenschweiler","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+
+  /* layout */
+  --shell:100%;
+  --measure:1152px;   /* page column: header, article head, related posts */
+  --prose:800px;      /* reading measure — Figma 2067:47844 body column */
+  --media:1224px;     /* hero image width */
+  --pad-x:56px;
+  --sec-y:88px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --press:2px;
+  --seam-angle:-8.4deg; /* diagonal stripe band under the hero image */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,button,.share a{transition:none}
+  .btn:active,button:active,.share a:active{transform:none}
+}
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--text-1);
+  font-family:var(--body);
+  font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+p{margin:0}
+a{color:inherit}
+ul{list-style:none;padding:0;margin:0}
+h1,h2,h3{margin:0}
+h1{font-family:var(--display);font-weight:900;line-height:1;text-transform:uppercase}
+::selection{background:var(--green);color:var(--white)}
+:focus-visible{outline:3px solid var(--green-mid);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--kaura)}
+html{scrollbar-color:var(--hiekka) var(--hiekka-light);scrollbar-width:thin}
+
+/* ---------- layout primitives ---------- */
+.sheet{width:100%;max-width:var(--shell);margin-inline:auto;padding-inline:var(--pad-x)}
+.inner{width:100%;max-width:var(--measure);margin-inline:auto}
+.section{padding-block:var(--sec-y)}
+
+.eyebrow{
+  font-family:var(--display);font-weight:700;
+  font-size:15px;line-height:1.3;text-transform:uppercase;
+  letter-spacing:.176em;display:block;color:var(--eyebrow-neutral);
+}
+.btn{
+  font-family:var(--display);font-weight:800;
+  font-size:21px;line-height:1.4;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;padding:16px 28px;
+  border:2px solid currentColor;color:var(--green-mid);
+  transition:background .18s var(--ease),color .18s var(--ease),transform .12s var(--ease);
+}
+.btn:active{transform:translate(var(--press),var(--press))}
+.btn:hover{background:var(--green-mid);color:var(--white-50)}
+
+/* ---------- header ---------- */
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:60;background:var(--dark-green);color:var(--kaura);
+  padding:.7rem 1.1rem;font-weight:600;text-decoration:none}
+
+/* On the article page the header sits on Hiekka Light, so the wordmark and
+   the nav are dark — the inverse of the home hero (Figma 2067:47844 top). */
+.top{position:relative;z-index:20;background:var(--hiekka-light)}
+.top .sheet{display:flex;align-items:center;gap:24px;padding-block:28px}
+.top .brand{margin-right:auto;display:block;line-height:0}
+.top .brand img{width:170px;height:auto}
+.menu{display:contents}
+.top nav{display:flex;gap:14px;margin-left:auto}
+.top nav a{
+  font-family:var(--display);font-weight:700;
+  font-size:18px;letter-spacing:.055em;text-transform:uppercase;
+  color:var(--dark-green);text-decoration:none;
+  border-bottom:2px solid transparent;
+  padding:4px 4px 2px;
+}
+.top nav a:hover{border-bottom-color:var(--green-mid);color:var(--green-mid)}
+.top nav a[aria-current]{border-bottom-color:var(--green-mid)}
+.langs{display:flex;gap:2.4px;margin-left:32px}
+.langs a{
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.12em;
+  color:var(--dark-green);text-decoration:none;padding:3px 7px;
+}
+.langs a[aria-current]{background:var(--hiekka)}
+.burger{display:none;background:none;border:0;padding:0}
+
+/* ============================================================
+   ARTICLE HEAD — date · reading time, poster headline, topics
+   ============================================================ */
+.art-head{background:var(--hiekka-light);padding:64px 0 56px}
+.art-head .inner{max-width:var(--measure)}
+.art-meta{
+  font-family:var(--display);font-weight:700;
+  font-size:15px;line-height:1.3;letter-spacing:.176em;text-transform:uppercase;
+  color:var(--green-mid);display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.art-meta .dot{color:var(--taivas-700);opacity:.8}
+.art-head h1{
+  font-size:96px;line-height:.94;letter-spacing:-.02em;
+  color:var(--dark-green);padding:20px 0 0;max-width:950px;
+}
+/* topic chips reuse the pillar .vocab treatment: 14% dark green on sand */
+.topics{display:flex;flex-wrap:wrap;gap:6px;padding-top:28px}
+.topics li{
+  background:rgba(22,62,53,.14);padding:5px 10px;
+  font-family:var(--display);font-weight:700;font-size:11px;line-height:18px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--dark-green);
+}
+
+/* ============================================================
+   HERO MEDIA — the image sits on the diagonal stripe seam where
+   Hiekka Light hands over to white (Figma 2067:47844).
+   ============================================================ */
+.hero-media{position:relative;overflow:hidden;background:var(--hiekka-light);
+  padding-inline:var(--pad-x)}
+.seam{position:absolute;inset:0;z-index:0;pointer-events:none}
+.seam-rot{
+  position:absolute;left:-10%;right:-10%;top:50%;margin-top:-100px;
+  transform:rotate(var(--seam-angle));transform-origin:50% 100px;
+}
+.seam-rot i{display:block;height:40px}
+.seam-rot i:nth-child(1){background:var(--green-mid)}
+.seam-rot i:nth-child(2){background:var(--green)}
+.seam-rot i:nth-child(3){background:var(--light-aqua)}
+.seam-rot i:nth-child(4){background:var(--light-blue)}
+.seam-rot i:nth-child(5){background:var(--blue)}
+.seam-rot b{display:block;height:2400px;background:var(--white)}
+.hero-shot{position:relative;z-index:1;margin:0;max-width:var(--media);margin-inline:auto}
+.hero-shot img{
+  width:100%;aspect-ratio:1224/570;object-fit:cover;object-position:50% 22%;
+  border-radius:16px;background:var(--dark-green);
+}
+.hero-shot figcaption{
+  font-size:12px;line-height:1.68;color:var(--text-2);padding-top:10px;
+}
+
+/* ============================================================
+   PROSE
+   ============================================================ */
+.article{background:var(--white);padding-bottom:24px}
+.prose{width:100%;max-width:var(--prose);margin-inline:auto;padding-top:48px}
+.prose > * + *{margin-top:24px}
+.prose p{font-size:18px;line-height:1.6;color:var(--text-2)}
+/* the zero-click answer: the first thing a reader — or an answer engine — gets */
+.prose .lead{font-size:21px;line-height:1.5;font-weight:500;color:var(--text-1)}
+.prose h2{
+  font-family:var(--display);font-weight:900;
+  font-size:42px;line-height:1.02;letter-spacing:-.01em;
+  color:var(--dark-green);margin-top:48px;
+}
+.prose h2 + p{margin-top:12px}
+.prose h3{
+  font-family:var(--body);font-weight:600;
+  font-size:21px;line-height:1.35;color:var(--text-1);margin-top:36px;
+}
+.prose h3 + p{margin-top:10px}
+.prose a{
+  color:inherit;text-decoration:underline;text-decoration-thickness:1.5px;
+  text-underline-offset:3px;transition:color .18s var(--ease);
+}
+.prose a:hover{color:var(--green-mid)}
+
+/* pull quote — the one long citation in the piece */
+.prose blockquote{
+  margin:40px 0 0;padding:4px 0 4px 28px;
+  border-left:5px solid var(--light-aqua);
+}
+.prose blockquote p{font-size:20px;line-height:1.55;color:var(--text-1)}
+.prose blockquote p + p{margin-top:16px}
+.prose blockquote cite{
+  display:block;padding-top:14px;font-style:normal;
+  font-family:var(--display);font-weight:700;font-size:14px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--green-mid);
+}
+
+/* the closing question gets poster weight, as in the frame */
+.prose .kicker-out{
+  font-family:var(--display);font-weight:900;font-size:42px;line-height:1.02;
+  letter-spacing:-.01em;color:var(--green-mid);margin-top:44px;
+}
+
+/* first-published-elsewhere note */
+.elsewhere-note{
+  margin-top:40px;border-top:3px solid var(--hiekka);padding-top:18px;
+  display:grid;gap:6px;
+}
+.elsewhere-note p{font-size:14px;line-height:1.6;color:var(--text-2)}
+
+/* share row */
+.share{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:32px}
+.share .share-k{
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.176em;
+  text-transform:uppercase;color:var(--text-2);
+}
+.share a{
+  font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.12em;
+  text-transform:uppercase;text-decoration:none;color:var(--dark-green);
+  border:2px solid var(--hiekka);padding:6px 12px;
+  transition:background .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .12s var(--ease);
+}
+.share a:hover{background:var(--dark-green);border-color:var(--dark-green);color:var(--hiekka-light)}
+.share a:active{transform:translate(1px,1px)}
+
+/* ============================================================
+   MUITA KIRJOITUKSIA
+   ============================================================ */
+.more{background:var(--white);padding:72px 0 96px}
+.more h2{
+  font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:64px;line-height:1;letter-spacing:-.02em;color:var(--dark-green);
+}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-top:36px}
+/* Figma: the rule above each card is Light Aqua here, not Hiekka */
+.post{border-top:4px solid var(--light-aqua);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.post .shot{aspect-ratio:358/180;overflow:hidden}
+.post .shot img{width:100%;height:100%;object-fit:cover}
+.post time{font-family:var(--display);font-weight:700;font-size:14px;line-height:1.3;
+  letter-spacing:.137em;color:var(--blue);padding-top:6px}
+.post h3{font-family:var(--body);font-size:18px;line-height:1.3;font-weight:600;color:var(--dark-green)}
+.post h3 a{text-decoration:none}
+.post h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.post p{font-size:15px;line-height:1.68;color:var(--text-2)}
+.more .foot{display:flex;justify-content:center;padding-top:40px}
+
+/* ============================================================
+   UUTISKIRJE — from the mobile frame 2067:49432
+   ============================================================ */
+.news{background:var(--kaura);padding-block:var(--sec-y)}
+.news .eyebrow{color:var(--on-kaura-700)}
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:start}
+.news h2{font-family:var(--display);font-weight:900;text-transform:uppercase;
+  font-size:58px;line-height:1;letter-spacing:-.015em;color:var(--dark-green);padding-top:16px;max-width:439px}
+.news p.blurb{font-size:17px;line-height:1.68;color:var(--on-kaura-body);padding-top:16px;max-width:544px}
+form{display:grid;gap:12.8px;max-width:432px}
+label{font-size:14px;line-height:23.52px;font-weight:500;color:var(--dark-green)}
+input[type=email]{
+  font:inherit;font-size:17px;padding:14.4px 16px;
+  border:3px solid var(--dark-green);background:transparent;color:var(--dark-green);
+  caret-color:var(--green-mid);border-radius:0;
+}
+input[type=email]::placeholder{color:var(--kaura-700)}
+form button{
+  font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:.08em;
+  text-transform:uppercase;background:var(--dark-green);color:var(--kaura);
+  border:0;padding:15.2px 32px;cursor:pointer;justify-self:start;
+  transition:background .18s var(--ease),transform .12s var(--ease);
+}
+form button:hover{background:var(--green-mid)}
+form button:active{transform:translate(var(--press),var(--press))}
+.fine{font-size:13px;line-height:21.84px;color:var(--on-kaura-body);padding-top:16px;max-width:432px}
+.fine a{color:var(--dark-green)}
+
+/* ---------- stripes + footer ---------- */
+.stripes{display:flex;flex-direction:column;height:220px}
+.stripes i{flex:1}
+.stripes i:nth-child(1){background:var(--green-mid)}
+.stripes i:nth-child(2){background:var(--green)}
+.stripes i:nth-child(3){background:var(--light-aqua)}
+.stripes i:nth-child(4){background:var(--light-blue)}
+.stripes i:nth-child(5){background:var(--blue)}
+
+footer{background:var(--dark-green);padding:40px 0 36px;color:var(--light-aqua)}
+.footer-mark{padding-block:40px}
+.footer-mark img{width:384px;max-width:100%}
+.foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding-bottom:24px}
+footer h2{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.5;
+  letter-spacing:.173em;text-transform:uppercase;color:var(--kaura)}
+.foot-grid ul{display:grid;gap:8.8px;padding-top:16px}
+.foot-grid a{font-size:15px;line-height:25.2px;color:var(--light-aqua);text-decoration:none}
+.foot-grid a:hover{color:var(--kaura);text-decoration:underline;text-underline-offset:3px}
+.party{display:flex;align-items:flex-end;height:100%}
+.party img{width:184px}
+.colophon{margin-top:32px;border-top:2px solid rgba(191,225,222,.28);padding-top:24px;
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-size:13px;line-height:21.84px;color:var(--footer-muted)}
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:no-preference){
+  .art-meta{animation:lift 850ms var(--ease) both}
+  .art-head h1{animation:lift 950ms var(--ease) 60ms both}
+  .topics{animation:lift 950ms var(--ease) 160ms both}
+  .hero-shot{animation:lift 950ms var(--ease) 220ms both}
+}
+@keyframes lift{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:none}}
+
+/* ============================================================
+   TABLET — 769…1199
+   ============================================================ */
+@media (max-width:1199px){
+  :root{--pad-x:40px}
+  .art-head h1{font-size:76px}
+  .prose h2,.prose .kicker-out{font-size:38px}
+  .more h2{font-size:56px}
+  .posts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .party{justify-content:flex-start}
+}
+@media (max-width:999px){
+  .art-head h1{font-size:64px}
+  .top nav{gap:10px}
+  .top nav a{font-size:16px}
+}
+
+/* ============================================================
+   MOBILE — ≤768  (Figma 2067:49432, 402px frame)
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px;--sec-y:60px;--seam-angle:-11deg}
+
+  /* header keeps the light ground on this page; only the panel is dark */
+  .top .sheet{padding-inline:16px;padding-block:16px;gap:8px}
+  .top .brand img{width:132px}
+  .burger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:44px;height:44px;padding:0 8px;margin-left:auto;
+    background:none;border:0;cursor:pointer;
+  }
+  .burger span{display:block;height:2px;background:var(--dark-green)}
+  .menu{
+    display:block;position:absolute;left:0;right:0;top:100%;
+    background:var(--dark-green);padding:16px;
+    border-bottom:4px solid var(--green-mid);
+  }
+  .top[data-open="false"] .menu{display:none}
+  .top nav{display:flex;flex-direction:column;gap:0;margin:0}
+  .top nav a{color:var(--kaura);font-size:26px;padding-block:8px;border-bottom:0}
+  .top nav a:hover{color:var(--white);border-bottom-color:transparent}
+  .langs{display:flex;gap:4px;margin:16px 0 0}
+  .langs a{color:var(--light-aqua);font-size:16px;padding:6px 10px}
+  .langs a[aria-current]{background:var(--green-mid);color:var(--white)}
+
+  .art-head{padding:24px 0 32px}
+  .art-meta{font-size:13px;letter-spacing:.14em;gap:10px}
+  .art-head h1{font-size:52px;line-height:.92;padding-top:14px;max-width:none}
+  .topics{padding-top:20px;gap:5px}
+  .topics li{font-size:10px;padding:4px 8px}
+
+  .hero-media{padding-inline:12px}
+  .seam-rot{margin-top:-70px;transform-origin:50% 70px}
+  .seam-rot i{height:28px}
+  .hero-shot img{aspect-ratio:378/248;border-radius:8px;object-position:50% 18%}
+
+  .prose{padding-top:28px}
+  .prose > * + *{margin-top:20px}
+  .prose p{font-size:17px;line-height:1.6}
+  .prose .lead{font-size:19px;line-height:1.5}
+  .prose h2{font-size:38px;margin-top:36px}
+  .prose h3{font-size:19px;margin-top:28px}
+  .prose blockquote{margin-top:32px;padding-left:18px;border-left-width:4px}
+  .prose blockquote p{font-size:18px}
+  .prose .kicker-out{font-size:34px;margin-top:32px}
+
+  .more{padding:56px 0 var(--sec-y)}
+  .more h2{font-size:48px}
+  .posts{grid-template-columns:1fr;gap:28px}
+  .post .shot{aspect-ratio:370/186}
+
+  .news{padding-block:var(--sec-y)}
+  .news-grid{grid-template-columns:1fr;gap:16px}
+  .news h2{font-size:42px;letter-spacing:-.02em;max-width:none}
+  form{max-width:none}
+  .fine{max-width:none}
+
+  .stripes{height:100px}
+  footer .sheet{padding-inline:32px}
+  .footer-mark{padding-block:24px}
+  .footer-mark img{width:278px}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .party{justify-content:flex-start;padding-top:8px}
+  .colophon{flex-direction:column;gap:4px}
+}
+
+@media (max-width:380px){
+  .art-head h1{font-size:44px}
+  .prose h2{font-size:32px}
+  .more h2{font-size:40px}
+}
+</style>
+</head>
+<body>
+<!--
+KIRJOITUS / blog article — Figma 2067:47844 (desktop) and 2067:49432 (mobile).
+Built on Site/home.html: tokens, header, stripes, newsletter and footer are inherited
+verbatim. New here: .art-head, .hero-media/.seam (the diagonal stripe hand-off from
+Hiekka Light to white), .prose and .share.
+
+Content: lavanti.fi/fi/blog/61/velkajarrun-ulkopuolelta-ei-tehda-vihreaa-talouspolitiikkaa/
+Re-set to the campaign canon: each H2 is a question a voter would actually type, and each
+section opens with a one-or-two sentence direct answer (AEO Strategia). The Nevanperä
+citation is trimmed to its structural half — no party is named anywhere on the page.
+-->
+<a class="skip" href="#main">Siirry pääsisältöön</a>
+
+<header class="top" id="top" data-open="false">
+  <div class="sheet">
+    <a class="brand" href="/fi/" aria-label="Lauri Lavanti — etusivu">
+      <img src="img/lavanti-logo-black.svg" width="170" height="87" alt="Lauri Lavanti">
+    </a>
+    <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Avaa valikko">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="menu" id="mainnav">
+      <nav aria-label="Päävalikko">
+        <a href="/fi/laurista/">Laurista</a>
+        <a href="/fi/kirjoitukset/" aria-current="true">Kirjoitukset</a>
+        <a href="/fi/otayhteytta/">Ota yhteyttä</a>
+        <a href="/fi/uutiskirje/">Uutiskirje</a>
+      </nav>
+      <div class="langs" role="group" aria-label="Kieli">
+        <a href="/fi/kirjoitukset/velkajarru/" aria-current="true">FI</a><a href="/sv/skriverier/">SV</a><a href="/en/writings/">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article>
+
+<!-- ===================== ARTIKKELIN OTSIKKO ===================== -->
+<div class="art-head">
+  <div class="sheet"><div class="inner">
+    <p class="art-meta">
+      <time datetime="2026-05-20">20.05.2026</time>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>3 min lukuaika</span>
+    </p>
+    <h1>Velkajarrun ulkopuolelta ei tehdä vihreää talouspolitiikkaa</h1>
+    <ul class="topics">
+      <li>Talous</li>
+      <li>Vihreät</li>
+      <li>Kansallinen politiikka</li>
+      <li>Kyvykkyys</li>
+    </ul>
+  </div></div>
+</div>
+
+<!-- ===================== KUVA + RAITADIAGONAALI ===================== -->
+<div class="hero-media">
+  <div class="seam" aria-hidden="true">
+    <div class="seam-rot"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+  </div>
+  <figure class="hero-shot">
+    <img src="img/blog/blog-20260520.avif" width="1120" height="1120"
+         alt="Lauri Lavanti kukkakuvioisessa paidassa ja tummassa pikkutakissa turkoosia seinää vasten."
+         fetchpriority="high">
+  </figure>
+</div>
+
+<!-- ===================== LEIPÄTEKSTI ===================== -->
+<div class="article">
+  <div class="sheet">
+    <div class="prose">
+
+      <p class="lead">Velkajarrusopimuksesta irtautuminen ei muuta sopeutuksen määrää — se poistaa mahdollisuuden vaikuttaa siihen, miten sopeutus tehdään. Siksi vihreää talouspolitiikkaa tehdään pöydässä, ei sen ulkopuolella.</p>
+
+      <p>Viime syksynä edustin Vihreitä Kirkkonummen talousarvioneuvotteluissa valtuustoryhmämme puheenjohtajana. Saimme ilmastokoordinaattorin puolipäiväisestä kokopäiväiseksi. Saimme korkeammat tavoitteet kävelyn ja pyöräilyn lisäämiselle. Saimme järjestöavustukset palautettua edellisen vuoden tasolle. Hävisimme koulujen resurssien osalta, eikä Kirkkonummella vakinaistettu aiemmin määräaikaisia kouluvalmentajia. Kompromisseja oli, ja osa niistä kirpaisi.</p>
+
+      <p>Mutta pöydässä oltiin. Ja siellä saatiin se, mitä saatiin.</p>
+
+      <p>Vihreiden puoluekokouksessa on käsittelyssä aloite, jossa 45 jäsentä esittää, että Vihreiden tulisi irtautua parlamentaarisesta velkajarrusopimuksesta. Aloite on sama valinta, mutta paljon isommassa mittakaavassa: olemmeko mukana vaikuttamassa asioihin vai emme?</p>
+
+      <h2>Mikä velkajarrusopimus on?</h2>
+      <p>Velkajarru on parlamentaarinen sopimus, jossa puolueet sitoutuivat sopeuttamaan julkista taloutta 8–11 miljardilla eurolla ensi vaalikaudella. Se päättää määrän, mutta ei tapaa: jokainen tuleva hallitus päättää itse, miten tavoitetta kohti kuljetaan.</p>
+
+      <p>Aloitteen huoli on aito ja hyvin perusteltu. Tällä hallituskaudella on nähty, miten vastuun valtiontalouden kohentamisesta kantavat lapset, vammaiset ja heikosti toimeen tulevat. Eikä velkajarru millään tavalla estä samanlaisen politiikan jatkumista. Samaan aikaan usko siihen, että velkajarru pannaan sellaisenaan täytäntöön, vaikuttaa heikolta. Kuten Fatim Diarra tiivisti: ”En usko, että löytyy semmoista poliittista pohjaa, jolla niin suuria leikkauksia tullaan toteuttamaan.”</p>
+
+      <p>Onkin syytä katsoa tarkasti, mitä on tullut sovittua. Numerot ovat suuria. On kuitenkin tärkeä huomata, kuten Atte Harjanne muistuttaa, että velkajarru ”ei ole jäykkä leikkauspakko, eikä se poista hallituksen valtaa ja vastuuta talouspolitiikasta”. Tai kuten Saara Hyrkkö korosti, ”taloustehostaminen ei ole synonyymi leikkauksille”. Toisin sanoen: määrä on päätetty, mutta tapaa ei.</p>
+
+      <h2>Mitä tapahtuu, jos Vihreät irtautuvat?</h2>
+      <p>Sopeutuksen määrä ei muutu — mutta sisältö muuttuu, olennaisesti. Ulkopuolelta ei neuvotella siitä, mistä säästetään ja mistä ei.</p>
+
+      <p>Puolueen varapuheenjohtaja Allu Pyhälammi kuvasi lähtökohtaa näin: ”Kun kävi kuitenkin selväksi, että valtaosa muista puolueista tulisivat siihen [velkajarruun] lähtemään mukaan joka tapauksessa, eduskuntaryhmämme teki päätöksen lähteä mukaan neuvottelemaan sovusta – ja saikin sinne useita parannuksia.”</p>
+
+      <p>Velkajarru sitoo tulevien hallitusten käsiä toimien etumerkin ja suuruuden suhteen. Juuri sitä parlamentaarisilla sopimuksilla haetaan, kuten Oras Tynkkynen on kuvannut: pitkäjänteisyyttä. Ne ovat käytännössä ainoa keino ratkoa ylivaalikautisia ongelmia. Julkisen velan suunnan taittaminen on sellainen ongelma. Toinen vastaava on ilmastonmuutoksen torjuminen. Ratkaisut molempiin vaativat sitoutumista yli yksittäisten hallitusten — eikä sellaisen kanssa haluta neuvotella, joka ei pidä sovitusta kiinni.</p>
+
+      <p>Kun olemme mukana, voimme edistää vihreää talouspolitiikkaa: markkinoiden tehokasta käyttöä, ulkoisvaikutusten hinnoittelua ja niiden kannattelua, joita markkinat eivät palvele. Tämä raami on kirjattu myös puolueen ohjelmiin. Periaateohjelman mukaan veroja peritään maksukyvyn ja aiheutuvien haittojen mukaan, ja ulkoisvaikutukset hinnoitellaan, jotta markkinat toimivat oikein.</p>
+
+      <h2>Mitä vihreä talouspolitiikka tarkoittaa käytännössä?</h2>
+      <p>Vihreä talouspolitiikka on vastasyklistä. Se vastaa kroonisiin alijäämiin rakenteellisilla uudistuksilla ja siirtää verotusta työstä haittoihin — tinkimättä hyvinvointivaltion perustasta.</p>
+
+      <p>Olen kirjoittanut aiemmin siitä, miten nämä periaatteet näkyvät myös kuntatasolla, kun talousarvioneuvotteluissa joudutaan valitsemaan, mihin rajalliset resurssit suunnataan. Sama logiikka pätee valtion tasolla: ilman pöydässä istumista valinnat tekevät muut. Kuntabudjetin reunaehdoista kirjoitin tarkemmin tekstissä <a href="/fi/kirjoitukset/tekoaly-palvelujen-turvaamisessa/">Tekoäly auttaa palvelujen turvaamisessa, mutta se ei ole ilmaista</a>.</p>
+
+      <p>Ilkka Nevanperä tiivisti asian osuvasti:</p>
+
+      <blockquote>
+        <p>Velkaantuminen ja hyvinvointivaltio pitää ottaa vakavasti. — — Vihreiden pitää olla vaihtoehto, joka uskaltaa sanoa, että kaikkien pitää osallistua. Heikompiosaiset ovat osansa tehneet. Vihreiden pitää olla vaihtoehto, jonka politiikkaa ohjaa taloustiede, ei eturyhmät tai vaalimatematiikka.</p>
+        <cite>Ilkka Nevanperä</cite>
+      </blockquote>
+
+      <p>Vihreät on Suomen johtava markkinaliberaali puolue. Ja velkajarrussa on kysymys suomalaisen talouspolitiikan suunnasta seuraavalla vaalikaudella.</p>
+
+      <p class="kicker-out">Haluammeko vaikuttaa, vai olla ulkopuolella?</p>
+
+      <p>Lue lisää <a href="/fi/kirjoitukset/?aihe=talous">talousaiheisista kirjoituksistani</a> ja <a href="/fi/kirjoitukset/?aihe=kansallinen-politiikka">kansallisen politiikan kirjoituksistani</a>.</p>
+
+      <div class="elsewhere-note">
+        <p>Julkaistu myös: Verde, 15. toukokuuta 2026.</p>
+        <p>Julkaistu myös: TalousVihreiden blogi, 21. toukokuuta 2026.</p>
+      </div>
+
+      <div class="share">
+        <span class="share-k">Jaa:</span>
+        <a href="https://mastodon.social/share?text=Velkajarrun%20ulkopuolelta%20ei%20tehd%C3%A4%20vihre%C3%A4%C3%A4%20talouspolitiikkaa%20https%3A%2F%2Flavanti.fi%2Ffi%2Fkirjoitukset%2Fvelkajarru%2F" rel="noopener">Mastodon</a>
+        <a href="https://bsky.app/intent/compose?text=Velkajarrun%20ulkopuolelta%20ei%20tehd%C3%A4%20vihre%C3%A4%C3%A4%20talouspolitiikkaa%20https%3A%2F%2Flavanti.fi%2Ffi%2Fkirjoitukset%2Fvelkajarru%2F" rel="noopener">Bluesky</a>
+        <a href="https://www.threads.net/intent/post?text=Velkajarrun%20ulkopuolelta%20ei%20tehd%C3%A4%20vihre%C3%A4%C3%A4%20talouspolitiikkaa%20https%3A%2F%2Flavanti.fi%2Ffi%2Fkirjoitukset%2Fvelkajarru%2F" rel="noopener">Threads</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Flavanti.fi%2Ffi%2Fkirjoitukset%2Fvelkajarru%2F" rel="noopener">LinkedIn</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flavanti.fi%2Ffi%2Fkirjoitukset%2Fvelkajarru%2F" rel="noopener">Facebook</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+</article>
+
+<!-- ===================== MUITA KIRJOITUKSIA ===================== -->
+<section class="more" aria-labelledby="more-h">
+  <div class="sheet"><div class="inner">
+    <h2 id="more-h">Muita kirjoituksia</h2>
+    <ul class="posts">
+      <li class="post">
+        <div class="shot"><img src="img/blog/blog-20260612.avif" alt="" aria-hidden="true" loading="lazy"></div>
+        <time datetime="2026-06-12">12.06.2026</time>
+        <h3><a href="/fi/kirjoitukset/arvoista-ei-tarvitse-tingita/">Miltä tuntuu olla puolueessa, jossa arvoista ei tarvitse tinkiä?</a></h3>
+        <p>Vaihdavihreisiin.fi-kampanja kutsuu liberaalit ja sosiaaliliberaalit Vihreisiin — puolueeseen, jossa arvoista ei tarvitse tinkiä.</p>
+      </li>
+      <li class="post">
+        <div class="shot"><img src="img/blog/blog-20260526.avif" alt="" aria-hidden="true" loading="lazy"></div>
+        <time datetime="2026-05-26">26.05.2026</time>
+        <h3><a href="/fi/kirjoitukset/markkinatalouden-puolustaja/">Vihreät — Markkinatalouden aito puolustaja</a></h3>
+        <p>Markkinatalous on tehokkain tunnettu tapa jakaa resursseja — ei kamreritaloutta, vaan aitoja markkinoita.</p>
+      </li>
+      <li class="post">
+        <div class="shot"><img src="img/blog/blog-20260729.avif" alt="" aria-hidden="true" loading="lazy"></div>
+        <time datetime="2026-07-29">29.07.2026</time>
+        <h3><a href="/fi/kirjoitukset/sahkoistyminen-kilpailueduksi/">Suomi voi tehdä sähköistymisestä kilpailuedun</a></h3>
+        <p>Caruna vaihtaa omistajaa, mutta sähköverkon tulevaisuuden ratkaisee sääntely — ei omistaja.</p>
+      </li>
+    </ul>
+    <div class="foot"><a class="btn" href="/fi/kirjoitukset/">Kaikki kirjoitukset</a></div>
+  </div></div>
+</section>
+
+<!-- ===================== UUTISKIRJE ===================== -->
+<section class="news" id="uutiskirje" aria-labelledby="news-h">
+  <div class="sheet"><div class="inner">
+    <div class="news-grid">
+      <div>
+        <span class="eyebrow">Uutiskirje</span>
+        <h2 id="news-h">Kerran kuussa, ei kampanjapostia</h2>
+        <p class="blurb">Analyysejä teknologian ja talouden kehityskuluista sekä arvioita niiden vaikutuksista yhteiskuntaan.</p>
+      </div>
+      <div>
+        <form action="/fi/uutiskirje/" method="post">
+          <label for="email">Sähköposti</label>
+          <input id="email" type="email" name="email" required autocomplete="email" placeholder="etunimi@esimerkki.fi">
+          <button type="submit">Tilaa</button>
+        </form>
+        <p class="fine">Voit perua uutiskirjeen koska tahansa. Lisätietoja: <a href="/fi/tietosuojaseloste/">tietosuojaseloste</a>.</p>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+</main>
+
+<div class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<footer class="on-dark">
+  <div class="sheet"><div class="inner">
+    <div class="footer-mark">
+      <img src="img/lavanti-logo-white.svg" width="384" height="196" alt="Lauri Lavanti">
+    </div>
+    <div class="foot-grid">
+      <div>
+        <h2>Lauri Lavanti</h2>
+        <ul>
+          <li><a href="/fi/laurista/">Laurista</a></li>
+          <li><a href="/fi/kirjoitukset/">Kirjoitukset</a></li>
+          <li><a href="/fi/otayhteytta/">Ota yhteyttä</a></li>
+          <li><a href="/fi/uutiskirje/">Uutiskirje</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kielet</h2>
+        <ul>
+          <li><a href="/fi/kirjoitukset/velkajarru/">Suomeksi</a></li>
+          <li><a href="/sv/skriverier/">På svenska</a></li>
+          <li><a href="/en/writings/">In English</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Yhteys</h2>
+        <ul>
+          <li><a href="mailto:lauri@laurilavanti.fi">lauri@laurilavanti.fi</a></li>
+          <li><a href="https://bsky.app/profile/lauri.lavanti.fi">@lauri.lavanti.fi</a></li>
+          <li><a href="/fi/tietosuojaseloste/">Tietosuojaseloste</a></li>
+        </ul>
+      </div>
+      <div class="party">
+        <img src="img/vihreiden-logo.svg" width="316" height="99" alt="Vihreät">
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Lauri Lavanti. Sisältö lisensoitu CC BY-SA 4.0.</span>
+      <span>Kuva: Markus Isomeri</span>
+    </div>
+  </div></div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"BlogPosting","@id":"https://lavanti.fi/fi/kirjoitukset/velkajarru/#post","url":"https://lavanti.fi/fi/kirjoitukset/velkajarru/","headline":"Velkajarrun ulkopuolelta ei tehdä vihreää talouspolitiikkaa","description":"Velkajarrusopimuksesta irtautuminen ei muuta sopeutuksen määrää — se poistaa mahdollisuuden vaikuttaa siihen, miten sopeutus tehdään.","inLanguage":"fi","datePublished":"2026-05-20","dateModified":"2026-05-21","wordCount":620,"timeRequired":"PT3M","keywords":["Talous","Vihreät","Kansallinen politiikka","Kyvykkyys","Velkajarru","Julkinen talous"],"articleSection":"Talous","image":"https://lavanti.fi/fi/kirjoitukset/velkajarru/kuva.jpg","author":{"@id":"https://lavanti.fi/fi/#person"},"publisher":{"@id":"https://lavanti.fi/fi/#person"},"mainEntityOfPage":{"@id":"https://lavanti.fi/fi/kirjoitukset/velkajarru/#page"},"about":{"@id":"https://lavanti.fi/fi/#party"}},
+{"@type":"FAQPage","@id":"https://lavanti.fi/fi/kirjoitukset/velkajarru/#faq","inLanguage":"fi","mainEntity":[
+{"@type":"Question","name":"Mikä velkajarrusopimus on?","acceptedAnswer":{"@type":"Answer","text":"Velkajarru on parlamentaarinen sopimus, jossa puolueet sitoutuivat sopeuttamaan julkista taloutta 8–11 miljardilla eurolla ensi vaalikaudella. Se päättää määrän, mutta ei tapaa: jokainen tuleva hallitus päättää itse, miten tavoitetta kohti kuljetaan."}},
+{"@type":"Question","name":"Mitä tapahtuu, jos Vihreät irtautuvat velkajarrusopimuksesta?","acceptedAnswer":{"@type":"Answer","text":"Sopeutuksen määrä ei muutu, mutta sisältö muuttuu olennaisesti. Ulkopuolelta ei neuvotella siitä, mistä säästetään ja mistä ei."}},
+{"@type":"Question","name":"Mitä vihreä talouspolitiikka tarkoittaa käytännössä?","acceptedAnswer":{"@type":"Answer","text":"Vihreä talouspolitiikka on vastasyklistä. Se vastaa kroonisiin alijäämiin rakenteellisilla uudistuksilla ja siirtää verotusta työstä haittoihin tinkimättä hyvinvointivaltion perustasta. Ulkoisvaikutukset hinnoitellaan, jotta markkinat toimivat oikein."}}]},
+{"@type":"Person","@id":"https://lavanti.fi/fi/#person","name":"Lauri Lavanti","givenName":"Lauri","familyName":"Lavanti","birthDate":"1991-10-01","url":"https://lavanti.fi/fi/","email":"lauri@laurilavanti.fi","telephone":"+358407617605","description":"Lauri Lavanti on Kirkkonummen kunnanvaltuutettu ja johtava ohjelmistokehittäjä (DI, Aalto). Hänen tavoitteenaan on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.","jobTitle":"johtava ohjelmistokehittäjä","knowsLanguage":["fi","en","sv"],"homeLocation":{"@type":"City","name":"Kirkkonummi"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Aalto-yliopisto"},"memberOf":{"@id":"https://lavanti.fi/fi/#party"},"knowsAbout":["Tekoäly","Digitaalinen itsenäisyys","Talouspolitiikka","Julkinen talous","Markkinatalous","Yrittäjyys","Sivistys","Perusoikeudet","Yksityisyys","Vastuullinen tekoäly","Julkishankintojen siirrettävyys","Suomenkieliset tekoälymallit","Avoin lähdekoodi"],"sameAs":["https://bsky.app/profile/lauri.lavanti.fi","https://mastodon.social/@laurilavanti","https://www.threads.com/@laurilavanti","https://www.linkedin.com/in/lapanti","https://www.instagram.com/laurilavanti/","https://www.facebook.com/laurilavanti","https://www.tiktok.com/@laurilavanti","https://fi.wikipedia.org/wiki/Lauri_Lavanti","https://www.wikidata.org/wiki/Q139711658"]},
+{"@type":"PoliticalParty","@id":"https://lavanti.fi/fi/#party","name":"Vihreä liitto","alternateName":"Vihreät","url":"https://www.vihreat.fi"}]}
+</script>
+
+<script>
+(function(){
+  var top = document.getElementById('top');
+  var burger = document.getElementById('burger');
+  if (!top || !burger) return;
+  function set(open){
+    top.setAttribute('data-open', open ? 'true' : 'false');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
+  }
+  burger.addEventListener('click', function(){
+    set(top.getAttribute('data-open') !== 'true');
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') set(false);
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) set(false);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>

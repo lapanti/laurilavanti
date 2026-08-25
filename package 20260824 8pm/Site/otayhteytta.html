@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ota yhteyttä — vastaan jokaiseen viestiin | Lauri Lavanti</title>
+<meta name="description" content="Lauri Lavantiin saa yhteyden sähköpostilla, puhelimella tai somessa. Hän vastaa viesteihin itse — aiheina tekoäly, digitaalinen itsenäisyys ja talous.">
+<link rel="canonical" href="https://lavanti.fi/fi/otayhteytta/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — from Figma "Lavanti.fi" (node 2057:40819 / 2057:40433)
+   ============================================================ */
+:root{
+  /* brand */
+  --dark-green:#163E35;
+  --green-mid:#006845;
+  --green:#009639;
+  --light-aqua:#BFE1DE;
+  --light-blue:#59B9F1;
+  --blue:#317CE6;
+
+  /* surfaces */
+  --hiekka-light:#E9E4D4;
+  --hiekka:#D6D2C4;
+  --white-50:#F5F5F5;
+  --light-gray:#EBEBEC;
+  --white:#FFFFFF;
+
+  /* accent families */
+  --kaura:#E4D77E;      --kaura-700:#625E37;    --kaura-900:#2A2A18;
+  --persikka:#F8CFA9;   --persikka-700:#6E5845; --persikka-900:#33251A;
+  --taivas:#BFE1DE;     --taivas-700:#466661;   --taivas-900:#12312C;
+  --blue-700:#465A66;   --blue-900:#122631;
+
+  /* text */
+  --text-1:#1B211C;
+  --text-2:#4A4E45;
+  --eyebrow-neutral:#5B5952;
+  --on-kaura-700:#3E5C4E;
+  --on-kaura-body:#20463C;
+  --footer-muted:#A9CFCB;
+
+  /* type */
+  --display:"Big Shoulders Display","Haettenschweiler","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Helvetica,Arial,sans-serif;
+
+  /* layout */
+  --shell:100%; /** was 1536px **/
+  --measure:1152px;
+  --pad-x:56px;
+  --sec-y:88px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --press:2px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,button,.link-rule{transition:none}
+  .btn:active,button:active,.link-rule:active{transform:none}
+}
+body{
+  margin:0;
+  background:var(--dark-green);
+  color:var(--text-1);
+  font-family:var(--body);
+  font-size:17px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+p{margin:0}
+a{color:inherit}
+ul{list-style:none;padding:0;margin:0}
+h1,h2,h3{margin:0}
+h1,h2{
+  font-family:var(--display);font-weight:900;
+  line-height:1;text-transform:uppercase;
+}
+::selection{background:var(--green);color:var(--white)}
+:focus-visible{outline:3px solid var(--green-mid);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--kaura)}
+html{scrollbar-color:var(--hiekka) var(--hiekka-light);scrollbar-width:thin}
+
+/* ---------- layout primitives ---------- */
+.sheet{width:100%;max-width:var(--shell);margin-inline:auto;padding-inline:var(--pad-x)}
+.inner{width:100%;max-width:var(--measure);margin-inline:auto}
+.section{padding-block:var(--sec-y)}
+
+.eyebrow{
+  font-family:var(--display);font-weight:700;
+  font-size:15px;line-height:1.3;text-transform:uppercase;
+  letter-spacing:.176em;display:block;color:var(--eyebrow-neutral);
+}
+.h2{font-size:120px;letter-spacing:-.02em;color:var(--dark-green);padding-top:16px}
+.h2--pillar{font-size:108px;letter-spacing:-.015em}
+.h2--mid{font-size:58px;letter-spacing:-.015em}
+.lede{font-size:19px;line-height:1.68;max-width:548px;padding-top:24px;color:var(--text-1)}
+
+/* buttons / links */
+.btn{
+  font-family:var(--display);font-weight:800;
+  font-size:21px;line-height:1.4;letter-spacing:.07em;text-transform:uppercase;
+  text-decoration:none;display:inline-block;padding:16px 28px;
+  border:2px solid currentColor;color:var(--dark-green);
+  transition:background .18s var(--ease),color .18s var(--ease),transform .12s var(--ease);
+}
+.btn:active{transform:translate(var(--press),var(--press))}
+.btn:hover{background:var(--dark-green);color:var(--hiekka-light)}
+.btn--green{color:var(--green-mid)}
+.btn--green:hover{background:var(--green-mid);color:var(--white-50)}
+.link-rule{
+  font-family:var(--display);font-weight:700;
+  font-size:14px;line-height:1.68;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green-mid);text-decoration:none;
+  border-bottom:2px solid currentColor;padding-bottom:3px;
+  display:inline-block;
+  transition:color .18s var(--ease),transform .12s var(--ease);
+}
+.link-rule:active{transform:translate(1px,1px)}
+.link-rule:hover{color:var(--dark-green)}
+
+/* ---------- header ---------- */
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:16px;z-index:60;background:var(--dark-green);color:var(--kaura);
+  padding:.7rem 1.1rem;font-weight:600;text-decoration:none}
+
+.top{position:absolute;inset:0 0 auto 0;z-index:20;height:68px;display:flex;align-items:center}
+.top .sheet{display:flex;align-items:center;gap:24px}
+.top .brand{margin-right:auto;display:none}
+.menu{display:contents}
+.top nav{display:flex;gap:14px;margin-left:auto}
+.top nav a{
+  font-family:var(--display);font-weight:700;
+  font-size:18px;letter-spacing:.055em;text-transform:uppercase;
+  color:var(--dark-green);text-decoration:none;
+  border-bottom:2px solid transparent;
+  padding-bottom:2px;
+  padding-top: 4px; padding-left: 4px; padding-right: 4px;
+  background-color:var(--hiekka-light);
+}
+.top nav a:hover{border-bottom-color:var(--green-mid);color:var(--green-mid)}
+.langs{display:flex;gap:2.4px;margin-left:32px}
+.langs a{
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.12em;
+  color:var(--dark-green);text-decoration:none;padding:3px 7px;
+}
+.langs a[aria-current]{background:var(--hiekka)}
+.burger{display:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--dark-green);
+  display:grid;grid-template-columns:470px minmax(0,1fr);
+  min-height:clamp(640px,92svh,899px)}
+.hero-left{position:relative;overflow:hidden;background:var(--dark-green)}
+.hero-left .bg{position:absolute;inset:0;display:block}
+.hero-left .bg img{width:100%;height:100%;object-fit:cover;object-position:100% 50%}
+.hero-left .mark{position:absolute;left:64px;top:64px;width:268px;height:auto;z-index:1}
+.hero-right{display:flex;flex-direction:column;justify-content:center;background:var(--hiekka-light);
+  padding:128px var(--pad-x) 32px}
+.hero-kicker{
+  font-family:var(--display);font-weight:700;font-size:16px;line-height:1.4;
+  letter-spacing:.165em;text-transform:uppercase;color:var(--green-mid);
+}
+.hero h1{
+  font-size:120px;letter-spacing:-.02em;color:var(--dark-green);
+  padding:16px 0 12px;max-width:1800px;
+}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero-foot{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.hero-foot p{font-size:16px;line-height:1.5;color:var(--dark-green);max-width:480px}
+
+/* ---------- stripes ---------- */
+.stripes{display:flex;flex-direction:column;height:220px}
+.stripes i{flex:1}
+.stripes i:nth-child(1){background:var(--green-mid)}
+.stripes i:nth-child(2){background:var(--green)}
+.stripes i:nth-child(3){background:var(--light-aqua)}
+.stripes i:nth-child(4){background:var(--light-blue)}
+.stripes i:nth-child(5){background:var(--blue)}
+
+/* ---------- intro plates ---------- */
+.plate--intro{background:var(--hiekka-light)}
+.plate--driver{background:var(--white-50)}
+.offwhite{background:var(--white-50)}
+
+/* ---------- pillars ---------- */
+.pillar--1{background:var(--kaura);--ink:var(--kaura-900);--ink-soft:var(--kaura-700)}
+.pillar--2{background:var(--persikka);--ink:var(--persikka-900);--ink-soft:var(--persikka-700)}
+.pillar--3{background:var(--taivas);--ink:var(--taivas-900);--ink-soft:var(--taivas-700)}
+.pillar .eyebrow{color:var(--ink-soft)}
+.pillar h2{color:var(--ink)}
+.pillar-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;padding-top:40px}
+.pillar .answer{font-size:20px;line-height:1.5;font-weight:500;color:var(--ink)}
+.pillar .detail{font-size:15px;line-height:1.68;color:var(--ink);opacity:.9}
+.vocab{display:flex;flex-wrap:wrap;gap:4.8px;padding-top:20px}
+.vocab li{
+  background:rgba(22,62,53,.14);padding:4.48px 8.8px;
+  font-family:var(--display);font-weight:700;font-size:11px;line-height:18.48px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--ink);
+}
+.reads{margin-top:24px;border-top:3px solid var(--ink);padding-top:18.4px;display:grid;gap:8.8px}
+.reads a{
+  display:grid;grid-template-columns:17.6px minmax(0,1fr);gap:7.2px;
+  font-size:15px;line-height:21px;font-weight:500;color:var(--ink);text-decoration:none;
+}
+.reads svg{width:16px;height:16px;margin-top:3.84px}
+.reads a:hover span{text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- synthesis ---------- */
+.synth{background:var(--white-50);position:relative;overflow:hidden;padding-block:96px}
+.synth .inner{position:relative;z-index:2}
+.synth .eyebrow{color:var(--blue-700)}
+.synth h2{font-size:110px;letter-spacing:-.02em;color:var(--blue-900);padding-top:16px;max-width:672px;}
+.synth p{font-size:20px;line-height:1.68;color:var(--blue-900);max-width:672px;padding-top:28px}
+.synth .lion{position:absolute;top:96px;right:244px;z-index:1;pointer-events:none;
+  width:clamp(220px,25vw,381px);height:auto}
+.synth .vstripes{position:absolute;top:0;bottom:0;right:0;width:305px;display:flex;z-index:1}
+.synth .vstripes i{flex:1}
+.synth .vstripes i:nth-child(1){background:var(--blue)}
+.synth .vstripes i:nth-child(2){background:var(--light-blue)}
+.synth .vstripes i:nth-child(3){background:var(--light-aqua)}
+.synth .vstripes i:nth-child(4){background:var(--green)}
+.synth .vstripes i:nth-child(5){background:var(--green-mid)}
+
+/* ---------- who ---------- */
+.who{background:var(--hiekka-light);padding-block:96px}
+.who .eyebrow{color:var(--green-mid)}
+.who-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+.who h2{font-size:58px;letter-spacing:-.015em;color:var(--dark-green);padding-top:16px;max-width:584px}
+.who p.bio{font-size:17px;line-height:1.68;color:var(--text-1);padding-top:19.2px}
+.who figure{margin:0;padding-top:24px}
+.who .frame{background:var(--white);overflow:hidden}
+.who .frame img{width:100%;aspect-ratio:564/392;object-fit:cover;object-position:50% 28%}
+.who figcaption{font-size:12px;line-height:20.16px;color:var(--text-2);padding-top:9.6px}
+.creds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-top:48px}
+.creds li{border-top:4px solid var(--hiekka);padding-top:11.2px;
+  font-size:15px;line-height:21px;font-weight:500;color:var(--text-1)}
+
+/* ---------- faq ---------- */
+.faq{background:var(--light-gray);padding-block:96px}
+.faq .eyebrow{color:var(--green-mid)}
+.qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px;padding-top:32px}
+.qa>div{border-top:3px solid var(--dark-green);padding-block:30.4px}
+.qa h3{font-family:var(--body);font-size:19px;line-height:24.7px;font-weight:600;color:var(--dark-green)}
+.qa .a1{font-size:17px;line-height:1.68;font-weight:500;color:var(--text-1);padding-top:10.4px}
+.qa .a2{font-size:15px;line-height:1.68;color:var(--text-2);padding-top:9.6px}
+
+/* ---------- writings ---------- */
+.writings{background:var(--hiekka-light);padding-block:96px}
+.writings .eyebrow{color:var(--green-mid)}
+.writings .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.writings h2{font-size:58px;letter-spacing:-.015em;color:var(--dark-green);padding-top:16px}
+@media (max-width:768px){
+  .writings h2{font-size:48px;}
+}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;padding-top:32px}
+.post{border-top:5px solid var(--hiekka);padding-top:16px;display:flex;flex-direction:column;gap:8.8px}
+.post .shot{height:184px;overflow:hidden}
+.post .shot img{width:100%;height:100%;object-fit:cover}
+.post time{font-family:var(--display);font-weight:700;font-size:14px;line-height:1.3;
+  letter-spacing:.137em;color:var(--text-2);padding-top:4px}
+.post h3{font-family:var(--body);font-size:18px;line-height:23.4px;font-weight:600;color:var(--green-mid)}
+.post h3 a{text-decoration:none}
+.post h3 a:hover{text-decoration:underline;text-underline-offset:3px}
+.post p{font-size:15px;line-height:1.68;color:var(--text-2)}
+.writings .foot{display:flex;justify-content:center;padding-top:32px}
+
+/* ---------- newsletter ---------- */
+.news{background:var(--kaura);padding-block:var(--sec-y)}
+.news .eyebrow{color:var(--on-kaura-700)}
+.news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:start}
+.news h2{font-size:58px;letter-spacing:-.015em;color:var(--dark-green);padding-top:16px;max-width:439px}
+.news p.blurb{font-size:17px;line-height:1.68;color:var(--on-kaura-body);padding-top:16px;max-width:544px}
+form{display:grid;gap:12.8px;max-width:432px}
+label{font-size:14px;line-height:23.52px;font-weight:500;color:var(--dark-green)}
+input[type=email]{
+  font:inherit;font-size:17px;padding:14.4px 16px;
+  border:3px solid var(--dark-green);background:transparent;color:var(--dark-green);
+  caret-color:var(--green-mid);border-radius:0;
+}
+input[type=email]::placeholder{color:var(--kaura-700)}
+button{
+  font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:.08em;
+  text-transform:uppercase;background:var(--dark-green);color:var(--kaura);
+  border:0;padding:15.2px 32px;cursor:pointer;justify-self:start;
+  transition:background .18s var(--ease),transform .12s var(--ease);
+}
+button:hover{background:var(--green-mid)}
+button:active{transform:translate(var(--press),var(--press))}
+.fine{font-size:13px;line-height:21.84px;color:var(--on-kaura-body);padding-top:16px;max-width:432px}
+.fine a{color:var(--dark-green)}
+
+/* ---------- footer ---------- */
+footer{background:var(--dark-green);padding:40px 0 36px;color:var(--light-aqua)}
+.footer-mark{padding-block:40px}
+.footer-mark img{width:384px;max-width:100%}
+.foot-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;padding-bottom:24px}
+footer h2{font-family:var(--display);font-weight:700;font-size:15px;line-height:1.5;
+  letter-spacing:.173em;text-transform:uppercase;color:var(--kaura)}
+.foot-grid ul{display:grid;gap:8.8px;padding-top:16px}
+.foot-grid a{font-size:15px;line-height:25.2px;color:var(--light-aqua);text-decoration:none}
+.foot-grid a:hover{color:var(--kaura);text-decoration:underline;text-underline-offset:3px}
+.party{display:flex;align-items:flex-end;height:100%}
+.party img{width:184px}
+.colophon{margin-top:32px;border-top:2px solid rgba(191,225,222,.28);padding-top:24px;
+  display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  font-size:13px;line-height:21.84px;color:var(--footer-muted)}
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+@media (prefers-reduced-motion:no-preference){
+  .hero-kicker{animation:lift 850ms var(--ease) both}
+  .hero h1{animation:lift 950ms var(--ease) 60ms both}
+  .hero-foot{animation:lift 950ms var(--ease) 160ms both}
+  .hero-left .mark{animation:lift 900ms var(--ease) 120ms both}
+}
+@keyframes lift{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:none}}
+
+/* ============================================================
+   TABLET — 769…1199
+   ============================================================ */
+@media (max-width:1199px){
+  :root{--pad-x:40px}
+  .hero{grid-template-columns:minmax(0,380px) minmax(0,1fr)}
+  .hero h1{font-size:88px;padding-right:0}
+  .hero-left .mark{width:200px;left:40px;top:40px}
+  .hero-right{padding-top:104px}
+  .h2{font-size:88px}
+  .h2--pillar{font-size:80px}
+  .synth h2{font-size:96px}
+  .synth .lion{display:none}
+  .synth .vstripes{width:180px}
+  .posts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .creds{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .foot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .party{justify-content:flex-start}
+}
+
+@media (max-width:999px){
+  .hero{grid-template-columns:minmax(0,330px) minmax(0,1fr)}
+  .hero-right { padding: 128px 40px 32px 16px; }
+  .hero h1{font-size:72px;padding-right:0}
+}
+
+/* ============================================================
+   MOBILE — ≤768  (Figma "home mobile", 390px frame)
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:24px;--sec-y:60px}
+
+  /* header: solid dark bar, wordmark + disclosure menu */
+  .top{position:fixed;height:60px;background:var(--dark-green)}
+  .top .sheet{padding-inline:16px;gap:8px}
+  .top .brand{display:block;margin-right:auto}
+  .top .brand img{width:87px}
+  .burger{
+    display:flex;flex-direction:column;justify-content:center;gap:5px;
+    width:44px;height:44px;padding:0 10px;margin-left:auto;
+    background:none;border:0;cursor:pointer;
+  }
+  .burger span{display:block;height:2px;background:var(--white);border-radius:0}
+  .menu{
+    display:block;position:absolute;left:0;right:0;top:60px;
+    background:var(--dark-green);padding:16px;
+    border-bottom:4px solid var(--green-mid);
+  }
+  .top[data-open="false"] .menu{display:none}
+  .top nav{display:flex;flex-direction:column;gap:0;margin:0}
+  .langs{display:flex;gap:4px;margin:16px 0 0}
+  .top nav a{color:var(--kaura);font-size:26px;padding-block:8px;border-bottom:0;background-color:var(--dark-green);}
+  .top nav a:hover{color:var(--white);border-bottom-color:transparent}
+  .langs a{color:var(--light-aqua);font-size:16px;padding:6px 10px}
+  .langs a[aria-current]{background:var(--green-mid);color:var(--white)}
+
+  /* hero: image band over stacked copy */
+  .hero{display:block;min-height:0;padding-top:60px}
+  .hero-left{height:222px}
+  .hero-left .mark{display:none}
+  .hero-left .bg img{object-position:50% 40%}
+  .hero-right{padding:24px 16px 32px}
+  .hero-kicker{font-size:14px;letter-spacing:.05em}
+  .hero h1{font-size:64px;letter-spacing:-.02em;padding:16px 0 12px}
+  .hero-foot{flex-direction:column;align-items:center;gap:24px;text-align:left}
+  .hero-foot p{max-width:none}
+  .btn{font-size:18px;padding:12px 20px}
+
+  .stripes{height:100px}
+
+  /* sections */
+  .h2{font-size:48px;letter-spacing:-.02em}
+  .h2--pillar{font-size:48px;letter-spacing:-.02em}
+  .lede{font-size:18px;line-height:1.6;max-width:none}
+
+  .pillar-body{grid-template-columns:1fr;gap:20px;padding-top:40px}
+  .pillar .answer{font-size:18px;line-height:1.6}
+  .pillar .detail{font-size:15px;line-height:1.6}
+  .reads a{align-items:start}
+
+  .synth{padding-block:88px}
+  .synth h2{font-size:48px;letter-spacing:-.02em}
+  .synth p{font-size:18px;line-height:1.6;max-width:none;padding-top:28px}
+  .synth .lion{display:block;top:20px;right:-40px;width:183px}
+  .synth .vstripes{display:none}
+
+  .who{padding-block:var(--sec-y)}
+  .who-grid{grid-template-columns:1fr;gap:0}
+  .who h2{font-size:48px;letter-spacing:-.02em;max-width:none}
+  .who figure{padding-top:24px}
+  .creds{grid-template-columns:1fr;gap:12px;padding-top:32px}
+  /* Figma 2057:40623 — the 4px Hiekka rule rotates from the card top to the left edge */
+  .creds li{border-top:0;border-left:4px solid var(--hiekka);padding:4px 0 3px 12px}
+
+  .faq{padding-block:var(--sec-y)}
+  .qa{grid-template-columns:1fr}
+
+  .writings{padding-block:var(--sec-y)}
+  .writings .head{display:block}
+  .writings .head .link-rule{display:none}
+  .posts{grid-template-columns:1fr;gap:24px}
+
+  .news{padding-block:var(--sec-y)}
+  .news .sheet{padding-inline:16px}
+  .news-grid{grid-template-columns:1fr;gap:16px}
+  .news h2{font-size:42px;letter-spacing:-.02em;max-width:none}
+  form{max-width:none}
+  .fine{max-width:none}
+
+  footer .sheet{padding-inline:32px}
+  .footer-mark{padding-block:24px}
+  .footer-mark img{width:278px}
+  .foot-grid{grid-template-columns:1fr;gap:24px}
+  .party{justify-content:flex-start;padding-top:8px}
+  .colophon{flex-direction:column;gap:4px}
+}
+
+@media (max-width:380px){
+  .hero h1{font-size:52px}
+  .h2,.h2--pillar,.synth h2,.who h2{font-size:40px}
+}
+
+/* ============================================================
+   OTA YHTEYTTÄ — page-specific components
+   Everything above is inherited verbatim from Site/home.html.
+   New here: .channels/.channel, .aud, plus .facts/.prose/.chips/
+   .elsewhere carried over from Site/laurista.html.
+   ============================================================ */
+
+/* wordmark stays parked top-left on subpages (no hero mark to collide with) */
+@media (min-width:769px){
+  .top .sheet{position:relative}
+  .top .brand{display:block;position:absolute;left:var(--pad-x);top:20.5px;width:170px;margin:0}
+  .top .brand img{width:170px;height:auto}
+}
+
+/* the top stripe band is half-height on subpages; the footer band keeps its 220px */
+.stripes--slim{height:132px}
+.plate--gray{background:var(--light-gray)}
+
+/* ---------- subpage hero — narrower image column (matches .hero--about) ---------- */
+.hero--contact{grid-template-columns:331px minmax(0,1fr);min-height:633px}
+.hero--contact h1{font-size:88px;max-width:625px}
+.hero--contact .hero-left .bg img{object-position:82% 34%}
+.hero--contact .hero-foot p{max-width:520px}
+
+/* ---------- channel cards — the point of the page ---------- */
+.channels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-top:40px}
+.channel{
+  display:flex;flex-direction:column;gap:10px;
+  background:var(--white-50);border:3px solid var(--dark-green);
+  padding:28px;text-decoration:none;color:var(--dark-green);
+  transition:background .18s var(--ease),color .18s var(--ease),transform .12s var(--ease);
+}
+.channel:hover{background:var(--dark-green);color:var(--hiekka-light)}
+.channel:active{transform:translate(var(--press),var(--press))}
+.ch-k{
+  font-family:var(--display);font-weight:700;font-size:15px;line-height:1.3;
+  letter-spacing:.176em;text-transform:uppercase;color:var(--green-mid);
+  transition:color .18s var(--ease);
+}
+.channel:hover .ch-k{color:var(--kaura)}
+.ch-v{
+  font-family:var(--display);font-weight:900;font-size:38px;line-height:1;
+  letter-spacing:-.01em;color:inherit;word-break:break-word;
+}
+.ch-n{font-size:14px;line-height:1.6;color:var(--text-2);transition:color .18s var(--ease)}
+.channel:hover .ch-n{color:var(--light-aqua)}
+.ch-go{
+  margin-top:auto;padding-top:18px;display:flex;align-items:center;gap:8px;
+  font-family:var(--display);font-weight:700;font-size:13px;
+  letter-spacing:.12em;text-transform:uppercase;color:inherit;
+}
+.ch-go svg{width:16px;height:16px;flex:none}
+
+/* ---------- kirjoita, jos olet… ---------- */
+.aud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-top:40px}
+.aud li{border-top:4px solid var(--hiekka);padding-top:14px}
+.aud h3{
+  font-family:var(--display);font-weight:800;font-size:26px;line-height:1.05;
+  letter-spacing:.01em;text-transform:uppercase;color:var(--dark-green);
+}
+.aud p{font-size:15px;line-height:1.68;color:var(--text-2);padding-top:10px}
+.facts-h{padding-top:56px;color:var(--green-mid)}
+.facts-h + .facts{padding-top:18px}
+
+/* ---------- carried over from laurista.html ---------- */
+.facts{display:grid;gap:12px;padding-top:24px}
+.facts li{
+  border-left:4px solid var(--hiekka);padding:4px 0 4px 12px;
+  font-size:17px;line-height:1.6;font-weight:500;color:var(--text-1);
+}
+.prose{display:grid;gap:20px;max-width:672px;padding-top:24px}
+.prose p{font-size:17px;line-height:1.68;color:var(--text-1)}
+.prose a{color:var(--green-mid);text-underline-offset:3px}
+.prose a:hover{color:var(--dark-green)}
+.pillar .prose p{color:var(--ink)}
+
+.elsewhere{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px;padding-top:40px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding-top:20px}
+.chips a{
+  font-family:var(--display);font-weight:700;font-size:13px;line-height:1.4;
+  letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+  color:var(--dark-green);background:var(--white);padding:8px 12px;
+  border:2px solid var(--hiekka);
+  transition:background .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .12s var(--ease);
+}
+.chips a:hover{background:var(--dark-green);border-color:var(--dark-green);color:var(--hiekka-light)}
+.chips a:active{transform:translate(1px,1px)}
+
+/* ---------- tablet ---------- */
+@media (max-width:1199px){
+  .hero--contact{grid-template-columns:260px minmax(0,1fr)}
+  .hero--contact h1{font-size:72px}
+  .channels{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .aud{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .elsewhere{gap:40px}
+}
+
+/* ---------- mobile ---------- */
+@media (max-width:768px){
+  .hero--contact{grid-template-columns:none;min-height:0}
+  .hero--contact h1{font-size:52px;max-width:none}
+  .hero--contact .hero-left .bg img{object-position:50% 40%}
+
+  .stripes--slim{height:72px}
+
+  .channels{grid-template-columns:1fr;gap:16px;padding-top:32px}
+  .channel{padding:22px}
+  .ch-v{font-size:34px}
+
+  .aud{grid-template-columns:1fr;gap:20px;padding-top:32px}
+  .facts-h{padding-top:40px}
+  .facts{gap:16px}
+  .prose{max-width:none;gap:16px}
+  .elsewhere{grid-template-columns:1fr;gap:32px;padding-top:32px}
+}
+
+@media (max-width:380px){
+  .hero--contact h1{font-size:42px}
+  .ch-v{font-size:28px}
+}
+</style>
+</head>
+<body>
+<!--
+OTA YHTEYTTÄ / contact — built on Site/home.html (base 08-juliste.html, Figma 2057:40819 / 2057:40433).
+Tokens, primitives and components are inherited; only .channels/.channel and .aud are new.
+Content: lavanti.fi/fi/contact/, re-voiced to the campaign canon (Opas yhtenäiseen kieleen, Tone of Voice).
+The live page buries the contact details in a sidebar list; here they are the first thing after the
+headline, at poster scale, because that is the one job this page has.
+-->
+<a class="skip" href="#main">Siirry pääsisältöön</a>
+
+<header class="top" id="top" data-open="false">
+  <div class="sheet">
+    <a class="brand" href="/fi/" aria-label="Lauri Lavanti — etusivu">
+      <img src="img/lavanti-logo-white.svg" width="170" height="87" alt="Lauri Lavanti">
+    </a>
+    <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mainnav" aria-label="Avaa valikko">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="menu" id="mainnav">
+      <nav aria-label="Päävalikko">
+        <a href="/fi/laurista/">Laurista</a>
+        <a href="/fi/kirjoitukset/">Kirjoitukset</a>
+        <a href="/fi/otayhteytta/" aria-current="page">Ota yhteyttä</a>
+        <a href="/fi/uutiskirje/">Uutiskirje</a>
+      </nav>
+      <div class="langs" role="group" aria-label="Kieli">
+        <a href="/fi/otayhteytta/" aria-current="true">FI</a><a href="/sv/kontakt/">SV</a><a href="/en/contact/">EN</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero hero--contact">
+  <div class="hero-left">
+    <picture class="bg">
+      <source media="(max-width:768px)" srcset="img/lavanti-mobile-bg-01.jpg" width="800" height="480">
+      <img src="img/lavanti-bg-04.jpg" width="1170" height="2240"
+           alt="Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa.">
+    </picture>
+  </div>
+  <div class="hero-right">
+    <p class="hero-kicker">Ota yhteyttä · Uudenmaan vaalipiiri</p>
+    <h1>Vastaan jokaiseen <em>viestiin</em></h1>
+    <div class="hero-foot">
+      <p>Sähköpostilla, puhelimella tai somessa. Parhaat päätökset syntyvät siitä, että joku kertoo, miltä asia näyttää läheltä katsottuna.</p>
+    </div>
+  </div>
+</section>
+
+<div class="stripes stripes--slim" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ===================== YHTEYSTIEDOT ===================== -->
+<section class="section plate--intro offwhite" id="yhteystiedot" aria-labelledby="yht-h">
+  <div class="sheet"><div class="inner">
+    <span class="eyebrow">Suorin reitti</span>
+    <h2 class="h2" id="yht-h">Ollaan yhteydessä</h2>
+    <p class="lede">Lauri Lavantiin saa yhteyden sähköpostilla osoitteeseen lauri@laurilavanti.fi tai puhelimitse numeroon 040 761 7605, joka toimii myös WhatsAppissa ja Signalissa. Hän lukee ja vastaa viestit itse.</p>
+
+    <div class="channels">
+      <a class="channel" href="mailto:lauri@laurilavanti.fi">
+        <span class="ch-k">Sähköposti</span>
+        <span class="ch-v">lauri@laurilavanti.fi</span>
+        <span class="ch-n">Paras reitti pitkille viesteille, taustatiedoille ja liitteille.</span>
+        <span class="ch-go"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Kirjoita viesti</span>
+      </a>
+      <a class="channel" href="tel:+358407617605">
+        <span class="ch-k">Puhelin</span>
+        <span class="ch-v">040 761 7605</span>
+        <span class="ch-n">Myös WhatsApp ja Signal. Signal, jos aihe on arkaluontoinen.</span>
+        <span class="ch-go"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Soita tai viestitä</span>
+      </a>
+      <a class="channel" href="#some">
+        <span class="ch-k">Sosiaalinen media</span>
+        <span class="ch-v">@lauri.lavanti.fi</span>
+        <span class="ch-n">Bluesky, Mastodon ja kuusi muuta kanavaa — keskustelu käy myös julkisesti.</span>
+        <span class="ch-go"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Kaikki tilit</span>
+      </a>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===================== SOME JA MEDIA ===================== -->
+<section class="section plate--intro" id="some" aria-labelledby="some-h">
+  <div class="sheet"><div class="inner">
+    <span class="eyebrow">Muualla</span>
+    <h2 class="h2 h2--mid" id="some-h">Sosiaalinen media ja media</h2>
+    <div class="elsewhere">
+      <div>
+        <p class="lede" style="padding-top:0">Ajankohtaisimmat ajatukseni löydät sosiaalisen median tileiltäni. Viesti tulee perille myös niiden kautta.</p>
+        <div class="chips">
+          <a href="https://bsky.app/profile/lauri.lavanti.fi" rel="me noopener">Bluesky</a>
+          <a href="https://mastodon.social/@laurilavanti" rel="me noopener">Mastodon</a>
+          <a href="https://www.threads.com/@laurilavanti" rel="me noopener">Threads</a>
+          <a href="https://www.linkedin.com/in/lapanti" rel="me noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/laurilavanti/" rel="me noopener">Instagram</a>
+          <a href="https://www.facebook.com/laurilavanti" rel="me noopener">Facebook</a>
+          <a href="https://www.tiktok.com/@laurilavanti" rel="me noopener">TikTok</a>
+          <a href="/fi/rss.xml">RSS-syöte</a>
+        </div>
+      </div>
+      <div>
+        <p class="lede" style="padding-top:0">Medialle: lyhyt esittely, jonka voi käyttää sellaisenaan.</p>
+        <div class="prose" style="padding-top:16px">
+          <p>Lauri Lavanti on johtava ohjelmistokehittäjä, Kirkkonummen kunnanvaltuutettu ja Vihreän valtuustoryhmän puheenjohtaja. Hän on informaatioverkostojen diplomi-insinööri Aalto-yliopistosta ja Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä 2027. Hän ajaa digitaalista itsenäisyyttä, yksityisyyden suojaa ja tekoälyn järkevää käyttöä.</p>
+          <p>Pidempi tausta, luottamustoimet ja työkokemus: <a href="/fi/laurista/">Laurista</a>. Valokuvat: Markus Isomeri — pyydä käyttöoikeus sähköpostilla.</p>
+        </div>
+        <div style="padding-top:28px"><a class="link-rule" href="/fi/laurista/">Tutustu taustaan</a></div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===================== AIHEET ===================== -->
+<section class="section pillar pillar--3" aria-labelledby="aiheet-h">
+  <div class="sheet"><div class="inner">
+    <span class="eyebrow">Aiheet</span>
+    <h2 class="h2 h2--pillar" id="aiheet-h">Mistä kannattaa kirjoittaa</h2>
+    <div class="pillar-body">
+      <div>
+        <p class="answer">Kirjoitan ja puhun tekoälystä, digitaalisesta itsenäisyydestä ja taloudesta. Kaikkein hyödyllisimmät viestit ovat niitä, joissa joku kertoo, miten asia näkyy hänen omassa työssään.</p>
+        <ul class="vocab"><li>Tekoäly</li><li>Digitaalinen itsenäisyys</li><li>Julkiset hankinnat</li><li>Yrittäjyys</li><li>Yksityisyys</li><li>Avoin lähdekoodi</li></ul>
+      </div>
+      <div>
+        <div class="prose" style="padding-top:0">
+          <p>Hankintapäätös, joka lukitsi järjestelmän vuosiksi. Opettaja, joka näkee mitä osaamiselle tapahtuu kesken uran. Yrittäjä, jolle hallinnollinen este maksaa työtunteja joka viikko. Nämä ovat asioita, joita ei näe tilastosta eikä lausuntokierrokselta — ne pitää kuulla joltakulta, joka on ollut paikalla.</p>
+          <p>Erimielisyys on yhtä tervetullutta kuin samanmielisyys. Jos jokin kantani on mielestäsi väärä, kerro miksi — mieluiten esimerkin kanssa. Näin ne ovat aiemminkin muuttuneet.</p>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===================== KENELLE ===================== -->
+<section class="section plate--driver" aria-labelledby="kenelle-h">
+  <div class="sheet"><div class="inner">
+    <span class="eyebrow">Kenelle</span>
+    <h2 class="h2 h2--mid" id="kenelle-h">Kirjoita, jos olet…</h2>
+    <p class="lede">Yhteydenottoon ei tarvita asiaa, joka on jo valmiiksi muotoiltu. Riittää, että se liittyy johonkin, minkä olet nähnyt läheltä.</p>
+    <ul class="aud">
+      <li>
+        <h3>Asiantuntija</h3>
+        <p>Kerro, missä kohtaa käytäntö ja lainsäädäntö eivät kohtaa. Yksi konkreettinen esimerkki painaa enemmän kuin lausunto.</p>
+      </li>
+      <li>
+        <h3>Toimittaja</h3>
+        <p>Kommentoin tekoälyä, digitaalista itsenäisyyttä, julkisia hankintoja ja taloutta. Puhelin on nopein reitti deadlinen alla.</p>
+      </li>
+      <li>
+        <h3>Yhteistyökumppani</h3>
+        <p>Tilaisuudet, paneelit ja alustukset: kerro aihe, ajankohta ja yleisö, niin vastaan onnistuuko se.</p>
+      </li>
+      <li>
+        <h3>Kiinnostunut</h3>
+        <p>Kysymys, joka ei sovi mihinkään lokeroon, sopii silti tähän. Myös silloin kun olet eri mieltä.</p>
+      </li>
+    </ul>
+    <h3 class="eyebrow facts-h">Mitä sen jälkeen tapahtuu</h3>
+    <ul class="facts">
+      <li>Luen ja vastaan viestit itse.</li>
+      <li>Sähköposti sopii pitkiin viesteihin, puhelin kiireisiin.</li>
+      <li>Signal ja WhatsApp toimivat samassa numerossa, jos aihe vaatii luottamuksellisuutta.</li>
+      <li>En julkaise yhteydenottoja enkä välitä niitä eteenpäin ilman lupaasi.</li>
+    </ul>
+  </div></div>
+</section>
+
+</main>
+
+<div class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<footer class="on-dark">
+  <div class="sheet"><div class="inner">
+    <div class="footer-mark">
+      <img src="img/lavanti-logo-white.svg" width="384" height="196" alt="Lauri Lavanti">
+    </div>
+    <div class="foot-grid">
+      <div>
+        <h2>Lauri Lavanti</h2>
+        <ul>
+          <li><a href="/fi/laurista/">Laurista</a></li>
+          <li><a href="/fi/kirjoitukset/">Kirjoitukset</a></li>
+          <li><a href="/fi/otayhteytta/">Ota yhteyttä</a></li>
+          <li><a href="/fi/uutiskirje/">Uutiskirje</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kielet</h2>
+        <ul>
+          <li><a href="/fi/otayhteytta/">Suomeksi</a></li>
+          <li><a href="/sv/kontakt/">På svenska</a></li>
+          <li><a href="/en/contact/">In English</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Yhteys</h2>
+        <ul>
+          <li><a href="mailto:lauri@laurilavanti.fi">lauri@laurilavanti.fi</a></li>
+          <li><a href="tel:+358407617605">040 761 7605</a></li>
+          <li><a href="https://bsky.app/profile/lauri.lavanti.fi">@lauri.lavanti.fi</a></li>
+          <li><a href="/fi/tietosuojaseloste/">Tietosuojaseloste</a></li>
+        </ul>
+      </div>
+      <div class="party">
+        <img src="img/vihreiden-logo.svg"
+             width="316" height="99" alt="Vihreät">
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Lauri Lavanti. Sisältö lisensoitu CC BY-SA 4.0.</span>
+      <span>Kuva: Markus Isomeri</span>
+    </div>
+  </div></div>
+</footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","@id":"https://lavanti.fi/fi/otayhteytta/#page","url":"https://lavanti.fi/fi/otayhteytta/","name":"Ota yhteyttä — vastaan jokaiseen viestiin","description":"Lauri Lavantiin saa yhteyden sähköpostilla, puhelimella tai somessa. Hän vastaa viesteihin itse — aiheina tekoäly, digitaalinen itsenäisyys ja talous.","inLanguage":"fi","mainEntity":{"@id":"https://lavanti.fi/fi/#person"}},{"@type":"Person","@id":"https://lavanti.fi/fi/#person","name":"Lauri Lavanti","givenName":"Lauri","familyName":"Lavanti","birthDate":"1991-10-01","url":"https://lavanti.fi/fi/","email":"lauri@laurilavanti.fi","telephone":"+358407617605","description":"Lauri Lavanti on Kirkkonummen kunnanvaltuutettu ja johtava ohjelmistokehittäjä (DI, Aalto). Hänen tavoitteenaan on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.","jobTitle":"johtava ohjelmistokehittäjä","knowsLanguage":["fi","en","sv"],"homeLocation":{"@type":"City","name":"Kirkkonummi"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Aalto-yliopisto"},"memberOf":{"@id":"https://lavanti.fi/fi/#party"},"contactPoint":[{"@type":"ContactPoint","contactType":"Yhteydenotot","email":"lauri@laurilavanti.fi","telephone":"+358407617605","availableLanguage":["fi","en","sv"]},{"@type":"ContactPoint","contactType":"Media","email":"lauri@laurilavanti.fi","telephone":"+358407617605","availableLanguage":["fi","en","sv"]}],"knowsAbout":["Tekoäly","Digitaalinen itsenäisyys","Talouspolitiikka","Markkinatalous","Yrittäjyys","Sivistys","Perusoikeudet","Yksityisyys","Vastuullinen tekoäly","Julkishankintojen siirrettävyys","Suomenkieliset tekoälymallit","Avoin lähdekoodi"],"sameAs":["https://bsky.app/profile/lauri.lavanti.fi","https://mastodon.social/@laurilavanti","https://www.threads.com/@laurilavanti","https://www.linkedin.com/in/lapanti","https://www.instagram.com/laurilavanti/","https://www.facebook.com/laurilavanti","https://www.tiktok.com/@laurilavanti","https://fi.wikipedia.org/wiki/Lauri_Lavanti","https://www.wikidata.org/wiki/Q139711658"]},{"@type":"PoliticalParty","@id":"https://lavanti.fi/fi/#party","name":"Vihreä liitto","alternateName":"Vihreät","url":"https://www.vihreat.fi"}]}
+</script>
+
+<script>
+(function(){
+  var top = document.getElementById('top');
+  var burger = document.getElementById('burger');
+  if (!top || !burger) return;
+  function set(open){
+    top.setAttribute('data-open', open ? 'true' : 'false');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Sulje valikko' : 'Avaa valikko');
+  }
+  burger.addEventListener('click', function(){
+    set(top.getAttribute('data-open') !== 'true');
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') set(false);
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 768) set(false);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
