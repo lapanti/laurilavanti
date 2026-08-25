@@ -231,4 +231,44 @@ export const recommendations: Recommendation[] = [
         recommendation:
             'Lauri on järjellä ajatteleva henkilö. Joka ymmärtää talousasiat ja markkinatalouden merkityksen. Voin rehellisesti suositella Lauria.',
     },
+    {
+        image: 'Samuel-Rinnetmaki',
+        locales: {
+            en: {
+                alt: 'Photo of Samuel Rinnetmäki. Close-up portrait, wearing a dark turtleneck sweater, with short greying hair.',
+                title: 'CTO',
+            },
+            fi: {
+                alt: 'Kuva Samuel Rinnetmäestä. Lähikuva, jossa hänellä on tumma pooloneule ja lyhyet harmaantuvat hiukset.',
+                title: 'teknologiajohtaja',
+            },
+            sv: {
+                alt: 'Foto på Samuel Rinnetmäki. Närbild, iklädd en mörk polotröja, med kort gråmelerat hår.',
+                title: 'CTO',
+            },
+        },
+        name: 'Samuel Rinnetmäki',
+        recommendation:
+            'Lauri ymmärtää tekniikkaa. Hän osaa ajatella ja argumentoida siitä tavalla, jota poliittisessa päätöksenteossa tarvitaan juuri nyt.',
+    },
+    {
+        image: 'Roni-Oberg',
+        locales: {
+            en: {
+                alt: 'Photo of Roni Öberg. He is on the deck of a sailboat, wearing a red cap and a red sailing jacket with a life vest, holding a mug of coffee at the helm.',
+                title: 'Program Manager',
+            },
+            fi: {
+                alt: 'Kuva Roni Öbergistä. Hän on purjeveneen kannella, päällään punainen lippalakki ja punainen purjehdustakki pelastusliivin kanssa, kädessään kahvimuki peräsimen äärellä.',
+                title: 'Ohjelmapäällikkö',
+            },
+            sv: {
+                alt: 'Foto på Roni Öberg. Han är på däck på en segelbåt, iklädd en röd keps och en röd seglarjacka med flytväst, med en kaffemugg i handen vid rodret.',
+                title: 'Programledare',
+            },
+        },
+        name: 'Roni Öberg',
+        recommendation:
+            'En valitse ehdokastani ensisijaisesti puolueen perusteella, vaan arvostan päätöksenteossa osaamista, pragmaattisuutta ja kykyä ymmärtää myös vaikeiden päätösten käytännön seurauksia. Laurissa arvostan erityisesti kykyä yhdistää teknologian, talouden ja yhteiskunnan kysymyksiä ilman turhaa ideologista jargonia. Kaikesta meidän ei tarvitse olla samaa mieltä (eikä pidäkään) mutta Laurin kanssa voi luottaa siihen, että näkemyksen taustalla on ajattelua, perehtymistä ja halua löytää toimivia ratkaisuja sekä kyky diplomatiaan. Siksi voin hyvillä mielin suositella Lauria.',
+    },
 ]
