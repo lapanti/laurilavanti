@@ -30,7 +30,7 @@
     "check": "astro check",
     "check:dist": "node scripts/checks/dist-contracts.mjs",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && npm run check:dist",
     "validate-page-titles": "node scripts/check-overflow.mjs $(find src/pages -name '*.mdx') $(find src/content/posts -name '*.mdx') src/content/tags/*.ts",
     "validate-translations": "node scripts/validate-translations.mjs",
     "validate-slugs": "node scripts/validate-slugs.mjs",
