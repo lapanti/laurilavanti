@@ -1,0 +1,156 @@
+---
+import { colors, typographics } from '../../lib/styles'
+
+interface Props {
+    allPostsHref: string
+    allPostsLabel: string
+    ground: 'sand' | 'offWhite'
+    heading: string
+    id: string
+    intro: string[]
+}
+
+const { allPostsHref, allPostsLabel, ground, heading, id, intro } = Astro.props
+const groundColor = {
+    offWhite: colors.offWhite,
+    sand: colors.lightSand,
+}[ground]
+---
+
+<style
+    define:vars={{
+        topicPlateAnswerFontFamily: typographics.pillarAnswer.fontFamily,
+        topicPlateDisplayFontFamily: typographics.display.fontFamily,
+        topicPlateForestGreen: colors.forestGreen,
+        topicPlateGround: groundColor,
+        topicPlateTextFontFamily: typographics.text.fontFamily,
+        topicPlateTextPrimary: colors.textPrimary,
+    }}
+>
+    .topic {
+        background: var(--topicPlateGround);
+        padding-block: 88px;
+        scroll-margin-top: 56px;
+    }
+
+    .topic-head {
+        align-items: start;
+        display: grid;
+        gap: 56px;
+        grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    }
+
+    .topic-h {
+        color: var(--topicPlateForestGreen);
+        font-family: var(--topicPlateDisplayFontFamily);
+        font-size: 88px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 6px;
+        text-transform: uppercase;
+    }
+
+    .topic-intro {
+        display: grid;
+        gap: 20px;
+        max-width: 620px;
+    }
+
+    .topic-intro p {
+        color: var(--topicPlateTextPrimary);
+        font-family: var(--topicPlateTextFontFamily);
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.68;
+        margin: 0;
+    }
+
+    .topic-intro .answer {
+        color: var(--topicPlateForestGreen);
+        font-family: var(--topicPlateAnswerFontFamily);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .topic-body {
+        padding-top: 56px;
+    }
+
+    .topic-more {
+        line-height: 1.68;
+        margin: 0;
+        padding-top: 40px;
+    }
+
+    @media (max-width: 1199px) {
+        .topic-head {
+            gap: 24px;
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .topic-h {
+            font-size: 72px;
+        }
+
+        .topic-intro {
+            max-width: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .topic {
+            padding-block: 60px;
+            scroll-margin-top: 104px;
+        }
+
+        .topic-h {
+            font-size: 52px;
+        }
+
+        .topic-intro .answer {
+            font-size: 19px;
+        }
+
+        .topic-body {
+            padding-top: 40px;
+        }
+
+        .topic-more {
+            padding-top: 32px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .topic-h {
+            font-size: 44px;
+        }
+    }
+</style>
+
+<section
+    aria-labelledby={`${id}-h`}
+    class:list={{
+        topic: true,
+        'topic--off': ground === 'offWhite',
+        'topic--sand': ground === 'sand',
+    }}
+    id={id}
+>
+    <div class="sheet">
+        <div class="inner">
+            <div class="topic-head">
+                <h2 class="topic-h" id={`${id}-h`}>{heading}</h2>
+                <div class="topic-intro">
+                    {intro.map((paragraph, index) => <p class:list={{ answer: index === 0 }}>{paragraph}</p>)}
+                </div>
+            </div>
+            <div class="topic-body">
+                <slot />
+            </div>
+            <p class="topic-more"><a class="link-rule" href={allPostsHref}>{allPostsLabel}</a></p>
+        </div>
+    </div>
+</section>
