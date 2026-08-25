@@ -197,15 +197,15 @@ export const recommendations: Recommendation[] = [
         locales: {
             en: {
                 alt: 'Photo of Ville Aarnio. He is smiling and wearing a blue and white checked shirt with his arms crossed.',
-                title: 'Chair of TalousVihreät (Green Economists)',
+                title: 'Chair of TalousVihreät',
             },
             fi: {
                 alt: 'Kuva Ville Aarniosta. Hän hymyilee, ja hänellä on päällään sinivalkoruudullinen kauluspaita, kädet ristissä rinnan päällä.',
-                title: 'Talousvihreiden puheenjohtaja',
+                title: 'TalousVihreiden puheenjohtaja',
             },
             sv: {
                 alt: 'Foto på Ville Aarnio. Han ler och bär en blårutig skjorta med armarna i kors.',
-                title: 'Ordförande för TalousVihreät (Ekonomiska gröna)',
+                title: 'Ordförande för TalousVihreät',
             },
         },
         name: 'Ville Aarnio',
