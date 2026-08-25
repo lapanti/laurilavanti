@@ -1,6 +1,6 @@
 ---
 import { getTagName } from '../../content/tags'
-import { colors, HEADER_SIZE, typographics } from '../../lib/styles'
+import { colors, typographics } from '../../lib/styles'
 
 interface Props {
     createdAt?: string
@@ -42,7 +42,6 @@ const tagsToRender = (tags ?? [])
         colorsDeepForest: colors.forestGreen,
         colorsLightSand: colors.lightSand,
         colorsTaivas700: colors.aquaInkSoft,
-        headerSize: HEADER_SIZE,
         metaFontFamily: typographics.meta.fontFamily,
         metaFontSize: typographics.meta.fontSize,
         metaFontWeight: typographics.meta.fontWeight,
@@ -52,7 +51,7 @@ const tagsToRender = (tags ?? [])
 >
     .art-head {
         background: var(--colorsLightSand);
-        padding: calc(var(--headerSize) + 64px) 0 56px;
+        padding: 64px 0 56px;
     }
 
     .art-meta {

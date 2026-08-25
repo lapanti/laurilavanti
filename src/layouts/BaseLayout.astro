@@ -23,6 +23,12 @@ interface Props {
     createdAt?: string
     description?: string
     faq?: Array<{ a: string; q: string }>
+    /**
+     * Signal Band visual rebrand: `hero` is the transparent bar over the front page's
+     * hero image; `solid` (default) is the light-sand bar every other page uses —
+     * independent of `plated`, since post/page layouts are plated but still solid-headed.
+     */
+    headerVariant?: 'hero' | 'solid'
     lang?: 'en' | 'fi' | 'sv'
     langAlternates?: Record<'en' | 'fi' | 'sv', string>
     noindex?: boolean
@@ -50,6 +56,7 @@ const {
     createdAt,
     description,
     faq,
+    headerVariant = 'solid',
     lang,
     langAlternates,
     noindex,
@@ -155,7 +162,7 @@ const {
             }
         </style>
         <div>
-            <Header lang={lang} variant={plated ? 'hero' : 'solid'} />
+            <Header lang={lang} variant={headerVariant} />
             <main class:list={{ plated }} id="main">
                 <slot name="banner" />
                 <article class:list={{ plated }}>
