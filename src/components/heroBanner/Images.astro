@@ -61,6 +61,12 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
             z-index: 1;
         }
 
+        /* NameLogo's "large" size renders ~138px wide; the front page's in-image mark
+           wants 268px (package 20260824 8pm/Site/home.html: .hero-left .mark). */
+        .mark :global(.name-logo) {
+            transform: rotate(-10deg) skew(-10deg) scale(1.94);
+        }
+
         .image-mobile {
             display: none;
         }

@@ -1,7 +1,8 @@
 ---
 import type { Lang, NavLink } from '../../content/nav'
 
-import { CONTENT_PADDING, CONTENT_SIZE } from '../../lib/styles'
+/** package 20260824 8pm/Site — every page's header shares this edge gutter (--pad-x). */
+const DESKTOP_PAD_X = '56px'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
@@ -15,19 +16,22 @@ interface Props {
 const { heroShowsMark = false, lang, links, variant = 'solid' } = Astro.props
 const navLinks = links.filter((link) => !link.switchToLang)
 const langLinks = links.filter((link) => link.switchToLang)
-const tone = variant === 'hero' ? 'dark' : 'light'
+/** The overhanging brand sits on the dark hero image and needs to be white; every
+ * other case (front-page hidden, or the solid light-sand bar) wants the dark mark. */
+const tone = variant === 'hero' && !heroShowsMark ? 'light' : 'dark'
 ---
 
-<style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>
+<style define:vars={{ desktopPadX: DESKTOP_PAD_X }}>
+    /* Every page's header spans the full width with this edge gutter, unlike the
+       body copy's own narrower centered measure (package 20260824 8pm/Site — shared
+       .sheet, --pad-x:56px, no max-width cap on the shell). */
     .container {
         display: none;
         align-items: center;
         flex-direction: row;
         gap: 24px;
-        margin: auto;
-        max-width: var(--contentSize);
-        padding-left: var(--contentPadding);
-        padding-right: var(--contentPadding);
+        padding-left: var(--desktopPadX);
+        padding-right: var(--desktopPadX);
         position: relative;
         width: 100%;
     }
@@ -45,9 +49,16 @@ const tone = variant === 'hero' ? 'dark' : 'light'
     }
 
     .brand.overhang {
-        left: 0;
+        left: var(--desktopPadX);
         position: absolute;
         top: 14px;
+    }
+
+    /* NameLogo's "small" size renders ~70px wide; the desktop nav wants a more
+       prominent 170px mark in every non-front-page context (package 20260824
+       8pm/Site/laurista.html and velkajarru.html both size the brand at 170px). */
+    .brand :global(.name-logo) {
+        transform: rotate(-10deg) skew(-10deg) scale(2.43);
     }
 
     nav {

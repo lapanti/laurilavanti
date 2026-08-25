@@ -39,7 +39,9 @@ const tone = variant === 'hero' ? 'light' : 'dark'
         margin-right: var(--contentPadding);
         max-width: var(--contentSize);
         min-width: 0;
-        width: 100%;
+        /* margins sit outside the box even under border-box, so 100% here would
+           overflow by 2x contentPadding — subtract them explicitly */
+        width: calc(100% - (var(--contentPadding) * 2));
     }
 
     .container > div {
@@ -60,6 +62,8 @@ const tone = variant === 'hero' ? 'light' : 'dark'
         height: var(--sizes3);
         width: var(--sizes3);
         right: var(--sizes05);
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 5;
         opacity: 0;
         cursor: pointer;
@@ -69,9 +73,11 @@ const tone = variant === 'hero' ? 'light' : 'dark'
         height: var(--sizes25);
         width: var(--sizes3);
         right: var(--sizes05);
+        top: 50%;
         padding-top: var(--sizes025);
         padding-bottom: var(--sizes025);
         position: absolute;
+        transform: translateY(-50%);
         z-index: 2;
         display: flex;
         flex-direction: column;
