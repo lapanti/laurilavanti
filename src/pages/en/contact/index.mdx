@@ -3,12 +3,16 @@ layout: '../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'Contact – councillor & lead developer'
 title: 'Contact'
+intro: "Welcome! I write and speak about digital independence, artificial intelligence, digitalisation more broadly, and economic policy. I'm especially interested in hearing others' thoughts and ideas on these topics."
 description: "Want to get in touch or follow Lauri Lavanti's work and thoughts? Find his phone number, email address, and social media channels here."
 slug: 'en/contact'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: 'Lauri-Lavanti-kivimuurin-edessa-katse-kameraan-vaaka'
-alt: 'Lauri Lavanti standing against a stone wall, looking directly at the camera. Photo: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
+alt: 'Lauri Lavanti standing in front of a glass-and-wood facade, looking at the camera. He is wearing a light blue floral shirt and a dark blazer. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 faq:
   - q: 'How can I contact Lauri Lavanti?'
     a: 'Lauri Lavanti can be reached by email (lauri@lavanti.fi), by phone (040 761 7605), or via social media (Instagram, LinkedIn, Bluesky, Mastodon, Threads, Facebook, TikTok).'
@@ -16,40 +20,43 @@ faq:
     a: 'Lauri is most active on Threads, LinkedIn, and Bluesky. He can also be found on Mastodon, Instagram, Facebook, and TikTok.'
 ---
 
-import SmartLink from '../../../components/SmartLink.astro'
-import H2 from '../../../components/H2.astro'
-import LI from '../../../components/LI.astro'
-import Link from '../../../components/Link.astro'
-import Paragraph from '../../../components/Paragraph.astro'
-import UL from '../../../components/UL.astro'
+import Chips from '../../../components/Chips.astro'
+import ChannelCard from '../../../components/contact/ChannelCard.astro'
+import ChannelGrid from '../../../components/contact/ChannelGrid.astro'
+import Lede from '../../../components/Lede.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Stripe from '../../../components/Stripe.astro'
 
-export const components = { a: SmartLink, h2: H2, p: Paragraph, ul: UL, li: LI }
+<Stripe size="slim" />
 
-## Get in touch
+<Plate eyebrow="Most direct" ground="offWhite" heading="Where can you reach me?">
+    <Lede>
+        I believe that the best solutions emerge together. That's why I want to hear from you, whether you're an expert, journalist, collaboration partner, or just interested in a discussion. I respond to all messages.
+    </Lede>
+    <ChannelGrid>
+        <ChannelCard href="mailto:lauri@lavanti.fi" kicker="Email" value="lauri@lavanti.fi" />
+        <ChannelCard href="tel:+358407617605" kicker="Phone" note="Also WhatsApp and Signal." value="040 761 7605" />
+    </ChannelGrid>
+</Plate>
 
-Welcome! I write and speak about digital independence, artificial intelligence, digitalisation more broadly, and economic policy. I'm especially interested in hearing others' thoughts and ideas on these topics.
+<Plate eyebrow="Elsewhere" ground="sand" heading="Social media">
+    <Chips
+        ariaLabel="Lauri's social media accounts"
+        items={[
+            { href: 'https://mastodon.social/@laurilavanti', label: 'Mastodon' },
+            { href: 'https://bsky.app/profile/lauri.lavanti.fi', label: 'Bluesky' },
+            { href: 'https://www.threads.com/@laurilavanti', label: 'Threads' },
+            { href: 'https://www.linkedin.com/in/laurilavanti', label: 'LinkedIn' },
+            { href: 'https://www.instagram.com/laurilavanti/', label: 'Instagram' },
+            { href: 'https://www.facebook.com/laurilavanti', label: 'Facebook' },
+            { href: 'https://www.tiktok.com/@laurilavanti', label: 'TikTok' },
+            { href: '/en/rss.xml', label: 'RSS feed' },
+        ]}
+    />
+</Plate>
 
-I believe that the best solutions emerge together. That's why I want to hear from you, whether you're an expert, journalist, collaboration partner, or just interested in a discussion. I respond to all messages.
-
-Send a message to one of my social media accounts or directly via email.
-
-## Newsletter
-
-Subscribe to <Link href="/en/newsletter/">my newsletter</Link> to receive my thoughts directly in your inbox.
-
-## Where can you reach me?
-
-Phone: 040 761 7605 (also WhatsApp and Signal)
-
-Email: [lauri@lavanti.fi](mailto:lauri@lavanti.fi)
-
-## Social media
-
-- Mastodon: [@laurilavanti@mastodon.social](https://mastodon.social/@laurilavanti)
-- Bluesky: [@lauri.lavanti.fi](https://bsky.app/profile/lauri.lavanti.fi)
-- Threads: [@laurilavanti](https://www.threads.com/@laurilavanti)
-- LinkedIn: [laurilavanti](https://www.linkedin.com/in/laurilavanti)
-- Instagram: [@laurilavanti](https://www.instagram.com/laurilavanti/)
-- Facebook: [laurilavanti](https://www.facebook.com/laurilavanti)
-- TikTok: [@laurilavanti](https://www.tiktok.com/@laurilavanti)
-- RSS for this page: [RSS feed](/en/rss.xml)
+<NewsletterPlate>
+    <NewsletterSubscribe lang="en" />
+</NewsletterPlate>

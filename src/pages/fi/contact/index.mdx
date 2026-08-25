@@ -3,12 +3,16 @@ layout: '../../../layouts/PageLayout.astro'
 lang: fi
 pageTitle: 'Ota yhteyttä – johtava ohjelmistokehittäjä'
 title: 'Ota yhteyttä'
+intro: 'Tervetuloa! Kirjoitan ja puhun digitaalisesta itsenäisyydestä, tekoälystä, digitalisaatiosta laajemminkin sekä taloudesta. Olen erityisen kiinnostunut kuulemaan myös muiden ajatuksia ja ideoita näiden teemojen ympärillä.'
 description: 'Haluatko ottaa yhteyttä tai seurata Lauri Lavannin toimintaa ja ajatuksia? Löydät puhelinnumeron, sähköpostin ja sosiaalisen median kanavat tältä sivulta.'
 slug: 'fi/contact'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-kivimuurin-edessa-katse-kameraan-vaaka
-alt: 'Lauri Lavanti seisoo kivimuuria vasten ja katsoo suoraan kameraan. Kuva: Markus Isomeri.'
+heroImage: Lauri-Lavanti-lasijulkisivun-edessa-pystykuva
+mobileHeroImage: Lauri-Lavanti-lasijulkisivun-edessa-nelio
+alt: 'Lauri Lavanti seisoo lasi- ja puujulkisivun edessä, katse kameraan. Päällä vaaleansininen kukkakuvioinen paita ja tumma bleiseri. Kuva: Markus Isomeri.'
+plated: true
+variant: 'split'
 faq:
   - q: 'Miten Lauri Lavantiin saa yhteyden?'
     a: 'Lauri Lavantiin saa yhteyden sähköpostilla (lauri@lavanti.fi), puhelimella (040 761 7605) tai sosiaalisen median kautta (Instagram, LinkedIn, Bluesky, Mastodon, Threads, Facebook, TikTok).'
@@ -16,41 +20,43 @@ faq:
     a: 'Lauri on aktiivisin Threadsissä, LinkedInissä ja Blueskyssa. Hänet löytää myös Mastodonista, Instagramista, Facebookista ja TikTokista.'
 ---
 
-import SmartLink from '../../../components/SmartLink.astro'
-import H2 from '../../../components/H2.astro'
-import LI from '../../../components/LI.astro'
-import Link from '../../../components/Link.astro'
-import Paragraph from '../../../components/Paragraph.astro'
-import UL from '../../../components/UL.astro'
+import Chips from '../../../components/Chips.astro'
+import ChannelCard from '../../../components/contact/ChannelCard.astro'
+import ChannelGrid from '../../../components/contact/ChannelGrid.astro'
+import Lede from '../../../components/Lede.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Stripe from '../../../components/Stripe.astro'
 
-export const components = { a: SmartLink, h2: H2, p: Paragraph, ul: UL, li: LI }
+<Stripe size="slim" />
 
-## Ollaan yhteydessä
+<Plate eyebrow="Suorin reitti" ground="offWhite" heading="Mistä minut saa kiinni?">
+    <Lede>
+        Uskon, että parhaat ratkaisut syntyvät yhdessä. Siksi haluan kuulla sinulta, olitpa sitten asiantuntija, toimittaja, yhteistyökumppani tai vain kiinnostunut keskustelemaan. Vastaan kaikkiin viesteihin.
+    </Lede>
+    <ChannelGrid>
+        <ChannelCard href="mailto:lauri@lavanti.fi" kicker="Sähköposti" value="lauri@lavanti.fi" />
+        <ChannelCard href="tel:+358407617605" kicker="Puhelin" note="Myös WhatsApp ja Signal." value="040 761 7605" />
+    </ChannelGrid>
+</Plate>
 
-Tervetuloa! Kirjoitan ja puhun digitaalisesta itsenäisyydestä, tekoälystä, digitalisaatiosta laajemminkin sekä taloudesta. Olen erityisen kiinnostunut kuulemaan myös muiden ajatuksia ja ideoita näiden teemojen ympärillä.
+<Plate eyebrow="Muualla" ground="sand" heading="Sosiaalinen media">
+    <Chips
+        ariaLabel="Laurin sosiaalisen median tilit"
+        items={[
+            { href: 'https://mastodon.social/@laurilavanti', label: 'Mastodon' },
+            { href: 'https://bsky.app/profile/lauri.lavanti.fi', label: 'Bluesky' },
+            { href: 'https://www.threads.com/@laurilavanti', label: 'Threads' },
+            { href: 'https://www.linkedin.com/in/laurilavanti', label: 'LinkedIn' },
+            { href: 'https://www.instagram.com/laurilavanti/', label: 'Instagram' },
+            { href: 'https://www.facebook.com/laurilavanti', label: 'Facebook' },
+            { href: 'https://www.tiktok.com/@laurilavanti', label: 'TikTok' },
+            { href: '/fi/rss.xml', label: 'RSS-syöte' },
+        ]}
+    />
+</Plate>
 
-Uskon, että parhaat ratkaisut syntyvät yhdessä. Siksi haluan kuulla sinulta, olitpa sitten asiantuntija, toimittaja, yhteistyökumppani tai vain kiinnostunut keskustelemaan. Vastaan kaikkiin viesteihin.
-
-Lähetä viesti jollekin sosiaalisen median tileistäni tai suoraan sähköpostiini.
-
-
-## Uutiskirje
-
-Tilaa <Link href="/fi/newsletter/">uutiskirjeeni</Link> ja saat ajatuksiani suoraan sähköpostiisi.
-
-## Mistä minut saa kiinni?
-
-Puhelin: 040 761 7605 (myös WhatsApp ja Signal)
-
-Sähköposti: [lauri@lavanti.fi](mailto:lauri@lavanti.fi)
-
-## Sosiaalinen media
-
-- Mastodon: [@laurilavanti@mastodon.social](https://mastodon.social/@laurilavanti)
-- Bluesky: [@lauri.lavanti.fi](https://bsky.app/profile/lauri.lavanti.fi)
-- Threads: [@laurilavanti](https://www.threads.com/@laurilavanti)
-- LinkedIn: [laurilavanti](https://www.linkedin.com/in/laurilavanti)
-- Instagram: [@laurilavanti](https://www.instagram.com/laurilavanti/)
-- Facebook: [laurilavanti](https://www.facebook.com/laurilavanti)
-- TikTok: [@laurilavanti](https://www.tiktok.com/@laurilavanti)
-- RSS tälle sivulle: [RSS-syöte](/fi/rss.xml)
+<NewsletterPlate>
+    <NewsletterSubscribe lang="fi" />
+</NewsletterPlate>
