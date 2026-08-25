@@ -158,6 +158,12 @@ const privacyHref = `/${lang}/privacy-policy/`
         color: var(--colorsOatSoft);
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+        /* one shared height for the field and the submit, so the two sit level when the
+           row is side by side. Derived from the button's own type spec — one 1.4em line
+           of 21px display type plus its 15.2px block padding — floored at the 44px
+           touch target. The loading state inherits it too, so the row cannot jump. */
+        --control-height: max(2.75rem, calc(21px * 1.4 + 30.4px));
+
         height: auto;
         width: 100%;
         float: left;
@@ -189,24 +195,29 @@ const privacyHref = `/${lang}/privacy-policy/`
         line-height: var(--sizes125);
         margin-bottom: 0;
         margin-top: 0;
+        min-height: var(--control-height);
         overflow-y: initial;
         padding: 14.4px 16px;
         width: 100%;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+        align-items: center;
         background-color: var(--colorsDeepForest) !important;
         border: 0 !important;
         border-radius: 0;
         box-shadow: none;
         color: var(--colorsOat) !important;
         cursor: pointer;
+        display: inline-flex;
         font-family: var(--fontFamiliesHeading);
         font-size: 21px !important;
         font-weight: 800;
         height: auto;
+        justify-content: center;
         letter-spacing: 0.08em !important;
         line-height: 1.4;
         margin: 0 !important;
+        min-height: var(--control-height);
         padding: 15.2px 32px !important;
         text-transform: uppercase !important;
         transition:
@@ -433,9 +444,7 @@ const privacyHref = `/${lang}/privacy-policy/`
                             </div>
 
                             <div class="ml-button-horizontal primary">
-                                <button class="primary" style="height: 2.75rem;" type="submit"
-                                    >{content.submitButton}</button
-                                >
+                                <button class="primary" type="submit">{content.submitButton}</button>
 
                                 <button class="loading" disabled="disabled" style="display: none;" type="button">
                                     <div class="ml-form-embedSubmitLoad"></div>
