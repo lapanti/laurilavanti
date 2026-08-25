@@ -174,12 +174,12 @@ describe('<Head />', () => {
     it('should emit a secondary FAQPage JSON-LD script when faq has 2 or more entries', async () => {
         const result = await renderAstroComponent(Head, {
             props: {
-                faq: [
-                    { a: 'Answer one.', q: 'Question one?' },
-                    { a: 'Answer two.', q: 'Question two?' },
-                ],
                 title: 'Test Blog Post',
                 type: 'BlogPosting',
+                visibleFaq: [
+                    { answer: 'Answer one.', question: 'Question one?' },
+                    { answer: 'Answer two.', question: 'Question two?' },
+                ],
             },
         })
 
@@ -206,9 +206,9 @@ describe('<Head />', () => {
     it('should not emit a FAQPage JSON-LD script when faq has fewer than 2 entries', async () => {
         const result = await renderAstroComponent(Head, {
             props: {
-                faq: [{ a: 'Answer one.', q: 'Question one?' }],
                 title: 'Test Blog Post',
                 type: 'BlogPosting',
+                visibleFaq: [{ answer: 'Answer one.', question: 'Question one?' }],
             },
         })
 
@@ -227,12 +227,12 @@ describe('<Head />', () => {
         const result = await renderAstroComponent(Head, {
             props: {
                 createdAt: '2025-01-01',
-                faq: [
-                    { a: 'Answer one.', q: 'Question one?' },
-                    { a: 'Answer two.', q: 'Question two?' },
-                ],
                 title: 'Test Blog Post',
                 type: 'BlogPosting',
+                visibleFaq: [
+                    { answer: 'Answer one.', question: 'Question one?' },
+                    { answer: 'Answer two.', question: 'Question two?' },
+                ],
             },
         })
 

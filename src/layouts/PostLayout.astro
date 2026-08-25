@@ -22,7 +22,6 @@ const {
     authors,
     description,
     externalPublications,
-    faq,
     heroImage,
     id,
     lang,
@@ -33,6 +32,7 @@ const {
     tags,
     title,
     updatedDate,
+    visibleFaq,
     wordCount,
 } = post
 
@@ -88,7 +88,6 @@ const breadcrumbs: BreadcrumbItem[] = [
     breadcrumbs={breadcrumbs}
     createdAt={publishDate}
     description={description}
-    faq={faq}
     lang={lang}
     langAlternates={langAlternates}
     ogImage={ogImage}
@@ -98,6 +97,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     title={pageTitle}
     type={BLOGPOSTING}
     updatedAt={updatedDate}
+    visibleFaq={visibleFaq}
     wordCount={wordCount}
 >
     <TitleBanner

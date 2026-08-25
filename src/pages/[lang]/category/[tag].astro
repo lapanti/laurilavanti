@@ -28,7 +28,6 @@ const heroImageAltFallback: Record<Lang, string> = {
     sv: 'Lauri Lavanti sitter på en pall och lutar sig mot ett högt bord. Han har på sig en svart kavaj och en blåvit blommig skjorta. I kavajfickan finns en flerfärgad bröstduk. En trappa i bakgrunden.',
 }
 
-const faq = tag.faq?.[lang]
 const metaDescription = tag.metaDescription[lang]
 const bodyParagraphs = tag.descriptions[lang]
 ---
@@ -36,7 +35,6 @@ const bodyParagraphs = tag.descriptions[lang]
 <PageLayout
     alt={tag.heroImageAlt?.[lang] ?? heroImageAltFallback[lang]}
     description={metaDescription}
-    faq={faq}
     heroImage={tag.heroImage ?? heroImageFallback}
     lang={lang}
     pageTitle={tag.pageTitle[lang]}

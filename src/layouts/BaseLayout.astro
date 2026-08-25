@@ -1,6 +1,7 @@
 ---
 /* eslint-disable astro/no-unused-css-selector */
 import type { AuthorEntry } from '../content/person'
+import type { VisibleFaqEntry } from '../lib/faq'
 import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
 
 import Footer from '../components/Footer.astro'
@@ -22,7 +23,6 @@ interface Props {
     breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
-    faq?: Array<{ a: string; q: string }>
     lang?: 'en' | 'fi' | 'sv'
     langAlternates?: Record<'en' | 'fi' | 'sv', string>
     noindex?: boolean
@@ -33,6 +33,7 @@ interface Props {
     title: string
     type?: JsonLdType
     updatedAt?: string
+    visibleFaq?: VisibleFaqEntry[]
     wordCount?: number
 }
 
@@ -41,7 +42,6 @@ const {
     breadcrumbs,
     createdAt,
     description,
-    faq,
     lang,
     langAlternates,
     noindex,
@@ -52,6 +52,7 @@ const {
     title,
     type,
     updatedAt,
+    visibleFaq,
     wordCount,
 } = Astro.props
 ---
@@ -64,7 +65,6 @@ const {
             breadcrumbs={breadcrumbs}
             createdAt={createdAt}
             description={description}
-            faq={faq}
             lang={lang}
             langAlternates={langAlternates}
             noindex={noindex}
@@ -75,6 +75,7 @@ const {
             title={title}
             type={type}
             updatedAt={updatedAt}
+            visibleFaq={visibleFaq}
             wordCount={wordCount}
         />
     </head>

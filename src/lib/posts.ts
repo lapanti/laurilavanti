@@ -4,6 +4,8 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 
+import { extractVisibleFaq, type VisibleFaqEntry } from './faq'
+
 export const stripImportsExports = (raw: string): string =>
     raw.replace(/^(import\s+.+|export\s+const\s+components\s*=.+)$/gm, '')
 
@@ -11,6 +13,7 @@ export type Post = CollectionEntry<'posts'>['data'] & {
     entry: CollectionEntry<'posts'>
     readingTime: number
     url: string
+    visibleFaq: VisibleFaqEntry[]
     wordCount: number
 }
 
@@ -35,6 +38,7 @@ async function loadAllPosts(): Promise<Post[]> {
                 entry,
                 readingTime: Math.ceil(wordCount / 200),
                 url: `/${entry.data.lang}/blog/${entry.data.id}/${entry.data.slug}/`,
+                visibleFaq: extractVisibleFaq(body),
                 wordCount,
             }
         })

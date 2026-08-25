@@ -10,7 +10,6 @@ type Props = MDXLayoutProps<{
     alt?: string
     backgroundImage?: string
     description?: string
-    faq?: Array<{ a: string; q: string }>
     heroImage?: string
     lang?: 'en' | 'fi' | 'sv'
     mobileHeroImage?: string
@@ -27,7 +26,6 @@ const {
     alt,
     backgroundImage,
     description,
-    faq,
     heroImage,
     lang,
     mobileHeroImage,
@@ -44,7 +42,6 @@ const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 
 <BaseLayout
     description={description}
-    faq={faq}
     lang={lang}
     ogImage={ogImage}
     ogImageAlt={alt}
