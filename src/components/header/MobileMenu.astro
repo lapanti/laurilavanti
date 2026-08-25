@@ -18,8 +18,8 @@ const tone = variant === 'hero' ? 'light' : 'dark'
 
 <style
     define:vars={{
+        colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
-        colorsPineGreen: colors.pineGreen,
         colorsWhite: colors.white,
         contentPadding: CONTENT_PADDING,
         contentSize: CONTENT_SIZE,
@@ -108,7 +108,7 @@ const tone = variant === 'hero' ? 'light' : 'dark'
     .links {
         align-items: center;
         background-color: var(--colorsDeepForest);
-        border-bottom: 0 solid var(--colorsPineGreen);
+        border-bottom: 0 solid var(--colorsDarkGreen);
         display: flex;
         flex-direction: column;
         gap: var(--sizes25);

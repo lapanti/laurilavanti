@@ -38,10 +38,10 @@ const licenseText: Record<Lang, string> = {
 
 <style
     define:vars={{
+        colorsAquaBlue: colors.aquaBlue,
         colorsDeepForest: colors.forestGreen,
         colorsFooterMuted: colors.footerMuted,
-        colorsOatYellow: colors.oatYellow,
-        colorsSkyAqua: colors.skyAqua,
+        colorsOat: colors.oat,
         gridAreasFooter: gridAreas.footer,
         headingFontFamily: typographics.eyebrow.fontFamily,
         headingFontSize: typographics.eyebrow.fontSize,
@@ -52,7 +52,7 @@ const licenseText: Record<Lang, string> = {
 >
     footer {
         background-color: var(--colorsDeepForest);
-        color: var(--colorsSkyAqua);
+        color: var(--colorsAquaBlue);
         grid-area: var(--gridAreasFooter);
         padding: 40px 0 36px;
     }
@@ -70,7 +70,7 @@ const licenseText: Record<Lang, string> = {
     }
 
     .foot-grid h2 {
-        color: var(--colorsOatYellow);
+        color: var(--colorsOat);
         font-family: var(--headingFontFamily);
         font-size: var(--headingFontSize);
         font-weight: var(--headingFontWeight);
@@ -86,14 +86,14 @@ const licenseText: Record<Lang, string> = {
     }
 
     .foot-grid a {
-        color: var(--colorsSkyAqua);
+        color: var(--colorsAquaBlue);
         font-size: 15px;
         line-height: 25.2px;
         text-decoration: none;
     }
 
     .foot-grid a:hover {
-        color: var(--colorsOatYellow);
+        color: var(--colorsOat);
         text-decoration: underline;
         text-underline-offset: 3px;
     }

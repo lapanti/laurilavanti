@@ -32,10 +32,10 @@ const privacyHref = `/${lang}/privacy-policy/`
 
 <style
     define:vars={{
+        colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
-        colorsOatInkSoft: colors.oatInkSoft,
-        colorsOatYellow: colors.oatYellow,
-        colorsPineGreen: colors.pineGreen,
+        colorsOat: colors.oat,
+        colorsOatSoft: colors.oatSoft,
         colorsWhite: colors.white,
         fontFamiliesHeading: signalBandFontFamilies.heading,
         fontFamiliesSans: signalBandFontFamilies.sans,
@@ -136,7 +136,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         float: left;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::placeholder {
-        color: var(--colorsOatInkSoft);
+        color: var(--colorsOatSoft);
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
         height: auto;
@@ -163,7 +163,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         border-style: solid;
         border-width: 3px;
         box-sizing: border-box;
-        caret-color: var(--colorsPineGreen);
+        caret-color: var(--colorsDarkGreen);
         color: var(--colorsDeepForest);
         font-family: var(--fontFamiliesSans);
         font-size: 17px;
@@ -179,7 +179,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         border: 0 !important;
         border-radius: 0;
         box-shadow: none;
-        color: var(--colorsOatYellow) !important;
+        color: var(--colorsOat) !important;
         cursor: pointer;
         font-family: var(--fontFamiliesHeading);
         font-size: 21px !important;
@@ -196,7 +196,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         width: 100%;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
-        background-color: var(--colorsPineGreen) !important;
+        background-color: var(--colorsDarkGreen) !important;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:active {
         transform: translate(2px, 2px);
@@ -238,7 +238,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         border: 0 !important;
         border-radius: 0 !important;
         box-shadow: none !important;
-        color: var(--colorsOatYellow) !important;
+        color: var(--colorsOat) !important;
         cursor: pointer;
         font-family: var(--fontFamiliesHeading) !important;
         font-size: 18px !important;

@@ -70,18 +70,21 @@ export const gridTemplateColumnsArticle =
  * pre-rebrand tokens kept alive only for components not yet migrated to the Signal
  * Band system (visual rebrand, in progress) — do not use them in new work.
  *
- * The Signal Band palette itself (visual rebrand): five signal colors — `pineGreen`,
- * `vividGreen`, `skyAqua`, `brightSky`, `signalBlue` — plus grounds and the matched
+ * The Signal Band palette itself (visual rebrand): five signal colors — `darkGreen`,
+ * `brightGreen`, `aquaBlue`, `brightSky`, `signalBlue` — plus grounds and the matched
  * accent-plate ink pairs (`oat*`, `peachInk*`, `aqua*`, `blue*`).
  */
 export const colors = {
+    aquaBlue: '#BFE1DE' as const,
     aquaInk: '#12312C' as const,
     aquaInkSoft: '#466661' as const,
     black: 'rgb(0, 0, 0)' as const,
     blueInk: '#122631' as const,
     blueInkSoft: '#465A66' as const,
     bluesky: '#0060df' as const,
+    brightGreen: '#009639' as const,
     brightSky: '#59B9F1' as const,
+    darkGreen: '#006845' as const,
     darkGreenText: 'rgb(0, 104, 69)' as const,
     darkMoss: 'rgb(72, 75, 0)' as const, // Darker version of Moss to get AAA accessibility contrast
     evening: 'rgb(0, 98, 114)' as const,
@@ -97,27 +100,24 @@ export const colors = {
     linkedin: '#0E76A8' as const,
     mastodon: '#6363ff' as const,
     moss: 'rgb(90, 94, 0)' as const,
+    oat: '#E4D77E' as const,
     oatInk: '#2A2A18' as const,
-    oatInkSoft: '#625E37' as const,
-    oatYellow: '#E4D77E' as const,
+    oatSoft: '#625E37' as const,
     offWhite: '#F5F5F5' as const,
     onOatBody: '#20463C' as const,
     onOatEyebrow: '#3E5C4E' as const,
     peach: 'rgb(248, 207, 169)' as const, // = Signal Band peach (#F8CFA9)
     peachInk: '#33251A' as const,
     peachInkSoft: '#6E5845' as const,
-    pineGreen: '#006845' as const,
     regionalPurple: '#865C97' as const,
     rss: '#f26522' as const,
     sand: 'rgb(214, 210, 196)' as const, // = Signal Band sand (#D6D2C4)
     signalBlue: '#317CE6' as const,
     sky: '#bbdde6' as const,
-    skyAqua: '#BFE1DE' as const,
     textPrimary: '#1B211C' as const,
     textSecondary: '#4A4E45' as const,
     threads: 'rgb(0, 0, 0)' as const,
     transparent: 'transparent' as const,
-    vividGreen: '#009639' as const,
     white: 'rgb(255, 255, 255)' as const,
 } as const
 

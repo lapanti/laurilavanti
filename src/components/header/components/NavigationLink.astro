@@ -21,12 +21,12 @@ const isLang = Boolean(switchToLang)
 
 <style
     define:vars={{
+        colorsAquaBlue: colors.aquaBlue,
+        colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
         colorsLightSand: colors.lightSand,
-        colorsOatYellow: colors.oatYellow,
-        colorsPineGreen: colors.pineGreen,
+        colorsOat: colors.oat,
         colorsSand: colors.sand,
-        colorsSkyAqua: colors.skyAqua,
         colorsWhite: colors.white,
         navFontFamily: signalBandFontFamilies.heading,
         navFontSize: typographics.nav.fontSize,
@@ -60,11 +60,11 @@ const isLang = Boolean(switchToLang)
     }
     .desktop.nav-link:hover,
     .desktop.nav-link:focus-visible {
-        color: var(--colorsPineGreen);
-        border-bottom-color: var(--colorsPineGreen);
+        color: var(--colorsDarkGreen);
+        border-bottom-color: var(--colorsDarkGreen);
     }
     .desktop.nav-link[aria-current='page'] {
-        border-bottom-color: var(--colorsPineGreen);
+        border-bottom-color: var(--colorsDarkGreen);
     }
     /* hero variant only — legibility over the hero image comes from this chip, not a gradient */
     .desktop.nav-link.hero {
@@ -84,7 +84,7 @@ const isLang = Boolean(switchToLang)
 
     /* mobile dropdown link (content) — oat yellow on the deep forest panel */
     .mobile.nav-link {
-        color: var(--colorsOatYellow);
+        color: var(--colorsOat);
         font-size: var(--navMobileFontSize);
         padding-block: 8px;
     }
@@ -95,13 +95,13 @@ const isLang = Boolean(switchToLang)
 
     /* mobile dropdown lang chip — active language gets a pine green chip */
     .mobile.lang-link {
-        color: var(--colorsSkyAqua);
+        color: var(--colorsAquaBlue);
         font-size: 16px;
         letter-spacing: 0.12em;
         padding: 6px 10px;
     }
     .mobile.lang-link[aria-current='page'] {
-        background-color: var(--colorsPineGreen);
+        background-color: var(--colorsDarkGreen);
         color: var(--colorsWhite);
     }
 </style>

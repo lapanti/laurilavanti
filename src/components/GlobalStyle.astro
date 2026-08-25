@@ -16,17 +16,17 @@ const { button, chip, eyebrow, linkRule } = typographics
         chipFontWeight: chip.fontWeight,
         chipLetterSpacing: chip.letterSpacing,
         chipLineHeight: chip.lineHeight,
+        colorsAquaBlue: colors.aquaBlue,
+        colorsBrightGreen: colors.brightGreen,
         colorsBrightSky: colors.brightSky,
+        colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
         colorsEyebrowNeutral: colors.eyebrowNeutral,
         colorsLightSand: colors.lightSand,
-        colorsOatYellow: colors.oatYellow,
+        colorsOat: colors.oat,
         colorsOffWhite: colors.offWhite,
-        colorsPineGreen: colors.pineGreen,
         colorsSand: colors.sand,
         colorsSignalBlue: colors.signalBlue,
-        colorsSkyAqua: colors.skyAqua,
-        colorsVividGreen: colors.vividGreen,
         colorsWhite: colors.white,
         eyebrowFontFamily: eyebrow.fontFamily,
         eyebrowFontSize: eyebrow.fontSize,
@@ -320,15 +320,15 @@ const { button, chip, eyebrow, linkRule } = typographics
         scrollbar-width: thin;
     }
     ::selection {
-        background: var(--colorsVividGreen);
+        background: var(--colorsBrightGreen);
         color: var(--colorsWhite);
     }
     :focus-visible {
-        outline: 3px solid var(--colorsPineGreen);
+        outline: 3px solid var(--colorsDarkGreen);
         outline-offset: 3px;
     }
     .on-dark :focus-visible {
-        outline-color: var(--colorsOatYellow);
+        outline-color: var(--colorsOat);
     }
 
     /* layout primitives — a full-bleed shell, a centered measure, and the section rhythm */
@@ -384,10 +384,10 @@ const { button, chip, eyebrow, linkRule } = typographics
         transform: translate(var(--press), var(--press));
     }
     .btn--green {
-        color: var(--colorsPineGreen);
+        color: var(--colorsDarkGreen);
     }
     .btn--green:hover {
-        background: var(--colorsPineGreen);
+        background: var(--colorsDarkGreen);
         color: var(--colorsOffWhite);
     }
     @media (max-width: 768px) {
@@ -400,7 +400,7 @@ const { button, chip, eyebrow, linkRule } = typographics
     /* link-rule — an underlined tracked-uppercase link, the only inline link treatment */
     .link-rule {
         border-bottom: 2px solid currentcolor;
-        color: var(--colorsPineGreen);
+        color: var(--colorsDarkGreen);
         display: inline-block;
         font-family: var(--linkRuleFontFamily);
         font-size: var(--linkRuleFontSize);
@@ -431,13 +431,13 @@ const { button, chip, eyebrow, linkRule } = typographics
         flex: 1;
     }
     .stripes i:nth-child(1) {
-        background: var(--colorsPineGreen);
+        background: var(--colorsDarkGreen);
     }
     .stripes i:nth-child(2) {
-        background: var(--colorsVividGreen);
+        background: var(--colorsBrightGreen);
     }
     .stripes i:nth-child(3) {
-        background: var(--colorsSkyAqua);
+        background: var(--colorsAquaBlue);
     }
     .stripes i:nth-child(4) {
         background: var(--colorsBrightSky);
