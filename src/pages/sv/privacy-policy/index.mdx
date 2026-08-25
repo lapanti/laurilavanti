@@ -3,9 +3,15 @@ layout: '../../../layouts/PageLayout.astro'
 lang: sv
 pageTitle: 'Integritetspolicy – om dina personuppgifter'
 title: 'Integritets­policy'
+intro: 'Vilka uppgifter som samlas in, hur de behandlas och vilka rättigheter prenumeranten har gällande sina personuppgifter.'
 description: 'Lauri Lavantis nyhetsbrevs integritetspolicy: vilka uppgifter samlas in, hur de behandlas och vilka rättigheter prenumeranten har gällande sina personuppgifter.'
 slug: 'sv/privacy-policy'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka'
+alt: 'Lauri Lavanti står framför en glasvägg, iklädd en mörk kavaj och en mönstrad skjorta. Foto: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import SmartLink from '../../../components/SmartLink.astro'
@@ -14,8 +20,13 @@ import H3 from '../../../components/H3.astro'
 import Paragraph from '../../../components/Paragraph.astro'
 import UL from '../../../components/UL.astro'
 import LI from '../../../components/LI.astro'
+import Plate from '../../../components/Plate.astro'
+import PostProse from '../../../components/post/PostProse.astro'
 
 export const components = { a: SmartLink, h2: H2, h3: H3, p: Paragraph, ul: UL, li: LI }
+
+<Plate ground="white">
+<PostProse>
 
 ## Vilka uppgifter samlar nyhetsbrevet in?
 
@@ -50,3 +61,6 @@ Personuppgifter behandlas inom EU/EES-området. Personuppgifter överförs inte 
 - Om du anser att de personuppgifter vi behandlar om dig är felaktiga, behandlas olagligt eller om du har invänt mot behandlingen, kan du begära att vi begränsar behandlingen av dina uppgifter.
 
 Förfrågningar om dina rättigheter kan du skicka till Lauri Lavanti via e-post: lauri@lavanti.fi.
+
+</PostProse>
+</Plate>

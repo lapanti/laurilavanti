@@ -3,9 +3,15 @@ layout: '../../../layouts/PageLayout.astro'
 lang: fi
 pageTitle: 'Tietosuojaseloste – henkilötietojen suoja'
 title: 'Tieto­suoja­seloste'
+intro: 'Mitä tietoja uutiskirjeen tilaajista kerätään, miten niitä käsitellään ja mitkä ovat tilaajan oikeudet henkilötietojensa suhteen.'
 description: 'Lauri Lavannin uutiskirjeen tietosuojaseloste: mitä tietoja kerätään, miten niitä käsitellään ja mitkä ovat tilaajan oikeudet henkilötietojensa suhteen.'
 slug: 'fi/privacy-policy'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
+heroImage: Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty
+mobileHeroImage: Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka
+alt: 'Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa. Kuva: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import SmartLink from '../../../components/SmartLink.astro'
@@ -14,8 +20,13 @@ import H3 from '../../../components/H3.astro'
 import Paragraph from '../../../components/Paragraph.astro'
 import UL from '../../../components/UL.astro'
 import LI from '../../../components/LI.astro'
+import Plate from '../../../components/Plate.astro'
+import PostProse from '../../../components/post/PostProse.astro'
 
 export const components = { a: SmartLink, h2: H2, h3: H3, p: Paragraph, ul: UL, li: LI }
+
+<Plate ground="white">
+<PostProse>
 
 ## Mitä tietoja uutiskirje kerää?
 
@@ -53,3 +64,6 @@ Oikeus saada informaatiota henkilötietojen käsittelystä
 - jos käsittelemämme sinua koskevat tiedot ovat mielestäsi virheellisiä, niitä käsitellään lainvastaisesti tai olet vastustanut tietojesi käsittelyä, voit pyytää meitä rajoittamaan tietojesi käsittelyä
 
 Voit esittää tietosuojaoikeuksiasi koskevan pyynnön Lauri Lavannille sähköpostilla (lauri@lavanti.fi).
+
+</PostProse>
+</Plate>

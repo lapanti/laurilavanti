@@ -3,9 +3,15 @@ layout: '../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'Privacy policy – how your data is handled'
 title: 'Privacy policy'
+intro: "What data is collected, how it is used, and what rights subscribers have regarding their personal information."
 description: "Privacy policy for Lauri Lavanti's newsletter: what data is collected, how it is used, and what rights subscribers have regarding their personal information."
 slug: 'en/privacy-policy'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka'
+alt: 'Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import SmartLink from '../../../components/SmartLink.astro'
@@ -14,8 +20,13 @@ import H3 from '../../../components/H3.astro'
 import Paragraph from '../../../components/Paragraph.astro'
 import UL from '../../../components/UL.astro'
 import LI from '../../../components/LI.astro'
+import Plate from '../../../components/Plate.astro'
+import PostProse from '../../../components/post/PostProse.astro'
 
 export const components = { a: SmartLink, h2: H2, h3: H3, p: Paragraph, ul: UL, li: LI }
+
+<Plate ground="white">
+<PostProse>
 
 ## What data does the newsletter collect?
 
@@ -50,3 +61,6 @@ Personal data is processed within the EU/EEA area. Personal data will not be tra
 - If you believe the personal data we process about you is inaccurate, processed unlawfully, or you have objected to the processing, you may request that we restrict the processing of your data.
 
 You can submit requests regarding your data protection rights to Lauri Lavanti via email (lauri@lavanti.fi).
+
+</PostProse>
+</Plate>
