@@ -3,12 +3,16 @@ layout: '../../../layouts/PageLayout.astro'
 lang: fi
 pageTitle: 'Uutiskirje – tekoälystä ja yhteiskunnasta'
 title: 'Uutiskirje digi­taalisesti itsenäisen Suomen taloudesta, sivis­tyksestä ja vapaudesta tekoälyn aika­kaudella'
+intro: 'Uutiskirje käsittelee yhtä aihetta kerrallaan: tekoälyä, digitaalista itsenäisyyttä, yksityisyyden suojaa ja teknologian yhteiskunnallisia vaikutuksia. Tarkoitus on käydä tulevien muutoksien vaikutuksia läpi syvällisesti, mutta ymmärrettävästi.'
 description: 'Tilaa Lauri Lavannin uutiskirje: asiantuntija-analyysiä tekoälystä, digitaalisesta itsenäisyydestä ja teknologian yhteiskunnallisista vaikutuksista.'
 slug: 'fi/newsletter'
-updatedDate: '2026-05-15'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla
-alt: 'Lauri Lavanti seisoo kädet sivuilla rento hymy kasvoillaan ja katsoo kameraan. Hänellä on päällään valkoinen kauluspaita sinisillä kukkakuvioilla ja tumma pikkutakki. Kuvan otti Erkki Laine.'
+heroImage: Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty
+mobileHeroImage: Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka
+alt: 'Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa. Kuva: Markus Isomeri.'
+plated: true
+variant: 'split'
 faq:
     - q: 'Mistä Lauri Lavannin uutiskirje kertoo?'
       a: 'Uutiskirje käsittelee yhtä aihetta kerrallaan: tekoälyä, digitaalista itsenäisyyttä, yksityisyyden suojaa ja teknologian yhteiskunnallisia vaikutuksia. Tarkoitus on käydä tulevien muutoksien vaikutuksia läpi syvällisesti, mutta ymmärrettävästi.'
@@ -16,26 +20,38 @@ faq:
       a: 'Uutiskirje ilmestyy noin kerran kahdessa viikossa. Jokainen kirje käsittelee yhtä aihetta kerrallaan.'
 ---
 
-import H2 from '../../../components/H2.astro'
+import FactsList from '../../../components/FactsList.astro'
+import Lede from '../../../components/Lede.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
-import Paragraph from '../../../components/Paragraph.astro'
-import UL from '../../../components/UL.astro'
-import LI from '../../../components/LI.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
+import Stripe from '../../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph, ul: UL, li: LI }
+<Stripe size="slim" />
 
-## Miten tekoäly muuttaa työtä ja taloutta?
+<Plate ground="sand" heading="Miten tekoäly muuttaa työtä ja taloutta?">
+    <Lede wide>
+        Uutiskirjeessäni pohdin, miten teknologia, erityisesti tekoäly, muuttaa yhteiskuntaamme, työtämme ja arkeamme. Käsittelen esimerkiksi sitä, miksi digitaalinen itsenäisyys on välttämättömyys yhteiskunnalle, miten tekoälyn aiheuttama työn muutos pakottaa meidät uudistumaan ja millaista tulevaisuutta haluamme rakentaa yhdessä.
+    </Lede>
+</Plate>
 
-Uutiskirjeessäni pohdin, miten teknologia, erityisesti tekoäly, muuttaa yhteiskuntaamme, työtämme ja arkeamme. Käsittelen esimerkiksi sitä, miksi digitaalinen itsenäisyys on välttämättömyys yhteiskunnalle, miten tekoälyn aiheuttama työn muutos pakottaa meidät uudistumaan ja millaista tulevaisuutta haluamme rakentaa yhdessä.
+<Plate ground="offWhite">
+    <Prose>
+        Uskon, että teknologian tulee mahdollistaa uusia ratkaisuja. Siksi korostan kestäviä innovaatioita ja herätän keskustelua siitä, miten voimme hyödyntää teknologian tarjoamia mahdollisuuksia. Tavoitteenani on tarjota ajatuksia herättävää, faktoihin perustuvaa ja ratkaisulähtöistä sisältöä.
+    </Prose>
+</Plate>
 
-Uskon, että teknologian tulee mahdollistaa uusia ratkaisuja. Siksi korostan kestäviä innovaatioita ja herätän keskustelua siitä, miten voimme hyödyntää teknologian tarjoamia mahdollisuuksia. Tavoitteenani on tarjota ajatuksia herättävää, faktoihin perustuvaa ja ratkaisulähtöistä sisältöä.
+<Plate ground="gray" heading="Viimeaikaisia aiheita">
+    <FactsList
+        items={[
+            'Ikärajat someen — miten muualla on tehty, miten pitäisi tehdä, ja pitäisikö ollenkaan?',
+            'Tekoälyn väistämättömyys — olemmeko aktiivisia toimijoita vai muutosten kohde.',
+            'Datakeskukset Suomessa — ovatko ne meille uhka vai mahdollisuus.',
+        ]}
+    />
+</Plate>
 
-## Viimeaikaisia aiheita
-
-- Ikärajat someen — miten muualla on tehty, miten pitäisi tehdä, ja pitäisikö ollenkaan?
-- Tekoälyn väistämättömyys — olemmeko aktiivisia toimijoita vai muutosten kohde
-- Datakeskukset Suomessa — ovatko ne meille uhka vai mahdollisuus
-
-Tilaa uutiskirjeeni, niin saat seuraavan kirjeen sähköpostiisi.
-
-<NewsletterSubscribe lang="fi" />
+<NewsletterPlate>
+    <NewsletterSubscribe lang="fi" />
+</NewsletterPlate>

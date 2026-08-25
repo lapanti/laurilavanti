@@ -3,12 +3,16 @@ layout: '../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'Newsletter – AI, technology and society'
 title: "Newsletter on digitally independent Finland's economy, enlight­enment, and freedom in the age of AI"
+intro: 'The newsletter covers one topic at a time: AI, digital independence, privacy, and the societal impacts of technology. The aim is to go through the effects of upcoming changes thoroughly, yet in an accessible way.'
 description: "Subscribe to Lauri Lavanti's newsletter: expert analysis on AI, digital independence, and the societal impacts of technology."
 slug: 'en/newsletter'
-updatedDate: '2026-05-15'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla
-alt: 'Lauri Lavanti standing with arms at his sides, a relaxed smile and looking at the camera. He is wearing a white shirt with blue flower patterns and a dark jacket. Photo was taken by Erkki Laine.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka'
+alt: 'Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 faq:
     - q: "What is Lauri Lavanti's newsletter about?"
       a: 'The newsletter covers one topic at a time: AI, digital independence, privacy, and the societal impacts of technology. The aim is to go through the effects of upcoming changes thoroughly, yet in an accessible way.'
@@ -16,26 +20,38 @@ faq:
       a: 'The newsletter comes out roughly once every two weeks. Each letter covers one topic at a time.'
 ---
 
-import H2 from '../../../components/H2.astro'
+import FactsList from '../../../components/FactsList.astro'
+import Lede from '../../../components/Lede.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
-import Paragraph from '../../../components/Paragraph.astro'
-import UL from '../../../components/UL.astro'
-import LI from '../../../components/LI.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
+import Stripe from '../../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph, ul: UL, li: LI }
+<Stripe size="slim" />
 
-## How is AI transforming work and the economy?
+<Plate ground="sand" heading="How is AI transforming work and the economy?">
+    <Lede wide>
+        In my newsletter, I explore how technology – especially artificial intelligence – is transforming our society, work, and daily lives. I address topics such as why digital independence is essential for society, how AI-driven changes in work force us to innovate, and what kind of future we want to build together.
+    </Lede>
+</Plate>
 
-In my newsletter, I explore how technology – especially artificial intelligence – is transforming our society, work, and daily lives. I address topics such as why digital independence is essential for society, how AI-driven changes in work force us to innovate, and what kind of future we want to build together.
+<Plate ground="offWhite">
+    <Prose>
+        I believe that technology should enable new solutions. That's why I emphasize sustainable innovations and spark conversation about how we can leverage the opportunities technology provides. My goal is to provide thought-provoking, fact-based, and solution-oriented content.
+    </Prose>
+</Plate>
 
-I believe that technology should enable new solutions. That's why I emphasize sustainable innovations and spark conversation about how we can leverage the opportunities technology provides. My goal is to provide thought-provoking, fact-based, and solution-oriented content.
+<Plate ground="gray" heading="Recent topics">
+    <FactsList
+        items={[
+            'Age limits on social media — how others have done it, how it should be done, and should it be done at all?',
+            'The inevitability of AI — are we active agents or subjects of change.',
+            'Data centres in Finland — are they a threat or an opportunity for us.',
+        ]}
+    />
+</Plate>
 
-## Recent topics
-
-- Age limits on social media — how others have done it, how it should be done, and should it be done at all?
-- The inevitability of AI — are we active agents or subjects of change
-- Data centres in Finland — are they a threat or an opportunity for us
-
-Subscribe to my newsletter and you'll get the next issue in your inbox.
-
-<NewsletterSubscribe lang="en" />
+<NewsletterPlate>
+    <NewsletterSubscribe lang="en" />
+</NewsletterPlate>
