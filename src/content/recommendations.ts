@@ -172,19 +172,18 @@ export const recommendations: Recommendation[] = [
             'Eduskuntaan tarvitaan enemmän ihmisiä, jotka ymmärtävät sekä taloudesta että teknologiasta. Yhtenä Digitaalinen itsenäisyys -kansalaisaloitteen perustajista Lauri tunnistaa, miten Suomen tulisi toimia yhteiskuntaa monin tavoin muokkaavan teknologisen murroksen edessä. Laurilla on vahva analyyttinen ote, kyky hahmottaa laajoja kokonaisuuksia ja taito tehdä monimutkaisistakin asioista ymmärrettäviä. Hän on myös poikkeuksellisen sinnikäs ja työtä pelkäämätön.',
     },
     {
-        // No portrait supplied — the card renders the quote only.
-        image: '',
+        image: 'Harri-Kiljander',
         locales: {
             en: {
-                alt: '',
+                alt: 'Photo of Harri Kiljander. He is standing on the deck of a sailboat wearing sunglasses and a neon-green beanie, dressed in a yellow sailing jacket and a life vest.',
                 title: 'CEO, Alpha Design Partners',
             },
             fi: {
-                alt: '',
+                alt: 'Kuva Harri Kiljanderista. Hän seisoo purjeveneen kannella aurinkolasit ja neonvihreä pipo päässään, yllään keltainen purjehdustakki ja pelastusliivi.',
                 title: 'Toimitusjohtaja, Alpha Design Partners',
             },
             sv: {
-                alt: '',
+                alt: 'Foto av Harri Kiljander. Han står på däck på en segelbåt med solglasögon och en neongrön mössa, iklädd en gul seglarjacka och en flytväst.',
                 title: 'VD, Alpha Design Partners',
             },
         },
