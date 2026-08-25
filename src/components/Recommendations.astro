@@ -2,7 +2,6 @@
 import type { Lang } from '../content/nav'
 import type { Recommendation as RecommendationType } from '../content/recommendations'
 
-import { sizes } from '../lib/styles'
 import Recommendation from './recommendations/Recommendation.astro'
 
 interface Props {
@@ -13,27 +12,26 @@ interface Props {
 const { recommendations, lang } = Astro.props
 ---
 
-<style
-    define:vars={{
-        sizes2: sizes[2],
-        sizes8: sizes[8],
-    }}
->
+<style>
     ul {
         display: grid;
-        gap: var(--sizes2);
-        grid-column-start: 3;
+        gap: 24px;
         grid-template-columns: 1fr;
         list-style: none;
-        margin-bottom: var(--sizes2);
-        margin-top: var(--sizes2);
         padding: 0;
+        padding-top: 32px;
+    }
+
+    @media (min-width: 769px) {
+        ul {
+            gap: 40px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
     }
 
     @media (min-width: 1200px) {
         ul {
-            gap: var(--sizes8);
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 </style>

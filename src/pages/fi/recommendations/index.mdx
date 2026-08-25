@@ -2,45 +2,53 @@
 layout: '../../../layouts/PageLayout.astro'
 lang: fi
 pageTitle: 'Suosituksia ja kokemuksia Laurista'
-title: 'Suosituksia ja kokemuksia Laurista'
+title: 'Suosituksia ja kokemuksia'
+emphasis: 'Laurista'
+intro: 'Tällä sivulla on muiden ihmisten suosituksia ja kommentteja Lauri Lavannista.'
 description: 'Näin muut puhuvat Lauri Lavannista — suosituksia, kokemuksia ja kannustuksia kollegoilta, yhteisön jäseniltä ja äänestäjiltä.'
 slug: 'fi/recommendations'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-auditoriossa-hymyilee-vaaka
-alt: 'Lauri Lavanti istuu auditoriossa ja hymyilee kameralle. Kuva: Markus Isomeri.'
+heroImage: Lauri-Lavanti-lasijulkisivun-edessa-pystykuva
+mobileHeroImage: Lauri-Lavanti-lasijulkisivun-edessa-nelio
+alt: 'Lauri Lavanti seisoo lasi- ja puujulkisivun edessä, katse kameraan. Päällä vaaleansininen kukkakuvioinen paita ja tumma bleiseri. Kuva: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
+import FactsList from '../../../components/FactsList.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
 import Recommendations from '../../../components/Recommendations.astro'
-import SummaryBox from '../../../components/SummaryBox.astro'
+import Stripe from '../../../components/Stripe.astro'
 import { recommendations } from '../../../content/recommendations'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-<SummaryBox
-    ariaLabel="Miksi valita Lauri?"
-    lang="fi"
-    summaryRows={[
-        'Lauri paikkaa eduskunnan teknologia- ja tietopolitiikan osaamisvajetta. Juuri hänen kaltaisiaan asiantuntijoita tarvitaan.',
-        'Lauri on älykäs ja osaava vaikuttaja. Laurin yhteistyökykyä arvostetaan myös työelämässä ja yli puoluerajojen.',
-        'Lauri yhdistää teknologian, talouden ja oikeudenmukaisuuden. Hänellä on visio paremmasta yhteiskunnasta.',
-        'Lauri on Suomen digitaalisen itsenäisyyden ajaja. Hänellä on keskiössä ihmislähtöiset ja taloudellisesti kestävät ratkaisut.',
-        'Tälle sivulle on koottuna Lauria tuntevien suosituksia.'
-    ]}
-    title="Miksi valita Lauri?"
-/>
+<Plate eyebrow="Suositukset" ground="offWhite" heading="Miksi valita Lauri?">
+    <FactsList
+        items={[
+            'Lauri paikkaa eduskunnan teknologia- ja tietopolitiikan osaamisvajetta. Juuri hänen kaltaisiaan asiantuntijoita tarvitaan.',
+            'Lauri on älykäs ja osaava vaikuttaja. Laurin yhteistyökykyä arvostetaan myös työelämässä ja yli puoluerajojen.',
+            'Lauri yhdistää teknologian, talouden ja oikeudenmukaisuuden. Hänellä on visio paremmasta yhteiskunnasta.',
+            'Lauri on Suomen digitaalisen itsenäisyyden ajaja. Hänellä on keskiössä ihmislähtöiset ja taloudellisesti kestävät ratkaisut.',
+        ]}
+    />
+</Plate>
 
-Tällä sivulla on muiden ihmisten suosituksia ja kommentteja Lauri Lavannista.
+<Plate ground="sand" heading="Miksi ihmiset suosittelevat Lauria?">
+    <Prose>
+        <p>Alla olevat suositukset kertovat Laurista enemmän kuin yksikään ansioluettelo. Ne tulevat ihmisiltä, jotka ovat työskennelleet hänen kanssaan, seuranneet hänen politiikkaansa tai tuntevat hänet henkilökohtaisesti – yrittäjiltä, kansanedustajilta, kollegoilta ja luottamushenkilöiltä yli puoluerajojen.</p>
+        <p>Yhteinen viesti toistuu: Lauri yhdistää teknologian ja talouden syväosaamisen oikeudenmukaisuuteen ja ihmisläheisyyteen. Hän kuuntelee, rakentaa siltoja ja pitää kiinni periaatteista silloinkin, kun se on hankalaa.</p>
+    </Prose>
+</Plate>
 
-## Miksi ihmiset suosittelevat Lauria?
+<Plate ground="gray">
+    <Recommendations lang="fi" recommendations={recommendations} />
+</Plate>
 
-Alla olevat suositukset kertovat Laurista enemmän kuin yksikään ansioluettelo. Ne tulevat ihmisiltä, jotka ovat työskennelleet hänen kanssaan, seuranneet hänen politiikkaansa tai tuntevat hänet henkilökohtaisesti – yrittäjiltä, kansanedustajilta, kollegoilta ja luottamushenkilöiltä yli puoluerajojen.
-
-Yhteinen viesti toistuu: Lauri yhdistää teknologian ja talouden syväosaamisen oikeudenmukaisuuteen ja ihmisläheisyyteen. Hän kuuntelee, rakentaa siltoja ja pitää kiinni periaatteista silloinkin, kun se on hankalaa.
-
-Lue suositukset alta!
-
-
-<Recommendations recommendations={recommendations} lang="fi" />
+<NewsletterPlate>
+    <NewsletterSubscribe lang="fi" />
+</NewsletterPlate>

@@ -2,44 +2,53 @@
 layout: '../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'Endorsements and testimonials about Lauri'
-title: 'Endorse­ments and testi­monials about Lauri'
+title: 'Endorse­ments and testi­monials'
+emphasis: 'about Lauri'
+intro: 'On this page, you will find recommendations and comments about Lauri Lavanti.'
 description: 'What others say about Lauri Lavanti — endorsements, testimonials, and encouragements from colleagues, community members, and voters.'
 slug: 'en/recommendations'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-auditoriossa-hymyilee-vaaka
-alt: 'Lauri Lavanti sitting in an auditorium, smiling at the camera. Photo: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
+alt: 'Lauri Lavanti standing in front of a glass-and-wood facade, looking at the camera. He is wearing a light blue floral shirt and a dark blazer. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
+import FactsList from '../../../components/FactsList.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
 import Recommendations from '../../../components/Recommendations.astro'
-import SummaryBox from '../../../components/SummaryBox.astro'
+import Stripe from '../../../components/Stripe.astro'
 import { recommendations } from '../../../content/recommendations'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-<SummaryBox
-    ariaLabel="Why choose Lauri?"
-    lang="en"
-    summaryRows={[
-        'Lauri fills the expertise gap in technology and information policy in Parliament. Experts like him are exactly what we need.',
-        'Lauri is an intelligent and skilled influencer. His ability to collaborate is also valued in the workplace and across party lines.',
-        'Lauri combines technology, economics, and justice. He has a vision for a better society.',
-        'Lauri advocates for Finland\'s digital sovereignty, focusing on human-centered and economically sustainable solutions.',
-        'This page features recommendations from people who know Lauri.',
-    ]}
-    title="Why choose Lauri?"
-/>
+<Plate eyebrow="Recommendations" ground="offWhite" heading="Why choose Lauri?">
+    <FactsList
+        items={[
+            'Lauri fills the expertise gap in technology and information policy in Parliament. Experts like him are exactly what we need.',
+            'Lauri is an intelligent and skilled influencer. His ability to collaborate is also valued in the workplace and across party lines.',
+            'Lauri combines technology, economics, and justice. He has a vision for a better society.',
+            "Lauri advocates for Finland's digital sovereignty, focusing on human-centered and economically sustainable solutions.",
+        ]}
+    />
+</Plate>
 
-On this page, you will find recommendations and comments about Lauri Lavanti.
+<Plate ground="sand" heading="Why do people recommend Lauri?">
+    <Prose>
+        <p>The recommendations below say more about Lauri than any résumé. They come from people who have worked with him, followed his politics, or know him personally – entrepreneurs, members of parliament, colleagues, and elected officials across party lines.</p>
+        <p>One message recurs: Lauri combines deep expertise in technology and the economy with fairness and humanity. He listens, builds bridges, and holds to his principles even when it is hard.</p>
+    </Prose>
+</Plate>
 
-## Why do people recommend Lauri?
+<Plate ground="gray">
+    <Recommendations lang="en" recommendations={recommendations} />
+</Plate>
 
-The recommendations below say more about Lauri than any résumé. They come from people who have worked with him, followed his politics, or know him personally – entrepreneurs, members of parliament, colleagues, and elected officials across party lines.
-
-One message recurs: Lauri combines deep expertise in technology and the economy with fairness and humanity. He listens, builds bridges, and holds to his principles even when it is hard.
-
-Read the recommendations below!
-
-<Recommendations recommendations={recommendations} lang="en" />
+<NewsletterPlate>
+    <NewsletterSubscribe lang="en" />
+</NewsletterPlate>

@@ -1,6 +1,6 @@
 ---
 import { getImageSrcset } from '../../lib/images'
-import { fontFamilies, fontSizes, fontWeights, sizes } from '../../lib/styles'
+import { colors, typographics } from '../../lib/styles'
 
 interface Props {
     alt: string
@@ -16,24 +16,27 @@ const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
 
 <style
     define:vars={{
-        fontFamiliesMono: fontFamilies.mono,
-        fontFamiliesSans: fontFamilies.sans,
-        fontSizes1: fontSizes[1].fontSize,
-        fontWeightsMedium: fontWeights.medium,
-        fontWeightsRegular: fontWeights.regular,
-        lineHeight1: fontSizes[1].lineHeight,
-        sizes05: sizes[0.5],
-        sizes1: sizes[1],
+        colorsDarkGreen: colors.darkGreen,
+        colorsSand: colors.sand,
+        colorsTextPrimary: colors.textPrimary,
+        colorsTextSecondary: colors.textSecondary,
+        metaFontFamily: typographics.meta.fontFamily,
+        metaFontWeight: typographics.meta.fontWeight,
+        metaLetterSpacing: typographics.meta.letterSpacing,
+        pillarAnswerFontFamily: typographics.pillarAnswer.fontFamily,
+        pillarAnswerFontSize: typographics.pillarAnswer.fontSize,
+        pillarAnswerLineHeight: typographics.pillarAnswer.lineHeight,
     }}
 >
     article {
+        border-top: 5px solid var(--colorsSand);
         display: flex;
         flex-direction: column;
-        gap: var(--sizes1);
+        gap: 16px;
+        padding-top: 16px;
     }
 
     .portrait {
-        border-radius: 50%;
         overflow: hidden;
         width: 100%;
     }
@@ -46,33 +49,33 @@ const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
 
     blockquote {
         margin: 0;
-        padding-left: var(--sizes1);
     }
 
     p {
-        font-family: var(--fontFamiliesMono);
-        font-size: var(--fontSizes1);
-        font-weight: var(--fontWeightsRegular);
-        line-height: var(--lineHeight1);
+        color: var(--colorsTextPrimary);
+        font-family: var(--pillarAnswerFontFamily);
+        font-size: var(--pillarAnswerFontSize);
+        font-style: normal;
+        line-height: var(--pillarAnswerLineHeight);
         margin: 0;
     }
 
     footer {
         display: flex;
         flex-direction: column;
-        font-family: var(--fontFamiliesSans);
-        font-size: var(--fontSizes1);
-        line-height: var(--lineHeight1);
-        margin-top: var(--sizes05);
+        font-family: var(--metaFontFamily);
+        margin-top: 12px;
     }
 
     footer cite {
+        color: var(--colorsDarkGreen);
         font-style: normal;
-        font-weight: var(--fontWeightsMedium);
+        font-weight: var(--metaFontWeight);
     }
 
     footer span {
-        font-weight: var(--fontWeightsRegular);
+        color: var(--colorsTextSecondary);
+        letter-spacing: var(--metaLetterSpacing);
     }
 </style>
 <article>

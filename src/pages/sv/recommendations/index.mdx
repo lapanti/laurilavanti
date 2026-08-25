@@ -2,44 +2,53 @@
 layout: '../../../layouts/PageLayout.astro'
 lang: sv
 pageTitle: 'Rekommendationer och vittnesbörd om Lauri'
-title: 'Rekommen­dationer och vittnesmål om Lauri'
+title: 'Rekommen­dationer och vittnesbörd'
+emphasis: 'om Lauri'
+intro: 'På denna sida finns rekommendationer och kommentarer om Lauri Lavanti.'
 description: 'Så här talar andra om Lauri Lavanti — rekommendationer, vittnesmål och uppmuntran från kollegor, samhällsmedlemmar och väljare.'
 slug: 'sv/recommendations'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-auditoriossa-hymyilee-vaaka
-alt: 'Lauri Lavanti sitter i en hörsal och ler mot kameran. Foto: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
+alt: 'Lauri Lavanti står framför en glas- och träfasad, blicken mot kameran. Han bär en ljusblå blommig skjorta och en mörk kavaj. Foto: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
+import FactsList from '../../../components/FactsList.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
 import Recommendations from '../../../components/Recommendations.astro'
-import SummaryBox from '../../../components/SummaryBox.astro'
+import Stripe from '../../../components/Stripe.astro'
 import { recommendations } from '../../../content/recommendations'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-<SummaryBox
-    ariaLabel="Varför välja Lauri?"
-    lang="sv"
-    summaryRows={[
-        'Lauri fyller riksdagens kunskapsbrist inom teknik- och informationspolitik. Just sådana experter som han behövs.',
-        'Lauri är en intelligent och skicklig påverkare. Hans samarbetsförmåga uppskattas också i arbetslivet och över partigränserna.',
-        'Lauri förenar teknik, ekonomi och rättvisa. Han har en vision om ett bättre samhälle.',
-        'Lauri driver Finlands digitala självständighet. Han fokuserar på människoorienterade och ekonomiskt hållbara lösningar.',
-        'På denna sida har vi samlat rekommendationer från personer som känner Lauri.',
-    ]}
-    title="Varför välja Lauri?"
-/>
+<Plate eyebrow="Rekommendationer" ground="offWhite" heading="Varför välja Lauri?">
+    <FactsList
+        items={[
+            'Lauri fyller riksdagens kunskapsbrist inom teknik- och informationspolitik. Just sådana experter som han behövs.',
+            'Lauri är en intelligent och skicklig påverkare. Hans samarbetsförmåga uppskattas också i arbetslivet och över partigränserna.',
+            'Lauri förenar teknik, ekonomi och rättvisa. Han har en vision om ett bättre samhälle.',
+            'Lauri driver Finlands digitala självständighet. Han fokuserar på människoorienterade och ekonomiskt hållbara lösningar.',
+        ]}
+    />
+</Plate>
 
-På denna sida finns rekommendationer och kommentarer om Lauri Lavanti.
+<Plate ground="sand" heading="Varför rekommenderar människor Lauri?">
+    <Prose>
+        <p>Rekommendationerna nedan säger mer om Lauri än någon meritförteckning. De kommer från människor som har arbetat med honom, följt hans politik eller känner honom personligen – företagare, riksdagsledamöter, kollegor och förtroendevalda över partigränserna.</p>
+        <p>Ett gemensamt budskap återkommer: Lauri förenar djup kunskap om teknik och ekonomi med rättvisa och medmänsklighet. Han lyssnar, bygger broar och håller fast vid sina principer också när det är svårt.</p>
+    </Prose>
+</Plate>
 
-## Varför rekommenderar människor Lauri?
+<Plate ground="gray">
+    <Recommendations lang="sv" recommendations={recommendations} />
+</Plate>
 
-Rekommendationerna nedan säger mer om Lauri än någon meritförteckning. De kommer från människor som har arbetat med honom, följt hans politik eller känner honom personligen – företagare, riksdagsledamöter, kollegor och förtroendevalda över partigränserna.
-
-Ett gemensamt budskap återkommer: Lauri förenar djup kunskap om teknik och ekonomi med rättvisa och medmänsklighet. Han lyssnar, bygger broar och håller fast vid sina principer också när det är svårt.
-
-Läs rekommendationerna nedan!
-
-<Recommendations recommendations={recommendations} lang="sv" />
+<NewsletterPlate>
+    <NewsletterSubscribe lang="sv" />
+</NewsletterPlate>
