@@ -72,7 +72,14 @@ const decodePathname = (pathname) => {
 }
 
 const finding = (code, file, message) => ({ code, file, message })
-const normalizeText = (value) => value.replace(/\s+/g, ' ').trim()
+const normalizeText = (value) =>
+    value
+        .normalize('NFKC')
+        .replace(/\u00ad/g, '')
+        .replace(/[\u2018\u2019]/g, "'")
+        .replace(/[\u201c\u201d]/g, '"')
+        .replace(/\s+/g, ' ')
+        .trim()
 
 const listFiles = async (directory) => {
     const entries = await readdir(directory, { withFileTypes: true })

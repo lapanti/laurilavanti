@@ -78,4 +78,30 @@ visible code
             { answer: 'Visible diagram visible code', question: 'What is visible?' },
         ])
     })
+
+    it('preserves punctuation between adjacent inline links', () => {
+        const markdown = `
+## What is the range?
+
+The range is [50](https://example.com/50)–[70](https://example.com/70) euros.
+`
+
+        expect(extractVisibleFaq(markdown)).toEqual([
+            { answer: 'The range is 50–70 euros.', question: 'What is the range?' },
+        ])
+    })
+
+    it('ignores non-rendered MDX comments inside answer sections', () => {
+        const markdown = `
+## What is visible?
+
+{/* reviewer note */}
+
+Visible answer.
+
+{/* [SCHEMA: BlogPosting required] */}
+`
+
+        expect(extractVisibleFaq(markdown)).toEqual([{ answer: 'Visible answer.', question: 'What is visible?' }])
+    })
 })

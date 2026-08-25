@@ -20,6 +20,8 @@ const normalizeText = (value: string): string =>
         .replace(/\s+([,.;:!?])/g, '$1')
         .trim()
 
+const inlineContainers = new Set(['delete', 'emphasis', 'heading', 'link', 'linkReference', 'paragraph', 'strong'])
+
 const visibleText = (node: MarkdownNode): string => {
     switch (node.type) {
         case 'code':
@@ -33,14 +35,15 @@ const visibleText = (node: MarkdownNode): string => {
         case 'thematicBreak':
             return ''
         default:
-            return node.children?.map(visibleText).join(' ') ?? ''
+            return node.children?.map(visibleText).join(inlineContainers.has(node.type) ? '' : ' ') ?? ''
     }
 }
 
 const isH2 = (node: MarkdownNode): boolean => node.type === 'heading' && node.depth === 2
 
 export const extractVisibleFaq = (markdown: string): VisibleFaqEntry[] => {
-    const tree = unified().use(remarkParse).parse(markdown) as MarkdownNode
+    const visibleMarkdown = markdown.replace(/\{\/\*[\s\S]*?\*\/\}/g, '')
+    const tree = unified().use(remarkParse).parse(visibleMarkdown) as MarkdownNode
     const nodes = tree.children ?? []
     const entries: VisibleFaqEntry[] = []
 
