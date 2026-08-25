@@ -1,5 +1,7 @@
 interface NewsletterLocale {
     description: string
+    /** The tracked-uppercase label above the heading, shown in the split plate layout. */
+    eyebrow: string
     emailPlaceholder: string
     heading: string
     loadingLabel: string
@@ -16,6 +18,7 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
         description:
             'Subscribe to my newsletter and get analysis on the latest developments in AI and technology, and their impact on society, straight to your inbox.',
         emailPlaceholder: 'Email',
+        eyebrow: 'Newsletter',
         heading: 'Subscribe to the newsletter',
         loadingLabel: 'Loading...',
         privacyLinkText: 'privacy policy',
@@ -28,6 +31,7 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
         description:
             'Tilaamalla uutiskirjeeni saat sähköpostiisi analyysejä tuoreimmista kehityskuluista tekoälyn ja teknologian saralla sekä arvioita niiden vaikutuksista yhteiskuntaan.',
         emailPlaceholder: 'Sähköposti',
+        eyebrow: 'Uutiskirje',
         heading: 'Tilaa uutiskirje',
         loadingLabel: 'Lataa...',
         privacyLinkText: 'tietosuojaseloste',
@@ -41,6 +45,7 @@ export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
         description:
             'Prenumerera på mitt nyhetsbrev och få analyser av den senaste utvecklingen inom AI och teknik, samt dess påverkan på samhället, direkt till din inkorg.',
         emailPlaceholder: 'E-post',
+        eyebrow: 'Nyhetsbrev',
         heading: 'Prenumerera på nyhetsbrevet',
         loadingLabel: 'Laddar...',
         privacyLinkText: 'integritetspolicy',

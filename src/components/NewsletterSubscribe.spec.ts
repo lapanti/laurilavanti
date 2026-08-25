@@ -64,6 +64,40 @@ describe('<NewsletterSubscribe lang="fi" />', () => {
     })
 })
 
+describe('<NewsletterSubscribe layout="split" />', () => {
+    it('should render', async () => {
+        const result = await renderAstroComponent(NewsletterSubscribe, {
+            props: { lang: 'fi', layout: 'split' },
+        })
+
+        expect(result.firstChild).toMatchSnapshot()
+    })
+
+    it('should mark the container as the split plate layout', async () => {
+        const result = await renderAstroComponent(NewsletterSubscribe, {
+            props: { lang: 'fi', layout: 'split' },
+        })
+
+        expect(result.querySelector('.ml-form-embedContainer')).toHaveClass('news-split')
+    })
+
+    it('should render the eyebrow above the heading', async () => {
+        const result = await renderAstroComponent(NewsletterSubscribe, {
+            props: { lang: 'fi', layout: 'split' },
+        })
+
+        expect(getByText(result, 'Uutiskirje')).toBeDefined()
+    })
+
+    it('should not render the eyebrow in the stacked layout', async () => {
+        const result = await renderAstroComponent(NewsletterSubscribe, {
+            props: { lang: 'fi' },
+        })
+
+        expect(result.querySelector('.eyebrow')).toBeNull()
+    })
+})
+
 describe('<NewsletterSubscribe lang="en" />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(NewsletterSubscribe, {

@@ -5,7 +5,14 @@ import { colors } from '../../lib/styles'
 <style define:vars={{ colorsOat: colors.oat }}>
     .news {
         background: var(--colorsOat);
-        padding-block: 88px;
+        padding-block: var(--sec-y);
+    }
+
+    /* the oat band runs to a tighter 16px gutter on the 390px mobile frame */
+    @media (max-width: 768px) {
+        .news .sheet {
+            padding-inline: 16px;
+        }
     }
 </style>
 <section class="news" id="uutiskirje">

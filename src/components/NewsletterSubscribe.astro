@@ -1,15 +1,23 @@
 ---
 import { newsletterContent } from '../content/newsletter'
-import { colors, signalBandFontFamilies, sizes } from '../lib/styles'
+import { colors, signalBandFontFamilies, sizes, typographics } from '../lib/styles'
+import Eyebrow from './Eyebrow.astro'
 import H2 from './H2.astro'
 import Link from './Link.astro'
 import Paragraph from './Paragraph.astro'
 
 interface Props {
     lang: 'en' | 'fi' | 'sv'
+    /**
+     * `split` is the front page's oat newsletter band: an eyebrow, a headline-scale
+     * heading and the blurb in one column, the form and its fine print in the other.
+     * `stacked` (default) is the compact full-width form the inner pages carry.
+     */
+    layout?: 'split' | 'stacked'
 }
 
-const { lang } = Astro.props
+const { lang, layout = 'stacked' } = Astro.props
+const isSplit = layout === 'split'
 
 const content = newsletterContent[lang]
 
@@ -36,11 +44,22 @@ const privacyHref = `/${lang}/privacy-policy/`
         colorsDeepForest: colors.forestGreen,
         colorsOat: colors.oat,
         colorsOatSoft: colors.oatSoft,
+        colorsOnOatBody: colors.onOatBody,
+        colorsOnOatEyebrow: colors.onOatEyebrow,
         colorsWhite: colors.white,
+        fineFontFamily: typographics.fine.fontFamily,
+        fineFontSize: typographics.fine.fontSize,
+        fineLineHeight: typographics.fine.lineHeight,
         fontFamiliesHeading: signalBandFontFamilies.heading,
         fontFamiliesSans: signalBandFontFamilies.sans,
+        headlineFontFamily: typographics.headline.fontFamily,
+        headlineFontWeight: typographics.headline.fontWeight,
+        headlineLetterSpacing: typographics.headline.letterSpacing,
         sizes1: sizes[1],
         sizes125: sizes[1.25],
+        textFontFamily: typographics.text.fontFamily,
+        textFontSize: typographics.text.fontSize,
+        textLineHeight: typographics.text.lineHeight,
     }}
 >
     /* LOADER */
@@ -291,13 +310,102 @@ const privacyHref = `/${lang}/privacy-policy/`
         .ml-form-embedPermissionsContent.horizontal {
         margin: 0 0 var(--sizes1) 0;
     }
+
+    /* ============================================================
+       SPLIT — the front page's oat newsletter band: the intro in one
+       column, the form and its fine print in the other, both flush to
+       the plate's measure rather than the embed's own inset. The
+       selectors match the embed chains above, which they override.
+       ============================================================ */
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+        padding: 0;
+    }
+
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
+        align-items: start;
+        display: grid;
+        gap: var(--sizes1);
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
+        color: var(--colorsOnOatEyebrow);
+        margin: 0;
+        max-width: 544px;
+    }
+
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent :global(h2) {
+        color: var(--colorsDeepForest);
+        font-family: var(--headlineFontFamily);
+        font-size: 42px;
+        font-weight: var(--headlineFontWeight);
+        letter-spacing: var(--headlineLetterSpacing);
+        line-height: 1;
+        padding-top: var(--sizes1);
+        text-transform: uppercase;
+    }
+
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent :global(p) {
+        color: var(--colorsOnOatBody);
+        font-family: var(--textFontFamily);
+        font-size: var(--textFontSize);
+        line-height: var(--textLineHeight);
+        padding-top: var(--sizes1);
+    }
+
+    .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+        max-width: 432px;
+    }
+
+    .news-split.ml-form-embedContainer
+        .ml-form-embedWrapper
+        .ml-form-embedBody
+        .ml-form-embedPermissionsContent
+        :global(p) {
+        color: var(--colorsOnOatBody);
+        font-family: var(--fineFontFamily);
+        font-size: var(--fineFontSize);
+        line-height: var(--fineLineHeight);
+    }
+
+    @media (min-width: 769px) {
+        .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody {
+            gap: 64px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent :global(h2) {
+            font-size: 58px;
+        }
+
+        /* the 432px column is too narrow for the 70/30 row — stack the field
+           over a button that keeps its own width, as the prototype does */
+        .news-split .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal {
+            width: 100%;
+        }
+
+        .news-split .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields {
+            padding-bottom: 12.8px;
+            padding-right: 0;
+        }
+
+        .news-split .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal {
+            width: auto !important;
+        }
+
+        .news-split.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+            width: auto;
+        }
+    }
 </style>
 
-<div class:list={[`ml-form-embedContainer ml-subscribe-form`, subscribeClass]} id={formId}>
+<div class:list={['ml-form-embedContainer ml-subscribe-form', subscribeClass, { 'news-split': isSplit }]} id={formId}>
     <div class="ml-form-align-center">
         <div class="ml-form-embedWrapper embedForm">
             <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
-                <div class="ml-form-embedContent" style=" ">
+                <div class="ml-form-embedContent">
+                    {isSplit && <Eyebrow tone="inherit">{content.eyebrow}</Eyebrow>}
                     <H2>{content.heading}</H2>
                     <Paragraph>{content.description}</Paragraph>
                 </div>
@@ -337,6 +445,14 @@ const privacyHref = `/${lang}/privacy-policy/`
                         </div>
                     </div>
 
+                    <div aria-hidden="true" class="ml-mobileButton-horizontal">
+                        <button class="primary" tabindex="-1" type="submit">{content.submitButton}</button>
+                        <button class="loading" disabled="disabled" style="display: none;" tabindex="-1" type="button">
+                            <div class="ml-form-embedSubmitLoad"></div>
+                            <span class="sr-only">{content.loadingLabel}</span>
+                        </button>
+                    </div>
+
                     <!-- Privacy policy -->
                     <div class="ml-form-embedPermissions" style="">
                         <div class="ml-form-embedPermissionsContent horizontal privacy-policy">
@@ -351,13 +467,6 @@ const privacyHref = `/${lang}/privacy-policy/`
 
                     <input name="ml-submit" type="hidden" value="1" />
 
-                    <div aria-hidden="true" class="ml-mobileButton-horizontal">
-                        <button class="primary" tabindex="-1" type="submit">{content.submitButton}</button>
-                        <button class="loading" disabled="disabled" style="display: none;" tabindex="-1" type="button">
-                            <div class="ml-form-embedSubmitLoad"></div>
-                            <span class="sr-only">{content.loadingLabel}</span>
-                        </button>
-                    </div>
                     <input name="anticsrf" type="hidden" value="true" />
                 </form>
             </div>
