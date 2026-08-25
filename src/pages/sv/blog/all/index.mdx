@@ -3,26 +3,35 @@ layout: '../../../../layouts/PageLayout.astro'
 lang: sv
 pageTitle: 'Alla inlägg – AI, ekonomi och frihet'
 title: 'Alla inlägg'
+intro: 'AI förändrar allt — arbetet, ekonomin och hur staten betjänar oss. Jag skriver om hur det landar på tre saker som måste fungera: ekonomin, bildningen och friheten. Deras syntes är digital självständighet: ett samhälle som använder tekniken på sina egna villkor.'
 description: 'Alla Lauri Lavantis inlägg i kronologisk ordning: AI, ekonomi, lärande, frihet, digital självständighet och Kyrkslätt. Bläddra fritt.'
 slug: 'sv/blog/all'
-updatedDate: '2026-06-04'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio'
-alt: 'Lauri Lavanti sitter på stentrappor med en bärbar dator i knät och ler åt sidan. Foto: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka'
+alt: 'Lauri Lavanti står framför en glasvägg, iklädd en mörk kavaj och en mönstrad skjorta. Foto: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import ExcerptList from '../../../../components/ExcerptList.astro'
-import H2 from '../../../../components/H2.astro'
-import Paragraph from '../../../../components/Paragraph.astro'
+import Lede from '../../../../components/Lede.astro'
+import Plate from '../../../../components/Plate.astro'
+import Prose from '../../../../components/Prose.astro'
+import Stripe from '../../../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-AI förändrar allt — arbetet, ekonomin och hur staten betjänar oss. Jag skriver om hur det landar på tre saker som måste fungera: ekonomin, bildningen och friheten. Deras syntes är digital självständighet: ett samhälle som använder tekniken på sina egna villkor.
+<Plate ground="sand" heading="Vad innebär det att leva i AI:s era?">
+    <Lede wide>
+        Jag har över ett årtiondes praktisk erfarenhet av att bygga säker programvara och banktjänster. Med den bakgrunden skriver jag om varför AI inte bara effektiviserar arbetet utan tvingar oss att tänka om hela det sociala skyddsnätet, varför digital självständighet är en förutsättning för ett fritt samhälle, och hur vi kan se till att teknikens vinster når alla — inte bara ett fåtal.
+    </Lede>
+</Plate>
 
-## Vad innebär det att leva i AI:s era?
-
-Jag har över ett årtiondes praktisk erfarenhet av att bygga säker programvara och banktjänster. Med den bakgrunden skriver jag om varför AI inte bara effektiviserar arbetet utan tvingar oss att tänka om hela det sociala skyddsnätet, varför digital självständighet är en förutsättning för ett fritt samhälle, och hur vi kan se till att teknikens vinster når alla — inte bara ett fåtal.
-
-Om du söker inlägg om ett specifikt ämne hittar du dem grupperade efter ämne på [inläggssidan](/sv/blog/).
-
-<ExcerptList lang="sv" />
+<Plate ground="offWhite">
+    <Prose>
+        Om du söker inlägg om ett specifikt ämne hittar du dem grupperade efter ämne på [inläggssidan](/sv/blog/).
+    </Prose>
+    <ExcerptList lang="sv" />
+</Plate>

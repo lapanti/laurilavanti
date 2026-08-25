@@ -3,26 +3,35 @@ layout: '../../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'All posts – AI, economy, and freedom'
 title: 'All posts'
+intro: 'AI is changing everything — work, the economy, and how the state serves us. I write about how it lands on three things that have to keep working: the economy, learning, and freedom. Their synthesis is digital independence: a society that uses technology on its own terms.'
 description: 'All posts by Lauri Lavanti in chronological order: AI, economy, learning, freedom, digital independence, and Kirkkonummi.'
 slug: 'en/blog/all'
-updatedDate: '2026-06-04'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio'
-alt: 'Lauri Lavanti sitting on stone steps with a laptop on his lap, smiling and looking to the side. Photo: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka'
+alt: 'Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import ExcerptList from '../../../../components/ExcerptList.astro'
-import H2 from '../../../../components/H2.astro'
-import Paragraph from '../../../../components/Paragraph.astro'
+import Lede from '../../../../components/Lede.astro'
+import Plate from '../../../../components/Plate.astro'
+import Prose from '../../../../components/Prose.astro'
+import Stripe from '../../../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-AI is changing everything — work, the economy, and how the state serves us. I write about how it lands on three things that have to keep working: the economy, learning, and freedom. Their synthesis is digital independence: a society that uses technology on its own terms.
+<Plate ground="sand" heading="What does it mean to live in the age of AI?">
+    <Lede wide>
+        I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink the whole social safety net, why digital independence is a precondition for a free society, and how to ensure that the benefits of technology reach everyone — not only a few.
+    </Lede>
+</Plate>
 
-## What does it mean to live in the age of AI?
-
-I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink the whole social safety net, why digital independence is a precondition for a free society, and how to ensure that the benefits of technology reach everyone — not only a few.
-
-If you are looking for posts on a specific subject, find them grouped by topic on the [Writing page](/en/blog/).
-
-<ExcerptList lang="en" />
+<Plate ground="offWhite">
+    <Prose>
+        If you are looking for posts on a specific subject, find them grouped by topic on the [Writing page](/en/blog/).
+    </Prose>
+    <ExcerptList lang="en" />
+</Plate>

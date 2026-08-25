@@ -3,26 +3,35 @@ layout: '../../../../layouts/PageLayout.astro'
 lang: fi
 pageTitle: 'Kaikki kirjoitukset – tekoäly ja talous'
 title: 'Kaikki kirjoitukset'
+intro: 'Tekoäly muuttaa kaiken — työn, talouden ja sen, miten valtio palvelee meitä. Kirjoitan siitä, miten se vaikuttaa kolmeen asiaan, joiden on toimittava: talouteen, sivistykseen ja vapauteen. Niiden synteesi on digitaalinen itsenäisyys: yhteiskunta, joka käyttää teknologiaa omilla ehdoillaan.'
 description: 'Kaikki Lauri Lavannin kirjoitukset aikajärjestyksessä: tekoäly, talous, oppiminen, vapaus, digitaalinen itsenäisyys ja Kirkkonummi.'
 slug: 'fi/blog/all'
-updatedDate: '2026-06-04'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio
-alt: 'Lauri Lavanti istuu kivisillä portailla kannettava tietokone sylissään ja hymyilee sivulle päin. Kuva: Markus Isomeri.'
+heroImage: Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty
+mobileHeroImage: Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka
+alt: 'Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa. Kuva: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import ExcerptList from '../../../../components/ExcerptList.astro'
-import H2 from '../../../../components/H2.astro'
-import Paragraph from '../../../../components/Paragraph.astro'
+import Lede from '../../../../components/Lede.astro'
+import Plate from '../../../../components/Plate.astro'
+import Prose from '../../../../components/Prose.astro'
+import Stripe from '../../../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-Tekoäly muuttaa kaiken — työn, talouden ja sen, miten valtio palvelee meitä. Kirjoitan siitä, miten se vaikuttaa kolmeen asiaan, joiden on toimittava: talouteen, sivistykseen ja vapauteen. Niiden synteesi on digitaalinen itsenäisyys: yhteiskunta, joka käyttää teknologiaa omilla ehdoillaan.
+<Plate ground="sand" heading="Mitä tarkoittaa elää tekoälyn aikakaudella?">
+    <Lede wide>
+        Käytännön kokemukseni on yli vuosikymmenen ajalta turvallisten ohjelmistojen ja pankkijärjestelmien rakentajana. Sitä taustaa vasten kirjoitan siitä, miksi tekoäly ei vain tehosta työtä vaan pakottaa miettimään uudelleen koko sosiaaliturvan, miksi digitaalinen itsenäisyys on välttämättömyys vapaan yhteiskunnan kannalta, ja miten varmistetaan, että teknologian hyödyt tulevat kaikille — ei vain harvoille.
+    </Lede>
+</Plate>
 
-## Mitä tarkoittaa elää tekoälyn aikakaudella?
-
-Käytännön kokemukseni on yli vuosikymmenen ajalta turvallisten ohjelmistojen ja pankkijärjestelmien rakentajana. Sitä taustaa vasten kirjoitan siitä, miksi tekoäly ei vain tehosta työtä vaan pakottaa miettimään uudelleen koko sosiaaliturvan, miksi digitaalinen itsenäisyys on välttämättömyys vapaan yhteiskunnan kannalta, ja miten varmistetaan, että teknologian hyödyt tulevat kaikille — ei vain harvoille.
-
-Jos etsit kirjoituksia tietystä aiheesta, löydät ne [Kirjoitukset-sivulta](/fi/blog/) aiheittain jaoteltuina.
-
-<ExcerptList lang="fi" />
+<Plate ground="offWhite">
+    <Prose>
+        Jos etsit kirjoituksia tietystä aiheesta, löydät ne [Kirjoitukset-sivulta](/fi/blog/) aiheittain jaoteltuina.
+    </Prose>
+    <ExcerptList lang="fi" />
+</Plate>
