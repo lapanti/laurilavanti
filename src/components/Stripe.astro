@@ -1,0 +1,56 @@
+---
+import { colors } from '../lib/styles'
+
+interface Props {
+    /**
+     * The signal band, horizontal (the rule between major page movements, styled
+     * globally by GlobalStyle's `.stripes`) or vertical with the sequence reversed
+     * (the synthesis section's right-edge column).
+     */
+    orientation?: 'horizontal' | 'vertical-reversed'
+}
+
+const { orientation = 'horizontal' } = Astro.props
+const reversed = [colors.signalBlue, colors.brightSky, colors.skyAqua, colors.vividGreen, colors.pineGreen]
+---
+
+<style
+    define:vars={{ band1: reversed[0], band2: reversed[1], band3: reversed[2], band4: reversed[3], band5: reversed[4] }}
+>
+    .stripe--vertical {
+        flex-direction: row;
+        height: 100%;
+        width: 305px;
+    }
+    .stripe--vertical i {
+        flex: 1;
+    }
+    .stripe--vertical i:nth-child(1) {
+        background: var(--band1);
+    }
+    .stripe--vertical i:nth-child(2) {
+        background: var(--band2);
+    }
+    .stripe--vertical i:nth-child(3) {
+        background: var(--band3);
+    }
+    .stripe--vertical i:nth-child(4) {
+        background: var(--band4);
+    }
+    .stripe--vertical i:nth-child(5) {
+        background: var(--band5);
+    }
+    @media (max-width: 1199px) {
+        .stripe--vertical {
+            width: 180px;
+        }
+    }
+    @media (max-width: 768px) {
+        .stripe--vertical {
+            display: none;
+        }
+    }
+</style>
+<div aria-hidden="true" class:list={['stripes', { 'stripe--vertical': orientation === 'vertical-reversed' }]}>
+    <i></i><i></i><i></i><i></i><i></i>
+</div>
