@@ -4,6 +4,8 @@ import type { LocalTag } from '../../../content/tags'
 
 import ExcerptList from '../../../components/ExcerptList.astro'
 import Paragraph from '../../../components/Paragraph.astro'
+import Plate from '../../../components/Plate.astro'
+import PostProse from '../../../components/post/PostProse.astro'
 import { tags } from '../../../content/tags'
 import PageLayout from '../../../layouts/PageLayout.astro'
 import { COLLECTIONPAGE } from '../../../lib/jsonld'
@@ -21,16 +23,18 @@ interface Props {
 const { tag } = Astro.props
 const { lang } = Astro.params as { lang: Lang }
 
-const heroImageFallback = 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio'
+const heroImageFallback = 'Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty'
+const mobileHeroImageFallback = 'Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka'
 const heroImageAltFallback: Record<Lang, string> = {
-    en: 'Lauri Lavanti sitting on stone steps with a laptop on his lap, smiling and looking to the side. Photo: Markus Isomeri.',
-    fi: 'Lauri Lavanti istuu kivisillä portailla kannettava tietokone sylissään ja hymyilee sivulle päin. Kuva: Markus Isomeri.',
-    sv: 'Lauri Lavanti sitter på stentrappor med en bärbar dator i knät och ler åt sidan. Foto: Markus Isomeri.',
+    en: 'Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri.',
+    fi: 'Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa. Kuva: Markus Isomeri.',
+    sv: 'Lauri Lavanti står framför en glasvägg, iklädd en mörk kavaj och en mönstrad skjorta. Foto: Markus Isomeri.',
 }
 
 const faq = tag.faq?.[lang]
 const metaDescription = tag.metaDescription[lang]
 const bodyParagraphs = tag.descriptions[lang]
+const [intro, ...restParagraphs] = bodyParagraphs
 ---
 
 <PageLayout
@@ -38,12 +42,20 @@ const bodyParagraphs = tag.descriptions[lang]
     description={metaDescription}
     faq={faq}
     heroImage={tag.heroImage ?? heroImageFallback}
+    intro={intro}
     lang={lang}
+    mobileHeroImage={mobileHeroImageFallback}
     pageTitle={tag.pageTitle[lang]}
+    plated
     slug={`${lang}/category/${tag.id}`}
     title={tag.pageTitle[lang]}
     type={COLLECTIONPAGE}
+    variant="split"
 >
-    {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
-    <ExcerptList lang={lang} tag={tag.id} />
+    <Plate ground="white">
+        <PostProse>
+            {restParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
+            <ExcerptList lang={lang} tag={tag.id} />
+        </PostProse>
+    </Plate>
 </PageLayout>
