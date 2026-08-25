@@ -1,4 +1,4 @@
-import { getByRole } from '@testing-library/dom'
+import { getAllByRole, getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../../tests/helpers'
@@ -9,16 +9,6 @@ describe('<DesktopMenu />', () => {
         { href: '/fi/about/', label: 'Laurista', title: 'Laurista' },
         { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
     ]
-
-    it('should render', async () => {
-        const result = await renderAstroComponent(DesktopMenu, {
-            props: {
-                links,
-            },
-        })
-
-        expect(result.firstChild).toMatchSnapshot()
-    })
 
     it('should render the main link', async () => {
         const result = await renderAstroComponent(DesktopMenu, {
@@ -50,5 +40,20 @@ describe('<DesktopMenu />', () => {
 
         expect(getByRole(result, 'link', { name: 'Laurista' })).toHaveAttribute('href', '/fi/about/')
         expect(getByRole(result, 'link', { name: 'Blogi' })).toHaveAttribute('href', '/fi/blog/')
+    })
+
+    it('should render links inside a localized navigation landmark and lists', async () => {
+        const result = await renderAstroComponent(DesktopMenu, {
+            props: {
+                links,
+            },
+        })
+
+        expect(getByRole(result, 'navigation', { name: 'Päänavigaatio' })).toHaveAttribute(
+            'aria-label',
+            'Päänavigaatio'
+        )
+        expect(getAllByRole(result, 'list')).toHaveLength(2)
+        expect(getAllByRole(result, 'listitem')).toHaveLength(links.length + 1)
     })
 })

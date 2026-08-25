@@ -3,20 +3,30 @@
     - /url: "#main"
   - link "Hoppa till sidfoten ➡":
     - /url: "#footer"
-  - link "Lauri Lavanti":
-    - /url: /sv/
-  - link "Om Lauri":
-    - /url: /sv/about/
-  - link "Inlägg":
-    - /url: /sv/blog/
-  - link "Kontaktuppgifter":
-    - /url: /sv/contact/
-    - text: ""
-  - link "Nyhetsbrev":
-    - /url: /sv/newsletter/
-  - link "FI – Suomeksi":
-    - /url: /fi/about/
-    - text: ""
-  - link "EN – In English":
-    - /url: /en/about/
-    - text: ""
+  - navigation "Huvudnavigering":
+    - list:
+      - listitem:
+        - link "Lauri Lavanti":
+          - /url: /sv/
+    - list:
+      - listitem:
+        - link "Om Lauri":
+          - /url: /sv/about/
+      - listitem:
+        - link "Inlägg":
+          - /url: /sv/blog/
+      - listitem:
+        - link "Kontaktuppgifter":
+          - /url: /sv/contact/
+          - text: ""
+      - listitem:
+        - link "Nyhetsbrev":
+          - /url: /sv/newsletter/
+      - listitem:
+        - link "FI – Suomeksi":
+          - /url: /fi/about/
+          - text: ""
+      - listitem:
+        - link "EN – In English":
+          - /url: /en/about/
+          - text: ""

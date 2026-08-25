@@ -1,5 +1,11 @@
 export type Lang = 'en' | 'fi' | 'sv'
 
+export const navigationLabels: Record<Lang, { closeMenu: string; openMenu: string; primaryNavigation: string }> = {
+    en: { closeMenu: 'Close menu', openMenu: 'Open menu', primaryNavigation: 'Primary navigation' },
+    fi: { closeMenu: 'Sulje valikko', openMenu: 'Avaa valikko', primaryNavigation: 'Päänavigaatio' },
+    sv: { closeMenu: 'Stäng menyn', openMenu: 'Öppna menyn', primaryNavigation: 'Huvudnavigering' },
+}
+
 export const skipLinks: Record<Lang, { main: string; footer: string }> = {
     en: { footer: 'Skip to footer &#x27A1;', main: 'Skip to main content &#x27A1;' },
     fi: { footer: 'Siirry alatunnisteeseen &#x27A1;', main: 'Siirry pääsisältöön &#x27A1;' },

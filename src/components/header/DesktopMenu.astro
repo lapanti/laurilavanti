@@ -1,6 +1,7 @@
 ---
 import type { Lang, NavLink } from '../../content/nav'
 
+import { navigationLabels } from '../../content/nav'
 import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
@@ -10,7 +11,7 @@ interface Props {
     links: NavLink[]
 }
 
-const { lang, links } = Astro.props
+const { lang = 'fi', links } = Astro.props
 ---
 
 <style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE, sizes25: sizes[2.5] }}>
@@ -23,14 +24,17 @@ const { lang, links } = Astro.props
         width: var(--contentSize);
     }
 
-    .container > div {
+    .container > ul {
         align-items: center;
         display: flex;
         gap: var(--sizes25);
         justify-content: flex-start;
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
-    .container > div ~ div {
+    .container > ul ~ ul {
         flex-grow: 1;
         justify-content: flex-end;
     }
@@ -41,20 +45,22 @@ const { lang, links } = Astro.props
         }
     }
 </style>
-<div class="container">
-    <div>
-        <MainNavigationLink lang={lang} />
-    </div>
-    <div>
+<nav aria-label={navigationLabels[lang].primaryNavigation} class="container">
+    <ul>
+        <li><MainNavigationLink lang={lang} /></li>
+    </ul>
+    <ul>
         {
             links.map((link) => (
-                <NavigationLink
-                    href={link.href}
-                    label={link.label}
-                    switchToLang={link.switchToLang}
-                    title={link.title}
-                />
+                <li>
+                    <NavigationLink
+                        href={link.href}
+                        label={link.label}
+                        switchToLang={link.switchToLang}
+                        title={link.title}
+                    />
+                </li>
             ))
         }
-    </div>
-</div>
+    </ul>
+</nav>

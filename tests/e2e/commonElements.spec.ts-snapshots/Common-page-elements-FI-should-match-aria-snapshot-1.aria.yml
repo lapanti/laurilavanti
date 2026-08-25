@@ -3,19 +3,29 @@
     - /url: "#main"
   - link "Siirry alatunnisteeseen ➡":
     - /url: "#footer"
-  - link "Lauri Lavanti":
-    - /url: /fi/
-  - link "Laurista":
-    - /url: /fi/about/
-  - link "Kirjoitukset":
-    - /url: /fi/blog/
-  - link "Ota yhteyttä":
-    - /url: /fi/contact/
-  - link "Uutiskirje":
-    - /url: /fi/newsletter/
-  - link "SV – På svenska":
-    - /url: /sv/about/
-    - text: ""
-  - link "EN – In English":
-    - /url: /en/about/
-    - text: ""
+  - navigation "Päänavigaatio":
+    - list:
+      - listitem:
+        - link "Lauri Lavanti":
+          - /url: /fi/
+    - list:
+      - listitem:
+        - link "Laurista":
+          - /url: /fi/about/
+      - listitem:
+        - link "Kirjoitukset":
+          - /url: /fi/blog/
+      - listitem:
+        - link "Ota yhteyttä":
+          - /url: /fi/contact/
+      - listitem:
+        - link "Uutiskirje":
+          - /url: /fi/newsletter/
+      - listitem:
+        - link "SV – På svenska":
+          - /url: /sv/about/
+          - text: ""
+      - listitem:
+        - link "EN – In English":
+          - /url: /en/about/
+          - text: ""
