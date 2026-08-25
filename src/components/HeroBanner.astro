@@ -2,7 +2,7 @@
 import type { Lang } from '../content/nav'
 import type { Slogan } from '../content/slogan'
 
-import { colors } from '../lib/styles'
+import { colors, HEADER_SIZE } from '../lib/styles'
 import Images from './heroBanner/Images.astro'
 import Titles from './heroBanner/Titles.astro'
 
@@ -18,11 +18,14 @@ interface Props {
 const { alt, description, heroImage, lang, mobileHeroImage, slogan } = Astro.props
 ---
 
-<style define:vars={{ colorsDeepForest: colors.forestGreen }}>
+<style define:vars={{ colorsDeepForest: colors.forestGreen, headerSize: HEADER_SIZE }}>
     .hero {
         background: var(--colorsDeepForest);
         display: block;
         min-height: 0;
+        /* The mobile header is `position: fixed` and out of flow — reserve its height
+           so it doesn't sit on top of (and hide) the hero image underneath it. */
+        padding-top: var(--headerSize);
         position: relative;
     }
 
@@ -31,6 +34,7 @@ const { alt, description, heroImage, lang, mobileHeroImage, slogan } = Astro.pro
             display: grid;
             grid-template-columns: 330px minmax(0, 1fr);
             min-height: clamp(640px, 92svh, 899px);
+            padding-top: 0;
         }
     }
 
