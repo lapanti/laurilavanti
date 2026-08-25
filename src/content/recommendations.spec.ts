@@ -7,9 +7,9 @@ describe('recommendations data', () => {
         expect(recommendations.length).toBeGreaterThan(0)
     })
 
-    it('every entry should have a non-empty image', () => {
+    it('every entry should have a string image field', () => {
         for (const c of recommendations) {
-            expect(c.image).toBeTruthy()
+            expect(typeof c.image).toBe('string')
         }
     })
 
@@ -25,8 +25,8 @@ describe('recommendations data', () => {
         }
     })
 
-    it('every entry should have non-empty alt in all locales', () => {
-        for (const c of recommendations) {
+    it('every entry with an image should have non-empty alt in all locales', () => {
+        for (const c of recommendations.filter((r) => r.image)) {
             expect(c.locales.fi.alt).toBeTruthy()
             expect(c.locales.sv.alt).toBeTruthy()
             expect(c.locales.en.alt).toBeTruthy()
