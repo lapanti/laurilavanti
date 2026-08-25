@@ -3,22 +3,25 @@
 import type { Lang } from '../content/nav'
 
 import { summaryBoxContent } from '../content/summaryBox'
-import { colors, sizes, typographics } from '../lib/styles'
+import { colors, typographics, sizes } from '../lib/styles'
 import H2 from './H2.astro'
 import LI from './LI.astro'
 import UL from './UL.astro'
 
 interface Props {
     ariaLabel?: string
+    eyebrow?: string
     id?: string
     lang: Lang
+    lede?: string
     summaryRows: string[]
     title: string
+    variant?: 'facts' | 'legacy'
 }
 
-const { ariaLabel, id, lang, summaryRows, title } = Astro.props
+const { ariaLabel, eyebrow, id, lang, lede, summaryRows, title, variant = 'legacy' } = Astro.props
 const content = summaryBoxContent[lang]
-const isCollapsible = summaryRows.length > 3
+const isCollapsible = variant === 'legacy' && summaryRows.length > 3
 const expandLabelJson = JSON.stringify(content.expandLabel)
 const collapseLabelJson = JSON.stringify(content.collapseLabel)
 ---
@@ -28,11 +31,27 @@ const collapseLabelJson = JSON.stringify(content.collapseLabel)
         bodyFontFamily: typographics.body.fontFamily,
         bodyFontSize: typographics.body.fontSize,
         bodyFontWeight: typographics.body.fontWeight,
+        colorsDarkGreen: colors.darkGreen,
         colorsDarkMoss: colors.darkMoss,
+        colorsDeepForest: colors.forestGreen,
         colorsGray: colors.gray,
+        colorsOffWhite: colors.offWhite,
+        colorsSand: colors.sand,
+        colorsTextPrimary: colors.textPrimary,
+        displayFontFamily: typographics.display.fontFamily,
+        displayFontWeight: typographics.display.fontWeight,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
         sizes1: sizes[1],
         sizes3: sizes[3],
         sizes625: sizes[6.25],
+        textFontFamily: typographics.text.fontFamily,
+        textFontSize: typographics.text.fontSize,
+        textFontWeight: typographics.text.fontWeight,
+        textLineHeight: typographics.text.lineHeight,
     }}
 >
     aside {
@@ -84,32 +103,126 @@ const collapseLabelJson = JSON.stringify(content.collapseLabel)
         padding: 0;
         text-decoration: underline;
     }
+
+    .brief {
+        background: var(--colorsOffWhite);
+        padding-block: 96px;
+    }
+
+    .brief-eyebrow {
+        color: var(--colorsDarkGreen);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    .brief h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 48px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .brief-lede {
+        color: var(--colorsTextPrimary);
+        font-family: var(--textFontFamily);
+        font-size: var(--textFontSize);
+        font-weight: var(--textFontWeight);
+        line-height: var(--textLineHeight);
+        margin: 0;
+        max-width: 548px;
+        padding-top: 24px;
+    }
+
+    .brief-grid {
+        align-items: start;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+    }
+
+    .facts {
+        display: grid;
+        gap: 12px;
+        padding-top: 24px;
+    }
+
+    .facts li {
+        border-left: 4px solid var(--colorsSand);
+        color: var(--colorsTextPrimary);
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.6;
+        padding: 4px 0 4px 12px;
+    }
+
+    @media (min-width: 769px) {
+        .brief h2 {
+            font-size: 88px;
+        }
+        .brief-grid {
+            gap: 32px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
 </style>
-<aside aria-label={ariaLabel} id={id}>
-    <H2>{title}</H2>
-    {
-        isCollapsible ? (
-            <div class="summary-collapsible" data-expanded="false">
-                <div class="summary-list-wrapper">
+{
+    variant === 'facts' ? (
+        <section class="brief section" id={id}>
+            <div class="sheet">
+                <div class="inner">
+                    <div class="brief-grid">
+                        <div>
+                            {eyebrow && <span class="brief-eyebrow">{eyebrow}</span>}
+                            <H2>{title}</H2>
+                            {lede && <p class="brief-lede">{lede}</p>}
+                        </div>
+                        <ul class="facts">
+                            {summaryRows.map((row) => (
+                                <li>{row}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    ) : (
+        <aside aria-label={ariaLabel} id={id}>
+            <H2>{title}</H2>
+            {
+                isCollapsible ? (
+                    <div class="summary-collapsible" data-expanded="false">
+                        <div class="summary-list-wrapper">
+                            <UL>
+                                {summaryRows.map((row) => (
+                                    <LI>{row}</LI>
+                                ))}
+                            </UL>
+                            <div aria-hidden="true" class="summary-gradient" />
+                        </div>
+                        <button aria-expanded="false" class="summary-toggle" type="button">
+                            {content.expandLabel}
+                        </button>
+                    </div>
+                ) : (
                     <UL>
                         {summaryRows.map((row) => (
                             <LI>{row}</LI>
                         ))}
                     </UL>
-                    <div aria-hidden="true" class="summary-gradient" />
-                </div>
-                <button aria-expanded="false" class="summary-toggle" type="button">
-                    {content.expandLabel}
-                </button>
-            </div>
-        ) : (
-            <UL>
-                {summaryRows.map((row) => (
-                    <LI>{row}</LI>
-                ))}
-            </UL>
-        )
-    }
+                )
+            }
+        </aside>
+    )
+}
 </aside>
 {
     isCollapsible && (

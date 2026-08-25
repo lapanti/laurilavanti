@@ -3,7 +3,7 @@ import { getImageSrcset } from '../../lib/images'
 import { colors, typographics } from '../../lib/styles'
 
 interface Props {
-    credentials: string[]
+    credentials?: string[]
     eyebrow: string
     heading: string
     photographer: string
@@ -11,7 +11,7 @@ interface Props {
     portraitImage: string
 }
 
-const { credentials, eyebrow, heading, photographer, portraitAlt, portraitImage } = Astro.props
+const { credentials = [], eyebrow, heading, photographer, portraitAlt, portraitImage } = Astro.props
 const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
 ---
 
@@ -174,9 +174,15 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
                     <figcaption>{photographer}</figcaption>
                 </figure>
             </div>
-            <ul class="creds">
-                {credentials.map((credential) => <li>{credential}</li>)}
-            </ul>
+            {
+                credentials.length > 0 && (
+                    <ul class="creds">
+                        {credentials.map((credential) => (
+                            <li>{credential}</li>
+                        ))}
+                    </ul>
+                )
+            }
         </div>
     </div>
 </section>

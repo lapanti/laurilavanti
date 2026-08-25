@@ -1,4 +1,5 @@
 ---
+import { getTagName } from '../../content/tags'
 import { colors, typographics } from '../../lib/styles'
 import Banner from './excerpt/Banner.astro'
 import Description from './excerpt/Description.astro'
@@ -8,15 +9,21 @@ interface Props {
     date?: string
     excerpt?: string
     image?: string
+    lang?: 'en' | 'fi' | 'sv'
     slug?: string
+    tags?: string[]
     title: string
 }
 
-const { alt, date, excerpt, image, slug, title } = Astro.props
+const { alt, date, excerpt, image, lang = 'fi', slug, tags, title } = Astro.props
 
 const [dateOnly] = (date ?? '').split('T')
 const [year, month, day] = dateOnly ? dateOnly.split('-') : []
 const dateToDisplay = dateOnly ? `${day}.${month}.${year}` : ''
+
+const tagsToRender = (tags ?? [])
+    .map((tagId) => getTagName(tagId, lang))
+    .filter((name): name is string => name !== undefined)
 ---
 
 <style

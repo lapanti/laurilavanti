@@ -6,9 +6,10 @@ interface Props {
     alt?: string
     heroImage?: string
     mobileHeroImage?: string
+    showMark?: boolean
 }
 
-const { alt, heroImage, mobileHeroImage } = Astro.props
+const { alt, heroImage, mobileHeroImage, showMark = true } = Astro.props
 
 const heroImg = heroImage ? getImageSrcset(heroImage, '1x1', [560, 720, 1120, 1680]) : undefined
 const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 750, 1120, 1680]) : undefined
@@ -117,7 +118,11 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560,
             )
         }
     </div>
-    <div class="mark">
-        <NameLogo size="large" tone="light" />
-    </div>
+    {
+        showMark && (
+            <div class="mark">
+                <NameLogo size="large" tone="light" />
+            </div>
+        )
+    }
 </div>

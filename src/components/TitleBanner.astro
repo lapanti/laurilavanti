@@ -3,21 +3,44 @@ import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import ArtHead from './titleBanner/ArtHead.astro'
 import HeroMedia from './titleBanner/HeroMedia.astro'
 import Image from './titleBanner/Image.astro'
+import SplitHero from './titleBanner/SplitHero.astro'
 import Title from './titleBanner/Title.astro'
 
 interface Props {
     alt?: string
     createdAt?: string
+    ctaHref?: string
+    ctaLabel?: string
+    emphasis?: string
+    eyebrow?: string
     heroImage?: string
+    intro?: string
     lang?: 'en' | 'fi' | 'sv'
+    mobileHeroImage?: string
     readingTime?: number
     tags?: string[]
     title: string
     updatedDate?: string
-    variant?: 'page' | 'post'
+    variant?: 'page' | 'post' | 'split'
 }
 
-const { alt, createdAt, heroImage, lang, readingTime, tags, title, updatedDate, variant = 'page' } = Astro.props
+const {
+    alt,
+    createdAt,
+    ctaHref,
+    ctaLabel,
+    emphasis,
+    eyebrow,
+    heroImage,
+    intro,
+    lang,
+    mobileHeroImage,
+    readingTime,
+    tags,
+    title,
+    updatedDate,
+    variant = 'page',
+} = Astro.props
 ---
 
 <style
@@ -65,6 +88,18 @@ const { alt, createdAt, heroImage, lang, readingTime, tags, title, updatedDate, 
             />
             <HeroMedia alt={alt} heroImage={heroImage} />
         </Fragment>
+    ) : variant === 'split' ? (
+        <SplitHero
+            alt={alt}
+            ctaHref={ctaHref}
+            ctaLabel={ctaLabel}
+            emphasis={emphasis}
+            eyebrow={eyebrow}
+            heroImage={heroImage}
+            intro={intro}
+            mobileHeroImage={mobileHeroImage}
+            title={title}
+        />
     ) : (
         <div class="container">
             <div class="content">

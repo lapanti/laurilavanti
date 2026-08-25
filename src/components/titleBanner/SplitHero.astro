@@ -1,0 +1,170 @@
+---
+import Images from '../heroBanner/Images.astro'
+import { colors, typographics } from '../../lib/styles'
+
+interface Props {
+    alt?: string
+    ctaHref?: string
+    ctaLabel?: string
+    emphasis?: string
+    eyebrow?: string
+    heroImage?: string
+    intro?: string
+    mobileHeroImage?: string
+    title: string
+}
+
+const { alt, ctaHref, ctaLabel, emphasis, eyebrow, heroImage, intro, mobileHeroImage, title } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsBrightGreen: colors.brightGreen,
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        displayFontFamily: typographics.display.fontFamily,
+        displayFontWeight: typographics.display.fontWeight,
+        displayLetterSpacing: typographics.display.letterSpacing,
+        heroFootFontFamily: typographics.heroFoot.fontFamily,
+        heroFootFontSize: typographics.heroFoot.fontSize,
+        heroFootFontWeight: typographics.heroFoot.fontWeight,
+        heroFootLineHeight: typographics.heroFoot.lineHeight,
+        heroKickerFontFamily: typographics.heroKicker.fontFamily,
+        heroKickerFontSize: typographics.heroKicker.fontSize,
+        heroKickerFontWeight: typographics.heroKicker.fontWeight,
+        heroKickerLetterSpacing: typographics.heroKicker.letterSpacing,
+        heroKickerLineHeight: typographics.heroKicker.lineHeight,
+    }}
+>
+    .hero {
+        background: var(--colorsDeepForest);
+        display: block;
+        min-height: 0;
+        position: relative;
+    }
+
+    .hero-right {
+        background: var(--colorsLightSand);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 24px 16px 32px;
+    }
+
+    .hero-kicker {
+        color: var(--colorsDarkGreen);
+        font-family: var(--heroKickerFontFamily);
+        font-size: var(--heroKickerFontSize);
+        font-weight: var(--heroKickerFontWeight);
+        letter-spacing: var(--heroKickerLetterSpacing);
+        line-height: var(--heroKickerLineHeight);
+        text-transform: uppercase;
+    }
+
+    h1 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 52px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: var(--displayLetterSpacing);
+        line-height: 1;
+        margin: 0;
+        max-width: 760px;
+        padding: 16px 0 12px;
+        text-transform: uppercase;
+    }
+
+    h1 em {
+        color: var(--colorsBrightGreen);
+        font-style: normal;
+    }
+
+    .hero-foot {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        text-align: left;
+    }
+
+    .hero-foot p {
+        color: var(--colorsDeepForest);
+        font-family: var(--heroFootFontFamily);
+        font-size: var(--heroFootFontSize);
+        font-weight: var(--heroFootFontWeight);
+        line-height: var(--heroFootLineHeight);
+        margin: 0;
+        max-width: none;
+    }
+
+    @media (min-width: 769px) {
+        .hero {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            min-height: 633px;
+        }
+
+        .hero-right {
+            padding: 104px 40px 32px 16px;
+        }
+
+        h1 {
+            font-size: 72px;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .hero {
+            grid-template-columns: 330px minmax(0, 1fr);
+        }
+
+        .hero-right {
+            padding: 128px 40px 32px 16px;
+        }
+
+        h1 {
+            font-size: 88px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .hero {
+            grid-template-columns: 331px minmax(0, 1fr);
+        }
+
+        .hero-right {
+            padding: 128px 56px 32px;
+        }
+
+        h1 {
+            font-size: 120px;
+        }
+
+        .hero-foot {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .hero-foot p {
+            max-width: 520px;
+        }
+    }
+</style>
+<section class="hero">
+    <Images alt={alt} heroImage={heroImage} mobileHeroImage={mobileHeroImage} showMark={false} />
+    <div class="hero-right">
+        {eyebrow && <p class="hero-kicker">{eyebrow}</p>}
+        <h1>
+            {title} {emphasis && <em>{emphasis}</em>}
+        </h1>
+        <div class="hero-foot">
+            {intro && <p>{intro}</p>}
+            {ctaHref && ctaLabel && (
+                <a class="btn" href={ctaHref}>
+                    {ctaLabel}
+                </a>
+            )}
+        </div>
+    </div>
+</section>

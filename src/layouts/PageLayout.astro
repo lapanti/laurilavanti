@@ -9,24 +9,53 @@ import BaseLayout from './BaseLayout.astro'
 interface Props {
     alt?: string
     createdAt?: string
+    ctaHref?: string
+    ctaLabel?: string
     description?: string
+    emphasis?: string
+    eyebrow?: string
     faq?: Array<{ a: string; q: string }>
     heroImage?: string
+    intro?: string
     lang?: 'en' | 'fi' | 'sv'
+    mobileHeroImage?: string
     noindex?: boolean
     pageTitle: string
+    plated?: boolean
     slug?: string
     tags?: string[]
     title: string
     type?: JsonLdType
     updatedAt?: string
+    variant?: 'page' | 'split'
 }
 
 // Support both MDX layout usage (props under frontmatter) and direct .astro component usage
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props: Props = ((Astro.props as any).frontmatter as Props | undefined) ?? (Astro.props as Props)
-const { alt, createdAt, description, faq, heroImage, lang, noindex, pageTitle, slug, tags, title, type, updatedAt } =
-    props
+const {
+    alt,
+    createdAt,
+    ctaHref,
+    ctaLabel,
+    description,
+    emphasis,
+    eyebrow,
+    faq,
+    heroImage,
+    intro,
+    lang,
+    mobileHeroImage,
+    noindex,
+    pageTitle,
+    plated = false,
+    slug,
+    tags,
+    title,
+    type,
+    updatedAt,
+    variant = 'page',
+} = props
 
 const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 
@@ -50,6 +79,7 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     noindex={noindex}
     ogImage={ogImage}
     ogImageAlt={alt}
+    plated={plated}
     slug={slug}
     title={pageTitle}
     type={type}
@@ -58,11 +88,18 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     <TitleBanner
         alt={alt}
         createdAt={createdAt}
+        ctaHref={ctaHref}
+        ctaLabel={ctaLabel}
+        emphasis={emphasis}
+        eyebrow={eyebrow}
         heroImage={heroImage}
+        intro={intro}
         lang={lang}
+        mobileHeroImage={mobileHeroImage}
         slot="banner"
         tags={tags}
         title={title}
+        variant={variant}
     />
     <slot />
 </BaseLayout>
