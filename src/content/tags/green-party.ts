@@ -15,38 +15,6 @@ export const greenPartyTag: LocalTag = {
             'Grön politik är inte en uppsättning fasta ståndpunkter. Den formas genom intern debatt, ny information och avvägningar i verkligt beslutsfattande. Att dela med sig av dessa val och åsikter öppet är viktigt.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'The party congress sets the direction through the party programme process and votes on membership motions. Representatives then interpret that direction in coalition negotiations and budget processes. The gap between programme and practice is where the interesting political choices happen.',
-                q: 'How does Green Party direction get set?',
-            },
-            {
-                a: 'Green politics combines ecological sustainability, individual freedom, social justice, and market mechanisms that price in externalities. In practice this means, for example, pricing carbon dioxide emissions, developing public services, and genuinely free markets where small businesses and entrepreneurs can also thrive.',
-                q: 'What distinguishes Green economic politics from other parties?',
-            },
-        ],
-        fi: [
-            {
-                a: 'Puoluekokous asettaa suunnan puolueen ohjelmatyön ja jäsenaloitteiden kautta. Edustajat tulkitsevat tätä suuntaa hallitusneuvotteluissa ja talousarvioneuvotteluissa. Ohjelman ja käytännön välinen kuilu on se paikka, jossa kiinnostavat poliittiset valinnat tapahtuvat.',
-                q: 'Miten Vihreiden linja muodostuu?',
-            },
-            {
-                a: 'Vihreä politiikka yhdistää ekologisen kestävyyden, yksilön vapauden, sosiaalisen oikeudenmukaisuuden ja markkinalähtöiset ratkaisut, jotka hinnoittelevat ulkoisvaikutukset. Käytännössä tämä tarkoittaa esimerkiksi hiilidioksidipäästöjen hinnoittelua, julkisten palveluiden kehittämistä ja tosiasiallisesti vapaita markkinoita, joissa myös pienet yritykset ja yrittäjät voivat menestyä.',
-                q: 'Mikä erottaa vihreän talouspolitiikan muista puolueista?',
-            },
-        ],
-        sv: [
-            {
-                a: 'Partikongressen sätter riktningen genom partiets programarbete och omröstningar om medlemsmotioner. Företrädarna tolkar sedan den riktningen i koalitionsförhandlingar och budgetprocesser. Gapet mellan program och praktik är där de intressanta politiska valen sker.',
-                q: 'Hur fastställs De Grönas linje?',
-            },
-            {
-                a: 'Grön politik kombinerar ekologisk hållbarhet, individuell frihet, social rättvisa och marknadsmekanismer som prissätter externa effekter. I praktiken innebär detta till exempel att prissätta koldioxidutsläpp, utveckla offentliga tjänster och skapa genuint fria marknader där även små företag och företagare kan blomstra.',
-                q: 'Vad utmärker grön ekonomisk politik jämfört med andra partier?',
-            },
-        ],
-    },
     id: 'green-party',
     metaDescription: {
         en: 'Green Party politics from inside — congress decisions, programme choices, and the trade-offs of being a Green representative.',

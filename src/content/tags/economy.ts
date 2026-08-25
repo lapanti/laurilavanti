@@ -18,50 +18,6 @@ export const economyTag: LocalTag = {
             'En fungerande ekonomi i AI-eran är inte bara en slogan. Det är substans: kompetens som överlever omställningen, företag som kan bygga på finsk och europeisk infrastruktur, och en stat som upphandlar teknik på sina egna villkor.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'AI changes how work gets done, what businesses compete on, and what public services can offer. Without competence in parliament, Finland risks paying premium prices for foreign technology while domestic capability shrinks. The economic policy question is not whether to invest in AI, but how to do it so it delivers lasting benefit.',
-                q: 'Why is AI an economic policy question?',
-            },
-            {
-                a: 'Procurement rules that don’t favour specific companies, but keep markets open and fair for everyone. Education policy that lets workers move between roles as the labour market changes. None of this is exotic — it is the standard playbook for any country that wants to compete in a technology shift.',
-                q: 'What concretely keeps the economy working in the AI era?',
-            },
-            {
-                a: 'Public money should above all promote open and fair markets, so we get the best outcome at the lowest cost — which benefits taxpayers and Finnish companies alike. Procurement law is the lever, and its rules are written in parliament.',
-                q: 'How does this connect to public sector procurement?',
-            },
-        ],
-        fi: [
-            {
-                a: 'Tekoäly muuttaa työn tekemistä, sitä millä yritykset kilpailevat ja mitä julkiset palvelut voivat tarjota. Ilman osaamista eduskunnassa Suomi maksaa ylihintaa ulkomaisesta teknologiasta samalla kun kotimainen osaaminen kutistuu. Talouspoliittinen kysymys ei ole, panostaako tekoälyyn, vaan miten se tehdään niin, että siitä saadaan pitkäkestoista hyötyä.',
-                q: 'Miksi tekoäly on talouspoliittinen kysymys?',
-            },
-            {
-                a: 'Hankintasääntöjä, jotka eivät suosi tiettyjä yrityksiä, vaan pitävät markkinat avoimina ja reiluina kaikille. Koulutuspolitiikkaa, jonka avulla työntekijät voivat siirtyä rooleista toisiin, kun työmarkkinat muuttuvat. Tämä ei ole eksoottista — näin toimii jokainen maa, joka haluaa pärjätä teknologiamurroksessa.',
-                q: 'Mitä konkreettisesti tarkoittaa talouden pitäminen toimivana tekoälyn aikana?',
-            },
-            {
-                a: 'Julkisen rahan tulee ennen kaikkea edistää avoimia ja reiluja markkinoita, jotta saadaan paras lopputulos pienimmällä kustannuksella, siitä hyötyy niin veronmaksaja kuin suomalaiset yrityksetkin. Hankintalaki on vipu, jonka säännöt kirjoitetaan eduskunnassa.',
-                q: 'Miten tämä liittyy julkisiin hankintoihin?',
-            },
-        ],
-        sv: [
-            {
-                a: 'AI förändrar hur arbete utförs, vad företag konkurrerar med och vad offentliga tjänster kan erbjuda. Utan kompetens i riksdagen riskerar Finland att betala överpris för utländsk teknik samtidigt som inhemsk kompetens krymper. Den ekonomisk-politiska frågan är inte om man ska satsa på AI, utan hur man gör det så att det ger varaktig nytta.',
-                q: 'Varför är AI en ekonomisk-politisk fråga?',
-            },
-            {
-                a: 'Upphandlingsregler som inte gynnar särskilda företag, utan håller marknaderna öppna och rättvisa för alla. Utbildningspolitik som låter arbetstagare byta roller när arbetsmarknaden förändras. Detta är inget exotiskt — så gör varje land som vill klara sig i ett teknikskifte.',
-                q: 'Vad innebär det konkret att hålla ekonomin fungerande i AI-eran?',
-            },
-            {
-                a: 'Offentliga medel ska framför allt främja öppna och rättvisa marknader, så att vi får bästa möjliga resultat till lägsta kostnad — vilket gynnar både skattebetalare och finländska företag. Upphandlingslagen är hävstången, och dess regler skrivs i riksdagen.',
-                q: 'Hur hänger detta ihop med offentlig upphandling?',
-            },
-        ],
-    },
     id: 'economy',
     metaDescription: {
         en: 'Finland’s economy needs to work through the AI era — new companies, new jobs, and world-class public services.',
