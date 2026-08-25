@@ -9,6 +9,13 @@ export interface Slogan {
     candidacy: string
 }
 
+/** Label for the hero's call-to-action button, linking to the driving-theme section. */
+export const heroCtaLabel: Record<Lang, string> = {
+    en: 'Explore my platform',
+    fi: 'Tutustu ohjelmaani',
+    sv: 'Utforska mitt program',
+}
+
 export const sloganContent: Record<Lang, Slogan> = {
     en: {
         candidacy: 'Running for Parliament in Uusimaa',

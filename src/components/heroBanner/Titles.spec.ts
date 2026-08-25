@@ -5,8 +5,7 @@ import { renderAstroComponent } from '../../../tests/helpers'
 import Titles from './Titles.astro'
 
 describe('<Titles />', () => {
-    const secondaryTitle = 'Secondary Title'
-    const title = 'Test Title'
+    const description = 'Description sentence shown under the headline.'
     const slogan = {
         candidacy: 'Candidacy line',
         prefix: 'Because technology should serve',
@@ -16,94 +15,74 @@ describe('<Titles />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(Titles, {
             props: {
-                secondaryTitle,
-                title,
+                description,
+                lang: 'en',
+                slogan,
             },
         })
 
         expect(result.firstChild).toMatchSnapshot()
     })
 
-    it('should render the name logo as h1', async () => {
+    it('should render the h1 as the prefix followed by the resting word', async () => {
         const result = await renderAstroComponent(Titles, {
             props: {
-                title,
+                description,
+                lang: 'en',
+                slogan,
             },
         })
 
-        expect(getByRole(result, 'heading', { level: 1, name: 'Lauri Lavanti' })).toBeDefined()
+        expect(getByRole(result, 'heading', { level: 1, name: `${slogan.prefix} four` })).toBeDefined()
     })
 
-    it('should render secondary title', async () => {
+    it('should emphasise the resting word', async () => {
         const result = await renderAstroComponent(Titles, {
             props: {
-                secondaryTitle,
-                title,
+                description,
+                lang: 'en',
+                slogan,
             },
         })
 
-        expect(getByRole(result, 'heading', { level: 2, name: secondaryTitle })).toBeDefined()
+        const em = result.querySelector('h1 em')
+
+        expect(em?.textContent).toBe('four')
     })
 
-    describe('with a slogan', () => {
-        it('should render', async () => {
-            const result = await renderAstroComponent(Titles, {
-                props: {
-                    slogan,
-                    title,
-                },
-            })
-
-            expect(result.firstChild).toMatchSnapshot()
+    it('should render the candidacy line as the kicker above the headline', async () => {
+        const result = await renderAstroComponent(Titles, {
+            props: {
+                description,
+                lang: 'en',
+                slogan,
+            },
         })
 
-        it('should name the h2 after the resting slogan, not the animation', async () => {
-            const result = await renderAstroComponent(Titles, {
-                props: {
-                    slogan,
-                    title,
-                },
-            })
+        expect(getByText(result, slogan.candidacy)).toBeDefined()
+    })
 
-            expect(getByRole(result, 'heading', { level: 2, name: `${slogan.prefix} four` })).toBeDefined()
+    it('should render the description as the foot paragraph', async () => {
+        const result = await renderAstroComponent(Titles, {
+            props: {
+                description,
+                lang: 'en',
+                slogan,
+            },
         })
 
-        it('should render the resting word so the slogan is complete without JavaScript', async () => {
-            const result = await renderAstroComponent(Titles, {
-                props: {
-                    slogan,
-                    title,
-                },
-            })
-            const typed = result.querySelector('.typed')
+        expect(getByText(result, description)).toBeDefined()
+    })
 
-            expect(typed?.textContent?.trim()).toBe('four')
-            expect(typed?.getAttribute('data-typed-words')).toBe(JSON.stringify(slogan.words))
+    it('should render a call-to-action link to the driver section', async () => {
+        const result = await renderAstroComponent(Titles, {
+            props: {
+                description,
+                lang: 'en',
+                slogan,
+            },
         })
 
-        it('should render the candidacy line after the slogan', async () => {
-            const result = await renderAstroComponent(Titles, {
-                props: {
-                    slogan,
-                    title,
-                },
-            })
-            const heading = getByRole(result, 'heading', { level: 2 })
-            const candidacy = getByText(result, slogan.candidacy)
-
-            expect(heading.nextElementSibling).toBe(candidacy)
-        })
-
-        it('should take precedence over secondaryTitle', async () => {
-            const result = await renderAstroComponent(Titles, {
-                props: {
-                    secondaryTitle,
-                    slogan,
-                    title,
-                },
-            })
-
-            expect(result.textContent).not.toContain(secondaryTitle)
-        })
+        expect(getByRole(result, 'link')).toHaveAttribute('href', '#driver')
     })
 })

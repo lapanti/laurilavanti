@@ -1,140 +1,136 @@
 ---
+import type { Lang } from '../../content/nav'
 import type { Slogan } from '../../content/slogan'
 
-import { colors, sizes, typographics } from '../../lib/styles'
-import NameLogo from '../NameLogo.astro'
+import { heroCtaLabel } from '../../content/slogan'
+import { colors, typographics } from '../../lib/styles'
 
 interface Props {
-    title: string
-    secondaryTitle?: string
-    slogan?: Slogan
+    description: string
+    lang: Lang
+    slogan: Slogan
 }
 
-const { secondaryTitle, slogan } = Astro.props
-
-const restingWord = slogan?.words.at(-1)
+const { description, lang, slogan } = Astro.props
+const restingWord = slogan.words.at(-1)
 ---
 
 <style
     define:vars={{
-        colorsWhite: colors.white,
-        h2FontFamily: typographics.h2.fontFamily,
-        h2FontSize: typographics.h2.fontSize,
-        h2FontWeight: typographics.h2.fontWeight,
-        h2LineHeight: typographics.h2.lineHeight,
-        ingressFontFamily: typographics.ingress.fontFamily,
-        ingressFontSize: typographics.ingress.fontSize,
-        ingressFontWeight: typographics.ingress.fontWeight,
-        ingressLineHeight: typographics.ingress.lineHeight,
-        sizes0875: sizes[0.875],
-        sizes3: sizes[3],
-        sizes15: sizes[1.5],
-        sizes375: sizes[3.75],
+        colorsBrightGreen: colors.brightGreen,
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        displayFontFamily: typographics.display.fontFamily,
+        displayFontWeight: typographics.display.fontWeight,
+        displayLetterSpacing: typographics.display.letterSpacing,
+        heroFootFontFamily: typographics.heroFoot.fontFamily,
+        heroFootFontSize: typographics.heroFoot.fontSize,
+        heroFootFontWeight: typographics.heroFoot.fontWeight,
+        heroFootLineHeight: typographics.heroFoot.lineHeight,
+        heroKickerFontFamily: typographics.heroKicker.fontFamily,
+        heroKickerFontSize: typographics.heroKicker.fontSize,
+        heroKickerFontWeight: typographics.heroKicker.fontWeight,
+        heroKickerLetterSpacing: typographics.heroKicker.letterSpacing,
+        heroKickerLineHeight: typographics.heroKicker.lineHeight,
     }}
 >
-    div {
-        color: var(--colorsWhite);
+    .hero-right {
+        background: var(--colorsLightSand);
         display: flex;
         flex-direction: column;
-        gap: var(--sizes15);
-        margin-top: var(--sizes3);
-        padding: var(--sizes0875);
+        justify-content: center;
+        padding: 24px 16px 32px;
     }
 
-    h2 {
-        font-family: var(--h2FontFamily);
-        font-weight: var(--h2FontWeight);
-        font-size: var(--h2FontSize);
-        line-height: var(--h2LineHeight);
+    .hero-kicker {
+        color: var(--colorsDarkGreen);
+        font-family: var(--heroKickerFontFamily);
+        font-size: var(--heroKickerFontSize);
+        font-weight: var(--heroKickerFontWeight);
+        letter-spacing: var(--heroKickerLetterSpacing);
+        line-height: var(--heroKickerLineHeight);
+        text-transform: uppercase;
     }
 
-    p {
-        font-family: var(--ingressFontFamily);
-        font-weight: var(--ingressFontWeight);
-        font-size: var(--ingressFontSize);
-        line-height: var(--ingressLineHeight);
+    h1 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 64px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: var(--displayLetterSpacing);
+        line-height: 1;
+        margin: 0;
+        max-width: 1800px;
+        padding: 16px 0 12px;
+        text-transform: uppercase;
     }
 
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
+    h1 em {
+        color: var(--colorsBrightGreen);
+        font-style: normal;
     }
 
-    /* Own line, reserved height: the growing word never reflows the prefix
-       above it nor the candidacy line below it. */
-    .typed {
-        display: block;
-        min-height: 1lh;
+    .hero-foot {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        text-align: left;
     }
 
-    .typed::after {
-        content: '▌';
-        /* Keep the caret from adding width the resting word would jump over. */
-        margin-left: -0.1em;
+    .hero-foot p {
+        color: var(--colorsDeepForest);
+        font-family: var(--heroFootFontFamily);
+        font-size: var(--heroFootFontSize);
+        font-weight: var(--heroFootFontWeight);
+        line-height: var(--heroFootLineHeight);
+        max-width: none;
     }
 
-    .typed[data-done]::after {
-        content: none;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-        .typed::after {
-            animation: caret-blink 1s step-end infinite;
+    @media (min-width: 769px) {
+        .hero-right {
+            padding: 128px 40px 32px 16px;
         }
+        h1 {
+            font-size: 72px;
+        }
+    }
 
-        @keyframes caret-blink {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
+    @media (min-width: 1000px) {
+        .hero-right {
+            padding-top: 128px;
+        }
+        h1 {
+            font-size: 88px;
         }
     }
 
     @media (min-width: 1200px) {
-        div {
+        .hero-right {
+            padding: 128px 56px 32px;
+        }
+        h1 {
+            font-size: 120px;
+        }
+        .hero-foot {
             align-items: flex-start;
-            gap: var(--sizes3);
-            justify-content: flex-start;
-            padding: var(--sizes375);
-            width: 50%;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .hero-foot p {
+            max-width: 480px;
         }
     }
 </style>
-<div>
-    <h1><NameLogo /></h1>
-    {
-        slogan ? (
-            <Fragment>
-                <h2>
-                    {/* The accessible name stays fixed at the full resting slogan, so
-                        screen readers and aria snapshots never see the animation. */}
-                    <span class="sr-only">{`${slogan.prefix} ${restingWord}`}</span>
-                    <span aria-hidden="true">
-                        {slogan.prefix}
-                        {/* Starts "done" — no caret — so the resting state is correct
-                            whenever the animation never runs. The script clears it. */}
-                        <span class="typed" data-done data-typed-words={JSON.stringify(slogan.words)}>
-                            {restingWord}
-                        </span>
-                    </span>
-                </h2>
-                <p>{slogan.candidacy}</p>
-            </Fragment>
-        ) : (
-            secondaryTitle && <h2>{secondaryTitle}</h2>
-        )
-    }
+<div class="hero-right">
+    <p class="hero-kicker">{slogan.candidacy}</p>
+    <h1>
+        {slogan.prefix}
+        <em>{restingWord}</em>
+    </h1>
+    <div class="hero-foot">
+        <p>{description}</p>
+        <a class="btn" href="#driver">{heroCtaLabel[lang]}</a>
+    </div>
 </div>
-
-<script>
-    import '../../lib/typewriterClient'
-</script>

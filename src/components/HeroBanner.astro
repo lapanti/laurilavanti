@@ -1,47 +1,52 @@
 ---
+import type { Lang } from '../content/nav'
 import type { Slogan } from '../content/slogan'
 
-import { colors, HEADER_SIZE, sizes } from '../lib/styles'
+import { colors } from '../lib/styles'
 import Images from './heroBanner/Images.astro'
 import Titles from './heroBanner/Titles.astro'
 
 interface Props {
     alt?: string
-    backgroundImage?: string
+    description: string
     heroImage?: string
+    lang: Lang
     mobileHeroImage?: string
-    secondaryTitle?: string
-    slogan?: Slogan
-    title: string
+    slogan: Slogan
 }
 
-const { alt, backgroundImage, heroImage, mobileHeroImage, secondaryTitle, slogan, title } = Astro.props
+const { alt, description, heroImage, lang, mobileHeroImage, slogan } = Astro.props
 ---
 
-<style
-    define:vars={{
-        colorsForestGreen: colors.forestGreen,
-        headerSize: HEADER_SIZE,
-        sizes45: sizes[45],
-    }}
->
-    div {
-        align-items: stretch;
-        background: var(--colorsForestGreen);
-        display: flex;
-        flex-direction: column;
-        grid-column: 1 / -1;
+<style define:vars={{ colorsDeepForest: colors.forestGreen }}>
+    .hero {
+        background: var(--colorsDeepForest);
+        display: block;
+        min-height: 0;
+        position: relative;
+    }
+
+    @media (min-width: 769px) {
+        .hero {
+            display: grid;
+            grid-template-columns: 330px minmax(0, 1fr);
+            min-height: clamp(640px, 92svh, 899px);
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .hero {
+            grid-template-columns: 380px minmax(0, 1fr);
+        }
     }
 
     @media (min-width: 1200px) {
-        div {
-            flex-direction: row-reverse;
-            height: var(--sizes45);
-            padding-top: var(--headerSize);
+        .hero {
+            grid-template-columns: 470px minmax(0, 1fr);
         }
     }
 </style>
-<div>
-    <Titles secondaryTitle={secondaryTitle} slogan={slogan} title={title} />
-    <Images alt={alt} backgroundImage={backgroundImage} heroImage={heroImage} mobileHeroImage={mobileHeroImage} />
-</div>
+<section class="hero">
+    <Images alt={alt} heroImage={heroImage} mobileHeroImage={mobileHeroImage} />
+    <Titles description={description} lang={lang} slogan={slogan} />
+</section>

@@ -1,59 +1,63 @@
 ---
 import { getImageSrcset } from '../../lib/images'
-import { sizes } from '../../lib/styles'
-import BackgroundImage from './images/BackgroundImage.astro'
+import NameLogo from '../NameLogo.astro'
 
 interface Props {
     alt?: string
-    backgroundImage?: string
     heroImage?: string
     mobileHeroImage?: string
 }
 
-const { alt, backgroundImage, heroImage, mobileHeroImage } = Astro.props
+const { alt, heroImage, mobileHeroImage } = Astro.props
 
 const heroImg = heroImage ? getImageSrcset(heroImage, '1x1', [560, 720, 1120, 1680]) : undefined
 const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 750, 1120, 1680]) : undefined
 ---
 
-<style define:vars={{ sizes1Negative: `-${sizes[1]}`, sizes14Negative: `-${sizes[14]}` }}>
-    .container {
-        display: flex;
-        flex: 1;
+<style>
+    .hero-left {
         overflow: hidden;
         position: relative;
-        margin-top: 0;
     }
 
-    .image {
-        height: auto;
-        margin-left: var(--sizes1Negative);
+    .hero-left .bg {
+        display: block;
+        height: 222px;
+        position: relative;
+    }
+
+    .hero-left .bg img {
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 40%;
         width: 100%;
     }
 
-    .image-mobile {
-        display: block;
+    .mark {
+        display: none;
     }
 
     .image-desktop {
         display: none;
     }
 
-    @media (min-width: 1200px) {
-        .container {
-            overflow: visible;
-            width: 50%;
-            margin-top: 0;
+    @media (min-width: 769px) {
+        .hero-left .bg {
             height: 100%;
+            position: absolute;
+            inset: 0;
         }
 
-        .image {
-            bottom: 0;
+        .hero-left .bg img {
+            object-position: 100% 50%;
+        }
+
+        .mark {
+            display: block;
+            left: 40px;
             position: absolute;
-            right: var(--sizes14Negative);
-            margin-top: auto;
-            max-height: 100%;
-            width: auto;
+            top: 40px;
+            z-index: 1;
         }
 
         .image-mobile {
@@ -64,44 +68,56 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560,
             display: block;
         }
     }
-</style>
-<div class="container">
-    <BackgroundImage image={backgroundImage} />
-    {
-        heroImg && mobileImg ? (
-            <>
-                <img
-                    alt={alt ?? ''}
-                    class="image image-mobile"
-                    fetchpriority="high"
-                    height={mobileImg.height}
-                    sizes="(max-width: 1199px) 100vw, 560px"
-                    src={mobileImg.src}
-                    srcset={mobileImg.srcset}
-                    width={mobileImg.width}
-                />
-                <img
-                    alt={alt ?? ''}
-                    class="image image-desktop"
-                    fetchpriority="high"
-                    height={heroImg.height}
-                    sizes="(max-width: 1199px) 100vw, min(50vw, 600px)"
-                    src={heroImg.src}
-                    srcset={heroImg.srcset}
-                    width={heroImg.width}
-                />
-            </>
-        ) : heroImg ? (
-            <img
-                alt={alt ?? ''}
-                class="image"
-                fetchpriority="high"
-                height={heroImg.height}
-                sizes="(max-width: 1199px) 100vw, 560px"
-                src={heroImg.src}
-                srcset={heroImg.srcset}
-                width={heroImg.width}
-            />
-        ) : null
+
+    @media (min-width: 1200px) {
+        .mark {
+            left: 64px;
+            top: 64px;
+        }
     }
+</style>
+<div class="hero-left">
+    <div class="bg">
+        {
+            heroImg && mobileImg ? (
+                <>
+                    <img
+                        alt={alt ?? ''}
+                        class="image-mobile"
+                        fetchpriority="high"
+                        height={mobileImg.height}
+                        sizes="(max-width: 768px) 100vw, 470px"
+                        src={mobileImg.src}
+                        srcset={mobileImg.srcset}
+                        width={mobileImg.width}
+                    />
+                    <img
+                        alt={alt ?? ''}
+                        class="image-desktop"
+                        fetchpriority="high"
+                        height={heroImg.height}
+                        sizes="(max-width: 768px) 100vw, 470px"
+                        src={heroImg.src}
+                        srcset={heroImg.srcset}
+                        width={heroImg.width}
+                    />
+                </>
+            ) : (
+                heroImg && (
+                    <img
+                        alt={alt ?? ''}
+                        fetchpriority="high"
+                        height={heroImg.height}
+                        sizes="(max-width: 768px) 100vw, 470px"
+                        src={heroImg.src}
+                        srcset={heroImg.srcset}
+                        width={heroImg.width}
+                    />
+                )
+            )
+        }
+    </div>
+    <div class="mark">
+        <NameLogo size="large" tone="light" />
+    </div>
 </div>
