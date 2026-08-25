@@ -1,0 +1,34 @@
+---
+import { colors, typographics } from '../lib/styles'
+
+interface Props {
+    tone?: 'neutral' | 'inherit'
+}
+
+const { tone = 'neutral' } = Astro.props
+const eyebrowColor = tone === 'inherit' ? 'currentColor' : colors.eyebrowNeutral
+---
+
+<style
+    define:vars={{
+        eyebrowColor,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+    }}
+>
+    .eyebrow {
+        color: var(--eyebrowColor);
+        display: block;
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+</style>
+
+<span class="eyebrow"><slot /></span>

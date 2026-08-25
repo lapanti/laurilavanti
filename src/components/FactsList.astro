@@ -1,0 +1,45 @@
+---
+import { colors, typographics } from '../lib/styles'
+
+interface Props {
+    items: string[]
+}
+
+const { items } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsSand: colors.sand,
+        colorsTextPrimary: colors.textPrimary,
+        factsFontFamily: typographics.text.fontFamily,
+        factsFontWeight: typographics.pillarAnswer.fontWeight,
+    }}
+>
+    .facts {
+        display: grid;
+        gap: 12px;
+        padding-top: 24px;
+    }
+
+    .facts li {
+        border-left: 4px solid var(--colorsSand);
+        color: var(--colorsTextPrimary);
+        font-family: var(--factsFontFamily);
+        font-size: 17px;
+        font-weight: var(--factsFontWeight);
+        line-height: 1.6;
+        padding: 4px 0 4px 12px;
+    }
+
+    @media (max-width: 768px) {
+        .facts {
+            gap: 16px;
+            padding-top: 24px;
+        }
+    }
+</style>
+
+<ul class="facts">
+    {items.map((item) => <li>{item}</li>)}
+</ul>

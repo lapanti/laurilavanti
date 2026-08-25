@@ -1,0 +1,32 @@
+---
+import { colors } from '../lib/styles'
+
+interface Props {
+    ground?: 'sand' | 'offWhite' | 'gray' | 'oat' | 'white'
+    id?: string
+    labelledBy?: string
+}
+
+const { ground = 'sand', id, labelledBy } = Astro.props
+const groundColor = {
+    gray: colors.gray,
+    oat: colors.oat,
+    offWhite: colors.offWhite,
+    sand: colors.lightSand,
+    white: colors.white,
+}[ground]
+---
+
+<style define:vars={{ groundColor }}>
+    .plate {
+        background: var(--groundColor);
+    }
+</style>
+
+<section aria-labelledby={labelledBy} class="plate section" id={id}>
+    <div class="sheet">
+        <div class="inner">
+            <slot />
+        </div>
+    </div>
+</section>

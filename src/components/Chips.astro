@@ -1,0 +1,69 @@
+---
+import { colors, typographics } from '../lib/styles'
+
+interface Props {
+    ariaLabel?: string
+    items: Array<{ href: string; label: string }>
+}
+
+const { ariaLabel, items } = Astro.props
+---
+
+<style
+    define:vars={{
+        chipFontFamily: typographics.chip.fontFamily,
+        chipFontWeight: typographics.chip.fontWeight,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        colorsSand: colors.sand,
+        colorsWhite: colors.white,
+    }}
+>
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 20px;
+    }
+
+    .chips a {
+        background: var(--colorsWhite);
+        border: 2px solid var(--colorsSand);
+        color: var(--colorsDeepForest);
+        font-family: var(--chipFontFamily);
+        font-size: 13px;
+        font-weight: var(--chipFontWeight);
+        letter-spacing: 0.12em;
+        line-height: 1.4;
+        padding: 8px 12px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition:
+            background 0.18s var(--ease),
+            border-color 0.18s var(--ease),
+            color 0.18s var(--ease),
+            transform 0.12s var(--ease);
+    }
+
+    .chips a:hover {
+        background: var(--colorsDeepForest);
+        border-color: var(--colorsDeepForest);
+        color: var(--colorsLightSand);
+    }
+
+    .chips a:active {
+        transform: translate(1px, 1px);
+    }
+</style>
+
+<ul aria-label={ariaLabel} class="chips">
+    {
+        items.map((item) => (
+            <li>
+                <a href={item.href} rel={item.href.startsWith('http') ? 'noopener' : undefined}>
+                    {item.label}
+                </a>
+            </li>
+        ))
+    }
+</ul>

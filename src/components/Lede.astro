@@ -1,0 +1,44 @@
+---
+import { colors, typographics } from '../lib/styles'
+
+interface Props {
+    wide?: boolean
+}
+
+const { wide = false } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsTextPrimary: colors.textPrimary,
+        ledeFontFamily: typographics.lede.fontFamily,
+        ledeFontSize: typographics.lede.fontSize,
+        ledeFontWeight: typographics.lede.fontWeight,
+        ledeLineHeight: typographics.lede.lineHeight,
+    }}
+>
+    .lede {
+        color: var(--colorsTextPrimary);
+        font-family: var(--ledeFontFamily);
+        font-size: var(--ledeFontSize);
+        font-weight: var(--ledeFontWeight);
+        line-height: var(--ledeLineHeight);
+        max-width: 548px;
+        padding-top: 24px;
+    }
+
+    .lede--wide {
+        max-width: 760px;
+    }
+
+    @media (max-width: 768px) {
+        .lede,
+        .lede--wide {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: none;
+        }
+    }
+</style>
+
+<p class:list={{ lede: !wide, 'lede lede--wide': wide }}><slot /></p>
