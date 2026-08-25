@@ -11,8 +11,8 @@ interface Props {
 
 const { alt, heroImage, mobileHeroImage, showMark = true } = Astro.props
 
-const heroImg = heroImage ? getImageSrcset(heroImage, '1x1', [560, 720, 1120, 1680]) : undefined
-const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, '1x1', [560, 750, 1120, 1680]) : undefined
+const heroImg = heroImage ? getImageSrcset(heroImage, 'heroPortrait', [560, 720, 1120, 1680]) : undefined
+const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandscape', [560, 750, 1120, 1680]) : undefined
 ---
 
 <style>

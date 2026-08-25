@@ -18,6 +18,10 @@ const VARIANTS: Record<string, VariantDef> = {
     background: { fit: 'crop', gravity: 'auto', h: 660, w: 1920 },
     body: { fit: 'crop', gravity: 'auto', h: 1800, w: 2400 },
     hero: { fit: 'crop', gravity: 'face', h: 1320, w: 1728 },
+    /** Split-hero desktop column — the designer's own portrait crop (hero-pysty), not a re-crop. */
+    heroPortrait: { fit: 'crop', gravity: 'face', h: 2240, w: 1170 },
+    /** Split-hero mobile band — the designer's own landscape crop (hero-vaaka), not a re-crop. */
+    heroLandscape: { fit: 'crop', gravity: 'face', h: 480, w: 800 },
     og: { fit: 'crop', gravity: 'face', h: 630, w: 1200 },
 }
 
