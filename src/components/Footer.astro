@@ -1,11 +1,22 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { footerAriaLabel, footerLinks, footerLogoAlt, footerRssAriaLabel } from '../content/footer'
-import { colors, CONTENT_PADDING, CONTENT_SIZE, gridAreas, sizes } from '../lib/styles'
+import {
+    footerAriaLabel,
+    footerColumnLabels,
+    footerLanguageLinks,
+    footerLinks,
+    footerLogoAlt,
+    footerPrivacyPolicyLabel,
+    footerRssAriaLabel,
+} from '../content/footer'
+import { navLinks } from '../content/nav'
+import { personEmail } from '../content/person'
+import { colors, gridAreas, typographics } from '../lib/styles'
 import InstagramLink from './footer/InstagramLink.astro'
 import Link from './footer/Link.astro'
 import TikTokLink from './footer/TikTokLink.astro'
+import NameLogo from './NameLogo.astro'
 
 interface Props {
     lang?: Lang
@@ -13,6 +24,8 @@ interface Props {
 
 const { lang = 'fi' } = Astro.props
 const getAriaLabel = footerAriaLabel[lang]
+const columnLabels = footerColumnLabels[lang]
+const siteLinks = navLinks[lang].filter((link) => !link.switchToLang)
 
 const year = new Date().getFullYear()
 
@@ -25,119 +38,204 @@ const licenseText: Record<Lang, string> = {
 
 <style
     define:vars={{
-        colorsForestGreen: colors.forestGreen,
-        colorsWhite: colors.white,
-        contentPadding: CONTENT_PADDING,
-        contentSize: CONTENT_SIZE,
+        colorsDeepForest: colors.forestGreen,
+        colorsFooterMuted: colors.footerMuted,
+        colorsOatYellow: colors.oatYellow,
+        colorsSkyAqua: colors.skyAqua,
         gridAreasFooter: gridAreas.footer,
-        sizes0875: sizes[0.875],
-        sizes15: sizes[1.5],
+        headingFontFamily: typographics.eyebrow.fontFamily,
+        headingFontSize: typographics.eyebrow.fontSize,
+        headingFontWeight: typographics.eyebrow.fontWeight,
+        headingLetterSpacing: typographics.eyebrow.letterSpacing,
+        headingLineHeight: typographics.eyebrow.lineHeight,
     }}
 >
     footer {
-        align-items: center;
-        background-color: var(--colorsForestGreen);
-        color: var(--colorsWhite);
-        display: flex;
+        background-color: var(--colorsDeepForest);
+        color: var(--colorsSkyAqua);
         grid-area: var(--gridAreasFooter);
-        justify-content: center;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        gap: var(--sizes15);
-        padding-block: var(--sizes15);
-        width: 100%;
+        padding: 40px 0 36px;
     }
 
-    .top {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: var(--sizes15);
-        width: 100%;
+    .footer-mark {
+        /* generous clearance: NameLogo's rotate+skew overflows its own layout box by ~4x */
+        padding: 40px 0 130px;
     }
 
-    .top > div,
-    .top > ul {
-        align-items: center;
+    .foot-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px;
+        padding-bottom: 24px;
+    }
+
+    .foot-grid h2 {
+        color: var(--colorsOatYellow);
+        font-family: var(--headingFontFamily);
+        font-size: var(--headingFontSize);
+        font-weight: var(--headingFontWeight);
+        letter-spacing: var(--headingLetterSpacing);
+        line-height: var(--headingLineHeight);
+        text-transform: uppercase;
+    }
+
+    .foot-grid ul {
+        display: grid;
+        gap: 8.8px;
+        padding-top: 16px;
+    }
+
+    .foot-grid a {
+        color: var(--colorsSkyAqua);
+        font-size: 15px;
+        line-height: 25.2px;
+        text-decoration: none;
+    }
+
+    .foot-grid a:hover {
+        color: var(--colorsOatYellow);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .social {
         display: flex;
         flex-direction: row;
-        justify-content: center;
-    }
-
-    .top > ul {
-        flex: 1;
         flex-wrap: wrap;
-        gap: var(--sizes15);
+        gap: 0;
+        padding-top: 8px;
     }
 
-    .license {
-        font-size: var(--sizes0875);
-        text-align: center;
-        width: 100%;
+    .party {
+        align-items: flex-end;
+        display: flex;
+        height: 100%;
     }
 
-    .license a {
+    .colophon {
+        border-top: 2px solid rgba(191, 225, 222, 0.28);
+        color: var(--colorsFooterMuted);
+        font-size: 13px;
+        line-height: 21.84px;
+        margin-top: 32px;
+        padding-top: 24px;
+    }
+
+    .colophon a {
         color: inherit;
     }
 
-    @media (min-width: 1200px) {
-        .container {
-            padding-left: var(--contentPadding);
-            padding-right: var(--contentPadding);
-            width: var(--contentSize);
+    @media (max-width: 1199px) {
+        .foot-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        .top {
-            flex-direction: row;
-        }
-
-        .top > div {
+        .party {
             justify-content: flex-start;
         }
+    }
 
-        .top > ul {
-            justify-content: flex-end;
+    @media (max-width: 768px) {
+        .footer-mark {
+            padding: 24px 0 90px;
+        }
+
+        .foot-grid {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .party {
+            justify-content: flex-start;
+            padding-top: 8px;
         }
     }
 </style>
-<footer id="footer">
-    <div class="container">
-        <div class="top">
-            <div>
-                <img
-                    alt={footerLogoAlt[lang]}
-                    height="51"
-                    loading="lazy"
-                    src="/logos/Vihreiden-logo-suomeksi-ruotsiksi-ja-englanniksi.svg"
-                    width="144"
-                />
+<footer class="on-dark" id="footer">
+    <div class="sheet">
+        <div class="inner">
+            <div class="footer-mark">
+                <NameLogo size="large" tone="light" />
             </div>
-            <ul>
-                {
-                    footerLinks.map((link) =>
-                        link.icon === 'instagram' ? (
-                            <InstagramLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
-                        ) : link.icon === 'tiktok' ? (
-                            <TikTokLink ariaLabel={getAriaLabel(link.title)} title={link.title} url={link.url} />
-                        ) : (
-                            <Link
-                                ariaLabel={getAriaLabel(link.title)}
-                                icon={link.icon}
-                                title={link.title}
-                                url={link.url}
-                            />
-                        )
-                    )
-                }
-                <Link ariaLabel={footerRssAriaLabel[lang]} icon="fa7-solid:rss" title="RSS" url={`/${lang}/rss.xml`} />
-            </ul>
+            <div class="foot-grid">
+                <div>
+                    <h2>{columnLabels.site}</h2>
+                    <ul>
+                        {
+                            siteLinks.map((link) => (
+                                <li>
+                                    <a href={link.href}>{link.label}</a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <div>
+                    <h2>{columnLabels.languages}</h2>
+                    <ul>
+                        {
+                            footerLanguageLinks.map((link) => (
+                                <li>
+                                    <a href={link.href}>{link.label}</a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+                <div>
+                    <h2>{columnLabels.contact}</h2>
+                    <ul>
+                        <li><a href={`mailto:${personEmail}`}>{personEmail}</a></li>
+                        <li><a href={`/${lang}/privacy-policy/`}>{footerPrivacyPolicyLabel[lang]}</a></li>
+                    </ul>
+                    <ul class="social">
+                        {
+                            footerLinks.map((link) =>
+                                link.icon === 'instagram' ? (
+                                    <InstagramLink
+                                        ariaLabel={getAriaLabel(link.title)}
+                                        title={link.title}
+                                        url={link.url}
+                                    />
+                                ) : link.icon === 'tiktok' ? (
+                                    <TikTokLink
+                                        ariaLabel={getAriaLabel(link.title)}
+                                        title={link.title}
+                                        url={link.url}
+                                    />
+                                ) : (
+                                    <Link
+                                        ariaLabel={getAriaLabel(link.title)}
+                                        icon={link.icon}
+                                        title={link.title}
+                                        url={link.url}
+                                    />
+                                )
+                            )
+                        }
+                        <Link
+                            ariaLabel={footerRssAriaLabel[lang]}
+                            icon="fa7-solid:rss"
+                            title="RSS"
+                            url={`/${lang}/rss.xml`}
+                        />
+                    </ul>
+                </div>
+                <div class="party">
+                    <img
+                        alt={footerLogoAlt[lang]}
+                        height="65"
+                        loading="lazy"
+                        src="/logos/Vihreiden-logo-suomeksi-ruotsiksi-ja-englanniksi.svg"
+                        width="184"
+                    />
+                </div>
+            </div>
+            <p class="colophon">
+                {licenseText[lang]}
+                {' '}
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>.
+            </p>
         </div>
-        <p class="license">
-            {licenseText[lang]}
-            {' '}
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a>.
-        </p>
     </div>
 </footer>

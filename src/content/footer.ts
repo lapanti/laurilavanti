@@ -33,3 +33,21 @@ export const footerLogoAlt: Record<Lang, string> = {
     fi: 'Vihreiden logo ja teksti',
     sv: 'De Gröna logotyp och text',
 }
+
+export const footerColumnLabels: Record<Lang, { contact: string; languages: string; site: string }> = {
+    en: { contact: 'Contact', languages: 'Languages', site: 'Lauri Lavanti' },
+    fi: { contact: 'Yhteys', languages: 'Kielet', site: 'Lauri Lavanti' },
+    sv: { contact: 'Kontakt', languages: 'Språk', site: 'Lauri Lavanti' },
+}
+
+export const footerLanguageLinks: Array<{ href: string; label: string }> = [
+    { href: '/fi/', label: 'Suomeksi' },
+    { href: '/sv/', label: 'På svenska' },
+    { href: '/en/', label: 'In English' },
+]
+
+export const footerPrivacyPolicyLabel: Record<Lang, string> = {
+    en: 'Privacy policy',
+    fi: 'Tietosuojaseloste',
+    sv: 'Integritetspolicy',
+}
