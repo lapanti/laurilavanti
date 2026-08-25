@@ -28,6 +28,14 @@ interface Props {
     noindex?: boolean
     ogImage?: string
     ogImageAlt?: string
+    /**
+     * Signal Band visual rebrand, transitional: renders `<main>`/`<article>` as plain
+     * block flow instead of the 5-column article grid, so full-bleed color plates can
+     * sit edge to edge. Opt-in per layout while pages migrate phase by phase — remove
+     * this prop (and the article grid it's an alternative to) once every layout that
+     * renders prose has moved to plates.
+     */
+    plated?: boolean
     slug?: string
     tags?: string[]
     title: string
@@ -47,6 +55,7 @@ const {
     noindex,
     ogImage,
     ogImageAlt,
+    plated = false,
     slug,
     tags,
     title,
@@ -132,12 +141,23 @@ const {
                     grid-template-rows: var(--gridTemplateRowsLayout);
                 }
             }
+
+            /* Signal Band visual rebrand, transitional (see the `plated` prop) — full-bleed
+               block flow instead of the article grid, so color plates run edge to edge. */
+            main.plated {
+                background-color: transparent;
+                display: block;
+            }
+
+            main.plated > article.plated {
+                display: contents;
+            }
         </style>
         <div>
             <Header lang={lang} />
-            <main id="main">
+            <main class:list={{ plated }} id="main">
                 <slot name="banner" />
-                <article>
+                <article class:list={{ plated }}>
                     <slot />
                 </article>
             </main>
