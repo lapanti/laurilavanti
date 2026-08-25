@@ -13,20 +13,27 @@ import { colors, typographics } from '../lib/styles'
 >
     .prose {
         color: var(--colorsTextPrimary);
-        display: grid;
         font-family: var(--textFontFamily);
         font-size: var(--textFontSize);
         font-weight: var(--textFontWeight);
-        gap: 20px;
         line-height: var(--textLineHeight);
         max-width: 672px;
         padding-top: 24px;
     }
 
+    /* Block flow rather than a grid: Paragraph carries an inline grid-column-start
+       that would otherwise place slotted MDX paragraphs in the wrong column. */
+    .prose > :global(* + *) {
+        margin-top: 20px;
+    }
+
     @media (max-width: 768px) {
         .prose {
-            gap: 16px;
             max-width: none;
+        }
+
+        .prose > :global(* + *) {
+            margin-top: 16px;
         }
     }
 </style>
