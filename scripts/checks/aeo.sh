@@ -24,6 +24,11 @@ fi
 # AI engines generate summaries 60% more often when a heading is a question.
 # Covers EN, FI, and SV question-opening words, Finnish -ko/-kö verb forms,
 # and any heading ending with a question mark.
+#
+# Headings aren't always literal `##`/`###` markdown — section components
+# (Pillar, IntroPlate, WhoBio, ...) take their heading as a `heading="..."`
+# prop and render it through a real <h2>/<h3>, so the same question-format
+# patterns are also checked against that prop's quoted value.
 question_words_en="How|What|Why|When|Who|Can|Is|Are|Does|Should|Which|Will|Has|Have"
 question_words_fi="Miten|Mitä|Miksi|Milloin|Kuka|Voiko|Onko|Pitäisikö|Mikä|Mikäli|Kuinka|Ketkä|Missä"
 question_words_sv="Hur|Vad|Varför|När|Vem|Kan|Är|Ska|Vilken|Vilket|Vilka|Bör|Har"
@@ -31,7 +36,11 @@ question_words_sv="Hur|Vad|Varför|När|Vem|Kan|Är|Ska|Vilken|Vilket|Vilka|Bör
 if ! fm_body "$file" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
    && ! fm_body "$file" | grep -qP "^#{2,3} \S.*\?$" \
    && ! fm_body "$file" | grep -qP "^#{2,3} \w+ko\b" \
-   && ! fm_body "$file" | grep -qP "^#{2,3} \w+kö\b"; then
+   && ! fm_body "$file" | grep -qP "^#{2,3} \w+kö\b" \
+   && ! fm_body "$file" | grep -qP "heading=[\"'](${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
+   && ! fm_body "$file" | grep -qP "heading=[\"'][^\"']*\?[\"']" \
+   && ! fm_body "$file" | grep -qP "heading=[\"']\w+ko\b" \
+   && ! fm_body "$file" | grep -qP "heading=[\"']\w+kö\b"; then
     error "$file" "no conversational (question-format) H2/H3 heading found — at least one required for AEO"
     failed=1
 fi
@@ -67,7 +76,11 @@ if [[ "$has_ai_tag" -eq 1 ]]; then
         if echo "$line" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
            || echo "$line" | grep -qP "^#{2,3} \S.*\?$" \
            || echo "$line" | grep -qP "^#{2,3} \w+ko\b" \
-           || echo "$line" | grep -qP "^#{2,3} \w+kö\b"; then
+           || echo "$line" | grep -qP "^#{2,3} \w+kö\b" \
+           || echo "$line" | grep -qP "heading=[\"'](${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
+           || echo "$line" | grep -qP "heading=[\"'][^\"']*\?[\"']" \
+           || echo "$line" | grep -qP "heading=[\"']\w+ko\b" \
+           || echo "$line" | grep -qP "heading=[\"']\w+kö\b"; then
             q_count=$((q_count + 1))
         fi
     done < <(fm_body "$file")

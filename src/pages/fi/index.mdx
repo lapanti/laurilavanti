@@ -3,13 +3,10 @@ layout: '../../layouts/FrontPageLayout.astro'
 lang: fi
 pageTitle: 'Lauri Lavanti – eduskuntavaaliehdokas 2027 | Vihreät'
 title: 'Lauri Lavanti'
-description: 'Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä, johtava ohjelmistokehittäjä. Tavoitteena digitaalisesti itsenäinen Suomi tekoälyn aikakaudella.'
+description: 'Tavoitteenani on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.'
 slug: 'fi'
-updatedDate: '2026-08-20'
+updatedDate: '2026-08-25'
 type: 'Person'
-heroBanner: true
-typedSlogan: true
-backgroundImage: 'Kirkkonummen-keskusta'
 heroImage: Lauri-Lavanti-nojaamassa-kasiin
 mobileHeroImage: Lauri-Lavanti-nojaamassa-kasiin-sinisella-taustalla
 alt: 'Lauri Lavanti nojaamassa käsiinsä ja katsoo kameraan hymyssä suin. Päällä hänellä on valkoinen kauluspaita ja tumma pikkutakki. Kuvan ottanut Erkki Laine.'
@@ -32,26 +29,95 @@ faq:
 
 import AllPostsLink from '../../components/AllPostsLink.astro'
 import FrontPageExcerptList from '../../components/FrontPageExcerptList.astro'
-import H2 from '../../components/H2.astro'
+import Faq from '../../components/frontPage/Faq.astro'
+import IntroPlate from '../../components/frontPage/IntroPlate.astro'
+import NewsletterPlate from '../../components/frontPage/NewsletterPlate.astro'
+import Pillar from '../../components/frontPage/Pillar.astro'
+import Synthesis from '../../components/frontPage/Synthesis.astro'
+import WhoBio from '../../components/frontPage/WhoBio.astro'
+import WritingsPlate from '../../components/frontPage/WritingsPlate.astro'
 import NewsletterSubscribe from '../../components/NewsletterSubscribe.astro'
-import Paragraph from '../../components/Paragraph.astro'
+import Stripe from '../../components/Stripe.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe />
 
-## Miksi olen ehdolla eduskuntaan?
+<IntroPlate eyebrow="Eduskuntavaalit 2027" heading="Olen ehdolla">
+    <p>Politiikka on parhaimmillaan sitä, että yhteisistä asioista pidetään huolta yhdessä. Asetun ehdolle, koska haluan varmistaa, että Suomi pärjää tekoälyn aikakaudella omilla ehdoillaan, eikä kukaan jää kehityksen jalkoihin. Minulle tärkeintä on avoimuus ja rehellisyys sekä usko siihen, että ihmiset ovat pohjimmiltaan hyviä – yhteisistä asioista pitää voida keskustella kenen tahansa kanssa, vaikka olisimme eri mieltä.</p>
+</IntroPlate>
 
-Politiikka on parhaimmillaan sitä, että yhteisistä asioista pidetään huolta yhdessä. Asetun ehdolle, koska haluan varmistaa, että Suomi pärjää tekoälyn aikakaudella omilla ehdoillaan, eikä kukaan jää kehityksen jalkoihin. Minulle tärkeintä on avoimuus ja rehellisyys sekä usko siihen, että ihmiset ovat pohjimmiltaan hyviä – yhteisistä asioista pitää voida keskustella kenen tahansa kanssa, vaikka olisimme eri mieltä.
+<IntroPlate eyebrow="Ajava teema" ground="white" heading="Tekoäly" id="driver">
+    <p>Suomessa on rakennettu huipputeknologiaa vuosikymmeniä, Vaisalasta jäänmurtajiin, Nokiaan, Linuxiin ja Supercelliin. Tekoäly haastaa kirjoittamaan tähän tarinaan uuden luvun, ja se muuttaa työtä, taloutta ja julkisia palveluita nopeammin kuin lainsäädäntö pysyy perässä. Kysymys on siitä, tapahtuuko muutos meidän ehdoillamme vai jonkun muun.</p>
+</IntroPlate>
 
-Suomessa on rakennettu huipputeknologiaa vuosikymmeniä, Vaisalasta jäänmurtajiin, Nokiaan, Linuxiin ja Supercelliin. Tekoäly haastaa kirjoittamaan tähän tarinaan uuden luvun, ja se muuttaa työtä, taloutta ja julkisia palveluita nopeammin kuin lainsäädäntö pysyy perässä. Kysymys on siitä, tapahtuuko muutos meidän ehdoillamme vai jonkun muun.
+<Pillar
+    eyebrow="Pilari yksi"
+    heading="Miksi toimittajariippuvuus maksaa veronmaksajille?"
+    tone="oat"
+    vocab={['Kilpailukyky', 'Hankinnat', 'Siirrettävyys', 'Avoin lähdekoodi']}
+    reads={[
+        { href: '/fi/blog/65/suomi-voi-tehda-sahkoistymisesta-kilpailuedun/', label: 'Suomi voi tehdä sähköistymisestä kilpailuedun' },
+        { href: '/fi/blog/62/vihreat-markkinatalouden-aito-puolustaja/', label: 'Vihreät – Markkinatalouden aito puolustaja' },
+    ]}
+>
+    <p class="answer" slot="answer">Vaadin, että julkiset tekoäly- ja digihankinnat rakennetaan avoinna ja siirrettävinä, jotta toimittajariippuvuus ei kuluta verorahoja vuosi toisensa jälkeen.</p>
+    <p class="detail" slot="detail">Esimerkkinä käytän eVakaa, Espoon, Tampereen, Oulun ja Turun yhteistyössä kehittämää avoimen lähdekoodin varhaiskasvatusjärjestelmää. Yli kymmenen kuntaa hyötyy jo järjestelmästä, ja sen ansiosta kehityskustannukset jaetaan ja säästetään joka vuosi.</p>
+</Pillar>
 
-Olen rakentanut turvallisia ohjelmistoja ja pankkipalveluita yli vuosikymmenen ja opiskellut teknologiaa Aalto-yliopistossa. Kun päätetään koodista, hankinnoista tai tietoturvasta, tiedän mistä puhutaan – ja haluan pitää huolen, että ratkaisut palvelevat jokaisen arkea. Ymmärrän myös, mihin teknologian rajat on asetettava, jotta oikeusvaltio säilyy.
+<Pillar
+    eyebrow="Pilari kaksi"
+    heading="Sivistys ja tasa-arvo"
+    tone="peach"
+    vocab={['Osaaminen', 'Tasa-arvo', 'Kirjastot', 'Elinikäinen oppiminen']}
+    reads={[
+        { href: '/fi/blog/60/tekoaly-auttaa-palvelujen-turvaamisessa-mutta-se-ei-ole-ilmaista/', label: 'Tekoäly auttaa palvelujen turvaamisessa, mutta se ei ole ilmaista' },
+        { href: '/fi/blog/37/koulutus-on-kunnan-tarkein-tehtava/', label: 'Koulutus on kunnan tärkein tehtävä' },
+    ]}
+>
+    <p class="answer" slot="answer">Osaamisen on pysyttävä ajan tasalla läpi elämän ja oltava tasa-arvoisesti kaikkien saatavilla ammatillisesta koulutuksesta korkeakouluihin.</p>
+    <p class="detail" slot="detail">Olen syvästi huolissani ammatillisen ja yliopistokoulutuksen rahoituksen leikkauksista, sillä monipuolinen osaaminen on Suomen kilpailukyvyn perusta. Kirjastot ovat yksi harvoista paikoista, joista löytyy ilmaista tietoa ilman käyttäjädatan keruuta — tekoälyn aikakaudella tämä tekee niistä tärkeitä tasa-arvon turvaajia.</p>
+</Pillar>
 
-Osa näistä rajoista on erityisen arvokkaita, sillä ne suojaavat meidän kaikkien yksityisyyttä ja perusoikeuksia. Yksityisyyden suoja ei ole jarru kehitykselle, vaan se on demokratian edellytys.
+<Pillar
+    eyebrow="Pilari kolme"
+    heading="Vapaus ja perusoikeudet"
+    tone="aqua"
+    vocab={['Yksityisyys', 'Perusoikeudet', 'Oikeusvaltio', 'Massavalvonta']}
+    reads={[
+        { href: '/fi/blog/54/chat-control-parlamentti-toimi-oikein/', label: 'Chat control: parlamentti toimi oikein' },
+        { href: '/fi/blog/59/valtuustoaloite-kirkkonummen-digitaalisen-huoltovarmuuden-vahvistaminen/', label: 'Valtuustoaloite: Kirkkonummen digitaalisen huoltovarmuuden vahvistaminen' },
+    ]}
+>
+    <p class="answer" slot="answer">Yksityisyyden suoja ei ole jarru kehitykselle, vaan se on demokratian edellytys.</p>
+    <p class="detail" slot="detail">Tekoäly helpottaa massavalvontaa teknisesti, ja siksi lainsäädännön on pidettävä kiinni perusoikeuksista. Ilman vahvaa yksityisyydensuojaa demokratia ei voi toimia, eikä tekoälyä saa missään tapauksessa käyttää sen heikentämiseen.</p>
+</Pillar>
 
-Olen Lauri Lavanti, Vihreiden eduskuntavaaliehdokas Uudellamaalla, kirkkonummelainen kunnanvaltuutettu, Vihreän valtuustoryhmän puheenjohtaja, neljän lapsen isä, johtava ohjelmistokehittäjä ja diplomi-insinööri. Näiltä sivuilta löydät ajatuksiani tulevaisuudesta ja siitä, mikä meitä odottaa.
+<Synthesis eyebrow="Synteesi" heading="Digitaalinen itsenäisyys">
+    <p>Tekoäly muuttaa kaiken — työn, talouden ja sen, miten valtio palvelee meitä. Kirjoitan siitä, miten se vaikuttaa kolmeen asiaan, joiden on toimittava: talouteen, sivistykseen ja vapauteen. Niiden synteesi on digitaalinen itsenäisyys: yhteiskunta, joka käyttää teknologiaa omilla ehdoillaan.</p>
+</Synthesis>
 
-<NewsletterSubscribe lang="fi" />
+<WhoBio
+    credentials={[
+        'Diplomi-insinööri, Aalto-yliopisto',
+        'Johtava ohjelmistokehittäjä, yli 10 vuotta',
+        'Kirkkonummen kunnanvaltuutettu, Vihreän valtuustoryhmän puheenjohtaja',
+        'Neljän lapsen isä',
+    ]}
+    eyebrow="Kuka"
+    heading="Kuka on Lauri Lavanti?"
+    photographer="Kuva: Juha Jantunen"
+    portraitAlt="Lauri Lavanti istumassa tuolilla ikkunan edessä, katse kameraan, hymyillen. Hänellä on päällään valkoinen kauluspaita, jossa on sinisiä kukkakuvioita, sekä tumma pikkutakki."
+    portraitImage="Lauri-Lavanti-sitting-in-front-of-a-window"
+>
+    <p class="bio">Olen rakentanut turvallisia ohjelmistoja ja pankkipalveluita yli vuosikymmenen ja opiskellut teknologiaa Aalto-yliopistossa. Kun päätetään koodista, hankinnoista tai tietoturvasta, tiedän mistä puhutaan – ja haluan pitää huolen, että ratkaisut palvelevat jokaisen arkea. Ymmärrän myös, mihin teknologian rajat on asetettava, jotta oikeusvaltio säilyy.</p>
+</WhoBio>
 
-<FrontPageExcerptList limit={9} />
+<Faq eyebrow="Suorat vastaukset" faq={frontmatter.faq} heading="Usein kysyttyä" />
 
-<AllPostsLink lang="fi" />
+<WritingsPlate allPostsHref="/fi/blog/all/" allPostsLabel="Kaikki kirjoitukset" eyebrow="Ajankohtaista" heading="Kirjoitukset">
+    <FrontPageExcerptList limit={9} />
+    <AllPostsLink lang="fi" />
+</WritingsPlate>
+
+<NewsletterPlate>
+    <NewsletterSubscribe lang="fi" />
+</NewsletterPlate>
