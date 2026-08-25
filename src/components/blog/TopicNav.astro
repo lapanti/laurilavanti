@@ -14,32 +14,39 @@ interface Props {
 
 const { ariaLabel, currentId, items } = Astro.props
 const topicNavScript = `(function(){
-  var links = [].slice.call(document.querySelectorAll('.topicnav a'));
-  if (!links.length) return;
-  var pairs = [];
-  links.forEach(function(a){
-    var href = a.getAttribute('href');
-    if (!href) return;
-    var s = document.getElementById(decodeURIComponent(href.slice(1)));
-    if (s) pairs.push({a: a, s: s});
-  });
-  if (!pairs.length) return;
-  var current = null;
-  function update(){
-    var line = window.scrollY + (window.innerWidth <= 768 ? 60 : 0) + 96;
-    var found = null;
-    pairs.forEach(function(p){
-      var top = p.s.getBoundingClientRect().top + window.scrollY;
-      if (top <= line && top + p.s.offsetHeight > line) found = p;
+  function init(){
+    var links = [].slice.call(document.querySelectorAll('.topicnav a'));
+    if (!links.length) return;
+    var pairs = [];
+    links.forEach(function(a){
+      var href = a.getAttribute('href');
+      if (!href) return;
+      var s = document.getElementById(decodeURIComponent(href.slice(1)));
+      if (s) pairs.push({a: a, s: s});
     });
-    if (found === current) return;
-    current = found;
-    pairs.forEach(function(p){ p.a.setAttribute('aria-current', 'false'); });
-    if (found) found.a.setAttribute('aria-current', 'true');
+    if (!pairs.length) return;
+    var current = null;
+    function update(){
+      var line = window.scrollY + (window.innerWidth <= 768 ? 60 : 0) + 96;
+      var found = null;
+      pairs.forEach(function(p){
+        var top = p.s.getBoundingClientRect().top + window.scrollY;
+        if (top <= line && top + p.s.offsetHeight > line) found = p;
+      });
+      if (found === current) return;
+      current = found;
+      pairs.forEach(function(p){ p.a.setAttribute('aria-current', 'false'); });
+      if (found) found.a.setAttribute('aria-current', 'true');
+    }
+    window.addEventListener('scroll', update, {passive: true});
+    window.addEventListener('resize', update, {passive: true});
+    update();
   }
-  window.addEventListener('scroll', update, {passive: true});
-  window.addEventListener('resize', update, {passive: true});
-  update();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();`
 ---
 
