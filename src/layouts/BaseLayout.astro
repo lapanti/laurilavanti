@@ -104,6 +104,7 @@ const {
             body > div {
                 display: grid;
                 grid-template-areas:
+                    'header'
                     'main'
                     'footer';
                 grid-template-columns: var(--gridTemplateColumns);
@@ -154,7 +155,7 @@ const {
             }
         </style>
         <div>
-            <Header lang={lang} />
+            <Header lang={lang} variant={plated ? 'hero' : 'solid'} />
             <main class:list={{ plated }} id="main">
                 <slot name="banner" />
                 <article class:list={{ plated }}>

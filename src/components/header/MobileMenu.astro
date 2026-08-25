@@ -9,14 +9,17 @@ import NavigationLink from './components/NavigationLink.astro'
 interface Props {
     lang?: Lang
     links: NavLink[]
+    variant?: 'hero' | 'solid'
 }
 
-const { lang, links } = Astro.props
+const { lang, links, variant = 'solid' } = Astro.props
+const tone = variant === 'hero' ? 'light' : 'dark'
 ---
 
 <style
     define:vars={{
-        colorsForestGreen: colors.forestGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsPineGreen: colors.pineGreen,
         colorsWhite: colors.white,
         contentPadding: CONTENT_PADDING,
         contentSize: CONTENT_SIZE,
@@ -80,9 +83,14 @@ const { lang, links } = Astro.props
         display: block;
         height: var(--sizes025);
         width: 100%;
-        border-radius: 10px;
         background: var(--colorsWhite);
         transition: transform 0.25s ease-in-out;
+    }
+
+    .hamburger-lines-container.dark .line1,
+    .hamburger-lines-container.dark .line2,
+    .hamburger-lines-container.dark .line3 {
+        background: var(--colorsDeepForest);
     }
 
     .line1 {
@@ -99,14 +107,8 @@ const { lang, links } = Astro.props
 
     .links {
         align-items: center;
-        background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.15) 25%,
-            rgba(255, 255, 255, 0) 50%,
-            rgba(255, 255, 255, 0) 100%
-        );
-        background-color: var(--colorsForestGreen);
+        background-color: var(--colorsDeepForest);
+        border-bottom: 0 solid var(--colorsPineGreen);
         display: flex;
         flex-direction: column;
         gap: var(--sizes25);
@@ -138,6 +140,7 @@ const { lang, links } = Astro.props
     }
 
     .container input[type='checkbox']:checked ~ .links {
+        border-bottom-width: 4px;
         height: calc(100dvh - var(--headerSize));
     }
 
@@ -145,7 +148,7 @@ const { lang, links } = Astro.props
         opacity: 100%;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 769px) {
         .container,
         .links {
             display: none;
@@ -161,19 +164,20 @@ const { lang, links } = Astro.props
 </style>
 <div class="container">
     <div>
-        <MainNavigationLink lang={lang} />
+        <MainNavigationLink lang={lang} tone={tone} />
     </div>
     <div>
         <input aria-label="Avaa valikko. Sulje valikko kun valittu." name="" type="checkbox" />
-        <div class="hamburger-lines-container">
+        <div class:list={['hamburger-lines-container', { dark: variant === 'solid' }]}>
             <span class="line1"></span>
             <span class="line2"></span>
             <span class="line3"></span>
         </div>
-        <div class="links">
+        <div class="links on-dark">
             {
                 links.map((link) => (
                     <NavigationLink
+                        context="mobile"
                         href={link.href}
                         label={link.label}
                         switchToLang={link.switchToLang}

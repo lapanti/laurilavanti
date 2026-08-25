@@ -1,86 +1,123 @@
 ---
 import type { Lang } from '../../../content/nav'
 
-import { colors, fontSizes, sizes, typographics } from '../../../lib/styles'
+import { colors, signalBandFontFamilies, typographics } from '../../../lib/styles'
 
 interface Props {
+    /** Desktop sits on the header bar; mobile is the dark dropdown panel. */
+    context: 'desktop' | 'mobile'
     href: string
     label: string
     switchToLang?: Lang
     title: string
+    /** Only meaningful for context="desktop" — the hero bar chips its links, solid doesn't. */
+    variant?: 'hero' | 'solid'
 }
 
-const { href, label, switchToLang, title } = Astro.props
+const { context, href, label, switchToLang, title, variant = 'solid' } = Astro.props
 const { pathname } = Astro.url
+const isLang = Boolean(switchToLang)
 ---
 
 <style
     define:vars={{
-        bodyFontFamily: typographics.body.fontFamily,
-        bodyFontSize: fontSizes[1.5].fontSize,
-        bodyFontWeight: typographics.body.fontWeight,
-        bodyLineHeight: fontSizes[1.5].lineHeight,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        colorsOatYellow: colors.oatYellow,
+        colorsPineGreen: colors.pineGreen,
+        colorsSand: colors.sand,
+        colorsSkyAqua: colors.skyAqua,
         colorsWhite: colors.white,
-        sizes01875: sizes[0.1875],
+        navFontFamily: signalBandFontFamilies.heading,
+        navFontSize: typographics.nav.fontSize,
+        navFontWeight: typographics.nav.fontWeight,
+        navLetterSpacing: typographics.nav.letterSpacing,
+        navLineHeight: typographics.nav.lineHeight,
+        navMobileFontSize: typographics.navMobile.fontSize,
     }}
 >
     a {
+        display: inline-flex;
         align-items: center;
-        display: flex;
-        font-family: var(--bodyFontFamily);
-        font-weight: var(--bodyFontWeight);
-        font-size: var(--bodyFontSize);
-        line-height: var(--bodyLineHeight);
+        font-family: var(--navFontFamily);
+        font-weight: var(--navFontWeight);
+        font-size: var(--navFontSize);
+        line-height: var(--navLineHeight);
+        letter-spacing: var(--navLetterSpacing);
+        text-transform: uppercase;
+        text-decoration: none;
         min-height: 2.75rem;
+    }
+
+    /* desktop nav link (content) — deep forest text, transparent 2px underline at rest */
+    .desktop.nav-link {
+        color: var(--colorsDeepForest);
+        border-bottom: 2px solid transparent;
+        padding: 4px 4px 2px;
+        transition:
+            border-color 0.18s var(--ease),
+            color 0.18s var(--ease);
+    }
+    .desktop.nav-link:hover,
+    .desktop.nav-link:focus-visible {
+        color: var(--colorsPineGreen);
+        border-bottom-color: var(--colorsPineGreen);
+    }
+    .desktop.nav-link[aria-current='page'] {
+        border-bottom-color: var(--colorsPineGreen);
+    }
+    /* hero variant only — legibility over the hero image comes from this chip, not a gradient */
+    .desktop.nav-link.hero {
+        background-color: var(--colorsLightSand);
+    }
+
+    /* desktop lang chip — active language gets a sand background */
+    .desktop.lang-link {
+        color: var(--colorsDeepForest);
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        padding: 3px 7px;
+    }
+    .desktop.lang-link[aria-current='page'] {
+        background-color: var(--colorsSand);
+    }
+
+    /* mobile dropdown link (content) — oat yellow on the deep forest panel */
+    .mobile.nav-link {
+        color: var(--colorsOatYellow);
+        font-size: var(--navMobileFontSize);
+        padding-block: 8px;
+    }
+    .mobile.nav-link:hover,
+    .mobile.nav-link:focus-visible {
         color: var(--colorsWhite);
-        position: relative;
-        overflow: hidden;
     }
 
-    a[aria-current='page'] {
-        text-decoration: underline;
-        text-decoration-thickness: var(--sizes01875);
+    /* mobile dropdown lang chip — active language gets a pine green chip */
+    .mobile.lang-link {
+        color: var(--colorsSkyAqua);
+        font-size: 16px;
+        letter-spacing: 0.12em;
+        padding: 6px 10px;
     }
-
-    a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: var(--sizes01875);
-        opacity: 1;
-        transform: translate3d(-100%, 0, 0);
-        background-color: var(--colorsWhite);
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-        a::after {
-            transition: transform 200ms ease-in-out;
-        }
-    }
-
-    a:hover::after,
-    a:focus::after {
-        transform: translate3d(0, 0, 0);
-    }
-
-    a:focus-visible {
-        outline: var(--sizes01875) solid var(--colorsWhite);
-        outline-offset: 2px;
-    }
-
-    a[aria-current='page']:hover::after,
-    a[aria-current='page']:focus::after {
-        transform: translate3d(-100%, 0, 0);
+    .mobile.lang-link[aria-current='page'] {
+        background-color: var(--colorsPineGreen);
+        color: var(--colorsWhite);
     }
 </style>
 <a
     aria-current={pathname.startsWith(href) ? 'page' : 'false'}
     aria-label={title !== label ? (title.includes(label) ? title : `${label} – ${title}`) : undefined}
+    class:list={[
+        context,
+        {
+            hero: context === 'desktop' && !isLang && variant === 'hero',
+            'lang-link': isLang,
+            'nav-link': !isLang,
+        },
+    ]}
     data-switch-to-lang={switchToLang}
     href={href}
-    style={{ minHeight: '2.75rem', minWidth: '2.75rem' }}
 >
     {label}
 </a>

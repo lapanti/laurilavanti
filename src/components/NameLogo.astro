@@ -3,22 +3,25 @@ import { colors, fontSizes, typographics } from '../lib/styles'
 
 interface Props {
     size?: 'large' | 'small'
+    /** Signal Band visual rebrand: which ground the mark sits on. */
+    tone?: 'dark' | 'light'
 }
 
-const { size = 'large' } = Astro.props
+const { size = 'large', tone = 'light' } = Astro.props
 const { fontFamily, fontWeight } = typographics.h1
 const { fontSize } = size === 'large' ? typographics.h1 : fontSizes[1.5]
 const firstNameFontSize = size === 'large' ? '22px' : '10px'
+const textColor = tone === 'light' ? colors.white : colors.forestGreen
 ---
 
-<style define:vars={{ colorsWhite: colors.white, firstNameFontSize, fontFamily, fontSize, fontWeight }}>
+<style define:vars={{ firstNameFontSize, fontFamily, fontSize, fontWeight, textColor }}>
     .name-logo {
         display: flex;
         flex-direction: column;
         transform: rotate(-10deg) skew(-10deg);
     }
     .name-logo span {
-        color: var(--colorsWhite);
+        color: var(--textColor);
         font-family: var(--fontFamily);
         font-weight: var(--fontWeight);
         font-size: var(--fontSize);

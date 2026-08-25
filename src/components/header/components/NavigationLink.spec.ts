@@ -12,6 +12,7 @@ describe('<NavigationLink />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label,
                 title,
@@ -24,6 +25,7 @@ describe('<NavigationLink />', () => {
     it('should render a link element', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label,
                 title,
@@ -36,6 +38,7 @@ describe('<NavigationLink />', () => {
     it('should have correct href attribute', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label,
                 title,
@@ -48,6 +51,7 @@ describe('<NavigationLink />', () => {
     it('should not set aria-label when label equals title', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label,
                 title,
@@ -60,6 +64,7 @@ describe('<NavigationLink />', () => {
     it('should set combined aria-label when label differs from title', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label: 'EN',
                 title: 'In English',
@@ -72,6 +77,7 @@ describe('<NavigationLink />', () => {
     it('should have aria-current as false when not in correct page', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label,
                 title,
@@ -85,6 +91,7 @@ describe('<NavigationLink />', () => {
     it('should have aria-current as page when in correct page', async () => {
         const result = await renderAstroComponent(NavigationLink, {
             props: {
+                context: 'desktop',
                 href,
                 label,
                 title,

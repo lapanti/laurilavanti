@@ -62,7 +62,7 @@ describe('styles', () => {
 
     describe('hEADER_SIZE', () => {
         it('should stay the same', () => {
-            expect(HEADER_SIZE).toEqual(sizes[5])
+            expect(HEADER_SIZE).toEqual(sizes[3.75])
         })
     })
 

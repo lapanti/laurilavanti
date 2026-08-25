@@ -2,48 +2,65 @@
 import type { Lang } from '../content/nav'
 
 import { navLinks } from '../content/nav'
-import { colors, HEADER_SIZE, zIndices } from '../lib/styles'
+import { colors, gridAreas, HEADER_SIZE, zIndices } from '../lib/styles'
 import DesktopMenu from './header/DesktopMenu.astro'
 import MobileMenu from './header/MobileMenu.astro'
 import SkipLinks from './header/SkipLinks.astro'
 
 interface Props {
     lang?: Lang
+    /**
+     * Signal Band visual rebrand: `hero` is the transparent bar absolutely positioned
+     * over the front page's hero image (68px, no background of its own — legibility
+     * comes from each nav link's own light-sand chip, not a gradient overlay). `solid`
+     * is the light-sand bar every other page uses, sized by its own content.
+     */
+    variant?: 'hero' | 'solid'
 }
 
-const { lang = 'fi' } = Astro.props
+const { lang = 'fi', variant = 'solid' } = Astro.props
 const links = navLinks[lang]
 ---
 
 <style
     define:vars={{
-        colorsForestGreen: colors.forestGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        gridAreasHeader: gridAreas.header,
         headerSize: HEADER_SIZE,
         zIndices50: zIndices[50],
     }}
 >
     header {
         box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        height: var(--headerSize);
+        grid-area: var(--gridAreasHeader);
         user-select: none;
         width: 100vw;
         z-index: var(--zIndices50);
-        background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.15) 25%,
-            rgba(255, 255, 255, 0) 50%,
-            rgba(255, 255, 255, 0) 100%
-        );
-        background-color: var(--colorsForestGreen);
-        box-shadow: hsla(0 0% 0% / 0.1) 0 0.5rem 1rem;
-        position: fixed;
+    }
+
+    header.hero {
+        background: transparent;
+        height: 68px;
+        position: absolute;
+        inset: 0 0 auto 0;
+    }
+
+    header.solid {
+        background-color: var(--colorsLightSand);
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+        header.hero {
+            background-color: var(--colorsDeepForest);
+            height: var(--headerSize);
+            position: fixed;
+        }
     }
 </style>
-<header>
+<header class:list={[variant]}>
     <SkipLinks lang={lang} />
-    <MobileMenu lang={lang} links={links} />
-    <DesktopMenu lang={lang} links={links} />
+    <MobileMenu lang={lang} links={links} variant={variant} />
+    <DesktopMenu lang={lang} links={links} variant={variant} />
 </header>

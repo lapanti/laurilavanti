@@ -40,7 +40,7 @@ export const zIndices = {
     [100]: 100 as const,
 } as const
 
-export const HEADER_SIZE = sizes[5]
+export const HEADER_SIZE = sizes[3.75] // 60px — Signal Band mobile header bar height
 export const CONTENT_SIZE = sizes[75]
 export const CONTENT_PADDING = sizes[0.5]
 
@@ -49,11 +49,12 @@ export const CONTENT_PADDING = sizes[0.5]
 
 export const gridAreas = {
     footer: 'footer' as const,
+    header: 'header' as const,
     main: 'main' as const,
 } as const
 
-export const gridTemplateRowsLayout = `1fr auto` as const
-export const gridTemplateRowsLayoutMobile = `1fr auto` as const
+export const gridTemplateRowsLayout = `auto 1fr auto` as const
+export const gridTemplateRowsLayoutMobile = `auto 1fr auto` as const
 export const gridTemplateColumns = 'repeat(1, minmax(0, 1fr))' as const
 export const gridTemplateColumnsArticle =
     `1fr ${CONTENT_PADDING} min(calc(${sizes[75]} - ${sizes[1]}), calc(100% - ${sizes[1.125]})) ${CONTENT_PADDING} 1fr` as const

@@ -1,58 +1,87 @@
 ---
 import type { Lang, NavLink } from '../../content/nav'
 
-import { CONTENT_PADDING, CONTENT_SIZE, sizes } from '../../lib/styles'
+import { CONTENT_PADDING, CONTENT_SIZE } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
 interface Props {
     lang?: Lang
     links: NavLink[]
+    variant?: 'hero' | 'solid'
 }
 
-const { lang, links } = Astro.props
+const { lang, links, variant = 'solid' } = Astro.props
+const navLinks = links.filter((link) => !link.switchToLang)
+const langLinks = links.filter((link) => link.switchToLang)
+const tone = variant === 'hero' ? 'dark' : 'light'
 ---
 
-<style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE, sizes25: sizes[2.5] }}>
+<style define:vars={{ contentPadding: CONTENT_PADDING, contentSize: CONTENT_SIZE }}>
     .container {
         display: none;
+        align-items: center;
         flex-direction: row;
+        gap: 24px;
         margin: auto;
         padding-left: var(--contentPadding);
         padding-right: var(--contentPadding);
         width: var(--contentSize);
     }
 
-    .container > div {
-        align-items: center;
+    .brand {
+        margin-right: auto;
+    }
+
+    .brand.hero {
+        display: none;
+    }
+
+    nav {
         display: flex;
-        gap: var(--sizes25);
-        justify-content: flex-start;
+        gap: 14px;
+        margin-left: auto;
     }
 
-    .container > div ~ div {
-        flex-grow: 1;
-        justify-content: flex-end;
+    .langs {
+        display: flex;
+        gap: 2.4px;
+        margin-left: 32px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 769px) {
         .container {
             display: flex;
         }
     }
 </style>
 <div class="container">
-    <div>
-        <MainNavigationLink lang={lang} />
+    <div class:list={['brand', { hero: variant === 'hero' }]}>
+        <MainNavigationLink lang={lang} tone={tone} />
     </div>
-    <div>
+    <nav aria-label="Päävalikko">
         {
-            links.map((link) => (
+            navLinks.map((link) => (
                 <NavigationLink
+                    context="desktop"
+                    href={link.href}
+                    label={link.label}
+                    title={link.title}
+                    variant={variant}
+                />
+            ))
+        }
+    </nav>
+    <div class="langs" role="group">
+        {
+            langLinks.map((link) => (
+                <NavigationLink
+                    context="desktop"
                     href={link.href}
                     label={link.label}
                     switchToLang={link.switchToLang}
                     title={link.title}
+                    variant={variant}
                 />
             ))
         }
