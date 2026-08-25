@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../../../content/nav'
 
-import { colors, sizes } from '../../../lib/styles'
+import { colors, HEADER_SIZE, sizes } from '../../../lib/styles'
 import NameLogo from '../../NameLogo.astro'
 
 interface Props {
@@ -17,6 +17,7 @@ const underlineColor = tone === 'light' ? colors.white : colors.forestGreen
 
 <style
     define:vars={{
+        headerSize: HEADER_SIZE,
         sizes01875: sizes[0.1875],
         sizes5: sizes[5],
         underlineColor,
@@ -28,6 +29,14 @@ const underlineColor = tone === 'light' ? colors.white : colors.forestGreen
         min-height: var(--sizes5);
         position: relative;
         overflow: hidden;
+    }
+
+    /* the header bar is a fixed 60px on mobile (see HEADER_SIZE) — cap the tap target
+       to match, otherwise the logo's own min-height grows the header past that. */
+    @media (max-width: 768px) {
+        a {
+            min-height: var(--headerSize);
+        }
     }
 
     a::after {
