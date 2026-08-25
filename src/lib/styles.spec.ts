@@ -354,6 +354,26 @@ describe('styles', () => {
                     fontStyle: 'italic',
                     fontWeight: fontWeights.regular,
                 },
+                quoteBody: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '20px',
+                    fontStyle: 'italic',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.4',
+                },
+                quoteCite: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '20px',
+                    fontWeight: fontWeights.bold,
+                    lineHeight: '1.5',
+                },
+                quoteCiteMeta: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '17px',
+                    fontWeight: fontWeights.semibold,
+                    letterSpacing: '0.01em',
+                    lineHeight: '1.6',
+                },
                 text: {
                     fontFamily: signalBandFontFamilies.sans,
                     fontSize: '17px',

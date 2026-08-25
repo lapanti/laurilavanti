@@ -15,16 +15,19 @@ const { recommendations, lang } = Astro.props
 <style>
     ul {
         display: grid;
-        gap: 24px;
+        gap: 32px;
         grid-template-columns: 1fr;
         list-style: none;
         padding: 0;
         padding-top: 32px;
     }
 
+    li {
+        display: flex;
+    }
+
     @media (min-width: 769px) {
         ul {
-            gap: 40px;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }

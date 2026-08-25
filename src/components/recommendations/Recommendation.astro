@@ -17,23 +17,32 @@ const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
 <style
     define:vars={{
         colorsDarkGreen: colors.darkGreen,
-        colorsSand: colors.sand,
+        colorsOffWhite: colors.offWhite,
         colorsTextPrimary: colors.textPrimary,
         colorsTextSecondary: colors.textSecondary,
-        metaFontFamily: typographics.meta.fontFamily,
-        metaFontWeight: typographics.meta.fontWeight,
-        metaLetterSpacing: typographics.meta.letterSpacing,
-        pillarAnswerFontFamily: typographics.pillarAnswer.fontFamily,
-        pillarAnswerFontSize: typographics.pillarAnswer.fontSize,
-        pillarAnswerLineHeight: typographics.pillarAnswer.lineHeight,
+        quoteBodyFontFamily: typographics.quoteBody.fontFamily,
+        quoteBodyFontSize: typographics.quoteBody.fontSize,
+        quoteBodyFontStyle: typographics.quoteBody.fontStyle,
+        quoteBodyFontWeight: typographics.quoteBody.fontWeight,
+        quoteBodyLineHeight: typographics.quoteBody.lineHeight,
+        quoteCiteFontFamily: typographics.quoteCite.fontFamily,
+        quoteCiteFontSize: typographics.quoteCite.fontSize,
+        quoteCiteFontWeight: typographics.quoteCite.fontWeight,
+        quoteCiteLineHeight: typographics.quoteCite.lineHeight,
+        quoteCiteMetaFontFamily: typographics.quoteCiteMeta.fontFamily,
+        quoteCiteMetaFontSize: typographics.quoteCiteMeta.fontSize,
+        quoteCiteMetaFontWeight: typographics.quoteCiteMeta.fontWeight,
+        quoteCiteMetaLetterSpacing: typographics.quoteCiteMeta.letterSpacing,
+        quoteCiteMetaLineHeight: typographics.quoteCiteMeta.lineHeight,
     }}
 >
     article {
-        border-top: 5px solid var(--colorsSand);
+        background: var(--colorsOffWhite);
         display: flex;
+        flex: 1;
         flex-direction: column;
         gap: 16px;
-        padding-top: 16px;
+        padding: 16px;
     }
 
     .portrait {
@@ -49,33 +58,61 @@ const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
 
     blockquote {
         margin: 0;
+        padding: 4px 8px 8px;
     }
 
     p {
         color: var(--colorsTextPrimary);
-        font-family: var(--pillarAnswerFontFamily);
-        font-size: var(--pillarAnswerFontSize);
-        font-style: normal;
-        line-height: var(--pillarAnswerLineHeight);
+        font-family: var(--quoteBodyFontFamily);
+        font-size: var(--quoteBodyFontSize);
+        font-style: var(--quoteBodyFontStyle);
+        font-weight: var(--quoteBodyFontWeight);
+        line-height: var(--quoteBodyLineHeight);
         margin: 0;
+        /* Hangs the opening quotation mark into the blockquote's own left padding. */
+        text-indent: -0.45em;
+    }
+
+    /*
+     * The quotation marks are decoration, so they live in CSS rather than in the markup.
+     * They hang off the quote itself rather than the paragraph so that the markup's own
+     * indentation can't push them away from the text.
+     */
+    em::before,
+    em::after {
+        content: '”';
+    }
+
+    /* Hides the marks from screen readers where the alt-text syntax is supported. */
+    @supports (content: '”' / '') {
+        em::before,
+        em::after {
+            content: '”' / '';
+        }
     }
 
     footer {
         display: flex;
         flex-direction: column;
-        font-family: var(--metaFontFamily);
-        margin-top: 12px;
+        padding-top: 12px;
     }
 
     footer cite {
         color: var(--colorsDarkGreen);
+        font-family: var(--quoteCiteFontFamily);
+        font-size: var(--quoteCiteFontSize);
         font-style: normal;
-        font-weight: var(--metaFontWeight);
+        font-weight: var(--quoteCiteFontWeight);
+        line-height: var(--quoteCiteLineHeight);
     }
 
     footer span {
         color: var(--colorsTextSecondary);
-        letter-spacing: var(--metaLetterSpacing);
+        font-family: var(--quoteCiteMetaFontFamily);
+        font-size: var(--quoteCiteMetaFontSize);
+        font-weight: var(--quoteCiteMetaFontWeight);
+        letter-spacing: var(--quoteCiteMetaLetterSpacing);
+        line-height: var(--quoteCiteMetaLineHeight);
     }
 </style>
 <article>
