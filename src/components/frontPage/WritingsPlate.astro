@@ -5,17 +5,19 @@ interface Props {
     allPostsHref: string
     allPostsLabel: string
     eyebrow: string
+    ground?: 'sand' | 'white'
     heading: string
 }
 
-const { allPostsHref, allPostsLabel, eyebrow, heading } = Astro.props
+const { allPostsHref, allPostsLabel, eyebrow, ground = 'sand', heading } = Astro.props
+const groundColor = { sand: colors.lightSand, white: colors.white }[ground]
 ---
 
 <style
     define:vars={{
         colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
-        colorsLightSand: colors.lightSand,
+        colorsGround: groundColor,
         eyebrowFontFamily: typographics.eyebrow.fontFamily,
         eyebrowFontSize: typographics.eyebrow.fontSize,
         eyebrowFontWeight: typographics.eyebrow.fontWeight,
@@ -31,7 +33,7 @@ const { allPostsHref, allPostsLabel, eyebrow, heading } = Astro.props
     }}
 >
     .writings {
-        background: var(--colorsLightSand);
+        background: var(--colorsGround);
         padding-block: 96px;
     }
 

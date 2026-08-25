@@ -12,6 +12,12 @@ const { style } = Astro.props
         list-style: none;
         position: relative;
     }
+
+    :global(.prose) ul {
+        display: grid;
+        gap: 12px;
+        grid-column-start: auto;
+    }
 </style>
 <ul style={style}>
     <slot />

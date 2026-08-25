@@ -1,5 +1,5 @@
 ---
-import { typographics } from '../lib/styles'
+import { colors, typographics } from '../lib/styles'
 
 interface Props {
     itemProp?: string
@@ -10,10 +10,15 @@ const { itemProp } = Astro.props
 
 <style
     define:vars={{
+        colorsTextPrimary: colors.textPrimary,
         h3FontFamily: typographics.h3.fontFamily,
         h3FontSize: typographics.h3.fontSize,
         h3FontWeight: typographics.h3.fontWeight,
         h3LineHeight: typographics.h3.lineHeight,
+        titleFontFamily: typographics.title.fontFamily,
+        titleFontSize: typographics.title.fontSize,
+        titleFontWeight: typographics.title.fontWeight,
+        titleLineHeight: typographics.title.lineHeight,
     }}
 >
     h3 {
@@ -23,6 +28,16 @@ const { itemProp } = Astro.props
         line-height: var(--h3LineHeight);
         grid-column-start: 3;
         margin-block: 0;
+    }
+
+    :global(.prose) h3 {
+        color: var(--colorsTextPrimary);
+        font-family: var(--titleFontFamily);
+        font-size: var(--titleFontSize);
+        font-weight: var(--titleFontWeight);
+        line-height: var(--titleLineHeight);
+        grid-column-start: auto;
+        margin-top: 36px;
     }
 </style>
 <h3 itemprop={itemProp}>

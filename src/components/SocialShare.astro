@@ -8,7 +8,7 @@ import {
     personMastodonInstance,
     personThreadsHandle,
 } from '../content/person'
-import { colors, sizes } from '../lib/styles'
+import { colors, sizes, typographics } from '../lib/styles'
 
 interface Props {
     ariaLabel: string
@@ -78,10 +78,17 @@ const mastodonFallbackHref = `https://${personMastodonInstance}/share?text=${enc
 <style
     define:vars={{
         colorsBluesky: colors.bluesky,
+        colorsDarkGreen: colors.darkGreen,
         colorsFacebook: colors.facebook,
         colorsLinkedin: colors.linkedin,
         colorsMastodon: colors.mastodon,
+        colorsSand: colors.sand,
+        colorsTextSecondary: colors.textSecondary,
         colorsThreads: colors.threads,
+        metaFontFamily: typographics.meta.fontFamily,
+        metaFontSize: typographics.meta.fontSize,
+        metaFontWeight: typographics.meta.fontWeight,
+        metaLetterSpacing: typographics.meta.letterSpacing,
         sizes05: sizes[0.5],
         sizes15: sizes[1.5],
     }}
@@ -103,6 +110,41 @@ const mastodonFallbackHref = `https://${personMastodonInstance}/share?text=${enc
         flex-direction: row;
         justify-content: center;
         margin-right: var(--sizes05);
+    }
+
+    :global(.prose) aside {
+        flex-wrap: wrap;
+        gap: 12px;
+        grid-column-start: auto;
+        margin-top: 32px;
+    }
+
+    :global(.prose) .share {
+        color: var(--colorsTextSecondary);
+        font-family: var(--metaFontFamily);
+        font-size: var(--metaFontSize);
+        font-weight: var(--metaFontWeight);
+        letter-spacing: var(--metaLetterSpacing);
+        margin-right: 0;
+        text-transform: uppercase;
+    }
+
+    :global(.prose) a {
+        border: 2px solid var(--colorsSand);
+        margin-right: 0;
+        padding: 6px 12px;
+        transition:
+            background 0.18s,
+            border-color 0.18s;
+    }
+
+    :global(.prose) a:hover {
+        background: var(--colorsDarkGreen);
+        border-color: var(--colorsDarkGreen);
+    }
+
+    :global(.prose) a:active {
+        transform: translate(1px, 1px);
     }
 
     svg {

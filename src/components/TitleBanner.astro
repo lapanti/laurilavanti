@@ -1,5 +1,7 @@
 ---
 import { colors, HEADER_SIZE, sizes } from '../lib/styles'
+import ArtHead from './titleBanner/ArtHead.astro'
+import HeroMedia from './titleBanner/HeroMedia.astro'
 import Image from './titleBanner/Image.astro'
 import Title from './titleBanner/Title.astro'
 
@@ -12,9 +14,10 @@ interface Props {
     tags?: string[]
     title: string
     updatedDate?: string
+    variant?: 'page' | 'post'
 }
 
-const { alt, createdAt, heroImage, lang, readingTime, tags, title, updatedDate } = Astro.props
+const { alt, createdAt, heroImage, lang, readingTime, tags, title, updatedDate, variant = 'page' } = Astro.props
 ---
 
 <style
@@ -49,16 +52,32 @@ const { alt, createdAt, heroImage, lang, readingTime, tags, title, updatedDate }
         }
     }
 </style>
-<div class="container">
-    <div class="content">
-        <Title
-            createdAt={createdAt}
-            lang={lang}
-            readingTime={readingTime}
-            tags={tags}
-            title={title}
-            updatedDate={updatedDate}
-        />
-        <Image alt={alt} heroImage={heroImage} />
-    </div>
-</div>
+{
+    variant === 'post' ? (
+        <Fragment>
+            <ArtHead
+                createdAt={createdAt}
+                lang={lang}
+                readingTime={readingTime}
+                tags={tags}
+                title={title}
+                updatedDate={updatedDate}
+            />
+            <HeroMedia alt={alt} heroImage={heroImage} />
+        </Fragment>
+    ) : (
+        <div class="container">
+            <div class="content">
+                <Title
+                    createdAt={createdAt}
+                    lang={lang}
+                    readingTime={readingTime}
+                    tags={tags}
+                    title={title}
+                    updatedDate={updatedDate}
+                />
+                <Image alt={alt} heroImage={heroImage} />
+            </div>
+        </div>
+    )
+}

@@ -1,14 +1,14 @@
 ---
 import type { Post } from '../lib/posts'
 
+import AllPostsLink from '../components/AllPostsLink.astro'
 import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
-import H2 from '../components/H2.astro'
+import WritingsPlate from '../components/frontPage/WritingsPlate.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
-import { gridTemplateColumnsArticle, sizes } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
@@ -41,14 +41,23 @@ const shareUrl = `https://lavanti.fi/${canonicalSlug}/`
 
 const i18n = {
     en: {
+        allPostsHref: '/en/blog/all/',
+        allPostsLabel: 'All posts',
+        eyebrow: 'Writing',
         otherPosts: 'Other posts',
         shareAriaLabel: (t: string) => `Share links for post ${t}`,
     },
     fi: {
+        allPostsHref: '/fi/blog/all/',
+        allPostsLabel: 'Kaikki kirjoitukset',
+        eyebrow: 'Kirjoitukset',
         otherPosts: 'Muita kirjoituksia',
         shareAriaLabel: (t: string) => `Kirjoituksen ${t} sosiaalisen median jakolinkit`,
     },
     sv: {
+        allPostsHref: '/sv/blog/all/',
+        allPostsLabel: 'Alla inlägg',
+        eyebrow: 'Inlägg',
         otherPosts: 'Andra inlägg',
         shareAriaLabel: (t: string) => `Delningslänkar för inlägget ${t}`,
     },
@@ -68,19 +77,20 @@ const breadcrumbs: BreadcrumbItem[] = [
 ]
 ---
 
-<style
-    define:vars={{
-        articleRowGap: sizes[1],
-        gridTemplateColumnsArticle,
-        otherPostsMarginBlockStart: sizes[2],
-    }}
->
-    .other-posts {
-        display: grid;
-        grid-column: 1 / -1;
-        grid-template-columns: var(--gridTemplateColumnsArticle);
-        margin-block-start: var(--otherPostsMarginBlockStart);
-        row-gap: var(--articleRowGap);
+<style>
+    .prose-section {
+        background: white;
+        padding-bottom: 24px;
+    }
+
+    .prose {
+        margin-inline: auto;
+        max-width: 800px;
+        padding-top: 48px;
+    }
+
+    .prose > :global(* + *) {
+        margin-top: 24px;
     }
 </style>
 <BaseLayout
@@ -93,6 +103,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     langAlternates={langAlternates}
     ogImage={ogImage}
     ogImageAlt={alt}
+    plated
     slug={canonicalSlug}
     tags={tags}
     title={pageTitle}
@@ -110,12 +121,30 @@ const breadcrumbs: BreadcrumbItem[] = [
         tags={tags}
         title={title}
         updatedDate={updatedDate}
+        variant="post"
     />
-    <slot />
-    <Byline authors={authors ?? ['lauri']} externalPublications={externalPublications} lang={lang} />
-    <SocialShare ariaLabel={t.shareAriaLabel(pageTitle)} locale={lang} shareUrl={shareUrl} title={pageTitle} />
-    <section class="other-posts">
-        <H2>{t.otherPosts}</H2>
-        <ExcerptList currentSlug={slug} lang={lang} limit={4} relatedTags={tags} />
-    </section>
+    <div class="prose-section">
+        <div class="sheet">
+            <div class="prose">
+                <slot />
+                <Byline authors={authors ?? ['lauri']} externalPublications={externalPublications} lang={lang} />
+                <SocialShare
+                    ariaLabel={t.shareAriaLabel(pageTitle)}
+                    locale={lang}
+                    shareUrl={shareUrl}
+                    title={pageTitle}
+                />
+            </div>
+        </div>
+    </div>
+    <WritingsPlate
+        allPostsHref={t.allPostsHref}
+        allPostsLabel={t.allPostsLabel}
+        eyebrow={t.eyebrow}
+        ground="white"
+        heading={t.otherPosts}
+    >
+        <ExcerptList currentSlug={slug} lang={lang} limit={3} relatedTags={tags} />
+        <AllPostsLink lang={lang} />
+    </WritingsPlate>
 </BaseLayout>

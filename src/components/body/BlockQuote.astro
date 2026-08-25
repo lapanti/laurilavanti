@@ -9,7 +9,9 @@ import { colors, sizes, typographics } from '../../lib/styles'
         blockQuoteFontStyle: typographics.blockQuote.fontStyle,
         blockQuoteFontWeight: typographics.blockQuote.fontWeight,
         blockQuoteLineHeight: typographics.blockQuote.lineHeight,
+        colorsAquaBlue: colors.aquaBlue,
         colorsSand: colors.sand,
+        colorsTextPrimary: colors.textPrimary,
         sizes05: sizes[0.5],
     }}
 >
@@ -29,6 +31,27 @@ import { colors, sizes, typographics } from '../../lib/styles'
         font-size: var(--blockQuoteFontSize);
         font-weight: var(--blockQuoteFontWeight);
         line-height: var(--blockQuoteLineHeight);
+    }
+
+    :global(.prose) blockquote {
+        border-left-color: var(--colorsAquaBlue);
+        border-left-width: 5px;
+        grid-column-start: auto;
+        margin-top: 40px;
+        padding: 4px 0 4px 28px;
+    }
+
+    :global(.prose) blockquote :global(p) {
+        color: var(--colorsTextPrimary);
+        font-family: inherit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.55;
+    }
+
+    :global(.prose) blockquote :global(p + p) {
+        margin-top: 16px;
     }
 </style>
 <blockquote>

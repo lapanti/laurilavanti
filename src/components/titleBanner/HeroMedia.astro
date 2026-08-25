@@ -1,0 +1,144 @@
+---
+import { getImageSrcset } from '../../lib/images'
+import { colors } from '../../lib/styles'
+
+interface Props {
+    alt?: string
+    heroImage?: string
+}
+
+const { alt, heroImage } = Astro.props
+const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefined
+---
+
+<style
+    define:vars={{
+        band1: colors.darkGreen,
+        band2: colors.brightGreen,
+        band3: colors.aquaBlue,
+        band4: colors.brightSky,
+        band5: colors.signalBlue,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        colorsWhite: colors.white,
+    }}
+>
+    .hero-media {
+        background: var(--colorsLightSand);
+        overflow: hidden;
+        padding-inline: 16px;
+        position: relative;
+    }
+
+    .seam {
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .seam-rot {
+        left: -10%;
+        margin-top: -70px;
+        position: absolute;
+        right: -10%;
+        top: 50%;
+        transform: rotate(-11deg);
+        transform-origin: 50% 70px;
+    }
+
+    .seam-rot i {
+        display: block;
+        height: 28px;
+    }
+
+    .seam-rot i:nth-child(1) {
+        background: var(--band1);
+    }
+
+    .seam-rot i:nth-child(2) {
+        background: var(--band2);
+    }
+
+    .seam-rot i:nth-child(3) {
+        background: var(--band3);
+    }
+
+    .seam-rot i:nth-child(4) {
+        background: var(--band4);
+    }
+
+    .seam-rot i:nth-child(5) {
+        background: var(--band5);
+    }
+
+    .seam-rot b {
+        background: var(--colorsWhite);
+        display: block;
+        height: 2400px;
+    }
+
+    .hero-shot {
+        margin: 0 auto;
+        max-width: 1224px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-shot img {
+        aspect-ratio: 378 / 248;
+        background: var(--colorsDeepForest);
+        height: auto;
+        object-fit: cover;
+        object-position: 50% 18%;
+        width: 100%;
+    }
+
+    @media (min-width: 769px) {
+        .hero-media {
+            padding-inline: 56px;
+        }
+
+        .seam-rot {
+            margin-top: -100px;
+            transform: rotate(-8.4deg);
+            transform-origin: 50% 100px;
+        }
+
+        .seam-rot i {
+            height: 40px;
+        }
+
+        .hero-shot img {
+            aspect-ratio: 1224 / 570;
+            object-position: 50% 22%;
+        }
+    }
+</style>
+{
+    img && (
+        <div class="hero-media">
+            <div aria-hidden="true" class="seam">
+                <div class="seam-rot">
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                    <b />
+                </div>
+            </div>
+            <figure class="hero-shot">
+                <img
+                    alt={alt ?? ''}
+                    fetchpriority="high"
+                    height={img.height}
+                    sizes="(max-width: 1223px) 100vw, 1224px"
+                    src={img.src}
+                    srcset={img.srcset}
+                    width={img.width}
+                />
+            </figure>
+        </div>
+    )
+}

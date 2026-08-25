@@ -14,9 +14,14 @@ const { heavy } = Astro.props
         bodyFontSize: typographics.body.fontSize,
         bodyFontWeight: typographics.body.fontWeight,
         bodyLineHeight: typographics.body.lineHeight,
+        colorsDarkGreen: colors.darkGreen,
         colorsForestGreen: colors.forestGreen,
+        colorsTextSecondary: colors.textSecondary,
         sizes05: sizes[0.5],
         sizes125: sizes[1.25],
+        textFontFamily: typographics.text.fontFamily,
+        textFontWeight: typographics.text.fontWeight,
+        textLineHeight: typographics.text.lineHeight,
     }}
 >
     li {
@@ -36,6 +41,26 @@ const { heavy } = Astro.props
         content: '»';
         left: 0;
         position: absolute;
+    }
+
+    :global(.prose) li {
+        color: var(--colorsTextSecondary);
+        font-family: var(--textFontFamily);
+        font-size: 17px;
+        font-weight: var(--textFontWeight);
+        line-height: var(--textLineHeight);
+        margin-left: 0;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    :global(.prose) li:not(:first-child) {
+        margin-top: 0;
+    }
+
+    :global(.prose) li:before {
+        color: var(--colorsDarkGreen);
+        content: '—';
     }
 </style>
 <li style={{ ...(heavy ? { fontWeight: fontWeights.black } : {}) }}>

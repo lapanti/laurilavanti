@@ -1,5 +1,5 @@
 ---
-import { typographics } from '../lib/styles'
+import { colors, typographics } from '../lib/styles'
 
 interface Props {
     inGrid?: boolean
@@ -15,6 +15,10 @@ const { inGrid = true, itemProp } = Astro.props
         bodyFontSize: typographics.body.fontSize,
         bodyFontWeight: typographics.body.fontWeight,
         bodyLineHeight: typographics.body.lineHeight,
+        colorsTextSecondary: colors.textSecondary,
+        textFontFamily: typographics.text.fontFamily,
+        textFontWeight: typographics.text.fontWeight,
+        textLineHeight: typographics.text.lineHeight,
     }}
 >
     p {
@@ -23,6 +27,22 @@ const { inGrid = true, itemProp } = Astro.props
         font-weight: var(--bodyFontWeight);
         line-height: var(--bodyLineHeight);
         margin-block: 0;
+    }
+
+    :global(.prose) p {
+        color: var(--colorsTextSecondary);
+        font-family: var(--textFontFamily);
+        font-size: 17px;
+        font-weight: var(--textFontWeight);
+        line-height: var(--textLineHeight);
+        grid-column-start: auto;
+    }
+
+    @media (min-width: 769px) {
+        :global(.prose) p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
     }
 </style>
 <p itemprop={itemProp} style={{ ...(inGrid ? { gridColumnStart: 3 } : {}) }}>

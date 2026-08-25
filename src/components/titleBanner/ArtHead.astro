@@ -1,0 +1,166 @@
+---
+import { getTagName } from '../../content/tags'
+import { colors, HEADER_SIZE, typographics } from '../../lib/styles'
+
+interface Props {
+    createdAt?: string
+    lang?: 'en' | 'fi' | 'sv'
+    readingTime?: number
+    tags?: string[]
+    title: string
+    updatedDate?: string
+}
+
+const { createdAt, lang = 'fi', readingTime, tags, title, updatedDate } = Astro.props
+
+const tagBasePaths = { en: '/en/category', fi: '/fi/category', sv: '/sv/category' }
+const readingTimeLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'min read', fi: 'min lukuaika', sv: 'min' }
+const updatedLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'Updated', fi: 'Päivitetty', sv: 'Uppdaterad' }
+
+const [dateOnly] = (createdAt ?? '').split('T')
+const [year, month, day] = dateOnly ? dateOnly.split('-') : []
+const dateToDisplay = dateOnly ? `${day}.${month}.${year}` : ''
+
+const showUpdated = Boolean(updatedDate) && updatedDate !== dateOnly
+const [updYear, updMonth, updDay] = showUpdated && updatedDate ? updatedDate.split('-') : []
+const updatedDateToDisplay = showUpdated ? `${updDay}.${updMonth}.${updYear}` : ''
+
+const tagsToRender = (tags ?? [])
+    .map((tagId) => ({ id: tagId, name: getTagName(tagId, lang) }))
+    .filter((tag): tag is { id: string; name: string } => tag.name !== undefined)
+---
+
+<style
+    define:vars={{
+        articleHeadlineFontFamily: typographics.articleHeadline.fontFamily,
+        chipFontFamily: typographics.chip.fontFamily,
+        chipFontSize: typographics.chip.fontSize,
+        chipFontWeight: typographics.chip.fontWeight,
+        chipLetterSpacing: typographics.chip.letterSpacing,
+        chipLineHeight: typographics.chip.lineHeight,
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        colorsTaivas700: colors.aquaInkSoft,
+        headerSize: HEADER_SIZE,
+        metaFontFamily: typographics.meta.fontFamily,
+        metaFontSize: typographics.meta.fontSize,
+        metaFontWeight: typographics.meta.fontWeight,
+        metaLetterSpacing: typographics.meta.letterSpacing,
+        metaLineHeight: typographics.meta.lineHeight,
+    }}
+>
+    .art-head {
+        background: var(--colorsLightSand);
+        padding: calc(var(--headerSize) + 64px) 0 56px;
+    }
+
+    .art-meta {
+        align-items: center;
+        color: var(--colorsDarkGreen);
+        display: flex;
+        flex-wrap: wrap;
+        font-family: var(--metaFontFamily);
+        font-size: var(--metaFontSize);
+        font-weight: var(--metaFontWeight);
+        gap: 14px;
+        letter-spacing: var(--metaLetterSpacing);
+        line-height: var(--metaLineHeight);
+        text-transform: uppercase;
+    }
+
+    .art-meta .dot {
+        color: var(--colorsTaivas700);
+        opacity: 0.8;
+    }
+
+    h1 {
+        color: var(--colorsDeepForest);
+        font-family: var(--articleHeadlineFontFamily);
+        font-size: 52px;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+        line-height: 0.94;
+        margin: 0;
+        max-width: 950px;
+        padding: 20px 0 0;
+        text-transform: uppercase;
+    }
+
+    .topics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding-top: 20px;
+    }
+
+    .topics a {
+        background: rgba(22, 62, 53, 0.14);
+        color: var(--colorsDeepForest);
+        display: inline-block;
+        font-family: var(--chipFontFamily);
+        font-size: var(--chipFontSize);
+        font-weight: var(--chipFontWeight);
+        letter-spacing: var(--chipLetterSpacing);
+        line-height: var(--chipLineHeight);
+        padding: 5px 10px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .topics a:hover {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    @media (min-width: 1200px) {
+        h1 {
+            font-size: 96px;
+        }
+    }
+</style>
+<div class="art-head">
+    <div class="sheet">
+        <div class="inner">
+            <p class="art-meta">
+                {dateOnly && <time datetime={dateOnly}>{dateToDisplay}</time>}
+                {
+                    readingTime && readingTime > 0 && (
+                        <Fragment>
+                            <span aria-hidden="true" class="dot">
+                                ·
+                            </span>
+                            <span>
+                                {readingTime} {readingTimeLabel[lang]}
+                            </span>
+                        </Fragment>
+                    )
+                }
+                {
+                    showUpdated && (
+                        <Fragment>
+                            <span aria-hidden="true" class="dot">
+                                ·
+                            </span>
+                            <time datetime={updatedDate}>
+                                {updatedLabel[lang]}: {updatedDateToDisplay}
+                            </time>
+                        </Fragment>
+                    )
+                }
+            </p>
+            <h1>{title}</h1>
+            {
+                tagsToRender.length > 0 && (
+                    <ul class="topics">
+                        {tagsToRender.map((tag) => (
+                            <li>
+                                <a href={`${tagBasePaths[lang]}/${tag.id}/`}>{tag.name}</a>
+                            </li>
+                        ))}
+                    </ul>
+                )
+            }
+        </div>
+    </div>
+</div>
