@@ -2,13 +2,18 @@
 layout: '../../../layouts/PageLayout.astro'
 lang: sv
 pageTitle: 'AI-kompetens hör hemma i beslutsfattandet'
-title: 'AI-kompetens hör hemma i besluts­fattandet'
+title: 'AI-kompetens hör hemma'
+emphasis: 'i beslutsfattandet'
+intro: 'Lauri Lavanti bygger mjukvara på en bank och fattar beslut i kommunfullmäktige. Hans syn på teknologi är grundad i praktisk erfarenhet och kompetens – inte i hype eller att stå vid sidlinjen.'
 description: 'De Grönas riksdagskandidat i Nyland, fullmäktigeledamot i Kyrkslätt och ledande programutvecklare (DI, Aalto), bygger ett digitalt självständigt Finland.'
 slug: 'sv/about'
-updatedDate: '2026-08-17'
+updatedDate: '2026-08-25'
 type: 'ProfilePage'
 heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
 alt: 'Lauri Lavanti står framför en glas- och träfasad, blicken mot kameran. Han bär en ljusblå blommig skjorta och en mörk kavaj. Foto: Markus Isomeri.'
+plated: true
+variant: 'split'
 faq:
   - q: 'Vilken bakgrund har Lauri Lavanti?'
     a: 'Lauri Lavanti är De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027. Han är ledande programutvecklare på en bank och diplomingenjör från Aalto-universitetet samt kommunfullmäktigeledamot i Kyrkslätt och ordförande för Gröna fullmäktigegruppen.'
@@ -27,74 +32,98 @@ faq:
 ---
 
 import CurriculumVitae from '../../../components/CurriculumVitae.astro'
-import SmartLink from '../../../components/SmartLink.astro'
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
-import SummaryBox from '../../../components/SummaryBox.astro'
+import Chips from '../../../components/Chips.astro'
+import Eyebrow from '../../../components/Eyebrow.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import Pillar from '../../../components/frontPage/Pillar.astro'
+import WhoBio from '../../../components/frontPage/WhoBio.astro'
+import FactsList from '../../../components/FactsList.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
 import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/sv-cv'
 
-export const components = { a: SmartLink, h2: H2, p: Paragraph }
+<Plate eyebrow="Vem" ground="offWhite" heading="Lauri i korthet" id="brief">
+    <FactsList
+        items={[
+            'De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027.',
+            'Förenar praktisk teknologikompetens med ekonomiskt tänkande och samhällsansvar.',
+            'Över ett decennium av erfarenhet av att bygga säker mjukvara, ledande programutvecklare på en bank.',
+            'Kommunfullmäktigeledamot i Kyrkslätt, ordförande för Gröna fullmäktigegruppen.',
+            'Diplomingenjör i informationsnätverk, Aalto-universitetet.',
+            'Driver för digital självständighet, integritetsskydd och ett förnuftigt användande av AI.',
+            'Fyra barn.',
+        ]}
+    />
+</Plate>
 
-<SummaryBox
-    ariaLabel="Fakta om Lauri"
-    lang="sv"
-    summaryRows={[
-        'De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027.',
-        'Förenar praktisk teknologikompetens med ekonomiskt tänkande och samhällsansvar.',
-        'Över ett decennium av erfarenhet av att bygga säker mjukvara, ledande programutvecklare på en bank.',
-        'Kommunfullmäktigeledamot i Kyrkslätt, ordförande för Gröna fullmäktigegruppen.',
-        'Diplomingenjör i informationsnätverk, Aalto-universitetet.',
-        'Driver för digital självständighet, integritetsskydd och ett förnuftigt användande av AI.',
-        'Fyra barn.',
+<Plate ground="sand">
+    <Eyebrow>Bakgrund</Eyebrow>
+    <Prose>
+        <p>Han är De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027, ledande programutvecklare, kommunfullmäktigeledamot i Kyrkslätt samt ordförande för De Grönas fullmäktigegrupp. Han är utexaminerad diplomingenjör från Aalto-universitetet och fokuserar på AI, ekonomisk politik, företagande samt digital självständighet. Digital självständighet, integritetsskydd och ansvarsfull implementering av AI är delar av samma helhet: hur vi bygger teknologisk utveckling som är både konkurrenskraftig och hållbar.</p>
+        <p>Lauri har också en <a href="https://fi.wikipedia.org/wiki/Lauri_Lavanti">Wikipedia-artikel</a> (på finska).</p>
+    </Prose>
+</Plate>
+
+<Pillar
+    eyebrow="Arbete"
+    heading="En teknologiexpert som förenar konkurrenskraft och integritetsskydd"
+    tone="oat"
+    vocab={['Arkitektur', 'Informationssäkerhet', 'AI-verktyg', 'Underhållbarhet']}
+    reads={[
+        { href: '/sv/blog/57/ai-forandrar-vad-utvecklare-far-betalt-for/', label: 'AI förändrar vad utvecklare får betalt för' },
+        { href: '/sv/blog/60/ai-hjalper-till-att-sakra-kommunala-tjanster-men-det-kostar/', label: 'AI hjälper trygga kommunala tjänster, men det är inte gratis' },
     ]}
-    title="Lauri i korthet"
-/>
+>
+    <p class="answer" slot="answer">Jag arbetar som ledande programutvecklare och ansvarar för de tekniska lösningarna i vårt teams tjänster. I mitt arbete står planering, utveckling och underhåll av krävande helheter i centrum. Jag leder tekniska riktlinjer, bygger teamets AI-verktyg och för en aktiv dialog med intressenter för att säkerställa att lösningarna motsvarar verkliga behov och håller över tid.</p>
+    <p class="detail" slot="detail">Digitalisering är inte bara en teknisk fråga för mig, utan också en samhällelig och etisk. Jag ser till att lösningarna inte bara fungerar idag, utan också är säkra och underhållbara imorgon. Teknologin ska vara säker, funktionell och tjäna människan. Finland har varit ett föregångsland inom högteknologi i decennier. AI förändrar arbete, tjänster och förtroendet för digitala system. Vi behöver människor i beslutsfattande positioner som förstår teknologi på en praktisk nivå.</p>
+</Pillar>
 
-Lauri Lavanti bygger mjukvara på en bank och fattar beslut i kommunfullmäktige. Hans syn på teknologi är grundad i praktisk erfarenhet och kompetens – inte i hype eller att stå vid sidlinjen.
+<Pillar
+    eyebrow="Politik"
+    heading="Varför gick jag in i politiken?"
+    tone="peach"
+    vocab={['AI', 'Ekonomi', 'Digitalisering', 'Integritetsskydd']}
+    reads={[
+        { href: '/sv/blog/62/de-grona-marknadsekonomiets-sanna-forsvarare/', label: 'De gröna – Marknadsekonomiets sanna försvarare' },
+        { href: '/sv/blog/37/utbildning-ar-kommunens-viktigaste-uppgift/', label: 'Utbildning är kommunens viktigaste uppgift' },
+    ]}
+>
+    <p class="answer" slot="answer">I politiken fokuserar jag särskilt på AI, ekonomisk politik och digitalisering – samt på hur Finland kan förbli konkurrenskraftigt samtidigt som vi säkerställer integritetsskydd och digital självständighet. Samhället digitaliseras kontinuerligt, men den offentliga förvaltningen och beslutsfattandet hänger inte ofta med i utvecklingen.</p>
+    <p class="detail" slot="detail">Jag är De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027. Mina viktigaste förtroendeuppdrag är att vara kommunfullmäktigeledamot i Kyrkslätt och ordförande för Gröna fullmäktigegruppen. Vi behöver bättre förståelse för teknologins möjligheter och risker samt mod att satsa på utbildning och högproduktiv teknologisk utveckling.</p>
+</Pillar>
 
-Han är De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027, ledande programutvecklare, kommunfullmäktigeledamot i Kyrkslätt samt ordförande för De Grönas fullmäktigegrupp. Han är utexaminerad diplomingenjör från Aalto-universitetet och fokuserar på AI, ekonomisk politik, företagande samt digital självständighet. Digital självständighet, integritetsskydd och ansvarsfull implementering av AI är delar av samma helhet: hur vi bygger teknologisk utveckling som är både konkurrenskraftig och hållbar.
+<Pillar
+    eyebrow="Medborgaraktivism"
+    heading="Digital självständighet och medborgarinitiativ"
+    tone="aqua"
+    vocab={['Digital självständighet', 'Försörjningsberedskap', 'Medborgarinitiativ', 'Grundläggande rättigheter']}
+    reads={[
+        { href: '/sv/blog/66/digital-sjalvstandighet-vardagens-val/', label: 'Digital självständighet: 5 + 1 val för vardagen' },
+        { href: '/sv/blog/59/fullmaktigemotion-starka-kyrkslatt-digital-forsorjningsberedskap/', label: 'Fullmäktigemotion: digital beredskap' },
+    ]}
+>
+    <p class="answer" slot="answer">Jag är initiativtagare och primär kontaktperson för medborgarinitiativet för digital självständighet. Vårt initiativ kräver lagstiftning som säkerställer att kritiska offentliga digitala tjänster och data förblir i händerna på finska och europeiska aktörer – på servrar inom EU/EES-området.</p>
+    <p class="detail" slot="detail">Digital självständighet stöder europeisk teknologisk utveckling, minskar beroendet av enskilda leverantörer och skapar bättre förutsättningar för inhemsk mjukvaruutveckling. Det är inte en ideologi utan en praktisk förutsättning för ett fungerande samhälle – och det stärker också demokratin och medborgarnas rättigheter, samtidigt som det skapar marknader för ny företagsverksamhet.</p>
+</Pillar>
 
-Lauri har också en [Wikipedia-artikel](https://fi.wikipedia.org/wiki/Lauri_Lavanti) (på finska).
+<Plate eyebrow="Utbildning" ground="offWhite" heading="Mångdisciplinär och bred syn">
+    <Prose>
+        <p>Jag är utbildad diplomingenjör i informationsnätverk. Utbildningsprogrammet bygger på datateknik, men breddas från teknik till bland annat estetik och filosofi. Utbildningen har lärt mig att se system som både tekniska och mänskliga helheter.</p>
+        <p>Mångdisciplinariteten har gett mig förmågan att smidigt fungera som brobyggare och bygga gemensam förståelse mellan olika yrkesgrupper. Jag granskar teknologin alltid också ur perspektiven av betydelse, påverkan och ansvar. I praktiken innebär det att jag kan kommunicera med både tekniska experter och företrädare för näringslivet – och säkerställa att de förstår varandra.</p>
+    </Prose>
+</Plate>
 
-## En teknologiexpert som förenar konkurrenskraft och integritetsskydd
-
-Jag arbetar som ledande programutvecklare och ansvarar för de tekniska lösningarna i vårt teams tjänster. I mitt arbete står planering, utveckling och underhåll av krävande helheter i centrum. Jag leder tekniska riktlinjer, bygger teamets AI-verktyg och för en aktiv dialog med intressenter för att säkerställa att lösningarna motsvarar verkliga behov och håller över tid.
-
-Digitalisering är inte bara en teknisk fråga för mig, utan också en samhällelig och etisk. Jag ser till att lösningarna inte bara fungerar idag, utan också är säkra och underhållbara imorgon. Teknologin ska vara säker, funktionell och tjäna människan.
-
-Finland har varit ett föregångsland inom högteknologi i decennier. AI förändrar arbete, tjänster och förtroendet för digitala system. Vi behöver människor i beslutsfattande positioner som förstår teknologi på en praktisk nivå.
-
-## Varför gick jag in i politiken?
-
-I politiken fokuserar jag särskilt på AI, ekonomisk politik och digitalisering – samt på hur Finland kan förbli konkurrenskraftigt samtidigt som vi säkerställer integritetsskydd och digital självständighet. Samhället digitaliseras kontinuerligt, men den offentliga förvaltningen och beslutsfattandet hänger inte ofta med i utvecklingen. Samma utmaning gäller hela Finland.
-
-Jag är De Grönas riksdagskandidat i Nylands valkrets i riksdagsvalet 2027. Mina viktigaste förtroendeuppdrag är att vara kommunfullmäktigeledamot i Kyrkslätt och ordförande för Gröna fullmäktigegruppen.
-
-Vi behöver bättre förståelse för teknologins möjligheter och risker samt mod att satsa på utbildning och högproduktiv teknologisk utveckling. Det är viktigare än någonsin att Finland inte halkar efter i kompetens eller konkurrenskraft.
-
-## Digital självständighet och medborgarinitiativ
-
-Jag är initiativtagare och primär kontaktperson för medborgarinitiativet för digital självständighet. Vårt initiativ kräver lagstiftning som säkerställer att kritiska offentliga digitala tjänster och data förblir i händerna på finska och europeiska aktörer – på servrar inom EU/EES-området.
-
-Digital självständighet stöder europeisk teknologisk utveckling, minskar beroendet av enskilda leverantörer och skapar bättre förutsättningar för inhemsk mjukvaruutveckling. Det är inte en ideologi utan en praktisk förutsättning för ett fungerande samhälle – och det stärker också demokratin och medborgarnas rättigheter, samtidigt som det skapar marknader för ny företagsverksamhet.
-
-## Mångdisciplinär och bred syn
-
-Jag är utbildad diplomingenjör i informationsnätverk. Utbildningsprogrammet bygger på datateknik, men breddas från teknik till bland annat estetik och filosofi. Utbildningen har lärt mig att se system som både tekniska och mänskliga helheter.
-
-Mångdisciplinariteten har gett mig förmågan att smidigt fungera som brobyggare och bygga gemensam förståelse mellan olika yrkesgrupper. Jag granskar teknologin alltid också ur perspektiven av betydelse, påverkan och ansvar. I praktiken innebär det att jag kan kommunicera med både tekniska experter och företrädare för näringslivet – och säkerställa att de förstår varandra.
-
-## Hemma och på fritiden
-
-På fritiden står mina fyra barn i centrum. Vardagen består av hobbyer, utflykter och gemensamma stunder. Föräldraskapet lär mig mycket om emotionella färdigheter, interaktion och vikten av ständig övning och utveckling.
-
-Brädspel, datorspel, litteratur och lagsport har följt med mig länge. Även om de hektiska åren begränsar tiden, tycker jag det är viktigt att bevara utrymme även för dessa intressen, och jag har ersatt lagsport med aktiv löpning. Ett av mina käraste fritidsintressen har varit amerikansk fotboll, där jag spelade defensive lineman och long snapper för Aalto Predators och Helsinki Wolverines. Jag hade också äran att representera Finland i studentlandslaget, bland annat vid de allra första VM på universitetsnivå i Uppsala.
-
-## Tankar på andra platser
-
-Mina senaste tankar hittar du på mina sociala medier-konton: [Mastodon](https://mastodon.social/@laurilavanti), [Bluesky](https://bsky.app/profile/lauri.lavanti.fi), [Threads](https://www.threads.com/@laurilavanti), [LinkedIn](https://www.linkedin.com/in/laurilavanti/), [Instagram](https://www.instagram.com/laurilavanti/), [Facebook](https://www.facebook.com/laurilavanti) och [TikTok](https://www.tiktok.com/@laurilavanti). Jag använder också regelbundet [Reddit](https://www.reddit.com/user/laurilavanti/).
-
-Utöver min egen webbplats hittar du mina texter bland annat i [Uusi Suomi](https://puheenvuoro.uusisuomi.fi/author/lauri-lavanti/), [Verde](https://www.verdelehti.fi/tag/puheenvuoro/) och lokaltidningar som Länsiväylä. Oftast hittar du mina tankar i [Kirkkonummen Sanomat](https://www.kirkkonummensanomat.fi/).
+<WhoBio
+    eyebrow="Vardag"
+    heading="Hemma och på fritiden"
+    photographer="Foto: Markus Isomeri"
+    portraitAlt="Lauri Lavanti står framför en skulptur mot en glasfasad, blicken mot kameran och ler."
+    portraitImage="Lauri-Lavanti-lasijulkisivun-edessa-veistoksen-vieressa"
+>
+    <p class="bio">På fritiden står mina fyra barn i centrum. Vardagen består av hobbyer, utflykter och gemensamma stunder. Föräldraskapet lär mig mycket om emotionella färdigheter, interaktion och vikten av ständig övning och utveckling.</p>
+    <p class="bio">Brädspel, datorspel, litteratur och lagsport har följt med mig länge. Även om de hektiska åren begränsar tiden, tycker jag det är viktigt att bevara utrymme även för dessa intressen, och jag har ersatt lagsport med aktiv löpning. Ett av mina käraste fritidsintressen har varit amerikansk fotboll, där jag spelade defensive lineman och long snapper för Aalto Predators och Helsinki Wolverines. Jag hade också äran att representera Finland i studentlandslaget, bland annat vid de allra första VM på universitetsnivå i Uppsala.</p>
+</WhoBio>
 
 <CurriculumVitae
     degrees={degrees}
@@ -104,3 +133,29 @@ Utöver min egen webbplats hittar du mina texter bland annat i [Uusi Suomi](http
     jobExperiences={jobExperiences}
     jobExperiencesTitle={jobExperiencesTitle}
 />
+
+<Plate eyebrow="Annanstans" ground="sand" heading="Tankar på andra platser">
+    <Prose>
+        <p>Mina senaste tankar hittar du på mina sociala medier-konton.</p>
+    </Prose>
+    <Chips
+        ariaLabel="Lauris konton i sociala medier"
+        items={[
+            { href: 'https://mastodon.social/@laurilavanti', label: 'Mastodon' },
+            { href: 'https://bsky.app/profile/lauri.lavanti.fi', label: 'Bluesky' },
+            { href: 'https://www.threads.com/@laurilavanti', label: 'Threads' },
+            { href: 'https://www.linkedin.com/in/laurilavanti/', label: 'LinkedIn' },
+            { href: 'https://www.instagram.com/laurilavanti/', label: 'Instagram' },
+            { href: 'https://www.facebook.com/laurilavanti', label: 'Facebook' },
+            { href: 'https://www.tiktok.com/@laurilavanti', label: 'TikTok' },
+            { href: 'https://www.reddit.com/user/laurilavanti/', label: 'Reddit' },
+        ]}
+    />
+    <Prose>
+        <p>Utöver min egen webbplats hittar du mina texter bland annat i <a href="https://puheenvuoro.uusisuomi.fi/author/lauri-lavanti/">Uusi Suomi</a>, <a href="https://www.verdelehti.fi/tag/puheenvuoro/">Verde</a> och lokaltidningar som Länsiväylä. Oftast hittar du mina tankar i <a href="https://www.kirkkonummensanomat.fi/">Kirkkonummen Sanomat</a>.</p>
+    </Prose>
+</Plate>
+
+<NewsletterPlate>
+    <NewsletterSubscribe lang="sv" />
+</NewsletterPlate>

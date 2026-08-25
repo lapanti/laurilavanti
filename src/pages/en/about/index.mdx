@@ -2,13 +2,18 @@
 layout: '../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'AI expertise belongs in decision-making'
-title: 'AI expertise belongs in decision-making'
+title: 'AI expertise belongs'
+emphasis: 'in decision-making'
+intro: "Lauri Lavanti builds software at a bank and makes decisions on the municipal council. His view of technology is grounded in practical experience and expertise — not hype or watching from the sidelines."
 description: "The Greens' parliamentary candidate in Uusimaa, Kirkkonummi councillor and lead developer (MSc, Aalto), building a digitally independent Finland."
 slug: 'en/about'
-updatedDate: '2026-08-17'
+updatedDate: '2026-08-25'
 type: 'ProfilePage'
 heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
 alt: 'Lauri Lavanti standing in front of a glass-and-wood facade, looking at the camera. He is wearing a light blue floral shirt and a dark blazer. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 faq:
   - q: "What is Lauri Lavanti's background?"
     a: "Lauri Lavanti is the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 parliamentary elections. He is a lead developer at a bank and a Master of Science (Tech.) from Aalto University, as well as a municipal councillor in Kirkkonummi and chair of the Green council group."
@@ -27,74 +32,98 @@ faq:
 ---
 
 import CurriculumVitae from '../../../components/CurriculumVitae.astro'
-import SmartLink from '../../../components/SmartLink.astro'
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
-import SummaryBox from '../../../components/SummaryBox.astro'
+import Chips from '../../../components/Chips.astro'
+import Eyebrow from '../../../components/Eyebrow.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import Pillar from '../../../components/frontPage/Pillar.astro'
+import WhoBio from '../../../components/frontPage/WhoBio.astro'
+import FactsList from '../../../components/FactsList.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
 import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/en-cv'
 
-export const components = { a: SmartLink, h2: H2, p: Paragraph }
+<Plate eyebrow="Who" ground="offWhite" heading="Lauri in TL;DR-format" id="brief">
+    <FactsList
+        items={[
+            "The Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 elections.",
+            'Combines hands-on technology expertise with economic thinking and societal responsibility.',
+            'Over a decade of experience building secure software, lead developer at a bank.',
+            'Municipal councillor in Kirkkonummi, chair of the Green council group.',
+            'Master of Science (Tech.), Information Networks, Aalto University.',
+            'Advocates for digital independence, privacy, and the sensible use of AI.',
+            'Four children.',
+        ]}
+    />
+</Plate>
 
-<SummaryBox
-    ariaLabel="Facts about Lauri"
-    lang="en"
-    summaryRows={[
-        "The Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 elections.",
-        'Combines hands-on technology expertise with economic thinking and societal responsibility.',
-        'Over a decade of experience building secure software, lead developer at a bank.',
-        'Municipal councillor in Kirkkonummi, chair of the Green council group.',
-        'Master of Science (Tech.), Information Networks, Aalto University.',
-        'Advocates for digital independence, privacy, and the sensible use of AI.',
-        'Four children.',
+<Plate ground="sand">
+    <Eyebrow>Background</Eyebrow>
+    <Prose>
+        <p>He is the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 elections, a lead developer, municipal councillor in Kirkkonummi, and chair of the Greens council group. He graduated as a Master of Science (Tech.) from Aalto University and focuses on AI, economic policy, entrepreneurship, and digital independence. Digital independence, privacy, and the responsible adoption of AI are all part of the same whole: how we build technological development that is both competitive and sustainable.</p>
+        <p>Lauri also has a <a href="https://fi.wikipedia.org/wiki/Lauri_Lavanti">Wikipedia article</a> (in Finnish).</p>
+    </Prose>
+</Plate>
+
+<Pillar
+    eyebrow="Work"
+    heading="A technology expert who combines competitiveness and privacy"
+    tone="oat"
+    vocab={['Architecture', 'Security', 'AI tooling', 'Maintainability']}
+    reads={[
+        { href: '/en/blog/57/ai-changes-what-developers-get-paid-for/', label: 'AI changes what developers get paid for' },
+        { href: '/en/blog/60/ai-helps-secure-municipal-services-but-it-isnt-free/', label: 'AI helps secure municipal services, but it is not free' },
     ]}
-    title="Lauri in TL;DR -format"
-/>
+>
+    <p class="answer" slot="answer">I work as a lead developer and am responsible for the technical solutions of our team's services. My work focuses on the design, development, and maintenance of demanding systems. I manage technical guidelines, build the team's AI tools, and engage in active dialogue with stakeholders to ensure that solutions meet real needs and stand the test of time.</p>
+    <p class="detail" slot="detail">For me, digitalization is not just a technical issue, but also a social and ethical one. I make sure that solutions are not only functional today, but also secure and maintainable tomorrow. Technology must be safe, functional, and serve people. Finland has been a model country for high technology for decades. AI is reshaping work, services, and trust in digital systems. We need people in decision-making positions who understand technology at a practical level.</p>
+</Pillar>
 
-Lauri Lavanti builds software at a bank and makes decisions on the municipal council. His view of technology is grounded in practical experience and expertise — not hype or watching from the sidelines.
+<Pillar
+    eyebrow="Politics"
+    heading="Why did I get into politics?"
+    tone="peach"
+    vocab={['AI', 'Economic policy', 'Digitalisation', 'Privacy']}
+    reads={[
+        { href: '/en/blog/62/greens-the-true-defenders-of-the-market-economy/', label: 'Greens – The True Defenders of the Market Economy' },
+        { href: '/en/blog/37/education-is-the-municipalitys-most-important-task/', label: "Education is the municipality's most important task" },
+    ]}
+>
+    <p class="answer" slot="answer">In politics, I focus particularly on AI, economic policy, and digitalisation — as well as on how Finland can remain competitive while safeguarding privacy and digital independence. Society is rapidly becoming digitalized, but public administration and decision-making do not often keep pace with developments.</p>
+    <p class="detail" slot="detail">I am the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 elections. My most important civic roles are serving as municipal councillor in Kirkkonummi and chair of the Green council group. We need a better understanding of the opportunities and risks presented by technology, as well as the courage to invest in education and high-productivity technological development.</p>
+</Pillar>
 
-He is the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 elections, a lead developer, municipal councillor in Kirkkonummi, and chair of the Greens council group. He graduated as a Master of Science (Tech.) from Aalto University and focuses on AI, economic policy, entrepreneurship, and digital independence. Digital independence, privacy, and the responsible adoption of AI are all part of the same whole: how we build technological development that is both competitive and sustainable.
+<Pillar
+    eyebrow="Civic action"
+    heading="Digital independence and civic action"
+    tone="aqua"
+    vocab={['Digital independence', 'Resilience', "Citizens' initiative", 'Fundamental rights']}
+    reads={[
+        { href: '/en/blog/66/digital-independence-five-plus-one-everyday-choices/', label: 'Digital independence: 5 + 1 choices for everyday life' },
+        { href: '/en/blog/59/council-initiative-strengthening-kirkkonummis-digital-resilience/', label: 'Council initiative: digital resilience' },
+    ]}
+>
+    <p class="answer" slot="answer">I am the initiator and primary contact of the Digital Independence citizen initiative. Our initiative calls for legislation ensuring that critical public digital services and data remain in the hands of Finnish and European actors, on servers located in the EU/EEA area.</p>
+    <p class="detail" slot="detail">Digital independence supports European technological development, reduces dependence on individual vendors, and creates better conditions for domestic software development. It is not an ideology but a practical prerequisite for a functioning society — and it also strengthens democracy and citizens' rights, while creating markets for new business activity.</p>
+</Pillar>
 
-Lauri also has a [Wikipedia article](https://fi.wikipedia.org/wiki/Lauri_Lavanti) (in Finnish).
+<Plate eyebrow="Education" ground="offWhite" heading="Multidisciplinarity and a broad perspective">
+    <Prose>
+        <p>By training, I am a Master of Science (Tech.) from the study programme of information networks. The program is based on information technology, but it also covers other subjects such as aesthetics and philosophy. The program has taught me to view systems as both technical and humane entities.</p>
+        <p>My multidisciplinary background has given me the ability to act smoothly as a bridge builder, fostering mutual understanding between different professional groups. I also always examine technology from the perspective of its significance, impact, and responsibility. In practice, that means I can speak with both technical experts and business representatives — and make sure they understand each other.</p>
+    </Prose>
+</Plate>
 
-## A technology expert who combines competitiveness and privacy
-
-I work as a lead developer and am responsible for the technical solutions of our team's services. My work focuses on the design, development, and maintenance of demanding systems. I manage technical guidelines, build the team's AI tools, and engage in active dialogue with stakeholders to ensure that solutions meet real needs and stand the test of time.
-
-For me, digitalization is not just a technical issue, but also a social and ethical one. I make sure that solutions are not only functional today, but also secure and maintainable tomorrow. Technology must be safe, functional, and serve people.
-
-Finland has been a model country for high technology for decades. AI is reshaping work, services, and trust in digital systems. We need people in decision-making positions who understand technology at a practical level.
-
-## Why did I get into politics?
-
-In politics, I focus particularly on AI, economic policy, and digitalisation — as well as on how Finland can remain competitive while safeguarding privacy and digital independence. Society is rapidly becoming digitalized, but public administration and decision-making do not often keep pace with developments. The same challenge applies across Finland.
-
-I am the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 elections. My most important civic roles are serving as municipal councillor in Kirkkonummi and chair of the Green council group.
-
-We need a better understanding of the opportunities and risks presented by technology, as well as the courage to invest in education and high-productivity technological development. It is more important than ever that Finland does not fall behind in terms of expertise or competitiveness.
-
-## Digital independence and civic action
-
-I am the initiator and primary contact of the Digital Independence citizen initiative. Our initiative calls for legislation ensuring that critical public digital services and data remain in the hands of Finnish and European actors, on servers located in the EU/EEA area.
-
-Digital independence supports European technological development, reduces dependence on individual vendors, and creates better conditions for domestic software development. It is not an ideology but a practical prerequisite for a functioning society — and it also strengthens democracy and citizens' rights, while creating markets for new business activity.
-
-## Multidisciplinarity and a broad perspective
-
-By training, I am a Master of Science (Tech.) from the study programme of information networks. The program is based on information technology, but it also covers other subjects such as aesthetics and philosophy. The program has taught me to view systems as both technical and humane entities.
-
-My multidisciplinary background has given me the ability to act smoothly as a bridge builder, fostering mutual understanding between different professional groups. I also always examine technology from the perspective of its significance, impact, and responsibility. In practice, that means I can speak with both technical experts and business representatives — and make sure they understand each other.
-
-## At home and off duty
-
-My four children are the focus of my free time. Everyday life consists of hobbies, excursions, and moments spent together. Parenting teaches me a lot about emotional skills, interaction, and the importance of continuous practice and development.
-
-Board games, video games, literature, and team sports have been a part of my life for a long time. Even though my busy schedule limits my time, I think it's important to make room for these interests, and I've replaced team sports with active jogging. One of my dearest hobbies has been American football, where I played defensive lineman and long snapper for Aalto Predators and the Helsinki Wolverines. I also had the honour of representing Finland on the student national team, including at the first-ever university-level World Championships in Uppsala.
-
-## Thoughts elsewhere
-
-You can find my latest thoughts on my social media accounts: [Mastodon](https://mastodon.social/@laurilavanti), [Bluesky](https://bsky.app/profile/lauri.lavanti.fi), [Threads](https://www.threads.com/@laurilavanti), [LinkedIn](https://www.linkedin.com/in/laurilavanti/), [Instagram](https://www.instagram.com/laurilavanti/), [Facebook](https://www.facebook.com/laurilavanti) and [TikTok](https://www.tiktok.com/@laurilavanti). I'm also a regular [Reddit](https://www.reddit.com/user/laurilavanti/) user.
-
-Beyond my own site, you can find my writing at [Uusi Suomi](https://puheenvuoro.uusisuomi.fi/author/lauri-lavanti/), [Verde](https://www.verdelehti.fi/tag/puheenvuoro/), and local papers such as Länsiväylä. You'll most often find my thoughts in [Kirkkonummen Sanomat](https://www.kirkkonummensanomat.fi/).
+<WhoBio
+    eyebrow="Everyday life"
+    heading="At home and off duty"
+    photographer="Photo: Markus Isomeri"
+    portraitAlt="Lauri Lavanti stands in front of a sculpture against a glass facade, looking at the camera with a smile."
+    portraitImage="Lauri-Lavanti-lasijulkisivun-edessa-veistoksen-vieressa"
+>
+    <p class="bio">My four children are the focus of my free time. Everyday life consists of hobbies, excursions, and moments spent together. Parenting teaches me a lot about emotional skills, interaction, and the importance of continuous practice and development.</p>
+    <p class="bio">Board games, video games, literature, and team sports have been a part of my life for a long time. Even though my busy schedule limits my time, I think it's important to make room for these interests, and I've replaced team sports with active jogging. One of my dearest hobbies has been American football, where I played defensive lineman and long snapper for Aalto Predators and the Helsinki Wolverines. I also had the honour of representing Finland on the student national team, including at the first-ever university-level World Championships in Uppsala.</p>
+</WhoBio>
 
 <CurriculumVitae
     degrees={degrees}
@@ -104,3 +133,29 @@ Beyond my own site, you can find my writing at [Uusi Suomi](https://puheenvuoro.
     jobExperiences={jobExperiences}
     jobExperiencesTitle={jobExperiencesTitle}
 />
+
+<Plate eyebrow="Elsewhere" ground="sand" heading="Thoughts elsewhere">
+    <Prose>
+        <p>You can find my latest thoughts on my social media accounts.</p>
+    </Prose>
+    <Chips
+        ariaLabel="Lauri's social media accounts"
+        items={[
+            { href: 'https://mastodon.social/@laurilavanti', label: 'Mastodon' },
+            { href: 'https://bsky.app/profile/lauri.lavanti.fi', label: 'Bluesky' },
+            { href: 'https://www.threads.com/@laurilavanti', label: 'Threads' },
+            { href: 'https://www.linkedin.com/in/laurilavanti/', label: 'LinkedIn' },
+            { href: 'https://www.instagram.com/laurilavanti/', label: 'Instagram' },
+            { href: 'https://www.facebook.com/laurilavanti', label: 'Facebook' },
+            { href: 'https://www.tiktok.com/@laurilavanti', label: 'TikTok' },
+            { href: 'https://www.reddit.com/user/laurilavanti/', label: 'Reddit' },
+        ]}
+    />
+    <Prose>
+        <p>Beyond my own site, you can find my writing at <a href="https://puheenvuoro.uusisuomi.fi/author/lauri-lavanti/">Uusi Suomi</a>, <a href="https://www.verdelehti.fi/tag/puheenvuoro/">Verde</a>, and local papers such as Länsiväylä. You'll most often find my thoughts in <a href="https://www.kirkkonummensanomat.fi/">Kirkkonummen Sanomat</a>.</p>
+    </Prose>
+</Plate>
+
+<NewsletterPlate>
+    <NewsletterSubscribe lang="en" />
+</NewsletterPlate>
