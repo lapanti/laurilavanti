@@ -171,4 +171,65 @@ export const recommendations: Recommendation[] = [
         recommendation:
             'Eduskuntaan tarvitaan enemmän ihmisiä, jotka ymmärtävät sekä taloudesta että teknologiasta. Yhtenä Digitaalinen itsenäisyys -kansalaisaloitteen perustajista Lauri tunnistaa, miten Suomen tulisi toimia yhteiskuntaa monin tavoin muokkaavan teknologisen murroksen edessä. Laurilla on vahva analyyttinen ote, kyky hahmottaa laajoja kokonaisuuksia ja taito tehdä monimutkaisistakin asioista ymmärrettäviä. Hän on myös poikkeuksellisen sinnikäs ja työtä pelkäämätön.',
     },
+    {
+        // No portrait supplied — the card renders the quote only.
+        image: '',
+        locales: {
+            en: {
+                alt: '',
+                title: 'CEO, Alpha Design Partners',
+            },
+            fi: {
+                alt: '',
+                title: 'Toimitusjohtaja, Alpha Design Partners',
+            },
+            sv: {
+                alt: '',
+                title: 'VD, Alpha Design Partners',
+            },
+        },
+        name: 'Harri Kiljander',
+        recommendation:
+            'Lauri ajattelee insinöörin ratkaisukeskeisesti, mutta muistaa lähteä liikkeelle ihmiskeskeisesti — teknologia palvelee ihmistä ja yhteiskuntaa, eikä ole itsetarkoitus. Yhteiskuntamme on entistä digitaalisempi ja sen myötä myös uudella tavalla haavoittuvampi, joillekin meistä myös vaikeaselkoisempi. Laurilla on osaamista ja kokemusta turvallisten helppokäyttöisten digitaalisten järjestelmien kehittämisestä. Eduskunnassa tarvitaan tällaista osaamista sujuvamman Suomen rakentamiseksi suomalaisille — tämä luo samalla turvallisuutta ja työpaikkoja.',
+    },
+    {
+        image: 'Ville-Aarnio',
+        locales: {
+            en: {
+                alt: 'Photo of Ville Aarnio. He is smiling and wearing a blue and white checked shirt with his arms crossed.',
+                title: 'Chair of TalousVihreät (Green Economists)',
+            },
+            fi: {
+                alt: 'Kuva Ville Aarniosta. Hän hymyilee, ja hänellä on päällään sinivalkoruudullinen kauluspaita, kädet ristissä rinnan päällä.',
+                title: 'Talousvihreiden puheenjohtaja',
+            },
+            sv: {
+                alt: 'Foto på Ville Aarnio. Han ler och bär en blårutig skjorta med armarna i kors.',
+                title: 'Ordförande för TalousVihreät (Ekonomiska gröna)',
+            },
+        },
+        name: 'Ville Aarnio',
+        recommendation:
+            'Lauri on uuden polven vihreä talousosaaja, joka ymmärtää markkinatalouden vahvuudet ja rajoitteet. Hän pyrkii muuttamaan maailmaa taloudellisia kannusteita ohjaamalla, mutta ymmärtää samalla, etteivät markkinat synny tyhjiössä vaan poliittisilla päätöksillä luodussa ympäristössä, jota voi määrätietoisella sääntelyllä ohjata.',
+    },
+    {
+        image: 'Panu-Laturi',
+        locales: {
+            en: {
+                alt: 'Photo of Panu Laturi. He has longish fair hair and is wearing a dark suit jacket, a dark waistcoat and a white dress shirt.',
+                title: 'Former Secretary General of the Green Party, disability pensioner',
+            },
+            fi: {
+                alt: 'Kuva Panu Laturista. Hänellä on pitkähköt vaaleat hiukset ja päällään tumma puvuntakki, tumma liivi ja valkoinen kauluspaita.',
+                title: 'Vihreiden entinen puoluesihteeri, työkyvyttömyyseläkeläinen',
+            },
+            sv: {
+                alt: 'Foto på Panu Laturi. Han har halvlångt ljust hår och bär en mörk kavaj, en mörk väst och en vit skjorta.',
+                title: 'Grönas tidigare partisekreterare, sjukpensionär',
+            },
+        },
+        name: 'Panu Laturi',
+        recommendation:
+            'Lauri on järjellä ajatteleva henkilö. Joka ymmärtää talousasiat ja markkinatalouden merkityksen. Voin rehellisesti suositella Lauria.',
+    },
 ]
