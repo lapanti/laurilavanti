@@ -64,7 +64,7 @@ const licenseText: Record<Lang, string> = {
 
     .foot-grid {
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
         gap: 32px;
         padding-bottom: 24px;
     }
@@ -98,17 +98,18 @@ const licenseText: Record<Lang, string> = {
         text-underline-offset: 3px;
     }
 
-    .social {
+    .foot-grid ul.social {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         gap: 0;
-        padding-top: 8px;
+        padding-top: 0;
     }
 
     .party {
-        align-items: flex-end;
+        align-items: center;
         display: flex;
+        gap: 24px;
         height: 100%;
     }
 
@@ -131,6 +132,7 @@ const licenseText: Record<Lang, string> = {
         }
 
         .party {
+            grid-column: 1 / -1;
             justify-content: flex-start;
         }
     }
@@ -145,7 +147,17 @@ const licenseText: Record<Lang, string> = {
             gap: 24px;
         }
 
+        .foot-grid ul.social {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 12px;
+            justify-content: start;
+        }
+
         .party {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 16px;
             justify-content: flex-start;
             padding-top: 8px;
         }
@@ -188,6 +200,8 @@ const licenseText: Record<Lang, string> = {
                         <li><a href={`mailto:${personEmail}`}>{personEmail}</a></li>
                         <li><a href={`/${lang}/privacy-policy/`}>{footerPrivacyPolicyLabel[lang]}</a></li>
                     </ul>
+                </div>
+                <div class="party">
                     <ul class="social">
                         {
                             footerLinks.map((link) =>
@@ -220,8 +234,6 @@ const licenseText: Record<Lang, string> = {
                             url={`/${lang}/rss.xml`}
                         />
                     </ul>
-                </div>
-                <div class="party">
                     <img
                         alt={footerLogoAlt[lang]}
                         height="65"
