@@ -2,46 +2,57 @@
 import { colors, typographics } from '../lib/styles'
 
 const { button, chip, eyebrow, linkRule } = typographics
+
+/**
+ * GlobalStyle renders no elements of its own, so Astro's `define:vars` — which declares
+ * the custom properties inline on a component's root elements — has nowhere to put them
+ * and every global rule below would reference variables that are never declared. Declare
+ * them on `:root` instead, from the same token modules, so the globals resolve everywhere.
+ */
+const rootTokens: Record<string, string> = {
+    buttonFontFamily: button.fontFamily,
+    buttonFontSize: button.fontSize,
+    buttonFontWeight: String(button.fontWeight),
+    buttonLetterSpacing: button.letterSpacing,
+    buttonLineHeight: String(button.lineHeight),
+    chipFontFamily: chip.fontFamily,
+    chipFontSize: chip.fontSize,
+    chipFontWeight: String(chip.fontWeight),
+    chipLetterSpacing: chip.letterSpacing,
+    chipLineHeight: String(chip.lineHeight),
+    colorsAquaBlue: colors.aquaBlue,
+    colorsBrightGreen: colors.brightGreen,
+    colorsBrightSky: colors.brightSky,
+    colorsDarkGreen: colors.darkGreen,
+    colorsDeepForest: colors.forestGreen,
+    colorsEyebrowNeutral: colors.eyebrowNeutral,
+    colorsForestGreen14: colors.forestGreen14,
+    colorsLightSand: colors.lightSand,
+    colorsOat: colors.oat,
+    colorsOffWhite: colors.offWhite,
+    colorsSand: colors.sand,
+    colorsSignalBlue: colors.signalBlue,
+    colorsWhite: colors.white,
+    eyebrowFontFamily: eyebrow.fontFamily,
+    eyebrowFontSize: eyebrow.fontSize,
+    eyebrowFontWeight: String(eyebrow.fontWeight),
+    eyebrowLetterSpacing: eyebrow.letterSpacing,
+    eyebrowLineHeight: String(eyebrow.lineHeight),
+    linkRuleFontFamily: linkRule.fontFamily,
+    linkRuleFontSize: linkRule.fontSize,
+    linkRuleFontWeight: String(linkRule.fontWeight),
+    linkRuleLetterSpacing: linkRule.letterSpacing,
+    linkRuleLineHeight: String(linkRule.lineHeight),
+}
+
+const rootTokenRule = `:root{${Object.entries(rootTokens)
+    .map(([name, value]) => `--${name}:${value};`)
+    .join('')}}`
 ---
 
-<style
-    define:vars={{
-        buttonFontFamily: button.fontFamily,
-        buttonFontSize: button.fontSize,
-        buttonFontWeight: button.fontWeight,
-        buttonLetterSpacing: button.letterSpacing,
-        buttonLineHeight: button.lineHeight,
-        chipFontFamily: chip.fontFamily,
-        chipFontSize: chip.fontSize,
-        chipFontWeight: chip.fontWeight,
-        chipLetterSpacing: chip.letterSpacing,
-        chipLineHeight: chip.lineHeight,
-        colorsAquaBlue: colors.aquaBlue,
-        colorsBrightGreen: colors.brightGreen,
-        colorsBrightSky: colors.brightSky,
-        colorsDarkGreen: colors.darkGreen,
-        colorsDeepForest: colors.forestGreen,
-        colorsEyebrowNeutral: colors.eyebrowNeutral,
-        colorsForestGreen14: colors.forestGreen14,
-        colorsLightSand: colors.lightSand,
-        colorsOat: colors.oat,
-        colorsOffWhite: colors.offWhite,
-        colorsSand: colors.sand,
-        colorsSignalBlue: colors.signalBlue,
-        colorsWhite: colors.white,
-        eyebrowFontFamily: eyebrow.fontFamily,
-        eyebrowFontSize: eyebrow.fontSize,
-        eyebrowFontWeight: eyebrow.fontWeight,
-        eyebrowLetterSpacing: eyebrow.letterSpacing,
-        eyebrowLineHeight: eyebrow.lineHeight,
-        linkRuleFontFamily: linkRule.fontFamily,
-        linkRuleFontSize: linkRule.fontSize,
-        linkRuleFontWeight: linkRule.fontWeight,
-        linkRuleLetterSpacing: linkRule.letterSpacing,
-        linkRuleLineHeight: linkRule.lineHeight,
-    }}
-    is:global
->
+<style is:inline set:html={rootTokenRule}></style>
+
+<style is:global>
     *,
     ::before,
     ::after {
