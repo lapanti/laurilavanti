@@ -1,5 +1,5 @@
 ---
-import LI from '../../LI.astro'
+import { colors, typographics } from '../../../lib/styles'
 import Description from './row/Description.astro'
 import Label from './row/Label.astro'
 import Meta from './row/Meta.astro'
@@ -20,15 +20,93 @@ interface Props {
 const { company, degree, description, duty, endYear, location, organization, school, startYear, title } = Astro.props
 ---
 
-<LI heavy={!endYear}>
-    <Label degree={degree} duty={duty} title={title} />
-    <Meta
-        company={company}
-        endYear={endYear}
-        location={location}
-        organization={organization}
-        school={school}
-        startYear={startYear}
-    />
+<style
+    define:vars={{
+        colorsDarkGreen: colors.darkGreen,
+        colorsGreen: colors.brightGreen,
+        colorsTextSecondary: colors.textSecondary,
+        cvOrgFontFamily: typographics.chip.fontFamily,
+        cvOrgFontWeight: typographics.chip.fontWeight,
+        cvRoleFontFamily: typographics.title.fontFamily,
+        cvRoleFontWeight: typographics.title.fontWeight,
+    }}
+>
+    li {
+        border-top: 3px solid var(--colorsDarkGreen);
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+        padding-block: 28px;
+    }
+
+    li:last-child {
+        border-bottom: 3px solid var(--colorsDarkGreen);
+    }
+
+    :global(.cv-role) {
+        color: var(--colorsDarkGreen);
+        font-family: var(--cvRoleFontFamily);
+        font-size: 19px;
+        font-weight: var(--cvRoleFontWeight);
+        line-height: 1.32;
+        margin: 0;
+    }
+
+    :global(.cv-org) {
+        color: var(--colorsTextSecondary);
+        display: block;
+        font-family: var(--cvOrgFontFamily);
+        font-size: 15px;
+        font-weight: var(--cvOrgFontWeight);
+        letter-spacing: 0.14em;
+        line-height: 1.4;
+        padding-top: 8px;
+        text-transform: uppercase;
+    }
+
+    :global(.cv-notes) {
+        display: grid;
+        gap: 10px;
+    }
+
+    :global(.cv-notes li) {
+        border-top: 0;
+        color: var(--colorsTextSecondary);
+        display: grid;
+        font-size: 15px;
+        gap: 14px;
+        grid-template-columns: 8px minmax(0, 1fr);
+        line-height: 1.68;
+        padding: 0;
+    }
+
+    :global(.cv-notes li)::before {
+        background: var(--colorsGreen);
+        content: '';
+        display: block;
+        height: 8px;
+        margin-top: 9px;
+        width: 8px;
+    }
+
+    @media (min-width: 769px) {
+        li {
+            gap: 16px 56px;
+            grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
+        }
+    }
+</style>
+<li>
+    <div>
+        <Label degree={degree} duty={duty} title={title} />
+        <Meta
+            company={company}
+            endYear={endYear}
+            location={location}
+            organization={organization}
+            school={school}
+            startYear={startYear}
+        />
+    </div>
     {description && <Description items={description} />}
-</LI>
+</li>

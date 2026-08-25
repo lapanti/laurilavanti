@@ -10,7 +10,7 @@ describe('<Meta />', () => {
             props: { endYear: 2023, location: 'Helsinki', organization: 'OP', startYear: 2020 },
         })
 
-        expect(getByText(result, 'OP (Helsinki) 2020–2023')).toBeDefined()
+        expect(getByText(result, 'OP (Helsinki) · 2020–2023')).toBeDefined()
     })
 
     it('should render company when provided', async () => {
@@ -18,7 +18,7 @@ describe('<Meta />', () => {
             props: { company: 'Verkkokauppa.com', endYear: 2024, startYear: 2022 },
         })
 
-        expect(getByText(result, 'Verkkokauppa.com 2022–2024')).toBeDefined()
+        expect(getByText(result, 'Verkkokauppa.com · 2022–2024')).toBeDefined()
     })
 
     it('should render school when provided', async () => {
@@ -26,7 +26,7 @@ describe('<Meta />', () => {
             props: { endYear: 2018, school: 'Aalto University', startYear: 2012 },
         })
 
-        expect(getByText(result, 'Aalto University 2012–2018')).toBeDefined()
+        expect(getByText(result, 'Aalto University · 2012–2018')).toBeDefined()
     })
 
     it('should display single year when startYear equals endYear', async () => {
@@ -34,7 +34,7 @@ describe('<Meta />', () => {
             props: { company: 'StartUp', endYear: 2022, startYear: 2022 },
         })
 
-        expect(getByText(result, 'StartUp 2022')).toBeDefined()
+        expect(getByText(result, 'StartUp · 2022')).toBeDefined()
         expect(queryByText(result, '2022–')).toBeNull()
     })
 
@@ -43,7 +43,7 @@ describe('<Meta />', () => {
             props: { company: 'OP', startYear: 2024 },
         })
 
-        expect(getByText(result, 'OP 2024–')).toBeDefined()
+        expect(getByText(result, 'OP · 2024–')).toBeDefined()
     })
 
     it('should render location without entity', async () => {
@@ -51,7 +51,7 @@ describe('<Meta />', () => {
             props: { endYear: 2023, location: 'Remote', startYear: 2020 },
         })
 
-        expect(getByText(result, '(Remote) 2020–2023')).toBeDefined()
+        expect(getByText(result, '(Remote) · 2020–2023')).toBeDefined()
     })
 
     it('should prefer organization over company over school', async () => {
@@ -59,6 +59,6 @@ describe('<Meta />', () => {
             props: { company: 'Company', organization: 'Org', school: 'School', startYear: 2020 },
         })
 
-        expect(getByText(result, 'Org 2020–')).toBeDefined()
+        expect(getByText(result, 'Org · 2020–')).toBeDefined()
     })
 })

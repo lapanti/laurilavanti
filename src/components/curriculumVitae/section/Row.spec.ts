@@ -48,7 +48,7 @@ describe('<Row />', () => {
             },
         })
 
-        expect(getByText(result, 'Tech Corp (New York) 2020–2023')).toBeDefined()
+        expect(getByText(result, 'Tech Corp (New York) · 2020–2023')).toBeDefined()
     })
 
     it('should render company when provided', async () => {
@@ -56,7 +56,7 @@ describe('<Row />', () => {
             props: { company: 'Acme Inc', endYear: 2024, startYear: 2021, title: 'Manager' },
         })
 
-        expect(getByText(result, 'Acme Inc 2021–2024')).toBeDefined()
+        expect(getByText(result, 'Acme Inc · 2021–2024')).toBeDefined()
     })
 
     it('should render school when provided', async () => {
@@ -64,7 +64,7 @@ describe('<Row />', () => {
             props: { degree: 'PhD', endYear: 2020, school: 'Harvard University', startYear: 2015 },
         })
 
-        expect(getByText(result, 'Harvard University 2015–2020')).toBeDefined()
+        expect(getByText(result, 'Harvard University · 2015–2020')).toBeDefined()
     })
 
     it('should display single year when startYear equals endYear', async () => {
@@ -72,7 +72,7 @@ describe('<Row />', () => {
             props: { company: 'StartUp', endYear: 2022, startYear: 2022, title: 'Intern' },
         })
 
-        expect(getByText(result, 'StartUp 2022')).toBeDefined()
+        expect(getByText(result, 'StartUp · 2022')).toBeDefined()
         expect(queryByText(result, '2022–')).toBeNull()
     })
 
@@ -81,7 +81,7 @@ describe('<Row />', () => {
             props: { company: 'Tech Corp', startYear: 2023, title: 'Current Role' },
         })
 
-        expect(getByText(result, 'Tech Corp 2023–')).toBeDefined()
+        expect(getByText(result, 'Tech Corp · 2023–')).toBeDefined()
     })
 
     it('should render location without company', async () => {
@@ -89,6 +89,6 @@ describe('<Row />', () => {
             props: { endYear: 2023, location: 'Remote', startYear: 2020, title: 'Consultant' },
         })
 
-        expect(getByText(result, '(Remote) 2020–2023')).toBeDefined()
+        expect(getByText(result, '(Remote) · 2020–2023')).toBeDefined()
     })
 })

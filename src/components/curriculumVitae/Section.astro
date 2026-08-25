@@ -1,41 +1,51 @@
 ---
 import type { CvRow } from '../../types/local'
 
-import { sizes, typographics } from '../../lib/styles'
-import H2 from '../H2.astro'
-import UL from '../UL.astro'
+import { colors, typographics } from '../../lib/styles'
+import Plate from '../Plate.astro'
 import Row from './section/Row.astro'
 
 interface Props {
-    title: string
+    ground?: 'gray' | 'offWhite'
     items: CvRow[]
+    title: string
 }
 
-const { title, items } = Astro.props
+const { ground = 'gray', title, items } = Astro.props
 ---
 
 <style
     define:vars={{
-        bodyFontFamily: typographics.body.fontFamily,
-        bodyFontSize: typographics.body.fontSize,
-        bodyFontWeight: typographics.body.fontWeight,
-        bodyLineHeight: typographics.body.lineHeight,
-        sizes1: sizes[1],
+        colorsDeepForest: colors.forestGreen,
+        displayFontFamily: typographics.display.fontFamily,
+        displayFontWeight: typographics.display.fontWeight,
     }}
 >
-    div {
-        font-family: var(--bodyFontFamily);
-        font-weight: var(--bodyFontWeight);
-        font-size: var(--bodyFontSize);
-        line-height: var(--bodyLineHeight);
-        margin-bottom: var(--sizes1);
-        margin-top: var(--sizes1);
+    h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 48px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: -0.015em;
+        line-height: 1;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    ul {
+        padding-top: 32px;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: 58px;
+        }
     }
 </style>
 
-<H2>{title}</H2>
-<div>
-    <UL>
+<Plate ground={ground}>
+    <h2>{title}</h2>
+    <ul>
         {items?.filter((f) => f !== undefined).map((row) => <Row {...row} />)}
-    </UL>
-</div>
+    </ul>
+</Plate>

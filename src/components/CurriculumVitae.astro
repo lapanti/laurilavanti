@@ -15,13 +15,6 @@ interface Props {
 const { degreesTitle, degrees, fiduciariesTitle, fiduciaries, jobExperiencesTitle, jobExperiences } = Astro.props
 ---
 
-<style>
-    div {
-        grid-column-start: 3;
-    }
-</style>
-<div>
-    <Section items={fiduciaries} title={fiduciariesTitle} />
-    <Section items={jobExperiences} title={jobExperiencesTitle} />
-    <Section items={degrees} title={degreesTitle} />
-</div>
+<Section ground="gray" items={fiduciaries} title={fiduciariesTitle} />
+<Section ground="offWhite" items={jobExperiences} title={jobExperiencesTitle} />
+<Section ground="gray" items={degrees} title={degreesTitle} />

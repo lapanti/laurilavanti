@@ -1,7 +1,4 @@
 ---
-import LI from '../../../LI.astro'
-import UL from '../../../UL.astro'
-
 interface Props {
     items: string[]
 }
@@ -9,6 +6,6 @@ interface Props {
 const { items } = Astro.props
 ---
 
-<UL style={`margin-top: 0.25rem`}>
-    {items.map((item) => <LI>{item}</LI>)}
-</UL>
+<ul class="cv-notes">
+    {items.map((item) => <li>{item}</li>)}
+</ul>
