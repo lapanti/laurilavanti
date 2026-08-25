@@ -22,6 +22,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
         { href: '/en/newsletter/', label: 'Newsletter', title: 'Newsletter' },
         { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
         { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
+        { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
     fi: [
         { href: '/fi/about/', label: 'Laurista', title: 'Laurista' },
@@ -29,6 +30,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
         { href: '/fi/blog/', label: 'Kirjoitukset', title: 'Kirjoitukset' },
         { href: '/fi/contact/', label: 'Ota yhteyttä', title: 'Ota yhteyttä' },
         { href: '/fi/newsletter/', label: 'Uutiskirje', title: 'Uutiskirje' },
+        { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
         { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
         { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
@@ -39,6 +41,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
         { href: '/sv/contact/', label: 'Kontakt', title: 'Kontaktuppgifter' },
         { href: '/sv/newsletter/', label: 'Nyhetsbrev', title: 'Nyhetsbrev' },
         { href: '/fi/', label: 'FI', switchToLang: 'fi', title: 'Suomeksi' },
+        { href: '/sv/', label: 'SV', switchToLang: 'sv', title: 'På svenska' },
         { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
 }
