@@ -30,13 +30,13 @@ export class AnyPage {
          * On mobile the desktop container is display:none (nth 0 → mobile link).
          */
         const navIdx = this.isMobile ? 0 : 1
-        this.navButton = page.locator('header input[type="checkbox"]')
+        this.navButton = page.locator('header button[aria-controls="mobile-primary-navigation"]')
         this.navLinkHome = page.locator(`header a[href="/${lang}/"]`).nth(navIdx)
         this.navLinkAboutMe = page.locator('a[href="/fi/about/"]').nth(navIdx)
         this.navLinkBlog = page.locator('a[href="/fi/blog/"]').nth(navIdx)
         this.navLinkContactInfo = page.locator('a[href="/fi/contact/"]').nth(navIdx)
-        this.navLinkAboutMeSwe = page.locator('a[href="/sv/"]').nth(navIdx)
-        this.navLinkAboutMeEn = page.locator('a[href="/en/"]').nth(navIdx)
+        this.navLinkAboutMeSwe = page.locator('a[data-switch-to-lang="sv"]').nth(navIdx)
+        this.navLinkAboutMeEn = page.locator('a[data-switch-to-lang="en"]').nth(navIdx)
         this.navLinkNewsletter = page.locator('a[href="/fi/newsletter/"]').nth(navIdx)
         this.footerFacebookLink = page.locator('footer a[href*="facebook.com"]')
         this.footerBlueskyLink = page.locator('footer a[href*="bsky.app"]')
@@ -60,9 +60,9 @@ export class AnyPage {
     }
 
     async openMainNavigation() {
-        await expect(this.navButton).not.toBeChecked()
+        await expect(this.navButton).toHaveAttribute('aria-expanded', 'false')
         await this.navButton.click()
-        await expect(this.navButton).toBeChecked()
+        await expect(this.navButton).toHaveAttribute('aria-expanded', 'true')
     }
 
     async checkMainNavigationLinks() {
@@ -88,9 +88,9 @@ export class AnyPage {
     }
 
     async closeMainNavigation() {
-        await expect(this.navButton).toBeChecked()
+        await expect(this.navButton).toHaveAttribute('aria-expanded', 'true')
         await this.navButton.click()
-        await expect(this.navButton).not.toBeChecked()
+        await expect(this.navButton).toHaveAttribute('aria-expanded', 'false')
     }
 
     async checkMainNavigation() {

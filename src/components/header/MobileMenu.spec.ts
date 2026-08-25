@@ -1,4 +1,4 @@
-import { getByRole } from '@testing-library/dom'
+import { getAllByRole, getByRole } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../../tests/helpers'
@@ -10,24 +10,21 @@ describe('<MobileMenu />', () => {
         { href: '/fi/blog/', label: 'Blogi', title: 'Blogi' },
     ]
 
-    it('should render', async () => {
+    it('should render a closed menu disclosure', async () => {
         const result = await renderAstroComponent(MobileMenu, {
             props: {
                 links,
             },
         })
 
-        expect(result.firstChild).toMatchSnapshot()
-    })
+        const button = getByRole(result, 'button', { name: 'Avaa valikko' })
+        const menu = result.querySelector('#mobile-primary-navigation')
 
-    it('should render the menu input', async () => {
-        const result = await renderAstroComponent(MobileMenu, {
-            props: {
-                links,
-            },
-        })
-
-        expect(getByRole(result, 'checkbox', { name: /Avaa valikko/i })).not.toBeChecked()
+        expect(button).toHaveAttribute('aria-controls', 'mobile-primary-navigation')
+        expect(button).toHaveAttribute('aria-expanded', 'false')
+        expect(menu).toHaveAttribute('aria-label', 'Päänavigaatio')
+        expect(menu).toHaveAttribute('hidden')
+        expect(getAllByRole(menu as HTMLElement, 'listitem', { hidden: true })).toHaveLength(links.length)
     })
 
     it('should render the main link', async () => {
@@ -49,6 +46,10 @@ describe('<MobileMenu />', () => {
         })
 
         expect(getByRole(result, 'link', { name: /Lauri Lavanti/i })).toHaveAttribute('href', '/sv/')
+        expect(getByRole(result, 'button', { name: 'Öppna menyn' })).toHaveAttribute(
+            'aria-controls',
+            'mobile-primary-navigation'
+        )
     })
 
     it('should render all given links', async () => {
@@ -58,7 +59,9 @@ describe('<MobileMenu />', () => {
             },
         })
 
-        expect(getByRole(result, 'link', { name: 'Laurista' })).toHaveAttribute('href', '/fi/about/')
-        expect(getByRole(result, 'link', { name: 'Blogi' })).toHaveAttribute('href', '/fi/blog/')
+        const menu = result.querySelector('#mobile-primary-navigation')
+
+        expect(menu?.querySelector('a[href="/fi/about/"]')).toHaveTextContent('Laurista')
+        expect(menu?.querySelector('a[href="/fi/blog/"]')).toHaveTextContent('Blogi')
     })
 })

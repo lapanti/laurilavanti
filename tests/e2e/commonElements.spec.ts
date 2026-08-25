@@ -8,6 +8,7 @@ import { AboutSwePage } from './pages/aboutSwePage'
 test.describe('Common page elements FI', () => {
     test('should match aria snapshot', async ({ page }) => {
         const aboutPage = new AboutPage(page)
+        test.skip(aboutPage.isMobile, 'Mobile navigation has disclosure-specific snapshots')
         await aboutPage.goTo()
 
         await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
@@ -34,6 +35,7 @@ test.describe('Common page elements FI', () => {
 test.describe('Common page elements EN', () => {
     test('should match aria snapshot', async ({ page }) => {
         const aboutPage = new AboutEnPage(page)
+        test.skip(aboutPage.isMobile, 'Mobile navigation has disclosure-specific snapshots')
         await aboutPage.goTo()
 
         await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
@@ -60,6 +62,7 @@ test.describe('Common page elements EN', () => {
 test.describe('Common page elements SV', () => {
     test('should match aria snapshot', async ({ page }) => {
         const aboutPage = new AboutSwePage(page)
+        test.skip(aboutPage.isMobile, 'Mobile navigation has disclosure-specific snapshots')
         await aboutPage.goTo()
 
         await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()

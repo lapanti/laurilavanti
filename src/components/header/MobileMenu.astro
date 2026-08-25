@@ -2,6 +2,7 @@
 /* eslint-disable astro/no-unused-css-selector */
 import type { Lang, NavLink } from '../../content/nav'
 
+import { navigationLabels } from '../../content/nav'
 import { colors, CONTENT_PADDING, CONTENT_SIZE, HEADER_SIZE, sizes } from '../../lib/styles'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
@@ -11,7 +12,8 @@ interface Props {
     links: NavLink[]
 }
 
-const { lang, links } = Astro.props
+const { lang = 'fi', links } = Astro.props
+const labels = navigationLabels[lang]
 ---
 
 <style
@@ -50,28 +52,30 @@ const { lang, links } = Astro.props
         justify-content: flex-end;
     }
 
-    input[type='checkbox'] {
-        position: absolute;
+    .menu-toggle {
+        background: transparent;
+        border: 0;
+        cursor: pointer;
         display: block;
         height: var(--sizes3);
-        width: var(--sizes3);
+        padding: 0;
+        position: absolute;
         right: var(--sizes05);
+        width: var(--sizes3);
         z-index: 5;
-        opacity: 0;
-        cursor: pointer;
     }
 
     .hamburger-lines-container {
-        height: var(--sizes25);
-        width: var(--sizes3);
-        right: var(--sizes05);
-        padding-top: var(--sizes025);
-        padding-bottom: var(--sizes025);
-        position: absolute;
-        z-index: 2;
         display: flex;
         flex-direction: column;
+        height: var(--sizes25);
         justify-content: space-between;
+        padding-bottom: var(--sizes025);
+        padding-top: var(--sizes025);
+        position: absolute;
+        right: var(--sizes05);
+        width: var(--sizes3);
+        z-index: 2;
     }
 
     .line1,
@@ -98,7 +102,6 @@ const { lang, links } = Astro.props
     }
 
     .links {
-        align-items: center;
         background: linear-gradient(
             90deg,
             rgba(0, 0, 0, 0.3) 0%,
@@ -107,17 +110,26 @@ const { lang, links } = Astro.props
             rgba(255, 255, 255, 0) 100%
         );
         background-color: var(--colorsEvening);
-        display: flex;
-        flex-direction: column;
-        gap: var(--sizes25);
-        justify-content: center;
+        height: 0;
         left: 0;
         overflow: hidden;
         position: absolute;
         top: var(--headerSize);
         transition: height 0.3s ease-in-out;
         width: 100vw;
-        height: 0;
+    }
+
+    .links ul {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes25);
+        height: 100%;
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
 
     .links a {
@@ -125,24 +137,29 @@ const { lang, links } = Astro.props
         opacity: 0;
     }
 
-    .container input[type='checkbox']:checked ~ div > .line1 {
+    .menu-toggle[aria-expanded='true'] + .hamburger-lines-container > .line1 {
         transform: rotate(45deg);
     }
 
-    .container input[type='checkbox']:checked ~ div > .line2 {
+    .menu-toggle[aria-expanded='true'] + .hamburger-lines-container > .line2 {
         transform: scaleY(0);
     }
 
-    .container input[type='checkbox']:checked ~ div > .line3 {
+    .menu-toggle[aria-expanded='true'] + .hamburger-lines-container > .line3 {
         transform: rotate(-45deg);
     }
 
-    .container input[type='checkbox']:checked ~ .links {
+    .menu-toggle[aria-expanded='true'] ~ .links {
         height: calc(100dvh - var(--headerSize));
     }
 
-    .container input[type='checkbox']:checked ~ .links a {
+    .menu-toggle[aria-expanded='true'] ~ .links a {
         opacity: 100%;
+    }
+
+    .menu-toggle:focus-visible {
+        outline: var(--sizes025) solid var(--colorsPeach);
+        outline-offset: 2px;
     }
 
     @media (min-width: 1200px) {
@@ -159,28 +176,43 @@ const { lang, links } = Astro.props
         }
     }
 </style>
-<div class="container">
+<div class="container" data-mobile-menu>
     <div>
         <MainNavigationLink lang={lang} />
     </div>
     <div>
-        <input aria-label="Avaa valikko. Sulje valikko kun valittu." name="" type="checkbox" />
-        <div class="hamburger-lines-container">
+        <button
+            aria-controls="mobile-primary-navigation"
+            aria-expanded="false"
+            aria-label={labels.openMenu}
+            class="menu-toggle"
+            data-close-label={labels.closeMenu}
+            data-open-label={labels.openMenu}
+            type="button"
+        >
+        </button>
+        <div aria-hidden="true" class="hamburger-lines-container">
             <span class="line1"></span>
             <span class="line2"></span>
             <span class="line3"></span>
         </div>
-        <div class="links">
-            {
-                links.map((link) => (
-                    <NavigationLink
-                        href={link.href}
-                        label={link.label}
-                        switchToLang={link.switchToLang}
-                        title={link.title}
-                    />
-                ))
-            }
-        </div>
+        <nav aria-label={labels.primaryNavigation} class="links" hidden id="mobile-primary-navigation">
+            <ul>
+                {
+                    links.map((link) => (
+                        <li>
+                            <NavigationLink
+                                href={link.href}
+                                label={link.label}
+                                switchToLang={link.switchToLang}
+                                title={link.title}
+                            />
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
     </div>
 </div>
+
+<script src="./mobileMenu.ts"></script>
