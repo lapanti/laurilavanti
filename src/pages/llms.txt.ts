@@ -7,8 +7,8 @@ const AI_TAG = 'artificial-intelligence'
 
 const PILLAR_LINKS = [
     { label: 'Etusivu', url: '/fi/' },
-    { label: 'Aiheet', url: '/fi/topics' },
-    { label: 'Laurista', url: '/fi/about' },
+    { label: 'Aiheet', url: '/fi/blog/' },
+    { label: 'Laurista', url: '/fi/about/' },
 ]
 
 export const buildLlmsTxt = (posts: Post[], site: URL): string => {

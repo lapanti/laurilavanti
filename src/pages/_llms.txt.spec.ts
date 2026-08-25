@@ -100,12 +100,12 @@ describe('buildLlmsTxt — pillar pages section', () => {
         expect(content).toContain('[Etusivu](https://lavanti.fi/fi/)')
     })
 
-    it('links Aiheet to /fi/topics', () => {
-        expect(content).toContain('[Aiheet](https://lavanti.fi/fi/topics)')
+    it('links Aiheet to /fi/blog/', () => {
+        expect(content).toContain('[Aiheet](https://lavanti.fi/fi/blog/)')
     })
 
-    it('links Laurista to /fi/about', () => {
-        expect(content).toContain('[Laurista](https://lavanti.fi/fi/about)')
+    it('links Laurista to /fi/about/', () => {
+        expect(content).toContain('[Laurista](https://lavanti.fi/fi/about/)')
     })
 })
 
