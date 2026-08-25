@@ -1,6 +1,6 @@
 ---
-import Images from '../heroBanner/Images.astro'
 import { colors, typographics } from '../../lib/styles'
+import Images from '../heroBanner/Images.astro'
 
 interface Props {
     alt?: string
@@ -156,15 +156,18 @@ const { alt, ctaHref, ctaLabel, emphasis, eyebrow, heroImage, intro, mobileHeroI
     <div class="hero-right">
         {eyebrow && <p class="hero-kicker">{eyebrow}</p>}
         <h1>
-            {title} {emphasis && <em>{emphasis}</em>}
+            {title}
+            {emphasis && <em>{emphasis}</em>}
         </h1>
         <div class="hero-foot">
             {intro && <p>{intro}</p>}
-            {ctaHref && ctaLabel && (
-                <a class="btn" href={ctaHref}>
-                    {ctaLabel}
-                </a>
-            )}
+            {
+                ctaHref && ctaLabel && (
+                    <a class="btn" href={ctaHref}>
+                        {ctaLabel}
+                    </a>
+                )
+            }
         </div>
     </div>
 </section>

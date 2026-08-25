@@ -109,6 +109,45 @@ describe('<Excerpt />', () => {
         expect(result.querySelector('time')).toBeNull()
     })
 
+    it('should render the localised tag names as chips', async () => {
+        const result = await renderAstroComponent(Excerpt, {
+            props: {
+                lang: 'fi',
+                slug: 'test-article',
+                tags: ['artificial-intelligence', 'economy'],
+                title: 'Test Article',
+            },
+        })
+
+        const chips = [...result.querySelectorAll('.tags li')].map((li) => li.textContent)
+        expect(chips).toEqual(['Tekoäly', 'Talous'])
+    })
+
+    it('should not render a tag list when there are no tags', async () => {
+        const result = await renderAstroComponent(Excerpt, {
+            props: {
+                slug: 'test-article',
+                title: 'Test Article',
+            },
+        })
+
+        expect(result.querySelector('.tags')).toBeNull()
+    })
+
+    it('should skip tags that have no matching definition', async () => {
+        const result = await renderAstroComponent(Excerpt, {
+            props: {
+                lang: 'fi',
+                slug: 'test-article',
+                tags: ['artificial-intelligence', 'not-a-real-tag'],
+                title: 'Test Article',
+            },
+        })
+
+        const chips = [...result.querySelectorAll('.tags li')].map((li) => li.textContent)
+        expect(chips).toEqual(['Tekoäly'])
+    })
+
     it('should render with all props', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {

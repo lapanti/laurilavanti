@@ -55,7 +55,10 @@ const reversed = [colors.signalBlue, colors.brightSky, colors.aquaBlue, colors.b
 </style>
 <div
     aria-hidden="true"
-    class:list={['stripes', { 'stripe--vertical': orientation === 'vertical-reversed', 'stripes--slim': size === 'slim' }]}
+    class:list={[
+        'stripes',
+        { 'stripe--vertical': orientation === 'vertical-reversed', 'stripes--slim': size === 'slim' },
+    ]}
 >
     <i></i><i></i><i></i><i></i><i></i>
 </div>

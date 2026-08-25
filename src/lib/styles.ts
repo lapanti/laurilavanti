@@ -93,6 +93,7 @@ export const colors = {
     facebook: '#4267B2' as const,
     footerMuted: '#A9CFCB' as const,
     forestGreen: 'rgb(22, 62, 53)' as const, // = Signal Band deepForest (#163E35)
+    forestGreen14: 'rgba(22, 62, 53, 0.14)' as const, // chip ground, tinted by whatever plate sits behind it
     forestGreen70: 'rgba(22, 62, 53, 0.7)' as const,
     gray: 'rgb(235, 235, 236)' as const, // = Signal Band lightGray (#EBEBEC)
     instagramGradient: 'url(#instagram-gradient)' as const,

@@ -99,6 +99,7 @@ describe('styles', () => {
                 facebook: '#4267B2',
                 footerMuted: '#A9CFCB',
                 forestGreen: 'rgb(22, 62, 53)',
+                forestGreen14: 'rgba(22, 62, 53, 0.14)',
                 forestGreen70: 'rgba(22, 62, 53, 0.7)',
                 gray: 'rgb(235, 235, 236)',
                 instagramGradient: 'url(#instagram-gradient)',

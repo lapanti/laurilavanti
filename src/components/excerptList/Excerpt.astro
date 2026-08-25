@@ -28,6 +28,13 @@ const tagsToRender = (tags ?? [])
 
 <style
     define:vars={{
+        chipFontFamily: typographics.chip.fontFamily,
+        chipFontSize: typographics.chip.fontSize,
+        chipFontWeight: typographics.chip.fontWeight,
+        chipLetterSpacing: typographics.chip.letterSpacing,
+        chipLineHeight: typographics.chip.lineHeight,
+        colorsDarkGreen: colors.darkGreen,
+        colorsForestGreen14: colors.forestGreen14,
         colorsSand: colors.sand,
         colorsTextSecondary: colors.textSecondary,
         metaFontFamily: typographics.meta.fontFamily,
@@ -55,6 +62,30 @@ const tagsToRender = (tags ?? [])
         padding-top: 4px;
         text-transform: uppercase;
     }
+
+    /* labels, not filters — deliberately not links and with no hover state */
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: auto;
+        padding-top: 14px;
+    }
+
+    .tags li {
+        background: var(--colorsForestGreen14);
+        border-top: 0;
+        color: var(--colorsDarkGreen);
+        display: block;
+        font-family: var(--chipFontFamily);
+        font-size: var(--chipFontSize);
+        font-weight: var(--chipFontWeight);
+        letter-spacing: var(--chipLetterSpacing);
+        line-height: var(--chipLineHeight);
+        padding: 4px 9px;
+        text-transform: uppercase;
+        width: auto;
+    }
 </style>
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
@@ -62,4 +93,13 @@ const tagsToRender = (tags ?? [])
         {date && <time datetime={dateOnly}>{dateToDisplay}</time>}
         <Description excerpt={excerpt} />
     </article>
+    {
+        tagsToRender.length > 0 && (
+            <ul class="tags">
+                {tagsToRender.map((name) => (
+                    <li>{name}</li>
+                ))}
+            </ul>
+        )
+    }
 </li>
