@@ -8,6 +8,7 @@ import {
     fontSizes,
     fontWeights,
     HEADER_SIZE,
+    signalBandFontFamilies,
     sizes,
     typographics,
     zIndices,
@@ -80,27 +81,49 @@ describe('styles', () => {
     describe('colors', () => {
         it('should stay the same', () => {
             expect(colors).toEqual({
+                aquaInk: '#12312C',
+                aquaInkSoft: '#466661',
                 black: 'rgb(0, 0, 0)',
+                blueInk: '#122631',
+                blueInkSoft: '#465A66',
                 bluesky: '#0060df',
+                brightSky: '#59B9F1',
                 darkGreenText: 'rgb(0, 104, 69)',
                 darkMoss: 'rgb(72, 75, 0)',
                 evening: 'rgb(0, 98, 114)',
                 evening70: 'rgba(0, 98, 114, 0.7)',
+                eyebrowNeutral: '#5B5952',
                 facebook: '#4267B2',
+                footerMuted: '#A9CFCB',
                 forestGreen: 'rgb(22, 62, 53)',
                 forestGreen70: 'rgba(22, 62, 53, 0.7)',
                 gray: 'rgb(235, 235, 236)',
                 instagramGradient: 'url(#instagram-gradient)',
+                lightSand: '#E9E4D4',
                 linkedin: '#0E76A8',
                 mastodon: '#6363ff',
                 moss: 'rgb(90, 94, 0)',
+                oatInk: '#2A2A18',
+                oatInkSoft: '#625E37',
+                oatYellow: '#E4D77E',
+                offWhite: '#F5F5F5',
+                onOatBody: '#20463C',
+                onOatEyebrow: '#3E5C4E',
                 peach: 'rgb(248, 207, 169)',
+                peachInk: '#33251A',
+                peachInkSoft: '#6E5845',
+                pineGreen: '#006845',
                 regionalPurple: '#865C97',
                 rss: '#f26522',
                 sand: 'rgb(214, 210, 196)',
+                signalBlue: '#317CE6',
                 sky: '#bbdde6',
+                skyAqua: '#BFE1DE',
+                textPrimary: '#1B211C',
+                textSecondary: '#4A4E45',
                 threads: 'rgb(0, 0, 0)',
                 transparent: 'transparent',
+                vividGreen: '#009639',
                 white: 'rgb(255, 255, 255)',
             })
         })
@@ -134,13 +157,25 @@ describe('styles', () => {
         })
     })
 
+    describe('signalBandFontFamilies', () => {
+        it('should stay the same', () => {
+            expect(signalBandFontFamilies).toEqual({
+                heading: `"Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif`,
+                sans: `"IBM Plex Sans", "Segoe UI", Helvetica, Arial, sans-serif`,
+            })
+        })
+    })
+
     describe('fontWeights', () => {
         it('should stay the same', () => {
             expect(fontWeights).toEqual({
                 black: 900,
+                bold: 700,
+                extrabold: 800,
                 light: 300,
                 medium: 500,
                 regular: 400,
+                semibold: 600,
             })
         })
     })
@@ -149,6 +184,20 @@ describe('styles', () => {
         it('should stay the same', () => {
             expect(typographics).toEqual({
                 additionalInfo: { ...fontSizes[1], fontFamily: fontFamilies.mono, fontWeight: fontWeights.regular },
+                articleHeadline: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '42px',
+                    fontWeight: fontWeights.black,
+                    letterSpacing: '-0.01em',
+                    lineHeight: '1.02',
+                    textTransform: 'uppercase',
+                },
+                articleLead: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '21px',
+                    fontWeight: fontWeights.medium,
+                    lineHeight: '1.5',
+                },
                 blockQuote: {
                     ...fontSizes[1.5],
                     fontFamily: fontFamilies.mono,
@@ -156,21 +205,171 @@ describe('styles', () => {
                     fontWeight: fontWeights.regular,
                 },
                 body: { ...fontSizes[1.25], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
+                button: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '21px',
+                    fontWeight: fontWeights.extrabold,
+                    letterSpacing: '0.07em',
+                    lineHeight: '1.4',
+                    textTransform: 'uppercase',
+                },
+                caption: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '12px',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.68',
+                },
+                chip: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '11px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.13em',
+                    lineHeight: '18.48px',
+                    textTransform: 'uppercase',
+                },
                 definition: {
                     ...fontSizes[1],
                     fontFamily: fontFamilies.mono,
                     fontWeight: fontWeights.medium,
                     textTransform: 'uppercase',
                 },
+                display: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '120px',
+                    fontWeight: fontWeights.black,
+                    letterSpacing: '-0.02em',
+                    lineHeight: '1',
+                    textTransform: 'uppercase',
+                },
+                displayPillar: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '108px',
+                    fontWeight: fontWeights.black,
+                    letterSpacing: '-0.015em',
+                    lineHeight: '1',
+                    textTransform: 'uppercase',
+                },
+                displaySynthesis: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '110px',
+                    fontWeight: fontWeights.black,
+                    letterSpacing: '-0.02em',
+                    lineHeight: '1',
+                    textTransform: 'uppercase',
+                },
+                eyebrow: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '15px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.176em',
+                    lineHeight: '1.3',
+                    textTransform: 'uppercase',
+                },
+                fine: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '13px',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.68',
+                },
                 h1: { ...fontSizes[3], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
                 h2: { ...fontSizes[2.25], fontFamily: fontFamilies.heading, fontWeight: fontWeights.black },
                 h3: { ...fontSizes[1.5], fontFamily: fontFamilies.sans, fontWeight: fontWeights.medium },
+                headline: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '58px',
+                    fontWeight: fontWeights.black,
+                    letterSpacing: '-0.015em',
+                    lineHeight: '1',
+                    textTransform: 'uppercase',
+                },
+                heroFoot: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '16px',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.5',
+                },
+                heroKicker: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '16px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.165em',
+                    lineHeight: '1.4',
+                    textTransform: 'uppercase',
+                },
                 ingress: { ...fontSizes[1.875], fontFamily: fontFamilies.sans, fontWeight: fontWeights.light },
+                lede: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '19px',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.68',
+                },
+                linkRule: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '14px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.12em',
+                    lineHeight: '1.68',
+                    textTransform: 'uppercase',
+                },
+                meta: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '14px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.137em',
+                    lineHeight: '1.3',
+                    textTransform: 'uppercase',
+                },
+                nav: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '18px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.055em',
+                    lineHeight: '1.3',
+                    textTransform: 'uppercase',
+                },
+                navMobile: {
+                    fontFamily: signalBandFontFamilies.heading,
+                    fontSize: '26px',
+                    fontWeight: fontWeights.bold,
+                    letterSpacing: '0.055em',
+                    lineHeight: '1.3',
+                    textTransform: 'uppercase',
+                },
+                pillarAnswer: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '20px',
+                    fontWeight: fontWeights.medium,
+                    lineHeight: '1.5',
+                },
+                postTitle: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '18px',
+                    fontWeight: fontWeights.semibold,
+                    lineHeight: '1.3',
+                },
                 quote: {
                     ...fontSizes[1.125],
                     fontFamily: fontFamilies.sans,
                     fontStyle: 'italic',
                     fontWeight: fontWeights.regular,
+                },
+                text: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '17px',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.68',
+                },
+                textSmall: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '15px',
+                    fontWeight: fontWeights.regular,
+                    lineHeight: '1.68',
+                },
+                title: {
+                    fontFamily: signalBandFontFamilies.sans,
+                    fontSize: '19px',
+                    fontWeight: fontWeights.semibold,
+                    lineHeight: '1.3',
                 },
             })
         })
