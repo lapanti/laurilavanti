@@ -1,14 +1,11 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
-import { Icon } from 'astro-icon/components'
-
 import {
     personBlueskyHandle,
     personMastodonHandle,
     personMastodonInstance,
     personThreadsHandle,
 } from '../content/person'
-import { colors, sizes, typographics } from '../lib/styles'
+import { colors, typographics } from '../lib/styles'
 
 interface Props {
     ariaLabel: string
@@ -77,106 +74,68 @@ const mastodonFallbackHref = `https://${personMastodonInstance}/share?text=${enc
 
 <style
     define:vars={{
-        colorsBluesky: colors.bluesky,
-        colorsDarkGreen: colors.darkGreen,
-        colorsFacebook: colors.facebook,
-        colorsLinkedin: colors.linkedin,
-        colorsMastodon: colors.mastodon,
+        colorsForestGreen: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
         colorsSand: colors.sand,
         colorsTextSecondary: colors.textSecondary,
-        colorsThreads: colors.threads,
-        metaFontFamily: typographics.meta.fontFamily,
-        metaFontSize: typographics.meta.fontSize,
-        metaFontWeight: typographics.meta.fontWeight,
-        metaLetterSpacing: typographics.meta.letterSpacing,
-        sizes05: sizes[0.5],
-        sizes15: sizes[1.5],
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        linkRuleFontFamily: typographics.linkRule.fontFamily,
+        linkRuleFontSize: typographics.linkRule.fontSize,
+        linkRuleFontWeight: typographics.linkRule.fontWeight,
+        linkRuleLetterSpacing: typographics.linkRule.letterSpacing,
+        linkRuleLineHeight: typographics.linkRule.lineHeight,
     }}
 >
-    aside {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        grid-column-start: 3;
-    }
-
     .share {
-        margin-right: var(--sizes05);
-    }
-
-    a {
         align-items: center;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-right: var(--sizes05);
-    }
-
-    :global(.prose) aside {
         flex-wrap: wrap;
         gap: 12px;
-        grid-column-start: auto;
         margin-top: 32px;
     }
 
-    :global(.prose) .share {
+    .share-k {
         color: var(--colorsTextSecondary);
-        font-family: var(--metaFontFamily);
-        font-size: var(--metaFontSize);
-        font-weight: var(--metaFontWeight);
-        letter-spacing: var(--metaLetterSpacing);
-        margin-right: 0;
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
         text-transform: uppercase;
     }
 
-    :global(.prose) a {
+    .share a {
         border: 2px solid var(--colorsSand);
-        margin-right: 0;
+        color: var(--colorsForestGreen);
+        font-family: var(--linkRuleFontFamily);
+        font-size: var(--linkRuleFontSize);
+        font-weight: var(--linkRuleFontWeight);
+        letter-spacing: var(--linkRuleLetterSpacing);
+        line-height: var(--linkRuleLineHeight);
         padding: 6px 12px;
+        text-decoration: none;
+        text-transform: uppercase;
         transition:
-            background 0.18s,
-            border-color 0.18s;
+            background 0.18s var(--ease),
+            border-color 0.18s var(--ease),
+            color 0.18s var(--ease),
+            transform 0.12s var(--ease);
     }
 
-    :global(.prose) a:hover {
-        background: var(--colorsDarkGreen);
-        border-color: var(--colorsDarkGreen);
+    .share a:hover {
+        background: var(--colorsForestGreen);
+        border-color: var(--colorsForestGreen);
+        color: var(--colorsLightSand);
     }
 
-    :global(.prose) a:active {
+    .share a:active {
         transform: translate(1px, 1px);
     }
-
-    svg {
-        display: inline-block;
-        height: var(--sizes15);
-        width: var(--sizes15);
-        stroke: currentColor;
-        fill: currentColor;
-    }
-
-    .facebook {
-        color: var(--colorsFacebook);
-    }
-
-    .threads {
-        color: var(--colorsThreads);
-    }
-
-    .bluesky {
-        color: var(--colorsBluesky);
-    }
-
-    .linkedin {
-        color: var(--colorsLinkedin);
-    }
-
-    .mastodon {
-        color: var(--colorsMastodon);
-    }
 </style>
-<aside aria-label={ariaLabel}>
-    <span class="share">{l.share}</span>
+<aside aria-label={ariaLabel} class="share">
+    <span class="share-k">{l.share}</span>
     <a
         aria-label={l.mastodon(title)}
         data-instance-prompt={l.mastodonInstancePrompt}
@@ -184,46 +143,41 @@ const mastodonFallbackHref = `https://${personMastodonInstance}/share?text=${enc
         href={mastodonFallbackHref}
         id="mastodon-share"
         rel="noopener noreferrer"
-        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.mastodonTitle}
     >
-        <Icon class="mastodon" name="fa7-brands:mastodon" />
+        Mastodon
     </a>
     <a
         aria-label={l.bluesky(title)}
         href={`https://bsky.app/intent/compose?text=${encodeURIComponent(blueskyText)}`}
         rel="noopener noreferrer"
-        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.blueskyTitle}
     >
-        <Icon class="bluesky" name="fa7-brands:bluesky" />
+        Bluesky
     </a>
     <a
         aria-label={l.threads(title)}
         href={`https://threads.com/intent/post?text=${encodeURIComponent(threadsText)}`}
         rel="noopener noreferrer"
-        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.threadsTitle}
     >
-        <Icon class="threads" name="fa7-brands:threads" />
+        Threads
     </a>
     <a
         aria-label={l.linkedin(title)}
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
-        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.linkedinTitle}
     >
-        <Icon class="linkedin" name="fa7-brands:linkedin" />
+        LinkedIn
     </a>
     <a
         aria-label={l.facebook(title)}
         href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(shareUrl)}`}
         rel="noopener noreferrer"
-        style={{ height: '2.75rem', minWidth: '2.75rem' }}
         title={l.facebookTitle}
     >
-        <Icon class="facebook" name="fa7-brands:facebook" />
+        Facebook
     </a>
 </aside>
 <script

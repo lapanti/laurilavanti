@@ -41,6 +41,18 @@ describe('<SocialShare />', () => {
         expect(getByRole(result, 'complementary', { name: ariaLabel })).toBeDefined()
     })
 
+    it('should render Finnish share label', async () => {
+        const result = await renderAstroComponent(SocialShare, {
+            props: {
+                ariaLabel,
+                shareUrl,
+                title,
+            },
+        })
+
+        expect(result.querySelector('.share-k')?.textContent).toBe('Jaa:')
+    })
+
     it('should render facebook link', async () => {
         const result = await renderAstroComponent(SocialShare, {
             props: {
@@ -330,6 +342,19 @@ describe('<SocialShare />', () => {
         const enTitle = 'Test post'
         const enShareUrl = 'https://lavanti.fi/en/blog/test'
 
+        it('should render English share label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: enAriaLabel,
+                    locale: 'en',
+                    shareUrl: enShareUrl,
+                    title: enTitle,
+                },
+            })
+
+            expect(result.querySelector('.share-k')?.textContent).toBe('Share:')
+        })
+
         it('should render facebook link with English label', async () => {
             const result = await renderAstroComponent(SocialShare, {
                 props: {
@@ -448,6 +473,19 @@ describe('<SocialShare />', () => {
         const svAriaLabel = 'Dela inlägget "Testinlägg" på sociala medier'
         const svTitle = 'Testinlägg'
         const svShareUrl = 'https://lavanti.fi/sv/blog/test'
+
+        it('should render Swedish share label', async () => {
+            const result = await renderAstroComponent(SocialShare, {
+                props: {
+                    ariaLabel: svAriaLabel,
+                    locale: 'sv',
+                    shareUrl: svShareUrl,
+                    title: svTitle,
+                },
+            })
+
+            expect(result.querySelector('.share-k')?.textContent).toBe('Dela:')
+        })
 
         it('should render facebook link with Swedish label', async () => {
             const result = await renderAstroComponent(SocialShare, {

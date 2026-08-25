@@ -37,6 +37,18 @@ describe('<Byline />', () => {
             expect(result.querySelector('em')?.textContent).toContain('15. maaliskuuta 2025')
         })
 
+        it('wraps external publications in an elsewhere note', async () => {
+            const result = await renderAstroComponent(Byline, {
+                props: {
+                    authors: ['lauri'],
+                    externalPublications: [{ date: '2025-03-15', name: 'Kauppalehti' }],
+                    lang: 'fi',
+                },
+            })
+
+            expect(result.querySelector('.elsewhere-note > p')?.textContent).toContain('Kauppalehti')
+        })
+
         it('renders Finnish prefix', async () => {
             const result = await renderAstroComponent(Byline, {
                 props: {

@@ -3,14 +3,15 @@
 exports[`<SocialShare /> > should render 1`] = `
 <aside
   aria-label="Kirjoituksen "Vuosi 2026 on tekoälyn" jakaminen sosiaalisessa mediassa"
+  class="share"
   data-astro-cid-w7whim4q=""
-  style="--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+  style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
 >
    
   <span
-    class="share"
+    class="share-k"
     data-astro-cid-w7whim4q=""
-    style="--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
   >
     Jaa:
   </span>
@@ -25,33 +26,12 @@ https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     href="https://mastodon.social/share?text=Lue%20%22Vuosi%202026%20on%20teko%C3%A4lyn%22%2C%20jonka%20%40laurilavanti%40mastodon.social%20kirjoitti%0A%0Ahttps%3A%2F%2Flavanti.fi%2Fblogi%2Fvuosi-2026-on-tekoalyn"
     id="mastodon-share"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
     title="Jaa Mastodonissa"
   >
-     
-    <svg
-      class="mastodon"
-      data-astro-cid-w7whim4q="true"
-      data-icon="fa7-brands:mastodon"
-      height="1em"
-      width="1em"
-    >
-         
-      <symbol
-        id="ai:fa7-brands:mastodon"
-        viewBox="0 0 640 640"
-      >
-        <path
-          d="M529 243.1c0-97.2-63.7-125.7-63.7-125.7c-62.5-28.7-228.6-28.4-290.5 0c0 0-63.7 28.5-63.7 125.7c0 115.7-6.6 259.4 105.6 289.1c40.5 10.7 75.3 13 103.3 11.4c50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54c-.6-4.6-.9-9.3-.9-13.9c85.6 20.9 158.7 9.1 178.7 6.7c56.1-6.7 105-41.3 111.2-72.9c9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V254.1c0-49.7-64-51.6-64 6.9v62.5H297V261c0-58.5-64-56.6-64-6.9v114.2h-46.7c0-122.1-5.2-147.9 18.4-175c25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5l11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1c23.7 27.3 18.4 53 18.4 175"
-          fill="currentColor"
-        />
-      </symbol>
-      <use
-        href="#ai:fa7-brands:mastodon"
-      />
-        
-    </svg>
-     
+    
+Mastodon
+
   </a>
    
   <a
@@ -59,33 +39,12 @@ https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     data-astro-cid-w7whim4q=""
     href="https://bsky.app/intent/compose?text=Lue%20%22Vuosi%202026%20on%20teko%C3%A4lyn%22%2C%20jonka%20%40lauri.lavanti.fi%20kirjoitti%0A%0Ahttps%3A%2F%2Flavanti.fi%2Fblogi%2Fvuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
     title="Jaa Blueskyssa"
   >
-     
-    <svg
-      class="bluesky"
-      data-astro-cid-w7whim4q="true"
-      data-icon="fa7-brands:bluesky"
-      height="1em"
-      width="1em"
-    >
-         
-      <symbol
-        id="ai:fa7-brands:bluesky"
-        viewBox="0 0 640 640"
-      >
-        <path
-          d="M439.8 358.7c-3.3-.4-6.7-.8-10-1.3c3.4.4 6.7.9 10 1.3M320 291.1c-26.1-50.7-97.1-145.2-163.1-191.8c-63.3-44.7-87.4-37-103.3-29.8C35.3 77.8 32 105.9 32 122.4S41.1 258 47 277.9c19.5 65.7 89.1 87.9 153.2 80.7c3.3-.5 6.6-.9 10-1.4c-3.3.5-6.6 1-10 1.4c-93.9 14-177.3 48.2-67.9 169.9C252.6 653.1 297.1 501.8 320 425.1c22.9 76.7 49.2 222.5 185.6 103.4c102.4-103.4 28.1-156-65.8-169.9c-3.3-.4-6.7-.8-10-1.3c3.4.4 6.7.9 10 1.3c64.1 7.1 133.6-15.1 153.2-80.7c5.9-19.9 15-138.9 15-155.5s-3.3-44.7-21.6-52.9c-15.8-7.1-40-14.9-103.2 29.8c-66.1 46.6-137.1 141.1-163.2 191.8"
-          fill="currentColor"
-        />
-      </symbol>
-      <use
-        href="#ai:fa7-brands:bluesky"
-      />
-        
-    </svg>
-     
+    
+Bluesky
+
   </a>
    
   <a
@@ -93,33 +52,12 @@ https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     data-astro-cid-w7whim4q=""
     href="https://threads.com/intent/post?text=Lue%20%22Vuosi%202026%20on%20teko%C3%A4lyn%22%2C%20jonka%20%40laurilavanti%20kirjoitti%0A%0Ahttps%3A%2F%2Flavanti.fi%2Fblogi%2Fvuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
     title="Jaa Threadsissä"
   >
-     
-    <svg
-      class="threads"
-      data-astro-cid-w7whim4q="true"
-      data-icon="fa7-brands:threads"
-      height="1em"
-      width="1em"
-    >
-         
-      <symbol
-        id="ai:fa7-brands:threads"
-        viewBox="0 0 640 640"
-      >
-        <path
-          d="M436.8 302c-.6-69.6-38.3-111.5-102-111.5c-42.5 0-78.3 19.2-97.1 49.9l41.2 28.7c10.7-16.8 25.4-30.8 52.4-30.8c30.5 0 46.3 17 50.8 48.5c-14.7-2.3-29.5-3.5-44.6-3.5c-82.4 0-121.1 37.3-121.1 86.6s38.8 79.7 95.9 79.7c62.7 0 100.1-42.2 115.4-94.5c15.9 7.2 26.9 24 26.9 49.3c0 67.6-78 104.5-144.1 104.5c-97.5 0-161.3-64-161.3-168.2c0-127.6 84.3-209.4 197.6-209.4c76 0 113.6 33.4 139.2 78.1l42-29.5c-27.8-58-89.9-99.5-183.1-99.5c-148.5 0-249.5 105.4-249.5 258.2c0 139.8 98.9 220.9 216.7 220.9c97.4 0 195.8-56.8 195.8-154c0-50.8-29.2-84.5-71.2-103.5zm-126.4 96.9c-21.5 0-40.4-10.2-40.4-29c0-29.6 36.4-38.6 72-38.6c13.5 0 26.8.9 38.5 3.5c-8.4 38.5-33.4 64.2-70 64.2z"
-          fill="currentColor"
-        />
-      </symbol>
-      <use
-        href="#ai:fa7-brands:threads"
-      />
-        
-    </svg>
-     
+    
+Threads
+
   </a>
    
   <a
@@ -127,33 +65,12 @@ https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     data-astro-cid-w7whim4q=""
     href="https://www.linkedin.com/sharing/share-offsite/?url=https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
     title="Jaa LinkedInissä"
   >
-     
-    <svg
-      class="linkedin"
-      data-astro-cid-w7whim4q="true"
-      data-icon="fa7-brands:linkedin"
-      height="1em"
-      width="1em"
-    >
-         
-      <symbol
-        id="ai:fa7-brands:linkedin"
-        viewBox="0 0 640 640"
-      >
-        <path
-          d="M512 96H127.9C110.3 96 96 110.5 96 128.3v383.4c0 17.8 14.3 32.3 31.9 32.3H512c17.6 0 32-14.5 32-32.3V128.3c0-17.8-14.4-32.3-32-32.3M231.4 480H165V266.2h66.5V480zm-33.2-320c21.3 0 38.5 17.2 38.5 38.5S219.5 237 198.2 237s-38.5-17.2-38.5-38.5s17.2-38.5 38.5-38.5m282.1 320h-66.4V376c0-24.8-.5-56.7-34.5-56.7c-34.6 0-39.9 27-39.9 54.9V480h-66.4V266.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5c67.2 0 79.7 44.3 79.7 101.9z"
-          fill="currentColor"
-        />
-      </symbol>
-      <use
-        href="#ai:fa7-brands:linkedin"
-      />
-        
-    </svg>
-     
+    
+LinkedIn
+
   </a>
    
   <a
@@ -161,33 +78,12 @@ https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     data-astro-cid-w7whim4q=""
     href="https://www.facebook.com/sharer/sharer.php?u=https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn"
     rel="noopener noreferrer"
-    style="height:2.75rem;min-width:2.75rem;--colorsBluesky: #0060df;--colorsDarkGreen: #006845;--colorsFacebook: #4267B2;--colorsLinkedin: #0E76A8;--colorsMastodon: #6363ff;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--colorsThreads: rgb(0, 0, 0);--metaFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--metaFontSize: 14px;--metaFontWeight: 700;--metaLetterSpacing: 0.137em;--sizes05: 0.5rem;--sizes15: 1.5rem;"
+    style="--colorsForestGreen: rgb(22, 62, 53);--colorsLightSand: #E9E4D4;--colorsSand: rgb(214, 210, 196);--colorsTextSecondary: #4A4E45;--eyebrowFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--eyebrowFontSize: 15px;--eyebrowFontWeight: 700;--eyebrowLetterSpacing: 0.176em;--linkRuleFontFamily: "Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;--linkRuleFontSize: 14px;--linkRuleFontWeight: 700;--linkRuleLetterSpacing: 0.12em;--linkRuleLineHeight: 1.68;"
     title="Jaa Facebookissa"
   >
-     
-    <svg
-      class="facebook"
-      data-astro-cid-w7whim4q="true"
-      data-icon="fa7-brands:facebook"
-      height="1em"
-      width="1em"
-    >
-         
-      <symbol
-        id="ai:fa7-brands:facebook"
-        viewBox="0 0 640 640"
-      >
-        <path
-          d="M576 320c0-141.4-114.6-256-256-256S64 178.6 64 320c0 120 82.7 220.8 194.2 248.5V398.2h-52.8V320h52.8v-33.7c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V236c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V320h83.6l-14.4 78.2H351v175.9C477.8 558.8 576 450.9 576 320"
-          fill="currentColor"
-        />
-      </symbol>
-      <use
-        href="#ai:fa7-brands:facebook"
-      />
-        
-    </svg>
-     
+    
+Facebook
+
   </a>
    
 </aside>

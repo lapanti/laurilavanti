@@ -24,43 +24,45 @@ const publicationPrefix: Record<string, string> = {
 
 <style
     define:vars={{
-        bodyFontFamily: typographics.body.fontFamily,
-        bodyFontSize: typographics.body.fontSize,
-        bodyFontWeight: typographics.body.fontWeight,
-        bodyLineHeight: typographics.body.lineHeight,
         colorsSand: colors.sand,
         colorsTextSecondary: colors.textSecondary,
         fineFontFamily: typographics.fine.fontFamily,
         fineFontSize: typographics.fine.fontSize,
         fineFontWeight: typographics.fine.fontWeight,
         fineLineHeight: typographics.fine.lineHeight,
+        textFontFamily: typographics.text.fontFamily,
+        textFontWeight: typographics.text.fontWeight,
     }}
 >
-    p {
-        font-family: var(--bodyFontFamily);
-        font-size: var(--bodyFontSize);
-        font-weight: var(--bodyFontWeight);
-        line-height: var(--bodyLineHeight);
-        grid-column-start: 3;
-        margin-block: 0;
-    }
-
-    :global(.prose) .byline {
-        border-top: 3px solid var(--colorsSand);
+    .byline {
         display: grid;
         gap: 6px;
-        grid-column-start: auto;
         margin-top: 40px;
-        padding-top: 18px;
     }
 
-    :global(.prose) .byline p {
+    .byline > p {
         color: var(--colorsTextSecondary);
         font-family: var(--fineFontFamily);
         font-size: var(--fineFontSize);
         font-weight: var(--fineFontWeight);
-        grid-column-start: auto;
         line-height: var(--fineLineHeight);
+        margin-block: 0;
+    }
+
+    .elsewhere-note {
+        border-top: 3px solid var(--colorsSand);
+        display: grid;
+        gap: 6px;
+        padding-top: 18px;
+    }
+
+    .elsewhere-note p {
+        color: var(--colorsTextSecondary);
+        font-family: var(--textFontFamily);
+        font-size: 14px;
+        font-weight: var(--textFontWeight);
+        line-height: 1.6;
+        margin-block: 0;
     }
 </style>
 {
@@ -71,17 +73,21 @@ const publicationPrefix: Record<string, string> = {
                     <em>{text}</em>
                 </p>
             )}
-            {externalPublications?.map((pub: ExternalPublication) => {
-                const pubLang = pub.lang ?? 'fi'
-                const suffix = pubLang !== lang ? ` (${languageName[pubLang]})` : ''
+            {externalPublications && (
+                <div class="elsewhere-note">
+                    {externalPublications.map((pub: ExternalPublication) => {
+                        const pubLang = pub.lang ?? 'fi'
+                        const suffix = pubLang !== lang ? ` (${languageName[pubLang]})` : ''
 
-                return (
-                    <p>
-                        {/* prettier-ignore */}
-                        <em>{`${publicationPrefix[lang]}: `}{pub.url ? <SmartLink href={pub.url}>{pub.name}</SmartLink> : pub.name}{`, ${formatPublicationDate(pub.date, lang)}${suffix}.`}</em>
-                    </p>
-                )
-            })}
+                        return (
+                            <p>
+                                {/* prettier-ignore */}
+                                <em>{`${publicationPrefix[lang]}: `}{pub.url ? <SmartLink href={pub.url}>{pub.name}</SmartLink> : pub.name}{`, ${formatPublicationDate(pub.date, lang)}${suffix}.`}</em>
+                            </p>
+                        )
+                    })}
+                </div>
+            )}
         </div>
     )
 }

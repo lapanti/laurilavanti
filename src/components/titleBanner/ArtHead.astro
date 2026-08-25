@@ -37,16 +37,16 @@ const tagsToRender = (tags ?? [])
         chipFontSize: typographics.chip.fontSize,
         chipFontWeight: typographics.chip.fontWeight,
         chipLetterSpacing: typographics.chip.letterSpacing,
-        chipLineHeight: typographics.chip.lineHeight,
         colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
+        colorsForestGreen14: colors.forestGreen14,
         colorsLightSand: colors.lightSand,
         colorsTaivas700: colors.aquaInkSoft,
-        metaFontFamily: typographics.meta.fontFamily,
-        metaFontSize: typographics.meta.fontSize,
-        metaFontWeight: typographics.meta.fontWeight,
-        metaLetterSpacing: typographics.meta.letterSpacing,
-        metaLineHeight: typographics.meta.lineHeight,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
     }}
 >
     .art-head {
@@ -59,12 +59,12 @@ const tagsToRender = (tags ?? [])
         color: var(--colorsDarkGreen);
         display: flex;
         flex-wrap: wrap;
-        font-family: var(--metaFontFamily);
-        font-size: var(--metaFontSize);
-        font-weight: var(--metaFontWeight);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
         gap: 14px;
-        letter-spacing: var(--metaLetterSpacing);
-        line-height: var(--metaLineHeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
         text-transform: uppercase;
     }
 
@@ -76,9 +76,9 @@ const tagsToRender = (tags ?? [])
     h1 {
         color: var(--colorsDeepForest);
         font-family: var(--articleHeadlineFontFamily);
-        font-size: 52px;
+        font-size: 96px;
         font-weight: 900;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.02em;
         line-height: 0.94;
         margin: 0;
         max-width: 950px;
@@ -90,18 +90,18 @@ const tagsToRender = (tags ?? [])
         display: flex;
         flex-wrap: wrap;
         gap: 6px;
-        padding-top: 20px;
+        padding-top: 28px;
     }
 
     .topics a {
-        background: rgba(22, 62, 53, 0.14);
+        background: var(--colorsForestGreen14);
         color: var(--colorsDeepForest);
         display: inline-block;
         font-family: var(--chipFontFamily);
         font-size: var(--chipFontSize);
         font-weight: var(--chipFontWeight);
         letter-spacing: var(--chipLetterSpacing);
-        line-height: var(--chipLineHeight);
+        line-height: 18px;
         padding: 5px 10px;
         text-decoration: none;
         text-transform: uppercase;
@@ -112,9 +112,50 @@ const tagsToRender = (tags ?? [])
         text-underline-offset: 2px;
     }
 
-    @media (min-width: 1200px) {
+    @media (max-width: 1199px) {
         h1 {
-            font-size: 96px;
+            font-size: 76px;
+        }
+    }
+
+    @media (max-width: 999px) {
+        h1 {
+            font-size: 64px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .art-head {
+            padding: 24px 0 32px;
+        }
+
+        .art-meta {
+            font-size: 13px;
+            gap: 10px;
+            letter-spacing: 0.14em;
+        }
+
+        h1 {
+            font-size: 52px;
+            line-height: 0.92;
+            max-width: none;
+            padding-top: 14px;
+        }
+
+        .topics {
+            gap: 5px;
+            padding-top: 20px;
+        }
+
+        .topics a {
+            font-size: 10px;
+            padding: 4px 8px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        h1 {
+            font-size: 44px;
         }
     }
 </style>

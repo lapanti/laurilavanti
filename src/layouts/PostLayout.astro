@@ -4,11 +4,15 @@ import type { Post } from '../lib/posts'
 import AllPostsLink from '../components/AllPostsLink.astro'
 import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
+import NewsletterPlate from '../components/frontPage/NewsletterPlate.astro'
 import WritingsPlate from '../components/frontPage/WritingsPlate.astro'
+import NewsletterSubscribe from '../components/NewsletterSubscribe.astro'
+import PostProse from '../components/post/PostProse.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
+import { colors } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
@@ -77,20 +81,10 @@ const breadcrumbs: BreadcrumbItem[] = [
 ]
 ---
 
-<style>
+<style define:vars={{ colorsWhite: colors.white }}>
     .prose-section {
-        background: white;
+        background: var(--colorsWhite);
         padding-bottom: 24px;
-    }
-
-    .prose {
-        margin-inline: auto;
-        max-width: 800px;
-        padding-top: 48px;
-    }
-
-    .prose > :global(* + *) {
-        margin-top: 24px;
     }
 </style>
 <BaseLayout
@@ -125,7 +119,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     />
     <div class="prose-section">
         <div class="sheet">
-            <div class="prose">
+            <PostProse>
                 <slot />
                 <Byline authors={authors ?? ['lauri']} externalPublications={externalPublications} lang={lang} />
                 <SocialShare
@@ -134,7 +128,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                     shareUrl={shareUrl}
                     title={pageTitle}
                 />
-            </div>
+            </PostProse>
         </div>
     </div>
     <WritingsPlate
@@ -147,4 +141,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         <ExcerptList currentSlug={slug} lang={lang} limit={3} relatedTags={tags} />
         <AllPostsLink lang={lang} />
     </WritingsPlate>
+    <NewsletterPlate>
+        <NewsletterSubscribe lang={lang} />
+    </NewsletterPlate>
 </BaseLayout>
