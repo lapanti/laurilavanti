@@ -105,7 +105,19 @@ const { alt, ctaHref, ctaLabel, emphasis, eyebrow, heroImage, intro, mobileHeroI
             min-height: 633px;
         }
 
+        /* Fixed to the hero's own 633px band instead of stretching with it — an
+           unusually long headline (e.g. the newsletter's) can grow .hero-right well
+           past 633px, and this image column shouldn't grow (and re-crop) with it. */
+        .hero :global(.hero-left) {
+            height: 633px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 260px;
+        }
+
         .hero-right {
+            grid-column: 2;
             padding: 104px 40px 32px 16px;
         }
 
@@ -117,6 +129,10 @@ const { alt, ctaHref, ctaLabel, emphasis, eyebrow, heroImage, intro, mobileHeroI
     @media (min-width: 1000px) {
         .hero {
             grid-template-columns: 330px minmax(0, 1fr);
+        }
+
+        .hero :global(.hero-left) {
+            width: 330px;
         }
 
         .hero-right {
@@ -131,6 +147,10 @@ const { alt, ctaHref, ctaLabel, emphasis, eyebrow, heroImage, intro, mobileHeroI
     @media (min-width: 1200px) {
         .hero {
             grid-template-columns: 331px minmax(0, 1fr);
+        }
+
+        .hero :global(.hero-left) {
+            width: 331px;
         }
 
         .hero-right {
