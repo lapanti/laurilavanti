@@ -8,17 +8,23 @@ import MobileMenu from './header/MobileMenu.astro'
 import SkipLinks from './header/SkipLinks.astro'
 
 interface Props {
+    /**
+     * Only the front page's hero renders its own in-image wordmark — every other
+     * `hero`-variant page needs the nav's own brand link shown (and overhanging the
+     * hero) instead. Ignored for `variant="solid"`.
+     */
+    heroShowsMark?: boolean
     lang?: Lang
     /**
      * Signal Band visual rebrand: `hero` is the transparent bar absolutely positioned
-     * over the front page's hero image (68px, no background of its own — legibility
-     * comes from each nav link's own light-sand chip, not a gradient overlay). `solid`
+     * over a page's hero image (68px, no background of its own — legibility comes
+     * from each nav link's own light-sand chip, not a gradient overlay). `solid`
      * is the light-sand bar every other page uses, sized by its own content.
      */
     variant?: 'hero' | 'solid'
 }
 
-const { lang = 'fi', variant = 'solid' } = Astro.props
+const { heroShowsMark = false, lang = 'fi', variant = 'solid' } = Astro.props
 const links = navLinks[lang]
 ---
 
@@ -63,5 +69,5 @@ const links = navLinks[lang]
 <header class:list={[variant]}>
     <SkipLinks lang={lang} />
     <MobileMenu lang={lang} links={links} variant={variant} />
-    <DesktopMenu lang={lang} links={links} variant={variant} />
+    <DesktopMenu heroShowsMark={heroShowsMark} lang={lang} links={links} variant={variant} />
 </header>

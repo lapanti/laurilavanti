@@ -6,12 +6,13 @@ import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
 
 interface Props {
+    heroShowsMark?: boolean
     lang?: Lang
     links: NavLink[]
     variant?: 'hero' | 'solid'
 }
 
-const { lang, links, variant = 'solid' } = Astro.props
+const { heroShowsMark = false, lang, links, variant = 'solid' } = Astro.props
 const navLinks = links.filter((link) => !link.switchToLang)
 const langLinks = links.filter((link) => link.switchToLang)
 const tone = variant === 'hero' ? 'dark' : 'light'
@@ -27,6 +28,7 @@ const tone = variant === 'hero' ? 'dark' : 'light'
         max-width: var(--contentSize);
         padding-left: var(--contentPadding);
         padding-right: var(--contentPadding);
+        position: relative;
         width: 100%;
     }
 
@@ -34,8 +36,18 @@ const tone = variant === 'hero' ? 'dark' : 'light'
         margin-right: auto;
     }
 
-    .brand.hero {
+    /* The front page's hero has its own in-image wordmark, so the nav's copy is
+       redundant there. Every other hero-variant page has no in-image mark — the nav's
+       brand is its only logo, positioned to overhang the top of the dark hero column
+       (package 20260824 8pm/Site/laurista.html: ".top .brand", Figma 2067:47750). */
+    .brand.hidden {
         display: none;
+    }
+
+    .brand.overhang {
+        left: 0;
+        position: absolute;
+        top: 14px;
     }
 
     nav {
@@ -57,7 +69,12 @@ const tone = variant === 'hero' ? 'dark' : 'light'
     }
 </style>
 <div class="container">
-    <div class:list={['brand', { hero: variant === 'hero' }]}>
+    <div
+        class:list={[
+            'brand',
+            { hidden: variant === 'hero' && heroShowsMark, overhang: variant === 'hero' && !heroShowsMark },
+        ]}
+    >
         <MainNavigationLink lang={lang} tone={tone} />
     </div>
     <nav aria-label="Päävalikko">

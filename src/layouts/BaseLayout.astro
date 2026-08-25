@@ -24,11 +24,17 @@ interface Props {
     description?: string
     faq?: Array<{ a: string; q: string }>
     /**
-     * Signal Band visual rebrand: `hero` is the transparent bar over the front page's
-     * hero image; `solid` (default) is the light-sand bar every other page uses —
+     * Signal Band visual rebrand: `hero` is the transparent bar over a page's hero
+     * image; `solid` (default) is the light-sand bar every other page uses —
      * independent of `plated`, since post/page layouts are plated but still solid-headed.
      */
     headerVariant?: 'hero' | 'solid'
+    /**
+     * Only the front page's hero renders its own in-image wordmark — every other
+     * `hero`-variant header needs to show its own brand link instead (overhanging the
+     * hero, since there's no in-image mark to rely on there).
+     */
+    heroShowsMark?: boolean
     lang?: 'en' | 'fi' | 'sv'
     langAlternates?: Record<'en' | 'fi' | 'sv', string>
     noindex?: boolean
@@ -57,6 +63,7 @@ const {
     description,
     faq,
     headerVariant = 'solid',
+    heroShowsMark = false,
     lang,
     langAlternates,
     noindex,
@@ -162,7 +169,7 @@ const {
             }
         </style>
         <div>
-            <Header lang={lang} variant={headerVariant} />
+            <Header heroShowsMark={heroShowsMark} lang={lang} variant={headerVariant} />
             <main class:list={{ plated }} id="main">
                 <slot name="banner" />
                 <article class:list={{ plated }}>
