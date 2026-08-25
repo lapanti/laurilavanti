@@ -3,27 +3,40 @@ layout: '../../../layouts/PageLayout.astro'
 lang: sv
 pageTitle: 'Inlägg – AI, ekonomi och digital frihet'
 title: 'Inlägg'
+intro: 'AI förändrar allt — arbetet, ekonomin samt hur staten och samhällen i stort fungerar. Dessutom sker denna förändring med en aldrig tidigare skådad hastighet. Jag skriver särskilt om hur det påverkar ekonomin, bildningen och friheten. Dessa tre måste fungera till vår fördel för att digital självständighet ska bli verklighet — så att Finland kan vara ett samhälle som använder tekniken på sina egna villkor.'
+ctaHref: '/sv/blog/all/'
+ctaLabel: 'Alla inlägg'
 description: 'Lauri Lavanti skriver efter ämne: AI, ekonomi, lärande, frihet, digital självständighet och Kyrkslätt. Läs inlägg per ämnesområde.'
 slug: 'sv/blog'
-updatedDate: '2026-06-04'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio'
-alt: 'Lauri Lavanti sitter på stentrappor med en bärbar dator i knät och ler åt sidan. Foto: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
+alt: 'Lauri Lavanti står framför en glas- och träfasad, blicken mot kameran. Han bär en ljusblå blommig skjorta och en mörk kavaj. Foto: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import AllPostsLink from '../../../components/AllPostsLink.astro'
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
+import Lede from '../../../components/Lede.astro'
+import Plate from '../../../components/Plate.astro'
+import Stripe from '../../../components/Stripe.astro'
 import TopicsWithExcerpts from '../../../components/TopicsWithExcerpts.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-AI förändrar allt — arbetet, ekonomin samt hur staten och samhällen i stort fungerar. Dessutom sker denna förändring med en aldrig tidigare skådad hastighet. Jag skriver särskilt om hur det påverkar ekonomin, bildningen och friheten. Dessa tre måste fungera till vår fördel för att digital självständighet ska bli verklighet — så att Finland kan vara ett samhälle som använder tekniken på sina egna villkor.
+<Plate ground="sand" heading="Vad innebär det att leva i AI:s era?">
+    <Lede wide>
+        Jag har över ett årtiondes praktisk erfarenhet av att bygga säker programvara och banksystem. Med den bakgrunden skriver jag om varför AI inte bara effektiviserar arbetet, utan tvingar oss att tänka om nästan alla delar av samhället: det sociala skyddsnätet, varför digital självständighet är en förutsättning för ett fritt samhälle, och hur vi ser till att alla drar nytta av tekniken — inte bara ett fåtal.
+    </Lede>
+</Plate>
 
-## Vad innebär det att leva i AI:s era?
+<TopicsWithExcerpts
+    ariaLabel="Inläggens ämnen"
+    ids={['artificial-intelligence', 'economy', 'enlightenment', 'freedom', 'digital-independence', 'kirkkonummi']}
+    lang="sv"
+/>
 
-Jag har över ett årtiondes praktisk erfarenhet av att bygga säker programvara och banksystem. Med den bakgrunden skriver jag om varför AI inte bara effektiviserar arbetet, utan tvingar oss att tänka om nästan alla delar av samhället: det sociala skyddsnätet, varför digital självständighet är en förutsättning för ett fritt samhälle, och hur vi ser till att alla drar nytta av tekniken — inte bara ett fåtal.
-
-<TopicsWithExcerpts lang="sv" ids={['artificial-intelligence', 'economy', 'enlightenment', 'freedom', 'digital-independence', 'kirkkonummi']} />
-
-<AllPostsLink lang="sv" />
+<Plate ground="gray">
+    <AllPostsLink lang="sv" />
+</Plate>

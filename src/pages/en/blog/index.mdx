@@ -3,27 +3,40 @@ layout: '../../../layouts/PageLayout.astro'
 lang: en
 pageTitle: 'Writing – AI, economy, and freedom'
 title: 'Writing'
+intro: "AI is changing everything — work, the economy, and how the state and societies more broadly function. What's more, this shift is happening at unprecedented speed. I write especially about how it affects the economy, enlightenment, and freedom. These three have to work in our favour for digital independence to become a reality — so that Finland can be a society that uses technology on its own terms."
+ctaHref: '/en/blog/all/'
+ctaLabel: 'All posts'
 description: 'Lauri Lavanti writes by topic: AI, economy, enlightenment, freedom, digital independence, and Kirkkonummi. Browse posts by subject area.'
 slug: 'en/blog'
-updatedDate: '2026-06-04'
+updatedDate: '2026-08-25'
 type: 'WebPage'
-heroImage: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio'
-alt: 'Lauri Lavanti sitting on stone steps with a laptop on his lap, smiling and looking to the side. Photo: Markus Isomeri.'
+heroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-pystykuva'
+mobileHeroImage: 'Lauri-Lavanti-lasijulkisivun-edessa-nelio'
+alt: 'Lauri Lavanti standing in front of a glass-and-wood facade, looking at the camera. He is wearing a light blue floral shirt and a dark blazer. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
 ---
 
 import AllPostsLink from '../../../components/AllPostsLink.astro'
-import H2 from '../../../components/H2.astro'
-import Paragraph from '../../../components/Paragraph.astro'
+import Lede from '../../../components/Lede.astro'
+import Plate from '../../../components/Plate.astro'
+import Stripe from '../../../components/Stripe.astro'
 import TopicsWithExcerpts from '../../../components/TopicsWithExcerpts.astro'
 
-export const components = { h2: H2, p: Paragraph }
+<Stripe size="slim" />
 
-AI is changing everything — work, the economy, and how the state and societies more broadly function. What's more, this shift is happening at unprecedented speed. I write especially about how it affects the economy, enlightenment, and freedom. These three have to work in our favour for digital independence to become a reality — so that Finland can be a society that uses technology on its own terms.
+<Plate ground="sand" heading="What does it mean to live in the age of AI?">
+    <Lede wide>
+        I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink nearly every part of society: the social safety net, why digital independence is a precondition for a free society, and how we ensure that everyone benefits from technology — not only a few.
+    </Lede>
+</Plate>
 
-## What does it mean to live in the age of AI?
+<TopicsWithExcerpts
+    ariaLabel="Post topics"
+    ids={['artificial-intelligence', 'economy', 'enlightenment', 'freedom', 'digital-independence', 'kirkkonummi']}
+    lang="en"
+/>
 
-I have over a decade of hands-on experience building secure software and banking systems. From that background I write about why AI does not merely speed up work but forces us to rethink nearly every part of society: the social safety net, why digital independence is a precondition for a free society, and how we ensure that everyone benefits from technology — not only a few.
-
-<TopicsWithExcerpts lang="en" ids={['artificial-intelligence', 'economy', 'enlightenment', 'freedom', 'digital-independence', 'kirkkonummi']} />
-
-<AllPostsLink lang="en" />
+<Plate ground="gray">
+    <AllPostsLink lang="en" />
+</Plate>
