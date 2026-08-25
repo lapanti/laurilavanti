@@ -23,7 +23,7 @@ if [[ "$is_post" -eq 0 ]] && [[ ! "$file" =~ /fi/ ]]; then
 fi
 
 # Only run on blog posts.
-if [[ "$is_post" -eq 0 ]] && ! grep -qP "PostLayout" "$file"; then
+if [[ "$is_post" -eq 0 ]] && ! grep -q "PostLayout" "$file"; then
     exit 0
 fi
 

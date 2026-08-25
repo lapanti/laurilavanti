@@ -27,11 +27,9 @@ fi
 question_words_en="How|What|Why|When|Who|Can|Is|Are|Does|Should|Which|Will|Has|Have"
 question_words_fi="Miten|Mitä|Miksi|Milloin|Kuka|Voiko|Onko|Pitäisikö|Mikä|Mikäli|Kuinka|Ketkä|Missä"
 question_words_sv="Hur|Vad|Varför|När|Vem|Kan|Är|Ska|Vilken|Vilket|Vilka|Bör|Har"
+question_heading_pattern="^#{2,3} ((${question_words_en}|${question_words_fi}|${question_words_sv})([^[:alnum:]_]|$)|[^[:space:]].*\?$|[[:alnum:]_]+(ko|kö)([^[:alnum:]_]|$))"
 
-if ! fm_body "$file" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
-   && ! fm_body "$file" | grep -qP "^#{2,3} \S.*\?$" \
-   && ! fm_body "$file" | grep -qP "^#{2,3} \w+ko\b" \
-   && ! fm_body "$file" | grep -qP "^#{2,3} \w+kö\b"; then
+if ! fm_body "$file" | grep -qE "$question_heading_pattern"; then
     error "$file" "no conversational (question-format) H2/H3 heading found — at least one required for AEO"
     failed=1
 fi
@@ -59,15 +57,12 @@ fi
 if [[ "$is_post" -eq 1 ]]; then
     has_ai_tag="$(node "$SCRIPT_DIR/../lib/read-json-field.mjs" "$meta_file" tags | grep -qx "artificial-intelligence" && echo 1 || echo 0)"
 else
-    has_ai_tag="$(awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence" && grep -qP "PostLayout" "$file" && echo 1 || echo 0)"
+    has_ai_tag="$(awk '/^---$/ { c++; if (c == 2) exit; next } c == 1' "$file" | grep -q "artificial-intelligence" && grep -q "PostLayout" "$file" && echo 1 || echo 0)"
 fi
 if [[ "$has_ai_tag" -eq 1 ]]; then
     q_count=0
     while IFS= read -r line; do
-        if echo "$line" | grep -qP "^#{2,3} (${question_words_en}|${question_words_fi}|${question_words_sv})\b" \
-           || echo "$line" | grep -qP "^#{2,3} \S.*\?$" \
-           || echo "$line" | grep -qP "^#{2,3} \w+ko\b" \
-           || echo "$line" | grep -qP "^#{2,3} \w+kö\b"; then
+        if echo "$line" | grep -qE "$question_heading_pattern"; then
             q_count=$((q_count + 1))
         fi
     done < <(fm_body "$file")

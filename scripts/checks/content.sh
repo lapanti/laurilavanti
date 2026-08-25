@@ -23,7 +23,7 @@ fi
 
 is_blog_post() {
     [[ "$is_post" -eq 1 ]] && return 0
-    grep -qP "PostLayout" "$file"
+    grep -q "PostLayout" "$file"
 }
 
 meta_field() { node "$SCRIPT_DIR/../lib/read-json-field.mjs" "$meta_file" "$1"; }
@@ -88,7 +88,7 @@ if [[ -n "$hero_image" ]]; then
     if [[ -z "$hero_alt" ]]; then
         error "$file" "heroImage set but alt is missing — required for og:image:alt and accessibility"
         failed=1
-    elif echo "$hero_alt" | grep -qiP '^[\w\-]+\.(jpe?g|png|gif|webp|avif|svg)$'; then
+    elif echo "$hero_alt" | grep -qiE '^[[:alnum:]_-]+\.(jpe?g|png|gif|webp|avif|svg)$'; then
         error "$file" "alt looks like a filename: \"${hero_alt}\" — use descriptive text"
         failed=1
     else
@@ -104,12 +104,12 @@ fi
 # Extract all ![alt](src) pairs and check each alt.
 while IFS= read -r line; do
     # Extract alt from ![alt](src)
-    alt_text="$(echo "$line" | grep -oP '(?<=!\[)[^\]]*(?=\])')"
-    src_text="$(echo "$line" | grep -oP '(?<=\()\S+(?=\))')"
+    alt_text="$(echo "$line" | sed -E 's/^!\[([^]]*)\]\(.*$/\1/')"
+    src_text="$(echo "$line" | sed -E 's/^!\[[^]]*\]\(([^)]*)\)$/\1/')"
     if [[ -z "$alt_text" ]]; then
         error "$file" "body image with empty alt: ![](${src_text})"
         failed=1
-    elif echo "$alt_text" | grep -qiP '^[\w\-]+\.(jpe?g|png|gif|webp|avif|svg)$'; then
+    elif echo "$alt_text" | grep -qiE '^[[:alnum:]_-]+\.(jpe?g|png|gif|webp|avif|svg)$'; then
         error "$file" "body image alt looks like a filename: \"${alt_text}\""
         failed=1
     else
@@ -119,12 +119,12 @@ while IFS= read -r line; do
             failed=1
         fi
     fi
-done < <(fm_body "$file" | grep -oP '!\[[^\]]*\]\([^)]*\)' || true)
+done < <(fm_body "$file" | grep -oE '!\[[^]]*\]\([^)]*\)' || true)
 
 if is_blog_post; then
     # ── internal link count ───────────────────────────────────────────────────
     # Counts [text](/path) links pointing to internal pages.
-    link_count="$(fm_body "$file" | grep -oP '\[[^\]]*\]\(/[^)]*\)' | wc -l || true)"
+    link_count="$(fm_body "$file" | grep -oE '\[[^]]*\]\(/[^)]*\)' | wc -l || true)"
     if [[ "$link_count" -lt 3 ]]; then
         error "$file" "internal links: ${link_count} (minimum 3) — add links to related content"
         failed=1
@@ -137,12 +137,6 @@ if is_blog_post; then
     # Extract tags and verify each exists in src/content/tags/.
     REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
     TAGS_DIR="$REPO_ROOT/src/content/tags"
-
-    # Build set of valid tag IDs from *.ts files (excluding types.ts)
-    declare -A valid_tags
-    while IFS= read -r tag_id; do
-        valid_tags["$tag_id"]=1
-    done < <(grep -rh "id:" "$TAGS_DIR" --include="*.ts" --exclude="types.ts" | grep -oP "(?<=id:\s')[^']+|(?<=id:\s\")[^\"]+")
 
     if [[ "$is_post" -eq 1 ]]; then
         post_tags="$(meta_field tags)"
@@ -162,7 +156,7 @@ if is_blog_post; then
     else
         while IFS= read -r tag; do
             tag="$(echo "$tag" | xargs)"  # trim whitespace
-            if [[ -z "${valid_tags[$tag]+x}" ]]; then
+            if [[ ! -f "$TAGS_DIR/$tag.ts" ]]; then
                 error "$file" "unknown tag: '${tag}' — not found in src/content/tags"
                 failed=1
             fi

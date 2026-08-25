@@ -29,7 +29,7 @@ else
     required_fields=(pageTitle title description lang slug layout)
 fi
 for field in "${required_fields[@]}"; do
-    if ! grep -qP "^${field}:" "$file"; then
+    if ! grep -qE "^${field}:" "$file"; then
         error "$file" "missing required frontmatter field: ${field}"
         failed=1
     fi
@@ -42,8 +42,8 @@ if [[ "$is_post" -eq 1 ]]; then
         error "$file" "missing required field in meta.json: publishDate (required for blog posts)"
         failed=1
     fi
-elif grep -qP '^layout:' "$file" && grep -qP "PostLayout" "$file"; then
-    if ! grep -qP '^publishDate:' "$file"; then
+elif grep -qE '^layout:' "$file" && grep -q "PostLayout" "$file"; then
+    if ! grep -qE '^publishDate:' "$file"; then
         error "$file" "missing required frontmatter field: publishDate (required for blog posts)"
         failed=1
     fi
@@ -68,17 +68,18 @@ fi
 slug_val="$(fm_field "$file" slug)"
 if [[ -n "$slug_val" ]]; then
     # No uppercase letters
-    if echo "$slug_val" | grep -qP '[A-Z]'; then
+    if echo "$slug_val" | grep -q '[A-Z]'; then
         error "$file" "slug contains uppercase letters: '${slug_val}'"
         failed=1
     fi
     # No underscores
-    if echo "$slug_val" | grep -qP '_'; then
+    if echo "$slug_val" | grep -q '_'; then
         error "$file" "slug contains underscores (use hyphens): '${slug_val}'"
         failed=1
     fi
     # No soft hyphens (U+00AD)
-    if echo "$slug_val" | grep -qP '\x{00AD}'; then
+    soft_hyphen="$(printf '\302\255')"
+    if [[ "$slug_val" == *"$soft_hyphen"* ]]; then
         error "$file" "slug contains a soft hyphen (U+00AD): '${slug_val}'"
         failed=1
     fi
@@ -87,10 +88,10 @@ if [[ -n "$slug_val" ]]; then
     if [[ "$is_post" -eq 1 ]]; then
         blog_id="$post_id"
     else
-        blog_id="$(echo "$file" | grep -oP '/blog/\K\d+' || true)"
+        blog_id="$(echo "$file" | sed -nE 's#^.*/blog/([0-9]+)/.*#\1#p')"
     fi
     if [[ "$blog_id" != "20" && "$blog_id" != "47" ]]; then
-        if echo "$slug_val" | grep -qP '(19|20)\d{2}'; then
+        if echo "$slug_val" | grep -qE '(19|20)[0-9]{2}'; then
             error "$file" "slug contains a 4-digit year (makes content appear stale): '${slug_val}'"
             failed=1
         fi
@@ -100,7 +101,7 @@ fi
 # ── slug must equal folder name for legacy page-routed blog posts ───────────
 # Not applicable to content-collection posts: the folder is the numeric id, not
 # the slug. Slug uniqueness per locale is enforced instead by cross-file.mjs.
-if [[ "$is_post" -eq 0 ]] && echo "$file" | grep -qP '/blog/\d+/'; then
+if [[ "$is_post" -eq 0 ]] && echo "$file" | grep -qE '/blog/[0-9]+/'; then
     folder_name="$(basename "$(dirname "$file")")"
     if [[ -n "$slug_val" && "$folder_name" != "$slug_val" ]]; then
         error "$file" "slug '${slug_val}' does not match folder name '${folder_name}'"
@@ -110,7 +111,7 @@ fi
 
 # ── no bare H1 in body ───────────────────────────────────────────────────────
 # Layout renders the <h1>; a second one in the body creates a duplicate H1.
-h1_lines="$(fm_body "$file" | grep -nP '^# [^#]' | head -1 || true)"
+h1_lines="$(fm_body "$file" | grep -nE '^# [^#]' | head -1 || true)"
 if [[ -n "$h1_lines" ]]; then
     error "$file" "H1 (# heading) found in body — layout already renders the title as H1"
     failed=1
