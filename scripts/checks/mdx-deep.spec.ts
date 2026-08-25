@@ -145,6 +145,24 @@ describe('checkFile — passage length', () => {
     })
 })
 
+describe('checkFile — hidden FAQ metadata', () => {
+    const base = { body: validBody(), isBlogPost: false, today: TODAY }
+
+    it('rejects synthetic FAQ frontmatter', () => {
+        const errors = checkFile({ ...base, frontmatter: "title: 'Page'\nfaq:\n  - q: 'Hidden?'" })
+
+        expect(errors).toContain(
+            'synthetic faq frontmatter is not allowed — FAQ schema must be derived from visible H2 sections'
+        )
+    })
+
+    it('allows visible question sections without FAQ frontmatter', () => {
+        const errors = checkFile({ ...base, frontmatter: "title: 'Page'" })
+
+        expect(errors.some((error) => error.includes('synthetic faq'))).toBe(false)
+    })
+})
+
 // ── checkFile: freshness ──────────────────────────────────────────────────────
 
 describe('checkFile — freshness', () => {

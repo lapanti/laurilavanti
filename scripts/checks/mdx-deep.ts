@@ -89,17 +89,31 @@ export function proseParagraphs(body: string): string[] {
 
 interface CheckFileParams {
     body: string
+    frontmatter?: string
     isBlogPost: boolean
     publishDate?: string | null
     today: Date
     updatedDate?: string | null
 }
 
-/** Run passage-length and freshness checks. Returns error strings (empty = pass).
+/**
+ * Run passage-length and freshness checks. Returns error strings (empty = pass).
  *  For blog posts, publishDate/updatedDate live in the post's sibling meta.json
- *  (not this file's own frontmatter) — callers resolve and pass them in directly. */
-export function checkFile({ body, isBlogPost, publishDate, today, updatedDate }: CheckFileParams): string[] {
+ *  (not this file's own frontmatter) — callers resolve and pass them in directly.
+ */
+export function checkFile({
+    body,
+    frontmatter = '',
+    isBlogPost,
+    publishDate,
+    today,
+    updatedDate,
+}: CheckFileParams): string[] {
     const errors: string[] = []
+
+    if (/^faq\s*:/m.test(frontmatter)) {
+        errors.push('synthetic faq frontmatter is not allowed — FAQ schema must be derived from visible H2 sections')
+    }
 
     // passage length (all pages)
     for (const para of proseParagraphs(body)) {
@@ -145,7 +159,7 @@ if (isMain) {
         if (!file.endsWith('.mdx')) continue
         const content = readFileSync(file, 'utf8')
         const rel = file.replace(repoRoot, '')
-        const { body } = splitMdx(content)
+        const { body, frontmatter } = splitMdx(content)
         const isBlogPost = /[/\\]content[/\\]posts[/\\]\d+[/\\](fi|sv|en)\.mdx$/.test(file)
 
         let publishDate: string | null = null
@@ -156,7 +170,7 @@ if (isMain) {
             updatedDate = meta.updatedDate ?? null
         }
 
-        const errors = checkFile({ body, isBlogPost, publishDate, today, updatedDate })
+        const errors = checkFile({ body, frontmatter, isBlogPost, publishDate, today, updatedDate })
         if (errors.length > 0) {
             hasError = true
             printErrors(rel, errors)
