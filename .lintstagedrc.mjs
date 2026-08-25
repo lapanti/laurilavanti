@@ -18,7 +18,6 @@ export default {
     '*/**/*.mdx': (files) => [
         `scripts/mdx-validate.sh ${files.map((f) => `"${f}"`).join(' ')}`,
         `node scripts/check-overflow.mjs ${files.map((f) => `"${f}"`).join(' ')}`,
-        'node --experimental-strip-types scripts/checks/redirects.mjs',
     ],
     '**/content/posts/**/meta.json': (files) => {
         const mdxFiles = siblingMdxFiles(files)
@@ -26,12 +25,8 @@ export default {
         return [
             `scripts/mdx-validate.sh ${mdxFiles.map((f) => `"${f}"`).join(' ')}`,
             `node scripts/check-overflow.mjs ${mdxFiles.map((f) => `"${f}"`).join(' ')}`,
-            'node --experimental-strip-types scripts/checks/redirects.mjs',
         ]
     },
-    '**/content/tags/*.ts': (files) => [
-        `node scripts/check-overflow.mjs ${files.map((f) => `"${f}"`).join(' ')}`,
-        'node --experimental-strip-types scripts/checks/redirects.mjs',
-    ],
+    '**/content/tags/*.ts': (files) => `node scripts/check-overflow.mjs ${files.map((f) => `"${f}"`).join(' ')}`,
     'src/lib/redirects.ts': () => 'node --experimental-strip-types scripts/checks/redirects.mjs',
 }

@@ -2,16 +2,16 @@
 
 > **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
 > **Status**: `Active`
-> **Last updated**: 2026-05-18
+> **Last updated**: 2026-08-25
 > **Issue**: [#1213](https://github.com/lapanti/laurilavanti/issues/1213)
 
 ---
 
 ## Intent
 
-The `redirects` map in `astro.config.mjs` has accreted 213 entries since the site was first migrated to the locale-prefixed URL scheme. Some legacy entries now form chains (`A → B`, `B → C` — search engines should be sent straight to `C`) and others have dead-end targets (the destination no longer corresponds to a page that exists). Chains waste crawl budget; dead-ends produce indexed 404s. Neither is visible from inside Astro's build, so they accumulate silently.
+The historical `redirects` map can accumulate malformed paths, chains (`A → B`, `B → C`), cycles, and targets that no longer exist. These failures waste crawl budget or produce indexed 404s, so redirects are validated at both the source and generated-output boundaries.
 
-This feature introduces a pre-commit/CLI audit script that detects both pathologies, prunes the existing redirect map to a clean baseline, and gates further drift via pre-commit + CI. After this lands, the project has an enforceable invariant: every redirect collapses in one hop to a page that actually exists.
+The fast source audit validates path normalization and graph integrity without reconstructing application routes. The built-output contract audit parses the emitted `_redirects` file and discovers canonical routes and assets directly from `dist/`; it owns duplicate/conflict detection and proves that every target exists. Together they enforce the invariant that every redirect is a normalized, deterministic one-hop rule to generated output.
 
 It also extracts the redirects literal out of `astro.config.mjs` into `src/lib/redirects.ts` so the audit script (and any future tooling) can import it cleanly.
 
@@ -20,19 +20,21 @@ It also extracts the redirects literal out of `astro.config.mjs` into `src/lib/r
 ## Scope
 
 ### In scope
+
 - Extracting `redirects` into its own module `src/lib/redirects.ts` (behaviour-preserving refactor).
-- New script `scripts/checks/redirects.mjs` that reports redirect chains and dead-end targets. (Issue specifies `.ts`; decision to use `.mjs` taken to match existing `scripts/checks/*.mjs` pattern and avoid a transpile step — runs via Node 24 `--experimental-strip-types`.)
+- Source audit `scripts/checks/redirects.mjs` for normalized local paths, chains, and cycles.
+- Built-output target validation in `scripts/checks/dist-contracts.mjs`.
 - npm script `audit:redirects`.
-- Manual prune of the current redirect map: collapse all detected chains, remove all detected dead-ends.
-- Pre-commit gating via lint-staged on `src/lib/redirects.ts`, `src/content/tags/**`, `src/pages/**/*.mdx`.
+- Pre-commit gating via lint-staged when `src/lib/redirects.ts` changes.
 - CI gating via a new step in the `validate-content` job.
 
 ### Out of scope
+
 - Migrating to a Cloudflare-side `_redirects` file.
 - Removing redirects whose terminals still resolve correctly (kept regardless of age).
 - The fi/43 slug typo fix `kuka-paattaa-mista-puhumma → puhumme` (rides the same branch but is its own change).
 - Reorganising redirect groupings or comments beyond the prune.
-- Any change to redirect *semantics* (HTTP status, target locale, etc.).
+- Any change to redirect _semantics_ (HTTP status, target locale, etc.).
 
 ---
 
@@ -44,19 +46,23 @@ Feature: Redirect audit & prune
   Background:
     Given the redirects map is exported from src/lib/redirects.ts
     And the audit script lives at scripts/checks/redirects.mjs
-    And the script enumerates valid routes from:
-      | source                                                |
-      | src/pages/{lang}/blog/{id}/{slug}/index.mdx           |
-      | tags[] from src/content/tags.ts (× 3 locales)         |
-      | hard-coded static page list                           |
-    And bare /{lang}/blog/{id}/ directories are NOT valid routes
+    And the source audit validates src/lib/redirects.ts
+    And the output audit discovers canonical routes and assets from dist/
+    And neither audit maintains a manual application-route allowlist
 
   Scenario: Clean baseline reports no findings
-    Given every redirect in src/lib/redirects.ts collapses in one hop
-    And every redirect terminal resolves to a generated page
+    Given every source redirect uses normalized local paths
+    And every source redirect collapses in one hop
     When `npm run audit:redirects` runs
-    Then stdout shows "Summary: N total, 0 chains, 0 dead-ends, N clean"
+    Then stdout shows zero normalization findings, chains, and cycles
     And the process exits 0
+
+  Scenario: Path normalization
+    Given a redirect source or destination lacks a leading or trailing slash
+    Or it contains duplicate slashes, a query, a fragment, or a non-local URL
+    When the source audit runs
+    Then a normalization finding identifies the source and invalid value
+    And the process exits 1
 
   Scenario: Chain detection
     Given the redirects map contains entry A → B
@@ -71,44 +77,31 @@ Feature: Redirect audit & prune
     Then a single chain entry is emitted for A with via [B, C] and terminal D
     And a separate chain entry is emitted for B with via [C] and terminal D
 
-  Scenario: Cycle in redirects does not hang
+  Scenario: Cycle detection does not hang
     Given the redirects map contains A → B and B → A
     When the audit runs
-    Then a chain entry is emitted with a cycle marker
+    Then a cycle entry is emitted
     And the process exits 1
     And the script does not loop infinitely
 
-  Scenario: Dead-end target detection
-    Given the redirects map contains entry X → /missing/
-    And /missing/ matches no generated page, category route, or static page
-    When the audit runs
-    Then a dead-end entry is emitted listing X and its terminal /missing/
+  Scenario: Generated target validation
+    Given the emitted _redirects file contains entry X → /missing/
+    And /missing/ is not a generated canonical route or real asset
+    When `npm run check:dist` runs after a build
+    Then a redirect-target-missing finding identifies X and /missing/
     And the process exits 1
 
-  Scenario: Bare /{lang}/blog/{id}/ is treated as a dead-end
-    Given the redirects map contains entry X → /fi/blog/43/
-    When the audit runs
-    Then a dead-end entry is emitted for X
-    Because bare id directories are excluded from the valid-route set
-
-  Scenario: Category route is a valid target
-    Given the redirects map contains entry X → /fi/category/technology/
-    And tags[] contains a tag with id "technology"
-    When the audit runs
-    Then X is reported under "clean"
-
-  Scenario: Pre-commit gating fires on MDX rename
+  Scenario: Pre-commit gating fires on redirect-map change
     Given the redirects audit baseline is clean
-    And a developer renames src/pages/fi/blog/43/{old-slug}/ to {new-slug}/
-    And stages the rename without updating redirects.ts
+    And a developer stages a malformed or chained entry in src/lib/redirects.ts
     When the lint-staged pre-commit hook runs
     Then `node --experimental-strip-types scripts/checks/redirects.mjs` runs
-    And the commit is rejected because the audit finds a dead-end pointing at {old-slug}
+    And the commit is rejected
 
   Scenario: CI gating fails the pipeline on regression
-    Given a PR introduces a new chain or dead-end
+    Given a PR introduces a malformed path, chain, cycle, or missing generated target
     When the `validate-content` job runs in GitHub Actions
-    Then the "Run redirect audit" step exits non-zero
+    Then a redirect contract exits non-zero
     And the job fails
 
   Scenario: Astro build is unaffected by the refactor
@@ -132,7 +125,7 @@ export const redirects: Record<string, string> = {
 }
 ```
 
-Audit-internal types (not exported):
+Source-audit types:
 
 ```typescript
 // scripts/checks/redirects.mjs — JSDoc, not runtime
@@ -141,40 +134,27 @@ Audit-internal types (not exported):
  * @property {string} from        — original source key
  * @property {string[]} via       — intermediate hops, in order
  * @property {string} terminal    — final destination after collapsing
- * @property {boolean} isCycle    — true if a cycle was detected
- */
-
-/**
- * @typedef {Object} DeadEndFinding
- * @property {string} from        — redirect source whose terminal is unreachable
- * @property {string} terminal    — the unresolvable destination
+ * @property {boolean} isCycle    — true only for cycle findings
  */
 ```
 
-Valid-route set construction:
-
-1. **Blog pages** — `readdirSync('src/pages/{en,fi,sv}/blog/{id}/{slug}/')` → `/{lang}/blog/{id}/{slug}/`. Bare `/{lang}/blog/{id}/` (without slug) is **excluded**.
-2. **Category pages** — `tags[].id` × `['en','fi','sv']` → `/{lang}/category/{tag.id}/`.
-3. **Static pages** — explicit list: `/`, `/{lang}/`, `/{lang}/{about,contact,blog,newsletter,privacy-policy,recommendations,topics}/`, `/{lang}/topics/{tag.id}/`.
-
 Chain detection: for each redirect source, follow hops transitively until reaching a terminal not in the redirect map (or a cycle). Terminal differs from the immediate destination → chain.
 
-Dead-end detection: terminal not present in the union of (1)+(2)+(3).
+Generated target detection: parse `dist/_redirects`, derive canonical routes and assets from the files in `dist/`, and reject any terminal absent from those generated sets.
 
 ---
 
 ## Dependencies
 
-- [SEO Spec](./spec.md) — covers sitemap exclusion of bare `/{lang}/blog/{id}/` paths (line 154); the audit's "bare id is not a valid route" rule is consistent with that.
+- [Site Hardening Spec](../site-hardening/spec.md) — owns built-output contracts and generated Finnish aliases.
 
 ---
 
 ## Anti-patterns
 
-- **Do not** count other redirect SOURCES as valid terminals when checking dead-ends — that would mask broken chains by labelling them clean. Chain detection handles chains; dead-end detection only consults real routes.
+- **Do not** reconstruct application routes from source directories or hard-coded page lists. Generated output is the route truth.
 - **Do not** auto-edit redirects from the audit script. Audit reports; humans confirm; humans commit. Per-entry approval is required for each prune commit.
-- **Do not** use `import.meta.glob` in the audit script — that helper is Vite-only and silently returns `{}` outside Astro. Use `fs.readdirSync` (precedent: `scripts/checks/cross-file.mjs`).
-- **Do not** enable CI/pre-commit gating before the redirect map is pruned to a clean baseline. The new step will fail immediately and block the PR. Required order: refactor → script → prune (chains then dead-ends) → gating.
+- **Do not** move generated-target checks back into the pre-build source audit. They require a completed build.
 - **Do not** narrow `redirects` to `as const` — Astro's redirect type accepts richer object forms and over-narrowing pessimises future entries; keep `Record<string, string>`.
 - **Do not** remove a redirect just because the source URL "looks old". Removal requires audit evidence of dead-end (terminal unreachable). Static-output Astro generates an HTML stub per redirect source; deletion breaks external links.
 
@@ -182,7 +162,7 @@ Dead-end detection: terminal not present in the union of (1)+(2)+(3).
 
 ## Notes
 
-- **Runtime redirect mechanism**: `output: 'static'` means Astro compiles each redirect source into an HTML stub with `<meta http-equiv="refresh">`, not an HTTP 301. To recover true 301s, the `redirects-file` Astro integration (`src/lib/redirectsIntegration.ts`) emits `dist/_redirects` from the redirect map plus the bare-id → slug pairs; Cloudflare Pages serves those paths as genuine HTTP 301s in production (Pages always follows a `_redirects` rule even when a static asset exists at the same path, so the meta-refresh stubs are bypassed and remain only as an `astro preview` fallback). The audit script still verifies the redirect *map* is clean. Note: `astro preview` does not honour `_redirects`, so a true-301 check requires `npx wrangler pages dev dist`.
+- **Runtime redirect mechanism**: `output: 'static'` means Astro compiles each redirect source into an HTML stub with `<meta http-equiv="refresh">`, not an HTTP 301. To recover true 301s, the `redirects-file` Astro integration (`src/lib/redirectsIntegration.ts`) emits `dist/_redirects` from the redirect map plus the bare-id → slug pairs; Cloudflare Pages serves those paths as genuine HTTP 301s in production (Pages always follows a `_redirects` rule even when a static asset exists at the same path, so the meta-refresh stubs are bypassed and remain only as an `astro preview` fallback). The audit script still verifies the redirect _map_ is clean. Note: `astro preview` does not honour `_redirects`, so a true-301 check requires `npx wrangler pages dev dist`.
 
 ## Open Questions
 
@@ -192,7 +172,8 @@ None.
 
 ## Changelog
 
-| Date       | Change                                   |
-|------------|------------------------------------------|
-| 2026-05-18 | Initial draft                            |
-| 2026-05-18 | Activated; fixed repo link, terminology, anti-patterns, added Notes section |
+| Date       | Change                                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------------------ |
+| 2026-05-18 | Initial draft                                                                                          |
+| 2026-05-18 | Activated; fixed repo link, terminology, anti-patterns, added Notes section                            |
+| 2026-08-25 | Split source graph checks from generated-output target validation; removed manual route reconstruction |
