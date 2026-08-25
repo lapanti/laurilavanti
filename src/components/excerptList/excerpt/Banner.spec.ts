@@ -37,7 +37,7 @@ describe('<Banner />', () => {
             },
         })
 
-        const heading = getByRole(result, 'heading', { level: 2, name: /My Article/i })
+        const heading = getByRole(result, 'heading', { level: 3, name: /My Article/i })
         expect(heading).toBeDefined()
         expect(heading).toHaveTextContent('My Article')
     })

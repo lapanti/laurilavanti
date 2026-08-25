@@ -92,9 +92,7 @@ const seeAllLabels: Record<Lang, (name: string) => string> = {
                         date={node.publishDate}
                         excerpt={node.description}
                         image={node.heroImage}
-                        lang={lang}
                         slug={node.url.replace(/^\//, '').replace(/\/$/, '')}
-                        tags={node.tags}
                         title={node.title}
                     />
                 ))}

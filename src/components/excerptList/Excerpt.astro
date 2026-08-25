@@ -1,5 +1,5 @@
 ---
-import Meta from '../Meta.astro'
+import { colors, typographics } from '../../lib/styles'
 import Banner from './excerpt/Banner.astro'
 import Description from './excerpt/Description.astro'
 
@@ -8,30 +8,51 @@ interface Props {
     date?: string
     excerpt?: string
     image?: string
-    lang?: 'en' | 'fi' | 'sv'
     slug?: string
-    tags?: string[]
     title: string
 }
 
-const { alt, date, excerpt, image, lang = 'fi', slug, tags, title } = Astro.props
+const { alt, date, excerpt, image, slug, title } = Astro.props
 
-const metaAriaLabels = {
-    en: (t: string) => `Meta information for post "${t}"`,
-    fi: (t: string) => `Kirjoituksen "${t}" meta-tiedot`,
-    sv: (t: string) => `Metainformation för inlägget "${t}"`,
-}
+const [dateOnly] = (date ?? '').split('T')
+const [year, month, day] = dateOnly ? dateOnly.split('-') : []
+const dateToDisplay = dateOnly ? `${day}.${month}.${year}` : ''
 ---
 
-<style>
+<style
+    define:vars={{
+        colorsSand: colors.sand,
+        colorsTextSecondary: colors.textSecondary,
+        metaFontFamily: typographics.meta.fontFamily,
+        metaFontWeight: typographics.meta.fontWeight,
+        metaLetterSpacing: typographics.meta.letterSpacing,
+        metaLineHeight: typographics.meta.lineHeight,
+    }}
+>
     li {
+        border-top: 5px solid var(--colorsSand);
+        display: flex;
+        flex-direction: column;
+        gap: 8.8px;
+        padding-top: 16px;
         width: 100%;
+    }
+
+    time {
+        color: var(--colorsTextSecondary);
+        font-family: var(--metaFontFamily);
+        font-size: 14px;
+        font-weight: var(--metaFontWeight);
+        letter-spacing: var(--metaLetterSpacing);
+        line-height: var(--metaLineHeight);
+        padding-top: 4px;
+        text-transform: uppercase;
     }
 </style>
 <li>
     <article aria-label={title} itemscope itemtype="https://schema.org/CreativeWork">
         <Banner alt={alt} image={image} slug={slug} title={title} />
-        {date && tags && <Meta ariaLabel={metaAriaLabels[lang](title)} date={date} lang={lang} tags={tags} />}
+        {date && <time datetime={dateOnly}>{dateToDisplay}</time>}
         <Description excerpt={excerpt} />
     </article>
 </li>

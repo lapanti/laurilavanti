@@ -1,7 +1,5 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
-import { sizes } from '../../../lib/styles'
-import Paragraph from '../../Paragraph.astro'
+import { colors, typographics } from '../../../lib/styles'
 
 interface Props {
     excerpt?: string
@@ -10,11 +8,21 @@ interface Props {
 const { excerpt } = Astro.props
 ---
 
-<style define:vars={{ sizes025: sizes[0.25] }}>
+<style
+    define:vars={{
+        colorsTextSecondary: colors.textSecondary,
+        textSmallFontFamily: typographics.textSmall.fontFamily,
+        textSmallFontWeight: typographics.textSmall.fontWeight,
+        textSmallLineHeight: typographics.textSmall.lineHeight,
+    }}
+>
     p {
-        margin-top: var(--sizes025);
+        color: var(--colorsTextSecondary);
+        font-family: var(--textSmallFontFamily);
+        font-size: 15px;
+        font-weight: var(--textSmallFontWeight);
+        line-height: var(--textSmallLineHeight);
+        margin: 0;
     }
 </style>
-<Paragraph inGrid={false} itemProp="description">
-    {excerpt}
-</Paragraph>
+<p itemprop="description">{excerpt}</p>

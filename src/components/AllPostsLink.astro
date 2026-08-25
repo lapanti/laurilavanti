@@ -1,8 +1,6 @@
 ---
 import type { Lang } from '../content/nav'
 
-import { colors, fontFamilies, fontWeights, sizes } from '../lib/styles'
-
 interface Props {
     lang: Lang
 }
@@ -10,9 +8,9 @@ interface Props {
 const { lang } = Astro.props
 
 const labels: Record<Lang, string> = {
-    en: 'All posts →',
-    fi: 'Kaikki kirjoitukset →',
-    sv: 'Alla inlägg →',
+    en: 'All posts',
+    fi: 'Kaikki kirjoitukset',
+    sv: 'Alla inlägg',
 }
 
 const hrefs: Record<Lang, string> = {
@@ -22,43 +20,13 @@ const hrefs: Record<Lang, string> = {
 }
 ---
 
-<style
-    define:vars={{
-        colorsForestGreen: colors.forestGreen,
-        colorsForestGreen70: colors.forestGreen70,
-        colorsWhite: colors.white,
-        fontFamiliesSans: fontFamilies.sans,
-        fontWeightMedium: fontWeights.medium,
-        sizes1: sizes[1],
-        sizes2: sizes[2],
-    }}
->
+<style>
     .cta-wrapper {
         display: flex;
-        grid-column-start: 3;
         justify-content: center;
-        margin-top: var(--sizes2);
-    }
-
-    a {
-        align-items: center;
-        background-color: var(--colorsForestGreen);
-        border: 1px solid var(--colorsForestGreen);
-        color: var(--colorsWhite);
-        display: inline-flex;
-        font-family: var(--fontFamiliesSans);
-        font-size: var(--sizes1);
-        font-weight: var(--fontWeightMedium);
-        min-block-size: 2.75rem;
-        padding: 0.5rem 1.5rem;
-        text-decoration: none;
-    }
-
-    a:hover {
-        background-color: var(--colorsForestGreen70);
-        border-color: var(--colorsForestGreen70);
+        padding-top: 32px;
     }
 </style>
 <div class="cta-wrapper">
-    <a href={hrefs[lang]}>{labels[lang]}</a>
+    <a class="btn btn--green" href={hrefs[lang]}>{labels[lang]}</a>
 </div>

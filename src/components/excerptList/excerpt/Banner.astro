@@ -1,8 +1,6 @@
 ---
-/* eslint-disable astro/no-unused-css-selector */
 import { getImageSrcset } from '../../../lib/images'
-import { sizes } from '../../../lib/styles'
-import H2 from '../../H2.astro'
+import { colors, typographics } from '../../../lib/styles'
 
 interface Props {
     alt?: string
@@ -15,52 +13,61 @@ const { alt, image, slug, title } = Astro.props
 const img = image ? getImageSrcset(image, '1x1', [400, 560, 750, 1120]) : undefined
 ---
 
-<style define:vars={{ sizes025: sizes[0.25], sizes01875: sizes[0.1875] }}>
+<style
+    define:vars={{
+        colorsDarkGreen: colors.darkGreen,
+        titleFontFamily: typographics.postTitle.fontFamily,
+        titleFontWeight: typographics.postTitle.fontWeight,
+        titleLineHeight: typographics.postTitle.lineHeight,
+    }}
+>
     a {
-        color: black;
+        color: inherit;
+        display: block;
         text-decoration: none;
     }
 
-    a:hover {
-        text-decoration: underline;
-        text-decoration-thickness: var(--sizes01875);
+    .shot {
+        height: 184px;
+        overflow: hidden;
     }
 
-    .excerpt-image {
-        aspect-ratio: 1;
-        height: auto;
+    .shot img {
+        height: 100%;
         object-fit: cover;
         width: 100%;
     }
 
-    a div {
-        align-items: flex-end;
-        display: flex;
-        margin-top: var(--sizes025);
-        position: relative;
-        width: 100%;
+    h3 {
+        color: var(--colorsDarkGreen);
+        font-family: var(--titleFontFamily);
+        font-size: 18px;
+        font-weight: var(--titleFontWeight);
+        line-height: var(--titleLineHeight);
+        margin: 0;
+        padding-top: 8.8px;
     }
 
-    h2 {
-        grid-column-start: auto;
+    a:hover h3 {
+        text-decoration: underline;
+        text-underline-offset: 3px;
     }
 </style>
 <a href={`/${slug}/`} rel="permalink">
     {
         img && (
-            <img
-                alt={alt ?? ''}
-                class="excerpt-image"
-                height={img.height}
-                loading="lazy"
-                sizes="(max-width: 1199px) 100vw, min(33vw, 380px)"
-                src={img.src}
-                srcset={img.srcset}
-                width={img.width}
-            />
+            <div class="shot">
+                <img
+                    alt={alt ?? ''}
+                    height={img.height}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                    src={img.src}
+                    srcset={img.srcset}
+                    width={img.width}
+                />
+            </div>
         )
     }
-    <div>
-        <H2 itemProp="headline">{title}</H2>
-    </div>
+    <h3 itemprop="headline">{title}</h3>
 </a>

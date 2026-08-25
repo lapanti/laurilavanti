@@ -1,4 +1,4 @@
-import { getByRole, getByText, queryByRole } from '@testing-library/dom'
+import { getByRole, getByText } from '@testing-library/dom'
 import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../../tests/helpers'
@@ -83,41 +83,30 @@ describe('<Excerpt />', () => {
         expect(getByText(result, excerpt)).toBeDefined()
     })
 
-    it('should render Meta when date and tags are provided', async () => {
+    it('should render the date as a formatted time element when provided', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                date: '2024-01-01',
+                date: '2024-01-02',
                 slug: 'test-article',
-                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })
 
-        expect(getByRole(result, 'complementary', { name: /Kirjoituksen "Test Article" meta-tiedot/i })).toBeDefined()
+        const time = result.querySelector('time')
+        expect(time).not.toBeNull()
+        expect(time).toHaveAttribute('datetime', '2024-01-02')
+        expect(time).toHaveTextContent('02.01.2024')
     })
 
-    it('should not render Meta when date is missing', async () => {
+    it('should not render a time element when date is missing', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
-                slug: 'test-article',
-                tags: ['tag-1'],
-                title: 'Test Article',
-            },
-        })
-
-        expect(queryByRole(result, 'complementary')).toBeNull()
-    })
-
-    it('should not render Meta when tags are missing', async () => {
-        const result = await renderAstroComponent(Excerpt, {
-            props: {
-                date: '2024-01-01',
                 slug: 'test-article',
                 title: 'Test Article',
             },
         })
 
-        expect(queryByRole(result, 'complementary')).toBeNull()
+        expect(result.querySelector('time')).toBeNull()
     })
 
     it('should render with all props', async () => {
@@ -126,41 +115,10 @@ describe('<Excerpt />', () => {
                 date: '2024-01-01',
                 excerpt: 'Test excerpt',
                 slug: 'test-article',
-                tags: ['tag-1'],
                 title: 'Test Article',
             },
         })
 
         expect(getByRole(result, 'article', { name: /Test Article/i })).toBeDefined()
-    })
-
-    it('should render Meta with English aria-label when lang is en', async () => {
-        const result = await renderAstroComponent(Excerpt, {
-            props: {
-                date: '2024-01-01',
-                lang: 'en',
-                slug: 'test-article',
-                tags: ['tag-1'],
-                title: 'Test Article',
-            },
-        })
-
-        expect(getByRole(result, 'complementary', { name: /Meta information for post "Test Article"/i })).toBeDefined()
-    })
-
-    it('should render Meta with Swedish aria-label when lang is sv', async () => {
-        const result = await renderAstroComponent(Excerpt, {
-            props: {
-                date: '2024-01-01',
-                lang: 'sv',
-                slug: 'test-article',
-                tags: ['tag-1'],
-                title: 'Test Article',
-            },
-        })
-
-        expect(
-            getByRole(result, 'complementary', { name: /Metainformation för inlägget "Test Article"/i })
-        ).toBeDefined()
     })
 })
