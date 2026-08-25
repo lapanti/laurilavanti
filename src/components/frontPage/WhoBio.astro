@@ -1,0 +1,182 @@
+---
+import { getImageSrcset } from '../../lib/images'
+import { colors, typographics } from '../../lib/styles'
+
+interface Props {
+    credentials: string[]
+    eyebrow: string
+    heading: string
+    photographer: string
+    portraitAlt: string
+    portraitImage: string
+}
+
+const { credentials, eyebrow, heading, photographer, portraitAlt, portraitImage } = Astro.props
+const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
+---
+
+<style
+    define:vars={{
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        colorsSand: colors.sand,
+        colorsTextPrimary: colors.textPrimary,
+        colorsTextSecondary: colors.textSecondary,
+        colorsWhite: colors.white,
+        displayFontFamily: typographics.headline.fontFamily,
+        displayFontWeight: typographics.headline.fontWeight,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+        textFontFamily: typographics.text.fontFamily,
+        textFontWeight: typographics.text.fontWeight,
+        textLineHeight: typographics.text.lineHeight,
+        textSmallFontFamily: typographics.textSmall.fontFamily,
+        textSmallFontWeight: typographics.textSmall.fontWeight,
+    }}
+>
+    .who {
+        background: var(--colorsLightSand, #e9e4d4);
+        padding-block: 96px;
+    }
+
+    .eyebrow {
+        color: var(--colorsDarkGreen);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    .who-grid {
+        align-items: start;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 42px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+        max-width: none;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .who :global(.bio) {
+        color: var(--colorsTextPrimary);
+        font-family: var(--textFontFamily);
+        font-weight: var(--textFontWeight);
+        font-size: 17px;
+        line-height: var(--textLineHeight);
+        margin: 0;
+        padding-top: 19.2px;
+    }
+
+    figure {
+        margin: 0;
+        padding-top: 24px;
+    }
+
+    .frame {
+        background: var(--colorsWhite);
+        overflow: hidden;
+    }
+
+    .frame img {
+        aspect-ratio: 564 / 392;
+        object-fit: cover;
+        object-position: 50% 28%;
+        width: 100%;
+    }
+
+    figcaption {
+        color: var(--colorsTextSecondary);
+        font-family: var(--textSmallFontFamily);
+        font-size: 12px;
+        line-height: 20.16px;
+        padding-top: 9.6px;
+    }
+
+    .creds {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 1fr;
+        padding-top: 32px;
+    }
+
+    .creds li {
+        border-left: 4px solid var(--colorsSand);
+        color: var(--colorsTextPrimary);
+        font-family: var(--textSmallFontFamily);
+        font-weight: var(--textSmallFontWeight);
+        font-size: 15px;
+        line-height: 21px;
+        padding: 4px 0 3px 12px;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            max-width: 584px;
+        }
+        .creds {
+            border-top: 0;
+            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding-top: 48px;
+        }
+        .creds li {
+            border-left: 0;
+            border-top: 4px solid var(--colorsSand);
+            padding: 11.2px 0 0;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        .who-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .creds {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+</style>
+<section class="who">
+    <div class="sheet">
+        <div class="inner">
+            <div class="who-grid">
+                <div>
+                    <span class="eyebrow">{eyebrow}</span>
+                    <h2>{heading}</h2>
+                    <slot />
+                </div>
+                <figure>
+                    <div class="frame">
+                        <img
+                            alt={portraitAlt}
+                            height={portrait.height}
+                            sizes="(max-width: 999px) 100vw, 50vw"
+                            src={portrait.src}
+                            srcset={portrait.srcset}
+                            width={portrait.width}
+                        />
+                    </div>
+                    <figcaption>{photographer}</figcaption>
+                </figure>
+            </div>
+            <ul class="creds">
+                {credentials.map((credential) => <li>{credential}</li>)}
+            </ul>
+        </div>
+    </div>
+</section>

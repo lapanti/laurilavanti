@@ -1,0 +1,110 @@
+---
+import { colors, typographics } from '../../lib/styles'
+
+interface Props {
+    allPostsHref: string
+    allPostsLabel: string
+    eyebrow: string
+    heading: string
+}
+
+const { allPostsHref, allPostsLabel, eyebrow, heading } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightSand: colors.lightSand,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+        headlineFontFamily: typographics.headline.fontFamily,
+        headlineFontWeight: typographics.headline.fontWeight,
+        linkRuleFontFamily: typographics.linkRule.fontFamily,
+        linkRuleFontSize: typographics.linkRule.fontSize,
+        linkRuleFontWeight: typographics.linkRule.fontWeight,
+        linkRuleLetterSpacing: typographics.linkRule.letterSpacing,
+        linkRuleLineHeight: typographics.linkRule.lineHeight,
+    }}
+>
+    .writings {
+        background: var(--colorsLightSand);
+        padding-block: 96px;
+    }
+
+    .eyebrow {
+        color: var(--colorsDarkGreen);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    .head {
+        align-items: flex-end;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: space-between;
+    }
+
+    h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--headlineFontFamily);
+        font-size: 48px;
+        font-weight: var(--headlineFontWeight);
+        letter-spacing: -0.015em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .all-posts-link {
+        color: var(--colorsDarkGreen);
+        display: none;
+        font-family: var(--linkRuleFontFamily);
+        font-size: var(--linkRuleFontSize);
+        font-weight: var(--linkRuleFontWeight);
+        letter-spacing: var(--linkRuleLetterSpacing);
+        line-height: var(--linkRuleLineHeight);
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .content {
+        padding-top: 32px;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: 58px;
+        }
+        .all-posts-link {
+            border-bottom: 2px solid currentcolor;
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+    }
+</style>
+<section class="writings section">
+    <div class="sheet">
+        <div class="inner">
+            <div class="head">
+                <div>
+                    <span class="eyebrow">{eyebrow}</span>
+                    <h2>{heading}</h2>
+                </div>
+                <a class="all-posts-link" href={allPostsHref}>{allPostsLabel}</a>
+            </div>
+            <div class="content">
+                <slot />
+            </div>
+        </div>
+    </div>
+</section>

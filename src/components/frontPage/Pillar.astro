@@ -1,0 +1,191 @@
+---
+import { colors, typographics } from '../../lib/styles'
+
+interface Read {
+    href: string
+    label: string
+}
+
+interface Props {
+    eyebrow: string
+    heading: string
+    reads: Read[]
+    tone: 'aqua' | 'oat' | 'peach'
+    vocab: string[]
+}
+
+const { eyebrow, heading, reads, tone, vocab } = Astro.props
+
+const toneColors = {
+    aqua: { ground: colors.aquaBlue, ink: colors.aquaInk, inkSoft: colors.aquaInkSoft },
+    oat: { ground: colors.oat, ink: colors.oatInk, inkSoft: colors.oatSoft },
+    peach: { ground: colors.peach, ink: colors.peachInk, inkSoft: colors.peachInkSoft },
+}[tone]
+---
+
+<style
+    define:vars={{
+        chipFontFamily: typographics.chip.fontFamily,
+        chipFontSize: typographics.chip.fontSize,
+        chipFontWeight: typographics.chip.fontWeight,
+        chipLetterSpacing: typographics.chip.letterSpacing,
+        chipLineHeight: typographics.chip.lineHeight,
+        displayPillarFontFamily: typographics.displayPillar.fontFamily,
+        displayPillarFontWeight: typographics.displayPillar.fontWeight,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+        ground: toneColors.ground,
+        ink: toneColors.ink,
+        inkSoft: toneColors.inkSoft,
+        pillarAnswerFontFamily: typographics.pillarAnswer.fontFamily,
+        pillarAnswerFontSize: typographics.pillarAnswer.fontSize,
+        pillarAnswerFontWeight: typographics.pillarAnswer.fontWeight,
+        pillarAnswerLineHeight: typographics.pillarAnswer.lineHeight,
+        textSmallFontFamily: typographics.textSmall.fontFamily,
+        textSmallFontSize: typographics.textSmall.fontSize,
+        textSmallFontWeight: typographics.textSmall.fontWeight,
+        textSmallLineHeight: typographics.textSmall.lineHeight,
+    }}
+>
+    .pillar {
+        background: var(--ground);
+    }
+
+    .pillar .eyebrow {
+        color: var(--inkSoft);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    .pillar h2 {
+        color: var(--ink);
+        font-family: var(--displayPillarFontFamily);
+        font-size: 48px;
+        font-weight: var(--displayPillarFontWeight);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .pillar-body {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr;
+        padding-top: 40px;
+    }
+
+    .pillar :global(.answer) {
+        color: var(--ink);
+        font-family: var(--pillarAnswerFontFamily);
+        font-size: var(--pillarAnswerFontSize);
+        font-weight: var(--pillarAnswerFontWeight);
+        line-height: var(--pillarAnswerLineHeight);
+        margin: 0;
+    }
+
+    .pillar :global(.detail) {
+        color: var(--ink);
+        font-family: var(--textSmallFontFamily);
+        font-size: var(--textSmallFontSize);
+        font-weight: var(--textSmallFontWeight);
+        line-height: var(--textSmallLineHeight);
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    .vocab {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4.8px;
+        padding-top: 20px;
+    }
+
+    .vocab li {
+        background: rgba(22, 62, 53, 0.14);
+        color: var(--ink);
+        font-family: var(--chipFontFamily);
+        font-size: var(--chipFontSize);
+        font-weight: var(--chipFontWeight);
+        letter-spacing: var(--chipLetterSpacing);
+        line-height: var(--chipLineHeight);
+        padding: 4.48px 8.8px;
+        text-transform: uppercase;
+    }
+
+    .reads {
+        border-top: 3px solid var(--ink);
+        display: grid;
+        gap: 8.8px;
+        margin-top: 24px;
+        padding-top: 18.4px;
+    }
+
+    .reads a {
+        color: var(--ink);
+        display: block;
+        font-family: var(--textSmallFontFamily);
+        font-size: var(--textSmallFontSize);
+        font-weight: 500;
+        line-height: 21px;
+        text-decoration: none;
+    }
+
+    .reads a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    @media (min-width: 769px) {
+        .pillar h2 {
+            font-size: 80px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .pillar h2 {
+            font-size: 108px;
+            letter-spacing: -0.015em;
+        }
+        .pillar-body {
+            gap: 56px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+</style>
+<section class="pillar section">
+    <div class="sheet">
+        <div class="inner">
+            <span class="eyebrow">{eyebrow}</span>
+            <h2>{heading}</h2>
+            <div class="pillar-body">
+                <div>
+                    <slot name="answer" />
+                    <ul class="vocab">
+                        {vocab.map((word) => <li>{word}</li>)}
+                    </ul>
+                </div>
+                <div>
+                    <slot name="detail" />
+                    <ul class="reads">
+                        {
+                            reads.map((read) => (
+                                <li>
+                                    <a href={read.href}>{read.label}</a>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

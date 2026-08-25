@@ -1,0 +1,113 @@
+---
+import { colors, typographics } from '../../lib/styles'
+
+interface Props {
+    eyebrow: string
+    faq: Array<{ a: string; q: string }>
+    heading: string
+}
+
+const { eyebrow, faq, heading } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsDarkGreen: colors.darkGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsLightGray: colors.gray,
+        colorsTextPrimary: colors.textPrimary,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+        headlineFontFamily: typographics.headline.fontFamily,
+        headlineFontWeight: typographics.headline.fontWeight,
+        titleFontFamily: typographics.title.fontFamily,
+        titleFontWeight: typographics.title.fontWeight,
+    }}
+>
+    .faq {
+        background: var(--colorsLightGray);
+        padding-block: 96px;
+    }
+
+    .eyebrow {
+        color: var(--colorsDarkGreen);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--headlineFontFamily);
+        font-size: 42px;
+        font-weight: var(--headlineFontWeight);
+        letter-spacing: -0.015em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .qa {
+        column-gap: 56px;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 32px;
+    }
+
+    .qa > div {
+        border-top: 3px solid var(--colorsDeepForest);
+        padding-block: 30.4px;
+    }
+
+    .qa h3 {
+        color: var(--colorsDeepForest);
+        font-family: var(--titleFontFamily);
+        font-size: 19px;
+        font-weight: var(--titleFontWeight);
+        line-height: 24.7px;
+        margin: 0;
+    }
+
+    .qa .a1 {
+        color: var(--colorsTextPrimary);
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 1.68;
+        margin: 0;
+        padding-top: 10.4px;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: 58px;
+        }
+        .qa {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+</style>
+<section class="faq">
+    <div class="sheet">
+        <div class="inner">
+            <span class="eyebrow">{eyebrow}</span>
+            <h2>{heading}</h2>
+            <div class="qa">
+                {
+                    faq.map((item) => (
+                        <div>
+                            <h3>{item.q}</h3>
+                            <p class="a1">{item.a}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

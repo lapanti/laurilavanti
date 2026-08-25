@@ -1,0 +1,126 @@
+---
+import { colors, typographics } from '../../lib/styles'
+import Stripe from '../Stripe.astro'
+
+interface Props {
+    eyebrow: string
+    heading: string
+}
+
+const { eyebrow, heading } = Astro.props
+---
+
+<style
+    define:vars={{
+        colorsBlueInk: colors.blueInk,
+        colorsBlueInkSoft: colors.blueInkSoft,
+        colorsOffWhite: colors.offWhite,
+        displaySynthesisFontFamily: typographics.displaySynthesis.fontFamily,
+        displaySynthesisFontWeight: typographics.displaySynthesis.fontWeight,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+        textFontFamily: typographics.text.fontFamily,
+        textFontSize: typographics.text.fontSize,
+        textFontWeight: typographics.text.fontWeight,
+        textLineHeight: typographics.text.lineHeight,
+    }}
+>
+    .synth {
+        background: var(--colorsOffWhite);
+        overflow: hidden;
+        padding-block: 88px;
+        position: relative;
+    }
+
+    .synth .inner {
+        position: relative;
+        z-index: 2;
+    }
+
+    .eyebrow {
+        color: var(--colorsBlueInkSoft);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    h2 {
+        color: var(--colorsBlueInk);
+        font-family: var(--displaySynthesisFontFamily);
+        font-size: 48px;
+        font-weight: var(--displaySynthesisFontWeight);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+        max-width: 672px;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .synth :global(p) {
+        color: var(--colorsBlueInk);
+        font-family: var(--textFontFamily);
+        font-size: var(--textFontSize);
+        font-weight: var(--textFontWeight);
+        line-height: var(--textLineHeight);
+        margin: 0;
+        max-width: 672px;
+        padding-top: 28px;
+    }
+
+    .lion {
+        display: block;
+        height: auto;
+        pointer-events: none;
+        position: absolute;
+        right: -40px;
+        top: 20px;
+        width: 183px;
+        z-index: 1;
+    }
+
+    .vstripe {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: 96px;
+        }
+        .lion {
+            display: none;
+        }
+        .vstripe {
+            display: flex;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        h2 {
+            font-size: 110px;
+        }
+    }
+</style>
+<section class="synth">
+    <img alt="" class="lion" height="478" src="/digitaalinen-itsenaisyys-leijona.svg" width="381" />
+    <div class="vstripe">
+        <Stripe orientation="vertical-reversed" />
+    </div>
+    <div class="sheet">
+        <div class="inner">
+            <span class="eyebrow">{eyebrow}</span>
+            <h2>{heading}</h2>
+            <slot />
+        </div>
+    </div>
+</section>

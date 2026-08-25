@@ -1,0 +1,97 @@
+---
+import { colors, typographics } from '../../lib/styles'
+
+interface Props {
+    eyebrow: string
+    ground?: 'sand' | 'white'
+    heading: string
+    id?: string
+}
+
+const { eyebrow, ground = 'sand', heading, id } = Astro.props
+const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
+---
+
+<style
+    define:vars={{
+        colorsDeepForest: colors.forestGreen,
+        colorsEyebrowNeutral: colors.eyebrowNeutral,
+        displayFontFamily: typographics.display.fontFamily,
+        displayFontWeight: typographics.display.fontWeight,
+        eyebrowFontFamily: typographics.eyebrow.fontFamily,
+        eyebrowFontSize: typographics.eyebrow.fontSize,
+        eyebrowFontWeight: typographics.eyebrow.fontWeight,
+        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
+        eyebrowLineHeight: typographics.eyebrow.lineHeight,
+        groundColor,
+        textFontFamily: typographics.text.fontFamily,
+        textFontSize: typographics.text.fontSize,
+        textFontWeight: typographics.text.fontWeight,
+        textLineHeight: typographics.text.lineHeight,
+    }}
+>
+    .plate {
+        background: var(--groundColor);
+    }
+
+    .eyebrow {
+        color: var(--colorsEyebrowNeutral);
+        font-family: var(--eyebrowFontFamily);
+        font-size: var(--eyebrowFontSize);
+        font-weight: var(--eyebrowFontWeight);
+        letter-spacing: var(--eyebrowLetterSpacing);
+        line-height: var(--eyebrowLineHeight);
+        text-transform: uppercase;
+    }
+
+    h2 {
+        color: var(--colorsDeepForest);
+        font-family: var(--displayFontFamily);
+        font-size: 48px;
+        font-weight: var(--displayFontWeight);
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0;
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    .body {
+        display: grid;
+        gap: 20px;
+        padding-top: 24px;
+    }
+
+    .body :global(p) {
+        color: var(--colorsDeepForest);
+        font-family: var(--textFontFamily);
+        font-size: var(--textFontSize);
+        font-weight: var(--textFontWeight);
+        line-height: var(--textLineHeight);
+        margin: 0;
+        max-width: 720px;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: 88px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        h2 {
+            font-size: 120px;
+        }
+    }
+</style>
+<section class="plate section" id={id}>
+    <div class="sheet">
+        <div class="inner">
+            <span class="eyebrow">{eyebrow}</span>
+            <h2>{heading}</h2>
+            <div class="body">
+                <slot />
+            </div>
+        </div>
+    </div>
+</section>
