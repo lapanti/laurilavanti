@@ -189,7 +189,7 @@ export const recommendations: Recommendation[] = [
         },
         name: 'Harri Kiljander',
         recommendation:
-            'Lauri ajattelee insinöörin ratkaisukeskeisesti, mutta muistaa lähteä liikkeelle ihmiskeskeisesti — teknologia palvelee ihmistä ja yhteiskuntaa, eikä ole itsetarkoitus. Yhteiskuntamme on entistä digitaalisempi ja sen myötä myös uudella tavalla haavoittuvampi, joillekin meistä myös vaikeaselkoisempi. Laurilla on osaamista ja kokemusta turvallisten helppokäyttöisten digitaalisten järjestelmien kehittämisestä. Eduskunnassa tarvitaan tällaista osaamista sujuvamman Suomen rakentamiseksi suomalaisille — tämä luo samalla turvallisuutta ja työpaikkoja.',
+            'Lauri ajattelee insinöörimäisesti ja ratkaisukeskeisesti, mutta ihminen edellä: teknologia palvelee yhteiskuntaa, eikä ole itsetarkoitus. Suomi digitalisoituu ja on uudella tavalla haavoittuvampi ja joillekin vaikeaselkoisempi; Laurilla taas on osaamista turvallisten, helppokäyttöisten digitaalisten järjestelmien kehittämisestä. Eduskunnassa tarvitaan juuri tätä — sujuvamman ja turvallisemman Suomen sekä uusien työpaikkojen rakentamiseksi.',
     },
     {
         image: 'Ville-Aarnio',
