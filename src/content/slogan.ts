@@ -23,9 +23,10 @@ export const sloganContent: Record<Lang, Slogan> = {
         words: ['the economy', 'education', 'rights', 'Finland'],
     },
     fi: {
-        candidacy: 'Ehdolla eduskuntaan Uudellamaalla',
-        prefix: 'Koska teknologian tulee palvella',
-        words: ['taloutta', 'sivistystä', 'vapautta', 'Suomea'],
+        candidacy:
+            'Johtava ohjelmistokehittäjä, DI (Aalto) · Kirkkonummen kunnanvaltuutettu · Vihreiden eduskuntavaaliehdokas · Uudenmaan vaalipiiri · 2027',
+        prefix: 'Koska talouden tulee palvella',
+        words: ['taloutta', 'sivistystä', 'vapautta', 'ihmistä'],
     },
     sv: {
         candidacy: 'Kandiderar till riksdagen i Nyland',
