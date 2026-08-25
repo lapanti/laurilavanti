@@ -1,6 +1,6 @@
 ---
 import { newsletterContent } from '../content/newsletter'
-import { colors, fontFamilies, sizes } from '../lib/styles'
+import { colors, signalBandFontFamilies, sizes } from '../lib/styles'
 import H2 from './H2.astro'
 import Link from './Link.astro'
 import Paragraph from './Paragraph.astro'
@@ -32,13 +32,13 @@ const privacyHref = `/${lang}/privacy-policy/`
 
 <style
     define:vars={{
-        colorsBlack: colors.black,
-        colorsForestGreen: colors.forestGreen,
-        colorsForestGreen70: colors.forestGreen70,
-        colorsMoss: colors.moss,
+        colorsDeepForest: colors.forestGreen,
+        colorsOatInkSoft: colors.oatInkSoft,
+        colorsOatYellow: colors.oatYellow,
+        colorsPineGreen: colors.pineGreen,
         colorsWhite: colors.white,
-        fontFamiliesSans: fontFamilies.sans,
-        sizes0875: sizes[0.875],
+        fontFamiliesHeading: signalBandFontFamilies.heading,
+        fontFamiliesSans: signalBandFontFamilies.sans,
         sizes1: sizes[1],
         sizes125: sizes[1.25],
     }}
@@ -95,7 +95,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         letter-spacing: normal !important;
     }
     .ml-form-embedContainer .ml-form-embedWrapper {
-        background-color: var(--colorsWhite);
+        background-color: transparent;
         box-sizing: border-box;
         display: inline-block !important;
         margin: 0;
@@ -136,7 +136,7 @@ const privacyHref = `/${lang}/privacy-policy/`
         float: left;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::placeholder {
-        color: var(--colorsMoss);
+        color: var(--colorsOatInkSoft);
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
         height: auto;
@@ -157,41 +157,57 @@ const privacyHref = `/${lang}/privacy-policy/`
         padding-right: 10px;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
-        background-color: var(--colorsWhite);
-        color: var(--colorsBlack);
-        border-color: var(--colorsForestGreen);
+        background-color: transparent;
+        border-color: var(--colorsDeepForest);
+        border-radius: 0;
         border-style: solid;
-        border-width: 1px;
+        border-width: 3px;
+        box-sizing: border-box;
+        caret-color: var(--colorsPineGreen);
+        color: var(--colorsDeepForest);
         font-family: var(--fontFamiliesSans);
-        font-size: var(--sizes1);
+        font-size: 17px;
         line-height: var(--sizes125);
         margin-bottom: 0;
         margin-top: 0;
-        padding: 10px 10px;
-        width: 100%;
-        box-sizing: border-box;
         overflow-y: initial;
+        padding: 14.4px 16px;
+        width: 100%;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
-        background-color: var(--colorsForestGreen) !important;
-        border-color: var(--colorsForestGreen);
-        border-style: solid;
-        border-width: 1px;
+        background-color: var(--colorsDeepForest) !important;
+        border: 0 !important;
+        border-radius: 0;
         box-shadow: none;
-        color: var(--colorsWhite) !important;
+        color: var(--colorsOatYellow) !important;
         cursor: pointer;
-        font-family: var(--fontFamiliesSans);
-        font-size: var(--sizes1) !important;
-        font-weight: 700;
-        line-height: var(--sizes125);
-        margin: 0 !important;
-        padding: 10px !important;
-        width: 100%;
+        font-family: var(--fontFamiliesHeading);
+        font-size: 21px !important;
+        font-weight: 800;
         height: auto;
+        letter-spacing: 0.08em !important;
+        line-height: 1.4;
+        margin: 0 !important;
+        padding: 15.2px 32px !important;
+        text-transform: uppercase !important;
+        transition:
+            background-color 0.18s ease,
+            transform 0.12s ease;
+        width: 100%;
     }
     .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
-        background-color: var(--colorsForestGreen70) !important;
-        border-color: var(--colorsForestGreen70) !important;
+        background-color: var(--colorsPineGreen) !important;
+    }
+    .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:active {
+        transform: translate(2px, 2px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+            transition: none;
+        }
+        .ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:active {
+            transform: none;
+        }
     }
     @media only screen and (max-width: 1200px) {
         .ml-form-formContent.horozintalForm {
@@ -218,18 +234,19 @@ const privacyHref = `/${lang}/privacy-policy/`
     }
 
     .ml-mobileButton-horizontal button {
-        background-color: var(--colorsForestGreen) !important;
-        border-color: var(--colorsForestGreen) !important;
-        border-style: solid !important;
-        border-width: 1px !important;
+        background-color: var(--colorsDeepForest) !important;
+        border: 0 !important;
+        border-radius: 0 !important;
         box-shadow: none !important;
-        color: var(--colorsWhite) !important;
+        color: var(--colorsOatYellow) !important;
         cursor: pointer;
-        font-family: var(--fontFamiliesSans) !important;
-        font-size: var(--sizes0875) !important;
-        font-weight: 700 !important;
-        line-height: var(--sizes125) !important;
-        padding: 10px !important;
+        font-family: var(--fontFamiliesHeading) !important;
+        font-size: 18px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1.4 !important;
+        padding: 12px 20px !important;
+        text-transform: uppercase !important;
         width: 100% !important;
     }
 
