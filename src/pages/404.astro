@@ -1,5 +1,6 @@
 ---
 import ExcerptList from '../components/ExcerptList.astro'
+import Plate from '../components/Plate.astro'
 import PageLayout from '../layouts/PageLayout.astro'
 import { getAllPosts } from '../lib/posts'
 
@@ -8,9 +9,18 @@ const langMatch = pathname.match(/^\/(en|sv)\//)
 const lang = langMatch ? (langMatch[1] as 'en' | 'sv') : 'fi'
 
 const i18n = {
-    en: { title: 'The page you were looking for was unfor­tunately not found — could it be one of these?' },
-    fi: { title: 'Etsimääsi sivua ei valitet­tavasti löytynyt, olisiko se joku seuraavista?' },
-    sv: { title: 'Sidan du letade efter hittades tyvärr inte — kan det vara någon av dessa?' },
+    en: {
+        alt: 'Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri.',
+        title: 'The page you were looking for was unfor­tunately not found — could it be one of these?',
+    },
+    fi: {
+        alt: 'Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa. Kuva: Markus Isomeri.',
+        title: 'Etsimääsi sivua ei valitet­tavasti löytynyt, olisiko se joku seuraavista?',
+    },
+    sv: {
+        alt: 'Lauri Lavanti står framför en glasvägg, iklädd en mörk kavaj och en mönstrad skjorta. Foto: Markus Isomeri.',
+        title: 'Sidan du letade efter hittades tyvärr inte — kan det vara någon av dessa?',
+    },
 }
 const t = i18n[lang]
 
@@ -36,6 +46,17 @@ const postIndexJson = JSON.stringify(Object.fromEntries(allPosts.map((p) => [p.l
 `}
 />
 
-<PageLayout lang={lang} pageTitle={t.title} title={t.title}>
-    <ExcerptList lang={lang} limit={8} />
+<PageLayout
+    alt={t.alt}
+    heroImage="Lauri-Lavanti-lasijulkisivun-edessa-hero-pysty"
+    lang={lang}
+    mobileHeroImage="Lauri-Lavanti-lasijulkisivun-edessa-hero-vaaka"
+    pageTitle={t.title}
+    plated
+    title={t.title}
+    variant="split"
+>
+    <Plate ground="white">
+        <ExcerptList lang={lang} limit={8} />
+    </Plate>
 </PageLayout>
