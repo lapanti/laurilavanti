@@ -60,6 +60,9 @@ const licenseText: Record<Lang, string> = {
     .footer-mark {
         /* generous clearance: NameLogo's rotate+skew overflows its own layout box by ~4x */
         padding: 40px 0 130px;
+        /* the skew shifts the glyphs' visual left edge ~9px right of the box's actual
+           edge — nudge back so the wordmark lines up with the columns below it */
+        margin-left: -9px;
     }
 
     .foot-grid {
@@ -167,7 +170,9 @@ const licenseText: Record<Lang, string> = {
     <div class="sheet">
         <div class="inner">
             <div class="footer-mark">
-                <NameLogo size="large" tone="light" />
+                <a href={`/${lang}/`}>
+                    <NameLogo size="large" tone="light" />
+                </a>
             </div>
             <div class="foot-grid">
                 <div>
