@@ -1,5 +1,27 @@
 import { defineConfig, devices } from '@playwright/test'
 
+const LOCAL_E2E_URL = 'http://localhost:4321'
+
+export const normalizeE2EUrl = (value: string | undefined): string | null => {
+    if (!value) return null
+
+    let url: URL
+    try {
+        url = new URL(value)
+    } catch {
+        throw new Error('E2E_URL must be an absolute HTTPS URL')
+    }
+
+    if (url.protocol !== 'https:' || url.username || url.password || url.search || url.hash) {
+        throw new Error('E2E_URL must be an absolute HTTPS URL without credentials, query, or fragment')
+    }
+
+    url.pathname = `${url.pathname.replace(/\/+$/, '')}/`
+    return url.href
+}
+
+const remoteE2EUrl = normalizeE2EUrl(process.env.E2E_URL)
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -82,7 +104,7 @@ export default defineConfig({
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('')`. */
-        baseURL: process.env.E2E_URL || 'http://localhost:4321',
+        baseURL: remoteE2EUrl ?? LOCAL_E2E_URL,
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',
@@ -90,10 +112,14 @@ export default defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env.CI ? 4 : undefined,
 
-    /* Run your local dev server before starting the tests */
-    webServer: {
-        command: 'npm run build && npm run preview',
-        url: 'http://localhost:4321',
-        reuseExistingServer: !process.env.CI,
-    },
+    /* Run a local server only when no deployed candidate was supplied. */
+    ...(remoteE2EUrl
+        ? {}
+        : {
+              webServer: {
+                  command: 'npm run build && npm run preview',
+                  reuseExistingServer: !process.env.CI,
+                  url: LOCAL_E2E_URL,
+              },
+          }),
 })
