@@ -1,10 +1,11 @@
 ---
 import type { Lang, NavLink } from '../../content/nav'
 
-/** package 20260824 8pm/Site — every page's header shares this edge gutter (--pad-x). */
-const DESKTOP_PAD_X = '56px'
 import MainNavigationLink from './components/MainNavigationLink.astro'
 import NavigationLink from './components/NavigationLink.astro'
+
+/** package 20260824 8pm/Site — every page's header shares this edge gutter (--pad-x). */
+const DESKTOP_PAD_X = '56px'
 
 interface Props {
     heroShowsMark?: boolean
@@ -16,8 +17,10 @@ interface Props {
 const { heroShowsMark = false, lang, links, variant = 'solid' } = Astro.props
 const navLinks = links.filter((link) => !link.switchToLang)
 const langLinks = links.filter((link) => link.switchToLang)
-/** The overhanging brand sits on the dark hero image and needs to be white; every
- * other case (front-page hidden, or the solid light-sand bar) wants the dark mark. */
+/**
+ * The overhanging brand sits on the dark hero image and needs to be white; every
+ * other case (front-page hidden, or the solid light-sand bar) wants the dark mark.
+ */
 const tone = variant === 'hero' && !heroShowsMark ? 'light' : 'dark'
 ---
 

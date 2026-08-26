@@ -18,18 +18,22 @@ const VARIANTS: Record<string, VariantDef> = {
     background: { fit: 'crop', gravity: 'auto', h: 660, w: 1920 },
     body: { fit: 'crop', gravity: 'auto', h: 1800, w: 2400 },
     hero: { fit: 'crop', gravity: 'face', h: 1320, w: 1728 },
-    /** Split-hero desktop column — the designer's own portrait crop (hero-pysty), not a re-crop. */
-    heroPortrait: { fit: 'crop', gravity: 'face', h: 2240, w: 1170 },
     /** Split-hero mobile band — the designer's own landscape crop (hero-vaaka), not a re-crop. */
     heroLandscape: { fit: 'crop', gravity: 'face', h: 480, w: 800 },
+    /** Split-hero desktop column — the designer's own portrait crop (hero-pysty), not a re-crop. */
+    heroPortrait: { fit: 'crop', gravity: 'face', h: 2240, w: 1170 },
     og: { fit: 'crop', gravity: 'face', h: 630, w: 1200 },
-    /** Post excerpt card thumbnail — a fixed 184px-tall band at a fluid, mostly-wide
-     * card width. `1x1` (a square) doesn't match that shape, over-cropping the face
-     * out of frame once object-fit: cover squeezes it into the landscape band. */
-    postThumb: { fit: 'crop', gravity: 'face', h: 720, w: 1432 },
-    /** A pre-composed social card (photo + wordmark + headline already laid out) —
-     * gravity: 'auto' avoids face-cropping into the text half like `og` would. */
+    /**
+     * A pre-composed social card (photo + wordmark + headline already laid out) —
+     * gravity: 'auto' avoids face-cropping into the text half like `og` would.
+     */
     ogFlat: { fit: 'cover', gravity: 'auto', h: 630, w: 1200 },
+    /**
+     * Post excerpt card thumbnail — a fixed 184px-tall band at a fluid, mostly-wide
+     * card width. `1x1` (a square) doesn't match that shape, over-cropping the face
+     * out of frame once object-fit: cover squeezes it into the landscape band.
+     */
+    postThumb: { fit: 'crop', gravity: 'face', h: 720, w: 1432 },
 }
 
 export function getImage(slug: string, variant: string): CFImageResult {
