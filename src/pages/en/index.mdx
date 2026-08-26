@@ -23,8 +23,6 @@ faq:
     a: "Digital independence means that public services, critical infrastructure, and citizens' data are not at the mercy of a handful of foreign corporations. Lauri Lavanti advocates for policies where Finland and the EU build their own technology base, rather than purchasing surveillance capacity from abroad."
   - q: 'How does technical expertise show up in political decision-making?'
     a: "Lauri Lavanti brings hands-on experience in software development and digital systems to decision-making — he can tell when a technical argument holds and when it's just a sales pitch. His goal is for the public sector to keep pace with technological development and not procure solutions it doesn't understand."
-  - q: 'Why does AI expertise belong in parliamentary decision-making?'
-    a: 'AI is changing work, the economy, and public services faster than legislation can keep up. Parliament needs decision-makers who understand AI from the inside — not just at a high level. Lauri Lavanti is a lead developer who brings hands-on technology expertise directly into political decision-making.'
 ---
 
 import AllPostsLink from '../../components/AllPostsLink.astro'
@@ -41,17 +39,17 @@ import Stripe from '../../components/Stripe.astro'
 
 <Stripe />
 
-<IntroPlate eyebrow="Parliamentary election 2027" heading="Why am I running for parliament?">
-    <p>Politics is at its best when we look after our shared affairs together. I am running because I want to make sure that Finland thrives in the age of AI on its own terms, and that no one is left behind. What matters most to me is openness and honesty, and the belief that people are fundamentally good – we must be able to discuss shared matters with anyone, even when we disagree.</p>
-</IntroPlate>
-
-<IntroPlate eyebrow="Driving theme" ground="white" heading="AI" id="driver">
-    <p>Finland has built high technology for decades, from Vaisala to icebreakers, Nokia, Linux, and Supercell. AI challenges us to write a new chapter in this story, and it is changing work, the economy, and public services faster than legislation can keep up. The question is whether that change happens on our terms or someone else's.</p>
+<IntroPlate eyebrow="Parliamentary election 2027" heading="Why am I running?">
+    <p>For decades, Finland has been a model country for high technology and expertise — from Vaisala to icebreakers, Nokia to Linux, Supercell to ICEYE and IQM. That position is now wavering. At the same time, AI is fundamentally reshaping society: it is changing work, trust in digital services, and how people connect with each other. On top of that, the state's economic situation limits what we can do.</p>
+    <p>Now, more than ever, we need expertise and understanding of technology, AI, and how they affect society and markets. I have a technology degree from Aalto University and over a decade of hands-on experience building secure software and banking services. I understand the different ways technology can be put to use and how it affects society. I also understand where its limits must be set, so that we uphold the rule of law.</p>
+    <p>Some of these limits are especially valuable: they protect all of our privacy and fundamental rights. Privacy protection is not a brake on progress — it is a precondition for democracy.</p>
+    <p>I am Lauri Lavanti — a Kirkkonummi municipal councillor, chair of the Green council group, father of four, lead developer, and Master of Science in Technology. On these pages you'll find my thoughts on the future and what lies ahead for us.</p>
 </IntroPlate>
 
 <Pillar
     eyebrow="Pillar one"
-    heading="Why does vendor dependency cost taxpayers?"
+    heading="Making the economy work"
+    id="driver"
     tone="oat"
     vocab={['Competitiveness', 'Procurement', 'Portability', 'Open source']}
     reads={[
@@ -59,13 +57,13 @@ import Stripe from '../../components/Stripe.astro'
         { href: '/en/blog/62/greens-the-true-defenders-of-the-market-economy/', label: 'Greens – The True Defenders of the Market Economy' },
     ]}
 >
-    <p class="answer" slot="answer">I'm demanding that public AI and digital procurement be built open and portable, so vendor dependency doesn't drain tax money year after year.</p>
-    <p class="detail" slot="detail">My example is eVaka, the open-source early childhood education system developed jointly by Espoo, Tampere, Oulu, and Turku. More than ten municipalities already benefit from it, and because the costs are shared, it saves money every year.</p>
+    <p class="answer" slot="answer">Finland's economy has to work in the age of AI. That means new companies, new jobs, and public services that genuinely use technology instead of just buying it from outside. Without technology expertise in parliament, decisions on AI procurement, data infrastructure, and working life get made by people who don't know what they're buying.</p>
+    <p class="detail" slot="detail">I write about the economy through what I have done for over a decade: building software and software teams across different industries. AI is changing the foundations of work, competitiveness, and public services. Finland can be a pioneer here, but only if public investment is directed at domestic expertise, with a real understanding of what is being done.</p>
 </Pillar>
 
 <Pillar
     eyebrow="Pillar two"
-    heading="Education and equality"
+    heading="Making education seamless"
     tone="peach"
     vocab={['Skills', 'Equality', 'Libraries', 'Lifelong learning']}
     reads={[
@@ -73,26 +71,27 @@ import Stripe from '../../components/Stripe.astro'
         { href: "/en/blog/37/education-is-the-municipalitys-most-important-task/", label: "Education is the municipality's most important task" },
     ]}
 >
-    <p class="answer" slot="answer">Skills need to stay current throughout life and be equally available to everyone, from vocational training to higher education.</p>
-    <p class="detail" slot="detail">I'm deeply concerned about the funding cuts to both vocational and university education — diverse expertise is the foundation of Finland's competitiveness. Libraries are one of the few places that offer free access to knowledge without harvesting user data — in the age of AI, that makes them essential guardians of equality.</p>
+    <p class="answer" slot="answer">Finland's strength has always been its people and their expertise. In the age of AI, education has to stay seamless — from early childhood education to working life and all the way to retirement — so that everyone can develop their potential to the fullest. That way, AI's productivity gains compound for the whole of society, and no one gets left behind.</p>
+    <p class="detail" slot="detail">Education is not a line item to cut first when the budget tightens. It is central infrastructure for the entire post-AI era. Savings on teaching, libraries, vocational training, and studies get paid back tenfold once labour markets change faster than people can learn new things.</p>
 </Pillar>
 
 <Pillar
     eyebrow="Pillar three"
-    heading="Freedom and fundamental rights"
+    heading="Making freedom secure"
     tone="aqua"
     vocab={['Privacy', 'Fundamental rights', 'Rule of law', 'Mass surveillance']}
     reads={[
         { href: '/en/blog/54/chat-control-parliament-was-right/', label: 'Chat control: parliament was right' },
-        { href: '/en/blog/59/council-initiative-strengthening-kirkkonummis-digital-resilience/', label: 'Council initiative: digital resilience' },
+        { href: '/en/blog/48/the-use-of-biometric-identifiers-in-passports-must-not-be-expanded/', label: 'The use of biometric identifiers in passports must not be expanded' },
     ]}
 >
-    <p class="answer" slot="answer">Privacy protection is not a brake on development, but a prerequisite for democracy.</p>
-    <p class="detail" slot="detail">AI makes mass surveillance technically easier, which is exactly why legislation has to hold the line on fundamental rights. Without strong privacy protection, democracy cannot function, and AI must never be used to weaken it.</p>
+    <p class="answer" slot="answer">Freedom is one of the most important questions of the age of AI. It's a question of whether your data, your communications, and your everyday life remain your own, when most of the infrastructure they live on is owned by someone else. Privacy protection is a fundamental right — but the bigger question is whether fundamental rights hold up while we develop technology that makes mass surveillance almost free.</p>
+    <p class="detail" slot="detail">In my career, I've built software in environments where data rules are taken seriously — regulated industries like finance — as well as in environments where data is the business. That experience has made one thing clear: privacy and fundamental rights don't protect themselves. They are protected by laws, regulations, and individuals who care passionately about it.</p>
 </Pillar>
 
 <Synthesis eyebrow="Synthesis" heading="Digital independence">
-    <p>AI is changing everything — work, the economy, and how the state serves us. I write about how it lands on three things that have to keep working: the economy, learning, and freedom. Their synthesis is digital independence: a society that uses technology on its own terms.</p>
+    <p>Finland and Europe need to control their own digital infrastructure. That's why I launched the Digital Independence citizens' initiative, which collected the 50,000 signatures required for parliamentary consideration in July 2026. In the initiative, we demand that Finland reduce its dependence on foreign digital service providers and strengthen digital sovereignty.</p>
+    <p>Finland's public administration is heavily dependent on, for example, major American cloud providers, the so-called hyperscalers — Amazon, Microsoft, and Google. Since 2022, it has become uncomfortably clear that geopolitical power games are here to stay, including in the digital operating environment. Finnish and European alternatives exist: UpCloud is a concrete example of a high-performance domestic cloud service that the public sector can use. I advocate for breaking up public IT procurements, favouring open source, and factoring crisis preparedness — digital security of supply — into procurement decisions.</p>
 </Synthesis>
 
 <WhoBio
