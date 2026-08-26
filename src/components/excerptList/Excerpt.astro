@@ -41,6 +41,7 @@ const tagsToRender = (tags ?? [])
         colorsForestGreen10: colors.forestGreen10,
         colorsSand: colors.sand,
         colorsTextSecondary: colors.textSecondary,
+        colorsWhite: colors.white,
         metaFontFamily: typographics.meta.fontFamily,
         metaFontWeight: typographics.meta.fontWeight,
         metaLetterSpacing: typographics.meta.letterSpacing,
@@ -88,11 +89,19 @@ const tagsToRender = (tags ?? [])
         padding: 4px 9px;
         text-decoration: none;
         text-transform: uppercase;
+        transition:
+            background 0.18s var(--ease),
+            color 0.18s var(--ease),
+            transform 0.12s var(--ease);
     }
 
     .tags a:hover {
-        text-decoration: underline;
-        text-underline-offset: 3px;
+        background: var(--colorsDarkGreen);
+        color: var(--colorsWhite);
+    }
+
+    .tags a:active {
+        transform: translate(var(--press), var(--press));
     }
 </style>
 <li>
