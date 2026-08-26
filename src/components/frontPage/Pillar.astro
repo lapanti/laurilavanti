@@ -9,12 +9,13 @@ interface Read {
 interface Props {
     eyebrow: string
     heading: string
+    id?: string
     reads: Read[]
     tone: 'aqua' | 'oat' | 'peach'
     vocab: string[]
 }
 
-const { eyebrow, heading, reads, tone, vocab } = Astro.props
+const { eyebrow, heading, id, reads, tone, vocab } = Astro.props
 
 const toneColors = {
     aqua: { ground: colors.aquaBlue, ink: colors.aquaInk, inkSoft: colors.aquaInkSoft },
@@ -161,7 +162,7 @@ const toneColors = {
         }
     }
 </style>
-<section class="pillar section">
+<section class="pillar section" id={id}>
     <div class="sheet">
         <div class="inner">
             <span class="eyebrow">{eyebrow}</span>
