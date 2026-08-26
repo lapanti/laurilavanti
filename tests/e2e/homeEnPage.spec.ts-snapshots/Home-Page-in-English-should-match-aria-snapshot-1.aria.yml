@@ -1,5 +1,6 @@
 - main:
   - 'img "Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri."'
+  - text: Lauri Lavanti
   - paragraph: Running for Parliament in Uusimaa
   - heading "Because technology should serve Finland" [level=1]:
     - text: ""
@@ -18,10 +19,14 @@
     - heading "Making the economy work" [level=2]
     - paragraph: Finland’s economy has to work in the age of AI. That means new companies, new jobs, and public services that genuinely use technology instead of just buying it from outside. Without technology expertise in parliament, decisions on AI procurement, data infrastructure, and working life get made by people who don’t know what they’re buying.
     - list:
-      - listitem: Competitiveness
+      - listitem:
+        - link "Competitiveness":
+          - /url: /en/category/economy/
       - listitem: Procurement
       - listitem: Portability
-      - listitem: Open source
+      - listitem:
+        - link "Open source":
+          - /url: /en/category/digital-independence/
     - paragraph: "I write about the economy through what I have done for over a decade: building software and software teams across different industries. AI is changing the foundations of work, competitiveness, and public services. Finland can be a pioneer here, but only if public investment is directed at domestic expertise, with a real understanding of what is being done."
     - list:
       - listitem:
@@ -34,9 +39,15 @@
     - heading "Making education seamless" [level=2]
     - paragraph: Finland’s strength has always been its people and their expertise. In the age of AI, education has to stay seamless — from early childhood education to working life and all the way to retirement — so that everyone can develop their potential to the fullest. That way, AI’s productivity gains compound for the whole of society, and no one gets left behind.
     - list:
-      - listitem: Skills
-      - listitem: Equality
-      - listitem: Libraries
+      - listitem:
+        - link "Skills":
+          - /url: /en/category/education/
+      - listitem:
+        - link "Equality":
+          - /url: /en/category/equality-and-non-discrimination/
+      - listitem:
+        - link "Libraries":
+          - /url: /en/category/culture-and-education/
       - listitem: Lifelong learning
     - paragraph: Education is not a line item to cut first when the budget tightens. It is central infrastructure for the entire post-AI era. Savings on teaching, libraries, vocational training, and studies get paid back tenfold once labour markets change faster than people can learn new things.
     - list:
@@ -50,8 +61,12 @@
     - heading "Making freedom secure" [level=2]
     - paragraph: Freedom is one of the most important questions of the age of AI. It’s a question of whether your data, your communications, and your everyday life remain your own, when most of the infrastructure they live on is owned by someone else. Privacy protection is a fundamental right — but the bigger question is whether fundamental rights hold up while we develop technology that makes mass surveillance almost free.
     - list:
-      - listitem: Privacy
-      - listitem: Fundamental rights
+      - listitem:
+        - link "Privacy":
+          - /url: /en/category/privacy/
+      - listitem:
+        - link "Fundamental rights":
+          - /url: /en/category/freedom/
       - listitem: Rule of law
       - listitem: Mass surveillance
     - paragraph: "In my career, I’ve built software in environments where data rules are taken seriously — regulated industries like finance — as well as in environments where data is the business. That experience has made one thing clear: privacy and fundamental rights don’t protect themselves. They are protected by laws, regulations, and individuals who care passionately about it."
@@ -93,6 +108,8 @@
     - paragraph: Lauri Lavanti brings hands-on experience in software development and digital systems to decision-making — he can tell when a technical argument holds and when it's just a sales pitch. His goal is for the public sector to keep pace with technological development and not procure solutions it doesn't understand.
     - text: Latest
     - heading "Writing" [level=2]
+    - link "All posts":
+      - /url: /en/blog/all/
     - list:
       - listitem:
         - 'article /Running for parliament in \d+: Finland needs digital independence in the age of AI/':
@@ -103,8 +120,12 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: /I am running as a Green candidate in Uusimaa for the \d+ parliamentary election\. My goal is a digitally independent Finland in the age of AI\./
         - list:
-          - listitem: National politics
-          - listitem: Digital independence
+          - listitem:
+            - link "National politics":
+              - /url: /en/category/national-politics/
+          - listitem:
+            - link "Digital independence":
+              - /url: /en/category/digital-independence/
       - listitem:
         - 'article "Digital independence: 5 + 1 choices for everyday life"':
           - 'link "A cartoon image showing a blonde woman holding a laptop computer. The Finnish flag is displayed on the computer screen. A bald eagle is attempting to snatch the computer from the woman. The image is surrounded by text that reads ''Digital independence'', ''Digitaalinen itsenäisyys'' and ''Digital självständighet''. Copyright for the image belongs to the Digital Independence citizens'' initiative. Digital independence: 5 + 1 choices for everyday life"':
@@ -114,8 +135,12 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Digital independence is built through everyday choices. Here are 5 + 1 concrete ways to strengthen it and digital security of supply yourself.
         - list:
-          - listitem: Digital independence
-          - listitem: Digitalisation
+          - listitem:
+            - link "Digital independence":
+              - /url: /en/category/digital-independence/
+          - listitem:
+            - link "Digitalisation":
+              - /url: /en/category/digitalisation/
       - listitem:
         - article "Finland Can Turn Electrification Into a Competitive Edge":
           - link "High-voltage power line pylons against a blue sky Finland Can Turn Electrification Into a Competitive Edge":
@@ -125,9 +150,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Caruna is changing owners, but regulation — not ownership — decides the power grid's future. Finland can turn electrification into a competitive edge.
         - list:
-          - listitem: Infrastructure
-          - listitem: Digital independence
-          - listitem: Economy
+          - listitem:
+            - link "Infrastructure":
+              - /url: /en/category/infrastructure/
+          - listitem:
+            - link "Digital independence":
+              - /url: /en/category/digital-independence/
+          - listitem:
+            - link "Economy":
+              - /url: /en/category/economy/
       - listitem:
         - article "The flag is up. What does Kirkkonummi do next?":
           - link /Rainbow flag flying at the Kirkkonummi municipal hall in June \d+\. The flag is up\. What does Kirkkonummi do next\?/:
@@ -137,9 +168,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: /Kirkkonummi raised the Pride flag for the first time on \d+ June \d+\. The flag matters, but equality also demands concrete action in the autumn budget\./
         - list:
-          - listitem: Kirkkonummi
-          - listitem: Equality & equity
-          - listitem: Freedom
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /en/category/kirkkonummi/
+          - listitem:
+            - link "Equality & equity":
+              - /url: /en/category/equality-and-non-discrimination/
+          - listitem:
+            - link "Freedom":
+              - /url: /en/category/freedom/
       - listitem:
         - article "How does it feel to be in a party where you don't have to compromise on your values?":
           - 'link "Market Greens'' invitation: Liberal, welcome home — image from the vaihdavihreisiin.fi campaign How does it feel to be in a party where you don''t have to compromise on your values?"':
@@ -149,11 +186,21 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: The vaihdavihreisiin.fi campaign invites liberals and social liberals to join the Finnish Greens — the party where you don't have to compromise on your values.
         - list:
-          - listitem: Economy
-          - listitem: Green Party
-          - listitem: Freedom
-          - listitem: National politics
-          - listitem: Marketgreen
+          - listitem:
+            - link "Economy":
+              - /url: /en/category/economy/
+          - listitem:
+            - link "Green Party":
+              - /url: /en/category/green-party/
+          - listitem:
+            - link "Freedom":
+              - /url: /en/category/freedom/
+          - listitem:
+            - link "National politics":
+              - /url: /en/category/national-politics/
+          - listitem:
+            - link "Marketgreen":
+              - /url: /en/category/marketgreen/
       - listitem:
         - article "Greens – The True Defenders of the Market Economy":
           - link /Green Party congress in Turku \d+ Greens – The True Defenders of the Market Economy/:
@@ -163,9 +210,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: The market economy is the best known way to allocate resources. The Greens are its only true defender in Finland – real markets, not accountant economics.
         - list:
-          - listitem: Economy
-          - listitem: Green Party
-          - listitem: National politics
+          - listitem:
+            - link "Economy":
+              - /url: /en/category/economy/
+          - listitem:
+            - link "Green Party":
+              - /url: /en/category/green-party/
+          - listitem:
+            - link "National politics":
+              - /url: /en/category/national-politics/
       - listitem:
         - article "Green economic policy requires a seat at the table":
           - link "Lauri Lavanti standing in a floral shirt against a blue background Green economic policy requires a seat at the table":
@@ -175,9 +228,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Leaving the debt-brake agreement does not change the scale of fiscal adjustment — it removes the Greens from shaping how the adjustment is done.
         - list:
-          - listitem: Economy
-          - listitem: Green Party
-          - listitem: National politics
+          - listitem:
+            - link "Economy":
+              - /url: /en/category/economy/
+          - listitem:
+            - link "Green Party":
+              - /url: /en/category/green-party/
+          - listitem:
+            - link "National politics":
+              - /url: /en/category/national-politics/
       - listitem:
         - article "AI helps secure municipal services, but it is not free":
           - link "Lauri Lavanti stands in a floral shirt against a white background. AI helps secure municipal services, but it is not free":
@@ -187,10 +246,18 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: In Konnevesi, AI cut processing time for road grants from two months to days. Kirkkonummi is too small to act alone — but collaboration makes change possible.
         - list:
-          - listitem: Artificial intelligence
-          - listitem: Kirkkonummi
-          - listitem: Digitalisation
-          - listitem: Enlightenment
+          - listitem:
+            - link "Artificial intelligence":
+              - /url: /en/category/artificial-intelligence/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /en/category/kirkkonummi/
+          - listitem:
+            - link "Digitalisation":
+              - /url: /en/category/digitalisation/
+          - listitem:
+            - link "Enlightenment":
+              - /url: /en/category/enlightenment/
       - listitem:
         - 'article "Council initiative: digital resilience"':
           - 'link "Lauri Lavanti smiling and looking at the camera. He is wearing a white t-shirt that reads Digitaalinen itsenäisyys (Digital independence) with a lion motif above it, and a blazer. Photo by Erkki Laine. Council initiative: digital resilience"':
@@ -200,9 +267,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Kirkkonummi relies on digital systems for nearly all its operations. This initiative calls for mapping dependencies and switching to open file formats.
         - list:
-          - listitem: Kirkkonummi
-          - listitem: Digital independence
-          - listitem: Council motion
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /en/category/kirkkonummi/
+          - listitem:
+            - link "Digital independence":
+              - /url: /en/category/digital-independence/
+          - listitem:
+            - link "Council motion":
+              - /url: /en/category/council-motion/
     - link "All posts":
       - /url: /en/blog/all/
     - text: Newsletter
@@ -210,6 +283,7 @@
     - paragraph: Subscribe to my newsletter and get analysis on the latest developments in AI and technology, and their impact on society, straight to your inbox.
     - text: Email
     - textbox "Email"
+    - button "Subscribe"
     - paragraph:
       - text: You can unsubscribe at any time. For more information, read our
       - link "privacy policy":

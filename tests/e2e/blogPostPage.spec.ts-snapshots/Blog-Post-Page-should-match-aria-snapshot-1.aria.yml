@@ -106,6 +106,8 @@
         - text: ""
     - text: Kirjoitukset
     - heading "Muita kirjoituksia" [level=2]
+    - link "Kaikki kirjoitukset":
+      - /url: /fi/blog/all/
     - list:
       - listitem:
         - article "Terveys kuuluu kaikille":
@@ -116,9 +118,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Poistamalla sote-asiakasmaksut säästetään byrokratiassa, hoidetaan ongelmat ennen kuin ne kasvavat ja varmistetaan, ettei kukaan jää hoidotta.
         - list:
-          - listitem: /Aluevaalit \d+/
-          - listitem: Kirkkonummi
-          - listitem: Sote-uudistus
+          - listitem:
+            - link /Aluevaalit \d+/:
+              - /url: /fi/category/regional-elections-2022/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /fi/category/kirkkonummi/
+          - listitem:
+            - link "Sote-uudistus":
+              - /url: /fi/category/health-and-social-reform/
       - listitem:
         - article "Mitä jos terveyskeskusta ei olisikaan?":
           - link "Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä alla sama ruotsiksi, eli Social- och hälsocentral. Mitä jos terveyskeskusta ei olisikaan?":
@@ -128,9 +136,15 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
         - list:
-          - listitem: /Aluevaalit \d+/
-          - listitem: Kirkkonummi
-          - listitem: Sote-uudistus
+          - listitem:
+            - link /Aluevaalit \d+/:
+              - /url: /fi/category/regional-elections-2022/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /fi/category/kirkkonummi/
+          - listitem:
+            - link "Sote-uudistus":
+              - /url: /fi/category/health-and-social-reform/
       - listitem:
         - article /Asetun ehdolle aluevaaleihin \d+/:
           - link /Kuva Lauri Lavannista pellon edustalla\. Taaempana taustalla on metsää\. Asetun ehdolle aluevaaleihin \d+/:
@@ -140,15 +154,22 @@
           - time: /\d+\.\d+\.\d+/
           - paragraph: Asetan itseni ehdolle aluevaaleihin. Tärkeintä on lähipalvelujen säilyminen, terveydenhuollon pitäminen julkisena ja hoitohenkilökunnan hyvinvointi.
         - list:
-          - listitem: /Aluevaalit \d+/
-          - listitem: Kirkkonummi
-          - listitem: Sote-uudistus
+          - listitem:
+            - link /Aluevaalit \d+/:
+              - /url: /fi/category/regional-elections-2022/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /fi/category/kirkkonummi/
+          - listitem:
+            - link "Sote-uudistus":
+              - /url: /fi/category/health-and-social-reform/
     - link "Kaikki kirjoitukset":
       - /url: /fi/blog/all/
     - heading "Tilaa uutiskirje" [level=2]
     - paragraph: Tilaamalla uutiskirjeeni saat sähköpostiisi analyysejä tuoreimmista kehityskuluista tekoälyn ja teknologian saralla sekä arvioita niiden vaikutuksista yhteiskuntaan.
     - text: Sähköposti
     - textbox "Sähköposti"
+    - button "Tilaa"
     - paragraph:
       - text: Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue
       - link "tietosuojaseloste":
