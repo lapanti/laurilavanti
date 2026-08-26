@@ -51,7 +51,12 @@ import Stripe from '../../components/Stripe.astro'
     heading="Talous toimivaksi"
     id="driver"
     tone="oat"
-    vocab={['Kilpailukyky', 'Hankinnat', 'Siirrettävyys', 'Avoin lähdekoodi']}
+    vocab={[
+        { href: '/fi/category/economy/', label: 'Kilpailukyky' },
+        'Hankinnat',
+        'Siirrettävyys',
+        { href: '/fi/category/digital-independence/', label: 'Avoin lähdekoodi' },
+    ]}
     reads={[
         { href: '/fi/blog/65/suomi-voi-tehda-sahkoistymisesta-kilpailuedun/', label: 'Suomi voi tehdä sähköistymisestä kilpailuedun' },
         { href: '/fi/blog/62/vihreat-markkinatalouden-aito-puolustaja/', label: 'Vihreät – Markkinatalouden aito puolustaja' },
@@ -65,7 +70,12 @@ import Stripe from '../../components/Stripe.astro'
     eyebrow="Pilari kaksi"
     heading="Sivistys saumattomaksi"
     tone="peach"
-    vocab={['Osaaminen', 'Tasa-arvo', 'Kulttuuri', 'Elinikäinen oppiminen']}
+    vocab={[
+        { href: '/fi/category/education/', label: 'Osaaminen' },
+        { href: '/fi/category/equality-and-non-discrimination/', label: 'Tasa-arvo' },
+        { href: '/fi/category/culture-and-education/', label: 'Kulttuuri' },
+        'Elinikäinen oppiminen',
+    ]}
     reads={[
         { href: '/fi/blog/60/tekoaly-auttaa-palvelujen-turvaamisessa-mutta-se-ei-ole-ilmaista/', label: 'Tekoäly auttaa palvelujen turvaamisessa, mutta se ei ole ilmaista' },
         { href: '/fi/blog/37/koulutus-on-kunnan-tarkein-tehtava/', label: 'Koulutus on kunnan tärkein tehtävä' },
@@ -79,7 +89,12 @@ import Stripe from '../../components/Stripe.astro'
     eyebrow="Pilari kolme"
     heading="Vapaus varmaksi"
     tone="aqua"
-    vocab={['Yksityisyys', 'Perusoikeudet', 'Oikeusvaltio', 'Massavalvonta']}
+    vocab={[
+        { href: '/fi/category/privacy/', label: 'Yksityisyys' },
+        { href: '/fi/category/freedom/', label: 'Perusoikeudet' },
+        'Oikeusvaltio',
+        'Massavalvonta',
+    ]}
     reads={[
         { href: '/fi/blog/54/chat-control-parlamentti-toimi-oikein/', label: 'Chat control: parlamentti toimi oikein' },
         { href: '/fi/blog/48/passien-biometristen-tunnisteiden-kayttoa-ei-pida-laajentaa/', label: 'Passien biometristen tunnisteiden käyttöä ei pidä laajentaa' },

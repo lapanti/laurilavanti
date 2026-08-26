@@ -12,7 +12,7 @@ interface Props {
     id?: string
     reads: Read[]
     tone: 'aqua' | 'oat' | 'peach'
-    vocab: string[]
+    vocab: Array<Read | string>
 }
 
 const { eyebrow, heading, id, reads, tone, vocab } = Astro.props
@@ -122,6 +122,16 @@ const toneColors = {
         text-transform: uppercase;
     }
 
+    .vocab a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .vocab a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
     .reads {
         border-top: 3px solid var(--ink);
         display: grid;
@@ -171,7 +181,17 @@ const toneColors = {
                 <div>
                     <slot name="answer" />
                     <ul class="vocab">
-                        {vocab.map((word) => <li>{word}</li>)}
+                        {
+                            vocab.map((item) =>
+                                typeof item === 'string' ? (
+                                    <li>{item}</li>
+                                ) : (
+                                    <li>
+                                        <a href={item.href}>{item.label}</a>
+                                    </li>
+                                )
+                            )
+                        }
                     </ul>
                 </div>
                 <div>
