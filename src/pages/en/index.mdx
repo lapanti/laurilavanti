@@ -51,7 +51,12 @@ import Stripe from '../../components/Stripe.astro'
     heading="Making the economy work"
     id="driver"
     tone="oat"
-    vocab={['Competitiveness', 'Procurement', 'Portability', 'Open source']}
+    vocab={[
+        { href: '/en/category/economy/', label: 'Competitiveness' },
+        'Procurement',
+        'Portability',
+        { href: '/en/category/digital-independence/', label: 'Open source' },
+    ]}
     reads={[
         { href: '/en/blog/65/finland-can-turn-electrification-into-a-competitive-edge/', label: 'Finland Can Turn Electrification Into a Competitive Edge' },
         { href: '/en/blog/62/greens-the-true-defenders-of-the-market-economy/', label: 'Greens – The True Defenders of the Market Economy' },
@@ -65,7 +70,12 @@ import Stripe from '../../components/Stripe.astro'
     eyebrow="Pillar two"
     heading="Making education seamless"
     tone="peach"
-    vocab={['Skills', 'Equality', 'Libraries', 'Lifelong learning']}
+    vocab={[
+        { href: '/en/category/education/', label: 'Skills' },
+        { href: '/en/category/equality-and-non-discrimination/', label: 'Equality' },
+        { href: '/en/category/culture-and-education/', label: 'Libraries' },
+        'Lifelong learning',
+    ]}
     reads={[
         { href: '/en/blog/60/ai-helps-secure-municipal-services-but-it-isnt-free/', label: 'AI helps secure municipal services, but it is not free' },
         { href: "/en/blog/37/education-is-the-municipalitys-most-important-task/", label: "Education is the municipality's most important task" },
@@ -79,7 +89,12 @@ import Stripe from '../../components/Stripe.astro'
     eyebrow="Pillar three"
     heading="Making freedom secure"
     tone="aqua"
-    vocab={['Privacy', 'Fundamental rights', 'Rule of law', 'Mass surveillance']}
+    vocab={[
+        { href: '/en/category/privacy/', label: 'Privacy' },
+        { href: '/en/category/freedom/', label: 'Fundamental rights' },
+        'Rule of law',
+        'Mass surveillance',
+    ]}
     reads={[
         { href: '/en/blog/54/chat-control-parliament-was-right/', label: 'Chat control: parliament was right' },
         { href: '/en/blog/48/the-use-of-biometric-identifiers-in-passports-must-not-be-expanded/', label: 'The use of biometric identifiers in passports must not be expanded' },
