@@ -22,8 +22,12 @@ const [year, month, day] = dateOnly ? dateOnly.split('-') : []
 const dateToDisplay = dateOnly ? `${day}.${month}.${year}` : ''
 
 const tagsToRender = (tags ?? [])
-    .map((tagId) => getTagName(tagId, lang))
-    .filter((name): name is string => name !== undefined)
+    .map((tagId) => {
+        const name = getTagName(tagId, lang)
+
+        return name ? { id: tagId, name } : undefined
+    })
+    .filter((t): t is { id: string; name: string } => t !== undefined)
 ---
 
 <style
@@ -64,7 +68,6 @@ const tagsToRender = (tags ?? [])
         text-transform: uppercase;
     }
 
-    /* labels, not filters — deliberately not links and with no hover state */
     .tags {
         display: flex;
         flex-wrap: wrap;
@@ -73,9 +76,8 @@ const tagsToRender = (tags ?? [])
         padding-top: 14px;
     }
 
-    .tags li {
+    .tags a {
         background: var(--colorsForestGreen10);
-        border-top: 0;
         color: var(--colorsDarkGreen);
         display: block;
         font-family: var(--chipFontFamily);
@@ -84,8 +86,13 @@ const tagsToRender = (tags ?? [])
         letter-spacing: var(--chipLetterSpacing);
         line-height: var(--chipLineHeight);
         padding: 4px 9px;
+        text-decoration: none;
         text-transform: uppercase;
-        width: auto;
+    }
+
+    .tags a:hover {
+        text-decoration: underline;
+        text-underline-offset: 3px;
     }
 </style>
 <li>
@@ -97,8 +104,10 @@ const tagsToRender = (tags ?? [])
     {
         tagsToRender.length > 0 && (
             <ul class="tags">
-                {tagsToRender.map((name) => (
-                    <li>{name}</li>
+                {tagsToRender.map(({ id, name }) => (
+                    <li>
+                        <a href={`/${lang}/category/${id}/`}>{name}</a>
+                    </li>
                 ))}
             </ul>
         )
