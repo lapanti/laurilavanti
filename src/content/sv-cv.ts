@@ -1,4 +1,4 @@
-export const fiduciariesTitle = 'Förtroendeuppdrag'
+export const fiduciariesTitle = 'Förtroende­uppdrag'
 export const fiduciaries = [
     {
         description: [
@@ -113,7 +113,7 @@ export const fiduciaries = [
     },
 ]
 
-export const jobExperiencesTitle = 'Arbetserfarenhet'
+export const jobExperiencesTitle = 'Arbets­erfarenhet'
 export const jobExperiences = [
     {
         company: 'OP',
