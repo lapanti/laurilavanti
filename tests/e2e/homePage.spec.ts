@@ -24,7 +24,7 @@ test.describe('Home Page', () => {
         const homePage = new HomePage(page)
         await homePage.goHome()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 

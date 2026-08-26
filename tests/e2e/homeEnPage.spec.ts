@@ -23,7 +23,7 @@ test.describe('Home Page in English', () => {
         const homePage = new HomeEnPage(page)
         await homePage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 

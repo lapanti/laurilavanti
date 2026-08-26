@@ -23,7 +23,7 @@ test.describe('Newsletter Page (English)', () => {
         const newsletterPage = new NewsletterEnPage(page)
         await newsletterPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 

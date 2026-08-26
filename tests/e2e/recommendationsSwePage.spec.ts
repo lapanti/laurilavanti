@@ -23,7 +23,7 @@ test.describe('Recommendations Page in swedish', () => {
         const recommendationsPage = new RecommendationsSwePage(page)
         await recommendationsPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 

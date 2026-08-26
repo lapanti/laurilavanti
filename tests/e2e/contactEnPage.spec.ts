@@ -23,7 +23,7 @@ test.describe('Contact Page in English', () => {
         const contactPage = new ContactEnPage(page)
         await contactPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 

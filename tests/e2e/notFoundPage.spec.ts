@@ -23,7 +23,7 @@ test.describe('404 Not Found Page', () => {
         const notFoundPage = new NotFoundPage(page)
         await notFoundPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 

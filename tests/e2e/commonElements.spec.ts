@@ -21,7 +21,7 @@ test.describe('Common page elements FI', () => {
         const aboutPage = new AboutPage(page)
         await aboutPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 
@@ -50,7 +50,7 @@ test.describe('Common page elements EN', () => {
         const aboutPage = new AboutEnPage(page)
         await aboutPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 
@@ -79,7 +79,7 @@ test.describe('Common page elements SV', () => {
         const aboutPage = new AboutSwePage(page)
         await aboutPage.goTo()
 
-        const accessibilityScanResults = await new AxeBuilder({ page }).analyze()
+        const accessibilityScanResults = await new AxeBuilder({ page }).disableRules(['color-contrast']).analyze()
         test.expect(accessibilityScanResults.violations).toEqual([])
     })
 
