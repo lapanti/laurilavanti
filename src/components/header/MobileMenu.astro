@@ -13,6 +13,8 @@ interface Props {
 }
 
 const { lang, links, variant = 'solid' } = Astro.props
+const navLinks = links.filter((link) => !link.switchToLang)
+const langLinks = links.filter((link) => link.switchToLang)
 const tone = variant === 'hero' ? 'light' : 'dark'
 ---
 
@@ -128,6 +130,11 @@ const tone = variant === 'hero' ? 'light' : 'dark'
         opacity: 0;
     }
 
+    .langs {
+        display: flex;
+        gap: var(--sizes05);
+    }
+
     /* Open state mirrors the language switcher's active chip (bright green fill)
        rather than morphing the lines into a close icon. */
     .container input[type='checkbox']:checked ~ .hamburger-lines-container {
@@ -170,16 +177,23 @@ const tone = variant === 'hero' ? 'light' : 'dark'
         </div>
         <div class="links on-dark">
             {
-                links.map((link) => (
-                    <NavigationLink
-                        context="mobile"
-                        href={link.href}
-                        label={link.label}
-                        switchToLang={link.switchToLang}
-                        title={link.title}
-                    />
+                navLinks.map((link) => (
+                    <NavigationLink context="mobile" href={link.href} label={link.label} title={link.title} />
                 ))
             }
+            <div class="langs" role="group">
+                {
+                    langLinks.map((link) => (
+                        <NavigationLink
+                            context="mobile"
+                            href={link.href}
+                            label={link.label}
+                            switchToLang={link.switchToLang}
+                            title={link.title}
+                        />
+                    ))
+                }
+            </div>
         </div>
     </div>
 </div>
