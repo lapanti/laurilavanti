@@ -34,7 +34,6 @@ const heroImageAltFallback: Record<Lang, string> = {
 const faq = tag.faq?.[lang]
 const metaDescription = tag.metaDescription[lang]
 const bodyParagraphs = tag.descriptions[lang]
-const [intro, ...restParagraphs] = bodyParagraphs
 ---
 
 <PageLayout
@@ -42,7 +41,6 @@ const [intro, ...restParagraphs] = bodyParagraphs
     description={metaDescription}
     faq={faq}
     heroImage={tag.heroImage ?? heroImageFallback}
-    intro={intro}
     lang={lang}
     mobileHeroImage={mobileHeroImageFallback}
     pageTitle={tag.pageTitle[lang]}
@@ -54,7 +52,7 @@ const [intro, ...restParagraphs] = bodyParagraphs
 >
     <Plate ground="white">
         <PostProse>
-            {restParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
+            {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
             <ExcerptList lang={lang} tag={tag.id} />
         </PostProse>
     </Plate>
