@@ -7,6 +7,7 @@ import Footer from '../components/Footer.astro'
 import GlobalStyle from '../components/GlobalStyle.astro'
 import Head from '../components/Head.astro'
 import Header from '../components/Header.astro'
+import Stripe from '../components/Stripe.astro'
 import {
     colors,
     gridAreas,
@@ -107,6 +108,7 @@ const {
                 articleRowGap: sizes[1],
                 colorsWhite: colors.white,
                 gridAreasMain: gridAreas.main,
+                gridAreasStripe: gridAreas.stripe,
                 gridTemplateColumns,
                 gridTemplateColumnsArticle,
                 gridTemplateRowsLayout,
@@ -120,6 +122,7 @@ const {
                 grid-template-areas:
                     'header'
                     'main'
+                    'stripe'
                     'footer';
                 grid-template-columns: var(--gridTemplateColumns);
                 grid-template-rows: var(--gridTemplateRowsLayoutMobile);
@@ -133,6 +136,10 @@ const {
                 grid-area: var(--gridAreasMain);
                 grid-auto-rows: auto;
                 grid-template-columns: var(--gridTemplateColumnsArticle);
+            }
+
+            body > div > :global(.stripes) {
+                grid-area: var(--gridAreasStripe);
             }
 
             main > article {
@@ -176,6 +183,7 @@ const {
                     <slot />
                 </article>
             </main>
+            <Stripe />
             <Footer lang={lang} />
         </div>
         <script is:inline set:html={'window.__langAlternates=' + JSON.stringify(langAlternates ?? null) + ';'} />
