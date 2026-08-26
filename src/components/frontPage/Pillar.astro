@@ -12,7 +12,7 @@ interface Props {
     id?: string
     reads: Read[]
     tone: 'aqua' | 'oat' | 'peach'
-    vocab: Array<Read | string>
+    vocab: Read[]
 }
 
 const { eyebrow, heading, id, reads, tone, vocab } = Astro.props
@@ -193,15 +193,11 @@ const toneColors = {
                     <slot name="answer" />
                     <ul class="vocab">
                         {
-                            vocab.map((item) =>
-                                typeof item === 'string' ? (
-                                    <li>{item}</li>
-                                ) : (
-                                    <li>
-                                        <a href={item.href}>{item.label}</a>
-                                    </li>
-                                )
-                            )
+                            vocab.map((item) => (
+                                <li>
+                                    <a href={item.href}>{item.label}</a>
+                                </li>
+                            ))
                         }
                     </ul>
                 </div>
