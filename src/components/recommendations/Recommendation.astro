@@ -65,7 +65,6 @@ const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
         color: var(--colorsTextPrimary);
         font-family: var(--quoteBodyFontFamily);
         font-size: var(--quoteBodyFontSize);
-        font-style: var(--quoteBodyFontStyle);
         font-weight: var(--quoteBodyFontWeight);
         line-height: var(--quoteBodyLineHeight);
         margin: 0;
@@ -76,8 +75,13 @@ const img = image ? getImageSrcset(image, '1x1', [448, 896]) : undefined
     /*
      * The quotation marks are decoration, so they live in CSS rather than in the markup.
      * They hang off the quote itself rather than the paragraph so that the markup's own
-     * indentation can't push them away from the text.
+     * indentation can't push them away from the text. Italics live here too, not on the
+     * paragraph, so the paragraph's own computed style stays non-italic (Siteimprove sia-r85).
      */
+    em {
+        font-style: var(--quoteBodyFontStyle);
+    }
+
     em::before,
     em::after {
         content: '”';
