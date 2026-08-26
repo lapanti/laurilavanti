@@ -26,6 +26,15 @@ export default defineConfig({
             maxDiffPixelRatio: 0.25,
             threshold: 0.25,
         },
+        /**
+         * Default aria-snapshot path has no {projectName} segment, so Mobile Chrome
+         * and Google Chrome share one baseline file. Some elements genuinely reflow
+         * differently at mobile viewport widths, so a shared file can't satisfy both
+         * projects. Give aria snapshots their own file per project, same as screenshots.
+         */
+        toMatchAriaSnapshot: {
+            pathTemplate: '{snapshotDir}/{testFileDir}/{testFileName}-snapshots/{arg}{-projectName}{ext}',
+        },
     },
     /* Fail the build on CI if you accidentally left test.only in the source code. */
     forbidOnly: !!process.env.CI,

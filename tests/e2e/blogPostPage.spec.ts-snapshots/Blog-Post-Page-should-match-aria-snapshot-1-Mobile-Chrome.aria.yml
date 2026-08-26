@@ -1,0 +1,174 @@
+- main:
+  - paragraph:
+    - time: /\d+\.\d+\.\d+/
+    - text: 2 min lukuaika
+    - time: "/Päivitetty: \\d+\\.\\d+\\.\\d+/"
+  - heading "Sote on hyvinvointiyhteiskunnan kulmakivi" [level=1]
+  - list:
+    - listitem:
+      - link /Aluevaalit \d+/:
+        - /url: /fi/category/regional-elections-2022/
+    - listitem:
+      - link "Kirkkonummi":
+        - /url: /fi/category/kirkkonummi/
+    - listitem:
+      - link "Sote-uudistus":
+        - /url: /fi/category/health-and-social-reform/
+  - figure:
+    - img "Kuva Lauri Lavannista, taustalla näkyy metsää."
+  - article:
+    - paragraph: Sosiaali- ja terveydenhuolto on kallista. Siitä ei pääse yli eikä ympäri. Mutta jos meillä ei ole hyvin toimivaa sosiaali- ja terveydenhuoltoa, voimmeko enää kutsua maatamme hyvinvointivaltioksi?
+    - heading "Miksi sosiaali- ja terveydenhuolto on kriisissä?" [level=2]
+    - paragraph:
+      - text: Usein julkisuudessa puhutaan talouden sopeuttamisesta, korkeasta velkaantumisasteesta ja julkisten instituutioiden menoista. Mutta entä kolikon kääntöpuoli? Jo ennen koronaa meillä oli
+      - link "pulaa hoitajista":
+        - /url: https://yle.fi/aihe/t/18-328952
+      - text: ja
+      - link "lääkäreistä":
+        - /url: https://www.is.fi/kotimaa/art-2000006278379.html
+      - text: ", ja tilanne on siitä vain pahentunut. Tukitoimintoja on karsittu ja"
+      - link "lääkärit tekevät hallinnollisia töitä":
+        - /url: https://www.hs.fi/paakirjoitukset/art-2000008439006.html
+      - text: . Sairaanhoitajille maksetaan liian
+      - link "matalaa palkkaa":
+        - /url: https://www.iltalehti.fi/tyoelama/a/7c881fab-b5d2-4bc6-b7e8-3b446f74116b
+      - text: työn vaativuuteen ja koulutustasoon nähden.
+      - link "Hoitovelka kasvaa":
+        - /url: https://yle.fi/uutiset/3-11605429
+      - text: päivä päivältä, kun
+      - link "teho-osastot ovat täynnä koronapotilaita":
+        - /url: https://yle.fi/uutiset/3-12205139
+      - text: ja hoitajia joudutaan siirtämään akuutissa tarpeessa pois omilta osastoiltaan.
+      - link "Mielenterveysongelmat yleistyvät":
+        - /url: https://yle.fi/uutiset/3-11286438
+      - text: ja ovat
+      - link "yleisin syy työkyvyttömyyseläkkeelle siirtymiseen":
+        - /url: https://www.etk.fi/ajankohtaista/mielenterveyden-sairaudet-yleisin-tyokyvyttomyyselakkeelle-siirtymisen-syy/
+      - text: .
+      - link "Sosiaalityöntekijöiden asiakasmäärät kasvavat":
+        - /url: https://yle.fi/uutiset/3-10823854
+      - text: . Nuoret syrjäytyvät ja voivat pahoin. Onko meillä varaa olla korjaamatta näitä ongelmia?
+    - heading "Mitä sote-panostukset oikeasti tuottavat?" [level=2]
+    - paragraph: Panostamalla hoitohenkilökuntaan ja lääkäreihin varmistamme sen, että apua saa jatkossakin. Tarjoamalla mielenterveyspalveluita saamme kiinni ongelmista kun niistä voi vielä selviytyä. Huolehtimalla sosiaalityöntekijöiden riittävyydestä, varmistamme, että lasten oikeus turvalliseen kasvuympäristöön toteutuu mahdollisimman hyvin. Ennaltaehkäisemällä vakavampia ongelmia, säästämme pitkällä aikavälillä rahaa, aikaa ja vaivaa kaikilta. Poistamalla asiakasmaksut, pidämme huolta myös heikoimmassa asemassa olevista ennen kuin heille tulee vakavampia ongelmia. Tarjoamalla kattavia sosiaalipalveluita pidämme myös huolen erityisryhmistä ja heidän läheisistään. Kaikella tällä estämme syrjäytymistä ja pysymme pidempään työkykyisinä.
+    - heading "Ennaltaehkäisy on halvempaa kuin hoito" [level=2]
+    - paragraph:
+      - text: Tietenkin sosiaali- ja terveydenhuollossa pitää myös saada rahalle mahdollisimman paljon vastinetta. Halvinta ja tehokkainta olisikin ennaltaehkäisevät toimet. Mittasuhteita antaa se, että
+      - link /vuonna \d+ Uudellamaalla käytettiin 1 \d+ euroa erikoissairaanhoitoon per asukas ja \d+ euroa perusterveydenhuoltoon per asukas/:
+        - /url: https://www.kuntaliitto.fi/sosiaali-ja-terveysasiat/tilastot-ja-erillisselvitykset/kuntien-sosiaali-ja-terveydenhuollon-nettokustannukset-euroaasukas
+      - text: . Malliesimerkki tehokkaasta ennaltaehkäisystä on maksuton ehkäisy nuorille. Esimerkiksi Vantaalla se on tutkitusti
+      - link "vähentänyt ei-toivottuja raskauksia":
+        - /url: https://bmjopen.bmj.com/content/11/2/e043092
+      - link /\d+-\d+-vuotiailla \d+% ja \d+-\d+-vuotiailla \d+%/:
+        - /url: https://terveysportti.mobi/xmedia/duo/duo15044.pdf#2
+      - text: . Toinen hyvä ja ajankohtainen esimerkki on rokotukset. Esimerikiksi
+      - link /2 annoksen sarja koronarokotetta maksaa enintään \d+,\d+ euroa/:
+        - /url: https://www.iltalehti.fi/koronavirus/a/24f02847-25ad-466e-a160-709e51be80e7
+      - text: ja
+      - link /tehohoito koronapotilaalle maksaa keskimäärin \d+ \d+ euroa/:
+        - /url: https://www.iltalehti.fi/kotimaa/a/a5ac42f4-d753-4d24-abaf-a14967e3422b
+      - text: .
+    - paragraph: Sosiaali- ja terveydenhuolto ei ole pelkkä menoerä, vaan sijoitus tulevaisuuteemme. Jokainen järkevästi käytetty euro soteen on askel kohti hyvinvoivaa väestöä. Soten kustannusten kasvua ei hillitä palveluita leikkaamalla, vaan oikeiden palveluiden tarjoamisella oikeaan aikaan.
+    - paragraph: Tasapainotetaanko taloutta vai korjataanko hyvinvointiyhteiskunta?
+    - paragraph:
+      - strong: /Päivitetty \d+\.\d+\.\d+\./
+      - text: /Sote-uudistus toteutui ja Länsi-Uudenmaan hyvinvointialue aloitti toimintansa tammikuussa \d+\. Ennaltaehkäiseviin palveluihin ei edelleenkään panosteta riittävästi — tekstin ydinargumentti on siksi yhtä ajankohtainen kuin kirjoitushetkellä\./
+    - paragraph:
+      - text: "Olen kirjoittanut sote-uudistuksesta laajemmin:"
+      - link "mitä tapahtuisi ilman terveyskeskusta":
+        - /url: /fi/blog/9/mita-jos-terveyskeskusta-ei-olisikaan/
+      - text: ","
+      - link "sote-maksujen poistamisesta":
+        - /url: /fi/blog/11/terveys-kuuluu-kaikille/
+      - text: sekä
+      - link "perusturvajaoston roolista":
+        - /url: /fi/blog/8/perusturvajaosto-mika-se-on/
+      - text: .
+    - paragraph:
+      - emphasis: "/Julkaistu myös: Kirkkonummen Sanomat, \\d+\\. joulukuuta \\d+\\./"
+    - paragraph:
+      - emphasis: "/Julkaistu myös: Länsiväylä, 5\\. tammikuuta \\d+\\./"
+    - complementary "Kirjoituksen Sote on hyvinvointiyhteiskunnan kulmakivi sosiaalisen median jakolinkit":
+      - text: "Jaa:"
+      - link "Jaa kirjoitus \"Sote on hyvinvointiyhteiskunnan kulmakivi\" Mastodonissa":
+        - /url: https://mastodon.social/share?text=Lue%20%22Sote%20on%20hyvinvointiyhteiskunnan%20kulmakivi%22%2C%20jonka%20%40laurilavanti%40mastodon.social%20kirjoitti%0A%0Ahttps%3A%2F%2Flavanti.fi%2Ffi%2Fblog%2F10%2Fsote-on-hyvinvointiyhteiskunnan-kulmakivi%2F
+        - text: ""
+      - link "Jaa kirjoitus \"Sote on hyvinvointiyhteiskunnan kulmakivi\" Blueskyssa":
+        - /url: https://bsky.app/intent/compose?text=Lue%20%22Sote%20on%20hyvinvointiyhteiskunnan%20kulmakivi%22%2C%20jonka%20%40lauri.lavanti.fi%20kirjoitti%0A%0Ahttps%3A%2F%2Flavanti.fi%2Ffi%2Fblog%2F10%2Fsote-on-hyvinvointiyhteiskunnan-kulmakivi%2F
+        - text: ""
+      - link "Jaa kirjoitus \"Sote on hyvinvointiyhteiskunnan kulmakivi\" Threadsissä":
+        - /url: https://threads.com/intent/post?text=Lue%20%22Sote%20on%20hyvinvointiyhteiskunnan%20kulmakivi%22%2C%20jonka%20%40laurilavanti%20kirjoitti%0A%0Ahttps%3A%2F%2Flavanti.fi%2Ffi%2Fblog%2F10%2Fsote-on-hyvinvointiyhteiskunnan-kulmakivi%2F
+        - text: ""
+      - link "Jaa kirjoitus \"Sote on hyvinvointiyhteiskunnan kulmakivi\" LinkedInissä":
+        - /url: https://www.linkedin.com/sharing/share-offsite/?url=https://lavanti.fi/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/
+        - text: ""
+      - link "Jaa kirjoitus \"Sote on hyvinvointiyhteiskunnan kulmakivi\" Facebookissa":
+        - /url: https://www.facebook.com/sharer/sharer.php?u=https://lavanti.fi/fi/blog/10/sote-on-hyvinvointiyhteiskunnan-kulmakivi/
+        - text: ""
+    - text: Kirjoitukset
+    - heading "Muita kirjoituksia" [level=2]
+    - list:
+      - listitem:
+        - article "Terveys kuuluu kaikille":
+          - link "Kuva Lauri Lavannista, taustalla näkyy metsää Terveys kuuluu kaikille":
+            - /url: /fi/blog/11/terveys-kuuluu-kaikille/
+            - img "Kuva Lauri Lavannista, taustalla näkyy metsää"
+            - heading "Terveys kuuluu kaikille" [level=3]
+          - time: /\d+\.\d+\.\d+/
+          - paragraph: Poistamalla sote-asiakasmaksut säästetään byrokratiassa, hoidetaan ongelmat ennen kuin ne kasvavat ja varmistetaan, ettei kukaan jää hoidotta.
+        - list:
+          - listitem:
+            - link /Aluevaalit \d+/:
+              - /url: /fi/category/regional-elections-2022/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /fi/category/kirkkonummi/
+          - listitem:
+            - link "Sote-uudistus":
+              - /url: /fi/category/health-and-social-reform/
+      - listitem:
+        - article "Mitä jos terveyskeskusta ei olisikaan?":
+          - link "Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä alla sama ruotsiksi, eli Social- och hälsocentral. Mitä jos terveyskeskusta ei olisikaan?":
+            - /url: /fi/blog/9/mita-jos-terveyskeskusta-ei-olisikaan/
+            - img "Kuva tiekyltistä, jossa lukee Sosiaali- ja terveyskeskus, sekä alla sama ruotsiksi, eli Social- och hälsocentral."
+            - heading "Mitä jos terveyskeskusta ei olisikaan?" [level=3]
+          - time: /\d+\.\d+\.\d+/
+          - paragraph: Mitä jos Jorvin ensiapu olisi koko läntisen Uudenmaan ainoa päivystys? Mitä jos Jorvissa pitäisi aina jonottaa monta tuntia?
+        - list:
+          - listitem:
+            - link /Aluevaalit \d+/:
+              - /url: /fi/category/regional-elections-2022/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /fi/category/kirkkonummi/
+          - listitem:
+            - link "Sote-uudistus":
+              - /url: /fi/category/health-and-social-reform/
+      - listitem:
+        - article /Asetun ehdolle aluevaaleihin \d+/:
+          - link /Kuva Lauri Lavannista pellon edustalla\. Taaempana taustalla on metsää\. Asetun ehdolle aluevaaleihin \d+/:
+            - /url: /fi/blog/7/ehdolle-aluevaaleihin/
+            - img "Kuva Lauri Lavannista pellon edustalla. Taaempana taustalla on metsää."
+            - heading /Asetun ehdolle aluevaaleihin \d+/ [level=3]
+          - time: /\d+\.\d+\.\d+/
+          - paragraph: Asetan itseni ehdolle aluevaaleihin. Tärkeintä on lähipalvelujen säilyminen, terveydenhuollon pitäminen julkisena ja hoitohenkilökunnan hyvinvointi.
+        - list:
+          - listitem:
+            - link /Aluevaalit \d+/:
+              - /url: /fi/category/regional-elections-2022/
+          - listitem:
+            - link "Kirkkonummi":
+              - /url: /fi/category/kirkkonummi/
+          - listitem:
+            - link "Sote-uudistus":
+              - /url: /fi/category/health-and-social-reform/
+    - link "Kaikki kirjoitukset":
+      - /url: /fi/blog/all/
+    - heading "Tilaa uutiskirje" [level=2]
+    - paragraph: Tilaamalla uutiskirjeeni saat sähköpostiisi analyysejä tuoreimmista kehityskuluista tekoälyn ja teknologian saralla sekä arvioita niiden vaikutuksista yhteiskuntaan.
+    - text: Sähköposti
+    - textbox "Sähköposti"
+    - paragraph:
+      - text: Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue
+      - link "tietosuojaseloste":
+        - /url: /fi/privacy-policy/
+      - text: .
