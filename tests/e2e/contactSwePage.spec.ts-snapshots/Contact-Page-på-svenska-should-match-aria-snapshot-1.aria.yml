@@ -1,54 +1,50 @@
 - main:
+  - 'img "Lauri Lavanti står framför en glasvägg, iklädd en mörk kavaj och en mönstrad skjorta. Foto: Markus Isomeri."'
   - heading "Ta kontakt" [level=1]
-  - img "Lauri Lavanti lutar sig mot en pelare med ett porträtt i bakgrunden, blicken mot kameran, leende. Han har på sig en vit skjorta med blå blomstermönster och en mörk kavaj. Bilden togs av Juha Jantunen."
+  - paragraph: Välkommen! Jag skriver och talar om digital självständighet, artificiell intelligens, digitalisering i stort samt ekonomi. Jag är särskilt intresserad av att höra andras tankar och idéer om dessa ämnen.
   - article:
-    - heading "Kontakta mig" [level=2]
-    - paragraph: Välkommen! Jag skriver och talar om digital självständighet, artificiell intelligens, digitalisering i stort samt ekonomi. Jag är särskilt intresserad av att höra andras tankar och idéer om dessa ämnen.
-    - paragraph: Jag tror att de bästa lösningarna uppstår tillsammans. Därför vill jag höra från dig, oavsett om du är expert, journalist, samarbetspartner eller bara intresserad av diskussion. Jag svarar på alla meddelanden.
-    - paragraph: Skicka ett meddelande till någon av mina sociala mediekonton eller direkt via e-post.
-    - heading "Nyhetsbrev" [level=2]
-    - paragraph:
-      - text: Prenumerera på
-      - link "mitt nyhetsbrev":
-        - /url: /sv/newsletter/
-      - text: och få mina tankar direkt till din e-post.
+    - text: Direktast
     - heading "Var når du mig?" [level=2]
-    - paragraph: "/Telefon: \\d+ \\d+ \\d+ \\(även WhatsApp och Signal\\)/"
-    - paragraph:
-      - text: "E-post:"
-      - link "lauri@lavanti.fi":
-        - /url: mailto:lauri@lavanti.fi
+    - paragraph
+    - paragraph: Jag tror att de bästa lösningarna uppstår tillsammans. Därför vill jag höra från dig, oavsett om du är expert, journalist, samarbetspartner eller bara intresserad av diskussion. Jag svarar på alla meddelanden.
+    - paragraph
+    - link "E-post lauri@lavanti.fi":
+      - /url: mailto:lauri@lavanti.fi
+    - link /Telefon \d+ \d+ \d+ Även WhatsApp och Signal\./:
+      - /url: tel:+358407617605
+    - text: Annanstans
     - heading "Sociala medier" [level=2]
-    - list:
+    - list "Lauris konton i sociala medier":
       - listitem:
-        - text: "» Mastodon:"
-        - link "@laurilavanti@mastodon.social":
+        - link "Mastodon":
           - /url: https://mastodon.social/@laurilavanti
       - listitem:
-        - text: "» Bluesky:"
-        - link "@lauri.lavanti.fi":
+        - link "Bluesky":
           - /url: https://bsky.app/profile/lauri.lavanti.fi
       - listitem:
-        - text: "» Threads:"
-        - link "@laurilavanti":
+        - link "Threads":
           - /url: https://www.threads.com/@laurilavanti
       - listitem:
-        - text: "» LinkedIn:"
-        - link "laurilavanti":
+        - link "LinkedIn":
           - /url: https://www.linkedin.com/in/laurilavanti
       - listitem:
-        - text: "» Instagram:"
-        - link "@laurilavanti":
+        - link "Instagram":
           - /url: https://www.instagram.com/laurilavanti/
       - listitem:
-        - text: "» Facebook:"
-        - link "laurilavanti":
+        - link "Facebook":
           - /url: https://www.facebook.com/laurilavanti
       - listitem:
-        - text: "» TikTok:"
-        - link "@laurilavanti":
+        - link "TikTok":
           - /url: https://www.tiktok.com/@laurilavanti
       - listitem:
-        - text: "» RSS för denna sida:"
         - link "RSS-flöde":
           - /url: /sv/rss.xml
+    - heading "Prenumerera på nyhetsbrevet" [level=2]
+    - paragraph: Prenumerera på mitt nyhetsbrev och få analyser av den senaste utvecklingen inom AI och teknik, samt dess påverkan på samhället, direkt till din inkorg.
+    - text: E-post
+    - textbox "E-post"
+    - paragraph:
+      - text: Du kan avsluta prenumerationen när som helst. För mer information, läs vår
+      - link "integritetspolicy":
+        - /url: /sv/privacy-policy/
+      - text: .

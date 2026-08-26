@@ -5,18 +5,26 @@
     - /url: "#footer"
   - link "Lauri Lavanti":
     - /url: /en/
-  - link "About Lauri":
-    - /url: /en/about/
-  - link "Writing":
-    - /url: /en/blog/
-  - link "Contact info":
-    - /url: /en/contact/
-    - text: ""
-  - link "Newsletter":
-    - /url: /en/newsletter/
-  - link "FI – Suomeksi":
-    - /url: /fi/about/
-    - text: ""
-  - link "SV – På svenska":
-    - /url: /sv/about/
-    - text: ""
+  - navigation "Päävalikko":
+    - link "About Lauri":
+      - /url: /en/about/
+    - link "Endorsements for Lauri":
+      - /url: /en/recommendations/
+      - text: ""
+    - link "Writing":
+      - /url: /en/blog/
+    - link "Contact info":
+      - /url: /en/contact/
+      - text: ""
+    - link "Newsletter":
+      - /url: /en/newsletter/
+  - group:
+    - link "FI – Suomeksi":
+      - /url: /fi/about/
+      - text: ""
+    - link "SV – På svenska":
+      - /url: /sv/about/
+      - text: ""
+    - link "EN – In English":
+      - /url: /en/about/
+      - text: ""

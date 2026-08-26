@@ -1,21 +1,20 @@
 - main:
-  - heading "Endorsements and testimonials about Lauri" [level=1]
-  - img "Lauri Lavanti standing in a hallway with his hands in his pockets, looking at the camera. Wearing a dark suit and a white dress shirt."
+  - 'img "Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri."'
+  - heading "Endorsements and testimonials about Lauri" [level=1]:
+    - text: ""
+    - emphasis: about Lauri
+  - paragraph: On this page, you will find recommendations and comments about Lauri Lavanti.
   - article:
-    - complementary "Why choose Lauri?":
-      - heading "Why choose Lauri?" [level=2]
-      - list:
-        - listitem: » Lauri fills the expertise gap in technology and information policy in Parliament. Experts like him are exactly what we need.
-        - listitem: » Lauri is an intelligent and skilled influencer. His ability to collaborate is also valued in the workplace and across party lines.
-        - listitem: » Lauri combines technology, economics, and justice. He has a vision for a better society.
-        - listitem: » Lauri advocates for Finland's digital sovereignty, focusing on human-centered and economically sustainable solutions.
-        - listitem: » This page features recommendations from people who know Lauri.
-      - button "More"
-    - paragraph: On this page, you will find recommendations and comments about Lauri Lavanti.
+    - text: Recommendations
+    - heading "Why choose Lauri?" [level=2]
+    - list:
+      - listitem: Lauri fills the expertise gap in technology and information policy in Parliament. Experts like him are exactly what we need.
+      - listitem: Lauri is an intelligent and skilled influencer. His ability to collaborate is also valued in the workplace and across party lines.
+      - listitem: Lauri combines technology, economics, and justice. He has a vision for a better society.
+      - listitem: Lauri advocates for Finland's digital sovereignty, focusing on human-centered and economically sustainable solutions.
     - heading "Why do people recommend Lauri?" [level=2]
     - paragraph: The recommendations below say more about Lauri than any résumé. They come from people who have worked with him, followed his politics, or know him personally – entrepreneurs, members of parliament, colleagues, and elected officials across party lines.
     - paragraph: "One message recurs: Lauri combines deep expertise in technology and the economy with fairness and humanity. He listens, builds bridges, and holds to his principles even when it is hard."
-    - paragraph: Read the recommendations below!
     - list:
       - listitem:
         - article:
@@ -75,9 +74,10 @@
             - text: Mari Holopainen Member of Parliament, M.Sc. (Econ.)
       - listitem:
         - article:
+          - img "Photo of Harri Kiljander. He is standing on the deck of a sailboat wearing sunglasses and a neon-green beanie, dressed in a yellow sailing jacket and a life vest."
           - blockquote:
             - paragraph:
-              - emphasis: Lauri ajattelee insinöörin ratkaisukeskeisesti, mutta muistaa lähteä liikkeelle ihmiskeskeisesti — teknologia palvelee ihmistä ja yhteiskuntaa, eikä ole itsetarkoitus. Yhteiskuntamme on entistä digitaalisempi ja sen myötä myös uudella tavalla haavoittuvampi, joillekin meistä myös vaikeaselkoisempi. Laurilla on osaamista ja kokemusta turvallisten helppokäyttöisten digitaalisten järjestelmien kehittämisestä. Eduskunnassa tarvitaan tällaista osaamista sujuvamman Suomen rakentamiseksi suomalaisille — tämä luo samalla turvallisuutta ja työpaikkoja.
+              - emphasis: "Lauri ajattelee insinöörimäisesti ja ratkaisukeskeisesti, mutta ihminen edellä: teknologia palvelee yhteiskuntaa, eikä ole itsetarkoitus. Suomi digitalisoituu ja on uudella tavalla haavoittuvampi ja joillekin vaikeaselkoisempi; Laurilla taas on osaamista turvallisten, helppokäyttöisten digitaalisten järjestelmien kehittämisestä. Eduskunnassa tarvitaan juuri tätä — sujuvamman ja turvallisemman Suomen sekä uusien työpaikkojen rakentamiseksi."
             - text: Harri Kiljander CEO, Alpha Design Partners
       - listitem:
         - article:
@@ -93,3 +93,25 @@
             - paragraph:
               - emphasis: Lauri on järjellä ajatteleva henkilö. Joka ymmärtää talousasiat ja markkinatalouden merkityksen. Voin rehellisesti suositella Lauria.
             - text: Panu Laturi Former Secretary General of the Green Party, disability pensioner
+      - listitem:
+        - article:
+          - img "Photo of Samuel Rinnetmäki. Close-up portrait, wearing a dark turtleneck sweater, with short greying hair."
+          - blockquote:
+            - paragraph:
+              - emphasis: Lauri ymmärtää tekniikkaa. Hän osaa ajatella ja argumentoida siitä tavalla, jota poliittisessa päätöksenteossa tarvitaan juuri nyt.
+            - text: Samuel Rinnetmäki CTO
+      - listitem:
+        - article:
+          - img "Photo of Roni Öberg. He is on the deck of a sailboat, wearing a red cap and a red sailing jacket with a life vest, holding a mug of coffee at the helm."
+          - blockquote:
+            - paragraph:
+              - emphasis: En valitse ehdokastani ensisijaisesti puolueen perusteella, vaan arvostan päätöksenteossa osaamista, pragmaattisuutta ja kykyä ymmärtää myös vaikeiden päätösten käytännön seurauksia. Laurissa arvostan erityisesti kykyä yhdistää teknologian, talouden ja yhteiskunnan kysymyksiä ilman turhaa ideologista jargonia. Kaikesta meidän ei tarvitse olla samaa mieltä (eikä pidäkään) mutta Laurin kanssa voi luottaa siihen, että näkemyksen taustalla on ajattelua, perehtymistä ja halua löytää toimivia ratkaisuja sekä kyky diplomatiaan. Siksi voin hyvillä mielin suositella Lauria.
+            - text: Roni Öberg Program Manager
+    - heading "Subscribe to the newsletter" [level=2]
+    - paragraph: Subscribe to my newsletter and get analysis on the latest developments in AI and technology, and their impact on society, straight to your inbox.
+    - text: Email
+    - textbox "Email"
+    - paragraph:
+      - text: You can unsubscribe at any time. For more information, read our
+      - link "privacy policy":
+        - /url: /en/privacy-policy/

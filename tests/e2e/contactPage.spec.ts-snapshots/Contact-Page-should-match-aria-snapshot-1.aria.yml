@@ -1,54 +1,50 @@
 - main:
+  - 'img "Lauri Lavanti seisoo lasiseinän edessä tummassa pikkutakissa ja kuviollisessa paidassa. Kuva: Markus Isomeri."'
   - heading "Ota yhteyttä" [level=1]
-  - img "Lauri Lavanti nojaa pylvääseen, taustalla muotokuva, katsoo kameraan, hymyillen. Hänellä on päällään valkoinen kauluspaita sinisillä kukkakuvioilla ja tumma pikkutakki. Kuvan otti Juha Jantunen."
+  - paragraph: Tervetuloa! Kirjoitan ja puhun digitaalisesta itsenäisyydestä, tekoälystä, digitalisaatiosta laajemminkin sekä taloudesta. Olen erityisen kiinnostunut kuulemaan myös muiden ajatuksia ja ideoita näiden teemojen ympärillä.
   - article:
-    - heading "Ollaan yhteydessä" [level=2]
-    - paragraph: Tervetuloa! Kirjoitan ja puhun digitaalisesta itsenäisyydestä, tekoälystä, digitalisaatiosta laajemminkin sekä taloudesta. Olen erityisen kiinnostunut kuulemaan myös muiden ajatuksia ja ideoita näiden teemojen ympärillä.
-    - paragraph: Uskon, että parhaat ratkaisut syntyvät yhdessä. Siksi haluan kuulla sinulta, olitpa sitten asiantuntija, toimittaja, yhteistyökumppani tai vain kiinnostunut keskustelemaan. Vastaan kaikkiin viesteihin.
-    - paragraph: Lähetä viesti jollekin sosiaalisen median tileistäni tai suoraan sähköpostiini.
-    - heading "Uutiskirje" [level=2]
-    - paragraph:
-      - text: Tilaa
-      - link "uutiskirjeeni":
-        - /url: /fi/newsletter/
-      - text: ja saat ajatuksiani suoraan sähköpostiisi.
+    - text: Suorin reitti
     - heading "Mistä minut saa kiinni?" [level=2]
-    - paragraph: "/Puhelin: \\d+ \\d+ \\d+ \\(myös WhatsApp ja Signal\\)/"
-    - paragraph:
-      - text: "Sähköposti:"
-      - link "lauri@lavanti.fi":
-        - /url: mailto:lauri@lavanti.fi
+    - paragraph
+    - paragraph: Uskon, että parhaat ratkaisut syntyvät yhdessä. Siksi haluan kuulla sinulta, olitpa sitten asiantuntija, toimittaja, yhteistyökumppani tai vain kiinnostunut keskustelemaan. Vastaan kaikkiin viesteihin.
+    - paragraph
+    - link "Sähköposti lauri@lavanti.fi":
+      - /url: mailto:lauri@lavanti.fi
+    - link /Puhelin \d+ \d+ \d+ Myös WhatsApp ja Signal\./:
+      - /url: tel:+358407617605
+    - text: Muualla
     - heading "Sosiaalinen media" [level=2]
-    - list:
+    - list "Laurin sosiaalisen median tilit":
       - listitem:
-        - text: "» Mastodon:"
-        - link "@laurilavanti@mastodon.social":
+        - link "Mastodon":
           - /url: https://mastodon.social/@laurilavanti
       - listitem:
-        - text: "» Bluesky:"
-        - link "@lauri.lavanti.fi":
+        - link "Bluesky":
           - /url: https://bsky.app/profile/lauri.lavanti.fi
       - listitem:
-        - text: "» Threads:"
-        - link "@laurilavanti":
+        - link "Threads":
           - /url: https://www.threads.com/@laurilavanti
       - listitem:
-        - text: "» LinkedIn:"
-        - link "laurilavanti":
+        - link "LinkedIn":
           - /url: https://www.linkedin.com/in/laurilavanti
       - listitem:
-        - text: "» Instagram:"
-        - link "@laurilavanti":
+        - link "Instagram":
           - /url: https://www.instagram.com/laurilavanti/
       - listitem:
-        - text: "» Facebook:"
-        - link "laurilavanti":
+        - link "Facebook":
           - /url: https://www.facebook.com/laurilavanti
       - listitem:
-        - text: "» TikTok:"
-        - link "@laurilavanti":
+        - link "TikTok":
           - /url: https://www.tiktok.com/@laurilavanti
       - listitem:
-        - text: "» RSS tälle sivulle:"
         - link "RSS-syöte":
           - /url: /fi/rss.xml
+    - heading "Tilaa uutiskirje" [level=2]
+    - paragraph: Tilaamalla uutiskirjeeni saat sähköpostiisi analyysejä tuoreimmista kehityskuluista tekoälyn ja teknologian saralla sekä arvioita niiden vaikutuksista yhteiskuntaan.
+    - text: Sähköposti
+    - textbox "Sähköposti"
+    - paragraph:
+      - text: Voit perua uutiskirjeen koska tahansa. Lisätietoja varten lue
+      - link "tietosuojaseloste":
+        - /url: /fi/privacy-policy/
+      - text: .
