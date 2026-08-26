@@ -23,6 +23,9 @@ const VARIANTS: Record<string, VariantDef> = {
     /** Split-hero mobile band — the designer's own landscape crop (hero-vaaka), not a re-crop. */
     heroLandscape: { fit: 'crop', gravity: 'face', h: 480, w: 800 },
     og: { fit: 'crop', gravity: 'face', h: 630, w: 1200 },
+    /** A pre-composed social card (photo + wordmark + headline already laid out) —
+     * gravity: 'auto' avoids face-cropping into the text half like `og` would. */
+    ogFlat: { fit: 'cover', gravity: 'auto', h: 630, w: 1200 },
 }
 
 export function getImage(slug: string, variant: string): CFImageResult {

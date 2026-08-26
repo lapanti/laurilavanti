@@ -23,7 +23,7 @@ type Props = MDXLayoutProps<{
 const { frontmatter } = Astro.props
 const { alt, description, faq, heroImage, lang, mobileHeroImage, pageTitle, slug, type } = frontmatter
 
-const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
+const ogImage = getImage('og-image-lauri-lavanti', 'ogFlat').src
 const resolvedLang = lang ?? 'fi'
 const slogan = sloganContent[resolvedLang]
 ---
@@ -35,7 +35,7 @@ const slogan = sloganContent[resolvedLang]
     heroShowsMark
     lang={lang}
     ogImage={ogImage}
-    ogImageAlt={alt}
+    ogImageAlt="Lauri Lavanti"
     plated
     slug={slug}
     title={pageTitle}

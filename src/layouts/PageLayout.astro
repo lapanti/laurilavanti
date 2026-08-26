@@ -57,7 +57,7 @@ const {
     variant = 'page',
 } = props
 
-const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
+const ogImage = getImage('og-image-lauri-lavanti', 'ogFlat').src
 
 const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }
 const categoryLabel: Record<string, string> = { en: 'Category', fi: 'Kategoria', sv: 'Kategori' }
@@ -79,7 +79,7 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     lang={lang}
     noindex={noindex}
     ogImage={ogImage}
-    ogImageAlt={alt}
+    ogImageAlt="Lauri Lavanti"
     plated={plated}
     slug={slug}
     title={pageTitle}
