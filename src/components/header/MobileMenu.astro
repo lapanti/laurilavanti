@@ -52,6 +52,12 @@ const tone = variant === 'hero' ? 'light' : 'dark'
         justify-content: flex-start;
     }
 
+    /* hand-tuned: the wordmark's skew makes it read as slightly low even though its
+       box is centered — nudge up 1px. */
+    .brand :global(.name-logo) {
+        margin-top: -1px;
+    }
+
     .container > div ~ div {
         justify-content: flex-end;
     }
@@ -170,7 +176,7 @@ const tone = variant === 'hero' ? 'light' : 'dark'
     }
 </style>
 <div class="container">
-    <div>
+    <div class="brand">
         <MainNavigationLink lang={lang} tone={tone} />
     </div>
     <div>
