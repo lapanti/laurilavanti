@@ -2,19 +2,25 @@
 import { colors, fontSizes, typographics } from '../lib/styles'
 
 interface Props {
+    /**
+     * Scales both lines' font-size uniformly — a real size change, not a post-hoc
+     * transform, so the mark's own layout box grows to fit (no clipping by an
+     * ancestor's overflow:hidden).
+     */
+    scale?: number
     size?: 'large' | 'small'
     /** Signal Band visual rebrand: which ground the mark sits on. */
     tone?: 'dark' | 'light'
 }
 
-const { size = 'large', tone = 'light' } = Astro.props
+const { scale = 1, size = 'large', tone = 'light' } = Astro.props
 const { fontFamily, fontWeight } = typographics.h1
 const { fontSize } = size === 'large' ? typographics.h1 : fontSizes[1.5]
 const firstNameFontSize = size === 'large' ? '22px' : '10px'
 const textColor = tone === 'light' ? colors.white : colors.forestGreen
 ---
 
-<style define:vars={{ firstNameFontSize, fontFamily, fontSize, fontWeight, textColor }}>
+<style define:vars={{ firstNameFontSize, fontFamily, fontSize, fontWeight, scale, textColor }}>
     .name-logo {
         display: flex;
         flex-direction: column;
@@ -24,12 +30,12 @@ const textColor = tone === 'light' ? colors.white : colors.forestGreen
         color: var(--textColor);
         font-family: var(--fontFamily);
         font-weight: var(--fontWeight);
-        font-size: var(--fontSize);
+        font-size: calc(var(--fontSize) * var(--scale));
         line-height: 1;
         text-transform: uppercase;
     }
     .name-logo .first-name {
-        font-size: var(--firstNameFontSize);
+        font-size: calc(var(--firstNameFontSize) * var(--scale));
     }
 </style>
 <span class="name-logo"><span class="first-name">Lauri</span> <span>Lavanti</span></span>

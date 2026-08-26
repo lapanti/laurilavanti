@@ -54,13 +54,6 @@ const tone = variant === 'hero' && !heroShowsMark ? 'light' : 'dark'
         top: 14px;
     }
 
-    /* NameLogo's "small" size renders ~70px wide; the desktop nav wants a more
-       prominent 170px mark in every non-front-page context (package 20260824
-       8pm/Site/laurista.html and velkajarru.html both size the brand at 170px). */
-    .brand :global(.name-logo) {
-        transform: rotate(-10deg) skew(-10deg) scale(2.43);
-    }
-
     nav {
         display: flex;
         gap: 14px;
@@ -86,7 +79,7 @@ const tone = variant === 'hero' && !heroShowsMark ? 'light' : 'dark'
             { hidden: variant === 'hero' && heroShowsMark, overhang: variant === 'hero' && !heroShowsMark },
         ]}
     >
-        <MainNavigationLink lang={lang} tone={tone} />
+        <MainNavigationLink lang={lang} scale={2.43} tone={tone} />
     </div>
     <nav aria-label="Päävalikko">
         {

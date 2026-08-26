@@ -6,10 +6,11 @@ import NameLogo from '../../NameLogo.astro'
 
 interface Props {
     lang?: Lang
+    scale?: number
     tone?: 'dark' | 'light'
 }
 
-const { lang = 'fi', tone = 'light' } = Astro.props
+const { lang = 'fi', scale = 1, tone = 'light' } = Astro.props
 const { pathname } = Astro.url
 const href = `/${lang}/`
 const underlineColor = tone === 'light' ? colors.white : colors.forestGreen
@@ -28,7 +29,6 @@ const underlineColor = tone === 'light' ? colors.white : colors.forestGreen
         display: flex;
         min-height: var(--sizes5);
         position: relative;
-        overflow: hidden;
     }
 
     /* the header bar is a fixed 60px on mobile (see HEADER_SIZE) — cap the tap target
@@ -39,39 +39,11 @@ const underlineColor = tone === 'light' ? colors.white : colors.forestGreen
         }
     }
 
-    a::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: var(--sizes01875);
-        opacity: 1;
-        transform: translate3d(-100%, 0, 0);
-        background-color: var(--underlineColor);
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-        a::after {
-            transition: transform 200ms ease-in-out;
-        }
-    }
-
-    a:hover::after,
-    a:focus::after {
-        transform: translate3d(0, 0, 0);
-    }
-
     a:focus-visible {
         outline: var(--sizes01875) solid var(--underlineColor);
         outline-offset: 2px;
     }
-
-    a[aria-current='page']:hover::after,
-    a[aria-current='page']:focus::after {
-        transform: translate3d(-100%, 0, 0);
-    }
 </style>
 <a aria-current={pathname === href ? 'page' : 'false'} href={href}>
-    <NameLogo size="small" tone={tone} />
+    <NameLogo scale={scale} size="small" tone={tone} />
 </a>
