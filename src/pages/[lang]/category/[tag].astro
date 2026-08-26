@@ -34,6 +34,12 @@ const heroImageAltFallback: Record<Lang, string> = {
 const faq = tag.faq?.[lang]
 const metaDescription = tag.metaDescription[lang]
 const bodyParagraphs = tag.descriptions[lang]
+
+const relatedPostsHeading: Record<Lang, string> = {
+    en: 'Related posts',
+    fi: 'Aiheeseen liittyvät kirjoitukset',
+    sv: 'Relaterade inlägg',
+}
 ---
 
 <PageLayout
@@ -51,8 +57,10 @@ const bodyParagraphs = tag.descriptions[lang]
     variant="split"
 >
     <Plate ground="white">
+        <PostProse>{bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}</PostProse>
+    </Plate>
+    <Plate ground="white" heading={relatedPostsHeading[lang]}>
         <PostProse>
-            {bodyParagraphs.map((p) => <Paragraph>{p}</Paragraph>)}
             <ExcerptList lang={lang} tag={tag.id} />
         </PostProse>
     </Plate>
