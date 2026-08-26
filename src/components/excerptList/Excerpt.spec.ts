@@ -109,7 +109,7 @@ describe('<Excerpt />', () => {
         expect(result.querySelector('time')).toBeNull()
     })
 
-    it('should render the localised tag names as chips', async () => {
+    it('should render the localised tag names as links to their category page', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
                 lang: 'fi',
@@ -119,8 +119,14 @@ describe('<Excerpt />', () => {
             },
         })
 
-        const chips = [...result.querySelectorAll('.tags li')].map((li) => li.textContent)
-        expect(chips).toEqual(['Tekoäly', 'Talous'])
+        const chips = [...result.querySelectorAll('.tags a')].map((a) => ({
+            href: a.getAttribute('href'),
+            text: a.textContent,
+        }))
+        expect(chips).toEqual([
+            { href: '/fi/category/artificial-intelligence/', text: 'Tekoäly' },
+            { href: '/fi/category/economy/', text: 'Talous' },
+        ])
     })
 
     it('should not render a tag list when there are no tags', async () => {
@@ -144,7 +150,7 @@ describe('<Excerpt />', () => {
             },
         })
 
-        const chips = [...result.querySelectorAll('.tags li')].map((li) => li.textContent)
+        const chips = [...result.querySelectorAll('.tags a')].map((a) => a.textContent)
         expect(chips).toEqual(['Tekoäly'])
     })
 
