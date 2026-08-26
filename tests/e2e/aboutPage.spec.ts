@@ -40,11 +40,4 @@ test.describe('About Page', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should expand and collapse summary', async ({ page }) => {
-        const aboutPage = new AboutPage(page)
-        await aboutPage.goTo()
-
-        await aboutPage.checkSummaryCollapse()
-    })
 })

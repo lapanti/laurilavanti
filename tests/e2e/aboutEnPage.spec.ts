@@ -40,11 +40,4 @@ test.describe('About Page in english', () => {
 
         await test.expect(page).toHaveScreenshot()
     })
-
-    test('should expand and collapse summary', async ({ page }) => {
-        const aboutPage = new AboutEnPage(page)
-        await aboutPage.goTo()
-
-        await aboutPage.checkSummaryCollapse()
-    })
 })

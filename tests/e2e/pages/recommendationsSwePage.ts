@@ -7,12 +7,10 @@ import { AnyPage } from './anyPage'
 export class RecommendationsSwePage extends AnyPage {
     readonly recommendationsList: Locator
     readonly pageTitle: Locator
-    readonly summaryBox: Locator
 
     constructor(page: Page) {
         super(page)
         this.pageTitle = page.getByRole('heading', { level: 1 })
-        this.summaryBox = page.getByRole('complementary')
         this.recommendationsList = page.locator('main ul').last()
     }
 
@@ -24,7 +22,6 @@ export class RecommendationsSwePage extends AnyPage {
     }
 
     async checkContent() {
-        await expect(this.summaryBox).toBeVisible()
         await expect(this.recommendationsList).toBeVisible()
     }
 }

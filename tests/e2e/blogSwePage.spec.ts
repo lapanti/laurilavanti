@@ -38,6 +38,6 @@ test.describe('Blog Page på svenska', () => {
         const blogPage = new BlogSwePage(page)
         await blogPage.goTo()
 
-        await test.expect(page.locator('main > div').first()).toHaveScreenshot()
+        await test.expect(page.getByRole('main')).toHaveScreenshot()
     })
 })

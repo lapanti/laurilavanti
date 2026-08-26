@@ -38,6 +38,6 @@ test.describe('Blog Page', () => {
         const blogPage = new BlogPage(page)
         await blogPage.goTo()
 
-        await test.expect(page.locator('main > div').first()).toHaveScreenshot()
+        await test.expect(page.getByRole('main')).toHaveScreenshot()
     })
 })
