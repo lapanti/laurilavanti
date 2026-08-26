@@ -6,12 +6,15 @@ import { AboutPage } from './pages/aboutPage'
 import { AboutSwePage } from './pages/aboutSwePage'
 
 test.describe('Common page elements FI', () => {
-    test('should match aria snapshot', async ({ page }) => {
+    test('should match aria snapshot', async ({ page }, testInfo) => {
         const aboutPage = new AboutPage(page)
         await aboutPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
-        await test.expect(page.getByRole('contentinfo')).toMatchAriaSnapshot()
+        const project = testInfo.project.name.replace(/\s+/g, '-')
+        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot({ name: `fi-banner-${project}.aria.yml` })
+        await test
+            .expect(page.getByRole('contentinfo'))
+            .toMatchAriaSnapshot({ name: `fi-contentinfo-${project}.aria.yml` })
     })
 
     test('should pass accessibility test', async ({ page }) => {
@@ -32,12 +35,15 @@ test.describe('Common page elements FI', () => {
 })
 
 test.describe('Common page elements EN', () => {
-    test('should match aria snapshot', async ({ page }) => {
+    test('should match aria snapshot', async ({ page }, testInfo) => {
         const aboutPage = new AboutEnPage(page)
         await aboutPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
-        await test.expect(page.getByRole('contentinfo')).toMatchAriaSnapshot()
+        const project = testInfo.project.name.replace(/\s+/g, '-')
+        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot({ name: `en-banner-${project}.aria.yml` })
+        await test
+            .expect(page.getByRole('contentinfo'))
+            .toMatchAriaSnapshot({ name: `en-contentinfo-${project}.aria.yml` })
     })
 
     test('should pass accessibility test', async ({ page }) => {
@@ -58,12 +64,15 @@ test.describe('Common page elements EN', () => {
 })
 
 test.describe('Common page elements SV', () => {
-    test('should match aria snapshot', async ({ page }) => {
+    test('should match aria snapshot', async ({ page }, testInfo) => {
         const aboutPage = new AboutSwePage(page)
         await aboutPage.goTo()
 
-        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot()
-        await test.expect(page.getByRole('contentinfo')).toMatchAriaSnapshot()
+        const project = testInfo.project.name.replace(/\s+/g, '-')
+        await test.expect(page.getByRole('banner')).toMatchAriaSnapshot({ name: `sv-banner-${project}.aria.yml` })
+        await test
+            .expect(page.getByRole('contentinfo'))
+            .toMatchAriaSnapshot({ name: `sv-contentinfo-${project}.aria.yml` })
     })
 
     test('should pass accessibility test', async ({ page }) => {
