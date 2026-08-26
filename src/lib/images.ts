@@ -23,6 +23,10 @@ const VARIANTS: Record<string, VariantDef> = {
     /** Split-hero mobile band — the designer's own landscape crop (hero-vaaka), not a re-crop. */
     heroLandscape: { fit: 'crop', gravity: 'face', h: 480, w: 800 },
     og: { fit: 'crop', gravity: 'face', h: 630, w: 1200 },
+    /** Post excerpt card thumbnail — a fixed 184px-tall band at a fluid, mostly-wide
+     * card width. `1x1` (a square) doesn't match that shape, over-cropping the face
+     * out of frame once object-fit: cover squeezes it into the landscape band. */
+    postThumb: { fit: 'crop', gravity: 'face', h: 720, w: 1432 },
     /** A pre-composed social card (photo + wordmark + headline already laid out) —
      * gravity: 'auto' avoids face-cropping into the text half like `og` would. */
     ogFlat: { fit: 'cover', gravity: 'auto', h: 630, w: 1200 },

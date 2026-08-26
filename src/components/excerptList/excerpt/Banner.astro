@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { alt, image, slug, title } = Astro.props
-const img = image ? getImageSrcset(image, '1x1', [400, 560, 750, 1120]) : undefined
+const img = image ? getImageSrcset(image, 'postThumb', [400, 560, 750, 1120]) : undefined
 ---
 
 <style
