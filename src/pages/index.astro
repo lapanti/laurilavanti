@@ -12,18 +12,11 @@ import Head from '../components/Head.astro'
             is:inline
             set:html={`
             (function () {
-                var supported = ['fi', 'sv', 'en']
                 var langs = (navigator.languages && navigator.languages.length)
                     ? navigator.languages
                     : [navigator.language || 'fi']
-                var target = 'fi'
-                for (var i = 0; i < langs.length; i++) {
-                    var primary = String(langs[i]).toLowerCase().split('-')[0]
-                    if (supported.indexOf(primary) !== -1) {
-                        target = primary
-                        break
-                    }
-                }
+                var primary = String(langs[0] || 'fi').toLowerCase().split('-')[0]
+                var target = primary === 'sv' ? 'sv' : 'fi'
                 window.location.replace('/' + target + '/')
             })()
         `}

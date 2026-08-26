@@ -1,10 +1,10 @@
 import test from '@playwright/test'
 
 const cases: Array<[string, string]> = [
-    ['en-US', '/en/'],
+    ['en-US', '/fi/'], // non-Swedish locales fall back to default
     ['sv-SE', '/sv/'],
     ['fi-FI', '/fi/'],
-    ['de-DE', '/fi/'], // unmatched locale falls back to default
+    ['de-DE', '/fi/'], // non-Swedish locales fall back to default
 ]
 
 for (const [locale, expected] of cases) {
