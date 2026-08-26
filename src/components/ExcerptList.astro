@@ -45,7 +45,9 @@ const nodes = await getExcerptPosts({ currentSlug, excludeIds, lang, limit, only
                 date={node.publishDate}
                 excerpt={node.description}
                 image={node.heroImage}
+                lang={lang}
                 slug={node.url.replace(/^\//, '').replace(/\/$/, '')}
+                tags={node.tags}
                 title={node.title}
             />
         ))
