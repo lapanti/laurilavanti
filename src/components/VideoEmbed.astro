@@ -2,6 +2,7 @@
 import type { Lang } from '../content/nav'
 
 import { videoEmbedContent } from '../content/videoEmbed'
+import { getImageSrcset } from '../lib/images'
 import { colors, sizes, typographics } from '../lib/styles'
 
 interface Props {
@@ -9,14 +10,17 @@ interface Props {
     lang: Lang
     /** Extra query params appended verbatim to the embed URL, e.g. `si=xxxx`. */
     params?: string
+    /** Cloudflare Images slug for the poster frame shown behind the facade. */
+    posterImage?: string
     /** Human-readable video title — the injected iframe's accessible name. */
     title: string
     /** YouTube video id, e.g. `fiLEp7wLK3I`. */
     videoId: string
 }
 
-const { lang, params, title, videoId } = Astro.props
+const { lang, params, posterImage, title, videoId } = Astro.props
 const content = videoEmbedContent[lang]
+const poster = posterImage ? getImageSrcset(posterImage, 'video', [640, 960, 1280, 1440]) : undefined
 
 if (!/^[\w-]{6,20}$/.test(videoId)) {
     throw new Error(`VideoEmbed: invalid YouTube video id "${videoId}"`)
@@ -75,8 +79,14 @@ const videoEmbedScript = `(function(){
         buttonLineHeight: typographics.button.lineHeight,
         colorsBrightGreen: colors.brightGreen,
         colorsDeepForest: colors.forestGreen,
+        colorsDeepForest70: colors.forestGreen70,
         colorsOat: colors.oat,
         colorsOffWhite: colors.offWhite,
+        colorsTextSecondary: colors.textSecondary,
+        fineFontFamily: typographics.fine.fontFamily,
+        fineFontSize: typographics.fine.fontSize,
+        fineFontWeight: typographics.fine.fontWeight,
+        fineLineHeight: typographics.fine.lineHeight,
         sizes05: sizes[0.5],
         sizes4: sizes[4],
         sizes15: sizes[1.5],
@@ -92,12 +102,25 @@ const videoEmbedScript = `(function(){
     .frame {
         aspect-ratio: 16 / 9;
         background: var(--colorsDeepForest);
+        display: grid;
+        width: 100%;
+    }
+
+    /* Poster and facade share one grid cell, so neither needs absolute positioning. */
+    .poster,
+    .facade {
+        grid-area: 1 / 1;
+    }
+
+    .poster {
+        height: 100%;
+        object-fit: cover;
         width: 100%;
     }
 
     .facade {
         align-items: center;
-        background: none;
+        background: var(--colorsDeepForest70);
         border: 0;
         color: var(--colorsOat);
         cursor: pointer;
@@ -142,6 +165,16 @@ const videoEmbedScript = `(function(){
         width: var(--sizes15);
     }
 
+    .note {
+        color: var(--colorsTextSecondary);
+        font-family: var(--fineFontFamily);
+        font-size: var(--fineFontSize);
+        font-weight: var(--fineFontWeight);
+        line-height: var(--fineLineHeight);
+        margin: 0;
+        padding-top: var(--sizes05);
+    }
+
     .label {
         font-family: var(--buttonFontFamily);
         font-size: var(--buttonFontSize);
@@ -164,6 +197,21 @@ const videoEmbedScript = `(function(){
 </style>
 <div class="video-embed">
     <div class="frame" data-video-frame={videoId}>
+        {
+            poster && (
+                <img
+                    alt=""
+                    class="poster"
+                    decoding="async"
+                    height={poster.height}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 720px"
+                    src={poster.src}
+                    srcset={poster.srcset}
+                    width={poster.width}
+                />
+            )
+        }
         <button aria-label={`${content.playLabel}: ${title}`} class="facade" type="button">
             <span aria-hidden="true" class="glyph">
                 <svg fill="currentColor" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -173,5 +221,6 @@ const videoEmbedScript = `(function(){
             <span class="label">{content.playLabel}</span>
         </button>
     </div>
+    <p class="note">{content.sourceNote}</p>
 </div>
 <script is:inline set:html={videoEmbedScript} />

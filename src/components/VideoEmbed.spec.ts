@@ -21,11 +21,35 @@ describe('<VideoEmbed />', () => {
     })
 
     it('should not ship an iframe or a third-party image in the initial markup', async () => {
-        const result = await renderAstroComponent(VideoEmbed, { props })
+        const result = await renderAstroComponent(VideoEmbed, { props: { ...props, posterImage: 'video-poster' } })
 
         expect(result.querySelectorAll('iframe')).toHaveLength(0)
-        expect(result.querySelectorAll('img')).toHaveLength(0)
         expect(result.innerHTML).not.toContain('ytimg')
+        expect(result.querySelector('img')?.getAttribute('src')).toMatch(/^https:\/\/lavanti\.fi\/images\//)
+    })
+
+    it('should render no poster when no slug is given', async () => {
+        const result = await renderAstroComponent(VideoEmbed, { props })
+
+        expect(result.querySelectorAll('img')).toHaveLength(0)
+    })
+
+    it('should lazy-load the poster behind the facade', async () => {
+        const result = await renderAstroComponent(VideoEmbed, { props: { ...props, posterImage: 'video-poster' } })
+        const poster = result.querySelector('img')
+
+        expect(poster).toHaveAttribute('alt', '')
+        expect(poster).toHaveAttribute('decoding', 'async')
+        expect(poster).toHaveAttribute('loading', 'lazy')
+        expect(poster).toHaveAttribute('srcset')
+    })
+
+    it.each(langs)('should name YouTube as the source for %s', async (lang) => {
+        const result = await renderAstroComponent(VideoEmbed, { props: { ...props, lang } })
+        const note = result.querySelector('.note')
+
+        expect(note).toHaveTextContent(videoEmbedContent[lang].sourceNote)
+        expect(note?.textContent).toContain('YouTube')
     })
 
     it('should build a cookieless autoplaying embed url in the click handler', async () => {
