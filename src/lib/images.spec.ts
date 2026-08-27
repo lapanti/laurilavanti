@@ -62,6 +62,12 @@ describe('getImageSrcset', () => {
         expect(result.srcset).toContain('gravity=auto')
     })
 
+    it('keeps the video variant at 16:9 so a poster matches the player box', () => {
+        const result = getImageSrcset('test-slug', 'video', [640, 1280])
+        expect(result.srcset).toContain('w=640,h=360')
+        expect(result.srcset).toContain('w=1280,h=720')
+    })
+
     it('throws on unknown variant', () => {
         expect(() => getImageSrcset('test-slug', 'nonexistent', [560])).toThrow('Unknown image variant: nonexistent')
     })
