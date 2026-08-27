@@ -674,7 +674,6 @@ jobs:
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/about/
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/1/kotihoidon-tuen-kuntalisa/
-          budgetPath: .github/lighthouse-budget.json
+          configPath: .github/lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
