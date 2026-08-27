@@ -34,6 +34,8 @@ const VARIANTS: Record<string, VariantDef> = {
      * out of frame once object-fit: cover squeezes it into the landscape band.
      */
     postThumb: { fit: 'crop', gravity: 'face', h: 720, w: 1432 },
+    /** 16:9 poster frame behind a VideoEmbed facade — matches the player's own aspect ratio. */
+    video: { fit: 'crop', gravity: 'auto', h: 720, w: 1280 },
 }
 
 export function getImage(slug: string, variant: string): CFImageResult {
