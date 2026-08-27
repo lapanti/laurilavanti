@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { getImage, getImageSrcset } from './images'
+import { getDownloadUrl, getImage, getImageSrcset } from './images'
 
 vi.unmock('./images')
 
@@ -35,6 +35,32 @@ describe('getImage', () => {
 
     it('throws on unknown variant', () => {
         expect(() => getImage('test-slug', 'nonexistent')).toThrow('Unknown image variant: nonexistent')
+    })
+})
+
+describe('getDownloadUrl', () => {
+    it('returns a full-resolution scale-down JPEG URL with defaults', () => {
+        expect(getDownloadUrl('test-slug')).toBe(
+            `${BASE}/test-slug/w=3000,fit=scale-down,quality=90,format=jpeg`
+        )
+    })
+
+    it('forces format=jpeg rather than format=auto', () => {
+        const url = getDownloadUrl('test-slug')
+        expect(url).toContain('format=jpeg')
+        expect(url).not.toContain('format=auto')
+    })
+
+    it('honours custom width and quality', () => {
+        expect(getDownloadUrl('test-slug', 2000, 80)).toBe(
+            `${BASE}/test-slug/w=2000,fit=scale-down,quality=80,format=jpeg`
+        )
+    })
+
+    it('encodes slug with special characters', () => {
+        expect(getDownloadUrl('slug with spaces & chars')).toContain(
+            'slug%20with%20spaces%20%26%20chars'
+        )
     })
 })
 

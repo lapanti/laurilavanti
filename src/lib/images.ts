@@ -46,6 +46,15 @@ export function getImage(slug: string, variant: string): CFImageResult {
     }
 }
 
+/**
+ * Full-resolution download URL for the media gallery. Serves the original frame
+ * scaled down to fit `width` (never upscaled) as a JPEG — `format=jpeg` rather than
+ * the `format=auto` used elsewhere, so editors receive a file they can open, not AVIF/WebP.
+ */
+export function getDownloadUrl(slug: string, width = 3000, quality = 90): string {
+    return `${BASE}/${encodeURIComponent(slug)}/w=${width},fit=scale-down,quality=${quality},format=jpeg`
+}
+
 export function getImageSrcset(
     slug: string,
     variant: string,
