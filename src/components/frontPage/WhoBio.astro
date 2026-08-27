@@ -165,7 +165,9 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
                     <div class="frame">
                         <img
                             alt={portraitAlt}
+                            decoding="async"
                             height={portrait.height}
+                            loading="lazy"
                             sizes="(max-width: 999px) 100vw, 50vw"
                             src={portrait.src}
                             srcset={portrait.srcset}
