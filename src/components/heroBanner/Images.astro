@@ -27,6 +27,10 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
         position: relative;
     }
 
+    .hero-left .bg picture {
+        display: contents;
+    }
+
     .hero-left .bg img {
         height: 100%;
         object-fit: cover;
@@ -35,10 +39,6 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
     }
 
     .mark {
-        display: none;
-    }
-
-    .image-desktop {
         display: none;
     }
 
@@ -60,14 +60,6 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
             top: 40px;
             z-index: 1;
         }
-
-        .image-mobile {
-            display: none;
-        }
-
-        .image-desktop {
-            display: block;
-        }
     }
 
     @media (min-width: 1200px) {
@@ -81,28 +73,24 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
     <div class="bg">
         {
             heroImg && mobileImg ? (
-                <>
+                <picture>
+                    <source
+                        height={heroImg.height}
+                        media="(min-width: 769px)"
+                        sizes="470px"
+                        srcset={heroImg.srcset}
+                        width={heroImg.width}
+                    />
                     <img
                         alt={alt ?? ''}
-                        class="image-mobile"
                         fetchpriority="high"
                         height={mobileImg.height}
-                        sizes="(max-width: 768px) 100vw, 470px"
+                        sizes="100vw"
                         src={mobileImg.src}
                         srcset={mobileImg.srcset}
                         width={mobileImg.width}
                     />
-                    <img
-                        alt={alt ?? ''}
-                        class="image-desktop"
-                        fetchpriority="high"
-                        height={heroImg.height}
-                        sizes="(max-width: 768px) 100vw, 470px"
-                        src={heroImg.src}
-                        srcset={heroImg.srcset}
-                        width={heroImg.width}
-                    />
-                </>
+                </picture>
             ) : (
                 heroImg && (
                     <img
