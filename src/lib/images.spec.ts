@@ -40,9 +40,7 @@ describe('getImage', () => {
 
 describe('getDownloadUrl', () => {
     it('returns a full-resolution scale-down JPEG URL with defaults', () => {
-        expect(getDownloadUrl('test-slug')).toBe(
-            `${BASE}/test-slug/w=3000,fit=scale-down,quality=90,format=jpeg`
-        )
+        expect(getDownloadUrl('test-slug')).toBe(`${BASE}/test-slug/w=3000,fit=scale-down,quality=90,format=jpeg`)
     })
 
     it('forces format=jpeg rather than format=auto', () => {
@@ -58,9 +56,7 @@ describe('getDownloadUrl', () => {
     })
 
     it('encodes slug with special characters', () => {
-        expect(getDownloadUrl('slug with spaces & chars')).toContain(
-            'slug%20with%20spaces%20%26%20chars'
-        )
+        expect(getDownloadUrl('slug with spaces & chars')).toContain('slug%20with%20spaces%20%26%20chars')
     })
 })
 
