@@ -1,5 +1,5 @@
 /**
- * dist-head.mjs
+ * dist-head.ts
  *
  * Built-HTML head guardrail. Scans every page in the build output (dist/ by
  * default) and asserts the SEO-critical head tags survived the layout → Head
@@ -39,12 +39,14 @@ const KNOWN_JSONLD_TYPES = new Set([
 ])
 const POST_PATH_RE = /^\/(fi|sv|en)\/blog\/\d+\/.+\/$/
 
+type TagAttrs = Record<string, string>
+
 /** URL pathname with percent-encoding decoded, so it compares against raw dist dir names. */
-const urlPath = (href) => decodeURIComponent(new URL(href).pathname)
+const urlPath = (href: string): string => decodeURIComponent(new URL(href).pathname)
 
 /** Parse the attributes of a single HTML tag into an object (order-agnostic). */
-export function parseAttrs(tag) {
-    const attrs = {}
+export function parseAttrs(tag: string): TagAttrs {
+    const attrs: TagAttrs = {}
     for (const m of tag.matchAll(/([\w:-]+)="([^"]*)"/g)) {
         attrs[m[1]] = m[2]
     }
@@ -52,20 +54,20 @@ export function parseAttrs(tag) {
 }
 
 /** Collect all tags with the given name from an HTML document. */
-export function findTags(html, tagName) {
+export function findTags(html: string, tagName: string): TagAttrs[] {
     return [...html.matchAll(new RegExp(`<${tagName}\\b[^>]*>`, 'g'))].map((m) => parseAttrs(m[0]))
 }
 
 /** True for redirect stubs and noindex pages, which carry no SEO head. */
-export function isSkippablePage(html) {
+export function isSkippablePage(html: string): boolean {
     if (/http-equiv="refresh"/.test(html)) return true
     return findTags(html, 'meta').some((t) => t.name === 'robots' && /noindex/.test(t.content ?? ''))
 }
 
 /** Recursively collect built pages as { pagePath: html } (dist-relative URL paths). */
-export function collectPages(distDir) {
-    const pages = new Map()
-    const walk = (dir) => {
+export function collectPages(distDir: string): Map<string, string> {
+    const pages = new Map<string, string>()
+    const walk = (dir: string): void => {
         for (const entry of readdirSync(dir, { withFileTypes: true })) {
             const full = join(dir, entry.name)
             if (entry.isDirectory()) walk(full)
@@ -80,8 +82,8 @@ export function collectPages(distDir) {
 }
 
 /** Check one page; returns a list of problem descriptions (empty = ok). */
-export function checkPage(html, pagePath, builtPaths) {
-    const problems = []
+export function checkPage(html: string, pagePath: string, builtPaths: Set<string>): string[] {
+    const problems: string[] = []
     const isPost = POST_PATH_RE.test(pagePath)
     const lang = pagePath.split('/')[1]
 
@@ -90,7 +92,7 @@ export function checkPage(html, pagePath, builtPaths) {
     else if (!titles[0]) problems.push('empty <title>')
 
     const metas = findTags(html, 'meta')
-    const meta = (name, key = 'name') => metas.filter((t) => t[key] === name)
+    const meta = (name: string, key = 'name') => metas.filter((t) => t[key] === name)
 
     if (!meta('description').some((t) => (t.content ?? '').trim())) problems.push('missing or empty meta description')
 
@@ -142,7 +144,7 @@ export function checkPage(html, pagePath, builtPaths) {
 
     const jsonldBlocks = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => m[1])
     if (jsonldBlocks.length === 0) problems.push('no JSON-LD blocks')
-    const parsedTypes = []
+    const parsedTypes: Array<Record<string, unknown>> = []
     for (const block of jsonldBlocks) {
         try {
             const data = JSON.parse(block)
