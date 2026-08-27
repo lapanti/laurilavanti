@@ -48,6 +48,17 @@ describe('<Head />', () => {
         expect(ogTitle).toHaveAttribute('content', 'Test Page')
     })
 
+    it('should set theme-color meta tag', async () => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                title: 'Test Page',
+            },
+        })
+
+        const themeColor = result.querySelector('meta[name="theme-color"]')
+        expect(themeColor).toHaveAttribute('content', '#163E35')
+    })
+
     it('should set description meta tags', async () => {
         const description = 'Custom description'
         const result = await renderAstroComponent(Head, {
