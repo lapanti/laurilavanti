@@ -672,7 +672,10 @@ jobs:
         with:
           urls: |
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/
+            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/en/
+            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/sv/
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/about/
+            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/1/kotihoidon-tuen-kuntalisa/
           configPath: .github/lighthouserc.json
           uploadArtifacts: true
