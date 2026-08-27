@@ -73,7 +73,7 @@ import Stripe from '../../components/Stripe.astro'
     vocab={[
         { href: '/sv/category/education/', label: 'Kunnande' },
         { href: '/sv/category/equality-and-non-discrimination/', label: 'Jämlikhet' },
-        { href: '/sv/category/culture-and-education/', label: 'Bibliotek' },
+        { href: '/sv/category/culture-and-education/', label: 'Kultur' },
         'Livslångt lärande',
     ]}
     reads={[
@@ -113,7 +113,7 @@ import Stripe from '../../components/Stripe.astro'
     credentials={[
         'Civilingenjör, Aalto-universitetet',
         'Ledande programutvecklare, över 10 år',
-        'Kommunalråd i Kyrkslätt, ordförande för Gröna fullmäktigegruppen',
+        'Kommunfullmäktigeledamot i Kyrkslätt, ordförande för Gröna fullmäktigegruppen',
         'Far till fyra barn',
     ]}
     eyebrow="Vem"
@@ -125,7 +125,7 @@ import Stripe from '../../components/Stripe.astro'
     <p class="bio">Jag har byggt säkra programvaror och banktjänster i över ett decennium och studerat teknik vid Aalto-universitetet. När det fattas beslut om kod, upphandlingar eller datasäkerhet vet jag vad det handlar om – och jag vill se till att lösningarna tjänar allas vardag. Jag förstår också var teknikens gränser måste sättas, för att rättsstaten ska bestå.</p>
 </WhoBio>
 
-<Faq eyebrow="Direkta svar" faq={frontmatter.faq} heading="Vanliga frågor" />
+<Faq eyebrow="Q & A" faq={frontmatter.faq} heading="Vanliga frågor" />
 
 <WritingsPlate allPostsHref="/sv/blog/all/" allPostsLabel="Alla inlägg" eyebrow="Aktuellt" heading="Inlägg">
     <FrontPageExcerptList lang="sv" limit={9} />

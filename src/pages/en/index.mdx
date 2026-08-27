@@ -73,7 +73,7 @@ import Stripe from '../../components/Stripe.astro'
     vocab={[
         { href: '/en/category/education/', label: 'Skills' },
         { href: '/en/category/equality-and-non-discrimination/', label: 'Equality' },
-        { href: '/en/category/culture-and-education/', label: 'Libraries' },
+        { href: '/en/category/culture-and-education/', label: 'Culture' },
         'Lifelong learning',
     ]}
     reads={[
@@ -125,7 +125,7 @@ import Stripe from '../../components/Stripe.astro'
     <p class="bio">I have built secure software and banking services for over a decade and studied technology at Aalto University. When decisions are made about code, procurement, or data security, I know what is being discussed – and I want to make sure the solutions serve everyone's everyday life. I also understand where the limits on technology must be set, so that the rule of law endures.</p>
 </WhoBio>
 
-<Faq eyebrow="Direct answers" faq={frontmatter.faq} heading="Frequently asked questions" />
+<Faq eyebrow="Q & A" faq={frontmatter.faq} heading="Frequently asked questions" />
 
 <WritingsPlate allPostsHref="/en/blog/all/" allPostsLabel="All posts" eyebrow="Latest" heading="Writing">
     <FrontPageExcerptList lang="en" limit={9} />
