@@ -1,0 +1,177 @@
+---
+import type { Lang } from '../content/nav'
+
+import { videoEmbedContent } from '../content/videoEmbed'
+import { colors, sizes, typographics } from '../lib/styles'
+
+interface Props {
+    /** Locale for the play button label and accessible name. */
+    lang: Lang
+    /** Extra query params appended verbatim to the embed URL, e.g. `si=xxxx`. */
+    params?: string
+    /** Human-readable video title — the injected iframe's accessible name. */
+    title: string
+    /** YouTube video id, e.g. `fiLEp7wLK3I`. */
+    videoId: string
+}
+
+const { lang, params, title, videoId } = Astro.props
+const content = videoEmbedContent[lang]
+
+if (!/^[\w-]{6,20}$/.test(videoId)) {
+    throw new Error(`VideoEmbed: invalid YouTube video id "${videoId}"`)
+}
+
+/*
+ * Nothing is requested from youtube-nocookie.com until the visitor presses play, so the
+ * embed costs nothing on initial load. `autoplay=1` is appended last so the click that
+ * dismisses the facade also starts playback — the visitor already pressed play, the
+ * iframe just arrives late.
+ */
+const query = [params, 'autoplay=1'].filter(Boolean).join('&')
+const allowJson = JSON.stringify(
+    'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+)
+const embedUrlJson = JSON.stringify(`https://www.youtube-nocookie.com/embed/${videoId}?${query}`)
+const titleJson = JSON.stringify(title)
+
+/*
+ * Prettier parses <script> blocks as plain JavaScript, so the handler lives in this string
+ * and is injected with `is:inline set:html` (see ARCHITECTURE.md). The iframe is built with
+ * DOM APIs rather than innerHTML so the title never has to survive a double escaping round
+ * trip, and it is sized inline because no scoped selector can reach an element that is
+ * absent from the static markup.
+ */
+const videoEmbedScript = `(function(){
+    var allow = ${allowJson}
+    var src = ${embedUrlJson}
+    var title = ${titleJson}
+    document.querySelectorAll('[data-video-frame="${videoId}"]').forEach(function(frame){
+        var facade = frame.querySelector('button')
+        if(!facade) return
+        facade.addEventListener('click',function(){
+            var iframe = document.createElement('iframe')
+            iframe.setAttribute('allow', allow)
+            iframe.setAttribute('allowfullscreen','')
+            iframe.setAttribute('referrerpolicy','strict-origin-when-cross-origin')
+            iframe.setAttribute('src', src)
+            iframe.setAttribute('title', title)
+            iframe.style.border = '0'
+            iframe.style.height = '100%'
+            iframe.style.width = '100%'
+            frame.replaceChildren(iframe)
+            iframe.focus()
+        })
+    })
+})()`
+---
+
+<style
+    define:vars={{
+        buttonFontFamily: typographics.button.fontFamily,
+        buttonFontSize: typographics.button.fontSize,
+        buttonFontWeight: typographics.button.fontWeight,
+        buttonLetterSpacing: typographics.button.letterSpacing,
+        buttonLineHeight: typographics.button.lineHeight,
+        colorsBrightGreen: colors.brightGreen,
+        colorsDeepForest: colors.forestGreen,
+        colorsOat: colors.oat,
+        colorsOffWhite: colors.offWhite,
+        sizes05: sizes[0.5],
+        sizes4: sizes[4],
+        sizes15: sizes[1.5],
+        sizes45: sizes[45],
+    }}
+>
+    .video-embed {
+        margin-top: var(--sizes15);
+        max-width: var(--sizes45);
+    }
+
+    /* The injected iframe fills this box, so the 16/9 ratio holds before and after load. */
+    .frame {
+        aspect-ratio: 16 / 9;
+        background: var(--colorsDeepForest);
+        width: 100%;
+    }
+
+    .facade {
+        align-items: center;
+        background: none;
+        border: 0;
+        color: var(--colorsOat);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: var(--sizes05);
+        height: 100%;
+        justify-content: center;
+        padding: var(--sizes15);
+        width: 100%;
+    }
+
+    /* The global focus ring is dark green — too low-contrast on deep forest. */
+    .facade:focus-visible {
+        outline: 3px solid var(--colorsOat);
+        outline-offset: -3px;
+    }
+
+    .glyph {
+        align-items: center;
+        background: var(--colorsOat);
+        color: var(--colorsDeepForest);
+        display: flex;
+        height: var(--sizes4);
+        justify-content: center;
+        transition:
+            background 0.18s var(--ease),
+            color 0.18s var(--ease),
+            transform 0.12s var(--ease);
+        width: var(--sizes4);
+    }
+
+    .facade:hover .glyph,
+    .facade:focus-visible .glyph {
+        background: var(--colorsBrightGreen);
+        color: var(--colorsOffWhite);
+        transform: scale(1.06);
+    }
+
+    .glyph svg {
+        height: var(--sizes15);
+        width: var(--sizes15);
+    }
+
+    .label {
+        font-family: var(--buttonFontFamily);
+        font-size: var(--buttonFontSize);
+        font-weight: var(--buttonFontWeight);
+        letter-spacing: var(--buttonLetterSpacing);
+        line-height: var(--buttonLineHeight);
+        text-transform: uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .glyph {
+            transition: none;
+        }
+
+        .facade:hover .glyph,
+        .facade:focus-visible .glyph {
+            transform: none;
+        }
+    }
+</style>
+<div class="video-embed">
+    <div class="frame" data-video-frame={videoId}>
+        <button aria-label={`${content.playLabel}: ${title}`} class="facade" type="button">
+            <span aria-hidden="true" class="glyph">
+                <svg fill="currentColor" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 5v14l11-7z"></path>
+                </svg>
+            </span>
+            <span class="label">{content.playLabel}</span>
+        </button>
+    </div>
+</div>
+<script is:inline set:html={videoEmbedScript} />
