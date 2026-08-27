@@ -60,6 +60,12 @@ All agents and workflows shall follow these rules for every change:
 
 ---
 
+## Response Tone
+
+Chat replies and Claude-authored internal docs (PR bodies, commit messages, specs, ADRs): fact first, technical audience, concrete over abstract, short. Middle register — Google developer documentation style. Never applies to site content, which follows `.agents/specs/` and the content skills. Enforced via `.claude/output-styles/technical-concise.md` (set as `outputStyle` in `.claude/settings.json`).
+
+---
+
 ## Personas
 
 Invoke on-demand (do not load all at once):
