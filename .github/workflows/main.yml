@@ -138,7 +138,7 @@ jobs:
           name: build-folder
           path: dist
       - name: Run built-HTML head guardrail
-        run: node scripts/checks/dist-head.mjs dist
+        run: node --experimental-strip-types scripts/checks/dist-head.ts dist
 
   unit-test:
     runs-on: ubuntu-latest
