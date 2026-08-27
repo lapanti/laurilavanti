@@ -678,5 +678,6 @@ jobs:
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/
             ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/1/kotihoidon-tuen-kuntalisa/
           configPath: .github/lighthouserc.json
+          runs: 3
           uploadArtifacts: true
           temporaryPublicStorage: true
