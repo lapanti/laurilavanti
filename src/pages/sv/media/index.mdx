@@ -1,0 +1,39 @@
+---
+layout: '../../../layouts/PageLayout.astro'
+lang: sv
+pageTitle: 'Bildbank för media och intresserade'
+title: 'Bildbank för'
+emphasis: 'media'
+intro: 'Fotograf Markus Isomeris bilder på Lauri Lavanti – fritt tillgängliga för media och andra intresserade.'
+description: 'Ladda ner och använd fotograf Markus Isomeris bilder på Lauri Lavanti. Bilderna är fritt tillgängliga under CC BY-SA 4.0 med angivande av fotografen.'
+slug: 'sv/media'
+updatedDate: '2026-08-27'
+type: 'CollectionPage'
+heroImage: Lauri-Lavanti-dipolissa-lasijulkisivun-edessa-hero-pysty
+mobileHeroImage: Lauri-Lavanti-dipolissa-lasijulkisivun-edessa-hero-vaaka
+alt: 'Lauri Lavanti står framför en glasvägg i en mörk kavaj och en blommig skjorta. Foto: Markus Isomeri.'
+plated: true
+variant: 'split'
+---
+
+import Gallery from '../../../components/Gallery.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
+import Stripe from '../../../components/Stripe.astro'
+import { galleryPhotos } from '../../../content/gallery'
+
+<Stripe size="slim" />
+
+<Plate eyebrow="Media" ground="offWhite" heading="Bilder för media">
+    <Prose>
+        <p>På den här sidan finns fotograf Markus Isomeris bilder på Lauri Lavanti samlade. Media och andra intresserade får ladda ner och använda dem fritt. Varje bild finns i tre beskärningar: kvadrat, stående och liggande. Bilderna laddas ner i full upplösning som JPEG.</p>
+    </Prose>
+    <Gallery lang="sv" photos={galleryPhotos} />
+</Plate>
+
+<Plate ground="sand" heading="Hur får jag använda bilderna?">
+    <Prose>
+        <p>Bilderna är licensierade under <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.sv" rel="license">Creative Commons Erkännande-DelaLika 4.0 (CC BY-SA 4.0)</a>, precis som webbplatsens övriga innehåll. Du får använda, bearbeta och dela bilderna även kommersiellt, så länge du anger fotografen: <strong>Markus Isomeri</strong>.</p>
+        <p>DelaLika innebär att om du bearbetar en bild och publicerar resultatet, delar du det under samma licens CC BY-SA 4.0. Andra fotografers bilder på webbplatsen omfattas inte av denna licens.</p>
+    </Prose>
+</Plate>
