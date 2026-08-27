@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { alt, heroImage } = Astro.props
-const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1728]) : undefined
+const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1080, 1296, 1728]) : undefined
 ---
 
 <style>
