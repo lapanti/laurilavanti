@@ -59,6 +59,23 @@ describe('<Head />', () => {
         expect(themeColor).toHaveAttribute('content', '#163E35')
     })
 
+    it.each([
+        ['fi', '/fi/rss.xml', 'Lauri Lavanti – blogi'],
+        ['sv', '/sv/rss.xml', 'Lauri Lavanti – blogg'],
+        ['en', '/en/rss.xml', 'Lauri Lavanti – blog'],
+    ])('should set RSS autodiscovery link for %s', async (lang, href, title) => {
+        const result = await renderAstroComponent(Head, {
+            props: {
+                lang,
+                title: 'Test Page',
+            },
+        })
+
+        const rssLink = result.querySelector('link[rel="alternate"][type="application/rss+xml"]')
+        expect(rssLink).toHaveAttribute('href', href)
+        expect(rssLink).toHaveAttribute('title', title)
+    })
+
     it('should set description meta tags', async () => {
         const description = 'Custom description'
         const result = await renderAstroComponent(Head, {
@@ -507,7 +524,7 @@ describe('<Head />', () => {
         })
 
         expect(result.querySelector('link[rel="canonical"]')).toBeNull()
-        expect(result.querySelector('link[rel="alternate"]')).toBeNull()
+        expect(result.querySelector('link[rel="alternate"][hreflang]')).toBeNull()
     })
 
     it('should emit two og:locale:alternate tags for fi page (en_GB, sv_SE)', async () => {
