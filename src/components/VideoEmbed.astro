@@ -20,7 +20,8 @@ interface Props {
 
 const { lang, params, posterImage, title, videoId } = Astro.props
 const content = videoEmbedContent[lang]
-const poster = posterImage ? getImageSrcset(posterImage, 'video', [640, 960, 1280, 1440]) : undefined
+/* The 1280x720 variant is the largest the source still can fill — asking for more upscales. */
+const poster = posterImage ? getImageSrcset(posterImage, 'video', [640, 960, 1280]) : undefined
 
 if (!/^[\w-]{6,20}$/.test(videoId)) {
     throw new Error(`VideoEmbed: invalid YouTube video id "${videoId}"`)
