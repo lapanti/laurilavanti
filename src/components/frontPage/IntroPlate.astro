@@ -90,6 +90,7 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
         <div class="inner">
             <span class="eyebrow">{eyebrow}</span>
             <h2>{heading}</h2>
+            <slot name="video" />
             <div class="body">
                 <slot />
             </div>
