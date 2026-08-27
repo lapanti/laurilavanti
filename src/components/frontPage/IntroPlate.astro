@@ -1,5 +1,5 @@
 ---
-import { colors, typographics } from '../../lib/styles'
+import { colors, sizes, typographics } from '../../lib/styles'
 
 interface Props {
     eyebrow: string
@@ -24,6 +24,7 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
         eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
         eyebrowLineHeight: typographics.eyebrow.lineHeight,
         groundColor,
+        sizes45: sizes[45],
         textFontFamily: typographics.text.fontFamily,
         textFontSize: typographics.text.fontSize,
         textFontWeight: typographics.text.fontWeight,
@@ -69,7 +70,7 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
         font-weight: var(--textFontWeight);
         line-height: var(--textLineHeight);
         margin: 0;
-        max-width: 720px;
+        max-width: var(--sizes45);
     }
 
     @media (min-width: 769px) {
