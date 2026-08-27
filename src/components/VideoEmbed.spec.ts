@@ -56,7 +56,7 @@ describe('<VideoEmbed />', () => {
         const result = await renderAstroComponent(VideoEmbed, { props })
         const script = result.querySelector('script')?.textContent ?? ''
 
-        expect(script).toContain('https://www.youtube-nocookie.com/embed/fiLEp7wLK3I?autoplay=1')
+        expect(script).toContain('https://www.youtube-nocookie.com/embed/fiLEp7wLK3I?cc_load_policy=0&autoplay=1')
         expect(script).toContain('strict-origin-when-cross-origin')
         expect(script).not.toContain('https://www.youtube.com/')
     })
@@ -65,7 +65,9 @@ describe('<VideoEmbed />', () => {
         const result = await renderAstroComponent(VideoEmbed, { props: { ...props, params: 'start=30' } })
         const script = result.querySelector('script')?.textContent ?? ''
 
-        expect(script).toContain('https://www.youtube-nocookie.com/embed/fiLEp7wLK3I?start=30&autoplay=1')
+        expect(script).toContain(
+            'https://www.youtube-nocookie.com/embed/fiLEp7wLK3I?start=30&cc_load_policy=0&autoplay=1'
+        )
     })
 
     it.each(langs)('should render a play button for %s', async (lang) => {
