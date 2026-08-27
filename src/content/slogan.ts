@@ -18,9 +18,12 @@ export const heroCtaLabel: Record<Lang, string> = {
 
 export const sloganContent: Record<Lang, Slogan> = {
     en: {
-        candidacy: ['Running for Parliament in Uusimaa'],
-        prefix: 'Because technology should serve',
-        restingWord: 'Finland',
+        candidacy: [
+            'Lead developer, MSc, Aalto · Kirkkonummi municipal councillor',
+            "The Greens' parliamentary candidate · Uusimaa electoral district · 2027",
+        ],
+        prefix: 'Because the economy shall serve',
+        restingWord: 'the people',
     },
     fi: {
         candidacy: [
@@ -31,8 +34,11 @@ export const sloganContent: Record<Lang, Slogan> = {
         restingWord: 'ihmistä',
     },
     sv: {
-        candidacy: ['Kandiderar till riksdagen i Nyland'],
-        prefix: 'Eftersom tekniken ska tjäna',
-        restingWord: 'Finland',
+        candidacy: [
+            'Ledande programutvecklare, DI (Aalto) · Kommunfullmäktigeledamot i Kyrkslätt',
+            'De Grönas riksdagskandidat · Nylands valkrets · 2027',
+        ],
+        prefix: 'Eftersom ekonomin ska tjäna',
+        restingWord: 'människan',
     },
 }
