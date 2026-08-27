@@ -46,6 +46,12 @@ export const footerLanguageLinks: Array<{ href: string; label: string }> = [
     { href: '/en/', label: 'In English' },
 ]
 
+export const footerMediaLabel: Record<Lang, string> = {
+    en: 'For media',
+    fi: 'Medialle',
+    sv: 'För media',
+}
+
 export const footerPrivacyPolicyLabel: Record<Lang, string> = {
     en: 'Privacy policy',
     fi: 'Tietosuojaseloste',
