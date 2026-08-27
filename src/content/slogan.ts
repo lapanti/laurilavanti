@@ -3,8 +3,8 @@ import type { Lang } from './nav'
 export interface Slogan {
     /** Fixed opening of the campaign slogan. */
     prefix: string
-    /** Objects typed after the prefix, in order. The last one is the resting state. */
-    words: [string, string, string, string]
+    /** Object of the slogan, shown emphasised after the prefix. */
+    restingWord: string
     /** Plain-register candidacy line shown under the slogan, one entry per line. */
     candidacy: string[]
 }
@@ -20,7 +20,7 @@ export const sloganContent: Record<Lang, Slogan> = {
     en: {
         candidacy: ['Running for Parliament in Uusimaa'],
         prefix: 'Because technology should serve',
-        words: ['the economy', 'education', 'rights', 'Finland'],
+        restingWord: 'Finland',
     },
     fi: {
         candidacy: [
@@ -28,11 +28,11 @@ export const sloganContent: Record<Lang, Slogan> = {
             'Vihreiden eduskuntavaaliehdokas · Uudenmaan vaalipiiri · 2027',
         ],
         prefix: 'Koska talouden tulee palvella',
-        words: ['taloutta', 'sivistystä', 'vapautta', 'ihmistä'],
+        restingWord: 'ihmistä',
     },
     sv: {
         candidacy: ['Kandiderar till riksdagen i Nyland'],
         prefix: 'Eftersom tekniken ska tjäna',
-        words: ['ekonomin', 'utbildningen', 'friheten', 'Finland'],
+        restingWord: 'Finland',
     },
 }

@@ -9,7 +9,7 @@ describe('<Titles />', () => {
     const slogan = {
         candidacy: ['Candidacy line'],
         prefix: 'Because technology should serve',
-        words: ['one', 'two', 'three', 'four'] as [string, string, string, string],
+        restingWord: 'four',
     }
 
     it('should render', async () => {

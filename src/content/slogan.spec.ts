@@ -17,18 +17,7 @@ describe('slogan data', () => {
         }
     })
 
-    it.each(LOCALES)('%s — has four non-empty typed words', (locale) => {
-        const { words } = sloganContent[locale]
-
-        expect(words).toHaveLength(4)
-        for (const word of words) {
-            expect(word.trim()).toBeTruthy()
-        }
-    })
-
-    it.each(LOCALES)('%s — typed words are unique', (locale) => {
-        const { words } = sloganContent[locale]
-
-        expect(new Set(words).size).toBe(words.length)
+    it.each(LOCALES)('%s — has a non-empty resting word', (locale) => {
+        expect(sloganContent[locale].restingWord.trim()).toBeTruthy()
     })
 })
