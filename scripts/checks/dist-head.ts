@@ -148,8 +148,8 @@ export function checkPage(html: string, pagePath: string, builtPaths: Set<string
     for (const block of jsonldBlocks) {
         try {
             const data = JSON.parse(block)
-            if (!String(data['@context'] ?? '').includes('schema.org'))
-                problems.push(`JSON-LD block missing schema.org @context`)
+            if (data['@context'] !== 'https://schema.org')
+                problems.push(`JSON-LD @context is "${data['@context']}", expected "https://schema.org"`)
             if (!KNOWN_JSONLD_TYPES.has(data['@type'])) problems.push(`unknown JSON-LD @type "${data['@type']}"`)
             parsedTypes.push(data)
         } catch {

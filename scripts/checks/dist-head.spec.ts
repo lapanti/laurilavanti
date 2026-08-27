@@ -194,6 +194,15 @@ describe('checkPage', () => {
                 BUILT_PATHS
             )
         ).toContain('unknown JSON-LD @type "Nonsense"')
+        expect(
+            checkPage(
+                pageHtml({
+                    jsonld: '<script type="application/ld+json">{"@context":"https://evilschema.org.example.com","@type":"Person"}</script>',
+                }),
+                PAGE_PATH,
+                BUILT_PATHS
+            )
+        ).toContain('JSON-LD @context is "https://evilschema.org.example.com", expected "https://schema.org"')
     })
 
     it('requires og:image and BlogPosting with datePublished on post pages', () => {
