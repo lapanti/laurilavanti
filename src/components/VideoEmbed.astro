@@ -31,9 +31,11 @@ if (!/^[\w-]{6,20}$/.test(videoId)) {
  * Nothing is requested from youtube-nocookie.com until the visitor presses play, so the
  * embed costs nothing on initial load. `autoplay=1` is appended last so the click that
  * dismisses the facade also starts playback — the visitor already pressed play, the
- * iframe just arrives late.
+ * iframe just arrives late. `cc_load_policy=0` keeps YouTube's own caption track off,
+ * since a video that carries burnt-in subtitles would otherwise show them twice; a
+ * viewer whose YouTube account forces captions on still overrides this.
  */
-const query = [params, 'autoplay=1'].filter(Boolean).join('&')
+const query = [params, 'cc_load_policy=0', 'autoplay=1'].filter(Boolean).join('&')
 const allowJson = JSON.stringify(
     'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 )
