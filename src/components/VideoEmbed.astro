@@ -80,7 +80,6 @@ const videoEmbedScript = `(function(){
         buttonLineHeight: typographics.button.lineHeight,
         colorsBrightGreen: colors.brightGreen,
         colorsDeepForest: colors.forestGreen,
-        colorsDeepForest70: colors.forestGreen70,
         colorsOat: colors.oat,
         colorsOffWhite: colors.offWhite,
         colorsTextSecondary: colors.textSecondary,
@@ -89,6 +88,7 @@ const videoEmbedScript = `(function(){
         fineFontWeight: typographics.fine.fontWeight,
         fineLineHeight: typographics.fine.lineHeight,
         sizes05: sizes[0.5],
+        sizes025: sizes[0.25],
         sizes4: sizes[4],
         sizes15: sizes[1.5],
         sizes45: sizes[45],
@@ -121,7 +121,7 @@ const videoEmbedScript = `(function(){
 
     .facade {
         align-items: center;
-        background: var(--colorsDeepForest70);
+        background: none;
         border: 0;
         color: var(--colorsOat);
         cursor: pointer;
@@ -177,11 +177,14 @@ const videoEmbedScript = `(function(){
     }
 
     .label {
+        background: var(--colorsDeepForest);
+        color: var(--colorsOat);
         font-family: var(--buttonFontFamily);
         font-size: var(--buttonFontSize);
         font-weight: var(--buttonFontWeight);
         letter-spacing: var(--buttonLetterSpacing);
         line-height: var(--buttonLineHeight);
+        padding: var(--sizes025) var(--sizes05);
         text-transform: uppercase;
     }
 
