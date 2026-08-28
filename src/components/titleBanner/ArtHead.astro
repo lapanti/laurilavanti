@@ -164,7 +164,7 @@ const tagsToRender = (tags ?? [])
 <div class="art-head">
     <div class="sheet">
         <div class="inner">
-            <p class="art-meta">
+            <div class="art-meta">
                 {dateOnly && <time datetime={dateOnly}>{dateToDisplay}</time>}
                 {
                     readingTime && readingTime > 0 && (
@@ -190,7 +190,7 @@ const tagsToRender = (tags ?? [])
                         </Fragment>
                     )
                 }
-            </p>
+            </div>
             <h1>{title}</h1>
             {
                 tagsToRender.length > 0 && (
