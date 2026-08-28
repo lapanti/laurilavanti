@@ -29,39 +29,39 @@ const groundColor = {
 >
     .topic {
         background: var(--topicPlateGround);
-        padding-block: 88px;
-        scroll-margin-top: 56px;
+        padding-block: 5.5rem;
+        scroll-margin-top: 3.5rem;
     }
 
     .topic-head {
         align-items: start;
         display: grid;
-        gap: 56px;
+        gap: 3.5rem;
         grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
     }
 
     .topic-h {
         color: var(--topicPlateForestGreen);
         font-family: var(--topicPlateDisplayFontFamily);
-        font-size: 88px;
+        font-size: 5.5rem;
         font-weight: 900;
         letter-spacing: -0.02em;
         line-height: 1;
         margin: 0;
-        padding-top: 6px;
+        padding-top: 0.375rem;
         text-transform: uppercase;
     }
 
     .topic-intro {
         display: grid;
-        gap: 20px;
+        gap: 1.25rem;
         max-width: 620px;
     }
 
     .topic-intro p {
         color: var(--topicPlateTextPrimary);
         font-family: var(--topicPlateTextFontFamily);
-        font-size: 17px;
+        font-size: 1.0625rem;
         font-weight: 400;
         line-height: 1.68;
         margin: 0;
@@ -70,29 +70,29 @@ const groundColor = {
     .topic-intro .answer {
         color: var(--topicPlateForestGreen);
         font-family: var(--topicPlateAnswerFontFamily);
-        font-size: 20px;
+        font-size: 1.25rem;
         font-weight: 500;
         line-height: 1.5;
     }
 
     .topic-body {
-        padding-top: 56px;
+        padding-top: 3.5rem;
     }
 
     .topic-more {
         line-height: 1.68;
         margin: 0;
-        padding-top: 40px;
+        padding-top: 2.5rem;
     }
 
     @media (max-width: 1199px) {
         .topic-head {
-            gap: 24px;
+            gap: 1.5rem;
             grid-template-columns: minmax(0, 1fr);
         }
 
         .topic-h {
-            font-size: 72px;
+            font-size: 4.5rem;
         }
 
         .topic-intro {
@@ -102,30 +102,30 @@ const groundColor = {
 
     @media (max-width: 768px) {
         .topic {
-            padding-block: 60px;
-            scroll-margin-top: 104px;
+            padding-block: 3.75rem;
+            scroll-margin-top: 6.5rem;
         }
 
         .topic-h {
-            font-size: 52px;
+            font-size: 3.25rem;
         }
 
         .topic-intro .answer {
-            font-size: 19px;
+            font-size: 1.1875rem;
         }
 
         .topic-body {
-            padding-top: 40px;
+            padding-top: 2.5rem;
         }
 
         .topic-more {
-            padding-top: 32px;
+            padding-top: 2rem;
         }
     }
 
     @media (max-width: 380px) {
         .topic-h {
-            font-size: 44px;
+            font-size: 2.75rem;
         }
     }
 </style>

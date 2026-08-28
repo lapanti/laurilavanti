@@ -52,9 +52,9 @@ const toneColors = {
 
     .pillar-body {
         display: grid;
-        gap: 20px;
+        gap: 1.25rem;
         grid-template-columns: 1fr;
-        padding-top: 40px;
+        padding-top: 2.5rem;
     }
 
     .pillar :global(.answer) {
@@ -79,8 +79,8 @@ const toneColors = {
     .vocab {
         display: flex;
         flex-wrap: wrap;
-        gap: 4.8px;
-        padding-top: 20px;
+        gap: 0.3rem;
+        padding-top: 1.25rem;
     }
 
     .vocab li {
@@ -91,15 +91,15 @@ const toneColors = {
         font-weight: var(--chipFontWeight);
         letter-spacing: var(--chipLetterSpacing);
         line-height: var(--chipLineHeight);
-        padding: 4.48px 8.8px;
+        padding: 0.28rem 0.55rem;
         text-transform: uppercase;
     }
 
     .vocab a {
         color: inherit;
         display: block;
-        margin: -4.48px -8.8px;
-        padding: 4.48px 8.8px;
+        margin: -0.28rem -0.55rem;
+        padding: 0.28rem 0.55rem;
         text-decoration: none;
         transition:
             background 0.18s var(--ease),
@@ -119,9 +119,9 @@ const toneColors = {
     .reads {
         border-top: 3px solid var(--ink);
         display: grid;
-        gap: 8.8px;
-        margin-top: 24px;
-        padding-top: 18.4px;
+        gap: 0.55rem;
+        margin-top: 1.5rem;
+        padding-top: 1.15rem;
     }
 
     .reads a {
@@ -130,18 +130,18 @@ const toneColors = {
         font-family: var(--textSmallFontFamily);
         font-size: var(--textSmallFontSize);
         font-weight: 500;
-        line-height: 21px;
+        line-height: 1.4;
         text-decoration: none;
     }
 
     .reads a:hover {
         text-decoration: underline;
-        text-underline-offset: 3px;
+        text-underline-offset: 0.1875rem;
     }
 
     @media (min-width: 1200px) {
         .pillar-body {
-            gap: 56px;
+            gap: 3.5rem;
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }

@@ -40,7 +40,7 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
 >
     .who {
         background: var(--colorsLightSand, #e9e4d4);
-        padding-block: 96px;
+        padding-block: 6rem;
     }
 
     .eyebrow {
@@ -56,20 +56,20 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
     .who-grid {
         align-items: start;
         display: grid;
-        gap: 24px;
+        gap: 1.5rem;
         grid-template-columns: 1fr;
     }
 
     h2 {
         color: var(--colorsDeepForest);
         font-family: var(--displayFontFamily);
-        font-size: 42px;
+        font-size: 2.625rem;
         font-weight: var(--displayFontWeight);
         letter-spacing: -0.02em;
         line-height: 1;
         margin: 0;
         max-width: none;
-        padding-top: 16px;
+        padding-top: 1rem;
         text-transform: uppercase;
     }
 
@@ -77,15 +77,15 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
         color: var(--colorsTextPrimary);
         font-family: var(--textFontFamily);
         font-weight: var(--textFontWeight);
-        font-size: 17px;
+        font-size: 1.0625rem;
         line-height: var(--textLineHeight);
         margin: 0;
-        padding-top: 19.2px;
+        padding-top: 1.2rem;
     }
 
     figure {
         margin: 0;
-        padding-top: 24px;
+        padding-top: 1.5rem;
     }
 
     .frame {
@@ -104,16 +104,16 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
     figcaption {
         color: var(--colorsTextSecondary);
         font-family: var(--textSmallFontFamily);
-        font-size: 12px;
-        line-height: 20.16px;
-        padding-top: 9.6px;
+        font-size: 0.75rem;
+        line-height: 1.68;
+        padding-top: 0.6rem;
     }
 
     .creds {
         display: grid;
-        gap: 12px;
+        gap: 0.75rem;
         grid-template-columns: 1fr;
-        padding-top: 32px;
+        padding-top: 2rem;
     }
 
     .creds li {
@@ -121,9 +121,9 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
         color: var(--colorsTextPrimary);
         font-family: var(--textSmallFontFamily);
         font-weight: var(--textSmallFontWeight);
-        font-size: 15px;
-        line-height: 21px;
-        padding: 4px 0 3px 12px;
+        font-size: 0.9375rem;
+        line-height: 1.4;
+        padding: 0.25rem 0 0.1875rem 0.75rem;
     }
 
     @media (min-width: 769px) {
@@ -132,14 +132,14 @@ const portrait = getImageSrcset(portraitImage, 'hero', [560, 840, 1128])
         }
         .creds {
             border-top: 0;
-            gap: 20px;
+            gap: 1.25rem;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            padding-top: 48px;
+            padding-top: 3rem;
         }
         .creds li {
             border-left: 0;
             border-top: 4px solid var(--colorsSand);
-            padding: 11.2px 0 0;
+            padding: 0.7rem 0 0;
         }
     }
 
