@@ -1,0 +1,84 @@
+name: Production performance audit
+
+# Weekly Lighthouse run against the live site with production-grade budgets
+# (.github/lighthouserc-production.json). The PR gate in main.yml measures
+# cold-cache preview deploys and is deliberately looser — this workflow is the
+# one that asserts production is actually fast (Core Web Vitals feed ranking).
+
+on:
+  schedule:
+    - cron: '30 6 * * 1' # every Monday at 06:30 UTC, after the freshness audit
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    name: Lighthouse against production
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Run Lighthouse
+        id: lighthouse
+        continue-on-error: true
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://lavanti.fi/fi/
+            https://lavanti.fi/en/
+            https://lavanti.fi/sv/
+            https://lavanti.fi/fi/about/
+            https://lavanti.fi/fi/blog/
+            https://lavanti.fi/fi/blog/1/kotihoidon-tuen-kuntalisa/
+          configPath: .github/lighthouserc-production.json
+          runs: 3
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Find existing tracking issue
+        id: find-issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE=$(gh issue list --label "perf-audit" --state open --json number --jq '.[0].number // ""')
+          echo "number=$ISSUE" >> "$GITHUB_OUTPUT"
+
+      - name: Update or create tracking issue (budgets exceeded)
+        if: steps.lighthouse.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: |
+            <!-- perf-audit-body -->
+            Production Lighthouse run exceeded the budgets in `.github/lighthouserc-production.json`.
+
+            - Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            - Budgets: performance >= 0.90, LCP <= 2500 ms, TBT <= 300 ms, CLS <= 0.1
+
+            Median reports per URL are attached as run artifacts (and uploaded to
+            temporary public storage — links in the run log).
+
+            _Updated automatically by the [production performance audit](${{ github.server_url }}/${{ github.repository }}/actions/workflows/perf-audit.yml)._
+        run: |
+          if [ -n "${{ steps.find-issue.outputs.number }}" ]; then
+            gh issue edit "${{ steps.find-issue.outputs.number }}" --body "$BODY"
+            gh issue comment "${{ steps.find-issue.outputs.number }}" --body "Audit refreshed $(date -u +%Y-%m-%d) — budgets still exceeded."
+          else
+            gh issue create \
+              --title "Performance audit: production budgets exceeded" \
+              --label "perf-audit" \
+              --body "$BODY"
+          fi
+
+      - name: Close tracking issue (budgets met)
+        if: steps.lighthouse.outcome == 'success' && steps.find-issue.outputs.number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment "${{ steps.find-issue.outputs.number }}" --body "Production is back within budget as of $(date -u +%Y-%m-%d). Closing."
+          gh issue close "${{ steps.find-issue.outputs.number }}"
+
+      - name: Fail the run when budgets exceeded
+        if: steps.lighthouse.outcome == 'failure'
+        run: exit 1
