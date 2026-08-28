@@ -5,11 +5,12 @@ import { getAllPosts, type Post } from '../lib/posts'
 
 const AI_TAG = 'artificial-intelligence'
 
+/* Canonical URLs only (trailingSlash: 'always') — a listed URL must never round-trip a redirect. */
 const PILLAR_LINKS = [
     { label: 'Etusivu', url: '/fi/' },
-    { label: 'Aiheet', url: '/fi/topics' },
-    { label: 'Laurista', url: '/fi/about' },
-    { label: 'Suositukset', url: '/fi/recommendations' },
+    { label: 'Aiheet', url: '/fi/blog/' },
+    { label: 'Laurista', url: '/fi/about/' },
+    { label: 'Suositukset', url: '/fi/recommendations/' },
 ]
 
 export const buildLlmsTxt = (posts: Post[], site: URL): string => {
