@@ -186,7 +186,7 @@ describe('styles', () => {
                 additionalInfo: { ...fontSizes[1], fontFamily: fontFamilies.mono, fontWeight: fontWeights.regular },
                 articleHeadline: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '42px',
+                    fontSize: '2.625rem',
                     fontWeight: fontWeights.black,
                     letterSpacing: '-0.01em',
                     lineHeight: '1.02',
@@ -194,7 +194,7 @@ describe('styles', () => {
                 },
                 articleLead: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '21px',
+                    fontSize: '1.3125rem',
                     fontWeight: fontWeights.medium,
                     lineHeight: '1.5',
                 },
@@ -207,7 +207,7 @@ describe('styles', () => {
                 body: { ...fontSizes[1.25], fontFamily: fontFamilies.sans, fontWeight: fontWeights.regular },
                 button: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '21px',
+                    fontSize: '1.3125rem',
                     fontWeight: fontWeights.extrabold,
                     letterSpacing: '0.07em',
                     lineHeight: '1.4',
@@ -215,16 +215,16 @@ describe('styles', () => {
                 },
                 caption: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '12px',
+                    fontSize: '0.75rem',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.68',
                 },
                 chip: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '11px',
+                    fontSize: '0.6875rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.13em',
-                    lineHeight: '18.48px',
+                    lineHeight: '1.68',
                     textTransform: 'uppercase',
                 },
                 definition: {
@@ -235,7 +235,7 @@ describe('styles', () => {
                 },
                 display: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '120px',
+                    fontSize: '7.5rem',
                     fontWeight: fontWeights.black,
                     letterSpacing: '-0.02em',
                     lineHeight: '1',
@@ -243,7 +243,7 @@ describe('styles', () => {
                 },
                 displayPillar: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '108px',
+                    fontSize: '6.75rem',
                     fontWeight: fontWeights.black,
                     letterSpacing: '-0.015em',
                     lineHeight: '1',
@@ -251,7 +251,7 @@ describe('styles', () => {
                 },
                 displaySynthesis: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '110px',
+                    fontSize: '6.875rem',
                     fontWeight: fontWeights.black,
                     letterSpacing: '-0.02em',
                     lineHeight: '1',
@@ -259,7 +259,7 @@ describe('styles', () => {
                 },
                 eyebrow: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '15px',
+                    fontSize: '0.9375rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.176em',
                     lineHeight: '1.3',
@@ -267,7 +267,7 @@ describe('styles', () => {
                 },
                 fine: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '13px',
+                    fontSize: '0.8125rem',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.68',
                 },
@@ -276,7 +276,7 @@ describe('styles', () => {
                 h3: { ...fontSizes[1.5], fontFamily: fontFamilies.sans, fontWeight: fontWeights.medium },
                 headline: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '58px',
+                    fontSize: '3.625rem',
                     fontWeight: fontWeights.black,
                     letterSpacing: '-0.015em',
                     lineHeight: '1',
@@ -284,13 +284,13 @@ describe('styles', () => {
                 },
                 heroFoot: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '16px',
+                    fontSize: '1rem',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.5',
                 },
                 heroKicker: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '16px',
+                    fontSize: '1rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.165em',
                     lineHeight: '1.4',
@@ -299,13 +299,13 @@ describe('styles', () => {
                 ingress: { ...fontSizes[1.875], fontFamily: fontFamilies.sans, fontWeight: fontWeights.light },
                 lede: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '19px',
+                    fontSize: '1.1875rem',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.68',
                 },
                 linkRule: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '14px',
+                    fontSize: '0.875rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.12em',
                     lineHeight: '1.68',
@@ -313,7 +313,7 @@ describe('styles', () => {
                 },
                 meta: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '14px',
+                    fontSize: '0.875rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.137em',
                     lineHeight: '1.3',
@@ -321,7 +321,7 @@ describe('styles', () => {
                 },
                 nav: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '18px',
+                    fontSize: '1.125rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.055em',
                     lineHeight: '1.3',
@@ -329,7 +329,7 @@ describe('styles', () => {
                 },
                 navMobile: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '26px',
+                    fontSize: '1.625rem',
                     fontWeight: fontWeights.bold,
                     letterSpacing: '0.055em',
                     lineHeight: '1.3',
@@ -337,13 +337,13 @@ describe('styles', () => {
                 },
                 pillarAnswer: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '20px',
+                    fontSize: '1.25rem',
                     fontWeight: fontWeights.medium,
                     lineHeight: '1.5',
                 },
                 postTitle: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '18px',
+                    fontSize: '1.125rem',
                     fontWeight: fontWeights.semibold,
                     lineHeight: '1.3',
                 },
@@ -355,39 +355,39 @@ describe('styles', () => {
                 },
                 quoteBody: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '20px',
+                    fontSize: '1.25rem',
                     fontStyle: 'italic',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.4',
                 },
                 quoteCite: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '20px',
+                    fontSize: '1.25rem',
                     fontWeight: fontWeights.bold,
                     lineHeight: '1.5',
                 },
                 quoteCiteMeta: {
                     fontFamily: signalBandFontFamilies.heading,
-                    fontSize: '17px',
+                    fontSize: '1.0625rem',
                     fontWeight: fontWeights.semibold,
                     letterSpacing: '0.01em',
                     lineHeight: '1.6',
                 },
                 text: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '17px',
+                    fontSize: '1.0625rem',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.68',
                 },
                 textSmall: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '15px',
+                    fontSize: '0.9375rem',
                     fontWeight: fontWeights.regular,
                     lineHeight: '1.68',
                 },
                 title: {
                     fontFamily: signalBandFontFamilies.sans,
-                    fontSize: '19px',
+                    fontSize: '1.1875rem',
                     fontWeight: fontWeights.semibold,
                     lineHeight: '1.3',
                 },
