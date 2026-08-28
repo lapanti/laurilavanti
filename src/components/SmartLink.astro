@@ -1,5 +1,4 @@
 ---
-import ExternalLink from './ExternalLink.astro'
 import Link from './Link.astro'
 
 interface Props {
@@ -11,14 +10,7 @@ interface Props {
 
 const { ariaLabel, heading, href, rel } = Astro.props
 
-const isInternal = href.startsWith('/')
+const external = !href.startsWith('/')
 ---
 
-{
-    /* prettier-ignore */
-    isInternal ? (
-        <Link heading={heading} href={href} rel={rel}><slot /></Link>
-    ) : (
-        <ExternalLink ariaLabel={ariaLabel} href={href} rel={rel}><slot /></ExternalLink>
-    )
-}
+<Link ariaLabel={ariaLabel} external={external} heading={heading} href={href} rel={rel}><slot /></Link>

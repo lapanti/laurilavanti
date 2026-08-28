@@ -2,12 +2,16 @@
 import { colors, sizes } from '../lib/styles'
 
 interface Props {
+    /** Only used when external: suffixed with the Finnish "opens in a new tab" note. */
+    ariaLabel?: string
+    /** Opens in a new tab with noopener noreferrer. */
+    external?: boolean
     heading?: boolean
     href: string
     rel?: string
 }
 
-const { heading, href, rel } = Astro.props
+const { ariaLabel, external = false, heading, href, rel } = Astro.props
 ---
 
 <style define:vars={{ colorsDarkGreen: colors.darkGreen, colorsDarkMoss: colors.darkMoss, sizes0125: sizes[0.125] }}>
@@ -32,4 +36,10 @@ const { heading, href, rel } = Astro.props
         color: var(--colorsDarkGreen);
     }
 </style>
-<a class:list={[{ heading }]} href={href} rel={`${rel ? rel : ''}`}><slot /></a>
+<a
+    aria-label={external && ariaLabel ? `${ariaLabel} (linkki aukeaa uudessa välilehdessä)` : null}
+    class:list={[{ heading }]}
+    href={href}
+    rel={external ? `${rel ? rel : ''} noopener noreferrer` : `${rel ? rel : ''}`}
+    target={external ? '_blank' : null}><slot /></a
+>
