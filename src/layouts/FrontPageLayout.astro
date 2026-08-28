@@ -3,6 +3,7 @@ import type { MDXLayoutProps } from 'astro'
 import type { JsonLdType } from '../lib/jsonld'
 
 import HeroBanner from '../components/HeroBanner.astro'
+import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import { sloganContent } from '../content/slogan'
 import { getImage } from '../lib/images'
 import BaseLayout from './BaseLayout.astro'
@@ -41,6 +42,9 @@ const slogan = sloganContent[resolvedLang]
     title={pageTitle}
     type={type}
 >
+    <Fragment slot="head">
+        <HeroPreloadLinks heroImage={heroImage} mobileHeroImage={mobileHeroImage} mode="art-directed" />
+    </Fragment>
     <HeroBanner
         alt={alt}
         description={description ?? ''}
