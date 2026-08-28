@@ -39,7 +39,7 @@ const { description, lang, slogan } = Astro.props
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 24px 16px 32px;
+        padding: 1.5rem 1rem 2rem;
     }
 
     .hero-kicker {
@@ -55,13 +55,13 @@ const { description, lang, slogan } = Astro.props
     h1 {
         color: var(--colorsDeepForest);
         font-family: var(--displayFontFamily);
-        font-size: 64px;
+        font-size: 4rem;
         font-weight: var(--displayFontWeight);
         letter-spacing: var(--displayLetterSpacing);
         line-height: 1;
         margin: 0;
         max-width: 1800px;
-        padding: 16px 0 12px;
+        padding: 1rem 0 0.75rem;
         text-transform: uppercase;
     }
 
@@ -74,7 +74,7 @@ const { description, lang, slogan } = Astro.props
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 1.5rem;
         text-align: left;
     }
 
@@ -89,10 +89,10 @@ const { description, lang, slogan } = Astro.props
 
     @media (min-width: 769px) {
         .hero-right {
-            padding: 128px 40px 32px 16px;
+            padding: 8rem 2.5rem 2rem 1rem;
         }
         h1 {
-            font-size: 72px;
+            font-size: 4.5rem;
         }
         .hero-foot {
             align-items: center;
@@ -106,19 +106,19 @@ const { description, lang, slogan } = Astro.props
 
     @media (min-width: 1000px) {
         .hero-right {
-            padding-top: 128px;
+            padding-top: 8rem;
         }
         h1 {
-            font-size: 88px;
+            font-size: 5.5rem;
         }
     }
 
     @media (min-width: 1200px) {
         .hero-right {
-            padding: 128px 56px 32px;
+            padding: 8rem 3.5rem 2rem;
         }
         h1 {
-            font-size: 120px;
+            font-size: 7.5rem;
         }
     }
 </style>
