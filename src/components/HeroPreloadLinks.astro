@@ -1,0 +1,86 @@
+---
+import { getHeroPreload, HERO_CONFIGS } from '../lib/images'
+
+interface Props {
+    heroImage?: string
+    mobileHeroImage?: string
+    /**
+     * Which hero markup the preload must mirror:
+     * `post` — titleBanner/HeroMedia.astro's single `<img>`;
+     * `page` — titleBanner/Image.astro's single `<img>`;
+     * `art-directed` — heroBanner/Images.astro's `<picture>` (front page + split pages),
+     * falling back to its single-`<img>` branch when mobileHeroImage is absent.
+     */
+    mode: 'art-directed' | 'page' | 'post'
+}
+
+const { heroImage, mobileHeroImage, mode } = Astro.props
+
+/*
+ * Preload shape (see .agents/specs/lcp-delivery.md): no `crossorigin` — the <img>
+ * fetch is no-cors and a credentials-mode mismatch double-downloads; no `href` —
+ * browsers without imagesrcset support skip the preload instead of fetching the
+ * largest width. The media pair must stay byte-equal to Images.astro's
+ * `<source media>` boundary or one viewport double-downloads.
+ */
+const single =
+    heroImage && mode !== 'art-directed'
+        ? getHeroPreload(heroImage, mode === 'post' ? HERO_CONFIGS.postHero : HERO_CONFIGS.pageHero)
+        : undefined
+const pair =
+    heroImage && mobileHeroImage && mode === 'art-directed'
+        ? {
+              desktop: getHeroPreload(heroImage, HERO_CONFIGS.portrait),
+              mobile: getHeroPreload(mobileHeroImage, HERO_CONFIGS.landscape),
+          }
+        : undefined
+const fallback =
+    heroImage && !mobileHeroImage && mode === 'art-directed'
+        ? getHeroPreload(heroImage, HERO_CONFIGS.single)
+        : undefined
+---
+
+{
+    single && (
+        <link
+            as="image"
+            fetchpriority="high"
+            imagesizes={single.imagesizes}
+            imagesrcset={single.imagesrcset}
+            rel="preload"
+        />
+    )
+}
+{
+    pair && (
+        <Fragment>
+            <link
+                as="image"
+                fetchpriority="high"
+                imagesizes={pair.mobile.imagesizes}
+                imagesrcset={pair.mobile.imagesrcset}
+                media="(max-width: 768px)"
+                rel="preload"
+            />
+            <link
+                as="image"
+                fetchpriority="high"
+                imagesizes={pair.desktop.imagesizes}
+                imagesrcset={pair.desktop.imagesrcset}
+                media="(min-width: 769px)"
+                rel="preload"
+            />
+        </Fragment>
+    )
+}
+{
+    fallback && (
+        <link
+            as="image"
+            fetchpriority="high"
+            imagesizes={fallback.imagesizes}
+            imagesrcset={fallback.imagesrcset}
+            rel="preload"
+        />
+    )
+}
