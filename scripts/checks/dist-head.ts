@@ -19,6 +19,10 @@
  *   - RSS autodiscovery link matching the page locale
  *   - every JSON-LD block parses, declares schema.org and a known @type;
  *     blog post pages carry a BlogPosting with datePublished
+ *   - LCP hero preload drift guard (.agents/specs/lcp-delivery.md): every
+ *     fetchpriority=high hero has an image preload whose imagesrcset/imagesizes
+ *     are byte-equal to the hero <img>/<source> markup, with no crossorigin and
+ *     no href; post pages carry exactly one image preload
  */
 
 import { readdirSync, readFileSync } from 'node:fs'
@@ -140,6 +144,29 @@ export function checkPage(html: string, pagePath: string, builtPaths: Set<string
         const rss = links.filter((t) => t.rel === 'alternate' && t.type === 'application/rss+xml')
         if (!rss.some((t) => t.href === `/${lang}/rss.xml`))
             problems.push(`missing RSS autodiscovery link for /${lang}/rss.xml`)
+    }
+
+    const preloads = links.filter((t) => t.rel === 'preload' && t.as === 'image')
+    const heroImgs = findTags(html, 'img').filter((t) => t.fetchpriority === 'high')
+    const heroSrcsets = new Map<string, string>()
+    for (const el of [...heroImgs, ...findTags(html, 'source')]) {
+        if (el.srcset) heroSrcsets.set(el.srcset, el.sizes ?? '')
+    }
+
+    if (heroImgs.length > 0 && preloads.length === 0)
+        problems.push('hero image (fetchpriority=high) has no preload link')
+    if (isPost && heroImgs.length > 0 && preloads.length !== 1)
+        problems.push(`post page expected exactly one image preload, found ${preloads.length}`)
+    for (const p of preloads) {
+        if (p.crossorigin !== undefined) problems.push('image preload carries crossorigin (double-download hazard)')
+        if (p.href !== undefined) problems.push('image preload carries an href fallback (double-download hazard)')
+        if (!p.imagesrcset) {
+            problems.push('image preload missing imagesrcset')
+        } else if (!heroSrcsets.has(p.imagesrcset)) {
+            problems.push('image preload imagesrcset does not match any hero img/source srcset')
+        } else if ((p.imagesizes ?? '') !== heroSrcsets.get(p.imagesrcset)) {
+            problems.push('image preload imagesizes differs from its hero element sizes')
+        }
     }
 
     const jsonldBlocks = [...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)].map((m) => m[1])
