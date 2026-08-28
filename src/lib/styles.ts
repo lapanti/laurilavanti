@@ -361,7 +361,7 @@ export const typographics = {
         fontSize: '1.25rem',
         fontStyle: 'italic',
         fontWeight: fontWeights.regular,
-        lineHeight: '1.4',
+        lineHeight: '1.5', // >= 1.5 keeps recommendation-quote <p> compliant with SiteImprove sia-r73 (WCAG 1.4.8)
     },
     quoteCite: {
         fontFamily: signalBandFontFamilies.heading,
