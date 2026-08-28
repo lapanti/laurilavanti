@@ -20,13 +20,13 @@ import { colors, typographics } from '../lib/styles'
         font-weight: var(--textFontWeight);
         line-height: var(--textLineHeight);
         max-width: 672px;
-        padding-top: 24px;
+        padding-top: 1.5rem;
     }
 
     :global(.prose a) {
         color: var(--colorsDarkGreen);
         text-decoration: underline;
-        text-underline-offset: 3px;
+        text-underline-offset: 0.1875rem;
     }
 
     :global(.prose a:hover) {
@@ -36,7 +36,7 @@ import { colors, typographics } from '../lib/styles'
     /* Block flow rather than a grid: Paragraph carries an inline grid-column-start
        that would otherwise place slotted MDX paragraphs in the wrong column. */
     .prose > :global(* + *) {
-        margin-top: 20px;
+        margin-top: 1.25rem;
     }
 
     @media (max-width: 768px) {
@@ -45,7 +45,7 @@ import { colors, typographics } from '../lib/styles'
         }
 
         .prose > :global(* + *) {
-            margin-top: 16px;
+            margin-top: 1rem;
         }
     }
 </style>

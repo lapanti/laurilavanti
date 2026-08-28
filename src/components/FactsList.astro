@@ -18,24 +18,24 @@ const { items } = Astro.props
 >
     .facts {
         display: grid;
-        gap: 12px;
-        padding-top: 24px;
+        gap: 0.75rem;
+        padding-top: 1.5rem;
     }
 
     .facts li {
         border-left: 4px solid var(--colorsSand);
         color: var(--colorsTextPrimary);
         font-family: var(--factsFontFamily);
-        font-size: 17px;
+        font-size: 1.0625rem;
         font-weight: var(--factsFontWeight);
         line-height: 1.6;
-        padding: 4px 0 4px 12px;
+        padding: 0.25rem 0 0.25rem 0.75rem;
     }
 
     @media (max-width: 768px) {
         .facts {
-            gap: 16px;
-            padding-top: 24px;
+            gap: 1rem;
+            padding-top: 1.5rem;
         }
     }
 </style>
