@@ -12,6 +12,18 @@ test.describe('About Page på svenska', () => {
         await aboutPage.checkContent()
     })
 
+    test('should show the slim signal band below the hero', async ({ page }) => {
+        const aboutPage = new AboutSwePage(page)
+        await aboutPage.goTo()
+
+        /*
+         * Signal Band separator between the split hero and the page plates —
+         * decorative (aria-hidden), so aria snapshots never guard it and the
+         * screenshot diff ratio can absorb it silently. Assert it explicitly.
+         */
+        await test.expect(page.locator('main .stripes--slim')).toBeVisible()
+    })
+
     test('should match aria snapshot', async ({ page }) => {
         const aboutPage = new AboutSwePage(page)
         await aboutPage.goTo()
