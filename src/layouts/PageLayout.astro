@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../content/nav'
-import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
+import type { BreadcrumbItem, FaqItem, JsonLdType } from '../lib/jsonld'
 
 import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import TitleBanner from '../components/TitleBanner.astro'
@@ -16,7 +16,7 @@ interface Props {
     description?: string
     emphasis?: string
     eyebrow?: string
-    faq?: Array<{ a: string; q: string }>
+    faq?: Array<FaqItem>
     heroImage?: string
     intro?: string
     lang?: Lang

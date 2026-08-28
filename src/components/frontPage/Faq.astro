@@ -1,9 +1,11 @@
 ---
+import type { FaqItem } from '../../lib/jsonld'
+
 import { colors, typographics } from '../../lib/styles'
 
 interface Props {
     eyebrow: string
-    faq: Array<{ a: string; q: string }>
+    faq: Array<FaqItem>
     heading: string
 }
 

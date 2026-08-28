@@ -1,9 +1,11 @@
+import type { FaqItem } from '../../lib/jsonld'
+
 export interface LocalTag {
     descriptions: { en: string[]; fi: string[]; sv: string[] }
     faq?: {
-        en?: Array<{ a: string; q: string }>
-        fi?: Array<{ a: string; q: string }>
-        sv?: Array<{ a: string; q: string }>
+        en?: Array<FaqItem>
+        fi?: Array<FaqItem>
+        sv?: Array<FaqItem>
     }
     heroImage?: string
     heroImageAlt?: { en: string; fi: string; sv: string }

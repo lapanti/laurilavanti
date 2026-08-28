@@ -11,3 +11,5 @@ export const JSON_LD_TYPES = [BLOGPOSTING, COLLECTIONPAGE, PERSON, PROFILEPAGE, 
 export type JsonLdType = (typeof JSON_LD_TYPES)[number]
 
 export type BreadcrumbItem = { name: string; url: string }
+
+export type FaqItem = { a: string; q: string }
