@@ -17,8 +17,10 @@ const BUILT_PATHS = new Set([
 ])
 
 interface HeadOverrides {
+    body?: string
     canonical?: string
     description?: string
+    head?: string
     hreflangs?: string
     jsonld?: string
     ogImage?: string
@@ -28,7 +30,9 @@ interface HeadOverrides {
 
 function pageHtml(overrides: HeadOverrides = {}): string {
     const {
+        body = '',
         canonical = '<link href="https://lavanti.fi/fi/about/" rel="canonical">',
+        head = '',
         description = '<meta name="description" content="Kuvaus sivusta">',
         hreflangs = [
             '<link href="https://lavanti.fi/fi/about/" hreflang="fi" rel="alternate">',
@@ -43,12 +47,19 @@ function pageHtml(overrides: HeadOverrides = {}): string {
     } = overrides
     const ogUrl = /href="([^"]*)" rel="canonical"/.exec(canonical)?.[1] ?? 'https://lavanti.fi/fi/about/'
 
-    return `<html><head>${title}${description}${canonical}${hreflangs}${rss}
+    return `<html><head>${title}${description}${canonical}${hreflangs}${rss}${head}
         <meta content="Testisivu" property="og:title">
         <meta content="Kuvaus sivusta" property="og:description">
         <meta content="${ogUrl}" property="og:url">
-        ${ogImage}${jsonld}</head><body></body></html>`
+        ${ogImage}${jsonld}</head><body>${body}</body></html>`
 }
+
+// ── hero preload fixtures ─────────────────────────────────────────────────────
+
+const HERO_SRCSET = 'https://lavanti.fi/images/x/w=864 864w, https://lavanti.fi/images/x/w=1728 1728w'
+const HERO_SIZES = '(max-width: 1223px) 100vw, 1224px'
+const HERO_IMG = `<img alt="" fetchpriority="high" sizes="${HERO_SIZES}" src="https://lavanti.fi/images/x/w=1728" srcset="${HERO_SRCSET}" width="1728" height="1320">`
+const HERO_PRELOAD = `<link as="image" fetchpriority="high" imagesizes="${HERO_SIZES}" imagesrcset="${HERO_SRCSET}" rel="preload">`
 
 // ── parseAttrs / findTags ─────────────────────────────────────────────────────
 
@@ -203,6 +214,65 @@ describe('checkPage', () => {
                 BUILT_PATHS
             )
         ).toContain('JSON-LD @context is "https://evilschema.org.example.com", expected "https://schema.org"')
+    })
+
+    it('passes a hero page whose preload mirrors the hero img', () => {
+        expect(checkPage(pageHtml({ body: HERO_IMG, head: HERO_PRELOAD }), PAGE_PATH, BUILT_PATHS)).toEqual([])
+    })
+
+    it('flags a hero image without a preload link', () => {
+        const problems = checkPage(pageHtml({ body: HERO_IMG }), PAGE_PATH, BUILT_PATHS)
+        expect(problems).toContain('hero image (fetchpriority=high) has no preload link')
+    })
+
+    it('flags a preload whose imagesrcset drifted from the hero markup', () => {
+        const drifted = HERO_PRELOAD.replace('864 864w', '999 999w')
+        const problems = checkPage(pageHtml({ body: HERO_IMG, head: drifted }), PAGE_PATH, BUILT_PATHS)
+        expect(problems).toContain('image preload imagesrcset does not match any hero img/source srcset')
+    })
+
+    it('flags a preload whose imagesizes drifted from the hero sizes', () => {
+        const drifted = HERO_PRELOAD.replace('imagesizes="(max-width: 1223px) 100vw, 1224px"', 'imagesizes="100vw"')
+        const problems = checkPage(pageHtml({ body: HERO_IMG, head: drifted }), PAGE_PATH, BUILT_PATHS)
+        expect(problems).toContain('image preload imagesizes differs from its hero element sizes')
+    })
+
+    it('flags crossorigin and href double-download hazards on image preloads', () => {
+        const withCrossorigin = HERO_PRELOAD.replace('rel="preload"', 'crossorigin="" rel="preload"')
+        expect(checkPage(pageHtml({ body: HERO_IMG, head: withCrossorigin }), PAGE_PATH, BUILT_PATHS)).toContain(
+            'image preload carries crossorigin (double-download hazard)'
+        )
+        const withHref = HERO_PRELOAD.replace(
+            'rel="preload"',
+            'href="https://lavanti.fi/images/x/w=1728" rel="preload"'
+        )
+        expect(checkPage(pageHtml({ body: HERO_IMG, head: withHref }), PAGE_PATH, BUILT_PATHS)).toContain(
+            'image preload carries an href fallback (double-download hazard)'
+        )
+    })
+
+    it('accepts a preload matching a picture source and flags extra preloads on posts', () => {
+        const sourceSrcset = 'https://lavanti.fi/images/y/w=560 560w'
+        const body = `<picture><source media="(min-width: 769px)" sizes="470px" srcset="${sourceSrcset}">${HERO_IMG}</picture>`
+        const sourcePreload = `<link as="image" fetchpriority="high" imagesizes="470px" imagesrcset="${sourceSrcset}" media="(min-width: 769px)" rel="preload">`
+        expect(checkPage(pageHtml({ body, head: HERO_PRELOAD + sourcePreload }), PAGE_PATH, BUILT_PATHS)).toEqual([])
+
+        const postOverrides: HeadOverrides = {
+            body,
+            canonical: `<link href="https://lavanti.fi${POST_PATH}" rel="canonical">`,
+            head: HERO_PRELOAD + sourcePreload,
+            hreflangs: [
+                `<link href="https://lavanti.fi${POST_PATH}" hreflang="fi" rel="alternate">`,
+                '<link href="https://lavanti.fi/sv/blog/1/test-artikel/" hreflang="sv" rel="alternate">',
+                '<link href="https://lavanti.fi/en/blog/1/test-article/" hreflang="en" rel="alternate">',
+                `<link href="https://lavanti.fi${POST_PATH}" hreflang="x-default" rel="alternate">`,
+            ].join(''),
+            jsonld: '<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","datePublished":"2026-01-01"}</script>',
+            ogImage: '<meta content="https://lavanti.fi/images/x/og" property="og:image">',
+        }
+        expect(checkPage(pageHtml(postOverrides), POST_PATH, BUILT_PATHS)).toContain(
+            'post page expected exactly one image preload, found 2'
+        )
     })
 
     it('requires og:image and BlogPosting with datePublished on post pages', () => {
