@@ -100,16 +100,22 @@ describe('buildLlmsTxt — pillar pages section', () => {
         expect(content).toContain('[Etusivu](https://lavanti.fi/fi/)')
     })
 
-    it('links Aiheet to /fi/topics', () => {
-        expect(content).toContain('[Aiheet](https://lavanti.fi/fi/topics)')
+    it('links Aiheet to the canonical /fi/blog/ (topics merged into blog, issue #1288)', () => {
+        expect(content).toContain('[Aiheet](https://lavanti.fi/fi/blog/)')
     })
 
-    it('links Laurista to /fi/about', () => {
-        expect(content).toContain('[Laurista](https://lavanti.fi/fi/about)')
+    it('links Laurista to /fi/about/ with trailing slash', () => {
+        expect(content).toContain('[Laurista](https://lavanti.fi/fi/about/)')
     })
 
-    it('links Suositukset to /fi/recommendations', () => {
-        expect(content).toContain('[Suositukset](https://lavanti.fi/fi/recommendations)')
+    it('links Suositukset to /fi/recommendations/ with trailing slash', () => {
+        expect(content).toContain('[Suositukset](https://lavanti.fi/fi/recommendations/)')
+    })
+
+    it('lists no URL that would round-trip a redirect (all trailing-slash canonical)', () => {
+        const urls = [...content.matchAll(/\[[^\]]+\]\((https:\/\/lavanti\.fi[^)]*)\)/g)].map((m) => m[1])
+        const redirecting = urls.filter((u) => !u.endsWith('/') && !u.endsWith('.xml') && !u.endsWith('.txt'))
+        expect(redirecting).toEqual([])
     })
 })
 
