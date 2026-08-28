@@ -91,9 +91,9 @@ const { eyebrow, heading } = Astro.props
             <Eyebrow color={colors.blueInkSoft}>{eyebrow}</Eyebrow>
             <PlateHeading
                 color={colors.blueInk}
-                letterSpacing="-0.02em"
+                letterSpacing={typographics.displaySynthesis.letterSpacing}
                 maxWidth="672px"
-                sizes={['48px', '96px', '110px']}
+                sizes={['48px', '96px', typographics.displaySynthesis.fontSize]}
             >
                 {heading}
             </PlateHeading>
