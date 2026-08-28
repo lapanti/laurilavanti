@@ -29,11 +29,14 @@ URL format: `https://lavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gra
 
 **Image usage sites:**
 
+Hero components take their variant, `widths`, and `sizes` from **`HERO_CONFIGS` in `src/lib/images.ts`** — the same config builds the `<link rel="preload">` links (`HeroPreloadLinks.astro` via each layout's `head` slot), and `scripts/checks/dist-head.ts` asserts the two stay byte-equal in the built HTML. See `.agents/specs/lcp-delivery.md`.
+
 | Component | Variant | `widths` / `sizes` | Notes |
 |---|---|---|---|
 | `heroBanner/images/BackgroundImage.astro` | `background` | `[960,1920]` / `100vw` | Decorative — `alt=""`. Desktop-only (hidden < 1200px). No `fetchpriority`. |
-| `titleBanner/Image.astro` | `hero` | `[864,1728]` / `(max-width:1199px) 100vw, 50vw` | Fills `50vw × 45rem` box via `object-fit: cover`. |
-| `heroBanner/Images.astro` | `1x1` (hero + mobile) | `[560,720,1120,1680]` / `(max-width:1199px) 100vw, min(50vw, 600px)` (desktop) | Transparent cutout — must stay 1:1 to preserve full figure. |
+| `titleBanner/HeroMedia.astro` | `hero` (`HERO_CONFIGS.postHero`) | `[864,1080,1296,1728]` / `(max-width:1223px) 100vw, 1224px` | Post-page hero. Single `<img>`; art direction is CSS-only. |
+| `titleBanner/Image.astro` | `hero` (`HERO_CONFIGS.pageHero`) | `[864,1080,1296,1728]` / `(max-width:1199px) 100vw, 50vw` | Fills `50vw × 45rem` box via `object-fit: cover`. |
+| `heroBanner/Images.astro` | `heroPortrait` + `heroLandscape` (`HERO_CONFIGS.portrait`/`.landscape`/`.single`) | portrait `[560,720,1120,1680]` / `470px`; landscape `[560,750,1120,1680]` / `100vw` | Art-directed `<picture>` (front page + split pages), source boundary 768/769px. |
 | `excerptList/excerpt/Banner.astro` | `1x1` | `[560,750,1120]` / `(max-width:1199px) 100vw, min(33vw, 380px)` | Square thumbnail; 3-column grid on desktop. `loading="lazy"`. |
 | `body/ImageWithCaption.astro` | `body` | `[400,800,1200]` / `(max-width:640px) 100vw, 800px` | Inline image with `<figcaption>`. `aria-label` from `caption` prop. `loading="lazy"`. |
 | `recommendations/Recommendation.astro` | `1x1` | `[448,896]` / `448px` | Circular portrait via CSS `border-radius:50%`. `loading="lazy"`. |
@@ -75,6 +78,7 @@ URL format: `https://lavanti.fi/images/{slug}/w={w},h={h},fit={fit},gravity={gra
 - Do not set `fetchpriority="high"` on `BackgroundImage` — it is `display:none` on mobile
 - Do not add `loading="lazy"` to above-the-fold images (`heroBanner/Images`, `titleBanner/Image`)
 - When choosing srcset widths, avoid large gaps: a gap from Xw to 2Xw means high-DPR mobile picks 2Xw for a slot that only needs ~1.75Xw. Add an intermediate entry.
+- Do not write hero srcset widths or `sizes` literals in a component or layout — import from `HERO_CONFIGS`; the dist-head preload guard fails on drift.
 
 ---
 
