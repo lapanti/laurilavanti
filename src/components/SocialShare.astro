@@ -1,4 +1,6 @@
 ---
+import type { Lang } from '../content/nav'
+
 import {
     personBlueskyHandle,
     personMastodonHandle,
@@ -9,7 +11,7 @@ import { colors, typographics } from '../lib/styles'
 
 interface Props {
     ariaLabel: string
-    locale?: 'en' | 'fi' | 'sv'
+    locale?: Lang
     shareUrl: string
     title: string
 }

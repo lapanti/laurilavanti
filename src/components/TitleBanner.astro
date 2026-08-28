@@ -1,4 +1,6 @@
 ---
+import type { Lang } from '../content/nav'
+
 import { colors, HEADER_SIZE, sizes } from '../lib/styles'
 import ArtHead from './titleBanner/ArtHead.astro'
 import HeroMedia from './titleBanner/HeroMedia.astro'
@@ -15,7 +17,7 @@ interface Props {
     eyebrow?: string
     heroImage?: string
     intro?: string
-    lang?: 'en' | 'fi' | 'sv'
+    lang?: Lang
     mobileHeroImage?: string
     readingTime?: number
     tags?: string[]

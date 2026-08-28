@@ -1,11 +1,13 @@
 ---
+import type { Lang } from '../content/nav'
+
 import { getExcerptPosts } from '../lib/posts'
 import Excerpt from './excerptList/Excerpt.astro'
 
 interface Props {
     currentSlug?: string
     excludeIds?: number[]
-    lang?: 'en' | 'fi' | 'sv'
+    lang?: Lang
     limit?: number
     onlyIds?: number[]
     relatedTags?: string[]

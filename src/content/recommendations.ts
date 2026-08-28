@@ -1,3 +1,5 @@
+import type { Lang } from './nav'
+
 interface RecommendationLocale {
     alt: string
     title: string
@@ -5,7 +7,7 @@ interface RecommendationLocale {
 
 export interface Recommendation {
     image: string
-    locales: Record<'en' | 'fi' | 'sv', RecommendationLocale>
+    locales: Record<Lang, RecommendationLocale>
     name: string
     recommendation: string
 }

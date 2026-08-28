@@ -1,4 +1,5 @@
 ---
+import type { Lang } from '../content/nav'
 import type { AuthorEntry } from '../content/person'
 import type { ExternalPublication } from '../lib/byline'
 
@@ -9,7 +10,7 @@ import SmartLink from './SmartLink.astro'
 interface Props {
     authors: AuthorEntry[]
     externalPublications?: ExternalPublication[]
-    lang: 'en' | 'fi' | 'sv'
+    lang: Lang
 }
 
 const { authors, externalPublications, lang } = Astro.props

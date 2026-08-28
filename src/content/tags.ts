@@ -1,3 +1,5 @@
+import type { Lang } from './nav'
+
 import { artificialIntelligenceTag } from './tags/artificial-intelligence'
 import { basicWelfareTag } from './tags/basic-welfare'
 import { coopElectionsTag } from './tags/coop-elections'
@@ -66,6 +68,6 @@ export const tags = [
     nationalPoliticsTag,
 ]
 
-export function getTagName(id: string, lang: 'en' | 'fi' | 'sv' = 'fi'): string | undefined {
+export function getTagName(id: string, lang: Lang = 'fi'): string | undefined {
     return tags.find((t) => t.id === id)?.names[lang]
 }

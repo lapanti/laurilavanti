@@ -1,4 +1,5 @@
 ---
+import type { Lang } from '../content/nav'
 import type { Post } from '../lib/posts'
 
 import AllPostsLink from '../components/AllPostsLink.astro'
@@ -17,7 +18,7 @@ import { colors } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
-    langAlternates: Record<'en' | 'fi' | 'sv', string>
+    langAlternates: Record<Lang, string>
     post: Post
 }
 
