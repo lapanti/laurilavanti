@@ -25,6 +25,7 @@ import {
     personUrl,
     personWorksFor,
 } from '../content/person'
+import { rssTitles } from '../content/rss'
 import {
     BLOGPOSTING,
     type BreadcrumbItem,
@@ -82,13 +83,6 @@ const ogLocale: Record<Lang, string> = {
     en: 'en_GB',
     fi: 'fi_FI',
     sv: 'sv_SE',
-}
-
-// Feed titles must match the per-locale RSS titles in src/pages/[lang]/rss.xml.ts
-const rssTitle: Record<Lang, string> = {
-    en: 'Lauri Lavanti – blog',
-    fi: 'Lauri Lavanti – blogi',
-    sv: 'Lauri Lavanti – blogg',
 }
 
 const isArticle = type === BLOGPOSTING
@@ -310,5 +304,5 @@ const breadcrumbJsonLd =
 {breadcrumbJsonLd && <script is:inline set:html={breadcrumbJsonLd} type="application/ld+json" />}
 
 <link href="/sitemap-index.xml" rel="sitemap" />
-<link href={`/${lang}/rss.xml`} rel="alternate" title={rssTitle[lang]} type="application/rss+xml" />
+<link href={`/${lang}/rss.xml`} rel="alternate" title={rssTitles[lang]} type="application/rss+xml" />
 <link href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license" />
