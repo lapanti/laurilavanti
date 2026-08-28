@@ -6,6 +6,7 @@ import Byline from '../components/Byline.astro'
 import ExcerptList from '../components/ExcerptList.astro'
 import NewsletterPlate from '../components/frontPage/NewsletterPlate.astro'
 import WritingsPlate from '../components/frontPage/WritingsPlate.astro'
+import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import NewsletterSubscribe from '../components/NewsletterSubscribe.astro'
 import PostProse from '../components/post/PostProse.astro'
 import SocialShare from '../components/SocialShare.astro'
@@ -105,6 +106,9 @@ const breadcrumbs: BreadcrumbItem[] = [
     updatedAt={updatedDate}
     wordCount={wordCount}
 >
+    <Fragment slot="head">
+        <HeroPreloadLinks heroImage={heroImage} mode="post" />
+    </Fragment>
     <TitleBanner
         alt={alt}
         createdAt={publishDate}
