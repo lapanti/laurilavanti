@@ -2,8 +2,8 @@
 import type { Lang } from '../content/nav'
 
 import { getTagName } from '../content/tags'
-import { sizes, typographics } from '../lib/styles'
-import TagPill from './TagPill.astro'
+import { typographics } from '../lib/styles'
+import Chips from './Chips.astro'
 
 interface Props {
     ariaLabel: string
@@ -35,26 +35,10 @@ const tagsToRender = tags
     .filter((tag): tag is { id: string; name: string } => tag.name !== undefined)
 ---
 
-<style
-    define:vars={{
-        sizes05: sizes[0.5],
-    }}
->
+<style>
     aside {
         display: flex;
         flex-direction: column;
-    }
-
-    ul {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0 var(--sizes05);
-    }
-
-    li {
-        list-style: none;
     }
 </style>
 <aside aria-label={ariaLabel}>
@@ -75,13 +59,7 @@ const tagsToRender = tags
     }
     {
         tags.length > 0 && (
-            <ul>
-                {tagsToRender.map((tag) => (
-                    <li>
-                        <TagPill href={`${tagBasePaths[lang]}/${tag.id}/`} label={tag.name} />
-                    </li>
-                ))}
-            </ul>
+            <Chips items={tagsToRender.map((tag) => ({ href: `${tagBasePaths[lang]}/${tag.id}/`, label: tag.name }))} />
         )
     }
 </aside>
