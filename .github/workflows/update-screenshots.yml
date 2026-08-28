@@ -1,0 +1,76 @@
+name: Update screenshots
+
+# Regenerates every screenshot golden in the exact environment the CI gate uses
+# (same runner image, same deploy pipeline) and pushes the result back to the
+# invoking branch. Goldens are CI-canonical (issue #1393): local
+# `--update-snapshots` runs are for iteration only and may sit a pixel off CI.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    # Baselines are reviewed through a PR like any other change — never
+    # regenerated directly on main.
+    if: github.ref != 'refs/heads/main'
+    name: Regenerate screenshot baselines
+    permissions:
+      contents: write
+      deployments: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: "package-lock.json"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - id: deploy
+        name: Deploy preview
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          # Same race-free deploy shape as main.yml (issue #1391): explicit
+          # branch, and the tests below target the unique deployment-url.
+          command: pages deploy dist --project-name=laurilavanti --branch=${{ github.ref_name }}
+
+      - uses: actions/cache@v6
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: npm run test:e2e:setup
+
+      - name: Regenerate screenshot baselines
+        env:
+          E2E_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: npm run test:e2e:screenshots:update
+        timeout-minutes: 20
+
+      - name: Commit updated baselines
+        run: |
+          if git diff --quiet -- tests; then
+            echo "Baselines already match CI rendering — nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/e2e/*-snapshots
+          git commit -m "test(e2e): regenerate screenshot baselines from CI
+
+          Produced by the update-screenshots workflow in the gate environment
+          (run ${{ github.run_id }}). Unsigned by documented exception - CI
+          holds no GPG key.
+
+          Co-authored-by: Claude Fable <claude-fable@anthropic.com>"
+          git push
