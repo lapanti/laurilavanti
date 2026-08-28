@@ -49,7 +49,11 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
     <div class="sheet">
         <div class="inner">
             <Eyebrow>{eyebrow}</Eyebrow>
-            <PlateHeading color={colors.forestGreen} letterSpacing="-0.02em" sizes={['48px', '88px', '120px']}>
+            <PlateHeading
+                color={colors.forestGreen}
+                letterSpacing={typographics.display.letterSpacing}
+                sizes={['48px', '88px', typographics.display.fontSize]}
+            >
                 {heading}
             </PlateHeading>
             <slot name="video" />
