@@ -22,9 +22,18 @@ export default defineConfig({
          * For example in `await expect(locator).toHaveText();`
          */
         timeout: 10_000,
+        /**
+         * Goldens are CI-canonical (issue #1393): regenerate via the
+         * "Update screenshots" workflow_dispatch, which runs update mode in the
+         * exact gate environment. Local --update-snapshots is for iteration only
+         * and may sit a pixel off CI rendering. Same-env noise is near zero, so
+         * the gate is tight: 1% differing pixels, 0.2 per-pixel color threshold
+         * for antialiasing. The previous 25% ratio silently absorbed a missing
+         * page section (about-page Signal Band) and whole-component restyles.
+         */
         toHaveScreenshot: {
-            maxDiffPixelRatio: 0.25,
-            threshold: 0.25,
+            maxDiffPixelRatio: 0.01,
+            threshold: 0.2,
         },
         /**
          * Default aria-snapshot path has no {projectName} segment, so Mobile Chrome
