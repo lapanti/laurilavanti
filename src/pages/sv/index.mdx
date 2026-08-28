@@ -26,7 +26,7 @@ faq:
 ---
 
 import AllPostsLink from '../../components/AllPostsLink.astro'
-import FrontPageExcerptList from '../../components/FrontPageExcerptList.astro'
+import ExcerptList from '../../components/ExcerptList.astro'
 import Faq from '../../components/frontPage/Faq.astro'
 import IntroPlate from '../../components/frontPage/IntroPlate.astro'
 import NewsletterPlate from '../../components/frontPage/NewsletterPlate.astro'
@@ -130,7 +130,7 @@ import VideoEmbed from '../../components/VideoEmbed.astro'
 <Faq eyebrow="Q & A" faq={frontmatter.faq} heading="Vanliga frågor" />
 
 <WritingsPlate allPostsHref="/sv/blog/all/" allPostsLabel="Alla inlägg" eyebrow="Aktuellt" heading="Inlägg">
-    <FrontPageExcerptList lang="sv" limit={9} />
+    <ExcerptList lang="sv" limit={9} />
     <AllPostsLink lang="sv" />
 </WritingsPlate>
 

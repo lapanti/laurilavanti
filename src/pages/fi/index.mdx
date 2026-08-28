@@ -26,7 +26,7 @@ faq:
 ---
 
 import AllPostsLink from '../../components/AllPostsLink.astro'
-import FrontPageExcerptList from '../../components/FrontPageExcerptList.astro'
+import ExcerptList from '../../components/ExcerptList.astro'
 import Faq from '../../components/frontPage/Faq.astro'
 import IntroPlate from '../../components/frontPage/IntroPlate.astro'
 import NewsletterPlate from '../../components/frontPage/NewsletterPlate.astro'
@@ -130,7 +130,7 @@ import VideoEmbed from '../../components/VideoEmbed.astro'
 <Faq eyebrow="Q & A" faq={frontmatter.faq} heading="Usein kysyttyä" />
 
 <WritingsPlate allPostsHref="/fi/blog/all/" allPostsLabel="Kaikki kirjoitukset" eyebrow="Ajankohtaista" heading="Kirjoitukset">
-    <FrontPageExcerptList limit={9} />
+    <ExcerptList limit={9} />
     <AllPostsLink lang="fi" />
 </WritingsPlate>
 
