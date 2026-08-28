@@ -5,7 +5,6 @@ import { glob } from 'astro/loaders'
 import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 
-type Lang = Lang
 type Localized<T> = T | Partial<Record<Lang, T>>
 
 const LANGS: readonly Lang[] = ['en', 'fi', 'sv']
