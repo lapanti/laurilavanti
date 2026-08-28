@@ -39,6 +39,24 @@ export const zIndices = {
     [100]: 100 as const,
 } as const
 
+/**
+ * Sanctioned `@media` breakpoints (px). CSS custom properties are invalid in media
+ * query conditions, so components keep the literals — this map is the source of
+ * truth and `mediaQueries.spec.ts` fails any `@media` px value outside it.
+ * Boundaries pair up: 768/769 (tablet), 999/1000 (wide), 1199/1200 (desktop);
+ * 380 and 400 are legacy small-phone tweaks (TopicPlate, ArtHead, MailerLite embed).
+ */
+export const breakpoints = {
+    desktop: 1200,
+    desktopMax: 1199,
+    phoneSmall: 380,
+    phoneSmallLegacy: 400,
+    tablet: 769,
+    tabletMax: 768,
+    wide: 1000,
+    wideMax: 999,
+} as const
+
 export const HEADER_SIZE = sizes[3.75] // 60px — Signal Band mobile header bar height
 export const CONTENT_SIZE = sizes[75]
 export const CONTENT_PADDING = sizes[0.5]
