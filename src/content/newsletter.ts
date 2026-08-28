@@ -1,3 +1,5 @@
+import type { Lang } from './nav'
+
 interface NewsletterLocale {
     description: string
     /** The tracked-uppercase label above the heading, shown in the split plate layout. */
@@ -13,7 +15,7 @@ interface NewsletterLocale {
     successMessage: string
 }
 
-export const newsletterContent: Record<'en' | 'fi' | 'sv', NewsletterLocale> = {
+export const newsletterContent: Record<Lang, NewsletterLocale> = {
     en: {
         description:
             'Subscribe to my newsletter and get analysis on the latest developments in AI and technology, and their impact on society, straight to your inbox.',

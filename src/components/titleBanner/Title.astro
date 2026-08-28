@@ -1,11 +1,13 @@
 ---
+import type { Lang } from '../../content/nav'
+
 import { colors, CONTENT_PADDING, sizes } from '../../lib/styles'
 import Meta from '../Meta.astro'
 import H1 from './title/H1.astro'
 
 interface Props {
     createdAt?: string
-    lang?: 'en' | 'fi' | 'sv'
+    lang?: Lang
     readingTime?: number
     tags?: string[]
     title: string

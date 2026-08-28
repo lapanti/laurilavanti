@@ -1,4 +1,6 @@
 ---
+import type { Lang } from '../content/nav'
+
 import { newsletterContent } from '../content/newsletter'
 import { colors, signalBandFontFamilies, sizes, typographics } from '../lib/styles'
 import Eyebrow from './Eyebrow.astro'
@@ -7,7 +9,7 @@ import Link from './Link.astro'
 import Paragraph from './Paragraph.astro'
 
 interface Props {
-    lang: 'en' | 'fi' | 'sv'
+    lang: Lang
     /**
      * `split` is the front page's oat newsletter band: an eyebrow, a headline-scale
      * heading and the blurb in one column, the form and its fine print in the other.

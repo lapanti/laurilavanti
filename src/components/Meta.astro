@@ -1,4 +1,6 @@
 ---
+import type { Lang } from '../content/nav'
+
 import { getTagName } from '../content/tags'
 import { sizes, typographics } from '../lib/styles'
 import TagPill from './TagPill.astro'
@@ -7,7 +9,7 @@ interface Props {
     ariaLabel: string
     bigDateTime?: boolean
     date: string
-    lang?: 'en' | 'fi' | 'sv'
+    lang?: Lang
     readingTime?: number
     tags: string[]
     updatedDate?: string
@@ -21,8 +23,8 @@ const [dateOnly] = date.split('T')
 const [year, month, day] = dateOnly.split('-')
 const dateToDisplay = `${day}.${month}.${year}`
 
-const readingTimeLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'min read', fi: 'min lukuaika', sv: 'min' }
-const updatedLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'Updated', fi: 'Päivitetty', sv: 'Uppdaterad' }
+const readingTimeLabel: Record<Lang, string> = { en: 'min read', fi: 'min lukuaika', sv: 'min' }
+const updatedLabel: Record<Lang, string> = { en: 'Updated', fi: 'Päivitetty', sv: 'Uppdaterad' }
 
 const showUpdated = updatedDate && updatedDate !== dateOnly
 const [updYear, updMonth, updDay] = showUpdated ? updatedDate.split('-') : []

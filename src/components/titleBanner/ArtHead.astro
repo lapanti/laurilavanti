@@ -1,10 +1,12 @@
 ---
+import type { Lang } from '../../content/nav'
+
 import { getTagName } from '../../content/tags'
 import { colors, typographics } from '../../lib/styles'
 
 interface Props {
     createdAt?: string
-    lang?: 'en' | 'fi' | 'sv'
+    lang?: Lang
     readingTime?: number
     tags?: string[]
     title: string
@@ -14,8 +16,8 @@ interface Props {
 const { createdAt, lang = 'fi', readingTime, tags, title, updatedDate } = Astro.props
 
 const tagBasePaths = { en: '/en/category', fi: '/fi/category', sv: '/sv/category' }
-const readingTimeLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'min read', fi: 'min lukuaika', sv: 'min' }
-const updatedLabel: Record<'en' | 'fi' | 'sv', string> = { en: 'Updated', fi: 'Päivitetty', sv: 'Uppdaterad' }
+const readingTimeLabel: Record<Lang, string> = { en: 'min read', fi: 'min lukuaika', sv: 'min' }
+const updatedLabel: Record<Lang, string> = { en: 'Updated', fi: 'Päivitetty', sv: 'Uppdaterad' }
 
 const [dateOnly] = (createdAt ?? '').split('T')
 const [year, month, day] = dateOnly ? dateOnly.split('-') : []

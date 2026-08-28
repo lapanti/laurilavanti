@@ -1,4 +1,6 @@
 ---
+import type { Lang } from '../../content/nav'
+
 import { getTagName } from '../../content/tags'
 import { colors, typographics } from '../../lib/styles'
 import Banner from './excerpt/Banner.astro'
@@ -9,7 +11,7 @@ interface Props {
     date?: string
     excerpt?: string
     image?: string
-    lang?: 'en' | 'fi' | 'sv'
+    lang?: Lang
     slug?: string
     tags?: string[]
     title: string
