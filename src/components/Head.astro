@@ -28,6 +28,7 @@ import {
 import {
     BLOGPOSTING,
     type BreadcrumbItem,
+    type FaqItem,
     FAQPAGE,
     JSON_LD_TYPES,
     type JsonLdType,
@@ -42,7 +43,7 @@ interface Props {
     breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
-    faq?: Array<{ a: string; q: string }>
+    faq?: Array<FaqItem>
     lang?: Lang
     langAlternates?: Record<Lang, string>
     noindex?: boolean

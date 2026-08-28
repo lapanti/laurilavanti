@@ -2,7 +2,7 @@
 import type { Lang } from '../content/nav'
 /* eslint-disable astro/no-unused-css-selector */
 import type { AuthorEntry } from '../content/person'
-import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
+import type { BreadcrumbItem, FaqItem, JsonLdType } from '../lib/jsonld'
 
 import Footer from '../components/Footer.astro'
 import GlobalStyle from '../components/GlobalStyle.astro'
@@ -24,7 +24,7 @@ interface Props {
     breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
-    faq?: Array<{ a: string; q: string }>
+    faq?: Array<FaqItem>
     /**
      * Signal Band visual rebrand: `hero` is the transparent bar over a page's hero
      * image; `solid` (default) is the light-sand bar every other page uses —

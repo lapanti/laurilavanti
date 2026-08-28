@@ -1,7 +1,7 @@
 ---
 import type { MDXLayoutProps } from 'astro'
 import type { Lang } from '../content/nav'
-import type { JsonLdType } from '../lib/jsonld'
+import type { FaqItem, JsonLdType } from '../lib/jsonld'
 
 import HeroBanner from '../components/HeroBanner.astro'
 import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
@@ -12,7 +12,7 @@ import BaseLayout from './BaseLayout.astro'
 type Props = MDXLayoutProps<{
     alt?: string
     description?: string
-    faq?: Array<{ a: string; q: string }>
+    faq?: Array<FaqItem>
     heroImage?: string
     lang?: Lang
     mobileHeroImage?: string
