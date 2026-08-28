@@ -12,6 +12,7 @@ import NewsletterSubscribe from '../components/NewsletterSubscribe.astro'
 import PostProse from '../components/post/PostProse.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
+import { breadcrumbLabels } from '../lib/breadcrumbs'
 import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
 import { colors } from '../lib/styles'
@@ -74,11 +75,9 @@ const t = i18n[lang]
 const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
 
 const siteOrigin = 'https://lavanti.fi'
-const homeLabel: Record<string, string> = { en: 'Home', fi: 'Etusivu', sv: 'Hem' }
-const blogLabel: Record<string, string> = { en: 'Blog', fi: 'Blogi', sv: 'Blogg' }
 const breadcrumbs: BreadcrumbItem[] = [
-    { name: homeLabel[lang], url: `${siteOrigin}/${lang}/` },
-    { name: blogLabel[lang], url: `${siteOrigin}/${lang}/blog/` },
+    { name: breadcrumbLabels.home[lang], url: `${siteOrigin}/${lang}/` },
+    { name: breadcrumbLabels.blog[lang], url: `${siteOrigin}/${lang}/blog/` },
     { name: pageTitle, url: `${siteOrigin}/${canonicalSlug}/` },
 ]
 ---

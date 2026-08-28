@@ -3,24 +3,22 @@ import type { Lang } from '../../content/nav'
 
 import rss from '@astrojs/rss'
 
+import { rssTitles } from '../../content/rss'
 import { getImage } from '../../lib/images'
 import { getAllPosts, getPostHtml } from '../../lib/posts'
 
-const i18n: Record<Lang, { description: string; permalinkLabel: string; title: string }> = {
+const i18n: Record<Lang, { description: string; permalinkLabel: string }> = {
     en: {
         description: 'Blog posts by Lauri Lavanti',
         permalinkLabel: 'Permanent link to the blog post',
-        title: 'Lauri Lavanti – blog',
     },
     fi: {
         description: 'Lauri Lavantin blogikirjoitukset',
         permalinkLabel: 'Pysyvä linkki blogikirjoitukseen',
-        title: 'Lauri Lavanti – blogi',
     },
     sv: {
         description: 'Lauri Lavantis blogginlägg',
         permalinkLabel: 'Permanent länk till blogginlägget',
-        title: 'Lauri Lavanti – blogg',
     },
 }
 
@@ -58,7 +56,7 @@ export async function GET(context: APIContext) {
         description: t.description,
         items,
         site: context.site!,
-        title: t.title,
+        title: rssTitles[lang],
         xmlns: { media: 'http://search.yahoo.com/mrss/' },
     })
 }
