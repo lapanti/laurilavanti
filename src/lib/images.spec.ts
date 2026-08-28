@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { getDownloadUrl, getImage, getImageSrcset } from './images'
+import { getDownloadUrl, getHeroPreload, getImage, getImageSrcset, HERO_CONFIGS } from './images'
 
 vi.unmock('./images')
 
@@ -92,5 +92,26 @@ describe('getImageSrcset', () => {
 
     it('throws on unknown variant', () => {
         expect(() => getImageSrcset('test-slug', 'nonexistent', [560])).toThrow('Unknown image variant: nonexistent')
+    })
+})
+
+describe('getHeroPreload', () => {
+    it.each(Object.entries(HERO_CONFIGS))('mirrors the %s config markup byte-for-byte', (_name, config) => {
+        const preload = getHeroPreload('test-slug', config)
+        const markup = getImageSrcset('test-slug', config.variant, [...config.widths])
+        expect(preload.imagesrcset).toBe(markup.srcset)
+        expect(preload.imagesizes).toBe(config.sizes)
+    })
+
+    it('builds the post hero preload from the hero variant', () => {
+        const preload = getHeroPreload('test-slug', HERO_CONFIGS.postHero)
+        expect(preload.imagesrcset).toContain(`${BASE}/test-slug/w=864,h=660,fit=crop,gravity=face,format=auto 864w`)
+        expect(preload.imagesrcset).toContain('w=1728,h=1320')
+        expect(preload.imagesizes).toBe('(max-width: 1223px) 100vw, 1224px')
+    })
+
+    it('keeps the art-directed pair mutually exclusive by sizes', () => {
+        expect(getHeroPreload('s', HERO_CONFIGS.landscape).imagesizes).toBe('100vw')
+        expect(getHeroPreload('s', HERO_CONFIGS.portrait).imagesizes).toBe('470px')
     })
 })
