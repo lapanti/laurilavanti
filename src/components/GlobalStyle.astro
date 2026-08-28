@@ -189,11 +189,11 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
     figure,
     p,
     pre {
-        margin: 0px;
+        margin: 0;
     }
     body {
         line-height: inherit;
-        margin: 0px;
+        margin: 0;
     }
     button,
     [role='button'] {
@@ -219,8 +219,8 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
         font-variation-settings: inherit;
         font-weight: inherit;
         line-height: inherit;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
     }
     button,
     select {
@@ -265,8 +265,8 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
     ul,
     menu {
         list-style: none;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
     }
 
     /* ============================================================
@@ -275,21 +275,21 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
        ============================================================ */
     :root {
         --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        --measure: 1152px;
-        --pad-x: 56px;
+        --measure: 72rem;
+        --pad-x: 3.5rem;
         --press: 2px;
-        --prose: 800px;
-        --sec-y: 88px;
+        --prose: 50rem;
+        --sec-y: 5.5rem;
     }
     @media (max-width: 1199px) {
         :root {
-            --pad-x: 40px;
+            --pad-x: 2.5rem;
         }
     }
     @media (max-width: 768px) {
         :root {
-            --pad-x: 24px;
-            --sec-y: 60px;
+            --pad-x: 1.5rem;
+            --sec-y: 3.75rem;
         }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -359,7 +359,7 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
         font-weight: var(--buttonFontWeight);
         letter-spacing: var(--buttonLetterSpacing);
         line-height: var(--buttonLineHeight);
-        padding: 16px 28px;
+        padding: 1rem 1.75rem;
         text-decoration: none;
         text-transform: uppercase;
         transition:
@@ -383,8 +383,8 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
     }
     @media (max-width: 768px) {
         .btn {
-            font-size: 18px;
-            padding: 12px 20px;
+            font-size: 1.125rem;
+            padding: 0.75rem 1.25rem;
         }
     }
 
@@ -398,7 +398,7 @@ const rootTokenRule = `:root{${Object.entries(rootTokens)
         font-weight: var(--linkRuleFontWeight);
         letter-spacing: var(--linkRuleLetterSpacing);
         line-height: var(--linkRuleLineHeight);
-        padding-bottom: 3px;
+        padding-bottom: 0.1875rem;
         text-decoration: none;
         text-transform: uppercase;
         transition:
