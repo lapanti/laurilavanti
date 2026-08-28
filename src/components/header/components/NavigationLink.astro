@@ -53,7 +53,7 @@ const isLang = Boolean(switchToLang)
     .desktop.nav-link {
         color: var(--colorsDeepForest);
         border-bottom: 2px solid transparent;
-        padding: 4px 4px 2px;
+        padding: 0.25rem 0.25rem 0.125rem;
         transition:
             border-color 0.18s var(--ease),
             color 0.18s var(--ease);
@@ -74,9 +74,9 @@ const isLang = Boolean(switchToLang)
     /* desktop lang chip — active language gets a sand background */
     .desktop.lang-link {
         color: var(--colorsDeepForest);
-        font-size: 15px;
+        font-size: 0.9375rem;
         letter-spacing: 0.12em;
-        padding: 3px 7px;
+        padding: 0.1875rem 0.4375rem;
     }
     .desktop.lang-link[aria-current='page'] {
         background-color: var(--colorsSand);
@@ -86,7 +86,7 @@ const isLang = Boolean(switchToLang)
     .mobile.nav-link {
         color: var(--colorsOat);
         font-size: var(--navMobileFontSize);
-        padding-block: 8px;
+        padding-block: 0.5rem;
     }
     .mobile.nav-link:hover,
     .mobile.nav-link:focus-visible {
@@ -96,9 +96,9 @@ const isLang = Boolean(switchToLang)
     /* mobile dropdown lang chip — active language gets a pine green chip */
     .mobile.lang-link {
         color: var(--colorsAquaBlue);
-        font-size: 16px;
+        font-size: 1rem;
         letter-spacing: 0.12em;
-        padding: 6px 10px;
+        padding: 0.375rem 0.625rem;
     }
     .mobile.lang-link[aria-current='page'] {
         background-color: var(--colorsDarkGreen);

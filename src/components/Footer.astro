@@ -55,22 +55,22 @@ const licenseText: Record<Lang, string> = {
         background-color: var(--colorsDeepForest);
         color: var(--colorsAquaBlue);
         grid-area: var(--gridAreasFooter);
-        padding: 40px 0 36px;
+        padding: 2.5rem 0 2.25rem;
     }
 
     .footer-mark {
         /* generous clearance: NameLogo's rotate+skew overflows its own layout box by ~4x */
-        padding: 40px 0 130px;
+        padding: 2.5rem 0 8.125rem;
         /* the skew shifts the glyphs' visual left edge ~9px right of the box's actual
            edge — nudge back so the wordmark lines up with the columns below it */
-        margin-left: -9px;
+        margin-left: -0.5625rem;
     }
 
     .foot-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-        gap: 32px;
-        padding-bottom: 24px;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
     }
 
     .foot-grid h2 {
@@ -85,21 +85,21 @@ const licenseText: Record<Lang, string> = {
 
     .foot-grid ul {
         display: grid;
-        gap: 8.8px;
-        padding-top: 16px;
+        gap: 0.55rem;
+        padding-top: 1rem;
     }
 
     .foot-grid a {
         color: var(--colorsAquaBlue);
-        font-size: 15px;
-        line-height: 25.2px;
+        font-size: 0.9375rem;
+        line-height: 1.68;
         text-decoration: none;
     }
 
     .foot-grid a:hover {
         color: var(--colorsOat);
         text-decoration: underline;
-        text-underline-offset: 3px;
+        text-underline-offset: 0.1875rem;
     }
 
     .foot-grid ul.social {
@@ -113,17 +113,17 @@ const licenseText: Record<Lang, string> = {
     .party {
         align-items: center;
         display: flex;
-        gap: 24px;
+        gap: 1.5rem;
         height: 100%;
     }
 
     .colophon {
         border-top: 2px solid rgba(191, 225, 222, 0.28);
         color: var(--colorsFooterMuted);
-        font-size: 13px;
-        line-height: 21.84px;
-        margin-top: 32px;
-        padding-top: 24px;
+        font-size: 0.8125rem;
+        line-height: 1.68;
+        margin-top: 2rem;
+        padding-top: 1.5rem;
     }
 
     .colophon a {
@@ -143,27 +143,27 @@ const licenseText: Record<Lang, string> = {
 
     @media (max-width: 768px) {
         .footer-mark {
-            padding: 24px 0 90px;
+            padding: 1.5rem 0 5.625rem;
         }
 
         .foot-grid {
             grid-template-columns: 1fr;
-            gap: 24px;
+            gap: 1.5rem;
         }
 
         .foot-grid ul.social {
             display: grid;
             grid-template-columns: repeat(4, auto);
-            gap: 12px;
+            gap: 0.75rem;
             justify-content: start;
         }
 
         .party {
             align-items: flex-start;
             flex-direction: column;
-            gap: 16px;
+            gap: 1rem;
             justify-content: flex-start;
-            padding-top: 8px;
+            padding-top: 0.5rem;
         }
     }
 </style>
