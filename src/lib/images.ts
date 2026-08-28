@@ -38,6 +38,30 @@ const VARIANTS: Record<string, VariantDef> = {
     video: { fit: 'crop', gravity: 'auto', h: 720, w: 1280 },
 }
 
+interface HeroSrcsetConfig {
+    sizes: string
+    variant: string
+    widths: number[]
+}
+
+/**
+ * Single source of truth for hero responsive configs — consumed by both the hero
+ * components (`<img>`/`<source>` srcset+sizes) and the `<link rel="preload">` links
+ * the layouts inject, so the two can never drift (a drifted preload double-downloads).
+ */
+export const HERO_CONFIGS = {
+    /** heroBanner/Images.astro `<picture>` mobile `<img>` (front page + split pages). */
+    landscape: { sizes: '100vw', variant: 'heroLandscape', widths: [560, 750, 1120, 1680] },
+    /** titleBanner/Image.astro (`page`-variant title banner). */
+    pageHero: { sizes: '(max-width: 1199px) 100vw, 50vw', variant: 'hero', widths: [864, 1080, 1296, 1728] },
+    /** heroBanner/Images.astro `<picture>` desktop `<source>` (front page + split pages). */
+    portrait: { sizes: '470px', variant: 'heroPortrait', widths: [560, 720, 1120, 1680] },
+    /** titleBanner/HeroMedia.astro (post pages). */
+    postHero: { sizes: '(max-width: 1223px) 100vw, 1224px', variant: 'hero', widths: [864, 1080, 1296, 1728] },
+    /** heroBanner/Images.astro fallback branch — heroImage without mobileHeroImage. */
+    single: { sizes: '(max-width: 768px) 100vw, 470px', variant: 'heroPortrait', widths: [560, 720, 1120, 1680] },
+} as const satisfies Record<string, HeroSrcsetConfig>
+
 export function getImage(slug: string, variant: string): CFImageResult {
     const v = VARIANTS[variant]
     if (!v) throw new Error(`Unknown image variant: ${variant}`)
@@ -77,4 +101,16 @@ export function getImageSrcset(
         srcset: entries.join(', '),
         width: widths[widths.length - 1],
     }
+}
+
+/**
+ * Preload attributes for an LCP hero. Byte-equal to the `<img>`/`<source>` markup built
+ * from the same config. Callers must not add `crossorigin` (image fetches are no-cors;
+ * a credentials-mode mismatch double-downloads) nor an `href` fallback (browsers without
+ * `imagesrcset` support would fetch the largest width on every viewport).
+ */
+export function getHeroPreload(slug: string, config: HeroSrcsetConfig): { imagesizes: string; imagesrcset: string } {
+    const { srcset } = getImageSrcset(slug, config.variant, config.widths)
+
+    return { imagesizes: config.sizes, imagesrcset: srcset }
 }
