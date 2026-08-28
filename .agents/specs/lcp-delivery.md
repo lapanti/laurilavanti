@@ -1,7 +1,7 @@
 # Spec: LCP Delivery (hero preload, HTML caching, font payload)
 
 > **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
-> **Status**: `Draft`
+> **Status**: `Active`
 > **Last updated**: 2026-08-28
 
 ---
@@ -157,3 +157,4 @@ _None._
 | Date | Change |
 |------|--------|
 | 2026-08-28 | Initial draft (issue #1379) |
+| 2026-08-28 | Approved by author — status Active (PR #1384) |
