@@ -1,5 +1,5 @@
 ---
-import { getImageSrcset } from '../../lib/images'
+import { getImageSrcset, HERO_CONFIGS } from '../../lib/images'
 import NameLogo from '../NameLogo.astro'
 
 interface Props {
@@ -11,8 +11,12 @@ interface Props {
 
 const { alt, heroImage, mobileHeroImage, showMark = true } = Astro.props
 
-const heroImg = heroImage ? getImageSrcset(heroImage, 'heroPortrait', [560, 720, 1120, 1680]) : undefined
-const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandscape', [560, 750, 1120, 1680]) : undefined
+const heroImg = heroImage
+    ? getImageSrcset(heroImage, HERO_CONFIGS.portrait.variant, [...HERO_CONFIGS.portrait.widths])
+    : undefined
+const mobileImg = mobileHeroImage
+    ? getImageSrcset(mobileHeroImage, HERO_CONFIGS.landscape.variant, [...HERO_CONFIGS.landscape.widths])
+    : undefined
 ---
 
 <style>
@@ -77,7 +81,7 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
                     <source
                         height={heroImg.height}
                         media="(min-width: 769px)"
-                        sizes="470px"
+                        sizes={HERO_CONFIGS.portrait.sizes}
                         srcset={heroImg.srcset}
                         width={heroImg.width}
                     />
@@ -85,7 +89,7 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
                         alt={alt ?? ''}
                         fetchpriority="high"
                         height={mobileImg.height}
-                        sizes="100vw"
+                        sizes={HERO_CONFIGS.landscape.sizes}
                         src={mobileImg.src}
                         srcset={mobileImg.srcset}
                         width={mobileImg.width}
@@ -97,7 +101,7 @@ const mobileImg = mobileHeroImage ? getImageSrcset(mobileHeroImage, 'heroLandsca
                         alt={alt ?? ''}
                         fetchpriority="high"
                         height={heroImg.height}
-                        sizes="(max-width: 768px) 100vw, 470px"
+                        sizes={HERO_CONFIGS.single.sizes}
                         src={heroImg.src}
                         srcset={heroImg.srcset}
                         width={heroImg.width}
