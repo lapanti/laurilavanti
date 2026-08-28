@@ -1,6 +1,7 @@
 ---
 import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
 
+import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { getImage } from '../lib/images'
 import { COLLECTIONPAGE } from '../lib/jsonld'
@@ -86,6 +87,13 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     type={type}
     updatedAt={updatedAt}
 >
+    <Fragment slot="head">
+        <HeroPreloadLinks
+            heroImage={heroImage}
+            mobileHeroImage={mobileHeroImage}
+            mode={variant === 'split' ? 'art-directed' : 'page'}
+        />
+    </Fragment>
     <TitleBanner
         alt={alt}
         createdAt={createdAt}
