@@ -199,9 +199,13 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy dist --project-name=laurilavanti
+          # Explicit branch: the Actions detached-HEAD checkout otherwise makes
+          # wrangler derive the literal branch name "head", so every PR shared one
+          # alias and concurrent PRs raced in e2e (issue #1391).
+          command: pages deploy dist --project-name=laurilavanti --branch=${{ github.head_ref || github.ref_name }}
     outputs:
-      pages-deployment-alias-url: ${{ steps.deploy.outputs.pages-deployment-alias-url }}
+      # Unique per-deploy URL — immune to alias overwrites from concurrent runs.
+      deployment-url: ${{ steps.deploy.outputs.deployment-url }}
 
   test-e2e-snapshots:
     runs-on: ubuntu-latest
@@ -231,7 +235,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run snapshot tests
         env:
-          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+          E2E_URL: ${{ needs.deploy.outputs.deployment-url }}
         run: npm run test:e2e:snapshots
         timeout-minutes: 15
       - uses: actions/upload-artifact@v7
@@ -269,7 +273,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run screenshot tests
         env:
-          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+          E2E_URL: ${{ needs.deploy.outputs.deployment-url }}
         run: npm run test:e2e:screenshots
         timeout-minutes: 15
       - uses: actions/upload-artifact@v7
@@ -307,7 +311,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run axe accessibility tests
         env:
-          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+          E2E_URL: ${{ needs.deploy.outputs.deployment-url }}
         run: npm run test:e2e:axe
         timeout-minutes: 10
       - uses: actions/upload-artifact@v7
@@ -345,7 +349,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run SiteImprove tests
         env:
-          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+          E2E_URL: ${{ needs.deploy.outputs.deployment-url }}
         run: npm run test:e2e:siteimprove
         timeout-minutes: 15
       - uses: actions/upload-artifact@v7
@@ -383,7 +387,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run other tests
         env:
-          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+          E2E_URL: ${{ needs.deploy.outputs.deployment-url }}
         run: npm run test:e2e:other
         timeout-minutes: 10
       - uses: actions/upload-artifact@v7
@@ -421,7 +425,7 @@ jobs:
         run: npm run test:e2e:setup
       - name: Run horizontal scroll tests
         env:
-          E2E_URL: ${{ needs.deploy.outputs.pages-deployment-alias-url }}
+          E2E_URL: ${{ needs.deploy.outputs.deployment-url }}
         run: npm run test:e2e:horizontal-scroll
         timeout-minutes: 10
       - uses: actions/upload-artifact@v7
@@ -673,12 +677,12 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           urls: |
-            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/
-            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/en/
-            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/sv/
-            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/about/
-            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/
-            ${{ needs.deploy.outputs.pages-deployment-alias-url }}/fi/blog/1/kotihoidon-tuen-kuntalisa/
+            ${{ needs.deploy.outputs.deployment-url }}/fi/
+            ${{ needs.deploy.outputs.deployment-url }}/en/
+            ${{ needs.deploy.outputs.deployment-url }}/sv/
+            ${{ needs.deploy.outputs.deployment-url }}/fi/about/
+            ${{ needs.deploy.outputs.deployment-url }}/fi/blog/
+            ${{ needs.deploy.outputs.deployment-url }}/fi/blog/1/kotihoidon-tuen-kuntalisa/
           configPath: .github/lighthouserc.json
           runs: 3
           uploadArtifacts: true
