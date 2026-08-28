@@ -358,7 +358,7 @@ describe('styles', () => {
                     fontSize: '1.25rem',
                     fontStyle: 'italic',
                     fontWeight: fontWeights.regular,
-                    lineHeight: '1.4',
+                    lineHeight: '1.5',
                 },
                 quoteCite: {
                     fontFamily: signalBandFontFamilies.heading,
