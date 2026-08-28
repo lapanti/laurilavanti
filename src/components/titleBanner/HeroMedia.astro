@@ -1,5 +1,5 @@
 ---
-import { getImageSrcset } from '../../lib/images'
+import { getImageSrcset, HERO_CONFIGS } from '../../lib/images'
 import { colors } from '../../lib/styles'
 
 interface Props {
@@ -8,7 +8,9 @@ interface Props {
 }
 
 const { alt, heroImage } = Astro.props
-const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1080, 1296, 1728]) : undefined
+const img = heroImage
+    ? getImageSrcset(heroImage, HERO_CONFIGS.postHero.variant, [...HERO_CONFIGS.postHero.widths])
+    : undefined
 ---
 
 <style
@@ -135,7 +137,7 @@ const img = heroImage ? getImageSrcset(heroImage, 'hero', [864, 1080, 1296, 1728
                     alt={alt ?? ''}
                     fetchpriority="high"
                     height={img.height}
-                    sizes="(max-width: 1223px) 100vw, 1224px"
+                    sizes={HERO_CONFIGS.postHero.sizes}
                     src={img.src}
                     srcset={img.srcset}
                     width={img.width}
