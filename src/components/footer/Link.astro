@@ -6,6 +6,7 @@ import { colors, sizes } from '../../lib/styles'
 
 interface Props {
     ariaLabel: string
+    /** astro-icon name; omit and pass an svg via the slot for brand-custom artwork. */
     icon?: string
     title: string
     url: string
@@ -28,9 +29,6 @@ const iconToHoverColor = (icon?: string): string | undefined => {
     }
     if (icon === 'fa7-brands:threads') {
         return colors.threads
-    }
-    if (icon === 'fa7-brands:tiktok') {
-        return undefined
     }
     if (icon === 'fa7-solid:rss') {
         return colors.rss
@@ -61,10 +59,13 @@ const hoverColor = iconToHoverColor(icon)
         min-width: 2.75rem;
     }
 
-    li svg {
-        color: var(--colorsGray);
+    li a :global(svg) {
         height: var(--sizes225);
         width: var(--sizes225);
+    }
+
+    li svg {
+        color: var(--colorsGray);
         stroke: currentColor;
         fill: currentColor;
     }
@@ -76,6 +77,6 @@ const hoverColor = iconToHoverColor(icon)
 </style>
 <li>
     <a aria-label={ariaLabel} href={url} rel="me noopener noreferrer" target="_blank" title={title}>
-        {icon && <Icon name={icon} />}
+        {icon ? <Icon name={icon} /> : <slot />}
     </a>
 </li>
