@@ -1,5 +1,7 @@
 ---
 import { colors, typographics } from '../../lib/styles'
+import Eyebrow from '../Eyebrow.astro'
+import PlateHeading from '../PlateHeading.astro'
 import Stripe from '../Stripe.astro'
 
 interface Props {
@@ -13,15 +15,7 @@ const { eyebrow, heading } = Astro.props
 <style
     define:vars={{
         colorsBlueInk: colors.blueInk,
-        colorsBlueInkSoft: colors.blueInkSoft,
         colorsOffWhite: colors.offWhite,
-        displaySynthesisFontFamily: typographics.displaySynthesis.fontFamily,
-        displaySynthesisFontWeight: typographics.displaySynthesis.fontWeight,
-        eyebrowFontFamily: typographics.eyebrow.fontFamily,
-        eyebrowFontSize: typographics.eyebrow.fontSize,
-        eyebrowFontWeight: typographics.eyebrow.fontWeight,
-        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
-        eyebrowLineHeight: typographics.eyebrow.lineHeight,
         textFontFamily: typographics.text.fontFamily,
         textFontSize: typographics.text.fontSize,
         textFontWeight: typographics.text.fontWeight,
@@ -31,36 +25,12 @@ const { eyebrow, heading } = Astro.props
     .synth {
         background: var(--colorsOffWhite);
         overflow: hidden;
-        padding-block: 88px;
         position: relative;
     }
 
     .synth .inner {
         position: relative;
         z-index: 2;
-    }
-
-    .eyebrow {
-        color: var(--colorsBlueInkSoft);
-        font-family: var(--eyebrowFontFamily);
-        font-size: var(--eyebrowFontSize);
-        font-weight: var(--eyebrowFontWeight);
-        letter-spacing: var(--eyebrowLetterSpacing);
-        line-height: var(--eyebrowLineHeight);
-        text-transform: uppercase;
-    }
-
-    h2 {
-        color: var(--colorsBlueInk);
-        font-family: var(--displaySynthesisFontFamily);
-        font-size: 48px;
-        font-weight: var(--displaySynthesisFontWeight);
-        letter-spacing: -0.02em;
-        line-height: 1;
-        margin: 0;
-        max-width: 672px;
-        padding-top: 16px;
-        text-transform: uppercase;
     }
 
     .synth :global(p) {
@@ -94,9 +64,6 @@ const { eyebrow, heading } = Astro.props
     }
 
     @media (min-width: 769px) {
-        h2 {
-            font-size: 96px;
-        }
         .lion {
             display: none;
         }
@@ -106,9 +73,6 @@ const { eyebrow, heading } = Astro.props
     }
 
     @media (min-width: 1200px) {
-        h2 {
-            font-size: 110px;
-        }
         .lion {
             display: block;
             right: 244px;
@@ -117,15 +81,22 @@ const { eyebrow, heading } = Astro.props
         }
     }
 </style>
-<section class="synth">
+<section class="synth section">
     <img alt="" class="lion" height="478" src="/digitaalinen-itsenaisyys-leijona.svg" width="381" />
     <div class="vstripe">
         <Stripe orientation="vertical-reversed" />
     </div>
     <div class="sheet">
         <div class="inner">
-            <span class="eyebrow">{eyebrow}</span>
-            <h2>{heading}</h2>
+            <Eyebrow color={colors.blueInkSoft}>{eyebrow}</Eyebrow>
+            <PlateHeading
+                color={colors.blueInk}
+                letterSpacing="-0.02em"
+                maxWidth="672px"
+                sizes={['48px', '96px', '110px']}
+            >
+                {heading}
+            </PlateHeading>
             <slot />
         </div>
     </div>

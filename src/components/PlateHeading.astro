@@ -1,0 +1,59 @@
+---
+import { typographics } from '../lib/styles'
+
+interface Props {
+    color: string
+    id?: string
+    /** Base letter-spacing; some ramps tighten at desktop via letterSpacingDesktop. */
+    letterSpacing?: string
+    letterSpacingDesktop?: string
+    maxWidth?: string
+    /** Font-size ramp: [base, ≥769px?, ≥1200px?]. Every plate shares family/weight from the display role. */
+    sizes: [string] | [string, string] | [string, string, string]
+}
+
+const { color, id, letterSpacing = '-0.015em', letterSpacingDesktop, maxWidth, sizes } = Astro.props
+const [sizeBase, sizeTablet, sizeDesktop] = sizes
+---
+
+<style
+    define:vars={{
+        color,
+        fontFamily: typographics.display.fontFamily,
+        fontWeight: typographics.display.fontWeight,
+        letterSpacing,
+        letterSpacingDesktop: letterSpacingDesktop ?? letterSpacing,
+        maxWidth: maxWidth ?? 'none',
+        sizeBase,
+        sizeDesktop: sizeDesktop ?? sizeTablet ?? sizeBase,
+        sizeTablet: sizeTablet ?? sizeBase,
+    }}
+>
+    h2 {
+        color: var(--color);
+        font-family: var(--fontFamily);
+        font-size: var(--sizeBase);
+        font-weight: var(--fontWeight);
+        letter-spacing: var(--letterSpacing);
+        line-height: 1;
+        margin: 0;
+        max-width: var(--maxWidth);
+        padding-top: 16px;
+        text-transform: uppercase;
+    }
+
+    @media (min-width: 769px) {
+        h2 {
+            font-size: var(--sizeTablet);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        h2 {
+            font-size: var(--sizeDesktop);
+            letter-spacing: var(--letterSpacingDesktop);
+        }
+    }
+</style>
+
+<h2 id={id}><slot /></h2>

@@ -2,6 +2,8 @@
 import type { FaqItem } from '../../lib/jsonld'
 
 import { colors, typographics } from '../../lib/styles'
+import Eyebrow from '../Eyebrow.astro'
+import PlateHeading from '../PlateHeading.astro'
 
 interface Props {
     eyebrow: string
@@ -14,46 +16,15 @@ const { eyebrow, faq, heading } = Astro.props
 
 <style
     define:vars={{
-        colorsDarkGreen: colors.darkGreen,
         colorsDeepForest: colors.forestGreen,
         colorsLightGray: colors.gray,
         colorsTextPrimary: colors.textPrimary,
-        eyebrowFontFamily: typographics.eyebrow.fontFamily,
-        eyebrowFontSize: typographics.eyebrow.fontSize,
-        eyebrowFontWeight: typographics.eyebrow.fontWeight,
-        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
-        eyebrowLineHeight: typographics.eyebrow.lineHeight,
-        headlineFontFamily: typographics.headline.fontFamily,
-        headlineFontWeight: typographics.headline.fontWeight,
         titleFontFamily: typographics.title.fontFamily,
         titleFontWeight: typographics.title.fontWeight,
     }}
 >
     .faq {
         background: var(--colorsLightGray);
-        padding-block: 96px;
-    }
-
-    .eyebrow {
-        color: var(--colorsDarkGreen);
-        font-family: var(--eyebrowFontFamily);
-        font-size: var(--eyebrowFontSize);
-        font-weight: var(--eyebrowFontWeight);
-        letter-spacing: var(--eyebrowLetterSpacing);
-        line-height: var(--eyebrowLineHeight);
-        text-transform: uppercase;
-    }
-
-    h2 {
-        color: var(--colorsDeepForest);
-        font-family: var(--headlineFontFamily);
-        font-size: 42px;
-        font-weight: var(--headlineFontWeight);
-        letter-spacing: -0.015em;
-        line-height: 1;
-        margin: 0;
-        padding-top: 16px;
-        text-transform: uppercase;
     }
 
     .qa {
@@ -87,19 +58,16 @@ const { eyebrow, faq, heading } = Astro.props
     }
 
     @media (min-width: 769px) {
-        h2 {
-            font-size: 58px;
-        }
         .qa {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 </style>
-<section class="faq">
+<section class="faq section">
     <div class="sheet">
         <div class="inner">
-            <span class="eyebrow">{eyebrow}</span>
-            <h2>{heading}</h2>
+            <Eyebrow color={colors.darkGreen}>{eyebrow}</Eyebrow>
+            <PlateHeading color={colors.forestGreen} sizes={['42px', '58px']}>{heading}</PlateHeading>
             <div class="qa">
                 {
                     faq.map((item) => (

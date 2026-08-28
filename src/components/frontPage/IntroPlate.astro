@@ -1,5 +1,7 @@
 ---
 import { colors, sizes, typographics } from '../../lib/styles'
+import Eyebrow from '../Eyebrow.astro'
+import PlateHeading from '../PlateHeading.astro'
 
 interface Props {
     eyebrow: string
@@ -15,14 +17,6 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
 <style
     define:vars={{
         colorsDeepForest: colors.forestGreen,
-        colorsEyebrowNeutral: colors.eyebrowNeutral,
-        displayFontFamily: typographics.display.fontFamily,
-        displayFontWeight: typographics.display.fontWeight,
-        eyebrowFontFamily: typographics.eyebrow.fontFamily,
-        eyebrowFontSize: typographics.eyebrow.fontSize,
-        eyebrowFontWeight: typographics.eyebrow.fontWeight,
-        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
-        eyebrowLineHeight: typographics.eyebrow.lineHeight,
         groundColor,
         sizes45: sizes[45],
         textFontFamily: typographics.text.fontFamily,
@@ -33,28 +27,6 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
 >
     .plate {
         background: var(--groundColor);
-    }
-
-    .eyebrow {
-        color: var(--colorsEyebrowNeutral);
-        font-family: var(--eyebrowFontFamily);
-        font-size: var(--eyebrowFontSize);
-        font-weight: var(--eyebrowFontWeight);
-        letter-spacing: var(--eyebrowLetterSpacing);
-        line-height: var(--eyebrowLineHeight);
-        text-transform: uppercase;
-    }
-
-    h2 {
-        color: var(--colorsDeepForest);
-        font-family: var(--displayFontFamily);
-        font-size: 48px;
-        font-weight: var(--displayFontWeight);
-        letter-spacing: -0.02em;
-        line-height: 1;
-        margin: 0;
-        padding-top: 16px;
-        text-transform: uppercase;
     }
 
     .body {
@@ -72,24 +44,14 @@ const groundColor = ground === 'sand' ? colors.lightSand : colors.offWhite
         margin: 0;
         max-width: var(--sizes45);
     }
-
-    @media (min-width: 769px) {
-        h2 {
-            font-size: 88px;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        h2 {
-            font-size: 120px;
-        }
-    }
 </style>
 <section class="plate section" id={id}>
     <div class="sheet">
         <div class="inner">
-            <span class="eyebrow">{eyebrow}</span>
-            <h2>{heading}</h2>
+            <Eyebrow>{eyebrow}</Eyebrow>
+            <PlateHeading color={colors.forestGreen} letterSpacing="-0.02em" sizes={['48px', '88px', '120px']}>
+                {heading}
+            </PlateHeading>
             <slot name="video" />
             <div class="body">
                 <slot />
