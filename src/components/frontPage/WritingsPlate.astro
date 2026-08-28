@@ -1,5 +1,7 @@
 ---
 import { colors, typographics } from '../../lib/styles'
+import Eyebrow from '../Eyebrow.astro'
+import PlateHeading from '../PlateHeading.astro'
 
 interface Props {
     allPostsHref: string
@@ -16,15 +18,7 @@ const groundColor = { sand: colors.lightSand, white: colors.white }[ground]
 <style
     define:vars={{
         colorsDarkGreen: colors.darkGreen,
-        colorsDeepForest: colors.forestGreen,
         colorsGround: groundColor,
-        eyebrowFontFamily: typographics.eyebrow.fontFamily,
-        eyebrowFontSize: typographics.eyebrow.fontSize,
-        eyebrowFontWeight: typographics.eyebrow.fontWeight,
-        eyebrowLetterSpacing: typographics.eyebrow.letterSpacing,
-        eyebrowLineHeight: typographics.eyebrow.lineHeight,
-        headlineFontFamily: typographics.headline.fontFamily,
-        headlineFontWeight: typographics.headline.fontWeight,
         linkRuleFontFamily: typographics.linkRule.fontFamily,
         linkRuleFontSize: typographics.linkRule.fontSize,
         linkRuleFontWeight: typographics.linkRule.fontWeight,
@@ -34,17 +28,6 @@ const groundColor = { sand: colors.lightSand, white: colors.white }[ground]
 >
     .writings {
         background: var(--colorsGround);
-        padding-block: 96px;
-    }
-
-    .eyebrow {
-        color: var(--colorsDarkGreen);
-        font-family: var(--eyebrowFontFamily);
-        font-size: var(--eyebrowFontSize);
-        font-weight: var(--eyebrowFontWeight);
-        letter-spacing: var(--eyebrowLetterSpacing);
-        line-height: var(--eyebrowLineHeight);
-        text-transform: uppercase;
     }
 
     .head {
@@ -53,18 +36,6 @@ const groundColor = { sand: colors.lightSand, white: colors.white }[ground]
         flex-wrap: wrap;
         gap: 24px;
         justify-content: space-between;
-    }
-
-    h2 {
-        color: var(--colorsDeepForest);
-        font-family: var(--headlineFontFamily);
-        font-size: 48px;
-        font-weight: var(--headlineFontWeight);
-        letter-spacing: -0.015em;
-        line-height: 1;
-        margin: 0;
-        padding-top: 16px;
-        text-transform: uppercase;
     }
 
     .all-posts-link {
@@ -84,9 +55,6 @@ const groundColor = { sand: colors.lightSand, white: colors.white }[ground]
     }
 
     @media (min-width: 769px) {
-        h2 {
-            font-size: 58px;
-        }
         .all-posts-link {
             border-bottom: 2px solid currentcolor;
             display: inline-block;
@@ -99,8 +67,8 @@ const groundColor = { sand: colors.lightSand, white: colors.white }[ground]
         <div class="inner">
             <div class="head">
                 <div>
-                    <span class="eyebrow">{eyebrow}</span>
-                    <h2>{heading}</h2>
+                    <Eyebrow color={colors.darkGreen}>{eyebrow}</Eyebrow>
+                    <PlateHeading color={colors.forestGreen} sizes={['48px', '58px']}>{heading}</PlateHeading>
                 </div>
                 <a class="all-posts-link" href={allPostsHref}>{allPostsLabel}</a>
             </div>

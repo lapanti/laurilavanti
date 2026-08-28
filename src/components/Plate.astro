@@ -1,6 +1,7 @@
 ---
-import { colors, typographics } from '../lib/styles'
+import { colors } from '../lib/styles'
 import Eyebrow from './Eyebrow.astro'
+import PlateHeading from './PlateHeading.astro'
 
 interface Props {
     eyebrow?: string
@@ -20,34 +21,9 @@ const groundColor = {
 }[ground]
 ---
 
-<style
-    define:vars={{
-        colorsDeepForest: colors.forestGreen,
-        displayFontFamily: typographics.display.fontFamily,
-        displayFontWeight: typographics.display.fontWeight,
-        groundColor,
-    }}
->
+<style define:vars={{ groundColor }}>
     .plate {
         background: var(--groundColor);
-    }
-
-    h2 {
-        color: var(--colorsDeepForest);
-        font-family: var(--displayFontFamily);
-        font-size: 48px;
-        font-weight: var(--displayFontWeight);
-        letter-spacing: -0.015em;
-        line-height: 1;
-        margin: 0;
-        padding-top: 16px;
-        text-transform: uppercase;
-    }
-
-    @media (min-width: 769px) {
-        h2 {
-            font-size: 58px;
-        }
     }
 </style>
 
@@ -55,7 +31,13 @@ const groundColor = {
     <div class="sheet">
         <div class="inner">
             {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-            {heading && <h2>{heading}</h2>}
+            {
+                heading && (
+                    <PlateHeading color={colors.forestGreen} sizes={['48px', '58px']}>
+                        {heading}
+                    </PlateHeading>
+                )
+            }
             <slot />
         </div>
     </div>

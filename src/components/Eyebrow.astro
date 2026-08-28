@@ -2,11 +2,13 @@
 import { colors, typographics } from '../lib/styles'
 
 interface Props {
+    /** Raw color override; wins over tone. */
+    color?: string
     tone?: 'neutral' | 'inherit'
 }
 
-const { tone = 'neutral' } = Astro.props
-const eyebrowColor = tone === 'inherit' ? 'currentColor' : colors.eyebrowNeutral
+const { color, tone = 'neutral' } = Astro.props
+const eyebrowColor = color ?? (tone === 'inherit' ? 'currentColor' : colors.eyebrowNeutral)
 ---
 
 <style
