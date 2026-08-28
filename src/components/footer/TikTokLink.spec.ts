@@ -126,7 +126,7 @@ describe('<TikTokLink />', () => {
         expect(result.querySelector('svg')).toHaveAttribute('viewBox', '-3 -2 36 36')
     })
 
-    it('should have id attribute on link', async () => {
+    it('should not ship a script for the brand hover (CSS handles it)', async () => {
         const result = await renderAstroComponent(TikTokLink, {
             props: {
                 ariaLabel: 'TikTok (avautuu uudessa välilehdessä)',
@@ -135,6 +135,6 @@ describe('<TikTokLink />', () => {
             },
         })
 
-        expect(getByRole(result, 'link')).toHaveAttribute('id', 'tiktok-footer-link')
+        expect(result.querySelector('script')).toBeNull()
     })
 })
