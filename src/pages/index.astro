@@ -3,40 +3,12 @@ import Head from '../components/Head.astro'
 import { getImage } from '../lib/images'
 
 const ogImage = getImage('og-image-lauri-lavanti', 'ogFlat').src
-
-const faq = [
-    {
-        a: 'Lauri Lavanti on Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä vuoden 2027 eduskuntavaaleissa. Hän on kirkkonummelainen kunnanvaltuutettu ja johtava ohjelmistokehittäjä, jonka tavoitteena on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella.',
-        q: 'Missä Lauri Lavanti on ehdolla eduskuntavaaleissa?',
-    },
-    {
-        a: 'Lauri Lavannille tärkeimpiä arvoja ovat oikeudenmukaisuus, tasa-arvo ja demokratia sekä avoimuus ja rehellisyys. Hänen ajattelussaan talous on väline, jolla rahoitetaan koulut, hoito ja muut yhteiset palvelut, ja jokaisen yksityisyys ja perusoikeudet on turvattava myös tekoälyn aikakaudella. Tavoitteena on digitaalisesti itsenäinen Suomi, jossa kukaan ei jää kehityksen jalkoihin.',
-        q: 'Mihin arvoihin Lauri Lavannin politiikka nojaa?',
-    },
-    {
-        a: 'Tekoäly muuttaa työn, kilpailukyvyn ja julkisten palveluiden perustan — Suomen on rakennettava oma osaamisensa eikä jäätävä riippuvaiseksi ulkomaisista alustoista. Lauri Lavannin mukaan talouspolitiikan on vastattava tähän muutokseen konkreettisella teknologiaosaamisella, ei vain yleisillä linjauksilla.',
-        q: 'Mitä tekoäly tarkoittaa Suomen taloudelle?',
-    },
-    {
-        a: 'Yksityisyyden suoja on perusoikeus, joka on vaarassa eriytyä: se, jolla on varaa ja osaamista, suojaa itsensä — muut eivät. Lauri Lavanti näkee digitaalisen yksityisyyden tasa-arvokysymyksenä, johon tarvitaan sekä lainsäädäntöä että teknistä ymmärrystä.',
-        q: 'Miksi yksityisyyden suoja on poliittinen kysymys?',
-    },
-    {
-        a: 'Digitaalinen itsenäisyys tarkoittaa sitä, että julkiset palvelut, kriittinen infrastruktuuri ja kansalaisten data eivät ole yksittäisten ulkomaisten yritysten varassa. Lauri Lavanti ajaa politiikkaa, jossa Suomi ja EU rakentavat omaa teknologiaperustaansa sen sijaan, että ostaisimme valvontakapasiteettia ulkomailta.',
-        q: 'Mitä digitaalinen itsenäisyys tarkoittaa käytännössä?',
-    },
-    {
-        a: 'Lauri Lavanti tuo päätöksentekoon käytännön kokemuksen ohjelmistokehityksestä ja digitaalisista järjestelmistä — hän tunnistaa, milloin tekninen argumentti on pätevä ja milloin se on pelkkää myyntipuhetta. Tavoitteena on, että julkinen sektori pysyy teknologisen kehityksen tahdissa eikä osta ratkaisuja ymmärtämättä, mitä ostaa.',
-        q: 'Miten tekninen asiantuntemus näkyy poliittisessa päätöksenteossa?',
-    },
-]
 ---
 
 <html lang="fi">
     <head>
         <Head
             description="Tavoitteenani on digitaalisesti itsenäinen Suomi, jossa talous, sivistys ja vapaus toimivat yhdessä tekoälyn aikakaudella."
-            faq={faq}
             lang="fi"
             noindex
             ogImage={ogImage}
