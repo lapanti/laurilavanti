@@ -141,6 +141,8 @@ jobs:
           path: dist
       - name: Run built-HTML head guardrail
         run: node --experimental-strip-types scripts/checks/dist-head.ts dist
+      - name: Run built-output crawl guardrail
+        run: node --experimental-strip-types scripts/checks/dist-crawl.ts dist
 
   unit-test:
     runs-on: ubuntu-latest
