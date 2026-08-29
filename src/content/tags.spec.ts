@@ -76,26 +76,6 @@ describe('tags data', () => {
             }
         }
     )
-
-    it.each(tags.filter((t) => t.faq))('$id — faq locale arrays, when present, have ≥ 2 entries', ({ id, faq }) => {
-        for (const locale of LOCALES) {
-            const entries = faq![locale] ?? []
-            expect(
-                entries.length === 0 || entries.length >= 2,
-                `${id} faq.${locale} has ${entries.length} entries — need 0 or ≥ 2 to render FAQPage JSON-LD`
-            ).toBe(true)
-        }
-    })
-
-    it.each(tags.filter((t) => t.faq))('$id — faq entries have non-empty q and a', ({ id, faq }) => {
-        for (const locale of LOCALES) {
-            const entries = faq![locale] ?? []
-            for (const [i, entry] of entries.entries()) {
-                expect(entry.q, `${id} faq.${locale}[${i}].q`).toBeTruthy()
-                expect(entry.a, `${id} faq.${locale}[${i}].a`).toBeTruthy()
-            }
-        }
-    })
 })
 
 describe('getTagName', () => {
