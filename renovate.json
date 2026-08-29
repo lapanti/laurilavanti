@@ -1,19 +1,42 @@
 {
-    "extends": [
-        "config:recommended"
-    ],
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
     "packageRules": [
         {
-            "groupName": "all non-major dependencies",
-            "groupSlug": "all-minor-patch",
-            "matchPackagePatterns": [
-                "*"
-            ],
-            "matchUpdateTypes": [
-                "minor",
-                "patch"
-            ],
-            "automerge": true
+            "description": "Never automerge major updates — always open a PR for human review",
+            "matchUpdateTypes": ["major"],
+            "automerge": false
+        },
+        {
+            "description": "Astro ecosystem",
+            "groupName": "astro",
+            "matchPackageNames": ["astro", "@astrojs/**", "eslint-plugin-astro"]
+        },
+        {
+            "description": "Linting, formatting, and types",
+            "groupName": "lint and types",
+            "matchPackageNames": [
+                "eslint",
+                "eslint-**",
+                "@eslint/**",
+                "@stylistic/**",
+                "typescript",
+                "typescript-eslint",
+                "@typescript-eslint/**",
+                "prettier",
+                "@types/**"
+            ]
+        },
+        {
+            "description": "Testing tools",
+            "groupName": "testing",
+            "matchPackageNames": ["vitest", "@vitest/**", "playwright", "@playwright/**", "@axe-core/playwright"]
+        },
+        {
+            "description": "Automerge non-major updates once required CI checks pass",
+            "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+            "automerge": true,
+            "platformAutomerge": true
         }
     ]
 }
