@@ -18,62 +18,6 @@ export const digitalisationTag: LocalTag = {
             'Den mänskliga dimensionen spelar också roll. Digitalisering får inte utesluta människor som har svårt med onlinegränssnitt — läkarbesök, förmånsansökningar och tillståndsansökningar måste förbli tillgängliga via icke-digitala kanaler. Effektivitetsvinster bör inte uppnås genom att tvinga de mest utsatta att anpassa sig till den kanal som är mest bekväm för leverantören.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'Digitalisation means moving services online, using data to support decision-making, and making processes more efficient. It can improve service accessibility and reduce costs.',
-                q: 'What does digitalisation mean for the public sector?',
-            },
-            {
-                a: 'Risks of digitalisation include privacy violations, cybersecurity threats, digital exclusion, and dependency on foreign technology vendors.',
-                q: 'What are the risks of digitalisation?',
-            },
-            {
-                a: 'Vendor lock-in, accessibility gaps for those not comfortable with digital interfaces, data sovereignty risks, and single points of failure. Good digitalisation requires open standards, interoperability, and retained non-digital alternatives.',
-                q: 'What are the specific risks in public sector digitalisation?',
-            },
-            {
-                a: 'Open standards over proprietary platforms, iterative delivery over big-bang projects, citizen-testing before rollout, and physical alternatives retained for services that affect rights and welfare.',
-                q: 'How should municipalities approach digitalisation?',
-            },
-        ],
-        fi: [
-            {
-                a: 'Digitalisaatio tarkoittaa palvelujen siirtymistä verkkoon, päätöksenteon tueksi tulevaa dataa ja tehokkaampia prosesseja. Se voi parantaa palvelujen saatavuutta ja säästää kustannuksia.',
-                q: 'Mitä digitalisaatio tarkoittaa julkiselle sektorille?',
-            },
-            {
-                a: 'Digitalisaation riskejä ovat yksityisyyden loukkaukset, kyberturvallisuusuhat, digitaalinen syrjäytyminen ja riippuvuus ulkomaisista teknologiatoimittajista.',
-                q: 'Mitkä ovat digitalisaation riskit?',
-            },
-            {
-                a: 'Toimittajariippuvuus, saavutettavuusaukot niille, joille digitaaliset käyttöliittymät ovat vaikeita, datasuvereniteettiriskit ja kriittiset vikakohdat. Hyvä digitalisaatio edellyttää avoimia standardeja, yhteentoimivuutta ja säilytettyjä ei-digitaalisia vaihtoehtoja.',
-                q: 'Mitkä ovat julkisen sektorin digitalisaation erityisriskit?',
-            },
-            {
-                a: 'Avoimet standardit suljettujen alustojen sijaan, iteratiivinen toimittaminen suurnäyttämön hankkeiden sijaan, kansalaistestaus ennen käyttöönottoa, ja ei-digitaalisten vaihtoehtojen säilyttäminen oikeuksiin ja hyvinvointiin vaikuttavissa palveluissa.',
-                q: 'Miten kuntien pitäisi lähestyä digitalisaatiota?',
-            },
-        ],
-        sv: [
-            {
-                a: 'Digitalisering innebär att tjänster flyttar online, att data stöder beslutsfattande och att processer effektiviseras. Det kan förbättra tillgängligheten till tjänster och spara kostnader.',
-                q: 'Vad innebär digitalisering för den offentliga sektorn?',
-            },
-            {
-                a: 'Riskerna med digitalisering inkluderar integritetsintrång, cybersäkerhetshot, digital utestängning och beroende av utländska teknikaktörer.',
-                q: 'Vilka är riskerna med digitalisering?',
-            },
-            {
-                a: 'Leverantörsinlåsning, tillgänglighetsbrister för dem som inte är bekväma med digitala gränssnitt, datasuveränitetsrisker och kritiska felkällor. Bra digitalisering kräver öppna standarder, interoperabilitet och bibehållna icke-digitala alternativ.',
-                q: 'Vilka är de specifika riskerna med offentlig sektors digitalisering?',
-            },
-            {
-                a: 'Öppna standarder framför proprietära plattformar, iterativ leverans framför stora engångsprojekt, medborgartest före lansering, och bibehållna fysiska alternativ för tjänster som påverkar rättigheter och välfärd.',
-                q: 'Hur bör kommuner hantera digitalisering?',
-            },
-        ],
-    },
     id: 'digitalisation',
     metaDescription: {
         en: 'Digitalisation is both an opportunity and a risk. Finland must lead with quality, not just speed — getting it wrong at scale is expensive and hard to reverse.',

@@ -18,50 +18,6 @@ export const freedomTag: LocalTag = {
             'Att trygga friheten i AI-eran kräver noga avvägda eftergifter samt strikta gränser. Massövervakning, utvidgad användning av biometriska identifierare eller automatisk granskning av meddelanden är inte verktyg som bör tas i bruk lättvindigt, om alls. Varje steg som urholkar integriteten kräver vattentäta motiveringar och tydliga bevis för sin nytta — utan det finns ingen sak att försvara.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'Privacy is a precondition for all the other freedoms — speech, association, political dissent, even the freedom to change your mind. There is no such thing as a society that has freedoms but no privacy.',
-                q: 'Why frame privacy as a freedom question?',
-            },
-            {
-                a: 'Most surveillance proposals — chat scanning, biometric expansion, mass data retention — are sold as security measures targeting only criminals. The technology does not work that way. Once the capability exists, it scales easily to anyone, and the political pressure to use it elsewhere grows. There is also fairly little evidence that these technical measures actually restrict what criminals do.',
-                q: "Aren't these surveillance tools just for catching criminals?",
-            },
-            {
-                a: 'Find out how new technical solutions actually work, not just what the press release says. Legislate against biometric identification and mass data retention that lack genuine justification. Require infrastructure located in the EU/EEA, so data stays within the scope of European law. Treat digital rights as civil rights — because they are.',
-                q: 'What does parliament actually do about this?',
-            },
-        ],
-        fi: [
-            {
-                a: 'Yksityisyys on edellytys kaikille muille vapauksille — sananvapaudelle, yhdistymisen vapaudelle, vapaudelle poliittisille mielipiteille, jopa vapaudelle muuttaa mielensä. Sellaista yhteiskuntaa ei ole olemassakaan, jossa on vapauksia, mutta ei yksityisyyttä.',
-                q: 'Miksi käsittelet yksityisyyttä kysymyksenä vapaudesta?',
-            },
-            {
-                a: 'Useimmat valvontaesitykset — chat control, biometriikan laajennus, datan massasäilytys — kaupataan turvallisuutta lisäävinä toimina, jotka kohdistuvat vain rikollisiin. Teknologia ei kuitenkaan toimi niin. Kun kyvykkyys on kerran rakennettu, se skaalautuu helposti kehen tahansa, ja poliittinen paine niiden käyttämiseksi muualla kasvaa. On myös aika vähän näyttöä siitä, että tekniset keinot oikeasti rajoittaisivat rikollisten toimiin.',
-                q: 'Eivätkö nämä valvontatyökalut ole vain rikollisten kiinnisaamiseen?',
-            },
-            {
-                a: 'Selvittämällä mitä erilaiset uudet tekniset ratkaisut oikeasti toimivat. Säätämällä sellaista lainsäädäntöä, joka estää perusteettoman biometrisen tunnistamisen ja datan massasäilytyksen. Vaatimalla EU/ETA-alueella sijaitsevaa infrastruktuuria, jotta data pysyy eurooppalaisen lainsäädännön piirissä. Käsittelemällä digitaalisia oikeuksia perusoikeuksina — koska ne ovat sitä.',
-                q: 'Mitä eduskunta voi tehdä asialle?',
-            },
-        ],
-        sv: [
-            {
-                a: 'Integritet är en förutsättning för alla de andra friheterna — yttrandefriheten, föreningsfriheten, friheten till politiska åsikter, till och med friheten att ändra åsikt. Det finns inget samhälle som har friheter men ingen integritet.',
-                q: 'Varför rama in integritet som en frihetsfråga?',
-            },
-            {
-                a: 'De flesta övervakningsförslag — chatt-kontroll, utvidgad biometri, masslagring av data — säljs som säkerhetsåtgärder riktade enbart mot kriminella. Tekniken fungerar dock inte så. När kapaciteten väl finns skalas den lätt till vem som helst, och det politiska trycket att använda den på andra håll växer. Det finns dessutom ganska lite belägg för att de tekniska medlen faktiskt begränsar vad kriminella gör.',
-                q: 'Är inte dessa övervakningsverktyg bara till för att gripa kriminella?',
-            },
-            {
-                a: 'Genom att ta reda på hur nya tekniska lösningar faktiskt fungerar, inte bara vad pressmeddelandet säger. Genom att stifta lagstiftning som förhindrar biometrisk identifiering och masslagring av data utan genuin motivering. Genom att kräva infrastruktur inom EU/EES, så att data omfattas av europeisk lagstiftning. Genom att behandla digitala rättigheter som medborgerliga rättigheter — för det är vad de är.',
-                q: 'Vad kan riksdagen göra åt detta?',
-            },
-        ],
-    },
     id: 'freedom',
     metaDescription: {
         en: 'Freedom matters more than ever in the AI era. When linking data and surveillance is a button press away, fundamental rights need strengthening.',

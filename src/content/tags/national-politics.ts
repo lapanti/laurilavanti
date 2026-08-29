@@ -15,38 +15,6 @@ export const nationalPoliticsTag: LocalTag = {
             'Parlamentariska avtal, nedskärningar och finanspolitiska regler är inte abstrakta. De syns i kommunernas budgetar, i vilka tjänster som får finansiering och vilka som skärs ned, och i vilka koalitioner som är villiga att förhandla och vilka som inte är det. Jag skriver om hur det som händer på Arkadiabacken återspeglas i praktiken i Kyrkslätt.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'Cross-party parliamentary agreements set constraints that outlast individual governments. They are the main mechanism for handling problems that require commitment across election cycles, such as fiscal consolidation, climate targets, and long-term infrastructure. Whether any given agreement is well-designed is a separate question from whether such agreements are a workable tool.',
-                q: 'What is the role of parliamentary agreements in Finnish politics?',
-            },
-            {
-                a: 'National fiscal decisions determine how much money municipalities have, what services can be provided, and which groups bear the cost of adjustment. Participating in those decisions — rather than opposing them from outside — is the only way to influence who carries the burden.',
-                q: 'Why does national fiscal policy matter to local government?',
-            },
-        ],
-        fi: [
-            {
-                a: 'Parlamentaariset sopimukset asettavat rajoitteita, jotka kestävät yksittäisten hallitusten yli. Ne ovat tärkein keino käsitellä ongelmia, joiden ratkaisu vaatii sitoutumista yli vaalikausien, kuten julkisen talouden tasapainottaminen, ilmastotavoitteet ja pitkän tähtäimen infrastruktuuri. Se, onko jokin yksittäinen sopimus hyvin suunniteltu, on eri kysymys kuin se, ovatko tällaiset sopimukset ylipäätään toimiva väline.',
-                q: 'Mikä on parlamentaaristen sopimusten rooli Suomen politiikassa?',
-            },
-            {
-                a: 'Kansalliset talouspäätökset määrittävät, kuinka paljon rahaa kunnilla on, mitä palveluita voidaan tarjota ja ketkä kantavat sopeutuksen kustannukset. Osallistuminen näihin päätöksiin — eikä niiden vastustaminen ulkopuolelta — on ainoa keino vaikuttaa siihen, kenen harteille taakka kaatuu.',
-                q: 'Miksi kansallinen talouspolitiikka on tärkeä paikallishallinnolle?',
-            },
-        ],
-        sv: [
-            {
-                a: 'Parlamentariska avtal sätter begränsningar som överlever enskilda regeringar. De är det viktigaste verktyget för att hantera problem som kräver engagemang över valperioder, såsom finanskonsolidering, klimatmål och långsiktig infrastruktur. Om ett givet avtal är välutformat är en separat fråga från om sådana avtal är ett fungerande verktyg överhuvudtaget.',
-                q: 'Vilken roll spelar parlamentariska avtal i finländsk politik?',
-            },
-            {
-                a: 'Nationella finansbeslut avgör hur mycket pengar kommunerna har, vilka tjänster som kan tillhandahållas och vilka grupper som bär kostnaden för anpassningen. Att delta i dessa beslut — snarare än att motarbeta dem utifrån — är det enda sättet att påverka vem som bär bördan.',
-                q: 'Varför spelar nationell finanspolitik roll för lokalförvaltningen?',
-            },
-        ],
-    },
     id: 'national-politics',
     metaDescription: {
         en: 'Finnish national politics — parliament, coalitions and fiscal agreements — from a councillor watching Helsinki decisions land in practice.',

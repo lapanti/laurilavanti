@@ -18,62 +18,6 @@ export const technologyTag: LocalTag = {
             'Teknologibeslut är inte isolerade till ett enda politikområde. De ligger till grund för utbildning, integritet, demokratiskt deltagande, offentliga tjänster och ekonomisk konkurrenskraft. En sammanhängande teknologipolitik kräver att dessa trådar kopplas samman snarare än att behandla var och en separat.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'Technology changes how politicians communicate with voters, how decisions are made, and how public services are delivered. It can increase transparency but also introduce new risks.',
-                q: 'How does technology affect politics?',
-            },
-            {
-                a: 'Technology policy covers decisions about how society develops, regulates, and utilises technology — including AI, data protection, and digitalisation.',
-                q: 'What does technology policy mean?',
-            },
-            {
-                a: 'Without it, technology laws are effectively written to industry specifications. A politician who understands how systems work can ask the right questions, spot loopholes, and insist on rules that actually protect citizens rather than just creating compliance overhead.',
-                q: 'Why does technical expertise matter in political decision-making?',
-            },
-            {
-                a: 'Policy that centres citizens, not vendors. It means open standards, vendor neutrality in public procurement, transparency requirements, and democratic oversight of the systems that increasingly govern everyday life.',
-                q: "What does 'responsible technology policy' mean?",
-            },
-        ],
-        fi: [
-            {
-                a: 'Teknologia muuttaa tapaa, jolla poliitikot viestivät äänestäjien kanssa, miten päätöksiä tehdään ja miten julkisia palveluja tarjotaan. Se voi lisätä avoimuutta mutta myös tuoda uusia riskejä.',
-                q: 'Miten teknologia vaikuttaa politiikkaan?',
-            },
-            {
-                a: 'Teknologiapolitiikka tarkoittaa päätöksiä siitä, miten yhteiskunta kehittää, sääntelee ja hyödyntää teknologiaa. Siihen kuuluvat muun muassa tekoäly, tietosuoja ja digitalisaatio.',
-                q: 'Mitä teknologiapolitiikka tarkoittaa?',
-            },
-            {
-                a: 'Ilman sitä teknologialait kirjoitetaan käytännössä teollisuuden ehtojen mukaan. Poliitikko, joka ymmärtää miten järjestelmät toimivat, voi esittää oikeita kysymyksiä, havaita porsaanreiät ja vaatia sääntöjä, jotka todella suojaavat kansalaisia sen sijaan, että luovat pelkästään vaatimustenmukaisuustaakkaa.',
-                q: 'Miksi teknologiaosaaminen on tärkeää poliittisessa päätöksenteossa?',
-            },
-            {
-                a: 'Politiikka, joka asettaa kansalaiset, ei toimittajat, etusijalle. Se tarkoittaa avoimia standardeja, toimittajariippumattomuutta julkisissa hankinnoissa, läpinäkyvyysvaatimuksia ja demokraattista valvontaa niissä järjestelmissä, jotka yhä enemmän hallitsevat jokapäiväistä elämää.',
-                q: 'Mitä tarkoittaa vastuullinen teknologiapolitiikka?',
-            },
-        ],
-        sv: [
-            {
-                a: 'Teknologi förändrar hur politiker kommunicerar med väljarna, hur beslut fattas och hur offentliga tjänster tillhandahålls. Det kan öka transparensen men också medföra nya risker.',
-                q: 'Hur påverkar teknologi politiken?',
-            },
-            {
-                a: 'Teknologipolitik handlar om beslut om hur samhället utvecklar, reglerar och utnyttjar teknologi. Det inkluderar bland annat AI, dataskydd och digitalisering.',
-                q: 'Vad innebär teknologipolitik?',
-            },
-            {
-                a: 'Utan det skrivs teknologilagar i praktiken enligt branschens specifikationer. En politiker som förstår hur system fungerar kan ställa rätt frågor, upptäcka kryphål och insistera på regler som faktiskt skyddar medborgarna snarare än bara skapar efterlevnadsbörda.',
-                q: 'Varför spelar teknologisk kompetens roll i politiskt beslutsfattande?',
-            },
-            {
-                a: 'Politik som sätter medborgarna, inte leverantörerna, i centrum. Det innebär öppna standarder, leverantörsneutralitet i offentlig upphandling, transparenskrav och demokratisk tillsyn av de system som i allt högre grad styr vardagslivet.',
-                q: 'Vad innebär ansvarsfull teknologipolitik?',
-            },
-        ],
-    },
     id: 'technology',
     metaDescription: {
         en: 'Finland has a strong tradition of technological competence. Maintaining that edge requires people with practical expertise at the table where policy is made.',

@@ -18,50 +18,6 @@ export const marketgreenTag: LocalTag = {
             'Marknadsgrön är inte en varumärkesövning. Det är en substantiell ekonomisk-politisk hållning: skadeskatter i stället för arbetsskatter, konkurrens i stället för skydd av etablerade aktörer, öppna upphandlingar i stället för leverantörsberoende, och en stat som köper teknik på sina egna villkor. Arbetet på den här sidan kopplar hållningen till AI-erans industripolitik, överförbarhet av offentliga upphandlingar och De grönas bredare ekonomiska linje.',
         ],
     },
-    faq: {
-        en: [
-            {
-                a: 'Marketgreen politics says the market economy is the most effective known way to allocate resources, provided externalities are priced and competition is real. The role of policy is to shift taxation from labour to harm, keep markets competitive, and make sure pollution and other social costs are paid by the actors causing them. It is not a smaller-state argument — it is a working-state argument.',
-                q: 'What does Marketgreen mean?',
-            },
-            {
-                a: 'Because the Coalition Party has, year after year, conceded ground to its conservative wing on women’s rights, education, and human rights. Liberals can vote for the Greens without having to explain their votes against their own values. The Finnish party landscape needs at least one genuinely social-liberal option, and the Greens already are it — on the economy as well as on rights.',
-                q: 'Why switch from the centre-right to the Greens?',
-            },
-            {
-                a: 'A central plank: tax shifts from work to harm, public procurement that does not lock the country into a single vendor, support for domestic and European AI capacity, and labour-market policy that lets people move as the economy changes. The vaihdavihreisiin.fi campaign and the Marketgreen Manifesto spell this out in more detail.',
-                q: 'What does this mean concretely in economic policy?',
-            },
-        ],
-        fi: [
-            {
-                a: 'Markkinavihreä uskoo, että markkinatalous on tehokkain tunnettu tapa jakaa resursseja, kunhan ulkoisvaikutukset on hinnoiteltu ja kilpailu on aitoa. Politiikan tehtävä on siirtää verotuksen painopiste työstä haittoihin, pitää markkinat kilpailtuina ja varmistaa että saastuttaminen ja muut yhteiskunnalliset kustannukset maksaa niiden aiheuttaja. Kyse ei ole pienemmän valtion vaan toimivan valtion linjasta.',
-                q: 'Mitä markkinavihreä tarkoittaa?',
-            },
-            {
-                a: 'Koska Kokoomus on vuosi vuodelta myötäillyt konservatiiveja naisten oikeuksissa, koulutuksessa ja ihmisoikeuksissa. Vihreissä liberaalin ei tarvitse selitellä äänestyksiään omia arvojaan vastaan. Suomen puoluekenttään tarvitaan vähintään yksi aidosti sosiaaliliberaali vaihtoehto, ja Vihreät on sellainen jo nyt — myös taloudessa, ei vain oikeuksissa.',
-                q: 'Miksi vaihtaa Kokoomuksesta Vihreisiin?',
-            },
-            {
-                a: 'Keskeisesti: verotuksen painopiste työstä haittoihin, julkishankinnat jotka eivät lukitse maata yhden toimittajan alustaan, panostukset kotimaiseen ja eurooppalaiseen tekoälykapasiteettiin, ja työmarkkinapolitiikkaa, joka mahdollistaa siirtymät talouden muuttuessa. Vaihdavihreisiin.fi-kampanja ja Markkinavihreä manifesti avaavat tätä yksityiskohtaisemmin.',
-                q: 'Mitä tämä tarkoittaa konkreettisesti talouspolitiikassa?',
-            },
-        ],
-        sv: [
-            {
-                a: 'En marknadsgrön anser att marknadsekonomin är det effektivaste kända sättet att fördela resurser, förutsatt att externa effekter är prissatta och konkurrensen är verklig. Politikens uppgift är att flytta beskattningens tyngdpunkt från arbete till skador, hålla marknaderna konkurrensutsatta och säkerställa att förorening och andra samhällskostnader bärs av dem som orsakar dem. Det är inte en linje för mindre stat, utan för en stat som fungerar.',
-                q: 'Vad betyder marknadsgrön?',
-            },
-            {
-                a: 'För att Samlingspartiet, år efter år, har gett efter för sina konservativa krafter i kvinnors rättigheter, utbildning och mänskliga rättigheter. I De gröna behöver en liberal inte förklara röster mot sina egna värderingar. Det finländska partilandskapet behöver minst ett genuint socialliberalt alternativ, och De gröna är redan det — också i ekonomin, inte bara i rättigheter.',
-                q: 'Varför byta från mittenhögern till De gröna?',
-            },
-            {
-                a: 'Centralt: beskattningens tyngdpunkt flyttas från arbete till skador, offentliga upphandlingar som inte låser fast landet i en enda leverantör, satsningar på inhemsk och europeisk AI-kapacitet, och arbetsmarknadspolitik som tillåter rörelse när ekonomin förändras. Kampanjen vaihdavihreisiin.fi och Marknadsgrönt manifest beskriver detta mer i detalj.',
-                q: 'Vad innebär detta konkret i ekonomisk politik?',
-            },
-        ],
-    },
     id: 'marketgreen',
     metaDescription: {
         en: 'Marketgreen — market economy with priced externalities, fair competition, and tax shifted from work to harm. Greens as Finland’s market-liberal party.',
