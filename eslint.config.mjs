@@ -3,13 +3,14 @@
 import js from '@eslint/js'
 import stylistic from '@stylistic/eslint-plugin'
 import vitest from '@vitest/eslint-plugin'
-import { defineConfig } from 'eslint/config' // eslint-disable-line import/no-unresolved
+import { defineConfig } from 'eslint/config'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import { configs } from 'eslint-plugin-astro'
-import importPlugin from 'eslint-plugin-import'
+import { importX } from 'eslint-plugin-import-x'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
-import tseslint from 'typescript-eslint' // eslint-disable-line import/no-unresolved
+import tseslint from 'typescript-eslint'
 
 const testFileGlob = [
     'tests/__mocks__/**/*.js',
@@ -26,13 +27,11 @@ export default defineConfig([
         languageOptions: { globals: globals.browser },
         plugins: { js },
     },
-    importPlugin.flatConfigs.recommended,
-    importPlugin.flatConfigs.typescript,
+    importX.flatConfigs.recommended,
+    importX.flatConfigs.typescript,
     {
         settings: {
-            'import/resolver': {
-                typescript: true,
-            },
+            'import-x/resolver-next': [createTypeScriptImportResolver()],
         },
     },
     tseslint.configs.recommended,
@@ -80,7 +79,7 @@ export default defineConfig([
             '@typescript-eslint/no-use-before-define': ['error'],
             'eol-last': ['error', 'always'],
             eqeqeq: ['error', 'smart'],
-            'import/extensions': [
+            'import-x/extensions': [
                 'error',
                 'never',
                 {
@@ -88,12 +87,12 @@ export default defineConfig([
                     json: 'always',
                 },
             ],
-            'import/first': ['error'],
-            'import/named': ['error'],
-            'import/namespace': ['error'],
-            'import/newline-after-import': ['error'],
-            'import/no-duplicates': ['error'],
-            'import/no-unresolved': ['error', { ignore: ['^astro:'] }],
+            'import-x/first': ['error'],
+            'import-x/named': ['error'],
+            'import-x/namespace': ['error'],
+            'import-x/newline-after-import': ['error'],
+            'import-x/no-duplicates': ['error'],
+            'import-x/no-unresolved': ['error', { ignore: ['^astro:'] }],
             'linebreak-style': ['error', 'unix'],
             'max-depth': ['error', 3],
             'no-duplicate-imports': ['off'],
@@ -128,7 +127,7 @@ export default defineConfig([
          */
         files: ['**/*.astro/*.ts', '**/*.astro/*.js'],
         rules: {
-            'import/no-unresolved': ['off'],
+            'import-x/no-unresolved': ['off'],
         },
     },
     {

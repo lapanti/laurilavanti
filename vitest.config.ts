@@ -1,5 +1,5 @@
 /// <reference types="vitest/config" />
-import { getViteConfig } from 'astro/config' // eslint-disable-line import/no-unresolved
+import { getViteConfig } from 'astro/config' // eslint-disable-line import-x/no-unresolved
 import path from 'path'
 import { configDefaults } from 'vitest/config'
 
