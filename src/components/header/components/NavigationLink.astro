@@ -73,9 +73,20 @@ const isLang = Boolean(switchToLang)
 
     /* desktop lang chip — active language gets a sand background */
     .desktop.lang-link {
+        /*
+         * Widen the tap target toward 44px (SiteImprove sia-r111 / WCAG 2.5.5)
+         * without resizing the visible pill: a transparent inline border grows
+         * the clickable box while `background-clip: padding-box` keeps the sand
+         * active-state fill at its original width, and the negative inline margin
+         * holds the layout. Real border box, not a pseudo-element (Alfa ignores
+         * pseudo-elements). Height already meets 44px via the `a` min-height.
+         */
+        background-clip: padding-box;
+        border-inline: 0.625rem solid transparent;
         color: var(--colorsDeepForest);
         font-size: 0.9375rem;
         letter-spacing: 0.12em;
+        margin-inline: -0.625rem;
         padding: 0.1875rem 0.4375rem;
     }
     .desktop.lang-link[aria-current='page'] {
