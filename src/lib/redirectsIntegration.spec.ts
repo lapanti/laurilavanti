@@ -28,10 +28,39 @@ describe('buildRedirectLines', () => {
         expect(lines).toContain('/fi/blog/7/ /fi/blog/7/ehdolle-aluevaaleihin/ 301')
     })
 
-    it('ignores non-post pages and the bare-id source pages themselves', () => {
-        const lines = buildRedirectLines({}, ['/fi/', '/fi/blog/', '/fi/blog/51/', '/fi/category/technology/'])
+    it('derives locale-less aliases (both slash variants) for canonical Finnish pages', () => {
+        const lines = buildRedirectLines({}, ['/fi/about/', '/fi/category/technology/'])
+
+        expect(lines).toContain('/about /fi/about/ 301')
+        expect(lines).toContain('/about/ /fi/about/ 301')
+        expect(lines).toContain('/category/technology /fi/category/technology/ 301')
+        expect(lines).toContain('/category/technology/ /fi/category/technology/ 301')
+    })
+
+    it('aliases canonical Finnish blog posts alongside the bare-id redirect', () => {
+        const lines = buildRedirectLines({}, ['/fi/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/'])
+
+        expect(lines).toContain('/fi/blog/51/ /fi/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/ 301')
+        expect(lines).toContain(
+            '/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys /fi/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/ 301'
+        )
+        expect(lines).toContain(
+            '/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/ /fi/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/ 301'
+        )
+    })
+
+    it('never aliases the Finnish root, bare-post sources, English/Swedish pages, or file routes', () => {
+        const lines = buildRedirectLines({}, ['/fi/', '/fi/blog/51/', '/fi/rss.xml', '/en/about/', '/sv/about/'])
 
         expect(lines).toEqual([])
+    })
+
+    it('never shadows a path already defined as a static redirect source', () => {
+        const lines = buildRedirectLines({ '/about/': '/fi/about-legacy/' }, ['/fi/about/'])
+
+        expect(lines).toContain('/about/ /fi/about-legacy/ 301')
+        expect(lines).not.toContain('/about /fi/about/ 301')
+        expect(lines).not.toContain('/about/ /fi/about/ 301')
     })
 
     it('de-duplicates repeated pages and returns lines sorted deterministically', () => {
