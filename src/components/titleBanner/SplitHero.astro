@@ -110,14 +110,11 @@ const { alt, ctaHref, ctaLabel, emphasis, eyebrow, heroImage, intro, mobileHeroI
             padding-top: 0;
         }
 
-        /* Fixed to the hero's own 633px band instead of stretching with it — an
-           unusually long headline (e.g. the newsletter's) can grow .hero-right well
-           past 633px, and this image column shouldn't grow (and re-crop) with it. */
+        /* Stretches with the hero grid row (floored at 633px by .hero min-height) so the
+           image always covers the whole left column. On an unusually long headline that
+           grows .hero-right past 633px, the portrait zooms slightly (object-position:
+           100% 50%) rather than exposing the deep-forest background below it. */
         .hero :global(.hero-left) {
-            height: 633px;
-            left: 0;
-            position: absolute;
-            top: 0;
             width: 260px;
         }
 
