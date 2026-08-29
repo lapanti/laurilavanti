@@ -70,9 +70,20 @@ const tagsToRender = (tags ?? [])
         text-transform: uppercase;
     }
 
+    /*
+     * Drawn as a shape, not the "·" character: SiteImprove sia-r69 (WCAG 1.4.3)
+     * flags the low-contrast middot as a visible text node, but a decorative
+     * separator carries no text meaning. As a circle it keeps the exact muted
+     * look while leaving the rule's text-node applicability — same appearance,
+     * no palette change.
+     */
     .art-meta .dot {
-        color: var(--colorsTaivas700);
+        background: var(--colorsTaivas700);
+        border-radius: 50%;
+        flex: none;
+        height: 0.28em;
         opacity: 0.8;
+        width: 0.28em;
     }
 
     h1 {
@@ -169,9 +180,7 @@ const tagsToRender = (tags ?? [])
                 {
                     readingTime && readingTime > 0 && (
                         <Fragment>
-                            <span aria-hidden="true" class="dot">
-                                ·
-                            </span>
+                            <span aria-hidden="true" class="dot" />
                             <span>
                                 {readingTime} {readingTimeLabel[lang]}
                             </span>
@@ -181,9 +190,7 @@ const tagsToRender = (tags ?? [])
                 {
                     showUpdated && (
                         <Fragment>
-                            <span aria-hidden="true" class="dot">
-                                ·
-                            </span>
+                            <span aria-hidden="true" class="dot" />
                             <time datetime={updatedDate}>
                                 {updatedLabel[lang]}: {updatedDateToDisplay}
                             </time>
