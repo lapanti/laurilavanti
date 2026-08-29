@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../content/nav'
-import type { BreadcrumbItem, FaqItem, JsonLdType } from '../lib/jsonld'
+import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
 
 import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import TitleBanner from '../components/TitleBanner.astro'
@@ -17,7 +17,6 @@ interface Props {
     description?: string
     emphasis?: string
     eyebrow?: string
-    faq?: Array<FaqItem>
     heroImage?: string
     intro?: string
     lang?: Lang
@@ -44,7 +43,6 @@ const {
     description,
     emphasis,
     eyebrow,
-    faq,
     heroImage,
     intro,
     lang,
@@ -75,7 +73,6 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     breadcrumbs={breadcrumbs}
     createdAt={createdAt}
     description={description}
-    faq={faq}
     headerVariant={variant === 'split' ? 'hero' : 'solid'}
     lang={lang}
     noindex={noindex}

@@ -28,7 +28,6 @@ const posts = defineCollection({
         authors: z.array(authorEntry).optional(),
         description: z.string(),
         externalPublications: z.array(externalPublication).optional(),
-        faq: z.array(z.object({ a: z.string(), q: z.string() })).optional(),
         heroImage: z.string(),
         id: z.number().int().positive(),
         lang: z.enum(['fi', 'sv', 'en']),
