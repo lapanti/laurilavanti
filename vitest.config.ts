@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
 import { getViteConfig } from 'astro/config' // eslint-disable-line import-x/no-unresolved
 import path from 'path'
-import { configDefaults } from 'vitest/config'
+import { configDefaults, coverageConfigDefaults } from 'vitest/config'
 
 export default getViteConfig(
     {
@@ -21,6 +21,8 @@ export default getViteConfig(
         ],
         test: {
             coverage: {
+                // Merge with the defaults (Vitest replaces, not merges) so *.spec.ts stay excluded.
+                exclude: [...coverageConfigDefaults.exclude, 'src/lib/og/assets/**'],
                 include: ['src/lib/**'],
                 thresholds: {
                     functions: 80,
