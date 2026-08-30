@@ -31,6 +31,8 @@ const posts = defineCollection({
         heroImage: z.string(),
         id: z.number().int().positive(),
         lang: z.enum(['fi', 'sv', 'en']),
+        ogEmphasis: z.string().optional(),
+        ogTitle: z.string().optional(),
         pageTitle: z.string(),
         publishDate: isoDate,
         slug: z.string(),
