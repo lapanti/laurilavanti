@@ -8,6 +8,7 @@ import TitleBanner from '../components/TitleBanner.astro'
 import { breadcrumbLabels } from '../lib/breadcrumbs'
 import { getImage } from '../lib/images'
 import { COLLECTIONPAGE } from '../lib/jsonld'
+import { ogId } from '../lib/og/id'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
@@ -59,7 +60,13 @@ const {
     variant = 'page',
 } = props
 
-const ogImage = getImage('og-image-lauri-lavanti', 'ogFlat').src
+/*
+ * Pages with a canonical slug get a generated per-page card; slug-less pages (e.g. 404)
+ * fall back to the static default social card.
+ */
+const ogImage = slug
+    ? new URL(`/og/${ogId(slug)}.png`, Astro.site).href
+    : getImage('og-image-lauri-lavanti', 'ogFlat').src
 
 const breadcrumbs: BreadcrumbItem[] | undefined =
     type === COLLECTIONPAGE && lang && slug

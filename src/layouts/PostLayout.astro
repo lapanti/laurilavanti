@@ -13,8 +13,8 @@ import PostProse from '../components/post/PostProse.astro'
 import SocialShare from '../components/SocialShare.astro'
 import TitleBanner from '../components/TitleBanner.astro'
 import { breadcrumbLabels } from '../lib/breadcrumbs'
-import { getImage } from '../lib/images'
 import { BLOGPOSTING, type BreadcrumbItem } from '../lib/jsonld'
+import { ogId } from '../lib/og/id'
 import { colors } from '../lib/styles'
 import BaseLayout from './BaseLayout.astro'
 
@@ -71,7 +71,7 @@ const i18n = {
 
 const t = i18n[lang]
 
-const ogImage = heroImage ? getImage(heroImage, 'og').src : undefined
+const ogImage = new URL(`/og/${ogId(canonicalSlug)}.png`, Astro.site).href
 
 const siteOrigin = 'https://lavanti.fi'
 const breadcrumbs: BreadcrumbItem[] = [
