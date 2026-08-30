@@ -106,6 +106,23 @@ export function checkLlmsTxt(markdown: string, servable: Set<string>, redirectSo
     return problems
 }
 
+/**
+ * Extract the `og:image` URL from a built HTML document as a root-relative path, or
+ * null when there is none or it points off-site. Handles both attribute orders
+ * (`content`/`property`), since Head.astro emits `content` first.
+ */
+export function extractOgImage(html: string): string | null {
+    const match =
+        html.match(/<meta[^>]*\bproperty=["']og:image["'][^>]*\bcontent=["']([^"']+)["']/i) ??
+        html.match(/<meta[^>]*\bcontent=["']([^"']+)["'][^>]*\bproperty=["']og:image["']/i)
+    if (!match) return null
+    const url = match[1]
+    if (url.startsWith(`${SITE}/`)) return url.slice(SITE.length)
+    if (url.startsWith('/')) return url
+
+    return null
+}
+
 export interface RedirectRule {
     source: string
     target: string
@@ -164,8 +181,27 @@ if (isMain) {
     for (const problem of checkLlmsTxt(llmsText, servable, redirectSources)) report('llms.txt', problem)
     for (const problem of checkRedirectsOutput(rules, servable)) report('_redirects', problem)
 
+    /*
+     * Every generated per-page OG card (og:image → /og/*.png) must have been built.
+     * A page pointing at a card the endpoint never enumerated is a silent broken share
+     * image; /images/* fallbacks (Cloudflare Images) live off-dist and are skipped.
+     */
+    let ogChecked = 0
+    for (const page of pages) {
+        const ogPath = extractOgImage(readFileSync(join(distDir, page, 'index.html'), 'utf8'))
+        if (!ogPath?.startsWith('/og/')) continue
+        ogChecked++
+        /*
+         * normalizePath percent-decodes so an encoded URL (e.g. %C3%A4) matches the
+         * UTF-8 filename on disk, exactly as the llms.txt/_redirects checks do.
+         */
+        if (!servable.has(normalizePath(ogPath))) report(page, `og:image "${ogPath}" has no built PNG`)
+    }
+
     if (!hasError) {
-        console.log(`OK: llms.txt links and ${rules.length} redirect rules resolve against ${pages.size} built pages`)
+        console.log(
+            `OK: llms.txt links, ${rules.length} redirect rules, and ${ogChecked} og:image cards resolve against ${pages.size} built pages`
+        )
     }
     process.exit(hasError ? 1 : 0)
 }

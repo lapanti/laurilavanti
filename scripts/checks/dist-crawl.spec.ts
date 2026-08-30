@@ -1,6 +1,13 @@
 import { describe, expect, it } from 'vitest'
 
-import { checkLlmsTxt, checkRedirectsOutput, extractLlmsLinks, normalizePath, parseRedirects } from './dist-crawl'
+import {
+    checkLlmsTxt,
+    checkRedirectsOutput,
+    extractLlmsLinks,
+    extractOgImage,
+    normalizePath,
+    parseRedirects,
+} from './dist-crawl'
 
 describe('normalizePath', () => {
     it('adds a trailing slash to page routes and leaves file routes untouched', () => {
@@ -18,6 +25,22 @@ describe('normalizePath', () => {
         expect(normalizePath('/sv/blog/38/en-kall-skord-for-kyrksl%C3%A4tt/')).toBe(
             '/sv/blog/38/en-kall-skord-for-kyrkslätt/'
         )
+    })
+})
+
+describe('extractOgImage', () => {
+    it('extracts a site-origin og:image as a root-relative path (content-first order)', () => {
+        const html = '<meta content="https://lavanti.fi/og/fi__about.png" property="og:image" />'
+        expect(extractOgImage(html)).toBe('/og/fi__about.png')
+    })
+
+    it('handles the property-first attribute order', () => {
+        const html = '<meta property="og:image" content="https://lavanti.fi/og/fi.png" />'
+        expect(extractOgImage(html)).toBe('/og/fi.png')
+    })
+
+    it('returns null when there is no og:image', () => {
+        expect(extractOgImage('<meta name="twitter:card" content="summary" />')).toBeNull()
     })
 })
 
