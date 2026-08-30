@@ -33,6 +33,11 @@
             "matchPackageNames": ["vitest", "@vitest/**", "playwright", "@playwright/**", "@axe-core/playwright"]
         },
         {
+            "description": "One PR for all non-major updates — main is protected with strict mode and 15 required checks, so a per-package PR invalidates every other open PR the moment one merges, and the queue stalls",
+            "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+            "groupName": "all non-major dependencies"
+        },
+        {
             "description": "Automerge non-major updates once required CI checks pass",
             "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
             "automerge": true,
