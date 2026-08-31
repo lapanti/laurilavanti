@@ -23,6 +23,12 @@ on:
     - cron: '0 22 * * *'
   workflow_dispatch:
 
+# A manual dispatch overlapping the nightly cron would interleave the
+# force-push/PR steps; serialize runs instead.
+concurrency:
+  group: scheduled-publish
+  cancel-in-progress: false
+
 jobs:
   check:
     runs-on: ubuntu-latest
