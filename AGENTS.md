@@ -146,3 +146,13 @@ Manual steps:
 ## Content Freshness Policy
 
 Posts are considered stale under two rules: **Case A** — `publishDate` is more than 90 days ago and the post has no `updatedDate` (this is also a hard CI error enforced by `scripts/checks/mdx-deep.ts`); **Case B** — `updatedDate` is more than 180 days ago. Run `npm run check:freshness` to audit locally. A weekly GitHub Actions workflow (`freshness.yml`) runs the same audit and opens or updates a single tracking issue ("Freshness audit: stale posts") listing posts that need a refresh.
+
+---
+
+## Scheduled Publishing
+
+To publish a post on a future date, merge it to `main` normally with `publishDate` (and `updatedDate` — schema requires it) set to the target date. Behavior:
+
+- **Builds exclude future-dated posts** (routes, RSS, sitemap, `llms.txt`, OG cards, `_redirects`) except under `npm run dev`, where they stay visible for preview. The post's content is visible in the public repo before publish — this is accepted; do not schedule content that must stay non-public.
+- **Nightly automation** (`scheduled-publish.yml`, 22:00 UTC = Helsinki midnight) diffs due posts against the live sitemap (self-healing; `npm run check:publish-due` runs the same check locally). When a post is due it regenerates snapshot baselines, commits them API-signed to `chore/scheduled-publish-{date}`, and opens an **auto-merge PR** — merging it is the production deploy.
+- **Exemption to Git Workflow rule 7**: these automated baseline PRs merge without human review. They contain only mechanically regenerated goldens; the post content itself was human-reviewed in its own PR.
