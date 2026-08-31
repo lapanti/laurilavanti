@@ -22,6 +22,9 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    # Job-level: the runner ignores timeout-minutes on composite-action steps
+    # (actions/runner#1979), so the regen step can't guard itself.
+    timeout-minutes: 60
     # Baselines are reviewed through a PR like any other change — never
     # regenerated from main.
     if: github.ref != 'refs/heads/main'
@@ -35,7 +38,6 @@ jobs:
       - id: regen
         name: Regenerate baselines against a preview deploy
         uses: ./.github/actions/regen-baselines
-        timeout-minutes: 45
         with:
           branch: ${{ github.ref_name }}
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
