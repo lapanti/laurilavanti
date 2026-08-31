@@ -12,6 +12,9 @@ name: Update baselines
 #
 #   gh run download <run-id> --name ci-screenshot-baselines --dir tests/e2e
 #   git add tests/e2e/*-snapshots && git commit && git push
+#
+# The regeneration steps live in .github/actions/regen-baselines, shared with
+# scheduled-publish.yml (which commits API-signed via createCommitOnBranch).
 
 on:
   workflow_dispatch:
@@ -28,66 +31,33 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+
+      - id: regen
+        name: Regenerate baselines against a preview deploy
+        uses: ./.github/actions/regen-baselines
+        timeout-minutes: 45
         with:
-          node-version-file: ".nvmrc"
-          cache: "npm"
-          cache-dependency-path: "package-lock.json"
-      - name: Install dependencies
-        run: npm ci
+          branch: ${{ github.ref_name }}
+          cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build
-        run: npm run build
-
-      - id: deploy
-        name: Deploy preview
-        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          # Same race-free deploy shape as main.yml (issue #1391): explicit
-          # branch, and the tests below target the unique deployment-url.
-          command: pages deploy dist --project-name=laurilavanti --branch=${{ github.ref_name }}
-
-      - uses: actions/cache@v6
-        id: playwright-cache
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
-      - name: Install Playwright Browsers
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npm run test:e2e:setup
-
-      - name: Regenerate snapshot baselines
-        env:
-          E2E_URL: ${{ steps.deploy.outputs.deployment-url }}
-        run: npm run test:e2e:update
-        timeout-minutes: 30
-
-      - name: Report whether baselines changed
-        id: changed
+      - name: Post download instructions
+        if: steps.regen.outputs.changed == 'true'
         run: |
-          if git diff --quiet -- tests; then
-            echo "Baselines already match CI rendering."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git diff --stat -- tests
-            echo "changed=true" >> "$GITHUB_OUTPUT"
-            {
-              echo "### Baselines changed"
-              echo ""
-              echo "Download and commit with your signature:"
-              echo ""
-              echo '```'
-              echo "gh run download ${{ github.run_id }} --name ci-screenshot-baselines --dir tests/e2e"
-              echo "git add tests/e2e/*-snapshots && git commit && git push"
-              echo '```'
-            } >> "$GITHUB_STEP_SUMMARY"
-          fi
+          {
+            echo "### Baselines changed"
+            echo ""
+            echo "Download and commit with your signature:"
+            echo ""
+            echo '```'
+            echo "gh run download ${{ github.run_id }} --name ci-screenshot-baselines --dir tests/e2e"
+            echo "git add tests/e2e/*-snapshots && git commit && git push"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload regenerated baselines
-        if: steps.changed.outputs.changed == 'true'
+        if: steps.regen.outputs.changed == 'true'
         uses: actions/upload-artifact@v7
         with:
           name: ci-screenshot-baselines

@@ -1,0 +1,90 @@
+name: Regenerate snapshot baselines
+description: >
+  Build the site, deploy a preview under the given branch alias, and regenerate
+  every screenshot and aria-snapshot golden against it — the exact environment
+  the CI gate uses (goldens are CI-canonical, issue #1393). Shared by
+  update-screenshots.yml (manual refresh) and scheduled-publish.yml (nightly
+  automated publish). The caller checks out the repo first.
+
+inputs:
+  branch:
+    description: >
+      Pages preview branch alias for the deploy. Never `main` — that would
+      alias the production deployment.
+    required: true
+  cloudflare-api-token:
+    description: Cloudflare API token for the preview deploy
+    required: true
+  cloudflare-account-id:
+    description: Cloudflare account id for the preview deploy
+    required: true
+  github-token:
+    description: Token the wrangler action uses to create GitHub deployment records
+    required: true
+
+outputs:
+  changed:
+    description: "'true' when regeneration changed any baselines under tests/"
+    value: ${{ steps.changed.outputs.changed }}
+
+runs:
+  using: composite
+  steps:
+    - name: Refuse to deploy a preview aliasing production
+      if: inputs.branch == 'main'
+      shell: bash
+      run: |
+        echo "::error::regen-baselines: branch input must not be 'main'"
+        exit 1
+
+    - uses: actions/setup-node@v7
+      with:
+        node-version-file: ".nvmrc"
+        cache: "npm"
+        cache-dependency-path: "package-lock.json"
+    - name: Install dependencies
+      shell: bash
+      run: npm ci
+
+    - name: Build
+      shell: bash
+      run: npm run build
+
+    - id: deploy
+      name: Deploy preview
+      uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4
+      with:
+        apiToken: ${{ inputs.cloudflare-api-token }}
+        accountId: ${{ inputs.cloudflare-account-id }}
+        gitHubToken: ${{ inputs.github-token }}
+        # Same race-free deploy shape as main.yml (issue #1391): explicit
+        # branch, and the tests below target the unique deployment-url.
+        command: pages deploy dist --project-name=laurilavanti --branch=${{ inputs.branch }}
+
+    - uses: actions/cache@v6
+      id: playwright-cache
+      with:
+        path: ~/.cache/ms-playwright
+        key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+    - name: Install Playwright Browsers
+      if: steps.playwright-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: npm run test:e2e:setup
+
+    - name: Regenerate snapshot baselines
+      shell: bash
+      env:
+        E2E_URL: ${{ steps.deploy.outputs.deployment-url }}
+      run: npm run test:e2e:update
+
+    - name: Report whether baselines changed
+      id: changed
+      shell: bash
+      run: |
+        if git diff --quiet -- tests; then
+          echo "Baselines already match CI rendering."
+          echo "changed=false" >> "$GITHUB_OUTPUT"
+        else
+          git diff --stat -- tests
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+        fi
