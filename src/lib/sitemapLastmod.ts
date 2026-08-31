@@ -44,6 +44,11 @@ interface BuildPageDateMapInput {
  * Posts live under postsDir/{id}/{meta.json, fi.mdx, sv.mdx, en.mdx} — updatedDate is
  *  in the shared meta.json (not any .mdx file, so walkMdx/extractUpdatedDate can't see
  *  it), and the URL needs each language file's own slug, not derivable from the path.
+ *
+ * Future-dated (scheduled) posts are deliberately not filtered here: this map is a
+ *  lookup consulted only for pages present in the built sitemap, and unbuilt posts
+ *  never appear there — their entries are unreachable keys. Filtering would duplicate
+ *  the build clock at config-eval time for no correctness gain.
  */
 const buildPostDateEntries = (postsDir: string): Array<[string, string]> => {
     const entries: Array<[string, string]> = []
