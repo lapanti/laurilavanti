@@ -4,6 +4,8 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import { unified } from 'unified'
 
+import { helsinkiDateOf, isPublishedBy } from './publishing'
+
 export const stripImportsExports = (raw: string): string =>
     raw.replace(/^(import\s+.+|export\s+const\s+components\s*=.+)$/gm, '')
 
@@ -24,21 +26,29 @@ let cache: Promise<Post[]> | undefined
  */
 async function loadAllPosts(): Promise<Post[]> {
     const entries = await getCollection('posts')
+    const today = helsinkiDateOf(new Date())
 
-    return entries
-        .map((entry) => {
-            const body = stripImportsExports(entry.body ?? '')
-            const wordCount = body.trim().split(/\s+/).filter(Boolean).length
+    return (
+        entries
+            /*
+             * Scheduled publishing: future-dated posts are built only in dev; the
+             * nightly scheduled-publish workflow deploys them once the date arrives.
+             */
+            .filter((entry) => import.meta.env.DEV || isPublishedBy(entry.data.publishDate, today))
+            .map((entry) => {
+                const body = stripImportsExports(entry.body ?? '')
+                const wordCount = body.trim().split(/\s+/).filter(Boolean).length
 
-            return {
-                ...entry.data,
-                entry,
-                readingTime: Math.ceil(wordCount / 200),
-                url: `/${entry.data.lang}/blog/${entry.data.id}/${entry.data.slug}/`,
-                wordCount,
-            }
-        })
-        .toSorted((a, b) => b.id - a.id)
+                return {
+                    ...entry.data,
+                    entry,
+                    readingTime: Math.ceil(wordCount / 200),
+                    url: `/${entry.data.lang}/blog/${entry.data.id}/${entry.data.slug}/`,
+                    wordCount,
+                }
+            })
+            .toSorted((a, b) => b.id - a.id)
+    )
 }
 
 export const getAllPosts = (): Promise<Post[]> => (cache ??= loadAllPosts())
