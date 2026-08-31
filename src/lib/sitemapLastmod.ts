@@ -7,7 +7,7 @@ const LANGS = ['fi', 'sv', 'en'] as const
 
 export const extractUpdatedDate = (mdxContent: string): string | undefined => UPDATED_DATE.exec(mdxContent)?.[1]
 
-const extractSlug = (mdxContent: string): string | undefined => SLUG.exec(mdxContent)?.[1]
+export const extractSlug = (mdxContent: string): string | undefined => SLUG.exec(mdxContent)?.[1]
 
 const walkMdx = (dir: string): string[] => {
     const out: string[] = []
