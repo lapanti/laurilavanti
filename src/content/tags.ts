@@ -25,6 +25,7 @@ import { natureTag } from './tags/nature'
 import { privacyTag } from './tags/privacy'
 import { regionalElections2022Tag } from './tags/regional-elections-2022'
 import { regionalElections2025Tag } from './tags/regional-elections-2025'
+import { securityTag } from './tags/security'
 import { socialMediaTag } from './tags/social-media'
 import { technologyTag } from './tags/technology'
 import { transportationTag } from './tags/transportation'
@@ -66,6 +67,7 @@ export const tags = [
     natureTag,
     greenPartyTag,
     nationalPoliticsTag,
+    securityTag,
 ]
 
 export function getTagName(id: string, lang: Lang = 'fi'): string | undefined {
