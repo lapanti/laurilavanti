@@ -101,6 +101,8 @@ Posts live at `src/content/posts/{id}/{meta.json,fi.mdx,sv.mdx,en.mdx}` — a si
 
 `src/lib/posts.ts` wraps `getCollection('posts')` and exports `getAllPosts()` sorted newest-first, plus `getExcerptPosts()`, `getPostAlternates()`, and `getPostHtml()`. Use these whenever you need to list, filter, or link posts at build time. `getCollection()` cannot be exercised directly in Vitest (no prior `astro build`/`sync` in-process), so the filtering/sorting logic is kept in pure, fixture-tested functions (`filterExcerptPosts`, `sortByRelatedTags`, `buildAlternatesMap`) separate from the thin `astro:content`-touching wrappers.
 
+**Scheduled publishing**: `getAllPosts()` excludes posts whose `publishDate` is in the future (Europe/Helsinki, helpers in `src/lib/publishing.ts`) except under `astro dev`. Because every consumer flows through it, one filter gates routes, RSS, sitemap, `llms.txt`, OG cards, and `dist/_redirects`. The nightly `scheduled-publish.yml` workflow (22:00 UTC = Helsinki midnight) compares due posts against the live sitemap (`scripts/checks/publish-due.ts`), regenerates snapshot baselines via `.github/actions/regen-baselines`, and opens an auto-merge PR whose merge deploys production. See the "Scheduled publishing" section in `CLAUDE.md`.
+
 ---
 
 ## i18n / language switching
