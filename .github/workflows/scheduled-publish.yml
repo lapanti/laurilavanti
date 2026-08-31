@@ -65,6 +65,9 @@ jobs:
 
   publish:
     runs-on: ubuntu-latest
+    # Job-level: the runner ignores timeout-minutes on composite-action steps
+    # (actions/runner#1979), so the regen step can't guard itself.
+    timeout-minutes: 60
     name: Refresh baselines and open auto-merge PR
     needs: check
     if: needs.check.outputs.publish == 'true'
@@ -90,7 +93,6 @@ jobs:
       - id: regen
         name: Regenerate baselines against a preview deploy
         uses: ./.github/actions/regen-baselines
-        timeout-minutes: 45
         with:
           branch: ${{ steps.branch.outputs.name }}
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
