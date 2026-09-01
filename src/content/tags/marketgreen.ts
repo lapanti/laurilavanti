@@ -24,7 +24,7 @@ export const marketgreenTag: LocalTag = {
         fi: 'Markkinavihreä — markkinatalous, jossa ulkoisvaikutukset hinnoiteltu, kilpailu reilua ja verotus haittoihin. Vihreät markkinaliberaalina puolueena.',
         sv: 'Marknadsgrön — marknadsekonomi med prissatta externa effekter, rättvis konkurrens, skatt från arbete till skador. De gröna som marknadsliberalt parti.',
     },
-    names: { en: 'Marketgreen', fi: 'Markkinavihreä', sv: 'Marknadsgrön' },
+    names: { en: 'Marketgreen', fi: 'Markkina\u00ADvihreä', sv: 'Marknads\u00ADgrön' },
     pageTitle: {
         en: 'Marketgreen — market economy that works',
         fi: 'Markkina­vihreä — toimiva markkina­talous',

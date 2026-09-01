@@ -12,7 +12,7 @@ export const immigrationTag: LocalTag = {
         fi: 'Kirjoituksia maahanmuutosta, kotoutumisesta ja maahanmuuttopolitiikasta.',
         sv: 'Texter om immigration, integration och invandrarpolitik.',
     },
-    names: { en: 'Immigration', fi: 'Maahanmuutto', sv: 'Immigration' },
+    names: { en: 'Immigration', fi: 'Maahan\u00ADmuutto', sv: 'Immigration' },
     pageTitle: {
         en: 'Immigration and integration policy',
         fi: 'Maahan\u00ADmuutto – faktat ja politiikka',

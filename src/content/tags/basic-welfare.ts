@@ -12,7 +12,7 @@ export const basicWelfareTag: LocalTag = {
         fi: 'Kirjoituksia perusturvasta, sosiaalietuuksista ja sosiaalipalveluista.',
         sv: 'Texter om grundläggande trygghet, sociala förmåner och socialtjänster.',
     },
-    names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grundläggande' },
+    names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grund\u00ADläggande' },
     pageTitle: {
         en: 'About basic welfare and social security',
         fi: 'Perus\u00ADturvasta ja sosiaali\u00ADturvasta arjessa',

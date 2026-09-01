@@ -24,7 +24,7 @@ export const enlightenmentTag: LocalTag = {
         fi: 'Tekoälyn aikakaudella sivistyksen on pysyttävä saumattomana varhaiskasvatuksesta työelämään — että kukaan ei jää jälkeen.',
         sv: 'I AI-eran måste bildningen förbli sömlös från småbarnspedagogiken till arbetslivet — så att ingen lämnas efter.',
     },
-    names: { en: 'Enlightenment', fi: 'Sivistys', sv: 'Lärande' },
+    names: { en: 'Enlighten\u00ADment', fi: 'Sivistys', sv: 'Lärande' },
     pageTitle: {
         en: 'Seamless enlight\u00ADenment in the age of AI',
         fi: 'Sivistys saumat\u00ADtomaksi tekoälyn aikana',

@@ -12,7 +12,7 @@ export const councilMotionTag: LocalTag = {
         fi: 'Valtuustoaloitteita ja kirjoituksia Kirkkonummen valtuuston toiminnasta ja päätöksistä.',
         sv: 'Fullmäktigeinitiativ och texter om Kyrkslätts fullmäktiges verksamhet och beslut.',
     },
-    names: { en: 'Council motion', fi: 'Valtuustoaloite', sv: 'Fullmäktigeinitiativ' },
+    names: { en: 'Council motion', fi: 'Valtuusto\u00ADaloite', sv: 'Fullmäktige\u00ADinitiativ' },
     pageTitle: {
         en: 'Council motion – municipal council',
         fi: 'Valtuusto\u00ADaloite – Kirkko\u00ADnummen valtuusto',

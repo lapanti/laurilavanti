@@ -12,7 +12,7 @@ export const coopElectionsTag: LocalTag = {
         fi: 'Kirjoituksia osuuskauppavaaleista ja S-ryhmän jäsendemokratiasta.',
         sv: 'Texter om kooperativvalet och S-gruppens medlemsdemokrati.',
     },
-    names: { en: 'Co-op elections', fi: 'Osuuskauppavaalit', sv: 'Kooperativval' },
+    names: { en: 'Co-op elections', fi: 'Osuus\u00ADkauppa\u00ADvaalit', sv: 'Kooperativ\u00ADval' },
     pageTitle: {
         en: 'Co-op elections – S Group democracy',
         fi: 'Osuus\u00ADkauppa\u00ADvaalit – S-ryhmän demokratia',

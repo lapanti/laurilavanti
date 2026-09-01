@@ -12,7 +12,7 @@ export const earlyChildhoodEducationTag: LocalTag = {
         fi: 'Kirjoituksia varhaiskasvatuksesta, päiväkodeista ja lasten palveluista.',
         sv: 'Texter om småbarnspedagogik, daghem och barntjänster.',
     },
-    names: { en: 'Early childhood education', fi: 'Varhaiskasvatus', sv: 'Småbarnspedagogik' },
+    names: { en: 'Early childhood education', fi: 'Varhais\u00ADkasvatus', sv: 'Småbarns\u00ADpedagogik' },
     pageTitle: {
         en: 'Early childhood education and care',
         fi: 'Varhais\u00ADkasvatus – lasten oppiminen ja hoito',

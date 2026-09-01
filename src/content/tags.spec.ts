@@ -88,7 +88,7 @@ describe('getTagName', () => {
     })
 
     it('returns sv name for known id with sv locale', () => {
-        expect(getTagName('digital-independence', 'sv')).toBe('Digital självständighet')
+        expect(getTagName('digital-independence', 'sv')).toBe('Digital själv­ständighet')
     })
 
     it('returns undefined for unknown id', () => {

@@ -24,7 +24,7 @@ export const digitalIndependenceTag: LocalTag = {
         fi: 'Suomen digitaalinen suvereniteetti ja huoltovarmuus alkavat omasta infrastruktuurista — siksi perustin Digitaalinen itsenäisyys -kansalaisaloitteen.',
         sv: 'Finlands digitala suveränitet och försörjningstrygghet — jag är huvudinitiativtagare till medborgarinitiativet om digital självständighet.',
     },
-    names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital självständighet' },
+    names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital själv\u00ADständighet' },
     pageTitle: {
         en: 'Digital inde\u00ADpendence and resilience',
         fi: 'Digitaalinen itsenäisyys sekä huolto\u00ADvarmuus',
