@@ -1,54 +1,121 @@
 #!/usr/bin/env node
-// Checks that no unbreakable word segment in title/pageTitle exceeds the
-// available container width on mobile (360 px viewport, Galaxy S24).
+// Checks that no unbreakable word segment in a post/page `title` or tag
+// `pageTitle` exceeds the width of the column it renders in.
 //
-// H1 on post/tag pages: Krana Fat 60 px, container ≈ 344 px (360 − 2×8)
-// H2 in excerpt cards:  Krana Fat 36 px, container ≈ 328 px (360 − 2×16)
+// Widths are estimated from real Big Shoulders Display glyph metrics
+// (scripts/font-metrics.json: per-glyph advances + kern pairs, weight 900;
+// regenerate with `npm run generate:font-metrics`). Both checked surfaces
+// render uppercase with letter-spacing −0.02em:
 //
-// Character-width buckets for Krana Fat (condensed display font), in em:
-//   narrow  i j l f r t | !  → 0.38
-//   normal  a-z (rest) digits → 0.52
-//   wide    m w                → 0.75
-//   upper   A-Z (rest)        → 0.62
-//   upper-w M W                → 0.85
+//   Hero H1 (SplitHero.astro) — mdx `title`, tag `pageTitle`:
+//     52px in 328px (≤768px: 360 − 2×16)
+//     72px in 453px (769px: 769 − 260 − 16 − 40)   ← tightest ratio
+//     88px in 614px (1000px: 1000 − 330 − 16 − 40)
+//     120px in 757px (≥1200px: 1200 − 331 − 2×56, h1 max-width 760px)
 //
-// A segment is any run of chars between: space, hyphen, en-dash, em-dash,
-// soft-hyphen (U+00AD), or the colon that follows a subtitle prefix.
-// Soft hyphens are valid break points — split there.
+// A segment is any run of chars between break points (space, hyphen, en/em
+// dash, soft hyphen, colon). Visible break glyphs stay on the line they end:
+// a segment that breaks at a soft hyphen is measured with a trailing "-"
+// (the browser paints one), and hyphen/dash/colon breaks keep their glyph.
 //
 // Usage:
 //   node scripts/check-overflow.mjs src/pages/**/*.mdx
 //   node scripts/check-overflow.mjs src/content/tags/*.ts
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const NARROW = new Set('ijlrftIJLRFT1|!')
-const WIDE = new Set('mw')
-const UPPER_WIDE = new Set('MW')
+const metrics = JSON.parse(readFileSync(new URL('./font-metrics.json', import.meta.url), 'utf8'))
 
-function charWidth(ch) {
-    const lo = ch.toLowerCase()
-    if (WIDE.has(lo)) return 0.75
-    if (NARROW.has(lo)) return 0.38
-    if (UPPER_WIDE.has(ch)) return 0.85
-    if (ch >= 'A' && ch <= 'Z') return 0.62
-    if (ch >= '0' && ch <= '9') return 0.52
-    // accented/special: treat as normal
-    return 0.52
+const LETTER_SPACING_EM = -0.02
+const WIDEST_EM = Math.max(...Object.values(metrics.advances))
+
+const warnedChars = new Set()
+
+function advanceEm(ch) {
+    const adv = metrics.advances[ch]
+    if (adv === undefined) {
+        if (!warnedChars.has(ch)) {
+            warnedChars.add(ch)
+            console.warn(
+                `warning: no font metrics for ${JSON.stringify(ch)} — assuming widest glyph; ` +
+                    'add it to CHARSET in scripts/generate-font-metrics.mjs and run npm run generate:font-metrics'
+            )
+        }
+        return WIDEST_EM
+    }
+    return adv
 }
 
-function segmentWidth(seg, fontPx) {
-    let w = 0
-    for (const ch of seg) w += charWidth(ch)
-    return w * fontPx
+// Estimated rendered width of an unbreakable segment, in px. Matches browser
+// rendering (uppercase, kerning, letter-spacing after every char) within ~0.5%
+// — see scripts/checks/fixtures/font-metrics-validation.json.
+export function segmentWidthPx(segment, fontPx) {
+    const chars = [...segment.toUpperCase()]
+    let em = 0
+    for (let i = 0; i < chars.length; i++) {
+        em += advanceEm(chars[i])
+        if (i > 0) em += metrics.kerning[chars[i - 1] + chars[i]] ?? 0
+    }
+    return em * fontPx + LETTER_SPACING_EM * fontPx * chars.length
 }
 
-// Break on spaces, hyphens, en/em dashes, soft hyphens, colons
-const BREAK_RE = /[\s­–—:-]/
+// Break chars whose glyph stays at the end of the broken line
+const VISIBLE_BREAKS = new Set(['-', '–', '—', ':'])
+const SOFT_HYPHEN = '­'
+
+// Split a value into renderable segments, keeping the visible break glyph (or
+// the "-" a soft hyphen paints) attached to the segment it ends.
+export function toSegments(value) {
+    const segments = []
+    let current = ''
+    for (const ch of value) {
+        if (ch === SOFT_HYPHEN) {
+            if (current) segments.push(current + '-')
+            current = ''
+        } else if (VISIBLE_BREAKS.has(ch)) {
+            if (current) segments.push(current + ch)
+            current = ''
+        } else if (/\s/.test(ch)) {
+            if (current) segments.push(current)
+            current = ''
+        } else {
+            current += ch
+        }
+    }
+    if (current) segments.push(current)
+    return segments
+}
+
+// --- geometries ---
+
+export const HERO_GEOMETRIES = [
+    { availPx: 328, fontPx: 52, label: 'hero H1 ≤768px' },
+    { availPx: 453, fontPx: 72, label: 'hero H1 at 769px' },
+    { availPx: 614, fontPx: 88, label: 'hero H1 at 1000px' },
+    { availPx: 757, fontPx: 120, label: 'hero H1 ≥1200px' },
+]
+
+// Worst overflow across geometries for each segment of a value, or [] if fine.
+export function findOverflows(value, geometries) {
+    const failures = []
+    for (const segment of toSegments(value)) {
+        let worst = null
+        for (const geometry of geometries) {
+            const widthPx = segmentWidthPx(segment, geometry.fontPx)
+            const overshoot = widthPx - geometry.availPx
+            if (overshoot > 0 && (worst === null || overshoot > worst.overshoot)) {
+                worst = { ...geometry, overshoot, widthPx }
+            }
+        }
+        if (worst) failures.push({ segment, ...worst })
+    }
+    return failures
+}
 
 // --- extractors ---
 
-function extractMdxFields(src) {
+export function extractMdxFields(src) {
     // Extract frontmatter block
     const fm = src.match(/^---\n([\s\S]*?)\n---/)
     if (!fm) return []
@@ -56,7 +123,7 @@ function extractMdxFields(src) {
     const results = []
 
     const titleM = block.match(/^title:\s*['"](.+?)['"]\s*$/m)
-    if (titleM) results.push({ field: 'title', value: titleM[1] })
+    if (titleM) results.push({ field: 'title', geometries: HERO_GEOMETRIES, value: titleM[1] })
 
     return results
 }
@@ -66,71 +133,48 @@ function resolveJsEscapes(str) {
     return str.replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
 }
 
-function extractTagFields(src) {
-    // Match pageTitle object locale values
+export function extractTagFields(src) {
     const results = []
-    const pageTitleBlock = src.match(/pageTitle:\s*\{([^}]+)\}/)
-    if (!pageTitleBlock) return results
-    const block = pageTitleBlock[1]
-    const localeRe = /(\w{2}):\s*['"](.+?)['"]/g
-    let m
-    while ((m = localeRe.exec(block)) !== null) {
-        results.push({ field: `pageTitle.${m[1]}`, value: resolveJsEscapes(m[2]) })
+    for (const { geometries, key } of [{ geometries: HERO_GEOMETRIES, key: 'pageTitle' }]) {
+        const block = src.match(new RegExp(`${key}:\\s*\\{([^}]+)\\}`))
+        if (!block) continue
+        const localeRe = /(\w{2}):\s*['"](.+?)['"]/g
+        let m
+        while ((m = localeRe.exec(block[1])) !== null) {
+            results.push({ field: `${key}.${m[1]}`, geometries, value: resolveJsEscapes(m[2]) })
+        }
     }
     return results
 }
 
 // --- main ---
 
-const H1_PX = 60
-const H2_PX = 36
-// Galaxy S24 viewport: 360px; padding 8px each side for H1 container
-const H1_AVAIL = 344
-// Excerpt H2 container: slightly narrower due to larger padding (16px each side)
-const H2_AVAIL = 328
+const isMain = process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 
-let failed = 0
-const files = process.argv.slice(2)
+if (isMain) {
+    let failed = 0
+    const files = process.argv.slice(2)
 
-for (const rawPath of files) {
-    const path = resolve(rawPath)
-    const src = readFileSync(path, 'utf8')
+    for (const rawPath of files) {
+        const path = resolve(rawPath)
+        const src = readFileSync(path, 'utf8')
 
-    const isMdx = path.endsWith('.mdx')
-    const isTagTs = path.endsWith('.ts') && path.includes('/content/tags/')
+        const isMdx = path.endsWith('.mdx')
+        const isTagTs = path.endsWith('.ts') && path.includes('/content/tags/')
 
-    if (!isMdx && !isTagTs) continue
+        if (!isMdx && !isTagTs) continue
 
-    const fields = isMdx ? extractMdxFields(src) : extractTagFields(src)
+        const fields = isMdx ? extractMdxFields(src) : extractTagFields(src)
 
-    for (const { field, value } of fields) {
-        // Split on break characters (including soft hyphens) to get renderable segments
-        const segments = value.split(BREAK_RE).filter(Boolean)
-
-        const h1w = Math.max(0, ...segments.map((s) => segmentWidth(s, H1_PX)))
-        if (h1w > H1_AVAIL) {
-            const longestSeg = segments.reduce((a, b) => (segmentWidth(b, H1_PX) > segmentWidth(a, H1_PX) ? b : a), '')
-            console.error(
-                `${path}: ${field}: segment "${longestSeg}" estimated ${Math.round(h1w)}px > ${H1_AVAIL}px (H1 at ${H1_PX}px) — add soft hyphen (­)`
-            )
-            failed++
-        }
-
-        // For MDX title: also check as H2 in excerpt cards (same field, smaller font)
-        if (isMdx && field === 'title') {
-            const h2w = Math.max(0, ...segments.map((s) => segmentWidth(s, H2_PX)))
-            if (h2w > H2_AVAIL) {
-                const longestSeg = segments.reduce(
-                    (a, b) => (segmentWidth(b, H2_PX) > segmentWidth(a, H2_PX) ? b : a),
-                    ''
-                )
+        for (const { field, geometries, value } of fields) {
+            for (const { availPx, fontPx, label, segment, widthPx } of findOverflows(value, geometries)) {
                 console.error(
-                    `${path}: ${field}: segment "${longestSeg}" estimated ${Math.round(h2w)}px > ${H2_AVAIL}px (H2 at ${H2_PX}px) — add soft hyphen (­)`
+                    `${path}: ${field}: segment "${segment}" estimated ${Math.round(widthPx)}px > ${availPx}px (${label}, ${fontPx}px) — add soft hyphen (­)`
                 )
                 failed++
             }
         }
     }
-}
 
-process.exit(failed > 0 ? 1 : 0)
+    process.exit(failed > 0 ? 1 : 0)
+}
