@@ -24,10 +24,10 @@ export const privacyTag: LocalTag = {
         fi: 'Yksityisyydensuoja on demokratian edellytys — ei jarru innovaatiolle tai turvallisuudelle. Ilman suojattua yksityistä tilaa vapaa ajattelu vaikeutuu.',
         sv: 'Integritetsskydd är en demokratisk förutsättning — inte en broms för innovation eller säkerhet. Utan ett skyddat privat utrymme försvåras fritt tänkande.',
     },
-    names: { en: 'Privacy', fi: 'Yksityisyy\u00ADden\u00ADsuoja', sv: 'Integritets\u00ADskydd' },
+    names: { en: 'Privacy', fi: 'Yksityi\u00ADsyyden\u00ADsuoja', sv: 'Integritets\u00ADskydd' },
     pageTitle: {
         en: 'Privacy protection in the digital world',
-        fi: 'Yksityisyy\u00ADden\u00ADsuoja digitaali\u00ADsessa maailmassa',
+        fi: 'Yksityi\u00ADsyyden\u00ADsuoja digitaa\u00ADlisessa maailmassa',
         sv: 'Integritets\u00ADskydd i den digitala världen',
     },
     updatedDate: '2026-07-28',
