@@ -26,8 +26,8 @@ export const digitalIndependenceTag: LocalTag = {
     },
     names: { en: 'Digital independence', fi: 'Digitaalinen itsenäisyys', sv: 'Digital själv\u00ADständighet' },
     pageTitle: {
-        en: 'Digital inde\u00ADpendence and resilience',
-        fi: 'Digitaalinen itsenäisyys sekä huolto\u00ADvarmuus',
+        en: 'Digital independence and resilience',
+        fi: 'Digitaalinen itsenäisyys sekä huoltovarmuus',
         sv: 'Digital själv\u00ADständighet och resiliens',
     },
     updatedDate: '2026-07-06',

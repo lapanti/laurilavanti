@@ -15,7 +15,7 @@ export const councilMotionTag: LocalTag = {
     names: { en: 'Council motion', fi: 'Valtuusto\u00ADaloite', sv: 'Fullmäktige\u00ADinitiativ' },
     pageTitle: {
         en: 'Council motion – municipal council',
-        fi: 'Valtuusto\u00ADaloite – Kirkko\u00ADnummen valtuusto',
+        fi: 'Valtuustoaloite – Kirkkonummen valtuusto',
         sv: 'Full\u00ADmäktige\u00ADinitiativ – kommun\u00ADfull\u00ADmäktige',
     },
     updatedDate: '2026-05-15',

@@ -15,8 +15,8 @@ export const basicWelfareTag: LocalTag = {
     names: { en: 'Basic welfare', fi: 'Perusturva', sv: 'Grund\u00ADläggande' },
     pageTitle: {
         en: 'About basic welfare and social security',
-        fi: 'Perus\u00ADturvasta ja sosiaali\u00ADturvasta arjessa',
-        sv: 'Om grund\u00ADläggande trygghet och socialskydd',
+        fi: 'Perusturvasta ja sosiaali\u00ADturvasta arjessa',
+        sv: 'Om grundläggande trygghet och socialskydd',
     },
     updatedDate: '2026-05-15',
 }

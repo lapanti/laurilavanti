@@ -14,8 +14,8 @@ export const westRailwayTag: LocalTag = {
     },
     names: { en: 'Western railway', fi: 'Länsirata', sv: 'Västbanan' },
     pageTitle: {
-        en: 'Western railway – Kirkko\u00ADnummi line',
-        fi: 'Länsirata – Pohjois-Kirkko\u00ADnummen ratayhteys',
+        en: 'Western railway – Kirkkonummi line',
+        fi: 'Länsirata – Pohjois-Kirkkonummen ratayhteys',
         sv: 'Västbanan – järnvägen till Kyrkslätt',
     },
     updatedDate: '2026-05-15',

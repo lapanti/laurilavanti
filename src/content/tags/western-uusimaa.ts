@@ -16,7 +16,7 @@ export const westernUusimaaTag: LocalTag = {
     pageTitle: {
         en: 'Western Uusimaa and regional welfare',
         fi: 'Länsi-Uusimaa – hyvinvointi\u00ADalue\u00ADpolitiikkaa',
-        sv: 'Västra Nyland – välfärd och region\u00ADpolitik',
+        sv: 'Västra Nyland – välfärd och regionpolitik',
     },
     updatedDate: '2026-05-15',
 }

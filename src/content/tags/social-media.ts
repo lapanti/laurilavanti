@@ -12,11 +12,11 @@ export const socialMediaTag: LocalTag = {
         fi: 'Kirjoituksia sosiaalisesta mediasta, sen vaikutuksesta politiikkaan ja viestintään.',
         sv: 'Texter om sociala medier och deras påverkan på politik och kommunikation.',
     },
-    names: { en: 'Social media', fi: 'Sosiaa\u00ADlinen media', sv: 'Sociala medier' },
+    names: { en: 'Social media', fi: 'Sosiaalinen media', sv: 'Sociala medier' },
     pageTitle: {
-        en: 'Social media in politics and communi\u00ADcation',
+        en: 'Social media in politics and communication',
         fi: 'Sosiaalinen media ja poliittinen työ',
-        sv: 'Sociala medier i politik och kommuni\u00ADkation',
+        sv: 'Sociala medier i politik och kommunikation',
     },
     updatedDate: '2026-05-15',
 }

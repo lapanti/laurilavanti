@@ -16,7 +16,7 @@ export const coopElectionsTag: LocalTag = {
     pageTitle: {
         en: 'Co-op elections – S Group democracy',
         fi: 'Osuus\u00ADkauppa\u00ADvaalit – S-ryhmän demokratia',
-        sv: 'Ko\u00ADoperativ\u00ADval – S-gruppens demokrati',
+        sv: 'Kooperativval – S-gruppens demokrati',
     },
     updatedDate: '2026-05-15',
 }

@@ -14,9 +14,9 @@ export const infrastructureTag: LocalTag = {
     },
     names: { en: 'Infra\u00ADstructure', fi: 'Infra', sv: 'Infra\u00ADstruktur' },
     pageTitle: {
-        en: 'Infra\u00ADstructure – building and engineering',
+        en: 'Infrastructure – building and engineering',
         fi: 'Infra\u00ADstruktuuri ja kunnallis\u00ADtekniikka',
-        sv: 'Infra\u00ADstruktur – byggande och kommunal\u00ADteknik',
+        sv: 'Infrastruktur – byggande och kommunal\u00ADteknik',
     },
     updatedDate: '2026-05-15',
 }

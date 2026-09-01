@@ -26,8 +26,8 @@ export const enlightenmentTag: LocalTag = {
     },
     names: { en: 'Enlighten\u00ADment', fi: 'Sivistys', sv: 'Lärande' },
     pageTitle: {
-        en: 'Seamless enlight\u00ADenment in the age of AI',
-        fi: 'Sivistys saumat\u00ADtomaksi tekoälyn aikana',
+        en: 'Seamless enlightenment in the age of AI',
+        fi: 'Sivistys saumattomaksi tekoälyn aikana',
         sv: 'Sömlös bildning i AI-erans Finland',
     },
     updatedDate: '2026-05-15',
