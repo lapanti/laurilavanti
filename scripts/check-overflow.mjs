@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Checks that no unbreakable word segment in a post/page `title` or tag
-// `pageTitle` exceeds the width of the column it renders in.
+// Checks that no unbreakable word segment in a post/page `title`, tag
+// `pageTitle` or tag `names` exceeds the width of the column it renders in.
 //
 // Widths are estimated from real Big Shoulders Display glyph metrics
 // (scripts/font-metrics.json: per-glyph advances + kern pairs, weight 900;
@@ -12,6 +12,8 @@
 //     72px in 453px (769px: 769 − 260 − 16 − 40)   ← tightest ratio
 //     88px in 614px (1000px: 1000 − 330 − 16 − 40)
 //     120px in 757px (≥1200px: 1200 − 331 − 2×56, h1 max-width 760px)
+//   Topic heading (TopicPlate.astro) — tag `names`:
+//     88px in 464px (29rem column, binding at ≥1200px)
 //
 // A segment is any run of chars between break points (space, hyphen, en/em
 // dash, soft hyphen, colon). Visible break glyphs stay on the line they end:
@@ -96,6 +98,8 @@ export const HERO_GEOMETRIES = [
     { availPx: 757, fontPx: 120, label: 'hero H1 ≥1200px' },
 ]
 
+export const TOPIC_GEOMETRIES = [{ availPx: 464, fontPx: 88, label: 'topic heading ≥1200px' }]
+
 // Worst overflow across geometries for each segment of a value, or [] if fine.
 export function findOverflows(value, geometries) {
     const failures = []
@@ -135,7 +139,10 @@ function resolveJsEscapes(str) {
 
 export function extractTagFields(src) {
     const results = []
-    for (const { geometries, key } of [{ geometries: HERO_GEOMETRIES, key: 'pageTitle' }]) {
+    for (const { geometries, key } of [
+        { geometries: HERO_GEOMETRIES, key: 'pageTitle' },
+        { geometries: TOPIC_GEOMETRIES, key: 'names' },
+    ]) {
         const block = src.match(new RegExp(`${key}:\\s*\\{([^}]+)\\}`))
         if (!block) continue
         const localeRe = /(\w{2}):\s*['"](.+?)['"]/g
