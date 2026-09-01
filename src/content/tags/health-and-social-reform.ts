@@ -16,7 +16,7 @@ export const healthAndSocialReformTag: LocalTag = {
         fi: 'Kirjoituksia sote-uudistuksesta, hyvinvointialueista ja sosiaali- ja terveyspalvelujen järjestämisestä.',
         sv: 'Texter om vård- och servicereformen, välfärdsområdena och organisering av social- och hälsovårdstjänster.',
     },
-    names: { en: 'Social & health reform', fi: 'Sote-uudistus', sv: 'Vård- och servicereform' },
+    names: { en: 'Social & health reform', fi: 'Sote-uudistus', sv: 'Vård- och service\u00ADreform' },
     pageTitle: {
         en: 'Social and health reform – welfare areas',
         fi: 'Sote-uudistus – hyvinvointi\u00ADalueiden',

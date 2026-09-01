@@ -12,7 +12,7 @@ export const infrastructureTag: LocalTag = {
         fi: 'Kirjoituksia infrastruktuurista, rakentamisesta ja kunnallistekniikasta.',
         sv: 'Texter om infrastruktur, byggande och kommunalteknik.',
     },
-    names: { en: 'Infrastructure', fi: 'Infra', sv: 'Infrastruktur' },
+    names: { en: 'Infra\u00ADstructure', fi: 'Infra', sv: 'Infra\u00ADstruktur' },
     pageTitle: {
         en: 'Infra\u00ADstructure – building and engineering',
         fi: 'Infra\u00ADstruktuuri ja kunnallis\u00ADtekniikka',

@@ -12,7 +12,7 @@ export const urbanPlanningTag: LocalTag = {
         fi: 'Kirjoituksia kaavoituksesta, maankäytöstä ja kaupunkikehityksestä.',
         sv: 'Texter om planläggning, markanvändning och stadsutveckling.',
     },
-    names: { en: 'Urban planning', fi: 'Kaavoitus', sv: 'Planläggning' },
+    names: { en: 'Urban planning', fi: 'Kaavoitus', sv: 'Plan\u00ADläggning' },
     pageTitle: {
         en: 'Urban planning and land use policy',
         fi: 'Kaavoitus ja maankäytön suunnittelu',
