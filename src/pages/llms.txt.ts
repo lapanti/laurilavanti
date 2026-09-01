@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro'
 
 import { getTagName, tags } from '../content/tags'
 import { getAllPosts, type Post } from '../lib/posts'
+import { stripSoftHyphens } from '../lib/text'
 
 const AI_TAG = 'artificial-intelligence'
 
@@ -28,8 +29,10 @@ export const buildLlmsTxt = (posts: Post[], site: URL): string => {
         .map((id) => {
             const taggedPosts = fiPosts.filter((p) => p.tags.includes(id))
             if (taggedPosts.length === 0) return ''
-            const name = getTagName(id, 'fi') ?? id
-            const links = taggedPosts.map((p) => `- [${p.title}](${new URL(p.url, site).href})`).join('\n')
+            const name = stripSoftHyphens(getTagName(id, 'fi') ?? id)
+            const links = taggedPosts
+                .map((p) => `- [${stripSoftHyphens(p.title)}](${new URL(p.url, site).href})`)
+                .join('\n')
 
             return `## ${name}\n\n${links}`
         })
@@ -37,7 +40,9 @@ export const buildLlmsTxt = (posts: Post[], site: URL): string => {
         .join('\n\n')
 
     const nonFiPosts = posts.filter((p) => p.lang !== 'fi')
-    const multilingualLinks = nonFiPosts.map((p) => `- [${p.title}](${new URL(p.url, site).href})`).join('\n')
+    const multilingualLinks = nonFiPosts
+        .map((p) => `- [${stripSoftHyphens(p.title)}](${new URL(p.url, site).href})`)
+        .join('\n')
 
     const pillarLinks = PILLAR_LINKS.map((l) => `- [${l.label}](${new URL(l.url, site).href})`).join('\n')
 

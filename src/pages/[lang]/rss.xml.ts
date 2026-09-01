@@ -6,6 +6,7 @@ import rss from '@astrojs/rss'
 import { rssTitles } from '../../content/rss'
 import { getImage } from '../../lib/images'
 import { getAllPosts, getPostHtml } from '../../lib/posts'
+import { stripSoftHyphens } from '../../lib/text'
 
 const i18n: Record<Lang, { description: string; permalinkLabel: string }> = {
     en: {
@@ -47,7 +48,7 @@ export async function GET(context: APIContext) {
                 enclosure: { length: 0, type: 'image/jpeg', url: img.src },
                 link: post.url,
                 pubDate: new Date(post.publishDate),
-                title: post.title,
+                title: stripSoftHyphens(post.title),
             }
         })
     )
