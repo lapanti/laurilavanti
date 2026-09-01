@@ -16,7 +16,7 @@ export const urbanPlanningTag: LocalTag = {
     pageTitle: {
         en: 'Urban planning and land use policy',
         fi: 'Kaavoitus ja maankäytön suunnittelu',
-        sv: 'Plan\u00ADläggning och mark\u00ADanvändnings\u00ADpolitik',
+        sv: 'Planläggning och mark\u00ADanvändnings\u00ADpolitik',
     },
     updatedDate: '2026-05-15',
 }

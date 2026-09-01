@@ -26,8 +26,8 @@ export const kirkkonummiTag: LocalTag = {
     },
     names: { en: 'Kirkkonummi', fi: 'Kirkkonummi', sv: 'Kyrkslätt' },
     pageTitle: {
-        en: 'Kirkko\u00ADnummi – nature, Porkkala to Nuuksio',
-        fi: 'Kirkko\u00ADnummi – luontoa Porkkalasta Nuuksioon',
+        en: 'Kirkkonummi – nature, Porkkala to Nuuksio',
+        fi: 'Kirkkonummi – luontoa Porkkalasta Nuuksioon',
         sv: 'Kyrkslätt – natur, Porkkala till Noux',
     },
     updatedDate: '2026-05-15',

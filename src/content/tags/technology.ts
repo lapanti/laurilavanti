@@ -27,7 +27,7 @@ export const technologyTag: LocalTag = {
     names: { en: 'Technology', fi: 'Teknologia', sv: 'Teknologi' },
     pageTitle: {
         en: 'Technology in society and politics',
-        fi: 'Teknologia yhteis\u00ADkunnassa ja politiikassa',
+        fi: 'Teknologia yhteiskunnassa ja politiikassa',
         sv: 'Teknologi i samhälle och politiken',
     },
     updatedDate: '2026-05-15',

@@ -15,8 +15,8 @@ export const transportationTag: LocalTag = {
     names: { en: 'Transport', fi: 'Liikenne', sv: 'Trafik' },
     pageTitle: {
         en: 'Transport and sustainable mobility',
-        fi: 'Joukko\u00ADliikenne ja kestävä liikkuminen',
-        sv: 'Kollektiv\u00ADtrafik och hållbar rörlighet',
+        fi: 'Joukkoliikenne ja kestävä liikkuminen',
+        sv: 'Kollektivtrafik och hållbar rörlighet',
     },
     updatedDate: '2026-05-15',
 }
