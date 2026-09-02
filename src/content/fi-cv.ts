@@ -220,6 +220,18 @@ export const jobExperiences = [
         startYear: 2013,
         title: 'Seasonal trainee',
     },
+    {
+        company: 'Puolustusvoimat',
+        description: [
+            'Aloitin palveluksen sotilaspoliisikomppaniassa Riihimäellä ja siirryin peruskoulutuskauden jälkeen Santahaminaan sisällöntuottajaksi Maanpuolustuskorkeakoululle.',
+            'Kävin graafikkokoulutuksen Panssariprikaatissa ja taitoin muun muassa Maanpuolustuskorkeakoulun valintaoppaan (Adobe Photoshop, InDesign ja Illustrator).',
+            'Kotiuduin Kaartin jääkärinä.',
+        ],
+        endYear: 2012,
+        location: 'Helsinki',
+        startYear: 2011,
+        title: 'Varusmiespalvelus',
+    },
 ]
 
 export const degreesTitle = 'Koulutus'
