@@ -503,8 +503,45 @@ function ml_webform_success_${formId.replace('mlb2-', '')}() {
 `}
 />
 
+{
+    /* The embed script (and the jQuery + inputmask bundles it chains) must not compete with the LCP hero for throttled bandwidth — the form sits below the fold on every page and posts natively before the script arrives, so it loads only when scrolled near. */
+}
 <script
-    defer
-    src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b"
-    type="text/javascript"></script>
-<script is:inline set:html={`fetch('${takelUrl}')`} />
+    is:inline
+    set:html={`
+(function () {
+    var loaded = false
+    function load() {
+        if (loaded || window.__mlWebformsLoaded) {
+            loaded = true
+            return
+        }
+        loaded = true
+        window.__mlWebformsLoaded = true
+        var s = document.createElement('script')
+        s.src = 'https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b'
+        s.defer = true
+        document.head.appendChild(s)
+        fetch('${takelUrl}')
+    }
+    var el = document.getElementById('${formId}')
+    if (!el || !('IntersectionObserver' in window)) {
+        load()
+        return
+    }
+    var io = new IntersectionObserver(
+        function (entries) {
+            for (var i = 0; i < entries.length; i++) {
+                if (entries[i].isIntersecting) {
+                    io.disconnect()
+                    load()
+                    return
+                }
+            }
+        },
+        { rootMargin: '400px 0px' }
+    )
+    io.observe(el)
+})()
+`}
+/>
