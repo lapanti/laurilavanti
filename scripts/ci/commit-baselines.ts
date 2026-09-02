@@ -53,8 +53,13 @@ if (isMain) {
     /*
      * -uall lists files inside untracked directories individually (git collapses
      * them to one `dir/` entry by default, which readFileSync can't consume).
+     * core.quotePath=false stops git C-quoting non-ASCII paths (e.g. Swedish
+     * aria goldens like `…-på-svenska-…`), which would reach readFileSync as a
+     * quoted, octal-escaped literal and fail with ENOENT.
      */
-    const status = execSync('git status --porcelain -uall -- tests', { encoding: 'utf8' })
+    const status = execSync('git -c core.quotePath=false status --porcelain -uall -- tests', {
+        encoding: 'utf8',
+    })
     const { additions, deletions } = parsePorcelain(status)
     if (additions.length === 0 && deletions.length === 0) {
         process.stderr.write('commit-baselines: no baseline changes under tests/ to commit\n')
