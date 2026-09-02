@@ -27,7 +27,7 @@ export const personSameAs = [
     'https://bsky.app/profile/lauri.lavanti.fi',
     'https://www.facebook.com/laurilavanti',
     'https://www.instagram.com/laurilavanti/',
-    'https://www.linkedin.com/in/lapanti',
+    'https://www.linkedin.com/in/laurilavanti/',
     'https://mastodon.social/@laurilavanti',
     'https://www.threads.com/@laurilavanti',
     'https://www.tiktok.com/@laurilavanti',
