@@ -290,6 +290,10 @@ const breadcrumbJsonLd =
 <link href="/favicon.ico" rel="shortcut icon" />
 <link href="/app.webmanifest" rel="manifest" />
 <link href="https://scripts.simpleanalyticscdn.com" rel="preconnect" />
+{
+    /* Hero images always load from the canonical host; on preview deploys (*.pages.dev) that is a cross-origin hop the LCP image otherwise pays connection setup for. Same-origin in production, where browsers ignore the hint. */
+}
+<link href="https://lavanti.fi" rel="preconnect" />
 <link
     as="font"
     crossorigin=""
