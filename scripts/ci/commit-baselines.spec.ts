@@ -1,4 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { execSync } from 'node:child_process'
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
+import { tmpdir } from 'node:os'
+import path from 'node:path'
+import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 
 import { parsePorcelain } from './commit-baselines'
 
@@ -27,5 +31,39 @@ describe('parsePorcelain', () => {
     it('returns empty changes for empty status output', () => {
         expect(parsePorcelain('')).toEqual({ additions: [], deletions: [] })
         expect(parsePorcelain('\n')).toEqual({ additions: [], deletions: [] })
+    })
+})
+
+/*
+ * Regression for the ENOENT that failed scheduled-publish on 2026-09-02: git
+ * C-quotes non-ASCII paths under its default core.quotePath=true, so a Swedish
+ * aria golden reached readFileSync as a quoted octal-escaped literal. The commit
+ * step now runs status with core.quotePath=false; this exercises the real git
+ * invocation because the bug lived in the flag, not in parsePorcelain.
+ */
+describe('status invocation on non-ASCII paths', () => {
+    let repo: string
+    const relPath =
+        'tests/e2e/blogSwePage.spec.ts-snapshots/Blog-Page-på-svenska-should-match-aria-snapshot-1-Google-Chrome.aria.yml'
+
+    beforeEach(() => {
+        repo = mkdtempSync(path.join(tmpdir(), 'commit-baselines-'))
+        execSync('git init -q', { cwd: repo })
+        mkdirSync(path.join(repo, path.dirname(relPath)), { recursive: true })
+        writeFileSync(path.join(repo, relPath), 'aria:\n')
+    })
+
+    afterEach(() => {
+        rmSync(repo, { force: true, recursive: true })
+    })
+
+    it('yields a path readFileSync can open', () => {
+        const status = execSync('git -c core.quotePath=false status --porcelain -uall -- tests', {
+            cwd: repo,
+            encoding: 'utf8',
+        })
+        const { additions } = parsePorcelain(status)
+        expect(additions).toEqual([relPath])
+        expect(() => readFileSync(path.join(repo, additions[0]))).not.toThrow()
     })
 })
