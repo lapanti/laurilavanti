@@ -220,6 +220,18 @@ export const jobExperiences = [
         startYear: 2013,
         title: 'Seasonal trainee',
     },
+    {
+        company: 'Finnish Defence Forces',
+        description: [
+            'Began service in the military police company in Riihimäki and, after the basic training period, transferred to Santahamina as a content producer for the National Defence University.',
+            'Completed graphic-design training at the Armoured Brigade and did the layout for, among others, the National Defence University admissions guide (Adobe Photoshop, InDesign, and Illustrator).',
+            'Discharged as a Guard Jaeger.',
+        ],
+        endYear: 2012,
+        location: 'Helsinki',
+        startYear: 2011,
+        title: 'Military service',
+    },
 ]
 
 export const degreesTitle = 'Education'

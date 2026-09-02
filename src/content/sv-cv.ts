@@ -220,6 +220,18 @@ export const jobExperiences = [
         startYear: 2013,
         title: 'Seasonal trainee',
     },
+    {
+        company: 'Försvarsmakten',
+        description: [
+            'Inledde tjänstgöringen i militärpoliskompaniet i Riihimäki och flyttade efter grundutbildningsperioden till Sandhamn som innehållsproducent för Försvarshögskolan.',
+            'Genomgick grafikerutbildning vid Pansarbrigaden och ombröt bland annat Försvarshögskolans antagningsguide (Adobe Photoshop, InDesign och Illustrator).',
+            'Hemförlovades som gardesjägare.',
+        ],
+        endYear: 2012,
+        location: 'Helsingfors',
+        startYear: 2011,
+        title: 'Beväringstjänst',
+    },
 ]
 
 export const degreesTitle = 'Utbildning'
