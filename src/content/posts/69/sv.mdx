@@ -1,0 +1,37 @@
+---
+lang: 'sv'
+slug: 'airbus-scaleway-jurisdiktionsskal'
+pageTitle: 'Airbus valde Scaleway av jurisdiktionsskäl'
+title: 'Airbus valde Scaleway också av jurisdiktions­skäl'
+description: 'Airbus flyttade kritiska system till Scaleway även av jurisdiktionsskäl. Samma riskbedömning passar varje organisations molnval.'
+alt: 'Fasaden på en Airbus-fabriksbyggnad med Airbus-logotypen på väggen.'
+---
+
+import SmartLink from '../../../components/SmartLink.astro'
+import H2 from '../../../components/H2.astro'
+import H3 from '../../../components/H3.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { a: SmartLink, h2: H2, h3: H3, p: Paragraph }
+
+Företag köper molntjänster till sina mest kritiska system, och serverns placering räcker inte längre som svar på säkerhetsfrågan. Det avgörande är under vilket lands jurisdiktion leverantören själv verkar.
+
+## Varför flyttar Airbus sina system till Scaleway?
+
+Ett färskt exempel kommer från den europeiska flygplanstillverkaren Airbus. [The Register](https://www.theregister.com/paas-and-iaas/2026/07/16/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway-amid-digital-sovereignty-push/5272373) rapporterade i juli att bolaget flyttar omkring 70 kritiska applikationer från Amazons molntjänst till den franska leverantören Scaleway. Flytten ingår i ett bredare program som Airbus kallar Minimum Viable Company. Det syftar på den kärna av system som håller verksamheten igång i en krissituation. Den första fasen ska vara klar senast 2028.
+
+Airbus valde inte Scaleway enbart på grund av priset eller den tekniska prestandan. Enligt tidningen vägde bolaget anbuden utifrån teknisk prestanda, motståndskraft mot störningar och rättsligt skydd, och jurisdiktionsfrågan hörde till den sistnämnda. Scaleways anbud var ändå kommersiellt konkurrenskraftigt, trots konkurrensen från branschens stora molnjättar.
+
+## Vad betyder jurisdiktion i praktiken?
+
+Jag ser inget ideologiskt i det här. Det handlar om en vanlig riskbedömning. Serverns placering visar var data fysiskt finns, men inte vem som kan komma åt den genom ett myndighetsbeslut. Det avgörs av under vilket lands jurisdiktion leverantören verkar. USA:s CLOUD Act förpliktar amerikanska företag att lämna ut data i sin besittning till myndigheterna, även om datan fysiskt finns i Europa. Därför förtjänar jurisdiktionen sin plats bland [upphandlingskriterierna](/sv/blog/53/digital-sjalvstandighet-byggs-steg-for-steg/): leveranssäkerhet, informationssäkerhet, pris. Det är en rad i riskbedömningen, inte ett specialfall.
+
+## Räcker en europeisk version av molntjänsten?
+
+Visst erbjuder de stora molnleverantörerna numera europeiska versioner av sina tjänster, där data stannar inom EU och personalen är europeisk. Det undanröjer ändå inte grundfrågan. Så länge moderbolaget är amerikanskt sträcker sig CLOUD Act sannolikt också till det europeiska dotterbolaget. Enligt branschexperter ligger den yttersta bestämmanderätten i praktiken oftast där bolagets juridiska hemvist finns.
+
+## Vad är egentligen avgörande?
+
+Det avgörande är inte leverantörens nationalitet, utan behörigheten, det vill säga vems lagar som reglerar tillgången till data. Detta gäller lika mycket en amerikansk, en fransk och en kinesisk leverantör. När en organisation bygger sin kritiska verksamhet på en enda leverantörs moln byggs samtidigt ett [stigberoende](/sv/blog/51/digital-sjalvstandighet-ar-en-nodvandighet/) in.
+
+Airbus fattade inte sitt beslut av princip, utan utifrån en riskbedömning. Samma resonemang passar [var och en](/sv/blog/66/digital-sjalvstandighet-vardagens-val/) som inte vill fundera varje morgon på i vems händer den egna datan i slutändan finns.

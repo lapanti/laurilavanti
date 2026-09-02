@@ -1,0 +1,37 @@
+---
+lang: 'fi'
+slug: 'airbus-scaleway-lainsaadannon-piiri'
+pageTitle: 'Airbus, Scaleway ja lainsäädännön piiri'
+title: 'Airbus valitsi Scalewayn myös lainsäädännön piirin takia'
+description: 'Airbus siirsi kriittisiä järjestelmiä Scalewaylle myös lainsäädännön piirin vuoksi. Sama riskiarvio sopii jokaiselle pilvivalinnalle.'
+alt: 'Airbus-tehdasrakennuksen ulkojulkisivu, jonka seinässä on Airbus-logo.'
+---
+
+import SmartLink from '../../../components/SmartLink.astro'
+import H2 from '../../../components/H2.astro'
+import H3 from '../../../components/H3.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { a: SmartLink, h2: H2, h3: H3, p: Paragraph }
+
+Yritykset ostavat pilvipalveluita kriittisimpiinkin järjestelmiinsä, eikä palvelimen sijainti enää riitä vastaukseksi turvallisuuskysymykseen. Ratkaisevaa on, minkä maan lainsäädännön piirissä palveluntarjoaja itse toimii.
+
+## Miksi Airbus siirtää järjestelmänsä Scalewaylle?
+
+Tästä on tuore esimerkki eurooppalaiselta lentokonevalmistajalta Airbusilta. [The Register](https://www.theregister.com/paas-and-iaas/2026/07/16/airbus-migrating-70-critical-apps-from-aws-to-frances-scaleway-amid-digital-sovereignty-push/5272373) kertoi heinäkuussa, että yhtiö siirtää parhaillaan noin 70 kriittistä sovellustaan Amazonin pilvipalvelusta ranskalaiselle Scalewaylle. Siirto kuuluu laajempaan ohjelmaan, jota Airbus kutsuu nimellä Minimum Viable Company. Sillä tarkoitetaan järjestelmien ydinjoukkoa, jonka varassa yhtiön toiminta pysyy pystyssä poikkeustilanteessakin. Ensimmäinen vaihe on tarkoitus saada valmiiksi vuoteen 2028 mennessä.
+
+Airbus ei valinnut Scalewayta pelkän hinnan takia eikä pelkän teknisen suorituskyvynkään takia. Lehden mukaan yhtiö punnitsi tarjouksia teknisen suorituskyvyn, toiminnan häiriönsietokyvyn ja oikeudellisten suojatoimien kannalta, ja lainsäädäntökysymys kuului juuri viimeiseen näistä. Scalewayn tarjous oli silti myös kaupallisesti kilpailukykyinen, vaikka vastassa olivat alan suuret pilvijätit.
+
+## Mitä lainsäädännön piiri tarkoittaa?
+
+En näe tässä mitään ideologista. Kyse on tavallisesta riskiarviosta. Palvelimen sijainti kertoo, missä data fyysisesti on, mutta ei sitä, kuka siihen pääsee käsiksi viranomaispäätöksellä. Sen määrää se, minkä maan lainsäädännön piirissä toimittaja toimii. Yhdysvaltain CLOUD Act velvoittaa yhdysvaltalaisen yrityksen luovuttamaan hallussaan olevan datan viranomaisille, vaikka data sijaitsisi fyysisesti Euroopassa. Siksi lainsäädännön piiri ansaitsee paikkansa muiden [hankintakriteerien](/fi/blog/53/digitaalinen-itsenaisyys-rakennetaan-askel-kerrallaan/), kuten toimitusvarmuuden, tietoturvan ja hinnan, joukossa. Se on yksi rivi riskiarviossa, ei erikoistapaus.
+
+## Riittääkö eurooppalainen versio pilvipalvelusta?
+
+On totta, että suuret pilvipalveluntarjoajat tarjoavat nykyään eurooppalaisia versioita palveluistaan, joissa data pysyy EU:n alueella ja henkilöstö on eurooppalaista. Tämä ei kuitenkaan poista alkuperäistä kysymystä. Niin kauan kuin emoyhtiö on yhdysvaltalainen, CLOUD Act ulottuu todennäköisesti myös sen eurooppalaiseen tytäryhtiöön. Alan asiantuntijoiden mukaan ylin määräysvalta jää käytännössä yleensä sinne, missä yhtiön juridinen kotipaikka on.
+
+## Mikä on lopulta ratkaisevaa?
+
+Ratkaisevaa ei ole toimittajan kansallisuus. Ratkaisevaa on toimivalta eli se, kenen lait säätelevät pääsyä dataan. Sama koskee yhtä lailla yhdysvaltalaista, ranskalaista ja kiinalaista toimittajaa. Kun organisaatio rakentaa kriittisen toimintansa yhden toimittajan pilven varaan, se rakentaa samalla [polkuriippuvuutta](/fi/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/).
+
+Airbus ei tehnyt ratkaisuaan periaatteen vuoksi. Se teki sen riskiarvion perusteella. Sama harkinta sopii [jokaiselle](/fi/blog/66/digitaalinen-itsenaisyys-arjen-valinnat/), joka ei halua joka aamu miettiä, kenen käsissä sen data lopulta on.
