@@ -1,18 +1,20 @@
 import type { Lang } from './nav'
 
 export interface GalleryPhoto {
-    /** Localised description of the thumbnail (the neliö crop). */
+    /** Localised description of the thumbnail (the first available crop). */
     alt: Record<Lang, string>
-    /** Cloudflare Images slugs for each aspect crop of the same photo. */
-    crops: { nelio: string; pysty: string; vaaka: string }
+    /** Cloudflare Images slugs per aspect crop. At least one of the three must be present. */
+    crops: Partial<Record<'nelio' | 'pysty' | 'vaaka', string>>
     id: string
-    photographer: string
+    /** Omit when no photographer credit applies (e.g. in-house/studio shots). */
+    photographer?: string
 }
 
 /**
- * Media gallery: five photos from Markus Isomeri's 2026 photoshoot, each offered in
- * three aspect crops (neliö 1:1, pysty portrait, vaaka landscape). Cleared for
- * download under CC BY-SA 4.0 — see the LICENSE file and the /media page.
+ * Media gallery: photos of Lauri Lavanti cleared for download under CC BY-SA 4.0 —
+ * see the LICENSE file and the /media page. Most are Markus Isomeri's 2026
+ * photoshoot, each offered in three aspect crops (neliö 1:1, pysty portrait, vaaka
+ * landscape); the 2026 campaign studio portraits are single pysty frames instead.
  */
 export const galleryPhotos: GalleryPhoto[] = [
     {
