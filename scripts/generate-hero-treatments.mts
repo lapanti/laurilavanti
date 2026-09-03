@@ -122,28 +122,27 @@ const PHOTOS: PhotoConfig[] = [
         mobile: { cropX: 83, cropY: 81, scale: 0.66, washStop: 0.55 },
     },
     {
-        desktop: { dx: 0, dy: 240, scale: 1.0 },
+        desktop: { dx: -515, dy: 184, scale: 1.8 },
         id: 'dipoli-katse-kameraan',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-pysty',
         vaakaSource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-vaaka',
-        mobile: { cropX: 0, cropY: 25, scale: 0.4, washStop: 0.45 },
+        mobile: { cropX: 84, cropY: 0, scale: 0.58, washStop: 0.45 },
     },
+    /*
+     * No aalto-auditorio entry: its crops are close-ups too tight to conform to
+     * the hero framing without synthetic background fill (see placeVaaka).
+     */
     {
-        desktop: { dx: 0, dy: 240, scale: 1.0 },
-        id: 'aalto-auditorio',
-        outBase: 'Lauri-Lavanti-aalto-yliopiston-paarakennuksen-auditoriossa-hymyilee',
-        pystySource: 'Lauri-Lavanti-aalto-yliopiston-paarakennuksen-auditoriossa-hymyilee-pysty',
-        vaakaSource: 'Lauri-Lavanti-aalto-yliopiston-paarakennuksen-auditoriossa-hymyilee-vaaka',
-        mobile: { cropX: 0, cropY: 25, scale: 0.4, washStop: 0.45 },
-    },
-    {
-        desktop: { dx: 0, dy: 240, scale: 1.0 },
+        /* Desktop uses the high-res nelio — the koko-vartalo crop's laptop
+         * corner forces the subject too far left; the nelio keeps the laptop
+         * below the frame at near-native scale. */
+        desktop: { dx: -774, dy: 215, scale: 0.97 },
         id: 'portailla',
         outBase: 'Lauri-Lavanti-tyoskentelee-portailla',
-        pystySource: 'Lauri-Lavanti-tyoskentelee-portailla-koko-vartalo',
+        pystySource: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio',
         vaakaSource: 'Lauri-Lavanti-tyoskentelee-portailla-vaaka',
-        mobile: { cropX: 0, cropY: 25, scale: 0.4, washStop: 0.45 },
+        mobile: { cropX: 210, cropY: 0, scale: 0.75, washStop: 0.45 },
     },
 ]
 
@@ -203,6 +202,16 @@ function placePysty(input: string, output: string, cfg: DesktopConfig, transpare
     const { height, width } = identifySize(input)
     const w = Math.round(width * cfg.scale)
     const h = Math.round(height * cfg.scale)
+    // The scaled source must cover the full canvas width and reach its bottom;
+    // only the top may be short (it gets the mirrored pad). Anything else would
+    // need synthetic fill the treatment doesn't allow — refuse to generate.
+    if (cfg.dx > 0 || cfg.dx + w < PYSTY_W || cfg.dy + h < PYSTY_H) {
+        throw new Error(
+            `desktop placement (scale ${cfg.scale}, dx ${cfg.dx}, dy ${cfg.dy}) leaves part of the ` +
+                `${PYSTY_W}x${PYSTY_H} canvas uncovered by the ${w}x${h} source — the photo cannot ` +
+                `conform to the hero framing without synthetic background fill`,
+        )
+    }
     const args = [input, '-resize', `${w}x${h}!`]
     let y = cfg.dy
     if (!transparent && cfg.dy > 0) {
@@ -221,19 +230,32 @@ function placePysty(input: string, output: string, cfg: DesktopConfig, transpare
     magick(args)
 }
 
-/** Shared transform for the mobile layers: scale then crop to the canvas. */
+/**
+ * Shared transform for the mobile layers: scale, then crop the canvas window
+ * at (cropX, cropY) in scaled-source coords. The window must be a true crop —
+ * a source too small for it (below-cover scale or out-of-bounds offsets) would
+ * need synthetic background fill, which is not acceptable for these heroes, so
+ * that case throws instead. Photos that can't conform are simply not treated
+ * (this is why there is no aalto-auditorio config: its crops are too tight for
+ * the mobile framing).
+ */
 function placeVaaka(input: string, output: string, cfg: MobileConfig, transparent: boolean): void {
     const { height, width } = identifySize(input)
     const w = Math.round(width * cfg.scale)
     const h = Math.round(height * cfg.scale)
+    if (cfg.cropX < 0 || cfg.cropY < 0 || cfg.cropX + VAAKA_W > w || cfg.cropY + VAAKA_H > h) {
+        throw new Error(
+            `mobile window ${VAAKA_W}x${VAAKA_H}+${cfg.cropX}+${cfg.cropY} does not fit inside ` +
+                `the scaled source (${w}x${h}) — the photo cannot conform to the hero framing ` +
+                `without synthetic background fill`,
+        )
+    }
     magick([
         input,
         ...(transparent ? ['-background', 'none'] : []),
         '-resize', `${w}x${h}!`,
         '-crop', `${VAAKA_W}x${VAAKA_H}+${cfg.cropX}+${cfg.cropY}`,
         '+repage',
-        ...(transparent ? [] : ['-background', 'black']),
-        '-extent', `${VAAKA_W}x${VAAKA_H}`,
         output,
     ])
 }
