@@ -63,7 +63,13 @@ const ORIGINAL_BLEND_PCT = 10
  * Multiply gradient from this gray at y=0 to white at TOP_DARKEN_STOP height.
  */
 const TOP_DARKEN_GRAY = 'gray55'
-const TOP_DARKEN_STOP = 0.4
+/**
+ * The desktop grade is top-only: full strength from y=0 down to GRADE_HOLD of
+ * the canvas height (covers the wordmark zone), then fades out by GRADE_STOP —
+ * the lower background stays natural. The extra darkening uses the same shape.
+ */
+const GRADE_HOLD = 0.25
+const GRADE_STOP = 0.55
 
 const PYSTY_W = 1170
 const PYSTY_H = 2240
@@ -73,7 +79,12 @@ const VAAKA_H = 480
 interface DesktopConfig {
     /** Horizontal shift of the shared bg+subject layer, px (negative = left). */
     dx: number
-    /** Shared scale factor for source → canvas (bottom-anchored). */
+    /**
+     * Canvas y of the source's top edge. Positive pushes the source down
+     * (background mirror-pads the gap above); negative crops into the top.
+     */
+    dy: number
+    /** Shared scale factor for source → canvas. */
     scale: number
 }
 
@@ -103,15 +114,15 @@ interface PhotoConfig {
  */
 const PHOTOS: PhotoConfig[] = [
     {
-        desktop: { dx: -60, scale: 0.97 },
+        desktop: { dx: -493, dy: 328, scale: 1.8 },
         id: 'dipoli-mietteliaana',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-pysty',
         vaakaSource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-vaaka',
-        mobile: { cropX: 78, cropY: 140, scale: 0.66, washStop: 0.55 },
+        mobile: { cropX: 83, cropY: 81, scale: 0.66, washStop: 0.55 },
     },
     {
-        desktop: { dx: 0, scale: 1.0 },
+        desktop: { dx: 0, dy: 240, scale: 1.0 },
         id: 'dipoli-katse-kameraan',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-pysty',
@@ -119,7 +130,7 @@ const PHOTOS: PhotoConfig[] = [
         mobile: { cropX: 0, cropY: 25, scale: 0.4, washStop: 0.45 },
     },
     {
-        desktop: { dx: 0, scale: 1.0 },
+        desktop: { dx: 0, dy: 240, scale: 1.0 },
         id: 'aalto-auditorio',
         outBase: 'Lauri-Lavanti-aalto-yliopiston-paarakennuksen-auditoriossa-hymyilee',
         pystySource: 'Lauri-Lavanti-aalto-yliopiston-paarakennuksen-auditoriossa-hymyilee-pysty',
@@ -127,7 +138,7 @@ const PHOTOS: PhotoConfig[] = [
         mobile: { cropX: 0, cropY: 25, scale: 0.4, washStop: 0.45 },
     },
     {
-        desktop: { dx: 0, scale: 1.0 },
+        desktop: { dx: 0, dy: 240, scale: 1.0 },
         id: 'portailla',
         outBase: 'Lauri-Lavanti-tyoskentelee-portailla',
         pystySource: 'Lauri-Lavanti-tyoskentelee-portailla-koko-vartalo',
@@ -177,29 +188,34 @@ function matteSubject(sourceSlug: string): string {
     return out
 }
 
+function geometryOffset(x: number, y: number): string {
+    return `${x >= 0 ? '+' : ''}${x}${y >= 0 ? '+' : ''}${y}`
+}
+
 /**
- * Shared transform for the desktop layers: scale, bottom-anchor, x-shift.
- * The background variant mirror-pads the top so scaled-down sources still fill
- * the canvas with plausible texture; the subject variant pads with transparency.
+ * Shared transform for the desktop layers: scale, then place the source's top
+ * edge at canvas y = dy with an x-shift of dx. Background and subject use the
+ * exact same mapping so the subject covers its own silhouette in the graded
+ * background. When dy > 0 the background mirror-pads the gap above with the
+ * flipped top strip (seamless texture); the subject just floats on transparency.
  */
 function placePysty(input: string, output: string, cfg: DesktopConfig, transparent: boolean): void {
     const { height, width } = identifySize(input)
     const w = Math.round(width * cfg.scale)
     const h = Math.round(height * cfg.scale)
-    const padTop = Math.max(0, PYSTY_H - h)
     const args = [input, '-resize', `${w}x${h}!`]
-    if (transparent) {
-        args.push('-background', 'none', '-gravity', 'south', '-extent', `${w}x${PYSTY_H}`)
-    } else if (padTop > 0) {
-        // Mirror the top strip upward so the graded background has no seam.
-        args.push(
-            '(', '+clone', '-crop', `${w}x${padTop}+0+0`, '-flip', ')',
-            '+swap', '-append',
-        )
+    let y = cfg.dy
+    if (!transparent && cfg.dy > 0) {
+        // Mirror the top strip upward so the graded background has no seam;
+        // blur it heavily so the duplicated texture reads as out-of-focus
+        // depth instead of a visible reflection.
+        args.push('(', '+clone', '-crop', `${w}x${cfg.dy}+0+0`, '-flip', '-blur', '0x25', ')', '+swap', '-append')
+        y = 0
     }
     args.push(
         '(', '-size', `${PYSTY_W}x${PYSTY_H}`, `xc:${transparent ? 'none' : 'black'}`, ')',
-        '+swap', '-gravity', 'south', '-geometry', `${cfg.dx >= 0 ? '+' : ''}${cfg.dx}+0`, '-composite',
+        '+swap', '-compose', 'over', '-gravity', 'northwest',
+        '-geometry', geometryOffset(cfg.dx, y), '-composite',
         output,
     )
     magick(args)
@@ -245,17 +261,27 @@ function generateDesktop(photo: PhotoConfig, tmpDir: string): string {
     placePysty(src, bg, photo.desktop, false)
     placePysty(cut, subj, photo.desktop, true)
 
-    // Grade: duotone forest ramp + a hint of the original for warm accents,
-    // extra darkening over the wordmark zone at the top, then the sand band —
-    // all on the background layer only.
-    const darkenH = Math.round(PYSTY_H * TOP_DARKEN_STOP)
+    // Grade the top only: the duotone forest ramp (+ a hint of the original for
+    // warm accents) holds full strength through the wordmark zone (GRADE_HOLD),
+    // fades out by GRADE_STOP, and leaves the lower background natural. Then
+    // extra darkening with the same shape and the sand band — all on the
+    // background layer only.
+    const holdH = Math.round(PYSTY_H * GRADE_HOLD)
+    const fadeH = Math.round(PYSTY_H * (GRADE_STOP - GRADE_HOLD))
     magick([
         bg,
         '(', '+clone', '-colorspace', 'Gray',
         '(', '-size', '1x256', `gradient:${RAMP_DARK}-${RAMP_LIGHT}`, ')',
-        '-clut', '-type', 'TrueColor', ')',
-        '+swap', '-define', `compose:args=${ORIGINAL_BLEND_PCT}`, '-compose', 'blend', '-composite',
-        '(', '-size', `${PYSTY_W}x${darkenH}`, `gradient:${TOP_DARKEN_GRAY}-white`,
+        '-clut', '-type', 'TrueColor',
+        '(', bg, ')', '-define', `compose:args=${ORIGINAL_BLEND_PCT}`, '-compose', 'blend', '-composite', ')',
+        // Clear the blend args — a lingering compose:args corrupts the masked composite below.
+        '+define', 'compose:args',
+        '(', '-size', `${PYSTY_W}x${holdH}`, 'xc:white',
+        '(', '-size', `${PYSTY_W}x${fadeH}`, 'gradient:white-black', ')', '-append',
+        '-background', 'black', '-gravity', 'north', '-extent', `${PYSTY_W}x${PYSTY_H}`, ')',
+        '-compose', 'over', '-composite',
+        '(', '-size', `${PYSTY_W}x${holdH}`, `xc:${TOP_DARKEN_GRAY}`,
+        '(', '-size', `${PYSTY_W}x${fadeH}`, `gradient:${TOP_DARKEN_GRAY}-white`, ')', '-append',
         '-background', 'white', '-gravity', 'north', '-extent', `${PYSTY_W}x${PYSTY_H}`, ')',
         '-compose', 'multiply', '-composite',
         '-fill', SAND, '-draw', `rectangle ${PYSTY_W - 110},0 ${PYSTY_W},${PYSTY_H}`,
