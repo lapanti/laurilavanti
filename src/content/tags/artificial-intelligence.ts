@@ -24,7 +24,7 @@ export const artificialIntelligenceTag: LocalTag = {
         fi: 'Käytän ja rakennan tekoälytyökaluja työkseni. On kriittistä, että Suomi tarttuu tekoälyn tuomiin mahdollisuuksiin, halliten samalla siihen liittyviä riskejä.',
         sv: 'Jag använder och bygger AI-verktyg för mitt uppehälle. Det är avgörande att Finland tar vara på möjligheterna AI ger, samtidigt som vi hanterar riskerna.',
     },
-    names: { en: 'Artificial intelligence', fi: 'Tekoäly', sv: 'Artificiell intelligens' },
+    names: { en: 'AI', fi: 'Tekoäly', sv: 'AI' },
     pageTitle: {
         en: 'Artificial intelligence – benefits and harms',
         fi: 'Tekoäly – hyödyistä, haitoista, politiikasta',
