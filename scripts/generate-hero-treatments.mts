@@ -98,51 +98,92 @@ interface MobileConfig {
     washStop: number
 }
 
+/**
+ * Per-photo colour normalisation so every hero shares one palette: the shoot
+ * spans golden sun and overcast light, so backgrounds get pulled into a common
+ * tonal family (shared tone, texture kept) and skin toward the front-page
+ * reference's warmth. Values are ImageMagick `-modulate` percentages plus
+ * linear channel gains.
+ */
+interface ToneConfig {
+    /** Blue channel gain (warmth: < 1 warms, > 1 cools). */
+    blue: number
+    /** -modulate brightness %. */
+    brightness: number
+    /** Red channel gain. */
+    red: number
+    /** -modulate saturation %. */
+    saturation: number
+}
+
+/** CLI args applying a ToneConfig to the current image. */
+function toneArgs(tone: ToneConfig | undefined): string[] {
+    if (!tone) return []
+    return [
+        '-modulate', `${tone.brightness},${tone.saturation},100`,
+        '-channel', 'R', '-evaluate', 'multiply', String(tone.red), '+channel',
+        '-channel', 'B', '-evaluate', 'multiply', String(tone.blue), '+channel',
+    ]
+}
+
 interface PhotoConfig {
+    /** Background finishing tone (applied before the top grade / wash). */
+    bgTone?: ToneConfig
     desktop: DesktopConfig
     id: string
     outBase: string
     pystySource: string
+    /** Subject-layer tone (skin normalisation toward the reference). */
+    subjectTone?: ToneConfig
     vaakaSource: string
     mobile: MobileConfig
 }
 
 /*
- * Per-photo tuning. `scale`/`dx` chosen so the head clears the top-25% wordmark
- * zone and the subject overlaps the sand band; mobile offsets place the face in
- * the 222px-tall display band (object-position: 50% 40%).
+ * Per-photo tuning. Framing is solved from measured eye-line / chin landmarks
+ * so all sub-page heroes share one face metric: desktop eye-to-chin ≈ 220px
+ * with the eye line at y ≈ 1020; mobile eye-to-chin ≈ 73px with the eye line
+ * at y ≈ 97 (the user-approved mietteliaana framing is the anchor). Horizontal
+ * placement is gaze-aware within the right-edge constraint (subject may only
+ * be cut by the bottom and left frame edges).
  */
 const PHOTOS: PhotoConfig[] = [
     {
-        desktop: { dx: -493, dy: 328, scale: 1.8 },
+        bgTone: { blue: 0.98, brightness: 50, red: 1.0, saturation: 58 },
+        desktop: { dx: -517, dy: 315, scale: 1.83 },
         id: 'dipoli-mietteliaana',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-pysty',
+        subjectTone: { blue: 0.9, brightness: 100, red: 1.04, saturation: 112 },
         vaakaSource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-vaaka',
         mobile: { cropX: 83, cropY: 81, scale: 0.66, washStop: 0.55 },
     },
     {
-        desktop: { dx: -515, dy: 184, scale: 1.8 },
+        bgTone: { blue: 0.97, brightness: 62, red: 1.01, saturation: 75 },
+        desktop: { dx: -570, dy: 132, scale: 1.91 },
         id: 'dipoli-katse-kameraan',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-pysty',
+        subjectTone: { blue: 0.88, brightness: 97, red: 1.03, saturation: 110 },
         vaakaSource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-vaaka',
-        mobile: { cropX: 84, cropY: 0, scale: 0.58, washStop: 0.45 },
+        mobile: { cropX: 140, cropY: 138, scale: 0.635, washStop: 0.45 },
     },
     /*
      * No aalto-auditorio entry: its crops are close-ups too tight to conform to
      * the hero framing without synthetic background fill (see placeVaaka).
      */
     {
+        bgTone: { blue: 0.93, brightness: 135, red: 1.02, saturation: 80 },
         /* Desktop uses the high-res nelio — the koko-vartalo crop's laptop
          * corner forces the subject too far left; the nelio keeps the laptop
          * below the frame at near-native scale. */
-        desktop: { dx: -774, dy: 215, scale: 0.97 },
+        desktop: { dx: -1195, dy: 63, scale: 1.16 },
         id: 'portailla',
         outBase: 'Lauri-Lavanti-tyoskentelee-portailla',
         pystySource: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio',
+        subjectTone: { blue: 0.95, brightness: 94, red: 1.0, saturation: 105 },
         vaakaSource: 'Lauri-Lavanti-tyoskentelee-portailla-vaaka',
-        mobile: { cropX: 210, cropY: 0, scale: 0.75, washStop: 0.45 },
+        mobile: { cropX: 91, cropY: 90, scale: 0.635, washStop: 0.45 },
     },
 ]
 
@@ -280,7 +321,9 @@ function generateDesktop(photo: PhotoConfig, tmpDir: string): string {
     const out = path.join(ORIGINALS_DIR, `${photo.outBase}-hero-pysty.jpg`)
 
     fillMatteHoles(matte, cut)
+    if (photo.subjectTone) magick([cut, ...toneArgs(photo.subjectTone), cut])
     placePysty(src, bg, photo.desktop, false)
+    if (photo.bgTone) magick([bg, ...toneArgs(photo.bgTone), bg])
     placePysty(cut, subj, photo.desktop, true)
 
     // Grade the top only: the duotone forest ramp (+ a hint of the original for
@@ -323,16 +366,17 @@ function generateMobile(photo: PhotoConfig, tmpDir: string): string {
     const out = path.join(ORIGINALS_DIR, `${photo.outBase}-hero-vaaka.jpg`)
 
     fillMatteHoles(matte, cut)
+    if (photo.subjectTone) magick([cut, ...toneArgs(photo.subjectTone), cut])
     placeVaaka(src, bg, photo.mobile, false)
+    if (photo.bgTone) magick([bg, ...toneArgs(photo.bgTone), bg])
     placeVaaka(cut, subj, photo.mobile, true)
 
-    // Darken and desaturate the background toward the reference's subdued look,
-    // then the top-down deepForest wash: fully opaque at y=0 (seamless blend
-    // with the solid header band above), fading out by washStop of the height.
+    // Top-down deepForest wash over the toned background: fully opaque at y=0
+    // (seamless blend with the solid header band above), fading out by washStop
+    // of the height. Background tone normalisation happens in bgTone above.
     const washH = Math.round(VAAKA_H * photo.mobile.washStop)
     magick([
         bg,
-        '-modulate', '78,62,100',
         '(', '-size', `${VAAKA_W}x${washH}`, `gradient:${DEEP_FOREST}-none`,
         '-background', 'none', '-gravity', 'north', '-extent', `${VAAKA_W}x${VAAKA_H}`, ')',
         '-compose', 'over', '-composite',
