@@ -23,6 +23,13 @@ const [dateOnly] = (date ?? '').split('T')
 const [year, month, day] = dateOnly ? dateOnly.split('-') : []
 const dateToDisplay = dateOnly ? `${day}.${month}.${year}` : ''
 
+/*
+ * Excerpt cards cap the chip row to keep it on a single line; the full tag
+ * list still renders on the post page. Slice after filtering so we keep N
+ * resolvable tags, not N raw ids that may include unresolved ones.
+ */
+const MAX_EXCERPT_TAGS = 3
+
 const tagsToRender = (tags ?? [])
     .map((tagId) => {
         const name = getTagName(tagId, lang)
@@ -30,6 +37,7 @@ const tagsToRender = (tags ?? [])
         return name ? { id: tagId, name } : undefined
     })
     .filter((t): t is { id: string; name: string } => t !== undefined)
+    .slice(0, MAX_EXCERPT_TAGS)
 ---
 
 <style

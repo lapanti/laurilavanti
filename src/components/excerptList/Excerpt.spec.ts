@@ -154,6 +154,20 @@ describe('<Excerpt />', () => {
         expect(chips).toEqual(['Tekoäly'])
     })
 
+    it('should cap the chip row at three tags, keeping meta.json order', async () => {
+        const result = await renderAstroComponent(Excerpt, {
+            props: {
+                lang: 'fi',
+                slug: 'test-article',
+                tags: ['kirkkonummi', 'economy', 'nature', 'freedom'],
+                title: 'Test Article',
+            },
+        })
+
+        const chips = [...result.querySelectorAll('.tags a')].map((a) => a.textContent)
+        expect(chips).toEqual(['Kirkkonummi', 'Talous', 'Luonto'])
+    })
+
     it('should render with all props', async () => {
         const result = await renderAstroComponent(Excerpt, {
             props: {
