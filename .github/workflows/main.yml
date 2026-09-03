@@ -27,6 +27,12 @@ jobs:
           path: .astro
           key: astro-${{ runner.os }}-${{ hashFiles('astro.config.*', 'src/**', 'public/**') }}
           restore-keys: astro-${{ runner.os }}-
+      # A restored data-store.json serves stale collection data when only a
+      # meta.json changed (Astro content-layer digest bug) — restore-keys means
+      # any src change restores an older store. Shipped stale tags to production
+      # on 2026-09-02. The rest of .astro stays cache-worthy.
+      - name: Drop restored content store
+        run: rm -f .astro/data-store.json
       - name: build it
         run: npm run build
       - uses: actions/upload-artifact@v7
