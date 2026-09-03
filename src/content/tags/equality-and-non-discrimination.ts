@@ -24,7 +24,7 @@ export const equalityAndNonDiscriminationTag: LocalTag = {
         fi: 'Yhdenvertaisuus on käytännöllistä hallintoa, ei ideologiaa. Jokaisella asukkaalla on oikeus yhtä laadukkaaseen palveluun taustastaan riippumatta.',
         sv: 'Jämlikhet är praktisk förvaltning, inte ideologi. Varje invånare förtjänar likvärdig servicekvalitet oavsett bakgrund, kön, etnicitet eller läggning.',
     },
-    names: { en: 'Equality & equity', fi: 'Tasa-arvo ja yhden\u00ADvertaisuus', sv: 'Jämlikhet' },
+    names: { en: 'Equality', fi: 'Tasa-arvo', sv: 'Jämlikhet' },
     pageTitle: {
         en: 'About equality and non-discrimination',
         fi: 'Tasa-arvosta ja yhden\u00ADvertaisuu\u00ADdesta',
