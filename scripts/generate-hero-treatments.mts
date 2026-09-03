@@ -154,7 +154,7 @@ const PHOTOS: PhotoConfig[] = [
         id: 'dipoli-mietteliaana',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-pysty',
-        subjectTone: { blue: 0.88, brightness: 100, red: 1.05, saturation: 115 },
+        subjectTone: { blue: 0.92, brightness: 100, red: 1.03, saturation: 110 },
         vaakaSource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-vaaka',
         mobile: { cropX: 83, cropY: 81, scale: 0.66, washStop: 0.55 },
     },
@@ -164,9 +164,9 @@ const PHOTOS: PhotoConfig[] = [
         id: 'dipoli-katse-kameraan',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan',
         pystySource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-pysty',
-        subjectTone: { blue: 0.82, brightness: 101, red: 1.04, saturation: 117 },
+        subjectTone: { blue: 0.9, brightness: 101, red: 1.02, saturation: 110 },
         vaakaSource: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-vaaka',
-        mobile: { cropX: 140, cropY: 138, scale: 0.635, washStop: 0.45 },
+        mobile: { cropX: 140, cropY: 34, scale: 0.635, washStop: 0.45 },
     },
     /*
      * No aalto-auditorio entry: its crops are close-ups too tight to conform to
@@ -181,9 +181,9 @@ const PHOTOS: PhotoConfig[] = [
         id: 'portailla',
         outBase: 'Lauri-Lavanti-tyoskentelee-portailla',
         pystySource: 'Lauri-Lavanti-kannettavan-tietokoneen-aarella-nelio',
-        subjectTone: { blue: 0.83, brightness: 94, red: 1.05, saturation: 118 },
+        subjectTone: { blue: 0.91, brightness: 95, red: 1.02, saturation: 110 },
         vaakaSource: 'Lauri-Lavanti-tyoskentelee-portailla-vaaka',
-        mobile: { cropX: 91, cropY: 90, scale: 0.635, washStop: 0.45 },
+        mobile: { cropX: 155, cropY: 0, scale: 0.713, washStop: 0.45 },
     },
 ]
 
