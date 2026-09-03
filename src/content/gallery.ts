@@ -87,4 +87,48 @@ export const galleryPhotos: GalleryPhoto[] = [
         id: 'portailla',
         photographer: 'Markus Isomeri',
     },
+    {
+        alt: {
+            en: 'Official studio portrait of Lauri Lavanti against a white background, standing with hands clasped, wearing a navy blazer and a floral shirt.',
+            fi: 'Virallinen studiokuva Lauri Lavannista valkoista taustaa vasten, kädet yhdessä edessä, yllään tummansininen pikkutakki ja kukkakuvioinen paita.',
+            sv: 'Officiellt studioporträtt av Lauri Lavanti mot vit bakgrund, stående med händerna knäppta, klädd i en marinblå kavaj och en blommig skjorta.',
+        },
+        crops: {
+            pysty: 'Lauri-Lavanti-virallinen-puoluekuva',
+        },
+        id: 'virallinen-puoluekuva',
+    },
+    {
+        alt: {
+            en: 'Studio portrait of Lauri Lavanti against a white background, one hand in his pocket, looking slightly to the side, wearing a navy blazer and a floral shirt.',
+            fi: 'Studiokuva Lauri Lavannista valkoista taustaa vasten, toinen käsi taskussa, katse hieman sivulle, yllään tummansininen pikkutakki ja kukkakuvioinen paita.',
+            sv: 'Studioporträtt av Lauri Lavanti mot vit bakgrund, ena handen i fickan, blicken lätt åt sidan, klädd i en marinblå kavaj och en blommig skjorta.',
+        },
+        crops: {
+            pysty: 'Lauri-Lavanti-studiokuvassa-kasi-taskussa-katse-vasemmalle',
+        },
+        id: 'studio-katse-vasemmalle',
+    },
+    {
+        alt: {
+            en: 'Studio portrait of Lauri Lavanti against a white background, jacket open with a small pin visible on the lapel, wearing a navy blazer and a floral shirt.',
+            fi: 'Studiokuva Lauri Lavannista valkoista taustaa vasten, takki auki ja pieni rintamerkki näkyvissä rinnuksessa, yllään tummansininen pikkutakki ja kukkakuvioinen paita.',
+            sv: 'Studioporträtt av Lauri Lavanti mot vit bakgrund, kavajen öppen med en liten pin synlig på slaget, klädd i en marinblå kavaj och en blommig skjorta.',
+        },
+        crops: {
+            pysty: 'Lauri-Lavanti-studiokuvassa-rintamerkki-nakyvissa',
+        },
+        id: 'studio-rintamerkki',
+    },
+    {
+        alt: {
+            en: 'Studio portrait of Lauri Lavanti against a white background, standing at a three-quarter turn with one hand in his pocket, wearing a navy blazer and a floral shirt.',
+            fi: 'Studiokuva Lauri Lavannista valkoista taustaa vasten, seisoo hieman sivuttain toinen käsi taskussa, yllään tummansininen pikkutakki ja kukkakuvioinen paita.',
+            sv: 'Studioporträtt av Lauri Lavanti mot vit bakgrund, stående lätt vriden i sidled med ena handen i fickan, klädd i en marinblå kavaj och en blommig skjorta.',
+        },
+        crops: {
+            pysty: 'Lauri-Lavanti-studiokuvassa-sivuttain-kasi-taskussa',
+        },
+        id: 'studio-sivuttain',
+    },
 ]
