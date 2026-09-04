@@ -29,8 +29,22 @@ const ACCENT = colors.brightGreen // emphasised word (#009639)
  */
 const ASSETS = join(process.cwd(), 'src/lib/og/assets')
 const fontData = readFileSync(join(ASSETS, 'fonts/BigShouldersDisplay-Black.ttf'))
-const portraitData = readFileSync(join(ASSETS, 'portrait.jpg'))
-const portraitUri = `data:image/jpeg;base64,${portraitData.toString('base64')}`
+
+/**
+ * Portrait data URIs, loaded lazily and cached per asset filename. `card.photo` selects
+ * a per-page portrait (see HERO_PORTRAITS in cards.ts); the default is the front-page
+ * portrait. Filenames come from the build-time card manifest, never from user input.
+ */
+const portraitCache = new Map<string, string>()
+const portraitUriFor = (photo = 'portrait.jpg'): string => {
+    let uri = portraitCache.get(photo)
+    if (!uri) {
+        uri = `data:image/jpeg;base64,${readFileSync(join(ASSETS, photo)).toString('base64')}`
+        portraitCache.set(photo, uri)
+    }
+
+    return uri
+}
 
 type Style = Record<string, unknown>
 interface Node {
@@ -122,7 +136,7 @@ export async function renderOgCard(card: OgCard): Promise<Uint8Array> {
                 'img',
                 { height: HEIGHT, objectFit: 'cover', objectPosition: '100% 50%', width: PORTRAIT_WIDTH },
                 undefined,
-                { height: HEIGHT, src: portraitUri, width: PORTRAIT_WIDTH }
+                { height: HEIGHT, src: portraitUriFor(card.photo), width: PORTRAIT_WIDTH }
             ),
             el(
                 'div',

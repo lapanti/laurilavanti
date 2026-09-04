@@ -8,12 +8,27 @@ import { ogId } from './id'
 /**
  * One generated OG card. `title` is the headline; `emphasis`, when present, is rendered
  * after it in bright green (mirroring SplitHero's `{title} <em>{emphasis}</em>`).
+ * `photo`, when present, names a portrait file in src/lib/og/assets/ to use instead of
+ * the default front-page portrait.
  */
 export interface OgCard {
     emphasis?: string
     id: string
     lang: Lang
+    photo?: string
     title: string
+}
+
+/**
+ * heroImage frontmatter slug → committed OG portrait asset. Pages whose treated hero
+ * has a copy in src/lib/og/assets/ get it on their card; everything else (front pages,
+ * posts, categories, pages sharing the front-page hero) keeps the default portrait.
+ * The treated heroes share one face metric, so a single objectPosition works for all.
+ */
+const HERO_PORTRAITS: Record<string, string> = {
+    'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-hero-pysty': 'portrait-katse-kameraan.jpg',
+    'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-hero-pysty': 'portrait-mietteliaana.jpg',
+    'Lauri-Lavanti-tyoskentelee-portailla-hero-pysty': 'portrait-portailla.jpg',
 }
 
 const LANGS: Lang[] = ['fi', 'sv', 'en']
@@ -26,6 +41,7 @@ export const cleanCardText = (text: string): string => text.replace(/­/g, '').r
 
 interface PageFrontmatter {
     emphasis?: string
+    heroImage?: string
     lang?: Lang
     noindex?: boolean
     ogEmphasis?: string
@@ -79,6 +95,7 @@ async function build(): Promise<OgCard[]> {
             emphasis: emphasis ? cleanCardText(emphasis) : undefined,
             id: ogId(fm.slug),
             lang: fm.lang,
+            photo: fm.heroImage ? HERO_PORTRAITS[fm.heroImage] : undefined,
             title,
         })
     }
