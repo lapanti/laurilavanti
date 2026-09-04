@@ -23,4 +23,17 @@ describe('renderOgCard', () => {
         expect([...png.slice(0, 8)]).toEqual(PNG_MAGIC)
         expect(readUint32(png, 16)).toBe(1200)
     })
+
+    it('renders a card with a per-page portrait photo', async () => {
+        const png = await renderOgCard({
+            id: 'fi__contact',
+            lang: 'fi',
+            photo: 'portrait-katse-kameraan.jpg',
+            title: 'Ota yhteyttä',
+        })
+
+        expect([...png.slice(0, 8)]).toEqual(PNG_MAGIC)
+        expect(readUint32(png, 16)).toBe(1200)
+        expect(readUint32(png, 20)).toBe(630)
+    })
 })
