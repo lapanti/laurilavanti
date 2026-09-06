@@ -47,7 +47,13 @@ async function loadAllPosts(): Promise<Post[]> {
                     wordCount,
                 }
             })
-            .toSorted((a, b) => b.id - a.id)
+            /*
+             * Display order is newest-first by publishDate, with id as a stable
+             * tiebreaker. Keying on the date (not id) keeps ordering correct for
+             * far-future scheduled posts, whose id — assigned at authoring time —
+             * can be lower than posts that publish earlier but are authored later.
+             */
+            .toSorted((a, b) => b.publishDate.localeCompare(a.publishDate) || b.id - a.id)
     )
 }
 
@@ -79,7 +85,9 @@ export interface ExcerptQuery {
 export const sortByRelatedTags = (posts: Post[], relatedTags: string[]): Post[] =>
     posts
         .map<[Post, number]>((p) => [p, relatedTags.reduce((sum, t) => sum + (p.tags.includes(t) ? 1 : 0), 0)])
-        .toSorted(([a, aPoints], [b, bPoints]) => (aPoints === bPoints ? b.id - a.id : bPoints - aPoints))
+        .toSorted(([a, aPoints], [b, bPoints]) =>
+            aPoints === bPoints ? b.publishDate.localeCompare(a.publishDate) || b.id - a.id : bPoints - aPoints
+        )
         .map(([p]) => p)
 
 export const filterExcerptPosts = (posts: Post[], q: ExcerptQuery): Post[] => {
