@@ -111,6 +111,16 @@ describe('sortByRelatedTags', () => {
         const results = sortByRelatedTags(posts, [])
         expect(results.map((p) => p.id)).toEqual([3, 2, 1])
     })
+
+    it('breaks equal-tag ties by publishDate descending before id', () => {
+        // Lower id but later publishDate must sort first — the far-future-post case.
+        const dated = [
+            makePost({ id: 5, publishDate: '2026-01-01', tags: ['kirkkonummi'] }),
+            makePost({ id: 6, publishDate: '2025-01-01', tags: ['kirkkonummi'] }),
+        ]
+        const results = sortByRelatedTags(dated, ['kirkkonummi'])
+        expect(results.map((p) => p.id)).toEqual([5, 6])
+    })
 })
 
 describe('buildAlternatesMap', () => {

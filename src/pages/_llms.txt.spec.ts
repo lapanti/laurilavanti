@@ -145,7 +145,7 @@ describe('buildLlmsTxt — tag sections', () => {
         }
     })
 
-    it('posts within each tag section are sorted newest-first by id', () => {
+    it('posts within each tag section preserve getAllPosts() order (newest-first by publishDate)', () => {
         const sectionChunks = content.split(/\n(?=## )/)
 
         for (const tag of tags) {
