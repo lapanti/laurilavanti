@@ -1,0 +1,50 @@
+---
+lang: 'sv'
+slug: 'kodare-mot-maskin'
+pageTitle: 'Kodare mot maskin: hur jag ändrade mig'
+title: 'Kodare mot maskin'
+description: 'Jag motsatte mig AI i kodandet i åratal – tills jag en helg lät Claude skriva allt. En personlig berättelse om hur ett hantverk blir industri.'
+alt: 'Lauri Lavanti mot mörk bakgrund, klädd i kavaj och en t-shirt med texten digitaalinen itsenäisyys.'
+---
+
+import SmartLink from '../../../components/SmartLink.astro'
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { a: SmartLink, h2: H2, p: Paragraph }
+
+Jag minns exakt det ögonblicket då jag försökte övertyga mig själv om att det här inte betydde någonting.
+
+Hela helgen klickade jag då och då på "Allow". Jag stängde bärbara datorn och gick och lade mig.
+
+## Varför såg jag kodandet som ett hantverk?
+
+Jag har skrivit kod som hobby och yrke i drygt tjugo år nu. Den första gnistan fick jag av min pappa, med vars tjocka HTML-bok jag byggde min första hemsida. Med lärdomarna från en PHP-bok jag lånade på biblioteket gjorde jag en bandsida åt en kompis, där spellistan uppdaterades genom att redigera en textfil. På yrkesskolan klarade jag hela webbsidekursen på en enda helg. Jag hade ju redan i flera år byggt sidor åt band, virtuella kennlar, kompisar.
+
+På Aalto-universitetet lärde jag mig mer om teorierna bakom mjukvaruutveckling än om själva kodandet. Visst minns jag ännu hur det var att koda på papper i C-kursens tenta. Jag har aldrig ansett mig vara den bästa kodaren, snarare en allroundare vars bästa förmåga har varit att fungera som bro mellan tekniken och resten av organisationen. Ändå har jag alltid varit stolt över mina kodningskunskaper.
+
+Den här hantverksidentiteten satt djupt. Jag minns när Ruben Stiller i radion frågade ChatGPT vad Urho Kekkonens hund hette och skrattade åt svaret. Jag skrattade med. En övergående modefluga, tänkte jag. I grund och botten är LLM:er bara [extremt avancerade gissningsmaskiner](/sv/blog/44/ai-kan-inte-allt/). När Copilot lanserades var min reaktion tydlig: tack, men nej tack. Copilot kändes som fusk. Att skriva kod tvingar en att tänka; om verktyget skriver den åt mig har jag bara kopierat kod snabbare.
+
+Jag var högljudd hemma, på jobbet och på nätet om att LLM:er inte "vet" någonting. Jag förde filosofiskt laddade diskussioner om vad kunskap egentligen är. Jag granskade kollegors kod som tydligt var gjord med Copilot, och den var stundtals rent ut sagt usel. Det bekräftade min uppfattning.
+
+## Vad fick mig att ändra åsikt?
+
+Sedan gjorde jag misstaget som ändrade allt: jag tog i bruk verktyget. I höstas installerade jag Copilot i min editor på jobbet, i tron att det bara var ett väldigt avancerat auto suggestion-verktyg, inte mer. Under julledigheten genererade jag med gratisversionen enhetstester till min hemsida. Jag kunde inte låta bli att bli imponerad.
+
+Den egentliga vändpunkten kom när den fria kapaciteten hos CMS-tjänsten jag använde för min sida tog slut, och i en veckas tid syntes bara pixelgröt i stället för bilder. Samtidigt berättade en kompis gång på gång om sina äventyr med Claude. Jag hade redan tidigare funderat på att jag borde flytta texterna från CMS:et till lokala filer, men det hade känts onödigt krångligt. Nu prenumererade jag på Claude och tillbringade mars första helg med att klicka på "Allow". Uppgiften var lätt att definiera men innehöll mycket kodande. Claude kodade alltihop.
+
+Jag såg hur det tuggade sig igenom uppgiften, och något förändrades. Att skriva kod var inte längre den färdighet som allt annat byggde kring. Det handlar om att definiera vad som behöver göras. Det höll jag redan på att luta åt när jag funderade på [kärnan i mjukvaruutveckling](/sv/blog/57/ai-forandrar-vad-utvecklare-far-betalt-for/). Att definiera vad som ska göras har hela tiden haft en kritisk roll i agil mjukvaruutveckling. Ändå brukar varje noggrant definierad funktion kosta flera dagar, om inte veckor, av utvecklarnas arbete. I det ögonblicket förändrades den insikten fullständigt.
+
+Nu är jag den som rekommenderar [de här verktygen](/sv/blog/47/ar-2026-ar-ai-aret/). Jag gör fortfarande själv definitionerna och läser igenom koden. [Kod som genererats av AI](/sv/blog/60/ai-hjalper-till-att-sakra-kommunala-tjanster-men-det-kostar/) ser ofta rätt ut även när den inte är det. Ansvaret försvinner ingenstans: går systemet sönder är det ändå mitt fel. Med tiden har jag ändå upplevt att jag lärt mig bedöma bättre var felen brukar dyka upp, och var jag i regel kan lita på resultatet.
+
+Kent Beck skrev för några år sedan att största delen av de färdigheter där han som människa hade ett övertag nu är värdelösa. Men han skrev samtidigt också att mängden saker som är möjliga för honom har exploderat, och att han nu kan pröva idéer han tidigare inte skulle ha brytt sig om att förverkliga, eftersom det gick för långsamt att experimentera. Själv har jag knappt kodat på fritiden sedan jag började koda för mitt levebröd. Nu är det ändå roligt igen, och jag får konkreta, handgripliga resultat med den lilla tid som blir över för egna projekt efter familjen.
+
+## Var ska morgondagens seniorer växa fram?
+
+Jag har accepterat att koden inte behöver komma från mina egna händer. Det är ändå sorgligt att se hur ett hantverk förvandlas till industriarbete.
+
+Men det finns en fråga jag inte har svar på. Mina egna färdigheter byggdes upp genom att skriva mycket dålig kod, få respons på kvaliteten och tvingas lösa saker jag inte hade en aning om. Juniorer har blivit seniorer genom att jobba, det vill säga genom att misslyckas och rätta till sina fel. Enligt en undersökning av Etla utnyttjar för närvarande bara en liten grupp kunskapsarbetare AI, med andra ord de som redan har tillräckligt med kontext för att bedöma resultaten kritiskt. Men hur ska den kontexten byggas upp i framtiden, om ingen längre skriver felaktig kod själv?
+
+Var befinner du dig just nu? Och om du redan har gått igenom samma process som jag, minns du fortfarande hur det kändes att skriva felaktig kod och få respons på den?
+
+*Lauri Lavanti är ledande programutvecklare och har byggt mjukvara som hobby och yrke i redan ett par decennier. Han har äntligen accepterat att all kod inte behöver komma från hans egna fingrar.*

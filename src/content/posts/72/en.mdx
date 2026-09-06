@@ -1,0 +1,50 @@
+---
+lang: 'en'
+slug: 'coder-vs-machine'
+pageTitle: 'Coder vs Machine: how I changed my mind'
+title: 'Coder vs Machine'
+description: 'I resisted AI coding tools for years – until one weekend I let Claude write all of it. A first-person account of a craft becoming industrial work.'
+alt: 'Lauri Lavanti against a dark background, wearing a blazer over a t-shirt reading digitaalinen itsenäisyys.'
+---
+
+import SmartLink from '../../../components/SmartLink.astro'
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { a: SmartLink, h2: H2, p: Paragraph }
+
+I remember the exact moment I tried to convince myself that none of this meant anything.
+
+All weekend, I kept clicking "Allow" every so often. I closed the laptop and went to bed.
+
+## Why did I treat coding as a craft?
+
+I've written code, for fun and for a living, for twenty-odd years now. My father got me started: his thick HTML book helped me build my first homepage. A library PHP book taught me enough to build a friend's band site, with a gig calendar that updated by editing a text file. At vocational school I finished the entire web course in one weekend, I'd already spent years building sites for bands, virtual kennel clubs, friends.
+
+At Aalto University I learned more software development theory than actual coding. I still remember what it was like to code by hand on paper for the C exam. I've never thought of myself as the best coder, more a generalist whose real skill has been bridging engineering and the rest of the organisation. Still, I've always been proud of my coding skills.
+
+That craftsman identity ran deep. I remember Ruben Stiller asking ChatGPT, on air, for the name of Urho Kekkonen's dog, and laughing at the answer. I laughed too. A passing fad, I thought. At bottom, LLMs are just [very sophisticated guessing machines](/en/blog/44/ai-cannot-do-everything/). When Copilot launched, my reaction was clear: thanks, but no thanks. It felt like cheating. Writing code forces you to think; if a tool writes it for you, you've just copied faster.
+
+I was vocal, at home, at work, online, about how LLMs don't "know" anything, I got into philosophically loaded arguments about what knowledge even is. I reviewed colleagues' code that had obviously been written with Copilot, and some of it was, frankly, awful. It confirmed my view.
+
+## What made me change my mind?
+
+Then I made the mistake that changed everything: I started using it. Last autumn, I installed Copilot in my work editor, telling myself it was just an advanced auto-suggestion tool, nothing more. Over the Christmas holidays, I used the free version to generate unit tests for my homepage. I couldn't help but be impressed.
+
+The real turning point came when the CMS behind my own site ran out of free capacity, and for a week all my images turned to pixel mush. A friend, meanwhile, kept telling me about his adventures with Claude. I'd been meaning to move my writing out of the CMS into local files but it always felt like too much hassle. So I subscribed to Claude and spent the first weekend of March clicking "Allow": an easy task to define, but plenty of code to write. Claude wrote all of it.
+
+I watched it chew through the task, and something shifted. Writing code was no longer the skill everything else was built around. What matters now is defining what needs to be done. I'd already been leaning this way when thinking about [the core of software development](/en/blog/57/ai-changes-what-developers-get-paid-for/). Defining the work has always been critical in agile development. And yet every carefully specified feature usually costs developers several days, if not weeks. In that moment, the whole picture changed completely.
+
+Now I'm the one recommending [these tools](/en/blog/47/2026-is-the-year-of-ai/). I still do the defining myself and read through all the code. [AI-generated code](/en/blog/60/ai-helps-secure-municipal-services-but-it-isnt-free/) often looks right even when it isn't. The responsibility doesn't go anywhere: if the system breaks, it's still my fault. Over time, though, I've felt myself getting better at judging where the errors tend to show up, and where I can trust the output by default.
+
+A few years ago, Kent Beck wrote that most of the skills where he'd had an edge as a human were now worthless. But he also wrote that the range of things now possible for him had exploded, and that he can try ideas he'd never have bothered building before, because experimenting used to be too slow. I hadn't really coded in my free time since I started coding for a living. Now it's fun again, and I get tangible results out of the little time family leaves for my own projects.
+
+## Where will tomorrow's seniors come from?
+
+I've accepted that the code doesn't have to come from my own hands. Still, it's sad to watch a craft turn into industrial work.
+
+But there's one question I can't answer. My own skills were built by writing plenty of bad code, getting feedback on its quality, and solving problems I had no idea how to approach. Juniors become seniors by doing the work: failing, and fixing their own mistakes. Research from Etla shows that only a small group of knowledge workers currently use AI, namely those who already have enough context to judge its output critically. But how will that context keep building, if no one writes flawed code themselves anymore?
+
+Where are you right now in this process? And if you've already been through the same journey I have, do you still remember what it felt like to write flawed code and get feedback on it?
+
+*Lauri Lavanti is a lead developer who has been building software, for fun and for a living, for a couple of decades now. He has finally accepted that not all code has to come from his own fingers.*
