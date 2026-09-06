@@ -94,9 +94,9 @@ Feature: llms.txt AI crawler entry-point map
     And links use the post's url field as the href and title as the label
 
   Scenario: Posts within each tag section are sorted newest-first
-    Given a tag with multiple Finnish posts at different ids
+    Given a tag with multiple Finnish posts at different publishDates
     When the links for that tag in /llms.txt are read in order
-    Then they appear sorted by post id descending (newest first)
+    Then they appear sorted by publishDate descending (newest first), with id as tiebreaker
 
   Scenario: Tag with zero Finnish posts is omitted
     Given a tag that exists in the tags registry
