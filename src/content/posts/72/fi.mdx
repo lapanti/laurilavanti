@@ -1,0 +1,50 @@
+---
+lang: 'fi'
+slug: 'koodari-vastaan-kone'
+pageTitle: 'Koodari vastaan kone: näin muutin mieleni'
+title: 'Koodari vastaan kone'
+description: 'Vastustin tekoälyä koodaamisessa vuosia – kunnes eräänä viikonloppuna annoin Clauden kirjoittaa kaiken. Henkilökohtainen kertomus käsityön muutoksesta.'
+alt: 'Lauri Lavanti tummaa taustaa vasten, yllään bleiseri ja digitaalinen itsenäisyys -paita.'
+---
+
+import SmartLink from '../../../components/SmartLink.astro'
+import H2 from '../../../components/H2.astro'
+import Paragraph from '../../../components/Paragraph.astro'
+
+export const components = { a: SmartLink, h2: H2, p: Paragraph }
+
+Muistan tarkalleen sen hetken, kun yritin vakuuttaa itselleni, ettei tämä tarkoita mitään.
+
+Koko viikonlopun klikkasin silloin tällöin "Allow". Suljin kannettavan ja menin nukkumaan.
+
+## Miksi pidin koodaamista käsityönä?
+
+Olen kirjoittanut koodia huvikseni ja ammatikseni jo reilut kaksikymmentä vuotta. Alkusysäyksen sain isältäni, jonka paksun HTML-kirjan avulla tein ensimmäiset kotisivuni. Kirjastosta lainatun PHP-kirjan opeilla tein kaverini bändisivun niin, että keikkakalenteri päivittyi tekstitiedostoa muokkaamalla. Ammattikoulussa tein koko nettisivu-kurssin yhdessä viikonlopussa, olinhan jo vuosia rakentanut sivuja bändeille, virtuaalikenneleille, kavereille.
+
+Aalto-yliopistossa opin enemmän ohjelmistokehityksen teorioista kuin koodista. Toki muistan yhä millaista oli koodata paperille C-kurssin tentissä. En ole pitänyt itseäni parhaana koodarina, vaan ennemmin yleisosaajana, jonka paras taito on ollut toimia siltana tekniikan ja muun organisaation välillä. Koodaustaidoistani olen silti aina ollut ylpeä.
+
+Tämä käsityö-identiteetti oli syvällä. Muistan, kun Ruben Stiller kysyi radiossa ChatGPT:ltä Urho Kekkosen koiran nimeä ja nauroi vastaukselle. Nauroin mukana. Ohimenevä muoti-ilmiö, ajattelin. Pohjimmiltaan LLM:t ovat vain [äärimmäisen kehittyneitä arvauskoneita](/fi/blog/44/tekoaly-ei-pysty-mihin-tahansa/). Kun Copilot julkaistiin, reaktioni oli selkeä: kiitos, ei kiitos. Copilot tuntui huijaamiselta. Koodin kirjoittaminen pakottaa ajattelemaan; jos työkalu kirjoittaa sen, olen vain kopioinut koodia nopeammin.
+
+Olin äänekäs kotona, töissä ja netissä siitä, etteivät LLM:t "tiedä" mitään – kävin filosofisesti latautuneita väittelyitä siitä, mitä tieto edes on. Katselmoin kollegoiden koodia, joka oli selkeästi tehtyä Copilotilla, ja se oli välillä suoraan sanottuna surkeaa. Se vahvisti näkemystäni.
+
+## Mikä sai minut muuttamaan mieleni?
+
+Sitten tein virheen, joka muutti kaiken: otin sen käyttöön. Viime syksynä asensin töissä Copilotin editoriini, ajatellen sen olevan erittäin kehittynyt auto suggestion -työkalu, ei enempää. Joululomalla generoin ilmaisversiolla yksikkötestejä kotisivulleni. En voinut olla vaikuttumatta.
+
+Varsinainen käänne tuli, kun omilla sivuillani käyttämän CMS-palvelun ilmainen kapasiteetti loppui kesken ja viikon ajan kuvien tilalla oli vain pikselimössöä. Samaan aikaan kaveri kertoi toistuvasti seikkailuistaan Claudella. Olin jo aiemmin miettinyt, että pitäisi siirtää kirjoitukset CMS:stä paikallisiin tiedostoihin, mutta se oli tuntunut turhan vaivalloiselta. Nyt tilasin Clauden ja vietin maaliskuun ensimmäisen viikonlopun klikkaillen "Allow". Tehtävä oli helppo määritellä, mutta sisälsi paljon koodaamista. Claude koodasi sen kaiken.
+
+Katselin, miten se pureskeli tehtävän läpi, ja jokin muuttui. Koodin kirjoittaminen ei ollut enää se taito, jonka ympärille kaikki rakentuu. Kyse on sen määrittelemisestä, mitä pitää tehdä. Tähän olin jo muutenkin kallistumassa, kun pohdin [ohjelmistokehityksen ydintä](/fi/blog/57/tekoaly-ei-korvaa-koodareita-vaan-muuttaa-sen-mista-heille-maksetaan/). Tekemisen määrittely on koko ajan ollut kriittisessä osassa ketterässä ohjelmistokehityksessä. Kuitenkin jokainen huolella määritelty ominaisuus yleensä maksaa useita päiviä, ellei viikkoja, devaajien työtä. Tuossa hetkessä se näkemys muuttui täysin.
+
+Nyt olen se, joka suosittelee [näitä työkaluja](/fi/blog/47/vuosi-2026-on-tekoalyn/). Teen edelleen itse määrittelyt ja luen koodin läpi. [Tekoälyn generoima koodi](/fi/blog/60/tekoaly-auttaa-palvelujen-turvaamisessa-mutta-se-ei-ole-ilmaista/) näyttää usein oikealta myös silloin, kun se ei ole. Vastuu ei siirry mihinkään: jos järjestelmä hajoaa, se on silti minun syyni. Ajan myötä olen kuitenkin kokenut oppivani arvioimaan paremmin missä kohdin virheitä esiintyy, ja missä voin lähtökohtaisesti luottaa tuotoksiin.
+
+Kent Beck kirjoitti muutama vuosi sitten, että valtaosa taidoista, joissa hänellä oli etulyöntiasema ihmisenä, ovat nyt arvottomia. Mutta hän kirjoitti samalla myös, että hänelle mahdollisten asioiden määrä on räjähtänyt, ja nyt hän voi kokeilla ideoita, joita ei ennen olisi vaivautunut toteuttamaan, koska kokeileminen oli liian hidasta. Itsekään en ole juuri vapaa-ajalla koodannut sen jälkeen kun aloin koodata työkseni. Nyt se on kuitenkin jälleen hauskaa ja saan käsin kosketeltavia tuotoksia sillä vähällä ajalla, jota perheen jälkeen omille projekteille jää.
+
+## Mistä tulevaisuuden seniorit kasvavat?
+
+Olen hyväksynyt, että koodin ei tarvitse tulla omista käsistäni. On silti surullista katsella, miten käsityöläisyys muuttuu teollisuustyöksi.
+
+Mutta on yksi kysymys, johon minulla ei ole vastausta. Omat taitoni rakentuivat kirjoittamalla paljon huonoa koodia, saamalla palautetta sen laadusta ja joutumalla ratkaisemaan asioita, joista minulla ei ollut aavistustakaan. Juniorista on tullut seniori tekemällä töitä, eli epäonnistumalla ja korjaamalla virheitään. Etlan tutkimuksen mukaan tekoälyä hyödyntää tällä hetkellä vasta pieni joukko tietotyöläisiä, toisin sanoen ne, joilla on jo riittävästi kontekstia arvioidakseen tuotoksia kriittisesti. Mutta miten se konteksti jatkossa karttuu, jos kukaan ei enää itse kirjoita virheellistä koodia?
+
+Missä vaiheessa sinä olet tällä hetkellä? Ja jos olet jo käynyt läpi saman prosessin kuin minä, muistatko vielä, miltä tuntui kirjoittaa virheellistä koodia ja saada siitä palautetta?
+
+*Lauri Lavanti on johtava ohjelmistokehittäjä, joka on rakentanut ohjelmistoja huvikseen ja työkseen jo parilla vuosikymmenellä. Hän on viimein hyväksynyt, ettei kaiken koodin tarvitse tulla omista sormista.*
