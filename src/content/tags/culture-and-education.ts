@@ -18,6 +18,6 @@ export const cultureAndEducationTag: LocalTag = {
         fi: 'Sivistyksestä ja kulttuuri\u00ADpalveluista',
         sv: 'Bildning, kultur och fritidstjänster',
     },
-    slugs: { en: 'culture-and-education', fi: 'sivistys', sv: 'bildning' },
+    slugs: { en: 'culture-and-education', fi: 'kulttuuri', sv: 'kultur' },
     updatedDate: '2026-05-15',
 }

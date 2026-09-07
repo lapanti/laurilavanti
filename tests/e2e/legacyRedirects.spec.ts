@@ -41,7 +41,7 @@ const kategoriaTagRedirects: Array<[string, string]> = [
     ['/kategoria/opetus/', '/fi/kategoria/opetus/'],
     ['/kategoria/osuuskauppavaalit/', '/fi/kategoria/osuuskauppavaalit/'],
     ['/kategoria/perusturva/', '/fi/kategoria/perusturva/'],
-    ['/kategoria/sivistys/', '/fi/kategoria/sivistys/'],
+    ['/kategoria/sivistys/', '/fi/kategoria/kulttuuri/'],
     ['/kategoria/sosiaalinen-media/', '/fi/kategoria/sosiaalinen-media/'],
     ['/kategoria/soteuudistus/', '/fi/kategoria/sote-uudistus/'],
     ['/kategoria/tasa-arvo-ja-yhdenvertaisuus/', '/fi/kategoria/tasa-arvo/'],
