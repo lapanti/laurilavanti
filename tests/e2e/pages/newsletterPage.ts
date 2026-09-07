@@ -17,7 +17,7 @@ export class NewsletterPage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/fi/newsletter/')
+        await this.page.goto('/fi/uutiskirje/')
 
         await expect(this.pageTitle).toBeVisible()
     }

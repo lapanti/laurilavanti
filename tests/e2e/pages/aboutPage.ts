@@ -15,7 +15,7 @@ export class AboutPage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/fi/about/')
+        await this.page.goto('/fi/laurista/')
 
         // Wait to ensure we are at the correct page
         await expect(this.aboutMeTitle).toBeVisible()
