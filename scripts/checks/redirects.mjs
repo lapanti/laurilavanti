@@ -45,12 +45,16 @@ function err(msg) {
 
 const validRoutes = new Set()
 
-// Static pages
+// Static pages — derived from the per-locale page directories so slug
+// migrations are picked up automatically; '/topics' is a legacy alias kept
+// for old redirect targets.
 validRoutes.add('/')
-const staticPaths = ['', '/about', '/blog', '/contact', '/newsletter', '/privacy-policy', '/recommendations', '/topics']
 for (const lang of LANGS) {
-    for (const path of staticPaths) {
-        validRoutes.add(`/${lang}${path}/`)
+    validRoutes.add(`/${lang}/`)
+    validRoutes.add(`/${lang}/topics/`)
+    const langRoot = join(root, 'src', 'pages', lang)
+    for (const entry of readdirSync(langRoot, { withFileTypes: true })) {
+        if (entry.isDirectory()) validRoutes.add(`/${lang}/${entry.name}/`)
     }
 }
 
