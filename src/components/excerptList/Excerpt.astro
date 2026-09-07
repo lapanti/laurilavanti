@@ -1,7 +1,7 @@
 ---
 import type { Lang } from '../../content/nav'
 
-import { getTagName } from '../../content/tags'
+import { getCategoryPath, getTagName } from '../../content/tags'
 import { colors, typographics } from '../../lib/styles'
 import Banner from './excerpt/Banner.astro'
 import Description from './excerpt/Description.astro'
@@ -131,7 +131,7 @@ const tagsToRender = (tags ?? [])
             <ul class="tags">
                 {tagsToRender.map(({ id, name }) => (
                     <li>
-                        <a href={`/${lang}/category/${id}/`}>{name}</a>
+                        <a href={getCategoryPath(id, lang)}>{name}</a>
                     </li>
                 ))}
             </ul>

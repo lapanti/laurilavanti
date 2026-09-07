@@ -1,7 +1,7 @@
 import type { Lang } from '../../content/nav'
 
 import { sloganContent } from '../../content/slogan'
-import { tags } from '../../content/tags'
+import { getCategoryPath, tags } from '../../content/tags'
 import { getAllPosts } from '../posts'
 import { ogId } from './id'
 
@@ -111,10 +111,14 @@ async function build(): Promise<OgCard[]> {
         })
     }
 
-    // Category / tag pages.
+    // Category / tag pages — og id derives from the canonical (localised) path.
     for (const lang of LANGS) {
         for (const tag of tags) {
-            cards.push({ id: ogId(`${lang}/category/${tag.id}`), lang, title: cleanCardText(tag.pageTitle[lang]) })
+            cards.push({
+                id: ogId(getCategoryPath(tag.id, lang)!.replace(/^\/|\/$/g, '')),
+                lang,
+                title: cleanCardText(tag.pageTitle[lang]),
+            })
         }
     }
 

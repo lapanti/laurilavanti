@@ -6,14 +6,19 @@ import ExcerptList from '../../../components/ExcerptList.astro'
 import Paragraph from '../../../components/Paragraph.astro'
 import Plate from '../../../components/Plate.astro'
 import PostProse from '../../../components/post/PostProse.astro'
-import { tags } from '../../../content/tags'
+import { CATEGORY_SEGMENTS, getCategoryPath, tags } from '../../../content/tags'
 import PageLayout from '../../../layouts/PageLayout.astro'
 import { COLLECTIONPAGE } from '../../../lib/jsonld'
 
 export function getStaticPaths() {
     const langs: Lang[] = ['fi', 'sv', 'en']
 
-    return langs.flatMap((lang) => tags.map((tag) => ({ params: { lang, tag: tag.id }, props: { tag } })))
+    return langs.flatMap((lang) =>
+        tags.map((tag) => ({
+            params: { category: CATEGORY_SEGMENTS[lang], lang, tag: tag.slugs[lang] },
+            props: { tag },
+        }))
+    )
 }
 
 interface Props {
@@ -39,6 +44,12 @@ const relatedPostsHeading: Record<Lang, string> = {
     fi: 'Aiheeseen liittyvät kirjoitukset',
     sv: 'Relaterade inlägg',
 }
+
+const langAlternates = {
+    en: getCategoryPath(tag.id, 'en')!,
+    fi: getCategoryPath(tag.id, 'fi')!,
+    sv: getCategoryPath(tag.id, 'sv')!,
+}
 ---
 
 <PageLayout
@@ -46,10 +57,11 @@ const relatedPostsHeading: Record<Lang, string> = {
     description={metaDescription}
     heroImage={tag.heroImage ?? heroImageFallback}
     lang={lang}
+    langAlternates={langAlternates}
     mobileHeroImage={mobileHeroImageFallback}
     pageTitle={tag.pageTitle[lang]}
     plated
-    slug={`${lang}/category/${tag.id}`}
+    slug={`${lang}/${CATEGORY_SEGMENTS[lang]}/${tag.slugs[lang]}`}
     title={tag.pageTitle[lang]}
     type={COLLECTIONPAGE}
     variant="split"
