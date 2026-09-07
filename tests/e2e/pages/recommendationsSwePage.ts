@@ -15,7 +15,7 @@ export class RecommendationsSwePage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/sv/recommendations/')
+        await this.page.goto('/sv/rekommendationer/')
 
         // Wait to ensure we are at the correct page
         await expect(this.pageTitle).toBeVisible()

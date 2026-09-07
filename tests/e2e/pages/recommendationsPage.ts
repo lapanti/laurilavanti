@@ -15,7 +15,7 @@ export class RecommendationsPage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/fi/recommendations/')
+        await this.page.goto('/fi/suositukset/')
 
         // Wait to ensure we are at the correct page
         await expect(this.pageTitle).toBeVisible()

@@ -27,7 +27,7 @@ export class ContactSwePage extends AnyPage {
     }
 
     async goTo() {
-        await this.page.goto('/sv/contact/')
+        await this.page.goto('/sv/kontakt/')
 
         // Wait to ensure we are at the correct page
         await expect(this.heading).toBeVisible()
