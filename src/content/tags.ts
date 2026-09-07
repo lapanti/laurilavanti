@@ -22,6 +22,7 @@ import { marketgreenTag } from './tags/marketgreen'
 import { municipalElections2025Tag } from './tags/municipal-elections-2025'
 import { nationalPoliticsTag } from './tags/national-politics'
 import { natureTag } from './tags/nature'
+import { parliamentaryElections2027Tag } from './tags/parliamentary-elections-2027'
 import { privacyTag } from './tags/privacy'
 import { regionalElections2022Tag } from './tags/regional-elections-2022'
 import { regionalElections2025Tag } from './tags/regional-elections-2025'
@@ -36,6 +37,7 @@ import { westernUusimaaTag } from './tags/western-uusimaa'
 export type { LocalTag } from './tags/types'
 
 export const tags = [
+    parliamentaryElections2027Tag,
     regionalElections2022Tag,
     regionalElections2025Tag,
     artificialIntelligenceTag,
