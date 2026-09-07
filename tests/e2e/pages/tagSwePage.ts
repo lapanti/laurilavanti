@@ -9,7 +9,7 @@ export class TagSwePage extends AnyPage {
     readonly title: Locator
     readonly articles: Locator
 
-    constructor(page: Page, url = '/sv/category/municipal-elections-2025/') {
+    constructor(page: Page, url = '/sv/kategori/kommunalval-2025/') {
         super(page)
         this.url = url
         this.title = page.getByRole('heading', { level: 1 })
