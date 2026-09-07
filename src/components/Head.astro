@@ -170,6 +170,7 @@ const jsonLd = JSON.stringify(
               '@context': 'https://schema.org',
               '@type': type && JSON_LD_TYPES.includes(type) ? type : WEBSITE,
               author: isArticle ? resolvedAuthors : { '@type': 'Person', name: personName },
+              ...(updatedAt && type !== BLOGPOSTING ? { dateModified: updatedAt } : {}),
               description,
               headline: title,
               license: 'https://creativecommons.org/licenses/by-sa/4.0/',

@@ -21,10 +21,11 @@ type Props = MDXLayoutProps<{
     slug?: string
     title: string
     type?: JsonLdType
+    updatedDate?: string
 }>
 
 const { frontmatter } = Astro.props
-const { alt, description, faq, heroImage, lang, mobileHeroImage, pageTitle, slug, type } = frontmatter
+const { alt, description, faq, heroImage, lang, mobileHeroImage, pageTitle, slug, type, updatedDate } = frontmatter
 
 const ogImage = slug
     ? new URL(`/og/${ogId(slug)}.png`, Astro.site).href
@@ -45,6 +46,7 @@ const slogan = sloganContent[resolvedLang]
     slug={slug}
     title={pageTitle}
     type={type}
+    updatedAt={updatedDate}
 >
     <Fragment slot="head">
         <HeroPreloadLinks heroImage={heroImage} mobileHeroImage={mobileHeroImage} mode="art-directed" />
