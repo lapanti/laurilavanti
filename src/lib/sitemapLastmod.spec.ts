@@ -31,9 +31,9 @@ describe('buildPageDateMap', () => {
     const map = buildPageDateMap({ pagesDir: PAGES_DIR, postsDir: POSTS_DIR, tags })
 
     it('maps a sample of known MDX pages and posts', () => {
-        expect(map.get('/fi/about/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(map.get('/fi/laurista/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
         expect(map.get('/en/blog/1/home-care-allowance-supplement/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
-        expect(map.get('/sv/newsletter/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+        expect(map.get('/sv/nyhetsbrev/')).toMatch(/^\d{4}-\d{2}-\d{2}$/)
     })
 
     it('every map value is a YYYY-MM-DD date', () => {

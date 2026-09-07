@@ -3,7 +3,10 @@ export const redirects: Record<string, string> = {
     '/51/': '/fi/blog/51/digitaalinen-itsenaisyys-on-valttamattomyys/',
     '/51sv/': '/sv/blog/51/digital-sjalvstandighet-ar-en-nodvandighet/',
 
+    // Localised FI/SV static-page slugs (September 2026) — old English-segment URLs
+    '/about/': '/fi/laurista/',
     '/about-me/': '/en/about/',
+
     '/blogi/': '/fi/blog/',
     '/blogi/aanestin-lansiradan-puolesta/': '/fi/blog/46/aanestin-lansiradan-puolesta/',
 
@@ -85,6 +88,7 @@ export const redirects: Record<string, string> = {
     '/blogi/yhdessa-olemme-vahvempia/': '/fi/blog/32/yhdessa-olemme-vahvempia/',
     '/blogi/yksi-askel-eteen-kaksi-taakse/': '/fi/blog/22/yksi-askel-eteen-kaksi-taakse/',
     '/blogi/yksityisyydensuoja/': '/fi/category/privacy/',
+    '/contact/': '/fi/yhteystiedot/',
     // Issue #1077 — wrong-locale slug redirects (Google-indexed 404s)
     '/en/blog/16/uusi-vuosi-tuttu-talvikunnossapito/': '/en/blog/16/new-year-familiar-winter-maintenance/',
     '/en/blog/17/luontomme-on-valttimme-vuodesta-toiseen/': '/en/blog/17/our-nature-is-our-trump-card-year-after-year/',
@@ -121,6 +125,7 @@ export const redirects: Record<string, string> = {
     '/en/category/yksityisyydensuoja/': '/en/category/privacy/',
     // Issue #1288 — topics merged into blog
     '/en/topics/': '/en/blog/',
+    '/fi/about/': '/fi/laurista/',
     '/fi/blog/25/congratulations-finland/': '/fi/blog/25/onnea-suomi/',
     // id 43 fi slug typo fix (puhumma → puhumme)
     '/fi/blog/43/kuka-paattaa-mista-puhumma/': '/fi/blog/43/kuka-paattaa-mista-puhumme/',
@@ -149,6 +154,10 @@ export const redirects: Record<string, string> = {
     '/fi/category/valtuustoaloite/': '/fi/category/council-motion/',
     '/fi/category/varhaiskasvatus/': '/fi/category/early-childhood-education/',
     '/fi/category/yksityisyydensuoja/': '/fi/category/privacy/',
+    '/fi/contact/': '/fi/yhteystiedot/',
+    '/fi/newsletter/': '/fi/uutiskirje/',
+    '/fi/privacy-policy/': '/fi/tietosuoja/',
+    '/fi/recommendations/': '/fi/suositukset/',
     // Issue #1288 — topics merged into blog
     '/fi/topics/': '/fi/blog/',
     '/kategoria/aluevaalit2022/': '/fi/category/regional-elections-2022/',
@@ -179,10 +188,14 @@ export const redirects: Record<string, string> = {
     // Issue #1078 — top-level election campaign page redirects
     '/kommunalvalet-och-valfardsomradesvalet-2025/': '/sv/blog/20/kommun-och-valfardsvalet-2025/',
     '/kuntavaalit-ja-aluevaalit-2025/': '/fi/blog/20/kuntavaalit-ja-aluevaalit-2025/',
-    '/minusta/': '/fi/about/',
+    '/minusta/': '/fi/laurista/',
     '/municipal-elections-and-county-elections-2025/': '/en/blog/20/municipal-and-regional-elections-2025/',
-    '/om-mig/': '/sv/about/',
-    '/ota-yhteytta/': '/fi/contact/',
+    '/newsletter/': '/fi/uutiskirje/',
+    '/om-mig/': '/sv/om-lauri/',
+    '/ota-yhteytta/': '/fi/yhteystiedot/',
+    '/privacy-policy/': '/fi/tietosuoja/',
+    '/recommendations/': '/fi/suositukset/',
+    '/sv/about/': '/sv/om-lauri/',
     // Issue #1077 — wrong-locale slug redirects (Google-indexed 404s)
     '/sv/blog/14/puheilla-muovaamme-todellisuutta/': '/sv/blog/14/med-ord-formar-vi-verkligheten/',
     '/sv/blog/15/kunnan-pitaa-suunnitella-pitkajanteisesti/': '/sv/blog/15/kommunen-maste-planera-langsiktigt/',
@@ -223,6 +236,10 @@ export const redirects: Record<string, string> = {
     '/sv/category/valtuustoaloite/': '/sv/category/council-motion/',
     '/sv/category/varhaiskasvatus/': '/sv/category/early-childhood-education/',
     '/sv/category/yksityisyydensuoja/': '/sv/category/privacy/',
+    '/sv/contact/': '/sv/kontakt/',
+    '/sv/newsletter/': '/sv/nyhetsbrev/',
+    '/sv/privacy-policy/': '/sv/dataskydd/',
+    '/sv/recommendations/': '/sv/rekommendationer/',
     // Issue #1288 — topics merged into blog
     '/sv/topics/': '/sv/blog/',
 }

@@ -104,12 +104,12 @@ describe('buildLlmsTxt — pillar pages section', () => {
         expect(content).toContain('[Aiheet](https://lavanti.fi/fi/blog/)')
     })
 
-    it('links Laurista to /fi/about/ with trailing slash', () => {
-        expect(content).toContain('[Laurista](https://lavanti.fi/fi/about/)')
+    it('links Laurista to /fi/laurista/ with trailing slash', () => {
+        expect(content).toContain('[Laurista](https://lavanti.fi/fi/laurista/)')
     })
 
-    it('links Suositukset to /fi/recommendations/ with trailing slash', () => {
-        expect(content).toContain('[Suositukset](https://lavanti.fi/fi/recommendations/)')
+    it('links Suositukset to /fi/suositukset/ with trailing slash', () => {
+        expect(content).toContain('[Suositukset](https://lavanti.fi/fi/suositukset/)')
     })
 
     it('lists no URL that would round-trip a redirect (all trailing-slash canonical)', () => {

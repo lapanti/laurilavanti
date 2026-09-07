@@ -53,9 +53,9 @@ describe('redirects structural integrity', () => {
     it.each([
         ['/blogi/', '/fi/blog/'],
         ['/about-me/', '/en/about/'],
-        ['/minusta/', '/fi/about/'],
-        ['/ota-yhteytta/', '/fi/contact/'],
-        ['/om-mig/', '/sv/about/'],
+        ['/minusta/', '/fi/laurista/'],
+        ['/ota-yhteytta/', '/fi/yhteystiedot/'],
+        ['/om-mig/', '/sv/om-lauri/'],
         ['/fi/blog/43/kuka-paattaa-mista-puhumma/', '/fi/blog/43/kuka-paattaa-mista-puhumme/'],
         ['/blogi/kuka-paattaa-mista-puhumma/', '/fi/blog/43/kuka-paattaa-mista-puhumme/'],
         ['/en/category/aluevaalit2022/', '/en/category/regional-elections-2022/'],
