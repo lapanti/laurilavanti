@@ -29,10 +29,16 @@ function fmField(content, field) {
     return (m[1] ?? m[2] ?? m[3] ?? '').trim()
 }
 
-// Derive tag IDs from filesystem (src/content/tags/*.ts, excluding types.ts)
-const tagIds = readdirSync(join(root, 'src', 'content', 'tags'))
-    .filter((f) => f.endsWith('.ts') && f !== 'types.ts')
-    .map((f) => f.replace(/\.ts$/, ''))
+// Derive tag IDs and localised slugs from the tag files (src/content/tags/*.ts)
+const CATEGORY_SEGMENTS = { en: 'category', fi: 'kategoria', sv: 'kategori' }
+const tagFiles = readdirSync(join(root, 'src', 'content', 'tags')).filter((f) => f.endsWith('.ts') && f !== 'types.ts')
+const tagIds = tagFiles.map((f) => f.replace(/\.ts$/, ''))
+const tagSlugs = tagFiles.map((f) => {
+    const source = readFileSync(join(root, 'src', 'content', 'tags', f), 'utf-8')
+    const m = /slugs: \{ en: '([^']+)', fi: '([^']+)', sv: '([^']+)' \}/.exec(source)
+    if (!m) throw new Error(`redirects check: no slugs field in ${f}`)
+    return { en: m[1], fi: m[2], sv: m[3] }
+})
 
 let hasError = false
 
@@ -58,10 +64,10 @@ for (const lang of LANGS) {
     }
 }
 
-// Category pages: /{lang}/category/{tag.id}/
-for (const tagId of tagIds) {
+// Category pages: /{lang}/{localised segment}/{localised slug}/
+for (const [i, tagId] of tagIds.entries()) {
     for (const lang of LANGS) {
-        validRoutes.add(`/${lang}/category/${tagId}/`)
+        validRoutes.add(`/${lang}/${CATEGORY_SEGMENTS[lang]}/${tagSlugs[i][lang]}/`)
         validRoutes.add(`/${lang}/topics/${tagId}/`)
     }
 }

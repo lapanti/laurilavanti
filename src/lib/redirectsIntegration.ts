@@ -2,7 +2,24 @@ import type { AstroIntegration } from 'astro'
 
 import { writeFile } from 'node:fs/promises'
 
+import { CATEGORY_SEGMENTS, tags } from '../content/tags'
 import { redirects } from './redirects'
+
+/*
+ * Old English-id category URLs → localised segment + slug (FI/SV only; the EN
+ * path is unchanged because its segment stays `category` and its slug is the
+ * tag id). Generated from the tag registry so new tags are covered
+ * automatically. These exist only in `_redirects` (no meta-refresh stubs), so
+ * under `astro preview` the old URLs 404 — production serves true 301s.
+ */
+const categoryRenames: Record<string, string> = Object.fromEntries(
+    tags.flatMap((tag) =>
+        (['fi', 'sv'] as const).map((lang) => [
+            `/${lang}/category/${tag.id}/`,
+            `/${lang}/${CATEGORY_SEGMENTS[lang]}/${tag.slugs[lang]}/`,
+        ])
+    )
+)
 
 /*
  * Canonical blog-post path: /{lang}/blog/{id}/{slug}/ — the slug segment is what
@@ -83,7 +100,7 @@ export const redirectsFile = (): AstroIntegration => ({
     hooks: {
         'astro:build:done': async ({ pages, dir, logger }) => {
             const lines = buildRedirectLines(
-                redirects,
+                { ...categoryRenames, ...redirects },
                 pages.map((page) => page.pathname)
             )
             await writeFile(new URL('_redirects', dir), `${lines.join('\n')}\n`, 'utf-8')
