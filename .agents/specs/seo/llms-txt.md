@@ -52,15 +52,16 @@ Feature: llms.txt AI crawler entry-point map
   Scenario: Header block matches llmstxt.org v0 spec
     Given the built /llms.txt
     When the file is parsed
-    Then the blockquote reads: "> Lauri Lavanti on kirkkonummelainen poliitikko ja lead developer, joka kirjoittaa teknologiasta, kunnallispolitiikasta ja yhteiskunnasta."
+    Then the blockquote reads: "> Lauri Lavanti on Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä, kirkkonummelainen kunnanvaltuutettu ja johtava ohjelmistokehittäjä, joka kirjoittaa teknologiasta, taloudesta ja yhteiskunnasta."
 
   Scenario: Pillar pages section is present
     Given the built /llms.txt
     When the sections are listed
     Then there is a section "## Tärkeimmät sivut"
     And it contains a markdown link to /fi/ with label "Etusivu"
-    And it contains a markdown link to /fi/topics with label "Aiheet"
-    And it contains a markdown link to /fi/about with label "Laurista"
+    And it contains a markdown link to /fi/blog/ with label "Aiheet"
+    And it contains a markdown link to /fi/about/ with label "Laurista"
+    And it contains a markdown link to /fi/recommendations/ with label "Suositukset"
 
   Scenario: AI tag section appears first among tag sections
     Given the built /llms.txt
@@ -150,3 +151,4 @@ interface LlmsTxtSection {
 | 2026-05-16 | Initial draft — status set to Active, pillar heading and blockquote text confirmed |
 | 2026-05-16 | Fix minor review findings: pinned Content-Type assertion, removed duplicate H1 check, moved empty-tag rule to Contract only, clarified LlmsTxtSection.heading type, pinned Finnish pillar labels, removed double separator |
 | 2026-07-30 | Updated for the posts content-collection migration: `allMdxPosts`/`src/lib/mdxPosts.ts` references replaced with `getAllPosts()`/`src/lib/posts.ts`; the exported function is now `buildLlmsTxt(posts, site)` (pure) with `GET` awaiting `getAllPosts()` |
+| 2026-09-07 | Synced spec to shipped implementation: blockquote is the election-framed bio (eduskuntavaaliehdokas), pillar links are Etusivu `/fi/`, Aiheet `/fi/blog/`, Laurista `/fi/about/`, Suositukset `/fi/recommendations/` |

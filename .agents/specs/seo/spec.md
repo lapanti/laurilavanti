@@ -96,7 +96,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 **Scenario: Home page (Person type) metadata**
 - Given: `src/pages/fi/index.mdx` with `type: 'Person'`, `slug: 'fi'`
 - When: The page is built
-- Then: JSON-LD type is `Person`; `jobTitle` is the Finnish value `'Kansanedustajaehdokas'`; `memberOf` is `Vihreä liitto`; canonical URL is `https://lavanti.fi/fi/`; hreflang for `sv` points to `https://lavanti.fi/sv/`
+- Then: JSON-LD type is `Person`; `jobTitle` is the Finnish value from `personJobTitle` in `src/content/person.ts` (currently `'eduskuntavaaliehdokas, kunnanvaltuutettu ja johtava ohjelmistokehittäjä ja DI'`); `memberOf` is `Vihreä liitto`; canonical URL is `https://lavanti.fi/fi/`; hreflang for `sv` points to `https://lavanti.fi/sv/`
 
 **Scenario: Page without slug**
 - Given: A page rendered without a `slug` prop
@@ -133,7 +133,7 @@ Every page emits structured metadata for search engines and social platforms: JS
 - When: The page is built
 - Then: Two `<script type="application/ld+json">` blocks are emitted — the first with `@type: Person`, the second with `@type: FAQPage`.
 
-**Scenario: Category page (CollectionPage type) metadata**
+**Scenario: Category page (CollectionPage type) metadata** *(FAQPage part planned — `LocalTag` has no `faq` field yet and the category route does not pass one)*
 - Given: A tag category page with `type: 'CollectionPage'`, `heroImage`, `description`, `faq` (2+ entries for the locale)
 - When: The page is built
 - Then: JSON-LD `@type` is `CollectionPage`; base fields (`author`, `description`, `headline`, `url`, `image`) are emitted; `og:type` is `website`; Twitter card is `summary_large_image`; a second JSON-LD block with `@type: FAQPage` is emitted; a visible `<FaqSection>` is rendered in the page body below `<ExcerptList>`.
