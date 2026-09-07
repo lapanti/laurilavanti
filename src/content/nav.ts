@@ -15,6 +15,7 @@ export interface NavLink {
 
 export const navLinks: Record<Lang, NavLink[]> = {
     en: [
+        { href: '/en/elections/', label: 'Elections', title: 'Parliamentary election 2027' },
         { href: '/en/about/', label: 'About Lauri', title: 'About Lauri' },
         { href: '/en/recommendations/', label: 'Endorsements', title: 'Endorsements for Lauri' },
         { href: '/en/blog/', label: 'Writing', title: 'Writing' },
@@ -25,6 +26,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
         { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
     fi: [
+        { href: '/fi/eduskuntavaalit/', label: 'Vaalit', title: 'Eduskuntavaalit 2027' },
         { href: '/fi/about/', label: 'Laurista', title: 'Laurista' },
         { href: '/fi/recommendations/', label: 'Suositukset', title: 'Suosituksia Laurista' },
         { href: '/fi/blog/', label: 'Kirjoitukset', title: 'Kirjoitukset' },
@@ -35,6 +37,7 @@ export const navLinks: Record<Lang, NavLink[]> = {
         { href: '/en/', label: 'EN', switchToLang: 'en', title: 'In English' },
     ],
     sv: [
+        { href: '/sv/riksdagsvalet/', label: 'Valet', title: 'Riksdagsvalet 2027' },
         { href: '/sv/about/', label: 'Om Lauri', title: 'Om Lauri' },
         { href: '/sv/recommendations/', label: 'Rekommendationer', title: 'Rekommendationer om Lauri' },
         { href: '/sv/blog/', label: 'Inlägg', title: 'Inlägg' },
