@@ -2,7 +2,7 @@ import type { Lang } from './nav'
 
 import { getImage } from '../lib/images'
 
-export const PERSON_ID = 'https://lavanti.fi/fi/about/#person'
+export const PERSON_ID = 'https://lavanti.fi/fi/laurista/#person'
 
 export const personBlueskyHandle = 'lauri.lavanti.fi'
 export const personThreadsHandle = 'laurilavanti'

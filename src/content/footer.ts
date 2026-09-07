@@ -57,3 +57,9 @@ export const footerPrivacyPolicyLabel: Record<Lang, string> = {
     fi: 'Tietosuojaseloste',
     sv: 'Integritetspolicy',
 }
+
+export const footerPrivacyPolicyHref: Record<Lang, string> = {
+    en: '/en/privacy-policy/',
+    fi: '/fi/tietosuoja/',
+    sv: '/sv/dataskydd/',
+}

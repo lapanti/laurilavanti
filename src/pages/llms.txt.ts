@@ -11,8 +11,8 @@ const PILLAR_LINKS = [
     { label: 'Etusivu', url: '/fi/' },
     { label: 'Eduskuntavaalit 2027', url: '/fi/eduskuntavaalit/' },
     { label: 'Aiheet', url: '/fi/blog/' },
-    { label: 'Laurista', url: '/fi/about/' },
-    { label: 'Suositukset', url: '/fi/recommendations/' },
+    { label: 'Laurista', url: '/fi/laurista/' },
+    { label: 'Suositukset', url: '/fi/suositukset/' },
 ]
 
 export const buildLlmsTxt = (posts: Post[], site: URL): string => {

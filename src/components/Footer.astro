@@ -8,6 +8,7 @@ import {
     footerLinks,
     footerLogoAlt,
     footerMediaLabel,
+    footerPrivacyPolicyHref,
     footerPrivacyPolicyLabel,
     footerRssAriaLabel,
 } from '../content/footer'
@@ -205,7 +206,7 @@ const licenseText: Record<Lang, string> = {
                     <ul>
                         <li><a href={`mailto:${personEmail}`}>{personEmail}</a></li>
                         <li><a href={`/${lang}/media/`}>{footerMediaLabel[lang]}</a></li>
-                        <li><a href={`/${lang}/privacy-policy/`}>{footerPrivacyPolicyLabel[lang]}</a></li>
+                        <li><a href={footerPrivacyPolicyHref[lang]}>{footerPrivacyPolicyLabel[lang]}</a></li>
                     </ul>
                 </div>
                 <div class="party">
