@@ -59,7 +59,7 @@ describe('redirects structural integrity', () => {
         ['/fi/blog/43/kuka-paattaa-mista-puhumma/', '/fi/blog/43/kuka-paattaa-mista-puhumme/'],
         ['/blogi/kuka-paattaa-mista-puhumma/', '/fi/blog/43/kuka-paattaa-mista-puhumme/'],
         ['/en/category/aluevaalit2022/', '/en/category/regional-elections-2022/'],
-        ['/sv/category/aluevaalit2022/', '/sv/category/regional-elections-2022/'],
+        ['/sv/category/aluevaalit2022/', '/sv/kategori/regionval-2022/'],
     ] as [string, string][])('%s → %s', (from, to) => {
         expect(redirects[from]).toBe(to)
     })
