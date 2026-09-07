@@ -10,6 +10,9 @@ import { BlogSwePage } from './pages/blogSwePage'
 import { ContactEnPage } from './pages/contactEnPage'
 import { ContactPage } from './pages/contactPage'
 import { ContactSwePage } from './pages/contactSwePage'
+import { ElectionEnPage } from './pages/electionEnPage'
+import { ElectionPage } from './pages/electionPage'
+import { ElectionSwePage } from './pages/electionSwePage'
 import { HomeEnPage } from './pages/homeEnPage'
 import { HomePage } from './pages/homePage'
 import { HomeSwePage } from './pages/homeSwePage'
@@ -93,6 +96,24 @@ test.describe('Horizontal scroll on mobile', () => {
 
     test('blog post (sv)', async ({ page }) => {
         const p = new BlogPostPage(page, '/sv/blog/10/sote-ar-valfardssallets-hordsten/')
+        await p.goTo()
+        await p.checkNoHorizontalScroll()
+    })
+
+    test('election page (fi)', async ({ page }) => {
+        const p = new ElectionPage(page)
+        await p.goTo()
+        await p.checkNoHorizontalScroll()
+    })
+
+    test('election page (en)', async ({ page }) => {
+        const p = new ElectionEnPage(page)
+        await p.goTo()
+        await p.checkNoHorizontalScroll()
+    })
+
+    test('election page (sv)', async ({ page }) => {
+        const p = new ElectionSwePage(page)
         await p.goTo()
         await p.checkNoHorizontalScroll()
     })
