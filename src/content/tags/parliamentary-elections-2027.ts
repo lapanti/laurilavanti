@@ -27,5 +27,6 @@ export const parliamentaryElections2027Tag: LocalTag = {
         fi: 'Eduskunta­vaalit 2027 – ehdolla Uudellamaalla',
         sv: 'Riksdagsvalet 2027 – kandidat i Nyland',
     },
+    slugs: { en: 'parliamentary-elections-2027', fi: 'eduskuntavaalit-2027', sv: 'riksdagsvalet-2027' },
     updatedDate: '2026-09-07',
 }
