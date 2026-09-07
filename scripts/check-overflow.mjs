@@ -100,6 +100,19 @@ export const HERO_GEOMETRIES = [
 
 export const TOPIC_GEOMETRIES = [{ availPx: 464, fontPx: 88, label: 'topic heading ≥1200px' }]
 
+/*
+ * Plate-style h2 headings (Plate/Pillar/Faq `heading=` props, PlateHeading,
+ * uppercase): the binding constraint is mobile — 375px viewport minus 2 ×
+ * 1.5rem `--pad-x` at 48px base size gives 327px, but the glyph estimator
+ * runs ~1–2% wide for some letter mixes, so availPx carries a calibrated
+ * buffer: "KONKURRENSKRAFT" (331px estimate, renders without overflow per
+ * the sv about-page horizontal-scroll e2e) must pass while
+ * "EDUSKUNTAVAALEISSA" (370px estimate, real overflow at 375px) must fail.
+ * Tablet (689px at 80px) and desktop (1088px at 108px displayPillar) allow
+ * strictly longer segments, so any segment that fits mobile fits everywhere.
+ */
+export const PLATE_HEADING_GEOMETRIES = [{ availPx: 345, fontPx: 48, label: 'plate heading ≤768px' }]
+
 // Worst overflow across geometries for each segment of a value, or [] if fine.
 export function findOverflows(value, geometries) {
     const failures = []
@@ -128,6 +141,14 @@ export function extractMdxFields(src) {
 
     const titleM = block.match(/^title:\s*['"](.+?)['"]\s*$/m)
     if (titleM) results.push({ field: 'title', geometries: HERO_GEOMETRIES, value: titleM[1] })
+
+    // Component `heading=` props in the body render as uppercase PlateHeading h2s
+    const body = src.slice(fm[0].length)
+    const headingRe = /heading=(?:"([^"]*)"|'([^']*)')/g
+    let m
+    while ((m = headingRe.exec(body)) !== null) {
+        results.push({ field: 'heading', geometries: PLATE_HEADING_GEOMETRIES, value: m[1] ?? m[2] })
+    }
 
     return results
 }

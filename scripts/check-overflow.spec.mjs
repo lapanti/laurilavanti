@@ -2,9 +2,11 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
 import {
+    extractMdxFields,
     extractTagFields,
     findOverflows,
     HERO_GEOMETRIES,
+    PLATE_HEADING_GEOMETRIES,
     segmentWidthPx,
     TOPIC_GEOMETRIES,
     toSegments,
@@ -63,6 +65,45 @@ describe('findOverflows', () => {
 
     it('checks hero geometries without false positives on a long real title', () => {
         expect(findOverflows('Aluevaalit 2025', HERO_GEOMETRIES)).toEqual([])
+    })
+
+    it('flags the unhyphenated election-page heading against the plate geometry', () => {
+        const failures = findOverflows('Miten äänestän eduskuntavaaleissa 2027?', PLATE_HEADING_GEOMETRIES)
+        expect(failures).toHaveLength(1)
+        expect(failures[0].segment).toBe('eduskuntavaaleissa')
+    })
+
+    it('passes the same heading once soft-hyphenated', () => {
+        expect(findOverflows('Miten äänestän eduskunta­vaaleissa 2027?', PLATE_HEADING_GEOMETRIES)).toEqual([])
+    })
+
+    it('passes the calibration case that renders without overflow', () => {
+        // "konkurrenskraft" estimates 331px but does not overflow at 375px —
+        // the sv about-page horizontal-scroll e2e is the ground truth.
+        expect(
+            findOverflows('En teknologiexpert som förenar konkurrenskraft och integritets­skydd', PLATE_HEADING_GEOMETRIES)
+        ).toEqual([])
+    })
+})
+
+describe('extractMdxFields', () => {
+    it('extracts the frontmatter title and body heading props', () => {
+        const src = [
+            '---',
+            "title: 'Ehdolla'",
+            '---',
+            '',
+            '<Plate eyebrow="Vaalit" heading="Eduskuntavaalit 2027 lyhyesti" id="lyhyesti">',
+            "<Faq heading='Usein kysyttyä' />",
+            '</Plate>',
+        ].join('\n')
+        const fields = extractMdxFields(src)
+        expect(fields.map((f) => [f.field, f.value])).toEqual([
+            ['title', 'Ehdolla'],
+            ['heading', 'Eduskuntavaalit 2027 lyhyesti'],
+            ['heading', 'Usein kysyttyä'],
+        ])
+        expect(fields[1].geometries).toBe(PLATE_HEADING_GEOMETRIES)
     })
 })
 
