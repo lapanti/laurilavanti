@@ -11,6 +11,7 @@ import { earlyChildhoodEducationTag } from './tags/early-childhood-education'
 import { economyTag } from './tags/economy'
 import { educationTag } from './tags/education'
 import { enlightenmentTag } from './tags/enlightenment'
+import { entrepreneurshipTag } from './tags/entrepreneurship'
 import { equalityAndNonDiscriminationTag } from './tags/equality-and-non-discrimination'
 import { freedomTag } from './tags/freedom'
 import { greenPartyTag } from './tags/green-party'
@@ -42,6 +43,7 @@ export const tags = [
     regionalElections2025Tag,
     artificialIntelligenceTag,
     economyTag,
+    entrepreneurshipTag,
     marketgreenTag,
     enlightenmentTag,
     freedomTag,
