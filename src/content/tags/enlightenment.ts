@@ -30,5 +30,6 @@ export const enlightenmentTag: LocalTag = {
         fi: 'Sivistys saumattomaksi tekoälyn aikana',
         sv: 'Sömlös bildning i AI-erans Finland',
     },
+    slugs: { en: 'enlightenment', fi: 'oppiminen', sv: 'larande' },
     updatedDate: '2026-05-15',
 }

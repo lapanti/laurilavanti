@@ -18,5 +18,6 @@ export const immigrationTag: LocalTag = {
         fi: 'Maahanmuutto – faktat ja politiikka',
         sv: 'Immigration och integrations\u00ADpolitik',
     },
+    slugs: { en: 'immigration', fi: 'maahanmuutto', sv: 'invandring' },
     updatedDate: '2026-05-15',
 }

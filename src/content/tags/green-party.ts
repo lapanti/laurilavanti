@@ -27,5 +27,6 @@ export const greenPartyTag: LocalTag = {
         fi: 'Vihreää politiikkaa — sisältä käsin',
         sv: 'Grön politik — sedd inifrån partiet',
     },
+    slugs: { en: 'green-party', fi: 'vihreat', sv: 'de-grona' },
     updatedDate: '2026-05-20',
 }

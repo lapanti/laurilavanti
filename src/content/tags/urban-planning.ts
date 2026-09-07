@@ -18,5 +18,6 @@ export const urbanPlanningTag: LocalTag = {
         fi: 'Kaavoitus ja maankäytön suunnittelu',
         sv: 'Planläggning och mark\u00ADanvändnings\u00ADpolitik',
     },
+    slugs: { en: 'urban-planning', fi: 'kaavoitus', sv: 'planlaggning' },
     updatedDate: '2026-05-15',
 }

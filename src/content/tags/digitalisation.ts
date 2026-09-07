@@ -30,5 +30,6 @@ export const digitalisationTag: LocalTag = {
         fi: 'Digitalisaatio – IT ja tietopolitiikka',
         sv: 'Digitalisering – IT och in\u00ADformations\u00ADpolitik',
     },
+    slugs: { en: 'digitalisation', fi: 'digitalisaatio', sv: 'digitalisering' },
     updatedDate: '2026-05-15',
 }

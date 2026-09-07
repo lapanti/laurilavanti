@@ -30,5 +30,6 @@ export const educationTag: LocalTag = {
         fi: 'Opetuksesta ja koulutus\u00ADpolitiikasta',
         sv: 'Om utbildning och utbildnings\u00ADpolitik',
     },
+    slugs: { en: 'education', fi: 'opetus', sv: 'utbildning' },
     updatedDate: '2026-05-15',
 }

@@ -18,5 +18,6 @@ export const councilMotionTag: LocalTag = {
         fi: 'Valtuustoaloite – Kirkkonummen valtuusto',
         sv: 'Full\u00ADmäktige\u00ADinitiativ – kommun\u00ADfull\u00ADmäktige',
     },
+    slugs: { en: 'council-motion', fi: 'valtuustoaloite', sv: 'fullmaktigeinitiativ' },
     updatedDate: '2026-05-15',
 }

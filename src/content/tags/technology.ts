@@ -30,5 +30,6 @@ export const technologyTag: LocalTag = {
         fi: 'Teknologia yhteiskunnassa ja politiikassa',
         sv: 'Teknologi i samhälle och politiken',
     },
+    slugs: { en: 'technology', fi: 'teknologia', sv: 'teknologi' },
     updatedDate: '2026-05-15',
 }

@@ -6,5 +6,7 @@ export interface LocalTag {
     metaDescription: { en: string; fi: string; sv: string }
     names: { en: string; fi: string; sv: string }
     pageTitle: { en: string; fi: string; sv: string }
+    /** Per-locale URL slug for the category page — ids stay English, slugs localise. */
+    slugs: { en: string; fi: string; sv: string }
     updatedDate: string
 }

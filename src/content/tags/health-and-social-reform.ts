@@ -22,5 +22,6 @@ export const healthAndSocialReformTag: LocalTag = {
         fi: 'Sote-uudistus – hyvinvointi\u00ADalueiden',
         sv: 'Vård- och servicereform – väl\u00ADfärds\u00ADområder',
     },
+    slugs: { en: 'health-and-social-reform', fi: 'sote-uudistus', sv: 'vard-och-servicereform' },
     updatedDate: '2026-05-15',
 }
