@@ -42,10 +42,11 @@ describe('buildPageDateMap', () => {
         }
     })
 
-    it('maps every tag under all three locale category URLs', () => {
+    it('maps every tag under all three localised category URLs', () => {
+        const segments = { en: 'category', fi: 'kategoria', sv: 'kategori' }
         for (const tag of tags) {
             for (const lang of ['fi', 'sv', 'en']) {
-                const url = `/${lang}/category/${tag.id}/`
+                const url = `/${lang}/${segments[lang]}/${tag.slugs[lang]}/`
                 expect(map.get(url)).toBe(tag.updatedDate)
             }
         }

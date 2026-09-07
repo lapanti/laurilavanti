@@ -124,8 +124,8 @@ describe('<Excerpt />', () => {
             text: a.textContent,
         }))
         expect(chips).toEqual([
-            { href: '/fi/category/artificial-intelligence/', text: 'Tekoäly' },
-            { href: '/fi/category/economy/', text: 'Talous' },
+            { href: '/fi/kategoria/tekoaly/', text: 'Tekoäly' },
+            { href: '/fi/kategoria/talous/', text: 'Talous' },
         ])
     })
 

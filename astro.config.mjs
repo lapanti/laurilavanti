@@ -60,8 +60,9 @@ export default defineConfig({
                 new URL(page).pathname !== '/' &&
                 // Exclude bare /{lang}/blog/{id}/ redirect pages
                 !/\/(en|fi|sv)\/blog\/\d+\/$/.test(page) &&
-                // Exclude old /kategoria/ redirect pages
-                !/\/kategoria\//.test(page),
+                // Exclude old root-level /kategoria/ redirect pages (the localised
+                // FI category pages live under /fi/kategoria/ and must stay included)
+                !new URL(page).pathname.startsWith('/kategoria/'),
             serialize: (item) => {
                 const path = decodeURIComponent(new URL(item.url).pathname)
                 const date = pageDateMap.get(path)

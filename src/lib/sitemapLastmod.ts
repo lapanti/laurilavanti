@@ -29,8 +29,11 @@ const mdxPathToUrl = (pagesDir: string, mdxPath: string): string => {
     return rel.replace(/\/index\.mdx$/, '/')
 }
 
+const CATEGORY_SEGMENTS = { en: 'category', fi: 'kategoria', sv: 'kategori' } as const
+
 interface TagWithDate {
     id: string
+    slugs: { en: string; fi: string; sv: string }
     updatedDate: string
 }
 
@@ -112,7 +115,7 @@ export const buildPageDateMap = ({ pagesDir, postsDir, tags }: BuildPageDateMapI
 
     for (const lang of LANGS) {
         for (const tag of tags) {
-            map.set(`/${lang}/category/${tag.id}/`, tag.updatedDate)
+            map.set(`/${lang}/${CATEGORY_SEGMENTS[lang]}/${tag.slugs[lang]}/`, tag.updatedDate)
         }
     }
 
