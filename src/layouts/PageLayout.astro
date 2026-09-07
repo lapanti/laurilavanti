@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../content/nav'
-import type { BreadcrumbItem, JsonLdType } from '../lib/jsonld'
+import type { BreadcrumbItem, FaqItem, JsonLdType } from '../lib/jsonld'
 
 import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import Stripe from '../components/Stripe.astro'
@@ -19,9 +19,11 @@ interface Props {
     description?: string
     emphasis?: string
     eyebrow?: string
+    faq?: Array<FaqItem>
     heroImage?: string
     intro?: string
     lang?: Lang
+    langAlternates?: Record<Lang, string>
     mobileHeroImage?: string
     noindex?: boolean
     pageTitle: string
@@ -31,6 +33,7 @@ interface Props {
     title: string
     type?: JsonLdType
     updatedAt?: string
+    updatedDate?: string
     variant?: 'page' | 'split'
 }
 
@@ -45,9 +48,11 @@ const {
     description,
     emphasis,
     eyebrow,
+    faq,
     heroImage,
     intro,
     lang,
+    langAlternates,
     mobileHeroImage,
     noindex,
     pageTitle,
@@ -57,6 +62,7 @@ const {
     title,
     type,
     updatedAt,
+    updatedDate,
     variant = 'page',
 } = props
 
@@ -81,8 +87,10 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     breadcrumbs={breadcrumbs}
     createdAt={createdAt}
     description={description}
+    faq={faq}
     headerVariant={variant === 'split' ? 'hero' : 'solid'}
     lang={lang}
+    langAlternates={langAlternates}
     noindex={noindex}
     ogImage={ogImage}
     ogImageAlt="Lauri Lavanti"
@@ -90,7 +98,7 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     slug={slug}
     title={pageTitle}
     type={type}
-    updatedAt={updatedAt}
+    updatedAt={updatedAt ?? updatedDate}
 >
     <Fragment slot="head">
         <HeroPreloadLinks
