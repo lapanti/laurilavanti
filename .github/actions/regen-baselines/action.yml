@@ -81,10 +81,12 @@ runs:
       id: changed
       shell: bash
       run: |
-        if git diff --quiet -- tests; then
+        # git diff is blind to newly created (untracked) snapshot files —
+        # porcelain status covers both modifications and additions.
+        if [ -z "$(git status --porcelain -- tests)" ]; then
           echo "Baselines already match CI rendering."
           echo "changed=false" >> "$GITHUB_OUTPUT"
         else
-          git diff --stat -- tests
+          git status --short -- tests
           echo "changed=true" >> "$GITHUB_OUTPUT"
         fi
