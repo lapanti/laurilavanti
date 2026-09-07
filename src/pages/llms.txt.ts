@@ -9,6 +9,7 @@ const AI_TAG = 'artificial-intelligence'
 /* Canonical URLs only (trailingSlash: 'always') — a listed URL must never round-trip a redirect. */
 const PILLAR_LINKS = [
     { label: 'Etusivu', url: '/fi/' },
+    { label: 'Eduskuntavaalit 2027', url: '/fi/eduskuntavaalit/' },
     { label: 'Aiheet', url: '/fi/blog/' },
     { label: 'Laurista', url: '/fi/about/' },
     { label: 'Suositukset', url: '/fi/recommendations/' },
