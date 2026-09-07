@@ -18,5 +18,6 @@ export const infrastructureTag: LocalTag = {
         fi: 'Infra\u00ADstruktuuri ja kunnallis\u00ADtekniikka',
         sv: 'Infrastruktur – byggande och kommunal\u00ADteknik',
     },
+    slugs: { en: 'infrastructure', fi: 'infra', sv: 'infrastruktur' },
     updatedDate: '2026-05-15',
 }

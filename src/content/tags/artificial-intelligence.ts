@@ -30,5 +30,6 @@ export const artificialIntelligenceTag: LocalTag = {
         fi: 'Tekoäly – hyödyistä, haitoista, politiikasta',
         sv: 'Artificiell intelligens – nyttor och skador',
     },
+    slugs: { en: 'artificial-intelligence', fi: 'tekoaly', sv: 'artificiell-intelligens' },
     updatedDate: '2026-05-15',
 }

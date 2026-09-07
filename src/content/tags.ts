@@ -75,3 +75,13 @@ export const tags = [
 export function getTagName(id: string, lang: Lang = 'fi'): string | undefined {
     return tags.find((t) => t.id === id)?.names[lang]
 }
+
+/** Localised category-page segment per locale. */
+export const CATEGORY_SEGMENTS: Record<Lang, string> = { en: 'category', fi: 'kategoria', sv: 'kategori' }
+
+/** Canonical category-page path for a tag in a locale, e.g. /fi/kategoria/tekoaly/. */
+export function getCategoryPath(id: string, lang: Lang): string | undefined {
+    const tag = tags.find((t) => t.id === id)
+
+    return tag ? `/${lang}/${CATEGORY_SEGMENTS[lang]}/${tag.slugs[lang]}/` : undefined
+}

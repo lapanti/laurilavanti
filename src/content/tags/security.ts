@@ -27,5 +27,6 @@ export const securityTag: LocalTag = {
         fi: 'Turvallisuus­politiikka ja varautu­minen',
         sv: 'Säkerhets­politik och beredskap i Finland',
     },
+    slugs: { en: 'security', fi: 'turvallisuus', sv: 'sakerhet' },
     updatedDate: '2026-08-31',
 }

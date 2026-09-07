@@ -18,5 +18,6 @@ export const natureTag: LocalTag = {
         fi: 'Luonto ja ympäristö Kirkko\u00ADnummella',
         sv: 'Natur, miljö och klimat i Kyrkslätt',
     },
+    slugs: { en: 'nature', fi: 'luonto', sv: 'natur' },
     updatedDate: '2026-05-15',
 }

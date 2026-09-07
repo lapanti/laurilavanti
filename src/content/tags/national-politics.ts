@@ -27,5 +27,6 @@ export const nationalPoliticsTag: LocalTag = {
         fi: 'Kansallinen politiikka paikallisen silmin',
         sv: 'Nationell politik ur ett lokalt perspektiv',
     },
+    slugs: { en: 'national-politics', fi: 'kansallinen-politiikka', sv: 'nationell-politik' },
     updatedDate: '2026-05-20',
 }

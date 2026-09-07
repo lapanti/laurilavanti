@@ -18,5 +18,6 @@ export const transportationTag: LocalTag = {
         fi: 'Joukkoliikenne ja kestävä liikkuminen',
         sv: 'Kollektivtrafik och hållbar rörlighet',
     },
+    slugs: { en: 'transportation', fi: 'liikenne', sv: 'trafik' },
     updatedDate: '2026-05-15',
 }

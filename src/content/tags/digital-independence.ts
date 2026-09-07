@@ -30,5 +30,6 @@ export const digitalIndependenceTag: LocalTag = {
         fi: 'Digitaalinen itsenäisyys sekä huoltovarmuus',
         sv: 'Digital själv\u00ADständighet och resiliens',
     },
+    slugs: { en: 'digital-independence', fi: 'digitaalinen-itsenaisyys', sv: 'digital-sjalvstandighet' },
     updatedDate: '2026-07-06',
 }

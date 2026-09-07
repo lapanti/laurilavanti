@@ -18,5 +18,6 @@ export const regionalElections2025Tag: LocalTag = {
         fi: 'Aluevaalit 2025 – hyvinvointi\u00ADalue\u00ADvaalit',
         sv: 'Regionval 2025 – val till väl\u00ADfärds\u00ADområdet',
     },
+    slugs: { en: 'regional-elections-2025', fi: 'aluevaalit-2025', sv: 'regionval-2025' },
     updatedDate: '2026-05-15',
 }

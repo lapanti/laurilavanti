@@ -18,5 +18,6 @@ export const earlyChildhoodEducationTag: LocalTag = {
         fi: 'Varhais\u00ADkasvatus – lasten oppiminen ja hoito',
         sv: 'Små\u00ADbarns\u00ADpedagogik – lärande och omsorg',
     },
+    slugs: { en: 'early-childhood-education', fi: 'varhaiskasvatus', sv: 'smabarnspedagogik' },
     updatedDate: '2026-05-15',
 }

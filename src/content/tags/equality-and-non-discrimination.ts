@@ -30,5 +30,6 @@ export const equalityAndNonDiscriminationTag: LocalTag = {
         fi: 'Tasa-arvosta ja yhden\u00ADvertaisuu\u00ADdesta',
         sv: 'Om jämlikhet och icke-diskriminering',
     },
+    slugs: { en: 'equality-and-non-discrimination', fi: 'tasa-arvo', sv: 'jamlikhet' },
     updatedDate: '2026-05-15',
 }

@@ -18,5 +18,6 @@ export const regionalElections2022Tag: LocalTag = {
         fi: 'Aluevaalit 2022 – Länsi-Uusimaan alue',
         sv: 'Regionval 2022 – Västra Nylands val',
     },
+    slugs: { en: 'regional-elections-2022', fi: 'aluevaalit-2022', sv: 'regionval-2022' },
     updatedDate: '2026-04-28',
 }

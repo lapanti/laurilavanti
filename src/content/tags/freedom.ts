@@ -30,5 +30,6 @@ export const freedomTag: LocalTag = {
         fi: 'Vapaus varmaksi tekoälyn aikakaudella',
         sv: 'Frihet som tryggas i AI-erans Finland',
     },
+    slugs: { en: 'freedom', fi: 'vapaus', sv: 'frihet' },
     updatedDate: '2026-05-15',
 }

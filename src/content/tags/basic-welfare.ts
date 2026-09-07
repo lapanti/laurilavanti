@@ -18,5 +18,6 @@ export const basicWelfareTag: LocalTag = {
         fi: 'Perusturvasta ja sosiaali\u00ADturvasta arjessa',
         sv: 'Om grundläggande trygghet och socialskydd',
     },
+    slugs: { en: 'basic-welfare', fi: 'perusturva', sv: 'grundtrygghet' },
     updatedDate: '2026-05-15',
 }

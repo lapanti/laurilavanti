@@ -18,5 +18,6 @@ export const westRailwayTag: LocalTag = {
         fi: 'Länsirata – Pohjois-Kirkkonummen ratayhteys',
         sv: 'Västbanan – järnvägen till Kyrkslätt',
     },
+    slugs: { en: 'west-railway', fi: 'lansirata', sv: 'vastbanan' },
     updatedDate: '2026-05-15',
 }
