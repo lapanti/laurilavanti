@@ -1,0 +1,132 @@
+---
+layout: '../../../layouts/PageLayout.astro'
+lang: en
+pageTitle: 'Parliamentary election 2027 in Uusimaa'
+title: 'Running'
+emphasis: 'for parliament'
+intro: "Lauri Lavanti is the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 Finnish parliamentary election. Election day is Sunday 18 April 2027, with advance voting in Finland on 7–13 April."
+description: "Lauri Lavanti is the Greens' parliamentary candidate in Uusimaa. Election day is 18 April 2027 — themes: the economy, education, and freedom in the age of AI."
+slug: 'en/elections'
+updatedDate: '2026-09-07'
+type: 'WebPage'
+heroImage: Lauri-Lavanti-dipolissa-lasijulkisivun-edessa-hero-pysty
+mobileHeroImage: Lauri-Lavanti-dipolissa-lasijulkisivun-edessa-hero-vaaka
+alt: 'Lauri Lavanti stands in front of a glass wall, wearing a dark blazer and a patterned shirt. Photo: Markus Isomeri.'
+plated: true
+variant: 'split'
+langAlternates:
+    en: '/en/elections/'
+    fi: '/fi/eduskuntavaalit/'
+    sv: '/sv/riksdagsvalet/'
+faq:
+    - q: 'In which electoral district is Lauri Lavanti running in the 2027 parliamentary election?'
+      a: "Lauri Lavanti is the Greens' candidate in the Uusimaa electoral district. The district covers the municipalities of Uusimaa apart from Helsinki — for example Kirkkonummi, Espoo, and Vantaa. Only voters registered in the Uusimaa district can vote for him."
+    - q: 'When is the 2027 Finnish parliamentary election held?'
+      a: 'Election day is Sunday 18 April 2027. Advance voting takes place in Finland on 7–13 April and abroad on 7–10 April 2027.'
+    - q: "What are Lauri Lavanti's themes in the 2027 parliamentary election?"
+      a: 'The campaign rests on three pillars: the economy, education, and freedom. Together they form the goal of a digitally independent Finland that uses AI and technology on its own terms — so that no one is left behind.'
+    - q: "What is Lauri Lavanti's candidate number?"
+      a: 'Candidate numbers are assigned when the candidate lists are confirmed on 18 March 2027. The number will be updated on this page as soon as it is confirmed.'
+    - q: 'Can I vote for Lauri Lavanti in advance?'
+      a: 'Yes. Advance voting runs in Finland on 7–13 April 2027, and you can vote in advance at any general advance polling station. On election day, 18 April 2027, you vote at your assigned polling station, stated in your notice of the right to vote.'
+    - q: "How can I support Lauri Lavanti's campaign?"
+      a: 'You can support the campaign by subscribing to the newsletter, sharing the posts, and discussing the campaign themes. You can also get in touch directly through the contact page.'
+---
+
+import Eyebrow from '../../../components/Eyebrow.astro'
+import FactsList from '../../../components/FactsList.astro'
+import Faq from '../../../components/frontPage/Faq.astro'
+import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
+import Pillar from '../../../components/frontPage/Pillar.astro'
+import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
+import Plate from '../../../components/Plate.astro'
+import Prose from '../../../components/Prose.astro'
+
+<Plate eyebrow="The election" ground="offWhite" heading="The 2027 parliamentary election in brief" id="inbrief">
+    <FactsList
+        items={[
+            'Election day is Sunday 18 April 2027.',
+            'Advance voting in Finland on 7–13 April 2027 and abroad on 7–10 April 2027.',
+            "Lauri Lavanti is the Greens' candidate in the Uusimaa electoral district.",
+            'Uusimaa elects more members of parliament than any other district in Finland.',
+            'Candidate numbers are confirmed on 18 March 2027.',
+            'Campaign themes: the economy, education, and freedom — together, digital independence.',
+        ]}
+    />
+</Plate>
+
+<Plate ground="sand">
+    <Eyebrow>Why</Eyebrow>
+    <Prose>
+        <p>Finland needs to secure its digital independence in the age of AI — that is why I am running. I bring to parliament more than ten years of hands-on experience building secure software and banking services, and an MSc in technology from Aalto University. I wrote more about it in <a href="/en/blog/67/my-candidacy-for-parliament/">my candidacy announcement</a>.</p>
+        <p>I am also one of the founders of the Digital Independence citizens' initiative. In July 2026 it gathered the 50,000 signatures required for parliamentary consideration and goes before parliament in spring 2027. You can find more about my background on the <a href="/en/about/">About Lauri</a> page and among the <a href="/en/recommendations/">endorsements</a>.</p>
+    </Prose>
+</Plate>
+
+<Pillar
+    eyebrow="Pillar one"
+    heading="How does the economy work in the age of AI?"
+    id="economy"
+    tone="oat"
+    vocab={[
+        { href: '/en/category/economy/', label: 'Economy' },
+        { href: '/en/category/artificial-intelligence/', label: 'AI' },
+        { href: '/en/category/digital-independence/', label: 'Digital independence' },
+    ]}
+    reads={[
+        { href: '/en/blog/65/finland-can-turn-electrification-into-a-competitive-edge/', label: 'Finland Can Turn Electrification Into a Competitive Edge' },
+        { href: '/en/blog/62/greens-the-true-defenders-of-the-market-economy/', label: 'Greens – The True Defenders of the Market Economy' },
+    ]}
+>
+    <p class="answer" slot="answer">The economy works in the age of AI only if Finland builds its own expertise instead of merely buying technology from outside. I demand that public AI and digital procurement be open and portable, so vendor dependency does not drain tax money year after year.</p>
+    <p class="detail" slot="detail">Parliament decides on procurement, data infrastructure, and the rules of working life. Those decisions need people who know the technology in practice — otherwise we buy solutions without understanding what we are buying.</p>
+</Pillar>
+
+<Pillar
+    eyebrow="Pillar two"
+    heading="How does education stay available to everyone?"
+    tone="peach"
+    vocab={[
+        { href: '/en/category/education/', label: 'Education' },
+        { href: '/en/category/culture-and-education/', label: 'Culture' },
+        { href: '/en/category/equality-and-non-discrimination/', label: 'Equality' },
+    ]}
+    reads={[
+        { href: '/en/blog/60/ai-helps-secure-municipal-services-but-it-isnt-free/', label: 'AI helps secure municipal services, but it is not free' },
+        { href: "/en/blog/37/education-is-the-municipalitys-most-important-task/", label: "Education is the municipality's most important task" },
+    ]}
+>
+    <p class="answer" slot="answer">Education stays available to everyone when skills can be built at every stage of life — from early childhood education to vocational training and universities. In the age of AI, education is infrastructure, not a line item.</p>
+    <p class="detail" slot="detail">I especially emphasise the role of libraries: they offer free knowledge and skills without harvesting user data. That makes them essential guardians of equality in the age of AI.</p>
+</Pillar>
+
+<Pillar
+    eyebrow="Pillar three"
+    heading="How is freedom secured in the age of AI?"
+    tone="aqua"
+    vocab={[
+        { href: '/en/category/privacy/', label: 'Privacy' },
+        { href: '/en/category/freedom/', label: 'Fundamental rights' },
+        { href: '/en/category/technology/', label: 'Technology' },
+    ]}
+    reads={[
+        { href: '/en/blog/54/chat-control-parliament-was-right/', label: 'Chat control: parliament was right' },
+        { href: '/en/blog/48/the-use-of-biometric-identifiers-in-passports-must-not-be-expanded/', label: 'The use of biometric identifiers in passports must not be expanded' },
+    ]}
+>
+    <p class="answer" slot="answer">Freedom is secured by making fundamental rights the starting point of all legislation. AI makes mass surveillance technically easy and cheap — which is exactly why privacy protection must be defended with particular care.</p>
+    <p class="detail" slot="detail">Without strong privacy protection, democracy cannot function. I have built software in regulated industries and know that privacy does not protect itself: it is protected by laws and by people who understand the technology.</p>
+</Pillar>
+
+<Plate eyebrow="Voting" ground="offWhite" heading="How do I vote in the 2027 parliamentary election?">
+    <Prose>
+        <p>You can vote in advance at any general advance polling station in Finland on 7–13 April 2027. On election day, Sunday 18 April, you vote at your assigned polling station, stated in the notice of the right to vote sent by post or via the Suomi.fi service. Full details are available from the <a href="https://vaalit.fi/en/frontpage">Ministry of Justice election service vaalit.fi</a>.</p>
+        <p>Voters registered in the Uusimaa electoral district can vote for Lauri Lavanti. To inform your decision, read the <a href="/en/blog/">posts</a> and subscribe to the newsletter below.</p>
+    </Prose>
+</Plate>
+
+<Faq eyebrow="Q & A" faq={frontmatter.faq} heading="Frequently asked questions about the election" />
+
+<NewsletterPlate>
+    <NewsletterSubscribe lang="en" />
+</NewsletterPlate>
