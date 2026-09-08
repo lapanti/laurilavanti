@@ -52,17 +52,26 @@ const VENV_PYTHON = path.join(REPO_ROOT, '.venv-matting', 'bin', 'python')
 const SAND = '#EAE4D6'
 /** Solid deepForest header band colour the mobile top edge must blend into. */
 const DEEP_FOREST = '#163E35'
-/** Desktop background duotone ramp: shadows → highlights, both dark forest. */
-const RAMP_DARK = '#121a15'
+/**
+ * Desktop background duotone ramp: shadows → highlights, both dark forest. The
+ * shadow floor sits well above black so the top zone can't crush to a menacing
+ * near-black over dark source backgrounds — it lands near the front-page
+ * reference's ~24% wordmark-zone lightness while staying a legibility backdrop
+ * for the white overhanging nav wordmark.
+ */
+const RAMP_DARK = '#232d27'
 const RAMP_LIGHT = '#35443c'
 /** How much of the original background shows through the desktop grade (%). */
 const ORIGINAL_BLEND_PCT = 10
 /**
  * Extra darkening of the desktop background's top area — the wordmark zone
- * needs the reference's ~23% lightness even over bright source backgrounds.
- * Multiply gradient from this gray at y=0 to white at TOP_DARKEN_STOP height.
+ * needs the reference's ~24% lightness for the white overhanging nav wordmark.
+ * A gentle multiply (near-white) so it nudges the top rather than crushing it:
+ * over these dark concrete-wall sources a strong multiply (the original gray55)
+ * drove the zone to ~10% (near-black, "menacing"); the ramp floor now sets the
+ * tone and this only trims highlights.
  */
-const TOP_DARKEN_GRAY = 'gray55'
+const TOP_DARKEN_GRAY = 'gray88'
 /**
  * The desktop grade is top-only: full strength from y=0 down to GRADE_HOLD of
  * the canvas height (covers the wordmark zone), then fades out by GRADE_STOP —
@@ -75,6 +84,15 @@ const PYSTY_W = 1170
 const PYSTY_H = 2240
 const VAAKA_W = 800
 const VAAKA_H = 480
+
+/**
+ * Desktop output slug suffix. Bumped from `-hero-pysty` to `-hero-pysty-v2` when
+ * the top grade was softened (see RAMP_DARK / TOP_DARKEN_GRAY) — the treated
+ * asset ships to Cloudflare Images by slug, so a new slug lets the corrected
+ * pixels deploy additively (POST-only, no cache purge) and revert via git. The
+ * mobile band keeps `-hero-vaaka` (its wash is unchanged).
+ */
+const PYSTY_SLUG_SUFFIX = '-hero-pysty-v2'
 
 interface DesktopConfig {
     /** Horizontal shift of the shared bg+subject layer, px (negative = left). */
@@ -149,7 +167,7 @@ interface PhotoConfig {
  */
 const PHOTOS: PhotoConfig[] = [
     {
-        bgTone: { blue: 0.98, brightness: 50, red: 1.0, saturation: 58 },
+        bgTone: { blue: 0.98, brightness: 78, red: 1.0, saturation: 58 },
         desktop: { dx: -517, dy: 315, scale: 1.83 },
         id: 'dipoli-mietteliaana',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana',
@@ -159,7 +177,7 @@ const PHOTOS: PhotoConfig[] = [
         mobile: { cropX: 83, cropY: 81, scale: 0.66, washStop: 0.55 },
     },
     {
-        bgTone: { blue: 0.97, brightness: 70, red: 1.01, saturation: 75 },
+        bgTone: { blue: 0.97, brightness: 90, red: 1.01, saturation: 75 },
         desktop: { dx: -570, dy: 132, scale: 1.91 },
         id: 'dipoli-katse-kameraan',
         outBase: 'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan',
@@ -173,7 +191,7 @@ const PHOTOS: PhotoConfig[] = [
      * the hero framing without synthetic background fill (see placeVaaka).
      */
     {
-        bgTone: { blue: 0.93, brightness: 135, red: 1.02, saturation: 80 },
+        bgTone: { blue: 0.93, brightness: 120, red: 1.02, saturation: 80 },
         /* Desktop uses the high-res nelio — the koko-vartalo crop's laptop
          * corner forces the subject too far left; the nelio keeps the laptop
          * below the frame at near-native scale. */
@@ -318,7 +336,7 @@ function generateDesktop(photo: PhotoConfig, tmpDir: string): string {
     const bg = path.join(tmpDir, 'bg.png')
     const bgGraded = path.join(tmpDir, 'bg-graded.png')
     const subj = path.join(tmpDir, 'subj.png')
-    const out = path.join(ORIGINALS_DIR, `${photo.outBase}-hero-pysty.jpg`)
+    const out = path.join(ORIGINALS_DIR, `${photo.outBase}${PYSTY_SLUG_SUFFIX}.jpg`)
 
     fillMatteHoles(matte, cut)
     if (photo.subjectTone) magick([cut, ...toneArgs(photo.subjectTone), cut])
