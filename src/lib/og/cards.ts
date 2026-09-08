@@ -26,9 +26,9 @@ export interface OgCard {
  * The treated heroes share one face metric, so a single objectPosition works for all.
  */
 const HERO_PORTRAITS: Record<string, string> = {
-    'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-hero-pysty': 'portrait-katse-kameraan.jpg',
-    'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-hero-pysty': 'portrait-mietteliaana.jpg',
-    'Lauri-Lavanti-tyoskentelee-portailla-hero-pysty': 'portrait-portailla.jpg',
+    'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-hero-pysty-v2': 'portrait-katse-kameraan.jpg',
+    'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-hero-pysty-v2': 'portrait-mietteliaana.jpg',
+    'Lauri-Lavanti-tyoskentelee-portailla-hero-pysty-v2': 'portrait-portailla.jpg',
 }
 
 const LANGS: Lang[] = ['fi', 'sv', 'en']
