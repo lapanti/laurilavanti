@@ -155,7 +155,7 @@ describe('<Byline />', () => {
                 },
             })
 
-            expect(result.querySelector('em')?.textContent).toContain('(på svenska)')
+            expect(result.querySelector('em')?.textContent).toContain('(ruotsiksi)')
         })
 
         it('renders no suffix when the publication lang matches the page lang', async () => {
@@ -191,7 +191,7 @@ describe('<Byline />', () => {
                 },
             })
 
-            expect(result.querySelector('em')?.textContent).toContain('(suomeksi)')
+            expect(result.querySelector('em')?.textContent).toContain('(in Finnish)')
         })
     })
 })

@@ -23,14 +23,26 @@ const publicationPrefix: Record<Lang, string> = {
 
 const localeMap: Record<Lang, string> = { en: 'en-GB', fi: 'fi-FI', sv: 'sv-SE' }
 
-export const languageName: Record<Lang, string> = { en: 'in English', fi: 'suomeksi', sv: 'på svenska' }
+/**
+ * How a linked article's language is named, in the language of the page doing the
+ * linking: `languageNameIn[pageLang][publicationLang]`. Naming it in its own language
+ * ("(suomeksi)" on an English page) would drop a foreign word into an otherwise
+ * English sentence, and a screen reader on a `lang="en"` page would pronounce it with
+ * English phonetics. Same-language pairs are never rendered — the suffix is omitted
+ * when the two match — but they are filled in so the map is total.
+ */
+export const languageNameIn: Record<Lang, Record<Lang, string>> = {
+    en: { en: 'in English', fi: 'in Finnish', sv: 'in Swedish' },
+    fi: { en: 'englanniksi', fi: 'suomeksi', sv: 'ruotsiksi' },
+    sv: { en: 'på engelska', fi: 'på finska', sv: 'på svenska' },
+}
 
 export const formatPublicationDate = (date: string, lang: Lang): string =>
     new Intl.DateTimeFormat(localeMap[lang], { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(date))
 
 export const buildPublicationBylineText = (pub: ExternalPublication, lang: Lang): string => {
     const pubLang = pub.lang ?? 'fi'
-    const suffix = pubLang !== lang ? ` (${languageName[pubLang]})` : ''
+    const suffix = pubLang !== lang ? ` (${languageNameIn[lang][pubLang]})` : ''
 
     return `${publicationPrefix[lang]}: ${pub.name}, ${formatPublicationDate(pub.date, lang)}${suffix}.`
 }

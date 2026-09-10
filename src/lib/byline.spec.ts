@@ -148,7 +148,7 @@ describe('buildPublicationBylineText', () => {
 
     it('appends a language suffix when the publication lang differs from the page lang', () => {
         expect(buildPublicationBylineText({ date: '2025-03-15', lang: 'sv', name: 'HBL' }, 'fi')).toBe(
-            'Julkaistu myös: HBL, 15. maaliskuuta 2025 (på svenska).'
+            'Julkaistu myös: HBL, 15. maaliskuuta 2025 (ruotsiksi).'
         )
     })
 
@@ -166,7 +166,14 @@ describe('buildPublicationBylineText', () => {
 
     it('defaults an unset lang to fi, adding the suffix on non-fi pages', () => {
         expect(buildPublicationBylineText({ date: '2025-03-15', name: 'Kauppalehti' }, 'en')).toBe(
-            'Also published in: Kauppalehti, 15 March 2025 (suomeksi).'
+            'Also published in: Kauppalehti, 15 March 2025 (in Finnish).'
         )
+    })
+
+    it('names the publication language in the reader language, not its own', () => {
+        const pub = { date: '2025-03-15', lang: 'sv', name: 'HBL' } as const
+
+        expect(buildPublicationBylineText(pub, 'en')).toContain('(in Swedish)')
+        expect(buildPublicationBylineText(pub, 'fi')).toContain('(ruotsiksi)')
     })
 })
