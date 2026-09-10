@@ -12,9 +12,10 @@ export interface GalleryPhoto {
 
 /**
  * Media gallery: photos of Lauri Lavanti cleared for download under CC BY-SA 4.0 —
- * see the LICENSE file and the /media page. Most are Markus Isomeri's 2026
- * photoshoot, each offered in three aspect crops (neliö 1:1, pysty portrait, vaaka
- * landscape); the 2026 campaign studio portraits are single pysty frames instead.
+ * see the LICENSE file and the /media page. The three-crop entries (neliö 1:1, pysty
+ * portrait, vaaka landscape) come from Markus Isomeri's 2026 photoshoot and the
+ * uncredited 2026 outdoor set; the 2026 campaign studio portraits are single pysty
+ * frames instead.
  */
 export const galleryPhotos: GalleryPhoto[] = [
     {
@@ -86,6 +87,58 @@ export const galleryPhotos: GalleryPhoto[] = [
         },
         id: 'portailla',
         photographer: 'Markus Isomeri',
+    },
+    {
+        alt: {
+            en: 'Lauri Lavanti standing on a lawn in front of apartment buildings with his hands in his pockets, wearing a navy blazer, a floral shirt and light chinos.',
+            fi: 'Lauri Lavanti seisoo nurmikolla kerrostalojen edessä kädet taskuissa, yllään tummansininen pikkutakki, kukkakuvioinen paita ja vaaleat housut.',
+            sv: 'Lauri Lavanti står på en gräsmatta framför flervåningshus med händerna i fickorna, klädd i en marinblå kavaj, en blommig skjorta och ljusa byxor.',
+        },
+        crops: {
+            nelio: 'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-nelio',
+            pysty: 'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-pysty',
+            vaaka: 'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-vaaka',
+        },
+        id: 'kerrostalopiha-kadet-taskuissa',
+    },
+    {
+        alt: {
+            en: 'Lauri Lavanti looking into the camera in a half-length portrait in a residential courtyard, with a lawn and passers-by behind him.',
+            fi: 'Lauri Lavanti katsoo kameraan puolilähikuvassa kerrostalopihalla, taustalla nurmikkoa ja ohikulkijoita.',
+            sv: 'Lauri Lavanti tittar in i kameran i en halvbild på en bostadsgård, med gräsmatta och förbipasserande i bakgrunden.',
+        },
+        crops: {
+            nelio: 'Lauri-Lavanti-kerrostalopihalla-lahikuva-nelio',
+            pysty: 'Lauri-Lavanti-kerrostalopihalla-lahikuva-pysty',
+            vaaka: 'Lauri-Lavanti-kerrostalopihalla-lahikuva-vaaka',
+        },
+        id: 'kerrostalopiha-lahikuva',
+    },
+    {
+        alt: {
+            en: 'Lauri Lavanti leaning against a granite wall with his arms crossed, looking upwards, wearing a navy blazer and a floral shirt.',
+            fi: 'Lauri Lavanti nojaa graniittimuuriin kädet puuskassa ja katsoo ylöspäin, yllään tummansininen pikkutakki ja kukkakuvioinen paita.',
+            sv: 'Lauri Lavanti lutar sig mot en granitmur med armarna i kors och blickar uppåt, klädd i en marinblå kavaj och en blommig skjorta.',
+        },
+        crops: {
+            nelio: 'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa-nelio',
+            pysty: 'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa-pysty',
+            vaaka: 'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa-vaaka',
+        },
+        id: 'graniittimuuri-kadet-puuskassa',
+    },
+    {
+        alt: {
+            en: 'Lauri Lavanti leaning against a granite wall with one hand in his pocket, looking into the camera, wearing a navy blazer, a floral shirt and light chinos.',
+            fi: 'Lauri Lavanti nojaa graniittimuuriin toinen käsi taskussa ja katsoo kameraan, yllään tummansininen pikkutakki, kukkakuvioinen paita ja vaaleat housut.',
+            sv: 'Lauri Lavanti lutar sig mot en granitmur med ena handen i fickan och tittar in i kameran, klädd i en marinblå kavaj, en blommig skjorta och ljusa byxor.',
+        },
+        crops: {
+            nelio: 'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa-nelio',
+            pysty: 'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa-pysty',
+            vaaka: 'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa-vaaka',
+        },
+        id: 'graniittimuuri-kasi-taskussa',
     },
     {
         alt: {
