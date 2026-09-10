@@ -158,12 +158,21 @@ interface PhotoConfig {
 }
 
 /*
- * Per-photo tuning. Framing is solved from measured eye-line / chin landmarks
- * so all sub-page heroes share one face metric: desktop eye-to-chin ≈ 220px
- * with the eye line at y ≈ 1020; mobile eye-to-chin ≈ 73px with the eye line
- * at y ≈ 97 (the user-approved mietteliaana framing is the anchor). Horizontal
- * placement is gaze-aware within the right-edge constraint (subject may only
- * be cut by the bottom and left frame edges).
+ * Per-photo tuning. Framing is solved from measured landmarks so all sub-page
+ * heroes share one face metric. The numbers below are measured off the finished
+ * assets rather than asserted — eye line and jaw-bottom, because the jaw is the
+ * landmark that stays identifiable across a tilted-back gaze:
+ *
+ *   desktop (1170×2240): eye line y ≈ 1017, eye-to-jaw ≈ 334
+ *   mobile  (800×480):   eye line y ≈ 202,  eye-to-jaw ≈ 118
+ *   face centre x on the desktop canvas ≈ 450–495
+ *
+ * To place a new photo: scale = 334 / eye-to-jaw in the source, then
+ * dy = 1017 − eye_y × scale (mobile: scale = 118 / eye-to-jaw,
+ * cropY = eye_y × scale − 202).
+ *
+ * Horizontal placement is gaze-aware within the right-edge constraint (subject
+ * may only be cut by the bottom and left frame edges).
  */
 const PHOTOS: PhotoConfig[] = [
     {
@@ -204,11 +213,9 @@ const PHOTOS: PhotoConfig[] = [
         mobile: { cropX: 155, cropY: 0, scale: 0.713, washStop: 0.45 },
     },
     /*
-     * The 2026 outdoor set. Measured against the three photos above rather than
-     * the header's nominal numbers: on the finished heroes the eye line sits at
-     * y ≈ 1017 with eye-to-jaw ≈ 334 (desktop) and y ≈ 202 with eye-to-jaw ≈ 118
-     * (mobile). Both crops take the full 3:2 frame as their source — a portrait
-     * crop would cost placePysty the horizontal room it needs to keep dx ≤ 0.
+     * The 2026 outdoor set. Both crops take the full 3:2 frame as their source —
+     * a portrait crop would cost placePysty the horizontal room it needs to keep
+     * dx ≤ 0.
      */
     {
         bgTone: { blue: 0.96, brightness: 84, red: 1.02, saturation: 60 },
