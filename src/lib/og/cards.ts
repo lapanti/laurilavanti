@@ -25,9 +25,13 @@ export interface OgCard {
  * posts, categories, pages sharing the front-page hero) keeps the default portrait.
  * The treated heroes share one face metric, so a single objectPosition works for all.
  */
-const HERO_PORTRAITS: Record<string, string> = {
+export const HERO_PORTRAITS: Record<string, string> = {
     'Lauri-Lavanti-dipolissa-kivimuurin-edessa-katse-kameraan-hero-pysty-v2': 'portrait-katse-kameraan.jpg',
     'Lauri-Lavanti-dipolissa-kivimuurin-edessa-mietteliaana-hero-pysty-v2': 'portrait-mietteliaana.jpg',
+    'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa-hero-pysty-v2': 'portrait-graniittimuuri-kadet-puuskassa.jpg',
+    'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa-hero-pysty-v2': 'portrait-graniittimuuri-kasi-taskussa.jpg',
+    'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-hero-pysty-v2': 'portrait-kerrostalopiha-kadet-taskuissa.jpg',
+    'Lauri-Lavanti-kerrostalopihalla-lahikuva-hero-pysty-v2': 'portrait-kerrostalopiha-lahikuva.jpg',
     'Lauri-Lavanti-tyoskentelee-portailla-hero-pysty-v2': 'portrait-portailla.jpg',
 }
 
