@@ -203,6 +203,56 @@ const PHOTOS: PhotoConfig[] = [
         vaakaSource: 'Lauri-Lavanti-tyoskentelee-portailla-vaaka',
         mobile: { cropX: 155, cropY: 0, scale: 0.713, washStop: 0.45 },
     },
+    /*
+     * The 2026 outdoor set. Measured against the three photos above rather than
+     * the header's nominal numbers: on the finished heroes the eye line sits at
+     * y ≈ 1017 with eye-to-jaw ≈ 334 (desktop) and y ≈ 202 with eye-to-jaw ≈ 118
+     * (mobile). Both crops take the full 3:2 frame as their source — a portrait
+     * crop would cost placePysty the horizontal room it needs to keep dx ≤ 0.
+     */
+    {
+        bgTone: { blue: 0.96, brightness: 84, red: 1.02, saturation: 60 },
+        desktop: { dx: -1765, dy: -28, scale: 1.713 },
+        id: 'kerrostalopiha-kadet-taskuissa',
+        outBase: 'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa',
+        pystySource: 'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-vaaka',
+        subjectTone: { blue: 0.91, brightness: 98, red: 1.06, saturation: 110 },
+        vaakaSource: 'Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-vaaka',
+        mobile: { cropX: 407, cropY: 167, scale: 0.605, washStop: 0.5 },
+    },
+    {
+        /* The tightest frame of the set: the source reaches the canvas bottom
+         * with only ~19px to spare, so scale is not free to drop any further. */
+        bgTone: { blue: 0.96, brightness: 86, red: 1.02, saturation: 62 },
+        desktop: { dx: -1019, dy: 83, scale: 1.088 },
+        id: 'kerrostalopiha-lahikuva',
+        outBase: 'Lauri-Lavanti-kerrostalopihalla-lahikuva',
+        pystySource: 'Lauri-Lavanti-kerrostalopihalla-lahikuva-vaaka',
+        subjectTone: { blue: 0.91, brightness: 98, red: 1.06, saturation: 110 },
+        vaakaSource: 'Lauri-Lavanti-kerrostalopihalla-lahikuva-vaaka',
+        mobile: { cropX: 129, cropY: 128, scale: 0.384, washStop: 0.45 },
+    },
+    {
+        /* Grey granite, so bgTone warms rather than cools the backdrop. */
+        bgTone: { blue: 0.95, brightness: 95, red: 1.03, saturation: 66 },
+        desktop: { dx: -1233, dy: 270, scale: 1.215 },
+        id: 'graniittimuuri-kadet-puuskassa',
+        outBase: 'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa',
+        pystySource: 'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa-vaaka',
+        subjectTone: { blue: 0.91, brightness: 98, red: 1.06, saturation: 110 },
+        vaakaSource: 'Lauri-Lavanti-graniittimuurin-edessa-kadet-puuskassa-vaaka',
+        mobile: { cropX: 205, cropY: 62, scale: 0.429, washStop: 0.5 },
+    },
+    {
+        bgTone: { blue: 0.95, brightness: 95, red: 1.03, saturation: 66 },
+        desktop: { dx: -1609, dy: 199, scale: 1.67 },
+        id: 'graniittimuuri-kasi-taskussa',
+        outBase: 'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa',
+        pystySource: 'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa-vaaka',
+        subjectTone: { blue: 0.91, brightness: 98, red: 1.06, saturation: 110 },
+        vaakaSource: 'Lauri-Lavanti-graniittimuurin-edessa-kasi-taskussa-vaaka',
+        mobile: { cropX: 346, cropY: 87, scale: 0.59, washStop: 0.5 },
+    },
 ]
 
 function run(cmd: string, args: string[]): void {
