@@ -147,6 +147,8 @@ Manual steps:
 
 Posts are considered stale under two rules: **Case A** — `publishDate` is more than 90 days ago and the post has no `updatedDate` (this is also a hard CI error enforced by `scripts/checks/mdx-deep.ts`); **Case B** — `updatedDate` is more than 180 days ago. Run `npm run check:freshness` to audit locally. A weekly GitHub Actions workflow (`freshness.yml`) runs the same audit and opens or updates a single tracking issue ("Freshness audit: stale posts") listing posts that need a refresh.
 
+Separately, **changing a page or post requires bumping its `updatedDate`** — the field feeds schema.org `dateModified` and the sitemap `lastmod`, so a stale value misreports when the content was last revised. `scripts/checks/updated-date.ts` enforces this from the `commit-msg` hook and again in CI against the PR's merge base. The unit is the page, or the whole post directory (the fi/sv/en siblings share one `meta.json`). For an edit that changes nothing a reader or crawler would notice, put `[skip-updated-date]` in the commit message. Run `npm run check:updated-date` to check staged changes by hand.
+
 ---
 
 ## Scheduled Publishing
