@@ -192,7 +192,7 @@ Feature: Canonical Person JSON-LD entity
     When the page is rendered
     Then the JSON-LD contains @type: 'WebSite'
     And the JSON-LD contains name: 'Lauri Lavanti'
-    And the JSON-LD contains sameAs with all 9 URLs (7 social + Wikipedia + Wikidata)
+    And the JSON-LD contains sameAs with all 10 URLs (8 social + Wikipedia + Wikidata)
 
   # ── Co-authored posts migration ──────────────────────────────────────────────
 

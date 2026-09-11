@@ -31,6 +31,7 @@ export const personSameAs = [
     'https://mastodon.social/@laurilavanti',
     'https://www.threads.com/@laurilavanti',
     'https://www.tiktok.com/@laurilavanti',
+    'https://www.youtube.com/@laurilavanti',
     'https://fi.wikipedia.org/wiki/Lauri_Lavanti',
     'https://www.wikidata.org/wiki/Q139711658',
 ]
