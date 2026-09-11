@@ -145,6 +145,7 @@ describe('<Link />', () => {
         ['fa7-brands:threads'],
         ['fa7-brands:tiktok'],
         ['fa7-solid:rss'],
+        ['fa7-brands:youtube'],
     ])('should support icon for %s', async (icon) => {
         const result = await renderAstroComponent(Link, {
             props: {

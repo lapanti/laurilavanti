@@ -138,6 +138,7 @@ export const colors = {
     threads: 'rgb(0, 0, 0)' as const,
     transparent: 'transparent' as const,
     white: 'rgb(255, 255, 255)' as const,
+    youtube: '#FF0000' as const,
 } as const
 
 /** Colors end */
