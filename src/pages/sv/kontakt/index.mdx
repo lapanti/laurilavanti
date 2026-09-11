@@ -26,6 +26,7 @@ import Lede from '../../../components/Lede.astro'
 import NewsletterPlate from '../../../components/frontPage/NewsletterPlate.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
 import Plate from '../../../components/Plate.astro'
+import { socialChips } from '../../../content/social'
 
 <Plate eyebrow="Direktast" ground="offWhite" heading="Var når du mig?">
     <Lede>
@@ -40,17 +41,7 @@ import Plate from '../../../components/Plate.astro'
 <Plate eyebrow="Annanstans" ground="sand" heading="Sociala medier">
     <Chips
         ariaLabel="Lauris konton i sociala medier"
-        items={[
-            { href: 'https://mastodon.social/@laurilavanti', label: 'Mastodon' },
-            { href: 'https://bsky.app/profile/lauri.lavanti.fi', label: 'Bluesky' },
-            { href: 'https://www.threads.com/@laurilavanti', label: 'Threads' },
-            { href: 'https://www.youtube.com/@laurilavanti', label: 'YouTube' },
-            { href: 'https://www.linkedin.com/in/laurilavanti', label: 'LinkedIn' },
-            { href: 'https://www.instagram.com/laurilavanti/', label: 'Instagram' },
-            { href: 'https://www.facebook.com/laurilavanti', label: 'Facebook' },
-            { href: 'https://www.tiktok.com/@laurilavanti', label: 'TikTok' },
-            { href: '/sv/rss.xml', label: 'RSS-flöde' },
-        ]}
+        items={[...socialChips, { href: '/sv/rss.xml', label: 'RSS-flöde' }]}
     />
 </Plate>
 
