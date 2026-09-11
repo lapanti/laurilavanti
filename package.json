@@ -23,6 +23,7 @@
     "check:dist-crawl": "node --experimental-strip-types scripts/checks/dist-crawl.ts dist",
     "check:freshness": "node --experimental-strip-types scripts/checks/freshness.ts $(find src/pages -name '*.mdx') $(find src/content/posts -name '*.mdx')",
     "check:publish-due": "node --experimental-strip-types scripts/checks/publish-due.ts",
+    "check:updated-date": "node --experimental-strip-types scripts/checks/updated-date.ts",
     "preview": "astro preview",
     "astro": "astro",
     "test": "vitest",
