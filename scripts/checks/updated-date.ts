@@ -10,6 +10,9 @@
  * marker lives in the commit message and pre-commit runs before the message
  * exists. CI re-runs it across the whole PR as a backstop.
  *
+ * A date already set to today counts as bumped, so a second edit on the same day
+ * is fine — the field records the day of the revision, not a counter.
+ *
  * Opt out for genuinely non-semantic edits (typography, a link swap) by putting
  * [skip-updated-date] in the commit message.
  *
@@ -97,6 +100,13 @@ export function readBlob(rev: string, path: string, cwd?: string): string | null
     }
 }
 
+/** Today in the site's date format, in local time — the same clock an author reads. */
+export function today(now = new Date()): string {
+    const pad = (n: number): string => String(n).padStart(2, '0')
+
+    return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`
+}
+
 export interface Revisions {
     /** Revision holding the proposed content: '' for the staged index, or a commit. */
     to: string
@@ -106,10 +116,12 @@ export interface Revisions {
     files: string[]
     /** Repository root to run git in. Defaults to the current directory. */
     cwd?: string
+    /** Date that counts as already-bumped. Defaults to today. */
+    now?: string
 }
 
 /** Units whose content changed without a matching updatedDate bump. */
-export function findOffenders({ to, from, files, cwd }: Revisions): Offender[] {
+export function findOffenders({ cwd, files, from, now = today(), to }: Revisions): Offender[] {
     const units = new Map<string, { field: string; files: string[] }>()
     for (const file of files) {
         const resolved = unitOf(file)
@@ -133,7 +145,11 @@ export function findOffenders({ to, from, files, cwd }: Revisions): Offender[] {
 
         const before = readUpdatedDate(field, readBlob(from, field, cwd))
         const after = readUpdatedDate(field, readBlob(to, field, cwd))
-        if (before !== null && before === after) offenders.push({ field, unit })
+        if (before === null) continue
+        // Already dated today is as good as bumped: the page was revised today.
+        if (after === now) continue
+        // Unchanged, or moved backwards — neither describes a fresh revision.
+        if (after === null || after <= before) offenders.push({ field, unit })
     }
     return offenders
 }
@@ -180,7 +196,7 @@ function main(argv: string[]): void {
     }
     console.error(
         `\nupdatedDate feeds schema.org dateModified and the sitemap lastmod, so it must` +
-            `\ntrack real revisions. Set it to today, or add ${SKIP_MARKER} to the commit` +
+            `\ntrack real revisions. Set it to ${today()}, or add ${SKIP_MARKER} to the commit` +
             `\nmessage when the edit changes nothing a reader or a crawler would notice.\n`
     )
     process.exit(1)
