@@ -20,6 +20,7 @@ export class AnyPage {
     readonly footerLinkedInLink: Locator
     readonly footerMastodonLink: Locator
     readonly footerTikTokLink: Locator
+    readonly footerYouTubeLink: Locator
 
     constructor(page: Page, lang: 'en' | 'fi' | 'sv' = 'fi') {
         this.page = page
@@ -45,6 +46,7 @@ export class AnyPage {
         this.footerLinkedInLink = page.locator('footer a[href*="linkedin.com"]')
         this.footerMastodonLink = page.locator('footer a[href*="mastodon"]')
         this.footerTikTokLink = page.locator('footer a[href*="tiktok.com"]')
+        this.footerYouTubeLink = page.locator('footer a[href*="youtube.com"]')
     }
 
     async checkNavLinkHomeAriaCurrent() {
@@ -113,6 +115,7 @@ export class AnyPage {
         await expect(this.footerLinkedInLink).toBeVisible()
         await expect(this.footerMastodonLink).toBeVisible()
         await expect(this.footerTikTokLink).toBeVisible()
+        await expect(this.footerYouTubeLink).toBeVisible()
     }
 
     async checkNoHorizontalScroll() {

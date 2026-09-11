@@ -125,6 +125,7 @@ describe('styles', () => {
                 threads: 'rgb(0, 0, 0)',
                 transparent: 'transparent',
                 white: 'rgb(255, 255, 255)',
+                youtube: '#FF0000',
             })
         })
     })
