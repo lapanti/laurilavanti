@@ -13,6 +13,7 @@ export class ContactEnPage extends AnyPage {
     readonly mastodon: Locator
     readonly threads: Locator
     readonly tiktok: Locator
+    readonly youtube: Locator
 
     constructor(page: Page) {
         super(page)
@@ -24,6 +25,7 @@ export class ContactEnPage extends AnyPage {
         this.mastodon = page.locator('main a[href*="mastodon"]').first()
         this.threads = page.locator('main a[href*="threads.com"]').first()
         this.tiktok = page.locator('main a[href*="tiktok.com"]').first()
+        this.youtube = page.locator('main a[href*="youtube.com"]').first()
     }
 
     async goTo() {
@@ -41,5 +43,6 @@ export class ContactEnPage extends AnyPage {
         await expect(this.mastodon).toBeVisible()
         await expect(this.threads).toBeVisible()
         await expect(this.tiktok).toBeVisible()
+        await expect(this.youtube).toBeVisible()
     }
 }
