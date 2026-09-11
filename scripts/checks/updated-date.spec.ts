@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
-import { findOffenders, readUpdatedDate, unitOf, withoutUpdatedDate } from './updated-date'
+import { findOffenders, readUpdatedDate, today, unitOf, withoutUpdatedDate } from './updated-date'
 
 describe('unitOf', () => {
     it('treats a page as its own unit, carrying updatedDate in its frontmatter', () => {
@@ -83,7 +83,7 @@ describe('findOffenders', () => {
     })
     afterAll(() => rmSync(repo, { force: true, recursive: true }))
 
-    const staged = (files: string[]) => findOffenders({ cwd: repo, files, from: 'HEAD', to: '' })
+    const staged = (files: string[]) => findOffenders({ cwd: repo, files, from: 'HEAD', now: '2026-09-11', to: '' })
 
     it('flags a page whose body changed without a bump', () => {
         write('src/pages/fi/sivu/index.mdx', page('2026-01-01', 'Muutettu'))
@@ -119,9 +119,47 @@ describe('findOffenders', () => {
         expect(staged(['src/content/posts/77/fi.mdx', 'src/content/posts/77/meta.json'])).toEqual([])
     })
 
+    it('accepts a second edit on a day the page was already dated', () => {
+        write('src/pages/fi/samapaiva/index.mdx', page('2026-09-11', 'Ensimmäinen'))
+        git('add', '-A')
+        git('commit', '-qm', 'same-day seed')
+        write('src/pages/fi/samapaiva/index.mdx', page('2026-09-11', 'Toinen muokkaus'))
+        git('add', '-A')
+        expect(staged(['src/pages/fi/samapaiva/index.mdx'])).toEqual([])
+    })
+
+    it('still flags a stale date that merely is not today', () => {
+        write('src/pages/fi/vanha/index.mdx', page('2026-01-01', 'Ensin'))
+        git('add', '-A')
+        git('commit', '-qm', 'stale seed')
+        write('src/pages/fi/vanha/index.mdx', page('2026-01-01', 'Muutettu'))
+        git('add', '-A')
+        expect(staged(['src/pages/fi/vanha/index.mdx'])).toEqual([
+            { field: 'src/pages/fi/vanha/index.mdx', unit: 'src/pages/fi/vanha/index.mdx' },
+        ])
+    })
+
+    it('flags a date moved backwards, which describes no fresh revision', () => {
+        write('src/pages/fi/taakse/index.mdx', page('2026-05-05', 'Ensin'))
+        git('add', '-A')
+        git('commit', '-qm', 'backwards seed')
+        write('src/pages/fi/taakse/index.mdx', page('2026-01-01', 'Muutettu'))
+        git('add', '-A')
+        expect(staged(['src/pages/fi/taakse/index.mdx'])).toEqual([
+            { field: 'src/pages/fi/taakse/index.mdx', unit: 'src/pages/fi/taakse/index.mdx' },
+        ])
+    })
+
     it('ignores a newly added page, which sets its dates at creation', () => {
         write('src/pages/fi/uusi/index.mdx', page('2026-09-11', 'Uusi'))
         git('add', '-A')
         expect(staged(['src/pages/fi/uusi/index.mdx'])).toEqual([])
+    })
+})
+
+describe('today', () => {
+    it('formats local time the way the frontmatter does', () => {
+        expect(today(new Date(2026, 8, 1))).toBe('2026-09-01')
+        expect(today(new Date(2026, 11, 31))).toBe('2026-12-31')
     })
 })
