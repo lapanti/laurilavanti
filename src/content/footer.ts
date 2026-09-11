@@ -1,21 +1,17 @@
 import type { Lang } from './nav'
 
+import { socialProfiles } from './social'
+
 interface FooterLink {
     icon: string
     title: string
     url: string
 }
 
-export const footerLinks: FooterLink[] = [
-    { icon: 'fa7-brands:mastodon', title: 'Mastodon', url: 'https://mastodon.social/@laurilavanti' },
-    { icon: 'fa7-brands:bluesky', title: 'Bluesky', url: 'https://bsky.app/profile/lauri.lavanti.fi' },
-    { icon: 'fa7-brands:threads', title: 'Threads', url: 'https://www.threads.com/@laurilavanti' },
-    { icon: 'fa7-brands:youtube', title: 'YouTube', url: 'https://www.youtube.com/@laurilavanti' },
-    { icon: 'fa7-brands:linkedin', title: 'LinkedIn', url: 'https://www.linkedin.com/in/laurilavanti/' },
-    { icon: 'instagram', title: 'Instagram', url: 'https://www.instagram.com/laurilavanti/' },
-    { icon: 'fa7-brands:facebook', title: 'Facebook', url: 'https://www.facebook.com/laurilavanti' },
-    { icon: 'tiktok', title: 'TikTok', url: 'https://www.tiktok.com/@laurilavanti' },
-]
+// Derived so the footer row cannot drift from sameAs or the page chips again.
+export const footerLinks: FooterLink[] = socialProfiles
+    .filter(({ footer }) => footer)
+    .map(({ icon, title, url }) => ({ icon: icon ?? '', title, url }))
 
 export const footerRssAriaLabel: Record<Lang, string> = {
     en: "Subscribe to Lauri Lavanti's RSS feed (opens in new tab)",

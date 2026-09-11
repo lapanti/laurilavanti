@@ -1,6 +1,7 @@
 import type { Lang } from './nav'
 
 import { getImage } from '../lib/images'
+import { socialUrls } from './social'
 
 export const PERSON_ID = 'https://lavanti.fi/fi/laurista/#person'
 
@@ -23,15 +24,9 @@ export function getPersonImageUrl(): Promise<string> {
     return Promise.resolve(getImage('Lauri-Lavanti-seisoo-suorassa-sinisella-taustalla', 'og').src)
 }
 
+// Social profiles come from the shared list; the reference entries are not profiles.
 export const personSameAs = [
-    'https://bsky.app/profile/lauri.lavanti.fi',
-    'https://www.facebook.com/laurilavanti',
-    'https://www.instagram.com/laurilavanti/',
-    'https://www.linkedin.com/in/laurilavanti/',
-    'https://mastodon.social/@laurilavanti',
-    'https://www.threads.com/@laurilavanti',
-    'https://www.tiktok.com/@laurilavanti',
-    'https://www.youtube.com/@laurilavanti',
+    ...socialUrls,
     'https://fi.wikipedia.org/wiki/Lauri_Lavanti',
     'https://www.wikidata.org/wiki/Q139711658',
 ]

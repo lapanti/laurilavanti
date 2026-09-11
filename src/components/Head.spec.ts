@@ -2,7 +2,11 @@ import { describe, expect, it } from 'vitest'
 
 import { renderAstroComponent } from '../../tests/helpers'
 import { PERSON_ID, personJobTitle } from '../content/person'
+import { socialUrls } from '../content/social'
 import Head from './Head.astro'
+
+/** Wikipedia and Wikidata: reference entries in sameAs that are not social profiles. */
+const REFERENCE_SAME_AS = 2
 
 describe('<Head />', () => {
     it('should render with required props', async () => {
@@ -400,7 +404,7 @@ describe('<Head />', () => {
         expect(jsonLd.birthPlace).toEqual({ '@type': 'Place', name: 'Jyväskylä' })
         expect(jsonLd.nationality).toEqual({ '@type': 'Country', name: 'FI' })
         expect(jsonLd.jobTitle).toBe(personJobTitle.fi)
-        expect(jsonLd.sameAs).toHaveLength(10)
+        expect(jsonLd.sameAs).toHaveLength(socialUrls.length + REFERENCE_SAME_AS)
         expect(jsonLd.sameAs).toContain('https://fi.wikipedia.org/wiki/Lauri_Lavanti')
         expect(jsonLd.sameAs).toContain('https://www.wikidata.org/wiki/Q139711658')
         expect(jsonLd.sameAs).not.toContain('https://digitaalinenitsenaisyys.fi/')
@@ -470,7 +474,7 @@ describe('<Head />', () => {
         expect(jsonLd.mainEntity['@type']).toBe('Person')
         expect(jsonLd.mainEntity['@id']).toBe(PERSON_ID)
         expect(jsonLd.mainEntity.name).toBe('Lauri Lavanti')
-        expect(jsonLd.mainEntity.sameAs).toHaveLength(10)
+        expect(jsonLd.mainEntity.sameAs).toHaveLength(socialUrls.length + REFERENCE_SAME_AS)
         expect(jsonLd.mainEntity.affiliation).toHaveLength(1)
     })
 

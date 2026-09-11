@@ -31,6 +31,7 @@ import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
 import Plate from '../../../components/Plate.astro'
 import Prose from '../../../components/Prose.astro'
 import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, jobExperiencesTitle } from '../../../content/sv-cv'
+import { socialChips } from '../../../content/social'
 
 <Plate eyebrow="Vem" ground="offWhite" heading="Lauri i korthet" id="brief">
     <FactsList
@@ -146,17 +147,7 @@ import { degrees, degreesTitle, fiduciaries, fiduciariesTitle, jobExperiences, j
     </Prose>
     <Chips
         ariaLabel="Lauris konton i sociala medier"
-        items={[
-            { href: 'https://mastodon.social/@laurilavanti', label: 'Mastodon' },
-            { href: 'https://bsky.app/profile/lauri.lavanti.fi', label: 'Bluesky' },
-            { href: 'https://www.threads.com/@laurilavanti', label: 'Threads' },
-            { href: 'https://www.youtube.com/@laurilavanti', label: 'YouTube' },
-            { href: 'https://www.linkedin.com/in/laurilavanti/', label: 'LinkedIn' },
-            { href: 'https://www.instagram.com/laurilavanti/', label: 'Instagram' },
-            { href: 'https://www.facebook.com/laurilavanti', label: 'Facebook' },
-            { href: 'https://www.tiktok.com/@laurilavanti', label: 'TikTok' },
-            { href: 'https://www.reddit.com/user/laurilavanti/', label: 'Reddit' },
-        ]}
+        items={socialChips}
     />
     <Prose>
         <p>Utöver min egen webbplats hittar du mina texter bland annat i <a href="https://puheenvuoro.uusisuomi.fi/author/lauri-lavanti/">Uusi Suomi</a>, <a href="https://www.verdelehti.fi/tag/puheenvuoro/">Verde</a> och lokaltidningar som Länsiväylä. Oftast hittar du mina tankar i <a href="https://www.kirkkonummensanomat.fi/">Kirkkonummen Sanomat</a>.</p>
