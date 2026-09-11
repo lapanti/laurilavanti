@@ -1,4 +1,4 @@
-export const fiduciariesTitle = 'Luottamustoimet'
+export const fiduciariesTitle = 'Luottamus­toimet'
 export const fiduciaries = [
     {
         description: [
