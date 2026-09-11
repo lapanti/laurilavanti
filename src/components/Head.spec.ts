@@ -400,7 +400,7 @@ describe('<Head />', () => {
         expect(jsonLd.birthPlace).toEqual({ '@type': 'Place', name: 'Jyväskylä' })
         expect(jsonLd.nationality).toEqual({ '@type': 'Country', name: 'FI' })
         expect(jsonLd.jobTitle).toBe(personJobTitle.fi)
-        expect(jsonLd.sameAs).toHaveLength(9)
+        expect(jsonLd.sameAs).toHaveLength(10)
         expect(jsonLd.sameAs).toContain('https://fi.wikipedia.org/wiki/Lauri_Lavanti')
         expect(jsonLd.sameAs).toContain('https://www.wikidata.org/wiki/Q139711658')
         expect(jsonLd.sameAs).not.toContain('https://digitaalinenitsenaisyys.fi/')
@@ -470,7 +470,7 @@ describe('<Head />', () => {
         expect(jsonLd.mainEntity['@type']).toBe('Person')
         expect(jsonLd.mainEntity['@id']).toBe(PERSON_ID)
         expect(jsonLd.mainEntity.name).toBe('Lauri Lavanti')
-        expect(jsonLd.mainEntity.sameAs).toHaveLength(9)
+        expect(jsonLd.mainEntity.sameAs).toHaveLength(10)
         expect(jsonLd.mainEntity.affiliation).toHaveLength(1)
     })
 
