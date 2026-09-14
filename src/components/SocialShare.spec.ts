@@ -10,8 +10,6 @@ import {
 } from '../content/person'
 import SocialShare from './SocialShare.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/SocialShare.spec.ts
-
 describe('<SocialShare />', () => {
     const shareUrl = 'https://lavanti.fi/blogi/vuosi-2026-on-tekoalyn'
     const title = 'Vuosi 2026 on tekoälyn'

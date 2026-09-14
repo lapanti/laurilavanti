@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import SmartLink from './SmartLink.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/SmartLink.spec.ts
-
 describe('<SmartLink />', () => {
     const internalHref = '/fi/blog/47/vuosi-2026-on-tekoalyn/'
     const externalHref = 'https://mastodon.social/@laurilavanti'

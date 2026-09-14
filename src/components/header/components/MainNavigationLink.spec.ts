@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../../../tests/helpers'
 import MainNavigationLink from './MainNavigationLink.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/header/components/MainNavigationLink.spec.ts
-
 describe('<MainNavigationLink />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(MainNavigationLink, {})

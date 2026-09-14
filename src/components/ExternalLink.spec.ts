@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import ExternalLink from './ExternalLink.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/ExternalLink.spec.ts
-
 describe('<ExternalLink />', () => {
     const href = 'https://mastodon.social/@laurilavanti'
     const text = 'Mastodontti'

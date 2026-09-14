@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import UL from './UL.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/UL.spec.ts
-
 describe('<UL />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(UL, {

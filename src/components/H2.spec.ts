@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import H2 from './H2.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/H2.spec.ts
-
 describe('<H2 />', () => {
     const itemProp = 'headline'
     const name = 'Mastodontti'

@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../../tests/helpers'
 import SkipLinks from './SkipLinks.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/SkipLinks.spec.ts
-
 describe('<SkipLinks />', () => {
     it('should render', async () => {
         const result = await renderAstroComponent(SkipLinks, {})
