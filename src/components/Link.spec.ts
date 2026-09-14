@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import Link from './Link.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/Link.spec.ts
-
 describe('<Link />', () => {
     const href = '/blogi/vuosi-2026-on-tekoalyn'
     const text = 'Vuosi 2026 on tekoälyn'

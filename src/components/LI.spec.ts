@@ -4,8 +4,6 @@ import { describe, expect, it } from 'vitest'
 import { renderAstroComponent } from '../../tests/helpers'
 import LI from './LI.astro'
 
-// filepath: /home/lapanti/code/laurilavanti/src/components/LI.spec.ts
-
 describe('<LI />', () => {
     const name = 'List item'
 
