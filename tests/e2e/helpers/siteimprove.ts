@@ -6,7 +6,7 @@ import { Audit } from '@siteimprove/alfa-test-utils'
 
 /*
  * Signal Band rebrand a11y debt — tracked in
- * https://github.com/lapanti/laurilavanti/issues/1368. Rules are excluded here
+ * https://github.com/lapanti/lavanti.fi/issues/1368. Rules are excluded here
  * only when meeting them would require changing the design system (palette or
  * component sizing); rules that can be met for free are enforced, not excluded.
  *

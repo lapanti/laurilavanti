@@ -3,7 +3,7 @@
 > **Pattern**: [The Spec](https://asdlc.io/patterns/the-spec) — Living document, permanent source of truth.
 > **Status**: `Active`
 > **Last updated**: 2026-05-18
-> **Issue**: [#1224](https://github.com/lapanti/laurilavanti/issues/1224)
+> **Issue**: [#1224](https://github.com/lapanti/lavanti.fi/issues/1224)
 
 ---
 
