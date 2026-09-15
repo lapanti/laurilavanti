@@ -7,13 +7,14 @@ emphasis: 'for parliament'
 intro: "Lauri Lavanti is the Greens' parliamentary candidate in the Uusimaa electoral district in the 2027 Finnish parliamentary election. Election day is Sunday 18 April 2027, with advance voting in Finland on 7–13 April."
 description: "Lauri Lavanti is the Greens' parliamentary candidate in Uusimaa. Election day is 18 April 2027 — themes: the economy, education, and freedom in the age of AI."
 slug: 'en/elections'
-updatedDate: '2026-09-07'
+updatedDate: '2026-09-15'
 type: 'WebPage'
 heroImage: Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-hero-pysty-v2
 mobileHeroImage: Lauri-Lavanti-kerrostalopihalla-kadet-taskuissa-hero-vaaka
 alt: 'Lauri Lavanti stands on a lawn in front of apartment buildings with his hands in his pockets, wearing a navy blazer and a floral shirt.'
 plated: true
 variant: 'split'
+eventCalendar: true
 langAlternates:
     en: '/en/elections/'
     fi: '/fi/eduskuntavaalit/'
@@ -33,6 +34,7 @@ faq:
       a: 'You can support the campaign by joining the campaign team or donating to the campaign — the donation link will be published on this page later. You can also subscribe to the newsletter, share the posts, and discuss the campaign themes. To join the team, get in touch through the contact page.'
 ---
 
+import EventCalendar from '../../../components/EventCalendar.astro'
 import Eyebrow from '../../../components/Eyebrow.astro'
 import FactsList from '../../../components/FactsList.astro'
 import Faq from '../../../components/frontPage/Faq.astro'
@@ -41,6 +43,7 @@ import Pillar from '../../../components/frontPage/Pillar.astro'
 import NewsletterSubscribe from '../../../components/NewsletterSubscribe.astro'
 import Plate from '../../../components/Plate.astro'
 import Prose from '../../../components/Prose.astro'
+import { visibleCampaignEvents } from '../../../lib/visibleEvents'
 
 <Plate eyebrow="The election" ground="offWhite" heading="The 2027 parliamentary election in brief" id="inbrief">
     <FactsList
@@ -125,6 +128,8 @@ import Prose from '../../../components/Prose.astro'
         <p>Voters registered in the Uusimaa electoral district can vote for Lauri Lavanti. To inform your decision, read the <a href="/en/blog/">posts</a> and subscribe to the newsletter below.</p>
     </Prose>
 </Plate>
+
+<EventCalendar events={visibleCampaignEvents()} eyebrow="Events" heading="Campaign event calendar" id="events" lang="en" />
 
 <Faq eyebrow="Q & A" faq={frontmatter.faq} heading="Frequently asked questions about the election" />
 
