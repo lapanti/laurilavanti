@@ -238,42 +238,41 @@ const faqJsonLd =
  * Event node needs a name that says what actually happens, and structured data
  * should not announce a programme that does not exist yet. There is no minimum
  * count here; the >= 2 gate on faq is a FAQPage rich-result requirement, not a
- * pattern to copy.
+ * pattern to copy. One script per event rather than a single array: every other
+ * block on the page is a standalone object, and scripts/checks/dist-head.ts reads
+ * @context and @type off each block.
  *
  * organizer is written out rather than referenced by @id: on a WebPage the canonical
  * Person node is not in the emitted graph, so a bare @id would dangle.
  */
 const announceableEvents = (events ?? []).filter((event) => event.topicConfirmed)
 
-const eventsJsonLd =
-    announceableEvents.length > 0
-        ? JSON.stringify(
-              announceableEvents.map((event) => ({
-                  '@context': 'https://schema.org',
-                  '@type': EVENT,
-                  description: event.locales[lang].description,
-                  ...(event.endTime ? { endDate: toHelsinkiIso(event.date, event.endTime) } : {}),
-                  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-                  eventStatus: 'https://schema.org/EventScheduled',
-                  isAccessibleForFree: true,
-                  location: {
-                      '@type': 'Place',
-                      address: {
-                          '@type': 'PostalAddress',
-                          addressCountry: 'FI',
-                          addressLocality: event.locales[lang].locality,
-                          postalCode: event.postalCode,
-                          streetAddress: event.streetAddress,
-                      },
-                      name: event.locales[lang].venue,
-                  },
-                  name: event.locales[lang].title,
-                  organizer: { '@type': 'Person', name: personName, url: personUrl },
-                  startDate: toHelsinkiIso(event.date, event.startTime),
-                  ...(canonical ? { url: canonical.toString() } : {}),
-              }))
-          )
-        : null
+const eventsJsonLd = announceableEvents.map((event) =>
+    JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': EVENT,
+        description: event.locales[lang].description,
+        ...(event.endTime ? { endDate: toHelsinkiIso(event.date, event.endTime) } : {}),
+        eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+        eventStatus: 'https://schema.org/EventScheduled',
+        isAccessibleForFree: true,
+        location: {
+            '@type': 'Place',
+            address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'FI',
+                addressLocality: event.locales[lang].locality,
+                postalCode: event.postalCode,
+                streetAddress: event.streetAddress,
+            },
+            name: event.locales[lang].venue,
+        },
+        name: event.locales[lang].title,
+        organizer: { '@type': 'Person', name: personName, url: personUrl },
+        startDate: toHelsinkiIso(event.date, event.startTime),
+        ...(canonical ? { url: canonical.toString() } : {}),
+    })
+)
 
 const breadcrumbJsonLd =
     breadcrumbs && breadcrumbs.length >= 2
@@ -355,7 +354,7 @@ const breadcrumbJsonLd =
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 {faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
-{eventsJsonLd && <script is:inline set:html={eventsJsonLd} type="application/ld+json" />}
+{eventsJsonLd.map((event) => <script is:inline set:html={event} type="application/ld+json" />)}
 {breadcrumbJsonLd && <script is:inline set:html={breadcrumbJsonLd} type="application/ld+json" />}
 
 <link href="/sitemap-index.xml" rel="sitemap" />
