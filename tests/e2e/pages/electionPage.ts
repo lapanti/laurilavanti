@@ -7,11 +7,13 @@ import { AnyPage } from './anyPage'
 export class ElectionPage extends AnyPage {
     readonly electionTitle: Locator
     readonly briefPlate: Locator
+    readonly eventCalendar: Locator
 
     constructor(page: Page) {
         super(page)
         this.electionTitle = page.getByRole('heading', { level: 1 })
         this.briefPlate = page.locator('#lyhyesti')
+        this.eventCalendar = page.locator('#tapahtumat')
     }
 
     async goTo() {
@@ -23,5 +25,6 @@ export class ElectionPage extends AnyPage {
 
     async checkContent() {
         await expect(this.briefPlate).toBeVisible()
+        await expect(this.eventCalendar).toBeVisible()
     }
 }
