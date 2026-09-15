@@ -1,5 +1,11 @@
 export const BLOGPOSTING = 'BlogPosting' as const
 export const COLLECTIONPAGE = 'CollectionPage' as const
+/*
+ * EVENT and FAQPAGE are sibling-script types: emitted alongside the page's primary
+ * JSON-LD, never as its @type. They are deliberately absent from JSON_LD_TYPES so no
+ * page frontmatter can select them.
+ */
+export const EVENT = 'Event' as const
 export const FAQPAGE = 'FAQPage' as const
 export const PERSON = 'Person' as const
 export const PROFILEPAGE = 'ProfilePage' as const

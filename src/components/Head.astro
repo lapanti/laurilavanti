@@ -1,4 +1,5 @@
 ---
+import type { CampaignEvent } from '../content/events'
 import type { Lang } from '../content/nav'
 import type { AuthorEntry } from '../content/person'
 
@@ -26,9 +27,11 @@ import {
     personWorksFor,
 } from '../content/person'
 import { rssTitles } from '../content/rss'
+import { toHelsinkiIso } from '../lib/eventDate'
 import {
     BLOGPOSTING,
     type BreadcrumbItem,
+    EVENT,
     type FaqItem,
     FAQPAGE,
     JSON_LD_TYPES,
@@ -44,6 +47,8 @@ interface Props {
     breadcrumbs?: BreadcrumbItem[]
     createdAt?: string
     description?: string
+    /** Campaign events for the sibling Event JSON-LD; the section itself renders from the page body. */
+    events?: CampaignEvent[]
     faq?: Array<FaqItem>
     lang?: Lang
     langAlternates?: Record<Lang, string>
@@ -62,6 +67,7 @@ const {
     authors,
     breadcrumbs,
     description = 'Vihreiden eduskuntavaaliehdokas Uudenmaan vaalipiirissä, johtava ohjelmistokehittäjä. Tavoitteena digitaalisesti itsenäinen Suomi tekoälyn aikakaudella.',
+    events,
     faq,
     lang: rawLang = 'fi',
     langAlternates,
@@ -226,6 +232,49 @@ const faqJsonLd =
           })
         : null
 
+/*
+ * Event nodes ride along as a sibling script, exactly as faqJsonLd does — the page's
+ * primary @type stays WebPage. Events whose topic is still open are left out: an
+ * Event node needs a name that says what actually happens, and structured data
+ * should not announce a programme that does not exist yet. There is no minimum
+ * count here; the >= 2 gate on faq is a FAQPage rich-result requirement, not a
+ * pattern to copy.
+ *
+ * organizer is written out rather than referenced by @id: on a WebPage the canonical
+ * Person node is not in the emitted graph, so a bare @id would dangle.
+ */
+const announceableEvents = (events ?? []).filter((event) => event.topicConfirmed)
+
+const eventsJsonLd =
+    announceableEvents.length > 0
+        ? JSON.stringify(
+              announceableEvents.map((event) => ({
+                  '@context': 'https://schema.org',
+                  '@type': EVENT,
+                  description: event.locales[lang].description,
+                  ...(event.endTime ? { endDate: toHelsinkiIso(event.date, event.endTime) } : {}),
+                  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+                  eventStatus: 'https://schema.org/EventScheduled',
+                  isAccessibleForFree: true,
+                  location: {
+                      '@type': 'Place',
+                      address: {
+                          '@type': 'PostalAddress',
+                          addressCountry: 'FI',
+                          addressLocality: event.locales[lang].locality,
+                          postalCode: event.postalCode,
+                          streetAddress: event.streetAddress,
+                      },
+                      name: event.locales[lang].venue,
+                  },
+                  name: event.locales[lang].title,
+                  organizer: { '@type': 'Person', name: personName, url: personUrl },
+                  startDate: toHelsinkiIso(event.date, event.startTime),
+                  ...(canonical ? { url: canonical.toString() } : {}),
+              }))
+          )
+        : null
+
 const breadcrumbJsonLd =
     breadcrumbs && breadcrumbs.length >= 2
         ? JSON.stringify({
@@ -306,6 +355,7 @@ const breadcrumbJsonLd =
 <title>{title.startsWith('Lauri Lavanti') ? title : `${title} | Lauri Lavanti`}</title>
 <script is:inline set:html={jsonLd} type="application/ld+json" />
 {faqJsonLd && <script is:inline set:html={faqJsonLd} type="application/ld+json" />}
+{eventsJsonLd && <script is:inline set:html={eventsJsonLd} type="application/ld+json" />}
 {breadcrumbJsonLd && <script is:inline set:html={breadcrumbJsonLd} type="application/ld+json" />}
 
 <link href="/sitemap-index.xml" rel="sitemap" />
