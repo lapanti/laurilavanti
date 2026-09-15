@@ -112,6 +112,8 @@ const topicPendingLabels: Record<Lang, string> = {
         padding-top: 0.65rem;
     }
 
+    /* A div, not a p: SiteImprove sia-r85 (paragraph-not-italics) fails an italic
+       paragraph, and the repo already moves such labels off the paragraph role. */
     .event-pending {
         color: var(--colorsTextSecondary);
         font-family: var(--fineFontFamily);
@@ -153,7 +155,9 @@ const topicPendingLabels: Record<Lang, string> = {
                                         {event.locales[lang].venue}, {event.locales[lang].locality}
                                     </p>
                                     <p class="event-description">{event.locales[lang].description}</p>
-                                    {!event.topicConfirmed && <p class="event-pending">{topicPendingLabels[lang]}</p>}
+                                    {!event.topicConfirmed && (
+                                        <div class="event-pending">{topicPendingLabels[lang]}</div>
+                                    )}
                                 </li>
                             )
                         })}
