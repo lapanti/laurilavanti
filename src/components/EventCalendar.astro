@@ -2,7 +2,7 @@
 import type { CampaignEvent } from '../content/events'
 import type { Lang } from '../content/nav'
 
-import { formatEventDate, formatEventTime } from '../lib/eventDate'
+import { eventDateTimeAttribute, formatEventDate, formatEventTime } from '../lib/eventDate'
 import { colors, typographics } from '../lib/styles'
 import Eyebrow from './Eyebrow.astro'
 import PlateHeading from './PlateHeading.astro'
@@ -144,7 +144,7 @@ const topicPendingLabels: Record<Lang, string> = {
 
                             return (
                                 <li data-event-id={event.id}>
-                                    <time class="event-when" datetime={event.date}>
+                                    <time class="event-when" datetime={eventDateTimeAttribute(event)}>
                                         {formatEventDate(event.date, lang)}
                                         {time && ` ${time}`}
                                     </time>

@@ -2,7 +2,7 @@ import type { CampaignEvent } from '../content/events'
 
 import { describe, expect, it } from 'vitest'
 
-import { formatEventDate, formatEventTime, toHelsinkiIso } from './eventDate'
+import { eventDateTimeAttribute, formatEventDate, formatEventTime, toHelsinkiIso } from './eventDate'
 
 const timed = { date: '2026-09-19', endTime: '17:00', startTime: '15:00' } as CampaignEvent
 const startOnly = { date: '2026-09-19', startTime: '15:00' } as CampaignEvent
@@ -69,6 +69,16 @@ describe('formatEventTime', () => {
 
     it('returns undefined while the schedule is still open', () => {
         expect(formatEventTime(undated, 'fi')).toBeUndefined()
+    })
+})
+
+describe('eventDateTimeAttribute', () => {
+    it('includes the start time when the event has one', () => {
+        expect(eventDateTimeAttribute(timed)).toBe('2026-09-19T15:00')
+    })
+
+    it('falls back to the calendar date while the schedule is open', () => {
+        expect(eventDateTimeAttribute(undated)).toBe('2026-11-30')
     })
 })
 

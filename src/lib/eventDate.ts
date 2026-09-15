@@ -51,6 +51,15 @@ export const formatEventTime = (event: CampaignEvent, lang: Lang): string | unde
 }
 
 /**
+ * The value for a <time datetime> attribute: the calendar date, plus the local
+ * start time when there is one, so the machine-readable value says everything the
+ * visible text does. Offset-free on purpose — datetime carries local time, and the
+ * zone belongs in the JSON-LD.
+ */
+export const eventDateTimeAttribute = (event: CampaignEvent): string =>
+    event.startTime ? `${event.date}T${event.startTime}` : event.date
+
+/**
  * An ISO 8601 instant for schema.org, e.g. "2026-09-19T15:00:00+03:00".
  *
  * The offset is derived from the zone rather than hardcoded, so it is +03:00 in
