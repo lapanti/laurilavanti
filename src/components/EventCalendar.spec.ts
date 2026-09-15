@@ -58,7 +58,7 @@ describe('<EventCalendar />', () => {
         const result = await renderAstroComponent(EventCalendar, { props })
 
         expect([...result.querySelectorAll('time')].map((t) => t.getAttribute('datetime'))).toEqual([
-            '2026-09-19',
+            '2026-09-19T15:00',
             '2026-11-30',
         ])
     })
