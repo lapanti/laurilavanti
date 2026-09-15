@@ -263,18 +263,18 @@ describe('<Head />', () => {
         topicConfirmed: false,
     }
 
-    /** The Event payload is a top-level array, so the FAQ/primary finders never match it. */
-    const findEventScript = (root: ParentNode) =>
-        Array.from(root.querySelectorAll('script[type="application/ld+json"]')).find((s) =>
-            Array.isArray(JSON.parse(s.textContent || '{}'))
-        )
+    /** One script per event, so the Event blocks are picked out by @type. */
+    const eventScripts = (root: ParentNode) =>
+        Array.from(root.querySelectorAll('script[type="application/ld+json"]'))
+            .map((s) => JSON.parse(s.textContent || '{}'))
+            .filter((parsed) => parsed['@type'] === 'Event')
 
     it('should emit a sibling Event JSON-LD script for events whose topic is confirmed', async () => {
         const result = await renderAstroComponent(Head, {
             props: { events: [confirmedEvent, openEvent], lang: 'fi', slug: 'fi/eduskuntavaalit', title: 'Vaalit' },
         })
 
-        const parsed = JSON.parse(findEventScript(result)?.textContent || '[]')
+        const parsed = eventScripts(result)
         expect(parsed).toHaveLength(1)
         expect(parsed[0]['@context']).toBe('https://schema.org')
         expect(parsed[0]['@type']).toBe('Event')
@@ -302,7 +302,7 @@ describe('<Head />', () => {
             props: { events: [confirmedEvent], lang: 'sv', slug: 'sv/riksdagsvalet', title: 'Valet' },
         })
 
-        const parsed = JSON.parse(findEventScript(result)?.textContent || '[]')
+        const parsed = eventScripts(result)
         expect(parsed[0].name).toBe('Bekräftat evenemang')
         expect(parsed[0].location.address.addressLocality).toBe('Esbo')
     })
@@ -312,13 +312,13 @@ describe('<Head />', () => {
             props: { events: [openEvent], slug: 'fi/eduskuntavaalit', title: 'Vaalit' },
         })
 
-        expect(findEventScript(result)).toBeUndefined()
+        expect(eventScripts(result)).toHaveLength(0)
     })
 
     it('should not emit an Event JSON-LD script when no events are passed', async () => {
         const result = await renderAstroComponent(Head, { props: { slug: 'fi/eduskuntavaalit', title: 'Vaalit' } })
 
-        expect(findEventScript(result)).toBeUndefined()
+        expect(eventScripts(result)).toHaveLength(0)
     })
 
     it('should not emit a FAQPage JSON-LD script when faq has fewer than 2 entries', async () => {

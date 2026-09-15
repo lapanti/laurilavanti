@@ -35,6 +35,7 @@ const KNOWN_JSONLD_TYPES = new Set([
     'BlogPosting',
     'BreadcrumbList',
     'CollectionPage',
+    'Event',
     'FAQPage',
     'Person',
     'ProfilePage',
