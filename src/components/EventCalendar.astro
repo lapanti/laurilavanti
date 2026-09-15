@@ -50,6 +50,7 @@ const topicPendingLabels: Record<Lang, string> = {
         textSmallFontWeight: typographics.textSmall.fontWeight,
         textSmallLineHeight: typographics.textSmall.lineHeight,
         titleFontFamily: typographics.title.fontFamily,
+        titleFontSize: typographics.title.fontSize,
         titleFontWeight: typographics.title.fontWeight,
     }}
 >
@@ -85,7 +86,7 @@ const topicPendingLabels: Record<Lang, string> = {
     .event-list h3 {
         color: var(--colorsForestGreen);
         font-family: var(--titleFontFamily);
-        font-size: 1.1875rem;
+        font-size: var(--titleFontSize);
         font-weight: var(--titleFontWeight);
         line-height: 1.3;
         margin: 0;
