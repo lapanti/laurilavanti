@@ -5,13 +5,11 @@ import type { BreadcrumbItem, FaqItem, JsonLdType } from '../lib/jsonld'
 import HeroPreloadLinks from '../components/HeroPreloadLinks.astro'
 import Stripe from '../components/Stripe.astro'
 import TitleBanner from '../components/TitleBanner.astro'
-import { campaignEvents } from '../content/events'
 import { breadcrumbLabels } from '../lib/breadcrumbs'
-import { filterUpcoming } from '../lib/events'
 import { getImage } from '../lib/images'
 import { COLLECTIONPAGE } from '../lib/jsonld'
 import { ogId } from '../lib/og/id'
-import { helsinkiDateOf } from '../lib/publishing'
+import { visibleCampaignEvents } from '../lib/visibleEvents'
 import BaseLayout from './BaseLayout.astro'
 
 interface Props {
@@ -80,14 +78,6 @@ const ogImage = slug
     ? new URL(`/og/${ogId(slug)}.png`, Astro.site).href
     : getImage('og-image-lauri-lavanti', 'ogFlat').src
 
-/*
- * Events that have already happened drop off the page. Dev keeps them so a past
- * event stays previewable, mirroring how loadAllPosts treats future-dated posts.
- * A static build goes stale, so the nightly scheduled-publish workflow redeploys
- * once an event has passed — see scripts/checks/events-due.ts.
- */
-const visibleEvents = import.meta.env.DEV ? campaignEvents : filterUpcoming(campaignEvents, helsinkiDateOf(new Date()))
-
 const breadcrumbs: BreadcrumbItem[] | undefined =
     type === COLLECTIONPAGE && lang && slug
         ? [
@@ -101,7 +91,7 @@ const breadcrumbs: BreadcrumbItem[] | undefined =
     breadcrumbs={breadcrumbs}
     createdAt={createdAt}
     description={description}
-    events={eventCalendar ? visibleEvents : undefined}
+    events={eventCalendar ? visibleCampaignEvents() : undefined}
     faq={faq}
     headerVariant={variant === 'split' ? 'hero' : 'solid'}
     lang={lang}
